@@ -1,0 +1,70 @@
+{
+  "godot": "4.7.2.stable.official.ed1daf0bf",
+  "workers": 1,
+  "results": [
+    {
+      "test": "m0",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 0.183,
+      "log": "artifacts/logs/m0.log"
+    },
+    {
+      "test": "board",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 0.249,
+      "log": "artifacts/logs/board.log"
+    },
+    {
+      "test": "m1",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 0.351,
+      "log": "artifacts/logs/m1.log"
+    },
+    {
+      "test": "edge_cases",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 0.35,
+      "log": "artifacts/logs/edge_cases.log"
+    },
+    {
+      "test": "acceptance",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 1.693,
+      "log": "artifacts/logs/acceptance.log"
+    },
+    {
+      "test": "ui",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 2.256,
+      "log": "artifacts/logs/ui.log"
+    },
+    {
+      "test": "ui_interaction",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 7.292,
+      "log": "artifacts/logs/ui_interaction.log"
+    },
+    {
+      "test": "performance",
+      "passed": false,
+      "exit_code": 1,
+      "seconds": 10.098,
+      "log": "artifacts/logs/performance.log"
+    }
+  ],
+  "not_run": [
+    "T2 threads=4",
+    "T2 threads=8",
+    "T10 new-player study"
+  ],
+  "passed_executed_tests": false,
+  "requested_test_count": 8,
+  "completed_test_count": 8
+}

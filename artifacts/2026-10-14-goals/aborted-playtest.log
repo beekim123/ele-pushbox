@@ -1,0 +1,15 @@
+2026-10-14 Asia/Shanghai
+Status: stopped after the user requested postponing bug investigation.
+Scope completed: launched one isolated Godot window and observed one D1 Up input.
+Scope NOT completed: screen resizing reproduction, obstacle-crossing reproduction, root-cause analysis, fixes, regression verification.
+Godot: 4.7.2.stable.official.ed1daf0bf, OpenGL compatibility, Apple M3.
+Resources: one game instance, worker_pool/max_threads=1, --single-threaded-scene, --max-fps 30, nice -n 10, numerical library threads=1.
+User data: isolated under CodexPushboxTests/pushbox-goals-playtest-20261014-q5u0daix.
+
+PLAYTEST_WINDOW {"viewport":[1280,720],"window":[1280,720]}
+PLAYTEST_STATE {"boxes":[{"at":[8,5],"id":"A"}],"level":1,"message":"","moves":0,"origin":[5,3],"player":[6,7],"running":true,"trapped":false}
+PLAYTEST_STATE {"boxes":[{"at":[8,5],"id":"A"}],"level":1,"message":"","moves":0,"origin":[5,3],"player":[6,7],"running":false,"trapped":false}
+PLAYTEST_STATE {"boxes":[{"at":[8,5],"id":"A"}],"level":1,"message":"","moves":1,"origin":[5,3],"player":[6,6],"running":true,"trapped":false}
+PLAYTEST_STATE {"boxes":[{"at":[8,5],"id":"A"}],"level":1,"message":"","moves":1,"origin":[5,3],"player":[6,6],"running":false,"trapped":false}
+
+The isolated Godot app was closed with Command-Q. The process session completed and CUA reported the running application was no longer found. These observations are partial evidence only; neither reported bug was verified or fixed.

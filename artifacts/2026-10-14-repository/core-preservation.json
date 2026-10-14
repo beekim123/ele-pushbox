@@ -1,0 +1,19 @@
+{
+  "all_passed": true,
+  "checks": {
+    "pushbox/scripts/board.gd": true,
+    "pushbox/rules.json": true,
+    "bin/libele_godot.dylib": true,
+    "pushbox/content/default/materials.json": true,
+    "pushbox/content/default/profile.json": true,
+    "pushbox/content/default/reactions.json": true,
+    "tests/fixtures/session_sync_v03.gd": true,
+    "pushbox/levels/d4.json except guides": true,
+    "pushbox/levels/d5.json except guides": true,
+    "pushbox/levels/d2.json except guides": true,
+    "pushbox/levels/d3.json except guides": true,
+    "pushbox/levels/d1.json except guides": true,
+    "Loader.populate": true
+  },
+  "session_scheduling": "explicitly authorized; result equivalence verified against frozen Session and original per-action hashes"
+}

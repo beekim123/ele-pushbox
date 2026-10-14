@@ -1,0 +1,103 @@
+{
+  "display": "macOS",
+  "frames": {
+    "max_us": 2468,
+    "min_us": 36,
+    "p50_us": 393,
+    "p95_us": 1602,
+    "samples": 250
+  },
+  "previews": {
+    "max_us": 16719,
+    "min_us": 8147,
+    "p50_us": 10149,
+    "p95_us": 16719,
+    "samples": 8
+  },
+  "rooms": [
+    {
+      "frames": {
+        "max_us": 1033,
+        "min_us": 36,
+        "p50_us": 567,
+        "p95_us": 1033,
+        "samples": 15
+      },
+      "level": 1,
+      "load_us": 27869,
+      "previews": {
+        "samples": 0
+      }
+    },
+    {
+      "frames": {
+        "max_us": 1857,
+        "min_us": 62,
+        "p50_us": 204,
+        "p95_us": 1154,
+        "samples": 77
+      },
+      "level": 2,
+      "load_us": 10097,
+      "previews": {
+        "max_us": 9628,
+        "min_us": 8147,
+        "p50_us": 9628,
+        "p95_us": 9628,
+        "samples": 2
+      }
+    },
+    {
+      "frames": {
+        "max_us": 2468,
+        "min_us": 83,
+        "p50_us": 1077,
+        "p95_us": 2212,
+        "samples": 43
+      },
+      "level": 3,
+      "load_us": 18362,
+      "previews": {
+        "samples": 0
+      }
+    },
+    {
+      "frames": {
+        "max_us": 1913,
+        "min_us": 100,
+        "p50_us": 581,
+        "p95_us": 1556,
+        "samples": 24
+      },
+      "level": 4,
+      "load_us": 14376,
+      "previews": {
+        "max_us": 8148,
+        "min_us": 8148,
+        "p50_us": 8148,
+        "p95_us": 8148,
+        "samples": 1
+      }
+    },
+    {
+      "frames": {
+        "max_us": 2301,
+        "min_us": 59,
+        "p50_us": 434,
+        "p95_us": 1506,
+        "samples": 91
+      },
+      "level": 5,
+      "load_us": 14636,
+      "previews": {
+        "max_us": 16719,
+        "min_us": 9367,
+        "p50_us": 10175,
+        "p95_us": 16719,
+        "samples": 5
+      }
+    }
+  ],
+  "scope": "CPU settlement frames: full Game._physics_process + native renderer upload_us + overlay draw_us; max four SDK ticks (opening one per frame); opening snapshot uses one existing worker with simulation/input frozen; per-room load_us includes world creation and tick-0 map commit, reported separately; previews include synchronous snapshot I/O, settlement and overlay diff; excludes vsync wait and GPU raster time",
+  "worker_count": 1
+}

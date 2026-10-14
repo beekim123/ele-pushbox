@@ -1,0 +1,8 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+FAIL victory interval prevents ordinary action delaying auto-next
+FAIL D5 retains visible victory scene after countdown
+FAIL restart clears all victory presentation
+FAIL gate state alone starts six-frame presentation tween
+FAIL flash survives update until a render consumes it
+v03 presentation: 6 checks, 5 failures

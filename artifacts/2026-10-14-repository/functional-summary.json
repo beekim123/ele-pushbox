@@ -1,0 +1,107 @@
+{
+  "godot": "4.7.2.stable.official.ed1daf0bf",
+  "workers": 1,
+  "candidate_version": "0.3",
+  "user_data_isolated": true,
+  "results": [
+    {
+      "test": "m0",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 0.316,
+      "log": "artifacts/v03/logs/m0.log"
+    },
+    {
+      "test": "board",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 0.248,
+      "log": "artifacts/v03/logs/board.log"
+    },
+    {
+      "test": "m1",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 0.343,
+      "log": "artifacts/v03/logs/m1.log"
+    },
+    {
+      "test": "edge_cases",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 0.25,
+      "log": "artifacts/v03/logs/edge_cases.log"
+    },
+    {
+      "test": "acceptance",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 1.817,
+      "log": "artifacts/v03/logs/acceptance.log"
+    },
+    {
+      "test": "session_scheduling",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 0.629,
+      "log": "artifacts/v03/logs/session_scheduling.log"
+    },
+    {
+      "test": "ui",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.245,
+      "log": "artifacts/v03/logs/ui.log"
+    },
+    {
+      "test": "ui_interaction",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 8.283,
+      "log": "artifacts/v03/logs/ui_interaction.log"
+    },
+    {
+      "test": "ui_failure",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 0.565,
+      "log": "artifacts/v03/logs/ui_failure.log"
+    },
+    {
+      "test": "inspect_levels",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 0.347,
+      "log": "artifacts/v03/logs/inspect_levels.log"
+    },
+    {
+      "test": "guides",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 2.969,
+      "log": "artifacts/v03/logs/guides.log"
+    },
+    {
+      "test": "v03_presentation",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 5.814,
+      "log": "artifacts/v03/logs/v03_presentation.log"
+    },
+    {
+      "test": "v03_render",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 2.269,
+      "log": "artifacts/v03/logs/v03_render.log"
+    }
+  ],
+  "not_run": [
+    "T2 threads=4",
+    "T2 threads=8",
+    "T10 new-player study"
+  ],
+  "passed_executed_tests": true,
+  "requested_test_count": 13,
+  "completed_test_count": 13
+}

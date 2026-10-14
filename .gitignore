@@ -1,0 +1,21 @@
+.DS_Store
+.godot/
+vendor/
+__pycache__/
+*.py[cod]
+*.uid
+.env
+.env.*
+!.env.example
+
+# Keep the small, licensed macOS arm64 runtime shipped with this demo.
+*.dylib
+!/bin/libele_godot.dylib
+
+# Archives and local build output stay on the workstation.
+/artifacts/*.zip
+/artifacts/snapshots/
+/artifacts/logs/sdk-build.log
+/artifacts/logs/environment.json
+/artifacts/logs/package-check-path.txt
+/artifacts/v03/test-created-guide-progress.json

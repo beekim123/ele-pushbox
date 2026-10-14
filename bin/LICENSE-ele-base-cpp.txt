@@ -1,0 +1,8 @@
+Copyright (c) 2026 chendongdong. All rights reserved.
+
+This software, including its source code, binaries and documentation,
+is proprietary. No part of it may be copied, modified, distributed or
+used without prior written permission from the copyright holder.
+
+Third-party components are distributed under their own licenses;
+see THIRD_PARTY.md.

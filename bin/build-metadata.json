@@ -1,0 +1,9 @@
+{
+  "sdk_version": "1.2.0",
+  "sdk_commit": "dacb93e6dc898ac8d1dfa95f6bc15686a183cf18",
+  "godot_version": "4.7.2.stable.official.ed1daf0bf",
+  "build_mode": "godot",
+  "config": "release",
+  "jobs": 1,
+  "dylib_sha256": "b084eb5ffad07cc4b790285156de1bf3ef1c33fd69a8bb7fd2d7c599f6c088c4"
+}
