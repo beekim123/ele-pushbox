@@ -1,0 +1,14 @@
+{
+  "command": "caffeinate -u -i python3 tools/run_tests.py --performance --artifact-dir /private/tmp/pushbox-polish-full-12",
+  "workers": 1,
+  "native_window_actions": [
+    "tutorial getApp + AX Raise",
+    "legacy performance window transitioned before CUA selection; no action applied",
+    "campaign getApp + AX Raise near the beginning"
+  ],
+  "native_app_path": "/Users/key_/Desktop/CURRGO/ele-proj/zips/Godot.app",
+  "CUA_session_reset_after_window_check": true,
+  "assertion_lifetime": "test runner only; automatic release on exit",
+  "result": "FAILED: all 18843 frames retained; 3 above threshold, max 8667us",
+  "SDK_logic_threshold_sampling_unchanged": true
+}

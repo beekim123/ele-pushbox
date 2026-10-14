@@ -1,0 +1,7 @@
+{
+  "foreground_request": "runner Window.grab_focus; immediate startup log focused=false",
+  "bounded_user_activity_assertion": "caffeinate -u -i -t 600 -w 29208, during final three scripts",
+  "native_window_inspection": "CUA getApp/getScreenshot during sky S_03; no SDK input sent",
+  "result": "FAILED: all 18820 samples retained, 18 above threshold, max 16191us",
+  "assertion_released": true
+}

@@ -1,0 +1,97 @@
+{
+  "time": "2026-10-15T06:16:58.276481+08:00",
+  "top_processes": [
+    {
+      "pid": 20090,
+      "ppid": 1,
+      "cpu_percent": 19.0,
+      "mem_percent": 1.2,
+      "elapsed": "04-21:20:31",
+      "executable": "/Applications/Shadowrocket.app/Contents/PlugIns/MacPacketTunnel.appex/Contents/MacOS/MacPacketTunnel"
+    },
+    {
+      "pid": 29148,
+      "ppid": 8222,
+      "cpu_percent": 12.2,
+      "mem_percent": 0.1,
+      "elapsed": "00:00",
+      "executable": "/Library/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python"
+    },
+    {
+      "pid": 8222,
+      "ppid": 7704,
+      "cpu_percent": 11.2,
+      "mem_percent": 1.0,
+      "elapsed": "03-13:40:38",
+      "executable": "/Applications/ChatGPT.app/Contents/Resources/codex-cli/CodexCLI.app/Contents/MacOS/codex"
+    },
+    {
+      "pid": 61527,
+      "ppid": 1,
+      "cpu_percent": 8.3,
+      "mem_percent": 0.5,
+      "elapsed": "02-21:15:25",
+      "executable": "/Applications/DingTalk.app/Contents/MacOS/DingTalk"
+    },
+    {
+      "pid": 393,
+      "ppid": 1,
+      "cpu_percent": 3.7,
+      "mem_percent": 0.1,
+      "elapsed": "12-09:01:03",
+      "executable": "/usr/sbin/coreaudiod"
+    },
+    {
+      "pid": 1843,
+      "ppid": 1,
+      "cpu_percent": 2.7,
+      "mem_percent": 1.1,
+      "elapsed": "12-09:00:50",
+      "executable": "/Applications/Firefox.app/Contents/MacOS/firefox"
+    },
+    {
+      "pid": 380,
+      "ppid": 1,
+      "cpu_percent": 2.5,
+      "mem_percent": 0.3,
+      "elapsed": "12-09:01:03",
+      "executable": "/System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer"
+    },
+    {
+      "pid": 600,
+      "ppid": 1,
+      "cpu_percent": 1.8,
+      "mem_percent": 0.5,
+      "elapsed": "12-09:00:59",
+      "executable": "/Applications/WeChat.app/Contents/MacOS/WeChat"
+    },
+    {
+      "pid": 2830,
+      "ppid": 622,
+      "cpu_percent": 1.6,
+      "mem_percent": 0.8,
+      "elapsed": "12-09:00:41",
+      "executable": "/Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/155.0.8059.26/Helpers/Google Chrome Helper (Renderer).app/Contents/MacOS/Google Chrome Helper (Renderer)"
+    },
+    {
+      "pid": 6080,
+      "ppid": 622,
+      "cpu_percent": 1.6,
+      "mem_percent": 1.0,
+      "elapsed": "12-08:59:37",
+      "executable": "/Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/155.0.8059.26/Helpers/Google Chrome Helper (Renderer).app/Contents/MacOS/Google Chrome Helper (Renderer)"
+    }
+  ],
+  "remaining_task_compute_processes": [],
+  "remaining_godot_processes": [
+    {
+      "pid": 4815,
+      "ppid": 1,
+      "cpu_percent": 1.2,
+      "mem_percent": 0.2,
+      "elapsed": "08:28:30",
+      "executable": "/private/var/folders/jp/gwzwdjx53fz62z9mllkfy1400000gn/T/AppTranslocation/EBEF381D-4E0E-4746-B95F-B3E5F65EF3E9/d/Godot.app/Contents/MacOS/Godot"
+    }
+  ],
+  "state": "waiting for global resources; no new heavy computation started; no unrelated process terminated"
+}
