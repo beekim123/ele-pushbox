@@ -1,0 +1,127 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+OpenGL API 4.1 Metal - 89.4 - Compatibility - Using Device: Apple - Apple M3
+
+TEST USER DIR: /Users/key_/Library/Application Support/CodexPushboxTests/codex-pushbox-test-w6wak3c7
+TEST TIMING WINDOW: focused=false
+BEGIN T8 D_01
+LOADED T8 D_01
+T8 D_01 samples=254 max_us=3163 peak={ "tick_us": 2379, "pump_us": 1438, "sdk_step_us": 826, "phase": "TICKS", "read_us": 0, "count_us": 0, "resolve_us": 0, "key_us": 0, "view_us": 56, "bookkeeping_us": 17 }
+BEGIN T8 D_02
+LOADED T8 D_02
+T8 D_02 samples=216 max_us=1684 peak={ "phase": "CAMPAIGN_COMMIT", "bookkeeping_us": 1152 }
+BEGIN T8 D_03
+LOADED T8 D_03
+FAIL T8 D_03 move=18 us=4684 physics_us=3987 upload_us=13 draw_us=684 phases={ "phase": "CAMPAIGN_COMMIT", "bookkeeping_us": 3970 }
+T8 D_03 samples=329 max_us=4684 peak={ "phase": "CAMPAIGN_COMMIT", "bookkeeping_us": 3970 }
+BEGIN T8 D_04
+LOADED T8 D_04
+T8 D_04 samples=329 max_us=1742 peak={ "phase": "CAMPAIGN_COMMIT", "bookkeeping_us": 1181 }
+BEGIN T8 D_05
+LOADED T8 D_05
+T8 D_05 samples=500 max_us=2960 peak={ "tick_us": 2193, "pump_us": 1, "sdk_step_us": 2038, "phase": "TICKS", "read_us": 0, "count_us": 0, "resolve_us": 0, "key_us": 0, "view_us": 55, "bookkeeping_us": 16 }
+BEGIN T8 D_06
+LOADED T8 D_06
+T8 D_06 samples=1246 max_us=3815 peak={ "tick_us": 2473, "pump_us": 0, "sdk_step_us": 0, "phase": "READ", "read_us": 2382, "count_us": 0, "resolve_us": 0, "key_us": 0, "view_us": 69, "bookkeeping_us": 70 }
+BEGIN T8 F_01
+LOADED T8 F_01
+T8 F_01 samples=290 max_us=2974 peak={ "tick_us": 223, "pump_us": 0, "sdk_step_us": 0, "phase": "RESOLVE", "read_us": 0, "count_us": 0, "resolve_us": 139, "key_us": 0, "view_us": 56, "bookkeeping_us": 22 }
+BEGIN T8 F_02
+LOADED T8 F_02
+FAIL T8 F_02 move=23 us=5574 physics_us=5572 upload_us=2 draw_us=0 phases={ "tick_us": 5540, "pump_us": 0, "sdk_step_us": 0, "phase": "CLASSIFY", "read_us": 14, "count_us": 0, "resolve_us": 0, "key_us": 0, "view_us": 21, "bookkeeping_us": 7 }
+T8 F_02 samples=415 max_us=5574 peak={ "tick_us": 5540, "pump_us": 0, "sdk_step_us": 0, "phase": "CLASSIFY", "read_us": 14, "count_us": 0, "resolve_us": 0, "key_us": 0, "view_us": 21, "bookkeeping_us": 7 }
+BEGIN T8 F_03
+LOADED T8 F_03
+T8 F_03 samples=437 max_us=1935 peak={ "phase": "CAMPAIGN_COMMIT", "bookkeeping_us": 1185 }
+BEGIN T8 F_04
+LOADED T8 F_04
+T8 F_04 samples=509 max_us=3946 peak={ "tick_us": 1180, "pump_us": 0, "sdk_step_us": 0, "phase": "COUNTS", "read_us": 0, "count_us": 1116, "resolve_us": 0, "key_us": 0, "view_us": 46, "bookkeeping_us": 21 }
+BEGIN T8 F_05
+LOADED T8 F_05
+T8 F_05 samples=537 max_us=1955 peak={ "tick_us": 775, "pump_us": 2, "sdk_step_us": 468, "phase": "TICKS", "read_us": 0, "count_us": 0, "resolve_us": 0, "key_us": 0, "view_us": 82, "bookkeeping_us": 25 }
+BEGIN T8 F_06
+LOADED T8 F_06
+T8 F_06 samples=638 max_us=2298 peak={ "tick_us": 1051, "pump_us": 2, "sdk_step_us": 738, "phase": "TICKS", "read_us": 0, "count_us": 0, "resolve_us": 0, "key_us": 0, "view_us": 80, "bookkeeping_us": 22 }
+BEGIN T8 R_01
+LOADED T8 R_01
+T8 R_01 samples=177 max_us=1562 peak={ "tick_us": 770, "pump_us": 68, "sdk_step_us": 507, "phase": "TICKS", "read_us": 0, "count_us": 0, "resolve_us": 0, "key_us": 0, "view_us": 52, "bookkeeping_us": 17 }
+BEGIN T8 R_02
+LOADED T8 R_02
+T8 R_02 samples=342 max_us=1595 peak={ "tick_us": 701, "pump_us": 2, "sdk_step_us": 451, "phase": "TICKS", "read_us": 0, "count_us": 0, "resolve_us": 0, "key_us": 0, "view_us": 59, "bookkeeping_us": 19 }
+BEGIN T8 R_03
+LOADED T8 R_03
+FAIL T8 R_03 move=3 us=5428 physics_us=5426 upload_us=2 draw_us=0 phases={ "tick_us": 5374, "pump_us": 0, "sdk_step_us": 0, "phase": "CATEGORIES", "read_us": 0, "count_us": 0, "resolve_us": 0, "key_us": 3283, "view_us": 33, "bookkeeping_us": 11 }
+T8 R_03 samples=490 max_us=5428 peak={ "tick_us": 5374, "pump_us": 0, "sdk_step_us": 0, "phase": "CATEGORIES", "read_us": 0, "count_us": 0, "resolve_us": 0, "key_us": 3283, "view_us": 33, "bookkeeping_us": 11 }
+BEGIN T8 R_04
+LOADED T8 R_04
+T8 R_04 samples=286 max_us=2590 peak={ "tick_us": 2176, "pump_us": 2, "sdk_step_us": 1935, "phase": "TICKS", "read_us": 0, "count_us": 0, "resolve_us": 0, "key_us": 0, "view_us": 62, "bookkeeping_us": 25 }
+BEGIN T8 R_05
+LOADED T8 R_05
+T8 R_05 samples=1067 max_us=2785 peak={ "tick_us": 2401, "pump_us": 0, "sdk_step_us": 0, "phase": "RESOLVE", "read_us": 0, "count_us": 0, "resolve_us": 2330, "key_us": 0, "view_us": 64, "bookkeeping_us": 13 }
+BEGIN T8 R_06
+LOADED T8 R_06
+FAIL T8 R_06 move=42 us=25901 physics_us=563 upload_us=24040 draw_us=1298 phases={ "tick_us": 526, "pump_us": 15, "sdk_step_us": 442, "phase": "TICKS", "read_us": 0, "count_us": 0, "resolve_us": 0, "key_us": 0, "view_us": 27, "bookkeeping_us": 6 }
+FAIL T8 R_06 move=42 us=13257 physics_us=13250 upload_us=7 draw_us=0 phases={ "tick_us": 13190, "pump_us": 0, "sdk_step_us": 0, "phase": "COUNTS", "read_us": 0, "count_us": 12806, "resolve_us": 0, "key_us": 0, "view_us": 45, "bookkeeping_us": 11 }
+T8 R_06 samples=1851 max_us=25901 peak={ "tick_us": 526, "pump_us": 15, "sdk_step_us": 442, "phase": "TICKS", "read_us": 0, "count_us": 0, "resolve_us": 0, "key_us": 0, "view_us": 27, "bookkeeping_us": 6 }
+BEGIN T8 C_01
+LOADED T8 C_01
+FAIL T8 C_01 move=1 us=5311 physics_us=425 upload_us=10 draw_us=4876 phases={ "tick_us": 339, "pump_us": 0, "sdk_step_us": 0, "phase": "RESOLVE", "read_us": 0, "count_us": 0, "resolve_us": 284, "key_us": 0, "view_us": 57, "bookkeeping_us": 17 }
+T8 C_01 samples=159 max_us=5311 peak={ "tick_us": 339, "pump_us": 0, "sdk_step_us": 0, "phase": "RESOLVE", "read_us": 0, "count_us": 0, "resolve_us": 284, "key_us": 0, "view_us": 57, "bookkeeping_us": 17 }
+BEGIN T8 C_02
+LOADED T8 C_02
+T8 C_02 samples=304 max_us=2205 peak={ "tick_us": 1510, "pump_us": 2, "sdk_step_us": 1316, "phase": "TICKS", "read_us": 0, "count_us": 0, "resolve_us": 0, "key_us": 0, "view_us": 57, "bookkeeping_us": 22 }
+BEGIN T8 C_03
+LOADED T8 C_03
+T8 C_03 samples=395 max_us=2466 peak={ "tick_us": 1578, "pump_us": 2, "sdk_step_us": 1403, "phase": "TICKS", "read_us": 0, "count_us": 0, "resolve_us": 0, "key_us": 0, "view_us": 58, "bookkeeping_us": 19 }
+BEGIN T8 C_04
+LOADED T8 C_04
+T8 C_04 samples=159 max_us=2160 peak={ "tick_us": 1757, "pump_us": 64, "sdk_step_us": 1529, "phase": "TICKS", "read_us": 0, "count_us": 0, "resolve_us": 0, "key_us": 0, "view_us": 60, "bookkeeping_us": 18 }
+BEGIN T8 C_05
+LOADED T8 C_05
+FAIL T8 C_05 move=3 us=8914 physics_us=5142 upload_us=90 draw_us=3682 phases={ "tick_us": 1445, "pump_us": 0, "sdk_step_us": 1382, "phase": "TICKS", "read_us": 0, "count_us": 0, "resolve_us": 0, "key_us": 0, "view_us": 3676, "bookkeeping_us": 14 }
+T8 C_05 samples=837 max_us=8914 peak={ "tick_us": 1445, "pump_us": 0, "sdk_step_us": 1382, "phase": "TICKS", "read_us": 0, "count_us": 0, "resolve_us": 0, "key_us": 0, "view_us": 3676, "bookkeeping_us": 14 }
+BEGIN T8 C_06
+LOADED T8 C_06
+T8 C_06 samples=845 max_us=3143 peak={ "tick_us": 176, "pump_us": 0, "sdk_step_us": 0, "phase": "RESOLVE", "read_us": 0, "count_us": 0, "resolve_us": 79, "key_us": 0, "view_us": 63, "bookkeeping_us": 20 }
+BEGIN T8 S_01
+LOADED T8 S_01
+T8 S_01 samples=351 max_us=1538 peak={ "tick_us": 958, "pump_us": 0, "sdk_step_us": 0, "phase": "READ", "read_us": 880, "count_us": 0, "resolve_us": 0, "key_us": 0, "view_us": 64, "bookkeeping_us": 22 }
+BEGIN T8 S_02
+LOADED T8 S_02
+T8 S_02 samples=365 max_us=1900 peak={ "phase": "CAMPAIGN_COMMIT", "bookkeeping_us": 1144 }
+BEGIN T8 S_03
+LOADED T8 S_03
+T8 S_03 samples=405 max_us=3093 peak={ "tick_us": 2084, "pump_us": 3, "sdk_step_us": 1898, "phase": "TICKS", "read_us": 0, "count_us": 0, "resolve_us": 0, "key_us": 0, "view_us": 66, "bookkeeping_us": 23 }
+BEGIN T8 S_04
+LOADED T8 S_04
+FAIL T8 S_04 move=2 us=4400 physics_us=4390 upload_us=10 draw_us=0 phases={ "tick_us": 359, "pump_us": 0, "sdk_step_us": 0, "phase": "RESOLVE", "read_us": 0, "count_us": 0, "resolve_us": 59, "key_us": 0, "view_us": 3991, "bookkeeping_us": 29 }
+T8 S_04 samples=416 max_us=4400 peak={ "tick_us": 359, "pump_us": 0, "sdk_step_us": 0, "phase": "RESOLVE", "read_us": 0, "count_us": 0, "resolve_us": 59, "key_us": 0, "view_us": 3991, "bookkeeping_us": 29 }
+BEGIN T8 S_05
+LOADED T8 S_05
+FAIL T8 S_05 move=11 us=4145 physics_us=3581 upload_us=229 draw_us=335 phases={ "tick_us": 3487, "pump_us": 1545, "sdk_step_us": 1822, "phase": "TICKS", "read_us": 0, "count_us": 0, "resolve_us": 0, "key_us": 0, "view_us": 61, "bookkeeping_us": 21 }
+FAIL T8 S_05 move=15 us=4627 physics_us=1276 upload_us=11 draw_us=3340 phases={ "phase": "CAMPAIGN_COMMIT", "bookkeeping_us": 1262 }
+T8 S_05 samples=489 max_us=4627 peak={ "phase": "CAMPAIGN_COMMIT", "bookkeeping_us": 1262 }
+BEGIN T8 S_06
+LOADED T8 S_06
+T8 S_06 samples=702 max_us=2123 peak={ "tick_us": 827, "pump_us": 2, "sdk_step_us": 614, "phase": "TICKS", "read_us": 0, "count_us": 0, "resolve_us": 0, "key_us": 0, "view_us": 63, "bookkeeping_us": 22 }
+BEGIN T8 X_01
+LOADED T8 X_01
+T8 X_01 samples=191 max_us=1329 peak={ "tick_us": 63, "pump_us": 0, "sdk_step_us": 0, "phase": "COUNTS", "read_us": 0, "count_us": 8, "resolve_us": 0, "key_us": 0, "view_us": 31, "bookkeeping_us": 175 }
+BEGIN T8 X_02
+LOADED T8 X_02
+T8 X_02 samples=221 max_us=2661 peak={ "tick_us": 2010, "pump_us": 100, "sdk_step_us": 1716, "phase": "TICKS", "read_us": 0, "count_us": 0, "resolve_us": 0, "key_us": 0, "view_us": 51, "bookkeeping_us": 21 }
+BEGIN T8 X_03
+LOADED T8 X_03
+T8 X_03 samples=420 max_us=2209 peak={ "tick_us": 86, "pump_us": 0, "sdk_step_us": 0, "phase": "COUNTS", "read_us": 0, "count_us": 9, "resolve_us": 0, "key_us": 0, "view_us": 59, "bookkeeping_us": 36 }
+BEGIN T8 X_04
+LOADED T8 X_04
+T8 X_04 samples=695 max_us=2483 peak={ "tick_us": 1634, "pump_us": 1, "sdk_step_us": 1355, "phase": "TICKS", "read_us": 0, "count_us": 0, "resolve_us": 0, "key_us": 0, "view_us": 59, "bookkeeping_us": 20 }
+BEGIN T8 X_05
+LOADED T8 X_05
+FAIL T8 X_05 move=8 us=5430 physics_us=5422 upload_us=8 draw_us=0 phases={ "tick_us": 5348, "pump_us": 0, "sdk_step_us": 0, "phase": "RESOLVE", "read_us": 0, "count_us": 0, "resolve_us": 3916, "key_us": 0, "view_us": 51, "bookkeeping_us": 14 }
+T8 X_05 samples=868 max_us=5430 peak={ "tick_us": 5348, "pump_us": 0, "sdk_step_us": 0, "phase": "RESOLVE", "read_us": 0, "count_us": 0, "resolve_us": 3916, "key_us": 0, "view_us": 51, "bookkeeping_us": 14 }
+BEGIN T8 X_06
+LOADED T8 X_06
+FAIL T8 X_06 move=8 us=5943 physics_us=5933 upload_us=10 draw_us=0 phases={ "tick_us": 5830, "pump_us": 0, "sdk_step_us": 0, "phase": "KEY", "read_us": 0, "count_us": 0, "resolve_us": 0, "key_us": 5285, "view_us": 58, "bookkeeping_us": 35 }
+FAIL T8 X_06 move=25 us=5471 physics_us=2645 upload_us=2340 draw_us=486 phases={ "tick_us": 2559, "pump_us": 1, "sdk_step_us": 2355, "phase": "TICKS", "read_us": 0, "count_us": 0, "resolve_us": 0, "key_us": 0, "view_us": 58, "bookkeeping_us": 20 }
+T8 X_06 samples=1147 max_us=5943 peak={ "tick_us": 5830, "pump_us": 0, "sdk_step_us": 0, "phase": "KEY", "read_us": 0, "count_us": 0, "resolve_us": 0, "key_us": 5285, "view_us": 58, "bookkeeping_us": 35 }
+Campaign T8: 18882 frames, max_us=25901, 13 failures

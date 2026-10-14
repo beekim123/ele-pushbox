@@ -48,3 +48,26 @@ static func dither(image: Image, area: Rect2i, color: Color) -> void:
 	for y in range(area.position.y,area.end.y,2):
 		for x in range(area.position.x+(y%4)/2,area.end.x,2):
 			rect(image,x,y,1,1,color)
+
+static func ellipse(image: Image, center: Vector2i, radius: Vector2i, color: Color) -> void:
+	for y in range(-radius.y,radius.y+1):
+		var ratio: float = float(y*y)/maxi(1,radius.y*radius.y)
+		var half: int = floori(radius.x*sqrt(maxf(0,1-ratio)))
+		rect(image,center.x-half,center.y+y,half*2+1,1,color)
+
+static func polygon(image: Image, points: PackedVector2Array, color: Color) -> void:
+	var min_y: int = image.get_height()
+	var max_y: int = 0
+	for p in points:
+		min_y = mini(min_y,floori(p.y))
+		max_y = maxi(max_y,ceili(p.y))
+	for y in range(maxi(0,min_y),mini(image.get_height(),max_y+1)):
+		var cuts: Array[float] = []
+		for i in points.size():
+			var a: Vector2 = points[i]
+			var b: Vector2 = points[(i+1)%points.size()]
+			if (a.y <= y and b.y > y) or (b.y <= y and a.y > y):
+				cuts.append(a.x+(y-a.y)*(b.x-a.x)/(b.y-a.y))
+		cuts.sort()
+		for i in range(0,cuts.size()-1,2):
+			rect(image,ceili(cuts[i]),y,floori(cuts[i+1])-ceili(cuts[i])+1,1,color)

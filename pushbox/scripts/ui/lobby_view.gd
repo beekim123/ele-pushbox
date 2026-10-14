@@ -6,11 +6,24 @@ signal campaign_selected(map: int, index: int)
 signal observation_requested(map: int, index: int)
 signal showcase_requested
 const Catalog := preload("res://pushbox/scripts/campaign_catalog.gd")
+const Ecology := preload("res://pushbox/scripts/render/ambient_ecology.gd")
+const Miniature := preload("res://pushbox/scripts/ui/mini_diorama.gd")
+const CARD_TITLES := [
+	["沉铁开道","一沙千斤","一沙二用","爆柱填渊","铁木双井","矿井枢纽"],
+	["甘霖育藤","浮木渡津","筑坝引泉","斩藤落箱","双藤交错","巨木水殿"],
+	["黄金天平","流沙漏斗","掬沙称重","沙漏水钟","双盘博弈","日轮内殿"],
+	["滴酸穿石","水火化沙","引酸入渠","钟乳石坠","双色沙漏","幽光熔脉"],
+	["履冰过渊","轻重云垫","冰封水位","顺风扬沙","破冰坠锚","云海圣域"],
+	["量子跃迁","隔空传沙","失重回廊","离子冷却","星门双生","曲率舱"]]
+var _miniature: Node2D
+var _mini_key := Vector2i(-1,-1)
+var _ecology_points: Dictionary = {}
 var map_index: int = 0
 var _thumbnails: Dictionary = {}
 const Style := preload("res://pushbox/scripts/ui/pixel_style.gd")
 const TITLES := ["教学模式", "闯关模式", "挑战模式"]
 const LEVEL_NAMES := ["移动与推箱", "挖沙与造坡", "放水与浮箱", "机关与爆破"]
+const CHALLENGE_LOCK_HINT := "六图银章开放"
 const LEVEL_IDS := ["t01", "t02", "t03", "t04"]
 var page: String = "modes"
 var selected: int = 0
@@ -29,6 +42,10 @@ var _generation: int = 0
 func _ready() -> void:
 	texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
 	load_progress()
+	Ecology.warm()
+	_miniature = Miniature.new()
+	_miniature.position = Vector2(10,73)
+	add_child(_miniature)
 
 func _exit_tree() -> void:
 	save_progress()
@@ -153,13 +170,13 @@ func challenge_unlocked() -> bool:
 	return mainline_complete() or campaign_count() >= 24
 
 func map_rect(index: int) -> Rect2:
-	return Rect2(7+index*51,35,50,20)
+	return Rect2(21+index*48,25,38,24)
 
 func pool_rect(index: int) -> Rect2:
-	return Rect2(119+(index%2)*96,61+(index/2)*30,93,28)
+	return Rect2(124+(index%2)*98,56+(index/2)*35,90,32)
 
 func observation_rect() -> Rect2:
-	return Rect2(8,134,104,17)
+	return Rect2(12,141,100,16)
 
 func _handle_campaign(event: InputEvent) -> void:
 	if event is InputEventKey and event.pressed and not event.echo:
@@ -277,8 +294,13 @@ func activate() -> void:
 
 func _process(delta: float) -> void:
 	clock += delta
+	_miniature.visible = page == "campaign"
+	if page == "campaign" and _mini_key != Vector2i(map_index,selected):
+		_mini_key = Vector2i(map_index,selected)
+		_miniature.select_campaign(map_index,selected)
+		_miniature.show()
 	_fade = maxf(0.0, _fade - delta)
-	var next: int = int(clock * 8)
+	var next: int = int(clock * 30)
 	if next != _frame or _fade > 0:
 		_frame = next
 		queue_redraw()
@@ -288,14 +310,16 @@ func _center_text(value: String, x: float, y: float, color: Color = Style.WHITE)
 	Style.text(self, value, Vector2(x - width / 2, y), color)
 
 func _draw() -> void:
-	draw_texture(Style.texture("cave_bg"), Vector2.ZERO)
-	for x in [28, 284]:
-		draw_line(Vector2(x + 4,0), Vector2(x + 4,15), Color("3e2731"))
-		draw_texture(Style.texture("lantern_idle_%d" % (int(clock * 2) % 2)), Vector2(x,15))
-	_center_text("推箱子：沙与水", 160, 28, Style.YELLOW)
+	var theme: String = Catalog.THEMES[map_index] if page=="campaign" else "dungeon"
+	draw_texture(Style.Art.background(theme,Vector2i(320,180)),Vector2.ZERO)
+	Ecology.backdrop(self,theme,clock)
 	if page == "campaign":
 		_draw_campaign()
 		return
+	for x in [28, 284]:
+		draw_line(Vector2(x + 4,0), Vector2(x + 4,15), Color("3e2731"))
+		draw_texture(Style.themed_texture("lantern_idle_%d" % (int(clock * 4) % 4),theme), Vector2(x,15))
+	_center_text("推箱子：沙与水", 160, 28, Style.YELLOW)
 	if page == "challenge":
 		_center_text("主线通行完成",160,77,Style.YELLOW)
 		_center_text("第三阶段挑战关卡筹备中",160,103)
@@ -314,7 +338,7 @@ func _draw() -> void:
 				draw_texture_rect(Style.texture("miner_idle_%d" % (int(clock * 2) % 2)), Rect2(center-22,68,32,32), false)
 				draw_texture_rect(Style.texture("icon_sandbag_7"), Rect2(center+6,80,24,24), false)
 			elif i == 1:
-				draw_texture_rect(Style.texture("crate_static_0"), Rect2(center-26,78,24,24), false)
+				draw_texture_rect(Style.texture("crate_static_0"), Rect2(center-30,74,32,32), false)
 				draw_texture_rect(Style.texture("mode_campaign"), Rect2(center-2,71,24,24), false)
 			else:
 				draw_texture_rect(Style.texture("mode_challenge"), Rect2(center-12,73,24,24), false)
@@ -326,7 +350,7 @@ func _draw() -> void:
 			else:
 				if not challenge_unlocked():
 					draw_texture(Style.texture("icon_lock"), Vector2(center-3,98))
-				_center_text("入口已解锁" if challenge_unlocked() else "六图银章后开放", center, 130, Color("8b9bb4"))
+				_center_text("入口已解锁" if challenge_unlocked() else CHALLENGE_LOCK_HINT, center, 130, Color("8b9bb4"))
 		Style.panel(self,showcase_rect())
 		_center_text("地图风格预览 · B",160,148,Style.YELLOW)
 	else:
@@ -343,50 +367,93 @@ func _draw() -> void:
 	if _fade > 0:
 		draw_rect(Rect2(0,34,320,118), Color(Style.INK, _fade / 0.12 * 0.35))
 
+func _star(at: Vector2, color: Color = Style.YELLOW) -> void:
+	var rows: Array[String] = ["...#...","...#...","#######",".#####.","..###..",".##.##.","##...##"]
+	for y in rows.size():
+		for x in rows[y].length():
+			if rows[y][x]=="#": draw_rect(Rect2(at+Vector2(x,y),Vector2.ONE),color)
+
+func _route_icon(map: int, at: Vector2, color: Color) -> void:
+	match map:
+		0:
+			draw_rect(Rect2(at,Vector2(12,9)),color,false)
+			draw_line(at+Vector2(0,4),at+Vector2(11,4),color)
+			draw_line(at+Vector2(5,0),at+Vector2(5,4),color)
+			draw_line(at+Vector2(8,4),at+Vector2(8,8),color)
+		1:
+			draw_polygon(PackedVector2Array([at+Vector2(0,8),at+Vector2(3,2),at+Vector2(10,0),at+Vector2(11,6),at+Vector2(6,10)]),PackedColorArray([color]))
+			draw_line(at+Vector2(1,9),at+Vector2(9,2),Color("265c42"))
+		2:
+			draw_arc(at+Vector2(6,5),3,0,TAU,12,color)
+			for i in 4:
+				var v := Vector2(cos(i*PI/2),sin(i*PI/2))
+				draw_line(at+Vector2(6,5)+v*5,at+Vector2(6,5)+v*6,color)
+		3:
+			draw_polygon(PackedVector2Array([at+Vector2(1,9),at+Vector2(3,0),at+Vector2(7,2),at+Vector2(10,10)]),PackedColorArray([color]))
+			draw_line(at+Vector2(4,2),at+Vector2(5,8),Style.WHITE)
+		4:
+			draw_polygon(PackedVector2Array([at+Vector2(0,8),at+Vector2(9,0),at+Vector2(12,4),at+Vector2(5,10)]),PackedColorArray([color]))
+			draw_line(at+Vector2(1,10),at+Vector2(9,2),Color("8b9bb4"))
+		5:
+			draw_arc(at+Vector2(6,5),4,0,TAU,14,color)
+			draw_line(at+Vector2(0,9),at+Vector2(12,1),Style.WHITE)
+			_star(at+Vector2(4,3),color)
+
 func _draw_campaign() -> void:
+	Style.text(self,"Esc",Vector2(8,17))
+	_center_text(Catalog.MAP_NAMES[map_index],160,18,Style.YELLOW)
+	draw_texture(Style.themed_texture("lantern_idle_%d"%(int(clock*4)%4),Catalog.THEMES[map_index]),Vector2(268,0))
+	Style.text(self,"%d/6"%map_count(map_index),Vector2(287,17),Style.YELLOW)
 	for map in 6:
-		var rect: Rect2 = map_rect(map)
-		Style.panel(self,rect)
-		if map == map_index:
-			draw_rect(rect.grow(-1),Style.YELLOW,false)
-		Style.text(self,"%d%s" % [map+1,Catalog.SHORT_NAMES[map]],rect.position+Vector2(2,13),Style.WHITE if map_unlocked(map) else Color("8b9bb4"))
-	Style.panel(self,Rect2(8,61,104,71))
-	Style.text(self,Catalog.MAP_NAMES[map_index],Vector2(12,74),Style.YELLOW)
-	var miniature: Texture2D = _thumbnail(map_index,selected)
-	if miniature != null:
-		draw_texture(miniature,Vector2(60-miniature.get_width()/2,78))
-	Style.text(self,"%d/6 %s" % [map_count(map_index),"金冠" if map_count(map_index)==6 else ("银章" if map_count(map_index)>=3 else "满3通行")],Vector2(12,128),Style.YELLOW if map_unlocked(map_index) else Color("8b9bb4"))
+		var center: Vector2 = map_rect(map).get_center()
+		if map<5:
+			for x in range(int(center.x+13),int(center.x+37),4):
+				draw_rect(Rect2(x,center.y,2,1),Color("8b9bb4"))
+		var color: Color = Style.Art.theme(Catalog.THEMES[map]).colors.accent if map_unlocked(map) else Color("5a6988")
+		draw_arc(center,12,0,TAU,16,color)
+		_route_icon(map,center-Vector2(6,5),color)
+		if map==map_index: draw_arc(center,14,0,TAU,16,Style.YELLOW)
+		if not map_unlocked(map): draw_texture(Style.texture("icon_lock"),center+Vector2(8,4))
+		elif map_count(map)>=3:
+			var at: Vector2 = center+Vector2(7,5)
+			if map_count(map)==6:
+				draw_line(at+Vector2(0,4),at+Vector2(7,4),Style.YELLOW)
+				draw_line(at,at+Vector2(1,3),Style.YELLOW)
+				draw_line(at+Vector2(3,1),at+Vector2(3,3),Style.YELLOW)
+				draw_line(at+Vector2(6,0),at+Vector2(5,3),Style.YELLOW)
+			else:
+				draw_rect(Rect2(at+Vector2(1,1),Vector2(5,5)),Color("c0cbdc"),false)
+				draw_rect(Rect2(at+Vector2(2,2),Vector2(3,2)),Style.WHITE)
+				draw_line(at+Vector2(3,-1),at+Vector2(3,1),Color("c0cbdc"))
+	Style.panel(self,Rect2(8,54,108,104))
+	Style.text(self,CARD_TITLES[map_index][selected],Vector2(14,68),Style.YELLOW)
+	var theme: String = Catalog.THEMES[map_index]
+	if theme=="forest":
+		draw_line(Vector2(8,63),Vector2(7,134),Color("63c74d"))
+		for y in [72,98,126]:
+			draw_line(Vector2(8,y),Vector2(4,y-3),Color("3e8948"))
+			_star(Vector2(3,y),Color("f6757a"))
+	elif theme=="sky_island":
+		draw_texture(Ecology._textures.cloud1,Vector2(40,135))
+	elif theme=="ruins":
+		for x in range(16,110,12): draw_line(Vector2(x,139),Vector2(x+3,137),Style.YELLOW)
 	Style.panel(self,observation_rect())
-	Style.text(self,"Tab 观察池",Vector2(13,147),Style.YELLOW)
+	Style.text(self,"Tab 观察大地图",Vector2(16,153),Style.YELLOW)
 	for index in 6:
 		var rect: Rect2 = pool_rect(index)
 		Style.panel(self,rect)
-		if index == selected:
-			draw_rect(rect.grow(-1),Style.YELLOW,false)
 		var unlocked: bool = level_unlocked(map_index,index)
-		var title: String = Catalog.TITLES[map_index][index]
-		Style.text(self,title.left(7),rect.position+Vector2(3,11),Style.WHITE if unlocked else Color("8b9bb4"))
-		var stars: String = "★".repeat(index/2+1)
-		var status: String = "已通" if completed.has(Catalog.id(map_index,index)) else ("可玩" if unlocked else "锁定")
-		Style.text(self,"%02d %s %s" % [index+1,stars,status],rect.position+Vector2(3,24),Style.YELLOW if unlocked else Color("8b9bb4"))
-	_center_text("主线通行完成 · 可继续收集金冠" if mainline_complete() else "Q/E 切地图 · 方向键选关 · Enter 进入",160,164,Color("c0cbdc"))
-	_center_text("Esc 返回大厅 · 锁定关卡仍可进入观察池侦察",160,177,Color("8b9bb4"))
-
-func _thumbnail(map: int, index: int) -> Texture2D:
-	var id: String = Catalog.id(map,index)
-	if _thumbnails.has(id):
-		return _thumbnails[id]
-	var data: Variant = JSON.parse_string(FileAccess.get_file_as_string(Catalog.path(map,index)))
-	if not data is Dictionary:
-		return null
-	var image := Image.create(data.map[0].length()*3,data.map.size()*3,false,Image.FORMAT_RGBA8)
-	var colors := {"bedrock":Color("5a6988"),"cracked_rock":Color("e4a672"),"sand":Color("ead4aa"),"water":Color("0099db"),"acid":Color("63c74d"),"lava":Color("f77622"),"ice":Color("a6fcff"),"gate":Color("b55088")}
-	for y in data.map.size():
-		for x in data.map[y].length():
-			var entry: Variant = data.legend[data.map[y][x]]
-			var material: String = entry if entry is String else entry.material
-			image.fill_rect(Rect2i(x*3,y*3,3,3),colors.get(material,Color("181425")))
-	for box in data.entities.boxes:
-		image.fill_rect(Rect2i(box.at[0]*3,box.at[1]*3,3,3),Color("c0cbdc") if box.kind == "iron" else Color("feae34"))
-	_thumbnails[id] = ImageTexture.create_from_image(image)
-	return _thumbnails[id]
+		if index==selected:
+			draw_rect(rect.grow(-1),Style.YELLOW if int(clock*3)%2 else Color("feae34"),false)
+			var cursor: Texture2D = Style.themed_texture("miner_idle_%d"%(int(clock*2)%2),theme)
+			draw_texture(cursor,rect.position-Vector2(11,-8))
+		Style.text(self,"%02d"%(index+1),rect.position+Vector2(5,13),Style.YELLOW)
+		Style.text(self,CARD_TITLES[map_index][index],rect.position+Vector2(22,13),Style.WHITE if unlocked else Color("8b9bb4"))
+		for star in index/2+1: _star(rect.position+Vector2(6+star*9,21))
+		if completed.has(Catalog.id(map_index,index)):
+			draw_texture(Style.texture("target_lit_0"),rect.position+Vector2(68,15))
+		elif not unlocked:
+			draw_texture(Style.texture("icon_lock"),rect.position+Vector2(76,21))
+		else:
+			draw_polygon(PackedVector2Array([rect.position+Vector2(76,21),rect.position+Vector2(76,27),rect.position+Vector2(81,24)]),PackedColorArray([Style.YELLOW]))
+	_center_text("Q/E 世界 · 方向键选关 · Enter 进入",160,175,Style.WHITE)

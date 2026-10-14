@@ -1,0 +1,254 @@
+[
+  {
+    "id": "C_01",
+    "theme": "cave",
+    "changed_tiles": 27,
+    "protected_tiles": 25,
+    "actions": 7
+  },
+  {
+    "id": "C_02",
+    "theme": "cave",
+    "changed_tiles": 33,
+    "protected_tiles": 39,
+    "actions": 13
+  },
+  {
+    "id": "C_03",
+    "theme": "cave",
+    "changed_tiles": 37,
+    "protected_tiles": 46,
+    "actions": 17
+  },
+  {
+    "id": "C_04",
+    "theme": "cave",
+    "changed_tiles": 54,
+    "protected_tiles": 37,
+    "actions": 6
+  },
+  {
+    "id": "C_05",
+    "theme": "cave",
+    "changed_tiles": 36,
+    "protected_tiles": 73,
+    "actions": 34
+  },
+  {
+    "id": "C_06",
+    "theme": "cave",
+    "changed_tiles": 44,
+    "protected_tiles": 85,
+    "actions": 26
+  },
+  {
+    "id": "D_01",
+    "theme": "dungeon",
+    "changed_tiles": 10,
+    "protected_tiles": 33,
+    "actions": 12
+  },
+  {
+    "id": "D_02",
+    "theme": "dungeon",
+    "changed_tiles": 10,
+    "protected_tiles": 29,
+    "actions": 13
+  },
+  {
+    "id": "D_03",
+    "theme": "dungeon",
+    "changed_tiles": 9,
+    "protected_tiles": 42,
+    "actions": 18
+  },
+  {
+    "id": "D_04",
+    "theme": "dungeon",
+    "changed_tiles": 12,
+    "protected_tiles": 49,
+    "actions": 22
+  },
+  {
+    "id": "D_05",
+    "theme": "dungeon",
+    "changed_tiles": 18,
+    "protected_tiles": 54,
+    "actions": 24
+  },
+  {
+    "id": "D_06",
+    "theme": "dungeon",
+    "changed_tiles": 13,
+    "protected_tiles": 92,
+    "actions": 66
+  },
+  {
+    "id": "F_01",
+    "theme": "forest",
+    "changed_tiles": 20,
+    "protected_tiles": 37,
+    "actions": 15
+  },
+  {
+    "id": "F_02",
+    "theme": "forest",
+    "changed_tiles": 21,
+    "protected_tiles": 37,
+    "actions": 27
+  },
+  {
+    "id": "F_03",
+    "theme": "forest",
+    "changed_tiles": 39,
+    "protected_tiles": 50,
+    "actions": 22
+  },
+  {
+    "id": "F_04",
+    "theme": "forest",
+    "changed_tiles": 18,
+    "protected_tiles": 56,
+    "actions": 28
+  },
+  {
+    "id": "F_05",
+    "theme": "forest",
+    "changed_tiles": 35,
+    "protected_tiles": 71,
+    "actions": 25
+  },
+  {
+    "id": "F_06",
+    "theme": "forest",
+    "changed_tiles": 55,
+    "protected_tiles": 74,
+    "actions": 30
+  },
+  {
+    "id": "R_01",
+    "theme": "ruins",
+    "changed_tiles": 18,
+    "protected_tiles": 33,
+    "actions": 9
+  },
+  {
+    "id": "R_02",
+    "theme": "ruins",
+    "changed_tiles": 30,
+    "protected_tiles": 46,
+    "actions": 19
+  },
+  {
+    "id": "R_03",
+    "theme": "ruins",
+    "changed_tiles": 33,
+    "protected_tiles": 48,
+    "actions": 29
+  },
+  {
+    "id": "R_04",
+    "theme": "ruins",
+    "changed_tiles": 33,
+    "protected_tiles": 43,
+    "actions": 9
+  },
+  {
+    "id": "R_05",
+    "theme": "ruins",
+    "changed_tiles": 36,
+    "protected_tiles": 71,
+    "actions": 49
+  },
+  {
+    "id": "R_06",
+    "theme": "ruins",
+    "changed_tiles": 33,
+    "protected_tiles": 115,
+    "actions": 66
+  },
+  {
+    "id": "S_01",
+    "theme": "sky_island",
+    "changed_tiles": 26,
+    "protected_tiles": 38,
+    "actions": 19
+  },
+  {
+    "id": "S_02",
+    "theme": "sky_island",
+    "changed_tiles": 35,
+    "protected_tiles": 43,
+    "actions": 22
+  },
+  {
+    "id": "S_03",
+    "theme": "sky_island",
+    "changed_tiles": 55,
+    "protected_tiles": 46,
+    "actions": 20
+  },
+  {
+    "id": "S_04",
+    "theme": "sky_island",
+    "changed_tiles": 36,
+    "protected_tiles": 44,
+    "actions": 18
+  },
+  {
+    "id": "S_05",
+    "theme": "sky_island",
+    "changed_tiles": 53,
+    "protected_tiles": 90,
+    "actions": 15
+  },
+  {
+    "id": "S_06",
+    "theme": "sky_island",
+    "changed_tiles": 88,
+    "protected_tiles": 75,
+    "actions": 34
+  },
+  {
+    "id": "X_01",
+    "theme": "cosmos",
+    "changed_tiles": 26,
+    "protected_tiles": 28,
+    "actions": 11
+  },
+  {
+    "id": "X_02",
+    "theme": "cosmos",
+    "changed_tiles": 37,
+    "protected_tiles": 42,
+    "actions": 8
+  },
+  {
+    "id": "X_03",
+    "theme": "cosmos",
+    "changed_tiles": 25,
+    "protected_tiles": 56,
+    "actions": 23
+  },
+  {
+    "id": "X_04",
+    "theme": "cosmos",
+    "changed_tiles": 24,
+    "protected_tiles": 48,
+    "actions": 12
+  },
+  {
+    "id": "X_05",
+    "theme": "cosmos",
+    "changed_tiles": 29,
+    "protected_tiles": 58,
+    "actions": 44
+  },
+  {
+    "id": "X_06",
+    "theme": "cosmos",
+    "changed_tiles": 25,
+    "protected_tiles": 93,
+    "actions": 44
+  }
+]

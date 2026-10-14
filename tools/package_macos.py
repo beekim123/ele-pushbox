@@ -5,6 +5,7 @@ import hashlib
 import json
 import os
 import plistlib
+import re
 import shutil
 import subprocess
 import tempfile
@@ -14,11 +15,12 @@ ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / 'artifacts/macos-stage1'
 parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument('--godot', default='/Users/key_/Desktop/CURRGO/ele-proj/zips/Godot.app/Contents/MacOS/Godot')
-parser.add_argument('--stage', choices=['stage1','stage2a'], default='stage1')
+parser.add_argument('--stage', choices=['stage1','stage2a','art-ui-polish'], default='stage1')
+parser.add_argument('--test-evidence', help='evidence directory for art-ui-polish full gate')
 parser.add_argument('--template', default='/private/tmp/pushbox-macos-template-4.7.2.zip')
 args = parser.parse_args()
-if args.stage == "stage2a":
-    OUT = ROOT / "artifacts/macos-stage2a"
+if args.stage != "stage1":
+    OUT = ROOT / ("artifacts/macos-"+args.stage)
 environment = dict(os.environ)
 for key in ['OMP_NUM_THREADS', 'OPENBLAS_NUM_THREADS', 'MKL_NUM_THREADS', 'VECLIB_MAXIMUM_THREADS']:
     environment[key] = '1'
@@ -43,15 +45,23 @@ def digest(path):
     return result.hexdigest()
 
 # Inspect the shared machine; never terminate a user's unrelated process.
-processes = subprocess.check_output(['ps','-axo','pid,comm,args'],text=True)
+processes = subprocess.check_output(['ps','-axo','pid,%cpu,comm,args'],text=True)
 for line in processes.splitlines()[1:]:
-    values = line.strip().split(None,2)
-    if len(values) == 3 and int(values[0]) != os.getpid():
-        if Path(values[1]).name == 'Godot' or ('python' in Path(values[1]).name.lower() and 'tools/run_tests.py' in values[2]):
+    values = line.strip().split(None,3)
+    if len(values) == 4 and int(values[0]) != os.getpid():
+        idle_editor = Path(values[2]).name == 'Godot' and float(values[1]) < 5 and '--path' not in values[3] and '--script' not in values[3]
+        if (Path(values[2]).name == 'Godot' and not idle_editor) or ('python' in Path(values[2]).name.lower() and ('tools/run_tests.py' in values[3] or float(values[1])>10)):
             raise RuntimeError('Compute already occupied by PID ' + values[0])
 summary_path = ROOT/('artifacts/stage2a/logs/test-summary.json' if args.stage == 'stage2a' else 'artifacts/stage1/logs/final/test-summary.json')
+if args.stage == 'art-ui-polish':
+    assert args.test_evidence, '--test-evidence required for polish candidate'
+    summary_path = ROOT/args.test_evidence/'logs/test-summary.json'
 summary = json.loads(summary_path.read_text())
-assert summary['passed_executed_tests'] and summary['completed_test_count'] == (24 if args.stage == 'stage2a' else 18)
+assert summary['passed_executed_tests'] and summary['completed_test_count'] == (25 if args.stage == 'art-ui-polish' else 24 if args.stage == 'stage2a' else 18)
+if args.stage == 'art-ui-polish':
+    snapshot = summary_path.parent.parent/'test-input-hashes.json'
+    assert summary.get('inputs_unchanged') and digest(snapshot) == summary['test_input_snapshot_sha256'], 'full-run source snapshot missing or changed'
+    assert all(digest(ROOT/p) == h for p,h in json.loads(snapshot.read_text()).items()), 'source changed since full gate; rerun before packaging'
 assert Path(args.template).is_file(), 'macOS 4.7.2 export template missing'
 template_dir = Path.home()/'Library/Application Support/Godot/export_templates/4.7.2.stable'
 template_dir.mkdir(parents=True,exist_ok=True)
@@ -123,6 +133,8 @@ notarization/notarization=0
 '''.replace('TEMPLATE',str(Path(args.template).resolve()))
     if args.stage == 'stage2a':
         preset = preset.replace('stage1','stage2a').replace('0.3.1','0.4.0')
+    if args.stage == 'art-ui-polish':
+        preset = preset.replace('stage1','art-ui-polish').replace('0.3.1','0.4.1')
     (stage/'export_presets.cfg').write_text(preset)
     (OUT/'export-preset-used.cfg').write_text(preset)
     run([args.godot,'--headless','--single-threaded-scene','--path',stage,'--import'],'import')
@@ -164,6 +176,9 @@ run(['codesign','--verify','--deep','--strict',app],'signature-verify')
 run([executable,'--headless','--single-threaded-scene','--','--package-smoke'],'package-smoke',90)
 smoke = (OUT/'logs/package-smoke.log').read_text()
 assert 'MAC PACKAGE:' in smoke and '0 failures' in smoke
+smoke_checks = int(re.search(r'MAC PACKAGE: (\d+) checks, 0 failures',smoke).group(1))
+if args.stage == 'art-ui-polish':
+    assert smoke_checks >= 2877, 'polish package must replay all 36 levels'
 
 with tempfile.TemporaryDirectory(prefix='codex-pushbox-dmg-',dir='/private/tmp') as directory:
     image_root = Path(directory)
@@ -172,9 +187,14 @@ with tempfile.TemporaryDirectory(prefix='codex-pushbox-dmg-',dir='/private/tmp')
     (image_root/'安装说明.txt').write_text('推箱子：沙与水 · 第一阶段候选\n\n适用于 Apple silicon（M1/M2/M3/M4 等）及 macOS 15.6 或更新。\n将 Pushbox.app 拖到 Applications（应用程序），然后双击启动。无需另装 Godot 或 SDK。\n本包为 ad-hoc 测试签名，尚未 Apple 公证；系统拦截时，请在系统设置→隐私与安全性中选择仍要打开。\n从大厅选择教学模式即可试玩 T01–T04。\n')
     if args.stage == 'stage2a':
         (image_root/'安装说明.txt').write_text('推箱子：沙与水 · 第二阶段 A 外部试玩候选\n\nApple silicon / macOS 15.6+；将 Pushbox.app 拖入 Applications。\n大厅 → 闯关模式；每图先开 2 关，每通 1 关再开 2 关，满 3/6 解锁下一地图。\nTab 观察池可侦察全部 36 关。Z 撤销，R 重开，Esc 返回大厅/查看下一步提示。\n反馈请记录关卡编号、复现步骤及预期/实际表现。\n本包为 ad-hoc 测试签名，尚未 Apple 公证；系统拦截时可在系统设置→隐私与安全性中选择仍要打开。\n')
+    if args.stage == 'art-ui-polish':
+        (image_root/'安装说明.txt').write_text('推箱子：沙与水 · 美术与 UI 翻新试玩候选 0.4.1\n\nApple silicon / macOS 15.6+；拖入 Applications 后启动。\n大厅 → 闯关模式：六主题动态背景、航线徽章、实际关卡微缩窗。\nTab 观察池：Q/E 切世界，A/D 切关，F 切全景 / 原生细节；原生模式方向键或拖动平移。\n每图通 3/6 关开下一图；Z 撤销，R 重开，Esc 返回。\n验收回复：美术与 UI 优化验收：通过 / 需改……\n候选未正式发布；ad-hoc 测试签名，未 Apple 公证。\n')
     dmg = OUT/('Pushbox-'+args.stage+'-macos-arm64.dmg')
     run(['hdiutil','create','-volname','Pushbox Sand and Water','-srcfolder',image_root,'-format','UDZO','-imagekey','zlib-level=6','-ov',dmg],'dmg-create',180)
 run(['hdiutil','verify',dmg],'dmg-verify',90)
-manifest = {'status':'macOS_installation_candidate','date':'2026-10-15' if args.stage == 'stage2a' else '2026-10-14','platform':'macOS arm64','minimum_macos':'15.6','godot':'4.7.2','app_version':'0.4.0' if args.stage == 'stage2a' else '0.3.1','sdk_sha256':sdk_hash,'sdk_bytes_unchanged':digest(libraries[0])==sdk_hash,'signed':'ad-hoc hardened runtime','notarized':False,'package_smoke_passed':True,'dmg':dmg.name,'dmg_bytes':dmg.stat().st_size,'dmg_sha256':digest(dmg),'executable':str(executable.relative_to(app)),'app_files_sha256':{str(p.relative_to(app)):digest(p) for p in sorted(app.rglob('*')) if p.is_file()}}
+manifest = {'status':'macOS_installation_candidate','date':'2026-10-15' if args.stage != 'stage1' else '2026-10-14','platform':'macOS arm64','minimum_macos':'15.6','godot':'4.7.2','app_version':'0.4.1' if args.stage == 'art-ui-polish' else '0.4.0' if args.stage == 'stage2a' else '0.3.1','sdk_sha256':sdk_hash,'sdk_bytes_unchanged':digest(libraries[0])==sdk_hash,'signed':'ad-hoc hardened runtime','notarized':False,'package_smoke_passed':True,'package_smoke_checks':smoke_checks,'dmg':dmg.name,'dmg_bytes':dmg.stat().st_size,'dmg_sha256':digest(dmg),'executable':str(executable.relative_to(app)),'app_files_sha256':{str(p.relative_to(app)):digest(p) for p in sorted(app.rglob('*')) if p.is_file()}}
+if args.stage == 'art-ui-polish':
+    manifest['test_evidence'] = args.test_evidence
+    manifest['test_input_snapshot_sha256'] = digest(snapshot)
 (OUT/'manifest.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n')
 print('MACOS PACKAGE READY ' + str(dmg),flush=True)

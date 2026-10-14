@@ -1,0 +1,192 @@
+{
+  "godot": "4.7.2.stable.official.ed1daf0bf",
+  "workers": 1,
+  "candidate_version": "full-08",
+  "user_data_isolated": true,
+  "legacy_sprite_pngs_present": false,
+  "results": [
+    {
+      "test": "m0",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 0.147,
+      "log": "artifacts/art-ui-polish/runs/full-08/logs/m0.log"
+    },
+    {
+      "test": "board",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 0.244,
+      "log": "artifacts/art-ui-polish/runs/full-08/logs/board.log"
+    },
+    {
+      "test": "m1",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 0.351,
+      "log": "artifacts/art-ui-polish/runs/full-08/logs/m1.log"
+    },
+    {
+      "test": "edge_cases",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 0.247,
+      "log": "artifacts/art-ui-polish/runs/full-08/logs/edge_cases.log"
+    },
+    {
+      "test": "acceptance",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 1.642,
+      "log": "artifacts/art-ui-polish/runs/full-08/logs/acceptance.log"
+    },
+    {
+      "test": "session_scheduling",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 0.662,
+      "log": "artifacts/art-ui-polish/runs/full-08/logs/session_scheduling.log"
+    },
+    {
+      "test": "ui",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.931,
+      "log": "artifacts/art-ui-polish/runs/full-08/logs/ui.log"
+    },
+    {
+      "test": "ui_interaction",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 10.296,
+      "log": "artifacts/art-ui-polish/runs/full-08/logs/ui_interaction.log"
+    },
+    {
+      "test": "ui_failure",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 0.892,
+      "log": "artifacts/art-ui-polish/runs/full-08/logs/ui_failure.log"
+    },
+    {
+      "test": "inspect_levels",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 0.361,
+      "log": "artifacts/art-ui-polish/runs/full-08/logs/inspect_levels.log"
+    },
+    {
+      "test": "guides",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.763,
+      "log": "artifacts/art-ui-polish/runs/full-08/logs/guides.log"
+    },
+    {
+      "test": "v03_presentation",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.953,
+      "log": "artifacts/art-ui-polish/runs/full-08/logs/v03_presentation.log"
+    },
+    {
+      "test": "v03_render",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 2.312,
+      "log": "artifacts/art-ui-polish/runs/full-08/logs/v03_render.log"
+    },
+    {
+      "test": "bugfix",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 4.329,
+      "log": "artifacts/art-ui-polish/runs/full-08/logs/bugfix.log"
+    },
+    {
+      "test": "procedural_art",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 0.251,
+      "log": "artifacts/art-ui-polish/runs/full-08/logs/procedural_art.log"
+    },
+    {
+      "test": "lobby_stage1",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 0.349,
+      "log": "artifacts/art-ui-polish/runs/full-08/logs/lobby_stage1.log"
+    },
+    {
+      "test": "tutorial_stage1",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 21.671,
+      "log": "artifacts/art-ui-polish/runs/full-08/logs/tutorial_stage1.log"
+    },
+    {
+      "test": "art_modules",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 0.247,
+      "log": "artifacts/art-ui-polish/runs/full-08/logs/art_modules.log"
+    },
+    {
+      "test": "biome_showcase",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 1.251,
+      "log": "artifacts/art-ui-polish/runs/full-08/logs/biome_showcase.log"
+    },
+    {
+      "test": "art_ui_polish",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 1.635,
+      "log": "artifacts/art-ui-polish/runs/full-08/logs/art_ui_polish.log"
+    },
+    {
+      "test": "mechanisms_stage2a",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 0.458,
+      "log": "artifacts/art-ui-polish/runs/full-08/logs/mechanisms_stage2a.log"
+    },
+    {
+      "test": "campaign_progress_stage2a",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 0.342,
+      "log": "artifacts/art-ui-polish/runs/full-08/logs/campaign_progress_stage2a.log"
+    },
+    {
+      "test": "campaign_stage2a",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 16.593,
+      "log": "artifacts/art-ui-polish/runs/full-08/logs/campaign_stage2a.log"
+    },
+    {
+      "test": "performance",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 22.238,
+      "log": "artifacts/art-ui-polish/runs/full-08/logs/performance.log"
+    },
+    {
+      "test": "campaign_performance",
+      "passed": false,
+      "exit_code": 1,
+      "seconds": 416.35,
+      "log": "artifacts/art-ui-polish/runs/full-08/logs/campaign_performance.log"
+    }
+  ],
+  "not_run": [
+    "T2 threads=4",
+    "T2 threads=8",
+    "T10 new-player study"
+  ],
+  "passed_executed_tests": false,
+  "requested_test_count": 25,
+  "completed_test_count": 25
+}

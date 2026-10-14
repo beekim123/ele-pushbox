@@ -24,3 +24,6 @@ __pycache__/
 
 /artifacts/macos-stage2a/*.app/
 /artifacts/macos-stage2a/*.dmg
+
+/artifacts/macos-art-ui-polish/*.app/
+/artifacts/macos-art-ui-polish/*.dmg

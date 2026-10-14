@@ -1,0 +1,286 @@
+{
+  "checks": 499,
+  "failures": 1,
+  "levels": [
+    {
+      "level": 1,
+      "steps": [
+        {
+          "action": "R",
+          "actors": "[7,6,\"A\",9,4]",
+          "hash": "b16642aa37c364eb",
+          "player": "(2, 3)",
+          "ticks": 4
+        },
+        {
+          "action": "U",
+          "actors": "[7,5,\"A\",9,4]",
+          "hash": "c26b5866cddb7a69",
+          "player": "(2, 2)",
+          "ticks": 4
+        },
+        {
+          "action": "U",
+          "actors": "[7,4,\"A\",9,4]",
+          "hash": "1fe59b3b84b763a4",
+          "player": "(2, 1)",
+          "ticks": 4
+        },
+        {
+          "action": "R",
+          "actors": "[8,4,\"A\",9,4]",
+          "hash": "6209f3b7c2af6d6b",
+          "player": "(3, 1)",
+          "ticks": 4
+        },
+        {
+          "action": "R",
+          "actors": "[9,4,\"A\",10,4]",
+          "hash": "8228afd981a53d78",
+          "player": "(4, 1)",
+          "ticks": 5
+        },
+        {
+          "action": "R",
+          "actors": "[10,4,\"A\",11,4]",
+          "hash": "4bd4448c316519bc",
+          "player": "(5, 1)",
+          "ticks": 5
+        },
+        {
+          "action": "R",
+          "actors": "[11,4,\"A\",12,4]",
+          "hash": "90f00aab4e7758d2",
+          "player": "(6, 1)",
+          "ticks": 5
+        },
+        {
+          "action": "R",
+          "actors": "[12,4,\"A\",13,7]",
+          "hash": "9f9e757583734f2e",
+          "player": "(7, 1)",
+          "ticks": 10
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "steps": [
+        {
+          "action": "DIG_L",
+          "actors": "[8,7,\"A\",11,5]",
+          "hash": "d27bcb21f3c832d2",
+          "player": "(3, 4)",
+          "ticks": 82
+        },
+        {
+          "action": "L",
+          "actors": "[7,7,\"A\",11,5]",
+          "hash": "e939c368dba70cea",
+          "player": "(2, 4)",
+          "ticks": 4
+        },
+        {
+          "action": "DIG_L",
+          "actors": "[7,7,\"A\",11,5]",
+          "hash": "2a7b59c2dc9f3cff",
+          "player": "(2, 4)",
+          "ticks": 24
+        },
+        {
+          "action": "R",
+          "actors": "[8,7,\"A\",11,5]",
+          "hash": "93b6ef21a41bc600",
+          "player": "(3, 4)",
+          "ticks": 4
+        },
+        {
+          "action": "POUR_R",
+          "actors": "[8,7,\"A\",11,5]",
+          "hash": "031bb37a59b041f7",
+          "player": "(3, 4)",
+          "ticks": 47
+        },
+        {
+          "action": "R",
+          "actors": "[9,6,\"A\",11,5]",
+          "hash": "bfc79badc3b9fba6",
+          "player": "(4, 3)",
+          "ticks": 4
+        },
+        {
+          "action": "R",
+          "actors": "[10,5,\"A\",11,5]",
+          "hash": "2f3a19dc8061bc1d",
+          "player": "(5, 2)",
+          "ticks": 4
+        },
+        {
+          "action": "R",
+          "actors": "[11,5,\"A\",12,5]",
+          "hash": "6052bc481e69b9f9",
+          "player": "(6, 2)",
+          "ticks": 5
+        },
+        {
+          "action": "R",
+          "actors": "[12,5,\"A\",13,7]",
+          "hash": "0c77de18e9f2bc78",
+          "player": "(7, 2)",
+          "ticks": 10
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "steps": [
+        {
+          "action": "R",
+          "actors": "[6,5,\"A\",10,7]",
+          "hash": "c9838abf262eb0b6",
+          "player": "(2, 3)",
+          "ticks": 4
+        },
+        {
+          "action": "R",
+          "actors": "[7,5,\"A\",10,7]",
+          "hash": "829bf7ff8b339b93",
+          "player": "(3, 3)",
+          "ticks": 4
+        },
+        {
+          "action": "USE",
+          "actors": "[7,5,\"A\",10,6]",
+          "hash": "7481e75cfeed993b",
+          "player": "(3, 3)",
+          "ticks": 308
+        },
+        {
+          "action": "POUR_R",
+          "actors": "[7,5,\"A\",10,5]",
+          "hash": "6b281ea29a57ff4b",
+          "player": "(3, 3)",
+          "ticks": 84
+        },
+        {
+          "action": "R",
+          "actors": "[8,5,\"A\",10,5]",
+          "hash": "c3d232c978e28abe",
+          "player": "(4, 3)",
+          "ticks": 4
+        },
+        {
+          "action": "R",
+          "actors": "[9,5,\"A\",10,5]",
+          "hash": "4286c07b03cad88f",
+          "player": "(5, 3)",
+          "ticks": 4
+        },
+        {
+          "action": "R",
+          "actors": "[10,5,\"A\",11,5]",
+          "hash": "0ebe42980949e08d",
+          "player": "(6, 3)",
+          "ticks": 6
+        },
+        {
+          "action": "R",
+          "actors": "[11,5,\"A\",12,5]",
+          "hash": "645ea5d9561b7290",
+          "player": "(7, 3)",
+          "ticks": 5
+        }
+      ]
+    },
+    {
+      "level": 4,
+      "steps": [
+        {
+          "action": "R",
+          "actors": "[6,5,\"A\",7,5,\"B\",12,5]",
+          "hash": "6a830204f1d2ddcd",
+          "player": "(2, 2)",
+          "ticks": 4
+        },
+        {
+          "action": "R",
+          "actors": "[7,5,\"A\",8,5,\"B\",12,5]",
+          "hash": "3ef9cda82f3559af",
+          "player": "(3, 2)",
+          "ticks": 5
+        },
+        {
+          "action": "R",
+          "actors": "[8,5,\"A\",9,6,\"B\",12,5]",
+          "hash": "8de36221ec1a3db9",
+          "player": "(4, 2)",
+          "ticks": 10
+        },
+        {
+          "action": "R",
+          "actors": "[9,5,\"A\",9,6,\"B\",12,5]",
+          "hash": "9a8bd44317b05c07",
+          "player": "(5, 2)",
+          "ticks": 4
+        },
+        {
+          "action": "R",
+          "actors": "[10,5,\"A\",9,6,\"B\",12,5]",
+          "hash": "9b249f04b16db844",
+          "player": "(6, 2)",
+          "ticks": 4
+        },
+        {
+          "action": "R",
+          "actors": "[11,5,\"A\",9,6,\"B\",12,5]",
+          "hash": "c36b8cdc1688c128",
+          "player": "(7, 2)",
+          "ticks": 4
+        },
+        {
+          "action": "R",
+          "actors": "[12,4,\"A\",9,6,\"B\",12,5]",
+          "hash": "60a52b4f119ca97b",
+          "player": "(8, 1)",
+          "ticks": 4
+        },
+        {
+          "action": "R",
+          "actors": "[13,4,\"A\",9,6,\"B\",12,5]",
+          "hash": "b40c2553cd2cb826",
+          "player": "(9, 1)",
+          "ticks": 4
+        },
+        {
+          "action": "R",
+          "actors": "[14,5,\"A\",9,6,\"B\",12,5]",
+          "hash": "c39def219e88edaa",
+          "player": "(10, 2)",
+          "ticks": 8
+        },
+        {
+          "action": "BOMB_L",
+          "actors": "[14,5,\"A\",9,6,\"B\",12,5]",
+          "hash": "724bd89f774b2c4e",
+          "player": "(10, 2)",
+          "ticks": 6
+        },
+        {
+          "action": "L",
+          "actors": "[13,5,\"A\",9,6,\"B\",12,5]",
+          "hash": "2983bd526e49ce03",
+          "player": "(9, 2)",
+          "ticks": 4
+        },
+        {
+          "action": "L",
+          "actors": "[12,5,\"A\",9,6,\"B\",11,5]",
+          "hash": "63a73ebeee246a90",
+          "player": "(8, 2)",
+          "ticks": 5
+        }
+      ]
+    }
+  ],
+  "workers": 1
+}

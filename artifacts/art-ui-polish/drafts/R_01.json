@@ -1,0 +1,141 @@
+{
+  "biome_mechanisms": {
+    "scales": [
+      {
+        "left": [
+          3.0,
+          3.0
+        ],
+        "lift": 2.0,
+        "right": [
+          7.0,
+          3.0
+        ]
+      }
+    ]
+  },
+  "budget": {
+    "bombs": 0.0,
+    "sand_cells": 0.0
+  },
+  "campaign": {
+    "index": 0.0,
+    "map": 2.0,
+    "stars": 1.0
+  },
+  "content": "default",
+  "entities": {
+    "boxes": [
+      {
+        "at": [
+          2.0,
+          3.0
+        ],
+        "id": "I",
+        "kind": "iron"
+      },
+      {
+        "at": [
+          7.0,
+          3.0
+        ],
+        "id": "A",
+        "kind": "wood"
+      }
+    ],
+    "ladders": [
+      [
+        2.0,
+        1.0
+      ],
+      [
+        2.0,
+        2.0
+      ],
+      [
+        2.0,
+        3.0
+      ],
+      [
+        3.0,
+        1.0
+      ],
+      [
+        4.0,
+        1.0
+      ],
+      [
+        5.0,
+        1.0
+      ],
+      [
+        6.0,
+        1.0
+      ]
+    ],
+    "levers": [],
+    "player": [
+      1.0,
+      3.0
+    ],
+    "targets": [
+      [
+        3.0,
+        5.0
+      ],
+      [
+        9.0,
+        1.0
+      ]
+    ]
+  },
+  "format": "pushbox.level/1",
+  "hints": [],
+  "id": "R_01",
+  "legend": {
+    "#": "bedrock",
+    ".": "empty",
+    "G": "gate",
+    "a": "acid",
+    "c": "cracked_rock",
+    "h": {
+      "fill": 0.5,
+      "material": "sand"
+    },
+    "i": "ice",
+    "m": "lava",
+    "q": {
+      "fill": 0.75,
+      "material": "sand"
+    },
+    "s": "sand",
+    "u": "pumice",
+    "w": "water"
+  },
+  "map": [
+    "....####....",
+    "............",
+    "##......####",
+    "#.......####",
+    "###.....####",
+    "###.....#..#",
+    "#.###..##..#"
+  ],
+  "mechanisms": [],
+  "seed": 1.0,
+  "solution": [
+    "R",
+    "U",
+    "U",
+    "R",
+    "R",
+    "R",
+    "R",
+    "R",
+    "R"
+  ],
+  "solution_hashes": [],
+  "solution_keys": [],
+  "theme_id": "ruins",
+  "title": "黄金天平"
+}

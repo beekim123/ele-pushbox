@@ -1,0 +1,1 @@
+{"budget":{},"content":"default","entities":{"boxes":[],"player":[1,5],"targets":[]},"format":"pushbox.level/1","id":"reaction_fixture","legend":{"#":"bedrock",".":"empty","a":"acid","c":"cracked_rock","m":"lava","w":"water"},"map":["############","#......#w###","#..a...#w###","#..a...#w###","#..a...#m###","###c####m###","############"],"seed":1}

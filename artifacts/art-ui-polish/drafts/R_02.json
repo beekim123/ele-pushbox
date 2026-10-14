@@ -1,0 +1,174 @@
+{
+  "biome_mechanisms": {
+    "hourglasses": [
+      {
+        "open_when": {
+          "not": {
+            "count": {
+              "gte": 1.0,
+              "rect": [
+                7.0,
+                3.0,
+                1.0,
+                1.0
+              ],
+              "tag": "breakable"
+            }
+          }
+        },
+        "tiles": [
+          [
+            7.0,
+            3.0
+          ]
+        ]
+      }
+    ]
+  },
+  "budget": {
+    "bombs": 1.0,
+    "sand_cells": 0.0
+  },
+  "campaign": {
+    "index": 1.0,
+    "map": 2.0,
+    "stars": 1.0
+  },
+  "content": "default",
+  "entities": {
+    "boxes": [
+      {
+        "at": [
+          3.0,
+          4.0
+        ],
+        "id": "A",
+        "kind": "wood"
+      }
+    ],
+    "ladders": [
+      [
+        2.0,
+        3.0
+      ],
+      [
+        2.0,
+        4.0
+      ],
+      [
+        3.0,
+        3.0
+      ],
+      [
+        4.0,
+        3.0
+      ],
+      [
+        5.0,
+        3.0
+      ],
+      [
+        6.0,
+        3.0
+      ]
+    ],
+    "levers": [],
+    "player": [
+      2.0,
+      4.0
+    ],
+    "targets": [
+      [
+        11.0,
+        4.0
+      ]
+    ]
+  },
+  "format": "pushbox.level/1",
+  "hints": [],
+  "id": "R_02",
+  "legend": {
+    "#": "bedrock",
+    ".": "empty",
+    "G": "gate",
+    "a": "acid",
+    "c": "cracked_rock",
+    "h": {
+      "fill": 0.5,
+      "material": "sand"
+    },
+    "i": "ice",
+    "m": "lava",
+    "q": {
+      "fill": 0.75,
+      "material": "sand"
+    },
+    "s": "sand",
+    "u": "pumice",
+    "w": "water"
+  },
+  "map": [
+    ".....##h#.....",
+    "...##.#s###...",
+    ".##...#s#..##.",
+    "#......c.G...#",
+    "#........G...#",
+    "#######.######",
+    "#.#####.#####.",
+    "#..##.###..##."
+  ],
+  "mechanisms": [
+    {
+      "id": "G1",
+      "kind": "gate",
+      "open_when": {
+        "count": {
+          "gte": 384.0,
+          "rect": [
+            7.0,
+            5.0,
+            1.0,
+            2.0
+          ],
+          "tag": "loose"
+        }
+      },
+      "tiles": [
+        [
+          9.0,
+          3.0
+        ],
+        [
+          9.0,
+          4.0
+        ]
+      ]
+    }
+  ],
+  "seed": 1.0,
+  "solution": [
+    "U",
+    "R",
+    "R",
+    "R",
+    "R",
+    "BOMB_R",
+    "L",
+    "L",
+    "L",
+    "L",
+    "D",
+    "R",
+    "R",
+    "R",
+    "R",
+    "R",
+    "R",
+    "R",
+    "R"
+  ],
+  "solution_hashes": [],
+  "solution_keys": [],
+  "theme_id": "ruins",
+  "title": "流沙漏斗"
+}

@@ -1,6 +1,7 @@
 shader_type canvas_item;
 render_mode unshaded;
 uniform sampler2D palette : filter_nearest;
+uniform bool local_pixel_coordinates = false;
 uniform int biome_style_id = 0;
 uniform int iron_crate_id = -1;
 uniform int acid_id = -1;
@@ -86,7 +87,7 @@ vec4 cracked_rock(vec2 p) {
 }
 
 void vertex() {
-	world_position = (MODEL_MATRIX * vec4(VERTEX, 0.0, 1.0)).xy - world_origin;
+	world_position = local_pixel_coordinates ? VERTEX : (MODEL_MATRIX * vec4(VERTEX, 0.0, 1.0)).xy - world_origin;
 }
 int material_at(sampler2D cell_texture, ivec2 at) {
 	if (at.x < 0 || at.y < 0 || at.x >= cell_texture_size.x || at.y >= cell_texture_size.y) { return bedrock_id; }

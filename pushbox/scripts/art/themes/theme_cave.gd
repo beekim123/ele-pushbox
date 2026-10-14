@@ -11,14 +11,4 @@ static func spec() -> Dictionary:
 	},{"e4a672":"2ce8f5", "b86f50":"5a6988", "733e39":"262b44", "fee761":"2ce8f5", "feae34":"b55088"})
 
 static func background(size: Vector2i) -> Image:
-	var image: Image = Ops.canvas(size,Color("181425"))
-	for y in range(-16,size.y,32):
-		for x in range(-32,size.x,64):
-			Ops.rect(image,x,y+6,58,22,Color("262b44"))
-			Ops.line(image,Vector2i(x,y+24),Vector2i(x+58,y+9),Color("193c3e"))
-			for i in 8:
-				Ops.rect(image,x+8+i,y+6,16-i*2,1,Color("3a4466"))
-			Ops.rect(image,x+43,y+22,3,7,Color("68386c"))
-			Ops.rect(image,x+47,y+19,2,10,Color("124e89"))
-			Ops.rect(image,x+47,y+19,1,2,Color("0099db"))
-	return image
+	return preload("res://pushbox/scripts/art/themes/natural_backdrops.gd").cave(size)

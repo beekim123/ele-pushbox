@@ -55,7 +55,7 @@ static func theme(id: String) -> Dictionary:
 	return _specs[key]
 
 static func themed_texture(name: String, id: String) -> Texture2D:
-	if not THEMES.has(id) or id == "dungeon":
+	if not THEMES.has(id) or (id == "dungeon" and not name.begins_with("lantern_idle_")):
 		return texture(name)
 	if name == "cave_bg":
 		return background(id,Vector2i(320,180))
@@ -78,8 +78,8 @@ static func _exclusive(name: String, id: String) -> Image:
 	var spec: Dictionary = theme(id)
 	if name == "crate_iron_0":
 		return Crates.iron(spec.index)
-	if spec.index > 0 and name.begins_with("lantern_idle_"):
-		return Ambient.themed_lamp(spec.index,spec.colors.accent)
+	if name.begins_with("lantern_idle_"):
+		return Ambient.themed_lamp(spec.index,spec.colors.accent,int(name.get_slice("_",2)))
 	var result: Image = Hazards.image(name)
 	if result == null:
 		result = Gimmicks.image(name,spec.colors.accent)
@@ -91,15 +91,7 @@ static func background(id: String, size: Vector2i) -> Texture2D:
 	var key: String = "%s:%dx%d" % [id,size.x,size.y]
 	if not _backgrounds.has(key):
 		var result: Image
-		if id == "dungeon" or not THEMES.has(id):
-			if size == Vector2i(320,180):
-				return texture("cave_bg")
-			result = Ops.canvas(size)
-			var tile: Image = texture("cave_bg").get_image()
-			for y in range(0,size.y,180):
-				for x in range(0,size.x,320):
-					result.blit_rect(tile,Rect2i(Vector2i.ZERO,tile.get_size()),Vector2i(x,y))
-		else:
-			result = THEMES[id].background(size)
+		var module: GDScript = THEMES.get(id,THEMES.dungeon)
+		result = module.background(size)
 		_backgrounds[key] = ImageTexture.create_from_image(result)
 	return _backgrounds[key]

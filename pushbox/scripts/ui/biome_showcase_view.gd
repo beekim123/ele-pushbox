@@ -1,8 +1,19 @@
 extends Node2D
-## Static authored panoramas rendered by the same terrain shader as gameplay.
+## One 320px UI; clipped map supports full overview and native detail panning.
 signal closed
 const Catalog := preload("res://pushbox/scripts/campaign_catalog.gd")
 const Board := preload("res://pushbox/scripts/board.gd")
+const Ecology := preload("res://pushbox/scripts/render/ambient_ecology.gd")
+const MapLayer := preload("res://pushbox/scripts/ui/showcase_map_layer.gd")
+var clock: float = 0.0
+var panorama: bool = true
+var _camera := Vector2.ZERO
+var _camera_target := Vector2.ZERO
+var _dragging: bool = false
+var _map_layer: Node2D
+var _clip: Control
+var _ecology_background: Node2D
+var _ecology_points: Dictionary = {}
 var campaign_mode: bool = false
 var level_index: int = 0
 var _hover: String = ""
@@ -33,10 +44,22 @@ func _ready() -> void:
 	_background.centered = false
 	_background.z_index = -2
 	add_child(_background)
+	_ecology_background = Ecology.new()
+	_ecology_background.z_index = -2
+	add_child(_ecology_background)
+	_clip = Control.new()
+	_clip.position = Vector2(8,29)
+	_clip.size = Vector2(304,122)
+	_clip.clip_contents = true
+	_clip.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	add_child(_clip)
+	_map_layer = MapLayer.new()
+	_map_layer.host = self
+	_clip.add_child(_map_layer)
 	terrain = Sprite2D.new()
 	terrain.centered = false
 	terrain.z_index = -1
-	add_child(terrain)
+	_map_layer.add_child(terrain)
 	hide()
 
 func open(value: int = 0) -> void:
@@ -54,6 +77,7 @@ func select_biome(value: int) -> void:
 	if terrain.material == null:
 		terrain.material = ShaderMaterial.new()
 		terrain.material.shader = SHADER
+		terrain.material.set_shader_parameter("local_pixel_coordinates",true)
 	index = posmod(value,THEMES.size())
 	theme_id = THEMES[index]
 	if not _cache.has(theme_id):
@@ -72,14 +96,14 @@ func select_biome(value: int) -> void:
 		_cache[theme_id] = {"data":data,"texture":ImageTexture.create_from_image(image)}
 	map_data = _cache[theme_id].data
 	map_size = Vector2i(map_data.size[0],map_data.size[1])
-	map_origin = Vector2((640-map_size.x*16)/2,40+(288-map_size.y*16)/2).floor()
-	_background.texture = Registry.background(theme_id,Vector2i(640,360))
+	map_origin = Vector2.ZERO
+	_background.texture = Registry.background(theme_id,Vector2i(320,180))
 	terrain.texture = _cache[theme_id].texture
-	terrain.position = map_origin
+	terrain.position = Vector2.ZERO
 	Binder.apply(terrain.material,theme_id,IDS)
 	terrain.material.set_shader_parameter("room_rect",Vector4(0,0,map_size.x*16,map_size.y*16))
 	terrain.material.set_shader_parameter("cell_texture_size",map_size*16)
-	terrain.material.set_shader_parameter("world_origin",to_global(map_origin))
+	terrain.material.set_shader_parameter("world_origin",terrain.global_position)
 	_sprites.clear()
 	_gates.clear()
 	var gate_columns: Dictionary = {}
@@ -90,24 +114,25 @@ func select_biome(value: int) -> void:
 				gate_columns[x] = []
 			gate_columns[x].append(prop.at[1])
 		else:
-			_sprites.append({"texture":Style.themed_texture(prop.sprite,theme_id),"at":Vector2(prop.at[0]*16,prop.at[1]*16),"flip":prop.get("flip",false)})
+			_sprites.append({"sprite":prop.sprite,"texture":Style.themed_texture(prop.sprite,theme_id),"at":Vector2(prop.at[0]*16,prop.at[1]*16),"flip":prop.get("flip",false)})
 	for x in gate_columns:
 		var ys: Array = gate_columns[x]
 		ys.sort()
 		for i in ys.size():
 			_gates.append({"at":Vector2(x*16,ys[i]*16),"i":i,"count":ys.size()})
-	queue_redraw()
+	fit_map()
 
 func previous_rect() -> Rect2:
-	return Rect2(12,169,32,30)
+	return Rect2(8,151,16,16)
 
 func next_rect() -> Rect2:
-	return Rect2(596,169,32,30)
+	return Rect2(296,151,16,16)
 
 func theme_rect(value: int) -> Rect2:
-	return Rect2(161+value*53,333,50,15)
+	return Rect2(37+value*41,151,39,15)
 
 func handle(event: InputEvent) -> void:
+	if _handle_camera(event): return
 	if campaign_mode:
 		_handle_campaign(event)
 		return
@@ -117,6 +142,10 @@ func handle(event: InputEvent) -> void:
 				select_biome(index-1)
 			KEY_RIGHT,KEY_D:
 				select_biome(index+1)
+			KEY_Q:
+				select_biome(index-1)
+			KEY_E:
+				select_biome(index+1)
 			KEY_ESCAPE:
 				closed.emit()
 	elif event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
@@ -125,7 +154,7 @@ func handle(event: InputEvent) -> void:
 			select_biome(index-1)
 		elif next_rect().has_point(at):
 			select_biome(index+1)
-		elif Rect2(8,5,68,25).has_point(at):
+		elif Rect2(8,3,32,21).has_point(at):
 			closed.emit()
 		else:
 			for i in THEMES.size():
@@ -141,37 +170,88 @@ func find_exposed_tile(top: bool) -> Vector2i:
 
 func _center_text(value: String, y: int, color: Color) -> void:
 	var width: float = Style.font().get_string_size(value,HORIZONTAL_ALIGNMENT_LEFT,-1,12).x
-	Style.text(self,value,Vector2(floori((640-width)/2),y),color)
+	Style.text(self,value,Vector2(floori((320-width)/2),y),color)
+
+func _process(delta: float) -> void:
+	if not visible: return
+	clock += delta
+	if not panorama:
+		_camera = _camera.lerp(_camera_target,minf(1,delta*12))
+		_map_layer.position = (Vector2(152,61)-_camera).round()
+		map_origin = _clip.position+_map_layer.position
+		refresh_world_origin()
+	_map_layer.queue_redraw()
+	queue_redraw()
+
+func refresh_world_origin() -> void:
+	if terrain.material != null:
+		terrain.material.set_shader_parameter("world_origin",terrain.global_position)
+
+func set_panorama(value: bool) -> void:
+	panorama = value
+	fit_map()
+
+func fit_map() -> void:
+	var pixels := Vector2(map_size*16)
+	var divisor: int = maxi(1,ceili(maxf(pixels.x/304,pixels.y/122))) if panorama else 1
+	_map_layer.scale = Vector2.ONE/divisor
+	_camera = pixels/2
+	_camera_target = _camera
+	_map_layer.position = (Vector2(152,61)-pixels*_map_layer.scale/2).floor()
+	map_origin = _clip.position+_map_layer.position
+	_ecology_background.theme_id = theme_id
+	_ecology_background.queue_redraw()
+	_ecology_points = Ecology.anchors(map_data)
+	refresh_world_origin()
+	_map_layer.queue_redraw()
+	queue_redraw()
+
+func _handle_camera(event: InputEvent) -> bool:
+	if event is InputEventKey and event.pressed and not event.echo:
+		if event.physical_keycode == KEY_F:
+			set_panorama(not panorama)
+			return true
+		if not panorama and event.physical_keycode in [KEY_LEFT,KEY_RIGHT,KEY_UP,KEY_DOWN]:
+			var direction: Vector2 = {KEY_LEFT:Vector2.LEFT,KEY_RIGHT:Vector2.RIGHT,KEY_UP:Vector2.UP,KEY_DOWN:Vector2.DOWN}[event.physical_keycode]
+			_camera_target = (_camera_target+direction*24).clamp(Vector2.ZERO,Vector2(map_size*16))
+			return true
+	if event is InputEventMouseButton:
+		var at: Vector2 = to_local(event.position)
+		if Rect2(8,29,304,122).has_point(at) and event.button_index == MOUSE_BUTTON_LEFT:
+			_dragging = event.pressed and not panorama
+			return _dragging
+		if event.button_index == MOUSE_BUTTON_LEFT and not event.pressed: _dragging = false
+	if event is InputEventMouseMotion and _dragging:
+		_camera_target = (_camera_target-event.relative/global_scale).clamp(Vector2.ZERO,Vector2(map_size*16))
+		return true
+	return false
+
+func draw_map(canvas: CanvasItem) -> void:
+	Ecology.surface(canvas,theme_id,clock,_ecology_points)
+	for prop in _sprites:
+		var texture: Texture2D = Style.themed_texture(Ecology.prop_name(prop.sprite,clock),theme_id)
+		var at: Vector2 = prop.at+Ecology.prop_offset(prop.sprite,clock,prop.at)
+		if prop.flip:
+			canvas.draw_texture_rect(texture,Rect2(at+Vector2(0,texture.get_height()),Vector2(texture.get_width(),-texture.get_height())),false)
+		else:
+			canvas.draw_texture(texture,at)
+	for gate in _gates:
+		Gates.tile(canvas,gate.at,theme_id,gate.i,gate.count,0.0)
 
 func _draw() -> void:
-	if map_data.is_empty():
-		return
-	for prop in _sprites:
-		var texture: Texture2D = prop.texture
-		var at: Vector2 = map_origin+prop.at
-		if prop.has("size"):
-			draw_texture_rect(texture,Rect2(at,prop.size),false)
-		elif prop.flip:
-			draw_texture_rect(texture,Rect2(at+Vector2(0,texture.get_height()),Vector2(texture.get_width(),-texture.get_height())),false)
-		else:
-			draw_texture(texture,at)
-	for gate in _gates:
-		Gates.tile(self,map_origin+gate.at,theme_id,gate.i,gate.count,0.0)
-	draw_rect(Rect2(0,0,640,36),Style.INK)
-	draw_rect(Rect2(0,331,640,29),Style.INK)
-	_center_text(("%s · %s" % [Catalog.id(index,level_index),map_data.title]) if campaign_mode else ("%02d / 06  %s · %s" % [index+1,LABELS[index],map_data.title]),18,Registry.theme(theme_id).colors.accent)
-	_center_text("%d × %d 格　%s" % [map_size.x,map_size.y,"观察池 · 左右切本图6关 · 上下切地图 · Tab 返回" if campaign_mode else "地图风格预览　左右键 / 点击箭头切换"],32,Color("8b9bb4"))
-	Style.text(self,"返回大厅",Vector2(8,18),Style.WHITE)
-	for rect in [previous_rect(),next_rect()]:
-		Style.panel(self,rect)
-	draw_polygon(PackedVector2Array([Vector2(24,184),Vector2(32,178),Vector2(32,190)]),PackedColorArray([Style.YELLOW]))
-	draw_polygon(PackedVector2Array([Vector2(616,184),Vector2(608,178),Vector2(608,190)]),PackedColorArray([Style.YELLOW]))
+	if map_data.is_empty(): return
+	Style.text(self,"Esc",Vector2(8,17))
+	var title: String = map_data.title.replace("："," ")
+	_center_text(title,17,Style.YELLOW)
+	Style.text(self,"F",Vector2(292,17),Style.YELLOW)
+	for rect in [previous_rect(),next_rect()]: Style.panel(self,rect)
+	draw_polygon(PackedVector2Array([Vector2(12,159),Vector2(19,155),Vector2(19,163)]),PackedColorArray([Style.YELLOW]))
+	draw_polygon(PackedVector2Array([Vector2(308,159),Vector2(301,155),Vector2(301,163)]),PackedColorArray([Style.YELLOW]))
 	for i in THEMES.size():
 		var rect: Rect2 = theme_rect(i)
-		if i == index:
-			draw_rect(rect,Color("3a4466"))
-		Style.text(self,LABELS[i],rect.position+Vector2(5,12),Style.YELLOW if i == index else Color("8b9bb4"))
-	_center_text(_hover if not _hover.is_empty() else map_data.features,359,Color("c0cbdc"))
+		if i==index: draw_line(rect.position+Vector2(4,14),rect.end-Vector2(4,1),Style.YELLOW)
+		Style.text(self,LABELS[i],rect.position+Vector2(2,11),Style.YELLOW if i==index else Style.WHITE)
+	_center_text(_hover if not _hover.is_empty() else ("F 全景 / 原生 · 方向键 / 拖动平移" if not panorama else "Q/E 世界 · A/D 切图 · F 原生细节"),176,Style.WHITE)
 
 func open_campaign(map: int, selected_level: int = 0) -> void:
 	campaign_mode = true
@@ -189,8 +269,9 @@ func select_campaign(map: int, selected_level: int) -> void:
 	if terrain.material == null:
 		terrain.material = ShaderMaterial.new()
 		terrain.material.shader = SHADER
+		terrain.material.set_shader_parameter("local_pixel_coordinates",true)
 	map_size = Vector2i(level.map[0].length(),level.map.size())
-	map_origin = Vector2((640-map_size.x*16)/2,40+(288-map_size.y*16)/2).floor()
+	map_origin = Vector2.ZERO
 	map_data = {"title":level.title,"map":level.map,"size":[map_size.x,map_size.y],"features":Catalog.FEATURES[index]}
 	var image := Image.create(map_size.x*16,map_size.y*16,false,Image.FORMAT_RGBA8)
 	for y in map_size.y:
@@ -201,12 +282,12 @@ func select_campaign(map: int, selected_level: int) -> void:
 			var filled: int = 16 if entry is String else floori(float(entry.get("fill",1))*16)
 			image.fill_rect(Rect2i(x*16,y*16+16-filled,16,filled),Color(id/255.0,0,0,1))
 	terrain.texture = ImageTexture.create_from_image(image)
-	terrain.position = map_origin
-	_background.texture = Registry.background(theme_id,Vector2i(640,360))
+	terrain.position = Vector2.ZERO
+	_background.texture = Registry.background(theme_id,Vector2i(320,180))
 	Binder.apply(terrain.material,theme_id,IDS)
 	terrain.material.set_shader_parameter("room_rect",Vector4(0,0,map_size.x*16,map_size.y*16))
 	terrain.material.set_shader_parameter("cell_texture_size",map_size*16)
-	terrain.material.set_shader_parameter("world_origin",to_global(map_origin))
+	terrain.material.set_shader_parameter("world_origin",terrain.global_position)
 	_sprites.clear()
 	_gates.clear()
 	var board := Board.new()
@@ -230,10 +311,10 @@ func select_campaign(map: int, selected_level: int) -> void:
 	for box in board.boxes:
 		_observe_prop(box.at-board.origin,"crate_iron_0" if box.kind == "iron" else "crate_static_0","沉水铁箱" if box.kind == "iron" else "浮水轻木箱")
 	_observe_prop(board.player-board.origin,"miner_idle_0","玩家起点")
-	queue_redraw()
+	fit_map()
 
 func _observe_prop(at: Vector2i, sprite: String, label: String) -> void:
-	_sprites.append({"texture":Style.themed_texture(sprite,theme_id),"at":Vector2(at)*16,"size":Vector2(16,16),"label":label,"flip":false})
+	_sprites.append({"sprite":sprite,"texture":Style.themed_texture(sprite,theme_id),"at":Vector2(at)*16,"label":label,"flip":false})
 
 func _handle_campaign(event: InputEvent) -> void:
 	if event is InputEventKey and event.pressed and not event.echo:
@@ -250,9 +331,9 @@ func _handle_campaign(event: InputEvent) -> void:
 				select_campaign(index+1,level_index)
 	elif event is InputEventMouseMotion:
 		_hover = ""
-		var at: Vector2 = to_local(event.position)-map_origin
+		var at: Vector2 = _map_layer.to_local(event.position)
 		for prop in _sprites:
-			if Rect2(prop.at,Vector2(16,16)).has_point(at):
+			if Rect2(prop.at,prop.texture.get_size()).has_point(at):
 				_hover = prop.label
 		queue_redraw()
 	elif event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
@@ -261,7 +342,7 @@ func _handle_campaign(event: InputEvent) -> void:
 			select_campaign(index,level_index-1)
 		elif next_rect().has_point(at):
 			select_campaign(index,level_index+1)
-		elif Rect2(8,5,68,25).has_point(at):
+		elif Rect2(8,3,32,21).has_point(at):
 			closed.emit()
 		else:
 			for map in 6:

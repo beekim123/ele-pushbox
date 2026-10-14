@@ -1,0 +1,8 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+OpenGL API 4.1 Metal - 89.4 - Compatibility - Using Device: Apple - Apple M3
+
+TEST USER DIR: /Users/key_/Library/Application Support/CodexPushboxTests/codex-pushbox-test-txk_dy1g
+FAIL polish: ruins lamp frame 3 is distinct
+FAIL polish: observation never compresses mechanism
+Art UI polish: 240 checks, 2 failures
+Executed 1/1 test scripts; passed=False; T2 threads 4/8 NOT RUN.

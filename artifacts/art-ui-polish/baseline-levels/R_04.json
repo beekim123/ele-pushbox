@@ -1,0 +1,192 @@
+{
+  "biome_mechanisms": {
+    "hourglasses": [
+      {
+        "delayed_tiles": [
+          [
+            5.0,
+            1.0
+          ]
+        ],
+        "open_when": {
+          "lever": "L1"
+        },
+        "tiles": [
+          [
+            5.0,
+            3.0
+          ]
+        ]
+      }
+    ]
+  },
+  "budget": {
+    "bombs": 0.0,
+    "sand_cells": 0.0
+  },
+  "campaign": {
+    "index": 3.0,
+    "map": 2.0,
+    "stars": 2.0
+  },
+  "content": "default",
+  "entities": {
+    "boxes": [
+      {
+        "at": [
+          7.0,
+          3.0
+        ],
+        "id": "A",
+        "kind": "wood"
+      }
+    ],
+    "ladders": [
+      [
+        3.0,
+        1.0
+      ],
+      [
+        3.0,
+        2.0
+      ],
+      [
+        3.0,
+        3.0
+      ],
+      [
+        5.0,
+        3.0
+      ],
+      [
+        5.0,
+        4.0
+      ],
+      [
+        7.0,
+        2.0
+      ],
+      [
+        7.0,
+        3.0
+      ],
+      [
+        7.0,
+        4.0
+      ]
+    ],
+    "levers": [
+      {
+        "at": [
+          2.0,
+          3.0
+        ],
+        "id": "L1"
+      }
+    ],
+    "player": [
+      2.0,
+      3.0
+    ],
+    "targets": [
+      [
+        9.0,
+        2.0
+      ]
+    ]
+  },
+  "format": "pushbox.level/1",
+  "hints": [],
+  "id": "R_04",
+  "legend": {
+    "#": "bedrock",
+    ".": "empty",
+    "G": "gate",
+    "a": "acid",
+    "c": "cracked_rock",
+    "h": {
+      "fill": 0.5,
+      "material": "sand"
+    },
+    "i": "ice",
+    "m": "lava",
+    "q": {
+      "fill": 0.75,
+      "material": "sand"
+    },
+    "s": "sand",
+    "u": "pumice",
+    "w": "water"
+  },
+  "map": [
+    "################",
+    "###..q#...######",
+    "###.#sG...######",
+    "##..#c#...######",
+    "#####w#w########",
+    "#####www########",
+    "#####w##########",
+    "################",
+    "################"
+  ],
+  "mechanisms": [
+    {
+      "id": "G1",
+      "kind": "gate",
+      "open_when": {
+        "count": {
+          "gte": 64.0,
+          "rect": [
+            7.0,
+            3.0,
+            1.0,
+            1.0
+          ],
+          "tag": "fluid"
+        }
+      },
+      "tiles": [
+        [
+          6.0,
+          2.0
+        ]
+      ]
+    }
+  ],
+  "seed": 1.0,
+  "solution": [
+    "USE",
+    "R",
+    "U",
+    "U",
+    "R",
+    "R",
+    "R",
+    "R",
+    "R"
+  ],
+  "solution_hashes": [
+    "3e6218a39b629d68",
+    "02a783791cac20fd",
+    "5c8127660ae2b740",
+    "2a6418d14077382b",
+    "d5c60ecae74b135b",
+    "d74689e6164d5393",
+    "8c5661701e97b218",
+    "ec39ae94f2de2f05",
+    "2c58fbf87806d493"
+  ],
+  "solution_keys": [
+    "[\"[\\\"[4,4,\\\\\\\"A\\\\\\\",9,3]\\\",[\\\"G1\\\",true],[\\\"L1\\\",true],{\\\"hourglasses\\\":[{\\\"delayed_tiles\\\":[[5,1]],\\\"open_when\\\":{\\\"lever\\\":\\\"L1\\\"},\\\"opened\\\":true,\\\"release_move\\\":2,\\\"tiles\\\":[[5,3]]}]},[[5,2],[5,3],[5,4],[7,4],[7,5],[9,3],[9,4],[9,5]]]\",0,[\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"OPEN\",\"OPEN\",\"SAND\",\"SOLID\",\"OPEN\",\"OPEN\",\"OPEN\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"OPEN\",\"SOLID\",\"OPEN\",\"OPEN\",\"BOX\",\"OPEN\",\"OPEN\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"OPEN\",\"OPEN\",\"SOLID\",\"OPEN\",\"SOLID\",\"OPEN\",\"OPEN\",\"OPEN\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"WATER\",\"SOLID\",\"WATER\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"WATER\",\"WATER\",\"WATER\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SAND\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\"],{\"bag\":{\"sand\":0},\"bombs\":0,\"boxes\":[{\"at\":[9,3],\"id\":\"A\",\"kind\":\"wood\"}],\"gate_crushed\":{},\"gates\":[{\"id\":\"G1\",\"open\":true}],\"ladders\":[[5,2],[5,3],[5,4],[7,4],[7,5],[9,3],[9,4],[9,5]],\"levers\":[{\"at\":[4,4],\"id\":\"L1\",\"on\":true}],\"mechanisms\":{\"hourglasses\":[{\"delayed_tiles\":[[5,1]],\"open_when\":{\"lever\":\"L1\"},\"opened\":true,\"release_move\":2,\"tiles\":[[5,3]]}]},\"moves\":1,\"player\":[4,4],\"trapped\":false}]",
+    "[\"[\\\"[5,4,\\\\\\\"A\\\\\\\",9,3]\\\",[\\\"G1\\\",true],[\\\"L1\\\",true],{\\\"hourglasses\\\":[{\\\"delayed_tiles\\\":[[5,1]],\\\"open_when\\\":{\\\"lever\\\":\\\"L1\\\"},\\\"opened\\\":true,\\\"release_move\\\":2,\\\"released\\\":true,\\\"tiles\\\":[[5,3]]}]},[[5,2],[5,3],[5,4],[7,4],[7,5],[9,3],[9,4],[9,5]]]\",0,[\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"OPEN\",\"OPEN\",\"OPEN\",\"SOLID\",\"OPEN\",\"OPEN\",\"OPEN\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"OPEN\",\"SOLID\",\"OPEN\",\"OPEN\",\"BOX\",\"OPEN\",\"OPEN\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"OPEN\",\"OPEN\",\"SOLID\",\"OPEN\",\"SOLID\",\"OPEN\",\"OPEN\",\"OPEN\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"WATER\",\"SOLID\",\"WATER\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SAND\",\"WATER\",\"WATER\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SAND\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\"],{\"bag\":{\"sand\":0},\"bombs\":0,\"boxes\":[{\"at\":[9,3],\"id\":\"A\",\"kind\":\"wood\"}],\"gate_crushed\":{},\"gates\":[{\"id\":\"G1\",\"open\":true}],\"ladders\":[[5,2],[5,3],[5,4],[7,4],[7,5],[9,3],[9,4],[9,5]],\"levers\":[{\"at\":[4,4],\"id\":\"L1\",\"on\":true}],\"mechanisms\":{\"hourglasses\":[{\"delayed_tiles\":[[5,1]],\"open_when\":{\"lever\":\"L1\"},\"opened\":true,\"release_move\":2,\"released\":true,\"tiles\":[[5,3]]}]},\"moves\":2,\"player\":[5,4],\"trapped\":false}]",
+    "[\"[\\\"[5,3,\\\\\\\"A\\\\\\\",9,3]\\\",[\\\"G1\\\",true],[\\\"L1\\\",true],{\\\"hourglasses\\\":[{\\\"delayed_tiles\\\":[[5,1]],\\\"open_when\\\":{\\\"lever\\\":\\\"L1\\\"},\\\"opened\\\":true,\\\"release_move\\\":2,\\\"released\\\":true,\\\"tiles\\\":[[5,3]]}]},[[5,2],[5,3],[5,4],[7,4],[7,5],[9,3],[9,4],[9,5]]]\",0,[\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"OPEN\",\"OPEN\",\"OPEN\",\"SOLID\",\"OPEN\",\"OPEN\",\"OPEN\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"OPEN\",\"SOLID\",\"OPEN\",\"OPEN\",\"BOX\",\"OPEN\",\"OPEN\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"OPEN\",\"OPEN\",\"SOLID\",\"OPEN\",\"SOLID\",\"OPEN\",\"OPEN\",\"OPEN\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"WATER\",\"SOLID\",\"WATER\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SAND\",\"WATER\",\"WATER\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SAND\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\"],{\"bag\":{\"sand\":0},\"bombs\":0,\"boxes\":[{\"at\":[9,3],\"id\":\"A\",\"kind\":\"wood\"}],\"gate_crushed\":{},\"gates\":[{\"id\":\"G1\",\"open\":true}],\"ladders\":[[5,2],[5,3],[5,4],[7,4],[7,5],[9,3],[9,4],[9,5]],\"levers\":[{\"at\":[4,4],\"id\":\"L1\",\"on\":true}],\"mechanisms\":{\"hourglasses\":[{\"delayed_tiles\":[[5,1]],\"open_when\":{\"lever\":\"L1\"},\"opened\":true,\"release_move\":2,\"released\":true,\"tiles\":[[5,3]]}]},\"moves\":3,\"player\":[5,3],\"trapped\":false}]",
+    "[\"[\\\"[5,2,\\\\\\\"A\\\\\\\",9,3]\\\",[\\\"G1\\\",true],[\\\"L1\\\",true],{\\\"hourglasses\\\":[{\\\"delayed_tiles\\\":[[5,1]],\\\"open_when\\\":{\\\"lever\\\":\\\"L1\\\"},\\\"opened\\\":true,\\\"release_move\\\":2,\\\"released\\\":true,\\\"tiles\\\":[[5,3]]}]},[[5,2],[5,3],[5,4],[7,4],[7,5],[9,3],[9,4],[9,5]]]\",0,[\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"OPEN\",\"OPEN\",\"OPEN\",\"SOLID\",\"OPEN\",\"OPEN\",\"OPEN\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"OPEN\",\"SOLID\",\"OPEN\",\"OPEN\",\"BOX\",\"OPEN\",\"OPEN\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"OPEN\",\"OPEN\",\"SOLID\",\"OPEN\",\"SOLID\",\"OPEN\",\"OPEN\",\"OPEN\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"WATER\",\"SOLID\",\"WATER\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SAND\",\"WATER\",\"WATER\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SAND\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\"],{\"bag\":{\"sand\":0},\"bombs\":0,\"boxes\":[{\"at\":[9,3],\"id\":\"A\",\"kind\":\"wood\"}],\"gate_crushed\":{},\"gates\":[{\"id\":\"G1\",\"open\":true}],\"ladders\":[[5,2],[5,3],[5,4],[7,4],[7,5],[9,3],[9,4],[9,5]],\"levers\":[{\"at\":[4,4],\"id\":\"L1\",\"on\":true}],\"mechanisms\":{\"hourglasses\":[{\"delayed_tiles\":[[5,1]],\"open_when\":{\"lever\":\"L1\"},\"opened\":true,\"release_move\":2,\"released\":true,\"tiles\":[[5,3]]}]},\"moves\":4,\"player\":[5,2],\"trapped\":false}]",
+    "[\"[\\\"[6,2,\\\\\\\"A\\\\\\\",9,3]\\\",[\\\"G1\\\",true],[\\\"L1\\\",true],{\\\"hourglasses\\\":[{\\\"delayed_tiles\\\":[[5,1]],\\\"open_when\\\":{\\\"lever\\\":\\\"L1\\\"},\\\"opened\\\":true,\\\"release_move\\\":2,\\\"released\\\":true,\\\"tiles\\\":[[5,3]]}]},[[5,2],[5,3],[5,4],[7,4],[7,5],[9,3],[9,4],[9,5]]]\",0,[\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"OPEN\",\"OPEN\",\"OPEN\",\"SOLID\",\"OPEN\",\"OPEN\",\"OPEN\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"OPEN\",\"SOLID\",\"OPEN\",\"OPEN\",\"BOX\",\"OPEN\",\"OPEN\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"OPEN\",\"OPEN\",\"SOLID\",\"OPEN\",\"SOLID\",\"OPEN\",\"OPEN\",\"OPEN\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"WATER\",\"SOLID\",\"WATER\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SAND\",\"WATER\",\"WATER\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SAND\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\"],{\"bag\":{\"sand\":0},\"bombs\":0,\"boxes\":[{\"at\":[9,3],\"id\":\"A\",\"kind\":\"wood\"}],\"gate_crushed\":{},\"gates\":[{\"id\":\"G1\",\"open\":true}],\"ladders\":[[5,2],[5,3],[5,4],[7,4],[7,5],[9,3],[9,4],[9,5]],\"levers\":[{\"at\":[4,4],\"id\":\"L1\",\"on\":true}],\"mechanisms\":{\"hourglasses\":[{\"delayed_tiles\":[[5,1]],\"open_when\":{\"lever\":\"L1\"},\"opened\":true,\"release_move\":2,\"released\":true,\"tiles\":[[5,3]]}]},\"moves\":5,\"player\":[6,2],\"trapped\":false}]",
+    "[\"[\\\"[7,3,\\\\\\\"A\\\\\\\",9,3]\\\",[\\\"G1\\\",true],[\\\"L1\\\",true],{\\\"hourglasses\\\":[{\\\"delayed_tiles\\\":[[5,1]],\\\"open_when\\\":{\\\"lever\\\":\\\"L1\\\"},\\\"opened\\\":true,\\\"release_move\\\":2,\\\"released\\\":true,\\\"tiles\\\":[[5,3]]}]},[[5,2],[5,3],[5,4],[7,4],[7,5],[9,3],[9,4],[9,5]]]\",0,[\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"OPEN\",\"OPEN\",\"OPEN\",\"SOLID\",\"OPEN\",\"OPEN\",\"OPEN\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"OPEN\",\"SOLID\",\"OPEN\",\"OPEN\",\"BOX\",\"OPEN\",\"OPEN\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"OPEN\",\"OPEN\",\"SOLID\",\"OPEN\",\"SOLID\",\"OPEN\",\"OPEN\",\"OPEN\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"WATER\",\"SOLID\",\"WATER\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SAND\",\"WATER\",\"WATER\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SAND\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\"],{\"bag\":{\"sand\":0},\"bombs\":0,\"boxes\":[{\"at\":[9,3],\"id\":\"A\",\"kind\":\"wood\"}],\"gate_crushed\":{},\"gates\":[{\"id\":\"G1\",\"open\":true}],\"ladders\":[[5,2],[5,3],[5,4],[7,4],[7,5],[9,3],[9,4],[9,5]],\"levers\":[{\"at\":[4,4],\"id\":\"L1\",\"on\":true}],\"mechanisms\":{\"hourglasses\":[{\"delayed_tiles\":[[5,1]],\"open_when\":{\"lever\":\"L1\"},\"opened\":true,\"release_move\":2,\"released\":true,\"tiles\":[[5,3]]}]},\"moves\":6,\"player\":[7,3],\"trapped\":false}]",
+    "[\"[\\\"[8,3,\\\\\\\"A\\\\\\\",9,3]\\\",[\\\"G1\\\",true],[\\\"L1\\\",true],{\\\"hourglasses\\\":[{\\\"delayed_tiles\\\":[[5,1]],\\\"open_when\\\":{\\\"lever\\\":\\\"L1\\\"},\\\"opened\\\":true,\\\"release_move\\\":2,\\\"released\\\":true,\\\"tiles\\\":[[5,3]]}]},[[5,2],[5,3],[5,4],[7,4],[7,5],[9,3],[9,4],[9,5]]]\",0,[\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"OPEN\",\"OPEN\",\"OPEN\",\"SOLID\",\"OPEN\",\"OPEN\",\"OPEN\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"OPEN\",\"SOLID\",\"OPEN\",\"OPEN\",\"BOX\",\"OPEN\",\"OPEN\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"OPEN\",\"OPEN\",\"SOLID\",\"OPEN\",\"SOLID\",\"OPEN\",\"OPEN\",\"OPEN\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"WATER\",\"SOLID\",\"WATER\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SAND\",\"WATER\",\"WATER\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SAND\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\"],{\"bag\":{\"sand\":0},\"bombs\":0,\"boxes\":[{\"at\":[9,3],\"id\":\"A\",\"kind\":\"wood\"}],\"gate_crushed\":{},\"gates\":[{\"id\":\"G1\",\"open\":true}],\"ladders\":[[5,2],[5,3],[5,4],[7,4],[7,5],[9,3],[9,4],[9,5]],\"levers\":[{\"at\":[4,4],\"id\":\"L1\",\"on\":true}],\"mechanisms\":{\"hourglasses\":[{\"delayed_tiles\":[[5,1]],\"open_when\":{\"lever\":\"L1\"},\"opened\":true,\"release_move\":2,\"released\":true,\"tiles\":[[5,3]]}]},\"moves\":7,\"player\":[8,3],\"trapped\":false}]",
+    "[\"[\\\"[9,3,\\\\\\\"A\\\\\\\",10,3]\\\",[\\\"G1\\\",true],[\\\"L1\\\",true],{\\\"hourglasses\\\":[{\\\"delayed_tiles\\\":[[5,1]],\\\"open_when\\\":{\\\"lever\\\":\\\"L1\\\"},\\\"opened\\\":true,\\\"release_move\\\":2,\\\"released\\\":true,\\\"tiles\\\":[[5,3]]}]},[[5,2],[5,3],[5,4],[7,4],[7,5],[9,3],[9,4],[9,5]]]\",0,[\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"OPEN\",\"OPEN\",\"OPEN\",\"SOLID\",\"OPEN\",\"OPEN\",\"OPEN\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"OPEN\",\"SOLID\",\"OPEN\",\"OPEN\",\"OPEN\",\"BOX\",\"OPEN\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"OPEN\",\"OPEN\",\"SOLID\",\"OPEN\",\"SOLID\",\"OPEN\",\"OPEN\",\"OPEN\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"WATER\",\"SOLID\",\"WATER\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SAND\",\"WATER\",\"WATER\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SAND\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\"],{\"bag\":{\"sand\":0},\"bombs\":0,\"boxes\":[{\"at\":[10,3],\"id\":\"A\",\"kind\":\"wood\"}],\"gate_crushed\":{},\"gates\":[{\"id\":\"G1\",\"open\":true}],\"ladders\":[[5,2],[5,3],[5,4],[7,4],[7,5],[9,3],[9,4],[9,5]],\"levers\":[{\"at\":[4,4],\"id\":\"L1\",\"on\":true}],\"mechanisms\":{\"hourglasses\":[{\"delayed_tiles\":[[5,1]],\"open_when\":{\"lever\":\"L1\"},\"opened\":true,\"release_move\":2,\"released\":true,\"tiles\":[[5,3]]}]},\"moves\":8,\"player\":[9,3],\"trapped\":false}]",
+    "[\"[\\\"[10,4,\\\\\\\"A\\\\\\\",11,3]\\\",[\\\"G1\\\",true],[\\\"L1\\\",true],{\\\"hourglasses\\\":[{\\\"delayed_tiles\\\":[[5,1]],\\\"open_when\\\":{\\\"lever\\\":\\\"L1\\\"},\\\"opened\\\":true,\\\"release_move\\\":2,\\\"released\\\":true,\\\"tiles\\\":[[5,3]]}]},[[5,2],[5,3],[5,4],[7,4],[7,5],[9,3],[9,4],[9,5]]]\",0,[\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"OPEN\",\"OPEN\",\"OPEN\",\"SOLID\",\"OPEN\",\"OPEN\",\"OPEN\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"OPEN\",\"SOLID\",\"OPEN\",\"OPEN\",\"OPEN\",\"OPEN\",\"BOX\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"OPEN\",\"OPEN\",\"SOLID\",\"OPEN\",\"SOLID\",\"OPEN\",\"OPEN\",\"OPEN\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"WATER\",\"SOLID\",\"WATER\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SAND\",\"WATER\",\"WATER\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SAND\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\"],{\"bag\":{\"sand\":0},\"bombs\":0,\"boxes\":[{\"at\":[11,3],\"id\":\"A\",\"kind\":\"wood\"}],\"gate_crushed\":{},\"gates\":[{\"id\":\"G1\",\"open\":true}],\"ladders\":[[5,2],[5,3],[5,4],[7,4],[7,5],[9,3],[9,4],[9,5]],\"levers\":[{\"at\":[4,4],\"id\":\"L1\",\"on\":true}],\"mechanisms\":{\"hourglasses\":[{\"delayed_tiles\":[[5,1]],\"open_when\":{\"lever\":\"L1\"},\"opened\":true,\"release_move\":2,\"released\":true,\"tiles\":[[5,3]]}]},\"moves\":9,\"player\":[10,4],\"trapped\":false}]"
+  ],
+  "theme_id": "ruins",
+  "title": "沙漏与水钟"
+}

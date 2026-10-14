@@ -1,0 +1,227 @@
+{
+  "display": "macOS",
+  "failures": 2,
+  "levels": [
+    {
+      "id": "D_01",
+      "max_us": 1787,
+      "samples": 253,
+      "won": true
+    },
+    {
+      "id": "D_02",
+      "max_us": 1465,
+      "samples": 216,
+      "won": true
+    },
+    {
+      "id": "D_03",
+      "max_us": 1508,
+      "samples": 330,
+      "won": true
+    },
+    {
+      "id": "D_04",
+      "max_us": 1636,
+      "samples": 330,
+      "won": true
+    },
+    {
+      "id": "D_05",
+      "max_us": 2216,
+      "samples": 501,
+      "won": true
+    },
+    {
+      "id": "D_06",
+      "max_us": 2301,
+      "samples": 1244,
+      "won": true
+    },
+    {
+      "id": "F_01",
+      "max_us": 9000,
+      "samples": 290,
+      "won": true
+    },
+    {
+      "id": "F_02",
+      "max_us": 1506,
+      "samples": 414,
+      "won": true
+    },
+    {
+      "id": "F_03",
+      "max_us": 1434,
+      "samples": 438,
+      "won": true
+    },
+    {
+      "id": "F_04",
+      "max_us": 1898,
+      "samples": 509,
+      "won": true
+    },
+    {
+      "id": "F_05",
+      "max_us": 2905,
+      "samples": 536,
+      "won": true
+    },
+    {
+      "id": "F_06",
+      "max_us": 1544,
+      "samples": 638,
+      "won": true
+    },
+    {
+      "id": "R_01",
+      "max_us": 1746,
+      "samples": 179,
+      "won": true
+    },
+    {
+      "id": "R_02",
+      "max_us": 1473,
+      "samples": 341,
+      "won": true
+    },
+    {
+      "id": "R_03",
+      "max_us": 1665,
+      "samples": 491,
+      "won": true
+    },
+    {
+      "id": "R_04",
+      "max_us": 3267,
+      "samples": 286,
+      "won": true
+    },
+    {
+      "id": "R_05",
+      "max_us": 2087,
+      "samples": 1065,
+      "won": true
+    },
+    {
+      "id": "R_06",
+      "max_us": 2364,
+      "samples": 1848,
+      "won": true
+    },
+    {
+      "id": "C_01",
+      "max_us": 1302,
+      "samples": 159,
+      "won": true
+    },
+    {
+      "id": "C_02",
+      "max_us": 1713,
+      "samples": 304,
+      "won": true
+    },
+    {
+      "id": "C_03",
+      "max_us": 1540,
+      "samples": 396,
+      "won": true
+    },
+    {
+      "id": "C_04",
+      "max_us": 1625,
+      "samples": 160,
+      "won": true
+    },
+    {
+      "id": "C_05",
+      "max_us": 1601,
+      "samples": 838,
+      "won": true
+    },
+    {
+      "id": "C_06",
+      "max_us": 1751,
+      "samples": 844,
+      "won": true
+    },
+    {
+      "id": "S_01",
+      "max_us": 1758,
+      "samples": 353,
+      "won": true
+    },
+    {
+      "id": "S_02",
+      "max_us": 1490,
+      "samples": 365,
+      "won": true
+    },
+    {
+      "id": "S_03",
+      "max_us": 2265,
+      "samples": 401,
+      "won": true
+    },
+    {
+      "id": "S_04",
+      "max_us": 10348,
+      "samples": 417,
+      "won": true
+    },
+    {
+      "id": "S_05",
+      "max_us": 3702,
+      "samples": 460,
+      "won": true
+    },
+    {
+      "id": "S_06",
+      "max_us": 1702,
+      "samples": 703,
+      "won": true
+    },
+    {
+      "id": "X_01",
+      "max_us": 1459,
+      "samples": 191,
+      "won": true
+    },
+    {
+      "id": "X_02",
+      "max_us": 2561,
+      "samples": 223,
+      "won": true
+    },
+    {
+      "id": "X_03",
+      "max_us": 1608,
+      "samples": 419,
+      "won": true
+    },
+    {
+      "id": "X_04",
+      "max_us": 1477,
+      "samples": 695,
+      "won": true
+    },
+    {
+      "id": "X_05",
+      "max_us": 2151,
+      "samples": 869,
+      "won": true
+    },
+    {
+      "id": "X_06",
+      "max_us": 2170,
+      "samples": 1147,
+      "won": true
+    }
+  ],
+  "max_us": 10348,
+  "p95_us": 1093,
+  "samples": 18853,
+  "threshold_us": 4000,
+  "workers": 1
+}

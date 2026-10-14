@@ -1,0 +1,251 @@
+{
+  "status": "implementation_complete_final_performance_gate_pending",
+  "local_checkpoint_only": true,
+  "full_delivery_complete": false,
+  "source_files_checked": 133,
+  "frozen_files_unchanged": 17,
+  "historical_evidence_preserved": true,
+  "latest_full_run": "runs/full-10",
+  "scripts_executed": 25,
+  "scripts_passed": 24,
+  "campaign_solved": "36/36",
+  "author_actions": 856,
+  "campaign_checks": 8929,
+  "art_ui_checks": 288,
+  "T8": {
+    "display": "macOS",
+    "failures": 13,
+    "levels": [
+      {
+        "id": "D_01",
+        "max_us": 3163,
+        "samples": 254,
+        "won": true
+      },
+      {
+        "id": "D_02",
+        "max_us": 1684,
+        "samples": 216,
+        "won": true
+      },
+      {
+        "id": "D_03",
+        "max_us": 4684,
+        "samples": 329,
+        "won": true
+      },
+      {
+        "id": "D_04",
+        "max_us": 1742,
+        "samples": 329,
+        "won": true
+      },
+      {
+        "id": "D_05",
+        "max_us": 2960,
+        "samples": 500,
+        "won": true
+      },
+      {
+        "id": "D_06",
+        "max_us": 3815,
+        "samples": 1246,
+        "won": true
+      },
+      {
+        "id": "F_01",
+        "max_us": 2974,
+        "samples": 290,
+        "won": true
+      },
+      {
+        "id": "F_02",
+        "max_us": 5574,
+        "samples": 415,
+        "won": true
+      },
+      {
+        "id": "F_03",
+        "max_us": 1935,
+        "samples": 437,
+        "won": true
+      },
+      {
+        "id": "F_04",
+        "max_us": 3946,
+        "samples": 509,
+        "won": true
+      },
+      {
+        "id": "F_05",
+        "max_us": 1955,
+        "samples": 537,
+        "won": true
+      },
+      {
+        "id": "F_06",
+        "max_us": 2298,
+        "samples": 638,
+        "won": true
+      },
+      {
+        "id": "R_01",
+        "max_us": 1562,
+        "samples": 177,
+        "won": true
+      },
+      {
+        "id": "R_02",
+        "max_us": 1595,
+        "samples": 342,
+        "won": true
+      },
+      {
+        "id": "R_03",
+        "max_us": 5428,
+        "samples": 490,
+        "won": true
+      },
+      {
+        "id": "R_04",
+        "max_us": 2590,
+        "samples": 286,
+        "won": true
+      },
+      {
+        "id": "R_05",
+        "max_us": 2785,
+        "samples": 1067,
+        "won": true
+      },
+      {
+        "id": "R_06",
+        "max_us": 25901,
+        "samples": 1851,
+        "won": true
+      },
+      {
+        "id": "C_01",
+        "max_us": 5311,
+        "samples": 159,
+        "won": true
+      },
+      {
+        "id": "C_02",
+        "max_us": 2205,
+        "samples": 304,
+        "won": true
+      },
+      {
+        "id": "C_03",
+        "max_us": 2466,
+        "samples": 395,
+        "won": true
+      },
+      {
+        "id": "C_04",
+        "max_us": 2160,
+        "samples": 159,
+        "won": true
+      },
+      {
+        "id": "C_05",
+        "max_us": 8914,
+        "samples": 837,
+        "won": true
+      },
+      {
+        "id": "C_06",
+        "max_us": 3143,
+        "samples": 845,
+        "won": true
+      },
+      {
+        "id": "S_01",
+        "max_us": 1538,
+        "samples": 351,
+        "won": true
+      },
+      {
+        "id": "S_02",
+        "max_us": 1900,
+        "samples": 365,
+        "won": true
+      },
+      {
+        "id": "S_03",
+        "max_us": 3093,
+        "samples": 405,
+        "won": true
+      },
+      {
+        "id": "S_04",
+        "max_us": 4400,
+        "samples": 416,
+        "won": true
+      },
+      {
+        "id": "S_05",
+        "max_us": 4627,
+        "samples": 489,
+        "won": true
+      },
+      {
+        "id": "S_06",
+        "max_us": 2123,
+        "samples": 702,
+        "won": true
+      },
+      {
+        "id": "X_01",
+        "max_us": 1329,
+        "samples": 191,
+        "won": true
+      },
+      {
+        "id": "X_02",
+        "max_us": 2661,
+        "samples": 221,
+        "won": true
+      },
+      {
+        "id": "X_03",
+        "max_us": 2209,
+        "samples": 420,
+        "won": true
+      },
+      {
+        "id": "X_04",
+        "max_us": 2483,
+        "samples": 695,
+        "won": true
+      },
+      {
+        "id": "X_05",
+        "max_us": 5430,
+        "samples": 868,
+        "won": true
+      },
+      {
+        "id": "X_06",
+        "max_us": 5943,
+        "samples": 1147,
+        "won": true
+      }
+    ],
+    "max_us": 25901,
+    "p95_us": 1519,
+    "samples": 18882,
+    "threshold_us": 4000,
+    "workers": 1
+  },
+  "current_package_matches_source": false,
+  "existing_package_source_run": "runs/full-04",
+  "next_owner": "current Codex chat",
+  "next_action": "When global compute resources are free, run a fresh complete 25-script gate, then package, verify, update evidence, and seal the candidate.",
+  "user_acceptance": false,
+  "formal_release": false,
+  "screenshots": 164,
+  "rendered_views": 82,
+  "prior_passing_evidence": "verification-before-surface-fix.json"
+}

@@ -1,0 +1,145 @@
+{
+  "biome_mechanisms": {},
+  "budget": {
+    "bombs": 0.0,
+    "sand_cells": 256.0
+  },
+  "campaign": {
+    "index": 1.0,
+    "map": 0.0,
+    "stars": 1.0
+  },
+  "content": "default",
+  "entities": {
+    "boxes": [
+      {
+        "at": [
+          3.0,
+          4.0
+        ],
+        "id": "A",
+        "kind": "wood"
+      }
+    ],
+    "ladders": [
+      [
+        6.0,
+        3.0
+      ],
+      [
+        6.0,
+        4.0
+      ],
+      [
+        2.0,
+        3.0
+      ],
+      [
+        2.0,
+        4.0
+      ],
+      [
+        3.0,
+        3.0
+      ],
+      [
+        4.0,
+        3.0
+      ],
+      [
+        5.0,
+        3.0
+      ]
+    ],
+    "levers": [],
+    "player": [
+      6.0,
+      4.0
+    ],
+    "targets": [
+      [
+        9.0,
+        4.0
+      ]
+    ]
+  },
+  "format": "pushbox.level/1",
+  "hints": [],
+  "id": "D_02",
+  "legend": {
+    "#": "bedrock",
+    ".": "empty",
+    "G": "gate",
+    "a": "acid",
+    "c": "cracked_rock",
+    "h": {
+      "fill": 0.5,
+      "material": "sand"
+    },
+    "i": "ice",
+    "m": "lava",
+    "q": {
+      "fill": 0.75,
+      "material": "sand"
+    },
+    "s": "sand",
+    "u": "pumice",
+    "w": "water"
+  },
+  "map": [
+    ".##########.",
+    "##..#..#..##",
+    "#..........#",
+    "#......G...#",
+    "#......G...#",
+    "#.#####G###.",
+    "#.#########."
+  ],
+  "mechanisms": [
+    {
+      "id": "G1",
+      "kind": "gate",
+      "open_when": {
+        "by": "player",
+        "plate": [
+          6.0,
+          4.0
+        ]
+      },
+      "tiles": [
+        [
+          7.0,
+          3.0
+        ],
+        [
+          7.0,
+          4.0
+        ],
+        [
+          7.0,
+          5.0
+        ]
+      ]
+    }
+  ],
+  "seed": 1.0,
+  "solution": [
+    "POUR_R",
+    "U",
+    "L",
+    "L",
+    "L",
+    "L",
+    "D",
+    "R",
+    "R",
+    "R",
+    "R",
+    "R",
+    "R"
+  ],
+  "solution_hashes": [],
+  "solution_keys": [],
+  "theme_id": "dungeon",
+  "title": "一沙卡千斤"
+}

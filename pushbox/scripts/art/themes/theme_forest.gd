@@ -12,14 +12,4 @@ static func spec() -> Dictionary:
 	},{"e4a672":"63c74d", "b86f50":"3e8948", "733e39":"265c42", "8b9bb4":"3e8948", "5a6988":"265c42", "fee761":"63c74d"})
 
 static func background(size: Vector2i) -> Image:
-	var image: Image = Ops.canvas(size,Color("193c3e"))
-	for x in range(-32,size.x,64):
-		Ops.rect(image,x+16,0,18,size.y,Color("265c42"))
-		Ops.rect(image,x+20,0,10,size.y,Color("3e2731"))
-		for y in range(0,size.y,45):
-			Ops.rect(image,x+4,y+6,46,9,Color("265c42"))
-			Ops.rect(image,x+8,y+2,36,5,Color("265c42"))
-			Ops.line(image,Vector2i(x+44,y+8),Vector2i(x+40,y+34),Color("3e8948"))
-			Ops.rect(image,x+38,y+18,4,2,Color("3e8948"))
-			Ops.rect(image,x+52,y+30,1,1,Color("63c74d"))
-	return image
+	return preload("res://pushbox/scripts/art/themes/natural_backdrops.gd").forest(size)

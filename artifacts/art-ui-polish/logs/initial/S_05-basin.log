@@ -1,0 +1,7 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+S_05 OPEN player=(4, 3) boxes=[{ "id": "A", "at": (6, 4), "kind": "wood" }, { "id": "I", "at": (3, 4), "kind": "iron" }]
+RECORDED S_05 actions=15
+Record campaign: 1 solved
+TEST USER DIR: /Users/key_/Library/Application Support/CodexPushboxTests/codex-pushbox-test-nbsquj5i
+Executed 1/1 test scripts; passed=True; T2 threads 4/8 NOT RUN.

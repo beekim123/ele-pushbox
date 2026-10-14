@@ -40,7 +40,7 @@ func run() -> void:
 		check(session.board.won() and session.errors.is_empty(), "packed tutorial victory")
 		session.dispose()
 		print("PACKAGE T%02d replay/undo PASS" % (room+1))
-	if OS.has_feature("stage2a"):
+	if OS.has_feature("stage2a") or OS.has_feature("art-ui-polish"):
 		for map in 6:
 			for index in 6:
 				var session := Session.new()

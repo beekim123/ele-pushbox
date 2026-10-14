@@ -3,6 +3,10 @@ extends Node2D
 const Style := preload("res://pushbox/scripts/ui/pixel_style.gd")
 const Art := preload("res://pushbox/scripts/art/art_registry.gd")
 const Gates := preload("res://pushbox/scripts/render/gate_painter.gd")
+const Ecology := preload("res://pushbox/scripts/render/ambient_ecology.gd")
+var ecology_enabled: bool = false
+var ecology_points: Dictionary = {}
+var ecology_background: Node2D
 const SIZE := 16.0
 var theme_id: String = "dungeon"
 var board: RefCounted
@@ -156,13 +160,17 @@ func _draw() -> void:
 	if board == null:
 		return
 	var lantern: Vector2 = Vector2(board.origin) * 16 + Vector2(int((20 - board.origin.x * 2) / 2) * 16, 16)
-	_sprite("lantern_idle_%d" % (int(clock * 2) % 2), lantern)
+	_sprite("lantern_idle_%d" % (int(clock * 4) % (4 if ecology_enabled else 2)), lantern)
+	if ecology_enabled:
+		var occupied: Array = [board.player]
+		for box in board.boxes: occupied.append(box.at)
+		Ecology.surface(self,theme_id,clock,ecology_points,occupied)
 	for at in board.targets:
 		_sprite("target_%s_%d" % ["lit" if winning or board.box_at(at) >= 0 else "idle", int(clock * 8) % (2 if winning or board.box_at(at) >= 0 else 4)], Vector2(at) * SIZE)
 		if winning or board.box_at(at) >= 0:
 			draw_rect(Rect2(Vector2(at) * 16 + Vector2(1,1), Vector2(14,14)), Style.YELLOW, false)
 	for prop in board.Biome.props(board):
-		draw_texture_rect(Style.themed_texture(prop.sprite, theme_id), Rect2(Vector2(prop.at) * SIZE, Vector2(16,16)), false)
+		draw_texture(Style.themed_texture(Ecology.prop_name(prop.sprite,clock), theme_id), Vector2(prop.at) * SIZE + Ecology.prop_offset(prop.sprite,clock,Vector2(prop.at)*SIZE))
 	for at in board.ladders:
 		_sprite("vine_ladder_0" if not board.mechanisms.get("vine_seeds", []).is_empty() else "ladder_static_0", Vector2(at) * SIZE)
 	for lever in board.levers:
@@ -256,4 +264,4 @@ func _draw() -> void:
 		draw_rect(Rect2(-global_position, get_viewport_rect().size), Color.WHITE)
 	if entrance > 0 or exit_fade > 0:
 		draw_rect(Rect2(-global_position, get_viewport_rect().size), Color(Style.INK, maxf(entrance, exit_fade)))
-	draw_us = Time.get_ticks_usec() - started
+	draw_us = Time.get_ticks_usec() - started + (ecology_background.draw_us if ecology_enabled and ecology_background != null else 0)

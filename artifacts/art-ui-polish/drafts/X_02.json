@@ -1,0 +1,124 @@
+{
+  "biome_mechanisms": {
+    "teleporters": [
+      {
+        "from": [
+          2.0,
+          2.0
+        ],
+        "to": [
+          5.0,
+          2.0
+        ]
+      }
+    ]
+  },
+  "budget": {
+    "bombs": 0.0,
+    "sand_cells": 256.0
+  },
+  "campaign": {
+    "index": 1.0,
+    "map": 5.0,
+    "stars": 1.0
+  },
+  "content": "default",
+  "entities": {
+    "boxes": [
+      {
+        "at": [
+          7.0,
+          3.0
+        ],
+        "id": "A",
+        "kind": "wood"
+      }
+    ],
+    "ladders": [
+      [
+        5.0,
+        2.0
+      ],
+      [
+        5.0,
+        3.0
+      ],
+      [
+        5.0,
+        4.0
+      ],
+      [
+        7.0,
+        2.0
+      ],
+      [
+        7.0,
+        3.0
+      ]
+    ],
+    "levers": [],
+    "player": [
+      1.0,
+      1.0
+    ],
+    "targets": [
+      [
+        9.0,
+        2.0
+      ]
+    ]
+  },
+  "format": "pushbox.level/1",
+  "hints": [],
+  "id": "X_02",
+  "legend": {
+    "#": "bedrock",
+    ".": "empty",
+    "G": "gate",
+    "a": "acid",
+    "c": "cracked_rock",
+    "h": {
+      "fill": 0.5,
+      "material": "sand"
+    },
+    "i": "ice",
+    "m": "lava",
+    "q": {
+      "fill": 0.75,
+      "material": "sand"
+    },
+    "s": "sand",
+    "u": "pumice",
+    "v": {
+      "fill": 0.4375,
+      "material": "water"
+    },
+    "w": "water"
+  },
+  "map": [
+    "...########...",
+    "..........##..",
+    ".#.#........#.",
+    "#####v#.##..##",
+    "##..#w#w#...##",
+    ".#..#www#...#.",
+    "..###w######..",
+    "...########..."
+  ],
+  "mechanisms": [],
+  "seed": 1.0,
+  "solution": [
+    "POUR_R",
+    "R",
+    "R",
+    "R",
+    "R",
+    "R",
+    "R",
+    "R"
+  ],
+  "solution_hashes": [],
+  "solution_keys": [],
+  "theme_id": "cosmos",
+  "title": "隔空传沙"
+}

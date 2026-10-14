@@ -1,0 +1,6 @@
+{
+  "test": "reject old full-04 before rebuilding current-source package",
+  "passed": true,
+  "expected_error": "full-run source snapshot missing or changed",
+  "original_package_preserved": true
+}

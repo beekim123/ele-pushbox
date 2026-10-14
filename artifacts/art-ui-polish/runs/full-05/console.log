@@ -1,0 +1,478 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+PASS M0: locked content loads; 320x192 world starts; tick=1
+TEST USER DIR: /Users/key_/Library/Application Support/CodexPushboxTests/codex-pushbox-test-0cgfrtxn
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+Board tests: 0 failures
+TEST USER DIR: /Users/key_/Library/Application Support/CodexPushboxTests/codex-pushbox-test-0cgfrtxn
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+D1 step=1 action=U ticks=4 rounds=1 player=(1, 3) bag=0 hash=dc185164bc71da72
+D1 step=2 action=U ticks=4 rounds=1 player=(1, 2) bag=0 hash=92aa9ae3a0df0ef9
+D1 step=3 action=R ticks=4 rounds=1 player=(2, 2) bag=0 hash=9c118dbd0d309093
+D1 step=4 action=R ticks=5 rounds=1 player=(3, 2) bag=0 hash=d69069f6580427d2
+D1 step=5 action=R ticks=5 rounds=1 player=(4, 2) bag=0 hash=fff911c693990598
+D1 step=6 action=R ticks=10 rounds=2 player=(5, 2) bag=0 hash=f5035a8f3add078b
+D1 WIN=true ticks=37
+D2 step=1 action=DIG_L ticks=44 rounds=1 player=(3, 4) bag=220 hash=339aaeb3687396b7
+D2 step=2 action=POUR_R ticks=35 rounds=1 player=(3, 4) bag=0 hash=27bb5f54384f8476
+D2 step=3 action=R ticks=4 rounds=1 player=(4, 3) bag=0 hash=63cac42c0b3935e3
+D2 step=4 action=R ticks=4 rounds=1 player=(5, 2) bag=0 hash=31113d1fdac22dca
+D2 step=5 action=R ticks=5 rounds=1 player=(6, 2) bag=0 hash=af053012b776b637
+D2 step=6 action=R ticks=10 rounds=2 player=(7, 2) bag=0 hash=0e2e31d497c8f065
+D2 WIN=true ticks=152
+D3 step=1 action=R ticks=4 rounds=1 player=(2, 3) bag=0 hash=6c77ed462cce8dc5
+D3 step=2 action=R ticks=4 rounds=1 player=(3, 3) bag=0 hash=d8d569268294f14c
+D3 step=3 action=R ticks=4 rounds=1 player=(4, 3) bag=0 hash=13f8c0830031d113
+D3 step=4 action=R ticks=4 rounds=1 player=(5, 3) bag=0 hash=59f5bb80d275b555
+D3 step=5 action=R ticks=4 rounds=1 player=(6, 3) bag=0 hash=1ce3c8ab691c269d
+D3 step=6 action=USE ticks=102 rounds=5 player=(6, 3) bag=0 hash=5b849c5bf5cee94f
+D3 step=7 action=L ticks=6 rounds=1 player=(5, 3) bag=0 hash=65c8632813915f79
+D3 step=8 action=L ticks=5 rounds=1 player=(4, 3) bag=0 hash=6b44de6c77bef0d6
+D3 step=9 action=L ticks=5 rounds=1 player=(3, 3) bag=0 hash=eaed66cff82f8d0e
+D3 WIN=true ticks=143
+D4 step=1 action=R ticks=4 rounds=1 player=(2, 2) bag=0 hash=6a830204f1d2ddcd
+D4 step=2 action=R ticks=5 rounds=1 player=(3, 2) bag=0 hash=3ef9cda82f3559af
+D4 step=3 action=R ticks=10 rounds=2 player=(4, 2) bag=0 hash=8de36221ec1a3db9
+D4 step=4 action=R ticks=4 rounds=1 player=(5, 2) bag=0 hash=9a8bd44317b05c07
+D4 step=5 action=R ticks=4 rounds=1 player=(6, 2) bag=0 hash=9b249f04b16db844
+D4 step=6 action=R ticks=4 rounds=1 player=(7, 2) bag=0 hash=c36b8cdc1688c128
+D4 step=7 action=R ticks=4 rounds=1 player=(8, 1) bag=0 hash=60a52b4f119ca97b
+D4 step=8 action=R ticks=4 rounds=1 player=(9, 1) bag=0 hash=b40c2553cd2cb826
+D4 step=9 action=R ticks=8 rounds=2 player=(10, 2) bag=0 hash=c39def219e88edaa
+D4 step=10 action=BOMB_L ticks=6 rounds=1 player=(10, 2) bag=0 hash=724bd89f774b2c4e
+D4 step=11 action=L ticks=4 rounds=1 player=(9, 2) bag=0 hash=2983bd526e49ce03
+D4 step=12 action=L ticks=5 rounds=1 player=(8, 2) bag=0 hash=63a73ebeee246a90
+D4 WIN=true ticks=67
+D5 step=1 action=BOMB_L ticks=91 rounds=1 player=(3, 2) bag=0 hash=39b920601b441fcd
+D5 step=2 action=L ticks=4 rounds=1 player=(2, 2) bag=0 hash=772c8d8aa281ba02
+D5 step=3 action=DIG_L ticks=18 rounds=1 player=(2, 2) bag=200 hash=9876d27dfca96ca9
+D5 step=4 action=L ticks=4 rounds=1 player=(1, 2) bag=200 hash=ce72cf306ebca63a
+D5 step=5 action=DIG_D ticks=22 rounds=2 player=(1, 3) bag=456 hash=53bc47f276c51b1b
+D5 step=6 action=R ticks=4 rounds=1 player=(2, 2) bag=456 hash=8832b6b7acb67b21
+D5 step=7 action=R ticks=4 rounds=1 player=(3, 2) bag=456 hash=8bbe5924d510cbaf
+D5 step=8 action=R ticks=4 rounds=1 player=(4, 2) bag=456 hash=abe44cbb948d810e
+D5 step=9 action=POUR_R ticks=83 rounds=2 player=(4, 2) bag=200 hash=e9ab3943026fc146
+D5 step=10 action=POUR_R ticks=73 rounds=1 player=(4, 2) bag=0 hash=f7f1a8a5888c3292
+D5 step=11 action=R ticks=4 rounds=1 player=(5, 2) bag=0 hash=d54bc06a0aaae838
+D5 step=12 action=R ticks=4 rounds=1 player=(6, 2) bag=0 hash=4ef33b653da9534b
+D5 step=13 action=R ticks=6 rounds=1 player=(7, 2) bag=0 hash=6f3a8744ed5dbd9f
+D5 step=14 action=R ticks=5 rounds=1 player=(8, 2) bag=0 hash=bccb123a3177c99e
+D5 WIN=true ticks=331
+M1: 0 failures
+TEST USER DIR: /Users/key_/Library/Application Support/CodexPushboxTests/codex-pushbox-test-0cgfrtxn
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+Edge cases: 1239 checks, 0 failures
+TEST USER DIR: /Users/key_/Library/Application Support/CodexPushboxTests/codex-pushbox-test-0cgfrtxn
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+PASS T1/T4/T5/T6/T7 D1
+PASS T1/T4/T5/T6/T7 D2
+PASS T1/T4/T5/T6/T7 D3
+PASS T1/T4/T5/T6/T7 D4
+PASS T1/T4/T5/T6/T7 D5
+PASS T3/T2 variant {"classify":{"threshold":104}}
+PASS T3/T2 variant {"classify":{"threshold":152}}
+PASS T3/T2 variant {"box_kinds":{"wood":{"float_support":48}}}
+PASS T3/T2 variant {"box_kinds":{"wood":{"float_support":80}}}
+PASS T3/T2 variant {"box_kinds":{"wood":{"float_support":48}},"classify":{"threshold":104}}
+PASS T3/T2 variant {"box_kinds":{"wood":{"float_support":80}},"classify":{"threshold":104}}
+PASS T3/T2 variant {"box_kinds":{"wood":{"float_support":48}},"classify":{"threshold":152}}
+PASS T3/T2 variant {"box_kinds":{"wood":{"float_support":80}},"classify":{"threshold":152}}
+PASS T3/T2 variant {}
+T2 threads 4/8: NOT RUN (explicit user resource constraint)
+Acceptance: 1763 checks, 0 failures
+TEST USER DIR: /Users/key_/Library/Application Support/CodexPushboxTests/codex-pushbox-test-0cgfrtxn
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+TEST USER DIR: /Users/key_/Library/Application Support/CodexPushboxTests/codex-pushbox-test-0cgfrtxn
+Session scheduling: 1309 checks, 0 failures
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+TEST USER DIR: /Users/key_/Library/Application Support/CodexPushboxTests/codex-pushbox-test-0cgfrtxn
+UI D1 victory=true
+UI D2 victory=true
+UI D3 victory=true
+UI D4 victory=true
+UI D5 victory=true
+UI: 0 failures
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+TEST USER DIR: /Users/key_/Library/Application Support/CodexPushboxTests/codex-pushbox-test-0cgfrtxn
+v03 input: 17 checks, 0 failures
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+TEST USER DIR: /Users/key_/Library/Application Support/CodexPushboxTests/codex-pushbox-test-0cgfrtxn
+UI failure paths: 4 checks, 0 failures
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+WARN BAND {"category":"WATER","cells":160,"room":3,"step":6,"tag":"fluid","tile":[5,4]}
+WARN BAND {"category":"WATER","cells":160,"room":3,"step":7,"tag":"fluid","tile":[5,4]}
+WARN BAND {"category":"WATER","cells":160,"room":3,"step":8,"tag":"fluid","tile":[5,4]}
+WARN BAND {"category":"WATER","cells":160,"room":3,"step":9,"tag":"fluid","tile":[5,4]}
+WARN BAND {"category":"WATER","cells":128,"room":5,"step":9,"tag":"fluid","tile":[5,3]}
+WARN BAND {"category":"WATER","cells":128,"room":5,"step":9,"tag":"fluid","tile":[7,3]}
+Snapshots [{"room":1,"sdk_bytes":249002},{"room":2,"sdk_bytes":244612},{"room":3,"sdk_bytes":244561},{"room":4,"sdk_bytes":252281},{"room":5,"sdk_bytes":253288}]
+Inspection: 0 errors
+TEST USER DIR: /Users/key_/Library/Application Support/CodexPushboxTests/codex-pushbox-test-0cgfrtxn
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+TEST USER DIR: /Users/key_/Library/Application Support/CodexPushboxTests/codex-pushbox-test-0cgfrtxn
+Guides: 21 checks, 0 failures
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+OpenGL API 4.1 Metal - 89.4 - Compatibility - Using Device: Apple - Apple M3
+
+TEST USER DIR: /Users/key_/Library/Application Support/CodexPushboxTests/codex-pushbox-test-0cgfrtxn
+v03 presentation: 7 checks, 0 failures
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+OpenGL API 4.1 Metal - 89.4 - Compatibility - Using Device: Apple - Apple M3
+
+TEST USER DIR: /Users/key_/Library/Application Support/CodexPushboxTests/codex-pushbox-test-0cgfrtxn
+v03 render: 4 checks, 0 failures
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+OpenGL API 4.1 Metal - 89.4 - Compatibility - Using Device: Apple - Apple M3
+
+TEST USER DIR: /Users/key_/Library/Application Support/CodexPushboxTests/codex-pushbox-test-0cgfrtxn
+RESIZE physical=(1280, 720) logical=(320.0, 180.0) screen_scale=(4.0, 4.0)
+RESIZE physical=(960, 720) logical=(320.0, 240.0) screen_scale=(3.0, 3.0)
+RESIZE physical=(1200, 540) logical=(400.0, 180.0) screen_scale=(3.0, 3.0)
+RESIZE physical=(1000, 700) logical=(333.0, 233.0) screen_scale=(3.0, 3.0)
+RESIZE physical=(480, 720) logical=(480.0, 720.0) screen_scale=(1.0, 1.0)
+RESIZE physical=(1200, 540) logical=(400.0, 180.0) screen_scale=(3.0, 3.0)
+RESIZE physical=(1280, 720) logical=(320.0, 180.0) screen_scale=(4.0, 4.0)
+Bugfix: 40 checks, 0 failures
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+Procedural art: 206 checks, 0 failures
+TEST USER DIR: /Users/key_/Library/Application Support/CodexPushboxTests/codex-pushbox-test-0cgfrtxn
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+TEST USER DIR: /Users/key_/Library/Application Support/CodexPushboxTests/codex-pushbox-test-0cgfrtxn
+Lobby stage1: 20 checks, 0 failures
+WARNING: 无法保存进度
+     at: push_warning (core/variant/variant_utility.cpp:1033)
+     GDScript backtrace (most recent call first):
+         [0] stage_progress (res://pushbox/scripts/ui/lobby_view.gd:88)
+         [1] save_progress (res://pushbox/scripts/ui/lobby_view.gd:142)
+         [2] mark_completed (res://pushbox/scripts/ui/lobby_view.gd:79)
+         [3] run (res://tests/lobby_stage1.gd:68)
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+OpenGL API 4.1 Metal - 89.4 - Compatibility - Using Device: Apple - Apple M3
+
+TEST USER DIR: /Users/key_/Library/Application Support/CodexPushboxTests/codex-pushbox-test-0cgfrtxn
+TEST TIMING WINDOW: focused=false
+Tutorial T01 checked
+Tutorial T02 checked
+Tutorial T03 checked
+Tutorial T04 checked
+Tutorial UI begin room=1 move=0 action=R
+Tutorial UI end room=1 move=1 running=false
+Tutorial UI begin room=1 move=1 action=U
+Tutorial UI end room=1 move=2 running=false
+Tutorial UI begin room=1 move=2 action=U
+Tutorial UI end room=1 move=3 running=false
+Tutorial UI begin room=1 move=3 action=R
+Tutorial UI end room=1 move=4 running=false
+Tutorial UI begin room=1 move=4 action=R
+Tutorial UI end room=1 move=5 running=false
+Tutorial UI begin room=1 move=5 action=R
+Tutorial UI end room=1 move=6 running=false
+Tutorial UI begin room=1 move=6 action=R
+Tutorial UI end room=1 move=7 running=false
+Tutorial UI begin room=1 move=7 action=R
+Tutorial UI end room=1 move=8 running=false
+Tutorial UI begin room=2 move=0 action=DIG_L
+Tutorial preview room=2 action=DIG_L cpu_us=18705 latency_us=46557 phases={"CATEGORIES":462,"CLASSIFY":296,"COUNTS":1985,"KEY":113,"READ":335,"RESOLVE":168,"TICKS":2354,"begin":11745,"finish":1247} slices=[3547,3555]
+Tutorial UI end room=2 move=1 running=false
+Tutorial UI begin room=2 move=1 action=L
+Tutorial UI end room=2 move=2 running=false
+Tutorial UI begin room=2 move=2 action=DIG_L
+Tutorial preview room=2 action=DIG_L cpu_us=18352 latency_us=34565 phases={"CATEGORIES":436,"CLASSIFY":277,"COUNTS":1649,"KEY":101,"READ":352,"RESOLVE":144,"TICKS":853,"begin":13156,"finish":1384} slices=[3579,1686]
+Tutorial UI end room=2 move=3 running=false
+Tutorial UI begin room=2 move=3 action=R
+Tutorial UI end room=2 move=4 running=false
+Tutorial UI begin room=2 move=4 action=POUR_R
+Tutorial preview room=2 action=POUR_R cpu_us=18860 latency_us=37278 phases={"CATEGORIES":437,"CLASSIFY":165,"COUNTS":1796,"KEY":105,"READ":328,"RESOLVE":139,"TICKS":1336,"begin":13391,"finish":1163} slices=[3581,1993]
+Tutorial UI end room=2 move=5 running=false
+Tutorial UI begin room=2 move=5 action=R
+Tutorial UI end room=2 move=6 running=false
+Tutorial UI begin room=2 move=6 action=R
+Tutorial UI end room=2 move=7 running=false
+Tutorial UI begin room=2 move=7 action=R
+Tutorial UI end room=2 move=8 running=false
+Tutorial UI begin room=2 move=8 action=R
+Tutorial UI end room=2 move=9 running=false
+Tutorial UI begin room=3 move=0 action=R
+Tutorial UI end room=3 move=1 running=false
+Tutorial UI begin room=3 move=1 action=R
+Tutorial UI end room=3 move=2 running=false
+Tutorial UI begin room=3 move=2 action=USE
+Tutorial UI end room=3 move=3 running=false
+Tutorial UI begin room=3 move=3 action=POUR_R
+Tutorial preview room=3 action=POUR_R cpu_us=31452 latency_us=87438 phases={"CATEGORIES":385,"CLASSIFY":167,"COUNTS":2012,"KEY":92,"READ":742,"RESOLVE":506,"TICKS":13214,"begin":13319,"finish":1015} slices=[3625,3538,3538,3642,3950]
+Tutorial UI end room=3 move=4 running=false
+Tutorial UI begin room=3 move=4 action=R
+Tutorial UI end room=3 move=5 running=false
+Tutorial UI begin room=3 move=5 action=R
+Tutorial UI end room=3 move=6 running=false
+Tutorial UI begin room=3 move=6 action=R
+Tutorial UI end room=3 move=7 running=false
+Tutorial UI begin room=3 move=7 action=R
+Tutorial UI end room=3 move=8 running=false
+Tutorial UI begin room=4 move=0 action=R
+Tutorial UI end room=4 move=1 running=false
+Tutorial UI begin room=4 move=1 action=R
+Tutorial UI end room=4 move=2 running=false
+Tutorial UI begin room=4 move=2 action=R
+Tutorial UI end room=4 move=3 running=false
+Tutorial UI begin room=4 move=3 action=R
+Tutorial UI end room=4 move=4 running=false
+Tutorial UI begin room=4 move=4 action=R
+Tutorial UI end room=4 move=5 running=false
+Tutorial UI begin room=4 move=5 action=R
+Tutorial UI end room=4 move=6 running=false
+Tutorial UI begin room=4 move=6 action=R
+Tutorial UI end room=4 move=7 running=false
+Tutorial UI begin room=4 move=7 action=R
+Tutorial UI end room=4 move=8 running=false
+Tutorial UI begin room=4 move=8 action=R
+Tutorial UI end room=4 move=9 running=false
+Tutorial UI begin room=4 move=9 action=BOMB_L
+Tutorial preview room=4 action=BOMB_L cpu_us=19554 latency_us=34201 phases={"CATEGORIES":421,"CLASSIFY":113,"COUNTS":1689,"KEY":127,"READ":382,"RESOLVE":174,"TICKS":160,"begin":12554,"finish":3934} slices=[7044]
+Tutorial UI end room=4 move=10 running=false
+Tutorial UI begin room=4 move=10 action=L
+Tutorial UI end room=4 move=11 running=false
+Tutorial UI begin room=4 move=11 action=L
+Tutorial UI end room=4 move=12 running=false
+Tutorial T8 frames=988 peak=2787 hover=87438
+Tutorial stage1: 499 checks, 0 failures
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+Art modules: 167 checks, 0 failures
+TEST USER DIR: /Users/key_/Library/Application Support/CodexPushboxTests/codex-pushbox-test-0cgfrtxn
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+OpenGL API 4.1 Metal - 89.4 - Compatibility - Using Device: Apple - Apple M3
+
+TEST USER DIR: /Users/key_/Library/Application Support/CodexPushboxTests/codex-pushbox-test-0cgfrtxn
+Biome showcase: 346 checks, 0 failures
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+OpenGL API 4.1 Metal - 89.4 - Compatibility - Using Device: Apple - Apple M3
+
+TEST USER DIR: /Users/key_/Library/Application Support/CodexPushboxTests/codex-pushbox-test-0cgfrtxn
+Art UI polish: 288 checks, 0 failures
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+Mechanisms Stage2A: 103 checks, 0 failures
+TEST USER DIR: /Users/key_/Library/Application Support/CodexPushboxTests/codex-pushbox-test-0cgfrtxn
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+Campaign progression: 114 checks, 0 failures
+TEST USER DIR: /Users/key_/Library/Application Support/CodexPushboxTests/codex-pushbox-test-0cgfrtxn
+WARNING: 无法保存进度
+     at: push_warning (core/variant/variant_utility.cpp:1033)
+     GDScript backtrace (most recent call first):
+         [0] finish_progress_write (res://pushbox/scripts/ui/lobby_view.gd:127)
+         [1] _initialize (res://tests/campaign_progress_stage2a.gd:61)
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+OpenGL API 4.1 Metal - 89.4 - Compatibility - Using Device: Apple - Apple M3
+
+TEST USER DIR: /Users/key_/Library/Application Support/CodexPushboxTests/codex-pushbox-test-0cgfrtxn
+PASS campaign D_01
+PASS campaign D_02
+PASS campaign D_03
+PASS campaign D_04
+PASS campaign D_05
+PASS campaign D_06
+PASS campaign F_01
+PASS campaign F_02
+PASS campaign F_03
+PASS campaign F_04
+PASS campaign F_05
+PASS campaign F_06
+PASS campaign R_01
+PASS campaign R_02
+PASS campaign R_03
+PASS campaign R_04
+PASS campaign R_05
+PASS campaign R_06
+PASS campaign C_01
+PASS campaign C_02
+PASS campaign C_03
+PASS campaign C_04
+PASS campaign C_05
+PASS campaign C_06
+PASS campaign S_01
+PASS campaign S_02
+PASS campaign S_03
+PASS campaign S_04
+PASS campaign S_05
+PASS campaign S_06
+PASS campaign X_01
+PASS campaign X_02
+PASS campaign X_03
+PASS campaign X_04
+PASS campaign X_05
+PASS campaign X_06
+Campaign Stage2A: 36/36 solved, 8929 checks, 0 failures
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+OpenGL API 4.1 Metal - 89.4 - Compatibility - Using Device: Apple - Apple M3
+
+TEST USER DIR: /Users/key_/Library/Application Support/CodexPushboxTests/codex-pushbox-test-0cgfrtxn
+TEST TIMING WINDOW: focused=false
+T8 D1 {"frames":{"max_us":1464,"min_us":23,"p50_us":352,"p95_us":1001,"samples":105},"level":1,"load_us":9798,"preview_cpu":{"max_us":0,"samples":0},"preview_latency":{"max_us":0,"samples":0}}
+T8 preview room=2 action=DIG_L cpu_us=18706 latency_us=48477
+T8 preview phases={"CATEGORIES":455,"CLASSIFY":248,"COUNTS":1781,"KEY":109,"READ":355,"RESOLVE":158,"TICKS":1271,"begin":12899,"finish":1430} slices=[3579,2327]
+T8 preview room=2 action=POUR_R cpu_us=17896 latency_us=36718
+T8 preview phases={"CATEGORIES":413,"CLASSIFY":227,"COUNTS":1695,"KEY":114,"READ":353,"RESOLVE":96,"TICKS":1036,"begin":12780,"finish":1182} slices=[3546,1653]
+T8 D2 {"frames":{"max_us":1107,"min_us":25,"p50_us":434,"p95_us":945,"samples":168},"level":2,"load_us":25948,"preview_cpu":{"max_us":18706,"min_us":17896,"p50_us":18706,"p95_us":18706,"samples":2},"preview_latency":{"max_us":48477,"min_us":36718,"p50_us":48477,"p95_us":48477,"samples":2}}
+T8 D3 {"frames":{"max_us":3255,"min_us":21,"p50_us":389,"p95_us":2488,"samples":214},"level":3,"load_us":14932,"preview_cpu":{"max_us":0,"samples":0},"preview_latency":{"max_us":0,"samples":0}}
+T8 preview room=4 action=BOMB_L cpu_us=14064 latency_us=25426
+T8 preview phases={"CATEGORIES":306,"CLASSIFY":92,"COUNTS":1342,"KEY":71,"READ":325,"RESOLVE":139,"TICKS":162,"begin":8948,"finish":2679} slices=[5147]
+T8 D4 {"frames":{"max_us":1283,"min_us":31,"p50_us":362,"p95_us":939,"samples":229},"level":4,"load_us":30549,"preview_cpu":{"max_us":14064,"min_us":14064,"p50_us":14064,"p95_us":14064,"samples":1},"preview_latency":{"max_us":25426,"min_us":25426,"p50_us":25426,"p95_us":25426,"samples":1}}
+T8 preview room=5 action=BOMB_L cpu_us=23723 latency_us=41197
+T8 preview phases={"CATEGORIES":457,"CLASSIFY":223,"COUNTS":1861,"KEY":107,"READ":359,"RESOLVE":218,"TICKS":2805,"begin":13701,"finish":3992} slices=[3503,6668]
+T8 preview room=5 action=DIG_L cpu_us=17756 latency_us=35214
+T8 preview phases={"CATEGORIES":389,"CLASSIFY":177,"COUNTS":1684,"KEY":89,"READ":357,"RESOLVE":180,"TICKS":560,"begin":13117,"finish":1203} slices=[4688]
+T8 preview room=5 action=DIG_D cpu_us=19521 latency_us=40209
+T8 preview phases={"CATEGORIES":396,"CLASSIFY":230,"COUNTS":1853,"KEY":98,"READ":760,"RESOLVE":395,"TICKS":838,"begin":13698,"finish":1253} slices=[3519,2392]
+T8 preview room=5 action=POUR_R cpu_us=24864 latency_us=54598
+T8 preview phases={"CATEGORIES":332,"CLASSIFY":188,"COUNTS":1560,"KEY":76,"READ":590,"RESOLVE":347,"TICKS":7158,"begin":13765,"finish":848} slices=[3551,3592,4074]
+T8 preview room=5 action=POUR_R cpu_us=24391 latency_us=69728
+T8 preview phases={"CATEGORIES":397,"CLASSIFY":212,"COUNTS":1860,"KEY":85,"READ":372,"RESOLVE":200,"TICKS":9849,"begin":10429,"finish":987} slices=[3588,3661,3549,3299]
+T8 D5 {"frames":{"max_us":1622,"min_us":31,"p50_us":426,"p95_us":1076,"samples":278},"level":5,"load_us":35815,"preview_cpu":{"max_us":24864,"min_us":17756,"p50_us":23723,"p95_us":24864,"samples":5},"preview_latency":{"max_us":69728,"min_us":35214,"p50_us":41197,"p95_us":69728,"samples":5}}
+T8 summary {"display":"macOS","frames":{"max_us":3255,"min_us":21,"p50_us":389,"p95_us":1142,"samples":994},"preview_cpu":{"max_us":24864,"min_us":14064,"p50_us":19521,"p95_us":24864,"samples":8},"preview_latency":{"max_us":69728,"min_us":25426,"p50_us":41197,"p95_us":69728,"samples":8},"rooms":[{"frames":{"max_us":1464,"min_us":23,"p50_us":352,"p95_us":1001,"samples":105},"level":1,"load_us":9798,"preview_cpu":{"max_us":0,"samples":0},"preview_latency":{"max_us":0,"samples":0}},{"frames":{"max_us":1107,"min_us":25,"p50_us":434,"p95_us":945,"samples":168},"level":2,"load_us":25948,"preview_cpu":{"max_us":18706,"min_us":17896,"p50_us":18706,"p95_us":18706,"samples":2},"preview_latency":{"max_us":48477,"min_us":36718,"p50_us":48477,"p95_us":48477,"samples":2}},{"frames":{"max_us":3255,"min_us":21,"p50_us":389,"p95_us":2488,"samples":214},"level":3,"load_us":14932,"preview_cpu":{"max_us":0,"samples":0},"preview_latency":{"max_us":0,"samples":0}},{"frames":{"max_us":1283,"min_us":31,"p50_us":362,"p95_us":939,"samples":229},"level":4,"load_us":30549,"preview_cpu":{"max_us":14064,"min_us":14064,"p50_us":14064,"p95_us":14064,"samples":1},"preview_latency":{"max_us":25426,"min_us":25426,"p50_us":25426,"p95_us":25426,"samples":1}},{"frames":{"max_us":1622,"min_us":31,"p50_us":426,"p95_us":1076,"samples":278},"level":5,"load_us":35815,"preview_cpu":{"max_us":24864,"min_us":17756,"p50_us":23723,"p95_us":24864,"samples":5},"preview_latency":{"max_us":69728,"min_us":35214,"p50_us":41197,"p95_us":69728,"samples":5}}],"scope":"Settlement CPU: Game physics + SDK upload + BoardView draw, max 4 real-world ticks per frame (opening 1), 1.5ms soft SDK-step budget, separate material-read/32-tile-count (1ms soft budget)/one-mechanism/actor/gate resolution slices and 64-tile key-category frames; previews drain the same phases in a 3.5ms soft work budget. Preview CPU includes snapshot I/O and result diff; latency measured from pointer target to completed rendered overlay, with vsync. Load/shader initialization reported separately. GPU raster and OS compositor excluded from CPU frame metric.","workers":1}
+Performance: 0 failures
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+OpenGL API 4.1 Metal - 89.4 - Compatibility - Using Device: Apple - Apple M3
+
+TEST USER DIR: /Users/key_/Library/Application Support/CodexPushboxTests/codex-pushbox-test-0cgfrtxn
+TEST TIMING WINDOW: focused=false
+BEGIN T8 D_01
+LOADED T8 D_01
+T8 D_01 samples=253 max_us=1570 peak={ "tick_us": 1211, "pump_us": 659, "sdk_step_us": 358, "phase": "TICKS", "read_us": 0, "count_us": 0, "resolve_us": 0, "key_us": 0, "view_us": 63, "bookkeeping_us": 16 }
+BEGIN T8 D_02
+LOADED T8 D_02
+T8 D_02 samples=217 max_us=1588 peak={ "tick_us": 1260, "pump_us": 0, "sdk_step_us": 0, "phase": "READ", "read_us": 1180, "count_us": 0, "resolve_us": 0, "key_us": 0, "view_us": 64, "bookkeeping_us": 21 }
+BEGIN T8 D_03
+LOADED T8 D_03
+T8 D_03 samples=330 max_us=1660 peak={ "phase": "CAMPAIGN_COMMIT", "bookkeeping_us": 1062 }
+BEGIN T8 D_04
+LOADED T8 D_04
+T8 D_04 samples=330 max_us=1597 peak={ "phase": "CAMPAIGN_COMMIT", "bookkeeping_us": 1046 }
+BEGIN T8 D_05
+LOADED T8 D_05
+T8 D_05 samples=502 max_us=3189 peak={ "tick_us": 2334, "pump_us": 1054, "sdk_step_us": 1168, "phase": "TICKS", "read_us": 0, "count_us": 0, "resolve_us": 0, "key_us": 0, "view_us": 59, "bookkeeping_us": 21 }
+BEGIN T8 D_06
+LOADED T8 D_06
+T8 D_06 samples=1251 max_us=3518 peak={ "tick_us": 2831, "pump_us": 1, "sdk_step_us": 1475, "phase": "TICKS", "read_us": 0, "count_us": 0, "resolve_us": 0, "key_us": 0, "view_us": 49, "bookkeeping_us": 13 }
+BEGIN T8 F_01
+LOADED T8 F_01
+FAIL T8 F_01 move=5 us=5458 physics_us=5452 upload_us=6 draw_us=0 phases={ "tick_us": 5349, "pump_us": 0, "sdk_step_us": 0, "phase": "COUNTS", "read_us": 0, "count_us": 11, "resolve_us": 0, "key_us": 0, "view_us": 68, "bookkeeping_us": 24 }
+T8 F_01 samples=290 max_us=5458 peak={ "tick_us": 5349, "pump_us": 0, "sdk_step_us": 0, "phase": "COUNTS", "read_us": 0, "count_us": 11, "resolve_us": 0, "key_us": 0, "view_us": 68, "bookkeeping_us": 24 }
+BEGIN T8 F_02
+LOADED T8 F_02
+T8 F_02 samples=417 max_us=2196 peak={ "tick_us": 1444, "pump_us": 2, "sdk_step_us": 1265, "phase": "TICKS", "read_us": 0, "count_us": 0, "resolve_us": 0, "key_us": 0, "view_us": 47, "bookkeeping_us": 14 }
+BEGIN T8 F_03
+LOADED T8 F_03
+T8 F_03 samples=437 max_us=2662 peak={ "tick_us": 1878, "pump_us": 31, "sdk_step_us": 1684, "phase": "TICKS", "read_us": 0, "count_us": 0, "resolve_us": 0, "key_us": 0, "view_us": 43, "bookkeeping_us": 13 }
+BEGIN T8 F_04
+LOADED T8 F_04
+T8 F_04 samples=508 max_us=2697 peak={ "tick_us": 1692, "pump_us": 2, "sdk_step_us": 1432, "phase": "TICKS", "read_us": 0, "count_us": 0, "resolve_us": 0, "key_us": 0, "view_us": 58, "bookkeeping_us": 21 }
+BEGIN T8 F_05
+LOADED T8 F_05
+T8 F_05 samples=537 max_us=2282 peak={ "tick_us": 1583, "pump_us": 778, "sdk_step_us": 672, "phase": "TICKS", "read_us": 0, "count_us": 0, "resolve_us": 0, "key_us": 0, "view_us": 55, "bookkeeping_us": 26 }
+BEGIN T8 F_06
+LOADED T8 F_06
+T8 F_06 samples=639 max_us=3966 peak={ "tick_us": 3899, "pump_us": 0, "sdk_step_us": 0, "phase": "RESOLVE", "read_us": 0, "count_us": 0, "resolve_us": 3837, "key_us": 0, "view_us": 45, "bookkeeping_us": 11 }
+BEGIN T8 R_01
+LOADED T8 R_01
+T8 R_01 samples=178 max_us=1655 peak={ "tick_us": 1230, "pump_us": 0, "sdk_step_us": 0, "phase": "RESOLVE", "read_us": 0, "count_us": 0, "resolve_us": 1159, "key_us": 0, "view_us": 90, "bookkeeping_us": 14 }
+BEGIN T8 R_02
+LOADED T8 R_02
+T8 R_02 samples=341 max_us=1649 peak={ "phase": "CAMPAIGN_COMMIT", "bookkeeping_us": 999 }
+BEGIN T8 R_03
+LOADED T8 R_03
+T8 R_03 samples=491 max_us=2246 peak={ "tick_us": 1488, "pump_us": 0, "sdk_step_us": 0, "phase": "RESOLVE", "read_us": 0, "count_us": 0, "resolve_us": 979, "key_us": 0, "view_us": 663, "bookkeeping_us": 25 }
+BEGIN T8 R_04
+LOADED T8 R_04
+T8 R_04 samples=286 max_us=2662 peak={ "tick_us": 1999, "pump_us": 2, "sdk_step_us": 1876, "phase": "TICKS", "read_us": 0, "count_us": 0, "resolve_us": 0, "key_us": 0, "view_us": 49, "bookkeeping_us": 18 }
+BEGIN T8 R_05
+LOADED T8 R_05
+T8 R_05 samples=1065 max_us=3329 peak={ "tick_us": 2926, "pump_us": 0, "sdk_step_us": 0, "phase": "RESOLVE", "read_us": 0, "count_us": 0, "resolve_us": 2843, "key_us": 0, "view_us": 93, "bookkeeping_us": 15 }
+BEGIN T8 R_06
+LOADED T8 R_06
+FAIL T8 R_06 move=4 us=5757 physics_us=179 upload_us=5 draw_us=5573 phases={ "tick_us": 116, "pump_us": 0, "sdk_step_us": 0, "phase": "RESOLVE", "read_us": 0, "count_us": 0, "resolve_us": 28, "key_us": 0, "view_us": 45, "bookkeeping_us": 11 }
+FAIL T8 R_06 move=15 us=4212 physics_us=3662 upload_us=10 draw_us=540 phases={ "tick_us": 3487, "pump_us": 0, "sdk_step_us": 0, "phase": "RESOLVE", "read_us": 0, "count_us": 0, "resolve_us": 1178, "key_us": 0, "view_us": 145, "bookkeeping_us": 21 }
+FAIL T8 R_06 move=62 us=8872 physics_us=2779 upload_us=9 draw_us=6084 phases={ "tick_us": 1890, "pump_us": 0, "sdk_step_us": 0, "phase": "READ", "read_us": 1800, "count_us": 0, "resolve_us": 0, "key_us": 0, "view_us": 323, "bookkeeping_us": 553 }
+T8 R_06 samples=1852 max_us=8872 peak={ "tick_us": 1890, "pump_us": 0, "sdk_step_us": 0, "phase": "READ", "read_us": 1800, "count_us": 0, "resolve_us": 0, "key_us": 0, "view_us": 323, "bookkeeping_us": 553 }
+BEGIN T8 C_01
+LOADED T8 C_01
+T8 C_01 samples=160 max_us=3969 peak={ "tick_us": 3481, "pump_us": 18, "sdk_step_us": 1175, "phase": "TICKS", "read_us": 0, "count_us": 0, "resolve_us": 0, "key_us": 0, "view_us": 36, "bookkeeping_us": 12 }
+BEGIN T8 C_02
+LOADED T8 C_02
+FAIL T8 C_02 move=3 us=4452 physics_us=3872 upload_us=10 draw_us=570 phases={ "tick_us": 2462, "pump_us": 2, "sdk_step_us": 25, "phase": "TICKS", "read_us": 0, "count_us": 0, "resolve_us": 0, "key_us": 0, "view_us": 1369, "bookkeeping_us": 28 }
+T8 C_02 samples=305 max_us=4452 peak={ "tick_us": 2462, "pump_us": 2, "sdk_step_us": 25, "phase": "TICKS", "read_us": 0, "count_us": 0, "resolve_us": 0, "key_us": 0, "view_us": 1369, "bookkeeping_us": 28 }
+BEGIN T8 C_03
+LOADED T8 C_03
+T8 C_03 samples=397 max_us=2814 peak={ "tick_us": 1819, "pump_us": 2, "sdk_step_us": 1628, "phase": "TICKS", "read_us": 0, "count_us": 0, "resolve_us": 0, "key_us": 0, "view_us": 67, "bookkeeping_us": 21 }
+BEGIN T8 C_04
+LOADED T8 C_04
+T8 C_04 samples=160 max_us=2592 peak={ "tick_us": 583, "pump_us": 2, "sdk_step_us": 424, "phase": "TICKS", "read_us": 0, "count_us": 0, "resolve_us": 0, "key_us": 0, "view_us": 44, "bookkeeping_us": 17 }
+BEGIN T8 C_05
+LOADED T8 C_05
+T8 C_05 samples=838 max_us=2783 peak={ "tick_us": 1946, "pump_us": 1, "sdk_step_us": 1813, "phase": "TICKS", "read_us": 0, "count_us": 0, "resolve_us": 0, "key_us": 0, "view_us": 65, "bookkeeping_us": 18 }
+BEGIN T8 C_06
+LOADED T8 C_06
+T8 C_06 samples=846 max_us=3056 peak={ "tick_us": 1886, "pump_us": 2, "sdk_step_us": 1686, "phase": "TICKS", "read_us": 0, "count_us": 0, "resolve_us": 0, "key_us": 0, "view_us": 79, "bookkeeping_us": 24 }
+BEGIN T8 S_01
+LOADED T8 S_01
+T8 S_01 samples=351 max_us=1527 peak={ "tick_us": 932, "pump_us": 0, "sdk_step_us": 0, "phase": "READ", "read_us": 850, "count_us": 0, "resolve_us": 0, "key_us": 0, "view_us": 62, "bookkeeping_us": 21 }
+BEGIN T8 S_02
+LOADED T8 S_02
+T8 S_02 samples=366 max_us=1797 peak={ "tick_us": 892, "pump_us": 0, "sdk_step_us": 0, "phase": "READ", "read_us": 808, "count_us": 0, "resolve_us": 0, "key_us": 0, "view_us": 64, "bookkeeping_us": 22 }
+BEGIN T8 S_03
+LOADED T8 S_03
+T8 S_03 samples=409 max_us=2804 peak={ "tick_us": 1917, "pump_us": 3, "sdk_step_us": 1738, "phase": "TICKS", "read_us": 0, "count_us": 0, "resolve_us": 0, "key_us": 0, "view_us": 49, "bookkeeping_us": 15 }
+BEGIN T8 S_04
+LOADED T8 S_04
+T8 S_04 samples=417 max_us=1992 peak={ "phase": "CAMPAIGN_COMMIT", "bookkeeping_us": 1471 }
+BEGIN T8 S_05
+LOADED T8 S_05
+FAIL T8 S_05 move=11 us=4380 physics_us=3654 upload_us=302 draw_us=424 phases={ "tick_us": 3567, "pump_us": 1626, "sdk_step_us": 1840, "phase": "TICKS", "read_us": 0, "count_us": 0, "resolve_us": 0, "key_us": 0, "view_us": 61, "bookkeeping_us": 16 }
+FAIL T8 S_05 move=11 us=4201 physics_us=3075 upload_us=1126 draw_us=0 phases={ "tick_us": 3002, "pump_us": 1, "sdk_step_us": 2889, "phase": "TICKS", "read_us": 0, "count_us": 0, "resolve_us": 0, "key_us": 0, "view_us": 45, "bookkeeping_us": 19 }
+T8 S_05 samples=497 max_us=4380 peak={ "tick_us": 3567, "pump_us": 1626, "sdk_step_us": 1840, "phase": "TICKS", "read_us": 0, "count_us": 0, "resolve_us": 0, "key_us": 0, "view_us": 61, "bookkeeping_us": 16 }
+BEGIN T8 S_06
+LOADED T8 S_06
+T8 S_06 samples=703 max_us=3154 peak={ "tick_us": 2517, "pump_us": 0, "sdk_step_us": 0, "phase": "RESOLVE", "read_us": 0, "count_us": 0, "resolve_us": 2458, "key_us": 0, "view_us": 154, "bookkeeping_us": 15 }
+BEGIN T8 X_01
+LOADED T8 X_01
+T8 X_01 samples=191 max_us=1682 peak={ "phase": "CAMPAIGN_COMMIT", "bookkeeping_us": 1151 }
+BEGIN T8 X_02
+LOADED T8 X_02
+FAIL T8 X_02 move=1 us=4111 physics_us=1400 upload_us=2275 draw_us=436 phases={ "tick_us": 1316, "pump_us": 44, "sdk_step_us": 1059, "phase": "TICKS", "read_us": 0, "count_us": 0, "resolve_us": 0, "key_us": 0, "view_us": 50, "bookkeeping_us": 21 }
+T8 X_02 samples=226 max_us=4111 peak={ "tick_us": 1316, "pump_us": 44, "sdk_step_us": 1059, "phase": "TICKS", "read_us": 0, "count_us": 0, "resolve_us": 0, "key_us": 0, "view_us": 50, "bookkeeping_us": 21 }
+BEGIN T8 X_03
+LOADED T8 X_03
+T8 X_03 samples=420 max_us=1697 peak={ "phase": "CAMPAIGN_COMMIT", "bookkeeping_us": 1009 }
+BEGIN T8 X_04
+LOADED T8 X_04
+FAIL T8 X_04 move=1 us=6169 physics_us=5308 upload_us=468 draw_us=393 phases={ "tick_us": 5130, "pump_us": 2, "sdk_step_us": 3589, "phase": "TICKS", "read_us": 0, "count_us": 0, "resolve_us": 0, "key_us": 0, "view_us": 145, "bookkeeping_us": 23 }
+FAIL T8 X_04 move=3 us=6362 physics_us=5667 upload_us=695 draw_us=0 phases={ "tick_us": 5460, "pump_us": 3, "sdk_step_us": 5018, "phase": "TICKS", "read_us": 0, "count_us": 0, "resolve_us": 0, "key_us": 0, "view_us": 164, "bookkeeping_us": 30 }
+T8 X_04 samples=696 max_us=6362 peak={ "tick_us": 5460, "pump_us": 3, "sdk_step_us": 5018, "phase": "TICKS", "read_us": 0, "count_us": 0, "resolve_us": 0, "key_us": 0, "view_us": 164, "bookkeeping_us": 30 }
+BEGIN T8 X_05
+LOADED T8 X_05
+FAIL T8 X_05 move=8 us=9891 physics_us=9548 upload_us=16 draw_us=327 phases={ "tick_us": 9457, "pump_us": 0, "sdk_step_us": 0, "phase": "CATEGORIES", "read_us": 0, "count_us": 0, "resolve_us": 0, "key_us": 9289, "view_us": 66, "bookkeeping_us": 17 }
+FAIL T8 X_05 move=30 us=4837 physics_us=4830 upload_us=7 draw_us=0 phases={ "tick_us": 2042, "pump_us": 0, "sdk_step_us": 0, "phase": "CATEGORIES", "read_us": 0, "count_us": 0, "resolve_us": 0, "key_us": 1902, "view_us": 1190, "bookkeeping_us": 1458 }
+T8 X_05 samples=870 max_us=9891 peak={ "tick_us": 9457, "pump_us": 0, "sdk_step_us": 0, "phase": "CATEGORIES", "read_us": 0, "count_us": 0, "resolve_us": 0, "key_us": 9289, "view_us": 66, "bookkeeping_us": 17 }
+BEGIN T8 X_06
+LOADED T8 X_06
+FAIL T8 X_06 move=21 us=9280 physics_us=7268 upload_us=7 draw_us=2005 phases={ "tick_us": 6027, "pump_us": 0, "sdk_step_us": 0, "phase": "KEY", "read_us": 0, "count_us": 0, "resolve_us": 0, "key_us": 5963, "view_us": 1210, "bookkeeping_us": 25 }
+FAIL T8 X_06 move=22 us=4973 physics_us=414 upload_us=4559 draw_us=0 phases={ "tick_us": 317, "pump_us": 0, "sdk_step_us": 0, "phase": "CATEGORIES", "read_us": 0, "count_us": 0, "resolve_us": 0, "key_us": 135, "view_us": 74, "bookkeeping_us": 15 }
+FAIL T8 X_06 move=22 us=8611 physics_us=8608 upload_us=3 draw_us=0 phases={ "tick_us": 8561, "pump_us": 0, "sdk_step_us": 0, "phase": "KEY", "read_us": 0, "count_us": 0, "resolve_us": 0, "key_us": 8531, "view_us": 33, "bookkeeping_us": 11 }
+FAIL T8 X_06 move=23 us=77027 physics_us=77022 upload_us=5 draw_us=0 phases={ "tick_us": 76945, "pump_us": 0, "sdk_step_us": 0, "phase": "KEY", "read_us": 0, "count_us": 0, "resolve_us": 0, "key_us": 76898, "view_us": 50, "bookkeeping_us": 20 }
+FAIL T8 X_06 move=25 us=6191 physics_us=5873 upload_us=318 draw_us=0 phases={ "tick_us": 5352, "pump_us": 0, "sdk_step_us": 5301, "phase": "TICKS", "read_us": 0, "count_us": 0, "resolve_us": 0, "key_us": 0, "view_us": 509, "bookkeeping_us": 8 }
+T8 X_06 samples=1150 max_us=77027 peak={ "tick_us": 76945, "pump_us": 0, "sdk_step_us": 0, "phase": "KEY", "read_us": 0, "count_us": 0, "resolve_us": 0, "key_us": 76898, "view_us": 50, "bookkeeping_us": 20 }
+Campaign T8: 18926 frames, max_us=77027, 17 failures
+Executed 25/25 test scripts; passed=False; T2 threads 4/8 NOT RUN.

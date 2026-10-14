@@ -46,6 +46,16 @@ func material_and_gate_probe(show: Node) -> void:
 		check(pixels.get_pixel(id*16+8,24).a > 0.7,"new and old material %d rendered" % id)
 	check(pixels.get_pixel(184,16).is_equal_approx(Color.WHITE),"ice bridge reflective top")
 	check(pixels.get_pixel(136,16).is_equal_approx(Style.YELLOW),"acid exposed surface")
+	if show.index == 1:
+		for y in [16,17,18]:
+			check(pixels.get_pixel(24,y).is_equal_approx(Color("63c74d")),"forest 3px grass at native pixel resolution")
+	if show.index == 4:
+		for y in [29,30,31]:
+			check(pixels.get_pixel(24,y).is_equal_approx(Color.WHITE),"sky 3px cloud underside at native pixel resolution")
+	if show.index == 5:
+		for y in [16,17]:
+			var color: Color = pixels.get_pixel(24,y)
+			check(color.is_equal_approx(Color("fee761")) or color.is_equal_approx(Style.INK),"cosmos 2px hazard cap")
 	if show.index == 3:
 		check(pixels.get_pixel(39,20).is_equal_approx(Style.YELLOW),"cave crack is bright sulfur")
 	if show.index < 4:
@@ -111,7 +121,7 @@ func run() -> void:
 	click(game,game.lobby.to_global(game.lobby.showcase_rect().get_center()))
 	await frame()
 	check(game.showcase.visible and game.session == null,"lobby opens visual preview without physics session")
-	check(root.content_scale_size == Vector2i(640,360),"large map native canvas")
+	check(root.content_scale_size == Vector2i(320,180),"shared 320px native UI canvas")
 	var dimensions: Array = [Vector2i(24,13),Vector2i(28,15),Vector2i(28,15),Vector2i(30,16),Vector2i(30,16),Vector2i(32,18)]
 	var digests: Dictionary = {}
 	for index in 6:
@@ -127,9 +137,9 @@ func run() -> void:
 		check(show.terrain.material.get_shader_parameter("biome_style_id") == index,"theme binder index")
 		for name in show.IDS:
 			check(show.terrain.material.get_shader_parameter(show.Binder.MATERIAL_NAMES[name]) == show.IDS[name],"all material uniforms bound")
-		check(show.map_origin.x >= 0 and show.map_origin.y >= 32 and show.map_origin.y+show.map_size.y*16 <= 332,"whole large map is visible")
+		check(show.map_origin.x >= 8 and show.map_origin.y >= 29 and show.map_origin.y+show.map_size.y*16*show._map_layer.scale.y <= 155,"whole large map is visible")
 		var native: Image = root.get_texture().get_image()
-		check(native.get_size() == Vector2i(640,360),"captured native viewport")
+		check(native.get_size() == Vector2i(320,180),"captured native viewport")
 		var digest := HashingContext.new()
 		digest.start(HashingContext.HASH_SHA256)
 		digest.update(native.get_data())
@@ -137,26 +147,13 @@ func run() -> void:
 		check(not digests.has(hash),"six visibly distinct rendered scenes")
 		digests[hash] = true
 		check(native.get_pixelv(Vector2i(show.map_origin)+Vector2i(8,8)).a > 0.9,"real scene pixels present")
-		if index == 1:
-			var at: Vector2i = show.find_exposed_tile(true)
-			for y in 3:
-				check(native.get_pixelv(Vector2i(show.map_origin)+at*16+Vector2i(8,y)).is_equal_approx(Color("63c74d")),"forest grass is a full 3px cap")
-		if index == 4:
-			var at: Vector2i = show.find_exposed_tile(false)
-			for y in [13,14,15]:
-				check(native.get_pixelv(Vector2i(show.map_origin)+at*16+Vector2i(8,y)).is_equal_approx(Color.WHITE),"sky underside is a full 3px cloud")
-		if index == 5:
-			var at: Vector2i = show.find_exposed_tile(true)
-			for y in 2:
-				var color: Color = native.get_pixelv(Vector2i(show.map_origin)+at*16+Vector2i(8,y))
-				check(color.is_equal_approx(Color("fee761")) or color.is_equal_approx(Style.INK),"cosmos 2px hazard stripe")
 		var folder: String = "res://artifacts/biome-preview/captures/"
 		DirAccess.make_dir_recursive_absolute(folder)
 		check(native.save_png(folder+show.theme_id+"-native.png") == OK,"native screenshot export")
 		var enlarged: Image = native.duplicate()
 		enlarged.resize(1920,1080,Image.INTERPOLATE_NEAREST)
 		check(enlarged.save_png(folder+show.theme_id+"-1920x1080.png") == OK,"integer x3 screenshot export")
-		captures.append({"theme":show.theme_id,"map_tiles":[show.map_size.x,show.map_size.y],"native":[640,360],"export":[1920,1080],"scale":3,"sha256_rgba":hash})
+		captures.append({"theme":show.theme_id,"map_tiles":[show.map_size.x,show.map_size.y],"native":[320,180],"export":[1920,1080],"scale":6,"sha256_rgba":hash})
 		await material_and_gate_probe(show)
 	key(game,KEY_RIGHT)
 	check(game.showcase.index == 0,"right wraps cosmos to dungeon")

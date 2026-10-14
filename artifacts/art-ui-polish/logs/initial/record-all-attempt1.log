@@ -1,0 +1,27 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+D_01 OPEN player=(3, 3) boxes=[{ "id": "I", "at": (8, 5), "kind": "iron" }, { "id": "A", "at": (6, 5), "kind": "wood" }]
+RECORDED D_01 actions=12
+D_02 OPEN player=(6, 4) boxes=[{ "id": "A", "at": (7, 6), "kind": "wood" }]
+RECORDED D_02 actions=13
+D_03 OPEN player=(2, 5) boxes=[{ "id": "A", "at": (8, 7), "kind": "wood" }, { "id": "B", "at": (14, 5), "kind": "wood" }]
+RECORDED D_03 actions=18
+D_04 OPEN player=(2, 5) boxes=[{ "id": "A", "at": (5, 6), "kind": "wood" }]
+RECORDED D_04 actions=22
+D_05 OPEN player=(9, 2) boxes=[{ "id": "I", "at": (9, 3), "kind": "iron" }, { "id": "A", "at": (7, 3), "kind": "wood" }]
+RECORDED D_05 actions=24
+D_06 OPEN player=(4, 2) boxes=[{ "id": "I", "at": (8, 2), "kind": "iron" }, { "id": "A", "at": (6, 2), "kind": "wood" }, { "id": "B", "at": (13, 8), "kind": "wood" }]
+FAIL D_06 step=48 action=R player=(9, 1) reason=前方挡住了，台阶上也没有空位。
+####################
+#.#.......#..#..#..#
+#........B.........#
+#.#s#.#.###.########
+#####www###.########
+#####wwB###.########
+#####w#####........#
+###########........#
+############.B.#####
+#..###..####www##.##
+#..###..########..##
+TEST USER DIR: /Users/key_/Library/Application Support/CodexPushboxTests/codex-pushbox-test-8a4alv5p
+Executed 1/1 test scripts; passed=False; T2 threads 4/8 NOT RUN.

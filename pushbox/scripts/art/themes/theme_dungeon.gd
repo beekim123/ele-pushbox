@@ -37,3 +37,6 @@ static func _line(result: Image, start: Vector2i, end: Vector2i) -> void:
 		if twice <= dx:
 			error += dx
 			at.y += sy
+
+static func background(size: Vector2i) -> Image:
+	return preload("res://pushbox/scripts/art/themes/natural_backdrops.gd").dungeon(size)

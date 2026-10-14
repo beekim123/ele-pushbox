@@ -1,0 +1,76 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+D_01 OPEN player=(3, 3) boxes=[{ "id": "I", "at": (8, 5), "kind": "iron" }, { "id": "A", "at": (6, 5), "kind": "wood" }]
+RECORDED D_01 actions=12
+D_02 OPEN player=(6, 4) boxes=[{ "id": "A", "at": (7, 6), "kind": "wood" }]
+RECORDED D_02 actions=13
+D_03 OPEN player=(2, 5) boxes=[{ "id": "A", "at": (8, 7), "kind": "wood" }, { "id": "B", "at": (14, 5), "kind": "wood" }]
+RECORDED D_03 actions=18
+D_04 OPEN player=(2, 5) boxes=[{ "id": "A", "at": (5, 6), "kind": "wood" }]
+RECORDED D_04 actions=22
+D_05 OPEN player=(9, 2) boxes=[{ "id": "I", "at": (9, 3), "kind": "iron" }, { "id": "A", "at": (7, 3), "kind": "wood" }]
+RECORDED D_05 actions=24
+D_06 OPEN player=(4, 2) boxes=[{ "id": "I", "at": (8, 2), "kind": "iron" }, { "id": "A", "at": (6, 2), "kind": "wood" }, { "id": "B", "at": (13, 8), "kind": "wood" }]
+RECORDED D_06 actions=66
+F_01 OPEN player=(1, 5) boxes=[{ "id": "A", "at": (12, 4), "kind": "wood" }]
+RECORDED F_01 actions=15
+F_02 OPEN player=(4, 4) boxes=[{ "id": "A", "at": (8, 6), "kind": "wood" }, { "id": "B", "at": (6, 6), "kind": "wood" }]
+RECORDED F_02 actions=27
+F_03 OPEN player=(3, 6) boxes=[{ "id": "A", "at": (10, 3), "kind": "wood" }]
+RECORDED F_03 actions=22
+F_04 OPEN player=(1, 6) boxes=[{ "id": "A", "at": (10, 3), "kind": "wood" }]
+RECORDED F_04 actions=28
+F_05 OPEN player=(3, 6) boxes=[{ "id": "I", "at": (5, 7), "kind": "iron" }, { "id": "A", "at": (9, 5), "kind": "wood" }, { "id": "B", "at": (15, 2), "kind": "wood" }]
+RECORDED F_05 actions=25
+F_06 OPEN player=(3, 6) boxes=[{ "id": "I", "at": (4, 6), "kind": "iron" }, { "id": "A", "at": (8, 4), "kind": "wood" }, { "id": "B", "at": (14, 1), "kind": "wood" }]
+RECORDED F_06 actions=30
+R_01 OPEN player=(1, 3) boxes=[{ "id": "I", "at": (6, 5), "kind": "iron" }, { "id": "A", "at": (11, 5), "kind": "wood" }]
+RECORDED R_01 actions=9
+R_02 OPEN player=(2, 4) boxes=[{ "id": "A", "at": (6, 6), "kind": "wood" }]
+RECORDED R_02 actions=19
+R_03 OPEN player=(3, 3) boxes=[{ "id": "A", "at": (11, 6), "kind": "wood" }, { "id": "B", "at": (15, 2), "kind": "wood" }]
+RECORDED R_03 actions=29
+R_04 OPEN player=(2, 3) boxes=[{ "id": "A", "at": (9, 4), "kind": "wood" }]
+RECORDED R_04 actions=9
+R_05 OPEN player=(3, 4) boxes=[{ "id": "A", "at": (5, 7), "kind": "wood" }, { "id": "I", "at": (11, 7), "kind": "iron" }]
+RECORDED R_05 actions=49
+R_06 OPEN player=(3, 4) boxes=[{ "id": "A", "at": (4, 6), "kind": "wood" }, { "id": "I", "at": (10, 6), "kind": "iron" }, { "id": "B", "at": (17, 6), "kind": "wood" }]
+RECORDED R_06 actions=66
+C_01 OPEN player=(2, 4) boxes=[{ "id": "A", "at": (7, 6), "kind": "wood" }]
+RECORDED C_01 actions=7
+C_02 OPEN player=(4, 4) boxes=[{ "id": "A", "at": (14, 4), "kind": "wood" }]
+RECORDED C_02 actions=13
+C_03 OPEN player=(3, 6) boxes=[{ "id": "A", "at": (10, 6), "kind": "wood" }]
+RECORDED C_03 actions=17
+C_04 OPEN player=(4, 1) boxes=[{ "id": "A", "at": (9, 4), "kind": "wood" }]
+RECORDED C_04 actions=6
+C_05 OPEN player=(4, 4) boxes=[{ "id": "A", "at": (14, 5), "kind": "wood" }]
+RECORDED C_05 actions=34
+C_06 OPEN player=(3, 6) boxes=[{ "id": "A", "at": (8, 5), "kind": "wood" }, { "id": "I", "at": (17, 5), "kind": "iron" }]
+RECORDED C_06 actions=26
+S_01 OPEN player=(4, 3) boxes=[{ "id": "A", "at": (9, 5), "kind": "wood" }, { "id": "I", "at": (6, 5), "kind": "iron" }]
+RECORDED S_01 actions=19
+S_02 OPEN player=(4, 3) boxes=[{ "id": "A", "at": (8, 5), "kind": "wood" }, { "id": "I", "at": (5, 5), "kind": "iron" }]
+RECORDED S_02 actions=22
+S_03 OPEN player=(4, 3) boxes=[{ "id": "A", "at": (9, 5), "kind": "wood" }, { "id": "B", "at": (15, 2), "kind": "wood" }]
+RECORDED S_03 actions=20
+S_04 OPEN player=(8, 5) boxes=[{ "id": "A", "at": (6, 6), "kind": "wood" }]
+RECORDED S_04 actions=18
+S_05 OPEN player=(5, 3) boxes=[{ "id": "A", "at": (6, 4), "kind": "wood" }, { "id": "I", "at": (3, 4), "kind": "iron" }]
+RECORDED S_05 actions=15
+S_06 OPEN player=(4, 3) boxes=[{ "id": "A", "at": (5, 3), "kind": "wood" }, { "id": "I", "at": (2, 3), "kind": "iron" }]
+RECORDED S_06 actions=34
+X_01 OPEN player=(1, 4) boxes=[{ "id": "A", "at": (6, 6), "kind": "wood" }]
+RECORDED X_01 actions=11
+X_02 OPEN player=(1, 1) boxes=[{ "id": "A", "at": (10, 5), "kind": "wood" }]
+RECORDED X_02 actions=8
+X_03 OPEN player=(2, 6) boxes=[{ "id": "A", "at": (8, 7), "kind": "wood" }, { "id": "I", "at": (5, 7), "kind": "iron" }]
+RECORDED X_03 actions=23
+X_04 OPEN player=(4, 4) boxes=[{ "id": "A", "at": (14, 5), "kind": "wood" }]
+RECORDED X_04 actions=12
+X_05 OPEN player=(1, 7) boxes=[{ "id": "A", "at": (4, 8), "kind": "wood" }, { "id": "B", "at": (5, 8), "kind": "wood" }, { "id": "I", "at": (13, 4), "kind": "iron" }]
+RECORDED X_05 actions=44
+X_06 OPEN player=(2, 6) boxes=[{ "id": "A", "at": (6, 6), "kind": "wood" }, { "id": "I", "at": (3, 6), "kind": "iron" }]
+RECORDED X_06 actions=44
+Record campaign: 36 solved
+TEST USER DIR: /Users/key_/Library/Application Support/CodexPushboxTests/codex-pushbox-test-goy7c0vg

@@ -1,0 +1,145 @@
+{
+  "biome_mechanisms": {
+    "vine_seeds": [
+      {
+        "at": [
+          6.0,
+          5.0
+        ],
+        "height": 4.0
+      }
+    ]
+  },
+  "budget": {
+    "bombs": 0.0,
+    "sand_cells": 0.0
+  },
+  "campaign": {
+    "index": 0.0,
+    "map": 1.0,
+    "stars": 1.0
+  },
+  "content": "default",
+  "entities": {
+    "boxes": [
+      {
+        "at": [
+          8.0,
+          2.0
+        ],
+        "id": "A",
+        "kind": "wood"
+      }
+    ],
+    "ladders": [
+      [
+        2.0,
+        2.0
+      ],
+      [
+        2.0,
+        3.0
+      ],
+      [
+        2.0,
+        4.0
+      ],
+      [
+        2.0,
+        5.0
+      ]
+    ],
+    "levers": [
+      {
+        "at": [
+          1.0,
+          5.0
+        ],
+        "id": "L1"
+      }
+    ],
+    "player": [
+      1.0,
+      5.0
+    ],
+    "targets": [
+      [
+        10.0,
+        2.0
+      ]
+    ]
+  },
+  "format": "pushbox.level/1",
+  "hints": [],
+  "id": "F_01",
+  "legend": {
+    "#": "bedrock",
+    ".": "empty",
+    "G": "gate",
+    "a": "acid",
+    "c": "cracked_rock",
+    "h": {
+      "fill": 0.5,
+      "material": "sand"
+    },
+    "i": "ice",
+    "m": "lava",
+    "q": {
+      "fill": 0.75,
+      "material": "sand"
+    },
+    "s": "sand",
+    "u": "pumice",
+    "w": "water"
+  },
+  "map": [
+    "..########..",
+    ".#........#.",
+    "#..........#",
+    "#..#wG.#####",
+    "#..#wG.#..##",
+    "....#..#....",
+    ".#######...."
+  ],
+  "mechanisms": [
+    {
+      "id": "SPRING",
+      "kind": "gate",
+      "open_when": {
+        "lever": "L1"
+      },
+      "tiles": [
+        [
+          5.0,
+          3.0
+        ],
+        [
+          5.0,
+          4.0
+        ]
+      ]
+    }
+  ],
+  "seed": 1.0,
+  "solution": [
+    "USE",
+    "R",
+    "U",
+    "U",
+    "U",
+    "R",
+    "R",
+    "R",
+    "R",
+    "U",
+    "U",
+    "U",
+    "R",
+    "R",
+    "R"
+  ],
+  "solution_hashes": [],
+  "solution_keys": [],
+  "theme_id": "forest",
+  "title": "甘霖育藤"
+}

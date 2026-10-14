@@ -94,39 +94,33 @@ const NAMES := {
 }
 
 const Ops := preload("res://pushbox/scripts/art/canvas_ops.gd")
-static func themed_lamp(theme: int, accent: Color) -> Image:
+static func themed_lamp(theme: int, accent: Color, frame: int = 0) -> Image:
 	var result: Image = Ops.canvas(Vector2i(16,24))
-	Ops.rect(result,7,0,1,5,Color("181425"))
-	match theme:
-		1:
-			Ops.rect(result,4,5,8,14,Color("181425"))
-			Ops.rect(result,5,6,6,12,Color("265c42"))
-			Ops.rect(result,7,9,2,2,Color("fee761"))
-			Ops.rect(result,9,14,1,1,Color("63c74d"))
-			Ops.rect(result,4,7,8,1,Color("3e8948"))
-			Ops.rect(result,4,17,8,1,Color("3e8948"))
-		2:
-			Ops.rect(result,3,16,10,6,Color("181425"))
-			Ops.rect(result,4,17,8,3,Color("feae34"))
-			Ops.rect(result,5,9,6,7,Color("f77622"))
-			Ops.rect(result,6,7,3,8,Color("fee761"))
-			Ops.rect(result,7,6,1,6,Color("ffffff"))
-		3:
-			Ops.rect(result,3,16,10,5,Color("181425"))
-			Ops.rect(result,4,9,3,9,Color("0099db"))
-			Ops.rect(result,8,5,3,13,Color("2ce8f5"))
-			Ops.rect(result,11,12,2,6,Color("b55088"))
-			Ops.rect(result,8,5,1,10,Color("ffffff"))
-		4:
-			Ops.rect(result,3,6,10,12,Color("181425"))
-			Ops.rect(result,4,7,8,10,Color("c0cbdc"))
-			Ops.rect(result,6,8,4,7,Color("ffffff"))
-			Ops.rect(result,4,17,8,1,Color("feae34"))
-			Ops.rect(result,7,19,1,4,Color("fee761"))
-		5:
-			Ops.rect(result,4,17,8,5,Color("181425"))
-			Ops.rect(result,5,18,6,3,Color("5a6988"))
-			Ops.rect(result,7,6,2,10,accent)
-			Ops.rect(result,4,8,8,1,Color("2ce8f5"))
-			Ops.rect(result,6,5,4,1,Color("ffffff"))
+	var f: int = posmod(frame,4)
+	var dark := Color("181425")
+	Ops.line(result,Vector2i(7,0),Vector2i(7,5),Color("8b9bb4"))
+	if theme == 2:
+		Ops.rect(result,3,18,10,3,dark)
+		Ops.rect(result,4,18,8,1,Color("fee761"))
+		for y in range(6+f%3,18):
+			var half: int = maxi(1,(y-4)/3)
+			Ops.rect(result,8-half+(f-1)%2,y,half*2,1,Color("f77622"))
+			Ops.rect(result,7,y+2,2,1,Color("fee761"))
+		Ops.rect(result,7+f/2,13,1,4,Color("ffffff"))
+	else:
+		Ops.rect(result,4,6,8,13,dark)
+		Ops.rect(result,5,7,6,10,Color("3e8948") if theme == 1 else Color("5a6988"))
+		Ops.rect(result,4,6,8,1,Color("feae34") if theme in [0,4] else accent)
+		Ops.rect(result,4,18,8,1,accent)
+		var glow: Color = [accent,Color("fee761"),Color("ffffff"),Color("ead4aa")][f]
+		if theme == 3:
+			for y in range(8,17):
+				Ops.rect(result,7-(y-8)/4,y,2+(y-8)/2,1,glow)
+		elif theme == 5:
+			Ops.line(result,Vector2i(7,8),Vector2i(7,16),glow)
+			Ops.rect(result,5,10+f,6,1,accent)
+		else:
+			Ops.rect(result,6,9,4,6,glow)
+			Ops.rect(result,7+(f%2),8+(f/2),1,2,Color("ffffff"))
+		Ops.rect(result,7,20,2,2,accent)
 	return result

@@ -1,0 +1,122 @@
+{
+  "biome_mechanisms": {},
+  "budget": {
+    "bombs": 0.0,
+    "sand_cells": 0.0
+  },
+  "campaign": {
+    "index": 0.0,
+    "map": 3.0,
+    "stars": 1.0
+  },
+  "content": "default",
+  "entities": {
+    "boxes": [
+      {
+        "at": [
+          3.0,
+          4.0
+        ],
+        "id": "A",
+        "kind": "wood"
+      }
+    ],
+    "ladders": [],
+    "levers": [
+      {
+        "at": [
+          2.0,
+          4.0
+        ],
+        "id": "L1"
+      }
+    ],
+    "player": [
+      2.0,
+      4.0
+    ],
+    "targets": [
+      [
+        9.0,
+        4.0
+      ]
+    ]
+  },
+  "format": "pushbox.level/1",
+  "hints": [],
+  "id": "C_01",
+  "legend": {
+    "#": "bedrock",
+    ".": "empty",
+    "G": "gate",
+    "a": "acid",
+    "c": "cracked_rock",
+    "h": {
+      "fill": 0.5,
+      "material": "sand"
+    },
+    "i": "ice",
+    "m": "lava",
+    "q": {
+      "fill": 0.75,
+      "material": "sand"
+    },
+    "s": "sand",
+    "u": "pumice",
+    "w": "water"
+  },
+  "map": [
+    ".###..###..#",
+    "...#.....#..",
+    "##..##a#..##",
+    "#.#...G.#..#",
+    "#.....c....#",
+    ".###########",
+    "............"
+  ],
+  "mechanisms": [
+    {
+      "id": "ACID",
+      "kind": "gate",
+      "open_when": {
+        "lever": "L1"
+      },
+      "tiles": [
+        [
+          6.0,
+          3.0
+        ]
+      ]
+    }
+  ],
+  "seed": 1.0,
+  "solution": [
+    "USE",
+    "R",
+    "R",
+    "R",
+    "R",
+    "R",
+    "R"
+  ],
+  "solution_hashes": [
+    "a560e5ba1821cfc4",
+    "60b78ecda740a51f",
+    "acdcf66c62111395",
+    "88a6d815951a44c2",
+    "56666c2182702b03",
+    "a88c92c12f0d9d57",
+    "f4824bbb55dc0eca"
+  ],
+  "solution_keys": [
+    "[\"[\\\"[6,6,\\\\\\\"A\\\\\\\",7,6]\\\",[\\\"ACID\\\",true],[\\\"L1\\\",true]]\",0,[\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"OPEN\",\"SOLID\",\"SOLID\",\"SOLID\",\"OPEN\",\"OPEN\",\"SOLID\",\"SOLID\",\"SOLID\",\"OPEN\",\"OPEN\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"OPEN\",\"OPEN\",\"OPEN\",\"SOLID\",\"OPEN\",\"OPEN\",\"OPEN\",\"OPEN\",\"OPEN\",\"SOLID\",\"OPEN\",\"OPEN\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"OPEN\",\"OPEN\",\"SOLID\",\"SOLID\",\"OPEN\",\"SOLID\",\"OPEN\",\"OPEN\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"OPEN\",\"SOLID\",\"OPEN\",\"OPEN\",\"OPEN\",\"OPEN\",\"OPEN\",\"SOLID\",\"OPEN\",\"OPEN\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"OPEN\",\"OPEN\",\"BOX\",\"OPEN\",\"OPEN\",\"OPEN\",\"OPEN\",\"OPEN\",\"OPEN\",\"OPEN\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"OPEN\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"OPEN\",\"OPEN\",\"OPEN\",\"OPEN\",\"OPEN\",\"OPEN\",\"OPEN\",\"OPEN\",\"OPEN\",\"OPEN\",\"OPEN\",\"OPEN\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\"]]",
+    "[\"[\\\"[7,6,\\\\\\\"A\\\\\\\",8,6]\\\",[\\\"ACID\\\",true],[\\\"L1\\\",true]]\",0,[\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"OPEN\",\"SOLID\",\"SOLID\",\"SOLID\",\"OPEN\",\"OPEN\",\"SOLID\",\"SOLID\",\"SOLID\",\"OPEN\",\"OPEN\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"OPEN\",\"OPEN\",\"OPEN\",\"SOLID\",\"OPEN\",\"OPEN\",\"OPEN\",\"OPEN\",\"OPEN\",\"SOLID\",\"OPEN\",\"OPEN\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"OPEN\",\"OPEN\",\"SOLID\",\"SOLID\",\"OPEN\",\"SOLID\",\"OPEN\",\"OPEN\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"OPEN\",\"SOLID\",\"OPEN\",\"OPEN\",\"OPEN\",\"OPEN\",\"OPEN\",\"SOLID\",\"OPEN\",\"OPEN\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"OPEN\",\"OPEN\",\"OPEN\",\"BOX\",\"OPEN\",\"OPEN\",\"OPEN\",\"OPEN\",\"OPEN\",\"OPEN\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"OPEN\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"OPEN\",\"OPEN\",\"OPEN\",\"OPEN\",\"OPEN\",\"OPEN\",\"OPEN\",\"OPEN\",\"OPEN\",\"OPEN\",\"OPEN\",\"OPEN\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\"]]",
+    "[\"[\\\"[8,6,\\\\\\\"A\\\\\\\",9,6]\\\",[\\\"ACID\\\",true],[\\\"L1\\\",true]]\",0,[\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"OPEN\",\"SOLID\",\"SOLID\",\"SOLID\",\"OPEN\",\"OPEN\",\"SOLID\",\"SOLID\",\"SOLID\",\"OPEN\",\"OPEN\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"OPEN\",\"OPEN\",\"OPEN\",\"SOLID\",\"OPEN\",\"OPEN\",\"OPEN\",\"OPEN\",\"OPEN\",\"SOLID\",\"OPEN\",\"OPEN\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"OPEN\",\"OPEN\",\"SOLID\",\"SOLID\",\"OPEN\",\"SOLID\",\"OPEN\",\"OPEN\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"OPEN\",\"SOLID\",\"OPEN\",\"OPEN\",\"OPEN\",\"OPEN\",\"OPEN\",\"SOLID\",\"OPEN\",\"OPEN\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"OPEN\",\"OPEN\",\"OPEN\",\"OPEN\",\"BOX\",\"OPEN\",\"OPEN\",\"OPEN\",\"OPEN\",\"OPEN\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"OPEN\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"OPEN\",\"OPEN\",\"OPEN\",\"OPEN\",\"OPEN\",\"OPEN\",\"OPEN\",\"OPEN\",\"OPEN\",\"OPEN\",\"OPEN\",\"OPEN\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\"]]",
+    "[\"[\\\"[9,6,\\\\\\\"A\\\\\\\",10,6]\\\",[\\\"ACID\\\",true],[\\\"L1\\\",true]]\",0,[\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"OPEN\",\"SOLID\",\"SOLID\",\"SOLID\",\"OPEN\",\"OPEN\",\"SOLID\",\"SOLID\",\"SOLID\",\"OPEN\",\"OPEN\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"OPEN\",\"OPEN\",\"OPEN\",\"SOLID\",\"OPEN\",\"OPEN\",\"OPEN\",\"OPEN\",\"OPEN\",\"SOLID\",\"OPEN\",\"OPEN\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"OPEN\",\"OPEN\",\"SOLID\",\"SOLID\",\"OPEN\",\"SOLID\",\"OPEN\",\"OPEN\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"OPEN\",\"SOLID\",\"OPEN\",\"OPEN\",\"OPEN\",\"OPEN\",\"OPEN\",\"SOLID\",\"OPEN\",\"OPEN\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"OPEN\",\"OPEN\",\"OPEN\",\"OPEN\",\"OPEN\",\"BOX\",\"OPEN\",\"OPEN\",\"OPEN\",\"OPEN\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"OPEN\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"OPEN\",\"OPEN\",\"OPEN\",\"OPEN\",\"OPEN\",\"OPEN\",\"OPEN\",\"OPEN\",\"OPEN\",\"OPEN\",\"OPEN\",\"OPEN\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\"]]",
+    "[\"[\\\"[10,6,\\\\\\\"A\\\\\\\",11,6]\\\",[\\\"ACID\\\",true],[\\\"L1\\\",true]]\",0,[\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"OPEN\",\"SOLID\",\"SOLID\",\"SOLID\",\"OPEN\",\"OPEN\",\"SOLID\",\"SOLID\",\"SOLID\",\"OPEN\",\"OPEN\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"OPEN\",\"OPEN\",\"OPEN\",\"SOLID\",\"OPEN\",\"OPEN\",\"OPEN\",\"OPEN\",\"OPEN\",\"SOLID\",\"OPEN\",\"OPEN\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"OPEN\",\"OPEN\",\"SOLID\",\"SOLID\",\"OPEN\",\"SOLID\",\"OPEN\",\"OPEN\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"OPEN\",\"SOLID\",\"OPEN\",\"OPEN\",\"OPEN\",\"OPEN\",\"OPEN\",\"SOLID\",\"OPEN\",\"OPEN\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"OPEN\",\"OPEN\",\"OPEN\",\"OPEN\",\"OPEN\",\"OPEN\",\"BOX\",\"OPEN\",\"OPEN\",\"OPEN\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"OPEN\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"OPEN\",\"OPEN\",\"OPEN\",\"OPEN\",\"OPEN\",\"OPEN\",\"OPEN\",\"OPEN\",\"OPEN\",\"OPEN\",\"OPEN\",\"OPEN\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\"]]",
+    "[\"[\\\"[11,6,\\\\\\\"A\\\\\\\",12,6]\\\",[\\\"ACID\\\",true],[\\\"L1\\\",true]]\",0,[\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"OPEN\",\"SOLID\",\"SOLID\",\"SOLID\",\"OPEN\",\"OPEN\",\"SOLID\",\"SOLID\",\"SOLID\",\"OPEN\",\"OPEN\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"OPEN\",\"OPEN\",\"OPEN\",\"SOLID\",\"OPEN\",\"OPEN\",\"OPEN\",\"OPEN\",\"OPEN\",\"SOLID\",\"OPEN\",\"OPEN\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"OPEN\",\"OPEN\",\"SOLID\",\"SOLID\",\"OPEN\",\"SOLID\",\"OPEN\",\"OPEN\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"OPEN\",\"SOLID\",\"OPEN\",\"OPEN\",\"OPEN\",\"OPEN\",\"OPEN\",\"SOLID\",\"OPEN\",\"OPEN\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"OPEN\",\"OPEN\",\"OPEN\",\"OPEN\",\"OPEN\",\"OPEN\",\"OPEN\",\"BOX\",\"OPEN\",\"OPEN\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"OPEN\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"OPEN\",\"OPEN\",\"OPEN\",\"OPEN\",\"OPEN\",\"OPEN\",\"OPEN\",\"OPEN\",\"OPEN\",\"OPEN\",\"OPEN\",\"OPEN\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\"]]",
+    "[\"[\\\"[12,6,\\\\\\\"A\\\\\\\",13,6]\\\",[\\\"ACID\\\",true],[\\\"L1\\\",true]]\",0,[\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"OPEN\",\"SOLID\",\"SOLID\",\"SOLID\",\"OPEN\",\"OPEN\",\"SOLID\",\"SOLID\",\"SOLID\",\"OPEN\",\"OPEN\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"OPEN\",\"OPEN\",\"OPEN\",\"SOLID\",\"OPEN\",\"OPEN\",\"OPEN\",\"OPEN\",\"OPEN\",\"SOLID\",\"OPEN\",\"OPEN\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"OPEN\",\"OPEN\",\"SOLID\",\"SOLID\",\"OPEN\",\"SOLID\",\"OPEN\",\"OPEN\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"OPEN\",\"SOLID\",\"OPEN\",\"OPEN\",\"OPEN\",\"OPEN\",\"OPEN\",\"SOLID\",\"OPEN\",\"OPEN\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"OPEN\",\"OPEN\",\"OPEN\",\"OPEN\",\"OPEN\",\"OPEN\",\"OPEN\",\"OPEN\",\"BOX\",\"OPEN\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"OPEN\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"OPEN\",\"OPEN\",\"OPEN\",\"OPEN\",\"OPEN\",\"OPEN\",\"OPEN\",\"OPEN\",\"OPEN\",\"OPEN\",\"OPEN\",\"OPEN\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\",\"SOLID\"]]"
+  ],
+  "theme_id": "cave",
+  "title": "滴酸穿石"
+}

@@ -1,0 +1,10 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+OpenGL API 4.1 Metal - 89.4 - Compatibility - Using Device: Apple - Apple M3
+
+TEST USER DIR: /Users/key_/Library/Application Support/CodexPushboxTests/codex-pushbox-test-_tta_xeg
+FAIL polish: crystal moth uses prescribed 6px native canvas
+FAIL polish: moth wings are translucent
+FAIL polish: reeds visibly sway between non-extremal phases
+FAIL polish: cloud sprite actually hops by a native pixel
+Art UI polish: 288 checks, 4 failures
+Executed 1/1 test scripts; passed=False; T2 threads 4/8 NOT RUN.

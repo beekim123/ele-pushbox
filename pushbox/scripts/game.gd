@@ -21,6 +21,8 @@ var lobby: Node2D
 var showcase: Node2D
 var session: RefCounted
 var preview: RefCounted
+const Ecology := preload("res://pushbox/scripts/render/ambient_ecology.gd")
+var ecology_background: Node2D
 var background: Sprite2D
 var view: Node2D
 var hud: CanvasLayer
@@ -55,6 +57,8 @@ func _ready() -> void:
 	background.region_enabled = true
 	background.texture = Style.texture("cave_bg")
 	add_child(background)
+	ecology_background = Ecology.new()
+	background.add_child(ecology_background)
 	view = View.new()
 	view.position = BOARD_POSITION
 	view.z_index = 2
@@ -179,7 +183,14 @@ func select_level_path(path: String, next_mode: String = "legacy", index: int = 
 	session.world.position = BOARD_POSITION
 	session.world.z_index = 1
 	view.theme_id = session.level.get("theme_id","dungeon")
-	background.texture = Style.themed_texture("cave_bg",view.theme_id)
+	background.texture = Style.Art.background(view.theme_id,Vector2i(320,180)) if mode == "campaign" else Style.themed_texture("cave_bg",view.theme_id)
+	ecology_background.visible = mode == "campaign"
+	ecology_background.theme_id = view.theme_id
+	ecology_background.seed = int(session.level.seed)
+	ecology_background.extent = Vector2(320,180)
+	view.ecology_enabled = mode == "campaign"
+	view.ecology_background = ecology_background
+	view.ecology_points = Ecology.anchors(session.level,Vector2(session.board.origin)*16) if mode == "campaign" else {}
 	# Theme variants can read back baseline textures. Prepare every animation
 	# pose during loading so first victory/tool poses never stall settlement.
 	for sprite_name in Style.Art.names():
@@ -187,9 +198,11 @@ func select_level_path(path: String, next_mode: String = "legacy", index: int = 
 	Style.themed_texture("crate_iron_0",view.theme_id)
 	for prop in session.board.Biome.props(session.board):
 		Style.themed_texture(prop.sprite,view.theme_id)
+		for f in 4:
+			Style.themed_texture(Ecology.prop_name(prop.sprite,f/4.0),view.theme_id)
 	_configure_render()
 	background.position = Vector2(session.board.origin) * 16
-	background.region_rect = Rect2(background.position, Vector2(session.level.map[0].length() * 16, session.level.map.size() * 16))
+	background.region_rect = Rect2(Vector2.ZERO,Vector2(320,180)) if mode == "campaign" else Rect2(background.position, Vector2(session.level.map[0].length() * 16, session.level.map.size() * 16))
 	preview = Preview.new()
 	reason = preview.configure(session, self)
 	if not reason.is_empty():
@@ -222,7 +235,7 @@ func select_level_path(path: String, next_mode: String = "legacy", index: int = 
 
 func _layout() -> void:
 	var window := get_window()
-	var base: Vector2i = Vector2i(640,360) if showcase != null and showcase.visible else Vector2i(320,180)
+	var base: Vector2i = Vector2i(320,180)
 	var pixel_scale: int = maxi(1, floori(minf(window.size.x / float(base.x), window.size.y / float(base.y))))
 	var canvas := Vector2i(maxi(base.x, window.size.x / pixel_scale), maxi(base.y, window.size.y / pixel_scale))
 	if window.content_scale_size != canvas:
@@ -230,14 +243,14 @@ func _layout() -> void:
 	_board_position = ((get_viewport_rect().size - Vector2(320, 180)) / 2).round()
 	lobby.position = _board_position
 	if showcase != null and showcase.visible:
-		showcase.position = ((get_viewport_rect().size-Vector2(640,360))/2).round()
-		showcase.terrain.material.set_shader_parameter("world_origin",showcase.to_global(showcase.map_origin))
+		showcase.position = _board_position
+		showcase.refresh_world_origin()
 	if session == null:
 		pause_menu.queue_redraw()
 		return
 	view.position = _board_position
 	session.world.position = _board_position
-	background.position = _board_position + Vector2(session.board.origin) * 16
+	background.position = _board_position if mode == "campaign" else _board_position + Vector2(session.board.origin) * 16
 	view.inventory_anchor = hud.bag_position() + Vector2(6, 6) - _board_position
 	var bombs: Array[Rect2] = hud.bomb_rects()
 	if not bombs.is_empty():

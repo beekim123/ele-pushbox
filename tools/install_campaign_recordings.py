@@ -1,9 +1,13 @@
 #!/usr/bin/env python3
 """Install a complete author-verified recording set without changing old levels."""
 import json
+import argparse
 from pathlib import Path
 root = Path(__file__).resolve().parents[1]
-recordings = sorted((root/'artifacts/stage2a/recorded').glob('*.json'))
+parser = argparse.ArgumentParser(description=__doc__)
+parser.add_argument('--artifact-dir', default='artifacts/stage2a')
+args = parser.parse_args()
+recordings = sorted((root/args.artifact_dir/'recorded').glob('*.json'))
 assert len(recordings) == 36
 for source in recordings:
     data = json.loads(source.read_text())

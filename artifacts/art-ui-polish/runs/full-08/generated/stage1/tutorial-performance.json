@@ -1,0 +1,15 @@
+{
+  "display": "macOS",
+  "frame_max_us": 2636,
+  "frame_samples": 988,
+  "hover_latency_us": [
+    48253,
+    34163,
+    35878,
+    85687,
+    36402
+  ],
+  "hover_max_us": 85687,
+  "hover_samples": 5,
+  "workers": 1
+}

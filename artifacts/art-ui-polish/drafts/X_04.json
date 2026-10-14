@@ -1,0 +1,131 @@
+{
+  "biome_mechanisms": {},
+  "budget": {
+    "bombs": 1.0,
+    "sand_cells": 0.0
+  },
+  "campaign": {
+    "index": 3.0,
+    "map": 5.0,
+    "stars": 2.0
+  },
+  "content": "default",
+  "entities": {
+    "boxes": [
+      {
+        "at": [
+          12.0,
+          4.0
+        ],
+        "id": "A",
+        "kind": "wood"
+      }
+    ],
+    "ladders": [
+      [
+        5.0,
+        4.0
+      ],
+      [
+        6.0,
+        4.0
+      ],
+      [
+        9.0,
+        4.0
+      ]
+    ],
+    "levers": [],
+    "player": [
+      4.0,
+      4.0
+    ],
+    "targets": [
+      [
+        14.0,
+        4.0
+      ]
+    ]
+  },
+  "format": "pushbox.level/1",
+  "hints": [],
+  "id": "X_04",
+  "legend": {
+    "#": "bedrock",
+    ".": "empty",
+    "G": "gate",
+    "a": "acid",
+    "c": "cracked_rock",
+    "h": {
+      "fill": 0.5,
+      "material": "sand"
+    },
+    "i": "ice",
+    "m": "lava",
+    "q": {
+      "fill": 0.75,
+      "material": "sand"
+    },
+    "s": "sand",
+    "u": "pumice",
+    "w": "water"
+  },
+  "map": [
+    "...##########...",
+    "..#.#w#......#..",
+    ".#..#w#.......#.",
+    "#...#w#....G...#",
+    "#....cm....G...#",
+    "#####mm##.######",
+    ".##############.",
+    "................",
+    "...##########..."
+  ],
+  "mechanisms": [
+    {
+      "id": "G1",
+      "kind": "gate",
+      "open_when": {
+        "count": {
+          "gte": 128.0,
+          "rect": [
+            9.0,
+            5.0,
+            1.0,
+            1.0
+          ],
+          "tag": "pumice"
+        }
+      },
+      "tiles": [
+        [
+          11.0,
+          3.0
+        ],
+        [
+          11.0,
+          4.0
+        ]
+      ]
+    }
+  ],
+  "seed": 1.0,
+  "solution": [
+    "BOMB_R",
+    "R",
+    "DIG_D",
+    "R",
+    "R",
+    "R",
+    "POUR_R",
+    "R",
+    "R",
+    "R",
+    "R",
+    "R"
+  ],
+  "solution_hashes": [],
+  "solution_keys": [],
+  "theme_id": "cosmos",
+  "title": "等离子冷却"
+}
