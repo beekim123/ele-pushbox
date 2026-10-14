@@ -1,7 +1,7 @@
 {
   "date": "2026-10-14",
   "stage": "1.5",
-  "status": "technical_candidate_passed_waiting_user_art_acceptance",
+  "status": "stage1_5_user_art_accepted_complete",
   "baseline_commit": "feaa6bad78d56e266cff1c8c070adc9061d282fc",
   "branch": "codex/stage1-5-biome-preview",
   "workers": 1,
@@ -177,13 +177,16 @@
   "phase1_5_committed_or_published": true,
   "technical_review": "Single-worker code and contract audit in this Codex session; no unresolved findings.",
   "next_executor": "user",
-  "next_action": "Double-click Run Demo.command in Finder, open 地图风格预览 · B, inspect all six maps, then reply in this chat: 阶段 1.5 美术通过。 or 阶段 1.5 请修改：……。",
+  "next_action": "No required action for Stage 1.5. To authorize Stage 2, send in this chat: 开始第二阶段玩法开发，按最新规划执行，保持单 worker。",
   "test_summary": "artifacts/biome-preview/logs/final/test-summary.json",
   "source_hashes": "artifacts/biome-preview/source-hashes.json",
   "captures": "artifacts/biome-preview/captures/manifest.json",
   "phase1_5_local_candidate_committed": true,
   "published": false,
   "pushed": false,
-  "user_art_accepted": false,
-  "candidate_commit_message": "Stage 1.5 art preview candidate complete"
+  "user_art_accepted": true,
+  "candidate_commit_message": "Stage 1.5 art preview candidate complete",
+  "user_art_acceptance_date": "2026-10-14",
+  "user_art_acceptance_message": "阶段 1.5 美术通过。",
+  "accepted_code_commit": "668720690e5d04c32c69c129991e4db11d0a1bb9"
 }
