@@ -1,6 +1,7 @@
 extends RefCounted
 ## Pure discrete rules. All commands use names; no SDK calls or randomness.
 
+const Biome := preload("res://pushbox/scripts/biome_mechanisms.gd")
 const WIDTH := 320
 const HEIGHT := 192
 const TILE := 16
@@ -11,6 +12,7 @@ const LOOSE_BIT := 2
 const FLUID_BIT := 4
 const BREAKABLE_BIT := 8
 
+var mechanisms: Dictionary = {}
 var rules: Dictionary
 var player := Vector2i.ZERO
 var boxes: Array = []
@@ -37,6 +39,11 @@ var _classification_threshold: int = 128
 var _uniform_rows: Dictionary = {}
 var _uniform_counts: Dictionary = {}
 var _commands: Array = []
+var _round_active: bool = false
+var _round_items: Array = []
+var _round_cursor: int = 0
+var _round_changed: bool = false
+var _round_before: String = ""
 
 func configure(config: Dictionary, materials: Array, mapping: Dictionary = {}) -> void:
 	rules = config.duplicate(true)
@@ -69,8 +76,16 @@ func read(data: PackedInt32Array, changed_tiles: Array[int] = []) -> void:
 	if ids == data:
 		return
 	ids = data.duplicate()
-	_uniform_rows.clear()
-	for row in ROWS:
+	var rows: Array = range(ROWS)
+	if changed_tiles.is_empty():
+		_uniform_rows.clear()
+	else:
+		var changed_rows: Dictionary = {}
+		for key in changed_tiles:
+			changed_rows[key/COLS] = true
+		rows = changed_rows.keys()
+	for row in rows:
+		_uniform_rows.erase(row)
 		var start: int = row * TILE * WIDTH
 		var material: int = ids[start]
 		if ids.slice(start, start + TILE * WIDTH).count(material) == TILE * WIDTH:
@@ -90,6 +105,11 @@ func inside(tile: Vector2i) -> bool:
 func seed_counts(key: int, material_counts: PackedInt32Array) -> void:
 	# Optional input data from the controller's existing SDK count query.
 	# The board remains pure; ID-only callers use counts() below unchanged.
+	var uniform: int = material_counts.find(256)
+	if uniform >= 0:
+		_counts[key] = _full_counts(uniform)
+		_categories.erase(key)
+		return
 	var result := {"solid": 0, "loose": 0, "fluid": 0, "breakable": 0, "empty": material_counts[0]}
 	for tag in tag_material_ids:
 		var total: int = 0
@@ -99,6 +119,15 @@ func seed_counts(key: int, material_counts: PackedInt32Array) -> void:
 	_counts[key] = result
 	_categories.erase(key)
 
+func _full_counts(material: int) -> Dictionary:
+	if not _uniform_counts.has(material):
+		var bits: int = flags[material]
+		var result := {"solid": 256 if (bits & SOLID_BIT) != 0 else 0, "loose": 256 if (bits & LOOSE_BIT) != 0 else 0, "fluid": 256 if (bits & FLUID_BIT) != 0 else 0, "breakable": 256 if (bits & BREAKABLE_BIT) != 0 else 0, "empty": 256 if material == 0 else 0}
+		for tag in tag_material_ids:
+			result[tag] = 256 if material in tag_material_ids[tag] else 0
+		_uniform_counts[material] = result
+	return _uniform_counts[material]
+
 func counts(tile: Vector2i) -> Dictionary:
 	if not inside(tile):
 		return {"solid": 256, "loose": 0, "fluid": 0, "breakable": 0, "empty": 0}
@@ -106,14 +135,7 @@ func counts(tile: Vector2i) -> Dictionary:
 	if _counts.has(key):
 		return _counts[key]
 	if _uniform_rows.has(tile.y):
-		var material: int = _uniform_rows[tile.y]
-		if not _uniform_counts.has(material):
-			var bits: int = flags[material]
-			var result := {"solid": 256 if (bits & SOLID_BIT) != 0 else 0, "loose": 256 if (bits & LOOSE_BIT) != 0 else 0, "fluid": 256 if (bits & FLUID_BIT) != 0 else 0, "breakable": 256 if (bits & BREAKABLE_BIT) != 0 else 0, "empty": 256 if material == 0 else 0}
-			for tag in tag_material_ids:
-				result[tag] = 256 if material in tag_material_ids[tag] else 0
-			_uniform_counts[material] = result
-		_counts[key] = _uniform_counts[material]
+		_counts[key] = _full_counts(_uniform_rows[tile.y])
 		return _counts[key]
 	# Most tiles are uniformly empty or bedrock. Packed-array count runs in C++;
 	# sixteen short row checks avoid 256 interpreted per-cell/tag operations.
@@ -125,30 +147,21 @@ func counts(tile: Vector2i) -> Dictionary:
 			uniform = false
 			break
 	if uniform:
-		var bits: int = flags[first]
-		var result := {"solid": 256 if (bits & SOLID_BIT) != 0 else 0, "loose": 256 if (bits & LOOSE_BIT) != 0 else 0, "fluid": 256 if (bits & FLUID_BIT) != 0 else 0, "breakable": 256 if (bits & BREAKABLE_BIT) != 0 else 0, "empty": 256 if first == 0 else 0}
-		_counts[key] = result
-		return result
-	var solid: int = 0
-	var loose: int = 0
-	var fluid: int = 0
-	var breakable: int = 0
-	var empty: int = 0
+		_counts[key] = _full_counts(first)
+		return _counts[key]
+	# Mixed tiles are also counted by PackedInt32Array's native loops. A single
+	# 256-ID tile copy avoids interpreted per-particle flag/tag classification;
+	# the resulting counts feed the same thresholds and include every tag.
+	var cells := PackedInt32Array()
 	for y in range(tile.y * TILE, (tile.y + 1) * TILE):
 		var start: int = y * WIDTH + tile.x * TILE
-		for x in TILE:
-			var material: int = ids[start + x]
-			if material == 0:
-				empty += 1
-				continue
-			var bits: int = flags[material]
-			solid += int((bits & SOLID_BIT) != 0)
-			loose += int((bits & LOOSE_BIT) != 0)
-			fluid += int((bits & FLUID_BIT) != 0)
-			breakable += int((bits & BREAKABLE_BIT) != 0)
-	var result := {"solid": solid, "loose": loose, "fluid": fluid, "breakable": breakable, "empty": empty}
-	_counts[key] = result
-	return result
+		cells.append_array(ids.slice(start, start + TILE))
+	var material_counts := PackedInt32Array()
+	material_counts.resize(names.size())
+	for material in names.size():
+		material_counts[material] = cells.count(material)
+	seed_counts(key, material_counts)
+	return _counts[key]
 
 func box_at(tile: Vector2i) -> int:
 	for i in boxes.size():
@@ -202,6 +215,8 @@ func _direction(action: String) -> Vector2i:
 func action_reason(action: String) -> String:
 	var direction: Vector2i = _direction(action)
 	var tile: Vector2i = player + direction
+	if action.begins_with("POUR_"):
+		tile = Biome.poured_at(self, tile)
 	if action in ["L", "R"]:
 		if enterable(tile):
 			return ""
@@ -243,6 +258,8 @@ func apply_action(action: String) -> Dictionary:
 	_commands = []
 	var direction: Vector2i = _direction(action)
 	var tile: Vector2i = player + direction
+	if action.begins_with("POUR_"):
+		tile = Biome.poured_at(self, tile)
 	var amount: int = 0
 	if action in ["L", "R"]:
 		if enterable(tile):
@@ -250,6 +267,9 @@ func apply_action(action: String) -> Dictionary:
 		elif box_at(tile) >= 0 and box_at(tile + Vector2i.UP) < 0 and enterable(tile + direction, true):
 			var index: int = box_at(tile)
 			_swap_box(index, tile + direction)
+			var dest: Vector2i = tile + direction
+			if Biome.wind(self, dest) == direction and tag_count(dest + Vector2i.DOWN, "ice") >= 128 and enterable(dest + direction, true):
+				_swap_box(index, dest + direction)
 			player = tile
 		else:
 			player = tile + Vector2i.UP
@@ -260,7 +280,8 @@ func apply_action(action: String) -> Dictionary:
 			for x in range(tile.x * TILE, (tile.x + 1) * TILE):
 				var material: int = ids[y * WIDTH + x]
 				if material in tag_material_ids.get(rules.dig.tag, []):
-					bag[names[material]] = int(bag.get(names[material], 0)) + 1
+					var name: String = names[material].trim_prefix("levitated_")
+					bag[name] = int(bag.get(name, 0)) + 1
 					_set_cell(x, y, "empty")
 					amount += 1
 	elif action.begins_with("POUR_"):
@@ -291,14 +312,21 @@ func apply_action(action: String) -> Dictionary:
 	moves += 1
 	return {"legal": true, "reason": "", "commands": _commands, "amount": amount}
 
-func _set_cell(x: int, y: int, name: String) -> void:
+func _write_cell(x: int, y: int, name: String) -> void:
+	# Batch writers retain every SDK command in the original order, then dirty
+	# each affected tile once before any count/category query can observe it.
 	_commands.append({"op": "set_cell", "args": [x, y, name]})
 	ids[y * WIDTH + x] = name_ids[name]
-	if _uniform_rows.get(y / TILE, -1) != int(name_ids[name]):
-		_uniform_rows.erase(y / TILE)
-	_counts.erase((y / TILE) * COLS + x / TILE)
-	_categories.erase((y / TILE) * COLS + x / TILE)
+
+func _dirty_tile(tile: Vector2i) -> void:
+	_uniform_rows.erase(tile.y)
+	_counts.erase(tile.y * COLS + tile.x)
+	_categories.erase(tile.y * COLS + tile.x)
 	read_revision += 1
+
+func _set_cell(x: int, y: int, name: String) -> void:
+	_write_cell(x, y, name)
+	_dirty_tile(Vector2i(x / TILE, y / TILE))
 
 func _paint(tile: Vector2i, name: String) -> void:
 	_commands.append({"op": "clear_rect", "args": [tile.x * TILE, tile.y * TILE, TILE, TILE]} if name == "empty" else {"op": "paint_rect", "args": [tile.x * TILE, tile.y * TILE, TILE, TILE, name]})
@@ -306,7 +334,7 @@ func _paint(tile: Vector2i, name: String) -> void:
 		_fill_row(y * WIDTH + tile.x * TILE, name_ids[name])
 	if _uniform_rows.get(tile.y, -1) != int(name_ids[name]):
 		_uniform_rows.erase(tile.y)
-	_counts.erase(tile.y * COLS + tile.x)
+	_counts[tile.y * COLS + tile.x] = _full_counts(name_ids[name])
 	_categories.erase(tile.y * COLS + tile.x)
 	read_revision += 1
 
@@ -323,11 +351,13 @@ func _swap_box(index: int, destination: Vector2i) -> void:
 	_paint(old, "empty")
 	for i in contents.size():
 		if contents[i] != 0:
-			_set_cell(old.x * TILE + i % TILE, old.y * TILE + i / TILE, names[contents[i]])
+			_write_cell(old.x * TILE + i % TILE, old.y * TILE + i / TILE, names[contents[i]])
+	if contents.count(0) != contents.size():
+		_dirty_tile(old)
 	boxes[index].at = destination
 	if rules.settle.wake_water:
 		for neighbour in [old + Vector2i.DOWN, old + Vector2i.LEFT, old + Vector2i.RIGHT]:
-			if not inside(neighbour):
+			if not inside(neighbour) or counts(neighbour).fluid == 0:
 				continue
 			var found: bool = false
 			for y in range(neighbour.y * TILE, (neighbour.y + 1) * TILE):
@@ -342,7 +372,11 @@ func _swap_box(index: int, destination: Vector2i) -> void:
 					break
 
 func _supported(box: Dictionary) -> bool:
+	if Biome.platform(self, box.at):
+		return true
 	var below: Vector2i = box.at + Vector2i.DOWN
+	if box.kind == "wood" and Biome.cloud(self, below):
+		return true
 	if category(below) in ["SOLID", "SAND", "BOX"] or below == player:
 		return true
 	var kind: Dictionary = rules.box_kinds[box.kind]
@@ -372,40 +406,105 @@ func _breakable_tiles() -> Array:
 		var index: int = ids.find(material)
 		while index >= 0:
 			tiles[Vector2i((index % WIDTH) / TILE, (index / WIDTH) / TILE)] = true
-			index = ids.find(material, index + 1)
+			# This tile is already present; skip its remaining cells in this row.
+			# Other columns and subsequent rows still scan in the original order.
+			var next_column: int = ((index % WIDTH) / TILE + 1) * TILE
+			index = ids.find(material, (index / WIDTH) * WIDTH + next_column)
 	var result: Array = tiles.keys()
 	result.sort_custom(func(a: Vector2i, b: Vector2i) -> bool: return a.y < b.y or (a.y == b.y and a.x < b.x))
 	return result
 
-func resolve_round() -> Dictionary:
+func begin_resolve_round() -> void:
 	_commands = []
+	_round_before = actors_key()
+	_round_changed = false
+	_round_cursor = 0
+	_round_items = []
+	for at in _breakable_tiles():
+		_round_items.append(["crumble",at])
+	for kind in ["vine_seeds","hourglasses","scales","stalactites","geysers","freezers","teleporters","gravity_zones"]:
+		for item in mechanisms.get(kind,[]):
+			_round_items.append([kind,item])
+	# Cargo positions can change during biome rules. Sort boxes only afterward,
+	# at the same point as the synchronous round.
+	_round_items.append(["box_order",null])
+	_round_active = true
+
+func advance_resolve_slice() -> Dictionary:
+	var item: Array = _round_items[_round_cursor]
+	_round_cursor += 1
 	var changed: bool = false
-	var before: String = actors_key()
-	for tile in _breakable_tiles():
-		var remaining: int = tag_count(tile, rules.bomb.crumble_tag)
-		if remaining > 0 and remaining < int(rules.bomb.crumble_below):
-			for y in range(tile.y * TILE, (tile.y + 1) * TILE):
-				for x in range(tile.x * TILE, (tile.x + 1) * TILE):
-					if ids[y * WIDTH + x] in tag_material_ids.get(rules.bomb.crumble_tag, []):
-						_set_cell(x, y, "empty")
-			changed = true
-	var order: Array = range(boxes.size())
-	order.sort_custom(func(a: int, b: int) -> bool: return boxes[a].at.y > boxes[b].at.y or (boxes[a].at.y == boxes[b].at.y and boxes[a].at.x < boxes[b].at.x))
-	for index in order:
-		if not _supported(boxes[index]):
-			while not _supported(boxes[index]):
-				_swap_box(index, boxes[index].at + Vector2i.DOWN)
-			changed = true
-			continue
-		var tile: Vector2i = boxes[index].at
-		if not rules.box_kinds[boxes[index].kind].floats or not enterable(tile + Vector2i.UP, true):
-			continue
-		var rise: bool = category(tile + Vector2i.DOWN) == "WATER" and _water_top([tile + Vector2i.DOWN]) <= tile.y
-		if not rise:
-			rise = _water_top([tile + Vector2i.LEFT, tile + Vector2i.RIGHT]) <= tile.y - 1
-		if rise:
-			_swap_box(index, tile + Vector2i.UP)
-			changed = true
+	match item[0]:
+		"crumble":
+			changed = _resolve_crumble(item[1])
+		"box_order":
+			var order: Array = range(boxes.size())
+			order.sort_custom(func(a: int, b: int) -> bool: return boxes[a].at.y > boxes[b].at.y or (boxes[a].at.y == boxes[b].at.y and boxes[a].at.x < boxes[b].at.x))
+			for index in order:
+				_round_items.append(["box",index])
+			_round_items.append(["player",null])
+			for gate in gates:
+				_round_items.append(["gate",gate])
+		"box":
+			changed = _resolve_box(item[1])
+		"player":
+			changed = _resolve_player()
+		"gate":
+			changed = _resolve_gate(item[1])
+		_:
+			changed = Biome.resolve(self,item[0],item[1])
+	_round_changed = _round_changed or changed
+	if _round_cursor < _round_items.size():
+		return {"done":false}
+	_round_active = false
+	_round_items.clear()
+	return {"done":true,"changed":_round_changed,"moved":_round_before != actors_key(),"commands":_commands}
+
+func resolve_round() -> Dictionary:
+	# Pure board/test callers drain the identical stages synchronously.
+	begin_resolve_round()
+	while true:
+		var result: Dictionary = advance_resolve_slice()
+		if result.done:
+			result.erase("done")
+			return result
+	return {}
+
+func _resolve_crumble(tile: Vector2i) -> bool:
+	var remaining: int = tag_count(tile, rules.bomb.crumble_tag)
+	if remaining <= 0 or remaining >= int(rules.bomb.crumble_below):
+		return false
+	for y in range(tile.y * TILE, (tile.y + 1) * TILE):
+		for x in range(tile.x * TILE, (tile.x + 1) * TILE):
+			if ids[y * WIDTH + x] in tag_material_ids.get(rules.bomb.crumble_tag, []):
+				_set_cell(x, y, "empty")
+	return true
+
+func _resolve_box(index: int) -> bool:
+	if Biome.gravity(self, boxes[index]) == -1:
+		var dest: Vector2i = boxes[index].at
+		while Biome.gravity(self, {"kind":boxes[index].kind,"at":dest + Vector2i.UP}) == -1 and enterable(dest + Vector2i.UP, true):
+			dest += Vector2i.UP
+		if dest != boxes[index].at:
+			_swap_box(index, dest)
+			return true
+		return false
+	if not _supported(boxes[index]):
+		while not _supported(boxes[index]):
+			_swap_box(index, boxes[index].at + Vector2i.DOWN)
+		return true
+	var tile: Vector2i = boxes[index].at
+	if not rules.box_kinds[boxes[index].kind].floats or not enterable(tile + Vector2i.UP, true):
+		return false
+	var rise: bool = category(tile + Vector2i.DOWN) == "WATER" and _water_top([tile + Vector2i.DOWN]) <= tile.y
+	if not rise:
+		rise = _water_top([tile + Vector2i.LEFT, tile + Vector2i.RIGHT]) <= tile.y - 1
+	if rise:
+		_swap_box(index, tile + Vector2i.UP)
+	return rise
+
+func _resolve_player() -> bool:
+	var before: Vector2i = player
 	trapped = false
 	if category(player) in ["SOLID", "SAND"]:
 		var escape: Vector2i = player + Vector2i.UP
@@ -415,34 +514,34 @@ func resolve_round() -> Dictionary:
 			trapped = true
 		else:
 			player = escape
-			changed = true
-	while not player in ladders and not (player + Vector2i.DOWN) in ladders and enterable(player + Vector2i.DOWN):
+	while not player in ladders and not (player + Vector2i.DOWN) in ladders and not Biome.cloud(self, player + Vector2i.DOWN) and not Biome.platform(self, player) and enterable(player + Vector2i.DOWN):
 		player.y += 1
-		changed = true
-	for gate in gates:
-		var want: bool = condition(gate.open_when)
-		if want and not gate.open:
+	return before != player
+
+func _resolve_gate(gate: Dictionary) -> bool:
+	var want: bool = condition(gate.open_when)
+	if want and not gate.open:
+		for tile in gate.tiles:
+			_paint(tile, "empty")
+		gate.open = true
+		return true
+	if not want and gate.open:
+		var occupied: bool = false
+		var stuff: int = 0
+		for tile in gate.tiles:
+			stuff += 256 - int(counts(tile).empty)
+			occupied = occupied or tile == player or box_at(tile) >= 0
+		if not occupied and stuff <= int(rules.gate.crush_max):
 			for tile in gate.tiles:
-				_paint(tile, "empty")
-			gate.open = true
-			changed = true
-		elif not want and gate.open:
-			var occupied: bool = false
-			var stuff: int = 0
-			for tile in gate.tiles:
-				stuff += 256 - int(counts(tile).empty)
-				occupied = occupied or tile == player or box_at(tile) >= 0
-			if not occupied and stuff <= int(rules.gate.crush_max):
-				for tile in gate.tiles:
-					for y in range(tile.y * TILE, (tile.y + 1) * TILE):
-						for x in range(tile.x * TILE, (tile.x + 1) * TILE):
-							var name: String = names[ids[y * WIDTH + x]]
-							if name != "empty":
-								gate_crushed[name] = int(gate_crushed.get(name, 0)) + 1
-					_paint(tile, "gate")
-				gate.open = false
-				changed = true
-	return {"changed": changed, "moved": before != actors_key(), "commands": _commands}
+				for y in range(tile.y * TILE, (tile.y + 1) * TILE):
+					for x in range(tile.x * TILE, (tile.x + 1) * TILE):
+						var name: String = names[ids[y * WIDTH + x]]
+						if name != "empty":
+							gate_crushed[name] = int(gate_crushed.get(name, 0)) + 1
+				_paint(tile, "gate")
+			gate.open = false
+			return true
+	return false
 
 func condition(expression: Variant) -> bool:
 	if expression is String:
@@ -508,6 +607,9 @@ func movement_key() -> String:
 		values.append([gate.id, gate.open])
 	for lever in levers:
 		values.append([lever.id, lever.on])
+	if not mechanisms.is_empty():
+		values.append(mechanisms)
+		values.append(ladders.map(func(at: Vector2i) -> Array: return [at.x, at.y]))
 	return JSON.stringify(values)
 
 func categories() -> PackedStringArray:
@@ -517,8 +619,11 @@ func categories() -> PackedStringArray:
 			result.append(category(Vector2i(x, y)))
 	return result
 
-func position_key() -> String:
-	return JSON.stringify([movement_key(), bombs, Array(categories())])
+func position_key(tile_categories: PackedStringArray = PackedStringArray()) -> String:
+	var values: Array = [movement_key(), bombs, Array(categories() if tile_categories.is_empty() else tile_categories)]
+	if not mechanisms.is_empty():
+		values.append(state())
+	return JSON.stringify(values)
 
 func state() -> Dictionary:
 	var result := {"player": [player.x, player.y], "boxes": [], "levers": [], "gates": [], "bag": bag.duplicate(), "bombs": bombs, "moves": moves, "trapped": trapped, "gate_crushed": gate_crushed.duplicate()}
@@ -528,9 +633,19 @@ func state() -> Dictionary:
 		result.levers.append({"id": lever.id, "at": [lever.at.x, lever.at.y], "on": lever.on})
 	for gate in gates:
 		result.gates.append({"id": gate.id, "open": gate.open})
+	if not mechanisms.is_empty():
+		result.mechanisms = Biome.canonical(mechanisms)
+		result.ladders = ladders.map(func(at: Vector2i) -> Array: return [at.x, at.y])
 	return result
 
 func restore(data: Dictionary) -> void:
+	_round_active = false
+	_round_items.clear()
+	if data.has("mechanisms"):
+		mechanisms = Biome.canonical(data.mechanisms)
+		ladders.clear()
+		for at in data.ladders:
+			ladders.append(Vector2i(at[0], at[1]))
 	player = Vector2i(data.player[0], data.player[1])
 	boxes = data.boxes.duplicate(true)
 	for box in boxes:

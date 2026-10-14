@@ -7,6 +7,9 @@ uniform int acid_id = -1;
 uniform int lava_id = -1;
 uniform int pumice_id = -1;
 uniform int ice_id = -1;
+uniform int levitated_sand_id = -1;
+uniform int levitated_pumice_id = -1;
+uniform int fume_id = -1;
 uniform vec4 bedrock_base = vec4(0.227451,0.266667,0.4,1.0);
 uniform vec4 bedrock_seam = vec4(0.149020,0.168627,0.266667,1.0);
 uniform vec4 bedrock_edge = vec4(0.545098,0.607843,0.705882,1.0);
@@ -117,7 +120,7 @@ void fragment() {
 			if (material_at(TEXTURE, px - ivec2(1,0)) == sand_id || material_at(TEXTURE, px + ivec2(1,0)) == sand_id) { c = INK; }
 		} else if (mat == cracked_id) {
 			c = cracked_rock(tile_pixel);
-		} else if (mat == sand_id) {
+		} else if (mat == sand_id || mat == levitated_sand_id) {
 			c = variant == 0 ? sand_base : (variant == 1 ? sand_mid : sand_light);
 			if (exposed) { c = sand_light; }
 		} else if (mat == water_id) {
@@ -137,9 +140,11 @@ void fragment() {
 			if (mod(wp.x-floor(wp.y/3.0),11.0) < 2.0 || up != lava_id) {
 				c = biome_style_id == 5 ? vec4(1.0,0.0,0.266667,1.0) : vec4(0.996078,0.682353,0.203922,1.0);
 			}
-		} else if (mat == pumice_id) {
+		} else if (mat == pumice_id || mat == levitated_pumice_id) {
 			c = variant % 2 == 0 ? vec4(0.545098,0.607843,0.705882,1.0) : vec4(0.352941,0.411765,0.533333,1.0);
 			if (mod(wp.x+wp.y*5.0,7.0) == 0.0) { c = INK; }
+		} else if (mat == fume_id) {
+			c = vec4(0.72,0.86,0.45,0.45);
 		} else if (mat == ice_id) {
 			c = vec4(0.172549,0.909804,0.960784,1.0);
 			if (mod(tile_pixel.x+tile_pixel.y,9.0) < 2.0 || up != ice_id) { c = vec4(1.0); }

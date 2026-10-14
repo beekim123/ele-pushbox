@@ -33,7 +33,7 @@ func tile(cells: PackedInt32Array, at: Vector2i, material: int, amount: int = 25
 		cells[(at.y * 16 + i / 16) * 320 + at.x * 16 + i % 16] = material if i < amount else 0
 
 func _initialize() -> void:
-	materials = Loader.json("res://pushbox/content/default/materials.json").materials
+	materials = Loader.json("res://pushbox/content/legacy/materials.json").materials
 	rules = Loader.json("res://pushbox/rules.json")
 	for amount in [0, 16, 17]:
 		var b: RefCounted = board_fixture()

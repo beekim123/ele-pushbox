@@ -4,7 +4,8 @@ extends RefCounted
 const Board := preload("res://pushbox/scripts/board.gd")
 const Loader := preload("res://pushbox/scripts/level_loader.gd")
 const COUNT_BATCH := 32
-enum Phase { TICKS, READ, COUNTS, RESOLVE, COMMIT_LAST, KEY }
+const COUNT_BUDGET_US := 1000
+enum Phase { TICKS, READ, CLASSIFY, COUNTS, RESOLVE, COMMIT_LAST, CATEGORIES, KEY }
 
 var world: Node
 var board: RefCounted
@@ -36,9 +37,14 @@ var phase: Phase = Phase.TICKS
 var last_work_phase: String = "TICKS"
 var last_read_us: int = 0
 var last_count_us: int = 0
+var last_pump_us: int = 0
+var last_sdk_step_us: int = 0
 var _count_tiles: Array[int] = []
 var _count_cursor: int = 0
+var _read_data := PackedInt32Array()
 var _terminal_read: bool = false
+var _key_categories := PackedStringArray()
+var _key_cursor: int = 0
 
 func load_level(path: String, parent: Node, render: bool = false) -> String:
 	level_path = path
@@ -84,10 +90,13 @@ func load_level(path: String, parent: Node, render: bool = false) -> String:
 	return ""
 
 func _begin(commands: Array) -> void:
+	_read_data = PackedInt32Array()
 	phase = Phase.TICKS
 	_count_tiles.clear()
 	_count_cursor = 0
 	_terminal_read = false
+	_key_categories = PackedStringArray()
+	_key_cursor = 0
 	_pending = commands
 	_offset = 0
 	_quiet = 0
@@ -137,22 +146,33 @@ func _prepare_world_read() -> void:
 					for x in range(cx * 4, cx * 4 + 4):
 						_count_tiles.append(y * 20 + x)
 	_chunk_versions = versions
-	board.read(world.get_material_ids(0, 0, 320, 192), _count_tiles)
+	_read_data = world.get_material_ids(0,0,320,192)
 
 func _seed_count_batch() -> bool:
+	var started: int = Time.get_ticks_usec()
 	var end: int = mini(_count_cursor + COUNT_BATCH, _count_tiles.size())
 	while _count_cursor < end:
 		var key: int = _count_tiles[_count_cursor]
 		board.seed_counts(key, world.count_materials((key % 20) * 16, (key / 20) * 16, 16, 16))
+		# Classify the same bounded batch while its counts are hot. This keeps
+		# the later position-key frame from classifying 240 cold tiles at once.
+		board.category(Vector2i(key % 20,key / 20))
 		_count_cursor += 1
+		if Time.get_ticks_usec() - started >= COUNT_BUDGET_US:
+			break
 	return _count_cursor == _count_tiles.size()
 
 func _step_once() -> void:
+	var pumping: int = Time.get_ticks_usec()
 	if _offset < _pending.size():
 		_pump()
-	if world.step(1) != 0:
+	last_pump_us += Time.get_ticks_usec() - pumping
+	var stepping: int = Time.get_ticks_usec()
+	var step_error: int = world.step(1)
+	last_sdk_step_us += Time.get_ticks_usec() - stepping
+	if step_error != 0:
 		errors.append(world.get_last_error())
-		phase = Phase.KEY
+		_start_key()
 		return
 	last_ticks += 1
 	total_ticks += 1
@@ -166,11 +186,20 @@ func _step_once() -> void:
 		errors.append("settle hit max_ticks")
 	phase = Phase.READ
 
+func _start_key() -> void:
+	_key_categories = PackedStringArray()
+	_key_cursor = 0
+	phase = Phase.CATEGORIES
+
 func _resolve() -> void:
-	last_rounds += 1
-	var result: Dictionary = board.resolve_round()
+	if not board._round_active:
+		board.begin_resolve_round()
+		last_rounds += 1
+	var result: Dictionary = board.advance_resolve_slice()
+	if not result.done:
+		return
 	if not result.changed:
-		phase = Phase.KEY
+		_start_key()
 		return
 	_pending = result.commands
 	_offset = 0
@@ -192,11 +221,19 @@ func _work_once() -> void:
 	match phase:
 		Phase.READ:
 			_prepare_world_read()
+			phase = Phase.CLASSIFY
+			last_read_us += Time.get_ticks_usec() - started
+		Phase.CLASSIFY:
+			board.read(_read_data,_count_tiles)
+			_read_data = PackedInt32Array()
 			phase = Phase.COUNTS
 			last_read_us += Time.get_ticks_usec() - started
 		Phase.COUNTS:
 			if _seed_count_batch():
-				phase = Phase.KEY if _terminal_read else Phase.RESOLVE
+				if _terminal_read:
+					_start_key()
+				else:
+					phase = Phase.RESOLVE
 			last_count_us += Time.get_ticks_usec() - started
 		Phase.RESOLVE:
 			_resolve()
@@ -211,8 +248,16 @@ func _work_once() -> void:
 			if _offset == _pending.size():
 				_terminal_read = true
 				phase = Phase.READ
+		Phase.CATEGORIES:
+			var end: int = mini(_key_cursor + 64, Board.COLS * Board.ROWS)
+			while _key_cursor < end:
+				_key_categories.append(board.category(Vector2i(_key_cursor % Board.COLS,_key_cursor / Board.COLS)))
+				_key_cursor += 1
+			if _key_cursor == Board.COLS * Board.ROWS:
+				phase = Phase.KEY
+			last_key_us += Time.get_ticks_usec() - started
 		Phase.KEY:
-			history.append(board.position_key())
+			history.append(board.position_key(_key_categories))
 			last_key_us += Time.get_ticks_usec() - started
 			running = false
 			phase = Phase.TICKS
@@ -225,6 +270,8 @@ func _advance(tick_budget: int, yield_work: bool) -> void:
 	last_resolve_us = 0
 	last_read_us = 0
 	last_count_us = 0
+	last_pump_us = 0
+	last_sdk_step_us = 0
 	last_work_phase = Phase.keys()[phase]
 	var stepped: int = 0
 	while running:
@@ -276,6 +323,7 @@ func restore(saved: Dictionary) -> bool:
 	if data.is_empty() or world.load_snapshot(saved.path) != 0:
 		errors.append("restore: " + world.get_last_error())
 		return false
+	_read_data = PackedInt32Array()
 	board.restore(data.board)
 	_chunk_versions.clear()
 	board.read(world.get_material_ids(0, 0, 320, 192))
@@ -290,6 +338,8 @@ func restore(saved: Dictionary) -> bool:
 	_count_tiles.clear()
 	_count_cursor = 0
 	_terminal_read = false
+	_key_categories = PackedStringArray()
+	_key_cursor = 0
 	_pending.clear()
 	_offset = 0
 	return true

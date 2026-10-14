@@ -10,6 +10,9 @@ const Lobby := preload("res://pushbox/scripts/ui/lobby_view.gd")
 const Showcase := preload("res://pushbox/scripts/ui/biome_showcase_view.gd")
 const ThemeBinder := preload("res://pushbox/scripts/render/theme_shader_binder.gd")
 const PauseMenu := preload("res://pushbox/scripts/ui/pause_menu.gd")
+const Catalog := preload("res://pushbox/scripts/campaign_catalog.gd")
+var campaign_map: int = 0
+var _campaign_save_pending: bool = false
 const BOARD_POSITION := Vector2.ZERO
 var start_in_lobby: bool = not OS.get_cmdline_args().has("--script")
 var progress_path: String = "user://progress.json"
@@ -74,10 +77,12 @@ func _ready() -> void:
 	lobby.level_selected.connect(select_tutorial)
 	lobby.settings_requested.connect(_lobby_settings)
 	lobby.showcase_requested.connect(open_showcase)
+	lobby.campaign_selected.connect(select_campaign)
+	lobby.observation_requested.connect(open_observation)
 	showcase = Showcase.new()
 	showcase.z_index = 11
 	add_child(showcase)
-	showcase.closed.connect(return_lobby)
+	showcase.closed.connect(_close_showcase)
 	get_viewport().size_changed.connect(_on_viewport_resized)
 	if start_in_lobby:
 		return_lobby()
@@ -90,8 +95,30 @@ func select_level(index: int) -> void:
 func select_tutorial(index: int) -> void:
 	select_level_path("res://pushbox/levels/tutorial/t%02d.json" % (clampi(index, 0, 3) + 1), "tutorial", clampi(index, 0, 3))
 
+func select_campaign(map: int, index: int) -> void:
+	if not lobby.level_unlocked(map,index):
+		return
+	campaign_map = map
+	lobby.map_index = map
+	select_level_path(Catalog.path(map,index), "campaign", index)
+
+func open_observation(map: int, index: int) -> void:
+	return_lobby("campaign")
+	lobby.conceal()
+	showcase.open_campaign(map,index)
+	_layout()
+
+func _close_showcase() -> void:
+	if showcase.campaign_mode:
+		lobby.map_index = showcase.index
+		return_lobby("campaign")
+	else:
+		return_lobby()
+
 func _select_menu_level(index: int) -> void:
-	if mode == "tutorial":
+	if mode == "campaign":
+		return_lobby("campaign")
+	elif mode == "tutorial":
 		select_tutorial(index)
 	else:
 		select_level(index)
@@ -111,6 +138,7 @@ func return_lobby(page: String = "modes") -> void:
 	hud.dragging = false
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	lobby.save_progress()
+	_campaign_save_pending = false
 	close_sessions()
 	hud.session = null
 	hud.painter.hide()
@@ -120,7 +148,7 @@ func return_lobby(page: String = "modes") -> void:
 	pause_menu.close()
 	_victory_left = -1.0
 	_replaying = false
-	lobby.show_page(page)
+	lobby.show_page(page, level_index if page == "campaign" and mode == "campaign" else 0)
 	_layout()
 
 func open_showcase() -> void:
@@ -141,6 +169,7 @@ func select_level_path(path: String, next_mode: String = "legacy", index: int = 
 	hud.painter.show()
 	pause_menu.lobby_context = false
 	pause_menu.tutorial = mode == "tutorial"
+	pause_menu.campaign = mode == "campaign"
 	session = Session.new()
 	var reason: String = session.load_level(path, self, true)
 	if not reason.is_empty():
@@ -151,6 +180,13 @@ func select_level_path(path: String, next_mode: String = "legacy", index: int = 
 	session.world.z_index = 1
 	view.theme_id = session.level.get("theme_id","dungeon")
 	background.texture = Style.themed_texture("cave_bg",view.theme_id)
+	# Theme variants can read back baseline textures. Prepare every animation
+	# pose during loading so first victory/tool poses never stall settlement.
+	for sprite_name in Style.Art.names():
+		Style.themed_texture(sprite_name,view.theme_id)
+	Style.themed_texture("crate_iron_0",view.theme_id)
+	for prop in session.board.Biome.props(session.board):
+		Style.themed_texture(prop.sprite,view.theme_id)
 	_configure_render()
 	background.position = Vector2(session.board.origin) * 16
 	background.region_rect = Rect2(background.position, Vector2(session.level.map[0].length() * 16, session.level.map.size() * 16))
@@ -256,6 +292,20 @@ func _configure_render() -> void:
 func _physics_process(_delta: float) -> void:
 	if session == null or not is_instance_valid(session.world) or pause_menu.opened:
 		return
+	if _campaign_save_pending and not session.running:
+		var save_start: int = Time.get_ticks_usec()
+		var save_phase: String = "CAMPAIGN_COMMIT" if lobby._staged_save else "CAMPAIGN_WRITE"
+		if lobby._staged_save:
+			lobby.commit_progress()
+			_campaign_save_pending = false
+		elif lobby._write_task >= 0:
+			if lobby.finish_progress_write() and not lobby._write_success:
+				_campaign_save_pending = false
+		elif not lobby.begin_progress_write():
+			_campaign_save_pending = false
+		frame_timing = {"phase":save_phase, "bookkeeping_us":Time.get_ticks_usec()-save_start}
+		frame_us.append(Time.get_ticks_usec()-save_start)
+		return
 	if animation_left > 0 and not skip_animation:
 		animation_left -= 1
 		view.fraction = 1.0 - animation_left / 6.0
@@ -298,12 +348,13 @@ func _physics_process(_delta: float) -> void:
 			if session.board.trapped:
 				_message("? 按 Z 撤销")
 			if session.board.won():
-				if mode == "tutorial":
-					lobby.mark_completed(session.level.id)
+				if mode in ["campaign","tutorial"]:
+					lobby.mark_completed(session.level.id,true)
+					_campaign_save_pending = true
 				_victory_left = 1.5
 				view.winning = true
 		hud.update_state(session)
-		frame_timing = {"tick_us": ticked - start, "phase": session.last_work_phase, "read_us": session.last_read_us, "count_us": session.last_count_us, "resolve_us": session.last_resolve_us, "key_us": session.last_key_us, "view_us": viewed - ticked, "bookkeeping_us": Time.get_ticks_usec() - viewed}
+		frame_timing = {"tick_us": ticked - start, "pump_us":session.last_pump_us,"sdk_step_us":session.last_sdk_step_us, "phase": session.last_work_phase, "read_us": session.last_read_us, "count_us": session.last_count_us, "resolve_us": session.last_resolve_us, "key_us": session.last_key_us, "view_us": viewed - ticked, "bookkeeping_us": Time.get_ticks_usec() - viewed}
 		frame_us.append(Time.get_ticks_usec() - start)
 	elif _replaying:
 		if _replay_index < session.level.solution.size():
@@ -335,12 +386,14 @@ func _process(delta: float) -> void:
 		if _message_left <= 0:
 			view.message = ""
 			view.queue_redraw()
-	if _victory_left > 0 and not _replaying:
+	if _victory_left > 0 and not _replaying and not _campaign_save_pending:
 		_victory_left -= delta
 		view.exit_fade = clampf((0.3 - _victory_left) / 0.3, 0.0, 1.0) if mode == "tutorial" or level_index < 4 else 0.0
 		view.queue_redraw()
 		if _victory_left <= 0:
-			if mode == "tutorial":
+			if mode == "campaign":
+				return_lobby("campaign")
+			elif mode == "tutorial":
 				if level_index == 3:
 					return_lobby()
 				else:
@@ -427,7 +480,7 @@ func request_direction(direction: String) -> void:
 	request_action("USE" if direction == "U" and session.board.action_reason("USE").is_empty() else direction)
 
 func request_action(action: String, _direct: bool = true) -> void:
-	if session == null or session.running or animation_left > 0 or _opening or pause_menu.opened or view.winning:
+	if session == null or session.running or animation_left > 0 or _opening or _campaign_save_pending or pause_menu.opened or view.winning:
 		return
 	var reason: String = session.board.action_reason(action)
 	if not reason.is_empty():
@@ -459,11 +512,17 @@ func request_action(action: String, _direct: bool = true) -> void:
 		_message(result.reason)
 
 func utility(action: String) -> void:
+	if _campaign_save_pending:
+		lobby.save_progress()
+		_campaign_save_pending = false
 	if action == "quit":
 		get_tree().quit()
 		return
+	if action == "campaign_pool":
+		return_lobby("campaign")
+		return
 	if action == "lobby":
-		return_lobby()
+		return_lobby("campaign" if mode == "campaign" else "modes")
 		return
 	if action == "reset_guides":
 		_guide_progress.clear()
@@ -617,6 +676,9 @@ func _save_guides() -> void:
 		file.store_string(JSON.stringify(_guide_progress))
 
 func close_sessions() -> void:
+	if _campaign_save_pending and is_instance_valid(lobby):
+		lobby.save_progress()
+		_campaign_save_pending = false
 	if preview != null:
 		preview.dispose()
 		preview = null

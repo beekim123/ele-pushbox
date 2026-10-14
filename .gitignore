@@ -21,3 +21,6 @@ __pycache__/
 /artifacts/logs/environment.json
 /artifacts/logs/package-check-path.txt
 /artifacts/v03/test-created-guide-progress.json
+
+/artifacts/macos-stage2a/*.app/
+/artifacts/macos-stage2a/*.dmg

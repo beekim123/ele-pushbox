@@ -106,5 +106,36 @@ func run() -> void:
 	check(capped.board.state() == capped_original.board.state() and capped.history == capped_original.history, "nonempty final commit retains original discrete state/key")
 	capped.dispose()
 	capped_original.dispose()
+	# Undo during a biome mutation must discard its unfinished round cursor,
+	# before any of the queued commands are submitted to the SDK.
+	var staged := Session.new()
+	check(staged.load_level("res://pushbox/levels/campaign/ruins/c_ruins_04.json",root) == "","staged mechanism fixture loads")
+	finish_frames(staged)
+	staged.seal_opening()
+	var staged_hash: String = staged.world.get_state_hash()
+	var staged_state: Dictionary = staged.board.state()
+	check(staged.perform("USE",true).legal,"staged hourglass action")
+	var guard: int = 0
+	while staged.running and not (staged.board._round_active and staged.board._round_changed) and guard < 2000:
+		staged.advance_frame(4)
+		guard += 1
+	check(staged.board._round_active and staged.board.mechanisms.hourglasses[0].get("opened",false),"interrupt after hourglass mutation before round commit")
+	check(staged.undo(),"undo unfinished biome round")
+	staged.advance_frame(4)
+	check(not staged.board._round_active and not staged.running and staged.world.get_state_hash() == staged_hash and staged.board.state() == staged_state,"undo cancels staged mechanism and pending SDK writes")
+	check(staged.perform("USE",true).legal,"redo staged mechanism")
+	finish_frames(staged)
+	check(staged.world.get_state_hash() == staged.level.solution_hashes[0] and staged.board.position_key() == staged.level.solution_keys[0],"sliced mechanism retains recorded hash and key")
+	check(staged.undo() and staged.perform("USE",true).legal,"prepare interrupted category key")
+	guard = 0
+	while staged.running and staged.phase != staged.Phase.CATEGORIES and guard < 2000:
+		staged.advance_frame(4)
+		guard += 1
+	staged.advance_frame(4)
+	check(staged.phase == staged.Phase.CATEGORIES and staged._key_cursor == 64,"key categories span bounded frozen frames")
+	check(staged.undo(),"undo partial category key")
+	staged.advance_frame(4)
+	check(not staged.running and staged._key_cursor == 0 and staged.world.get_state_hash() == staged_hash and staged.board.state() == staged_state,"undo discards partial key without a later history commit")
+	staged.dispose()
 	print("Session scheduling: %d checks, %d failures" % [checks, failures])
 	quit(1 if failures else 0)

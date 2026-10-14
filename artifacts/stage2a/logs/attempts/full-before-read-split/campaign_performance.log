@@ -1,0 +1,42 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+OpenGL API 4.1 Metal - 89.4 - Compatibility - Using Device: Apple - Apple M3
+
+T8 D_01 samples=123 max_us=3316
+T8 D_02 samples=98 max_us=1069
+T8 D_03 samples=137 max_us=2210
+T8 D_04 samples=160 max_us=1539
+T8 D_05 samples=265 max_us=2831
+T8 D_06 samples=372 max_us=2692
+T8 F_01 samples=124 max_us=1515
+T8 F_02 samples=185 max_us=2054
+T8 F_03 samples=175 max_us=2535
+T8 F_04 samples=193 max_us=1968
+T8 F_05 samples=227 max_us=1639
+FAIL T8 F_06 move=8 us=4267 phases={ "tick_us": 4167, "phase": "READ", "read_us": 4089, "count_us": 0, "resolve_us": 0, "key_us": 0, "view_us": 71, "bookkeeping_us": 16 }
+T8 F_06 samples=264 max_us=4267
+T8 R_01 samples=77 max_us=2121
+T8 R_02 samples=149 max_us=1368
+T8 R_03 samples=199 max_us=2910
+T8 R_04 samples=160 max_us=3227
+T8 R_05 samples=433 max_us=3107
+T8 R_06 samples=677 max_us=3552
+T8 C_01 samples=84 max_us=2283
+T8 C_02 samples=182 max_us=3977
+T8 C_03 samples=179 max_us=2356
+T8 C_04 samples=77 max_us=2279
+T8 C_05 samples=457 max_us=2550
+T8 C_06 samples=340 max_us=2510
+T8 S_01 samples=132 max_us=1209
+T8 S_02 samples=147 max_us=2301
+T8 S_03 samples=171 max_us=1963
+T8 S_04 samples=119 max_us=1663
+T8 S_05 samples=168 max_us=1397
+T8 S_06 samples=249 max_us=2090
+T8 X_01 samples=85 max_us=1570
+T8 X_02 samples=107 max_us=2757
+T8 X_03 samples=161 max_us=2389
+T8 X_04 samples=584 max_us=3055
+FAIL T8 X_05 move=44 us=4001 phases={ "phase": "CAMPAIGN_SAVE", "bookkeeping_us": 3549 }
+T8 X_05 samples=286 max_us=4001
+T8 X_06 samples=549 max_us=2665
+Campaign T8: 8095 frames, max_us=4267, 2 failures

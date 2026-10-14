@@ -7,6 +7,10 @@ static func json(path: String) -> Dictionary:
 	var parser := JSON.new()
 	if parser.parse(FileAccess.get_file_as_string(path)) != OK or not parser.data is Dictionary:
 		return {}
+	# SDK hashes include the content registry. Preserve the accepted nine levels
+	# with their byte-exact registry while default grows for campaign content.
+	if parser.data.get("format") == "pushbox.level/1" and parser.data.get("id") in ["d4", "d5", "d2", "d3_float", "d1", "t01", "t02", "t03", "t04"] and parser.data.get("content", "default") == "default":
+		parser.data.content = "legacy"
 	return parser.data
 
 static func merge(base: Dictionary, override: Dictionary) -> Dictionary:
@@ -163,13 +167,79 @@ static func validate(level: Dictionary, materials: Array, rules: Dictionary) -> 
 				return "鼠标引导坐标或按钮无效。"
 		if guide.has("hand") and (not guide.hand is Dictionary or guide.hand.get("from") != "hud:bombs" or guide.hand.get("to") != "map"):
 			return "拖动引导配置无效。"
+	var mechanism_error: String = _validate_biome(level.get("biome_mechanisms", {}), width, height, entities, definitions)
+	if not mechanism_error.is_empty():
+		return mechanism_error
 	if int(rules.settle.quiet_ticks) <= 1 or int(rules.classify.threshold) < 1 or int(rules.classify.threshold) > 256:
 		return "规则参数无效。"
+	return ""
+
+static func _validate_biome(data: Variant, width: int, height: int, entities: Dictionary, definitions: Dictionary) -> String:
+	if not data is Dictionary:
+		return "地图机关必须是对象。"
+	for kind in data:
+		if not kind in ["vine_seeds", "hourglasses", "scales", "stalactites", "geysers", "freezers", "cloud_pads", "wind_zones", "teleporters", "gravity_zones"] or not data[kind] is Array:
+			return "未知地图机关或数组无效：" + kind
+		for item in data[kind]:
+			if kind == "cloud_pads":
+				if not _coord(item, width, height):
+					return "浮云坐标无效。"
+				continue
+			if not item is Dictionary:
+				return "地图机关配置无效。"
+			if item.has("active_when") and not _guide_condition(item.active_when, width, height, entities):
+				return "地图机关条件无效。"
+			for key in ["at", "support", "left", "right", "from", "to"]:
+				if item.has(key) and not _coord(item[key], width, height):
+					return "地图机关坐标无效：" + key
+			for key in {"vine_seeds":["at", "height"], "hourglasses":["tiles", "open_when"], "scales":["left", "right", "lift"], "stalactites":["at", "support"], "geysers":["at", "every"], "freezers":["tiles", "active_when"], "wind_zones":["rect", "direction"], "teleporters":["from", "to"], "gravity_zones":["rect", "active_when"]}.get(kind, []):
+				if not item.has(key):
+					return "地图机关缺少字段：" + key
+			for key in ["height", "lift", "every", "threshold"]:
+				if item.has(key) and (not item[key] is float or item[key] < (0 if key == "threshold" else 1) or item[key] != int(item[key]) or item[key] > 32):
+					return "地图机关整数参数无效。"
+			if kind == "scales":
+				if item.left[1]+item.lift+1 >= height or item.right[1]+1 >= height or item.right[1]-item.lift < 0:
+					return "天平升降范围越界。"
+				if item.has("weight_height") and (not item.weight_height is float or item.weight_height < 1 or item.weight_height > height or item.weight_height != int(item.weight_height)):
+					return "天平称重高度无效。"
+			if item.has("delayed_tiles"):
+				if not item.delayed_tiles is Array:
+					return "定量漏斗源坐标无效。"
+				for at in item.delayed_tiles:
+					if not _coord(at,width,height):
+						return "定量漏斗源坐标无效。"
+			if item.has("tiles"):
+				if not item.tiles is Array or item.tiles.is_empty():
+					return "地图机关格列表为空。"
+				for at in item.tiles:
+					if not _coord(at, width, height):
+						return "地图机关格坐标无效。"
+			if item.has("rect"):
+				var r: Variant = item.rect
+				if not r is Array or r.size() != 4:
+					return "地图机关区域无效。"
+				for n in r:
+					if not n is float or n != int(n):
+						return "地图机关区域必须为整数。"
+				if r[0] < 0 or r[1] < 0 or r[2] < 1 or r[3] < 1 or r[0] + r[2] > width or r[1] + r[3] > height:
+					return "地图机关区域越界。"
+			if kind == "vine_seeds" and item.at[1] - item.height + 1 < 0:
+				return "藤梯高度越界。"
+			if kind == "geysers" and (not definitions.has(item.get("material", "water")) or definitions[item.get("material", "water")]["class"] != "liquid"):
+				return "泉眼只允许液体。"
+			if kind == "hourglasses" and not _guide_condition(item.open_when, width, height, entities):
+				return "沙漏条件无效。"
+			if kind == "wind_zones" and not item.direction in ["L", "R"]:
+				return "风向无效。"
+			if kind == "teleporters" and item.from == item.to:
+				return "传送座不能重合。"
 	return ""
 
 static func populate(board: RefCounted, level: Dictionary) -> Array:
 	var origin := Vector2i((20 - level.map[0].length()) / 2, (12 - level.map.size()) / 2)
 	board.origin = origin
+	board.mechanisms = board.Biome.canonical(level.get("biome_mechanisms", {}))
 	var entities: Dictionary = level.entities
 	board.player = origin + Vector2i(entities.player[0], entities.player[1])
 	for box in entities.boxes:
@@ -203,4 +273,21 @@ static func populate(board: RefCounted, level: Dictionary) -> Array:
 					commands.append({"op": "paint_rect", "args": [cx, cy + 16 - filled, 16, filled, name]})
 	for box in board.boxes:
 		commands.append({"op": "paint_rect", "args": [box.at.x * 16, box.at.y * 16, 16, 16, board.rules.box_kinds[box.kind].material]})
+	for scale in board.mechanisms.get("scales", []):
+		for key in ["left", "right"]:
+			var local_floor := Vector2i(scale[key][0],scale[key][1])+Vector2i.DOWN
+			var at: Vector2i = origin+local_floor
+			var entry: Variant = level.legend[level.map[local_floor.y][local_floor.x]]
+			if entry is String:
+				scale["under_"+key] = {"name":entry}
+			else:
+				var cells: Array = []
+				var filled: int = floori(float(entry.get("fill",1))*16)
+				for i in 256:
+					cells.append(board.name_ids[entry.material] if i >= (16-filled)*16 else 0)
+				scale["under_"+key] = {"cells":cells}
+			commands.append({"op":"paint_rect", "args":[at.x*16,at.y*16,16,16,"scale_platform"]})
+	for rock in board.mechanisms.get("stalactites", []):
+		var at: Vector2i = origin + Vector2i(rock.at[0], rock.at[1])
+		commands.append({"op":"paint_rect", "args":[at.x * 16, at.y * 16, 16, 16, "bedrock"]})
 	return commands

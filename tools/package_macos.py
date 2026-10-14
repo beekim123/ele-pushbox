@@ -14,8 +14,11 @@ ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / 'artifacts/macos-stage1'
 parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument('--godot', default='/Users/key_/Desktop/CURRGO/ele-proj/zips/Godot.app/Contents/MacOS/Godot')
+parser.add_argument('--stage', choices=['stage1','stage2a'], default='stage1')
 parser.add_argument('--template', default='/private/tmp/pushbox-macos-template-4.7.2.zip')
 args = parser.parse_args()
+if args.stage == "stage2a":
+    OUT = ROOT / "artifacts/macos-stage2a"
 environment = dict(os.environ)
 for key in ['OMP_NUM_THREADS', 'OPENBLAS_NUM_THREADS', 'MKL_NUM_THREADS', 'VECLIB_MAXIMUM_THREADS']:
     environment[key] = '1'
@@ -46,8 +49,9 @@ for line in processes.splitlines()[1:]:
     if len(values) == 3 and int(values[0]) != os.getpid():
         if Path(values[1]).name == 'Godot' or ('python' in Path(values[1]).name.lower() and 'tools/run_tests.py' in values[2]):
             raise RuntimeError('Compute already occupied by PID ' + values[0])
-summary = json.loads((ROOT/'artifacts/stage1/logs/final/test-summary.json').read_text())
-assert summary['passed_executed_tests'] and summary['completed_test_count'] == 18
+summary_path = ROOT/('artifacts/stage2a/logs/test-summary.json' if args.stage == 'stage2a' else 'artifacts/stage1/logs/final/test-summary.json')
+summary = json.loads(summary_path.read_text())
+assert summary['passed_executed_tests'] and summary['completed_test_count'] == (24 if args.stage == 'stage2a' else 18)
 assert Path(args.template).is_file(), 'macOS 4.7.2 export template missing'
 template_dir = Path.home()/'Library/Application Support/Godot/export_templates/4.7.2.stable'
 template_dir.mkdir(parents=True,exist_ok=True)
@@ -117,6 +121,8 @@ display/high_res=true
 codesign/codesign=0
 notarization/notarization=0
 '''.replace('TEMPLATE',str(Path(args.template).resolve()))
+    if args.stage == 'stage2a':
+        preset = preset.replace('stage1','stage2a').replace('0.3.1','0.4.0')
     (stage/'export_presets.cfg').write_text(preset)
     (OUT/'export-preset-used.cfg').write_text(preset)
     run([args.godot,'--headless','--single-threaded-scene','--path',stage,'--import'],'import')
@@ -164,9 +170,11 @@ with tempfile.TemporaryDirectory(prefix='codex-pushbox-dmg-',dir='/private/tmp')
     shutil.copytree(app,image_root/'Pushbox.app',symlinks=True)
     (image_root/'Applications').symlink_to('/Applications')
     (image_root/'安装说明.txt').write_text('推箱子：沙与水 · 第一阶段候选\n\n适用于 Apple silicon（M1/M2/M3/M4 等）及 macOS 15.6 或更新。\n将 Pushbox.app 拖到 Applications（应用程序），然后双击启动。无需另装 Godot 或 SDK。\n本包为 ad-hoc 测试签名，尚未 Apple 公证；系统拦截时，请在系统设置→隐私与安全性中选择仍要打开。\n从大厅选择教学模式即可试玩 T01–T04。\n')
-    dmg = OUT/'Pushbox-stage1-macos-arm64.dmg'
+    if args.stage == 'stage2a':
+        (image_root/'安装说明.txt').write_text('推箱子：沙与水 · 第二阶段 A 外部试玩候选\n\nApple silicon / macOS 15.6+；将 Pushbox.app 拖入 Applications。\n大厅 → 闯关模式；每图先开 2 关，每通 1 关再开 2 关，满 3/6 解锁下一地图。\nTab 观察池可侦察全部 36 关。Z 撤销，R 重开，Esc 返回大厅/查看下一步提示。\n反馈请记录关卡编号、复现步骤及预期/实际表现。\n本包为 ad-hoc 测试签名，尚未 Apple 公证；系统拦截时可在系统设置→隐私与安全性中选择仍要打开。\n')
+    dmg = OUT/('Pushbox-'+args.stage+'-macos-arm64.dmg')
     run(['hdiutil','create','-volname','Pushbox Sand and Water','-srcfolder',image_root,'-format','UDZO','-imagekey','zlib-level=6','-ov',dmg],'dmg-create',180)
 run(['hdiutil','verify',dmg],'dmg-verify',90)
-manifest = {'status':'macOS_installation_candidate','date':'2026-10-14','platform':'macOS arm64','minimum_macos':'15.6','godot':'4.7.2','app_version':'0.3.1','sdk_sha256':sdk_hash,'sdk_bytes_unchanged':digest(libraries[0])==sdk_hash,'signed':'ad-hoc hardened runtime','notarized':False,'package_smoke_passed':True,'dmg':dmg.name,'dmg_bytes':dmg.stat().st_size,'dmg_sha256':digest(dmg),'executable':str(executable.relative_to(app)),'app_files_sha256':{str(p.relative_to(app)):digest(p) for p in sorted(app.rglob('*')) if p.is_file()}}
+manifest = {'status':'macOS_installation_candidate','date':'2026-10-15' if args.stage == 'stage2a' else '2026-10-14','platform':'macOS arm64','minimum_macos':'15.6','godot':'4.7.2','app_version':'0.4.0' if args.stage == 'stage2a' else '0.3.1','sdk_sha256':sdk_hash,'sdk_bytes_unchanged':digest(libraries[0])==sdk_hash,'signed':'ad-hoc hardened runtime','notarized':False,'package_smoke_passed':True,'dmg':dmg.name,'dmg_bytes':dmg.stat().st_size,'dmg_sha256':digest(dmg),'executable':str(executable.relative_to(app)),'app_files_sha256':{str(p.relative_to(app)):digest(p) for p in sorted(app.rglob('*')) if p.is_file()}}
 (OUT/'manifest.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n')
 print('MACOS PACKAGE READY ' + str(dmg),flush=True)

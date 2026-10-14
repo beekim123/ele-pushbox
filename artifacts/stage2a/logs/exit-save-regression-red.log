@@ -1,0 +1,42 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+OpenGL API 4.1 Metal - 89.4 - Compatibility - Using Device: Apple - Apple M3
+
+PASS campaign D_01
+PASS campaign D_02
+PASS campaign D_03
+PASS campaign D_04
+PASS campaign D_05
+PASS campaign D_06
+PASS campaign F_01
+PASS campaign F_02
+PASS campaign F_03
+PASS campaign F_04
+PASS campaign F_05
+PASS campaign F_06
+PASS campaign R_01
+PASS campaign R_02
+PASS campaign R_03
+PASS campaign R_04
+PASS campaign R_05
+PASS campaign R_06
+PASS campaign C_01
+PASS campaign C_02
+PASS campaign C_03
+PASS campaign C_04
+PASS campaign C_05
+PASS campaign C_06
+PASS campaign S_01
+PASS campaign S_02
+PASS campaign S_03
+PASS campaign S_04
+PASS campaign S_05
+PASS campaign S_06
+PASS campaign X_01
+PASS campaign X_02
+PASS campaign X_03
+PASS campaign X_04
+PASS campaign X_05
+PASS campaign X_06
+FAIL exiting flushes a pending campaign save
+Campaign Stage2A: 36/36 solved, 8667 checks, 1 failures
+Executed 1/1 test scripts; passed=False; T2 threads 4/8 NOT RUN.

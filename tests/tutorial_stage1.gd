@@ -121,12 +121,16 @@ func run() -> void:
 func idle(game: Node) -> void:
 	var last: int = game.frame_us.size()
 	for _i in 1200:
-		if not game.session.running and not game._opening and game.animation_left == 0:
+		if not game.session.running and not game._opening and game.animation_left == 0 and not game._campaign_save_pending:
 			return
 		await frame()
 		if performance_enabled and game.frame_us.size() > last:
 			var overlay: int = game.view.draw_us if game.view.draw_frame == Engine.get_process_frames() else 0
-			frame_samples.append(game.frame_us[-1] + game.session.world.get_stats().upload_us + overlay)
+			var upload: int = game.session.world.get_stats().upload_us
+			var complete: int = game.frame_us[-1] + upload + overlay
+			frame_samples.append(complete)
+			if complete > 4000:
+				print("T8 slow tutorial room=",game.level_index+1," move=",game.session.board.moves," us=",complete," physics_us=",game.frame_us[-1]," upload_us=",upload," draw_us=",overlay," phases=",game.frame_timing)
 			last = game.frame_us.size()
 	check(false, "game idle within bound")
 

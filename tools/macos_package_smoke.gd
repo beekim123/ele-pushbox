@@ -2,6 +2,8 @@ extends Node
 ## Runs inside the exported PCK using its bundled runtime and SDK.
 const Session := preload("res://pushbox/scripts/session.gd")
 const Game := preload("res://pushbox/scripts/game.gd")
+const Catalog := preload("res://pushbox/scripts/campaign_catalog.gd")
+const Preview := preload("res://pushbox/scripts/preview.gd")
 const Style := preload("res://pushbox/scripts/ui/pixel_style.gd")
 var checks: int = 0
 var failures: int = 0
@@ -38,6 +40,25 @@ func run() -> void:
 		check(session.board.won() and session.errors.is_empty(), "packed tutorial victory")
 		session.dispose()
 		print("PACKAGE T%02d replay/undo PASS" % (room+1))
+	if OS.has_feature("stage2a"):
+		for map in 6:
+			for index in 6:
+				var session := Session.new()
+				check(session.load_level(Catalog.path(map,index),self).is_empty(),"packed campaign loads")
+				session.settle_sync()
+				var preview := Preview.new()
+				check(preview.configure(session,self) == "","packed preview loads")
+				for step in session.level.solution.size():
+					var action: String = session.level.solution[step]
+					var prediction: Dictionary = preview.predict(session,action)
+					check(session.perform(action).legal,"packed campaign action")
+					session.settle_sync()
+					check(session.world.get_state_hash() == session.level.solution_hashes[step] and session.board.position_key() == session.level.solution_keys[step],"packed campaign author fingerprint")
+					check(prediction.hash == session.world.get_state_hash() and prediction.game_state == session.board.state(),"packed campaign T6")
+				check(session.board.won() and session.errors.is_empty(),"packed campaign wins")
+				print("PACKAGE ",Catalog.id(map,index)," PASS")
+				preview.dispose()
+				session.dispose()
 	var game := Game.new()
 	game.start_in_lobby = true
 	game.progress_path = "user://package-smoke-progress.json"

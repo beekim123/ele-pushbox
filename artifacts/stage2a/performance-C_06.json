@@ -1,0 +1,17 @@
+{
+  "display": "macOS",
+  "failures": 0,
+  "levels": [
+    {
+      "id": "C_06",
+      "max_us": 2252,
+      "samples": 390,
+      "won": true
+    }
+  ],
+  "max_us": 2252,
+  "p95_us": 1127,
+  "samples": 390,
+  "threshold_us": 4000,
+  "workers": 1
+}

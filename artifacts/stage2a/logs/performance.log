@@ -1,0 +1,28 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+OpenGL API 4.1 Metal - 89.4 - Compatibility - Using Device: Apple - Apple M3
+
+TEST USER DIR: /Users/key_/Library/Application Support/CodexPushboxTests/codex-pushbox-test-_dgzjsp9
+TEST TIMING WINDOW: focused=false
+T8 D1 {"frames":{"max_us":1062,"min_us":13,"p50_us":257,"p95_us":701,"samples":106},"level":1,"load_us":10508,"preview_cpu":{"max_us":0,"samples":0},"preview_latency":{"max_us":0,"samples":0}}
+T8 preview room=2 action=DIG_L cpu_us=12554 latency_us=38406
+T8 preview phases={"CATEGORIES":284,"CLASSIFY":130,"COUNTS":1221,"KEY":68,"READ":265,"RESOLVE":111,"TICKS":1004,"begin":8554,"finish":917} slices=[4063]
+T8 preview room=2 action=POUR_R cpu_us=10886 latency_us=27885
+T8 preview phases={"CATEGORIES":262,"CLASSIFY":151,"COUNTS":1104,"KEY":59,"READ":239,"RESOLVE":127,"TICKS":646,"begin":7635,"finish":663} slices=[3302]
+T8 D2 {"frames":{"max_us":1025,"min_us":27,"p50_us":256,"p95_us":601,"samples":169},"level":2,"load_us":29706,"preview_cpu":{"max_us":12554,"min_us":10886,"p50_us":12554,"p95_us":12554,"samples":2},"preview_latency":{"max_us":38406,"min_us":27885,"p50_us":38406,"p95_us":38406,"samples":2}}
+T8 D3 {"frames":{"max_us":2638,"min_us":57,"p50_us":324,"p95_us":2187,"samples":204},"level":3,"load_us":31927,"preview_cpu":{"max_us":0,"samples":0},"preview_latency":{"max_us":0,"samples":0}}
+T8 preview room=4 action=BOMB_L cpu_us=18568 latency_us=35521
+T8 preview phases={"CATEGORIES":465,"CLASSIFY":146,"COUNTS":1794,"KEY":94,"READ":410,"RESOLVE":203,"TICKS":207,"begin":11343,"finish":3906} slices=[7300]
+T8 D4 {"frames":{"max_us":1126,"min_us":53,"p50_us":374,"p95_us":767,"samples":229},"level":4,"load_us":33145,"preview_cpu":{"max_us":18568,"min_us":18568,"p50_us":18568,"p95_us":18568,"samples":1},"preview_latency":{"max_us":35521,"min_us":35521,"p50_us":35521,"p95_us":35521,"samples":1}}
+T8 preview room=5 action=BOMB_L cpu_us=16631 latency_us=39081
+T8 preview phases={"CATEGORIES":287,"CLASSIFY":250,"COUNTS":1265,"KEY":73,"READ":305,"RESOLVE":157,"TICKS":2269,"begin":8560,"finish":3465} slices=[3606,4569]
+T8 preview room=5 action=DIG_L cpu_us=16705 latency_us=39833
+T8 preview phases={"CATEGORIES":402,"CLASSIFY":258,"COUNTS":1903,"KEY":97,"READ":367,"RESOLVE":199,"TICKS":683,"begin":11581,"finish":1215} slices=[3567,1622]
+T8 preview room=5 action=DIG_D cpu_us=15764 latency_us=45660
+T8 preview phases={"CATEGORIES":337,"CLASSIFY":192,"COUNTS":1684,"KEY":79,"READ":750,"RESOLVE":348,"TICKS":694,"begin":10628,"finish":1052} slices=[3548,1651]
+T8 preview room=5 action=POUR_R cpu_us=18591 latency_us=51595
+T8 preview phases={"CATEGORIES":289,"CLASSIFY":169,"COUNTS":1357,"KEY":69,"READ":509,"RESOLVE":319,"TICKS":5805,"begin":9335,"finish":739} slices=[3539,3511,2311]
+T8 preview room=5 action=POUR_R cpu_us=23435 latency_us=68115
+T8 preview phases={"CATEGORIES":332,"CLASSIFY":164,"COUNTS":1446,"KEY":83,"READ":337,"RESOLVE":159,"TICKS":8887,"begin":11176,"finish":851} slices=[3590,3596,3636,1553]
+T8 D5 {"frames":{"max_us":1668,"min_us":28,"p50_us":393,"p95_us":780,"samples":278},"level":5,"load_us":31927,"preview_cpu":{"max_us":23435,"min_us":15764,"p50_us":16705,"p95_us":23435,"samples":5},"preview_latency":{"max_us":68115,"min_us":39081,"p50_us":45660,"p95_us":68115,"samples":5}}
+T8 summary {"display":"macOS","frames":{"max_us":2638,"min_us":13,"p50_us":332,"p95_us":819,"samples":986},"preview_cpu":{"max_us":23435,"min_us":10886,"p50_us":16705,"p95_us":23435,"samples":8},"preview_latency":{"max_us":68115,"min_us":27885,"p50_us":39833,"p95_us":68115,"samples":8},"rooms":[{"frames":{"max_us":1062,"min_us":13,"p50_us":257,"p95_us":701,"samples":106},"level":1,"load_us":10508,"preview_cpu":{"max_us":0,"samples":0},"preview_latency":{"max_us":0,"samples":0}},{"frames":{"max_us":1025,"min_us":27,"p50_us":256,"p95_us":601,"samples":169},"level":2,"load_us":29706,"preview_cpu":{"max_us":12554,"min_us":10886,"p50_us":12554,"p95_us":12554,"samples":2},"preview_latency":{"max_us":38406,"min_us":27885,"p50_us":38406,"p95_us":38406,"samples":2}},{"frames":{"max_us":2638,"min_us":57,"p50_us":324,"p95_us":2187,"samples":204},"level":3,"load_us":31927,"preview_cpu":{"max_us":0,"samples":0},"preview_latency":{"max_us":0,"samples":0}},{"frames":{"max_us":1126,"min_us":53,"p50_us":374,"p95_us":767,"samples":229},"level":4,"load_us":33145,"preview_cpu":{"max_us":18568,"min_us":18568,"p50_us":18568,"p95_us":18568,"samples":1},"preview_latency":{"max_us":35521,"min_us":35521,"p50_us":35521,"p95_us":35521,"samples":1}},{"frames":{"max_us":1668,"min_us":28,"p50_us":393,"p95_us":780,"samples":278},"level":5,"load_us":31927,"preview_cpu":{"max_us":23435,"min_us":15764,"p50_us":16705,"p95_us":23435,"samples":5},"preview_latency":{"max_us":68115,"min_us":39081,"p50_us":45660,"p95_us":68115,"samples":5}}],"scope":"Settlement CPU: Game physics + SDK upload + BoardView draw, max 4 real-world ticks per frame (opening 1), 1.5ms soft SDK-step budget, separate material-read/32-tile-count (1ms soft budget)/one-mechanism/actor/gate resolution slices and 64-tile key-category frames; previews drain the same phases in a 3.5ms soft work budget. Preview CPU includes snapshot I/O and result diff; latency measured from pointer target to completed rendered overlay, with vsync. Load/shader initialization reported separately. GPU raster and OS compositor excluded from CPU frame metric.","workers":1}
+Performance: 0 failures

@@ -161,8 +161,10 @@ func _draw() -> void:
 		_sprite("target_%s_%d" % ["lit" if winning or board.box_at(at) >= 0 else "idle", int(clock * 8) % (2 if winning or board.box_at(at) >= 0 else 4)], Vector2(at) * SIZE)
 		if winning or board.box_at(at) >= 0:
 			draw_rect(Rect2(Vector2(at) * 16 + Vector2(1,1), Vector2(14,14)), Style.YELLOW, false)
+	for prop in board.Biome.props(board):
+		draw_texture_rect(Style.themed_texture(prop.sprite, theme_id), Rect2(Vector2(prop.at) * SIZE, Vector2(16,16)), false)
 	for at in board.ladders:
-		_sprite("ladder_static_0", Vector2(at) * SIZE)
+		_sprite("vine_ladder_0" if not board.mechanisms.get("vine_seeds", []).is_empty() else "ladder_static_0", Vector2(at) * SIZE)
 	for lever in board.levers:
 		_sprite("lever_right_0" if lever.on else "lever_left_0", Vector2(lever.at) * SIZE)
 	for gate in board.gates:
@@ -219,6 +221,10 @@ func _draw() -> void:
 		else:
 			_sprite("cursor_shovel" if hover_action.begins_with("DIG") else "icon_sandbag_7", pointer)
 	if not preview.is_empty():
+		for at in preview.get("game_state",{}).get("ladders",[]):
+			var tile := Vector2i(at[0],at[1])
+			if not tile in board.ladders:
+				draw_texture(Style.themed_texture("vine_ladder_0",theme_id),Vector2(tile)*SIZE,Color(0.5,1,1,0.6))
 		for tile in preview.changed:
 			var category: String = preview.categories[tile.y * 20 + tile.x]
 			var color: Color = {"SAND": Color("ead4aa"), "WATER": Color("2ce8f5"), "SOLID": Color("c0cbdc"), "BOX": Style.YELLOW}.get(category, Style.WHITE)

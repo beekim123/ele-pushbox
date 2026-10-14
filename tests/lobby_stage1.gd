@@ -35,7 +35,9 @@ func run() -> void:
 	key(game, KEY_D)
 	check(game.lobby.selected == 1, "WASD selects campaign")
 	key(game, KEY_ENTER)
-	check(game.lobby.page == "modes", "campaign stays locked")
+	check(game.lobby.page == "campaign", "campaign opens six-map pool")
+	key(game, KEY_ESCAPE)
+	game.lobby.selected = 1
 	key(game, KEY_RIGHT)
 	key(game, KEY_ENTER)
 	check(game.lobby.page == "modes", "challenge stays locked")

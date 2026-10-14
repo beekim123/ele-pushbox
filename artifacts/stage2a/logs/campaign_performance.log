@@ -1,0 +1,114 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+OpenGL API 4.1 Metal - 89.4 - Compatibility - Using Device: Apple - Apple M3
+
+TEST USER DIR: /Users/key_/Library/Application Support/CodexPushboxTests/codex-pushbox-test-_dgzjsp9
+TEST TIMING WINDOW: focused=false
+BEGIN T8 D_01
+LOADED T8 D_01
+T8 D_01 samples=252 max_us=1411 peak={ "phase": "CAMPAIGN_COMMIT", "bookkeeping_us": 564 }
+BEGIN T8 D_02
+LOADED T8 D_02
+T8 D_02 samples=216 max_us=1212 peak={ "phase": "CAMPAIGN_COMMIT", "bookkeeping_us": 917 }
+BEGIN T8 D_03
+LOADED T8 D_03
+T8 D_03 samples=330 max_us=1441 peak={ "tick_us": 830, "pump_us": 420, "sdk_step_us": 230, "phase": "TICKS", "read_us": 0, "count_us": 0, "resolve_us": 0, "key_us": 0, "view_us": 64, "bookkeeping_us": 23 }
+BEGIN T8 D_04
+LOADED T8 D_04
+T8 D_04 samples=330 max_us=1317 peak={ "tick_us": 605, "pump_us": 2, "sdk_step_us": 387, "phase": "TICKS", "read_us": 0, "count_us": 0, "resolve_us": 0, "key_us": 0, "view_us": 59, "bookkeeping_us": 24 }
+BEGIN T8 D_05
+LOADED T8 D_05
+T8 D_05 samples=501 max_us=2231 peak={ "tick_us": 1525, "pump_us": 2, "sdk_step_us": 1333, "phase": "TICKS", "read_us": 0, "count_us": 0, "resolve_us": 0, "key_us": 0, "view_us": 62, "bookkeeping_us": 21 }
+BEGIN T8 D_06
+LOADED T8 D_06
+T8 D_06 samples=1245 max_us=2902 peak={ "tick_us": 2165, "pump_us": 999, "sdk_step_us": 1036, "phase": "TICKS", "read_us": 0, "count_us": 0, "resolve_us": 0, "key_us": 0, "view_us": 76, "bookkeeping_us": 18 }
+BEGIN T8 F_01
+LOADED T8 F_01
+T8 F_01 samples=290 max_us=2379 peak={ "tick_us": 1578, "pump_us": 38, "sdk_step_us": 1277, "phase": "TICKS", "read_us": 0, "count_us": 0, "resolve_us": 0, "key_us": 0, "view_us": 67, "bookkeeping_us": 21 }
+BEGIN T8 F_02
+LOADED T8 F_02
+T8 F_02 samples=415 max_us=1349 peak={ "tick_us": 928, "pump_us": 0, "sdk_step_us": 0, "phase": "READ", "read_us": 825, "count_us": 0, "resolve_us": 0, "key_us": 0, "view_us": 71, "bookkeeping_us": 26 }
+BEGIN T8 F_03
+LOADED T8 F_03
+T8 F_03 samples=438 max_us=1489 peak={ "tick_us": 929, "pump_us": 2, "sdk_step_us": 780, "phase": "TICKS", "read_us": 0, "count_us": 0, "resolve_us": 0, "key_us": 0, "view_us": 56, "bookkeeping_us": 16 }
+BEGIN T8 F_04
+LOADED T8 F_04
+T8 F_04 samples=508 max_us=2290 peak={ "tick_us": 1526, "pump_us": 2, "sdk_step_us": 1327, "phase": "TICKS", "read_us": 0, "count_us": 0, "resolve_us": 0, "key_us": 0, "view_us": 56, "bookkeeping_us": 21 }
+BEGIN T8 F_05
+LOADED T8 F_05
+T8 F_05 samples=536 max_us=1734 peak={ "tick_us": 1184, "pump_us": 439, "sdk_step_us": 584, "phase": "TICKS", "read_us": 0, "count_us": 0, "resolve_us": 0, "key_us": 0, "view_us": 55, "bookkeeping_us": 19 }
+BEGIN T8 F_06
+LOADED T8 F_06
+T8 F_06 samples=639 max_us=1664 peak={ "tick_us": 984, "pump_us": 3, "sdk_step_us": 701, "phase": "TICKS", "read_us": 0, "count_us": 0, "resolve_us": 0, "key_us": 0, "view_us": 53, "bookkeeping_us": 17 }
+BEGIN T8 R_01
+LOADED T8 R_01
+T8 R_01 samples=178 max_us=1317 peak={ "tick_us": 921, "pump_us": 0, "sdk_step_us": 0, "phase": "READ", "read_us": 838, "count_us": 0, "resolve_us": 0, "key_us": 0, "view_us": 65, "bookkeeping_us": 21 }
+BEGIN T8 R_02
+LOADED T8 R_02
+T8 R_02 samples=342 max_us=2445 peak={ "tick_us": 622, "pump_us": 4, "sdk_step_us": 391, "phase": "TICKS", "read_us": 0, "count_us": 0, "resolve_us": 0, "key_us": 0, "view_us": 66, "bookkeeping_us": 25 }
+BEGIN T8 R_03
+LOADED T8 R_03
+T8 R_03 samples=490 max_us=1432 peak={ "tick_us": 964, "pump_us": 0, "sdk_step_us": 0, "phase": "READ", "read_us": 862, "count_us": 0, "resolve_us": 0, "key_us": 0, "view_us": 79, "bookkeeping_us": 26 }
+BEGIN T8 R_04
+LOADED T8 R_04
+T8 R_04 samples=285 max_us=1368 peak={ "phase": "CAMPAIGN_COMMIT", "bookkeeping_us": 960 }
+BEGIN T8 R_05
+LOADED T8 R_05
+T8 R_05 samples=1066 max_us=1562 peak={ "tick_us": 1337, "pump_us": 0, "sdk_step_us": 0, "phase": "RESOLVE", "read_us": 0, "count_us": 0, "resolve_us": 1257, "key_us": 0, "view_us": 60, "bookkeeping_us": 12 }
+BEGIN T8 R_06
+LOADED T8 R_06
+T8 R_06 samples=1848 max_us=2551 peak={ "tick_us": 1846, "pump_us": 892, "sdk_step_us": 797, "phase": "TICKS", "read_us": 0, "count_us": 0, "resolve_us": 0, "key_us": 0, "view_us": 82, "bookkeeping_us": 25 }
+BEGIN T8 C_01
+LOADED T8 C_01
+T8 C_01 samples=160 max_us=1124 peak={ "tick_us": 431, "pump_us": 3, "sdk_step_us": 235, "phase": "TICKS", "read_us": 0, "count_us": 0, "resolve_us": 0, "key_us": 0, "view_us": 72, "bookkeeping_us": 20 }
+BEGIN T8 C_02
+LOADED T8 C_02
+T8 C_02 samples=304 max_us=2118 peak={ "tick_us": 1750, "pump_us": 2, "sdk_step_us": 1483, "phase": "TICKS", "read_us": 0, "count_us": 0, "resolve_us": 0, "key_us": 0, "view_us": 73, "bookkeeping_us": 25 }
+BEGIN T8 C_03
+LOADED T8 C_03
+T8 C_03 samples=397 max_us=1712 peak={ "tick_us": 951, "pump_us": 4, "sdk_step_us": 748, "phase": "TICKS", "read_us": 0, "count_us": 0, "resolve_us": 0, "key_us": 0, "view_us": 65, "bookkeeping_us": 23 }
+BEGIN T8 C_04
+LOADED T8 C_04
+T8 C_04 samples=160 max_us=1548 peak={ "tick_us": 1105, "pump_us": 449, "sdk_step_us": 536, "phase": "TICKS", "read_us": 0, "count_us": 0, "resolve_us": 0, "key_us": 0, "view_us": 45, "bookkeeping_us": 13 }
+BEGIN T8 C_05
+LOADED T8 C_05
+T8 C_05 samples=838 max_us=2092 peak={ "tick_us": 1544, "pump_us": 3, "sdk_step_us": 1272, "phase": "TICKS", "read_us": 0, "count_us": 0, "resolve_us": 0, "key_us": 0, "view_us": 77, "bookkeeping_us": 26 }
+BEGIN T8 C_06
+LOADED T8 C_06
+T8 C_06 samples=845 max_us=2332 peak={ "tick_us": 1615, "pump_us": 1, "sdk_step_us": 1414, "phase": "TICKS", "read_us": 0, "count_us": 0, "resolve_us": 0, "key_us": 0, "view_us": 81, "bookkeeping_us": 23 }
+BEGIN T8 S_01
+LOADED T8 S_01
+T8 S_01 samples=351 max_us=1306 peak={ "phase": "CAMPAIGN_COMMIT", "bookkeeping_us": 988 }
+BEGIN T8 S_02
+LOADED T8 S_02
+T8 S_02 samples=366 max_us=1468 peak={ "tick_us": 965, "pump_us": 0, "sdk_step_us": 0, "phase": "READ", "read_us": 866, "count_us": 0, "resolve_us": 0, "key_us": 0, "view_us": 83, "bookkeeping_us": 28 }
+BEGIN T8 S_03
+LOADED T8 S_03
+T8 S_03 samples=392 max_us=1788 peak={ "tick_us": 1269, "pump_us": 3, "sdk_step_us": 1086, "phase": "TICKS", "read_us": 0, "count_us": 0, "resolve_us": 0, "key_us": 0, "view_us": 53, "bookkeeping_us": 22 }
+BEGIN T8 S_04
+LOADED T8 S_04
+T8 S_04 samples=417 max_us=1270 peak={ "phase": "CAMPAIGN_COMMIT", "bookkeeping_us": 920 }
+BEGIN T8 S_05
+LOADED T8 S_05
+T8 S_05 samples=443 max_us=2774 peak={ "tick_us": 2163, "pump_us": 1, "sdk_step_us": 1967, "phase": "TICKS", "read_us": 0, "count_us": 0, "resolve_us": 0, "key_us": 0, "view_us": 67, "bookkeeping_us": 22 }
+BEGIN T8 S_06
+LOADED T8 S_06
+T8 S_06 samples=702 max_us=1437 peak={ "tick_us": 1014, "pump_us": 800, "sdk_step_us": 102, "phase": "TICKS", "read_us": 0, "count_us": 0, "resolve_us": 0, "key_us": 0, "view_us": 34, "bookkeeping_us": 12 }
+BEGIN T8 X_01
+LOADED T8 X_01
+T8 X_01 samples=191 max_us=1116 peak={ "tick_us": 859, "pump_us": 0, "sdk_step_us": 0, "phase": "READ", "read_us": 798, "count_us": 0, "resolve_us": 0, "key_us": 0, "view_us": 44, "bookkeeping_us": 17 }
+BEGIN T8 X_02
+LOADED T8 X_02
+T8 X_02 samples=197 max_us=1791 peak={ "tick_us": 1209, "pump_us": 123, "sdk_step_us": 923, "phase": "TICKS", "read_us": 0, "count_us": 0, "resolve_us": 0, "key_us": 0, "view_us": 58, "bookkeeping_us": 25 }
+BEGIN T8 X_03
+LOADED T8 X_03
+T8 X_03 samples=420 max_us=1719 peak={ "phase": "CAMPAIGN_COMMIT", "bookkeeping_us": 1391 }
+BEGIN T8 X_04
+LOADED T8 X_04
+T8 X_04 samples=695 max_us=2408 peak={ "tick_us": 1632, "pump_us": 2, "sdk_step_us": 1361, "phase": "TICKS", "read_us": 0, "count_us": 0, "resolve_us": 0, "key_us": 0, "view_us": 78, "bookkeeping_us": 27 }
+BEGIN T8 X_05
+LOADED T8 X_05
+T8 X_05 samples=868 max_us=3866 peak={ "tick_us": 141, "pump_us": 0, "sdk_step_us": 0, "phase": "RESOLVE", "read_us": 0, "count_us": 0, "resolve_us": 60, "key_us": 0, "view_us": 3675, "bookkeeping_us": 32 }
+BEGIN T8 X_06
+LOADED T8 X_06
+T8 X_06 samples=1147 max_us=2384 peak={ "tick_us": 980, "pump_us": 5, "sdk_step_us": 754, "phase": "TICKS", "read_us": 0, "count_us": 0, "resolve_us": 0, "key_us": 0, "view_us": 69, "bookkeeping_us": 24 }
+Campaign T8: 18802 frames, max_us=3866, 0 failures

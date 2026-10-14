@@ -5,6 +5,7 @@ signal level_selected(index: int)
 signal outlines_changed(value: bool)
 const Style := preload("res://pushbox/scripts/ui/pixel_style.gd")
 const ROOT_ROWS := ["继续", "提示", "重开", "选关", "返回大厅", "设置", "退出"]
+var campaign: bool = false
 var tutorial: bool = false
 var lobby_context: bool = false
 var opened: bool = false
@@ -89,7 +90,11 @@ func activate() -> void:
 				0: close()
 				1: page = "hints"; selected = 0
 				2: close(); requested.emit("restart")
-				3: page = "levels"; selected = 0
+				3:
+					if campaign:
+						close(); requested.emit("campaign_pool")
+					else:
+						page = "levels"; selected = 0
 				4: close(); requested.emit("lobby")
 				5: page = "settings"; selected = 0
 				6: requested.emit("quit")

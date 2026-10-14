@@ -1,6 +1,11 @@
 extends Node2D
 ## Static authored panoramas rendered by the same terrain shader as gameplay.
 signal closed
+const Catalog := preload("res://pushbox/scripts/campaign_catalog.gd")
+const Board := preload("res://pushbox/scripts/board.gd")
+var campaign_mode: bool = false
+var level_index: int = 0
+var _hover: String = ""
 const Style := preload("res://pushbox/scripts/ui/pixel_style.gd")
 const Registry := preload("res://pushbox/scripts/art/art_registry.gd")
 const Loader := preload("res://pushbox/scripts/level_loader.gd")
@@ -35,6 +40,7 @@ func _ready() -> void:
 	hide()
 
 func open(value: int = 0) -> void:
+	campaign_mode = false
 	show()
 	select_biome(value)
 
@@ -42,6 +48,9 @@ func conceal() -> void:
 	hide()
 
 func select_biome(value: int) -> void:
+	if campaign_mode:
+		select_campaign(value,level_index)
+		return
 	if terrain.material == null:
 		terrain.material = ShaderMaterial.new()
 		terrain.material.shader = SHADER
@@ -99,6 +108,9 @@ func theme_rect(value: int) -> Rect2:
 	return Rect2(161+value*53,333,50,15)
 
 func handle(event: InputEvent) -> void:
+	if campaign_mode:
+		_handle_campaign(event)
+		return
 	if event is InputEventKey and event.pressed and not event.echo:
 		match event.physical_keycode:
 			KEY_LEFT,KEY_A:
@@ -137,7 +149,9 @@ func _draw() -> void:
 	for prop in _sprites:
 		var texture: Texture2D = prop.texture
 		var at: Vector2 = map_origin+prop.at
-		if prop.flip:
+		if prop.has("size"):
+			draw_texture_rect(texture,Rect2(at,prop.size),false)
+		elif prop.flip:
 			draw_texture_rect(texture,Rect2(at+Vector2(0,texture.get_height()),Vector2(texture.get_width(),-texture.get_height())),false)
 		else:
 			draw_texture(texture,at)
@@ -145,8 +159,8 @@ func _draw() -> void:
 		Gates.tile(self,map_origin+gate.at,theme_id,gate.i,gate.count,0.0)
 	draw_rect(Rect2(0,0,640,36),Style.INK)
 	draw_rect(Rect2(0,331,640,29),Style.INK)
-	_center_text("%02d / 06  %s · %s" % [index+1,LABELS[index],map_data.title],18,Registry.theme(theme_id).colors.accent)
-	_center_text("%d × %d 格　地图风格预览　左右键 / 点击箭头切换" % [map_size.x,map_size.y],32,Color("8b9bb4"))
+	_center_text(("%s · %s" % [Catalog.id(index,level_index),map_data.title]) if campaign_mode else ("%02d / 06  %s · %s" % [index+1,LABELS[index],map_data.title]),18,Registry.theme(theme_id).colors.accent)
+	_center_text("%d × %d 格　%s" % [map_size.x,map_size.y,"观察池 · 左右切本图6关 · 上下切地图 · Tab 返回" if campaign_mode else "地图风格预览　左右键 / 点击箭头切换"],32,Color("8b9bb4"))
 	Style.text(self,"返回大厅",Vector2(8,18),Style.WHITE)
 	for rect in [previous_rect(),next_rect()]:
 		Style.panel(self,rect)
@@ -157,4 +171,99 @@ func _draw() -> void:
 		if i == index:
 			draw_rect(rect,Color("3a4466"))
 		Style.text(self,LABELS[i],rect.position+Vector2(5,12),Style.YELLOW if i == index else Color("8b9bb4"))
-	_center_text(map_data.features,359,Color("c0cbdc"))
+	_center_text(_hover if not _hover.is_empty() else map_data.features,359,Color("c0cbdc"))
+
+func open_campaign(map: int, selected_level: int = 0) -> void:
+	campaign_mode = true
+	show()
+	select_campaign(map,selected_level)
+
+func select_campaign(map: int, selected_level: int) -> void:
+	index = posmod(map,6)
+	level_index = posmod(selected_level,6)
+	theme_id = THEMES[index]
+	_hover = ""
+	var level: Dictionary = Loader.json(Catalog.path(index,level_index))
+	if level.is_empty():
+		return
+	if terrain.material == null:
+		terrain.material = ShaderMaterial.new()
+		terrain.material.shader = SHADER
+	map_size = Vector2i(level.map[0].length(),level.map.size())
+	map_origin = Vector2((640-map_size.x*16)/2,40+(288-map_size.y*16)/2).floor()
+	map_data = {"title":level.title,"map":level.map,"size":[map_size.x,map_size.y],"features":Catalog.FEATURES[index]}
+	var image := Image.create(map_size.x*16,map_size.y*16,false,Image.FORMAT_RGBA8)
+	for y in map_size.y:
+		for x in map_size.x:
+			var entry: Variant = level.legend[level.map[y][x]]
+			var name: String = entry if entry is String else entry.material
+			var id: int = IDS.get(name,0)
+			var filled: int = 16 if entry is String else floori(float(entry.get("fill",1))*16)
+			image.fill_rect(Rect2i(x*16,y*16+16-filled,16,filled),Color(id/255.0,0,0,1))
+	terrain.texture = ImageTexture.create_from_image(image)
+	terrain.position = map_origin
+	_background.texture = Registry.background(theme_id,Vector2i(640,360))
+	Binder.apply(terrain.material,theme_id,IDS)
+	terrain.material.set_shader_parameter("room_rect",Vector4(0,0,map_size.x*16,map_size.y*16))
+	terrain.material.set_shader_parameter("cell_texture_size",map_size*16)
+	terrain.material.set_shader_parameter("world_origin",to_global(map_origin))
+	_sprites.clear()
+	_gates.clear()
+	var board := Board.new()
+	board.configure(Loader.json("res://pushbox/rules.json"),Loader.json("res://pushbox/content/default/materials.json").materials)
+	Loader.populate(board,level)
+	for at in board.targets:
+		_observe_prop(at-board.origin,"target_idle_0","箱体目标")
+	for at in board.ladders:
+		_observe_prop(at-board.origin,"ladder_static_0","上下攀爬")
+	for lever in board.levers:
+		_observe_prop(lever.at-board.origin,"lever_left_0","站在此处扳动")
+	for prop in board.Biome.props(board):
+		_observe_prop(prop.at-board.origin,prop.sprite,prop.label)
+	for rock in board.mechanisms.get("stalactites",[]):
+		var at := Vector2i(rock.at[0],rock.at[1])
+		image.fill_rect(Rect2i(at*16,Vector2i(16,16)),Color(IDS.bedrock/255.0,0,0,1))
+	terrain.texture.update(image)
+	for gate in board.gates:
+		for i in gate.tiles.size():
+			_gates.append({"at":Vector2(gate.tiles[i]-board.origin)*16,"i":i,"count":gate.tiles.size()})
+	for box in board.boxes:
+		_observe_prop(box.at-board.origin,"crate_iron_0" if box.kind == "iron" else "crate_static_0","沉水铁箱" if box.kind == "iron" else "浮水轻木箱")
+	_observe_prop(board.player-board.origin,"miner_idle_0","玩家起点")
+	queue_redraw()
+
+func _observe_prop(at: Vector2i, sprite: String, label: String) -> void:
+	_sprites.append({"texture":Style.themed_texture(sprite,theme_id),"at":Vector2(at)*16,"size":Vector2(16,16),"label":label,"flip":false})
+
+func _handle_campaign(event: InputEvent) -> void:
+	if event is InputEventKey and event.pressed and not event.echo:
+		match event.physical_keycode:
+			KEY_ESCAPE,KEY_TAB:
+				closed.emit()
+			KEY_LEFT,KEY_A:
+				select_campaign(index,level_index-1)
+			KEY_RIGHT,KEY_D:
+				select_campaign(index,level_index+1)
+			KEY_UP,KEY_Q:
+				select_campaign(index-1,level_index)
+			KEY_DOWN,KEY_E:
+				select_campaign(index+1,level_index)
+	elif event is InputEventMouseMotion:
+		_hover = ""
+		var at: Vector2 = to_local(event.position)-map_origin
+		for prop in _sprites:
+			if Rect2(prop.at,Vector2(16,16)).has_point(at):
+				_hover = prop.label
+		queue_redraw()
+	elif event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+		var at: Vector2 = to_local(event.position)
+		if previous_rect().has_point(at):
+			select_campaign(index,level_index-1)
+		elif next_rect().has_point(at):
+			select_campaign(index,level_index+1)
+		elif Rect2(8,5,68,25).has_point(at):
+			closed.emit()
+		else:
+			for map in 6:
+				if theme_rect(map).has_point(at):
+					select_campaign(map,level_index)

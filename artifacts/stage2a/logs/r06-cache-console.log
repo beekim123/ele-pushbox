@@ -1,0 +1,11 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+OpenGL API 4.1 Metal - 89.4 - Compatibility - Using Device: Apple - Apple M3
+
+TEST USER DIR: /Users/key_/Library/Application Support/CodexPushboxTests/codex-pushbox-test-8b3u8w3a
+BEGIN T8 R_06
+LOADED T8 R_06
+FAIL T8 R_06 move=3 us=4305 physics_us=4073 upload_us=5 draw_us=227 phases={ "tick_us": 4006, "phase": "RESOLVE", "read_us": 0, "count_us": 0, "resolve_us": 3849, "key_us": 0, "view_us": 53, "bookkeeping_us": 10 }
+FAIL T8 R_06 move=42 us=4320 physics_us=4108 upload_us=9 draw_us=203 phases={ "tick_us": 3970, "phase": "RESOLVE", "read_us": 0, "count_us": 0, "resolve_us": 3865, "key_us": 0, "view_us": 109, "bookkeeping_us": 20 }
+T8 R_06 samples=784 max_us=4320
+Campaign T8: 784 frames, max_us=4320, 2 failures
+Executed 1/1 test scripts; passed=False; T2 threads 4/8 NOT RUN.
