@@ -1,0 +1,157 @@
+{
+  "godot": "4.7.2.stable.official.ed1daf0bf",
+  "workers": 1,
+  "candidate_version": "stage1",
+  "user_data_isolated": true,
+  "legacy_sprite_pngs_present": false,
+  "results": [
+    {
+      "test": "m0",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 0.263,
+      "log": "artifacts/v03/logs/m0.log"
+    },
+    {
+      "test": "board",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 0.24,
+      "log": "artifacts/v03/logs/board.log"
+    },
+    {
+      "test": "m1",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 0.348,
+      "log": "artifacts/v03/logs/m1.log"
+    },
+    {
+      "test": "edge_cases",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 0.369,
+      "log": "artifacts/v03/logs/edge_cases.log"
+    },
+    {
+      "test": "acceptance",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 1.934,
+      "log": "artifacts/v03/logs/acceptance.log"
+    },
+    {
+      "test": "session_scheduling",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 0.677,
+      "log": "artifacts/v03/logs/session_scheduling.log"
+    },
+    {
+      "test": "ui",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.224,
+      "log": "artifacts/v03/logs/ui.log"
+    },
+    {
+      "test": "ui_interaction",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 8.34,
+      "log": "artifacts/v03/logs/ui_interaction.log"
+    },
+    {
+      "test": "ui_failure",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 0.686,
+      "log": "artifacts/v03/logs/ui_failure.log"
+    },
+    {
+      "test": "inspect_levels",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 0.372,
+      "log": "artifacts/v03/logs/inspect_levels.log"
+    },
+    {
+      "test": "guides",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.071,
+      "log": "artifacts/v03/logs/guides.log"
+    },
+    {
+      "test": "v03_presentation",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.675,
+      "log": "artifacts/v03/logs/v03_presentation.log"
+    },
+    {
+      "test": "v03_render",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 2.347,
+      "log": "artifacts/v03/logs/v03_render.log"
+    },
+    {
+      "test": "bugfix",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 3.942,
+      "log": "artifacts/v03/logs/bugfix.log"
+    },
+    {
+      "test": "procedural_art",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 0.5,
+      "log": "artifacts/v03/logs/procedural_art.log"
+    },
+    {
+      "test": "lobby_stage1",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 0.695,
+      "log": "artifacts/v03/logs/lobby_stage1.log"
+    },
+    {
+      "test": "tutorial_stage1",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 15.673,
+      "log": "artifacts/v03/logs/tutorial_stage1.log"
+    },
+    {
+      "test": "art_modules",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 0.338,
+      "log": "artifacts/v03/logs/art_modules.log"
+    },
+    {
+      "test": "biome_showcase",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 1.361,
+      "log": "artifacts/v03/logs/biome_showcase.log"
+    },
+    {
+      "test": "performance",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 14.618,
+      "log": "artifacts/v03/logs/performance.log"
+    }
+  ],
+  "not_run": [
+    "T2 threads=4",
+    "T2 threads=8",
+    "T10 new-player study"
+  ],
+  "passed_executed_tests": true,
+  "requested_test_count": 20,
+  "completed_test_count": 20
+}

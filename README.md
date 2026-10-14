@@ -1,6 +1,6 @@
-# 推箱子：沙与水 · v0.3 候选
+# 推箱子：沙与水 · 第一阶段与美术预览
 
-五个横版推箱房间，沙、水和爆破由真实 ele-base-cpp v1.2.0（dacb93e）模拟。Godot 4.7.2，macOS Apple silicon；工程已包含 SDK dylib。
+四个教学关与五个经典横版推箱房间，沙、水和爆破由真实 ele-base-cpp v1.2.0（dacb93e）模拟。Godot 4.7.2，macOS Apple silicon；工程已包含 SDK dylib。
 
 ## 获取与运行
 
@@ -11,7 +11,7 @@ cd ele-pushbox
 
 仓库随附约 1.2 MB 的 macOS arm64 SDK 动态库及许可证，运行需要 macOS 15.6 或更新版本、Apple silicon 和 Godot 4.7.2，无需先编译 SDK。其他操作系统和架构尚未适配。
 
-成品目标与持续补充入口见 [项目目标与需求记录](docs/project-goals.md)：保持当前像素美术与简单操作，扩展 SDK 元素反应、流体和刚体玩法，以及教学、闯关、地狱难度挑战三个模式。2026-10-14 已恢复真机 Bug 排查，屏幕适配、台阶动画穿过拐角和人物朝左错位已在候选中修复并验证。三模式尚未实现。
+成品目标与持续补充入口见 [项目目标与需求记录](docs/project-goals.md)。第一阶段的大厅、教学模式和纯代码美术已获用户验收并封存于 `feaa6ba`。当前增加阶段 1.5 六大风格视觉预览；闯关与挑战模式继续锁定，玩法开发待美术验收。
 
 双击根目录 **Run Demo.command** 即可启动。本机启动脚本会自动找到已有 Godot；其他机器可指定可执行文件：
 
@@ -19,18 +19,22 @@ cd ele-pushbox
 PUSHBOX_GODOT_BIN='/你的/Godot.app/Contents/MacOS/Godot' ./tools/run_demo.sh
 ```
 
+在大厅点击 **地图风格预览 · B**，或按 **B**：浏览地牢、森林、遗迹、洞穴、天空岛、宇宙六张大地图。左右方向键、左右箭头按钮及底部主题标签均可切换，Esc 或左上「返回大厅」退出。预览使用 640×360 原生画布、整数缩放及游戏的地形 Shader；新机关展示外观。六图的原生与 1920×1080 整数 ×3 截图见 [阶段 1.5 预览报告](artifacts/biome-preview/README.md)。
+
 方向键 / WASD 走、推、爬梯；人物站在拉杆上按 ↑，或左键点拉杆。左键点左、右、下相邻的沙格挖沙，右键点左、右相邻的空格或水格倒沙。悬停即预演，点击直接执行。把右上角炸药拖到左、右、下相邻格，松手爆破；拖回图标或在其他位置松手取消。
 
 Z 撤销（可按住），R 重开，均无确认。结算时按任意键或点鼠标快进。Esc 打开继续、提示、重开、选关、设置、退出；方向键 / 鼠标选择，Enter 确定。设置里可打开格子类别或重看引导，类别默认关闭。过关 1.5 秒后自动换关；第五关保留胜利画面。开发版 F12 回放作者解法。
 
 关卡基础布局为 320×180，默认窗口 1280×720，最小窗口 320×180。按窗口宽高扩展逻辑画布并整数放大，保持像素清晰；关卡居中、菜单居中、背包靠右，鼠标目标跟随实际画面。非整除尺寸只留下少于一个放大逻辑像素的余量边框。SDK 世界仍为 320×192，cell_scale=1，每格16像素，模拟与房间裁剪保持原样。沙袋按图标显示，一个满袋是一格沙；炸药每枚一个图标。
 
-关内引导在做对后消失，并记住已学过的操作。要给新的试玩者重看，先用 Esc → 设置 → 重看引导，再重开 D1。第一阶段已将精灵和 UI 素材改为由 `pushbox/scripts/ui/procedural_art.gd` 在内存中生成，地形由 `world.gdshader` 绘制。打磨素材时修改相应代码，并保持素材名称、尺寸和锚点兼容；原始尺寸、动作和锚点元数据保留在 `pushbox/assets/sprites/manifest.json`，视觉规范见 `docs/v3/ui-art-direction.md`。字体和许可证随包交付。
+关内引导在做对后消失，并记住已学过的操作。要给新的试玩者重看，先用 Esc → 设置 → 重看引导，再重开 D1。精灵和 UI 素材由 `pushbox/scripts/art/` 的分类模块在内存中生成，`ui/procedural_art.gd` 保留兼容转发；地形由 `world.gdshader` 绘制。`Style.texture(name)` 始终使用原始基线，`Style.themed_texture(name, theme_id)` 按需缓存主题变体。原始尺寸、动作和锚点元数据保留在 `pushbox/assets/sprites/manifest.json`，视觉规范见 `docs/v3/ui-art-direction.md`。字体和许可证随包交付。
 
 验证命令（严格顺序、单 worker；启动前检查其他聊天的计算进程）：
 
 ```sh
 python3 tools/run_tests.py --performance
+# 六图实机渲染验证与截图导出
+python3 tools/run_tests.py --only biome_showcase
 # 指定 Godot 时加 --godot '/完整可执行路径'
 ```
 

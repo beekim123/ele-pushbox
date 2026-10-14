@@ -2,6 +2,7 @@ extends Node2D
 ## A 320x180 native canvas; Game centers it using the same integer layout.
 signal level_selected(index: int)
 signal settings_requested
+signal showcase_requested
 const Style := preload("res://pushbox/scripts/ui/pixel_style.gd")
 const TITLES := ["教学模式", "闯关模式", "挑战模式"]
 const LEVEL_NAMES := ["移动与推箱", "挖沙与造坡", "放水与浮箱", "机关与爆破"]
@@ -85,10 +86,15 @@ func rows() -> Array:
 func row_rect(index: int) -> Rect2:
 	return Rect2(70, 43 + index * 21, 180, 20)
 
+func showcase_rect() -> Rect2:
+	return Rect2(86,137,148,14)
+
 func handle(event: InputEvent) -> void:
 	if event is InputEventKey and event.pressed and not event.echo:
 		var code: int = event.physical_keycode
-		if code == KEY_ESCAPE:
+		if code == KEY_B and page == "modes":
+			showcase_requested.emit()
+		elif code == KEY_ESCAPE:
 			if page == "tutorial":
 				show_page()
 			else:
@@ -101,6 +107,10 @@ func handle(event: InputEvent) -> void:
 			activate()
 	elif event is InputEventMouseMotion or event is InputEventMouseButton:
 		var at: Vector2 = to_local(event.position)
+		if page == "modes" and showcase_rect().has_point(at):
+			if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+				showcase_requested.emit()
+			return
 		for i in (3 if page == "modes" else 5):
 			var rect: Rect2 = card_rect(i) if page == "modes" else row_rect(i)
 			if rect.has_point(at):
@@ -160,6 +170,8 @@ func _draw() -> void:
 			else:
 				draw_texture(Style.texture("icon_lock"), Vector2(center-3,98))
 				_center_text("第二阶段开放" if i == 1 else "第三阶段开放", center, 130, Color("8b9bb4"))
+		Style.panel(self,showcase_rect())
+		_center_text("地图风格预览 · B",160,148,Style.YELLOW)
 	else:
 		Style.panel(self, Rect2(62,34,196,117))
 		for i in 5:
@@ -171,8 +183,5 @@ func _draw() -> void:
 				draw_texture(Style.texture("target_lit_0"), at + Vector2(149,-12))
 	_center_text("方向键 / 鼠标选择　Enter / 左键进入", 160, 162, Color("c0cbdc"))
 	_center_text("Esc 设置" if page == "modes" else "Esc 返回大厅", 160, 176, Color("8b9bb4"))
-	for i in 8:
-		var at := Vector2(fposmod(i * 43 + clock * (1 + i % 2), 316) + 2, 148 + i % 3 * 2)
-		draw_rect(Rect2(at.floor(), Vector2.ONE), Color("5a6988"))
 	if _fade > 0:
 		draw_rect(Rect2(0,34,320,118), Color(Style.INK, _fade / 0.12 * 0.35))

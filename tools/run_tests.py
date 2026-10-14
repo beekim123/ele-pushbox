@@ -56,6 +56,8 @@ tests.append(('bugfix', 'checks, 0 failures'))
 tests.append(('procedural_art', 'checks, 0 failures'))
 tests.append(('lobby_stage1', 'checks, 0 failures'))
 tests.append(('tutorial_stage1', 'checks, 0 failures'))
+tests.append(('art_modules', 'checks, 0 failures'))
+tests.append(('biome_showcase', 'checks, 0 failures'))
 if args.performance:
     tests.append(('performance', 'Performance: 0 failures'))
 if args.only:
@@ -95,7 +97,7 @@ try:
             command.extend(['--resolution', '1920x1080', '--', '--capture-stage1'])
         elif args.performance and name == 'tutorial_stage1':
             command.extend(['--', '--check-performance'])
-        elif name not in ['performance', 'v03_presentation', 'v03_render', 'bugfix']:
+        elif name not in ['performance', 'v03_presentation', 'v03_render', 'bugfix', 'biome_showcase']:
             command.insert(1, '--headless')
         start = time.monotonic()
         try:

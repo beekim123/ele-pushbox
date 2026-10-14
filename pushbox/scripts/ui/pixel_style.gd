@@ -1,11 +1,10 @@
 extends RefCounted
 ## Shared native-pixel drawing; raster textures are built once in memory.
-const Art := preload("res://pushbox/scripts/ui/procedural_art.gd")
+const Art := preload("res://pushbox/scripts/art/art_registry.gd")
 const INK := Color("181425")
 const WHITE := Color("ffffff")
 const YELLOW := Color("fee761")
 static var _font: FontFile
-static var _textures: Dictionary = {}
 static var _panel: StyleBoxTexture
 
 static func font() -> FontFile:
@@ -20,10 +19,10 @@ static func font() -> FontFile:
 	return _font
 
 static func texture(name: String) -> Texture2D:
-	if not _textures.has(name):
-		var image: Image = Art.image(name)
-		_textures[name] = ImageTexture.create_from_image(image)
-	return _textures[name]
+	return Art.texture(name)
+
+static func themed_texture(name: String, theme_id: String = "dungeon") -> Texture2D:
+	return Art.themed_texture(name,theme_id)
 
 static func text(canvas: CanvasItem, value: String, at: Vector2, color: Color = WHITE) -> void:
 	var p: Vector2 = at.round()

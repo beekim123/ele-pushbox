@@ -1,7 +1,10 @@
 extends Node2D
 ## Sprite presentation and hover overlays at one SDK cell per screen pixel.
 const Style := preload("res://pushbox/scripts/ui/pixel_style.gd")
+const Art := preload("res://pushbox/scripts/art/art_registry.gd")
+const Gates := preload("res://pushbox/scripts/render/gate_painter.gd")
 const SIZE := 16.0
+var theme_id: String = "dungeon"
 var board: RefCounted
 var outlines: bool = false
 var preview: Dictionary = {}
@@ -69,13 +72,13 @@ func feedback(next_action: String, amount: int) -> void:
 	if next_action.begins_with("BOMB"):
 		_flash_frames = 1
 		_shake_frames = 4
-		_emit(at, Color("c28569"), 12)
+		_emit(at, Art.theme(theme_id).colors.particle_rock, 12)
 	elif next_action.begins_with("DIG"):
-		_emit(at, Color("e4a672"), 4)
+		_emit(at, Art.theme(theme_id).colors.particle_sand, 4)
 		if amount > 0:
 			_particles.append({"at": at, "velocity": Vector2.ZERO, "age": 0.0, "life": 0.55, "color": Color("fee761"), "fly": true})
 	elif next_action.begins_with("POUR"):
-		_emit(at, Color("ead4aa"), 4)
+		_emit(at, Art.theme(theme_id).colors.sand_light, 4)
 	queue_redraw()
 
 func _emit(at: Vector2, color: Color, count: int = 4) -> void:
@@ -131,7 +134,13 @@ func _point(key: String) -> Vector2:
 	return start.lerp(target, fraction).round()
 
 func _sprite(name: String, at: Vector2, color: Color = Color.WHITE) -> void:
-	draw_texture(Style.texture(name), at.round(), color)
+	draw_texture(Style.themed_texture(name,theme_id), at.round(), color)
+
+func _box_sprite(box: Dictionary) -> String:
+	return "crate_iron_0" if box.get("kind","wood") == "iron" else "crate_static_0"
+
+func _draw_gate_tile(tile: Vector2i, i: int, count: int, openness: float) -> void:
+	Gates.tile(self,Vector2(tile)*SIZE,theme_id,i,count,openness)
 
 func _dashed(rect: Rect2, color: Color) -> void:
 	for x in range(0, int(rect.size.x), 4):
@@ -165,9 +174,7 @@ func _draw() -> void:
 			var tile: Vector2i = gate.tiles[i]
 			var before: float = 1.0 if _gate_from.get(gate.id, gate.open) else 0.0
 			var after: float = 1.0 if gate.open else 0.0
-			var height: int = int(lerpf(before, after, _gate_age) * 16)
-			if height < 16:
-				draw_texture_rect_region(Style.texture("gate_closed_0"), Rect2(Vector2(tile) * SIZE, Vector2(16,16-height)), Rect2(0, i * 16 + height, 16,16-height))
+			_draw_gate_tile(tile,i,gate.tiles.size(),lerpf(before,after,_gate_age))
 	if outlines:
 		for i in classes.size():
 			if classes[i] in ["SAND", "WATER"]:
@@ -176,7 +183,7 @@ func _draw() -> void:
 		var bob: float = 0.0
 		if board.ids.size() == 61440 and box.at.y < 11 and board.counts(box.at + Vector2i.DOWN).fluid >= 64:
 			bob = 1.0 if int(clock * 2) % 2 == 0 and fraction == 1.0 else 0.0
-		_sprite("crate_static_0", _point(box.id) + Vector2(0, -bob))
+		_sprite(_box_sprite(box), _point(box.id) + Vector2(0, -bob))
 		if winning and int(clock * 8) % 2 == 0:
 			draw_rect(Rect2(_point(box.id) + Vector2(1,1),Vector2(14,14)), Color.WHITE, false)
 	var p: Vector2 = _point("player")
@@ -195,7 +202,7 @@ func _draw() -> void:
 			for box in board.boxes:
 				if _from.get(box.id, _to.get(box.id)) != _to.get(box.id):
 					pose = "push"
-	var miner: Texture2D = Style.texture("miner_%s_%d" % [pose, int(clock * 8) % frame_count])
+	var miner: Texture2D = Style.themed_texture("miner_%s_%d" % [pose, int(clock * 8) % frame_count],theme_id)
 	var miner_rect := Rect2(p, Vector2(16 * _facing,16))
 	draw_texture_rect(miner, miner_rect, false)
 	if not message.is_empty():
@@ -228,7 +235,7 @@ func _draw() -> void:
 				if original.id == box.id:
 					old = original.at
 			if box.at != old:
-				_sprite("crate_static_0", Vector2(box.at) * SIZE, Color(1,1,1,0.45))
+				_sprite(_box_sprite(box), Vector2(box.at) * SIZE, Color(1,1,1,0.45))
 				_dashed(Rect2(Vector2(box.at) * SIZE, Vector2(15,15)), Style.YELLOW)
 	for particle in _particles:
 		var age: float = particle.age

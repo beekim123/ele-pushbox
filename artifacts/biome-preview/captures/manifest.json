@@ -1,0 +1,121 @@
+{
+  "checks": 346,
+  "display": "macOS",
+  "failures": 0,
+  "lobby_entry": {
+    "export": [
+      1920,
+      1080
+    ],
+    "native": [
+      320,
+      180
+    ],
+    "scale": 6
+  },
+  "screens": [
+    {
+      "export": [
+        1920,
+        1080
+      ],
+      "map_tiles": [
+        24,
+        13
+      ],
+      "native": [
+        640,
+        360
+      ],
+      "scale": 3,
+      "sha256_rgba": "138e8a72f949259878b9eef95eebf9c1f34a37811d31dbd97e00f39a62519237",
+      "theme": "dungeon"
+    },
+    {
+      "export": [
+        1920,
+        1080
+      ],
+      "map_tiles": [
+        28,
+        15
+      ],
+      "native": [
+        640,
+        360
+      ],
+      "scale": 3,
+      "sha256_rgba": "131276da8791b436eb4ffbd3b4cb2abba1851d0f012985a178483279b06106af",
+      "theme": "forest"
+    },
+    {
+      "export": [
+        1920,
+        1080
+      ],
+      "map_tiles": [
+        28,
+        15
+      ],
+      "native": [
+        640,
+        360
+      ],
+      "scale": 3,
+      "sha256_rgba": "cc235583a387a1c5da7915ca62de8b852aabb3138ce015cf31a7bc3153e3e279",
+      "theme": "ruins"
+    },
+    {
+      "export": [
+        1920,
+        1080
+      ],
+      "map_tiles": [
+        30,
+        16
+      ],
+      "native": [
+        640,
+        360
+      ],
+      "scale": 3,
+      "sha256_rgba": "301831857fc6841e311039c3bd85783ca73b009cb92a97f0a504d8d0f94751f4",
+      "theme": "cave"
+    },
+    {
+      "export": [
+        1920,
+        1080
+      ],
+      "map_tiles": [
+        30,
+        16
+      ],
+      "native": [
+        640,
+        360
+      ],
+      "scale": 3,
+      "sha256_rgba": "0632058597b98e0076bede3fa5bb212a6a8b1ac15bd270beaea19c9e7db8576a",
+      "theme": "sky_island"
+    },
+    {
+      "export": [
+        1920,
+        1080
+      ],
+      "map_tiles": [
+        32,
+        18
+      ],
+      "native": [
+        640,
+        360
+      ],
+      "scale": 3,
+      "sha256_rgba": "8444ae73b446cf81c0fdcdd7de6d99910f2b273a868b59040d8708fd1c192036",
+      "theme": "cosmos"
+    }
+  ],
+  "workers": 1
+}

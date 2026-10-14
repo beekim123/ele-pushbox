@@ -1,0 +1,222 @@
+{
+  "baseline_commit": "feaa6bad78d56e266cff1c8c070adc9061d282fc",
+  "checked": 43,
+  "all_unchanged": true,
+  "files": [
+    {
+      "path": "bin/LICENSE-box2d.txt",
+      "unchanged": true,
+      "sha256": "68a3e676d7e94093b102d5cba0d4e04af812040d6f230c3db67a6664574e43d2"
+    },
+    {
+      "path": "bin/LICENSE-ele-base-cpp.txt",
+      "unchanged": true,
+      "sha256": "86b66778b711b97ee9b33abdbd1219944efbf87eefdedc2ab523d127ee2f57cf"
+    },
+    {
+      "path": "bin/LICENSE-godot-cpp.txt",
+      "unchanged": true,
+      "sha256": "26a5b210d90760156ce886267ce9df235787dcc6cebfd7ecd95ef5b6fdcc95bf"
+    },
+    {
+      "path": "bin/THIRD_PARTY.md",
+      "unchanged": true,
+      "sha256": "5921ff2626682b64a62221e80c0405598e38a3429752ae73df7c4bb083c5f6e4"
+    },
+    {
+      "path": "bin/build-metadata.json",
+      "unchanged": true,
+      "sha256": "522ea00cda017f977a866ca3957494fc7a679a9c73cf573fa9d4b63ead03164d"
+    },
+    {
+      "path": "bin/libele_godot.dylib",
+      "unchanged": true,
+      "sha256": "b084eb5ffad07cc4b790285156de1bf3ef1c33fd69a8bb7fd2d7c599f6c088c4"
+    },
+    {
+      "path": "bin/palette.gdshader",
+      "unchanged": true,
+      "sha256": "77cf5ebe2ca64bdaf07372c016d26a2167718935671b7e19c4b9b8a22c2b3c2c"
+    },
+    {
+      "path": "ele.gdextension",
+      "unchanged": true,
+      "sha256": "a436a9f4ea8bf1bfa317bd23f50decae8a01a2933b4c62a61a3d81df42a1db7c"
+    },
+    {
+      "path": "pushbox/levels/d1.json",
+      "unchanged": true,
+      "sha256": "a125958fc450c637f597249ebd80889cf157a5b257d7cb539245eb529513cec2"
+    },
+    {
+      "path": "pushbox/levels/d2.json",
+      "unchanged": true,
+      "sha256": "3e41a94870ee0f406fa77067b3c1ad9a1af3640f25a1da0b586e3e2f5ab2c97e"
+    },
+    {
+      "path": "pushbox/levels/d3.json",
+      "unchanged": true,
+      "sha256": "a535c1f8da015257722899f220724cd27df910a02f1a7189cb5bcf5225c429f4"
+    },
+    {
+      "path": "pushbox/levels/d4.json",
+      "unchanged": true,
+      "sha256": "58a3acd91faafa8eac5fcb30148ddd659965819097cdeb9eb9cedade76132428"
+    },
+    {
+      "path": "pushbox/levels/d5.json",
+      "unchanged": true,
+      "sha256": "36e6cca94fd34a18b585ba2827e22c526a4cfcc6966d34da1888c5eece192046"
+    },
+    {
+      "path": "pushbox/levels/tutorial/t01.json",
+      "unchanged": true,
+      "sha256": "9b0c0892341c99141ff44103294bc3c279430f17a669fc645f931ffbdf9ee9a6"
+    },
+    {
+      "path": "pushbox/levels/tutorial/t02.json",
+      "unchanged": true,
+      "sha256": "4a567a7e76919eec145fe772c9efd027fff99ff1b7680791e94edc24da4d2aed"
+    },
+    {
+      "path": "pushbox/levels/tutorial/t03.json",
+      "unchanged": true,
+      "sha256": "27a117c0566ed1e5a0da230c9ac9a2e98625be7ac2bd729ddda785d3c66ce0c4"
+    },
+    {
+      "path": "pushbox/levels/tutorial/t04.json",
+      "unchanged": true,
+      "sha256": "4c981e15ee068974e89d4f743fcfc3330055abb827e44908a804c1e3d37bedb4"
+    },
+    {
+      "path": "pushbox/rules.json",
+      "unchanged": true,
+      "sha256": "cef680ac033a0920d0b76530f372200f5667289f88237760154ef4e6ae34a30a"
+    },
+    {
+      "path": "pushbox/scripts/board.gd",
+      "unchanged": true,
+      "sha256": "2a78ccf9e19598c363bca54f9d6f914af03e2a031cfe44bd8ccb98bc5ef7065f"
+    },
+    {
+      "path": "pushbox/scripts/session.gd",
+      "unchanged": true,
+      "sha256": "439be2f5a66b514a3426472a5f6407326ace780f47181fff58d6c4140d002c46"
+    },
+    {
+      "path": "tests/acceptance.gd",
+      "unchanged": true,
+      "sha256": "005f47509eb565adae4cc2cac182b060e792ede4d431ca0b291a80cce4d104d1"
+    },
+    {
+      "path": "tests/board.gd",
+      "unchanged": true,
+      "sha256": "af9f102f45c4aefc892d57d72dcfe57d70104ab55b9469cd5912c6dc1351acd8"
+    },
+    {
+      "path": "tests/bugfix.gd",
+      "unchanged": true,
+      "sha256": "6ac05a85dc8ea5668d27c446522a42269c385495783f8569b87e12232982020a"
+    },
+    {
+      "path": "tests/capture_v03.gd",
+      "unchanged": true,
+      "sha256": "c6c67242ca89ff04a97777350739162c1c4b87367c01affc8ab4d0926790000c"
+    },
+    {
+      "path": "tests/edge_cases.gd",
+      "unchanged": true,
+      "sha256": "bb676e6384c5122183cb527b2e12c5282927acf67da64d5664f3f86008aa8cf2"
+    },
+    {
+      "path": "tests/fixtures/art_rgba_v03.json",
+      "unchanged": true,
+      "sha256": "1945f9901a8335a80f6edce569ea2d9bb98c5fa908343735ee1797f5c0850821"
+    },
+    {
+      "path": "tests/fixtures/session_sync_v03.gd",
+      "unchanged": true,
+      "sha256": "0f6fffe6e6bd87a0580b52af8e84f400ba1176228d600a8b4bf54e1598ad2bc8"
+    },
+    {
+      "path": "tests/guides.gd",
+      "unchanged": true,
+      "sha256": "22676cbb0b5c3d17bb3aeda00b6f6e0914129cc942f0fbfe2208bdb95d114fcd"
+    },
+    {
+      "path": "tests/inspect_levels.gd",
+      "unchanged": true,
+      "sha256": "ae3059a6b23a2038037d988c0661f5bf9a193bd57a11f1905050a51b570bb403"
+    },
+    {
+      "path": "tests/lobby_stage1.gd",
+      "unchanged": true,
+      "sha256": "a64a40416c5856bf9b4217809e7bfa5e43653a7f436b555530e5fef07327a59f"
+    },
+    {
+      "path": "tests/m0.gd",
+      "unchanged": true,
+      "sha256": "b6690ba6208bbb9cd5bb071c65eeec8924d0b374b35699e749fc37c5a46fe2bf"
+    },
+    {
+      "path": "tests/m1.gd",
+      "unchanged": true,
+      "sha256": "92eeba945e2c6aeee4c4be5534fea8f8b53955829ecaa688514ac973cb3c150a"
+    },
+    {
+      "path": "tests/performance.gd",
+      "unchanged": true,
+      "sha256": "05c6b9e1ca5944470b0dcdd5ee63b299828b9aaf496ddc96e10c64aedc59fb28"
+    },
+    {
+      "path": "tests/procedural_art.gd",
+      "unchanged": true,
+      "sha256": "747a703fbf85342d727c9e43015ba1d97f23eb528694d65440806d3f501b259d"
+    },
+    {
+      "path": "tests/record_solution.gd",
+      "unchanged": true,
+      "sha256": "f4faf5c0227aa2d9d5d88dc60821bba13fee6399c64eedef30ae59602bc77246"
+    },
+    {
+      "path": "tests/session_scheduling.gd",
+      "unchanged": true,
+      "sha256": "d3d980f6fef90602f7ec7c1030aed34138e98fe313f9b986021a2d780a6deb2e"
+    },
+    {
+      "path": "tests/tutorial_stage1.gd",
+      "unchanged": true,
+      "sha256": "8b2a23a02cb240e6ddaac04723900b653be8964ce53371340e60003ec3e6a5e6"
+    },
+    {
+      "path": "tests/ui.gd",
+      "unchanged": true,
+      "sha256": "36f58cc53d57f109d076a777602dc88f8bd1fc79efc6ab9c93b69a810ee41906"
+    },
+    {
+      "path": "tests/ui_failure.gd",
+      "unchanged": true,
+      "sha256": "d27b62ba1d5a82c0936840950c06283c770814a331cda7f6708649d7d1b86fbd"
+    },
+    {
+      "path": "tests/ui_interaction.gd",
+      "unchanged": true,
+      "sha256": "94b267a4493d441da41c9be4c72e533a687eba87e00d7f0626cc08abe10b3192"
+    },
+    {
+      "path": "tests/v03_input.gd",
+      "unchanged": true,
+      "sha256": "469e0049c9b4cddbad6f6ab273b21932b836d8892ed4a78bfd6d73a38b7175ba"
+    },
+    {
+      "path": "tests/v03_presentation.gd",
+      "unchanged": true,
+      "sha256": "cdbab4acf6a5ff576ed98954b9098c669f87a10b05deb7cfbc11a02b4faf2307"
+    },
+    {
+      "path": "tests/v03_render.gd",
+      "unchanged": true,
+      "sha256": "b9d524dc6e2c41d6eba44aaf25e554175f2baa5231310afe5174fc20c479538f"
+    }
+  ]
+}

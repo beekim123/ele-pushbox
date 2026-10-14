@@ -7,12 +7,15 @@ const Hud := preload("res://pushbox/scripts/ui/hud.gd")
 const Guide := preload("res://pushbox/scripts/ui/guide.gd")
 const Style := preload("res://pushbox/scripts/ui/pixel_style.gd")
 const Lobby := preload("res://pushbox/scripts/ui/lobby_view.gd")
+const Showcase := preload("res://pushbox/scripts/ui/biome_showcase_view.gd")
+const ThemeBinder := preload("res://pushbox/scripts/render/theme_shader_binder.gd")
 const PauseMenu := preload("res://pushbox/scripts/ui/pause_menu.gd")
 const BOARD_POSITION := Vector2.ZERO
 var start_in_lobby: bool = not OS.get_cmdline_args().has("--script")
 var progress_path: String = "user://progress.json"
 var mode: String = "legacy"
 var lobby: Node2D
+var showcase: Node2D
 var session: RefCounted
 var preview: RefCounted
 var background: Sprite2D
@@ -70,6 +73,11 @@ func _ready() -> void:
 	add_child(lobby)
 	lobby.level_selected.connect(select_tutorial)
 	lobby.settings_requested.connect(_lobby_settings)
+	lobby.showcase_requested.connect(open_showcase)
+	showcase = Showcase.new()
+	showcase.z_index = 11
+	add_child(showcase)
+	showcase.closed.connect(return_lobby)
 	get_viewport().size_changed.connect(_on_viewport_resized)
 	if start_in_lobby:
 		return_lobby()
@@ -96,6 +104,8 @@ func _lobby_settings() -> void:
 	pause_menu.queue_redraw()
 
 func return_lobby(page: String = "modes") -> void:
+	if showcase != null:
+		showcase.conceal()
 	cancel_preview(true)
 	_dragging = false
 	hud.dragging = false
@@ -113,7 +123,14 @@ func return_lobby(page: String = "modes") -> void:
 	lobby.show_page(page)
 	_layout()
 
+func open_showcase() -> void:
+	return_lobby()
+	lobby.conceal()
+	showcase.open()
+	_layout()
+
 func select_level_path(path: String, next_mode: String = "legacy", index: int = 0) -> void:
+	showcase.conceal()
 	close_sessions()
 	mode = next_mode
 	level_index = index
@@ -132,6 +149,8 @@ func select_level_path(path: String, next_mode: String = "legacy", index: int = 
 		return
 	session.world.position = BOARD_POSITION
 	session.world.z_index = 1
+	view.theme_id = session.level.get("theme_id","dungeon")
+	background.texture = Style.themed_texture("cave_bg",view.theme_id)
 	_configure_render()
 	background.position = Vector2(session.board.origin) * 16
 	background.region_rect = Rect2(background.position, Vector2(session.level.map[0].length() * 16, session.level.map.size() * 16))
@@ -167,12 +186,16 @@ func select_level_path(path: String, next_mode: String = "legacy", index: int = 
 
 func _layout() -> void:
 	var window := get_window()
-	var pixel_scale: int = maxi(1, floori(minf(window.size.x / 320.0, window.size.y / 180.0)))
-	var canvas := Vector2i(maxi(320, window.size.x / pixel_scale), maxi(180, window.size.y / pixel_scale))
+	var base: Vector2i = Vector2i(640,360) if showcase != null and showcase.visible else Vector2i(320,180)
+	var pixel_scale: int = maxi(1, floori(minf(window.size.x / float(base.x), window.size.y / float(base.y))))
+	var canvas := Vector2i(maxi(base.x, window.size.x / pixel_scale), maxi(base.y, window.size.y / pixel_scale))
 	if window.content_scale_size != canvas:
 		window.content_scale_size = canvas
 	_board_position = ((get_viewport_rect().size - Vector2(320, 180)) / 2).round()
 	lobby.position = _board_position
+	if showcase != null and showcase.visible:
+		showcase.position = ((get_viewport_rect().size-Vector2(640,360))/2).round()
+		showcase.terrain.material.set_shader_parameter("world_origin",showcase.to_global(showcase.map_origin))
 	if session == null:
 		pause_menu.queue_redraw()
 		return
@@ -224,8 +247,10 @@ func _configure_render() -> void:
 		if not sprite is Sprite2D or not sprite.material is ShaderMaterial:
 			continue
 		var shader_material: ShaderMaterial = sprite.material
-		for material_name in ["bedrock", "cracked_rock", "sand", "water", "crate", "gate"]:
-			shader_material.set_shader_parameter(("cracked" if material_name == "cracked_rock" else material_name) + "_id", session.world.material_id(material_name))
+		var ids: Dictionary = {}
+		for material_name in ThemeBinder.MATERIAL_NAMES:
+			ids[material_name] = session.board.name_ids.get(material_name,-1)
+		ThemeBinder.apply(shader_material,view.theme_id,ids)
 		shader_material.set_shader_parameter("room_rect", Vector4(session.board.origin.x * 16, session.board.origin.y * 16, session.level.map[0].length() * 16, session.level.map.size() * 16))
 
 func _physics_process(_delta: float) -> void:
@@ -514,6 +539,10 @@ func _action_label(action: String) -> String:
 	return {"DIG": "左键挖沙 ", "POUR": "右键倒沙 ", "BOMB": "拖炸药 "}.get(action.get_slice("_", 0), "") + direction
 
 func _input(event: InputEvent) -> void:
+	if showcase.visible:
+		showcase.handle(event)
+		get_viewport().set_input_as_handled()
+		return
 	if pause_menu.opened:
 		pause_menu.handle(event)
 		get_viewport().set_input_as_handled()
