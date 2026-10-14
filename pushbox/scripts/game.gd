@@ -6,8 +6,13 @@ const View := preload("res://pushbox/scripts/ui/board_view.gd")
 const Hud := preload("res://pushbox/scripts/ui/hud.gd")
 const Guide := preload("res://pushbox/scripts/ui/guide.gd")
 const Style := preload("res://pushbox/scripts/ui/pixel_style.gd")
+const Lobby := preload("res://pushbox/scripts/ui/lobby_view.gd")
 const PauseMenu := preload("res://pushbox/scripts/ui/pause_menu.gd")
 const BOARD_POSITION := Vector2.ZERO
+var start_in_lobby: bool = not OS.get_cmdline_args().has("--script")
+var progress_path: String = "user://progress.json"
+var mode: String = "legacy"
+var lobby: Node2D
 var session: RefCounted
 var preview: RefCounted
 var background: Sprite2D
@@ -57,18 +62,73 @@ func _ready() -> void:
 	pause_menu = PauseMenu.new()
 	hud.add_child(pause_menu)
 	pause_menu.requested.connect(utility)
-	pause_menu.level_selected.connect(select_level)
+	pause_menu.level_selected.connect(_select_menu_level)
 	pause_menu.outlines_changed.connect(view.set_outlines)
+	lobby = Lobby.new()
+	lobby.progress_path = progress_path
+	lobby.z_index = 10
+	add_child(lobby)
+	lobby.level_selected.connect(select_tutorial)
+	lobby.settings_requested.connect(_lobby_settings)
 	get_viewport().size_changed.connect(_on_viewport_resized)
-	select_level(0)
+	if start_in_lobby:
+		return_lobby()
+	else:
+		select_level(0)
 
 func select_level(index: int) -> void:
+	select_level_path("res://pushbox/levels/d%d.json" % (clampi(index, 0, 4) + 1), "legacy", clampi(index, 0, 4))
+
+func select_tutorial(index: int) -> void:
+	select_level_path("res://pushbox/levels/tutorial/t%02d.json" % (clampi(index, 0, 3) + 1), "tutorial", clampi(index, 0, 3))
+
+func _select_menu_level(index: int) -> void:
+	if mode == "tutorial":
+		select_tutorial(index)
+	else:
+		select_level(index)
+
+func _lobby_settings() -> void:
+	pause_menu.lobby_context = true
+	pause_menu.opened = true
+	pause_menu.page = "settings"
+	pause_menu.selected = 0
+	pause_menu.queue_redraw()
+
+func return_lobby(page: String = "modes") -> void:
+	cancel_preview(true)
+	_dragging = false
+	hud.dragging = false
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	lobby.save_progress()
 	close_sessions()
-	level_index = clampi(index, 0, 4)
+	hud.session = null
+	hud.painter.hide()
+	view.hide()
+	view.set_process(false)
+	background.hide()
+	pause_menu.close()
+	_victory_left = -1.0
+	_replaying = false
+	lobby.show_page(page)
+	_layout()
+
+func select_level_path(path: String, next_mode: String = "legacy", index: int = 0) -> void:
+	close_sessions()
+	mode = next_mode
+	level_index = index
+	lobby.conceal()
+	background.show()
+	view.show()
+	view.set_process(true)
+	hud.painter.show()
+	pause_menu.lobby_context = false
+	pause_menu.tutorial = mode == "tutorial"
 	session = Session.new()
-	var reason: String = session.load_level("res://pushbox/levels/d%d.json" % (level_index + 1), self, true)
+	var reason: String = session.load_level(path, self, true)
 	if not reason.is_empty():
 		push_error(reason)
+		return_lobby("tutorial")
 		return
 	session.world.position = BOARD_POSITION
 	session.world.z_index = 1
@@ -112,6 +172,10 @@ func _layout() -> void:
 	if window.content_scale_size != canvas:
 		window.content_scale_size = canvas
 	_board_position = ((get_viewport_rect().size - Vector2(320, 180)) / 2).round()
+	lobby.position = _board_position
+	if session == null:
+		pause_menu.queue_redraw()
+		return
 	view.position = _board_position
 	session.world.position = _board_position
 	background.position = _board_position + Vector2(session.board.origin) * 16
@@ -125,7 +189,7 @@ func _layout() -> void:
 	view.queue_redraw()
 
 func _on_viewport_resized() -> void:
-	if session == null or _layout_queued:
+	if _layout_queued:
 		return
 	# Window attaches its screen rect after emitting size_changed. Resizing
 	# inside that signal lets the outer update overwrite the new attachment.
@@ -134,10 +198,10 @@ func _on_viewport_resized() -> void:
 
 func _apply_resize() -> void:
 	_layout_queued = false
-	if session == null:
-		return
 	cancel_preview()
 	_layout()
+	if session == null:
+		return
 	_pointer = get_viewport().get_mouse_position()
 	_sync_pointer()
 
@@ -162,8 +226,6 @@ func _configure_render() -> void:
 		var shader_material: ShaderMaterial = sprite.material
 		for material_name in ["bedrock", "cracked_rock", "sand", "water", "crate", "gate"]:
 			shader_material.set_shader_parameter(("cracked" if material_name == "cracked_rock" else material_name) + "_id", session.world.material_id(material_name))
-		shader_material.set_shader_parameter("bedrock_tex", Style.texture("tex_bedrock_0"))
-		shader_material.set_shader_parameter("cracked_tex", Style.texture("tex_cracked_0"))
 		shader_material.set_shader_parameter("room_rect", Vector4(session.board.origin.x * 16, session.board.origin.y * 16, session.level.map[0].length() * 16, session.level.map.size() * 16))
 
 func _physics_process(_delta: float) -> void:
@@ -211,6 +273,8 @@ func _physics_process(_delta: float) -> void:
 			if session.board.trapped:
 				_message("? 按 Z 撤销")
 			if session.board.won():
+				if mode == "tutorial":
+					lobby.mark_completed(session.level.id)
 				_victory_left = 1.5
 				view.winning = true
 		hud.update_state(session)
@@ -248,10 +312,16 @@ func _process(delta: float) -> void:
 			view.queue_redraw()
 	if _victory_left > 0 and not _replaying:
 		_victory_left -= delta
-		view.exit_fade = clampf((0.3 - _victory_left) / 0.3, 0.0, 1.0) if level_index < 4 else 0.0
+		view.exit_fade = clampf((0.3 - _victory_left) / 0.3, 0.0, 1.0) if mode == "tutorial" or level_index < 4 else 0.0
 		view.queue_redraw()
-		if _victory_left <= 0 and level_index < 4:
-			select_level(level_index + 1)
+		if _victory_left <= 0:
+			if mode == "tutorial":
+				if level_index == 3:
+					return_lobby()
+				else:
+					select_tutorial(level_index + 1)
+			elif level_index < 4:
+				select_level(level_index + 1)
 			return
 	if not session.running and animation_left == 0 and not _opening and not _replaying and _victory_left < 0:
 		_update_hover()
@@ -309,6 +379,13 @@ func _update_hover() -> void:
 	_hover_delay = 0
 	view.queue_redraw()
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN if not next.is_empty() or _dragging else Input.MOUSE_MODE_VISIBLE)
+	if not next.is_empty():
+		# Start on the pointer frame, including one existing 3.5ms work slice.
+		# Waiting for the next physics frame to begin added two idle display
+		# frames to long water previews. The cloned Session/rules stay identical.
+		_accept_preview(preview.begin(session, next, true))
+		if preview.pending:
+			_accept_preview(preview.advance_budget())
 
 func _accept_preview(result: Dictionary) -> void:
 	if result.is_empty() or result.get("action") != _hover_action:
@@ -320,10 +397,12 @@ func _accept_preview(result: Dictionary) -> void:
 	view.queue_redraw()
 
 func request_direction(direction: String) -> void:
+	if session == null:
+		return
 	request_action("USE" if direction == "U" and session.board.action_reason("USE").is_empty() else direction)
 
 func request_action(action: String, _direct: bool = true) -> void:
-	if session.running or animation_left > 0 or _opening or pause_menu.opened or view.winning:
+	if session == null or session.running or animation_left > 0 or _opening or pause_menu.opened or view.winning:
 		return
 	var reason: String = session.board.action_reason(action)
 	if not reason.is_empty():
@@ -358,10 +437,16 @@ func utility(action: String) -> void:
 	if action == "quit":
 		get_tree().quit()
 		return
+	if action == "lobby":
+		return_lobby()
+		return
 	if action == "reset_guides":
 		_guide_progress.clear()
-		guide.configure(session.board, session.level, _guide_progress)
+		if session != null:
+			guide.configure(session.board, session.level, _guide_progress)
 		_save_guides()
+		return
+	if session == null:
 		return
 	if _opening:
 		if _opening_failed and action == "restart":
@@ -429,11 +514,15 @@ func _action_label(action: String) -> String:
 	return {"DIG": "左键挖沙 ", "POUR": "右键倒沙 ", "BOMB": "拖炸药 "}.get(action.get_slice("_", 0), "") + direction
 
 func _input(event: InputEvent) -> void:
-	if session == null:
-		return
 	if pause_menu.opened:
 		pause_menu.handle(event)
 		get_viewport().set_input_as_handled()
+		return
+	if lobby.visible:
+		lobby.handle(event)
+		get_viewport().set_input_as_handled()
+		return
+	if session == null:
 		return
 	if event is InputEventKey and event.pressed:
 		var key: int = event.physical_keycode

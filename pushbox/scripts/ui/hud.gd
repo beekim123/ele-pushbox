@@ -40,6 +40,8 @@ func update_state(source: RefCounted, _tool: String = "", _previewing: bool = fa
 	painter.queue_redraw()
 
 func _process(delta: float) -> void:
+	if session == null:
+		return
 	room_age += delta
 	idle_seconds += delta
 	bag_bounce = maxf(0.0, bag_bounce - delta)
@@ -68,7 +70,8 @@ func _draw_hud() -> void:
 		return
 	var color := Color.WHITE
 	color.a = 1.0 if room_age < 3.0 else 0.55
-	Style.text(painter, "%d · %s" % [room_index + 1, ROOM_NAMES[room_index]], Vector2(7, 15), color)
+	var title: String = "T%02d · %s" % [room_index + 1, session.level.title] if session.level.id.begins_with("t0") else "%d · %s" % [room_index + 1, ROOM_NAMES[room_index]]
+	Style.text(painter, title, Vector2(7, 15), color)
 	if idle_seconds > 60.0:
 		Style.text(painter, "Esc 可以看提示", Vector2(7, 29), Color(1, 1, 1, minf(0.6, (idle_seconds - 60.0) / 2.0)))
 	if _show_bag or _bag > 0:

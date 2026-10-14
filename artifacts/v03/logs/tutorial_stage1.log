@@ -1,0 +1,88 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+OpenGL API 4.1 Metal - 89.4 - Compatibility - Using Device: Apple - Apple M3
+
+Tutorial T01 checked
+Tutorial T02 checked
+Tutorial T03 checked
+Tutorial T04 checked
+Tutorial UI begin room=1 move=0 action=R
+Tutorial UI end room=1 move=1 running=false
+Tutorial UI begin room=1 move=1 action=U
+Tutorial UI end room=1 move=2 running=false
+Tutorial UI begin room=1 move=2 action=U
+Tutorial UI end room=1 move=3 running=false
+Tutorial UI begin room=1 move=3 action=R
+Tutorial UI end room=1 move=4 running=false
+Tutorial UI begin room=1 move=4 action=R
+Tutorial UI end room=1 move=5 running=false
+Tutorial UI begin room=1 move=5 action=R
+Tutorial UI end room=1 move=6 running=false
+Tutorial UI begin room=1 move=6 action=R
+Tutorial UI end room=1 move=7 running=false
+Tutorial UI begin room=1 move=7 action=R
+Tutorial UI end room=1 move=8 running=false
+Tutorial UI begin room=2 move=0 action=DIG_L
+Tutorial preview room=2 action=DIG_L cpu_us=8881 latency_us=35861 phases={"COUNTS":874,"KEY":522,"READ":397,"RESOLVE":82,"TICKS":1192,"begin":5200,"finish":614} slices=[3743]
+Tutorial UI end room=2 move=1 running=false
+Tutorial UI begin room=2 move=1 action=L
+Tutorial UI end room=2 move=2 running=false
+Tutorial UI begin room=2 move=2 action=DIG_L
+Tutorial preview room=2 action=DIG_L cpu_us=8848 latency_us=25604 phases={"COUNTS":849,"KEY":579,"READ":479,"RESOLVE":77,"TICKS":462,"begin":5704,"finish":698} slices=[3172]
+Tutorial UI end room=2 move=3 running=false
+Tutorial UI begin room=2 move=3 action=R
+Tutorial UI end room=2 move=4 running=false
+Tutorial UI begin room=2 move=4 action=POUR_R
+Tutorial preview room=2 action=POUR_R cpu_us=10181 latency_us=27857 phases={"COUNTS":796,"KEY":953,"READ":517,"RESOLVE":88,"TICKS":707,"begin":6156,"finish":964} slices=[4081]
+Tutorial UI end room=2 move=5 running=false
+Tutorial UI begin room=2 move=5 action=R
+Tutorial UI end room=2 move=6 running=false
+Tutorial UI begin room=2 move=6 action=R
+Tutorial UI end room=2 move=7 running=false
+Tutorial UI begin room=2 move=7 action=R
+Tutorial UI end room=2 move=8 running=false
+Tutorial UI begin room=2 move=8 action=R
+Tutorial UI end room=2 move=9 running=false
+Tutorial UI begin room=3 move=0 action=R
+Tutorial UI end room=3 move=1 running=false
+Tutorial UI begin room=3 move=1 action=R
+Tutorial UI end room=3 move=2 running=false
+Tutorial UI begin room=3 move=2 action=USE
+Tutorial UI end room=3 move=3 running=false
+Tutorial UI begin room=3 move=3 action=POUR_R
+Tutorial preview room=3 action=POUR_R cpu_us=18753 latency_us=50769 phases={"COUNTS":1122,"KEY":639,"READ":627,"RESOLVE":482,"TICKS":8241,"begin":6974,"finish":668} slices=[3552,3767,4551]
+Tutorial UI end room=3 move=4 running=false
+Tutorial UI begin room=3 move=4 action=R
+Tutorial UI end room=3 move=5 running=false
+Tutorial UI begin room=3 move=5 action=R
+Tutorial UI end room=3 move=6 running=false
+Tutorial UI begin room=3 move=6 action=R
+Tutorial UI end room=3 move=7 running=false
+Tutorial UI begin room=3 move=7 action=R
+Tutorial UI end room=3 move=8 running=false
+Tutorial UI begin room=4 move=0 action=R
+Tutorial UI end room=4 move=1 running=false
+Tutorial UI begin room=4 move=1 action=R
+Tutorial UI end room=4 move=2 running=false
+Tutorial UI begin room=4 move=2 action=R
+Tutorial UI end room=4 move=3 running=false
+Tutorial UI begin room=4 move=3 action=R
+Tutorial UI end room=4 move=4 running=false
+Tutorial UI begin room=4 move=4 action=R
+Tutorial UI end room=4 move=5 running=false
+Tutorial UI begin room=4 move=5 action=R
+Tutorial UI end room=4 move=6 running=false
+Tutorial UI begin room=4 move=6 action=R
+Tutorial UI end room=4 move=7 running=false
+Tutorial UI begin room=4 move=7 action=R
+Tutorial UI end room=4 move=8 running=false
+Tutorial UI begin room=4 move=8 action=R
+Tutorial UI end room=4 move=9 running=false
+Tutorial UI begin room=4 move=9 action=BOMB_L
+Tutorial preview room=4 action=BOMB_L cpu_us=18328 latency_us=33180 phases={"COUNTS":1532,"KEY":753,"READ":436,"RESOLVE":253,"TICKS":183,"begin":12411,"finish":2760} slices=[5961]
+Tutorial UI end room=4 move=10 running=false
+Tutorial UI begin room=4 move=10 action=L
+Tutorial UI end room=4 move=11 running=false
+Tutorial UI begin room=4 move=11 action=L
+Tutorial UI end room=4 move=12 running=false
+Tutorial T8 frames=603 peak=2146 hover=50769
+Tutorial stage1: 499 checks, 0 failures

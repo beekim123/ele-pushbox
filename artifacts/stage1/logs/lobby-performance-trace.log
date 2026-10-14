@@ -1,0 +1,674 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+OpenGL API 4.1 Metal - 89.4 - Compatibility - Using Device: Apple - Apple M3
+
+TRACE native motion=(56.0, 89.0)
+TRACE native motion=(56.0, 88.25)
+TRACE native motion=(56.0, 88.0)
+TRACE native motion=(56.0, 87.75)
+TRACE native motion=(56.0, 86.75)
+TRACE native motion=(56.0, 86.0)
+TRACE native motion=(53.0, 83.25)
+TRACE native motion=(52.0, 82.0)
+TRACE native motion=(49.5, 78.75)
+TRACE native motion=(47.5, 74.75)
+TRACE hover room=0 pointer=(47.5, 74.75) local=(47.5, 74.75) victory=-1.0
+TRACE native motion=(47.0, 73.5)
+TRACE native motion=(46.25, 72.25)
+TRACE native motion=(45.75, 71.0)
+TRACE native motion=(44.75, 69.0)
+TRACE native motion=(44.75, 67.75)
+TRACE native motion=(44.75, 66.25)
+TRACE native motion=(45.75, 64.25)
+TRACE native motion=(47.25, 62.5)
+TRACE native motion=(49.75, 59.5)
+TRACE native motion=(52.25, 57.0)
+TRACE native motion=(53.25, 54.5)
+TRACE hover room=0 pointer=(53.25, 54.5) local=(53.25, 54.5) victory=-1.0
+TRACE native motion=(55.5, 49.75)
+TRACE native motion=(55.0, 50.75)
+TRACE hover room=0 pointer=(55.0, 50.75) local=(55.0, 50.75) victory=-1.0
+TRACE hover room=0 pointer=(-100.0, -100.0) local=(-100.0, -100.0) victory=-1.0
+TRACE native motion=(54.75, 49.75)
+TRACE native motion=(54.5, 48.0)
+TRACE native motion=(54.5, 46.0)
+TRACE native motion=(56.0, 44.25)
+TRACE native motion=(56.25, 43.75)
+TRACE native motion=(57.5, 42.75)
+TRACE native motion=(58.5, 42.25)
+TRACE hover room=0 pointer=(58.5, 42.25) local=(58.5, 42.25) victory=-1.0
+TRACE native motion=(58.5, 41.75)
+TRACE native motion=(58.5, 41.5)
+TRACE native motion=(59.0, 41.25)
+TRACE native motion=(59.0, 40.75)
+TRACE native motion=(59.25, 40.25)
+TRACE native motion=(59.25, 40.0)
+TRACE native motion=(59.5, 39.75)
+TRACE native motion=(59.75, 39.25)
+TRACE native motion=(59.75, 39.25)
+TRACE hover room=0 pointer=(59.75, 39.25) local=(59.75, 39.25) victory=-1.0
+TRACE native motion=(60.0, 39.25)
+TRACE native motion=(60.0, 39.0)
+TRACE native motion=(60.0, 38.75)
+TRACE native motion=(60.25, 38.75)
+TRACE native motion=(60.25, 38.5)
+TRACE native motion=(60.5, 38.25)
+T8 D1 {"frames":{"max_us":1459,"min_us":43,"p50_us":190,"p95_us":599,"samples":53},"level":1,"load_us":25502,"preview_cpu":{"max_us":0,"samples":0},"preview_latency":{"max_us":0,"samples":0}}
+TRACE hover room=1 pointer=(60.5, 38.25) local=(60.5, 38.25) victory=-1.0
+TRACE hover room=1 pointer=(120.0, 120.0) local=(120.0, 120.0) victory=-1.0
+T8 preview room=2 action=DIG_L cpu_us=11903 latency_us=58959
+T8 preview phases={"COUNTS":648,"KEY":439,"READ":365,"RESOLVE":67,"TICKS":562,"begin":9285,"finish":537} slices=[2659]
+TRACE hover room=1 pointer=(-100.0, -100.0) local=(-100.0, -100.0) victory=-1.0
+TRACE hover room=1 pointer=(152.0, 120.0) local=(152.0, 120.0) victory=-1.0
+T8 preview room=2 action=POUR_R cpu_us=12195 latency_us=51787
+T8 preview phases={"COUNTS":659,"KEY":479,"READ":331,"RESOLVE":138,"TICKS":460,"begin":9661,"finish":467} slices=[2562]
+TRACE hover room=1 pointer=(-100.0, -100.0) local=(-100.0, -100.0) victory=-1.0
+TRACE hover room=1 pointer=(-100.0, -100.0) local=(-100.0, -100.0) victory=-1.0
+TRACE hover room=1 pointer=(-100.0, -100.0) local=(-100.0, -100.0) victory=-1.0
+TRACE native motion=(61.0, 37.25)
+TRACE native motion=(61.75, 37.0)
+TRACE native motion=(62.0, 36.75)
+TRACE hover room=1 pointer=(62.0, 36.75) local=(62.0, 36.75) victory=-1.0
+TRACE native motion=(62.0, 36.25)
+TRACE native motion=(62.5, 36.25)
+TRACE native motion=(62.75, 36.0)
+TRACE native motion=(62.75, 35.75)
+TRACE native motion=(63.0, 35.5)
+TRACE native motion=(63.0, 35.25)
+TRACE native motion=(63.25, 35.0)
+T8 D2 {"frames":{"max_us":1334,"min_us":27,"p50_us":297,"p95_us":657,"samples":117},"level":2,"load_us":13765,"preview_cpu":{"max_us":12195,"min_us":11903,"p50_us":12195,"p95_us":12195,"samples":2},"preview_latency":{"max_us":58959,"min_us":51787,"p50_us":58959,"p95_us":58959,"samples":2}}
+TRACE hover room=2 pointer=(63.25, 35.0) local=(63.25, 35.0) victory=-1.0
+TRACE native motion=(63.75, 34.75)
+TRACE native motion=(64.0, 34.25)
+TRACE hover room=2 pointer=(64.0, 34.25) local=(64.0, 34.25) victory=-1.0
+TRACE hover room=2 pointer=(-100.0, -100.0) local=(-100.0, -100.0) victory=-1.0
+TRACE hover room=2 pointer=(-100.0, -100.0) local=(-100.0, -100.0) victory=-1.0
+TRACE hover room=2 pointer=(-100.0, -100.0) local=(-100.0, -100.0) victory=-1.0
+TRACE hover room=2 pointer=(-100.0, -100.0) local=(-100.0, -100.0) victory=-1.0
+TRACE hover room=2 pointer=(-100.0, -100.0) local=(-100.0, -100.0) victory=-1.0
+TRACE hover room=2 pointer=(-100.0, -100.0) local=(-100.0, -100.0) victory=-1.0
+TRACE hover room=2 pointer=(-100.0, -100.0) local=(-100.0, -100.0) victory=-1.0
+T8 D3 {"frames":{"max_us":2260,"min_us":77,"p50_us":384,"p95_us":2110,"samples":107},"level":3,"load_us":16895,"preview_cpu":{"max_us":0,"samples":0},"preview_latency":{"max_us":0,"samples":0}}
+TRACE hover room=3 pointer=(-100.0, -100.0) local=(-100.0, -100.0) victory=-1.0
+TRACE hover room=3 pointer=(-100.0, -100.0) local=(-100.0, -100.0) victory=-1.0
+TRACE hover room=3 pointer=(-100.0, -100.0) local=(-100.0, -100.0) victory=-1.0
+TRACE hover room=3 pointer=(-100.0, -100.0) local=(-100.0, -100.0) victory=-1.0
+TRACE native motion=(65.0, 34.25)
+TRACE native motion=(67.75, 33.5)
+TRACE native motion=(72.75, 32.5)
+TRACE native motion=(77.0, 32.25)
+TRACE native motion=(79.75, 31.75)
+TRACE native motion=(83.75, 31.25)
+TRACE native motion=(86.5, 31.25)
+TRACE native motion=(89.5, 31.25)
+TRACE native motion=(93.5, 31.0)
+TRACE native motion=(98.0, 30.25)
+TRACE hover room=3 pointer=(98.0, 30.25) local=(98.0, 30.25) victory=-1.0
+TRACE native motion=(102.75, 29.75)
+TRACE native motion=(108.25, 29.25)
+TRACE native motion=(111.25, 28.25)
+TRACE native motion=(113.25, 27.75)
+TRACE native motion=(114.75, 26.5)
+TRACE native motion=(116.0, 26.0)
+TRACE native motion=(117.75, 25.25)
+TRACE native motion=(119.25, 24.5)
+TRACE native motion=(123.25, 22.5)
+TRACE native motion=(127.25, 20.0)
+TRACE hover room=3 pointer=(127.25, 20.0) local=(127.25, 20.0) victory=-1.0
+TRACE native motion=(134.0, 15.0)
+TRACE native motion=(135.25, 13.5)
+TRACE native motion=(136.5, 11.75)
+TRACE native motion=(137.25, 10.5)
+TRACE native motion=(138.25, 8.0)
+TRACE native motion=(140.0, 4.75)
+TRACE native motion=(141.5, 1.25)
+TRACE native motion=(143.25, -2.25)
+TRACE native motion=(143.5, -2.75)
+TRACE native motion=(146.25, -7.5)
+TRACE native motion=(149.5, -11.75)
+TRACE native motion=(354.0, 113.0)
+TRACE hover room=3 pointer=(354.0, 113.0) local=(354.0, 113.0) victory=-1.0
+TRACE native motion=(153.75, -22.75)
+TRACE native motion=(155.5, -27.5)
+TRACE native motion=(155.75, -30.0)
+TRACE native motion=(156.5, -32.0)
+TRACE native motion=(156.5, -33.25)
+TRACE native motion=(156.5, -34.0)
+TRACE native motion=(156.5, -34.5)
+TRACE native motion=(155.5, -35.25)
+TRACE native motion=(154.5, -36.0)
+TRACE native motion=(154.25, -36.75)
+TRACE native motion=(153.5, -37.5)
+TRACE hover room=3 pointer=(153.5, -37.5) local=(153.5, -37.5) victory=-1.0
+TRACE native motion=(153.25, -38.0)
+TRACE native motion=(153.25, -38.25)
+TRACE native motion=(153.0, -39.0)
+TRACE native motion=(152.75, -39.5)
+TRACE native motion=(152.75, -40.25)
+TRACE native motion=(153.0, -41.25)
+TRACE native motion=(153.5, -42.0)
+TRACE native motion=(154.5, -43.25)
+TRACE native motion=(156.0, -45.0)
+TRACE native motion=(157.75, -47.0)
+TRACE native motion=(159.25, -48.75)
+TRACE hover room=3 pointer=(159.25, -48.75) local=(159.25, -48.75) victory=-1.0
+TRACE native motion=(163.0, -52.75)
+TRACE native motion=(164.75, -54.25)
+TRACE native motion=(165.75, -55.25)
+TRACE native motion=(166.75, -56.25)
+TRACE native motion=(167.75, -57.5)
+TRACE native motion=(168.75, -57.5)
+TRACE native motion=(169.25, -57.75)
+TRACE native motion=(170.0, -58.5)
+TRACE native motion=(170.25, -58.5)
+TRACE native motion=(171.5, -59.25)
+TRACE native motion=(173.0, -60.0)
+TRACE native motion=(174.75, -60.75)
+TRACE native motion=(176.5, -61.5)
+TRACE native motion=(177.75, -62.0)
+TRACE native motion=(178.75, -62.75)
+TRACE native motion=(179.5, -63.5)
+TRACE native motion=(180.5, -64.0)
+TRACE native motion=(181.5, -64.75)
+TRACE native motion=(182.5, -65.25)
+TRACE native motion=(183.5, -66.25)
+TRACE native motion=(184.25, -66.75)
+TRACE hover room=3 pointer=(184.25, -66.75) local=(184.25, -66.75) victory=-1.0
+TRACE native motion=(185.0, -67.25)
+TRACE hover room=3 pointer=(185.0, -67.25) local=(185.0, -67.25) victory=-1.0
+TRACE native motion=(186.5, -68.25)
+TRACE hover room=3 pointer=(186.5, -68.25) local=(186.5, -68.25) victory=-1.0
+TRACE native motion=(188.75, -69.5)
+TRACE hover room=3 pointer=(188.75, -69.5) local=(188.75, -69.5) victory=-1.0
+TRACE native motion=(191.25, -70.75)
+TRACE hover room=3 pointer=(191.25, -70.75) local=(191.25, -70.75) victory=-1.0
+TRACE native motion=(194.0, -72.25)
+TRACE hover room=3 pointer=(194.0, -72.25) local=(194.0, -72.25) victory=-1.0
+TRACE native motion=(195.0, -73.25)
+TRACE hover room=3 pointer=(195.0, -73.25) local=(195.0, -73.25) victory=-1.0
+TRACE native motion=(196.25, -74.0)
+TRACE hover room=3 pointer=(196.25, -74.0) local=(196.25, -74.0) victory=-1.0
+TRACE native motion=(198.0, -75.25)
+TRACE hover room=3 pointer=(198.0, -75.25) local=(198.0, -75.25) victory=-1.0
+TRACE native motion=(199.5, -76.0)
+TRACE hover room=3 pointer=(199.5, -76.0) local=(199.5, -76.0) victory=-1.0
+TRACE native motion=(200.5, -76.75)
+TRACE hover room=3 pointer=(200.5, -76.75) local=(200.5, -76.75) victory=-1.0
+TRACE native motion=(200.5, -76.75)
+TRACE hover room=3 pointer=(200.5, -76.75) local=(200.5, -76.75) victory=-1.0
+TRACE hover room=3 pointer=(200.5, -76.75) local=(200.5, -76.75) victory=-1.0
+TRACE hover room=3 pointer=(200.5, -76.75) local=(200.5, -76.75) victory=-1.0
+TRACE hover room=3 pointer=(200.5, -76.75) local=(200.5, -76.75) victory=-1.0
+TRACE hover room=3 pointer=(200.5, -76.75) local=(200.5, -76.75) victory=-1.0
+TRACE hover room=3 pointer=(200.5, -76.75) local=(200.5, -76.75) victory=-1.0
+TRACE hover room=3 pointer=(200.5, -76.75) local=(200.5, -76.75) victory=-1.0
+TRACE hover room=3 pointer=(200.5, -76.75) local=(200.5, -76.75) victory=-1.0
+TRACE hover room=3 pointer=(200.5, -76.75) local=(200.5, -76.75) victory=-1.0
+TRACE native motion=(200.25, -77.25)
+TRACE hover room=3 pointer=(200.25, -77.25) local=(200.25, -77.25) victory=-1.0
+TRACE native motion=(199.75, -77.5)
+TRACE hover room=3 pointer=(199.75, -77.5) local=(199.75, -77.5) victory=-1.0
+TRACE native motion=(199.0, -77.5)
+TRACE hover room=3 pointer=(199.0, -77.5) local=(199.0, -77.5) victory=-1.0
+TRACE native motion=(198.25, -77.5)
+TRACE hover room=3 pointer=(198.25, -77.5) local=(198.25, -77.5) victory=-1.0
+TRACE native motion=(197.5, -77.5)
+TRACE hover room=3 pointer=(197.5, -77.5) local=(197.5, -77.5) victory=-1.0
+TRACE native motion=(197.0, -77.5)
+TRACE hover room=3 pointer=(197.0, -77.5) local=(197.0, -77.5) victory=-1.0
+TRACE native motion=(197.0, -77.5)
+TRACE hover room=3 pointer=(197.0, -77.5) local=(197.0, -77.5) victory=-1.0
+TRACE native motion=(196.75, -77.5)
+TRACE hover room=3 pointer=(196.75, -77.5) local=(196.75, -77.5) victory=-1.0
+TRACE native motion=(196.5, -77.5)
+TRACE hover room=3 pointer=(196.5, -77.5) local=(196.5, -77.5) victory=-1.0
+TRACE native motion=(196.0, -77.5)
+TRACE hover room=3 pointer=(196.0, -77.5) local=(196.0, -77.5) victory=-1.0
+TRACE native motion=(195.75, -77.5)
+TRACE hover room=3 pointer=(195.75, -77.5) local=(195.75, -77.5) victory=-1.0
+TRACE native motion=(195.5, -77.5)
+TRACE hover room=3 pointer=(195.5, -77.5) local=(195.5, -77.5) victory=-1.0
+TRACE native motion=(194.75, -77.5)
+TRACE hover room=3 pointer=(194.75, -77.5) local=(194.75, -77.5) victory=-1.0
+TRACE native motion=(194.0, -77.5)
+TRACE hover room=3 pointer=(194.0, -77.5) local=(194.0, -77.5) victory=-1.0
+TRACE native motion=(193.5, -77.5)
+TRACE hover room=3 pointer=(193.5, -77.5) local=(193.5, -77.5) victory=-1.0
+TRACE native motion=(192.5, -77.5)
+TRACE hover room=3 pointer=(192.5, -77.5) local=(192.5, -77.5) victory=-1.0
+TRACE native motion=(191.25, -77.5)
+TRACE hover room=3 pointer=(191.25, -77.5) local=(191.25, -77.5) victory=-1.0
+TRACE native motion=(190.5, -77.5)
+TRACE hover room=3 pointer=(190.5, -77.5) local=(190.5, -77.5) victory=-1.0
+TRACE native motion=(190.0, -77.5)
+TRACE hover room=3 pointer=(190.0, -77.5) local=(190.0, -77.5) victory=-1.0
+TRACE native motion=(189.5, -77.5)
+TRACE hover room=3 pointer=(189.5, -77.5) local=(189.5, -77.5) victory=-1.0
+TRACE hover room=3 pointer=(189.5, -77.5) local=(189.5, -77.5) victory=-1.0
+TRACE native motion=(189.0, -77.5)
+TRACE hover room=3 pointer=(189.0, -77.5) local=(189.0, -77.5) victory=-1.0
+TRACE native motion=(188.75, -77.5)
+TRACE hover room=3 pointer=(188.75, -77.5) local=(188.75, -77.5) victory=-1.0
+TRACE native motion=(188.5, -77.5)
+TRACE hover room=3 pointer=(188.5, -77.5) local=(188.5, -77.5) victory=-1.0
+TRACE hover room=3 pointer=(188.5, -77.5) local=(188.5, -77.5) victory=-1.0
+TRACE hover room=3 pointer=(188.5, -77.5) local=(188.5, -77.5) victory=-1.0
+TRACE hover room=3 pointer=(188.5, -77.5) local=(188.5, -77.5) victory=-1.0
+TRACE hover room=3 pointer=(188.5, -77.5) local=(188.5, -77.5) victory=-1.0
+TRACE hover room=3 pointer=(188.5, -77.5) local=(188.5, -77.5) victory=-1.0
+TRACE hover room=3 pointer=(188.5, -77.5) local=(188.5, -77.5) victory=-1.0
+TRACE hover room=3 pointer=(188.5, -77.5) local=(188.5, -77.5) victory=-1.0
+TRACE hover room=3 pointer=(188.5, -77.5) local=(188.5, -77.5) victory=-1.0
+TRACE hover room=3 pointer=(188.5, -77.5) local=(188.5, -77.5) victory=-1.0
+TRACE hover room=3 pointer=(188.5, -77.5) local=(188.5, -77.5) victory=-1.0
+TRACE native motion=(188.75, -77.5)
+TRACE hover room=3 pointer=(188.75, -77.5) local=(188.75, -77.5) victory=-1.0
+TRACE native motion=(191.75, -77.5)
+TRACE hover room=3 pointer=(191.75, -77.5) local=(191.75, -77.5) victory=-1.0
+TRACE native motion=(198.75, -77.5)
+TRACE hover room=3 pointer=(198.75, -77.5) local=(198.75, -77.5) victory=-1.0
+TRACE native motion=(209.0, -77.25)
+TRACE hover room=3 pointer=(209.0, -77.25) local=(209.0, -77.25) victory=-1.0
+TRACE native motion=(220.25, -75.5)
+TRACE hover room=3 pointer=(220.25, -75.5) local=(220.25, -75.5) victory=-1.0
+TRACE native motion=(233.0, -74.25)
+TRACE hover room=3 pointer=(233.0, -74.25) local=(233.0, -74.25) victory=-1.0
+TRACE native motion=(243.75, -72.25)
+TRACE hover room=3 pointer=(243.75, -72.25) local=(243.75, -72.25) victory=-1.0
+TRACE native motion=(253.75, -70.0)
+TRACE hover room=3 pointer=(253.75, -70.0) local=(253.75, -70.0) victory=-1.0
+TRACE native motion=(262.0, -67.75)
+TRACE hover room=3 pointer=(262.0, -67.75) local=(262.0, -67.75) victory=-1.0
+TRACE native motion=(265.75, -66.25)
+TRACE hover room=3 pointer=(265.75, -66.25) local=(265.75, -66.25) victory=-1.0
+TRACE native motion=(268.5, -65.25)
+TRACE hover room=3 pointer=(268.5, -65.25) local=(268.5, -65.25) victory=-1.0
+TRACE native motion=(270.5, -64.25)
+TRACE hover room=3 pointer=(270.5, -64.25) local=(270.5, -64.25) victory=-1.0
+TRACE hover room=3 pointer=(270.5, -64.25) local=(270.5, -64.25) victory=-1.0
+TRACE native motion=(271.75, -63.0)
+TRACE hover room=3 pointer=(271.75, -63.0) local=(271.75, -63.0) victory=-1.0
+TRACE native motion=(272.5, -62.25)
+TRACE hover room=3 pointer=(272.5, -62.25) local=(272.5, -62.25) victory=-1.0
+TRACE native motion=(274.0, -61.25)
+TRACE hover room=3 pointer=(274.0, -61.25) local=(274.0, -61.25) victory=-1.0
+TRACE hover room=3 pointer=(274.0, -61.25) local=(274.0, -61.25) victory=-1.0
+TRACE native motion=(279.5, -59.75)
+TRACE hover room=3 pointer=(279.5, -59.75) local=(279.5, -59.75) victory=-1.0
+TRACE native motion=(282.5, -58.75)
+TRACE hover room=3 pointer=(282.5, -58.75) local=(282.5, -58.75) victory=-1.0
+TRACE native motion=(284.75, -58.75)
+TRACE hover room=3 pointer=(284.75, -58.75) local=(284.75, -58.75) victory=-1.0
+TRACE native motion=(287.0, -58.5)
+TRACE hover room=3 pointer=(287.0, -58.5) local=(287.0, -58.5) victory=-1.0
+TRACE native motion=(289.25, -58.5)
+TRACE hover room=3 pointer=(289.25, -58.5) local=(289.25, -58.5) victory=-1.0
+TRACE native motion=(295.0, -58.5)
+TRACE hover room=3 pointer=(295.0, -58.5) local=(295.0, -58.5) victory=-1.0
+TRACE native motion=(303.5, -57.75)
+TRACE hover room=3 pointer=(303.5, -57.75) local=(303.5, -57.75) victory=-1.0
+TRACE native motion=(308.0, -57.25)
+TRACE hover room=3 pointer=(308.0, -57.25) local=(308.0, -57.25) victory=-1.0
+TRACE native motion=(310.25, -57.0)
+TRACE hover room=3 pointer=(310.25, -57.0) local=(310.25, -57.0) victory=-1.0
+TRACE native motion=(310.75, -56.25)
+TRACE hover room=3 pointer=(310.75, -56.25) local=(310.75, -56.25) victory=-1.0
+TRACE native motion=(311.0, -55.75)
+TRACE hover room=3 pointer=(311.0, -55.75) local=(311.0, -55.75) victory=-1.0
+TRACE native motion=(311.25, -53.5)
+TRACE hover room=3 pointer=(311.25, -53.5) local=(311.25, -53.5) victory=-1.0
+TRACE native motion=(310.75, -50.25)
+TRACE hover room=3 pointer=(310.75, -50.25) local=(310.75, -50.25) victory=-1.0
+TRACE native motion=(308.5, -46.75)
+TRACE hover room=3 pointer=(308.5, -46.75) local=(308.5, -46.75) victory=-1.0
+TRACE native motion=(298.25, -37.0)
+TRACE hover room=3 pointer=(298.25, -37.0) local=(298.25, -37.0) victory=-1.0
+TRACE native motion=(274.5, -21.25)
+TRACE hover room=3 pointer=(274.5, -21.25) local=(274.5, -21.25) victory=-1.0
+TRACE native motion=(248.5, -3.25)
+TRACE hover room=3 pointer=(248.5, -3.25) local=(248.5, -3.25) victory=-1.0
+TRACE native motion=(227.0, 10.5)
+TRACE hover room=3 pointer=(227.0, 10.5) local=(227.0, 10.5) victory=-1.0
+TRACE native motion=(205.5, 23.5)
+TRACE hover room=3 pointer=(205.5, 23.5) local=(205.5, 23.5) victory=-1.0
+TRACE native motion=(173.25, 40.0)
+TRACE hover room=3 pointer=(173.25, 40.0) local=(173.25, 40.0) victory=-1.0
+TRACE native motion=(116.75, 61.75)
+TRACE hover room=3 pointer=(116.75, 61.75) local=(116.75, 61.75) victory=-1.0
+TRACE native motion=(70.5, 77.75)
+TRACE hover room=3 pointer=(70.5, 77.75) local=(70.5, 77.75) victory=-1.0
+TRACE native motion=(36.25, 90.25)
+TRACE hover room=3 pointer=(36.25, 90.25) local=(36.25, 90.25) victory=-1.0
+TRACE native motion=(8.25, 101.25)
+TRACE hover room=3 pointer=(8.25, 101.25) local=(8.25, 101.25) victory=-1.0
+TRACE native motion=(-3.75, 106.0)
+TRACE hover room=3 pointer=(-3.75, 106.0) local=(-3.75, 106.0) victory=-1.0
+TRACE native motion=(-11.5, 109.25)
+TRACE hover room=3 pointer=(-11.5, 109.25) local=(-11.5, 109.25) victory=-1.0
+TRACE native motion=(-17.5, 112.0)
+TRACE hover room=3 pointer=(-17.5, 112.0) local=(-17.5, 112.0) victory=-1.0
+TRACE hover room=3 pointer=(-17.5, 112.0) local=(-17.5, 112.0) victory=-1.0
+TRACE native motion=(-27.25, 116.75)
+TRACE hover room=3 pointer=(-27.25, 116.75) local=(-27.25, 116.75) victory=-1.0
+TRACE native motion=(-32.0, 120.0)
+TRACE hover room=3 pointer=(-32.0, 120.0) local=(-32.0, 120.0) victory=-1.0
+TRACE native motion=(-39.75, 125.25)
+TRACE hover room=3 pointer=(-39.75, 125.25) local=(-39.75, 125.25) victory=-1.0
+TRACE native motion=(-48.25, 131.0)
+TRACE hover room=3 pointer=(-48.25, 131.0) local=(-48.25, 131.0) victory=-1.0
+TRACE native motion=(-61.5, 141.0)
+TRACE hover room=3 pointer=(-61.5, 141.0) local=(-61.5, 141.0) victory=-1.0
+TRACE native motion=(-72.25, 149.5)
+TRACE hover room=3 pointer=(-72.25, 149.5) local=(-72.25, 149.5) victory=-1.0
+TRACE native motion=(-81.0, 158.0)
+TRACE hover room=3 pointer=(-81.0, 158.0) local=(-81.0, 158.0) victory=-1.0
+TRACE native motion=(-88.0, 166.25)
+TRACE hover room=3 pointer=(-88.0, 166.25) local=(-88.0, 166.25) victory=-1.0
+TRACE native motion=(-93.25, 174.5)
+TRACE hover room=3 pointer=(-93.25, 174.5) local=(-93.25, 174.5) victory=-1.0
+TRACE native motion=(-98.75, 186.25)
+TRACE hover room=3 pointer=(-98.75, 186.25) local=(-98.75, 186.25) victory=-1.0
+TRACE native motion=(-103.5, 200.25)
+TRACE hover room=3 pointer=(-103.5, 200.25) local=(-103.5, 200.25) victory=-1.0
+TRACE native motion=(-112.0, 220.25)
+TRACE hover room=3 pointer=(-112.0, 220.25) local=(-112.0, 220.25) victory=-1.0
+TRACE native motion=(-121.0, 239.0)
+TRACE hover room=3 pointer=(-121.0, 239.0) local=(-121.0, 239.0) victory=-1.0
+TRACE native motion=(-137.5, 268.25)
+TRACE hover room=3 pointer=(-137.5, 268.25) local=(-137.5, 268.25) victory=-1.0
+TRACE native motion=(-150.0, 287.5)
+TRACE hover room=3 pointer=(-150.0, 287.5) local=(-150.0, 287.5) victory=-1.0
+TRACE native motion=(-163.0, 306.25)
+TRACE hover room=3 pointer=(-163.0, 306.25) local=(-163.0, 306.25) victory=-1.0
+TRACE native motion=(-166.75, 311.25)
+TRACE hover room=3 pointer=(-166.75, 311.25) local=(-166.75, 311.25) victory=-1.0
+TRACE native motion=(-172.25, 317.25)
+TRACE hover room=3 pointer=(-172.25, 317.25) local=(-172.25, 317.25) victory=-1.0
+TRACE native motion=(-173.0, 318.25)
+TRACE hover room=3 pointer=(-173.0, 318.25) local=(-173.0, 318.25) victory=-1.0
+TRACE hover room=3 pointer=(-173.0, 318.25) local=(-173.0, 318.25) victory=-1.0
+TRACE hover room=3 pointer=(-173.0, 318.25) local=(-173.0, 318.25) victory=-1.0
+TRACE hover room=3 pointer=(-173.0, 318.25) local=(-173.0, 318.25) victory=-1.0
+FAIL preview did not complete BOMB_L
+TRACE native motion=(-170.25, 315.5)
+TRACE native motion=(-167.75, 314.0)
+TRACE native motion=(-163.5, 313.25)
+TRACE native motion=(-159.5, 312.5)
+TRACE native motion=(-155.0, 312.5)
+TRACE hover room=3 pointer=(-155.0, 312.5) local=(-155.0, 312.5) victory=-1.0
+TRACE native motion=(-149.75, 312.75)
+TRACE native motion=(-142.25, 313.5)
+TRACE native motion=(-137.25, 313.75)
+TRACE native motion=(-130.0, 314.25)
+TRACE native motion=(-123.75, 314.25)
+TRACE native motion=(-119.5, 312.75)
+TRACE native motion=(-113.75, 308.0)
+TRACE native motion=(-108.75, 304.0)
+TRACE hover room=3 pointer=(-108.75, 304.0) local=(-108.75, 304.0) victory=-1.0
+TRACE native motion=(-102.25, 299.5)
+TRACE native motion=(-97.25, 294.75)
+TRACE native motion=(-92.25, 290.5)
+TRACE native motion=(-86.0, 285.5)
+TRACE native motion=(-84.5, 283.75)
+TRACE native motion=(-83.0, 282.0)
+TRACE native motion=(-82.0, 280.25)
+TRACE native motion=(-81.25, 278.75)
+TRACE native motion=(-81.25, 278.75)
+TRACE native motion=(-81.0, 278.0)
+TRACE native motion=(-81.0, 277.0)
+T8 D4 {"frames":{"max_us":1733,"min_us":66,"p50_us":221,"p95_us":749,"samples":90},"level":4,"load_us":14264,"preview_cpu":{"max_us":0,"samples":0},"preview_latency":{"max_us":0,"samples":0}}
+TRACE native motion=(-81.0, 276.25)
+TRACE native motion=(-81.0, 275.5)
+TRACE native motion=(-81.0, 274.75)
+TRACE native motion=(-81.0, 274.0)
+TRACE native motion=(-81.0, 273.25)
+TRACE native motion=(-81.0, 273.0)
+TRACE native motion=(-81.0, 272.25)
+TRACE native motion=(-81.0, 272.0)
+TRACE native motion=(-81.0, 271.5)
+TRACE native motion=(-81.0, 271.0)
+TRACE native motion=(-81.0, 270.75)
+TRACE native motion=(-81.0, 270.5)
+TRACE hover room=4 pointer=(-81.0, 270.5) local=(-81.0, 270.5) victory=-1.0
+TRACE hover room=4 pointer=(104.0, 72.0) local=(104.0, 72.0) victory=-1.0
+T8 preview room=5 action=BOMB_L cpu_us=9506 latency_us=56921
+T8 preview phases={"COUNTS":707,"KEY":436,"READ":316,"RESOLVE":123,"TICKS":1202,"begin":4583,"finish":2139} slices=[4987]
+TRACE native motion=(-81.0, 269.5)
+TRACE native motion=(-81.0, 269.0)
+TRACE native motion=(-81.0, 268.5)
+TRACE native motion=(-81.0, 267.75)
+TRACE native motion=(-81.0, 267.25)
+TRACE native motion=(-81.0, 265.75)
+TRACE native motion=(-81.0, 264.5)
+TRACE native motion=(-81.0, 263.5)
+TRACE native motion=(-81.0, 262.0)
+TRACE native motion=(-82.25, 259.25)
+TRACE native motion=(-83.5, 257.25)
+TRACE native motion=(-85.25, 255.75)
+TRACE native motion=(-86.5, 254.5)
+TRACE native motion=(-88.75, 252.5)
+TRACE native motion=(-92.0, 251.0)
+TRACE hover room=4 pointer=(-92.0, 251.0) local=(-92.0, 251.0) victory=-1.0
+TRACE native motion=(-94.5, 249.75)
+TRACE native motion=(-96.0, 248.75)
+TRACE native motion=(-98.0, 247.75)
+TRACE native motion=(-100.25, 246.5)
+TRACE native motion=(-102.5, 245.25)
+TRACE native motion=(-104.5, 244.25)
+TRACE native motion=(-105.75, 243.0)
+TRACE native motion=(-107.0, 242.0)
+TRACE native motion=(-109.0, 240.75)
+TRACE native motion=(-110.25, 240.25)
+TRACE hover room=4 pointer=(-110.25, 240.25) local=(-110.25, 240.25) victory=-1.0
+TRACE native motion=(-111.75, 240.0)
+TRACE hover room=4 pointer=(-111.75, 240.0) local=(-111.75, 240.0) victory=-1.0
+TRACE native motion=(-112.0, 239.5)
+TRACE hover room=4 pointer=(-112.0, 239.5) local=(-112.0, 239.5) victory=-1.0
+TRACE native motion=(-112.5, 239.25)
+TRACE hover room=4 pointer=(-112.5, 239.25) local=(-112.5, 239.25) victory=-1.0
+TRACE native motion=(-112.5, 239.25)
+TRACE hover room=4 pointer=(-112.5, 239.25) local=(-112.5, 239.25) victory=-1.0
+TRACE native motion=(-113.25, 238.75)
+TRACE hover room=4 pointer=(-113.25, 238.75) local=(-113.25, 238.75) victory=-1.0
+TRACE native motion=(-113.5, 238.5)
+TRACE hover room=4 pointer=(-113.5, 238.5) local=(-113.5, 238.5) victory=-1.0
+TRACE native motion=(-114.25, 238.0)
+TRACE hover room=4 pointer=(-114.25, 238.0) local=(-114.25, 238.0) victory=-1.0
+TRACE native motion=(-114.75, 237.75)
+TRACE hover room=4 pointer=(-114.75, 237.75) local=(-114.75, 237.75) victory=-1.0
+TRACE native motion=(-115.5, 237.25)
+TRACE hover room=4 pointer=(-115.5, 237.25) local=(-115.5, 237.25) victory=-1.0
+TRACE native motion=(-116.0, 236.75)
+TRACE hover room=4 pointer=(-116.0, 236.75) local=(-116.0, 236.75) victory=-1.0
+TRACE native motion=(-116.25, 236.75)
+TRACE hover room=4 pointer=(-116.25, 236.75) local=(-116.25, 236.75) victory=-1.0
+TRACE native motion=(-116.5, 236.25)
+TRACE hover room=4 pointer=(-116.5, 236.25) local=(-116.5, 236.25) victory=-1.0
+TRACE native motion=(-117.0, 236.25)
+TRACE hover room=4 pointer=(-117.0, 236.25) local=(-117.0, 236.25) victory=-1.0
+TRACE native motion=(-117.0, 235.75)
+TRACE hover room=4 pointer=(-117.0, 235.75) local=(-117.0, 235.75) victory=-1.0
+TRACE native motion=(-117.5, 235.25)
+TRACE hover room=4 pointer=(-117.5, 235.25) local=(-117.5, 235.25) victory=-1.0
+TRACE native motion=(-117.75, 234.75)
+TRACE hover room=4 pointer=(-117.75, 234.75) local=(-117.75, 234.75) victory=-1.0
+TRACE native motion=(-118.0, 234.5)
+TRACE hover room=4 pointer=(-118.0, 234.5) local=(-118.0, 234.5) victory=-1.0
+TRACE native motion=(-118.25, 234.0)
+TRACE hover room=4 pointer=(-118.25, 234.0) local=(-118.25, 234.0) victory=-1.0
+TRACE native motion=(-119.0, 233.0)
+TRACE hover room=4 pointer=(-119.0, 233.0) local=(-119.0, 233.0) victory=-1.0
+TRACE native motion=(-119.75, 232.25)
+TRACE hover room=4 pointer=(-119.75, 232.25) local=(-119.75, 232.25) victory=-1.0
+TRACE native motion=(-120.5, 231.25)
+TRACE hover room=4 pointer=(-120.5, 231.25) local=(-120.5, 231.25) victory=-1.0
+TRACE native motion=(-121.25, 230.5)
+TRACE hover room=4 pointer=(-121.25, 230.5) local=(-121.25, 230.5) victory=-1.0
+TRACE native motion=(-121.5, 230.0)
+TRACE hover room=4 pointer=(-121.5, 230.0) local=(-121.5, 230.0) victory=-1.0
+TRACE hover room=4 pointer=(-121.5, 230.0) local=(-121.5, 230.0) victory=-1.0
+TRACE native motion=(-122.25, 229.0)
+TRACE hover room=4 pointer=(-122.25, 229.0) local=(-122.25, 229.0) victory=-1.0
+TRACE native motion=(-122.5, 229.0)
+TRACE hover room=4 pointer=(-122.5, 229.0) local=(-122.5, 229.0) victory=-1.0
+TRACE native motion=(-122.75, 228.75)
+TRACE hover room=4 pointer=(-122.75, 228.75) local=(-122.75, 228.75) victory=-1.0
+TRACE native motion=(-122.75, 228.5)
+TRACE hover room=4 pointer=(-122.75, 228.5) local=(-122.75, 228.5) victory=-1.0
+TRACE native motion=(-123.0, 228.25)
+TRACE hover room=4 pointer=(-123.0, 228.25) local=(-123.0, 228.25) victory=-1.0
+TRACE native motion=(-123.0, 227.75)
+TRACE hover room=4 pointer=(-123.0, 227.75) local=(-123.0, 227.75) victory=-1.0
+TRACE native motion=(-123.5, 227.5)
+TRACE hover room=4 pointer=(-123.5, 227.5) local=(-123.5, 227.5) victory=-1.0
+TRACE native motion=(-123.5, 227.25)
+TRACE hover room=4 pointer=(-123.5, 227.25) local=(-123.5, 227.25) victory=-1.0
+TRACE native motion=(-123.5, 226.75)
+TRACE hover room=4 pointer=(-123.5, 226.75) local=(-123.5, 226.75) victory=-1.0
+TRACE native motion=(-123.5, 226.5)
+TRACE hover room=4 pointer=(-123.5, 226.5) local=(-123.5, 226.5) victory=-1.0
+TRACE native motion=(-123.75, 226.25)
+TRACE hover room=4 pointer=(-123.75, 226.25) local=(-123.75, 226.25) victory=-1.0
+TRACE native motion=(-124.25, 225.75)
+TRACE hover room=4 pointer=(-124.25, 225.75) local=(-124.25, 225.75) victory=-1.0
+TRACE native motion=(-124.5, 225.5)
+TRACE hover room=4 pointer=(-124.5, 225.5) local=(-124.5, 225.5) victory=-1.0
+TRACE native motion=(-124.75, 225.25)
+TRACE hover room=4 pointer=(-124.75, 225.25) local=(-124.75, 225.25) victory=-1.0
+TRACE native motion=(-125.0, 224.5)
+TRACE hover room=4 pointer=(-125.0, 224.5) local=(-125.0, 224.5) victory=-1.0
+TRACE native motion=(-125.5, 224.25)
+TRACE hover room=4 pointer=(-125.5, 224.25) local=(-125.5, 224.25) victory=-1.0
+TRACE native motion=(-125.75, 224.25)
+TRACE hover room=4 pointer=(-125.75, 224.25) local=(-125.75, 224.25) victory=-1.0
+TRACE native motion=(-125.75, 224.25)
+TRACE hover room=4 pointer=(-125.75, 224.25) local=(-125.75, 224.25) victory=-1.0
+TRACE native motion=(-126.0, 223.75)
+TRACE hover room=4 pointer=(-126.0, 223.75) local=(-126.0, 223.75) victory=-1.0
+TRACE native motion=(-126.0, 223.25)
+TRACE hover room=4 pointer=(-126.0, 223.25) local=(-126.0, 223.25) victory=-1.0
+TRACE native motion=(-126.25, 223.25)
+TRACE hover room=4 pointer=(-126.25, 223.25) local=(-126.25, 223.25) victory=-1.0
+TRACE native motion=(-126.5, 223.0)
+TRACE hover room=4 pointer=(-126.5, 223.0) local=(-126.5, 223.0) victory=-1.0
+TRACE native motion=(-126.75, 223.0)
+TRACE hover room=4 pointer=(-126.75, 223.0) local=(-126.75, 223.0) victory=-1.0
+TRACE native motion=(-127.0, 222.75)
+TRACE hover room=4 pointer=(-127.0, 222.75) local=(-127.0, 222.75) victory=-1.0
+TRACE native motion=(-127.0, 222.5)
+TRACE hover room=4 pointer=(-127.0, 222.5) local=(-127.0, 222.5) victory=-1.0
+TRACE hover room=4 pointer=(-127.0, 222.5) local=(-127.0, 222.5) victory=-1.0
+TRACE native motion=(-127.0, 222.25)
+TRACE hover room=4 pointer=(-127.0, 222.25) local=(-127.0, 222.25) victory=-1.0
+TRACE hover room=4 pointer=(-127.0, 222.25) local=(-127.0, 222.25) victory=-1.0
+TRACE hover room=4 pointer=(-127.0, 222.25) local=(-127.0, 222.25) victory=-1.0
+TRACE hover room=4 pointer=(-127.0, 222.25) local=(-127.0, 222.25) victory=-1.0
+TRACE hover room=4 pointer=(-127.0, 222.25) local=(-127.0, 222.25) victory=-1.0
+TRACE hover room=4 pointer=(-127.0, 222.25) local=(-127.0, 222.25) victory=-1.0
+TRACE native motion=(-127.0, 222.0)
+TRACE hover room=4 pointer=(-127.0, 222.0) local=(-127.0, 222.0) victory=-1.0
+TRACE hover room=4 pointer=(-127.0, 222.0) local=(-127.0, 222.0) victory=-1.0
+TRACE hover room=4 pointer=(-127.0, 222.0) local=(-127.0, 222.0) victory=-1.0
+TRACE native motion=(-127.5, 221.75)
+TRACE hover room=4 pointer=(-127.5, 221.75) local=(-127.5, 221.75) victory=-1.0
+TRACE native motion=(-127.75, 221.75)
+TRACE hover room=4 pointer=(-127.75, 221.75) local=(-127.75, 221.75) victory=-1.0
+TRACE native motion=(-128.0, 221.75)
+TRACE hover room=4 pointer=(-128.0, 221.75) local=(-128.0, 221.75) victory=-1.0
+TRACE native motion=(-128.0, 221.25)
+TRACE hover room=4 pointer=(-128.0, 221.25) local=(-128.0, 221.25) victory=-1.0
+TRACE native motion=(-128.5, 221.0)
+TRACE hover room=4 pointer=(-128.5, 221.0) local=(-128.5, 221.0) victory=-1.0
+TRACE native motion=(-128.75, 220.75)
+TRACE hover room=4 pointer=(-128.75, 220.75) local=(-128.75, 220.75) victory=-1.0
+TRACE native motion=(-129.0, 220.5)
+TRACE hover room=4 pointer=(-129.0, 220.5) local=(-129.0, 220.5) victory=-1.0
+TRACE native motion=(-129.25, 220.25)
+TRACE hover room=4 pointer=(-129.25, 220.25) local=(-129.25, 220.25) victory=-1.0
+TRACE native motion=(-129.25, 220.0)
+TRACE hover room=4 pointer=(-129.25, 220.0) local=(-129.25, 220.0) victory=-1.0
+TRACE hover room=4 pointer=(-129.25, 220.0) local=(-129.25, 220.0) victory=-1.0
+TRACE native motion=(-129.5, 220.0)
+TRACE hover room=4 pointer=(-129.5, 220.0) local=(-129.5, 220.0) victory=-1.0
+TRACE native motion=(-129.5, 219.75)
+TRACE hover room=4 pointer=(-129.5, 219.75) local=(-129.5, 219.75) victory=-1.0
+TRACE native motion=(-129.5, 219.75)
+TRACE hover room=4 pointer=(-129.5, 219.75) local=(-129.5, 219.75) victory=-1.0
+TRACE hover room=4 pointer=(-129.5, 219.75) local=(-129.5, 219.75) victory=-1.0
+TRACE hover room=4 pointer=(-129.5, 219.75) local=(-129.5, 219.75) victory=-1.0
+TRACE native motion=(-129.75, 219.5)
+TRACE hover room=4 pointer=(-129.75, 219.5) local=(-129.75, 219.5) victory=-1.0
+TRACE native motion=(-129.75, 219.0)
+TRACE hover room=4 pointer=(-129.75, 219.0) local=(-129.75, 219.0) victory=-1.0
+TRACE native motion=(-130.0, 219.0)
+TRACE hover room=4 pointer=(-130.0, 219.0) local=(-130.0, 219.0) victory=-1.0
+TRACE native motion=(-130.0, 218.75)
+TRACE hover room=4 pointer=(-130.0, 218.75) local=(-130.0, 218.75) victory=-1.0
+TRACE native motion=(-130.25, 218.75)
+TRACE hover room=4 pointer=(-130.25, 218.75) local=(-130.25, 218.75) victory=-1.0
+TRACE native motion=(-130.25, 218.5)
+TRACE hover room=4 pointer=(-130.25, 218.5) local=(-130.25, 218.5) victory=-1.0
+TRACE hover room=4 pointer=(-130.25, 218.5) local=(-130.25, 218.5) victory=-1.0
+TRACE hover room=4 pointer=(-130.25, 218.5) local=(-130.25, 218.5) victory=-1.0
+TRACE hover room=4 pointer=(-130.25, 218.5) local=(-130.25, 218.5) victory=-1.0
+TRACE hover room=4 pointer=(-130.25, 218.5) local=(-130.25, 218.5) victory=-1.0
+TRACE hover room=4 pointer=(-130.25, 218.5) local=(-130.25, 218.5) victory=-1.0
+TRACE hover room=4 pointer=(-130.25, 218.5) local=(-130.25, 218.5) victory=-1.0
+TRACE hover room=4 pointer=(-130.25, 218.5) local=(-130.25, 218.5) victory=-1.0
+TRACE hover room=4 pointer=(-130.25, 218.5) local=(-130.25, 218.5) victory=-1.0
+TRACE hover room=4 pointer=(-130.25, 218.5) local=(-130.25, 218.5) victory=-1.0
+TRACE hover room=4 pointer=(-130.25, 218.5) local=(-130.25, 218.5) victory=-1.0
+TRACE hover room=4 pointer=(-130.25, 218.5) local=(-130.25, 218.5) victory=-1.0
+TRACE hover room=4 pointer=(-130.25, 218.5) local=(-130.25, 218.5) victory=-1.0
+TRACE hover room=4 pointer=(-130.25, 218.5) local=(-130.25, 218.5) victory=-1.0
+TRACE hover room=4 pointer=(-130.25, 218.5) local=(-130.25, 218.5) victory=-1.0
+TRACE hover room=4 pointer=(-130.25, 218.5) local=(-130.25, 218.5) victory=-1.0
+TRACE hover room=4 pointer=(-130.25, 218.5) local=(-130.25, 218.5) victory=-1.0
+TRACE hover room=4 pointer=(-130.25, 218.5) local=(-130.25, 218.5) victory=-1.0
+TRACE hover room=4 pointer=(-130.25, 218.5) local=(-130.25, 218.5) victory=-1.0
+TRACE hover room=4 pointer=(-130.25, 218.5) local=(-130.25, 218.5) victory=-1.0
+TRACE hover room=4 pointer=(-130.25, 218.5) local=(-130.25, 218.5) victory=-1.0
+TRACE hover room=4 pointer=(-130.25, 218.5) local=(-130.25, 218.5) victory=-1.0
+TRACE hover room=4 pointer=(-130.25, 218.5) local=(-130.25, 218.5) victory=-1.0
+TRACE hover room=4 pointer=(-130.25, 218.5) local=(-130.25, 218.5) victory=-1.0
+TRACE hover room=4 pointer=(-130.25, 218.5) local=(-130.25, 218.5) victory=-1.0
+TRACE hover room=4 pointer=(-130.25, 218.5) local=(-130.25, 218.5) victory=-1.0
+TRACE hover room=4 pointer=(-130.25, 218.5) local=(-130.25, 218.5) victory=-1.0
+TRACE hover room=4 pointer=(-130.25, 218.5) local=(-130.25, 218.5) victory=-1.0
+TRACE hover room=4 pointer=(-130.25, 218.5) local=(-130.25, 218.5) victory=-1.0
+TRACE hover room=4 pointer=(-130.25, 218.5) local=(-130.25, 218.5) victory=-1.0
+TRACE hover room=4 pointer=(-130.25, 218.5) local=(-130.25, 218.5) victory=-1.0
+TRACE hover room=4 pointer=(-130.25, 218.5) local=(-130.25, 218.5) victory=-1.0
+TRACE hover room=4 pointer=(-130.25, 218.5) local=(-130.25, 218.5) victory=-1.0
+TRACE hover room=4 pointer=(-130.25, 218.5) local=(-130.25, 218.5) victory=-1.0
+TRACE hover room=4 pointer=(-130.25, 218.5) local=(-130.25, 218.5) victory=-1.0
+TRACE hover room=4 pointer=(-130.25, 218.5) local=(-130.25, 218.5) victory=-1.0
+TRACE hover room=4 pointer=(-130.25, 218.5) local=(-130.25, 218.5) victory=-1.0
+TRACE hover room=4 pointer=(-130.25, 218.5) local=(-130.25, 218.5) victory=-1.0
+TRACE hover room=4 pointer=(-130.25, 218.5) local=(-130.25, 218.5) victory=-1.0
+TRACE hover room=4 pointer=(-130.25, 218.5) local=(-130.25, 218.5) victory=-1.0
+TRACE hover room=4 pointer=(-130.25, 218.5) local=(-130.25, 218.5) victory=-1.0
+FAIL preview did not complete DIG_L
+TRACE hover room=4 pointer=(-100.0, -100.0) local=(-100.0, -100.0) victory=-1.0
+TRACE hover room=4 pointer=(-100.0, -100.0) local=(-100.0, -100.0) victory=-1.0
+TRACE hover room=4 pointer=(88.0, 88.0) local=(88.0, 88.0) victory=-1.0
+T8 preview room=5 action=DIG_D cpu_us=19720 latency_us=63786
+T8 preview phases={"COUNTS":646,"KEY":427,"READ":358,"RESOLVE":206,"TICKS":344,"begin":17211,"finish":528} slices=[2538]
+TRACE hover room=4 pointer=(-100.0, -100.0) local=(-100.0, -100.0) victory=-1.0
+TRACE hover room=4 pointer=(-100.0, -100.0) local=(-100.0, -100.0) victory=-1.0
+TRACE hover room=4 pointer=(-100.0, -100.0) local=(-100.0, -100.0) victory=-1.0
+TRACE hover room=4 pointer=(-100.0, -100.0) local=(-100.0, -100.0) victory=-1.0
+TRACE hover room=4 pointer=(152.0, 72.0) local=(152.0, 72.0) victory=-1.0
+T8 preview room=5 action=POUR_R cpu_us=21307 latency_us=85096
+T8 preview phases={"COUNTS":1512,"KEY":2017,"READ":792,"RESOLVE":691,"TICKS":4808,"begin":9664,"finish":1823} slices=[3552,3891,4321]
+TRACE hover room=4 pointer=(-100.0, -100.0) local=(-100.0, -100.0) victory=-1.0
+TRACE hover room=4 pointer=(152.0, 72.0) local=(152.0, 72.0) victory=-1.0
+T8 preview room=5 action=POUR_R cpu_us=19716 latency_us=85154
+T8 preview phases={"COUNTS":1475,"KEY":1114,"READ":795,"RESOLVE":212,"TICKS":5230,"begin":9960,"finish":930} slices=[3536,3550,2766]
+TRACE hover room=4 pointer=(-100.0, -100.0) local=(-100.0, -100.0) victory=-1.0
+TRACE hover room=4 pointer=(-100.0, -100.0) local=(-100.0, -100.0) victory=-1.0
+TRACE hover room=4 pointer=(-100.0, -100.0) local=(-100.0, -100.0) victory=-1.0
+TRACE hover room=4 pointer=(-100.0, -100.0) local=(-100.0, -100.0) victory=-1.0
+T8 D5 {"frames":{"max_us":2148,"min_us":51,"p50_us":374,"p95_us":1236,"samples":166},"level":5,"load_us":16698,"preview_cpu":{"max_us":21307,"min_us":9506,"p50_us":19720,"p95_us":21307,"samples":4},"preview_latency":{"max_us":85154,"min_us":56921,"p50_us":85096,"p95_us":85154,"samples":4}}
+T8 summary {"display":"macOS","frames":{"max_us":2260,"min_us":27,"p50_us":286,"p95_us":1389,"samples":533},"preview_cpu":{"max_us":21307,"min_us":9506,"p50_us":19716,"p95_us":21307,"samples":6},"preview_latency":{"max_us":85154,"min_us":51787,"p50_us":63786,"p95_us":85154,"samples":6},"rooms":[{"frames":{"max_us":1459,"min_us":43,"p50_us":190,"p95_us":599,"samples":53},"level":1,"load_us":25502,"preview_cpu":{"max_us":0,"samples":0},"preview_latency":{"max_us":0,"samples":0}},{"frames":{"max_us":1334,"min_us":27,"p50_us":297,"p95_us":657,"samples":117},"level":2,"load_us":13765,"preview_cpu":{"max_us":12195,"min_us":11903,"p50_us":12195,"p95_us":12195,"samples":2},"preview_latency":{"max_us":58959,"min_us":51787,"p50_us":58959,"p95_us":58959,"samples":2}},{"frames":{"max_us":2260,"min_us":77,"p50_us":384,"p95_us":2110,"samples":107},"level":3,"load_us":16895,"preview_cpu":{"max_us":0,"samples":0},"preview_latency":{"max_us":0,"samples":0}},{"frames":{"max_us":1733,"min_us":66,"p50_us":221,"p95_us":749,"samples":90},"level":4,"load_us":14264,"preview_cpu":{"max_us":0,"samples":0},"preview_latency":{"max_us":0,"samples":0}},{"frames":{"max_us":2148,"min_us":51,"p50_us":374,"p95_us":1236,"samples":166},"level":5,"load_us":16698,"preview_cpu":{"max_us":21307,"min_us":9506,"p50_us":19720,"p95_us":21307,"samples":4},"preview_latency":{"max_us":85154,"min_us":56921,"p50_us":85096,"p95_us":85154,"samples":4}}],"scope":"Settlement CPU: Game physics + SDK upload + BoardView draw, max 4 real-world ticks per frame (opening 1), 1.5ms soft SDK-step budget, separate material-read/32-tile-count/resolve/key frames; previews drain the same phases in a 3.5ms soft work budget. Preview CPU includes snapshot I/O and result diff; latency measured from pointer target to completed rendered overlay, with vsync. Load/shader initialization reported separately. GPU raster and OS compositor excluded from CPU frame metric.","workers":1}
+Performance: 2 failures
+Executed 1/1 test scripts; passed=False; T2 threads 4/8 NOT RUN.

@@ -1,0 +1,2 @@
+artifacts/macos-stage1/Pushbox.app: accepted
+override=security disabled

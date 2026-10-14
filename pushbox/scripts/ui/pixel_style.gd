@@ -1,5 +1,6 @@
 extends RefCounted
-## Shared native-pixel drawing; resources stay replaceable by filename.
+## Shared native-pixel drawing; raster textures are built once in memory.
+const Art := preload("res://pushbox/scripts/ui/procedural_art.gd")
 const INK := Color("181425")
 const WHITE := Color("ffffff")
 const YELLOW := Color("fee761")
@@ -20,7 +21,7 @@ static func font() -> FontFile:
 
 static func texture(name: String) -> Texture2D:
 	if not _textures.has(name):
-		var image := Image.load_from_file("res://pushbox/assets/sprites/%s.png" % name)
+		var image: Image = Art.image(name)
 		_textures[name] = ImageTexture.create_from_image(image)
 	return _textures[name]
 
@@ -39,7 +40,5 @@ static func panel(canvas: CanvasItem, rect: Rect2) -> void:
 
 static func warm_assets() -> void:
 	font()
-	var directory := DirAccess.open("res://pushbox/assets/sprites")
-	for filename in directory.get_files():
-		if filename.ends_with(".png"):
-			texture(filename.trim_suffix(".png"))
+	for name in Art.names():
+		texture(name)

@@ -1,0 +1,45 @@
+{
+  "release": "https://github.com/godotengine/godot-builds/releases/tag/4.7.2-stable",
+  "asset": "Godot_v4.7.2-stable_export_templates.tpz",
+  "asset_bytes": 1281349702,
+  "asset_published_digest": "sha256:f298490b8d44d934be425a5a65a51bf15f422428b229a06a6e11d9ffea248011",
+  "whole_archive_digest_verified": false,
+  "selective_download": true,
+  "ranges": [
+    {
+      "start": 1281349680,
+      "end": 1281349701,
+      "bytes": 22
+    },
+    {
+      "start": 1281349660,
+      "end": 1281349679,
+      "bytes": 20
+    },
+    {
+      "start": 1281346116,
+      "end": 1281349679,
+      "bytes": 3564
+    },
+    {
+      "start": 863271834,
+      "end": 863271863,
+      "bytes": 30
+    },
+    {
+      "start": 863271864,
+      "end": 863271882,
+      "bytes": 19
+    },
+    {
+      "start": 863271911,
+      "end": 986151217,
+      "bytes": 122879307
+    }
+  ],
+  "member": "templates/macos.zip",
+  "member_crc32": "2986734b",
+  "member_crc_verified": true,
+  "macos_zip_sha256": "88df5e2e6fee99088699be66e6d42e4da4fb0c5619d054297d755a49558a4792",
+  "macos_zip_bytes": 123597580
+}

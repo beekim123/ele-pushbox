@@ -1,0 +1,141 @@
+{
+  "display": "macOS",
+  "frames": {
+    "max_us": 4989,
+    "min_us": 39,
+    "p50_us": 347,
+    "p95_us": 1582,
+    "samples": 535
+  },
+  "preview_cpu": {
+    "max_us": 20180,
+    "min_us": 12624,
+    "p50_us": 15750,
+    "p95_us": 20180,
+    "samples": 8
+  },
+  "preview_latency": {
+    "max_us": 85983,
+    "min_us": 49064,
+    "p50_us": 53847,
+    "p95_us": 85983,
+    "samples": 8
+  },
+  "rooms": [
+    {
+      "frames": {
+        "max_us": 1114,
+        "min_us": 42,
+        "p50_us": 176,
+        "p95_us": 647,
+        "samples": 52
+      },
+      "level": 1,
+      "load_us": 19939,
+      "preview_cpu": {
+        "max_us": 0,
+        "samples": 0
+      },
+      "preview_latency": {
+        "max_us": 0,
+        "samples": 0
+      }
+    },
+    {
+      "frames": {
+        "max_us": 1419,
+        "min_us": 39,
+        "p50_us": 259,
+        "p95_us": 768,
+        "samples": 117
+      },
+      "level": 2,
+      "load_us": 12534,
+      "preview_cpu": {
+        "max_us": 15113,
+        "min_us": 13213,
+        "p50_us": 15113,
+        "p95_us": 15113,
+        "samples": 2
+      },
+      "preview_latency": {
+        "max_us": 54070,
+        "min_us": 49064,
+        "p50_us": 54070,
+        "p95_us": 54070,
+        "samples": 2
+      }
+    },
+    {
+      "frames": {
+        "max_us": 3026,
+        "min_us": 52,
+        "p50_us": 437,
+        "p95_us": 2276,
+        "samples": 110
+      },
+      "level": 3,
+      "load_us": 13278,
+      "preview_cpu": {
+        "max_us": 0,
+        "samples": 0
+      },
+      "preview_latency": {
+        "max_us": 0,
+        "samples": 0
+      }
+    },
+    {
+      "frames": {
+        "max_us": 1467,
+        "min_us": 63,
+        "p50_us": 372,
+        "p95_us": 1152,
+        "samples": 90
+      },
+      "level": 4,
+      "load_us": 22808,
+      "preview_cpu": {
+        "max_us": 16211,
+        "min_us": 16211,
+        "p50_us": 16211,
+        "p95_us": 16211,
+        "samples": 1
+      },
+      "preview_latency": {
+        "max_us": 50820,
+        "min_us": 50820,
+        "p50_us": 50820,
+        "p95_us": 50820,
+        "samples": 1
+      }
+    },
+    {
+      "frames": {
+        "max_us": 4989,
+        "min_us": 67,
+        "p50_us": 437,
+        "p95_us": 1386,
+        "samples": 166
+      },
+      "level": 5,
+      "load_us": 15677,
+      "preview_cpu": {
+        "max_us": 20180,
+        "min_us": 12624,
+        "p50_us": 15750,
+        "p95_us": 20180,
+        "samples": 5
+      },
+      "preview_latency": {
+        "max_us": 85983,
+        "min_us": 49596,
+        "p50_us": 53847,
+        "p95_us": 85983,
+        "samples": 5
+      }
+    }
+  ],
+  "scope": "Settlement CPU: Game physics + SDK upload + BoardView draw, max 4 real-world ticks per frame (opening 1), 1.5ms soft SDK-step budget, separate material-read/32-tile-count/resolve/key frames; previews drain the same phases in a 3.5ms soft work budget. Preview CPU includes snapshot I/O and result diff; latency measured from pointer target to completed rendered overlay, with vsync. Load/shader initialization reported separately. GPU raster and OS compositor excluded from CPU frame metric.",
+  "workers": 1
+}

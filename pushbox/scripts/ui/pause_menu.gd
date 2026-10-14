@@ -4,7 +4,9 @@ signal requested(action: String)
 signal level_selected(index: int)
 signal outlines_changed(value: bool)
 const Style := preload("res://pushbox/scripts/ui/pixel_style.gd")
-const ROOT_ROWS := ["继续", "提示", "重开", "选关", "设置", "退出"]
+const ROOT_ROWS := ["继续", "提示", "重开", "选关", "返回大厅", "设置", "退出"]
+var tutorial: bool = false
+var lobby_context: bool = false
 var opened: bool = false
 var page: String = "root"
 var selected: int = 0
@@ -14,12 +16,18 @@ var hint_lines: PackedStringArray = []
 func rows() -> Array:
 	match page:
 		"hints": return ["规则提示", "下一步提示", "返回"]
-		"levels": return ["1 · 梯子", "2 · 挖与倒", "3 · 放水", "4 · 压板与炸药", "5 · 炸沙抬水位", "返回"]
+		"levels":
+			if tutorial:
+				return ["T01 · 移动与推箱", "T02 · 挖沙与造坡", "T03 · 放水与浮箱", "T04 · 机关与爆破", "返回"]
+			return ["1 · 梯子", "2 · 挖与倒", "3 · 放水", "4 · 压板与炸药", "5 · 炸沙抬水位", "返回"]
 		"settings": return ["格子类别：%s" % ("开" if outlines else "关"), "重看引导", "返回"]
 		"message": return ["返回"]
 	return ROOT_ROWS
 
 func toggle() -> void:
+	if lobby_context:
+		close()
+		return
 	if opened and page != "root":
 		page = "root"
 		selected = 0
@@ -51,7 +59,7 @@ func _rect() -> Rect2:
 	var offset: Vector2 = ((get_viewport_rect().size - Vector2(320, 180)) / 2).round()
 	if page == "message":
 		return Rect2(Vector2(48, 48) + offset, Vector2(224, 84))
-	return Rect2(Vector2(86, 14 + (6 - rows().size()) * 10) + offset, Vector2(148, rows().size() * 20 + 12))
+	return Rect2(Vector2(86, 14 + maxi(0, 6 - rows().size()) * 10) + offset, Vector2(148, rows().size() * 20 + 12))
 
 func handle(event: InputEvent) -> void:
 	if event is InputEventKey and event.pressed:
@@ -82,15 +90,16 @@ func activate() -> void:
 				1: page = "hints"; selected = 0
 				2: close(); requested.emit("restart")
 				3: page = "levels"; selected = 0
-				4: page = "settings"; selected = 0
-				5: requested.emit("quit")
+				4: close(); requested.emit("lobby")
+				5: page = "settings"; selected = 0
+				6: requested.emit("quit")
 		"hints":
 			if selected < 2:
 				requested.emit("rule_hint" if selected == 0 else "next_hint")
 			else:
 				page = "root"; selected = 1
 		"levels":
-			if selected < 5:
+			if selected < (4 if tutorial else 5):
 				close(); level_selected.emit(selected)
 			else:
 				page = "root"; selected = 3
@@ -102,7 +111,10 @@ func activate() -> void:
 				close()
 				requested.emit("reset_guides")
 			else:
-				page = "root"; selected = 4
+				if lobby_context:
+					close()
+				else:
+					page = "root"; selected = 5
 		"message": page = "hints"; selected = 0
 	queue_redraw()
 

@@ -15,6 +15,8 @@ __pycache__/
 # Archives and local build output stay on the workstation.
 /artifacts/*.zip
 /artifacts/snapshots/
+/artifacts/macos-stage1/*.app/
+/artifacts/macos-stage1/*.dmg
 /artifacts/logs/sdk-build.log
 /artifacts/logs/environment.json
 /artifacts/logs/package-check-path.txt

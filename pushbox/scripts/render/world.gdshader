@@ -1,8 +1,6 @@
 shader_type canvas_item;
 render_mode unshaded;
 uniform sampler2D palette : filter_nearest;
-uniform sampler2D bedrock_tex : source_color, filter_nearest, repeat_enable;
-uniform sampler2D cracked_tex : source_color, filter_nearest, repeat_enable;
 uniform int bedrock_id = 1;
 uniform int cracked_id = 2;
 uniform int sand_id = 5;
@@ -15,6 +13,33 @@ varying vec2 world_position;
 const vec4 INK = vec4(0.094118, 0.078431, 0.145098, 1.0);
 const vec4 SLATE = vec4(0.352941, 0.411765, 0.533333, 1.0);
 const vec4 ROCK_EDGE = vec4(0.545098, 0.607843, 0.705882, 1.0);
+
+float hash_tile(vec2 tile) {
+	return fract(sin(dot(tile, vec2(127.1, 311.7))) * 43758.5453);
+}
+float stroke(vec2 p, vec2 a, vec2 b) {
+	vec2 ab = b - a;
+	return length(p - a - ab * clamp(dot(p - a, ab) / dot(ab, ab), 0.0, 1.0));
+}
+vec4 bedrock(vec2 p, vec2 tile) {
+	vec4 c = vec4(0.227451, 0.266667, 0.4, 1.0);
+	vec4 seam = vec4(0.14902, 0.168627, 0.266667, 1.0);
+	if (p.x == 0.0 || p.y == 0.0) { c = seam; }
+	else if (p.x == 1.0 || p.y == 1.0) { c = SLATE; }
+	float start = 3.0 + 4.0 * step(0.5, hash_tile(tile));
+	if (p.y == 9.0 && p.x >= start && p.x <= start + 4.0) { c = seam; }
+	return c;
+}
+vec4 cracked_rock(vec2 p) {
+	vec4 c = vec4(0.760784, 0.521569, 0.411765, 1.0);
+	if (p.x == 0.0 || p.y == 0.0) { c = vec4(0.894118, 0.65098, 0.447059, 1.0); }
+	float crack = min(min(stroke(p, vec2(9,0), vec2(7,4)), stroke(p, vec2(7,4), vec2(10,7))),
+		min(stroke(p, vec2(10,7), vec2(6,10)), stroke(p, vec2(6,10), vec2(8,15))));
+	float branch = min(min(stroke(p, vec2(8,5), vec2(3,6)), stroke(p, vec2(3,6), vec2(0,4))),
+		min(stroke(p, vec2(7,10), vec2(12,11)), stroke(p, vec2(12,11), vec2(15,14))));
+	if (crack <= 0.9 || branch <= 0.5) { c = vec4(0.243137, 0.152941, 0.192157, 1.0); }
+	return c;
+}
 
 void vertex() {
 	world_position = (MODEL_MATRIX * vec4(VERTEX, 0.0, 1.0)).xy - world_origin;
@@ -30,19 +55,19 @@ void fragment() {
 	int mat = int(t.r | ((t.g & 15u) << 8u));
 	int variant = int((t.g >> 4u) & 3u);
 	vec2 wp = floor(world_position);
-	vec2 tile_uv = (wp + 0.5) / 16.0;
+	vec2 tile_pixel = mod(wp, 16.0);
 	vec4 c = vec4(0.0);
 	bool in_room = wp.x >= room_rect.x && wp.y >= room_rect.y && wp.x < room_rect.x + room_rect.z && wp.y < room_rect.y + room_rect.w;
 	if (in_room && mat != 0 && mat != crate_id && mat != gate_id) {
 		int up = material_at(TEXTURE, px - ivec2(0, 1));
 		bool exposed = up == 0 || up == crate_id || up == gate_id || up == water_id;
 		if (mat == bedrock_id) {
-			c = texture(bedrock_tex, tile_uv);
+			c = bedrock(tile_pixel, floor(wp / 16.0));
 			if (exposed) { c = ROCK_EDGE; }
 			else if (material_at(TEXTURE, px - ivec2(0,2)) == 0) { c = SLATE; }
 			if (material_at(TEXTURE, px - ivec2(1,0)) == sand_id || material_at(TEXTURE, px + ivec2(1,0)) == sand_id) { c = INK; }
 		} else if (mat == cracked_id) {
-			c = texture(cracked_tex, tile_uv);
+			c = cracked_rock(tile_pixel);
 		} else if (mat == sand_id) {
 			c = variant == 0 ? vec4(0.760784, 0.521569, 0.411765, 1.0) : (variant == 1 ? vec4(0.894118, 0.650980, 0.447059, 1.0) : vec4(0.917647, 0.831373, 0.666667, 1.0));
 			if (exposed) { c = vec4(0.917647, 0.831373, 0.666667, 1.0); }

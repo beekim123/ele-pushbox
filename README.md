@@ -25,7 +25,7 @@ Z 撤销（可按住），R 重开，均无确认。结算时按任意键或点�
 
 关卡基础布局为 320×180，默认窗口 1280×720，最小窗口 320×180。按窗口宽高扩展逻辑画布并整数放大，保持像素清晰；关卡居中、菜单居中、背包靠右，鼠标目标跟随实际画面。非整除尺寸只留下少于一个放大逻辑像素的余量边框。SDK 世界仍为 320×192，cell_scale=1，每格16像素，模拟与房间裁剪保持原样。沙袋按图标显示，一个满袋是一格沙；炸药每枚一个图标。
 
-关内引导在做对后消失，并记住已学过的操作。要给新的试玩者重看，先用 Esc → 设置 → 重看引导，再重开 D1。用户认可当前美术方向与 Python 制作方式，后续可以继续程序绘制并打磨素材；替换时沿用 `pushbox/assets/sprites/` 中同名 PNG，尺寸、动作和锚点见 `manifest.json` 及 `docs/v3/ui-art-direction.md`。当前仍为字符画导出的占位素材，字体和许可证随包交付。
+关内引导在做对后消失，并记住已学过的操作。要给新的试玩者重看，先用 Esc → 设置 → 重看引导，再重开 D1。第一阶段已将精灵和 UI 素材改为由 `pushbox/scripts/ui/procedural_art.gd` 在内存中生成，地形由 `world.gdshader` 绘制。打磨素材时修改相应代码，并保持素材名称、尺寸和锚点兼容；原始尺寸、动作和锚点元数据保留在 `pushbox/assets/sprites/manifest.json`，视觉规范见 `docs/v3/ui-art-direction.md`。字体和许可证随包交付。
 
 验证命令（严格顺序、单 worker；启动前检查其他聊天的计算进程）：
 
@@ -54,7 +54,7 @@ PUSHBOX_GODOT_BIN='/完整路径/Godot.app/Contents/MacOS/Godot' \
 
 第三方声明与许可证保存在 `bin/` 和 `pushbox/assets/fonts/`，原有许可声明保持原样。构建脚本在重建后更新 `bin/build-metadata.json` 的版本与动态库 SHA。本次仓库整理未重编或修改 SDK。
 
-素材导出器使用仓库内的 `tools/reference_art.py`，不依赖另一个本地设计项目。仓库保留源码、素材、文档与小体量验证证据；ZIP、vendor、Godot/Python 缓存、快照及本机构建日志由 `.gitignore` 排除，已有本地文件仍保留。
+2026-10-14 已清理不再使用的 68 张旧精灵 PNG、Python 素材导出工具及可重建缓存。`manifest.json` 保留原始素材元数据，其中记录的 Python 来源属于历史实现，可在 Git 历史查阅。仓库继续保留运行代码、字体与许可证、关卡、测试、设计文档和验证证据；ZIP、vendor、Godot/Python 缓存、快照及本机构建日志由 `.gitignore` 排除。清理记录见 `artifacts/2026-10-14-cleanup/verification.json`。
 
 `tools/package_demo.py` 保留原 v0.3 候选打包流程，读取 `artifacts/v03/logs/` 的历史摘要。后续生成新交付包时需先接入最新验证结果；不能把历史摘要当作本次检查的依据。本轮 Bug 修复已同步 GitHub `main`，尚未生成新的正式交付包。
 

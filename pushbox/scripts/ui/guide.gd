@@ -59,6 +59,9 @@ func advance(delta: float) -> void:
 	var old: String = active.get("id", "")
 	var completed: bool = false
 	for item in level.get("guides", []):
+		var dependency: String = item.get("after", "")
+		if not dependency.is_empty() and not progress.has(str(level.id) + ":" + dependency):
+			continue
 		if not progress.has(_key(item)) and _condition(item.get("done", "")):
 			progress[_key(item)] = true
 			completed = true
@@ -102,7 +105,10 @@ func _instruction(item: Dictionary) -> void:
 	if item.has("mouse"):
 		var target: Array = item.mouse.at
 		var at: Vector2 = Vector2(board.origin + Vector2i(target[0], target[1])) * 16 + Vector2(2,-20)
-		at.y += -1 if int(elapsed * 3) % 2 == 0 else 0
+		if item.get("point") is Array:
+			at = Vector2(board.origin + Vector2i(item.point[0],item.point[1])) * 16 + Vector2(2,1)
+		else:
+			at.y += -1 if int(elapsed * 3) % 2 == 0 else 0
 		draw_texture(Style.texture("mouse_" + item.mouse.button), at.round())
 		Style.text(self, item.get("text", ""), at + Vector2(16,11))
 	elif item.has("keycap"):
@@ -115,14 +121,19 @@ func _instruction(item: Dictionary) -> void:
 		Style.text(self, item.get("text", ""), at + Vector2(offset,11), Style.YELLOW)
 	elif item.has("hand"):
 		var t: float = fmod(shown_for, 1.0)
-		var at: Vector2 = hand_start.lerp(Vector2(246,51), t)
+		var target := Vector2(246,51)
+		if item.get("point") is Array:
+			target = Vector2(board.origin + Vector2i(item.point[0],item.point[1])) * 16 + Vector2(8,8)
+		var at: Vector2 = hand_start.lerp(target, t)
 		draw_texture(Style.texture("icon_bomb"), at.round())
 		draw_texture(Style.texture("hand_drag"), (at + Vector2(3,7)).round())
+		if not item.get("text", "").is_empty():
+			Style.text(self, item.text, Vector2(board.origin)*16 + Vector2(32,12), Style.YELLOW)
 
 func _draw() -> void:
 	if board == null:
 		return
-	if level.id == "d1":
+	if level.id in ["d1", "t01"]:
 		Style.text(self, "Z 撤销 · R 重开", Vector2(board.origin) * 16 + Vector2(8,94))
 	if hint_left > 0 and not hint_action.is_empty():
 		if hint_action.contains("_"):
