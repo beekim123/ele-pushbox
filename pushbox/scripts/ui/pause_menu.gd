@@ -48,9 +48,10 @@ func show_hint(value: String) -> void:
 	queue_redraw()
 
 func _rect() -> Rect2:
+	var offset: Vector2 = ((get_viewport_rect().size - Vector2(320, 180)) / 2).round()
 	if page == "message":
-		return Rect2(48, 48, 224, 84)
-	return Rect2(86, 14 + (6 - rows().size()) * 10, 148, rows().size() * 20 + 12)
+		return Rect2(Vector2(48, 48) + offset, Vector2(224, 84))
+	return Rect2(Vector2(86, 14 + (6 - rows().size()) * 10) + offset, Vector2(148, rows().size() * 20 + 12))
 
 func handle(event: InputEvent) -> void:
 	if event is InputEventKey and event.pressed:

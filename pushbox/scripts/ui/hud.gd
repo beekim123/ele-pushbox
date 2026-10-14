@@ -49,7 +49,7 @@ func _process(delta: float) -> void:
 func bomb_rects() -> Array[Rect2]:
 	var result: Array[Rect2] = []
 	var bags: int = maxi(1, ceili(_bag / 256.0)) if _show_bag or _bag > 0 else 0
-	var x: float = 304.0 - bags * 14.0
+	var x: float = bag_position().x - bags * 14.0
 	for i in _bombs:
 		result.append(Rect2(x - i * 14, 5, 12, 12))
 	return result
@@ -61,7 +61,7 @@ func bomb_at(at: Vector2) -> bool:
 	return false
 
 func bag_position() -> Vector2:
-	return Vector2(304, 5)
+	return Vector2(get_viewport().get_visible_rect().size.x - 16, 5)
 
 func _draw_hud() -> void:
 	if session == null:
@@ -77,7 +77,7 @@ func _draw_hud() -> void:
 			var fill: int = mini(7, roundi(clampi(_bag - i * 256, 0, 256) / 256.0 * 7))
 			painter.draw_texture(Style.texture("icon_sandbag_%d" % fill), bag_position() - Vector2(i * 14, 1 if bag_bounce > 0.12 else 0))
 		if bag_bounce > 0.12 and _gained:
-			Style.text(painter, "+", Vector2(305, 30), Style.YELLOW)
+			Style.text(painter, "+", bag_position() + Vector2(1, 25), Style.YELLOW)
 	# Bombs sit left of all bags, with one independent draggable icon per bomb.
 	for rect in bomb_rects():
 		painter.draw_texture(Style.texture("icon_bomb"), rect.position)

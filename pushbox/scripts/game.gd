@@ -32,6 +32,9 @@ var _dragging: bool = false
 var _victory_left: float = -1.0
 var frame_us: Array[int] = []
 var frame_timing: Dictionary = {}
+var _board_position := Vector2.ZERO
+var _world_origin := Vector2(INF, INF)
+var _layout_queued: bool = false
 
 func _ready() -> void:
 	texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
@@ -56,6 +59,7 @@ func _ready() -> void:
 	pause_menu.requested.connect(utility)
 	pause_menu.level_selected.connect(select_level)
 	pause_menu.outlines_changed.connect(view.set_outlines)
+	get_viewport().size_changed.connect(_on_viewport_resized)
 	select_level(0)
 
 func select_level(index: int) -> void:
@@ -99,8 +103,59 @@ func select_level(index: int) -> void:
 	_victory_left = -1.0
 	pause_menu.close()
 	hud.set_room(session, level_index)
+	_layout()
+
+func _layout() -> void:
+	var window := get_window()
+	var pixel_scale: int = maxi(1, floori(minf(window.size.x / 320.0, window.size.y / 180.0)))
+	var canvas := Vector2i(maxi(320, window.size.x / pixel_scale), maxi(180, window.size.y / pixel_scale))
+	if window.content_scale_size != canvas:
+		window.content_scale_size = canvas
+	_board_position = ((get_viewport_rect().size - Vector2(320, 180)) / 2).round()
+	view.position = _board_position
+	session.world.position = _board_position
+	background.position = _board_position + Vector2(session.board.origin) * 16
+	view.inventory_anchor = hud.bag_position() + Vector2(6, 6) - _board_position
+	var bombs: Array[Rect2] = hud.bomb_rects()
+	if not bombs.is_empty():
+		guide.hand_start = bombs[0].position + Vector2(-10, 13) - _board_position
+	_refresh_world_origin()
+	hud.painter.queue_redraw()
+	pause_menu.queue_redraw()
+	view.queue_redraw()
+
+func _on_viewport_resized() -> void:
+	if session == null or _layout_queued:
+		return
+	# Window attaches its screen rect after emitting size_changed. Resizing
+	# inside that signal lets the outer update overwrite the new attachment.
+	_layout_queued = true
+	_apply_resize.call_deferred()
+
+func _apply_resize() -> void:
+	_layout_queued = false
+	if session == null:
+		return
+	cancel_preview()
+	_layout()
+	_pointer = get_viewport().get_mouse_position()
+	_sync_pointer()
+
+func _sync_pointer() -> void:
+	hud.pointer = _pointer
+	view.pointer = view.to_local(_pointer)
+
+func _refresh_world_origin() -> void:
+	var at: Vector2 = session.world.global_position
+	if at == _world_origin:
+		return
+	_world_origin = at
+	for sprite in session.world.get_children():
+		if sprite is Sprite2D and sprite.material is ShaderMaterial:
+			sprite.material.set_shader_parameter("world_origin", at)
 
 func _configure_render() -> void:
+	_world_origin = Vector2(INF, INF)
 	for sprite in session.world.get_children():
 		if not sprite is Sprite2D or not sprite.material is ShaderMaterial:
 			continue
@@ -179,8 +234,10 @@ func _process(delta: float) -> void:
 	if session == null or pause_menu.opened:
 		return
 	var shake: Vector2 = view.shake_offset()
-	view.position = BOARD_POSITION + shake
-	session.world.position = BOARD_POSITION + shake
+	view.position = _board_position + shake
+	session.world.position = _board_position + shake
+	_refresh_world_origin()
+	_sync_pointer()
 	view.visual_tick()
 	if not _opening:
 		guide.advance(delta)
@@ -220,6 +277,7 @@ func cancel_preview(invalidate: bool = false) -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN if _dragging else Input.MOUSE_MODE_VISIBLE)
 
 func _action_at(at: Vector2, mode: String = "hover") -> String:
+	at = view.to_local(at)
 	if at.x < 0 or at.x >= 320 or at.y < 0 or at.y >= 180:
 		return ""
 	var tile := Vector2i(floori(at.x / 16), floori(at.y / 16))
@@ -398,13 +456,11 @@ func _input(event: InputEvent) -> void:
 		get_viewport().set_input_as_handled()
 	elif event is InputEventMouseMotion:
 		_pointer = event.position
-		hud.pointer = _pointer
-		view.pointer = _pointer
+		_sync_pointer()
 		view.queue_redraw()
 	elif event is InputEventMouseButton:
 		_pointer = event.position
-		hud.pointer = _pointer
-		view.pointer = _pointer
+		_sync_pointer()
 		view.queue_redraw()
 		if _opening:
 			return

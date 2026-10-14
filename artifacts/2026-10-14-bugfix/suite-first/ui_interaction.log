@@ -1,0 +1,13 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+FAIL hover predicts adjacent sand without selecting a tool
+FAIL one left click digs 220; no confirmation
+FAIL hover predicts pour after digging
+FAIL one right click pours matching D2 fixture
+FAIL T6 hover/click full world hash matches
+FAIL Z restores exact source after pour
+FAIL bomb drag predicts without consuming budget
+FAIL bomb drop executes once
+FAIL T6 drag/drop exact hash matches
+FAIL far clicks are silent and do not advance time
+v03 input: 17 checks, 10 failures

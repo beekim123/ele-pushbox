@@ -10,13 +10,14 @@ uniform int water_id = 6;
 uniform int crate_id = 3;
 uniform int gate_id = 4;
 uniform vec4 room_rect = vec4(0.0, 0.0, 320.0, 192.0);
+uniform vec2 world_origin = vec2(0.0);
 varying vec2 world_position;
 const vec4 INK = vec4(0.094118, 0.078431, 0.145098, 1.0);
 const vec4 SLATE = vec4(0.352941, 0.411765, 0.533333, 1.0);
 const vec4 ROCK_EDGE = vec4(0.545098, 0.607843, 0.705882, 1.0);
 
 void vertex() {
-	world_position = (MODEL_MATRIX * vec4(VERTEX, 0.0, 1.0)).xy;
+	world_position = (MODEL_MATRIX * vec4(VERTEX, 0.0, 1.0)).xy - world_origin;
 }
 int material_at(sampler2D cell_texture, ivec2 at) {
 	if (at.x < 0 || at.y < 0 || at.x >= 256 || at.y >= 256) { return bedrock_id; }

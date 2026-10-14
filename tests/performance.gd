@@ -52,7 +52,7 @@ func run() -> void:
 			if action.contains("_"):
 				game.cancel_preview()
 				game._dragging = action.begins_with("BOMB")
-				game._pointer = Vector2(game.session.board.player + game.session.board._direction(action)) * 16 + Vector2(8,8)
+				game._pointer = game.view.to_global(Vector2(game.session.board.player + game.session.board._direction(action)) * 16 + Vector2(8,8))
 				var began: int = Time.get_ticks_usec()
 				for _i in 120:
 					await rendered_frame()

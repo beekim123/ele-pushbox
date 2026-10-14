@@ -1,0 +1,26 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+OpenGL API 4.1 Metal - 89.4 - Compatibility - Using Device: Apple - Apple M3
+
+T8 D1 {"frames":{"max_us":3470,"min_us":42,"p50_us":252,"p95_us":968,"samples":53},"level":1,"load_us":11025,"preview_cpu":{"max_us":0,"samples":0},"preview_latency":{"max_us":0,"samples":0}}
+T8 preview room=2 action=DIG_L cpu_us=13470 latency_us=63445
+T8 preview phases={"COUNTS":1511,"KEY":854,"READ":625,"RESOLVE":121,"TICKS":996,"begin":8391,"finish":972} slices=[5133]
+T8 preview room=2 action=POUR_R cpu_us=14200 latency_us=52042
+T8 preview phases={"COUNTS":1305,"KEY":857,"READ":567,"RESOLVE":108,"TICKS":858,"begin":9654,"finish":851} slices=[4595]
+T8 D2 {"frames":{"max_us":1219,"min_us":43,"p50_us":310,"p95_us":685,"samples":117},"level":2,"load_us":21933,"preview_cpu":{"max_us":14200,"min_us":13470,"p50_us":14200,"p95_us":14200,"samples":2},"preview_latency":{"max_us":63445,"min_us":52042,"p50_us":63445,"p95_us":63445,"samples":2}}
+T8 D3 {"frames":{"max_us":2532,"min_us":71,"p50_us":364,"p95_us":2122,"samples":106},"level":3,"load_us":24836,"preview_cpu":{"max_us":0,"samples":0},"preview_latency":{"max_us":0,"samples":0}}
+T8 preview room=4 action=BOMB_L cpu_us=20667 latency_us=51932
+T8 preview phases={"COUNTS":1621,"KEY":1162,"READ":588,"RESOLVE":257,"TICKS":231,"begin":13102,"finish":3706} slices=[7620]
+T8 D4 {"frames":{"max_us":1361,"min_us":71,"p50_us":397,"p95_us":1097,"samples":90},"level":4,"load_us":22289,"preview_cpu":{"max_us":20667,"min_us":20667,"p50_us":20667,"p95_us":20667,"samples":1},"preview_latency":{"max_us":51932,"min_us":51932,"p50_us":51932,"p95_us":51932,"samples":1}}
+T8 preview room=5 action=BOMB_L cpu_us=18823 latency_us=71137
+T8 preview phases={"COUNTS":1322,"KEY":833,"READ":606,"RESOLVE":201,"TICKS":2438,"begin":9548,"finish":3875} slices=[3664,5721]
+T8 preview room=5 action=DIG_L cpu_us=13580 latency_us=51382
+T8 preview phases={"COUNTS":1230,"KEY":723,"READ":613,"RESOLVE":183,"TICKS":530,"begin":9428,"finish":873} slices=[4190]
+T8 preview room=5 action=DIG_D cpu_us=17957 latency_us=69121
+T8 preview phases={"COUNTS":1495,"KEY":680,"READ":997,"RESOLVE":217,"TICKS":743,"begin":12841,"finish":984} slices=[3508,1676]
+T8 preview room=5 action=POUR_R cpu_us=20588 latency_us=86977
+T8 preview phases={"COUNTS":1249,"KEY":650,"READ":819,"RESOLVE":471,"TICKS":6282,"begin":10421,"finish":696} slices=[3520,3769,2981]
+T8 preview room=5 action=POUR_R cpu_us=21836 latency_us=81902
+T8 preview phases={"COUNTS":1103,"KEY":714,"READ":494,"RESOLVE":153,"TICKS":7478,"begin":11183,"finish":711} slices=[3501,3570,3667]
+T8 D5 {"frames":{"max_us":1895,"min_us":60,"p50_us":506,"p95_us":1132,"samples":166},"level":5,"load_us":24216,"preview_cpu":{"max_us":21836,"min_us":13580,"p50_us":18823,"p95_us":21836,"samples":5},"preview_latency":{"max_us":86977,"min_us":51382,"p50_us":71137,"p95_us":86977,"samples":5}}
+T8 summary {"display":"macOS","frames":{"max_us":3470,"min_us":42,"p50_us":377,"p95_us":1255,"samples":532},"preview_cpu":{"max_us":21836,"min_us":13470,"p50_us":18823,"p95_us":21836,"samples":8},"preview_latency":{"max_us":86977,"min_us":51382,"p50_us":69121,"p95_us":86977,"samples":8},"rooms":[{"frames":{"max_us":3470,"min_us":42,"p50_us":252,"p95_us":968,"samples":53},"level":1,"load_us":11025,"preview_cpu":{"max_us":0,"samples":0},"preview_latency":{"max_us":0,"samples":0}},{"frames":{"max_us":1219,"min_us":43,"p50_us":310,"p95_us":685,"samples":117},"level":2,"load_us":21933,"preview_cpu":{"max_us":14200,"min_us":13470,"p50_us":14200,"p95_us":14200,"samples":2},"preview_latency":{"max_us":63445,"min_us":52042,"p50_us":63445,"p95_us":63445,"samples":2}},{"frames":{"max_us":2532,"min_us":71,"p50_us":364,"p95_us":2122,"samples":106},"level":3,"load_us":24836,"preview_cpu":{"max_us":0,"samples":0},"preview_latency":{"max_us":0,"samples":0}},{"frames":{"max_us":1361,"min_us":71,"p50_us":397,"p95_us":1097,"samples":90},"level":4,"load_us":22289,"preview_cpu":{"max_us":20667,"min_us":20667,"p50_us":20667,"p95_us":20667,"samples":1},"preview_latency":{"max_us":51932,"min_us":51932,"p50_us":51932,"p95_us":51932,"samples":1}},{"frames":{"max_us":1895,"min_us":60,"p50_us":506,"p95_us":1132,"samples":166},"level":5,"load_us":24216,"preview_cpu":{"max_us":21836,"min_us":13580,"p50_us":18823,"p95_us":21836,"samples":5},"preview_latency":{"max_us":86977,"min_us":51382,"p50_us":71137,"p95_us":86977,"samples":5}}],"scope":"Settlement CPU: Game physics + SDK upload + BoardView draw, max 4 real-world ticks per frame (opening 1), 1.5ms soft SDK-step budget, separate material-read/32-tile-count/resolve/key frames; previews drain the same phases in a 3.5ms soft work budget. Preview CPU includes snapshot I/O and result diff; latency measured from pointer target to completed rendered overlay, with vsync. Load/shader initialization reported separately. GPU raster and OS compositor excluded from CPU frame metric.","workers":1}
+Performance: 0 failures

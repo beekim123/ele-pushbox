@@ -42,7 +42,7 @@ func run() -> void:
 	game.select_level(1)
 	await idle(game)
 	var event := InputEventMouseMotion.new()
-	event.position = Vector2(game.session.board.player + Vector2i.LEFT) * 16 + Vector2(8,8)
+	event.position = game.view.to_global(Vector2(game.session.board.player + Vector2i.LEFT) * 16 + Vector2(8,8))
 	game._input(event)
 	await process_frame
 	await process_frame

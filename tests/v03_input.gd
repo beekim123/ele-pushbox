@@ -40,7 +40,7 @@ func click(at: Vector2, button: int = MOUSE_BUTTON_LEFT, pressed: bool = true) -
 
 func point(game: Node, relative: Vector2i) -> Vector2:
 	var size: float = float(game.session.world.cell_scale) * 16
-	return game.BOARD_POSITION + Vector2(game.session.board.player + relative) * size + Vector2.ONE * size / 2
+	return game.view.to_global(Vector2(game.session.board.player + relative) * size + Vector2.ONE * size / 2)
 
 func idle(game: Node) -> void:
 	for _i in 600:

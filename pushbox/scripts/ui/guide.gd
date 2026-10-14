@@ -12,6 +12,7 @@ var elapsed: float = 0.0
 var shown_for: float = 0.0
 var hint_action: String = ""
 var hint_left: float = 0.0
+var hand_start := Vector2(294, 18)
 
 func configure(source: RefCounted, data: Dictionary, learned_progress: Dictionary) -> void:
 	board = source
@@ -114,7 +115,7 @@ func _instruction(item: Dictionary) -> void:
 		Style.text(self, item.get("text", ""), at + Vector2(offset,11), Style.YELLOW)
 	elif item.has("hand"):
 		var t: float = fmod(shown_for, 1.0)
-		var at: Vector2 = Vector2(294,18).lerp(Vector2(246,51), t)
+		var at: Vector2 = hand_start.lerp(Vector2(246,51), t)
 		draw_texture(Style.texture("icon_bomb"), at.round())
 		draw_texture(Style.texture("hand_drag"), (at + Vector2(3,7)).round())
 

@@ -32,6 +32,7 @@ if not version.startswith('4.7.2.'):
 log_dir = ROOT/'artifacts/v03/logs'
 log_dir.mkdir(parents=True, exist_ok=True)
 tests = [('m0', 'PASS M0:'), ('board', 'Board tests: 0 failures'), ('m1', 'M1: 0 failures'), ('edge_cases', 'checks, 0 failures'), ('acceptance', 'checks, 0 failures'), ('session_scheduling', 'checks, 0 failures'), ('ui', 'UI: 0 failures'), ('ui_interaction', 'v03 input: 17 checks, 0 failures'), ('ui_failure', 'checks, 0 failures'), ('inspect_levels', 'Inspection: 0 errors'), ('guides', 'checks, 0 failures'), ('v03_presentation', 'checks, 0 failures'), ('v03_render', 'checks, 0 failures')]
+tests.append(('bugfix', 'checks, 0 failures'))
 if args.performance:
     tests.append(('performance', 'Performance: 0 failures'))
 if args.only:
@@ -55,7 +56,7 @@ test_user_dir = Path.home()/'Library/Application Support'/custom_user_dir
 try:
     for name, marker in tests:
         command = [godot, '--single-threaded-scene', '--max-fps', '60', '--path', str(test_root), '--script', f'tests/{name}.gd', '--quit-after', '1800']
-        if name not in ['performance', 'v03_presentation', 'v03_render']:
+        if name not in ['performance', 'v03_presentation', 'v03_render', 'bugfix']:
             command.insert(1, '--headless')
         start = time.monotonic()
         try:

@@ -29,6 +29,7 @@ var _flash_frames: int = 0
 var _shake_frames: int = 0
 var entrance: float = 0.0
 var exit_fade: float = 0.0
+var inventory_anchor := Vector2(310, 11)
 
 func set_outlines(value: bool) -> void:
 	outlines = value
@@ -123,7 +124,11 @@ func sync(animated: bool = false) -> void:
 
 func _point(key: String) -> Vector2:
 	var target: Vector2 = _to.get(key, Vector2.ZERO)
-	return ((_from.get(key, target) as Vector2).lerp(target, fraction)).round()
+	var start: Vector2 = _from.get(key, target)
+	if key == "player" and absf(target.x - start.x) == SIZE and start.y - target.y == SIZE:
+		var corner := Vector2(start.x, target.y)
+		return (start.lerp(corner, fraction * 2) if fraction < 0.5 else corner.lerp(target, fraction * 2 - 1)).round()
+	return start.lerp(target, fraction).round()
 
 func _sprite(name: String, at: Vector2, color: Color = Color.WHITE) -> void:
 	draw_texture(Style.texture(name), at.round(), color)
@@ -191,7 +196,7 @@ func _draw() -> void:
 				if _from.get(box.id, _to.get(box.id)) != _to.get(box.id):
 					pose = "push"
 	var miner: Texture2D = Style.texture("miner_%s_%d" % [pose, int(clock * 8) % frame_count])
-	var miner_rect := Rect2(p if _facing == 1 else p + Vector2(16,0), Vector2(16 * _facing,16))
+	var miner_rect := Rect2(p, Vector2(16 * _facing,16))
 	draw_texture_rect(miner, miner_rect, false)
 	if not message.is_empty():
 		var width: float = Style.font().get_string_size(message, HORIZONTAL_ALIGNMENT_LEFT, -1, 12).x
@@ -229,13 +234,13 @@ func _draw() -> void:
 		var age: float = particle.age
 		if particle.fly:
 			var t: float = age / particle.life
-			var at: Vector2 = (particle.at as Vector2).lerp(Vector2(310,11), t) + Vector2(0, -sin(t * PI) * 24)
+			var at: Vector2 = (particle.at as Vector2).lerp(inventory_anchor, t) + Vector2(0, -sin(t * PI) * 24)
 			draw_rect(Rect2(at.round(),Vector2(2,2)), particle.color)
 		else:
 			var at: Vector2 = particle.at + particle.velocity * age + Vector2(0,70 * age * age)
 			draw_rect(Rect2(at.round(), Vector2.ONE), particle.color)
 	if _flash_frames > 0:
-		draw_rect(Rect2(0,0,320,180), Color.WHITE)
+		draw_rect(Rect2(-global_position, get_viewport_rect().size), Color.WHITE)
 	if entrance > 0 or exit_fade > 0:
-		draw_rect(Rect2(0,0,320,180), Color(Style.INK, maxf(entrance, exit_fade)))
+		draw_rect(Rect2(-global_position, get_viewport_rect().size), Color(Style.INK, maxf(entrance, exit_fade)))
 	draw_us = Time.get_ticks_usec() - started
