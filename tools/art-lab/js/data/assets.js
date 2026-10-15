@@ -44,25 +44,25 @@ const ASSET_CATALOG = [
   },
   {
     id: "miner_dig", name: "矿工 · 挥铲挖沙", category: "character", fps: 8, biome: "all",
-    desc: "左键挖掘相邻沙格时的 3 帧挥铁铲动作。",
+    desc: "向右前下方挥铲的 3 帧动作：蓄力、铲入、回收；双手握柄，铲头位于身体前方，左向可镜像。",
     frames: [
       [
-        "................",".....zzzzz......","....zkkkkkzz....","...zkkkkkkklz...",
-        "...zjjjjjjjjz...","....zEEEEzEz....","....zEEEEEEz..zz",".....zFFFFz..zez",
-        "....ziiiiiizzez.","...zEiiiiiizezz.","...zFzhizzzezzz.","....zhhzvvvz....",
-        "....zxxzvuvz....","....zxxzvvzz....","....zffzzzffz...","....zzzz.zzzz..."
+        "................","....zzzzz.......","...zkkkkkzz.....","..zkkkkkkklz....",
+        "..zjjjjjjjjz....","...zEEEEzEz.....","...zEEEEEEz.....","....zFFFFz......",
+        "...ziEEEEz......","...ziFFFfE......","...zhhhhzFfzz...","....zhhhhzzzuvz.",
+        "....zxxxxz.zuvvz","...zxxz.zxxzzvvz","...zffz.zffz.zz.","...zzzz.zzzz...."
       ],
       [
-        "................",".....zzzzz......","....zkkkkkzz....","...zkkkkkkklz...",
-        "...zjjjjjjjjz...","....zEEEEzEz....","....zEEEEEEz....",".....zFFFFz...zz",
-        "....ziiiiiiz.zez","...zEiiiiiiEzez.","...zFzhiihzzezz.","....zhhhzzzez...",
-        "....zxxzvvvz....","....zxxzvuvz....","....zffzvvzfz...","....zzzzzzzzz..."
+        "................","................",".....zzzzz......","....zkkkkkzz....",
+        "...zkkkkkkklz...","...zjjjjjjjjz...","....zEEEEzEz....","....zEEEEEEz....",
+        ".....zFFFFz.....",".....ziiiiiz....","....iEEEiEz.....","....zFFFffEzz...",
+        "....zhhhzzFzuvz.","...zxxxzzxzzuvvz","..zffz..zffzzvvz","..zzzz..zzzz.zz."
       ],
       [
         "................",".....zzzzz......","....zkkkkkzz....","...zkkkkkkklz...",
         "...zjjjjjjjjz...","....zEEEEzEz....","....zEEEEEEz....",".....zFFFFz.....",
-        "....ziiiiiiz..zz","...zEiiiiiiEEzez","...zFzhiihzzzez.","....zhhhhhhzez..",
-        "....zxxxzzzez...","....zxxzvvvz....","....zffzvuvzz...","....zzzzvvzzz..."
+        "....ziiiiiz.....","....iEEEEiz.....","...zhFFFfEzz....","....zhhhzFzuvz..",
+        "....zxxxxzzuvvz.","...zxxz.zxxzvvz.","...zffz.zffzzz..","...zzzz.zzzz...."
       ]
     ]
   },
