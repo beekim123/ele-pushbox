@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pushbox · 美术工作台</title>
+  <script id="appearance-script" src="js/appearance.js"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="app-header" id="appHeader">
+    <div class="brand">
+      <svg class="brand-mark" viewBox="0 0 30 30" aria-hidden="true">
+        <path d="M3 8 15 2l12 6v14l-12 6-12-6Z M3 8l12 6 12-6 M15 14v14 M9 5l12 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+      </svg>
+      <div>
+        <div class="brand-name">
+          PUSHBOX
+          <span class="brand-section">
+            / 美术工作台
+          </span>
+        </div>
+        <span class="brand-caption">
+          沙与水 · 素材、场景与界面预演
+        </span>
+      </div>
+    </div>
+    <label class="search-field">
+      <svg class="icon" viewBox="0 0 20 20" aria-hidden="true">
+        <circle cx="8.5" cy="8.5" r="5.5"/>
+        <path d="m13 13 4 4"/>
+      </svg>
+      <input type="search" id="searchInput" class="search-input" aria-label="搜索素材" placeholder="搜索名称、ID 或说明">
+    </label>
+    <div class="header-actions">
+      <label class="theme-control">
+        <span>
+          外观
+        </span>
+        <select id="themeSelect" aria-label="页面外观主题">
+          <option value="system">
+            跟随系统
+          </option>
+          <option value="light">
+            浅色
+          </option>
+          <option value="dark">
+            深色
+          </option>
+        </select>
+      </label>
+      <button class="btn-outline inspector-toggle" id="inspectorToggle" aria-controls="inspectorPanel" aria-expanded="false" data-inspector="open">
+        检视器
+      </button>
+    </div>
+  </header>
+  <div class="viewer-body">
+    <aside class="category-nav" id="categoryNav" aria-label="素材筛选">
+      <div class="nav-group-label">
+        资源库
+      </div>
+      <nav class="category-links" aria-label="素材分类">
+        <button class="cat-btn active" data-cat="all" aria-pressed="true">
+          <span>
+            全部素材
+          </span>
+          <span class="cat-count" id="cnt-all">
+            0
+          </span>
+        </button>
+        <button class="cat-btn" data-cat="character" aria-pressed="false">
+          <span>
+            角色
+          </span>
+          <span class="cat-count" id="cnt-character">
+            0
+          </span>
+        </button>
+        <button class="cat-btn" data-cat="monster" aria-pressed="false">
+          <span>
+            动物与怪物
+          </span>
+          <span class="cat-count" id="cnt-monster">
+            0
+          </span>
+        </button>
+        <button class="cat-btn" data-cat="prop" aria-pressed="false">
+          <span>
+            道具与箱体
+          </span>
+          <span class="cat-count" id="cnt-prop">
+            0
+          </span>
+        </button>
+        <button class="cat-btn" data-cat="plant_mech" aria-pressed="false">
+          <span>
+            植物与机关
+          </span>
+          <span class="cat-count" id="cnt-plant_mech">
+            0
+          </span>
+        </button>
+        <button class="cat-btn" data-cat="terrain" aria-pressed="false">
+          <span>
+            地形与流体
+          </span>
+          <span class="cat-count" id="cnt-terrain">
+            0
+          </span>
+        </button>
+        <button class="cat-btn" data-cat="ui" aria-pressed="false">
+          <span>
+            界面与图标
+          </span>
+          <span class="cat-count" id="cnt-ui">
+            0
+          </span>
+        </button>
+        <button class="cat-btn" data-cat="map" aria-pressed="false">
+          <span>
+            地图全景
+          </span>
+          <span class="cat-count" id="cnt-map">
+            0
+          </span>
+        </button>
+      </nav>
+      <details class="biome-filter-group" open>
+        <summary>
+          场景主题
+        </summary>
+        <div class="biome-filter-list" id="biomeFilterList" role="group" aria-label="场景主题筛选">
+          <button class="biome-chip active" data-biome="all" aria-pressed="true">
+            <span class="color-dot">
+            </span>
+            全部主题
+          </button>
+          <button class="biome-chip" data-biome="dungeon" aria-pressed="false">
+            <span class="color-dot">
+            </span>
+            幽暗石牢
+          </button>
+          <button class="biome-chip" data-biome="forest" aria-pressed="false">
+            <span class="color-dot">
+            </span>
+            迷雾古森
+          </button>
+          <button class="biome-chip" data-biome="ruins" aria-pressed="false">
+            <span class="color-dot">
+            </span>
+            黄金神庙
+          </button>
+          <button class="biome-chip" data-biome="cave" aria-pressed="false">
+            <span class="color-dot">
+            </span>
+            幽光晶窟
+          </button>
+          <button class="biome-chip" data-biome="sky_island" aria-pressed="false">
+            <span class="color-dot">
+            </span>
+            云端圣域
+          </button>
+          <button class="biome-chip" data-biome="cosmos" aria-pressed="false">
+            <span class="color-dot">
+            </span>
+            深空星站
+          </button>
+        </div>
+      </details>
+      <p class="nav-footnote">
+        ENDESGA 32
+        <br>
+        原生像素 · 整数缩放
+      </p>
+    </aside>
+    <main class="gallery-main" id="galleryMain">
+      <div class="gallery-toolbar">
+        <div class="collection-heading">
+          <h1 id="galleryTitle">
+            全部素材
+          </h1>
+          <span class="result-count" id="galleryCount" role="status" aria-live="polite">
+          </span>
+        </div>
+        <div class="preview-controls">
+          <div class="control-group">
+            <span class="control-label">
+              底色
+            </span>
+            <div class="control-pill-group" role="group" aria-label="预览底色">
+              <button class="control-pill active" aria-pressed="true" data-stage-bg="bg-checker">
+                透明
+              </button>
+              <button class="control-pill" aria-pressed="false" data-stage-bg="bg-dark">
+                深色
+              </button>
+              <button class="control-pill" aria-pressed="false" data-stage-bg="bg-light">
+                灰色
+              </button>
+            </div>
+          </div>
+          <div class="control-group">
+            <span class="control-label">
+              精灵
+            </span>
+            <div class="control-pill-group" role="group" aria-label="精灵预览倍率">
+              <button class="control-pill" aria-pressed="false" data-scale="3">
+                3×
+              </button>
+              <button class="control-pill active" aria-pressed="true" data-scale="4">
+                4×
+              </button>
+              <button class="control-pill" aria-pressed="false" data-scale="6">
+                6×
+              </button>
+            </div>
+          </div>
+          <button class="btn-outline play-control" id="playPauseBtn" aria-pressed="true">
+            暂停动画
+          </button>
+        </div>
+      </div>
+      <div class="gallery-content" id="galleryContainer" aria-label="素材预览列表">
+      </div>
+    </main>
+    <aside class="inspector-panel" id="inspectorPanel" aria-label="素材检视器">
+      <div class="inspector-topline">
+        <span>
+          素材检视器
+        </span>
+        <button class="btn-outline inspector-close" id="closeInspectorBtn" data-inspector="close">
+          关闭
+        </button>
+      </div>
+      <div class="inspector-header">
+        <h3 id="inspTitle">
+          选择素材
+        </h3>
+        <div class="mono-id" id="inspId">
+          asset_id
+        </div>
+      </div>
+      <div>
+        <div class="inspector-preview-box bg-checker" id="inspStageBox">
+          <canvas id="inspCanvas" class="pixel-canvas" width="128" height="128" aria-label="所选素材像素预览" title="暂停动画后，选择色板并点击像素修改">
+          </canvas>
+        </div>
+        <p class="inspector-hint" id="inspHintText">
+          暂停动画后，可选择色板并点击像素修改。
+        </p>
+      </div>
+      <section id="frameSection">
+        <h2 class="section-label">
+          动画帧
+        </h2>
+        <div class="frame-strip" id="inspFrameStrip">
+        </div>
+      </section>
+      <section id="paletteSection">
+        <div class="section-label">
+          <h2>
+            像素色板
+          </h2>
+          <button class="text-button" id="resetAssetBtn">
+            还原
+          </button>
+        </div>
+        <div class="palette-bar" id="inspPaletteBar" role="group" aria-label="ENDESGA 32 像素画笔">
+        </div>
+      </section>
+      <section>
+        <h2 class="section-label">
+          素材信息
+        </h2>
+        <table class="spec-table">
+          <tr>
+            <td>
+              分类
+            </td>
+            <td id="specCat">
+              —
+            </td>
+          </tr>
+          <tr>
+            <td>
+              场景主题
+            </td>
+            <td id="specBiome">
+              —
+            </td>
+          </tr>
+          <tr>
+            <td>
+              原生尺寸
+            </td>
+            <td id="specSize">
+              —
+            </td>
+          </tr>
+          <tr>
+            <td>
+              动画
+            </td>
+            <td id="specFps">
+              —
+            </td>
+          </tr>
+        </table>
+        <p class="inspector-description" id="specDesc">
+        </p>
+      </section>
+      <div class="export-section">
+        <details class="code-disclosure">
+          <summary>
+            查看像素矩阵与配置
+          </summary>
+          <textarea id="inspCodeBox" class="code-snippet" aria-label="所选素材数据" readonly>
+          </textarea>
+        </details>
+        <button class="btn-primary" id="copyAssetBtn">
+          复制资产数据
+        </button>
+        <p class="copy-status" id="copyStatus" role="status" aria-live="polite">
+        </p>
+      </div>
+    </aside>
+  </div>
+  <button class="inspector-scrim" id="inspectorScrim" aria-label="关闭素材检视器" data-inspector="close" tabindex="-1" hidden>
+  </button>
+
+  <script id="workspace-script" src="js/workspace.js"></script>
+  <script id="palette-script" src="js/data/palette.js"></script>
+  <script id="assets-script" src="js/data/assets.js"></script>
+  <script id="biomes-script" src="js/data/biomes.js"></script>
+  <script id="state-script" src="js/state.js"></script>
+  <script id="gallery-script" src="js/gallery.js"></script>
+  <script id="renderers-script" src="js/renderers.js"></script>
+  <script id="inspector-script" src="js/inspector.js"></script>
+  <script id="controls-script" src="js/controls.js"></script>
+  <script id="app-script" src="js/app.js"></script>
+</body>
+</html>
