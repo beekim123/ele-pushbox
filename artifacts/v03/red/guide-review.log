@@ -1,6 +1,0 @@
-Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
-
-FAIL successful action clears obsolete hint demonstration
-FAIL loader rejects malformed player_at guide before runtime
-FAIL loader rejects misspelled guide completion event
-Guides: 21 checks, 3 failures

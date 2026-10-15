@@ -1,5 +1,0 @@
-Traceback (most recent call last):
-  File "/Users/key_/Desktop/CURRGO/pushbox-demo/tools/package_macos.py", line 63, in <module>
-    assert summary.get('inputs_unchanged') and digest(snapshot) == summary['test_input_snapshot_sha256'], 'full-run source snapshot missing or changed'
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-AssertionError: full-run source snapshot missing or changed

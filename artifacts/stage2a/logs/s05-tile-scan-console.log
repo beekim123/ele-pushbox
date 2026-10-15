@@ -1,9 +1,0 @@
-Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
-OpenGL API 4.1 Metal - 89.4 - Compatibility - Using Device: Apple - Apple M3
-
-TEST USER DIR: /Users/key_/Library/Application Support/CodexPushboxTests/codex-pushbox-test-u79pa6dq
-BEGIN T8 S_05
-LOADED T8 S_05
-T8 S_05 samples=243 max_us=2248
-Campaign T8: 243 frames, max_us=2248, 0 failures
-Executed 1/1 test scripts; passed=True; T2 threads 4/8 NOT RUN.

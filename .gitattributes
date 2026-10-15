@@ -2,15 +2,12 @@
 *.gd text eol=lf
 *.gdshader text eol=lf
 *.py text eol=lf
+*.mjs text eol=lf
+*.js text eol=lf
 *.sh text eol=lf
-*.command text eol=lf
 *.md text eol=lf
 *.json text eol=lf
 *.png binary
 *.woff2 binary
 *.dylib binary
-*.gz binary
-
-# Preserve original diagnostic output and third-party license text.
-artifacts/** -whitespace
-pushbox/assets/fonts/LICENSES/cubic-11/OFL.txt -whitespace
+third_party/** -whitespace

@@ -1,48 +1,17 @@
-# 项目文档导航
+# 文档导航
 
-更新日期：2026-10-15。
+每个主题只有一个有效文档。旧文档在快照 `0fae58c` 中，不作为执行依据。
 
-文档按用途管理：当前设计放在 design，能力与规范放在 reference，旧规格、计划和报告放在 archive。本目录根部只保留这个入口。运行版本、设计草案和历史验证结果分别阅读，不把旧计划中的状态当作当前结论。
-
-## 从这里开始
-
-| 需要了解什么 | 文档 | 使用方式 |
-|---|---|---|
-| 用户目标与最新约束 | [项目目标](design/project-goals.md) | 新要求持续补入，最新用户决定优先 |
-| 新一轮横版关卡与机制 | [关卡重设计草案](design/mode-and-level-design.md) | 唯一新版玩法设计稿；目前是概念草案，未实现 |
-| 当前进度与下一步负责人 | [项目进度与交接](v2/status.md) | 保留固定路径，先看最新交接及最新记录 |
-| SDK 能做什么 | [SDK 能力表](reference/sdk-capability-map.md) | 固定在项目使用的 v1.2.0；不是最新版 SDK 宣传页 |
-| SDK 扩展需求的来历 | [扩展需求参考快照](reference/sdk-extension-requests.md) | 区分已撤销、候选、草案，不自动视为新任务 |
-| 界面与像素美术规则 | [美术规范](reference/ui-art-direction.md) | v0.3 参考规范；与最新用户要求冲突时以后者为准 |
-
-## 专题设计
-
-| 文档 | 范围 |
+| 文档 | 用途 |
 |---|---|
-| [美术架构与主题](design/art-architecture-and-biome-design.md) | 美术模块、主题、素材组织；旧关卡数量不约束新版 |
-| [美术与 UI 专项方案](design/art-and-ui-polish-plan.md) | 既有专项工作的设计依据；完成情况看进度看板 |
-| [Art Lab 工作台设计](design/html-art-lab-design.md) | 工作台设计；当前操作说明见 [Art Lab README](../tools/art-lab/README.md) |
+| [status.md](status.md) | 当前阶段、已验证的内容、下一步与负责人 |
+| [design/game-design.md](design/game-design.md) | **唯一有效的玩法设计**：规则、章节、关卡、系统、界面 |
+| [design/art-direction.md](design/art-direction.md) | 美术规范 |
+| [design/art-pipeline.md](design/art-pipeline.md) | 美术源数据、版本、确认、导出与 Godot 交付 |
+| [audit/2026-10-15-design-audit.md](audit/2026-10-15-design-audit.md) | 本轮审核发现与决定 |
+| [reference/sdk-v1.2-verified.md](reference/sdk-v1.2-verified.md) | 逐条核对源码的 SDK 事实 |
+| [handoff/gpt-refactor-prompt.md](handoff/gpt-refactor-prompt.md) | 交给开发方（GPT）的完整重构提示词 |
 
-旧版本、执行计划与测量资料从 [历史文档索引](archive/README.md) 查找；移动前的路径可在其中的迁移表定位。
+关卡规格在 `content/levels/`，美术数据在 `art/`。
 
-## 目录职责
-
-| 目录或固定文件 | 内容 | 新文件放置规则 |
-|---|---|---|
-| design/ | 当前需求、玩法和专题设计 | 优先更新已有主题文档；同一玩法方案不重复开稿 |
-| reference/ | SDK 能力、规范与来源快照 | 写清版本、来源与适用范围 |
-| archive/v0.2/、archive/v0.3/ | 历史规格、报告、冲突记录 | 保留历史结论，不当作当前设计要求 |
-| archive/plans/ | 已执行或被新方案替代的计划 | 文件名保留日期，标清历史身份 |
-| archive/measurements/ | 旧 SDK 测量说明与参考源码 | 源码互相依赖的文件一起保管，不视为现役构建工具 |
-| assets/ui-mockups/ | 文档引用的六张历史样稿 | 只放文档附件；游戏资源仍在 pushbox/assets/ |
-| v2/status.md | 当前进度看板 | 交接规则指定的稳定路径，不随版本名迁移 |
-| v3/baseline.json | 历史基线数据 | 校验工具读取的稳定路径，不能随意移动或改写 |
-
-## 维护约定
-
-1. 根目录不新增散放的设计稿、报告、脚本或素材。先按用途选择目录，并更新本导航或历史索引。
-2. 当前横版关卡方案只更新 design/mode-and-level-design.md；目标与进度文档记录决策和交接，不复制一整份方案。
-3. 新文档使用含义清楚的小写连字符文件名；只有时间本身有意义的计划、报告才加日期，不再为工具名新建 superpowers 等目录。
-4. 移动 Markdown 时同时修复相对链接；新增本地引用须在仓库中可解析，或明确说明是仓库外历史资料。
-5. 不改写 artifacts 中旧清单、哈希、日志、截图和安装包来迎合新目录。旧证据中的路径表示当时快照，当前位置看迁移表。
-6. 归档不等于删除；目录整理不改变用户验收、技术验证、性能门禁或发布状态。
+维护约定：修改玩法只改 `game-design.md` 并写更新记录；进度只写在 `status.md`；不新建平行方案。

@@ -1,8 +1,0 @@
-{
-  "status": "incomplete_not_passed",
-  "completed_levels": 29,
-  "requested_levels": 36,
-  "last_completed": "S_05",
-  "reason": "whole process timeout after S_05; stderr retention and 900-frame idle guard added; S_06 isolated retest passed at 2605 us",
-  "evidence": "tool output from exec session 28450; not represented as full-suite success"
-}

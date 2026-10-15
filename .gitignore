@@ -1,29 +1,13 @@
 .DS_Store
 .godot/
-vendor/
 __pycache__/
 *.py[cod]
 *.uid
 .env
 .env.*
-!.env.example
-
-# Keep the small, licensed macOS arm64 runtime shipped with this demo.
+node_modules/
+# Local scratch output of the art tools (reviewable exports live in art/export/).
+/art/.tmp/
+# Keep the licensed macOS arm64 SDK runtime only.
 *.dylib
-!/bin/libele_godot.dylib
-
-# Archives and local build output stay on the workstation.
-/artifacts/*.zip
-/artifacts/snapshots/
-/artifacts/macos-stage1/*.app/
-/artifacts/macos-stage1/*.dmg
-/artifacts/logs/sdk-build.log
-/artifacts/logs/environment.json
-/artifacts/logs/package-check-path.txt
-/artifacts/v03/test-created-guide-progress.json
-
-/artifacts/macos-stage2a/*.app/
-/artifacts/macos-stage2a/*.dmg
-
-/artifacts/macos-art-ui-polish/*.app/
-/artifacts/macos-art-ui-polish/*.dmg
+!/third_party/ele-sdk/libele_godot.dylib

@@ -1,5 +1,0 @@
-Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
-
-UNDO_DIAGNOSTIC before={"bag":{"sand":0},"bombs":0,"boxes":[{"at":[8,5],"id":"A","kind":"wood"}],"gate_crushed":{},"gates":[],"levers":[],"moves":0,"player":[6,7],"trapped":false} after={"bag":{"sand":0.0},"bombs":0,"boxes":[{"at":[8,5],"id":"A","kind":"wood"}],"gate_crushed":{},"gates":[],"levers":[],"moves":0,"player":[6,7],"trapped":false} hashes=1579cc57a9081318/1579cc57a9081318 errors=[]
-FAIL undo can interrupt settlement/tween
-UI interaction: 16 checks, 1 failures

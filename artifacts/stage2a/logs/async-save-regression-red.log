@@ -1,6 +1,0 @@
-Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
-
-FAIL progress write can use the existing single worker
-Campaign progression: 101 checks, 1 failures
-TEST USER DIR: /Users/key_/Library/Application Support/CodexPushboxTests/codex-pushbox-test-24b6khea
-Executed 1/1 test scripts; passed=False; T2 threads 4/8 NOT RUN.

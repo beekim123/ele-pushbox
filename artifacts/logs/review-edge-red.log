@@ -1,8 +1,0 @@
-Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
-
-FAIL rules_override changes crumble tag
-FAIL rules_override changes dig tag
-FAIL snapshot failure aborts action
-FAIL snapshot failure leaves game and world unchanged
-FAIL capped resolution commits final batch consistently
-Edge cases: 35 checks, 5 failures

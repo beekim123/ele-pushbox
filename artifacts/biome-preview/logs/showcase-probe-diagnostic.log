@@ -1,7 +1,0 @@
-Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
-OpenGL API 4.1 Metal - 89.4 - Compatibility - Using Device: Apple - Apple M3
-
-Sulfur probe actual=(0.2431, 0.1529, 0.1922, 1.0) expected=(0.9961, 0.9059, 0.3804, 1.0) uniform=(0.243137, 0.152941, 0.192157, 1.0)
-FAIL cave crack is bright sulfur
-Biome showcase: 344 checks, 1 failures
-Executed 1/1 test scripts; passed=False; T2 threads 4/8 NOT RUN.

@@ -1,0 +1,157 @@
+{
+  "note": "Design-model check only (tools/check-levels.mjs). Not SDK verification.",
+  "levels": [
+    {
+      "id": "M01",
+      "file": "content/levels/ch1-mine/M01.json",
+      "title": "一推到位",
+      "author_steps": 4,
+      "author_ok": true,
+      "shortest": 4,
+      "shortest_solution": [
+        "R",
+        "R",
+        "R",
+        "R"
+      ],
+      "explored": 11,
+      "reachable_states": 26,
+      "dead_end_states": 8,
+      "warnings": []
+    },
+    {
+      "id": "M02",
+      "file": "content/levels/ch1-mine/M02.json",
+      "title": "绕到另一边",
+      "author_steps": 12,
+      "author_ok": true,
+      "shortest": 12,
+      "shortest_solution": [
+        "L",
+        "U",
+        "U",
+        "R",
+        "R",
+        "R",
+        "R",
+        "R",
+        "R",
+        "L",
+        "L",
+        "L"
+      ],
+      "explored": 38,
+      "reachable_states": 61,
+      "dead_end_states": 26,
+      "warnings": []
+    },
+    {
+      "id": "M03",
+      "file": "content/levels/ch1-mine/M03.json",
+      "title": "挖开一格",
+      "author_steps": 5,
+      "author_ok": true,
+      "shortest": 5,
+      "shortest_solution": [
+        "DIG_R",
+        "R",
+        "R",
+        "R",
+        "R"
+      ],
+      "explored": 37,
+      "reachable_states": 2413,
+      "dead_end_states": 708,
+      "warnings": []
+    },
+    {
+      "id": "M04",
+      "file": "content/levels/ch1-mine/M04.json",
+      "title": "一袋沙做台阶",
+      "author_steps": 6,
+      "author_ok": true,
+      "shortest": 6,
+      "shortest_solution": [
+        "R",
+        "R",
+        "POUR_R",
+        "R",
+        "R",
+        "R"
+      ],
+      "explored": 32,
+      "reachable_states": 33,
+      "dead_end_states": 0,
+      "warnings": []
+    },
+    {
+      "id": "M05",
+      "file": "content/levels/ch1-mine/M05.json",
+      "title": "箱子替我站",
+      "author_steps": 8,
+      "author_ok": true,
+      "shortest": 8,
+      "shortest_solution": [
+        "R",
+        "R",
+        "R",
+        "R",
+        "R",
+        "R",
+        "R",
+        "R"
+      ],
+      "explored": 17,
+      "reachable_states": 17,
+      "dead_end_states": 0,
+      "warnings": []
+    },
+    {
+      "id": "M06",
+      "file": "content/levels/ch1-mine/M06.json",
+      "title": "沙与箱各有用",
+      "author_steps": 10,
+      "author_ok": true,
+      "shortest": 10,
+      "shortest_solution": [
+        "DIG_L",
+        "R",
+        "R",
+        "R",
+        "R",
+        "R",
+        "R",
+        "POUR_R",
+        "R",
+        "R"
+      ],
+      "explored": 240,
+      "reachable_states": 1819,
+      "dead_end_states": 213,
+      "warnings": []
+    },
+    {
+      "id": "M07",
+      "file": "content/levels/ch1-mine/M07.json",
+      "title": "挖掉支撑",
+      "author_steps": 9,
+      "author_ok": true,
+      "shortest": 9,
+      "shortest_solution": [
+        "R",
+        "DIG_R",
+        "R",
+        "R",
+        "R",
+        "R",
+        "R",
+        "R",
+        "R"
+      ],
+      "explored": 85,
+      "reachable_states": 216,
+      "dead_end_states": 0,
+      "warnings": []
+    }
+  ]
+}
