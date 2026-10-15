@@ -21,7 +21,7 @@
   "ui.menu_icons",
   "ui.panel"
  ],
- "version": 2,
+ "version": 3,
  "stage": "review",
  "size": [
   320,
@@ -76,5 +76,5 @@
  },
  "usage": "设置项全部可用方向键调整。",
  "notes": "布局参考：文字来自 content/i18n，容器按文字宽度伸缩；Godot 用 Control 容器实现，不按像素硬编码文字位置。",
- "content_hash": "07b657b8eddb9897df8ed0ec3d07f7f5b7e8cf21818663215737c88d94d1589f"
+ "content_hash": "651e3d4879fe06c572e4ee216a23b4fd9e42338146f11f962b440f32cff39198"
 }

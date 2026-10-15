@@ -14,7 +14,7 @@
   {
    "id": "delivery",
    "name": "配送模式",
-   "summary": "游戏的核心：双滚轮定货物和收件人，网格实时穿越多个房间，推怪压怪，驿站购物，连送。",
+   "summary": "游戏的核心：双滚轮定货物和收件人，按格移动、世界实时运转，穿越多个房间，推怪压怪，驿站购物，连送。",
    "status": "design",
    "doc": "docs/design/mode-delivery.md",
    "order": 2

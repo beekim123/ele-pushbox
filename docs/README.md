@@ -5,20 +5,21 @@
 | 文档 | 用途 |
 |---|---|
 | [status.md](status.md) | 当前阶段、已验证的内容、下一步与负责人 |
-| [design/vision.md](design/vision.md) | **总纲**：PORTITOR 与万界渡口、三个模式、内容分层、路线图、待决定事项 |
-| [design/worlds.md](design/worlds.md) | 渡口与各个地区（世界）、地区专属机制 |
+| [design/vision.md](design/vision.md) | **总纲**：渡界人 · PORTITOR 与万界渡口、三个模式、内容分层、路线图、已定事项 |
+| [design/worlds.md](design/worlds.md) | 渡口与各个地区（世界）：取材于世界各地文化的原则、地府·酆都、地区专属机制 |
 | [design/characters.md](design/characters.md) | 主角设计、收件人、渡口居民 |
 | [design/game-design.md](design/game-design.md) | **玩法规则与关卡模式**：格子规则、材料、机关、系统、界面、关卡模式的组与关卡 |
 | [design/mode-hell.md](design/mode-hell.md) | 地狱模式（设计稿） |
 | [design/mode-delivery.md](design/mode-delivery.md) | **配送模式**（核心内容，设计稿，关卡模式完成后开工） |
 | [design/progression.md](design/progression.md) | 局外养成（设计稿） |
-| [design/naming.md](design/naming.md) | 名称：英文 PORTITOR 已定，中文候选待挑选 |
+| [design/naming.md](design/naming.md) | 名称：《渡界人》· PORTITOR（已定） |
 | [design/workbench.md](design/workbench.md) | 工作台：统一管理美术、机制与关卡，与游戏保持一致 |
 | [design/art-direction.md](design/art-direction.md) | 美术规范 |
 | [design/art-pipeline.md](design/art-pipeline.md) | 美术源数据、版本、确认、导出与 Godot 交付 |
 | [design/asset-inventory.md](design/asset-inventory.md) | 需要的资产、尚缺的资产、旧 42 项的去向 |
 | [audit/2026-10-15-design-audit.md](audit/2026-10-15-design-audit.md) | 本轮审核发现与决定 |
 | [research/2026-10-15-mode-references.md](research/2026-10-15-mode-references.md) | 配送模式、地狱模式、局外养成与名称的调研来源 |
+| [research/2026-10-15-competitors.md](research/2026-10-15-competitors.md) | 市面上有没有类似的游戏、我们的独特之处、要避开的坑 |
 | [reference/sdk-v1.2-verified.md](reference/sdk-v1.2-verified.md) | 逐条核对源码的 SDK 事实 |
 | [handoff/gpt-refactor-prompt.md](handoff/gpt-refactor-prompt.md) | 交给开发方（GPT）的完整重构提示词 |
 

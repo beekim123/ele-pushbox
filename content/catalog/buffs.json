@@ -7,7 +7,7 @@
    "id": "cart",
    "name": "手推车",
    "mode": "delivery",
-   "effect": "大件货物不减速",
+   "effect": "抬大件的移动间隔倍率从 ×2 降到 ×1.4（本局有效）",
    "price": 120,
    "status": "concept"
   },
@@ -15,7 +15,7 @@
    "id": "energy_drink",
    "name": "力气饮料",
    "mode": "delivery",
-   "effect": "接下来两个房间大件货物不减速",
+   "effect": "接下来两个房间：抬大件的移动间隔倍率从 ×2 降到 ×1.4",
    "price": 40,
    "status": "concept"
   },
@@ -63,7 +63,7 @@
    "id": "running_shoes",
    "name": "跑鞋",
    "mode": "delivery",
-   "effect": "移动速度 +10%（与属性分开计算，总加成仍有上限）",
+   "effect": "移动间隔 −10%（与属性分开计算，所有加成合计最多缩短 35%）",
    "price": 80,
    "status": "concept"
   },

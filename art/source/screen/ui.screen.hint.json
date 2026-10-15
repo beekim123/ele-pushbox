@@ -21,7 +21,7 @@
   "ui.menu_icons",
   "ui.panel"
  ],
- "version": 2,
+ "version": 3,
  "stage": "review",
  "size": [
   320,
@@ -34,5 +34,5 @@
  },
  "usage": "按 H 逐级展开三层提示；第三层提供演示与回到正确位置。",
  "notes": "布局参考：文字来自 content/i18n，容器按文字宽度伸缩；Godot 用 Control 容器实现，不按像素硬编码文字位置。",
- "content_hash": "c30a799af4eb60952ba97232575cd0ee7d4d39ed29b8c13b453bdf68fc6eaa42"
+ "content_hash": "315bd54e858adfd9cddc9a892443a2f7dc3b7ba92612facae338b19a9ff319c1"
 }

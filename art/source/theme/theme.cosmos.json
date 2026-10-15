@@ -13,7 +13,7 @@
   "deco.cosmos_sprout",
   "fauna.cosmos_drone"
  ],
- "version": 1,
+ "version": 2,
  "stage": "review",
  "size": [
   320,
@@ -117,5 +117,5 @@
  },
  "usage": "扩展章的地形、背景与生态。游戏中地形按 workbench/js/core/terrain.js 着色；生态按 ambient.js 的规则摆放。",
  "notes": "金属舱板，顶边黄黑警示条，背景是星空、行星与站体桁架；异星球芽，巡检无人机在远处悬停。",
- "content_hash": "df990dbccaf3405ff7dc8628df7f26440bbdede84095601beeaa4d9e880ca704"
+ "content_hash": "3ac5d299b95abfcf0a6d1c0ec09f654b94aa426ea00e35682623c1651cf15ea1"
 }

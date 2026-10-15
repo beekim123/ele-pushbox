@@ -4,8 +4,8 @@
   "name": "简体中文",
   "note": "界面文字唯一来源。用 {name} 占位，不要拼接句子。"
  },
- "game.title": "箱途",
- "game.tagline": "推、挖、倒，一路走过六个世界",
+ "game.title": "渡界人",
+ "game.tagline": "万物皆可送，诸界皆可渡",
  "menu.continue": "继续",
  "menu.chapters": "选择章节",
  "menu.settings": "设置",

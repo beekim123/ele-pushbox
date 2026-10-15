@@ -493,6 +493,166 @@
    "carry": "medium",
    "layer": 2,
    "status": "concept"
+  },
+  {
+   "id": "qingtuan",
+   "name": "青团",
+   "mode": "delivery",
+   "rule": "清明的点心，放久了会变硬：完好度随时间慢慢下降",
+   "counter": "走短路",
+   "mechanisms": [],
+   "rarity": "common",
+   "carry": "small",
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "paper_house",
+   "name": "纸扎小楼",
+   "mode": "delivery",
+   "rule": "很轻，会浮在水上、被风吹走；碰到火立刻烧光",
+   "counter": "远离火盆和鬼火；起风时用重物压住",
+   "mechanisms": [
+    "paper",
+    "burn",
+    "float_sink"
+   ],
+   "rarity": "rare",
+   "carry": "medium",
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "ink_brush",
+   "name": "文房四宝",
+   "mode": "delivery",
+   "rule": "砚台里有墨：倒着拿（攀爬、下落超过 2 格）会洒墨，完好度 −1",
+   "counter": "走楼梯和升降台，少跳",
+   "mechanisms": [
+    "fall",
+    "ladder"
+   ],
+   "rarity": "common",
+   "carry": "medium",
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "fried_tofu",
+   "name": "油豆腐",
+   "mode": "delivery",
+   "rule": "很香，一路上的狐狸都会来讨",
+   "counter": "用诱饵引开",
+   "mechanisms": [],
+   "rarity": "common",
+   "carry": "small",
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "cucumber",
+   "name": "黄瓜",
+   "mode": "delivery",
+   "rule": "河童闻到就会来抢",
+   "counter": "绕开水边",
+   "mechanisms": [],
+   "rarity": "common",
+   "carry": "small",
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "buckwheat_jelly",
+   "name": "荞麦凉粉",
+   "mode": "delivery",
+   "rule": "软软的，落下超过 1 格就会碎一块",
+   "counter": "慢慢走，带护垫",
+   "mechanisms": [
+    "fall"
+   ],
+   "rarity": "common",
+   "carry": "medium",
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "spice_box",
+   "name": "香料盒",
+   "mode": "delivery",
+   "rule": "打翻了会让你打喷嚏，几秒不能动",
+   "counter": "别摔",
+   "mechanisms": [
+    "fall"
+   ],
+   "rarity": "common",
+   "carry": "small",
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "durian",
+   "name": "榴莲",
+   "mode": "delivery",
+   "rule": "很臭：怪物闻着味道追来，但有的收件人特别爱",
+   "counter": "防水袋能封住味道",
+   "mechanisms": [],
+   "rarity": "rare",
+   "carry": "medium",
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "story_box",
+   "name": "故事匣",
+   "mode": "delivery",
+   "rule": "每进一个新房间，匣子里就冒出一个故事：随机发生一件小事",
+   "counter": "随机应变",
+   "mechanisms": [],
+   "rarity": "legendary",
+   "carry": "small",
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "matryoshka",
+   "name": "套娃",
+   "mode": "delivery",
+   "rule": "摔一次少一层：完好度就是层数（3 层）",
+   "counter": "护垫；少跳",
+   "mechanisms": [
+    "nested_box",
+    "fall"
+   ],
+   "rarity": "rare",
+   "carry": "medium",
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "golden_apple",
+   "name": "金苹果",
+   "mode": "delivery",
+   "rule": "会发光，夜里很显眼，怪物会被吸引",
+   "counter": "照亮黑暗，同时绕开怪物",
+   "mechanisms": [
+    "darkness"
+   ],
+   "rarity": "legendary",
+   "carry": "small",
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "cacao_beans",
+   "name": "可可豆",
+   "mode": "delivery",
+   "rule": "古时当钱用：驿站可以用它付账，但每付一次完好度 −1",
+   "counter": "忍住别花",
+   "mechanisms": [],
+   "rarity": "rare",
+   "carry": "small",
+   "layer": 2,
+   "status": "concept"
   }
  ]
 }

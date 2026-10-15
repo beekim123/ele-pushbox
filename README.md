@@ -1,10 +1,10 @@
-# 箱途 · Cratebound
+# 渡界人 · PORTITOR
 
-> 项目名在 2026-10-15 由「推箱子：沙与水」改为「箱途 / Cratebound」。名字只在 `content/i18n/*.json` 的 `game.title` 中定义；内部标识（如 `pushbox.art/1`）不随名字改变。
+> 游戏名在 2026-10-15 定为《渡界人》/ PORTITOR（此前用过「推箱子：沙与水」「箱途 / Cratebound」）。名字只在 `content/i18n/*.json` 的 `game.title` 中定义；内部标识（如 `pushbox.art/1`）不随名字改变。
 
 横版、侧视、按格移动的推箱解谜。沙、水、气体、火和冰由 [ele-base-cpp](https://github.com/beekim123/ele-base-cpp) v1.2.0 真实模拟。
 
-**当前阶段（2026-10-15）**：英文名 PORTITOR（中文名待定）。游戏分为关卡模式、配送模式（核心）、地狱模式，见[总纲](docs/design/vision.md)；先重构游戏并把现有机制做进关卡模式。主角正在重新设计（候选已在工作台）。Godot 重构按 [交接提示词](docs/handoff/gpt-refactor-prompt.md) 进行，**目前暂停，等用户说开始**。进度见 [docs/status.md](docs/status.md)。
+**当前阶段（2026-10-15）**：游戏分为关卡模式、配送模式（核心）、地狱模式，见[总纲](docs/design/vision.md)；先重构游戏并做关卡模式。主角是万界渡口的渡界人（`char.portitor`，已确认）。Godot 重构按 [交接提示词](docs/handoff/gpt-refactor-prompt.md) 进行，**目前暂停，等用户说开始**。进度见 [docs/status.md](docs/status.md)。
 
 ## 从这里开始
 

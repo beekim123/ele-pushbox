@@ -81,7 +81,7 @@
       if (L.marker[c.y * L.w + c.x] === M.SOCKET) S().draw(r, "mech.socket_lit", "lit", tick, px, py);
     }
     const p = s.player;
-    S().draw(r, "char.miner", o.pose || "idle", tick, ox + p.x * 16 + 8, oy + p.y * 16 + 16, o.facing === "left");
+    S().draw(r, "char.portitor", o.pose || "idle", tick, ox + p.x * 16 + 8, oy + p.y * 16 + 16, o.facing === "left");
     if (PB.matter) PB.matter.drawFx(r, spec, ox, oy, tick);
     if (PB.env) PB.env.draw(r, theme, "front", envCtx);
     if (o.target) {

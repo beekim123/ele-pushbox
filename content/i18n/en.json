@@ -4,8 +4,8 @@
   "name": "English",
   "note": "Single source of UI text. Use {name} placeholders; never concatenate sentences."
  },
- "game.title": "Cratebound",
- "game.tagline": "Push, dig and pour your way across six worlds",
+ "game.title": "PORTITOR",
+ "game.tagline": "Anything, to anyone, across any world",
  "menu.continue": "Continue",
  "menu.chapters": "Chapters",
  "menu.settings": "Settings",

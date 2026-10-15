@@ -184,7 +184,7 @@ function build() {
     const unapproved = uses.filter((id) => { const e = manifest.assets.find((x) => x.id === id); return !e || !e.current_is_approved; });
     refs.push({ name, file: p, sha256: sha(buf), uses, all_approved: unapproved.length === 0, unapproved });
   };
-  const common = ["ui.target", "char.miner", "obj.crate_wood", "obj.crate_iron", "mech.ladder", "mech.socket", "mech.socket_lit", "mech.exit_flag", "mech.plate", "mech.door", "mech.link_symbol", "ui.icons", "ui.goal_lamp", "item.sandbag", "item.bomb"];
+  const common = ["ui.target", "char.portitor", "obj.crate_wood", "obj.crate_iron", "mech.ladder", "mech.socket", "mech.socket_lit", "mech.exit_flag", "mech.plate", "mech.door", "mech.link_symbol", "ui.icons", "ui.goal_lamp", "item.sandbag", "item.bomb"];
   const usesFor = (themeId) => [themeId, ...((byId.get(themeId) || { src: {} }).src.depends || []), ...common];
   for (const t of PB.scene.THEMES) {
     const r = new PB.Raster(320, 180); PB.scene.renderLevel(r, PB.scene.SHOWCASE, null, { tick: 0, theme: t }); writeRef("showcase." + t.slice(6), r, usesFor(t));

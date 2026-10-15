@@ -115,7 +115,7 @@
    "id": "quick_hands",
    "name": "快手",
    "cost": 1,
-   "effect": "挖、倒、放炸药的硬直缩短",
+   "effect": "推、挖、倒、放炸药的动作间隔缩短 25%（不影响走路的移动间隔）",
    "source": "商店",
    "mode": "delivery",
    "status": "concept"

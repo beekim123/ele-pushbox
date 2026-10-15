@@ -15,14 +15,14 @@
   "workbench/js/core/env.js"
  ],
  "depends": [
-  "char.miner",
+  "char.portitor",
   "theme.dungeon",
   "ui.icons",
   "ui.keycap",
   "ui.menu_icons",
   "ui.panel"
  ],
- "version": 2,
+ "version": 3,
  "stage": "review",
  "size": [
   320,
@@ -44,5 +44,5 @@
  },
  "usage": "局内按 Esc 打开；背景为压暗的关卡画面。",
  "notes": "布局参考：文字来自 content/i18n，容器按文字宽度伸缩；Godot 用 Control 容器实现，不按像素硬编码文字位置。",
- "content_hash": "bb57633e90b5ab54fd1b8850dbb71265f3236ca989a926b1ea229e441fe56215"
+ "content_hash": "52a918c2c354c17f88f64718f76421f2ac017c505331cf30e46824dad992031f"
 }

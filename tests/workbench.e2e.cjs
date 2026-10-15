@@ -40,7 +40,7 @@ async function decode(file) {
     ["level M06", "art/export/reference/level.M06.png", "(() => { const r = new PB.Raster(320,180); PB.scene.renderLevel(r, PBStore.level('M06'), null, {tick:0, env:'off'}); return Array.from(r.data); })()"],
     ["chapter 4 showcase", "art/export/reference/chapter.forest.png", "(() => { const r = new PB.Raster(320,180); PB.scene.renderLevel(r, PB.matter.SHOWCASES.forest, null, {tick:0}); return Array.from(r.data); })()"],
     ["chapter 2-5 materials", "art/export/preview/material.chapter2_5.png", "(() => { const r = new PB.Raster(320,180); PB.matter.swatches(r); return Array.from(r.data); })()"],
-    ["miner sheet", "art/export/preview/char.miner.png", "(() => { const a = PBStore.asset('char.miner'); const r = new PB.Raster(a.size[0]*a.frames.length, a.size[1]); a.frames.forEach((f,i)=>r.blitRows(f,i*a.size[0],0,false)); return Array.from(r.data); })()"],
+    ["hero sheet", "art/export/preview/char.portitor.png", "(() => { const a = PBStore.asset('char.portitor'); const r = new PB.Raster(a.size[0]*a.frames.length, a.size[1]); a.frames.forEach((f,i)=>r.blitRows(f,i*a.size[0],0,false)); return Array.from(r.data); })()"],
   ]) {
     const got = await page.evaluate(expr);
     const want = await decode(file);
@@ -57,15 +57,11 @@ async function decode(file) {
   check(mechText.includes("M05") && mechText.includes("M06") && mechText.includes("有规格"), "mechanism page shows its levels and derived status");
   await page.goto(URL + "#overview"); await page.waitForTimeout(200);
   check((await page.locator("#overview-root").textContent()).includes("没有错误或警告"), "overview shows a clean content check");
-
-  // 2c. Protagonist preview swaps the hero only inside the scenes view.
-  await page.goto(URL + "#scenes/showcase.dungeon"); await page.waitForTimeout(250);
-  await page.selectOption('select[aria-label="主角"]', "candidate"); await page.waitForTimeout(150);
-  const swapped = await page.evaluate(() => PB.sprites.get("char.miner").frames[0].join("") === PBStore.asset("char.portitor").frames[0].join(""));
-  check(swapped && await page.locator("#scene-steps .note").isVisible(), "hero preview draws the candidate protagonist and says so");
-  await page.goto(URL + "#assets/char.miner"); await page.waitForTimeout(200);
-  const restored = await page.evaluate(() => PB.sprites.get("char.miner").frames[0].join("") === PBStore.asset("char.miner").frames[0].join(""));
-  check(restored, "leaving the scenes view restores the approved protagonist");
+  await page.goto(URL + "#catalog/worlds"); await page.waitForTimeout(200);
+  const eastAsia = JSON.parse(fs.readFileSync(path.join(REPO, "content/catalog/worlds.json"), "utf8")).entries.filter((w) => w.culture === "东亚").length;
+  await page.selectOption("#catalog-culture", "东亚"); await page.waitForTimeout(150);
+  const rows = await page.locator("#catalog-work table.grid tbody tr").count();
+  check(rows === eastAsia && (await page.locator("#catalog-work").textContent()).includes("地府·酆都"), `region catalog filters by culture sphere (${rows}/${eastAsia} 东亚 rows, 地府 listed)`);
 
   // 3. Hidden stages stop animating; the visible one animates.
   await page.goto(URL + "#scenes/showcase.forest"); await page.waitForTimeout(300);

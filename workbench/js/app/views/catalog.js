@@ -7,12 +7,13 @@
   const KINDS = [["worlds", "地区"], ["recipients", "收件人"], ["cargo", "货物"], ["combos", "缘分组合"], ["monsters", "怪物"], ["items", "道具"], ["buffs", "增益"], ["upgrades", "属性升级"], ["badges", "徽章"], ["events", "随机事件"], ["modes", "模式"]];
   const LABEL = { name: "名称", summary: "说明", rule: "规则", counter: "怎么应对", behavior: "行为", effect: "效果", mechanisms: "机制", assets: "美术", difficulty: "难度", mode: "模式", status: "状态", doc: "文档", order: "顺序",
     style: "风格", theme: "主题资产", layer: "层", worlds: "地区", world: "地区", rarity: "稀有度", temper: "脾气", likes: "喜欢", carry: "拿法", cargo: "货物", recipient: "收件人", reward: "奖励",
-    pushable: "能推", price: "价格", base: "初始", step: "每级", max_level: "级数", max: "最高", price_growth: "涨价", gate: "前置", cost: "点数", source: "来源", setup: "场景", choices: "选择" };
+    pushable: "能推", price: "价格", base: "初始", step: "每级", max_level: "级数", max: "最高", price_growth: "涨价", gate: "前置", cost: "点数", source: "来源", setup: "场景", choices: "选择",
+    culture: "文化圈", inspiration: "取材", care: "注意", origin: "来源地区" };
   const STATUS = { concept: "设计稿", active: "在用", design: "设计稿" };
   const RARITY = { common: "常见", rare: "稀有", legendary: "传说" };
   const CARRY = { small: "小件", medium: "手拿", bulky: "大件", living: "活物" };
   const nameOf = (kind, id) => { const e = store.catalog(kind).find((x) => x.id === id); return e ? e.name : id; };
-  let kind = "worlds";
+  let kind = "worlds", culture = "";
 
   function cell(key, v) {
     if (key === "mechanisms") return el("td", {}, (v || []).map(UI.mechChip));
@@ -37,8 +38,18 @@
     side.append(el("div", { class: "group-title", text: "目录" }));
     for (const [k, name] of KINDS) side.append(el("button", { class: "list-btn", type: "button", "aria-current": String(k === kind), onclick: () => { location.hash = "#catalog/" + k; } }, [el("span", { text: name }), el("span", { class: "small muted", text: String(store.catalog(k).length) })]));
     side.append(el("p", { class: "small muted", text: "机制和关卡计划见「机制」「模式与关卡」页。" }));
-    const entries = store.catalog(kind), name = KINDS.find(([k]) => k === kind)[1];
+    const all = store.catalog(kind), name = KINDS.find(([k]) => k === kind)[1];
     work.append(el("h2", { text: name }), el("p", { class: "small muted", text: store.catalogNote(kind) }), el("p", { class: "mono small muted", text: `content/catalog/${kind}.json` }));
+    // Regions carry a culture sphere (worlds.md 3.1): filter by it.
+    const cultures = [...new Set(all.map((e) => e.culture).filter(Boolean))];
+    if (!cultures.includes(culture)) culture = "";
+    if (cultures.length) {
+      const sel = el("select", { id: "catalog-culture", "aria-label": "文化圈", onchange: (ev) => { culture = ev.target.value; show(); } },
+        [el("option", { value: "", text: `全部文化圈（${all.length}）` })].concat(cultures.map((c) => el("option", { value: c, text: `${c}（${all.filter((e) => e.culture === c).length}）` }))));
+      sel.value = culture;
+      work.append(el("p", { class: "small" }, [el("label", { for: "catalog-culture", text: "文化圈 " }), sel]));
+    }
+    const entries = culture ? all.filter((e) => e.culture === culture) : all;
     const keys = [];
     for (const e of entries) for (const k of Object.keys(e)) if (k !== "id" && !keys.includes(k)) keys.push(k);
     const table = el("table", { class: "grid" });

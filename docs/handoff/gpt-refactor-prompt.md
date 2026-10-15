@@ -1,4 +1,4 @@
-# 交接提示词：重构《箱途 / Cratebound》Godot 游戏本体
+# 交接提示词：重构《渡界人 / PORTITOR》Godot 游戏本体
 
 > **状态：暂停（2026-10-15 用户决定："目前暂时还不要开始做"）。** 已按 GD-3 修订：游戏分为关卡模式、地狱模式、配送模式，本次只做**关卡模式**。用户说开始后，再把「你的任务」到文末交给开发方。美术 75 项全部已由用户确认（`APR-0001`、`APR-0002`，见 `art/approvals.json`）。
 >
@@ -8,7 +8,7 @@
 
 ## 你的任务
 
-你负责重构横版推箱解谜游戏 **PORTITOR**（中文名待用户从 `docs/design/naming.md` 中挑选；代码和界面里暂用现名《箱途 / Cratebound》）的 Godot 本体。主角是万界渡口的摆渡人，什么都送；游戏有三个模式（`docs/design/vision.md`），开发顺序是关卡模式 → 配送模式 → 地狱模式。**本次只做关卡模式**：每关只演示一个机制（SDK 机制或游戏层机制），地图都很简单；它同时是新机制的试验场和 SDK 的回归测试。分两个阶段：
+你负责重构横版推箱解谜游戏《**渡界人**》（英文名 **PORTITOR**，`docs/design/naming.md`）的 Godot 本体。主角是万界渡口的渡界人，什么都送；游戏有三个模式（`docs/design/vision.md`），开发顺序是关卡模式 → 配送模式 → 地狱模式。**本次只做关卡模式**：每关只演示一个机制（SDK 机制或游戏层机制），地图都很简单；它同时是新机制的试验场和 SDK 的回归测试。分两个阶段：
 
 - **阶段一**：按新的设计规格从零建一个干净的 Godot 工程，用真实 SDK 做出**基础组 7 关（M01–M07）+ 全套菜单**的可玩闭环，并自动生成验证报告。
 - **阶段二**：按关卡计划 `content/catalog/groups.json`，逐组细化并实现水、爆破、反应与气体、冷与热四个组（共 20 关），每组交设计审核。
@@ -125,7 +125,7 @@ game/
 
 - 开工先运行：`node tools/art.mjs build && node tools/art.mjs verify`（Node 18+，无依赖），确认输出以 `verify ok` 开头、`build` 没有 `bumped`、`content: 0 error(s)`。之后只读取 `art/export/manifest.json`，每项是否可用看 `approved` 与 `current_is_approved`。
 - 已确认清单（`APR-0001`，全部 v1，界面布局 v2 见 `APR-0002`）：
-  - 角色：`char.miner`（21 帧：待机、走、推、爬、挖、倒、落、胜利）。主角正在重新设计（`char.portitor`，待确认）；确认后会替换，动作名称和帧结构保持不变，所以代码只需要换资产编号。
+  - 角色：主角 `char.portitor`（21 帧：待机、走、推、爬、挖、倒、落、胜利；`APR-0003`）。旧主角 `char.miner` 已不是主角，游戏里不要用它当主角。
   - 物件：`obj.crate_wood`、`obj.crate_iron`
   - 机关：`mech.door`、`mech.plate`、`mech.link_symbol`、`mech.socket`、`mech.socket_lit`、`mech.exit_flag`、`mech.ladder`
   - 物品：`item.sandbag`、`item.bomb`

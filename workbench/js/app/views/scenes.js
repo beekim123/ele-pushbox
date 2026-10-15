@@ -63,16 +63,7 @@
   }
 
   let showIssues = false, envMode = "default";
-  // Protagonist preview: temporarily draw the candidate hero wherever the approved
-  // char.miner is drawn. Only inside this view and only in the browser; exports,
-  // references and the game keep using the approved sprite.
-  let heroPreview = false;
-  const HERO_CANDIDATE = "char.portitor";
-  function applyHero(on) {
-    const cand = store.asset(HERO_CANDIDATE);
-    if (on && cand) PB.sprites.register(Object.assign({}, store.effective(HERO_CANDIDATE), { id: "char.miner" }));
-    else PB.sprites.register(store.effective("char.miner"));
-  }
+
   const LOCALES = [["zh-Hans", "简体中文"], ["en", "English"], ["qps", "伪本地化（长度测试）"]];
   // "default" = the level / theme setting; "lite" = lighting only; "off"; or a weather name.
   function envOpts() {
@@ -196,20 +187,13 @@
     if (![...envSel.options].some((o) => o.value === envMode)) envMode = "default";
     envSel.value = envMode;
     const issueBtn = el("button", { class: "btn", type: "button", "aria-pressed": String(showIssues), text: "标出溢出", title: "用红框标出放不下而被省略的文字", onclick: () => { showIssues = !showIssues; issueBtn.setAttribute("aria-pressed", String(showIssues)); stage.refresh(); } });
-    const heroSel = el("select", { "aria-label": "主角", onchange: () => { heroPreview = heroSel.value === "candidate"; applyHero(heroPreview); stage.refresh(); heroNote.hidden = !heroPreview; } });
-    heroSel.append(el("option", { value: "approved", text: "矿工（已确认）" }));
-    if (store.asset(HERO_CANDIDATE)) heroSel.append(el("option", { value: "candidate", text: "摆渡人（候选）" }));
-    heroSel.value = heroPreview ? "candidate" : "approved";
-    const heroNote = el("p", { class: "note small", hidden: !heroPreview, text: "正在预览新主角候选 char.portitor（未确认）。只在这个页面临时替换；导出图、参考图和游戏仍使用已确认的矿工。" });
-    applyHero(heroPreview);
     stage = root.PBStage.create(host, {
       width: 320, height: 180, animated: true, autoplay: true, draw, label: current.name,
-      extras: (current.kind === "screen" ? [] : [gridBtn, obsBtn]).concat([el("label", { class: "small muted" }, ["主角 ", heroSel]), el("label", { class: "small muted" }, ["环境 ", envSel]), el("label", { class: "small muted" }, ["语言 ", locSel]), issueBtn]),
+      extras: (current.kind === "screen" ? [] : [gridBtn, obsBtn]).concat([el("label", { class: "small muted" }, ["环境 ", envSel]), el("label", { class: "small muted" }, ["语言 ", locSel]), issueBtn]),
       disclaimer: current.kind === "screen" ? "界面为布局与外观参考；交互在游戏中实现。" : "视觉示意，不代表 SDK 物理结果。",
     });
     info(current); steps(current);
-    document.getElementById("scene-steps").prepend(heroNote);
   }
 
-  root.PBScenes = { show, hide: () => { applyHero(false); if (stage) stage.setVisible(false); }, wake: () => stage && stage.setVisible(true) };
+  root.PBScenes = { show, hide: () => stage && stage.setVisible(false), wake: () => stage && stage.setVisible(true) };
 })(window);

@@ -68,9 +68,8 @@
     box.append(section("内容检查", [C.issues.length ? list : el("p", { class: "muted", text: "没有错误或警告（node tools/content.mjs check）。" })]));
 
     box.append(section("待你决定", [el("ul", {}, [
-      el("li", { text: "中文名：候选见 docs/design/naming.md（英文名 PORTITOR 已定）。" }),
-      el("li", {}, ["新主角候选：「资产」页 ", el("a", { href: "#assets/char.portitor", text: "char.portitor" }), "；「场景」页可以切换主角预览。"]),
-      el("li", { text: "配送模式改为网格实时：docs/design/vision.md 第 3 节。" }),
+      el("li", { text: "确认换上新主角和新名字后生成新版本的 15 项（6 个主题、material.chapter2_5、8 个界面布局），在「确认」页。只有标题和主角变了，见 docs/status.md。" }),
+      el("li", { text: "说开始后，把 docs/handoff/gpt-refactor-prompt.md 交给 GPT。" }),
     ])]));
   }
 

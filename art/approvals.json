@@ -602,6 +602,23 @@
      "png_sha256": "a6dd69fa825db739e3b58a41a56d296a4f5eed531b400f0b6dfecc308c688f29"
     }
    ]
+  },
+  {
+   "id": "APR-0003",
+   "date": "2026-10-15T09:24:32.933Z",
+   "by": "用户",
+   "via": "chat",
+   "scope": "新主角：斗笠灯笈摆渡人（21 帧）",
+   "note": "2026-10-15 用户在聊天中回复：「2 可以，就用这个」（针对上一条消息第 2 点：新主角候选 char.portitor）。",
+   "items": [
+    {
+     "asset": "char.portitor",
+     "version": 1,
+     "hash": "101e084c818e8db3e4970ee78c30edfdd00dfc176d9c6ab4459ce02be02d556b",
+     "png": "art/export/approved/char.portitor@v1.png",
+     "png_sha256": "563e16cfc13f3a765431e2fc528dfe2fb544810131795ecb0141c825812bdc32"
+    }
+   ]
   }
  ]
 }

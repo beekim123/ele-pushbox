@@ -104,7 +104,7 @@
     S().draw(r, "obj.crate_wood", "default", 0, 14 * 16 + 8, 156);
     S().draw(r, "obj.crate_wood", "default", 0, 15 * 16 + 8, 156);
     S().draw(r, "obj.crate_wood", "default", 0, 15 * 16 + 8, 140);
-    S().draw(r, "char.miner", "push", tick, 13 * 16 + 8, 156);
+    S().draw(r, "char.portitor", "push", tick, 13 * 16 + 8, 156);
     S().draw(r, "mech.exit_flag", "idle", tick, 18 * 16 + 12, 124);
     // Logo: crate emblem + title (2x when it fits in 200 px, else 1x) + tagline.
     S().draw(r, "obj.crate_wood", "default", 0, 24, 30);
@@ -164,7 +164,7 @@
     PB.ambient.draw(tmp, Tm, map, 0, oy, tick, "back", busy, area, null, amb);
     PB.terrain.drawTerrain(tmp, map, Tm, 0, oy, tick >> 3);
     PB.ambient.draw(tmp, Tm, map, 0, oy, tick, "front", busy, area, null, amb);
-    if (withHero) { S().draw(tmp, "char.miner", "idle", tick, 24, oy + floorRow * 16); S().draw(tmp, "obj.crate_wood", "default", 0, 40, oy + floorRow * 16); }
+    if (withHero) { S().draw(tmp, "char.portitor", "idle", tick, 24, oy + floorRow * 16); S().draw(tmp, "obj.crate_wood", "default", 0, 40, oy + floorRow * 16); }
     return tmp;
   }
 
@@ -354,7 +354,7 @@
     PB.terrain.drawBackground(ill, Tm, 0, 0, 56, 32, tick);
     const dug = Math.floor(tick / 60) % 2 === 1;
     PB.terrain.drawTerrain(ill, { w: 4, h: 2, at: (tx, ty) => (ty === 1 ? 1 : ty === 0 && tx === 2 && !dug ? 3 : 0) }, Tm, -4, 0, 0);
-    S().draw(ill, "char.miner", dug ? "idle" : "dig", tick, 20, 16);
+    S().draw(ill, "char.portitor", dug ? "idle" : "dig", tick, 20, 16);
     r.blit(ill, x + 8, y + 22);
     r.rect(x + 7, y + 21, 58, 1, "z"); r.rect(x + 7, y + 54, 58, 1, "z");
     if (dug) S().draw(r, "item.sandbag", 0, 0, x + 28, y + 58);
