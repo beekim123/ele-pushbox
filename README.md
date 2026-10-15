@@ -32,10 +32,11 @@
 
 ```sh
 node tools/check-levels.mjs --write          # 关卡设计模型检查（不是 SDK 验证）
+node tools/check-rooms.mjs --write           # 配送房间模板与按种子生成的地图检查（格子模型，不含怪物与时间）
 node tools/art.mjs build                     # 校验美术源数据、导出 PNG 与清单，再构建内容目录，更新工作台数据
 node tools/art.mjs verify                    # 导出、确认记录与内容目录的一致性检查
 node tools/content.mjs check                 # 只检查目录与关卡规格（机制、关卡计划、美术引用）
-node --test tests/art-pipeline.test.mjs tests/content.test.mjs   # 流程测试（临时目录，不碰真实数据）
+node --test tests/art-pipeline.test.mjs tests/content.test.mjs tests/rooms.test.mjs   # 流程测试（临时目录，不碰真实数据）
 node tests/workbench.e2e.cjs                 # 工作台浏览器测试（需要 Playwright + Chromium）
 python3 tools/build-font.py                  # 新增界面文字后重建像素字形（需要 Pillow）
 ```

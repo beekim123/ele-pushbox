@@ -9,6 +9,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { buildIdMap } from "./lib/ids.mjs";
+import { loadRooms } from "./check-rooms.mjs";
 
 const REPO = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 export const CATALOGS = ["modes", "groups", "mechanisms", "worlds", "recipients", "cargo", "combos", "monsters", "items", "buffs", "upgrades", "badges", "events", "slices"];
@@ -114,6 +115,8 @@ export function buildContent(root, opts = {}) {
   const worlds = byId(cat.worlds), recipients = byId(cat.recipients), cargo = byId(cat.cargo);
   for (const w of cat.worlds) {
     if (w.theme && !art.has(w.theme)) add("error", `worlds/${w.id}`, `主题 ${w.theme} 不是已有的美术资产`);
+    const life = w.theme && art.has(w.theme) ? ((art.get(w.theme).params || {}).ambient || []).map((a) => a.id) : [];
+    for (const id of w.ambient_exclude || []) if (!life.includes(id)) add("error", `worlds/${w.id}`, `ambient_exclude 的 ${id} 不在主题 ${w.theme} 的生态里`);
     for (const m of w.mechanisms || []) if (!mechs.has(m)) add("error", `worlds/${w.id}`, `机制 ${m} 不在机制目录中`);
   }
   for (const r of cat.recipients) {
@@ -163,6 +166,39 @@ export function buildContent(root, opts = {}) {
     if (!sl.time || !(sl.time.tick_hz > 0)) add("error", at, "time.tick_hz 必须大于 0");
   }
 
+  // ---- delivery room templates (docs/design/delivery-maps.md) ----
+  const rooms = loadRooms(root), roomById = new Map();
+  for (const { file, room: t } of rooms) {
+    const at = file;
+    if (roomById.has(t.id)) add("error", at, `房间编号 ${t.id} 重复（另见 ${roomById.get(t.id).file}）`);
+    roomById.set(t.id, { file, room: t });
+    if (!worlds.has(t.world)) add("error", at, `地区 ${t.world} 不在 worlds.json 中`);
+    else if (file !== `content/rooms/${t.world}/${t.id}.json`) add("error", at, `房间模板应放在 content/rooms/${t.world}/${t.id}.json`);
+    for (const m of t.mechanisms || []) if (!mechs.has(m)) add("error", at, `机制 ${m} 不在机制目录中`);
+    for (const [k, e] of Object.entries(t.legend || {})) if (e.monster && !monsters.has(e.monster)) add("error", at, `legend ${k} 的怪物 ${e.monster} 不在 monsters.json 中`);
+  }
+  let roomCheck = null;
+  const rcp = rel("content/rooms-check.generated.json");
+  if (fs.existsSync(rcp)) { try { roomCheck = readJson(rcp); } catch (e) { add("error", "content/rooms-check.generated.json", "不是合法 JSON"); } }
+  const checked = new Map(((roomCheck && roomCheck.templates) || []).map((t) => [t.id, t]));
+  for (const { file, sha256, room: t } of rooms) {
+    const c = checked.get(t.id);
+    if (!c || c.sha256 !== sha256) { add("error", file, "可通性检查结果缺失或已过期：运行 node tools/check-rooms.mjs --write"); continue; }
+    for (const e of c.errors) add("error", file, e);
+    for (const p of c.placements) for (const r of p.routes) if (!r.ok) add("error", file, `${p.key}：${r.from} → ${r.to} 走不通`);
+  }
+  for (const sl of cat.slices) {
+    const at = `slices/${sl.id}`;
+    for (const id of sl.rooms || []) {
+      const r = roomById.get(id);
+      if (!r) add("error", at, `房间模板 ${id} 不存在（content/rooms/）`);
+      else if (r.room.world !== sl.world) add("error", at, `房间模板 ${id} 属于 ${r.room.world}，不是 ${sl.world}`);
+    }
+    if (sl.rooms) for (const ty of ["gate", "home", "station", "room"]) if (!sl.rooms.some((id) => roomById.has(id) && roomById.get(id).room.type === ty)) add("error", at, `没有 ${ty} 类型的房间模板`);
+    const cs = ((roomCheck && roomCheck.slices) || []).find((x) => x.id === sl.id);
+    if (sl.rooms && sl.rooms.length && (!cs || !cs.ok)) add("error", at, cs ? "按种子生成的地图没有全部通过检查：" + (cs.failures[0] || "") : "还没有地图检查结果：运行 node tools/check-rooms.mjs --write");
+  }
+
   // ---- derived statuses ----
   const levelAssets = (l, g) => [...new Set([g.theme, ...(l.mechanisms || []).flatMap((m) => (mechs.get(m) || {}).assets || [])])];
   const levels = [];
@@ -197,6 +233,7 @@ export function buildContent(root, opts = {}) {
   const ids = buildIdMap({
     art: [...art.values()].map((a) => Object.assign({}, a, { file: artFile.get(a.id), approved: approved(a.id) })).sort((a, b) => a.id.localeCompare(b.id)),
     levels: levels.map((l) => ({ id: l.id, title: l.title, spec: l.has_spec ? l.spec : null, sha256: l.sha256 })),
+    rooms: rooms.map(({ file, sha256, room }) => ({ id: room.id, name: room.name, source: file, sha256 })),
     catalogs: cat, texts,
   });
   issues.push(...ids.issues);
@@ -205,7 +242,8 @@ export function buildContent(root, opts = {}) {
     errors: issues.filter((i) => i.level === "error").length, warnings: issues.filter((i) => i.level === "warn").length,
     report: report ? { generated: report.generated || null, commit: report.commit || null, sdk: report.sdk || null, levels: (report.levels || []).length, samples: report.samples || [], references: report.references || [] } : null,
   };
-  const result = { catalogs: cat, notes, levels, mechanisms, issues, summary, ids: ids.map };
+  const roomData = rooms.map(({ file, sha256, room }) => Object.assign({}, room, { file, sha256, check: checked.get(room.id) || null }));
+  const result = { catalogs: cat, notes, levels, mechanisms, issues, summary, ids: ids.map, rooms: roomData, roomSlices: (roomCheck && roomCheck.slices) || [] };
 
   if (opts.write) {
     // Godot reads only this manifest for modes, groups, level order and spec hashes.
@@ -219,6 +257,8 @@ export function buildContent(root, opts = {}) {
         mechanisms: mechanisms.map((m) => ({ id: m.id, name: m.name, group: m.group, owner: m.owner, sdk: m.sdk, levels: m.levels, status: m.status })),
         worlds: cat.worlds, recipients: cat.recipients, cargo: cat.cargo, combos: cat.combos, monsters: cat.monsters,
         items: cat.items, buffs: cat.buffs, upgrades: cat.upgrades, badges: cat.badges, events: cat.events, slices: cat.slices,
+        rooms: rooms.map(({ file, sha256, room }) => ({ id: room.id, world: room.world, type: room.type, spec: file, sha256 })),
+        delivery_golden: fs.existsSync(rel("content/export/delivery-golden.json")) ? "content/export/delivery-golden.json" : null,
       };
       fs.mkdirSync(rel("content/export"), { recursive: true });
       fs.writeFileSync(rel("content/export/content-manifest.json"), JSON.stringify(manifest, null, 1) + "\n");

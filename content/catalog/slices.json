@@ -24,6 +24,18 @@
     "rat_swarm",
     "skeleton_guard"
    ],
+   "rooms": [
+    "dungeon_gate",
+    "dungeon_home",
+    "dungeon_station",
+    "dungeon_hall",
+    "dungeon_guard",
+    "dungeon_burrow",
+    "dungeon_plate",
+    "dungeon_shaft",
+    "dungeon_corner",
+    "dungeon_well"
+   ],
    "mechanisms": [
     "push",
     "ladder",
@@ -64,7 +76,9 @@
     "directions": [
      "down",
      "up"
-    ]
+    ],
+    "drop_pct": 30,
+    "end_pct": 20
    },
    "time": {
     "tick_hz": 60,

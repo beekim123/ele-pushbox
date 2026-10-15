@@ -7,6 +7,7 @@
 export const DOMAINS = {
   art:       { name: "美术资产", source: "art/source/<分类>/<id>.json", game: (e) => e.kind === "procedural" ? proceduralPath(e) : `res://generated/art/${e.id}.tres` },
   level:     { name: "关卡", source: "content/levels/<模式>/<组>/<id>.json", game: (e) => `res://generated/content/${e.source.replace(/^content\//, "")}` },
+  room:      { name: "配送房间模板", source: "content/rooms/<地区>/<id>.json", game: (e) => `res://generated/content/${e.source.replace(/^content\//, "")}` },
   mode:      { name: "模式", catalog: "modes", game: (e) => `res://generated/content/catalog/modes.json#${e.id}` },
   group:     { name: "机制组（章）", catalog: "groups", game: (e) => `res://generated/content/catalog/groups.json#${e.id}` },
   mechanic:  { name: "机制", catalog: "mechanisms", game: (e) => `res://gameplay/mechanics/${e.id}.gd` },
@@ -35,7 +36,7 @@ const uidOf = (domain, id) => `${domain}:${id}`;
 
 // art: [{id, name, kind, category, version, content_hash, approved, file}]
 // levels: [{id, spec(file), sha256, title}] ; catalogs: {kind: [entries]} ; texts: {key: zh string}
-export function buildIdMap({ art, levels, catalogs, texts }) {
+export function buildIdMap({ art, levels, rooms, catalogs, texts }) {
   const issues = [], entries = [], seen = new Map(), paths = new Map();
   const push = (domain, e) => {
     const rule = ID_RULE[domain] || DEFAULT_RULE;
@@ -52,6 +53,7 @@ export function buildIdMap({ art, levels, catalogs, texts }) {
   for (const a of art) push("art", { id: a.id, name: a.name, kind: a.kind, source: a.file,
     extra: { category: a.category, version: a.version, hash: a.content_hash, approved: !!a.approved } });
   for (const l of levels) if (l.spec) push("level", { id: l.id, name: l.title, source: l.spec, extra: { sha256: l.sha256 } });
+  for (const r of rooms || []) push("room", { id: r.id, name: r.name, source: r.source, extra: { sha256: r.sha256 } });
   for (const [domain, D] of Object.entries(DOMAINS)) {
     if (!D.catalog) continue;
     for (const e of catalogs[D.catalog] || []) push(domain, { id: e.id, name: e.name || e.title || (e.cargo ? `${e.cargo} × ${e.recipient}` : ""), source: `content/catalog/${D.catalog}.json` });

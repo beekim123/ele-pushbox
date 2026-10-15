@@ -10,9 +10,10 @@
 |---|---|---|---|
 | `art` | 美术资产（精灵、主题、材料、界面布局） | `art/source/<分类>/<编号>.json` | 精灵 `res://generated/art/<编号>.tres`；主题 `res://generated/themes/<编号>.tres`；材料 `res://generated/materials/<编号>.tres`；界面 `res://ui/screens/<名>.tscn` |
 | `level` | 关卡规格 | `content/levels/<模式>/<组>/<编号>.json` | `res://generated/content/levels/<模式>/<组>/<编号>.json` |
+| `room` | 配送模式的房间模板（[delivery-maps.md](delivery-maps.md)） | `content/rooms/<地区>/<编号>.json` | `res://generated/content/rooms/<地区>/<编号>.json` |
 | `mode` `group` | 模式、机制组（章） | `content/catalog/modes.json`、`groups.json` | `res://generated/content/catalog/<目录>.json#<编号>` |
 | `mechanic` | 机制 | `content/catalog/mechanisms.json` | 规则代码 `res://gameplay/mechanics/<编号>.gd` |
-| `world` `recipient` `cargo` `combo` `monster` `item` `buff` `upgrade` `badge` `event` | 设计目录里的条目 | `content/catalog/<目录>.json` | `res://generated/content/catalog/<目录>.json#<编号>` |
+| `world` `recipient` `cargo` `combo` `monster` `item` `buff` `upgrade` `badge` `event` `slice` | 设计目录里的条目（`slice` 是可玩切片，即一局配送的配置） | `content/catalog/<目录>.json` | `res://generated/content/catalog/<目录>.json#<编号>` |
 | `text` | 界面与台词文字的键 | `content/i18n/zh-Hans.json`（英文在 `en.json`） | `tr:<键>`（TranslationServer） |
 
 以后新增的空间（`dialogue` 对话、`quest` 委托、`npc` 居民、`sfx` 音效、`music` 音乐、`shop` 商店货架……）照同样的方式加进 `tools/lib/ids.mjs` 的 `DOMAINS`，写清来源和游戏路径。

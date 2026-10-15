@@ -1,0 +1,42 @@
+{
+ "format": "pushbox.room/1",
+ "id": "dungeon_burrow",
+ "world": "dungeon",
+ "type": "room",
+ "name": "鼠洞",
+ "idea": "一座土丘挡住去路：挖进去，洞里的老鼠会追出来抢你刚挖到的沙。",
+ "weight": 12,
+ "mirror": true,
+ "exits": {
+  "left": [
+   "low"
+  ],
+  "right": [
+   "low"
+  ]
+ },
+ "legend": {
+  "1": {
+   "monster": "rat_swarm",
+   "dir": "left"
+  }
+ },
+ "mechanisms": [
+  "dig",
+  "pour",
+  "trap_monster",
+  "push_monster"
+ ],
+ "map": [
+  "####################",
+  "#..................#",
+  "#..................#",
+  "#..................#",
+  "#.....eeeeeee......#",
+  "#.....e.....e......#",
+  "......e.....e....$..",
+  "......e..1..e.......",
+  "######eeeeeee#######",
+  "####################"
+ ]
+}

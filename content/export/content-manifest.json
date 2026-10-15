@@ -1398,6 +1398,9 @@
     "plate_door"
    ],
    "theme": "theme.dungeon",
+   "ambient_exclude": [
+    "fauna.dungeon_rat"
+   ],
    "layer": 1,
    "status": "active"
   },
@@ -5848,6 +5851,18 @@
     "rat_swarm",
     "skeleton_guard"
    ],
+   "rooms": [
+    "dungeon_gate",
+    "dungeon_home",
+    "dungeon_station",
+    "dungeon_hall",
+    "dungeon_guard",
+    "dungeon_burrow",
+    "dungeon_plate",
+    "dungeon_shaft",
+    "dungeon_corner",
+    "dungeon_well"
+   ],
    "mechanisms": [
     "push",
     "ladder",
@@ -5888,7 +5903,9 @@
     "directions": [
      "down",
      "up"
-    ]
+    ],
+    "drop_pct": 30,
+    "end_pct": 20
    },
    "time": {
     "tick_hz": 60,
@@ -5930,5 +5947,78 @@
    },
    "fail_keep": 0.5
   }
- ]
+ ],
+ "rooms": [
+  {
+   "id": "dungeon_burrow",
+   "world": "dungeon",
+   "type": "room",
+   "spec": "content/rooms/dungeon/dungeon_burrow.json",
+   "sha256": "8f77e94b18e91af06f9f40e7ac29af625968061f8036d8378093cfe1d137ff5a"
+  },
+  {
+   "id": "dungeon_corner",
+   "world": "dungeon",
+   "type": "room",
+   "spec": "content/rooms/dungeon/dungeon_corner.json",
+   "sha256": "8ee7a51ccfb3c243b667368e5339fc7435d81e24275f592bcc850a62619bf947"
+  },
+  {
+   "id": "dungeon_gate",
+   "world": "dungeon",
+   "type": "gate",
+   "spec": "content/rooms/dungeon/dungeon_gate.json",
+   "sha256": "bc4ed0aa04fc6c01b339e3b32dfaa55611a40ab9f88dc5864ee7b6a9edfd5a80"
+  },
+  {
+   "id": "dungeon_guard",
+   "world": "dungeon",
+   "type": "room",
+   "spec": "content/rooms/dungeon/dungeon_guard.json",
+   "sha256": "706d2cf670d69c0d35b7014adb0860ef2bd2b05ed74a7f9126657aecdd84a23a"
+  },
+  {
+   "id": "dungeon_hall",
+   "world": "dungeon",
+   "type": "room",
+   "spec": "content/rooms/dungeon/dungeon_hall.json",
+   "sha256": "31a63ae5c5ec7719f09705afcd1e98e3ad5fd37751717860d04f4f28f2868046"
+  },
+  {
+   "id": "dungeon_home",
+   "world": "dungeon",
+   "type": "home",
+   "spec": "content/rooms/dungeon/dungeon_home.json",
+   "sha256": "c0fd4d15cfae592a39b57e8d6d21e6088553112a554f06cfdccb063b00e54ca6"
+  },
+  {
+   "id": "dungeon_plate",
+   "world": "dungeon",
+   "type": "room",
+   "spec": "content/rooms/dungeon/dungeon_plate.json",
+   "sha256": "989c338bf32f9ff759cb19f64fe86c8508d24caab6b36f99e1f1c4e5550e04da"
+  },
+  {
+   "id": "dungeon_shaft",
+   "world": "dungeon",
+   "type": "room",
+   "spec": "content/rooms/dungeon/dungeon_shaft.json",
+   "sha256": "391fef4f73fe1241fad75110d912750a48c6ee9038985045c33a84af7c8f9bab"
+  },
+  {
+   "id": "dungeon_station",
+   "world": "dungeon",
+   "type": "station",
+   "spec": "content/rooms/dungeon/dungeon_station.json",
+   "sha256": "890f0e1766bf16b44f035554a066992071fa972828589e0e2f8bf111167e4e76"
+  },
+  {
+   "id": "dungeon_well",
+   "world": "dungeon",
+   "type": "room",
+   "spec": "content/rooms/dungeon/dungeon_well.json",
+   "sha256": "70e51ef3078d09d710b7180267aa73b86b5009f47c7e33ba89c3722456f5458e"
+  }
+ ],
+ "delivery_golden": "content/export/delivery-golden.json"
 }
