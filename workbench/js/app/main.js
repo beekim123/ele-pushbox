@@ -2,7 +2,7 @@
 (function (root) {
   "use strict";
   const store = root.PBStore;
-  const VIEWS = { scenes: root.PBScenes, assets: root.PBAssets, edit: root.PBEditor, review: root.PBReview, export: root.PBExport };
+  const VIEWS = { overview: root.PBOverview, modes: root.PBModes, mechanisms: root.PBMechanisms, catalog: root.PBCatalog, scenes: root.PBScenes, assets: root.PBAssets, edit: root.PBEditor, review: root.PBReview, export: root.PBExport };
   let active = null;
 
   function toast(msg) {
@@ -25,8 +25,8 @@
   }
 
   function route() {
-    const [view, ...rest] = (location.hash.slice(1) || "scenes").split("/");
-    const name = VIEWS[view] ? view : "scenes";
+    const [view, ...rest] = (location.hash.slice(1) || "overview").split("/");
+    const name = VIEWS[view] ? view : "overview";
     const id = rest.join("/") || null;
     for (const v of Object.keys(VIEWS)) {
       const sec = document.getElementById("view-" + v);

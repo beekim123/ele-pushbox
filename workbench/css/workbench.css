@@ -157,3 +157,41 @@ textarea { width: 100%; min-height: 120px; font: 12px/1.5 ui-monospace, Menlo, m
 #view-edit .edit-layout { height: 100%; }
 @media (max-width: 1100px) { #view-edit .edit-layout { height: auto; } }
 .compare { display: grid; grid-template-columns: repeat(2, max-content); gap: 10px 16px; align-items: end; }
+
+/* ---- content views (overview, modes, mechanisms, design data) ---- */
+.tab-sep { width: 1px; background: var(--line); margin: 6px 6px; flex: none; }
+.catalog-view { grid-template-columns: 220px minmax(0, 1fr); }
+@media (max-width: 720px) { .catalog-view { grid-template-columns: minmax(0, 1fr); } }
+.ov-section { margin-top: 18px; }
+.mode-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 10px; }
+.mode-card { display: block; text-decoration: none; background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 10px 12px; }
+.mode-card:hover { border-color: var(--muted); }
+.mode-card .row { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+.mode-card p { margin: 6px 0 0; }
+.badge.st-proposed, .badge.st-design { color: var(--draft); }
+.badge.st-designed { color: var(--warn); }
+.badge.st-specified { color: var(--focus); }
+.badge.st-verified, .badge.st-active { color: var(--accent); }
+.badge.st-playable { color: var(--ok); }
+.badge.no { color: var(--danger); }
+.mark { display: inline-block; min-width: 1.4em; text-align: center; font-weight: 600; }
+.mark.yes { color: var(--ok); }
+.mark.no { color: var(--danger); }
+.mark.na { color: var(--muted); font-weight: 400; }
+.chips { display: flex; flex-wrap: wrap; gap: 4px; }
+.chip-link { display: inline-block; font-size: 12px; border: 1px solid var(--line); border-radius: 10px; padding: 0 7px; margin: 1px 4px 1px 0; text-decoration: none; white-space: nowrap; }
+.chip-link:hover { border-color: var(--muted); }
+.chip-link.st-playable { border-color: var(--ok); }
+.chip-link.st-verified { border-color: var(--accent); }
+.chip-link.st-specified { border-color: var(--focus); }
+.asset-link { white-space: nowrap; margin-right: 6px; }
+table.levels tr[aria-current="true"] td { background: var(--panel-2); }
+.btn.small { padding: 1px 8px; font-size: 12px; text-decoration: none; }
+.pipeline { display: flex; flex-wrap: wrap; gap: 4px; list-style: none; padding: 0; margin: 10px 0; counter-reset: step; }
+.pipeline li { font-size: 12px; padding: 3px 10px; border: 1px solid var(--line); border-radius: 12px; color: var(--muted); }
+.pipeline li.done { color: var(--ok); border-color: var(--ok); }
+.pipeline li.now { color: var(--accent-ink); background: var(--accent); border-color: var(--accent); }
+ul.issues { list-style: none; padding: 0; margin: 0; font-size: 13px; }
+ul.issues li { padding: 3px 0; border-bottom: 1px solid var(--line); }
+a.card { text-decoration: none; }
+.card .row { flex-wrap: wrap; }

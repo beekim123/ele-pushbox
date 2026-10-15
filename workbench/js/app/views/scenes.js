@@ -20,7 +20,10 @@
       const t = PB.scene.CHAPTER_THEME[key], a = store.asset(t);
       if (a) list.push({ group: "第 2–5 章代表场景（新材料与机关）", id: "chapter." + key, name: a.params.title + " · " + PB.i18n.t("level." + spec.id + ".title").replace(/^.*· */, ""), kind: "chapter", theme: t, spec, asset: store.asset("material.chapter2_5") });
     }
-    for (const lv of store.levels()) list.push({ group: "第 1 章关卡（设计模型）", id: "level." + lv.id, name: lv.id + " " + lv.title, kind: "level", level: lv });
+    for (const lv of store.levels().filter((l) => Array.isArray(l.map) && l.map.length)) {
+      const g = store.group(lv.group), m = g && store.mode(g.mode);
+      list.push({ group: g ? `${m ? m.name : ""} · ${g.name}（设计模型）` : "关卡（设计模型）", id: "level." + lv.id, name: lv.id + " " + lv.title, kind: "level", level: lv });
+    }
     for (const a of store.assets().filter((x) => x.category === "screen" && x.id !== "ui.screen.lobby")) list.push({ group: "游戏界面", id: a.id, name: a.name, kind: "screen", asset: a });
     return list;
   }
@@ -111,7 +114,8 @@
       box.append(el("h3", { text: "SDK / 游戏层" }));
       const ul2 = el("ul"); [...(lv.sdk.sdk || []).map((x) => "【SDK】" + x), ...(lv.sdk.game_layer || []).map((x) => "【游戏层】" + x)].forEach((x) => ul2.append(el("li", { class: "small", text: x }))); box.append(ul2);
       box.append(el("h3", { text: "验收条目" })); const ul3 = el("ul"); lv.checks.forEach((c) => ul3.append(el("li", { class: "small", text: c }))); box.append(ul3);
-      box.append(el("p", { class: "note small", text: "规格文件：content/levels/lab/basics/" + lv.id + ".json" }));
+      const pl = store.planned(lv.id);
+      box.append(el("p", { class: "note small" }, ["规格文件：", el("span", { class: "mono", text: pl && pl.spec ? pl.spec : `content/levels/${lv.mode}/${lv.group}/${lv.id}.json` }), "　", el("a", { href: `#modes/${lv.group}/${lv.id}`, text: "在「模式与关卡」中查看状态" })]));
     } else if (s.kind === "screen") {
       const a = s.asset;
       box.append(el("h2", { text: a.name }), el("p", { class: "small mono", text: `${a.id} @v${a.version}` }), statusBadge(a.id), el("p", { text: a.usage }), el("p", { class: "small muted", text: a.notes }));
@@ -136,7 +140,7 @@
       box.append(el("h3", { text: "地形主题" }), el("p", {}, [el("a", { href: "#assets/" + s.theme, text: s.theme }), " ", statusBadge(s.theme)]));
       box.append(el("p", { class: "note small", text: "场景数据：workbench/js/core/matter.js 的 SHOWCASES；材料着色同一文件的 SHADE。" }));
     } else {
-      box.append(el("h2", { text: s.name }), el("p", { text: "把第 1 章的人物、箱子、机关、材料和 HUD 放在同一画面中检查整体协调、层级和可读性。" }));
+      box.append(el("h2", { text: s.name }), el("p", { text: "把基础组（原第 1 章）的人物、箱子、机关、材料和 HUD 放在同一画面中检查整体协调、层级和可读性。" }));
       box.append(el("p", { class: "small muted", text: "画面中的布局只作示意，不是可玩关卡。水与沙的颗粒在游戏中会随 SDK 的格子移动，这里按格子静态绘制。" }));
       box.append(el("h3", { text: "地形主题" }), el("p", {}, [el("a", { href: "#assets/" + s.theme, text: s.theme }), " ", statusBadge(s.theme)]));
       box.append(el("h3", { text: "生态与环境" }), el("p", { class: "small", text: "本场景为了审稿显示该主题的全部小动物；实际关卡中每张图最多出现 1 只会动的小动物，约三分之一的关卡才有。光照只作用在背景上，不改变地形、箱子和机关的颜色；天气每关最多一种，可在上方「环境」中切换预览。" }));

@@ -1,0 +1,70 @@
+// Content pipeline tests (tools/content.mjs). Each test works on a temporary
+// copy of content/ and art/; the repository is only read.
+import { test } from "node:test";
+import assert from "node:assert/strict";
+import { execFileSync } from "node:child_process";
+import fs from "node:fs";
+import os from "node:os";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+import { buildContent } from "../tools/content.mjs";
+
+const REPO = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
+function sandbox() {
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), "pb-content-"));
+  for (const d of ["content", "art/source", "art/approvals.json"]) if (fs.existsSync(path.join(REPO, d))) fs.cpSync(path.join(REPO, d), path.join(dir, d), { recursive: true });
+  return dir;
+}
+const edit = (root, p, fn) => { const f = path.join(root, p); const v = JSON.parse(fs.readFileSync(f, "utf8")); fn(v); fs.writeFileSync(f, JSON.stringify(v, null, 1)); };
+const errors = (res) => res.issues.filter((i) => i.level === "error").map((i) => i.where + ": " + i.msg);
+
+test("the repository's catalogs and level specs pass without errors", () => {
+  const res = buildContent(REPO);
+  assert.deepEqual(errors(res), []);
+  assert.ok(res.levels.some((l) => l.id === "M01" && l.has_spec && l.model && l.model.ok));
+});
+
+test("a level spec naming an unknown mechanism is an error", () => {
+  const root = sandbox();
+  edit(root, "content/levels/lab/basics/M01.json", (s) => { s.mechanisms = ["teleport"]; });
+  assert.ok(errors(buildContent(root)).some((e) => e.includes("M01.json") && e.includes("不一致")));
+  edit(root, "content/catalog/groups.json", (g) => { g.entries[0].levels[0].mechanisms = ["teleport"]; });
+  assert.ok(errors(buildContent(root)).some((e) => e.includes("teleport")));
+});
+
+test("missing art, misplaced specs and duplicate ids are errors", () => {
+  const root = sandbox();
+  edit(root, "content/catalog/mechanisms.json", (m) => { m.entries[0].assets.push("obj.nonexistent"); m.entries.push(Object.assign({}, m.entries[1])); });
+  fs.renameSync(path.join(root, "content/levels/lab/basics/M02.json"), path.join(root, "content/levels/lab/M02.json"));
+  const e = errors(buildContent(root));
+  assert.ok(e.some((x) => x.includes("obj.nonexistent")));
+  assert.ok(e.some((x) => x.includes("编号重复")));
+  assert.ok(e.some((x) => x.includes("content/levels/lab/basics/M02.json")));
+});
+
+test("statuses come from data: a passing verification report marks the level verified", () => {
+  const root = sandbox();
+  let res = buildContent(root);
+  assert.equal(res.mechanisms.find((m) => m.id === "push").status, "specified");
+  assert.equal(res.mechanisms.find((m) => m.id === "power").status, "proposed");
+  fs.mkdirSync(path.join(root, "game/reports"), { recursive: true });
+  const ok = { id: "M01", won: true, replays: 3, consistent: true, undo_ok: true, max_ticks: 300, tick_limit: 4000, checks: [{ text: "x", ok: true }] };
+  fs.writeFileSync(path.join(root, "game/reports/verification.json"), JSON.stringify({ format: "pushbox.verification/1", levels: [ok] }));
+  res = buildContent(root);
+  assert.equal(res.levels.find((l) => l.id === "M01").verified.ok, true);
+  assert.equal(res.mechanisms.find((m) => m.id === "push").status, "playable"); // its art is approved
+  fs.writeFileSync(path.join(root, "game/reports/verification.json"), JSON.stringify({ format: "pushbox.verification/1", levels: [Object.assign({}, ok, { replays: 1 })] }));
+  assert.equal(buildContent(root).mechanisms.find((m) => m.id === "push").status, "specified");
+});
+
+test("build writes the Godot content manifest and the workbench data; check exits non-zero on errors", () => {
+  const root = sandbox();
+  execFileSync(process.execPath, [path.join(REPO, "tools/content.mjs"), "build", "--root", root]);
+  const man = JSON.parse(fs.readFileSync(path.join(root, "content/export/content-manifest.json"), "utf8"));
+  assert.equal(man.format, "pushbox.content-manifest/1");
+  const basics = man.groups.find((g) => g.id === "basics");
+  assert.equal(basics.levels[0].spec, "content/levels/lab/basics/M01.json");
+  assert.match(fs.readFileSync(path.join(root, "workbench/data/content.js"), "utf8"), /^\/\* Generated/);
+  edit(root, "content/catalog/groups.json", (g) => { g.entries[0].theme = "theme.nowhere"; });
+  assert.throws(() => execFileSync(process.execPath, [path.join(REPO, "tools/content.mjs"), "check", "--root", root], { stdio: "pipe" }));
+});

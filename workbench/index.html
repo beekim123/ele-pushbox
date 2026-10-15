@@ -3,19 +3,24 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>箱途 Cratebound · 美术工作台</title>
+<title>箱途 Cratebound · 工作台</title>
 <link rel="stylesheet" href="css/workbench.css">
 <script src="js/app/appearance.js"></script>
 </head>
 <body>
 <header class="topbar">
-  <div class="brand"><strong>箱途</strong><span>Cratebound · 美术工作台</span></div>
-  <nav class="tabs" aria-label="工作流程">
-    <a href="#scenes" data-view="scenes"><b>1</b>场景</a>
-    <a href="#assets" data-view="assets"><b>2</b>资产与动画</a>
-    <a href="#edit" data-view="edit"><b>3</b>编辑与对比</a>
-    <a href="#review" data-view="review"><b>4</b>确认<span class="count" id="review-count" hidden></span></a>
-    <a href="#export" data-view="export"><b>5</b>导出</a>
+  <div class="brand"><strong>箱途</strong><span>Cratebound · 内容与美术工作台</span></div>
+  <nav class="tabs" aria-label="工作台页面">
+    <a href="#overview" data-view="overview">总览</a>
+    <a href="#modes" data-view="modes">模式与关卡</a>
+    <a href="#mechanisms" data-view="mechanisms">机制</a>
+    <a href="#catalog" data-view="catalog">设计数据</a>
+    <span class="tab-sep" aria-hidden="true"></span>
+    <a href="#scenes" data-view="scenes">场景</a>
+    <a href="#assets" data-view="assets">资产与动画</a>
+    <a href="#edit" data-view="edit">编辑与对比</a>
+    <a href="#review" data-view="review">确认<span class="count" id="review-count" hidden></span></a>
+    <a href="#export" data-view="export">导出</a>
   </nav>
   <div class="top-right">
     <a class="drafts-flag" id="drafts-flag" href="#export" hidden></a>
@@ -28,6 +33,27 @@
 </header>
 
 <main>
+  <section class="view single" id="view-overview" hidden>
+    <div class="page" id="overview-root"></div>
+  </section>
+
+  <section class="view" id="view-modes" hidden>
+    <aside class="side" id="modes-side" aria-label="模式与组"></aside>
+    <div class="work" id="modes-work"></div>
+    <aside class="info" id="modes-info" aria-label="详情"></aside>
+  </section>
+
+  <section class="view" id="view-mechanisms" hidden>
+    <aside class="side" id="mech-side" aria-label="机制列表"></aside>
+    <div class="work" id="mech-work"></div>
+    <aside class="info" id="mech-info" aria-label="说明"></aside>
+  </section>
+
+  <section class="view catalog-view" id="view-catalog" hidden>
+    <aside class="side" id="catalog-side" aria-label="目录"></aside>
+    <div class="work" id="catalog-work"></div>
+  </section>
+
   <section class="view" id="view-scenes" hidden>
     <aside class="side" aria-label="场景列表"><div id="scene-list"></div></aside>
     <div class="work">
@@ -65,6 +91,7 @@
 <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
 
 <script src="data/bundle.js"></script>
+<script src="data/content.js"></script>
 <script src="js/core/raster.js"></script>
 <script src="js/core/font-data.js"></script>
 <script src="js/core/sprites.js"></script>
@@ -78,6 +105,11 @@
 <script src="js/core/ui.js"></script>
 <script src="js/app/store.js"></script>
 <script src="js/app/stage.js"></script>
+<script src="js/app/views/content-ui.js"></script>
+<script src="js/app/views/overview.js"></script>
+<script src="js/app/views/modes.js"></script>
+<script src="js/app/views/mechanisms.js"></script>
+<script src="js/app/views/catalog.js"></script>
 <script src="js/app/views/scenes.js"></script>
 <script src="js/app/views/assets.js"></script>
 <script src="js/app/views/editor.js"></script>

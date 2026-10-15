@@ -511,7 +511,7 @@
   {
    "id": "power",
    "name": "电与机关",
-   "group": "lab",
+   "group": "experimental",
    "owner": "sdk",
    "summary": "电源脉冲沿导线到达，门接收后锁存。",
    "sdk": [
@@ -525,7 +525,7 @@
   {
    "id": "particles",
    "name": "沙炮",
-   "group": "lab",
+   "group": "experimental",
    "owner": "sdk",
    "summary": "定向粒子喷沙进收集斗。",
    "sdk": [
@@ -539,7 +539,7 @@
   {
    "id": "rigid",
    "name": "落石",
-   "group": "lab",
+   "group": "experimental",
    "owner": "sdk",
    "summary": "刚体重物落入接收槽。",
    "sdk": [
@@ -553,7 +553,7 @@
   {
    "id": "pressure",
    "name": "风道",
-   "group": "lab",
+   "group": "experimental",
    "owner": "sdk",
    "summary": "气压推动气体与粒子。",
    "sdk": [

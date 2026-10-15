@@ -181,7 +181,7 @@
 | 5 冷与热 · 云端圣域 | 白石镶金、晴空浮岛；雏菊、白鸽、小云灵 | 点火烧栅、冷凝成冰、热喷化冰、炸药引燃 | 4（F01–F04） | cells、thermal、explosions、couplers |
 | 6 实验 · 深空星站 | 舱板与警示条；异星球芽、无人机 | 以后新增的 SDK 机制（6.7） | 0 | 按机制 |
 
-每关的结构：开局就能看见机制的因果；第一次出现的机关有安全的试错空间；作者解 4–12 步。关卡规格放在 `content/levels/lab/<组>/<编号>.json`（组目录：`basics`、`water`、`blast`、`react`、`thermal`、`lab`）。
+每关的结构：开局就能看见机制的因果；第一次出现的机关有安全的试错空间；作者解 4–12 步。关卡规格放在 `content/levels/lab/<组>/<编号>.json`（组目录：`basics`、`water`、`blast`、`react`、`thermal`、`experimental`）。
 
 ### 6.2 解锁与选关
 

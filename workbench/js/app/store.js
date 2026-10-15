@@ -35,8 +35,21 @@
   }
   function emit(what) { for (const fn of listeners) fn(what); }
 
+  // Content catalogs and derived statuses (data/content.js, built by tools/content.mjs).
+  const C = root.PB_CONTENT || { catalogs: {}, notes: {}, levels: [], mechanisms: [], issues: [], summary: { errors: 0, warnings: 0, report: null } };
+  const MECH_STATUS = { proposed: "提议", designed: "已设计", specified: "有规格", verified: "已验证", playable: "可玩" };
+
   const store = {
     bundle: B,
+    content: () => C,
+    hasContent: () => !!root.PB_CONTENT,
+    catalog: (kind) => C.catalogs[kind] || [],
+    catalogNote: (kind) => (C.notes || {})[kind] || "",
+    mode: (id) => (C.catalogs.modes || []).find((m) => m.id === id),
+    group: (id) => (C.catalogs.groups || []).find((g) => g.id === id),
+    mechanism: (id) => C.mechanisms.find((m) => m.id === id),
+    planned: (id) => C.levels.find((l) => l.id === id),
+    mechStatusLabel: (s) => MECH_STATUS[s] || s,
     storageOk: () => storageOk,
     assets: () => [...assets.values()],
     asset: (id) => assets.get(id),
