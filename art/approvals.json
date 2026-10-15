@@ -1,0 +1,415 @@
+{
+ "format": "pushbox.approvals/1",
+ "note": "Append-only. Written only by `node tools/art.mjs approve`.",
+ "records": [
+  {
+   "id": "APR-0001",
+   "date": "2026-10-15T07:16:13.018Z",
+   "by": "用户（keycroow）",
+   "via": "chat",
+   "scope": "全部美术候选：角色、箱子、机关、物品、特效、界面元素、六个主题（含生态与环境效果）、8 个界面画面，共 57 项",
+   "note": "用户在聊天中回复（2026-10-15）：『可以，目前跟美术相关的我都满意了，可以全部标记为通过』",
+   "items": [
+    {
+     "asset": "char.miner",
+     "version": 1,
+     "hash": "d1088f1add5a9f7cb8e6f1482bb70b7622ba202b08c0b6db533a7e58b4409535",
+     "png": "art/export/approved/char.miner@v1.png",
+     "png_sha256": "f358a85e823f84a7ae2e1b23538e4d8a9006f016751f7c790576a0f953a412ac"
+    },
+    {
+     "asset": "deco.cave_crystal",
+     "version": 1,
+     "hash": "efea73ac5f71e7eedbb1e9e070959f0a03e7249f0a0a1b1e4e8b969632c1b3cf",
+     "png": "art/export/approved/deco.cave_crystal@v1.png",
+     "png_sha256": "0b30fd52af2908036d9138cdc3d69cc7e44d2e4477362786380a56c5db0910fa"
+    },
+    {
+     "asset": "deco.cave_mushroom",
+     "version": 1,
+     "hash": "02a19b50f141b4c32a4f3ffb9c99f8a91bd7e28fb55277974e8695b2d1dcb3c8",
+     "png": "art/export/approved/deco.cave_mushroom@v1.png",
+     "png_sha256": "0ce4b6d65a69d7a04439d8bdd2649f1b726fcf4983e30cd1b9b33132f3947151"
+    },
+    {
+     "asset": "deco.cosmos_sprout",
+     "version": 1,
+     "hash": "4f02f4e5c234d60544b0bbd09e1c292d1b0d54fdbcd5b6d56525aead60dee0f6",
+     "png": "art/export/approved/deco.cosmos_sprout@v1.png",
+     "png_sha256": "c01c4aa2f0e70d560f69c678bf3c4376cf6069f5c9e6a25178a9b87b1648b0d8"
+    },
+    {
+     "asset": "deco.dungeon_moss",
+     "version": 1,
+     "hash": "08d991b50716ab13d802895f9b51ea689a76a05d72a3f550a27f72ec1da85478",
+     "png": "art/export/approved/deco.dungeon_moss@v1.png",
+     "png_sha256": "691fc17756a4e014dc2b3893ca8745c8ff82e81fae51984c77e1ddccaf70df1f"
+    },
+    {
+     "asset": "deco.dungeon_torch",
+     "version": 1,
+     "hash": "faf405815625bb62794c31d2480bb99fc1da2515b5e7bd0b77207217a8722531",
+     "png": "art/export/approved/deco.dungeon_torch@v1.png",
+     "png_sha256": "29959637eda5b8df03793be16fbb3817ca400da271ef0b9858e4509b353d3440"
+    },
+    {
+     "asset": "deco.forest_flower",
+     "version": 1,
+     "hash": "75c78b780b2903d4d6f231f655d558af3cf570749cd748f229f7f24f52ccd595",
+     "png": "art/export/approved/deco.forest_flower@v1.png",
+     "png_sha256": "3150bfd212e0e5708f9bed4396c4407e38f1275fee1b22ea44951649eadb7a4e"
+    },
+    {
+     "asset": "deco.forest_grass",
+     "version": 1,
+     "hash": "1cd11380958d41b5277d46d74cb3e3469be16801cadaf657d33a751ca7f5bb44",
+     "png": "art/export/approved/deco.forest_grass@v1.png",
+     "png_sha256": "6f07b95281a902cad5f49b33f110e5ab062253ae3ca5f76a70ddd759fe4ebc83"
+    },
+    {
+     "asset": "deco.ruins_lotus",
+     "version": 1,
+     "hash": "b7858a38d3711730e4fa6be7944d0fc6c4317542ff516e8f42aff45218ad2142",
+     "png": "art/export/approved/deco.ruins_lotus@v1.png",
+     "png_sha256": "2d91071611d26c562c307010a095bbcba13e568a6b6174b1bf0185e057176887"
+    },
+    {
+     "asset": "deco.ruins_vine",
+     "version": 1,
+     "hash": "1248130e07d359c261ebe0c60da54923c14e2fdaf34c209e1ec4c92069eca012",
+     "png": "art/export/approved/deco.ruins_vine@v1.png",
+     "png_sha256": "7b45b8c1ea733cab74b656cc04ab2dc48997f62a0f2dfb8bd7ee1ecd008fb6eb"
+    },
+    {
+     "asset": "deco.sky_flower",
+     "version": 1,
+     "hash": "cc43539105a8b3db23899736c2de90fa2629a6147ed07adf0888dd8115a50ea9",
+     "png": "art/export/approved/deco.sky_flower@v1.png",
+     "png_sha256": "39952d8769bb2e94991c598a214e8bf84c081b0b3bc5735d7f82ed09f0020fdd"
+    },
+    {
+     "asset": "fauna.cave_moth",
+     "version": 1,
+     "hash": "8ae9e104faf6057381452750cba06793cf693c2da96d9afb0eb01c0462fdda97",
+     "png": "art/export/approved/fauna.cave_moth@v1.png",
+     "png_sha256": "9501479b9d454b043a0ceed26c8e297c8193481ab1aa5731033ed9c1cfa894b1"
+    },
+    {
+     "asset": "fauna.cosmos_drone",
+     "version": 1,
+     "hash": "1401146e5501c690722e3142526e22c205a897fa10693ee11375f9df4e68afc7",
+     "png": "art/export/approved/fauna.cosmos_drone@v1.png",
+     "png_sha256": "68a94e9fbf00a9d7e11eba86a73d63ba1e9e6c826f0139be97c5e9b13fbf358f"
+    },
+    {
+     "asset": "fauna.dungeon_bat",
+     "version": 1,
+     "hash": "d2eb3b1ef3417414ac847e2cdfb1ab11c45a46128ef00eac1563ebc6b1514bdc",
+     "png": "art/export/approved/fauna.dungeon_bat@v1.png",
+     "png_sha256": "705fd30b5dd1b0879848307bd2246110072ba9af86670866c9b63dbe952172a4"
+    },
+    {
+     "asset": "fauna.dungeon_rat",
+     "version": 1,
+     "hash": "f09f3a8270586643715fffc226a3801ee9e006ff2583d5a170e018945e8f4733",
+     "png": "art/export/approved/fauna.dungeon_rat@v1.png",
+     "png_sha256": "ecc4ccbdbcaac5c4fe2bb5e02d30098b45fb2fcfcda14bedc8619d74c4e63c10"
+    },
+    {
+     "asset": "fauna.forest_bird",
+     "version": 1,
+     "hash": "9c44c68ef48b68d8b31901b3e17718d6b90e9308dcf893e4a5d2af341cc3756e",
+     "png": "art/export/approved/fauna.forest_bird@v1.png",
+     "png_sha256": "133a832da0a6a47af70c5d2dec6b05c491761338ee9cb84027bf8fdb76a592f9"
+    },
+    {
+     "asset": "fauna.forest_butterfly",
+     "version": 1,
+     "hash": "e4c5e613207d38dab9d962926faa7c263f017e4563b5314f9fb6f9188ae49eda",
+     "png": "art/export/approved/fauna.forest_butterfly@v1.png",
+     "png_sha256": "128137008dd1cb61d0edb4810cf0ea8964e5ce6eb36ebecfdfc6f0dd2edaedce"
+    },
+    {
+     "asset": "fauna.ruins_scarab",
+     "version": 1,
+     "hash": "0edbff7f7b4db6e05912e43a2c58c39e8f800b05f0bf2b35b12f761060fb38e7",
+     "png": "art/export/approved/fauna.ruins_scarab@v1.png",
+     "png_sha256": "6db8e280ef8b3cebfec40276f5214615563ac2a7c5f42a08c59718644fdc3566"
+    },
+    {
+     "asset": "fauna.sky_cloudling",
+     "version": 1,
+     "hash": "7cfda36287ed2f28ac9198a76b969f91e64805b2155c662160d54c1e8b341a63",
+     "png": "art/export/approved/fauna.sky_cloudling@v1.png",
+     "png_sha256": "71f81a98bfaf0a69ab2467795ec5faa468713b644e38f00f219cec88f936446e"
+    },
+    {
+     "asset": "fauna.sky_dove",
+     "version": 1,
+     "hash": "98fc6674c135cddf8eb2d3ac6a0ec093b773b6c039cbafcc974fa4b01b1101c9",
+     "png": "art/export/approved/fauna.sky_dove@v1.png",
+     "png_sha256": "7caba9c0a15358458b37d8b0a98928e7cd497ba564ede95d163dc235f4fed765"
+    },
+    {
+     "asset": "fx.dig_bits",
+     "version": 1,
+     "hash": "3d4014fda67a32325ee305d1d17a37f8d6951b36f8374b18ab71dfbff3ef09a3",
+     "png": "art/export/approved/fx.dig_bits@v1.png",
+     "png_sha256": "42506c1a1f9d38d3c0c7fedf35e1cea88fefcaa3bf8c1826e582594bc3515e09"
+    },
+    {
+     "asset": "fx.goal_spark",
+     "version": 1,
+     "hash": "9b6b40ade3dc85922d5080995c8269186416db4868b43d165be6682289e59dac",
+     "png": "art/export/approved/fx.goal_spark@v1.png",
+     "png_sha256": "d510a6ec040c050a1659f50b71a822dbacd8951eba1d918e8f528c04423bf5d6"
+    },
+    {
+     "asset": "fx.land_dust",
+     "version": 1,
+     "hash": "2f8a771514401662fbd8363b02e7b5b3fd3c96020e186d8d4e1ddbfff2984cdd",
+     "png": "art/export/approved/fx.land_dust@v1.png",
+     "png_sha256": "1c1d308076e68d38872a9c765fd9191cb5940bbb774ef283765d2705e24eeeca"
+    },
+    {
+     "asset": "item.bomb",
+     "version": 1,
+     "hash": "f50e0501ea870a20c7addf1fad72f70ce4dac2a54ffe88ccaff3c474ca7b049b",
+     "png": "art/export/approved/item.bomb@v1.png",
+     "png_sha256": "a00581809338d28f85199d95088bf3b939d412e82e544d6fb66702414b5d72a0"
+    },
+    {
+     "asset": "item.sandbag",
+     "version": 1,
+     "hash": "4717353f223ad3f9c60004d472c0ca7c599c5a62957ae9adb28163a4f4d9eccd",
+     "png": "art/export/approved/item.sandbag@v1.png",
+     "png_sha256": "662a3ccce8ebc6e0f51c992c6d9e7694bda377b677e1eeb8b3dbd4053ca2681f"
+    },
+    {
+     "asset": "mech.door",
+     "version": 1,
+     "hash": "74fb99c41322092f4e8bdddac2cf38872a7d890a99b25fc7a61cca6ad39cd714",
+     "png": "art/export/approved/mech.door@v1.png",
+     "png_sha256": "79b1d27102798000d27835301219ee6c03528a3b206682efa7128e7254179923"
+    },
+    {
+     "asset": "mech.exit_flag",
+     "version": 1,
+     "hash": "cdf2f0ecce1a35bab5313d588da5e34b8e62452c384e5914e8c30d1ba1afd050",
+     "png": "art/export/approved/mech.exit_flag@v1.png",
+     "png_sha256": "e21a974785bd5be13d341052a747baceec30b72d634d019f824dfbe258567c9d"
+    },
+    {
+     "asset": "mech.ladder",
+     "version": 1,
+     "hash": "92a24415a1048bce62488a0c4e7bd087e3158a8023aef6f2b937427eead953f6",
+     "png": "art/export/approved/mech.ladder@v1.png",
+     "png_sha256": "ed144e3b8d9e87101dc8994573343df73d99cd254a0d1a2a785f1b9b443080cc"
+    },
+    {
+     "asset": "mech.link_symbol",
+     "version": 1,
+     "hash": "fd0f35f349161d0e16b6a86b66fd827fd76af4c0f1029d24a8111bb2d48afe21",
+     "png": "art/export/approved/mech.link_symbol@v1.png",
+     "png_sha256": "554a7f07eea9af5ff0ba115af917318cf976d20be32f4642cc1cbbd59f780b71"
+    },
+    {
+     "asset": "mech.plate",
+     "version": 1,
+     "hash": "3c4fdd99180e2e392a28218b9e403ab254168bc549928937b86b34ee9f25c0ec",
+     "png": "art/export/approved/mech.plate@v1.png",
+     "png_sha256": "1ebc604e53dd6949383e5b80692f06cf5fc788696ae75882c8446b02c1a0f0bd"
+    },
+    {
+     "asset": "mech.socket",
+     "version": 1,
+     "hash": "4e24d52b6dd0c38315135ff57fba00ad1cd4cb365df5799e0f794495b85745af",
+     "png": "art/export/approved/mech.socket@v1.png",
+     "png_sha256": "a68204c7c64401f9cce58ad1f75c0cd4e8c0afd31db5aa65cab113dc8b60eabc"
+    },
+    {
+     "asset": "mech.socket_lit",
+     "version": 1,
+     "hash": "5e47f62ff0d94acee5a44e81d1b8686fb231d3f9708a82ea2523ce828f9543e3",
+     "png": "art/export/approved/mech.socket_lit@v1.png",
+     "png_sha256": "21759a5e003ca2b2256a19371774e9dc8a28e7bc4238049b30547ce7b44f59a8"
+    },
+    {
+     "asset": "obj.crate_iron",
+     "version": 1,
+     "hash": "8c04188e5a42b11842dd980cc3237842fb41ad7374a179510b5c629dc902bacb",
+     "png": "art/export/approved/obj.crate_iron@v1.png",
+     "png_sha256": "c405196a945580589750a96ace135167fb44973df20b92ef244d6b81f82e2504"
+    },
+    {
+     "asset": "obj.crate_wood",
+     "version": 1,
+     "hash": "8004b9b3ca8f9b25e809e24c6fdbc770db5a1da7b2528049f4f2da0cd6ca381f",
+     "png": "art/export/approved/obj.crate_wood@v1.png",
+     "png_sha256": "bf4b388d6feeec61e9226acf438cf833e807eaaed930acddf40dc4c194d52d79"
+    },
+    {
+     "asset": "theme.cave",
+     "version": 1,
+     "hash": "527e1a896c5a2e0cea32b1c848694dc1ce165d3163a7ac8cfb163b5324bbc86f",
+     "png": "art/export/approved/theme.cave@v1.png",
+     "png_sha256": "531d542d5bd82687dfc6ab6f25cf28b46faec9c01bb54738ceed99c1b62a3ae1"
+    },
+    {
+     "asset": "theme.cosmos",
+     "version": 1,
+     "hash": "df990dbccaf3405ff7dc8628df7f26440bbdede84095601beeaa4d9e880ca704",
+     "png": "art/export/approved/theme.cosmos@v1.png",
+     "png_sha256": "4f24fec72837f16f56eaaf42d1c4c842438994b645315bcea9161bc2154394a5"
+    },
+    {
+     "asset": "theme.dungeon",
+     "version": 1,
+     "hash": "c3881552b196c87ce21cd7d76954f6d058b388a060a010676167686326ed1e25",
+     "png": "art/export/approved/theme.dungeon@v1.png",
+     "png_sha256": "fc36e75e2a6d115577bf015a6e5de05d98913ae05259995172c0c631d83ac00f"
+    },
+    {
+     "asset": "theme.forest",
+     "version": 1,
+     "hash": "e90b4ba521c3de9c9eda5928061aa2efa49f1315dfcddfd355b0a540f524463b",
+     "png": "art/export/approved/theme.forest@v1.png",
+     "png_sha256": "5af596861b06dccf90804dfd7a6e9bf6e68e029d6bacbb3103c307958f616626"
+    },
+    {
+     "asset": "theme.ruins",
+     "version": 1,
+     "hash": "d73b763e7af2267f8997d64c06d08a80558accd2703d2d04e1da551734c3e7d2",
+     "png": "art/export/approved/theme.ruins@v1.png",
+     "png_sha256": "0057aaf5ee62524f9560e233b3a24a278c941aa5fa0ad590a3c4e6d2872fb370"
+    },
+    {
+     "asset": "theme.sky",
+     "version": 1,
+     "hash": "da7d99f444b82552d47d2f41a22b1306d8ac154226716b2cb0366b8cd94d20e9",
+     "png": "art/export/approved/theme.sky@v1.png",
+     "png_sha256": "bfe03ac8546cfeafbda14c84e89703417edeaf5db7c1be23ad3a8380306a6c14"
+    },
+    {
+     "asset": "ui.class_icon",
+     "version": 1,
+     "hash": "e90a69439d78f4b829d7f0ac5bc6c5ce642a2291ce702091999c573241819e95",
+     "png": "art/export/approved/ui.class_icon@v1.png",
+     "png_sha256": "ad1ed35a0cbb11bd29f746a471a4d56361316bac22e6b92661d5335556e38e50"
+    },
+    {
+     "asset": "ui.cursor",
+     "version": 1,
+     "hash": "a81f0eee56940511a17162e7b735137b2154a966ba3c5d72c077b77431f78ee9",
+     "png": "art/export/approved/ui.cursor@v1.png",
+     "png_sha256": "a2b577740a0b0af525530c0ef1dbf17ceff35fdfa91e2eb123ca085a4c6f38e4"
+    },
+    {
+     "asset": "ui.goal_lamp",
+     "version": 1,
+     "hash": "4dba01bdb0c6e4cd64e63f85ca53024bb7bf2cdbe6eaa1a7aa03b8e7490486fe",
+     "png": "art/export/approved/ui.goal_lamp@v1.png",
+     "png_sha256": "5ac8398e89cdff4775c81e02418d0649894058b8e171df5c09728cb19cb69f59"
+    },
+    {
+     "asset": "ui.icons",
+     "version": 1,
+     "hash": "94ae7bd0f452553f2abbfe6eb440fa24413a2809f40294d134d519b79eb0d209",
+     "png": "art/export/approved/ui.icons@v1.png",
+     "png_sha256": "3075c8eb7a046335fb258cdfc6ab86bfd199f19d6125cf86aad3665ec131206b"
+    },
+    {
+     "asset": "ui.keycap",
+     "version": 1,
+     "hash": "63774b82a1496982bed95c0a1804e46cf323c4bfd1a7dbef06d5aa6ce5e3706f",
+     "png": "art/export/approved/ui.keycap@v1.png",
+     "png_sha256": "cadeef21380650a0c167ef6fc898041dae2acd2e2958fb4f1ddee0f9a9e31191"
+    },
+    {
+     "asset": "ui.menu_icons",
+     "version": 1,
+     "hash": "58765a11a4ab23ded7a7d5b6938a1b1f79ad784c266db34b8e0fecf03020f11f",
+     "png": "art/export/approved/ui.menu_icons@v1.png",
+     "png_sha256": "b346c9e23c2fd15373d8b54aba805dfce6dc0f598cb8741b92b57eddbf4580ad"
+    },
+    {
+     "asset": "ui.panel",
+     "version": 1,
+     "hash": "a5a5deea16eb5e6e910aa6e90ef044d6095746748d13288fcad70687c1caf1a1",
+     "png": "art/export/approved/ui.panel@v1.png",
+     "png_sha256": "9ca06587fe84e072ad7f6788ccd6bbfcad48d749a76abcdd922ffd450094455d"
+    },
+    {
+     "asset": "ui.screen.chapters",
+     "version": 1,
+     "hash": "2c715347965477e88a19abdffc75e1b1d144173bdce4409f977b7db71ea8da59",
+     "png": "art/export/approved/ui.screen.chapters@v1.png",
+     "png_sha256": "69941857503656192a4341e29112c59a7146f984a8981382c9da9ad7591b2883"
+    },
+    {
+     "asset": "ui.screen.complete",
+     "version": 1,
+     "hash": "d8c2649d71470334b13c0fd3ac83b8c922179cbd28dd461a860029e8286c3f48",
+     "png": "art/export/approved/ui.screen.complete@v1.png",
+     "png_sha256": "ca72bef72a6bf3bd327c85a99fe1464fd12a37417dd24cc0c6b3dadde3d64df3"
+    },
+    {
+     "asset": "ui.screen.hint",
+     "version": 1,
+     "hash": "d25c4c928e6d915a8861f6902696eed8afb2c8650c2c707294350925ae6b04d5",
+     "png": "art/export/approved/ui.screen.hint@v1.png",
+     "png_sha256": "3ffc54ae4d510443c0b1b470f727fba857dda769a36f6b6961c4d9469036bdfe"
+    },
+    {
+     "asset": "ui.screen.levels",
+     "version": 1,
+     "hash": "1feddb30d14e1452b6008db1389377691f6be30fb80ab0ee6cdd24441d4c02bd",
+     "png": "art/export/approved/ui.screen.levels@v1.png",
+     "png_sha256": "a68b73f6186398c469cf18415a71b2b50ac10d14edc9c4c05be2e03982528d63"
+    },
+    {
+     "asset": "ui.screen.lobby",
+     "version": 1,
+     "hash": "3b5d15106439f6aba9a3f000efdfd5488796a0debfbcdd44b14b81c7eb113179",
+     "png": "art/export/approved/ui.screen.lobby@v1.png",
+     "png_sha256": "6d7e845f9bcba10753b18357d2e8f70bd71300d57dd14bc650cdf6cc5eb55007"
+    },
+    {
+     "asset": "ui.screen.pause",
+     "version": 1,
+     "hash": "4c3bb26f1a651f3548a7eee8e62b26ba76fc13f784f7343bd84cfdd9e1d68027",
+     "png": "art/export/approved/ui.screen.pause@v1.png",
+     "png_sha256": "a1f9aa24b4543de3789e67eb74ee6d10565f1dca3dfdf16d5e2b930ada76764c"
+    },
+    {
+     "asset": "ui.screen.rulecard",
+     "version": 1,
+     "hash": "85693810e3816e3730f79469b2fddc5f7a98f04bbda44abf494118e5c65b2a5a",
+     "png": "art/export/approved/ui.screen.rulecard@v1.png",
+     "png_sha256": "d02e69d90b75029085272c715dd4159bbb801ba47c3463c678b718e540af7a2a"
+    },
+    {
+     "asset": "ui.screen.settings",
+     "version": 1,
+     "hash": "bfd2a11b89fab1de823dee2fcf84874347004d4d5422ab972ae898e8a6de69fe",
+     "png": "art/export/approved/ui.screen.settings@v1.png",
+     "png_sha256": "a6dd69fa825db739e3b58a41a56d296a4f5eed531b400f0b6dfecc308c688f29"
+    },
+    {
+     "asset": "ui.target",
+     "version": 1,
+     "hash": "e9e2024de81ec519c84fb2efd7014af372e05a9799a5cbcc555c3d840b3f91e8",
+     "png": "art/export/approved/ui.target@v1.png",
+     "png_sha256": "f785dfca577e63d760a15400b0677d0007564601db25744751e6d0b9ff3ea60f"
+    },
+    {
+     "asset": "ui.theme_emblem",
+     "version": 1,
+     "hash": "116c2633d6261bbcaf0c121b0c45cd874d52a2b53188c3dcc1025430d37c1076",
+     "png": "art/export/approved/ui.theme_emblem@v1.png",
+     "png_sha256": "6221ca8792d52a782eadebc03e2a5be32704528a4bfec8c40e927c11a39b0f88"
+    }
+   ]
+  }
+ ]
+}
