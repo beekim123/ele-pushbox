@@ -39,31 +39,48 @@
   }
   function dim(r) { r.remap(0, 0, W, H, PB.DIM); r.remap(0, 0, W, H, PB.DIM); }
 
-  function backdrop(r, theme, tick) {
-    const T = S().get(theme).params;
+  function themeId(st, p) { return (st && st.theme) || (p && p.theme) || "theme.dungeon"; }
+
+  // Themed backdrop: background, a floor (plus optional extra solid tiles), ambient life.
+  // Floor top is at y = 156. extraSolid / occupied use tile coords with oy = 12.
+  function backdrop(r, theme, tick, extraSolid, occupied) {
+    const T = S().get(theme).params, M = PB.terrain.MAT, oy = 12;
+    const map = { w: 21, h: 11, at: (x, y) => (x < 0 || x >= 21 || y < 0 ? M.EMPTY : y >= 9 ? M.ROCK : extraSolid && extraSolid(x, y) ? M.ROCK : M.EMPTY) };
     PB.terrain.drawBackground(r, T, 0, 0, W, H, tick);
-    const floor = { w: 21, h: 2, at: (x, y) => (y < 0 || x < 0 || x >= 21 || y >= 2 ? 0 : 1) };
-    PB.terrain.drawTerrain(r, floor, T, 0, H - 24, tick >> 3);
+    const area = { x: 0, y: 0, w: W, h: 150 };
+    PB.ambient.draw(r, T, map, 0, oy, tick, "back", occupied, area);
+    PB.terrain.drawTerrain(r, map, T, 0, oy, tick >> 3);
+    PB.ambient.draw(r, T, map, 0, oy, tick, "front", occupied, area);
+    return T;
   }
 
   // ---------- screens ----------
   function lobby(r, tick, p, st) {
-    backdrop(r, p.theme, tick);
-    text2x(r, p.title, 20, 18, "l", "g");
-    TX().draw(r, p.subtitle, 22, 50, "d", "z");
-    S().draw(r, "obj.crate_wood", "default", 0, 236, H - 24);
-    S().draw(r, "obj.crate_wood", "default", 0, 252, H - 24);
-    S().draw(r, "obj.crate_wood", "default", 0, 244, H - 40);
-    S().draw(r, "char.miner", "idle", tick, 220, H - 24);
-    S().draw(r, "mech.exit_flag", "idle", tick, 284, H - 24);
-    const sel = st.focus | 0, x = 20, y0 = 74;
+    const th = themeId(st, p);
+    // A small diorama on the right: a two-tile ledge with the exit flag, stacked crates, the miner pushing.
+    const ledge = (x, y) => (x === 18 || x === 19) && (y === 7 || y === 8);
+    const busy = (x, y) => (y === 8 && x >= 12 && x <= 15) || (y === 7 && x === 15) || (y === 6 && (x === 18 || x === 19));
+    const T = backdrop(r, th, tick, ledge, busy);
+    const title = T.title || "";
+    // Title plate.
+    text2x(r, p.title, 20, 14, "l", "z");
+    TX().draw(r, p.subtitle, 22, 46, "c", "z");
+    const chap = T.chapter <= 5 ? p.chapter_label.replace("{n}", String(T.chapter)) : p.chapter_extra;
+    TX().draw(r, chap + title, 22, 60, "k", "z");
+    S().draw(r, "obj.crate_wood", "default", 0, 14 * 16 + 8, 156);
+    S().draw(r, "obj.crate_wood", "default", 0, 15 * 16 + 8, 156);
+    S().draw(r, "obj.crate_wood", "default", 0, 15 * 16 + 8, 140);
+    S().draw(r, "char.miner", "push", tick, 13 * 16 + 8, 156);
+    S().draw(r, "mech.exit_flag", "idle", tick, 18 * 16 + 12, 124);
+    const sel = st.focus | 0, x = 16, y0 = 80, w = 104, h = 10 + p.items.length * 16;
+    panel(r, x, y0, w, h, 0);
     p.items.forEach((label, i) => {
-      const y = y0 + i * 18;
-      panel(r, x, y, 92, 16, i === sel ? 1 : 0);
-      if (i === sel) { r.rect(x + 5, y + 6, 2, 4, "k"); r.rect(x + 7, y + 7, 1, 2, "k"); }
-      TX().draw(r, label, x + 12, y + 1, i === sel ? "l" : "u");
+      const y = y0 + 5 + i * 16;
+      if (i === sel) { panel(r, x + 4, y - 1, w - 8, 15, 1); r.rect(x + 9, y + 5, 2, 4, "k"); r.rect(x + 11, y + 6, 1, 2, "k"); }
+      TX().draw(r, label, x + 16, y, i === sel ? "l" : "u");
     });
-    let kx = 20; const ky = H - 17;
+    let kx = 16; const ky = H - 16;
+    r.rect(0, ky - 3, W, 19, "z");
     key(r, "up", kx, ky); key(r, "down", kx + 14, ky); kx += 30;
     kx += TX().draw(r, p.hint_select, kx, ky - 1, "v") + 8;
     kx += wideKey(r, "Enter", kx, ky) + 3;
@@ -71,41 +88,40 @@
   }
 
   function chapters(r, tick, p, st) {
-    backdrop(r, "terrain.mine", tick);
+    const sel = st.focus | 0, cur = p.chapters[sel];
+    backdrop(r, cur.theme || "theme.dungeon", tick);
     dim(r);
-    TX().draw(r, p.heading, 12, 6, "l", "z");
-    const sel = st.focus | 0, cw = 58, gap = 4, x0 = (W - (cw * 5 + gap * 4)) >> 1, y0 = 26;
+    TX().draw(r, p.heading, 10, 5, "l", "z");
+    const n = p.chapters.length, gap = 4, cw = Math.floor((W - 12 - gap * (n - 1)) / n), x0 = (W - (cw * n + gap * (n - 1))) >> 1, y0 = 24;
     p.chapters.forEach((ch, i) => {
       const x = x0 + i * (cw + gap), y = y0 + (i === sel ? -2 : 0);
       panel(r, x, y, cw, 112, i === sel ? 1 : 0);
-      // Thumbnail: a strip of that chapter's terrain, or a locked plate.
-      const th = { x: x + 5, y: y + 5, w: cw - 10, h: 44 };
+      const th = { x: x + 5, y: y + 5, w: cw - 10, h: 46 };
+      const tmp = new PB.Raster(th.w, th.h);
       if (ch.theme && S().has(ch.theme)) {
-        const T = S().get(ch.theme).params;
-        const tmp = new PB.Raster(th.w, th.h);
+        const T = S().get(ch.theme).params, M = PB.terrain.MAT;
+        const map = { w: 3, h: 3, at: (tx, ty) => (ty >= 2 && tx >= 0 && tx < 3 ? M.ROCK : M.EMPTY) };
+        const area = { x: 0, y: 0, w: th.w, h: 30 };
         PB.terrain.drawBackground(tmp, T, 0, 0, th.w, th.h, tick);
-        PB.terrain.drawTerrain(tmp, { w: 4, h: 1, at: (tx, ty) => (ty === 0 && tx >= 0 && tx < 4 ? ch.floor || 1 : 0) }, T, 0, th.h - 16, tick >> 3);
-        r.blit(tmp, th.x, th.y);
-        if (ch.sprite) S().draw(r, ch.sprite, "idle", tick, th.x + 16, th.y + th.h - 16);
-      } else {
-        r.rect(th.x, th.y, th.w, th.h, "y");
-      }
-      if (ch.locked) {
-        r.remap(th.x, th.y, th.w, th.h, PB.DIM);
-        icon(r, "lock", x + (cw >> 1) - 6, th.y + 16);
-      }
+        PB.ambient.draw(tmp, T, map, -4, -4, tick + i * 97, "back", null, area);
+        PB.terrain.drawTerrain(tmp, map, T, -4, -4, tick >> 3);
+        PB.ambient.draw(tmp, T, map, -4, -4, tick + i * 97, "front", null, area);
+      } else tmp.rect(0, 0, th.w, th.h, "y");
+      if (ch.locked) { tmp.remap(0, 0, th.w, th.h, PB.DIM); }
+      r.blit(tmp, th.x, th.y);
+      if (ch.locked) icon(r, "lock", x + (cw >> 1) - 6, th.y + 14);
       r.rect(th.x - 1, th.y - 1, th.w + 2, 1, "z"); r.rect(th.x - 1, th.y + th.h, th.w + 2, 1, "z");
-      TX().centered(r, ch.num, x + (cw >> 1), y + 52, "v");
-      TX().centered(r, ch.name, x + (cw >> 1), y + 66, ch.locked ? "w" : "u");
-      TX().centered(r, ch.progress, x + (cw >> 1), y + 84, ch.locked ? "w" : i === sel ? "l" : "k");
+      TX().centered(r, ch.num, x + (cw >> 1), y + 54, "v");
+      TX().centered(r, ch.name, x + (cw >> 1), y + 70, ch.locked ? "w" : i === sel ? "l" : "u");
+      TX().centered(r, ch.progress, x + (cw >> 1), y + 88, ch.locked ? "w" : i === sel ? "l" : "k");
     });
-    const cur = p.chapters[sel];
-    panel(r, 12, 146, W - 24, 24, 0);
-    TX().draw(r, cur.locked ? cur.unlock : cur.blurb, 20, 151, cur.locked ? "v" : "u");
+    panel(r, 6, 142, W - 12, 32, 0);
+    TX().draw(r, cur.full, 14, 144, "l");
+    TX().draw(r, cur.locked ? cur.unlock : cur.blurb, 14, 158, cur.locked ? "v" : "u");
   }
 
   function levels(r, tick, p, st) {
-    backdrop(r, "terrain.mine", tick);
+    backdrop(r, themeId(st, p), tick);
     dim(r);
     TX().draw(r, p.heading, 12, 6, "l", "z");
     TX().draw(r, p.progress, W - 12 - TX().measure(p.progress), 6, "k", "z");
@@ -139,7 +155,7 @@
   }
 
   function inLevel(r, tick, spec, extra) {
-    PB.scene.renderLevel(r, spec, null, Object.assign({ tick, theme: "terrain.mine" }, extra || {}));
+    PB.scene.renderLevel(r, spec, null, Object.assign({ tick }, extra || {}));
   }
 
   function pause(r, tick, p, st) {
@@ -177,7 +193,7 @@
     const spec = st.levelSpec;
     const TM = PB.tilemodel, parsed = TM.parse(spec);
     for (const a of spec.solution) TM.act(parsed.level, parsed.state, a);
-    PB.scene.renderLevel(r, spec, parsed, { tick, pose: "win", theme: "terrain.mine" });
+    PB.scene.renderLevel(r, spec, parsed, { tick, pose: "win" });
     const w = 150, h = 54, x = (W - w) >> 1, y = 34;
     panel(r, x, y, w, h, 2);
     text2x(r, p.heading, x + ((w - PB.text.measure(p.heading) * 2) >> 1), y + 4, "l", "g");
@@ -189,7 +205,7 @@
   }
 
   function settings(r, tick, p, st) {
-    backdrop(r, "terrain.mine", tick);
+    backdrop(r, themeId(st, p), tick);
     dim(r);
     const sel = st.focus | 0, w = 220, x = (W - w) >> 1, y = 22, h = 22 + p.items.length * 18;
     panel(r, x, y, w, h, 0);
@@ -217,7 +233,7 @@
     panel(r, x, y, w, h, 0);
     TX().draw(r, p.heading, x + 8, y + 4, "l");
     // Two-step illustration: earth beside the miner, then dug out with one bag.
-    const T = S().get("terrain.mine").params;
+    const T = S().get(PB.scene.themeFor(st.ruleSpec || st.levelSpec)).params;
     const ill = new PB.Raster(56, 32);
     PB.terrain.drawBackground(ill, T, 0, 0, 56, 32, tick);
     const dug = Math.floor(tick / 60) % 2 === 1;

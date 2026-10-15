@@ -7,14 +7,15 @@
  "renderer": [
   "workbench/js/core/ui.js",
   "workbench/js/core/scene.js",
-  "workbench/js/core/terrain.js"
+  "workbench/js/core/terrain.js",
+  "workbench/js/core/ambient.js"
  ],
  "depends": [
-  "terrain.mine",
-  "ui.panel",
+  "char.miner",
+  "theme.dungeon",
   "ui.icons",
   "ui.keycap",
-  "char.miner"
+  "ui.panel"
  ],
  "version": 1,
  "stage": "review",
@@ -32,5 +33,5 @@
  },
  "usage": "跳关或首次遇到概念时显示；也可从 HUD 旁的小图标重新打开。",
  "notes": "界面布局与文字参考；Godot 中用 Control 节点实现，像素位置以本参考图为准。",
- "content_hash": "0e1c3222a3a0757ea768792c1ff0bf55662f3a29459c1e3e24075c06aa74f039"
+ "content_hash": "021a4f39d85a3768c16d1758ddded7250eb2d9c07781728a6df0a63eaf52e5b9"
 }

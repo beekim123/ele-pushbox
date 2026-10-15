@@ -28,7 +28,7 @@ async function decode(file) {
   page.on("console", (m) => { if (m.type() === "error") errors.push(m.text()); });
 
   // 1. Every view opens without errors.
-  for (const h of ["#scenes", "#scenes/level.M04", "#scenes/ui.screen.chapters", "#assets", "#assets/mech.door", "#edit/obj.crate_wood", "#review", "#export"]) {
+  for (const h of ["#scenes", "#scenes/level.M04", "#scenes/ui.screen.chapters", "#scenes/lobby.forest", "#scenes/showcase.cosmos", "#assets", "#assets/mech.door", "#edit/obj.crate_wood", "#review", "#export"]) {
     await page.goto(URL + h); await page.waitForTimeout(250);
   }
   check(errors.length === 0, "all views load without console errors" + (errors.length ? ": " + errors[0] : ""));
@@ -36,7 +36,7 @@ async function decode(file) {
   // 2. Browser rendering equals the exported PNGs (same core code, integer pixels).
   await page.goto(URL + "#scenes");
   for (const [name, file, expr] of [
-    ["showcase", "art/export/reference/showcase.mine.png", "(() => { const r = new PB.Raster(320,180); PB.scene.renderLevel(r, PB.scene.SHOWCASE, null, {tick:0}); return Array.from(r.data); })()"],
+    ["showcase", "art/export/reference/showcase.dungeon.png", "(() => { const r = new PB.Raster(320,180); PB.scene.renderLevel(r, PB.scene.SHOWCASE, null, {tick:0}); return Array.from(r.data); })()"],
     ["level M06", "art/export/reference/level.M06.png", "(() => { const r = new PB.Raster(320,180); PB.scene.renderLevel(r, PBStore.level('M06'), null, {tick:0}); return Array.from(r.data); })()"],
     ["miner sheet", "art/export/preview/char.miner.png", "(() => { const a = PBStore.asset('char.miner'); const r = new PB.Raster(a.size[0]*a.frames.length, a.size[1]); a.frames.forEach((f,i)=>r.blitRows(f,i*a.size[0],0,false)); return Array.from(r.data); })()"],
   ]) {
@@ -47,7 +47,7 @@ async function decode(file) {
   }
 
   // 3. Hidden stages stop animating; the visible one animates.
-  await page.goto(URL + "#scenes/showcase.mine"); await page.waitForTimeout(300);
+  await page.goto(URL + "#scenes/showcase.forest"); await page.waitForTimeout(300);
   let before = await page.evaluate(() => window.__raf); await page.waitForTimeout(1000);
   const busy = (await page.evaluate(() => window.__raf)) - before;
   await page.goto(URL + "#review"); await page.waitForTimeout(300);

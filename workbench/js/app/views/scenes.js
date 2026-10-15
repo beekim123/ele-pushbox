@@ -6,12 +6,18 @@
   let stage = null, current = null, step = 0, grid = false, observe = false;
 
   function sceneList() {
-    const list = [
-      { group: "代表场景", id: "showcase.mine", name: "矿道 · 全要素", kind: "showcase", theme: "terrain.mine" },
-      { group: "代表场景", id: "showcase.aqueduct", name: "水渠 · 换主题对照", kind: "showcase", theme: "terrain.aqueduct" },
-    ];
+    const list = [];
+    for (const t of PB.scene.THEMES) {
+      const a = store.asset(t);
+      if (a) list.push({ group: "代表场景（全要素 × 六主题）", id: "showcase." + t.slice(6), name: a.params.title, kind: "showcase", theme: t, asset: a });
+    }
+    const lobby = store.assets().find((x) => x.id === "ui.screen.lobby");
+    if (lobby) for (const t of PB.scene.THEMES) {
+      const a = store.asset(t);
+      if (a) list.push({ group: "大厅（随主题切换）", id: "lobby." + t.slice(6), name: "大厅 · " + a.params.title, kind: "screen", asset: lobby, theme: t });
+    }
     for (const lv of store.levels()) list.push({ group: "第 1 章关卡（设计模型）", id: "level." + lv.id, name: lv.id + " " + lv.title, kind: "level", level: lv });
-    for (const a of store.assets().filter((x) => x.category === "screen")) list.push({ group: "游戏界面", id: a.id, name: a.name, kind: "screen", asset: a });
+    for (const a of store.assets().filter((x) => x.category === "screen" && x.id !== "ui.screen.lobby")) list.push({ group: "游戏界面", id: a.id, name: a.name, kind: "screen", asset: a });
     return list;
   }
 
@@ -20,7 +26,7 @@
     let group = null;
     for (const s of sceneList()) {
       if (s.group !== group) { group = s.group; listEl.append(el("div", { class: "group-title", text: group })); }
-      const badge = s.kind === "screen" ? statusBadge(s.asset.id) : null;
+      const badge = s.asset ? statusBadge(s.asset.id) : null;
       listEl.append(el("button", { class: "list-btn", type: "button", "aria-current": String(current && current.id === s.id), onclick: () => { location.hash = "#scenes/" + s.id; } }, [el("span", { text: s.name }), badge]));
     }
   }
@@ -58,7 +64,7 @@
       PB.scene.renderLevel(r, s.level, st.parsed, { tick, grid, observe, pose: won ? "win" : p.pose, facing: p.facing, target: nextTarget(s.level, st.parsed) });
     } else {
       const lv = store.level("M05");
-      PB.ui.render(r, s.asset, tick, { focus: s.asset.params.screen === "hint" ? 2 : s.asset.params.screen === "levels" ? 4 : 0, specs: Object.fromEntries(store.levels().map((l) => [l.id, l])), levelSpec: lv, ruleSpec: store.level("M03") });
+      PB.ui.render(r, s.asset, tick, { focus: s.asset.params.screen === "hint" ? 2 : s.asset.params.screen === "levels" ? 4 : 0, specs: Object.fromEntries(store.levels().map((l) => [l.id, l])), levelSpec: lv, ruleSpec: store.level("M03"), theme: s.theme });
     }
   }
 

@@ -137,39 +137,734 @@
    "ninepatch": null
   },
   {
-   "id": "deco.lantern",
-   "name": "矿灯（背景装饰）",
+   "id": "deco.cave_crystal",
+   "name": "晶窟 · 紫晶簇",
+   "category": "deco",
+   "kind": "sprite",
+   "layer": "ambient",
+   "current": {
+    "version": 1,
+    "hash": "efea73ac5f71e7eedbb1e9e070959f0a03e7249f0a0a1b1e4e8b969632c1b3cf",
+    "status": "review",
+    "preview": "art/export/preview/deco.cave_crystal.png",
+    "preview_sha256": "0b30fd52af2908036d9138cdc3d69cc7e44d2e4477362786380a56c5db0910fa"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    8,
+    8
+   ],
+   "frame_count": 1,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    4,
+    8
+   ],
+   "animations": {
+    "default": {
+     "fps": 0,
+     "loop": false,
+     "frames": [
+      0
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
+   "id": "deco.cave_mushroom",
+   "name": "晶窟 · 荧光蘑菇",
+   "category": "deco",
+   "kind": "sprite",
+   "layer": "ambient",
+   "current": {
+    "version": 1,
+    "hash": "02a19b50f141b4c32a4f3ffb9c99f8a91bd7e28fb55277974e8695b2d1dcb3c8",
+    "status": "review",
+    "preview": "art/export/preview/deco.cave_mushroom.png",
+    "preview_sha256": "0ce4b6d65a69d7a04439d8bdd2649f1b726fcf4983e30cd1b9b33132f3947151"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    8,
+    8
+   ],
+   "frame_count": 2,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    4,
+    8
+   ],
+   "animations": {
+    "glow": {
+     "fps": 2,
+     "loop": true,
+     "frames": [
+      0,
+      0,
+      1,
+      1
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
+   "id": "deco.cosmos_sprout",
+   "name": "星站 · 异星球芽",
+   "category": "deco",
+   "kind": "sprite",
+   "layer": "ambient",
+   "current": {
+    "version": 1,
+    "hash": "4f02f4e5c234d60544b0bbd09e1c292d1b0d54fdbcd5b6d56525aead60dee0f6",
+    "status": "review",
+    "preview": "art/export/preview/deco.cosmos_sprout.png",
+    "preview_sha256": "c01c4aa2f0e70d560f69c678bf3c4376cf6069f5c9e6a25178a9b87b1648b0d8"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    8,
+    8
+   ],
+   "frame_count": 2,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    4,
+    8
+   ],
+   "animations": {
+    "glow": {
+     "fps": 2,
+     "loop": true,
+     "frames": [
+      0,
+      1
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
+   "id": "deco.dungeon_moss",
+   "name": "石牢 · 苔藓与小菇",
+   "category": "deco",
+   "kind": "sprite",
+   "layer": "ambient",
+   "current": {
+    "version": 1,
+    "hash": "08d991b50716ab13d802895f9b51ea689a76a05d72a3f550a27f72ec1da85478",
+    "status": "review",
+    "preview": "art/export/preview/deco.dungeon_moss.png",
+    "preview_sha256": "691fc17756a4e014dc2b3893ca8745c8ff82e81fae51984c77e1ddccaf70df1f"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    8,
+    5
+   ],
+   "frame_count": 1,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    4,
+    5
+   ],
+   "animations": {
+    "default": {
+     "fps": 0,
+     "loop": false,
+     "frames": [
+      0
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
+   "id": "deco.dungeon_torch",
+   "name": "石牢 · 壁挂火把",
    "category": "deco",
    "kind": "sprite",
    "layer": "background",
    "current": {
     "version": 1,
-    "hash": "8a57645506d7b4cd1fbda1a34e4daeca0792ec842d20983490285a0141bfb68b",
+    "hash": "faf405815625bb62794c31d2480bb99fc1da2515b5e7bd0b77207217a8722531",
     "status": "review",
-    "preview": "art/export/preview/deco.lantern.png",
-    "preview_sha256": "819372e7ed39b924038c6f370fcf5e8f6f4853eab3eb1cf165c9bdf3811d9c12"
+    "preview": "art/export/preview/deco.dungeon_torch.png",
+    "preview_sha256": "29959637eda5b8df03793be16fbb3817ca400da271ef0b9858e4509b353d3440"
    },
    "approved": null,
    "current_is_approved": false,
    "frame_size": [
-    16,
-    16
+    6,
+    10
+   ],
+   "frame_count": 3,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    2,
+    9
+   ],
+   "animations": {
+    "flicker": {
+     "fps": 6,
+     "loop": true,
+     "frames": [
+      0,
+      1,
+      2,
+      1
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
+   "id": "deco.forest_flower",
+   "name": "古森 · 三色野花",
+   "category": "deco",
+   "kind": "sprite",
+   "layer": "ambient",
+   "current": {
+    "version": 1,
+    "hash": "75c78b780b2903d4d6f231f655d558af3cf570749cd748f229f7f24f52ccd595",
+    "status": "review",
+    "preview": "art/export/preview/deco.forest_flower.png",
+    "preview_sha256": "3150bfd212e0e5708f9bed4396c4407e38f1275fee1b22ea44951649eadb7a4e"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    8,
+    7
+   ],
+   "frame_count": 2,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    4,
+    7
+   ],
+   "animations": {
+    "sway": {
+     "fps": 2,
+     "loop": true,
+     "frames": [
+      0,
+      1
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
+   "id": "deco.forest_grass",
+   "name": "古森 · 草丛",
+   "category": "deco",
+   "kind": "sprite",
+   "layer": "ambient",
+   "current": {
+    "version": 1,
+    "hash": "1cd11380958d41b5277d46d74cb3e3469be16801cadaf657d33a751ca7f5bb44",
+    "status": "review",
+    "preview": "art/export/preview/deco.forest_grass.png",
+    "preview_sha256": "6f07b95281a902cad5f49b33f110e5ab062253ae3ca5f76a70ddd759fe4ebc83"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    8,
+    4
+   ],
+   "frame_count": 2,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    4,
+    4
+   ],
+   "animations": {
+    "sway": {
+     "fps": 2,
+     "loop": true,
+     "frames": [
+      0,
+      1
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
+   "id": "deco.ruins_lotus",
+   "name": "神庙 · 金莲",
+   "category": "deco",
+   "kind": "sprite",
+   "layer": "ambient",
+   "current": {
+    "version": 1,
+    "hash": "b7858a38d3711730e4fa6be7944d0fc6c4317542ff516e8f42aff45218ad2142",
+    "status": "review",
+    "preview": "art/export/preview/deco.ruins_lotus.png",
+    "preview_sha256": "2d91071611d26c562c307010a095bbcba13e568a6b6174b1bf0185e057176887"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    8,
+    7
+   ],
+   "frame_count": 1,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    4,
+    7
+   ],
+   "animations": {
+    "default": {
+     "fps": 0,
+     "loop": false,
+     "frames": [
+      0
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
+   "id": "deco.ruins_vine",
+   "name": "神庙 · 垂藤",
+   "category": "deco",
+   "kind": "sprite",
+   "layer": "ambient",
+   "current": {
+    "version": 1,
+    "hash": "1248130e07d359c261ebe0c60da54923c14e2fdaf34c209e1ec4c92069eca012",
+    "status": "review",
+    "preview": "art/export/preview/deco.ruins_vine.png",
+    "preview_sha256": "7b45b8c1ea733cab74b656cc04ab2dc48997f62a0f2dfb8bd7ee1ecd008fb6eb"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    6,
+    12
+   ],
+   "frame_count": 2,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    2,
+    0
+   ],
+   "animations": {
+    "sway": {
+     "fps": 2,
+     "loop": true,
+     "frames": [
+      0,
+      1
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
+   "id": "deco.sky_flower",
+   "name": "圣域 · 白雏菊",
+   "category": "deco",
+   "kind": "sprite",
+   "layer": "ambient",
+   "current": {
+    "version": 1,
+    "hash": "cc43539105a8b3db23899736c2de90fa2629a6147ed07adf0888dd8115a50ea9",
+    "status": "review",
+    "preview": "art/export/preview/deco.sky_flower.png",
+    "preview_sha256": "39952d8769bb2e94991c598a214e8bf84c081b0b3bc5735d7f82ed09f0020fdd"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    8,
+    6
+   ],
+   "frame_count": 2,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    4,
+    6
+   ],
+   "animations": {
+    "sway": {
+     "fps": 2,
+     "loop": true,
+     "frames": [
+      0,
+      1
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
+   "id": "fauna.cave_moth",
+   "name": "晶窟 · 水晶飞蛾",
+   "category": "fauna",
+   "kind": "sprite",
+   "layer": "background",
+   "current": {
+    "version": 1,
+    "hash": "8ae9e104faf6057381452750cba06793cf693c2da96d9afb0eb01c0462fdda97",
+    "status": "review",
+    "preview": "art/export/preview/fauna.cave_moth.png",
+    "preview_sha256": "9501479b9d454b043a0ceed26c8e297c8193481ab1aa5731033ed9c1cfa894b1"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    6,
+    5
+   ],
+   "frame_count": 2,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    3,
+    2
+   ],
+   "animations": {
+    "fly": {
+     "fps": 10,
+     "loop": true,
+     "frames": [
+      0,
+      1
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
+   "id": "fauna.cosmos_drone",
+   "name": "星站 · 巡检无人机",
+   "category": "fauna",
+   "kind": "sprite",
+   "layer": "background",
+   "current": {
+    "version": 1,
+    "hash": "1401146e5501c690722e3142526e22c205a897fa10693ee11375f9df4e68afc7",
+    "status": "review",
+    "preview": "art/export/preview/fauna.cosmos_drone.png",
+    "preview_sha256": "68a94e9fbf00a9d7e11eba86a73d63ba1e9e6c826f0139be97c5e9b13fbf358f"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    10,
+    8
+   ],
+   "frame_count": 2,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    5,
+    4
+   ],
+   "animations": {
+    "hover": {
+     "fps": 6,
+     "loop": true,
+     "frames": [
+      0,
+      1
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
+   "id": "fauna.dungeon_bat",
+   "name": "石牢 · 蝙蝠",
+   "category": "fauna",
+   "kind": "sprite",
+   "layer": "background",
+   "current": {
+    "version": 1,
+    "hash": "d2eb3b1ef3417414ac847e2cdfb1ab11c45a46128ef00eac1563ebc6b1514bdc",
+    "status": "review",
+    "preview": "art/export/preview/fauna.dungeon_bat.png",
+    "preview_sha256": "705fd30b5dd1b0879848307bd2246110072ba9af86670866c9b63dbe952172a4"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    12,
+    8
    ],
    "frame_count": 4,
    "sheet": "horizontal strip, frame i at x = i * frame_width",
    "anchor": [
-    8,
+    6,
     0
    ],
    "animations": {
-    "flicker": {
+    "hang": {
+     "fps": 2,
+     "loop": true,
+     "frames": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      1
+     ]
+    },
+    "fly": {
+     "fps": 8,
+     "loop": true,
+     "frames": [
+      2,
+      3
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
+   "id": "fauna.dungeon_rat",
+   "name": "石牢 · 小老鼠",
+   "category": "fauna",
+   "kind": "sprite",
+   "layer": "ambient",
+   "current": {
+    "version": 1,
+    "hash": "f09f3a8270586643715fffc226a3801ee9e006ff2583d5a170e018945e8f4733",
+    "status": "review",
+    "preview": "art/export/preview/fauna.dungeon_rat.png",
+    "preview_sha256": "ecc4ccbdbcaac5c4fe2bb5e02d30098b45fb2fcfcda14bedc8619d74c4e63c10"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    10,
+    6
+   ],
+   "frame_count": 2,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    5,
+    6
+   ],
+   "animations": {
+    "walk": {
+     "fps": 6,
+     "loop": true,
+     "frames": [
+      0,
+      1
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
+   "id": "fauna.forest_bird",
+   "name": "古森 · 知更鸟",
+   "category": "fauna",
+   "kind": "sprite",
+   "layer": "ambient",
+   "current": {
+    "version": 1,
+    "hash": "9c44c68ef48b68d8b31901b3e17718d6b90e9308dcf893e4a5d2af341cc3756e",
+    "status": "review",
+    "preview": "art/export/preview/fauna.forest_bird.png",
+    "preview_sha256": "133a832da0a6a47af70c5d2dec6b05c491761338ee9cb84027bf8fdb76a592f9"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    8,
+    7
+   ],
+   "frame_count": 3,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    4,
+    7
+   ],
+   "animations": {
+    "idle": {
+     "fps": 2,
+     "loop": true,
+     "frames": [
+      0
+     ]
+    },
+    "peck": {
      "fps": 4,
      "loop": true,
      "frames": [
       0,
       1,
       0,
+      1
+     ]
+    },
+    "fly": {
+     "fps": 8,
+     "loop": true,
+     "frames": [
       2
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
+   "id": "fauna.forest_butterfly",
+   "name": "古森 · 蝴蝶",
+   "category": "fauna",
+   "kind": "sprite",
+   "layer": "background",
+   "current": {
+    "version": 1,
+    "hash": "e4c5e613207d38dab9d962926faa7c263f017e4563b5314f9fb6f9188ae49eda",
+    "status": "review",
+    "preview": "art/export/preview/fauna.forest_butterfly.png",
+    "preview_sha256": "128137008dd1cb61d0edb4810cf0ea8964e5ce6eb36ebecfdfc6f0dd2edaedce"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    7,
+    5
+   ],
+   "frame_count": 2,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    3,
+    2
+   ],
+   "animations": {
+    "fly": {
+     "fps": 8,
+     "loop": true,
+     "frames": [
+      0,
+      1
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
+   "id": "fauna.ruins_scarab",
+   "name": "神庙 · 金甲虫",
+   "category": "fauna",
+   "kind": "sprite",
+   "layer": "ambient",
+   "current": {
+    "version": 1,
+    "hash": "0edbff7f7b4db6e05912e43a2c58c39e8f800b05f0bf2b35b12f761060fb38e7",
+    "status": "review",
+    "preview": "art/export/preview/fauna.ruins_scarab.png",
+    "preview_sha256": "6db8e280ef8b3cebfec40276f5214615563ac2a7c5f42a08c59718644fdc3566"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    8,
+    6
+   ],
+   "frame_count": 2,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    4,
+    6
+   ],
+   "animations": {
+    "walk": {
+     "fps": 6,
+     "loop": true,
+     "frames": [
+      0,
+      1
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
+   "id": "fauna.sky_cloudling",
+   "name": "圣域 · 小云灵",
+   "category": "fauna",
+   "kind": "sprite",
+   "layer": "background",
+   "current": {
+    "version": 1,
+    "hash": "7cfda36287ed2f28ac9198a76b969f91e64805b2155c662160d54c1e8b341a63",
+    "status": "review",
+    "preview": "art/export/preview/fauna.sky_cloudling.png",
+    "preview_sha256": "71f81a98bfaf0a69ab2467795ec5faa468713b644e38f00f219cec88f936446e"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    12,
+    8
+   ],
+   "frame_count": 2,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    6,
+    4
+   ],
+   "animations": {
+    "float": {
+     "fps": 2,
+     "loop": true,
+     "frames": [
+      0,
+      0,
+      0,
+      1
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
+   "id": "fauna.sky_dove",
+   "name": "圣域 · 白鸽",
+   "category": "fauna",
+   "kind": "sprite",
+   "layer": "background",
+   "current": {
+    "version": 1,
+    "hash": "98fc6674c135cddf8eb2d3ac6a0ec093b773b6c039cbafcc974fa4b01b1101c9",
+    "status": "review",
+    "preview": "art/export/preview/fauna.sky_dove.png",
+    "preview_sha256": "7caba9c0a15358458b37d8b0a98928e7cd497ba564ede95d163dc235f4fed765"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    10,
+    6
+   ],
+   "frame_count": 2,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    5,
+    3
+   ],
+   "animations": {
+    "fly": {
+     "fps": 6,
+     "loop": true,
+     "frames": [
+      0,
+      1
      ]
     }
    },
@@ -748,35 +1443,40 @@
    "ninepatch": null
   },
   {
-   "id": "terrain.aqueduct",
-   "name": "地形与背景 · 水渠",
-   "category": "terrain",
+   "id": "theme.cave",
+   "name": "主题 · 幽光晶窟",
+   "category": "theme",
    "kind": "procedural",
    "layer": "terrain",
    "current": {
     "version": 1,
-    "hash": "5741c43529b915ea26c77080fa26b73532e800bc44105aa73a3096fde384972f",
+    "hash": "9f601ee94441900e6a4d0212c74f74ea98414ff0ff2c5ff8591e1b961dc362c8",
     "status": "review",
-    "preview": "art/export/preview/terrain.aqueduct.png",
-    "preview_sha256": "00db5d8b3868fd684c16fa4f2e0b0427cc580d4b5997f38475a052983a95d274"
+    "preview": "art/export/preview/theme.cave.png",
+    "preview_sha256": "903cbc5cf0977602f2899e04ee38fb33e48037054c29af1359b1addce51e7490"
    },
    "approved": null,
    "current_is_approved": false,
    "renderer": [
-    "workbench/js/core/terrain.js"
+    "workbench/js/core/terrain.js",
+    "workbench/js/core/ambient.js"
    ],
    "params": {
+    "title": "幽光晶窟",
+    "chapter": 3,
     "rock": {
+     "pattern": "rough",
      "base": [
-      "v",
-      "w"
+      "x",
+      "y"
      ],
-     "seam": "x",
-     "speck": "u",
-     "light": "u",
-     "light2": "v",
-     "dark": "x",
-     "edge": "x"
+     "seam": "z",
+     "speck": "B",
+     "light": "w",
+     "light2": "x",
+     "dark": "z",
+     "edge": "z",
+     "top": "p"
     },
     "earth": {
      "base": [
@@ -816,38 +1516,68 @@
      "glint": "t"
     },
     "background": {
-     "style": "aqueduct",
+     "style": "cave",
      "base": [
-      "p",
-      "y"
+      "z",
+      "p"
      ],
-     "speck": "o",
-     "timber": "o",
-     "timberDark": "p"
-    }
+     "speck": "y",
+     "accent": "B",
+     "detail": "y"
+    },
+    "ambient": [
+     {
+      "type": "floor",
+      "id": "deco.cave_mushroom",
+      "anim": "glow",
+      "every": 4,
+      "max": 3
+     },
+     {
+      "type": "floor",
+      "id": "deco.cave_crystal",
+      "every": 7,
+      "max": 2,
+      "salt": 7
+     },
+     {
+      "type": "flyer",
+      "id": "fauna.cave_moth",
+      "anim": "fly",
+      "count": 2
+     }
+    ]
    },
-   "depends": []
+   "depends": [
+    "deco.cave_crystal",
+    "deco.cave_mushroom",
+    "fauna.cave_moth"
+   ]
   },
   {
-   "id": "terrain.mine",
-   "name": "地形与背景 · 矿道",
-   "category": "terrain",
+   "id": "theme.cosmos",
+   "name": "主题 · 深空星站",
+   "category": "theme",
    "kind": "procedural",
    "layer": "terrain",
    "current": {
     "version": 1,
-    "hash": "a7b998e7f69640316ad9f8dd107466e3815e29aacc2a2922938638b5f29eb606",
+    "hash": "c7b834587ee48ca80f494be4c0fa951899e3a2ad852a634d4a3d5d593667226c",
     "status": "review",
-    "preview": "art/export/preview/terrain.mine.png",
-    "preview_sha256": "d6055724ac56ad8eb6b17baea11e33c512f3cee14e312d27a4bb9829247d8bec"
+    "preview": "art/export/preview/theme.cosmos.png",
+    "preview_sha256": "32c19d0c642845e5098091c077d3ede49e90e0e9514a30df618a35aaf30cd7f9"
    },
    "approved": null,
    "current_is_approved": false,
    "renderer": [
-    "workbench/js/core/terrain.js"
+    "workbench/js/core/terrain.js",
+    "workbench/js/core/ambient.js"
    ],
    "params": {
+    "title": "深空星站",
+    "chapter": 6,
     "rock": {
+     "pattern": "panel",
      "base": [
       "w",
       "x"
@@ -857,7 +1587,8 @@
      "light": "v",
      "light2": "w",
      "dark": "y",
-     "edge": "y"
+     "edge": "y",
+     "top": "k"
     },
     "earth": {
      "base": [
@@ -897,17 +1628,492 @@
      "glint": "t"
     },
     "background": {
-     "style": "mine",
+     "style": "cosmos",
      "base": [
       "z",
+      "y"
+     ],
+     "speck": "t",
+     "accent": "B",
+     "detail": "x"
+    },
+    "ambient": [
+     {
+      "type": "floor",
+      "id": "deco.cosmos_sprout",
+      "anim": "glow",
+      "every": 5,
+      "max": 3
+     },
+     {
+      "type": "flyer",
+      "id": "fauna.cosmos_drone",
+      "anim": "hover",
+      "count": 1,
+      "path": "hover"
+     }
+    ]
+   },
+   "depends": [
+    "deco.cosmos_sprout",
+    "fauna.cosmos_drone"
+   ]
+  },
+  {
+   "id": "theme.dungeon",
+   "name": "主题 · 幽暗石牢",
+   "category": "theme",
+   "kind": "procedural",
+   "layer": "terrain",
+   "current": {
+    "version": 1,
+    "hash": "af6a8c373960872b2d514bf6fd7baf0a8f55a118801b8e1376d23fcb14ba1478",
+    "status": "review",
+    "preview": "art/export/preview/theme.dungeon.png",
+    "preview_sha256": "5bdb3eb51f015b7a46dd9cf391466ca4878bdbc5ba6707692d8d3f630b0736a0"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "renderer": [
+    "workbench/js/core/terrain.js",
+    "workbench/js/core/ambient.js"
+   ],
+   "params": {
+    "title": "幽暗石牢",
+    "chapter": 1,
+    "rock": {
+     "pattern": "brick",
+     "base": [
+      "x",
+      "y"
+     ],
+     "seam": "z",
+     "speck": "w",
+     "light": "w",
+     "light2": "x",
+     "dark": "z",
+     "edge": "z",
+     "top": "w"
+    },
+    "earth": {
+     "base": [
+      "e",
+      "F"
+     ],
+     "clump": "f",
+     "pebble": "v",
+     "pebbleShade": "g",
+     "crust": "d",
+     "crust2": "F",
+     "dark": "f"
+    },
+    "cracked": {
+     "base": [
+      "F",
+      "d"
+     ],
+     "crack": "g",
+     "crackLight": "c",
+     "light": "c",
+     "dark": "f"
+    },
+    "sand": {
+     "base": [
+      "c",
+      "d",
+      "c"
+     ],
+     "grain": "k",
+     "top": "l"
+    },
+    "water": {
+     "body": "q",
+     "upper": "r",
+     "surface": "s",
+     "glint": "t"
+    },
+    "background": {
+     "style": "dungeon",
+     "base": [
+      "z",
+      "y"
+     ],
+     "speck": "x",
+     "accent": "g",
+     "detail": "x"
+    },
+    "ambient": [
+     {
+      "type": "wall",
+      "id": "deco.dungeon_torch",
+      "anim": "flicker",
+      "spacing": 96,
+      "y": 22
+     },
+     {
+      "type": "hanger",
+      "id": "fauna.dungeon_bat",
+      "count": 1
+     },
+     {
+      "type": "floor",
+      "id": "deco.dungeon_moss",
+      "every": 5,
+      "max": 3
+     },
+     {
+      "type": "walker",
+      "id": "fauna.dungeon_rat"
+     }
+    ]
+   },
+   "depends": [
+    "deco.dungeon_moss",
+    "deco.dungeon_torch",
+    "fauna.dungeon_bat",
+    "fauna.dungeon_rat"
+   ]
+  },
+  {
+   "id": "theme.forest",
+   "name": "主题 · 迷雾古森",
+   "category": "theme",
+   "kind": "procedural",
+   "layer": "terrain",
+   "current": {
+    "version": 1,
+    "hash": "7f4e7287ff6335a4bb885e6571bff2c84c4f65412329e3fa327b20399ea6d535",
+    "status": "review",
+    "preview": "art/export/preview/theme.forest.png",
+    "preview_sha256": "5cce742f25f1847893d05bfb6c32ea0634658405e82539a856f2fe9dfc70f250"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "renderer": [
+    "workbench/js/core/terrain.js",
+    "workbench/js/core/ambient.js"
+   ],
+   "params": {
+    "title": "迷雾古森",
+    "chapter": 4,
+    "rock": {
+     "pattern": "grass",
+     "base": [
+      "f",
+      "e"
+     ],
+     "seam": "g",
+     "speck": "F",
+     "light": "m",
+     "light2": "n",
+     "dark": "g",
+     "edge": "g",
+     "top": "m"
+    },
+    "earth": {
+     "base": [
+      "e",
+      "F"
+     ],
+     "clump": "f",
+     "pebble": "v",
+     "pebbleShade": "g",
+     "crust": "d",
+     "crust2": "F",
+     "dark": "f"
+    },
+    "cracked": {
+     "base": [
+      "F",
+      "d"
+     ],
+     "crack": "g",
+     "crackLight": "c",
+     "light": "c",
+     "dark": "f"
+    },
+    "sand": {
+     "base": [
+      "c",
+      "d",
+      "c"
+     ],
+     "grain": "k",
+     "top": "l"
+    },
+    "water": {
+     "body": "q",
+     "upper": "r",
+     "surface": "s",
+     "glint": "t"
+    },
+    "background": {
+     "style": "forest",
+     "base": [
+      "p",
+      "o"
+     ],
+     "speck": "n",
+     "accent": "g",
+     "detail": "o"
+    },
+    "ambient": [
+     {
+      "type": "floor",
+      "id": "deco.forest_grass",
+      "anim": "sway",
+      "every": 3,
+      "max": 4
+     },
+     {
+      "type": "floor",
+      "id": "deco.forest_flower",
+      "anim": "sway",
+      "every": 5,
+      "max": 2,
+      "salt": 3
+     },
+     {
+      "type": "percher",
+      "id": "fauna.forest_bird"
+     },
+     {
+      "type": "flyer",
+      "id": "fauna.forest_butterfly",
+      "anim": "fly",
+      "count": 1
+     }
+    ]
+   },
+   "depends": [
+    "deco.forest_flower",
+    "deco.forest_grass",
+    "fauna.forest_bird",
+    "fauna.forest_butterfly"
+   ]
+  },
+  {
+   "id": "theme.ruins",
+   "name": "主题 · 黄金神庙",
+   "category": "theme",
+   "kind": "procedural",
+   "layer": "terrain",
+   "current": {
+    "version": 1,
+    "hash": "d4a9665e391a034547ee7236f8f35a5c27988d2d09db8bebbd20c8de0ffa878a",
+    "status": "review",
+    "preview": "art/export/preview/theme.ruins.png",
+    "preview_sha256": "c5d3dd9396446804f2440bd4f6c2d80523b63e36c623f4ad5d6444e8add3d881"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "renderer": [
+    "workbench/js/core/terrain.js",
+    "workbench/js/core/ambient.js"
+   ],
+   "params": {
+    "title": "黄金神庙",
+    "chapter": 2,
+    "rock": {
+     "pattern": "block",
+     "base": [
+      "d",
+      "F"
+     ],
+     "seam": "e",
+     "speck": "c",
+     "light": "c",
+     "light2": "d",
+     "dark": "f",
+     "edge": "e",
+     "top": "k"
+    },
+    "earth": {
+     "base": [
+      "e",
+      "F"
+     ],
+     "clump": "f",
+     "pebble": "v",
+     "pebbleShade": "g",
+     "crust": "d",
+     "crust2": "F",
+     "dark": "f"
+    },
+    "cracked": {
+     "base": [
+      "F",
+      "d"
+     ],
+     "crack": "g",
+     "crackLight": "c",
+     "light": "c",
+     "dark": "f"
+    },
+    "sand": {
+     "base": [
+      "c",
+      "d",
+      "c"
+     ],
+     "grain": "k",
+     "top": "l"
+    },
+    "water": {
+     "body": "q",
+     "upper": "r",
+     "surface": "s",
+     "glint": "t"
+    },
+    "background": {
+     "style": "ruins",
+     "base": [
+      "f",
       "g"
      ],
-     "speck": "y",
-     "timber": "f",
-     "timberDark": "g"
-    }
+     "speck": "e",
+     "accent": "e",
+     "detail": "g"
+    },
+    "ambient": [
+     {
+      "type": "hang",
+      "id": "deco.ruins_vine",
+      "anim": "sway",
+      "every": 4,
+      "max": 3
+     },
+     {
+      "type": "floor",
+      "id": "deco.ruins_lotus",
+      "every": 6,
+      "max": 2
+     },
+     {
+      "type": "walker",
+      "id": "fauna.ruins_scarab"
+     }
+    ]
    },
-   "depends": []
+   "depends": [
+    "deco.ruins_lotus",
+    "deco.ruins_vine",
+    "fauna.ruins_scarab"
+   ]
+  },
+  {
+   "id": "theme.sky",
+   "name": "主题 · 云端圣域",
+   "category": "theme",
+   "kind": "procedural",
+   "layer": "terrain",
+   "current": {
+    "version": 1,
+    "hash": "0b01f011ab7f27b363fb2a2919fea7db6406a55cea61f46e6b636ef254e2cc8b",
+    "status": "review",
+    "preview": "art/export/preview/theme.sky.png",
+    "preview_sha256": "61679f09d6cb3d09e4920bb5586c49c5982974bb2389cca21b64249b315393cb"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "renderer": [
+    "workbench/js/core/terrain.js",
+    "workbench/js/core/ambient.js"
+   ],
+   "params": {
+    "title": "云端圣域",
+    "chapter": 5,
+    "rock": {
+     "pattern": "marble",
+     "base": [
+      "t",
+      "u"
+     ],
+     "seam": "u",
+     "speck": "u",
+     "light": "t",
+     "light2": "t",
+     "dark": "v",
+     "edge": "v",
+     "top": "k",
+     "under": "t"
+    },
+    "earth": {
+     "base": [
+      "e",
+      "F"
+     ],
+     "clump": "f",
+     "pebble": "v",
+     "pebbleShade": "g",
+     "crust": "d",
+     "crust2": "F",
+     "dark": "f"
+    },
+    "cracked": {
+     "base": [
+      "F",
+      "d"
+     ],
+     "crack": "g",
+     "crackLight": "c",
+     "light": "c",
+     "dark": "f"
+    },
+    "sand": {
+     "base": [
+      "c",
+      "d",
+      "c"
+     ],
+     "grain": "k",
+     "top": "l"
+    },
+    "water": {
+     "body": "q",
+     "upper": "r",
+     "surface": "s",
+     "glint": "t"
+    },
+    "background": {
+     "style": "sky",
+     "base": [
+      "r",
+      "s"
+     ],
+     "speck": "t",
+     "accent": "u",
+     "detail": "v"
+    },
+    "ambient": [
+     {
+      "type": "floor",
+      "id": "deco.sky_flower",
+      "anim": "sway",
+      "every": 4,
+      "max": 3
+     },
+     {
+      "type": "flyer",
+      "id": "fauna.sky_dove",
+      "anim": "fly",
+      "count": 1,
+      "path": "cross"
+     },
+     {
+      "type": "flyer",
+      "id": "fauna.sky_cloudling",
+      "anim": "float",
+      "count": 1,
+      "path": "drift"
+     }
+    ]
+   },
+   "depends": [
+    "deco.sky_flower",
+    "fauna.sky_cloudling",
+    "fauna.sky_dove"
+   ]
   },
   {
    "id": "ui.class_icon",
@@ -1299,69 +2505,88 @@
    "layer": "ui",
    "current": {
     "version": 1,
-    "hash": "42e7013109f5f3620c1dccd5f096956117aa5c358e7afe17e36bde858aecda4c",
+    "hash": "a0d3c7f43fa3e35734a20d0a0051c70dae723d5105ae381199e3c62547017d4c",
     "status": "review",
     "preview": "art/export/preview/ui.screen.chapters.png",
-    "preview_sha256": "37a0281eb0975f4cd856a96b743c00464940253ff25184bdb3804747f219fef4"
+    "preview_sha256": "a029030443add4e880fb9969754de7fd8e23853787dc7e300cc9800e2a354ef1"
    },
    "approved": null,
    "current_is_approved": false,
    "renderer": [
     "workbench/js/core/ui.js",
     "workbench/js/core/scene.js",
-    "workbench/js/core/terrain.js"
+    "workbench/js/core/terrain.js",
+    "workbench/js/core/ambient.js"
    ],
    "params": {
     "screen": "chapters",
     "heading": "选择章节",
     "chapters": [
      {
-      "num": "第 1 章",
-      "name": "矿道",
-      "progress": "4 / 7",
-      "theme": "terrain.mine",
-      "floor": 3,
-      "sprite": "char.miner",
+      "num": "第1章",
+      "name": "石牢",
+      "full": "第 1 章 · 幽暗石牢",
+      "progress": "4/7",
+      "theme": "theme.dungeon",
       "blurb": "推、爬、挖、倒：认识箱子、梯子、夯土和沙。"
      },
      {
-      "num": "第 2 章",
-      "name": "水渠",
-      "progress": "0 / 7",
-      "theme": "terrain.aqueduct",
-      "floor": 1,
-      "locked": false,
+      "num": "第2章",
+      "name": "神庙",
+      "full": "第 2 章 · 黄金神庙",
+      "progress": "0/7",
+      "theme": "theme.ruins",
       "blurb": "水往低处流：浮起木箱、沉下铁箱、拉平两边的水。"
      },
      {
-      "num": "第 3 章",
-      "name": "采石场",
+      "num": "第3章",
+      "name": "晶窟",
+      "full": "第 3 章 · 幽光晶窟",
       "progress": "锁定",
+      "theme": "theme.cave",
       "locked": true,
       "unlock": "在第 2 章通关 5 关后解锁。"
      },
      {
-      "num": "第 4 章",
-      "name": "苔林",
+      "num": "第4章",
+      "name": "古森",
+      "full": "第 4 章 · 迷雾古森",
       "progress": "锁定",
+      "theme": "theme.forest",
       "locked": true,
       "unlock": "在第 3 章通关 4 关后解锁。"
      },
      {
-      "num": "第 5 章",
-      "name": "熔窟",
+      "num": "第5章",
+      "name": "圣域",
+      "full": "第 5 章 · 云端圣域",
       "progress": "锁定",
+      "theme": "theme.sky",
       "locked": true,
       "unlock": "在第 4 章通关 5 关后解锁。"
+     },
+     {
+      "num": "扩展",
+      "name": "星站",
+      "full": "扩展章 · 深空星站",
+      "progress": "未开放",
+      "theme": "theme.cosmos",
+      "locked": true,
+      "unlock": "主线完成并试玩后再决定是否开放（电与机关）。"
      }
     ]
    },
    "depends": [
-    "terrain.mine",
-    "ui.panel",
+    "char.miner",
+    "theme.cave",
+    "theme.cosmos",
+    "theme.dungeon",
+    "theme.forest",
+    "theme.ruins",
+    "theme.sky",
     "ui.icons",
     "ui.keycap",
-    "char.miner"
+    "ui.panel"
    ]
   },
   {
@@ -1372,17 +2597,18 @@
    "layer": "ui",
    "current": {
     "version": 1,
-    "hash": "f06a022ac8a593144bfc862344550480798237a19f11d1e340ad1a868b119a2d",
+    "hash": "aa819d5bd251b27780aed66e1ab85f44af9370fce9d47482d030d89e4eef96b9",
     "status": "review",
     "preview": "art/export/preview/ui.screen.complete.png",
-    "preview_sha256": "5813e48a893caad88dd01bcd69203cbd8c4ad812ff71fb643ef89119af50b9c0"
+    "preview_sha256": "fb1d487936a135a758874b5c8e27fd5d31d77d4700ff9ebfaa2ada75649744fc"
    },
    "approved": null,
    "current_is_approved": false,
    "renderer": [
     "workbench/js/core/ui.js",
     "workbench/js/core/scene.js",
-    "workbench/js/core/terrain.js"
+    "workbench/js/core/terrain.js",
+    "workbench/js/core/ambient.js"
    ],
    "params": {
     "screen": "complete",
@@ -1392,12 +2618,12 @@
     "select": "选关"
    },
    "depends": [
-    "terrain.mine",
-    "ui.panel",
+    "char.miner",
+    "mech.socket_lit",
+    "theme.dungeon",
     "ui.icons",
     "ui.keycap",
-    "char.miner",
-    "mech.socket_lit"
+    "ui.panel"
    ]
   },
   {
@@ -1408,17 +2634,18 @@
    "layer": "ui",
    "current": {
     "version": 1,
-    "hash": "63893182003ff11018f5702a21afff21bd3d73f0f643f0f531fa72e44ce10b6b",
+    "hash": "460e6c9f7a5dafb7ec8eb1ee0c0af6e1d9f9a0f5d59212472f1f70421076c2e4",
     "status": "review",
     "preview": "art/export/preview/ui.screen.hint.png",
-    "preview_sha256": "5454138178a56e8f87faff1d127e77605414f8d70e76c367782fb4be72683d55"
+    "preview_sha256": "f5971c00aca291b96394974f95b29f78ec7f5eb5a959e0014c1d04dd0f64067c"
    },
    "approved": null,
    "current_is_approved": false,
    "renderer": [
     "workbench/js/core/ui.js",
     "workbench/js/core/scene.js",
-    "workbench/js/core/terrain.js"
+    "workbench/js/core/terrain.js",
+    "workbench/js/core/ambient.js"
    ],
    "params": {
     "screen": "hint",
@@ -1428,10 +2655,10 @@
     "more": "再看一层"
    },
    "depends": [
-    "terrain.mine",
-    "ui.panel",
+    "theme.dungeon",
     "ui.icons",
-    "ui.keycap"
+    "ui.keycap",
+    "ui.panel"
    ]
   },
   {
@@ -1442,21 +2669,22 @@
    "layer": "ui",
    "current": {
     "version": 1,
-    "hash": "4946d25f11ace22fec1536cd56554b2c3607834424797cebeb102a671e95707b",
+    "hash": "849e266b649448ed58ffd85bbc0ff6e081ee83da15810e3ab6c861808dafbb3e",
     "status": "review",
     "preview": "art/export/preview/ui.screen.levels.png",
-    "preview_sha256": "38f9486503ca467a193d70310a54cca56c63039b73a580f4c1eda79d67e1b85c"
+    "preview_sha256": "4b4995e0ae319c4979304833a0d295597511d5f06f718c0bde0d849d2777f059"
    },
    "approved": null,
    "current_is_approved": false,
    "renderer": [
     "workbench/js/core/ui.js",
     "workbench/js/core/scene.js",
-    "workbench/js/core/terrain.js"
+    "workbench/js/core/terrain.js",
+    "workbench/js/core/ambient.js"
    ],
    "params": {
     "screen": "levels",
-    "heading": "第 1 章 · 矿道",
+    "heading": "第 1 章 · 幽暗石牢",
     "progress": "已通关 4 / 7",
     "levels": [
      {
@@ -1499,13 +2727,14 @@
     "hint_select": "选择",
     "hint_enter": "进入",
     "hint_back": "返回",
-    "recommended": "推荐"
+    "recommended": "推荐",
+    "theme": "theme.dungeon"
    },
    "depends": [
-    "terrain.mine",
-    "ui.panel",
+    "theme.dungeon",
     "ui.icons",
-    "ui.keycap"
+    "ui.keycap",
+    "ui.panel"
    ]
   },
   {
@@ -1516,21 +2745,22 @@
    "layer": "ui",
    "current": {
     "version": 1,
-    "hash": "03e059b9c2b78a7337a38e028a6b63111e34665c045f376c70cfc62955599be7",
+    "hash": "4639baf5af81adf269b0a39e5abc7a1cd67c1ab1cbd90fc270ddc09caef76805",
     "status": "review",
     "preview": "art/export/preview/ui.screen.lobby.png",
-    "preview_sha256": "0d14d6eb479940e5713085b50cf667a6bdf3122b161dfe63dce3417daebd6a10"
+    "preview_sha256": "629203599de17e1a23a2c821b6b88d26e78d61d89e78ba953a62ded1858bc4b4"
    },
    "approved": null,
    "current_is_approved": false,
    "renderer": [
     "workbench/js/core/ui.js",
     "workbench/js/core/scene.js",
-    "workbench/js/core/terrain.js"
+    "workbench/js/core/terrain.js",
+    "workbench/js/core/ambient.js"
    ],
    "params": {
     "screen": "lobby",
-    "theme": "terrain.mine",
+    "theme": "theme.dungeon",
     "title": "沙与水",
     "subtitle": "推箱子 · 横版解谜",
     "items": [
@@ -1540,16 +2770,18 @@
      "退出"
     ],
     "hint_select": "选择",
-    "hint_confirm": "确认"
+    "hint_confirm": "确认",
+    "chapter_label": "当前：第 {n} 章 · ",
+    "chapter_extra": "当前：扩展章 · "
    },
    "depends": [
-    "terrain.mine",
-    "ui.panel",
+    "char.miner",
+    "mech.exit_flag",
+    "obj.crate_wood",
+    "theme.dungeon",
     "ui.icons",
     "ui.keycap",
-    "char.miner",
-    "obj.crate_wood",
-    "mech.exit_flag"
+    "ui.panel"
    ]
   },
   {
@@ -1560,17 +2792,18 @@
    "layer": "ui",
    "current": {
     "version": 1,
-    "hash": "67a721a8c7d67bebe7168326b57d401bc767115c66a87e5d01c571a2bcb6acd0",
+    "hash": "78665a1e314e2d9d12b024d01e43e10ed1e84985e9953627425753381185a327",
     "status": "review",
     "preview": "art/export/preview/ui.screen.pause.png",
-    "preview_sha256": "db9c4cf93a05e8b21fdb39d295c8f961b83dc19d9a529c7e461760291ff7a28d"
+    "preview_sha256": "afe9da9c383f5ea80c225232fa19ae908958c9b1d726157459b63caef4818b00"
    },
    "approved": null,
    "current_is_approved": false,
    "renderer": [
     "workbench/js/core/ui.js",
     "workbench/js/core/scene.js",
-    "workbench/js/core/terrain.js"
+    "workbench/js/core/terrain.js",
+    "workbench/js/core/ambient.js"
    ],
    "params": {
     "screen": "pause",
@@ -1586,11 +2819,11 @@
     ]
    },
    "depends": [
-    "terrain.mine",
-    "ui.panel",
+    "char.miner",
+    "theme.dungeon",
     "ui.icons",
     "ui.keycap",
-    "char.miner"
+    "ui.panel"
    ]
   },
   {
@@ -1601,17 +2834,18 @@
    "layer": "ui",
    "current": {
     "version": 1,
-    "hash": "0e1c3222a3a0757ea768792c1ff0bf55662f3a29459c1e3e24075c06aa74f039",
+    "hash": "021a4f39d85a3768c16d1758ddded7250eb2d9c07781728a6df0a63eaf52e5b9",
     "status": "review",
     "preview": "art/export/preview/ui.screen.rulecard.png",
-    "preview_sha256": "db2c8269a3dccc70550541a43613298be66b6b063a0b6628b79d1d432e8cb1aa"
+    "preview_sha256": "df5b6660019d3894096d186d8421adf69cce1da81928dbfadd34b858b7916400"
    },
    "approved": null,
    "current_is_approved": false,
    "renderer": [
     "workbench/js/core/ui.js",
     "workbench/js/core/scene.js",
-    "workbench/js/core/terrain.js"
+    "workbench/js/core/terrain.js",
+    "workbench/js/core/ambient.js"
    ],
    "params": {
     "screen": "rulecard",
@@ -1620,11 +2854,11 @@
     "close": "知道了"
    },
    "depends": [
-    "terrain.mine",
-    "ui.panel",
+    "char.miner",
+    "theme.dungeon",
     "ui.icons",
     "ui.keycap",
-    "char.miner"
+    "ui.panel"
    ]
   },
   {
@@ -1635,17 +2869,18 @@
    "layer": "ui",
    "current": {
     "version": 1,
-    "hash": "e616581af893886998914cc0d78459242387d1f6c014628e3d81fce650b6305f",
+    "hash": "b3a225df684f4cea274691b2794b99baf7712d326291c69e2e51d1bf1b735f68",
     "status": "review",
     "preview": "art/export/preview/ui.screen.settings.png",
-    "preview_sha256": "7fa64f4461b51f5ae59793f9692b74eb07bf6080b37bf6e9e28046deecd7788a"
+    "preview_sha256": "537f0eddaa99f9265f3224347821bbd5abb16626a61c6163c7d0b62fb97de2f8"
    },
    "approved": null,
    "current_is_approved": false,
    "renderer": [
     "workbench/js/core/ui.js",
     "workbench/js/core/scene.js",
-    "workbench/js/core/terrain.js"
+    "workbench/js/core/terrain.js",
+    "workbench/js/core/ambient.js"
    ],
    "params": {
     "screen": "settings",
@@ -1686,10 +2921,10 @@
     ]
    },
    "depends": [
-    "terrain.mine",
-    "ui.panel",
+    "theme.dungeon",
     "ui.icons",
-    "ui.keycap"
+    "ui.keycap",
+    "ui.panel"
    ]
   },
   {
@@ -1752,12 +2987,15 @@
  ],
  "references": [
   {
-   "name": "showcase.mine",
-   "file": "art/export/reference/showcase.mine.png",
-   "sha256": "656704fc9ac3304982aa3bfdb72b9b7ec758a6490553ab8f9f240f0d2b5ab9e1",
+   "name": "showcase.dungeon",
+   "file": "art/export/reference/showcase.dungeon.png",
+   "sha256": "761cb3d2fe097dc07979dfac20dba19ebafced2affb0196f2e3b790964c6c20e",
    "uses": [
-    "terrain.mine",
-    "deco.lantern",
+    "theme.dungeon",
+    "deco.dungeon_moss",
+    "deco.dungeon_torch",
+    "fauna.dungeon_bat",
+    "fauna.dungeon_rat",
     "ui.target",
     "char.miner",
     "obj.crate_wood",
@@ -1776,8 +3014,553 @@
    ],
    "all_approved": false,
    "unapproved": [
-    "terrain.mine",
-    "deco.lantern",
+    "theme.dungeon",
+    "deco.dungeon_moss",
+    "deco.dungeon_torch",
+    "fauna.dungeon_bat",
+    "fauna.dungeon_rat",
+    "ui.target",
+    "char.miner",
+    "obj.crate_wood",
+    "obj.crate_iron",
+    "mech.ladder",
+    "mech.socket",
+    "mech.socket_lit",
+    "mech.exit_flag",
+    "mech.plate",
+    "mech.door",
+    "mech.link_symbol",
+    "ui.icons",
+    "ui.goal_lamp",
+    "item.sandbag",
+    "item.bomb"
+   ]
+  },
+  {
+   "name": "lobby.dungeon",
+   "file": "art/export/reference/lobby.dungeon.png",
+   "sha256": "629203599de17e1a23a2c821b6b88d26e78d61d89e78ba953a62ded1858bc4b4",
+   "uses": [
+    "ui.screen.lobby",
+    "theme.dungeon",
+    "deco.dungeon_moss",
+    "deco.dungeon_torch",
+    "fauna.dungeon_bat",
+    "fauna.dungeon_rat",
+    "ui.target",
+    "char.miner",
+    "obj.crate_wood",
+    "obj.crate_iron",
+    "mech.ladder",
+    "mech.socket",
+    "mech.socket_lit",
+    "mech.exit_flag",
+    "mech.plate",
+    "mech.door",
+    "mech.link_symbol",
+    "ui.icons",
+    "ui.goal_lamp",
+    "item.sandbag",
+    "item.bomb"
+   ],
+   "all_approved": false,
+   "unapproved": [
+    "ui.screen.lobby",
+    "theme.dungeon",
+    "deco.dungeon_moss",
+    "deco.dungeon_torch",
+    "fauna.dungeon_bat",
+    "fauna.dungeon_rat",
+    "ui.target",
+    "char.miner",
+    "obj.crate_wood",
+    "obj.crate_iron",
+    "mech.ladder",
+    "mech.socket",
+    "mech.socket_lit",
+    "mech.exit_flag",
+    "mech.plate",
+    "mech.door",
+    "mech.link_symbol",
+    "ui.icons",
+    "ui.goal_lamp",
+    "item.sandbag",
+    "item.bomb"
+   ]
+  },
+  {
+   "name": "showcase.ruins",
+   "file": "art/export/reference/showcase.ruins.png",
+   "sha256": "3b2ac2205fa6d1d9d8d421ec5ef06fcdd89e67f4d9fae953a605f6c461ac495a",
+   "uses": [
+    "theme.ruins",
+    "deco.ruins_lotus",
+    "deco.ruins_vine",
+    "fauna.ruins_scarab",
+    "ui.target",
+    "char.miner",
+    "obj.crate_wood",
+    "obj.crate_iron",
+    "mech.ladder",
+    "mech.socket",
+    "mech.socket_lit",
+    "mech.exit_flag",
+    "mech.plate",
+    "mech.door",
+    "mech.link_symbol",
+    "ui.icons",
+    "ui.goal_lamp",
+    "item.sandbag",
+    "item.bomb"
+   ],
+   "all_approved": false,
+   "unapproved": [
+    "theme.ruins",
+    "deco.ruins_lotus",
+    "deco.ruins_vine",
+    "fauna.ruins_scarab",
+    "ui.target",
+    "char.miner",
+    "obj.crate_wood",
+    "obj.crate_iron",
+    "mech.ladder",
+    "mech.socket",
+    "mech.socket_lit",
+    "mech.exit_flag",
+    "mech.plate",
+    "mech.door",
+    "mech.link_symbol",
+    "ui.icons",
+    "ui.goal_lamp",
+    "item.sandbag",
+    "item.bomb"
+   ]
+  },
+  {
+   "name": "lobby.ruins",
+   "file": "art/export/reference/lobby.ruins.png",
+   "sha256": "8f0f133d17e524f955ae058393730a476ea83b260cb29dab9f594362201e9998",
+   "uses": [
+    "ui.screen.lobby",
+    "theme.ruins",
+    "deco.ruins_lotus",
+    "deco.ruins_vine",
+    "fauna.ruins_scarab",
+    "ui.target",
+    "char.miner",
+    "obj.crate_wood",
+    "obj.crate_iron",
+    "mech.ladder",
+    "mech.socket",
+    "mech.socket_lit",
+    "mech.exit_flag",
+    "mech.plate",
+    "mech.door",
+    "mech.link_symbol",
+    "ui.icons",
+    "ui.goal_lamp",
+    "item.sandbag",
+    "item.bomb"
+   ],
+   "all_approved": false,
+   "unapproved": [
+    "ui.screen.lobby",
+    "theme.ruins",
+    "deco.ruins_lotus",
+    "deco.ruins_vine",
+    "fauna.ruins_scarab",
+    "ui.target",
+    "char.miner",
+    "obj.crate_wood",
+    "obj.crate_iron",
+    "mech.ladder",
+    "mech.socket",
+    "mech.socket_lit",
+    "mech.exit_flag",
+    "mech.plate",
+    "mech.door",
+    "mech.link_symbol",
+    "ui.icons",
+    "ui.goal_lamp",
+    "item.sandbag",
+    "item.bomb"
+   ]
+  },
+  {
+   "name": "showcase.cave",
+   "file": "art/export/reference/showcase.cave.png",
+   "sha256": "f7fb9e7dfeb510c621344dad23cdc6e3cef065a27d7bc307fb20fce886c25f06",
+   "uses": [
+    "theme.cave",
+    "deco.cave_crystal",
+    "deco.cave_mushroom",
+    "fauna.cave_moth",
+    "ui.target",
+    "char.miner",
+    "obj.crate_wood",
+    "obj.crate_iron",
+    "mech.ladder",
+    "mech.socket",
+    "mech.socket_lit",
+    "mech.exit_flag",
+    "mech.plate",
+    "mech.door",
+    "mech.link_symbol",
+    "ui.icons",
+    "ui.goal_lamp",
+    "item.sandbag",
+    "item.bomb"
+   ],
+   "all_approved": false,
+   "unapproved": [
+    "theme.cave",
+    "deco.cave_crystal",
+    "deco.cave_mushroom",
+    "fauna.cave_moth",
+    "ui.target",
+    "char.miner",
+    "obj.crate_wood",
+    "obj.crate_iron",
+    "mech.ladder",
+    "mech.socket",
+    "mech.socket_lit",
+    "mech.exit_flag",
+    "mech.plate",
+    "mech.door",
+    "mech.link_symbol",
+    "ui.icons",
+    "ui.goal_lamp",
+    "item.sandbag",
+    "item.bomb"
+   ]
+  },
+  {
+   "name": "lobby.cave",
+   "file": "art/export/reference/lobby.cave.png",
+   "sha256": "444ac3fd87c240f8be184d32f68f9b6ec3c2c0142fd45fe2e7b6eaef1ce393f8",
+   "uses": [
+    "ui.screen.lobby",
+    "theme.cave",
+    "deco.cave_crystal",
+    "deco.cave_mushroom",
+    "fauna.cave_moth",
+    "ui.target",
+    "char.miner",
+    "obj.crate_wood",
+    "obj.crate_iron",
+    "mech.ladder",
+    "mech.socket",
+    "mech.socket_lit",
+    "mech.exit_flag",
+    "mech.plate",
+    "mech.door",
+    "mech.link_symbol",
+    "ui.icons",
+    "ui.goal_lamp",
+    "item.sandbag",
+    "item.bomb"
+   ],
+   "all_approved": false,
+   "unapproved": [
+    "ui.screen.lobby",
+    "theme.cave",
+    "deco.cave_crystal",
+    "deco.cave_mushroom",
+    "fauna.cave_moth",
+    "ui.target",
+    "char.miner",
+    "obj.crate_wood",
+    "obj.crate_iron",
+    "mech.ladder",
+    "mech.socket",
+    "mech.socket_lit",
+    "mech.exit_flag",
+    "mech.plate",
+    "mech.door",
+    "mech.link_symbol",
+    "ui.icons",
+    "ui.goal_lamp",
+    "item.sandbag",
+    "item.bomb"
+   ]
+  },
+  {
+   "name": "showcase.forest",
+   "file": "art/export/reference/showcase.forest.png",
+   "sha256": "da10fa9e5a434a3094f2aae120e8221c0f6ce2162ceee93cc2dcfb24ee84dc7d",
+   "uses": [
+    "theme.forest",
+    "deco.forest_flower",
+    "deco.forest_grass",
+    "fauna.forest_bird",
+    "fauna.forest_butterfly",
+    "ui.target",
+    "char.miner",
+    "obj.crate_wood",
+    "obj.crate_iron",
+    "mech.ladder",
+    "mech.socket",
+    "mech.socket_lit",
+    "mech.exit_flag",
+    "mech.plate",
+    "mech.door",
+    "mech.link_symbol",
+    "ui.icons",
+    "ui.goal_lamp",
+    "item.sandbag",
+    "item.bomb"
+   ],
+   "all_approved": false,
+   "unapproved": [
+    "theme.forest",
+    "deco.forest_flower",
+    "deco.forest_grass",
+    "fauna.forest_bird",
+    "fauna.forest_butterfly",
+    "ui.target",
+    "char.miner",
+    "obj.crate_wood",
+    "obj.crate_iron",
+    "mech.ladder",
+    "mech.socket",
+    "mech.socket_lit",
+    "mech.exit_flag",
+    "mech.plate",
+    "mech.door",
+    "mech.link_symbol",
+    "ui.icons",
+    "ui.goal_lamp",
+    "item.sandbag",
+    "item.bomb"
+   ]
+  },
+  {
+   "name": "lobby.forest",
+   "file": "art/export/reference/lobby.forest.png",
+   "sha256": "eefa73ac371309768758bfea4843ad79027390683dd6b7beca45566af2469f30",
+   "uses": [
+    "ui.screen.lobby",
+    "theme.forest",
+    "deco.forest_flower",
+    "deco.forest_grass",
+    "fauna.forest_bird",
+    "fauna.forest_butterfly",
+    "ui.target",
+    "char.miner",
+    "obj.crate_wood",
+    "obj.crate_iron",
+    "mech.ladder",
+    "mech.socket",
+    "mech.socket_lit",
+    "mech.exit_flag",
+    "mech.plate",
+    "mech.door",
+    "mech.link_symbol",
+    "ui.icons",
+    "ui.goal_lamp",
+    "item.sandbag",
+    "item.bomb"
+   ],
+   "all_approved": false,
+   "unapproved": [
+    "ui.screen.lobby",
+    "theme.forest",
+    "deco.forest_flower",
+    "deco.forest_grass",
+    "fauna.forest_bird",
+    "fauna.forest_butterfly",
+    "ui.target",
+    "char.miner",
+    "obj.crate_wood",
+    "obj.crate_iron",
+    "mech.ladder",
+    "mech.socket",
+    "mech.socket_lit",
+    "mech.exit_flag",
+    "mech.plate",
+    "mech.door",
+    "mech.link_symbol",
+    "ui.icons",
+    "ui.goal_lamp",
+    "item.sandbag",
+    "item.bomb"
+   ]
+  },
+  {
+   "name": "showcase.sky",
+   "file": "art/export/reference/showcase.sky.png",
+   "sha256": "739905b0d40e8b7b7fb46af6a16f9eef2515d65bf8fca27550ad0c3529216ebb",
+   "uses": [
+    "theme.sky",
+    "deco.sky_flower",
+    "fauna.sky_cloudling",
+    "fauna.sky_dove",
+    "ui.target",
+    "char.miner",
+    "obj.crate_wood",
+    "obj.crate_iron",
+    "mech.ladder",
+    "mech.socket",
+    "mech.socket_lit",
+    "mech.exit_flag",
+    "mech.plate",
+    "mech.door",
+    "mech.link_symbol",
+    "ui.icons",
+    "ui.goal_lamp",
+    "item.sandbag",
+    "item.bomb"
+   ],
+   "all_approved": false,
+   "unapproved": [
+    "theme.sky",
+    "deco.sky_flower",
+    "fauna.sky_cloudling",
+    "fauna.sky_dove",
+    "ui.target",
+    "char.miner",
+    "obj.crate_wood",
+    "obj.crate_iron",
+    "mech.ladder",
+    "mech.socket",
+    "mech.socket_lit",
+    "mech.exit_flag",
+    "mech.plate",
+    "mech.door",
+    "mech.link_symbol",
+    "ui.icons",
+    "ui.goal_lamp",
+    "item.sandbag",
+    "item.bomb"
+   ]
+  },
+  {
+   "name": "lobby.sky",
+   "file": "art/export/reference/lobby.sky.png",
+   "sha256": "3bae69d57f57a71a94b77759a227adc3dee5f461f8b51f35afdf04adf64ab107",
+   "uses": [
+    "ui.screen.lobby",
+    "theme.sky",
+    "deco.sky_flower",
+    "fauna.sky_cloudling",
+    "fauna.sky_dove",
+    "ui.target",
+    "char.miner",
+    "obj.crate_wood",
+    "obj.crate_iron",
+    "mech.ladder",
+    "mech.socket",
+    "mech.socket_lit",
+    "mech.exit_flag",
+    "mech.plate",
+    "mech.door",
+    "mech.link_symbol",
+    "ui.icons",
+    "ui.goal_lamp",
+    "item.sandbag",
+    "item.bomb"
+   ],
+   "all_approved": false,
+   "unapproved": [
+    "ui.screen.lobby",
+    "theme.sky",
+    "deco.sky_flower",
+    "fauna.sky_cloudling",
+    "fauna.sky_dove",
+    "ui.target",
+    "char.miner",
+    "obj.crate_wood",
+    "obj.crate_iron",
+    "mech.ladder",
+    "mech.socket",
+    "mech.socket_lit",
+    "mech.exit_flag",
+    "mech.plate",
+    "mech.door",
+    "mech.link_symbol",
+    "ui.icons",
+    "ui.goal_lamp",
+    "item.sandbag",
+    "item.bomb"
+   ]
+  },
+  {
+   "name": "showcase.cosmos",
+   "file": "art/export/reference/showcase.cosmos.png",
+   "sha256": "1097cf27132834ffc2738a3f35391cc1d1a745e437f06e707593ffcacffb3054",
+   "uses": [
+    "theme.cosmos",
+    "deco.cosmos_sprout",
+    "fauna.cosmos_drone",
+    "ui.target",
+    "char.miner",
+    "obj.crate_wood",
+    "obj.crate_iron",
+    "mech.ladder",
+    "mech.socket",
+    "mech.socket_lit",
+    "mech.exit_flag",
+    "mech.plate",
+    "mech.door",
+    "mech.link_symbol",
+    "ui.icons",
+    "ui.goal_lamp",
+    "item.sandbag",
+    "item.bomb"
+   ],
+   "all_approved": false,
+   "unapproved": [
+    "theme.cosmos",
+    "deco.cosmos_sprout",
+    "fauna.cosmos_drone",
+    "ui.target",
+    "char.miner",
+    "obj.crate_wood",
+    "obj.crate_iron",
+    "mech.ladder",
+    "mech.socket",
+    "mech.socket_lit",
+    "mech.exit_flag",
+    "mech.plate",
+    "mech.door",
+    "mech.link_symbol",
+    "ui.icons",
+    "ui.goal_lamp",
+    "item.sandbag",
+    "item.bomb"
+   ]
+  },
+  {
+   "name": "lobby.cosmos",
+   "file": "art/export/reference/lobby.cosmos.png",
+   "sha256": "4683bae88ec4697f636303c9eeb645cdc51311b11c31c5d5e5a97478c3a1866d",
+   "uses": [
+    "ui.screen.lobby",
+    "theme.cosmos",
+    "deco.cosmos_sprout",
+    "fauna.cosmos_drone",
+    "ui.target",
+    "char.miner",
+    "obj.crate_wood",
+    "obj.crate_iron",
+    "mech.ladder",
+    "mech.socket",
+    "mech.socket_lit",
+    "mech.exit_flag",
+    "mech.plate",
+    "mech.door",
+    "mech.link_symbol",
+    "ui.icons",
+    "ui.goal_lamp",
+    "item.sandbag",
+    "item.bomb"
+   ],
+   "all_approved": false,
+   "unapproved": [
+    "ui.screen.lobby",
+    "theme.cosmos",
+    "deco.cosmos_sprout",
+    "fauna.cosmos_drone",
     "ui.target",
     "char.miner",
     "obj.crate_wood",
@@ -1798,10 +3581,13 @@
   {
    "name": "level.M01",
    "file": "art/export/reference/level.M01.png",
-   "sha256": "939db4ee0ef8311820ef2634cd5a1bb7947f4d64457ffaa349d30911cc4352ed",
+   "sha256": "bcdfe3ec768dc2e94a7b9e0eb7d752e1e84198dee66bc537c59617205a1883a7",
    "uses": [
-    "terrain.mine",
-    "deco.lantern",
+    "theme.dungeon",
+    "deco.dungeon_moss",
+    "deco.dungeon_torch",
+    "fauna.dungeon_bat",
+    "fauna.dungeon_rat",
     "ui.target",
     "char.miner",
     "obj.crate_wood",
@@ -1820,8 +3606,11 @@
    ],
    "all_approved": false,
    "unapproved": [
-    "terrain.mine",
-    "deco.lantern",
+    "theme.dungeon",
+    "deco.dungeon_moss",
+    "deco.dungeon_torch",
+    "fauna.dungeon_bat",
+    "fauna.dungeon_rat",
     "ui.target",
     "char.miner",
     "obj.crate_wood",
@@ -1842,10 +3631,13 @@
   {
    "name": "level.M02",
    "file": "art/export/reference/level.M02.png",
-   "sha256": "0e03212cc22e9c37d4b08af1131279aa8d05776230fbbb61913438e2c98a24fc",
+   "sha256": "2147d9e432743e653fbf41861589fec7dde28ae2b0c35e9e80a88ca38ed2ab05",
    "uses": [
-    "terrain.mine",
-    "deco.lantern",
+    "theme.dungeon",
+    "deco.dungeon_moss",
+    "deco.dungeon_torch",
+    "fauna.dungeon_bat",
+    "fauna.dungeon_rat",
     "ui.target",
     "char.miner",
     "obj.crate_wood",
@@ -1864,8 +3656,11 @@
    ],
    "all_approved": false,
    "unapproved": [
-    "terrain.mine",
-    "deco.lantern",
+    "theme.dungeon",
+    "deco.dungeon_moss",
+    "deco.dungeon_torch",
+    "fauna.dungeon_bat",
+    "fauna.dungeon_rat",
     "ui.target",
     "char.miner",
     "obj.crate_wood",
@@ -1886,10 +3681,13 @@
   {
    "name": "level.M03",
    "file": "art/export/reference/level.M03.png",
-   "sha256": "d52d25d729ec1d6e6adcb918e5bbe3ef7783963627444da112d0c667e1ff5124",
+   "sha256": "dc830b61e795e6a2797e9bae2432c66af6f4c9e97f63702e223ede9e82c1e63e",
    "uses": [
-    "terrain.mine",
-    "deco.lantern",
+    "theme.dungeon",
+    "deco.dungeon_moss",
+    "deco.dungeon_torch",
+    "fauna.dungeon_bat",
+    "fauna.dungeon_rat",
     "ui.target",
     "char.miner",
     "obj.crate_wood",
@@ -1908,8 +3706,11 @@
    ],
    "all_approved": false,
    "unapproved": [
-    "terrain.mine",
-    "deco.lantern",
+    "theme.dungeon",
+    "deco.dungeon_moss",
+    "deco.dungeon_torch",
+    "fauna.dungeon_bat",
+    "fauna.dungeon_rat",
     "ui.target",
     "char.miner",
     "obj.crate_wood",
@@ -1930,10 +3731,13 @@
   {
    "name": "level.M04",
    "file": "art/export/reference/level.M04.png",
-   "sha256": "bb4527768f67c5a959dbb8ff751467864cc20319a897e5ec93fe3d62b21c1cf1",
+   "sha256": "dd9ccad37e0977e69d9436b89aa9b21c771a469a7495818fafe8a5d4cc4fdaff",
    "uses": [
-    "terrain.mine",
-    "deco.lantern",
+    "theme.dungeon",
+    "deco.dungeon_moss",
+    "deco.dungeon_torch",
+    "fauna.dungeon_bat",
+    "fauna.dungeon_rat",
     "ui.target",
     "char.miner",
     "obj.crate_wood",
@@ -1952,8 +3756,11 @@
    ],
    "all_approved": false,
    "unapproved": [
-    "terrain.mine",
-    "deco.lantern",
+    "theme.dungeon",
+    "deco.dungeon_moss",
+    "deco.dungeon_torch",
+    "fauna.dungeon_bat",
+    "fauna.dungeon_rat",
     "ui.target",
     "char.miner",
     "obj.crate_wood",
@@ -1974,10 +3781,13 @@
   {
    "name": "level.M05",
    "file": "art/export/reference/level.M05.png",
-   "sha256": "0bbf0cf755a995b460fc2fd2814f6457945d83be8bf3eb5b75a47067a34921a2",
+   "sha256": "58bc55b9c46387ea29753abd19a9cee067304f480613dbe651a1cae3a3eaa910",
    "uses": [
-    "terrain.mine",
-    "deco.lantern",
+    "theme.dungeon",
+    "deco.dungeon_moss",
+    "deco.dungeon_torch",
+    "fauna.dungeon_bat",
+    "fauna.dungeon_rat",
     "ui.target",
     "char.miner",
     "obj.crate_wood",
@@ -1996,8 +3806,11 @@
    ],
    "all_approved": false,
    "unapproved": [
-    "terrain.mine",
-    "deco.lantern",
+    "theme.dungeon",
+    "deco.dungeon_moss",
+    "deco.dungeon_torch",
+    "fauna.dungeon_bat",
+    "fauna.dungeon_rat",
     "ui.target",
     "char.miner",
     "obj.crate_wood",
@@ -2018,10 +3831,13 @@
   {
    "name": "level.M06",
    "file": "art/export/reference/level.M06.png",
-   "sha256": "529d50e374c579260f4e476ca152d9104b72125aeeb66f8f229def383bf78258",
+   "sha256": "7cb83768ca4faab9d68e73cdbec98e96082f54be2db633e0abac712b2d215cae",
    "uses": [
-    "terrain.mine",
-    "deco.lantern",
+    "theme.dungeon",
+    "deco.dungeon_moss",
+    "deco.dungeon_torch",
+    "fauna.dungeon_bat",
+    "fauna.dungeon_rat",
     "ui.target",
     "char.miner",
     "obj.crate_wood",
@@ -2040,8 +3856,11 @@
    ],
    "all_approved": false,
    "unapproved": [
-    "terrain.mine",
-    "deco.lantern",
+    "theme.dungeon",
+    "deco.dungeon_moss",
+    "deco.dungeon_torch",
+    "fauna.dungeon_bat",
+    "fauna.dungeon_rat",
     "ui.target",
     "char.miner",
     "obj.crate_wood",
@@ -2062,10 +3881,13 @@
   {
    "name": "level.M07",
    "file": "art/export/reference/level.M07.png",
-   "sha256": "92e8ff0f66a89e0038636ed36b8b48d878c3504d0794c20d1874aee4dc1791d1",
+   "sha256": "ba2721b2c53d62713eb44cd9dd98c0d72b3919829761a6d6f626689fb1918fac",
    "uses": [
-    "terrain.mine",
-    "deco.lantern",
+    "theme.dungeon",
+    "deco.dungeon_moss",
+    "deco.dungeon_torch",
+    "fauna.dungeon_bat",
+    "fauna.dungeon_rat",
     "ui.target",
     "char.miner",
     "obj.crate_wood",
@@ -2084,8 +3906,11 @@
    ],
    "all_approved": false,
    "unapproved": [
-    "terrain.mine",
-    "deco.lantern",
+    "theme.dungeon",
+    "deco.dungeon_moss",
+    "deco.dungeon_torch",
+    "fauna.dungeon_bat",
+    "fauna.dungeon_rat",
     "ui.target",
     "char.miner",
     "obj.crate_wood",

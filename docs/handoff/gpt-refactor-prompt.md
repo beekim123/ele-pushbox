@@ -88,8 +88,8 @@ game/
   - 对 `approved` 不为空的条目：复制 `approved.png`，校验 `png_sha256`，生成 SpriteFrames / AtlasTexture，帧尺寸、锚点（底边中心对齐格子底边）、动画帧序、fps、是否循环、九宫格边距都取自 manifest；
   - 对未确认的条目：开发构建使用 `current.preview` 并显示占位标记；发布构建报错。
   - 导入设置：Filter Nearest，关闭 mipmap，无损压缩。
-- **地形**：不要用贴图。把 `workbench/js/core/terrain.js` 的规则移植成着色器，必须使用同一个 `h32` 哈希和同样的邻格规则；主题参数取自 `terrain.*` 资产的 `params`。推荐做法：用一个着色器同时采样 SDK 的两块瓦片纹理（世界宽 320，只有两块），以避免 256 格接缝处读不到邻格（EXT-10）；不可行时，可以改为读取 `get_material_ids` 生成整张材料纹理。沙、水的颗粒颜色使用 SDK 的随机颜色位。
-- **对照验证**：在 Godot 中把 `showcase.mine`（地图见 `workbench/js/core/scene.js` 中的 `SHOWCASE`）和 M01–M07 的开局状态渲染到 320×180 视口并截图，与 `art/export/reference/` 中的同名 PNG 逐像素比较。沙、水只比较颜色集合。差异必须写进 `docs/design/art-pipeline.md` 第 7 节，不能用"差不多"代替。
+- **地形**：不要用贴图。把 `workbench/js/core/terrain.js` 的规则移植成着色器，必须使用同一个 `h32` 哈希和同样的邻格规则；主题参数取自 `theme.*` 资产的 `params`；章节对应的主题见设计第 6.1 节；植物与小动物按 `workbench/js/core/ambient.js` 与美术规范第 6 节摆放和驱动。推荐做法：用一个着色器同时采样 SDK 的两块瓦片纹理（世界宽 320，只有两块），以避免 256 格接缝处读不到邻格（EXT-10）；不可行时，可以改为读取 `get_material_ids` 生成整张材料纹理。沙、水的颗粒颜色使用 SDK 的随机颜色位。
+- **对照验证**：在 Godot 中把 `showcase.<主题>`（六个主题各一张，地图见 `workbench/js/core/scene.js` 中的 `SHOWCASE`）和 M01–M07 的开局状态渲染到 320×180 视口并截图，与 `art/export/reference/` 中的同名 PNG 逐像素比较。沙、水只比较颜色集合。差异必须写进 `docs/design/art-pipeline.md` 第 7 节，不能用"差不多"代替。
 
 ### 5 未确认或缺失资产
 

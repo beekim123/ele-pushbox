@@ -7,15 +7,16 @@
  "renderer": [
   "workbench/js/core/ui.js",
   "workbench/js/core/scene.js",
-  "workbench/js/core/terrain.js"
+  "workbench/js/core/terrain.js",
+  "workbench/js/core/ambient.js"
  ],
  "depends": [
-  "terrain.mine",
-  "ui.panel",
+  "char.miner",
+  "mech.socket_lit",
+  "theme.dungeon",
   "ui.icons",
   "ui.keycap",
-  "char.miner",
-  "mech.socket_lit"
+  "ui.panel"
  ],
  "version": 1,
  "stage": "review",
@@ -34,5 +35,5 @@
  },
  "usage": "所有目标灯点亮后显示；人物播放胜利动作。",
  "notes": "界面布局与文字参考；Godot 中用 Control 节点实现，像素位置以本参考图为准。",
- "content_hash": "f06a022ac8a593144bfc862344550480798237a19f11d1e340ad1a868b119a2d"
+ "content_hash": "aa819d5bd251b27780aed66e1ab85f44af9370fce9d47482d030d89e4eef96b9"
 }

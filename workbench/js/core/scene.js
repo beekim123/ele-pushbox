@@ -9,6 +9,17 @@
 
   function themeOf(id) { return S().get(id).params; }
 
+  // Chapter -> visual theme (docs/design/game-design.md §6.1). Themes are skins only.
+  const CHAPTER_THEME = { dungeon: "theme.dungeon", ruins: "theme.ruins", cave: "theme.cave", forest: "theme.forest", sky: "theme.sky", cosmos: "theme.cosmos" };
+  const THEMES = ["theme.dungeon", "theme.ruins", "theme.cave", "theme.forest", "theme.sky", "theme.cosmos"];
+  function themeFor(spec, o) { return (o && o.theme) || CHAPTER_THEME[spec.chapter] || "theme.dungeon"; }
+  const openingCache = new Map();
+  function opening(spec) {
+    const key = spec.id + "|" + spec.map.join("");
+    if (!openingCache.has(key)) openingCache.set(key, TM().parse(spec));
+    return openingCache.get(key);
+  }
+
   function toMat(t) {
     const T = TM().T, M = TR().MAT;
     return t === T.ROCK ? M.ROCK : t === T.CRACKED ? M.CRACKED : t === T.EARTH ? M.EARTH : t === T.SAND ? M.SAND : t === T.WATER ? M.WATER : M.EMPTY;
@@ -19,13 +30,20 @@
     const o = opts || {};
     const L = state ? state.level : TM().parse(spec).level;
     const s = state ? state.state : TM().parse(spec).state;
-    const theme = themeOf(o.theme || "terrain.mine");
+    const theme = themeOf(themeFor(spec, o));
     const tick = o.tick || 0;
     const ox = (W - L.w * 16) >> 1, oy = HUD_H + ((H - HUD_H - L.h * 16) >> 1);
     TR().drawBackground(r, theme, 0, 0, W, H, tick);
-    if (theme.background.style === "mine" && S().has("deco.lantern")) for (let x = 64; x < W; x += 80) S().draw(r, "deco.lantern", "flicker", tick + x, x, 25);
     const map = { w: L.w, h: L.h, at: (x, y) => (x < 0 || y < 0 || x >= L.w || y >= L.h ? TR().MAT.EMPTY : toMat(s.terrain[y * L.w + x])) };
+    // Ambient life is placed from the opening layout so it never jumps when things move.
+    const first = opening(spec), s0 = first.state;
+    const map0 = { w: L.w, h: L.h, at: (x, y) => (x < 0 || y < 0 || x >= L.w || y >= L.h ? TR().MAT.EMPTY : toMat(s0.terrain[y * L.w + x])) };
+    const occupied = (tx, ty) => L.marker[ty * L.w + tx] !== TM().M.NONE || !!TM().crateAt(s0, tx, ty) || (s0.player.x === tx && s0.player.y === ty) || L.doors.includes(ty * L.w + tx);
+    const alive = (tx, ty) => map.at(tx, ty) === TR().MAT.EMPTY && !TM().crateAt(s, tx, ty) && map.at(tx, ty + 1) !== TR().MAT.EMPTY || map.at(tx, ty - 1) !== TR().MAT.EMPTY && map.at(tx, ty) === TR().MAT.EMPTY && !TM().crateAt(s, tx, ty);
+    const area = { x: ox + 16, y: oy + 16, w: Math.max(32, (L.w - 2) * 16), h: Math.max(32, (L.h - 2) * 16) };
+    if (o.ambient !== false) PB.ambient.draw(r, theme, map0, ox, oy, tick, "back", occupied, area, alive);
     TR().drawTerrain(r, map, theme, ox, oy, tick >> 3);
+    if (o.ambient !== false) PB.ambient.draw(r, theme, map0, ox, oy, tick, "front", occupied, area, alive);
     const M = TM().M;
     // Background markers.
     for (let i = 0; i < L.w * L.h; i++) {
@@ -120,7 +138,7 @@
   // Representative scene: every chapter-1 element plus water and cracked rock
   // so the whole art set can be judged together. Not a playable level.
   const SHOWCASE = {
-    id: "showcase.mine", code: "示意", title: "代表场景 · 矿道", map: [
+    id: "showcase.mine", code: "示意", title: "代表场景 · 全要素", map: [
       "####################",
       "#.........#........#",
       "#H........#.....X..#",
@@ -133,5 +151,5 @@
     bag: { sand: 2, bomb: 1 },
   };
 
-  PB.scene = { renderLevel, drawHud, SHOWCASE, W, H, HUD_H };
+  PB.scene = { renderLevel, drawHud, SHOWCASE, W, H, HUD_H, CHAPTER_THEME, THEMES, themeFor };
 })(typeof window !== "undefined" ? window : globalThis);

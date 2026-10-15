@@ -1,7 +1,7 @@
 {
   "format": "pushbox.levelspec/1",
   "id": "M03",
-  "chapter": "mine",
+  "chapter": "dungeon",
   "order": 3,
   "title": "挖开一格",
   "role": "教学",

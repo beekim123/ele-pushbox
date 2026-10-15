@@ -7,13 +7,14 @@
  "renderer": [
   "workbench/js/core/ui.js",
   "workbench/js/core/scene.js",
-  "workbench/js/core/terrain.js"
+  "workbench/js/core/terrain.js",
+  "workbench/js/core/ambient.js"
  ],
  "depends": [
-  "terrain.mine",
-  "ui.panel",
+  "theme.dungeon",
   "ui.icons",
-  "ui.keycap"
+  "ui.keycap",
+  "ui.panel"
  ],
  "version": 1,
  "stage": "review",
@@ -25,7 +26,7 @@
  "palette": "endesga32",
  "params": {
   "screen": "levels",
-  "heading": "第 1 章 · 矿道",
+  "heading": "第 1 章 · 幽暗石牢",
   "progress": "已通关 4 / 7",
   "levels": [
    {
@@ -68,9 +69,10 @@
   "hint_select": "选择",
   "hint_enter": "进入",
   "hint_back": "返回",
-  "recommended": "推荐"
+  "recommended": "推荐",
+  "theme": "theme.dungeon"
  },
  "usage": "关卡格（编号、名称、通关 / 跳过标记）与所选关卡的示意小地图和一句话发现。",
  "notes": "界面布局与文字参考；Godot 中用 Control 节点实现，像素位置以本参考图为准。",
- "content_hash": "4946d25f11ace22fec1536cd56554b2c3607834424797cebeb102a671e95707b"
+ "content_hash": "849e266b649448ed58ffd85bbc0ff6e081ee83da15810e3ab6c861808dafbb3e"
 }

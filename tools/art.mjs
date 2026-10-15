@@ -13,7 +13,7 @@ const cmd = argv[0];
 const opt = (name, def) => { const i = argv.indexOf("--" + name); return i >= 0 ? argv[i + 1] : def; };
 const ROOT = path.resolve(opt("root", REPO));
 const rel = (...p) => path.join(ROOT, ...p);
-const PB = loadCore(["raster", "font-data", "sprites", "tilemodel", "terrain", "scene", "ui"]);
+const PB = loadCore(["raster", "font-data", "sprites", "tilemodel", "terrain", "ambient", "scene", "ui"]);
 
 const sha = (buf) => crypto.createHash("sha256").update(buf).digest("hex");
 function canon(v) {
@@ -93,7 +93,7 @@ function levelSpecs() {
 }
 function renderProcedural(a, specs) {
   const r = new PB.Raster(320, 180);
-  if (a.category === "terrain") {
+  if (a.category === "theme") {
     PB.scene.renderLevel(r, PB.scene.SHOWCASE, null, { theme: a.id, tick: 0, hud: false });
   } else if (a.category === "screen") {
     const st = { focus: a.params.screen === "hint" ? 2 : a.params.screen === "levels" ? 4 : a.params.screen === "chapters" ? 0 : 0, specs: Object.fromEntries(specs.map((s) => [s.id, s])), levelSpec: specs.find((s) => s.id === "M05"), ruleSpec: specs.find((s) => s.id === "M03") };
@@ -160,9 +160,14 @@ function build() {
     const unapproved = uses.filter((id) => { const e = manifest.assets.find((x) => x.id === id); return !e || !e.current_is_approved; });
     refs.push({ name, file: p, sha256: sha(buf), uses, all_approved: unapproved.length === 0, unapproved });
   };
-  const levelUses = ["terrain.mine", "deco.lantern", "ui.target", "char.miner", "obj.crate_wood", "obj.crate_iron", "mech.ladder", "mech.socket", "mech.socket_lit", "mech.exit_flag", "mech.plate", "mech.door", "mech.link_symbol", "ui.icons", "ui.goal_lamp", "item.sandbag", "item.bomb"];
-  { const r = new PB.Raster(320, 180); PB.scene.renderLevel(r, PB.scene.SHOWCASE, null, { tick: 0 }); writeRef("showcase.mine", r, levelUses); }
-  for (const s of specs) { const r = new PB.Raster(320, 180); PB.scene.renderLevel(r, s, null, { tick: 0 }); writeRef("level." + s.id, r, levelUses); }
+  const common = ["ui.target", "char.miner", "obj.crate_wood", "obj.crate_iron", "mech.ladder", "mech.socket", "mech.socket_lit", "mech.exit_flag", "mech.plate", "mech.door", "mech.link_symbol", "ui.icons", "ui.goal_lamp", "item.sandbag", "item.bomb"];
+  const usesFor = (themeId) => [themeId, ...((byId.get(themeId) || { src: {} }).src.depends || []), ...common];
+  for (const t of PB.scene.THEMES) {
+    const r = new PB.Raster(320, 180); PB.scene.renderLevel(r, PB.scene.SHOWCASE, null, { tick: 0, theme: t }); writeRef("showcase." + t.slice(6), r, usesFor(t));
+    const lobby = byId.get("ui.screen.lobby");
+    if (lobby) { const l = new PB.Raster(320, 180); PB.ui.render(l, lobby.src, 0, { theme: t }); writeRef("lobby." + t.slice(6), l, ["ui.screen.lobby", ...usesFor(t)]); }
+  }
+  for (const s of specs) { const r = new PB.Raster(320, 180); PB.scene.renderLevel(r, s, null, { tick: 0 }); writeRef("level." + s.id, r, usesFor(PB.scene.themeFor(s))); }
   manifest.references = refs;
   writeJson(rel("art/export/manifest.json"), manifest);
   // Workbench bundle (classic script so file:// works).

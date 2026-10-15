@@ -12,9 +12,9 @@
 | `mech.socket`、`mech.socket_lit`、`mech.exit_flag`、`mech.ladder` | 箱子槽、点亮叠加、出口旗、梯子 | 1 |
 | `item.sandbag`、`item.bomb` | 背包图标 | 1 / 3 |
 | `fx.land_dust`、`fx.dig_bits`、`fx.goal_spark` | 落地、挖土、点亮 | 1 |
-| `deco.lantern` | 矿道背景吊灯 | 1 |
+| `theme.*`（6 个） | 地形图案、背景、生态清单：石牢、神庙、晶窟、古森、圣域、星站 | 1–5 + 扩展 |
+| `fauna.*`（9 个）、`deco.*`（10 个） | 各主题的小动物与植物：蝙蝠、老鼠、苔藓、火把；金甲虫、垂藤、金莲；飞蛾、荧光蘑菇、紫晶；知更鸟、蝴蝶、野花、草丛；白鸽、云灵、雏菊；无人机、异星球芽 | 对应主题 |
 | `ui.icons`、`ui.goal_lamp`、`ui.keycap`、`ui.panel`、`ui.cursor`、`ui.target`、`ui.class_icon` | 界面元素、目标高亮、观察模式图标 | 全部 |
-| `terrain.mine`、`terrain.aqueduct` | 地形着色与背景（第 2 章为提前候选） | 1 / 2 |
 | `ui.screen.lobby` / `chapters` / `levels` / `pause` / `hint` / `complete` / `settings` / `rulecard` | 界面布局参考 | 全部 |
 
 第一个可玩闭环（第 1 章 + 菜单）需要的资产，以上已经全部覆盖。
@@ -42,9 +42,9 @@
 | `ruins_brazier` | **改为**第 5 章 `mech.torch` | 火盆变成可操作的点火开关 |
 | `ui_keycaps` | **重画**为 `ui.keycap` | 方向键与字母键；Shift、Ctrl、Esc 等宽键由九宫格加文字绘制 |
 | `ui_lobby_screen`、`ui_campaign_screen` | **重做**为 `ui.screen.*` | 新的章节、关卡结构 |
-| `tile_forest_grass`、`tile_sky_marble`、`tile_cosmos_hull`、`tile_cave_sulfur` | **删除**，改为程序化 `terrain.*` | 地形由着色器逐像素绘制，不用贴图 |
-| `forest_bird`、`forest_butterfly`、`forest_frog`、`sky_dove`、`cloud_sprite`、`ruins_scarab`、`cave_moth`、`cosmos_drone`、`dungeon_bat` | **删除** | 会动的装饰小动物与可操作物争抢注意力；对应主题已取消。以后每章最多加一种低对比度的背景生物，并且要先过可读性检查 |
+| `tile_forest_grass`、`tile_sky_marble`、`tile_cosmos_hull`、`tile_cave_sulfur` | **改为**程序化 `theme.*` 的地形图案（草皮、白石镶金、舱板警示条、粗糙岩洞） | 地形由着色器逐像素绘制，不用贴图 |
+| `forest_bird`、`forest_butterfly`、`sky_dove`、`cloud_sprite`、`ruins_scarab`、`cave_moth`、`cosmos_drone`、`dungeon_bat` | **恢复并重画**（2026-10-15 用户决定） | 按美术规范第 6 节的生态规则重画为 `fauna.*`；`forest_frog` 暂不做，以免与水面玩法混淆 |
 | `hazard_gargoyle`、`hazard_mole` | **删除** | 挑战模式移出规划 |
-| `flower_sway`、`mushroom_glow` | **删除** | 同上（装饰优先级最低）；第 4 章可以重新评估 |
-| `wind_pinwheel`、`cloud_pad`、`cosmos_teleporter` | **删除** | 对应机制已移出主线 |
-| `map_*`（6 张旧地图） | **删除** | 旧主题与旧关卡 |
+| `flower_sway`、`mushroom_glow` | **恢复并重画**为 `deco.forest_flower`、`deco.cave_mushroom` | 同上 |
+| `wind_pinwheel`、`cloud_pad`、`cosmos_teleporter` | **删除** | 它们是机关而不是装饰，对应机制已移出主线 |
+| `map_*`（6 张旧地图） | **删除**地图布局，主题风格由 `theme.*` 继承 | 旧关卡布局不再使用 |

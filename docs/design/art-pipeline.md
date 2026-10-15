@@ -18,7 +18,7 @@
 ## 2 源数据格式（`pushbox.art/1`）
 
 - `kind: "sprite"`：`size`（帧宽高）、`anchor`（锚点）、`frames`（每帧为字符串行，`a`–`z`、`A`–`F` 对应 ENDESGA 32，`.` 透明）、`animations`（`{名称: {fps, loop, frames:[帧序号]}}`）、可选 `ninepatch`（上、右、下、左）。
-- `kind: "procedural"`：`renderer`（绘制代码文件）、`params`（参数）、`depends`（用到的其他资产）。地形主题与界面画面属于这一类。
+- `kind: "procedural"`：`renderer`（绘制代码文件）、`params`（参数）、`depends`（用到的其他资产）。主题（`theme.*`）与界面画面属于这一类。
 - 公共字段：`id`、`name`、`category`、`layer`、`version`、`stage`（`draft` 或 `review`）、`usage`、`notes`、`content_hash`（由工具维护）。
 
 **内容哈希**：对 `kind`、`size`、`anchor`、`palette`、`frames`、`animations`、`ninepatch`、`params`、`renderer`、`depends` 做规范化 JSON 后取 SHA-256。程序化资产还要加上绘制代码文件的哈希，以及所依赖资产的内容哈希。因此修改绘制代码或改动被引用的精灵，界面画面也会生成新版本。
@@ -57,7 +57,7 @@ node tools/art.mjs import pushbox-art-edits-….json   # 写回源数据，并�
 - Godot 只读取 `art/export/manifest.json`。对每个要用的资产，取 `approved` 字段给出的 PNG，并用 `png_sha256` 校验；发布构建遇到 `approved == null` 的资产时必须报错。开发构建可以加载 `current.preview` 作为占位，但界面上要显示"占位"标记。
 - 精灵图是横向条带，第 i 帧位于 `x = i × 帧宽`。锚点、动画（帧序号、fps、是否循环）、九宫格边距都以 manifest 为准，不要在游戏里重新定义。
 - 导入设置：最近邻采样，关闭 mipmap 与压缩（无损），不做任何颜色处理。
-- 地形不是贴图：游戏着色器必须按 `workbench/js/core/terrain.js` 的规则逐像素着色，主题参数取已确认的 `terrain.*` 资产的 `params`。静态材料使用同一个 `h32` 位置哈希。
+- 地形不是贴图：游戏着色器必须按 `workbench/js/core/terrain.js` 的规则逐像素着色，主题参数取已确认的 `theme.*` 资产的 `params`；生态按 `workbench/js/core/ambient.js` 的规则摆放。静态材料使用同一个 `h32` 位置哈希。
 - 界面画面（`ui.screen.*`）是布局参考图。Godot 用 Control 节点实现，元素位置、字号、颜色以参考图为准，并逐像素对照（动态文字和进度数字除外）。
 
 ## 7 一致性检查

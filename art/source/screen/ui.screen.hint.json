@@ -7,13 +7,14 @@
  "renderer": [
   "workbench/js/core/ui.js",
   "workbench/js/core/scene.js",
-  "workbench/js/core/terrain.js"
+  "workbench/js/core/terrain.js",
+  "workbench/js/core/ambient.js"
  ],
  "depends": [
-  "terrain.mine",
-  "ui.panel",
+  "theme.dungeon",
   "ui.icons",
-  "ui.keycap"
+  "ui.keycap",
+  "ui.panel"
  ],
  "version": 1,
  "stage": "review",
@@ -32,5 +33,5 @@
  },
  "usage": "按 H 逐级展开三层提示；第三层提供演示与回到正确位置。",
  "notes": "界面布局与文字参考；Godot 中用 Control 节点实现，像素位置以本参考图为准。",
- "content_hash": "63893182003ff11018f5702a21afff21bd3d73f0f643f0f531fa72e44ce10b6b"
+ "content_hash": "460e6c9f7a5dafb7ec8eb1ee0c0af6e1d9f9a0f5d59212472f1f70421076c2e4"
 }

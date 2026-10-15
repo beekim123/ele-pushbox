@@ -7,16 +7,17 @@
  "renderer": [
   "workbench/js/core/ui.js",
   "workbench/js/core/scene.js",
-  "workbench/js/core/terrain.js"
+  "workbench/js/core/terrain.js",
+  "workbench/js/core/ambient.js"
  ],
  "depends": [
-  "terrain.mine",
-  "ui.panel",
+  "char.miner",
+  "mech.exit_flag",
+  "obj.crate_wood",
+  "theme.dungeon",
   "ui.icons",
   "ui.keycap",
-  "char.miner",
-  "obj.crate_wood",
-  "mech.exit_flag"
+  "ui.panel"
  ],
  "version": 1,
  "stage": "review",
@@ -28,7 +29,7 @@
  "palette": "endesga32",
  "params": {
   "screen": "lobby",
-  "theme": "terrain.mine",
+  "theme": "theme.dungeon",
   "title": "沙与水",
   "subtitle": "推箱子 · 横版解谜",
   "items": [
@@ -38,9 +39,11 @@
    "退出"
   ],
   "hint_select": "选择",
-  "hint_confirm": "确认"
+  "hint_confirm": "确认",
+  "chapter_label": "当前：第 {n} 章 · ",
+  "chapter_extra": "当前：扩展章 · "
  },
- "usage": "启动后的第一个界面。背景为当前进度章节的场景。",
+ "usage": "启动后的第一个界面。背景、地面与生态随玩家当前所在章节的主题切换（六种主题都有参考图）。",
  "notes": "界面布局与文字参考；Godot 中用 Control 节点实现，像素位置以本参考图为准。",
- "content_hash": "03e059b9c2b78a7337a38e028a6b63111e34665c045f376c70cfc62955599be7"
+ "content_hash": "4639baf5af81adf269b0a39e5abc7a1cd67c1ab1cbd90fc270ddc09caef76805"
 }
