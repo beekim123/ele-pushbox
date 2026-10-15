@@ -3,7 +3,8 @@
 适用于本仓库内的所有自动化协作者（Claude、GPT / Codex 等）。用户在对话中给出的最新指示优先于本文件。
 
 1. **唯一设计来源**：玩法以 `docs/design/game-design.md` 为准，美术以 `docs/design/art-direction.md`、`docs/design/art-pipeline.md` 为准。不要依据快照 `0fae58c` 中的旧文档、旧测试或旧报告来做决定。
-2. **美术确认门槛**：游戏只能使用 `art/approvals.json` 中由用户确认过、且版本与哈希都匹配的资产。不得自行批准，不得把默认选中、测试通过、旧版通过或"风格已认可"当作确认。缺少确认的资产可以用 `art/export/` 中带 `PLACEHOLDER` 标记的占位，但占位不能视为最终素材。
+2. **美术确认门槛**：游戏只能使用 `art/approvals.json` 中由用户确认过、且版本与哈希都匹配的资产（目前 57 项全部已确认，记录 `APR-0001`）。不得自行批准，不得把默认选中、测试通过、旧版通过或"风格已认可"当作确认。缺少的资产可以用明显标出的占位，但占位不能视为最终素材。
+2a. **已确认美术的冻结区**：`art/source/**`、`art/approvals.json`、`art/history/**`、`art/export/approved/**`、`workbench/js/core/` 下的绘制文件、`content/i18n/*.json` 都参与内容哈希，改动会让确认失效。只有美术负责人（Claude）在用户要求下修改，并重新走确认流程；开发方新增界面文字写进 `content/i18n-extra/`。
 3. **改动已确认的资产**会生成新版本，并回到待确认状态；不能覆盖已确认的版本（工具会自动把旧版本存入 `art/history/`）。
 4. **自动化测试使用隔离数据**：测试不得写入 `art/approvals.json` 与 `art/source/`，应使用临时目录。
 5. **验证必须如实**：设计模型检查（`tools/check-levels.mjs`）不等于 SDK 验证；HTML 动画不等于物理结果；旧测试成绩不能证明新项目通过。

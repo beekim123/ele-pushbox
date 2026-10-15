@@ -72,12 +72,24 @@ async function decode(file) {
   await page.click("#export-root button.danger"); await page.waitForTimeout(200);
   check(!(await page.locator("#drafts-flag").isVisible()), "discarding the draft clears the flag");
 
-  // 5. Review selection produces exact asset@version#hash text.
+  // 5. Review page: approved assets cannot be re-selected; requests carry exact versions.
   await page.goto(URL + "#review"); await page.waitForTimeout(200);
-  await page.check('input[aria-label="通过 木箱"]');
-  const text = await page.locator('textarea[aria-label="确认文字"]').inputValue();
-  const v = await page.evaluate(() => { const a = PBStore.asset("obj.crate_wood"); return `obj.crate_wood@v${a.version} #${a.content_hash.slice(0, 12)}`; });
-  check(text.includes(v), "review text lists the exact version and hash");
+  const states = await page.evaluate(() => PBStore.assets().map((a) => [a.id, a.status, a.version, a.content_hash]));
+  const reviewable = states.find((x) => x[1] === "review");
+  if (reviewable) {
+    const name = await page.evaluate((id) => PBStore.asset(id).name, reviewable[0]);
+    await page.check(`input[aria-label="通过 ${name}"]`);
+    const text = await page.locator('textarea[aria-label="确认文字"]').inputValue();
+    check(text.includes(`${reviewable[0]}@v${reviewable[2]} #${reviewable[3].slice(0, 12)}`), "review text lists the exact version and hash");
+  } else {
+    const crate = states.find((x) => x[0] === "obj.crate_wood");
+    check(await page.locator('input[aria-label="通过 木箱"]').isDisabled(), "approved assets cannot be selected again");
+    await page.fill('input[aria-label="修改意见 木箱"]', "test change request");
+    await page.locator('input[aria-label="修改意见 木箱"]').dispatchEvent("change");
+    const text = await page.locator('textarea[aria-label="确认文字"]').inputValue();
+    check(text.includes(`obj.crate_wood@v${crate[2]}：test change request`), "change requests name the exact asset version");
+    await page.click("text=清空勾选与意见");
+  }
 
   // 6. Every UI screen lays out in Chinese and English without cut text.
   const textIssues = await page.evaluate(() => {

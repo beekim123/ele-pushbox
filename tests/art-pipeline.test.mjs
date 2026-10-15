@@ -13,10 +13,11 @@ const REPO = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const real = path.join(REPO, "art/approvals.json");
 const realBefore = fs.existsSync(real) ? crypto.createHash("sha256").update(fs.readFileSync(real)).digest("hex") : null;
 
+// A fresh copy of the sources with NO approvals, so the tests exercise the
+// pipeline itself regardless of what the user has approved in the repository.
 function sandbox() {
   const dir = fs.mkdtempSync(path.join(os.tmpdir(), "pb-art-"));
-  for (const d of ["art/source", "art/history", "content"]) if (fs.existsSync(path.join(REPO, d))) fs.cpSync(path.join(REPO, d), path.join(dir, d), { recursive: true });
-  if (fs.existsSync(real)) fs.copyFileSync(real, path.join(dir, "art/approvals.json"));
+  for (const d of ["art/source", "content"]) if (fs.existsSync(path.join(REPO, d))) fs.cpSync(path.join(REPO, d), path.join(dir, d), { recursive: true });
   return dir;
 }
 const art = (root, ...args) => execFileSync(process.execPath, [path.join(REPO, "tools/art.mjs"), ...args, "--root", root], { encoding: "utf8" });
