@@ -74,6 +74,7 @@ func _ready() -> void:
 	pause_menu.requested.connect(utility)
 	pause_menu.level_selected.connect(_select_menu_level)
 	pause_menu.outlines_changed.connect(view.set_outlines)
+	pause_menu.all_levels_open_changed.connect(_set_all_levels_open)
 	lobby = Lobby.new()
 	lobby.progress_path = progress_path
 	lobby.z_index = 10
@@ -83,6 +84,7 @@ func _ready() -> void:
 	lobby.showcase_requested.connect(open_showcase)
 	lobby.campaign_selected.connect(select_campaign)
 	lobby.observation_requested.connect(open_observation)
+	pause_menu.all_levels_open = lobby.all_levels_open
 	showcase = Showcase.new()
 	showcase.z_index = 11
 	add_child(showcase)
@@ -127,7 +129,15 @@ func _select_menu_level(index: int) -> void:
 	else:
 		select_level(index)
 
+func _set_all_levels_open(value: bool) -> void:
+	lobby.set_all_levels_open(value)
+	pause_menu.all_levels_open = lobby.all_levels_open
+	pause_menu.queue_redraw()
+	if lobby._save_pending:
+		push_warning("开放关卡设置未保存，本次仍已生效")
+
 func _lobby_settings() -> void:
+	pause_menu.all_levels_open = lobby.all_levels_open
 	pause_menu.lobby_context = true
 	pause_menu.opened = true
 	pause_menu.page = "settings"

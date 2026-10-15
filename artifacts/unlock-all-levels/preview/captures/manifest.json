@@ -1,0 +1,30 @@
+{
+  "animation_pairs": [],
+  "captures": [
+    {
+      "name": "all-levels-settings",
+      "native": [
+        320,
+        180
+      ],
+      "output": [
+        1920,
+        1080
+      ]
+    },
+    {
+      "name": "all-levels-cosmos-pool",
+      "native": [
+        320,
+        180
+      ],
+      "output": [
+        1920,
+        1080
+      ]
+    }
+  ],
+  "checks": 4,
+  "display": "macOS",
+  "failures": 0
+}

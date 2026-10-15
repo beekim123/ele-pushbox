@@ -3,6 +3,7 @@ extends Node2D
 signal requested(action: String)
 signal level_selected(index: int)
 signal outlines_changed(value: bool)
+signal all_levels_open_changed(value: bool)
 const Style := preload("res://pushbox/scripts/ui/pixel_style.gd")
 const ROOT_ROWS := ["继续", "提示", "重开", "选关", "返回大厅", "设置", "退出"]
 var campaign: bool = false
@@ -12,6 +13,7 @@ var opened: bool = false
 var page: String = "root"
 var selected: int = 0
 var outlines: bool = false
+var all_levels_open: bool = true
 var hint_lines: PackedStringArray = []
 
 func rows() -> Array:
@@ -21,7 +23,7 @@ func rows() -> Array:
 			if tutorial:
 				return ["T01 · 移动与推箱", "T02 · 挖沙与造坡", "T03 · 放水与浮箱", "T04 · 机关与爆破", "返回"]
 			return ["1 · 梯子", "2 · 挖与倒", "3 · 放水", "4 · 压板与炸药", "5 · 炸沙抬水位", "返回"]
-		"settings": return ["格子类别：%s" % ("开" if outlines else "关"), "重看引导", "返回"]
+		"settings": return ["格子类别：%s" % ("开" if outlines else "关"), "重看引导", "开放全部关卡：%s" % ("开" if all_levels_open else "关"), "返回"]
 		"message": return ["返回"]
 	return ROOT_ROWS
 
@@ -115,6 +117,9 @@ func activate() -> void:
 			elif selected == 1:
 				close()
 				requested.emit("reset_guides")
+			elif selected == 2:
+				all_levels_open = not all_levels_open
+				all_levels_open_changed.emit(all_levels_open)
 			else:
 				if lobby_context:
 					close()

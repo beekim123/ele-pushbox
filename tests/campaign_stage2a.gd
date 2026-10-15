@@ -86,6 +86,7 @@ func ui_checks() -> void:
 	game.progress_path = "user://stage2a-ui-test.json"
 	DirAccess.remove_absolute(game.progress_path)
 	root.add_child(game)
+	game.lobby.all_levels_open = false # Keep the original three-win unlock flow under test.
 	game.lobby.selected = 1
 	key(game,KEY_ENTER)
 	check(game.lobby.page == "campaign","Enter opens map pool")

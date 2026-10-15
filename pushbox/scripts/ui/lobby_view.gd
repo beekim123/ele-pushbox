@@ -29,6 +29,7 @@ var page: String = "modes"
 var selected: int = 0
 var progress_path: String = "user://progress.json"
 var completed: Dictionary = {}
+var all_levels_open: bool = true
 var clock: float = 0.0
 var _frame: int = -1
 var _fade: float = 0.0
@@ -55,12 +56,17 @@ func load_progress() -> void:
 		save_progress()
 	_generation += 1
 	completed.clear()
+	all_levels_open = true
 	_save_pending = false
 	_staged_save = false
 	if not FileAccess.file_exists(progress_path):
 		return
 	var data: Variant = JSON.parse_string(FileAccess.get_file_as_string(progress_path))
-	if not data is Dictionary or not data.get("completed") is Dictionary:
+	if not data is Dictionary:
+		return
+	if data.get("all_levels_open") is bool:
+		all_levels_open = data.all_levels_open
+	if not data.get("completed") is Dictionary:
 		return
 	for id in data.completed:
 		if data.completed[id] == true and (id in LEVEL_IDS or Catalog.locate(id).x >= 0):
@@ -83,7 +89,7 @@ func stage_progress() -> bool:
 	finish_progress_write(true)
 	if not _save_pending:
 		return false
-	_staged_save = _store_payload(progress_path+".tmp", JSON.stringify({"version":2,"completed":completed})+"\n")
+	_staged_save = _store_payload(progress_path+".tmp", JSON.stringify({"version":2,"completed":completed,"all_levels_open":all_levels_open})+"\n")
 	if not _staged_save:
 		push_warning("无法保存进度")
 	return _staged_save
@@ -111,7 +117,7 @@ func begin_progress_write() -> bool:
 	_staged_save = false
 	_write_success = false
 	_write_generation = _generation
-	var payload: String = JSON.stringify({"version":2,"completed":completed})+"\n"
+	var payload: String = JSON.stringify({"version":2,"completed":completed,"all_levels_open":all_levels_open})+"\n"
 	_write_task = WorkerThreadPool.add_task(_write_payload.bind(progress_path+".tmp",payload),false,"progress write")
 	return true
 
@@ -148,11 +154,21 @@ func completed_count() -> int:
 func map_count(map: int) -> int:
 	return Catalog.count(completed,map)
 
+func set_all_levels_open(value: bool) -> void:
+	if value == all_levels_open:
+		return
+	all_levels_open = value
+	_generation += 1
+	_staged_save = false
+	_save_pending = true
+	save_progress()
+	queue_redraw()
+
 func map_unlocked(map: int) -> bool:
-	return Catalog.map_unlocked(completed,map)
+	return map >= 0 and map < 6 and (all_levels_open or Catalog.map_unlocked(completed,map))
 
 func level_unlocked(map: int, index: int) -> bool:
-	return Catalog.level_unlocked(completed,map,index)
+	return map >= 0 and map < 6 and index >= 0 and index < 6 and (all_levels_open or Catalog.level_unlocked(completed,map,index))
 
 func badge(map: int) -> String:
 	return "全清金冠" if map_count(map) == 6 else ("通行银章" if map_count(map) >= 3 else "尚未通行")

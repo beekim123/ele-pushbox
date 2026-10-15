@@ -42,6 +42,20 @@ func run() -> void:
 	game.start_in_lobby = true
 	game.progress_path = "user://campaign-captures.json"
 	root.add_child(game)
+	if OS.get_environment("PUSHBOX_CAPTURE_UNLOCK_SETTINGS") == "1":
+		game._lobby_settings()
+		game.pause_menu.selected = 2
+		game.pause_menu.queue_redraw()
+		await capture("all-levels-settings")
+		game.pause_menu.close()
+		game.lobby.show_page("campaign")
+		game.lobby.map_index = 5
+		game.lobby.selected = 5
+		game.lobby.queue_redraw()
+		await capture("all-levels-cosmos-pool")
+		game.free()
+		write_manifest()
+		return
 	game.lobby.show_page("campaign")
 	await capture("campaign-pool")
 	for map in 6:
@@ -82,6 +96,9 @@ func run() -> void:
 	await capture("forest-pool-unlocked")
 	await process_frame
 	game.free()
+	write_manifest()
+
+func write_manifest() -> void:
 	var file := FileAccess.open("res://artifacts/stage2a/captures/manifest.json",FileAccess.WRITE)
 	file.store_string(JSON.stringify({"display":DisplayServer.get_name(),"captures":captures,"animation_pairs":animation_pairs,"checks":checks,"failures":failures},"  ")+"\n")
 	file.close()

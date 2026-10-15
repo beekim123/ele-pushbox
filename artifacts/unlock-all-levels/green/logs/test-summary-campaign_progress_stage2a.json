@@ -1,0 +1,26 @@
+{
+  "godot": "4.7.2.stable.official.ed1daf0bf",
+  "workers": 1,
+  "candidate_version": "green",
+  "user_data_isolated": true,
+  "legacy_sprite_pngs_present": false,
+  "results": [
+    {
+      "test": "campaign_progress_stage2a",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 0.441,
+      "log": "artifacts/unlock-all-levels/green/logs/campaign_progress_stage2a.log"
+    }
+  ],
+  "not_run": [
+    "T2 threads=4",
+    "T2 threads=8",
+    "T10 new-player study"
+  ],
+  "inputs_unchanged": true,
+  "test_input_snapshot_sha256": "9386e472072817e8e6a5614c30553319e96f0c75b8dd5583d6a8d50d5838b1ae",
+  "passed_executed_tests": true,
+  "requested_test_count": 1,
+  "completed_test_count": 1
+}
