@@ -144,6 +144,149 @@
    "ninepatch": null
   },
   {
+   "id": "char.portitor",
+   "name": "主角 · 摆渡人（斗笠灯笈）",
+   "category": "character",
+   "kind": "sprite",
+   "layer": "entity",
+   "current": {
+    "version": 1,
+    "hash": "101e084c818e8db3e4970ee78c30edfdd00dfc176d9c6ab4459ce02be02d556b",
+    "status": "review",
+    "preview": "art/export/preview/char.portitor.png",
+    "preview_sha256": "563e16cfc13f3a765431e2fc528dfe2fb544810131795ecb0141c825812bdc32"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    16,
+    16
+   ],
+   "frame_count": 21,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    8,
+    16
+   ],
+   "animations": {
+    "idle": {
+     "fps": 4,
+     "loop": true,
+     "frames": [
+      0,
+      0,
+      0,
+      1
+     ]
+    },
+    "walk": {
+     "fps": 8,
+     "loop": true,
+     "frames": [
+      2,
+      3,
+      4,
+      5
+     ]
+    },
+    "push": {
+     "fps": 8,
+     "loop": true,
+     "frames": [
+      6,
+      7,
+      8,
+      9
+     ]
+    },
+    "climb": {
+     "fps": 6,
+     "loop": true,
+     "frames": [
+      10,
+      11
+     ]
+    },
+    "dig": {
+     "fps": 8,
+     "loop": false,
+     "frames": [
+      12,
+      13,
+      14
+     ]
+    },
+    "pour": {
+     "fps": 8,
+     "loop": false,
+     "frames": [
+      15,
+      16,
+      17
+     ]
+    },
+    "fall": {
+     "fps": 8,
+     "loop": false,
+     "frames": [
+      18
+     ]
+    },
+    "win": {
+     "fps": 4,
+     "loop": true,
+     "frames": [
+      19,
+      20
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
+   "id": "char.portitor_alt",
+   "name": "主角备选概念（B 铜铃机偶 / C 狐面行者）",
+   "category": "character",
+   "kind": "sprite",
+   "layer": "entity",
+   "current": {
+    "version": 1,
+    "hash": "67b8374148a76242dbc4bdc02bd445c1f7975b72c4bb2904b073b7a9a3d0d097",
+    "status": "draft",
+    "preview": "art/export/preview/char.portitor_alt.png",
+    "preview_sha256": "c3290aa6de398971c1496770f89163db8d8735166ae0501c1cdf7140968b6278"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    16,
+    16
+   ],
+   "frame_count": 2,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    8,
+    16
+   ],
+   "animations": {
+    "B_bell_automaton": {
+     "fps": 0,
+     "loop": false,
+     "frames": [
+      0
+     ]
+    },
+    "C_fox_mask": {
+     "fps": 0,
+     "loop": false,
+     "frames": [
+      1
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
    "id": "deco.cave_crystal",
    "name": "晶窟 · 紫晶簇",
    "category": "deco",

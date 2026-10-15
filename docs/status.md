@@ -4,41 +4,44 @@
 
 ## 当前阶段
 
-**R1c：新总纲与工作台改造（Claude）已完成。** 游戏改为三个模式（[总纲](design/vision.md)）：关卡模式（现在做）、地狱模式（设计稿）、配送模式（设计稿，关卡模式完成后开工）。下一阶段 R2：GPT 重构 Godot 游戏并把现有机制全部做进关卡模式（基础组 + 菜单，然后水、爆破、反应与气体、冷与热四组）。**用户要求暂时不要开始**。
+**R1d：GD-4 设计扩展（Claude）已完成，等用户决定。** 英文名定为 PORTITOR；开发顺序改为关卡模式 → 配送模式 → 地狱模式（用户原话中的"闯关"即配送模式）。新增万界渡口世界观、地区、收件人、货物与缘分组合、怪物、道具、增益、属性养成、徽章、加急令、随机事件；配送模式改为网格实时。主角重新设计为"斗笠灯笈"摆渡人，候选美术已在工作台。Godot 重构（R2）**仍然暂停**，等用户说开始。
 
 | 项 | 状态 |
 |---|---|
 | 旧项目快照 | `0fae58c`（`origin/codex/art-ui-polish`），SDK、字体与许可证在 `third_party/` |
 | SDK 事实核实 | 完成（阅读源码，未编译运行）：[sdk-v1.2-verified.md](reference/sdk-v1.2-verified.md) |
-| 设计 | GD-3：[总纲](design/vision.md)、[规则与关卡模式](design/game-design.md)（5 组 27 关 + 实验组）、[地狱模式](design/mode-hell.md)、[配送模式](design/mode-delivery.md)、[局外养成](design/progression.md)、[名称候选](design/naming.md) |
-| 美术 | **75 项全部由用户确认**：`APR-0001`（57 项 v1）；`APR-0002`（第 2–5 组 18 项 v1 + 8 个界面布局 v2，用户原话："我看了下你设计的，都通过了。"） |
-| 工作台 | 改造完成（[说明](design/workbench.md)）：总览、模式与关卡、机制、设计数据四个新页面；状态全部由数据算出 |
-| 交接 | [gpt-refactor-prompt.md](handoff/gpt-refactor-prompt.md) 已按关卡模式修订，状态"暂停" |
+| 设计 | GD-4：[总纲](design/vision.md)、[规则与关卡模式](design/game-design.md)、[配送模式](design/mode-delivery.md)、[地区](design/worlds.md)、[角色](design/characters.md)、[局外养成](design/progression.md)、[地狱模式](design/mode-hell.md)、[名称](design/naming.md) |
+| 设计数据 | `content/catalog/`：24 个地区、47 位收件人、36 种货物、19 个缘分组合、46 种怪物、20 种道具、10 种增益、8 项属性、18 枚徽章、14 个事件、54 个机制（其中 28 个为提议） |
+| 美术 | 75 项已确认（`APR-0001`、`APR-0002`）；**待确认**：新主角 `char.portitor`（21 帧）；`char.portitor_alt` 是备选概念草图，不进游戏 |
+| 工作台 | 「设计数据」页可以看全部新目录；「场景」页可以切换主角预览 |
+| 交接 | [gpt-refactor-prompt.md](handoff/gpt-refactor-prompt.md)：已按关卡模式修订，状态"暂停" |
 
 ## 已实际验证（云端 Linux 环境）
 
-- `node tools/check-levels.mjs --write`：M01–M07 的作者解在设计模型中全部通关，且都等于模型最短解（文件搬到 `content/levels/lab/basics/` 后结果不变）。**这只是格子规则模型，不是 SDK 验证。**
-- `node tools/art.mjs verify`：75 项导出 PNG 与源数据逐字节一致；两条确认记录、已确认 PNG 与历史源数据哈希一致；8 个界面在简中、英文下零文字溢出；内容检查无错误。
-- `node tools/content.mjs check`：0 错误、0 警告；计划 33 关（关卡模式 27 + 地狱模式候选 6），7 关有规格；30 个机制中 6 个"有规格"、20 个"已设计"、4 个"提议"（实验组候选）；尚无 Godot 验证报告。
-- `node --test tests/art-pipeline.test.mjs tests/content.test.mjs`：6/6、5/5 通过（临时目录，不碰真实数据）。内容测试覆盖：未知机制、缺失美术、规格放错目录、编号重复都会报错；验证报告通过时机制状态自动变为"可玩"，回放次数不足时不算通过。
-- `node tests/workbench.e2e.cjs`（Chromium）：全部通过，包括新页面无报错、基础组 7 关列出并能打开预览、机制页显示派生状态、浏览器渲染与导出 PNG 逐字节一致、窄屏无横向滚动。
-- 搬动关卡文件、加入内容目录后，35 张旧参考图与改动前逐字节相同。
+- `node tools/art.mjs verify`：77 项导出 PNG 与源数据逐字节一致；确认记录完整；8 个界面中英文零溢出；内容检查无错误。
+- `node tools/content.mjs check`：0 错误、0 警告。新增的检查：收件人的地区和喜欢的货物、缘分组合的货物和收件人、怪物的地区、地区的主题和机制、机制的来源都必须存在。
+- `node --test tests/content.test.mjs tests/art-pipeline.test.mjs`：11/11 通过（临时目录）。
+- `node tests/workbench.e2e.cjs`（Chromium）：全部通过，新增检查：主角预览只在场景页替换主角，离开后恢复已确认的矿工；新目录页面加载无报错。
+- 35 张旧参考图与改动前逐字节相同（新主角没有进入导出图）。
+- `check-levels`：M01–M07 结果不变。
 
 ## 未验证 / 尚缺
 
-- 没有运行 Godot 与 SDK（本环境是 Linux，SDK 只有 macOS arm64 版本）。所有【待验证】项、实机回放、性能都在 R2 中验证。
-- 关卡模式第 2–5 组只有概念卡（20 关），由 GPT 在阶段二细化成规格。
-- 地狱模式、配送模式、局外养成只有设计稿；名称候选的重名只做了网页初筛。
-- 主角仍是矿工形象；"放置炸药"的人物动作、音效与音乐尚无。
+- 没有运行 Godot 与 SDK（本环境是 Linux，SDK 只有 macOS arm64 版本）。
+- 配送模式只有设计稿：网格实时与 SDK 的配合、房间切换、怪物、生成器都要先做技术样板。
+- 新地区、收件人、怪物、货物都还没有美术；24 个地区专属机制只是提议，要先进关卡模式实验组验证。
+- 中文名未定；名称重名只做了网页初筛。
 - 新手试玩未进行。
 
 ## 下一步
 
-1. **用户**：决定三件事（[总纲](design/vision.md) 第 6 节）——从 [名称候选](design/naming.md) 中挑一个名字；主角是否改画成配送员、何时改；地狱模式是否放在配送模式之前做。
-2. **Claude**：按用户的决定改名（改 `content/i18n` 的 `game.title`，8 个界面会生成新版本，需要重新确认）、改画主角（如用户同意）。
-3. **用户**：说开始后，把 [交接提示词](handoff/gpt-refactor-prompt.md) 中「你的任务」到文末交给 GPT。
-4. **GPT**：阶段一（基础组 + 全套菜单 + 验证报告），通过后阶段二逐组做；每次结束更新本文件。
-5. **Claude**：审核 GPT 每组的关卡；维护机制目录和工作台。
+1. **用户**：
+   - 从 [名称候选](design/naming.md) 中选中文名（推荐《万物摆渡人》，备选《渡界人》）；
+   - 在工作台看新主角（「资产」页 `char.portitor`，「场景」页"主角"下拉框选"摆渡人（候选）"），确认或提修改意见；
+   - 确认配送模式改为网格实时（[总纲](design/vision.md) 第 3 节）。
+2. **Claude**：按用户的决定改名、换主角（会让 8 个界面生成新版本，一次确认完），把 `char.miner` 改做收件人"老矿工"。
+3. **用户**：说开始后，把 [交接提示词](handoff/gpt-refactor-prompt.md) 交给 GPT，做关卡模式（R2）。
+4. **之后**：配送模式第 1 层先做技术样板（[配送模式](design/mode-delivery.md) 第 14 节）。
 
 ## 给设计负责人的问题
 

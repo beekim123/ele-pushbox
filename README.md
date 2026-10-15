@@ -4,7 +4,7 @@
 
 横版、侧视、按格移动的推箱解谜。沙、水、气体、火和冰由 [ele-base-cpp](https://github.com/beekim123/ele-base-cpp) v1.2.0 真实模拟。
 
-**当前阶段（2026-10-15）**：游戏改为三个模式（关卡模式、地狱模式、配送模式，见[总纲](docs/design/vision.md)），先重构游戏并把现有机制做进关卡模式。美术 75 项全部已由用户确认。Godot 重构按 [交接提示词](docs/handoff/gpt-refactor-prompt.md) 进行，**目前暂停，等用户说开始**。进度见 [docs/status.md](docs/status.md)。
+**当前阶段（2026-10-15）**：英文名 PORTITOR（中文名待定）。游戏分为关卡模式、配送模式（核心）、地狱模式，见[总纲](docs/design/vision.md)；先重构游戏并把现有机制做进关卡模式。主角正在重新设计（候选已在工作台）。Godot 重构按 [交接提示词](docs/handoff/gpt-refactor-prompt.md) 进行，**目前暂停，等用户说开始**。进度见 [docs/status.md](docs/status.md)。
 
 ## 从这里开始
 

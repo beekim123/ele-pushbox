@@ -28,7 +28,7 @@ async function decode(file) {
   page.on("console", (m) => { if (m.type() === "error") errors.push(m.text()); });
 
   // 1. Every view opens without errors.
-  for (const h of ["#overview", "#modes", "#modes/water", "#modes/basics/M03", "#modes/hell-pool", "#mechanisms", "#mechanisms/float_sink", "#catalog/cargo", "#catalog/items", "#scenes", "#scenes/level.M04", "#scenes/ui.screen.chapters", "#scenes/lobby.forest", "#scenes/showcase.cosmos", "#scenes/chapter.ruins", "#scenes/chapter.sky", "#assets", "#assets/material.chapter2_5", "#assets/mech.door", "#edit/obj.crate_wood", "#review", "#export"]) {
+  for (const h of ["#overview", "#modes", "#modes/water", "#modes/basics/M03", "#modes/hell-pool", "#mechanisms", "#mechanisms/float_sink", "#catalog/cargo", "#catalog/items", "#scenes", "#scenes/level.M04", "#scenes/ui.screen.chapters", "#scenes/lobby.forest", "#scenes/showcase.cosmos", "#scenes/chapter.ruins", "#scenes/chapter.sky", "#assets", "#assets/material.chapter2_5", "#assets/char.portitor", "#catalog/worlds", "#catalog/recipients", "#catalog/combos", "#catalog/upgrades", "#assets/mech.door", "#edit/obj.crate_wood", "#review", "#export"]) {
     await page.goto(URL + h); await page.waitForTimeout(250);
   }
   check(errors.length === 0, "all views load without console errors" + (errors.length ? ": " + errors[0] : ""));
@@ -57,6 +57,15 @@ async function decode(file) {
   check(mechText.includes("M05") && mechText.includes("M06") && mechText.includes("有规格"), "mechanism page shows its levels and derived status");
   await page.goto(URL + "#overview"); await page.waitForTimeout(200);
   check((await page.locator("#overview-root").textContent()).includes("没有错误或警告"), "overview shows a clean content check");
+
+  // 2c. Protagonist preview swaps the hero only inside the scenes view.
+  await page.goto(URL + "#scenes/showcase.dungeon"); await page.waitForTimeout(250);
+  await page.selectOption('select[aria-label="主角"]', "candidate"); await page.waitForTimeout(150);
+  const swapped = await page.evaluate(() => PB.sprites.get("char.miner").frames[0].join("") === PBStore.asset("char.portitor").frames[0].join(""));
+  check(swapped && await page.locator("#scene-steps .note").isVisible(), "hero preview draws the candidate protagonist and says so");
+  await page.goto(URL + "#assets/char.miner"); await page.waitForTimeout(200);
+  const restored = await page.evaluate(() => PB.sprites.get("char.miner").frames[0].join("") === PBStore.asset("char.miner").frames[0].join(""));
+  check(restored, "leaving the scenes view restores the approved protagonist");
 
   // 3. Hidden stages stop animating; the visible one animates.
   await page.goto(URL + "#scenes/showcase.forest"); await page.waitForTimeout(300);

@@ -1,6 +1,6 @@
 # 角色：主角、收件人与渡口居民（设计稿）
 
-状态：设计稿。主角美术候选已在工作台（`char.portitor`，待确认）。收件人、怪物清单以 `content/catalog/recipients.json`、`monsters.json` 为准。总纲见 [vision.md](vision.md)。
+状态：设计稿。主角美术候选已在工作台：「资产」页的 `char.portitor`（21 帧，待确认）和 `char.portitor_alt`（备选概念草图）；「场景」页工具栏的"主角"下拉框可以把所有场景、大厅和界面里的主角临时换成候选来看效果（只在浏览器里预览，不影响导出图和游戏）。收件人、怪物清单以 `content/catalog/recipients.json`、`monsters.json` 为准。总纲见 [vision.md](vision.md)。
 
 ## 1 主角：摆渡人
 
