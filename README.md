@@ -4,7 +4,7 @@
 
 横版、侧视、按格移动的推箱解谜。沙、水、气体、火和冰由 [ele-base-cpp](https://github.com/beekim123/ele-base-cpp) v1.2.0 真实模拟。
 
-**当前阶段（2026-10-15）**：游戏分为关卡模式、配送模式（核心）、地狱模式，见[总纲](docs/design/vision.md)；先重构游戏并做关卡模式。第一批关卡是第 1 组「基础」7 关 + 第 2 组「水与机关」9 关，规格已写好（`content/levels/lab/`）。主角是万界渡口的渡界人（`char.portitor`，已确认）。Godot 重构按 [交接提示词](docs/handoff/gpt-refactor-prompt.md) 进行，**目前暂停，等用户说开始**。进度见 [docs/status.md](docs/status.md)。
+**当前阶段（2026-10-15）**：游戏分为关卡模式、配送模式（核心）、地狱模式，见[总纲](docs/design/vision.md)；先重构游戏并做关卡模式。第一批关卡是第 1 组「基础」7 关 + 第 2 组「水与机关」9 关，规格已写好（`content/levels/lab/`）。主角是万界渡口的渡界人（`char.portitor`，已确认）。Godot 重构按 [交接提示词](docs/handoff/gpt-refactor-prompt.md) 进行，**已开始（执行者 GPT）**。进度见 [docs/status.md](docs/status.md)。
 
 ## 从这里开始
 

@@ -67,11 +67,9 @@
     for (const i of C.issues) list.append(el("li", { class: "issue " + i.level }, [el("span", { class: "badge " + (i.level === "error" ? "no" : "review"), text: i.level === "error" ? "错误" : "警告" }), " ", el("span", { class: "mono", text: i.where }), "：", i.msg]));
     box.append(section("内容检查", [C.issues.length ? list : el("p", { class: "muted", text: "没有错误或警告（node tools/content.mjs check）。" })]));
 
-    box.append(section("待你决定", [el("ul", {}, [
-      el("li", { text: "确认对话气泡：8 个界面布局 v4（提示改成主角的气泡）、ui.bubble、ui.bubble_tail、ui.emote、ui.screen.dialogue（样张），都在「确认」页。" }),
-      el("li", { text: "看「编号映射」页：每个资源的全局编号和它在游戏里的路径。" }),
-      el("li", { text: "看第一批关卡：「模式与关卡」页第 2 组「水与机关」9 关，「场景」页可以逐步回放每关的作者解。" }),
-      el("li", { text: "说开始后，把 docs/handoff/gpt-refactor-prompt.md 交给 GPT。" }),
+    box.append(section("现在", [el("ul", {}, [
+      el("li", { text: "全部美术已确认（APR-0001–APR-0005）。Godot 重构已交给 GPT：阶段一 = 工程骨架 + 第 1 组 + 全套菜单，阶段二 = 第 2 组「水与机关」。" }),
+      el("li", { text: "GPT 每次运行测试都会写 game/reports/verification.json，这里和「模式与关卡」页会显示每关的 SDK 验证状态。" }),
     ])]));
   }
 

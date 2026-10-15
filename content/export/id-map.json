@@ -826,7 +826,7 @@
    "category": "ui",
    "version": 1,
    "hash": "2ae0ff3e9b905d64ec2e7f0923a20d46b3645614be59aa9bc9e448af26749130",
-   "approved": false
+   "approved": true
   },
   {
    "uid": "art:ui.bubble_tail",
@@ -838,7 +838,7 @@
    "category": "ui",
    "version": 1,
    "hash": "93a98ba7445f1e1f18e32d2e11f45a358c18b52cc1dae76ac883b83b088c727f",
-   "approved": false
+   "approved": true
   },
   {
    "uid": "art:ui.class_icon",
@@ -874,7 +874,7 @@
    "category": "ui",
    "version": 1,
    "hash": "d8d3b3ddd80f9d40b108ee0829f5a28ffdd6943fe04e1c3d2956130a5c234546",
-   "approved": false
+   "approved": true
   },
   {
    "uid": "art:ui.goal_lamp",
@@ -958,7 +958,7 @@
    "category": "screen",
    "version": 4,
    "hash": "616c8a1a09bf2ad32f24c8cf1e70d8059bdb14d9c394ebbe86eb4703feaeb781",
-   "approved": false
+   "approved": true
   },
   {
    "uid": "art:ui.screen.complete",
@@ -970,7 +970,7 @@
    "category": "screen",
    "version": 4,
    "hash": "fbb067b0492c0dd3cc479c65713e8cc6dabf0f93f55e2d6a628bfb458c14d9bf",
-   "approved": false
+   "approved": true
   },
   {
    "uid": "art:ui.screen.dialogue",
@@ -982,7 +982,7 @@
    "category": "screen",
    "version": 1,
    "hash": "ea330683e10b2adfdef4f733182869535eea2cb27b750adf982b3410e8de85e5",
-   "approved": false
+   "approved": true
   },
   {
    "uid": "art:ui.screen.hint",
@@ -994,7 +994,7 @@
    "category": "screen",
    "version": 4,
    "hash": "89aa4fe24b01333d1c56f8e7144b9db5c38ef0777cc35a615c4e41b064b470d9",
-   "approved": false
+   "approved": true
   },
   {
    "uid": "art:ui.screen.levels",
@@ -1006,7 +1006,7 @@
    "category": "screen",
    "version": 4,
    "hash": "3ce7d34a0b822daa3fb5d01c243a606e06de7c4ae367565e2c06dec2c5ca4b24",
-   "approved": false
+   "approved": true
   },
   {
    "uid": "art:ui.screen.lobby",
@@ -1018,7 +1018,7 @@
    "category": "screen",
    "version": 4,
    "hash": "e2ec45838d3dcccf1f97feee4dcfc767b831ab3945d6ac07366db546cec5282e",
-   "approved": false
+   "approved": true
   },
   {
    "uid": "art:ui.screen.pause",
@@ -1030,7 +1030,7 @@
    "category": "screen",
    "version": 4,
    "hash": "8423060d12710e97b5e078ff4fd400b2a2b747c12af96e7ae95c1cf480e47ad3",
-   "approved": false
+   "approved": true
   },
   {
    "uid": "art:ui.screen.rulecard",
@@ -1042,7 +1042,7 @@
    "category": "screen",
    "version": 4,
    "hash": "e14dc3f027abd88493efd7491799dce58263e3bb9fcf26911dedf8f08c1e59f5",
-   "approved": false
+   "approved": true
   },
   {
    "uid": "art:ui.screen.settings",
@@ -1054,7 +1054,7 @@
    "category": "screen",
    "version": 4,
    "hash": "4c6df2e53a82b5b26efcfea702f0332847c7cb07b829d2352b04c3e21fa3df1a",
-   "approved": false
+   "approved": true
   },
   {
    "uid": "art:ui.target",

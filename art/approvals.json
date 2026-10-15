@@ -748,6 +748,100 @@
      "png_sha256": "a6dd69fa825db739e3b58a41a56d296a4f5eed531b400f0b6dfecc308c688f29"
     }
    ]
+  },
+  {
+   "id": "APR-0005",
+   "date": "2026-10-15T10:55:30.036Z",
+   "by": "用户",
+   "via": "chat",
+   "scope": "对话气泡：8 个界面布局 v4、ui.bubble、ui.bubble_tail、ui.emote、ui.screen.dialogue",
+   "note": "用户原话：我看了，没问题可以给提示词了",
+   "items": [
+    {
+     "asset": "ui.bubble",
+     "version": 1,
+     "hash": "2ae0ff3e9b905d64ec2e7f0923a20d46b3645614be59aa9bc9e448af26749130",
+     "png": "art/export/approved/ui.bubble@v1.png",
+     "png_sha256": "39fe4ac19d6469a54eecc539b44088a5cf826f95cb3be4dfe42c1c0d9e83fb02"
+    },
+    {
+     "asset": "ui.bubble_tail",
+     "version": 1,
+     "hash": "93a98ba7445f1e1f18e32d2e11f45a358c18b52cc1dae76ac883b83b088c727f",
+     "png": "art/export/approved/ui.bubble_tail@v1.png",
+     "png_sha256": "4779f3942363cd7dae7cc42aede1d34ccae1a1748019627b1b6acaf1bb145ce5"
+    },
+    {
+     "asset": "ui.emote",
+     "version": 1,
+     "hash": "d8d3b3ddd80f9d40b108ee0829f5a28ffdd6943fe04e1c3d2956130a5c234546",
+     "png": "art/export/approved/ui.emote@v1.png",
+     "png_sha256": "7088ab708b7164b55697d6d91d56bcd301f47dea764a72a317cc5c1365a532b5"
+    },
+    {
+     "asset": "ui.screen.chapters",
+     "version": 4,
+     "hash": "616c8a1a09bf2ad32f24c8cf1e70d8059bdb14d9c394ebbe86eb4703feaeb781",
+     "png": "art/export/approved/ui.screen.chapters@v4.png",
+     "png_sha256": "fc3569ec75857ca8d8851f4680b17eb500bd5cc7e3a03a7af693cc90a1d4a3f6"
+    },
+    {
+     "asset": "ui.screen.complete",
+     "version": 4,
+     "hash": "fbb067b0492c0dd3cc479c65713e8cc6dabf0f93f55e2d6a628bfb458c14d9bf",
+     "png": "art/export/approved/ui.screen.complete@v4.png",
+     "png_sha256": "f36e91ecb4b76df9e973798a2fdd3aa9d355d1b8466a6bba4f226f4c1e6e6e31"
+    },
+    {
+     "asset": "ui.screen.dialogue",
+     "version": 1,
+     "hash": "ea330683e10b2adfdef4f733182869535eea2cb27b750adf982b3410e8de85e5",
+     "png": "art/export/approved/ui.screen.dialogue@v1.png",
+     "png_sha256": "2da5cbf5dd3e6251790133aa70959b5825fdbd34a28b36dc5cd36e727b3322d2"
+    },
+    {
+     "asset": "ui.screen.hint",
+     "version": 4,
+     "hash": "89aa4fe24b01333d1c56f8e7144b9db5c38ef0777cc35a615c4e41b064b470d9",
+     "png": "art/export/approved/ui.screen.hint@v4.png",
+     "png_sha256": "1025ad73199499b956d99392f4f95366707134fb78172b3caee881b7ede5dec3"
+    },
+    {
+     "asset": "ui.screen.levels",
+     "version": 4,
+     "hash": "3ce7d34a0b822daa3fb5d01c243a606e06de7c4ae367565e2c06dec2c5ca4b24",
+     "png": "art/export/approved/ui.screen.levels@v4.png",
+     "png_sha256": "a68b73f6186398c469cf18415a71b2b50ac10d14edc9c4c05be2e03982528d63"
+    },
+    {
+     "asset": "ui.screen.lobby",
+     "version": 4,
+     "hash": "e2ec45838d3dcccf1f97feee4dcfc767b831ab3945d6ac07366db546cec5282e",
+     "png": "art/export/approved/ui.screen.lobby@v4.png",
+     "png_sha256": "a4648cd5bc92eee42fc7cae190d4e5794d007dcd223b2187f54a7a7f9fe1e084"
+    },
+    {
+     "asset": "ui.screen.pause",
+     "version": 4,
+     "hash": "8423060d12710e97b5e078ff4fd400b2a2b747c12af96e7ae95c1cf480e47ad3",
+     "png": "art/export/approved/ui.screen.pause@v4.png",
+     "png_sha256": "32fcbca857c11ffeeaaea1a248b3ae7d48b55019fd86114a8f3af41e760a12cf"
+    },
+    {
+     "asset": "ui.screen.rulecard",
+     "version": 4,
+     "hash": "e14dc3f027abd88493efd7491799dce58263e3bb9fcf26911dedf8f08c1e59f5",
+     "png": "art/export/approved/ui.screen.rulecard@v4.png",
+     "png_sha256": "4ca35c9e81bca9825738f2eb591c159202eb156841a5cfea7b1573a249436be3"
+    },
+    {
+     "asset": "ui.screen.settings",
+     "version": 4,
+     "hash": "4c6df2e53a82b5b26efcfea702f0332847c7cb07b829d2352b04c3e21fa3df1a",
+     "png": "art/export/approved/ui.screen.settings@v4.png",
+     "png_sha256": "a6dd69fa825db739e3b58a41a56d296a4f5eed531b400f0b6dfecc308c688f29"
+    }
+   ]
   }
  ]
 }
