@@ -272,7 +272,19 @@
    ],
    "doc": "docs/design/game-design.md 4.6",
    "risk": "崩落阈值是游戏层规则",
-   "layer": 0
+   "layer": 0,
+   "spec_contract": {
+    "actions": [
+     "BOMB_L",
+     "BOMB_R",
+     "BOMB_D"
+    ],
+    "target": "相邻地图内格，允许固体作为爆心",
+    "radius": 20,
+    "power": 8000,
+    "collapse_below_cells": 128,
+    "thermal_scope": "只教破坏的关卡可显式cells/explosions而不启thermal/temperature；火教学保留thermal与heat；全局异常状态禁搬不豁免"
+   }
   },
   {
    "id": "blast_through",
@@ -315,7 +327,13 @@
    ],
    "doc": "docs/design/game-design.md 6.4",
    "risk": "固定阶段长度 = 燃烧时长 + 余量",
-   "layer": 0
+   "layer": 0,
+   "spec_contract": {
+    "phase_ticks": 480,
+    "phase_scope": "该次引燃动作后固定阶段，之后再判静止",
+    "blast_resistance": 65535,
+    "burn_ticks_candidate": 32
+   }
   },
   {
    "id": "gravel",
@@ -334,7 +352,12 @@
    ],
    "doc": "docs/design/game-design.md 6.4",
    "risk": "结算时长不能触顶",
-   "layer": 0
+   "layer": 0,
+   "spec_contract": {
+    "move_chance": 64,
+    "blast_resistance": 65535,
+    "reason": "炸托石时保留待下落碎石；真实SDK粉末"
+   }
   },
   {
    "id": "acid",
@@ -441,7 +464,14 @@
    ],
    "doc": "docs/design/game-design.md 6.5",
    "risk": "寿命不超过 255 tick",
-   "layer": 0
+   "layer": 0,
+   "spec_contract": {
+    "device": "release",
+    "phase_ticks": 180,
+    "to": "plug_decay",
+    "lifetime_candidate": 120,
+    "timing": "真实SDK寿命到期转empty，禁止游戏层定时删塞"
+   }
   },
   {
    "id": "vine",
@@ -458,7 +488,12 @@
    "chars": [],
    "doc": "docs/design/game-design.md 6.5",
    "risk": "",
-   "layer": 0
+   "layer": 0,
+   "spec_contract": {
+    "device": "vine",
+    "height": "包含root的向上梯子格数",
+    "latch": true
+   }
   },
   {
    "id": "burn",
@@ -481,7 +516,33 @@
    ],
    "doc": "docs/design/game-design.md 6.4",
    "risk": "固定阶段长度",
-   "layer": 0
+   "layer": 0,
+   "spec_contract": {
+    "device": "torch",
+    "fields": {
+     "at": "火盆格[x,y]",
+     "area": "格单位圆外接可见框[x,y,w,h]",
+     "temperature": "SDK编码u16，8单位/K",
+     "phase_ticks": "固定热阶段后再判静止"
+    },
+    "circle": {
+     "center_x": "16*x+8*w",
+     "center_y": "16*y+8*h",
+     "radius": "8*min(w,h)",
+     "coverage": "SDK整数cell dx²+dy²<=r²，包含圆周切点",
+     "command": "paint_layer_circle(temperature,cx,cy,r,temperature)一次"
+    },
+    "observe": "同时画外接框与实际圆，不以矩形替代圆",
+    "f01_candidate": {
+     "center": [
+      104,
+      40
+     ],
+     "radius": 24,
+     "temperature": 6000,
+     "phase_ticks": 180
+    }
+   }
   },
   {
    "id": "freeze",
@@ -504,7 +565,15 @@
    ],
    "doc": "docs/design/game-design.md 6.4",
    "risk": "耦合器 stride = 1；冰不带 phase_up",
-   "layer": 0
+   "layer": 0,
+   "spec_contract": {
+    "device": "frost_vent",
+    "layer": "frost",
+    "value": 1,
+    "stride": 1,
+    "pulse": "真实SDK耦合器转换后清除脉冲",
+    "ice_phase_up": false
+   }
   },
   {
    "id": "melt",
@@ -525,7 +594,14 @@
    ],
    "doc": "docs/design/game-design.md 6.4",
    "risk": "",
-   "layer": 0
+   "layer": 0,
+   "spec_contract": {
+    "device": "heat_vent",
+    "layer": "heat",
+    "value": 1,
+    "stride": 1,
+    "pulse": "真实SDK耦合器转换后清除脉冲"
+   }
   },
   {
    "id": "blast_ignite",
@@ -695,7 +771,12 @@
    "doc": "docs/design/game-design.md 6.4",
    "risk": "与 SDK 冰材料共用",
    "layer": 0,
-   "origin": "polar"
+   "origin": "polar",
+   "spec_contract": {
+    "device": null,
+    "trigger": "推箱后箱脚ice",
+    "motion": "沿推动方向扫掠至受阻或离开连续冰；人物不滑"
+   }
   },
   {
    "id": "low_gravity",
@@ -770,7 +851,15 @@
    "doc": "docs/design/game-design.md 6.4",
    "risk": "",
    "layer": 0,
-   "origin": "wonderland"
+   "origin": "wonderland",
+   "spec_contract": {
+    "device": "bounce",
+    "fields": {
+     "at": "台面格[x,y]",
+     "height": 2
+    },
+    "landing": "直上两格；只有稳定落位才回到输入，G08使用顶端梯子"
+   }
   },
   {
    "id": "conveyor",
@@ -1011,7 +1100,18 @@
    "doc": "docs/design/game-design.md 6.4",
    "risk": "",
    "layer": 0,
-   "origin": "diyu"
+   "origin": "diyu",
+   "spec_contract": {
+    "device": "lantern_reveal",
+    "fields": {
+     "cells": "晶桥格列表",
+     "material": "bedrock"
+    },
+    "radius": 2,
+    "metric": "euclidean",
+    "order": "动作后先更新实心，再重力；人物重力后重算",
+    "visual_settings_independent": true
+   }
   },
   {
    "id": "hold_breath",
@@ -1069,7 +1169,18 @@
    "doc": "docs/design/game-design.md 6.4",
    "risk": "",
    "layer": 0,
-   "origin": "jeju"
+   "origin": "jeju",
+   "spec_contract": {
+    "device": "seesaw",
+    "fields": {
+     "ends": "两端台面格列表",
+     "height": 2,
+     "threshold": 1,
+     "landings": "与ends同序的明确实体落点列表"
+    },
+    "motion": "新落载事件触发对端一次；先竖直上升再横移一格，扫掠受阻拒绝；落位后重力",
+    "initial_loads": "建立初始载重基线，不触发开局弹射"
+   }
   },
   {
    "id": "gust",
@@ -1083,7 +1194,20 @@
    "doc": "docs/design/game-design.md 6.4",
    "risk": "",
    "layer": 0,
-   "origin": "jeju"
+   "origin": "jeju",
+   "spec_contract": {
+    "device": "gust",
+    "fields": {
+     "area": "[x,y,w,h]",
+     "direction": "L/R/U/D",
+     "period": 1,
+     "phase": 0,
+     "light_kinds": [
+      "wood"
+     ]
+    },
+    "timing": "每个合法玩家动作结算至多一次，不能每轮静止重复吹"
+   }
   },
   {
    "id": "monsoon",
@@ -1203,7 +1327,16 @@
    "doc": "docs/design/game-design.md 6.4",
    "risk": "",
    "layer": 0,
-   "origin": "baba_yaga"
+   "origin": "baba_yaga",
+   "spec_contract": {
+    "device": "nested_box",
+    "fields": {
+     "at": "绑定开局crate实体的格",
+     "layers": "外到内的箱材种类列表，1至3层"
+    },
+    "hit": "每次独立爆炸只剥一层；只剩一层按普通箱子处理",
+    "socket_accept": "goals[].accept.nested_layers:1 仅该槽匹配最内层；目标按地图坐标合并"
+   }
   },
   {
    "id": "petal_trail",
@@ -1245,7 +1378,16 @@
    "doc": "docs/design/game-design.md 6.4",
    "risk": "",
    "layer": 0,
-   "origin": "frontier"
+   "origin": "frontier",
+   "spec_contract": {
+    "device": "mine_cart",
+    "fields": {
+     "at": "台面格[x,y]",
+     "track": "有序相邻水平台面格列表",
+     "width": 1
+    },
+    "motion": "侧推一次逐格扫掠直到阻挡或轨道末端；载物同移，推车人只跟进一格"
+   }
   }
  ]
 }

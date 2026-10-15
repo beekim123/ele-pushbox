@@ -1,8 +1,5 @@
-class_name UnimplementedCommunicatingfbf971
-extends "res://gameplay/mechanics/mechanic.gd"
-## mechanic:communicating: catalog path only; not registered by any playable mode.
+class_name CommunicatingMechanic
+extends "res://gameplay/mechanics/sdk_material.gd"
 
-var unimplemented: bool = true
-
-func implementation_available() -> bool:
-	return false
+func material_names() -> Array[String]:
+	return ["water"]

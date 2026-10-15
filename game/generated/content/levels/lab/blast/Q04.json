@@ -1,0 +1,47 @@
+{
+  "format": "pushbox.levelspec/1",
+  "id": "Q04",
+  "chapter": "cave",
+  "mode": "lab",
+  "group": "blast",
+  "mechanisms": ["gravel"],
+  "order": 4,
+  "title": "慢慢滑下来",
+  "role": "教学",
+  "teaches": ["gravel"],
+  "requires": ["bomb", "bin"],
+  "discovery": "炸开托石，碎石慢慢落进斗里；等它停下再走下一步。",
+  "map": [
+    "##########",
+    "#####g####",
+    "#####g####",
+    "#P...%...#",
+    "#####.####",
+    "#####.####",
+    "##########"
+  ],
+  "profile": ["cells", "thermal", "explosions"],
+  "bag": {"sand": 0, "bomb": 1},
+  "devices": [{"type": "bin", "rect": [5, 4, 1, 2], "material": "gravel", "need": 512, "latch": true}],
+  "goals": [{"type": "bin", "device": 0}],
+  "solution": ["R", "R", "R", "BOMB_R"],
+  "hints": [
+    "碎石下面是一块裂岩，收集斗在更低处。",
+    "裂岩消失，碎石失去支撑；它落得慢，结算会等它。",
+    "走到裂岩左边，朝右放炸药，等斗的刻度满。"
+  ],
+  "misreads": [
+    "不用连续放炸药催碎石；单次结算会等待所有慢速粉末。",
+    "收集斗达到刻度即锁存，不要求人物再站上目标。"
+  ],
+  "sdk": {
+    "sdk": ["gravel为SDK powder，move_chance64，抗爆65535；初始512cell由SDK落入一格宽封闭井", "explode(目标格中心,20,8000)只摧毁托底裂岩；收集斗count_materials读取真实gravel数量"],
+    "game_layer": ["收集斗达到512cell后锁存；慢速材料未停时不因画面变化小而提前结束", "不能把碎石整格搬到斗里冒充慢落"]
+  },
+  "checks": [
+    "碎石总数保持512，收集斗真实计数达到512并锁存；玩法验证未运行",
+    "爆炸后存在可观察的慢落过程，结算低于1200tick/16轮",
+    "撤销还原托石、上方碎石和锁存灯"
+  ],
+  "notes": "碎石抗爆参数用于保持本关概念卡的因果：炸掉托石而不是炸没碎石。材料注册与阶段仍待真实SDK核定。"
+}

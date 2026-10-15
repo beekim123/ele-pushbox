@@ -23,7 +23,7 @@ func set_value(key: String, value: Variant) -> void:
 		return
 	var previous: Variant = values.get(key)
 	_set_normalized(key, value)
-	if values.get(key) == previous:
+	if typeof(values.get(key)) == typeof(previous) and values.get(key) == previous:
 		return
 	if is_inside_tree():
 		var save := get_node_or_null("/root/Save")

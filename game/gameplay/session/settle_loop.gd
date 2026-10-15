@@ -41,10 +41,12 @@ func advance(max_ticks: int = 4) -> Dictionary:
 		_classification_pending = false
 		if not Classifier.new().update(context.world, context.grid):
 			return _finish(false, "Cannot read all SDK material ids")
-		var changed: bool = false
+		var changed: bool = context.take_tick_changes()
+		context.settle_step_changed = changed
 		for mechanic in context.settle_mechanics:
 			var mechanism_changed: bool = mechanic.on_settle_step()
 			changed = mechanism_changed or changed
+			context.settle_step_changed = changed
 			if not context.last_error.is_empty():
 				return _finish(false, str(context.last_error))
 		if changed:

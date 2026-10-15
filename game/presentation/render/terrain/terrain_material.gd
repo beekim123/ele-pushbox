@@ -22,4 +22,8 @@ static func create(theme: Dictionary) -> ShaderMaterial:
 	material.set_shader_parameter("colors", values)
 	material.set_shader_parameter("rock_pattern", ["brick", "block", "rough", "grass", "marble", "cloud", "panel"].find(theme.rock.pattern))
 	material.set_shader_parameter("hazard_trim", theme.rock.get("trim") == "hazard")
+	var missing_ids: PackedInt32Array = PackedInt32Array()
+	missing_ids.resize(13)
+	missing_ids.fill(-1)
+	material.set_shader_parameter("matter_ids", missing_ids)
 	return material

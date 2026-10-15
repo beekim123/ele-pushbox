@@ -2,7 +2,9 @@ class_name LevelGridState
 extends RefCounted
 ## Gameplay terrain excludes crate entities and the door overlay.
 
-enum Terrain { EMPTY, ROCK, CRACKED, EARTH, SAND, WATER, DOOR }
+enum Terrain { EMPTY, ROCK, CRACKED, EARTH, SAND, WATER, DOOR, PLATFORM, GRAVEL, FUSE, ACID, LIMESTONE, MARBLE, HARD_ROCK, SMOKE, FOG, PLUG, WOOD, ICE }
+const TILE_MATERIALS: Dictionary = {Terrain.ROCK: "bedrock", Terrain.CRACKED: "cracked_rock", Terrain.EARTH: "packed_earth", Terrain.SAND: "sand", Terrain.WATER: "water", Terrain.PLATFORM: "bridge", Terrain.GRAVEL: "gravel", Terrain.FUSE: "fuse", Terrain.ACID: "acid", Terrain.LIMESTONE: "limestone_a", Terrain.MARBLE: "limestone_b", Terrain.HARD_ROCK: "hard_rock", Terrain.SMOKE: "smoke", Terrain.FOG: "fog", Terrain.PLUG: "plug", Terrain.WOOD: "wood", Terrain.ICE: "ice"}
+const OPEN_TERRAIN: Array[int] = [Terrain.EMPTY, Terrain.WATER, Terrain.ACID, Terrain.SMOKE, Terrain.FOG]
 enum Marker { NONE, LADDER, SOCKET, EXIT, PLATE }
 
 var width: int = 0
@@ -15,6 +17,7 @@ var bag: Dictionary = {"sand": 0, "bomb": 0}
 var groups: Array[Dictionary] = []
 var open: Array[int] = []
 var door_at: Dictionary = {}
+var devices: Array[Dictionary] = []
 var moves: int = 0
 var last_error: String = ""
 
@@ -50,6 +53,20 @@ func parse(spec: Dictionary) -> bool:
 				"#": terrain[index] = Terrain.ROCK
 				"e": terrain[index] = Terrain.EARTH
 				"s": terrain[index] = Terrain.SAND
+				"~": terrain[index] = Terrain.WATER
+				"%": terrain[index] = Terrain.CRACKED
+				"=": terrain[index] = Terrain.PLATFORM
+				"g": terrain[index] = Terrain.GRAVEL
+				"f": terrain[index] = Terrain.FUSE
+				"a": terrain[index] = Terrain.ACID
+				"L": terrain[index] = Terrain.LIMESTONE
+				"M": terrain[index] = Terrain.MARBLE
+				"R": terrain[index] = Terrain.HARD_ROCK
+				"^": terrain[index] = Terrain.SMOKE
+				"v": terrain[index] = Terrain.FOG
+				"p": terrain[index] = Terrain.PLUG
+				"w": terrain[index] = Terrain.WOOD
+				"i": terrain[index] = Terrain.ICE
 				".": pass
 				"|": door_cells.append(index)
 				"H": markers[index] = Marker.LADDER
@@ -66,11 +83,11 @@ func parse(spec: Dictionary) -> bool:
 					if character == "h":
 						markers[index] = Marker.LADDER
 				"B", "I", "b":
-					crates.append({"x": x, "y": y, "kind": "iron" if character == "I" else "wood"})
+					crates.append({"id": "crate-%d" % crates.size(), "x": x, "y": y, "kind": "iron" if character == "I" else "wood"})
 					if character == "b":
 						markers[index] = Marker.SOCKET
 				_:
-					last_error = "Unsupported basics map character: " + character
+					last_error = "Unsupported map character: " + character
 					return false
 	if player.is_empty():
 		last_error = "Level has no player"
@@ -84,7 +101,7 @@ func parse(spec: Dictionary) -> bool:
 	open.clear()
 	if spec.has("links"):
 		for link: Dictionary in spec.links:
-			var group: Dictionary = {"plates": [], "doors": [], "latch": bool(link.get("latch", false))}
+			var group: Dictionary = {"plates": [], "doors": [], "latch": bool(link.get("latch", false)), "symbol": link.get("symbol", ["circle", "triangle", "square"][groups.size() % 3])}
 			for point: Array in link.get("plates", []):
 				if not inside(int(point[0]), int(point[1])):
 					last_error = "Plate outside map"
@@ -108,9 +125,14 @@ func parse(spec: Dictionary) -> bool:
 		if not door_at.has(index):
 			last_error = "Door is not assigned to a group"
 			return false
-	if not spec.get("devices", []).is_empty() or not spec.get("water", []).is_empty():
-		last_error = "Stage two devices and water require their SDK samples"
-		return false
+	for point: Array in spec.get("water", []):
+		if not inside(int(point[0]), int(point[1])):
+			last_error = "Water outside map"
+			return false
+		terrain[tile_index(int(point[0]), int(point[1]))] = Terrain.WATER
+	devices.clear()
+	for device: Dictionary in spec.get("devices", []):
+		devices.append(device.duplicate(true))
 	moves = 0
 	return true
 
@@ -142,10 +164,10 @@ func is_ladder(x: int, y: int) -> bool:
 
 func supports(x: int, y: int) -> bool:
 	var tile: int = terrain_at(x, y)
-	return tile not in [Terrain.EMPTY, Terrain.WATER] or crate_index(x, y) >= 0
+	return tile not in OPEN_TERRAIN or crate_index(x, y) >= 0 or platform_at(x, y)
 
 func is_free(x: int, y: int) -> bool:
-	return inside(x, y) and terrain_at(x, y) in [Terrain.EMPTY, Terrain.WATER] and crate_index(x, y) < 0 and not is_player(x, y)
+	return inside(x, y) and terrain_at(x, y) in OPEN_TERRAIN and crate_index(x, y) < 0 and not is_player(x, y) and not platform_at(x, y)
 
 func blocked_for_door(index: int) -> bool:
 	var x: int = index % width
@@ -153,13 +175,17 @@ func blocked_for_door(index: int) -> bool:
 	return is_player(x, y) or crate_index(x, y) >= 0 or terrain[index] != Terrain.EMPTY
 
 func export_state() -> Dictionary:
-	return {"w": width, "h": height, "player": player.duplicate(true), "crates": crates.duplicate(true), "terrain": terrain.duplicate(), "bag": bag.duplicate(), "open": open.duplicate(), "moves": moves}
+	return {"w": width, "h": height, "player": player.duplicate(true), "crates": crates.duplicate(true), "terrain": terrain.duplicate(), "bag": bag.duplicate(), "open": open.duplicate(), "moves": moves, "devices": devices.duplicate(true), "markers": markers.duplicate()}
 
 func import_state(saved: Dictionary) -> void:
 	player = {"x": int(saved.player.x), "y": int(saved.player.y)}
 	crates.clear()
 	for crate: Dictionary in saved.crates:
-		crates.append({"x": int(crate.x), "y": int(crate.y), "kind": str(crate.kind)})
+		var restored: Dictionary = crate.duplicate(true)
+		restored.x = int(crate.x)
+		restored.y = int(crate.y)
+		restored.kind = str(crate.kind)
+		crates.append(restored)
 	terrain.clear()
 	for tile: Variant in saved.terrain:
 		terrain.append(int(tile))
@@ -168,3 +194,31 @@ func import_state(saved: Dictionary) -> void:
 	for door: Variant in saved.open:
 		open.append(int(door))
 	moves = int(saved.moves)
+
+	if saved.has("devices"):
+		devices.clear()
+		for device: Dictionary in saved.devices:
+			devices.append(device.duplicate(true))
+	if saved.has("markers"):
+		markers.clear()
+		for marker: Variant in saved.markers:
+			markers.append(int(marker))
+
+func platform_at(x: int, y: int) -> bool:
+	for device: Dictionary in devices:
+		var kind: String = str(device.get("type", ""))
+		if kind == "lift":
+			var stops: Array = device.get("stops", [])
+			if stops.size() == 2:
+				var at: Array = stops[int(device.get("stop", 0))]
+				if y == int(at[1]) and x >= int(at[0]) and x < int(at[0]) + int(device.get("width", 1)):
+					return true
+		elif kind in ["mine_cart", "bounce"]:
+			var at: Array = device.get("at", [])
+			if at.size() == 2 and y == int(at[1]) and x >= int(at[0]) and x < int(at[0]) + int(device.get("width", 1)):
+				return true
+		elif kind == "seesaw":
+			for at: Array in device.get("ends", []):
+				if x == int(at[0]) and y == int(at[1]):
+					return true
+	return false

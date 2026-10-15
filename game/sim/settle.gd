@@ -16,7 +16,7 @@ var result: Dictionary = {}
 
 func begin(world, budget: int = MAX_TICKS) -> void:
 	_world = world
-	_budget = budget
+	_budget = maxi(1, budget)
 	_quiet = 0
 	_ticks = 0
 	_hashes.clear()
@@ -39,17 +39,23 @@ func advance(max_ticks: int = 4) -> Dictionary:
 			return _finish(false, str(_world.last_error))
 		_ticks += 1
 		remaining -= 1
+		var phase_was_pending: bool = _world.pending_phase_ticks > 0
+		_world.pending_phase_ticks = maxi(0, int(_world.pending_phase_ticks) - 1)
+		if _world.tick_observer.is_valid():
+			_world.tick_observer.call()
+		if not str(_world.last_error).is_empty():
+			return _finish(false, str(_world.last_error))
 		_hashes.append(_world.get_state_hash())
 		var stats: Dictionary = _world.get_stats()
 		_max_step_us = maxi(_max_step_us, int(stats.get("step_us", 0)))
 		if not _world.command_errors.is_empty() or int(stats.get("commands_dropped", 0)) > 0 or int(stats.get("events_dropped", 0)) > 0:
 			return _finish(false, "SDK rejected or dropped work: " + str(_world.command_errors))
-		var stopped: bool = int(stats.get("active_chunks", -1)) == 0 and int(stats.get("queue_size", -1)) == 0 and int(stats.get("pressure_moves", 0)) == 0 and int(stats.get("electric_heads", 0)) == 0
+		var stopped: bool = not phase_was_pending and _world.pending_phase_ticks == 0 and int(stats.get("active_chunks", -1)) == 0 and int(stats.get("queue_size", -1)) == 0 and int(stats.get("pressure_moves", 0)) == 0 and int(stats.get("electric_heads", 0)) == 0
 		_quiet = _quiet + 1 if stopped else 0
 		if _quiet >= QUIET_TICKS:
 			return _finish(true, "")
 	if _ticks >= _budget:
-		return _finish(false, "Settlement exceeded 1200 total ticks")
+		return _finish(false, "Settlement exceeded %d total ticks" % _budget)
 	var pending: Dictionary = _result(true, _ticks, _quiet, _hashes, _max_step_us, "")
 	pending.finished = false
 	return pending
@@ -61,4 +67,4 @@ func _finish(ok: bool, error: String) -> Dictionary:
 	return result
 
 func _result(ok: bool, ticks: int, quiet: int, hashes: Array[String], peak: int, error: String) -> Dictionary:
-	return {"ok": ok, "ticks": ticks, "quiet": quiet, "hashes": hashes, "max_step_us": peak, "error": error}
+	return {"ok": ok, "ticks": ticks, "quiet": quiet, "hashes": hashes, "max_step_us": peak, "error": error, "phase_remaining": int(_world.pending_phase_ticks)}

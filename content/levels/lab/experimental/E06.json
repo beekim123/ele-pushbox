@@ -1,0 +1,20 @@
+{
+  "format": "pushbox.levelspec/1", "id": "E06", "chapter": "cosmos", "mode": "lab", "group": "experimental",
+  "mechanisms": ["load_bridge", "float_sink"], "order": 6, "title": "重箱开水门", "role": "短组合",
+  "teaches": ["load_bridge", "float_sink"], "requires": ["load_bridge", "float_sink", "plate_door"],
+  "discovery": "铁箱与人让桥超重，铁箱下沉压开水门。",
+  "map": ["###########", "###########", "#......####", "#P..I..|X##", "######=####", "######~####", "###########"],
+  "profile": ["cells", "liquid_pressure"], "bag": {"sand": 0, "bomb": 0},
+  "links": [{"plates": [[6, 5]], "doors": [[7, 3]], "symbol": "square", "latch": false}],
+  "devices": [{"type": "bridge", "cells": [[6, 4]], "capacity": 2}],
+  "goals": [{"type": "exit", "at": [8, 3]}],
+  "solution": ["R", "R", "R", "R", "R", "R", "R"],
+  "hints": ["桥能承受两份重量，桥下有一块连着门的水下压板。", "铁箱独占桥正好满载；你站上箱子才会超重。", "把铁箱推上桥，再向右登上箱子；桥塌后借铁箱登回门口。"],
+  "misreads": ["桥塌是路线的一部分，落水没有伤害。", "铁箱下沉要把原位置的水挤开，不能凭空删水。"],
+  "sdk": {
+    "sdk": ["桥板是static，坍塌后清除其自身cell，真实SDK水保持守恒并在开门/移箱后唤醒"],
+    "game_layer": ["人1、铁箱2；箱在桥上时载重2显示裂纹，人登箱同轮载重3触发整桥坍塌", "铁箱与水交换位置沉至[6,5]压板，人落至[6,4]后可以登一格到打开的[7,3]门，再到[8,3]出口", "门格有水/人/箱时保持打开，绝不吞物；撤销恢复桥和水体"]
+  },
+  "checks": ["7动作候选路线经过载重2/2、3/2、沉箱开门和出口；玩法验证未运行", "桥不因载重正好等于2坍塌；塌后不自动恢复，水cell总数守恒", "同一动作结算链完整执行浮沉与压板；不启任何新求解器或大型机制"],
+  "notes": "仅组合W02/W08已规定的机制，不改第二章原规格；星站桥使用已确认mech.bridge，缺少表现沿既有显著占位规则。"
+}

@@ -966,8 +966,8 @@
 					"7ae4317f0badb384"
 				],
 				"kind": "push",
-				"max_advance_us": 226,
-				"max_step_us": 24,
+				"max_advance_us": 205,
+				"max_step_us": 21,
 				"ok": true,
 				"phase": "physics",
 				"rounds": 2,
@@ -1205,7 +1205,7 @@
 					"566203b1ef6a66db"
 				],
 				"kind": "dig",
-				"max_advance_us": 56,
+				"max_advance_us": 62,
 				"max_step_us": 11,
 				"ok": true,
 				"phase": "classification",
@@ -1230,7 +1230,7 @@
 					"566203b1ef6a66db"
 				],
 				"kind": "dig",
-				"max_advance_us": 220,
+				"max_advance_us": 221,
 				"max_step_us": 11,
 				"ok": true,
 				"phase": "physics",
@@ -1260,8 +1260,8 @@
 					"615ce3bcacb63deb"
 				],
 				"kind": "dig",
-				"max_advance_us": 220,
-				"max_step_us": 21,
+				"max_advance_us": 221,
+				"max_step_us": 20,
 				"ok": true,
 				"phase": "physics",
 				"rounds": 2,
@@ -1800,8 +1800,8 @@
 					"7fb956c0ce81cfe0"
 				],
 				"kind": "push",
-				"max_advance_us": 197,
-				"max_step_us": 22,
+				"max_advance_us": 179,
+				"max_step_us": 21,
 				"ok": true,
 				"phase": "physics",
 				"rounds": 1,
@@ -2509,8 +2509,8 @@
 					"c2dadceb322a6a26"
 				],
 				"kind": "dig",
-				"max_advance_us": 193,
-				"max_step_us": 11,
+				"max_advance_us": 177,
+				"max_step_us": 10,
 				"ok": true,
 				"phase": "physics",
 				"rounds": 1,
@@ -3026,7 +3026,7 @@
 					"06c4cadceecbc021"
 				],
 				"kind": "walk",
-				"max_advance_us": 190,
+				"max_advance_us": 204,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -3289,7 +3289,7 @@
 			"status": "pass"
 		},
 		{
-			"actual": "/var/folders/jp/gwzwdjx53fz62z9mllkfy1400000gn/T/portitor-test-lhq3vnlg/sdk-64907--9223371976104475115",
+			"actual": "/var/folders/jp/gwzwdjx53fz62z9mllkfy1400000gn/T/portitor-test-y63_govz/sdk-23335--9223371976104475115",
 			"expected": "no abandoned partial snapshot",
 			"id": "deferred.snapshot.dispose_partial.false",
 			"status": "pass"
@@ -3324,7 +3324,7 @@
 			"status": "pass"
 		},
 		{
-			"actual": "/var/folders/jp/gwzwdjx53fz62z9mllkfy1400000gn/T/portitor-test-lhq3vnlg/sdk-64907--9223371975198505444/undo-2.snap.json",
+			"actual": "/var/folders/jp/gwzwdjx53fz62z9mllkfy1400000gn/T/portitor-test-y63_govz/sdk-23335--9223371975198505444/undo-2.snap.json",
 			"expected": "directory blocks JSON file write",
 			"id": "deferred.snapshot.failure_fixture",
 			"status": "pass"
@@ -3413,7 +3413,7 @@
 			"status": "pass"
 		},
 		{
-			"actual": "/var/folders/jp/gwzwdjx53fz62z9mllkfy1400000gn/T/portitor-test-lhq3vnlg/sdk-64907--9223371975198505444",
+			"actual": "/var/folders/jp/gwzwdjx53fz62z9mllkfy1400000gn/T/portitor-test-y63_govz/sdk-23335--9223371975198505444",
 			"expected": "no abandoned partial snapshot",
 			"id": "deferred.snapshot.dispose_partial.true",
 			"status": "pass"

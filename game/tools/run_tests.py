@@ -74,7 +74,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("godot")
     parser.add_argument("--gpu", action="store_true", help="also run actual macOS renderer comparisons")
-    parser.add_argument("--suites", default="core,sdk,gameplay,levels,ids,render,lab,ui,ui-contracts")
+    parser.add_argument("--suites", default="core,sdk,gameplay,levels,ids,render,lab,ui,ui-contracts,ui-interactions,ui-restart")
     args = parser.parse_args()
     RESULTS.mkdir(parents=True, exist_ok=True)
     REPORTS.mkdir(parents=True, exist_ok=True)
@@ -132,6 +132,7 @@ def main():
             return False
         evidence_files = {
             "sdk": RESULTS / "sdk.json", "gameplay": RESULTS / "gameplay.json", "levels": RESULTS / "levels.json",
+            "ui-interactions": RESULTS / "ui-interactions.json", "ui-interactions-gpu": RESULTS / "ui-interactions-gpu.json", "ui-restart": RESULTS / "ui-restart.json",
             "ids": REPORTS / "id-checks.json", "world-gpu": REPORTS / "world-reference-report.json",
             "showcase-gpu": REPORTS / "showcase-reference-report.json", "ui-gpu": REPORTS / "ui-reference-report.json",
             "dynamic-gpu": REPORTS / "dynamic-render-report.json", "sdk-seam-gpu": REPORTS / "sdk-seam-reference-report.json",
@@ -152,7 +153,7 @@ def main():
             code = 124
         (RESULTS / (name + ".log")).write_text(output)
         errors = bool(re.search(r"^(?:SCRIPT ERROR:|ERROR:)", output, re.MULTILINE))
-        completion_patterns = {"core":"core services: 0 failure(s)", "sdk":"PORTITOR_TEST_RESULT=", "gameplay":"PORTITOR_TEST_RESULT=", "levels":"PORTITOR_TEST_RESULT=", "ids":"id checks:", "render":"render reference failures:", "lab":'"suite":"lab"', "ui":'"suite":"ui"', "ui-contracts":'"suite":"ui-contracts"', "terrain-gpu":"terrain GPU reference failures:", "world-gpu":"World reference report:", "showcase-gpu":"showcase differences=", "dynamic-gpu":'"format":"portitor.dynamic-render/1"', "sdk-seam-gpu":"SDK seam", "performance":"PORTITOR_PERFORMANCE_COMPLETE", "performance-capacity":"PORTITOR_PERFORMANCE_COMPLETE", "ui-gpu":'"suite":"ui-gpu"'}
+        completion_patterns = {"core":"core services: 0 failure(s)", "sdk":"PORTITOR_TEST_RESULT=", "gameplay":"PORTITOR_TEST_RESULT=", "levels":"PORTITOR_TEST_RESULT=", "ids":"id checks:", "render":"render reference failures:", "lab":'"suite":"lab"', "ui":'"suite":"ui"', "ui-contracts":'"suite":"ui-contracts"', "ui-interactions":'"suite":"ui-interactions"', "ui-interactions-gpu":'"suite":"ui-interactions-gpu"', "ui-restart":'"suite":"ui-restart"', "terrain-gpu":"terrain GPU reference failures:", "world-gpu":"World reference report:", "showcase-gpu":"showcase differences=", "dynamic-gpu":'"format":"portitor.dynamic-render/1"', "sdk-seam-gpu":"SDK seam", "performance":"PORTITOR_PERFORMANCE_COMPLETE", "performance-capacity":"PORTITOR_PERFORMANCE_COMPLETE", "ui-gpu":'"suite":"ui-gpu"'}
         complete = completion_patterns.get(name, "") in output and (evidence is None or evidence.is_file())
         item = {"name": name, "ok": code == 0 and not errors and complete, "completed": complete, "exit_code": code, "engine_errors": errors, "seconds": round(time.monotonic() - started, 3), "command": command, "log": "game/tests/results/" + name + ".log"}
         stages.append(item)
@@ -174,12 +175,13 @@ def main():
         "ids": "tools/check_ids.gd", "render": "tests/refs/test_render.gd",
         "lab": "tests/modes/lab_test.gd",
         "ui": "tests/ui/run.gd", "ui-contracts": "tests/ui/contracts.gd",
+        "ui-interactions": "tests/ui/interactions.gd", "ui-restart": "tests/ui/restart.gd",
     }
     if prepared:
         for name in args.suites.split(","):
             run(name, [args.godot, "--headless", "--path", str(GAME), "--script", "res://" + names[name]])
         if args.gpu:
-            for name, path in [("terrain-gpu", "refs/test_terrain_shader.gd"), ("world-gpu", "refs/test_world_view.gd"), ("showcase-gpu", "refs/test_showcase.gd"), ("dynamic-gpu", "refs/test_dynamic_cells.gd"), ("sdk-seam-gpu", "refs/test_sdk_seam.gd"), ("performance", "refs/test_performance.gd"), ("ui-gpu", "ui/capture.gd")]:
+            for name, path in [("terrain-gpu", "refs/test_terrain_shader.gd"), ("world-gpu", "refs/test_world_view.gd"), ("showcase-gpu", "refs/test_showcase.gd"), ("dynamic-gpu", "refs/test_dynamic_cells.gd"), ("sdk-seam-gpu", "refs/test_sdk_seam.gd"), ("performance", "refs/test_performance.gd"), ("ui-interactions-gpu", "ui/interactions.gd"), ("ui-gpu", "ui/capture.gd")]:
                 run(name, [args.godot, "--path", str(GAME), "--display-driver", "macos", "--audio-driver", "Dummy", "--script", "res://tests/" + path])
                 if name == "performance":
                     run("performance-capacity", [args.godot, "--path", str(GAME), "--display-driver", "macos", "--audio-driver", "Dummy", "--script", "res://tests/refs/test_performance.gd", "--", "--uncapped"])

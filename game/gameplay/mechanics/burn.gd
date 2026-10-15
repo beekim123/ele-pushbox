@@ -1,8 +1,5 @@
-class_name UnimplementedBurn3d7064
-extends "res://gameplay/mechanics/mechanic.gd"
-## mechanic:burn: catalog path only; not registered by any playable mode.
+class_name BurnMechanic
+extends "res://gameplay/mechanics/sdk_material.gd"
 
-var unimplemented: bool = true
-
-func implementation_available() -> bool:
-	return false
+func material_names() -> Array[String]:
+	return ["wood", "fuse"]

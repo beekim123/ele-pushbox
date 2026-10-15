@@ -21,6 +21,7 @@ var _rule_icon: TextureRect
 var _rule_icon_uid: String = ""
 var _rule_icon_animation: String = "default"
 var _elapsed_ticks: float = 0.0
+var _volume_rows: Dictionary = {}
 static var _dim_materials: Dictionary = {}
 
 func configure(controller: Node) -> void:
@@ -43,6 +44,10 @@ func configure(controller: Node) -> void:
 	if screen_name not in ["play", "hint"]:
 		var marker_at: Vector2 = Vector2(8, 145) if screen_name == "levels" else Vector2(252, 0) if screen_name in ["chapters", "settings"] else Vector2(252, 164)
 		var marker: Label = _flow_label(t("dev.placeholder"), marker_at, 64, true)
+		marker.add_theme_color_override("font_color", Color("feae34"))
+	elif _level_has_placeholder():
+		var marker: Label = _flow_label(t("dev.placeholder"), Vector2(4, 164), 110, true)
+		marker.name = "LevelPlaceholderLabel"
 		marker.add_theme_color_override("font_color", Color("feae34"))
 	if not buttons.is_empty():
 		call_deferred("_focus_first")
@@ -68,6 +73,10 @@ func _process(delta: float) -> void:
 		var frame_count: int = int(Registry.art(_rule_icon_uid).get("frame_count", 1))
 		var phase: int = (tick / 60) % mini(2, maxi(1, frame_count))
 		_rule_icon.texture = PortitorUI.atlas(_rule_icon_uid, "default", phase) if frame_count > 1 else PortitorUI.atlas(_rule_icon_uid, _rule_icon_animation)
+	var bomb_preview: Control = get_node_or_null("BombDragPreview") as Control
+	if bomb_preview != null:
+		bomb_preview.visible = app.bomb_dragging()
+		bomb_preview.position = get_local_mouse_position() - Vector2(8, 8)
 
 func _visual_tick() -> int:
 	return int(app.world_view.fixed_tick) if app != null and app.world_view != null and int(app.world_view.fixed_tick) >= 0 else floori(_elapsed_ticks)
@@ -248,7 +257,7 @@ func _paragraph(text: String, location: Vector2, width: int, max_lines: int, cod
 	for index: int in mini(max_lines, lines.size()):
 		_label(lines[index], Vector2.ZERO, width, code, "", column)
 
-func _row(rect: Rect2, index: int, active_rect: Rect2 = Rect2(), panel_always: bool = false) -> Button:
+func _row(rect: Rect2, index: int, active_rect: Rect2 = Rect2(), panel_always: bool = false, activation: Callable = Callable()) -> Button:
 	if panel_always:
 		_panel(rect)
 	var node := Button.new()
@@ -269,7 +278,7 @@ func _row(rect: Rect2, index: int, active_rect: Rect2 = Rect2(), panel_always: b
 		if screen_name == "levels":
 			app.lab.level_index = index
 			_update_level_details())
-	node.pressed.connect(func() -> void: app.activate_menu(index))
+	node.pressed.connect(activation if activation.is_valid() else func() -> void: app.activate_menu(index))
 	buttons.append(node)
 	return node
 
@@ -289,6 +298,9 @@ func _sync_rows() -> void:
 			record.active.visible = false
 		for entry: Dictionary in record.labels:
 			entry.node.add_theme_color_override("font_color", _color(entry.selected if int(record.index) == focus_index else entry.normal))
+
+	for key: String in _volume_rows:
+		refresh_volume(key)
 
 func _wide_key(text: String, location: Vector2) -> int:
 	var width: int = _measure(text) + 8
@@ -363,15 +375,18 @@ func _chapters() -> void:
 	var group: Dictionary = app.lab.current_group()
 	_centered(_chapter_name(int(group.order)) + " · " + t(group.theme), 160, 116, 300, "l", "z")
 	_panel(Rect2(6, 148, 308, 30))
-	var body: String = t("chapter." + str(int(group.order)) + ".blurb") if app.lab.available(app.lab.group_index) else t("chapters.unlock", {"chapter": _chapter_name(maxi(1, int(group.order) - 1)), "n": _unlock_need(app.lab.group_index)}) if int(group.order) <= 5 else t("chapters.later")
+	var body: String
+	if not app.lab.stage_available(app.lab.group_index):
+		body = t("chapter.preview") if app.lab.open_all_levels else t("chapter.unavailable")
+	elif app.lab.available(app.lab.group_index):
+		body = t("chapter." + str(int(group.order)) + ".blurb")
+	else:
+		body = t("chapters.unlock", {"chapter": _chapter_name(maxi(1, int(group.order) - 1)), "n": _unlock_need(app.lab.group_index)}) if int(group.order) <= 5 else t("chapters.later")
 	_paragraph(body, Vector2(12, 149), 296, 2, "u" if app.lab.available(app.lab.group_index) else "v")
 	_page_indicator()
 
 func _unlock_need(index: int) -> int:
-	if index <= 0:
-		return 0
-	var previous: Dictionary = app.lab.groups[index - 1]
-	return maxi(2, previous.get("levels", []).size() - 2)
+	return app.lab.unlock_need(index)
 
 func _page_indicator() -> void:
 	var pages := Control.new()
@@ -526,14 +541,18 @@ func _levels() -> void:
 	var cleared_width: int = _measure(cleared)
 	_label(t("levels.title", {"chapter": _chapter_name(int(group.order)), "theme": t(group.theme)}), Vector2(10, 4), 290 - cleared_width, "l", "z")
 	_label(cleared, Vector2(310 - cleared_width, 4), cleared_width, "k", "z")
+	var row_height: int = mini(17, int(136 / maxi(1, app.lab.levels().size())))
 	for index: int in app.lab.levels().size():
 		var item: Dictionary = app.lab.levels()[index]
-		var y: int = 22 + index * 17
+		var y: int = 22 + index * row_height
 		var progress: Dictionary = Save.level_data("level:" + str(item.id))
 		_row(Rect2(8, y, 176, 15), index, Rect2(), true)
 		_row_label(index, str(item.id), Vector2(14, y), 28, "k")
 		var status_width: int = 16 if progress.get("cleared", false) or progress.get("skipped", false) or index == focus_index else 0
-		_row_label(index, t("level." + str(item.id) + ".title"), Vector2(42, y), 136 - status_width)
+		var title_key: String = "level." + str(item.id) + ".title"
+		var title: String = t(title_key)
+		if title == title_key: title = str(item.get("title", t("chapter.preview")))
+		_row_label(index, title, Vector2(42, y), 136 - status_width)
 		if progress.get("cleared", false):
 			_sprite("art:ui.icons", "check", Vector2(169, y + 1))
 		elif progress.get("skipped", false):
@@ -553,7 +572,10 @@ func _update_level_details() -> void:
 		_details.remove_child(child)
 		child.queue_free()
 	var uid: String = app.lab.level_uid()
-	var spec: Dictionary = Registry.level_spec(uid)
+	var has_spec: bool = app.lab.has_spec()
+	var spec: Dictionary = Registry.level_spec(uid) if not uid.is_empty() and has_spec else {}
+	if spec.is_empty():
+		_paragraph(t("chapter.preview"), Vector2(195, 32), 112, 8, "u", _details)
 	if not spec.is_empty():
 		var rows: Array = spec.map
 		var cell: int = maxi(2, mini(6, floori(minf(112.0 / str(rows[0]).length(), 54.0 / rows.size()))))
@@ -565,7 +587,18 @@ func _update_level_details() -> void:
 			for x: int in str(rows[y]).length():
 				_rectangle(Rect2(origin + Vector2(x * cell, y * cell), Vector2(cell, cell)), colors.get(str(rows[y]).substr(x, 1), "y"), _details)
 		var lines: int = floori(float(136 - (map_height + 10) - 4) / 13)
-		_paragraph(t("level." + str(spec.id) + ".discovery"), Vector2(195, 32 + map_height), 112, lines, "u", _details)
+		_paragraph(_level_text(spec, "discovery"), Vector2(195, 32 + map_height), 112, lines, "u", _details)
+
+func _level_text(spec: Dictionary, field: String) -> String:
+	var key: String = "level." + str(spec.get("id", "")) + "." + field
+	var translated: String = t(key)
+	if translated != key:
+		return translated
+	if field.begins_with("hint."):
+		var hints: Array = spec.get("hints", [])
+		var index: int = int(field.trim_prefix("hint.")) - 1
+		return str(hints[index]) if index >= 0 and index < hints.size() else ""
+	return str(spec.get(field, ""))
 
 func _hud() -> void:
 	if app.session == null:
@@ -580,21 +613,44 @@ func _hud() -> void:
 	var actions_start: int = 251 if screen_name == "play" else 264
 	var lamps_left: int = actions_start - 8 - goals.size() * 10
 	var count_left: int = lamps_left - 34
-	var bag_left: int = count_left - 39
-	_text("level." + str(spec.id) + ".title", Vector2(35, 3), maxi(30, bag_left - 41))
-	_label(str(spec.id), Vector2(5, 3), 28)
-	var sand: Label = _flow_label(str(int(state.bag.sand)), Vector2(bag_left + 16, 3), 24)
-	sand.name = "SandCount"
 	var bag_available: bool = int(state.bag.sand) > 0 or int(spec.get("bag", {}).get("sand", 0)) > 0
 	for row: String in spec.map:
 		bag_available = bag_available or row.contains("e") or row.contains("s")
+	var bomb_available: bool = int(state.bag.get("bomb", 0)) > 0 or int(spec.get("bag", {}).get("bomb", 0)) > 0
+	var bag_left: int = count_left - (39 if bag_available else 0)
+	var bomb_left: int = bag_left - (35 if bomb_available else 0)
+	_flow_label(_level_text(spec, "title"), Vector2(35, 3), maxi(30, bomb_left - 41))
+	_label(str(spec.id), Vector2(5, 3), 28)
+	var sand: Label = _flow_label(str(int(state.bag.sand)), Vector2(bag_left + 16, 3), 24)
+	sand.name = "SandCount"
 	sand.visible = bag_available
 	var bag := TextureRect.new()
 	bag.name = "SandBagIcon"
 	bag.visible = bag_available
 	bag.texture = PortitorUI.atlas("art:item.sandbag")
 	bag.position = Vector2(bag_left, 2)
+	bag.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	add_child(bag)
+	var bomb_count: Label = _flow_label(str(int(state.bag.get("bomb", 0))), Vector2(bomb_left + 17, 3), 18)
+	bomb_count.name = "BombCount"
+	bomb_count.visible = bomb_available
+	var bomb := TextureRect.new()
+	bomb.name = "BombIcon"
+	bomb.visible = bomb_available
+	bomb.texture = PortitorUI.atlas("art:item.bomb")
+	bomb.position = Vector2(bomb_left, 2)
+	bomb.size = Vector2(16, 16)
+	bomb.tooltip_text = t("extra.controls.bomb")
+	bomb.gui_input.connect(_bomb_source_input)
+	add_child(bomb)
+	var bomb_preview := TextureRect.new()
+	bomb_preview.name = "BombDragPreview"
+	bomb_preview.texture = bomb.texture
+	bomb_preview.size = Vector2(16, 16)
+	bomb_preview.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	bomb_preview.z_index = 100
+	bomb_preview.visible = false
+	add_child(bomb_preview)
 	var lit: int = 0
 	var lamps := HBoxContainer.new()
 	lamps.name = "GoalLamps"
@@ -632,10 +688,26 @@ func _observe_hold(enabled: bool) -> void:
 		app.world_view.set_meta("observe_toggle", enabled)
 		app.world_view.observe = enabled or Input.is_physical_key_pressed(KEY_TAB)
 
+func _bomb_source_input(event: InputEvent) -> void:
+	if event is InputEventMouseButton:
+		var mouse: InputEventMouseButton = event as InputEventMouseButton
+		if mouse.pressed and mouse.button_index == MOUSE_BUTTON_LEFT:
+			app.begin_bomb_drag()
+			if app.bomb_dragging():
+				accept_event()
+
 func refresh_session() -> void:
 	if app.session == null:
 		return
 	var state: Dictionary = app.session.state()
+	var bomb_count: Label = find_child("BombCount", true, false) as Label
+	if bomb_count != null:
+		bomb_count.text = str(int(state.bag.get("bomb", 0)))
+		if int(state.bag.get("bomb", 0)) > 0:
+			bomb_count.visible = true
+			var bomb: Control = get_node_or_null("BombIcon") as Control
+			if bomb != null:
+				bomb.visible = true
 	var sand: Label = find_child("SandCount", true, false) as Label
 	if sand != null:
 		sand.text = str(int(state.bag.sand))
@@ -689,15 +761,31 @@ func _settings() -> void:
 	_label(t("settings.title"), Vector2(28, 17), 264, "l")
 	for index: int in keys.size():
 		var y: int = 35 + index * 17
-		_row(Rect2(24, y - 2, 272, 16), index)
+		var selection: Callable = (func() -> void: set_focus(index)) if fields[index] in ["music", "sfx"] else (func() -> void: app.activate_menu(index))
+		_row(Rect2(24, y - 2, 272, 16), index, Rect2(), false, selection)
 		_row_label(index, t(keys[index]), Vector2(32, y), 170)
 		var value: Variant = Settings.values.get(fields[index], false)
 		var display: String = str(value)
 		match fields[index]:
 			"language": display = "English" if Locale.language == "en" else "简体中文"
 			"music", "sfx":
+				var bars: Array[ColorRect] = []
 				for bar: int in 10:
-					_rectangle(Rect2(218 + bar * 7, y + 4, 5, 6), ("k" if index == focus_index else "d") if bar < roundi(float(value) * 10) else "x")
+					bars.append(_rectangle(Rect2(218 + bar * 7, y + 4, 5, 6), ("k" if index == focus_index else "d") if bar < roundi(float(value) * 10) else "x"))
+				var slider := HSlider.new()
+				slider.position = Vector2(218, y - 2)
+				slider.size = Vector2(70, 16)
+				slider.min_value = 0
+				slider.max_value = 1
+				slider.step = 0.1
+				slider.set_value_no_signal(float(value))
+				# Keep the approved ten-bar artwork; native slider owns GUI drag/capture.
+				slider.modulate.a = 0
+				var field: String = fields[index]
+				slider.value_changed.connect(func(volume: float) -> void: app.set_volume(field, volume))
+				slider.focus_entered.connect(func() -> void: focus_index = index; _sync_rows())
+				add_child(slider)
+				_volume_rows[field] = {"slider": slider, "bars": bars, "index": index}
 				continue
 			"show_grid", "open_all_levels": display = t("on" if value else "off")
 			"ambience": display = t("env.full" if value == "full" else "env.lite" if value == "lights" else "env.off")
@@ -710,6 +798,14 @@ func _settings() -> void:
 		else:
 			_label(display, Vector2(288 - _measure(display), y), mini(86, _measure(display)), "c")
 
+func refresh_volume(key: String) -> void:
+	if not _volume_rows.has(key): return
+	var row: Dictionary = _volume_rows[key]
+	var value: float = float(Settings.values[key])
+	(row.slider as HSlider).set_value_no_signal(value)
+	for bar: int in row.bars.size():
+		(row.bars[bar] as ColorRect).color = _color(("k" if int(row.index) == focus_index else "d") if bar < roundi(value * 10) else "x")
+
 func _hint() -> void:
 	_hud()
 	var spec: Dictionary = app.session.spec if app.session != null else Registry.level_spec("level:M01")
@@ -719,7 +815,7 @@ func _hint() -> void:
 	var speaker := Vector2((320 - width * 16) / 2 + player.x * 16 + 8, 20 + (160 - height * 16) / 2 + player.y * 16 + 2)
 	var bubble := PortitorBubble.new()
 	add_child(bubble)
-	bubble.configure(t("level." + str(spec.id) + ".hint." + str(app.hint_level)), speaker, t("hint.title", {"n":app.hint_level}), t("dev.placeholder"))
+	bubble.configure(_level_text(spec, "hint." + str(app.hint_level)), speaker, t("hint.title", {"n":app.hint_level}), t("dev.placeholder"))
 	_issues.append_array(bubble.issues)
 	_panel(Rect2(6, 156, 308, 21))
 	_sprite("art:ui.icons", "hint", Vector2(12, 160))
@@ -730,6 +826,10 @@ func _hint() -> void:
 		_row_records.back()["never_highlight"] = true
 		_row_records.back().active.visible = false
 	else:
+		if app.lab.route_index(app.session.state()) < 0:
+			var only_rewind_width: int = mini(278, _measure(t("hint.rewind")) + 14)
+			_plain_button(t("hint.rewind"), Vector2(310 - only_rewind_width, 159), only_rewind_width, 0)
+			return
 		var demo_width: int = mini(139, _measure(t("hint.demo")) + 14)
 		var rewind_width: int = mini(278 - demo_width - 4, _measure(t("hint.rewind")) + 14)
 		var rewind_x: int = 310 - rewind_width
@@ -880,3 +980,11 @@ func _scan(parent: Node, result: Array) -> void:
 					result.append("text clipped by parent: " + str(control.name))
 				ancestor = ancestor.get_parent()
 		_scan(child, result)
+
+func _level_has_placeholder() -> bool:
+	if app.session == null:
+		return false
+	for device: Dictionary in app.session.spec.get("devices", []):
+		if str(device.get("type", "")) in ["mine_cart", "lantern_reveal", "nested_box", "bounce", "seesaw", "gust"]:
+			return true
+	return false

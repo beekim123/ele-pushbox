@@ -216,7 +216,7 @@
 					"a39e68d1e09db856"
 				],
 				"kind": "walk",
-				"max_advance_us": 213,
+				"max_advance_us": 204,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -240,7 +240,7 @@
 					"a39e68d1e09db856"
 				],
 				"kind": "walk",
-				"max_advance_us": 213,
+				"max_advance_us": 204,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -439,8 +439,8 @@
 					"9ae2c19f5a9d92f7"
 				],
 				"kind": "push",
-				"max_advance_us": 212,
-				"max_step_us": 21,
+				"max_advance_us": 216,
+				"max_step_us": 22,
 				"ok": true,
 				"phase": "physics",
 				"rounds": 1,
@@ -464,8 +464,8 @@
 					"9ae2c19f5a9d92f7"
 				],
 				"kind": "push",
-				"max_advance_us": 212,
-				"max_step_us": 21,
+				"max_advance_us": 216,
+				"max_step_us": 22,
 				"ok": true,
 				"phase": "physics",
 				"rounds": 1,
@@ -663,7 +663,7 @@
 					"bf2669347dc3f80f"
 				],
 				"kind": "push",
-				"max_advance_us": 218,
+				"max_advance_us": 209,
 				"max_step_us": 21,
 				"ok": true,
 				"phase": "physics",
@@ -688,7 +688,7 @@
 					"bf2669347dc3f80f"
 				],
 				"kind": "push",
-				"max_advance_us": 218,
+				"max_advance_us": 209,
 				"max_step_us": 21,
 				"ok": true,
 				"phase": "physics",
@@ -887,7 +887,7 @@
 					"0f1a1a8f7c613c9a"
 				],
 				"kind": "push",
-				"max_advance_us": 207,
+				"max_advance_us": 211,
 				"max_step_us": 21,
 				"ok": true,
 				"phase": "physics",
@@ -912,7 +912,7 @@
 					"0f1a1a8f7c613c9a"
 				],
 				"kind": "push",
-				"max_advance_us": 207,
+				"max_advance_us": 211,
 				"max_step_us": 21,
 				"ok": true,
 				"phase": "physics",
@@ -1950,7 +1950,7 @@
 					"a39e68d1e09db856"
 				],
 				"kind": "walk",
-				"max_advance_us": 214,
+				"max_advance_us": 220,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -1974,7 +1974,7 @@
 					"a39e68d1e09db856"
 				],
 				"kind": "walk",
-				"max_advance_us": 214,
+				"max_advance_us": 220,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -2173,8 +2173,8 @@
 					"9ae2c19f5a9d92f7"
 				],
 				"kind": "push",
-				"max_advance_us": 209,
-				"max_step_us": 21,
+				"max_advance_us": 208,
+				"max_step_us": 20,
 				"ok": true,
 				"phase": "physics",
 				"rounds": 1,
@@ -2198,8 +2198,8 @@
 					"9ae2c19f5a9d92f7"
 				],
 				"kind": "push",
-				"max_advance_us": 209,
-				"max_step_us": 21,
+				"max_advance_us": 208,
+				"max_step_us": 20,
 				"ok": true,
 				"phase": "physics",
 				"rounds": 1,
@@ -2397,7 +2397,7 @@
 					"bf2669347dc3f80f"
 				],
 				"kind": "push",
-				"max_advance_us": 233,
+				"max_advance_us": 261,
 				"max_step_us": 21,
 				"ok": true,
 				"phase": "physics",
@@ -2422,7 +2422,7 @@
 					"bf2669347dc3f80f"
 				],
 				"kind": "push",
-				"max_advance_us": 233,
+				"max_advance_us": 261,
 				"max_step_us": 21,
 				"ok": true,
 				"phase": "physics",
@@ -2621,7 +2621,7 @@
 					"0f1a1a8f7c613c9a"
 				],
 				"kind": "push",
-				"max_advance_us": 207,
+				"max_advance_us": 209,
 				"max_step_us": 21,
 				"ok": true,
 				"phase": "physics",
@@ -2646,7 +2646,7 @@
 					"0f1a1a8f7c613c9a"
 				],
 				"kind": "push",
-				"max_advance_us": 207,
+				"max_advance_us": 209,
 				"max_step_us": 21,
 				"ok": true,
 				"phase": "physics",
@@ -3684,7 +3684,7 @@
 					"a39e68d1e09db856"
 				],
 				"kind": "walk",
-				"max_advance_us": 202,
+				"max_advance_us": 231,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -3708,7 +3708,7 @@
 					"a39e68d1e09db856"
 				],
 				"kind": "walk",
-				"max_advance_us": 202,
+				"max_advance_us": 231,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -3907,8 +3907,8 @@
 					"9ae2c19f5a9d92f7"
 				],
 				"kind": "push",
-				"max_advance_us": 217,
-				"max_step_us": 20,
+				"max_advance_us": 211,
+				"max_step_us": 27,
 				"ok": true,
 				"phase": "physics",
 				"rounds": 1,
@@ -3932,8 +3932,8 @@
 					"9ae2c19f5a9d92f7"
 				],
 				"kind": "push",
-				"max_advance_us": 217,
-				"max_step_us": 20,
+				"max_advance_us": 211,
+				"max_step_us": 27,
 				"ok": true,
 				"phase": "physics",
 				"rounds": 1,
@@ -4131,7 +4131,7 @@
 					"bf2669347dc3f80f"
 				],
 				"kind": "push",
-				"max_advance_us": 206,
+				"max_advance_us": 216,
 				"max_step_us": 21,
 				"ok": true,
 				"phase": "physics",
@@ -4156,7 +4156,7 @@
 					"bf2669347dc3f80f"
 				],
 				"kind": "push",
-				"max_advance_us": 206,
+				"max_advance_us": 216,
 				"max_step_us": 21,
 				"ok": true,
 				"phase": "physics",
@@ -4355,7 +4355,7 @@
 					"0f1a1a8f7c613c9a"
 				],
 				"kind": "push",
-				"max_advance_us": 220,
+				"max_advance_us": 214,
 				"max_step_us": 21,
 				"ok": true,
 				"phase": "physics",
@@ -4380,7 +4380,7 @@
 					"0f1a1a8f7c613c9a"
 				],
 				"kind": "push",
-				"max_advance_us": 220,
+				"max_advance_us": 214,
 				"max_step_us": 21,
 				"ok": true,
 				"phase": "physics",
@@ -5442,7 +5442,7 @@
 					"9a5a9b9253fcc49a"
 				],
 				"kind": "walk",
-				"max_advance_us": 191,
+				"max_advance_us": 223,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -5466,7 +5466,7 @@
 					"9a5a9b9253fcc49a"
 				],
 				"kind": "walk",
-				"max_advance_us": 191,
+				"max_advance_us": 223,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -5672,7 +5672,7 @@
 					"bbff51dc1a1b4d48"
 				],
 				"kind": "climb",
-				"max_advance_us": 201,
+				"max_advance_us": 210,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -5696,7 +5696,7 @@
 					"bbff51dc1a1b4d48"
 				],
 				"kind": "climb",
-				"max_advance_us": 201,
+				"max_advance_us": 210,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -5902,7 +5902,7 @@
 					"bb61ee91030efa27"
 				],
 				"kind": "climb",
-				"max_advance_us": 222,
+				"max_advance_us": 206,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -5926,7 +5926,7 @@
 					"bb61ee91030efa27"
 				],
 				"kind": "climb",
-				"max_advance_us": 222,
+				"max_advance_us": 206,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -6132,7 +6132,7 @@
 					"e2264bebfb3553fc"
 				],
 				"kind": "step",
-				"max_advance_us": 224,
+				"max_advance_us": 213,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -6156,7 +6156,7 @@
 					"e2264bebfb3553fc"
 				],
 				"kind": "step",
-				"max_advance_us": 224,
+				"max_advance_us": 213,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -6362,7 +6362,7 @@
 					"d11997ca3a359469"
 				],
 				"kind": "walk",
-				"max_advance_us": 226,
+				"max_advance_us": 220,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -6386,7 +6386,7 @@
 					"d11997ca3a359469"
 				],
 				"kind": "walk",
-				"max_advance_us": 226,
+				"max_advance_us": 220,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -6592,7 +6592,7 @@
 					"27f1f3dcb932e186"
 				],
 				"kind": "walk",
-				"max_advance_us": 218,
+				"max_advance_us": 212,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -6616,7 +6616,7 @@
 					"27f1f3dcb932e186"
 				],
 				"kind": "walk",
-				"max_advance_us": 218,
+				"max_advance_us": 212,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -6822,7 +6822,7 @@
 					"fe8fb75da21f22c7"
 				],
 				"kind": "walk",
-				"max_advance_us": 216,
+				"max_advance_us": 233,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -6846,7 +6846,7 @@
 					"fe8fb75da21f22c7"
 				],
 				"kind": "walk",
-				"max_advance_us": 216,
+				"max_advance_us": 233,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -7052,7 +7052,7 @@
 					"742fd1d107ebe82b"
 				],
 				"kind": "walk",
-				"max_advance_us": 199,
+				"max_advance_us": 246,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -7076,7 +7076,7 @@
 					"742fd1d107ebe82b"
 				],
 				"kind": "walk",
-				"max_advance_us": 199,
+				"max_advance_us": 246,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -7294,7 +7294,7 @@
 					"9c0f81da8e186670"
 				],
 				"kind": "walk",
-				"max_advance_us": 221,
+				"max_advance_us": 225,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -7330,7 +7330,7 @@
 					"9c0f81da8e186670"
 				],
 				"kind": "walk",
-				"max_advance_us": 221,
+				"max_advance_us": 225,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -7536,7 +7536,7 @@
 					"60edb36c9110de4e"
 				],
 				"kind": "walk",
-				"max_advance_us": 212,
+				"max_advance_us": 203,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -7560,7 +7560,7 @@
 					"60edb36c9110de4e"
 				],
 				"kind": "walk",
-				"max_advance_us": 212,
+				"max_advance_us": 203,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -7767,8 +7767,8 @@
 					"9a097e0469d78cb5"
 				],
 				"kind": "push",
-				"max_advance_us": 213,
-				"max_step_us": 22,
+				"max_advance_us": 222,
+				"max_step_us": 23,
 				"ok": true,
 				"phase": "physics",
 				"rounds": 1,
@@ -7792,8 +7792,8 @@
 					"9a097e0469d78cb5"
 				],
 				"kind": "push",
-				"max_advance_us": 213,
-				"max_step_us": 22,
+				"max_advance_us": 222,
+				"max_step_us": 23,
 				"ok": true,
 				"phase": "physics",
 				"rounds": 1,
@@ -7999,8 +7999,8 @@
 					"dd7934ddb9d2ef4c"
 				],
 				"kind": "push",
-				"max_advance_us": 211,
-				"max_step_us": 21,
+				"max_advance_us": 200,
+				"max_step_us": 22,
 				"ok": true,
 				"phase": "physics",
 				"rounds": 1,
@@ -8024,8 +8024,8 @@
 					"dd7934ddb9d2ef4c"
 				],
 				"kind": "push",
-				"max_advance_us": 211,
-				"max_step_us": 21,
+				"max_advance_us": 200,
+				"max_step_us": 22,
 				"ok": true,
 				"phase": "physics",
 				"rounds": 1,
@@ -10518,7 +10518,7 @@
 					"9a5a9b9253fcc49a"
 				],
 				"kind": "walk",
-				"max_advance_us": 202,
+				"max_advance_us": 215,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -10542,7 +10542,7 @@
 					"9a5a9b9253fcc49a"
 				],
 				"kind": "walk",
-				"max_advance_us": 202,
+				"max_advance_us": 215,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -10748,7 +10748,7 @@
 					"bbff51dc1a1b4d48"
 				],
 				"kind": "climb",
-				"max_advance_us": 211,
+				"max_advance_us": 227,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -10772,7 +10772,7 @@
 					"bbff51dc1a1b4d48"
 				],
 				"kind": "climb",
-				"max_advance_us": 211,
+				"max_advance_us": 227,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -10978,7 +10978,7 @@
 					"bb61ee91030efa27"
 				],
 				"kind": "climb",
-				"max_advance_us": 212,
+				"max_advance_us": 226,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -11002,7 +11002,7 @@
 					"bb61ee91030efa27"
 				],
 				"kind": "climb",
-				"max_advance_us": 212,
+				"max_advance_us": 226,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -11208,7 +11208,7 @@
 					"e2264bebfb3553fc"
 				],
 				"kind": "step",
-				"max_advance_us": 218,
+				"max_advance_us": 226,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -11232,7 +11232,7 @@
 					"e2264bebfb3553fc"
 				],
 				"kind": "step",
-				"max_advance_us": 218,
+				"max_advance_us": 226,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -11438,7 +11438,7 @@
 					"d11997ca3a359469"
 				],
 				"kind": "walk",
-				"max_advance_us": 217,
+				"max_advance_us": 235,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -11462,7 +11462,7 @@
 					"d11997ca3a359469"
 				],
 				"kind": "walk",
-				"max_advance_us": 217,
+				"max_advance_us": 235,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -11668,8 +11668,8 @@
 					"27f1f3dcb932e186"
 				],
 				"kind": "walk",
-				"max_advance_us": 211,
-				"max_step_us": 0,
+				"max_advance_us": 240,
+				"max_step_us": 8,
 				"ok": true,
 				"phase": "physics",
 				"rounds": 1,
@@ -11692,8 +11692,8 @@
 					"27f1f3dcb932e186"
 				],
 				"kind": "walk",
-				"max_advance_us": 211,
-				"max_step_us": 0,
+				"max_advance_us": 240,
+				"max_step_us": 8,
 				"ok": true,
 				"phase": "physics",
 				"rounds": 1,
@@ -11898,7 +11898,7 @@
 					"fe8fb75da21f22c7"
 				],
 				"kind": "walk",
-				"max_advance_us": 221,
+				"max_advance_us": 224,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -11922,7 +11922,7 @@
 					"fe8fb75da21f22c7"
 				],
 				"kind": "walk",
-				"max_advance_us": 221,
+				"max_advance_us": 224,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -12128,7 +12128,7 @@
 					"742fd1d107ebe82b"
 				],
 				"kind": "walk",
-				"max_advance_us": 212,
+				"max_advance_us": 219,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -12152,7 +12152,7 @@
 					"742fd1d107ebe82b"
 				],
 				"kind": "walk",
-				"max_advance_us": 212,
+				"max_advance_us": 219,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -12370,7 +12370,7 @@
 					"9c0f81da8e186670"
 				],
 				"kind": "walk",
-				"max_advance_us": 213,
+				"max_advance_us": 226,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -12406,7 +12406,7 @@
 					"9c0f81da8e186670"
 				],
 				"kind": "walk",
-				"max_advance_us": 213,
+				"max_advance_us": 226,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -12612,7 +12612,7 @@
 					"60edb36c9110de4e"
 				],
 				"kind": "walk",
-				"max_advance_us": 222,
+				"max_advance_us": 216,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -12636,7 +12636,7 @@
 					"60edb36c9110de4e"
 				],
 				"kind": "walk",
-				"max_advance_us": 222,
+				"max_advance_us": 216,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -12843,8 +12843,8 @@
 					"9a097e0469d78cb5"
 				],
 				"kind": "push",
-				"max_advance_us": 222,
-				"max_step_us": 21,
+				"max_advance_us": 224,
+				"max_step_us": 25,
 				"ok": true,
 				"phase": "physics",
 				"rounds": 1,
@@ -12868,8 +12868,8 @@
 					"9a097e0469d78cb5"
 				],
 				"kind": "push",
-				"max_advance_us": 222,
-				"max_step_us": 21,
+				"max_advance_us": 224,
+				"max_step_us": 25,
 				"ok": true,
 				"phase": "physics",
 				"rounds": 1,
@@ -13075,8 +13075,8 @@
 					"dd7934ddb9d2ef4c"
 				],
 				"kind": "push",
-				"max_advance_us": 224,
-				"max_step_us": 21,
+				"max_advance_us": 227,
+				"max_step_us": 23,
 				"ok": true,
 				"phase": "physics",
 				"rounds": 1,
@@ -13100,8 +13100,8 @@
 					"dd7934ddb9d2ef4c"
 				],
 				"kind": "push",
-				"max_advance_us": 224,
-				"max_step_us": 21,
+				"max_advance_us": 227,
+				"max_step_us": 23,
 				"ok": true,
 				"phase": "physics",
 				"rounds": 1,
@@ -15594,7 +15594,7 @@
 					"9a5a9b9253fcc49a"
 				],
 				"kind": "walk",
-				"max_advance_us": 201,
+				"max_advance_us": 224,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -15618,7 +15618,7 @@
 					"9a5a9b9253fcc49a"
 				],
 				"kind": "walk",
-				"max_advance_us": 201,
+				"max_advance_us": 224,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -15824,7 +15824,7 @@
 					"bbff51dc1a1b4d48"
 				],
 				"kind": "climb",
-				"max_advance_us": 212,
+				"max_advance_us": 215,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -15848,7 +15848,7 @@
 					"bbff51dc1a1b4d48"
 				],
 				"kind": "climb",
-				"max_advance_us": 212,
+				"max_advance_us": 215,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -16054,7 +16054,7 @@
 					"bb61ee91030efa27"
 				],
 				"kind": "climb",
-				"max_advance_us": 214,
+				"max_advance_us": 215,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -16078,7 +16078,7 @@
 					"bb61ee91030efa27"
 				],
 				"kind": "climb",
-				"max_advance_us": 214,
+				"max_advance_us": 215,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -16284,7 +16284,7 @@
 					"e2264bebfb3553fc"
 				],
 				"kind": "step",
-				"max_advance_us": 213,
+				"max_advance_us": 230,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -16308,7 +16308,7 @@
 					"e2264bebfb3553fc"
 				],
 				"kind": "step",
-				"max_advance_us": 213,
+				"max_advance_us": 230,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -16514,7 +16514,7 @@
 					"d11997ca3a359469"
 				],
 				"kind": "walk",
-				"max_advance_us": 212,
+				"max_advance_us": 231,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -16538,7 +16538,7 @@
 					"d11997ca3a359469"
 				],
 				"kind": "walk",
-				"max_advance_us": 212,
+				"max_advance_us": 231,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -16744,7 +16744,7 @@
 					"27f1f3dcb932e186"
 				],
 				"kind": "walk",
-				"max_advance_us": 222,
+				"max_advance_us": 217,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -16768,7 +16768,7 @@
 					"27f1f3dcb932e186"
 				],
 				"kind": "walk",
-				"max_advance_us": 222,
+				"max_advance_us": 217,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -16974,7 +16974,7 @@
 					"fe8fb75da21f22c7"
 				],
 				"kind": "walk",
-				"max_advance_us": 216,
+				"max_advance_us": 218,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -16998,7 +16998,7 @@
 					"fe8fb75da21f22c7"
 				],
 				"kind": "walk",
-				"max_advance_us": 216,
+				"max_advance_us": 218,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -17204,7 +17204,7 @@
 					"742fd1d107ebe82b"
 				],
 				"kind": "walk",
-				"max_advance_us": 227,
+				"max_advance_us": 214,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -17228,7 +17228,7 @@
 					"742fd1d107ebe82b"
 				],
 				"kind": "walk",
-				"max_advance_us": 227,
+				"max_advance_us": 214,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -17446,7 +17446,7 @@
 					"9c0f81da8e186670"
 				],
 				"kind": "walk",
-				"max_advance_us": 211,
+				"max_advance_us": 220,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -17482,7 +17482,7 @@
 					"9c0f81da8e186670"
 				],
 				"kind": "walk",
-				"max_advance_us": 211,
+				"max_advance_us": 220,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -17688,7 +17688,7 @@
 					"60edb36c9110de4e"
 				],
 				"kind": "walk",
-				"max_advance_us": 221,
+				"max_advance_us": 215,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -17712,7 +17712,7 @@
 					"60edb36c9110de4e"
 				],
 				"kind": "walk",
-				"max_advance_us": 221,
+				"max_advance_us": 215,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -17919,8 +17919,8 @@
 					"9a097e0469d78cb5"
 				],
 				"kind": "push",
-				"max_advance_us": 224,
-				"max_step_us": 22,
+				"max_advance_us": 216,
+				"max_step_us": 23,
 				"ok": true,
 				"phase": "physics",
 				"rounds": 1,
@@ -17944,8 +17944,8 @@
 					"9a097e0469d78cb5"
 				],
 				"kind": "push",
-				"max_advance_us": 224,
-				"max_step_us": 22,
+				"max_advance_us": 216,
+				"max_step_us": 23,
 				"ok": true,
 				"phase": "physics",
 				"rounds": 1,
@@ -18151,8 +18151,8 @@
 					"dd7934ddb9d2ef4c"
 				],
 				"kind": "push",
-				"max_advance_us": 228,
-				"max_step_us": 23,
+				"max_advance_us": 216,
+				"max_step_us": 21,
 				"ok": true,
 				"phase": "physics",
 				"rounds": 1,
@@ -18176,8 +18176,8 @@
 					"dd7934ddb9d2ef4c"
 				],
 				"kind": "push",
-				"max_advance_us": 228,
-				"max_step_us": 23,
+				"max_advance_us": 216,
+				"max_step_us": 21,
 				"ok": true,
 				"phase": "physics",
 				"rounds": 1,
@@ -20679,8 +20679,8 @@
 					"51ee090d4975bf10"
 				],
 				"kind": "dig",
-				"max_advance_us": 222,
-				"max_step_us": 11,
+				"max_advance_us": 203,
+				"max_step_us": 12,
 				"ok": true,
 				"phase": "physics",
 				"rounds": 1,
@@ -20704,8 +20704,8 @@
 					"51ee090d4975bf10"
 				],
 				"kind": "dig",
-				"max_advance_us": 222,
-				"max_step_us": 11,
+				"max_advance_us": 203,
+				"max_step_us": 12,
 				"ok": true,
 				"phase": "physics",
 				"rounds": 1,
@@ -20911,7 +20911,7 @@
 					"692d0547ea176c31"
 				],
 				"kind": "walk",
-				"max_advance_us": 208,
+				"max_advance_us": 212,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -20935,7 +20935,7 @@
 					"692d0547ea176c31"
 				],
 				"kind": "walk",
-				"max_advance_us": 208,
+				"max_advance_us": 212,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -21133,7 +21133,7 @@
 					"8a0b10f3c19b2875"
 				],
 				"kind": "walk",
-				"max_advance_us": 214,
+				"max_advance_us": 215,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -21157,7 +21157,7 @@
 					"8a0b10f3c19b2875"
 				],
 				"kind": "walk",
-				"max_advance_us": 214,
+				"max_advance_us": 215,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -21356,8 +21356,8 @@
 					"85443bac30bdd16d"
 				],
 				"kind": "push",
-				"max_advance_us": 210,
-				"max_step_us": 21,
+				"max_advance_us": 212,
+				"max_step_us": 22,
 				"ok": true,
 				"phase": "physics",
 				"rounds": 1,
@@ -21381,8 +21381,8 @@
 					"85443bac30bdd16d"
 				],
 				"kind": "push",
-				"max_advance_us": 210,
-				"max_step_us": 21,
+				"max_advance_us": 212,
+				"max_step_us": 22,
 				"ok": true,
 				"phase": "physics",
 				"rounds": 1,
@@ -21580,8 +21580,8 @@
 					"e6c11422e48dde9f"
 				],
 				"kind": "push",
-				"max_advance_us": 219,
-				"max_step_us": 20,
+				"max_advance_us": 211,
+				"max_step_us": 22,
 				"ok": true,
 				"phase": "physics",
 				"rounds": 1,
@@ -21605,8 +21605,8 @@
 					"e6c11422e48dde9f"
 				],
 				"kind": "push",
-				"max_advance_us": 219,
-				"max_step_us": 20,
+				"max_advance_us": 211,
+				"max_step_us": 22,
 				"ok": true,
 				"phase": "physics",
 				"rounds": 1,
@@ -22813,7 +22813,7 @@
 				],
 				"kind": "dig",
 				"max_advance_us": 211,
-				"max_step_us": 10,
+				"max_step_us": 13,
 				"ok": true,
 				"phase": "physics",
 				"rounds": 1,
@@ -22838,7 +22838,7 @@
 				],
 				"kind": "dig",
 				"max_advance_us": 211,
-				"max_step_us": 10,
+				"max_step_us": 13,
 				"ok": true,
 				"phase": "physics",
 				"rounds": 1,
@@ -23044,7 +23044,7 @@
 					"692d0547ea176c31"
 				],
 				"kind": "walk",
-				"max_advance_us": 226,
+				"max_advance_us": 218,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -23068,7 +23068,7 @@
 					"692d0547ea176c31"
 				],
 				"kind": "walk",
-				"max_advance_us": 226,
+				"max_advance_us": 218,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -23266,7 +23266,7 @@
 					"8a0b10f3c19b2875"
 				],
 				"kind": "walk",
-				"max_advance_us": 223,
+				"max_advance_us": 210,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -23290,7 +23290,7 @@
 					"8a0b10f3c19b2875"
 				],
 				"kind": "walk",
-				"max_advance_us": 223,
+				"max_advance_us": 210,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -23489,7 +23489,7 @@
 					"85443bac30bdd16d"
 				],
 				"kind": "push",
-				"max_advance_us": 218,
+				"max_advance_us": 219,
 				"max_step_us": 21,
 				"ok": true,
 				"phase": "physics",
@@ -23514,7 +23514,7 @@
 					"85443bac30bdd16d"
 				],
 				"kind": "push",
-				"max_advance_us": 218,
+				"max_advance_us": 219,
 				"max_step_us": 21,
 				"ok": true,
 				"phase": "physics",
@@ -23713,8 +23713,8 @@
 					"e6c11422e48dde9f"
 				],
 				"kind": "push",
-				"max_advance_us": 206,
-				"max_step_us": 20,
+				"max_advance_us": 218,
+				"max_step_us": 22,
 				"ok": true,
 				"phase": "physics",
 				"rounds": 1,
@@ -23738,8 +23738,8 @@
 					"e6c11422e48dde9f"
 				],
 				"kind": "push",
-				"max_advance_us": 206,
-				"max_step_us": 20,
+				"max_advance_us": 218,
+				"max_step_us": 22,
 				"ok": true,
 				"phase": "physics",
 				"rounds": 1,
@@ -24945,8 +24945,8 @@
 					"51ee090d4975bf10"
 				],
 				"kind": "dig",
-				"max_advance_us": 220,
-				"max_step_us": 11,
+				"max_advance_us": 208,
+				"max_step_us": 12,
 				"ok": true,
 				"phase": "physics",
 				"rounds": 1,
@@ -24970,8 +24970,8 @@
 					"51ee090d4975bf10"
 				],
 				"kind": "dig",
-				"max_advance_us": 220,
-				"max_step_us": 11,
+				"max_advance_us": 208,
+				"max_step_us": 12,
 				"ok": true,
 				"phase": "physics",
 				"rounds": 1,
@@ -25177,7 +25177,7 @@
 					"692d0547ea176c31"
 				],
 				"kind": "walk",
-				"max_advance_us": 218,
+				"max_advance_us": 219,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -25201,7 +25201,7 @@
 					"692d0547ea176c31"
 				],
 				"kind": "walk",
-				"max_advance_us": 218,
+				"max_advance_us": 219,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -25399,7 +25399,7 @@
 					"8a0b10f3c19b2875"
 				],
 				"kind": "walk",
-				"max_advance_us": 213,
+				"max_advance_us": 218,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -25423,7 +25423,7 @@
 					"8a0b10f3c19b2875"
 				],
 				"kind": "walk",
-				"max_advance_us": 213,
+				"max_advance_us": 218,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -25622,8 +25622,8 @@
 					"85443bac30bdd16d"
 				],
 				"kind": "push",
-				"max_advance_us": 226,
-				"max_step_us": 21,
+				"max_advance_us": 206,
+				"max_step_us": 22,
 				"ok": true,
 				"phase": "physics",
 				"rounds": 1,
@@ -25647,8 +25647,8 @@
 					"85443bac30bdd16d"
 				],
 				"kind": "push",
-				"max_advance_us": 226,
-				"max_step_us": 21,
+				"max_advance_us": 206,
+				"max_step_us": 22,
 				"ok": true,
 				"phase": "physics",
 				"rounds": 1,
@@ -25846,7 +25846,7 @@
 					"e6c11422e48dde9f"
 				],
 				"kind": "push",
-				"max_advance_us": 216,
+				"max_advance_us": 212,
 				"max_step_us": 21,
 				"ok": true,
 				"phase": "physics",
@@ -25871,7 +25871,7 @@
 					"e6c11422e48dde9f"
 				],
 				"kind": "push",
-				"max_advance_us": 216,
+				"max_advance_us": 212,
 				"max_step_us": 21,
 				"ok": true,
 				"phase": "physics",
@@ -27101,7 +27101,7 @@
 					"1b50e8bae55fbca2"
 				],
 				"kind": "walk",
-				"max_advance_us": 225,
+				"max_advance_us": 226,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -27125,7 +27125,7 @@
 					"1b50e8bae55fbca2"
 				],
 				"kind": "walk",
-				"max_advance_us": 225,
+				"max_advance_us": 226,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -27325,7 +27325,7 @@
 					"a262ec85cb87d5fd"
 				],
 				"kind": "walk",
-				"max_advance_us": 221,
+				"max_advance_us": 224,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -27349,7 +27349,7 @@
 					"a262ec85cb87d5fd"
 				],
 				"kind": "walk",
-				"max_advance_us": 221,
+				"max_advance_us": 224,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -27592,7 +27592,7 @@
 					"d78f82d395655183"
 				],
 				"kind": "pour",
-				"max_advance_us": 215,
+				"max_advance_us": 229,
 				"max_step_us": 18,
 				"ok": true,
 				"phase": "physics",
@@ -27659,7 +27659,7 @@
 					"d78f82d395655183"
 				],
 				"kind": "pour",
-				"max_advance_us": 215,
+				"max_advance_us": 229,
 				"max_step_us": 18,
 				"ok": true,
 				"phase": "physics",
@@ -27871,7 +27871,7 @@
 					"d9e0dfd6d71b225b"
 				],
 				"kind": "step",
-				"max_advance_us": 213,
+				"max_advance_us": 223,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -27895,7 +27895,7 @@
 					"d9e0dfd6d71b225b"
 				],
 				"kind": "step",
-				"max_advance_us": 213,
+				"max_advance_us": 223,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -28095,7 +28095,7 @@
 					"5cca5e2501d241cf"
 				],
 				"kind": "step",
-				"max_advance_us": 218,
+				"max_advance_us": 236,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -28119,7 +28119,7 @@
 					"5cca5e2501d241cf"
 				],
 				"kind": "step",
-				"max_advance_us": 218,
+				"max_advance_us": 236,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -28319,7 +28319,7 @@
 					"22888024e8718b27"
 				],
 				"kind": "walk",
-				"max_advance_us": 227,
+				"max_advance_us": 224,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -28343,7 +28343,7 @@
 					"22888024e8718b27"
 				],
 				"kind": "walk",
-				"max_advance_us": 227,
+				"max_advance_us": 224,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -29775,7 +29775,7 @@
 					"1b50e8bae55fbca2"
 				],
 				"kind": "walk",
-				"max_advance_us": 227,
+				"max_advance_us": 214,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -29799,7 +29799,7 @@
 					"1b50e8bae55fbca2"
 				],
 				"kind": "walk",
-				"max_advance_us": 227,
+				"max_advance_us": 214,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -29999,7 +29999,7 @@
 					"a262ec85cb87d5fd"
 				],
 				"kind": "walk",
-				"max_advance_us": 225,
+				"max_advance_us": 230,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -30023,7 +30023,7 @@
 					"a262ec85cb87d5fd"
 				],
 				"kind": "walk",
-				"max_advance_us": 225,
+				"max_advance_us": 230,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -30266,7 +30266,7 @@
 					"d78f82d395655183"
 				],
 				"kind": "pour",
-				"max_advance_us": 219,
+				"max_advance_us": 231,
 				"max_step_us": 17,
 				"ok": true,
 				"phase": "physics",
@@ -30333,7 +30333,7 @@
 					"d78f82d395655183"
 				],
 				"kind": "pour",
-				"max_advance_us": 219,
+				"max_advance_us": 231,
 				"max_step_us": 17,
 				"ok": true,
 				"phase": "physics",
@@ -30545,7 +30545,7 @@
 					"d9e0dfd6d71b225b"
 				],
 				"kind": "step",
-				"max_advance_us": 217,
+				"max_advance_us": 228,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -30569,7 +30569,7 @@
 					"d9e0dfd6d71b225b"
 				],
 				"kind": "step",
-				"max_advance_us": 217,
+				"max_advance_us": 228,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -30769,7 +30769,7 @@
 					"5cca5e2501d241cf"
 				],
 				"kind": "step",
-				"max_advance_us": 213,
+				"max_advance_us": 229,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -30793,7 +30793,7 @@
 					"5cca5e2501d241cf"
 				],
 				"kind": "step",
-				"max_advance_us": 213,
+				"max_advance_us": 229,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -30993,7 +30993,7 @@
 					"22888024e8718b27"
 				],
 				"kind": "walk",
-				"max_advance_us": 211,
+				"max_advance_us": 233,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -31017,7 +31017,7 @@
 					"22888024e8718b27"
 				],
 				"kind": "walk",
-				"max_advance_us": 211,
+				"max_advance_us": 233,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -32449,7 +32449,7 @@
 					"1b50e8bae55fbca2"
 				],
 				"kind": "walk",
-				"max_advance_us": 217,
+				"max_advance_us": 228,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -32473,7 +32473,7 @@
 					"1b50e8bae55fbca2"
 				],
 				"kind": "walk",
-				"max_advance_us": 217,
+				"max_advance_us": 228,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -32673,7 +32673,7 @@
 					"a262ec85cb87d5fd"
 				],
 				"kind": "walk",
-				"max_advance_us": 225,
+				"max_advance_us": 241,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -32697,7 +32697,7 @@
 					"a262ec85cb87d5fd"
 				],
 				"kind": "walk",
-				"max_advance_us": 225,
+				"max_advance_us": 241,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -32940,8 +32940,8 @@
 					"d78f82d395655183"
 				],
 				"kind": "pour",
-				"max_advance_us": 227,
-				"max_step_us": 17,
+				"max_advance_us": 221,
+				"max_step_us": 20,
 				"ok": true,
 				"phase": "physics",
 				"rounds": 1,
@@ -33007,8 +33007,8 @@
 					"d78f82d395655183"
 				],
 				"kind": "pour",
-				"max_advance_us": 227,
-				"max_step_us": 17,
+				"max_advance_us": 221,
+				"max_step_us": 20,
 				"ok": true,
 				"phase": "physics",
 				"rounds": 1,
@@ -33219,7 +33219,7 @@
 					"d9e0dfd6d71b225b"
 				],
 				"kind": "step",
-				"max_advance_us": 219,
+				"max_advance_us": 230,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -33243,7 +33243,7 @@
 					"d9e0dfd6d71b225b"
 				],
 				"kind": "step",
-				"max_advance_us": 219,
+				"max_advance_us": 230,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -33443,7 +33443,7 @@
 					"5cca5e2501d241cf"
 				],
 				"kind": "step",
-				"max_advance_us": 225,
+				"max_advance_us": 228,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -33467,7 +33467,7 @@
 					"5cca5e2501d241cf"
 				],
 				"kind": "step",
-				"max_advance_us": 225,
+				"max_advance_us": 228,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -33667,7 +33667,7 @@
 					"22888024e8718b27"
 				],
 				"kind": "walk",
-				"max_advance_us": 217,
+				"max_advance_us": 237,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -33691,7 +33691,7 @@
 					"22888024e8718b27"
 				],
 				"kind": "walk",
-				"max_advance_us": 217,
+				"max_advance_us": 237,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -35175,8 +35175,8 @@
 					"578220cc3e935b87"
 				],
 				"kind": "walk",
-				"max_advance_us": 238,
-				"max_step_us": 0,
+				"max_advance_us": 254,
+				"max_step_us": 1,
 				"ok": true,
 				"phase": "physics",
 				"rounds": 1,
@@ -35199,8 +35199,8 @@
 					"578220cc3e935b87"
 				],
 				"kind": "walk",
-				"max_advance_us": 238,
-				"max_step_us": 0,
+				"max_advance_us": 254,
+				"max_step_us": 1,
 				"ok": true,
 				"phase": "physics",
 				"rounds": 1,
@@ -35442,8 +35442,8 @@
 					"6b2f8cb47ea9a672"
 				],
 				"kind": "push",
-				"max_advance_us": 240,
-				"max_step_us": 21,
+				"max_advance_us": 588,
+				"max_step_us": 49,
 				"ok": true,
 				"phase": "physics",
 				"rounds": 1,
@@ -35467,8 +35467,8 @@
 					"6b2f8cb47ea9a672"
 				],
 				"kind": "push",
-				"max_advance_us": 240,
-				"max_step_us": 21,
+				"max_advance_us": 588,
+				"max_step_us": 49,
 				"ok": true,
 				"phase": "physics",
 				"rounds": 1,
@@ -35715,7 +35715,7 @@
 					"28de810ca1b87925"
 				],
 				"kind": "push",
-				"max_advance_us": 251,
+				"max_advance_us": 271,
 				"max_step_us": 32,
 				"ok": true,
 				"phase": "physics",
@@ -35745,7 +35745,7 @@
 					"28de810ca1b87925"
 				],
 				"kind": "push",
-				"max_advance_us": 251,
+				"max_advance_us": 271,
 				"max_step_us": 32,
 				"ok": true,
 				"phase": "physics",
@@ -35987,7 +35987,7 @@
 					"af12a7e0f339a790"
 				],
 				"kind": "walk",
-				"max_advance_us": 237,
+				"max_advance_us": 260,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -36011,7 +36011,7 @@
 					"af12a7e0f339a790"
 				],
 				"kind": "walk",
-				"max_advance_us": 237,
+				"max_advance_us": 260,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -36253,7 +36253,7 @@
 					"1fd7d87ef4f677ce"
 				],
 				"kind": "walk",
-				"max_advance_us": 240,
+				"max_advance_us": 256,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -36277,7 +36277,7 @@
 					"1fd7d87ef4f677ce"
 				],
 				"kind": "walk",
-				"max_advance_us": 240,
+				"max_advance_us": 256,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -36519,7 +36519,7 @@
 					"541b386f1644cee5"
 				],
 				"kind": "walk",
-				"max_advance_us": 236,
+				"max_advance_us": 246,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -36543,7 +36543,7 @@
 					"541b386f1644cee5"
 				],
 				"kind": "walk",
-				"max_advance_us": 236,
+				"max_advance_us": 246,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -36785,7 +36785,7 @@
 					"bc8814ded4da158d"
 				],
 				"kind": "walk",
-				"max_advance_us": 235,
+				"max_advance_us": 253,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -36809,7 +36809,7 @@
 					"bc8814ded4da158d"
 				],
 				"kind": "walk",
-				"max_advance_us": 235,
+				"max_advance_us": 253,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -37051,7 +37051,7 @@
 					"17182baedcc25dee"
 				],
 				"kind": "walk",
-				"max_advance_us": 242,
+				"max_advance_us": 253,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -37075,7 +37075,7 @@
 					"17182baedcc25dee"
 				],
 				"kind": "walk",
-				"max_advance_us": 242,
+				"max_advance_us": 253,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -39225,7 +39225,7 @@
 					"578220cc3e935b87"
 				],
 				"kind": "walk",
-				"max_advance_us": 241,
+				"max_advance_us": 234,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -39249,7 +39249,7 @@
 					"578220cc3e935b87"
 				],
 				"kind": "walk",
-				"max_advance_us": 241,
+				"max_advance_us": 234,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -39493,7 +39493,7 @@
 				],
 				"kind": "push",
 				"max_advance_us": 247,
-				"max_step_us": 21,
+				"max_step_us": 22,
 				"ok": true,
 				"phase": "physics",
 				"rounds": 1,
@@ -39518,7 +39518,7 @@
 				],
 				"kind": "push",
 				"max_advance_us": 247,
-				"max_step_us": 21,
+				"max_step_us": 22,
 				"ok": true,
 				"phase": "physics",
 				"rounds": 1,
@@ -39765,8 +39765,8 @@
 					"28de810ca1b87925"
 				],
 				"kind": "push",
-				"max_advance_us": 246,
-				"max_step_us": 31,
+				"max_advance_us": 257,
+				"max_step_us": 30,
 				"ok": true,
 				"phase": "physics",
 				"rounds": 2,
@@ -39795,8 +39795,8 @@
 					"28de810ca1b87925"
 				],
 				"kind": "push",
-				"max_advance_us": 246,
-				"max_step_us": 31,
+				"max_advance_us": 257,
+				"max_step_us": 30,
 				"ok": true,
 				"phase": "physics",
 				"rounds": 2,
@@ -40037,7 +40037,7 @@
 					"af12a7e0f339a790"
 				],
 				"kind": "walk",
-				"max_advance_us": 243,
+				"max_advance_us": 244,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -40061,7 +40061,7 @@
 					"af12a7e0f339a790"
 				],
 				"kind": "walk",
-				"max_advance_us": 243,
+				"max_advance_us": 244,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -40303,7 +40303,7 @@
 					"1fd7d87ef4f677ce"
 				],
 				"kind": "walk",
-				"max_advance_us": 241,
+				"max_advance_us": 243,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -40327,7 +40327,7 @@
 					"1fd7d87ef4f677ce"
 				],
 				"kind": "walk",
-				"max_advance_us": 241,
+				"max_advance_us": 243,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -40835,7 +40835,7 @@
 					"bc8814ded4da158d"
 				],
 				"kind": "walk",
-				"max_advance_us": 244,
+				"max_advance_us": 246,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -40859,7 +40859,7 @@
 					"bc8814ded4da158d"
 				],
 				"kind": "walk",
-				"max_advance_us": 244,
+				"max_advance_us": 246,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -41101,7 +41101,7 @@
 					"17182baedcc25dee"
 				],
 				"kind": "walk",
-				"max_advance_us": 242,
+				"max_advance_us": 267,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -41125,7 +41125,7 @@
 					"17182baedcc25dee"
 				],
 				"kind": "walk",
-				"max_advance_us": 242,
+				"max_advance_us": 267,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -43275,7 +43275,7 @@
 					"578220cc3e935b87"
 				],
 				"kind": "walk",
-				"max_advance_us": 217,
+				"max_advance_us": 239,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -43299,7 +43299,7 @@
 					"578220cc3e935b87"
 				],
 				"kind": "walk",
-				"max_advance_us": 217,
+				"max_advance_us": 239,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -43815,7 +43815,7 @@
 					"28de810ca1b87925"
 				],
 				"kind": "push",
-				"max_advance_us": 246,
+				"max_advance_us": 258,
 				"max_step_us": 31,
 				"ok": true,
 				"phase": "physics",
@@ -43845,7 +43845,7 @@
 					"28de810ca1b87925"
 				],
 				"kind": "push",
-				"max_advance_us": 246,
+				"max_advance_us": 258,
 				"max_step_us": 31,
 				"ok": true,
 				"phase": "physics",
@@ -44087,7 +44087,7 @@
 					"af12a7e0f339a790"
 				],
 				"kind": "walk",
-				"max_advance_us": 239,
+				"max_advance_us": 244,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -44111,7 +44111,7 @@
 					"af12a7e0f339a790"
 				],
 				"kind": "walk",
-				"max_advance_us": 239,
+				"max_advance_us": 244,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -44353,7 +44353,7 @@
 					"1fd7d87ef4f677ce"
 				],
 				"kind": "walk",
-				"max_advance_us": 242,
+				"max_advance_us": 249,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -44377,7 +44377,7 @@
 					"1fd7d87ef4f677ce"
 				],
 				"kind": "walk",
-				"max_advance_us": 242,
+				"max_advance_us": 249,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -44619,7 +44619,7 @@
 					"541b386f1644cee5"
 				],
 				"kind": "walk",
-				"max_advance_us": 239,
+				"max_advance_us": 246,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -44643,7 +44643,7 @@
 					"541b386f1644cee5"
 				],
 				"kind": "walk",
-				"max_advance_us": 239,
+				"max_advance_us": 246,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -44885,7 +44885,7 @@
 					"bc8814ded4da158d"
 				],
 				"kind": "walk",
-				"max_advance_us": 236,
+				"max_advance_us": 247,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -44909,7 +44909,7 @@
 					"bc8814ded4da158d"
 				],
 				"kind": "walk",
-				"max_advance_us": 236,
+				"max_advance_us": 247,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -45151,7 +45151,7 @@
 					"17182baedcc25dee"
 				],
 				"kind": "walk",
-				"max_advance_us": 238,
+				"max_advance_us": 227,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -45175,7 +45175,7 @@
 					"17182baedcc25dee"
 				],
 				"kind": "walk",
-				"max_advance_us": 238,
+				"max_advance_us": 227,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -47394,7 +47394,7 @@
 					"dfb71f96b112f0e5"
 				],
 				"kind": "dig",
-				"max_advance_us": 252,
+				"max_advance_us": 261,
 				"max_step_us": 11,
 				"ok": true,
 				"phase": "physics",
@@ -47419,7 +47419,7 @@
 					"dfb71f96b112f0e5"
 				],
 				"kind": "dig",
-				"max_advance_us": 252,
+				"max_advance_us": 261,
 				"max_step_us": 11,
 				"ok": true,
 				"phase": "physics",
@@ -47719,8 +47719,8 @@
 					"7df4f95cf11bf4f2"
 				],
 				"kind": "push",
-				"max_advance_us": 287,
-				"max_step_us": 34,
+				"max_advance_us": 282,
+				"max_step_us": 32,
 				"ok": true,
 				"phase": "physics",
 				"rounds": 2,
@@ -47749,8 +47749,8 @@
 					"7df4f95cf11bf4f2"
 				],
 				"kind": "push",
-				"max_advance_us": 287,
-				"max_step_us": 34,
+				"max_advance_us": 282,
+				"max_step_us": 32,
 				"ok": true,
 				"phase": "physics",
 				"rounds": 2,
@@ -48043,7 +48043,7 @@
 					"af9870a517150e64"
 				],
 				"kind": "walk",
-				"max_advance_us": 251,
+				"max_advance_us": 283,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -48067,7 +48067,7 @@
 					"af9870a517150e64"
 				],
 				"kind": "walk",
-				"max_advance_us": 251,
+				"max_advance_us": 283,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -48361,7 +48361,7 @@
 					"1ef33af4764d0753"
 				],
 				"kind": "walk",
-				"max_advance_us": 271,
+				"max_advance_us": 273,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -48385,7 +48385,7 @@
 					"1ef33af4764d0753"
 				],
 				"kind": "walk",
-				"max_advance_us": 271,
+				"max_advance_us": 273,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -48679,7 +48679,7 @@
 					"28a782cd78948ac0"
 				],
 				"kind": "walk",
-				"max_advance_us": 271,
+				"max_advance_us": 278,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -48703,7 +48703,7 @@
 					"28a782cd78948ac0"
 				],
 				"kind": "walk",
-				"max_advance_us": 271,
+				"max_advance_us": 278,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -48997,7 +48997,7 @@
 					"78457e35675b8c8a"
 				],
 				"kind": "walk",
-				"max_advance_us": 268,
+				"max_advance_us": 286,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -49021,7 +49021,7 @@
 					"78457e35675b8c8a"
 				],
 				"kind": "walk",
-				"max_advance_us": 268,
+				"max_advance_us": 286,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -49315,7 +49315,7 @@
 					"0738d8778fae3db1"
 				],
 				"kind": "walk",
-				"max_advance_us": 270,
+				"max_advance_us": 281,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -49339,7 +49339,7 @@
 					"0738d8778fae3db1"
 				],
 				"kind": "walk",
-				"max_advance_us": 270,
+				"max_advance_us": 281,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -49676,7 +49676,7 @@
 					"264e029a8895aa12"
 				],
 				"kind": "pour",
-				"max_advance_us": 270,
+				"max_advance_us": 271,
 				"max_step_us": 17,
 				"ok": true,
 				"phase": "physics",
@@ -49743,7 +49743,7 @@
 					"264e029a8895aa12"
 				],
 				"kind": "pour",
-				"max_advance_us": 270,
+				"max_advance_us": 271,
 				"max_step_us": 17,
 				"ok": true,
 				"phase": "physics",
@@ -50037,7 +50037,7 @@
 					"21059b504ef602ab"
 				],
 				"kind": "step",
-				"max_advance_us": 259,
+				"max_advance_us": 271,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -50061,7 +50061,7 @@
 					"21059b504ef602ab"
 				],
 				"kind": "step",
-				"max_advance_us": 259,
+				"max_advance_us": 271,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -50355,7 +50355,7 @@
 					"39ff54a6b3f7cd09"
 				],
 				"kind": "step",
-				"max_advance_us": 277,
+				"max_advance_us": 273,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -50379,7 +50379,7 @@
 					"39ff54a6b3f7cd09"
 				],
 				"kind": "step",
-				"max_advance_us": 277,
+				"max_advance_us": 273,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -53578,7 +53578,7 @@
 					"dfb71f96b112f0e5"
 				],
 				"kind": "dig",
-				"max_advance_us": 255,
+				"max_advance_us": 264,
 				"max_step_us": 11,
 				"ok": true,
 				"phase": "physics",
@@ -53603,7 +53603,7 @@
 					"dfb71f96b112f0e5"
 				],
 				"kind": "dig",
-				"max_advance_us": 255,
+				"max_advance_us": 264,
 				"max_step_us": 11,
 				"ok": true,
 				"phase": "physics",
@@ -53903,8 +53903,8 @@
 					"7df4f95cf11bf4f2"
 				],
 				"kind": "push",
-				"max_advance_us": 279,
-				"max_step_us": 32,
+				"max_advance_us": 283,
+				"max_step_us": 31,
 				"ok": true,
 				"phase": "physics",
 				"rounds": 2,
@@ -53933,8 +53933,8 @@
 					"7df4f95cf11bf4f2"
 				],
 				"kind": "push",
-				"max_advance_us": 279,
-				"max_step_us": 32,
+				"max_advance_us": 283,
+				"max_step_us": 31,
 				"ok": true,
 				"phase": "physics",
 				"rounds": 2,
@@ -54227,7 +54227,7 @@
 					"af9870a517150e64"
 				],
 				"kind": "walk",
-				"max_advance_us": 269,
+				"max_advance_us": 257,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -54251,7 +54251,7 @@
 					"af9870a517150e64"
 				],
 				"kind": "walk",
-				"max_advance_us": 269,
+				"max_advance_us": 257,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -54545,7 +54545,7 @@
 					"1ef33af4764d0753"
 				],
 				"kind": "walk",
-				"max_advance_us": 269,
+				"max_advance_us": 259,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -54569,7 +54569,7 @@
 					"1ef33af4764d0753"
 				],
 				"kind": "walk",
-				"max_advance_us": 269,
+				"max_advance_us": 259,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -54863,7 +54863,7 @@
 					"28a782cd78948ac0"
 				],
 				"kind": "walk",
-				"max_advance_us": 269,
+				"max_advance_us": 270,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -54887,7 +54887,7 @@
 					"28a782cd78948ac0"
 				],
 				"kind": "walk",
-				"max_advance_us": 269,
+				"max_advance_us": 270,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -55181,7 +55181,7 @@
 					"78457e35675b8c8a"
 				],
 				"kind": "walk",
-				"max_advance_us": 270,
+				"max_advance_us": 280,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -55205,7 +55205,7 @@
 					"78457e35675b8c8a"
 				],
 				"kind": "walk",
-				"max_advance_us": 270,
+				"max_advance_us": 280,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -55499,7 +55499,7 @@
 					"0738d8778fae3db1"
 				],
 				"kind": "walk",
-				"max_advance_us": 271,
+				"max_advance_us": 275,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -55523,7 +55523,7 @@
 					"0738d8778fae3db1"
 				],
 				"kind": "walk",
-				"max_advance_us": 271,
+				"max_advance_us": 275,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -55860,8 +55860,8 @@
 					"264e029a8895aa12"
 				],
 				"kind": "pour",
-				"max_advance_us": 270,
-				"max_step_us": 17,
+				"max_advance_us": 256,
+				"max_step_us": 18,
 				"ok": true,
 				"phase": "physics",
 				"rounds": 1,
@@ -55927,8 +55927,8 @@
 					"264e029a8895aa12"
 				],
 				"kind": "pour",
-				"max_advance_us": 270,
-				"max_step_us": 17,
+				"max_advance_us": 256,
+				"max_step_us": 18,
 				"ok": true,
 				"phase": "physics",
 				"rounds": 1,
@@ -56221,7 +56221,7 @@
 					"21059b504ef602ab"
 				],
 				"kind": "step",
-				"max_advance_us": 268,
+				"max_advance_us": 256,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -56245,7 +56245,7 @@
 					"21059b504ef602ab"
 				],
 				"kind": "step",
-				"max_advance_us": 268,
+				"max_advance_us": 256,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -56539,7 +56539,7 @@
 					"39ff54a6b3f7cd09"
 				],
 				"kind": "step",
-				"max_advance_us": 268,
+				"max_advance_us": 262,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -56563,7 +56563,7 @@
 					"39ff54a6b3f7cd09"
 				],
 				"kind": "step",
-				"max_advance_us": 268,
+				"max_advance_us": 262,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -59762,7 +59762,7 @@
 					"dfb71f96b112f0e5"
 				],
 				"kind": "dig",
-				"max_advance_us": 269,
+				"max_advance_us": 289,
 				"max_step_us": 13,
 				"ok": true,
 				"phase": "physics",
@@ -59787,7 +59787,7 @@
 					"dfb71f96b112f0e5"
 				],
 				"kind": "dig",
-				"max_advance_us": 269,
+				"max_advance_us": 289,
 				"max_step_us": 13,
 				"ok": true,
 				"phase": "physics",
@@ -60087,8 +60087,8 @@
 					"7df4f95cf11bf4f2"
 				],
 				"kind": "push",
-				"max_advance_us": 288,
-				"max_step_us": 32,
+				"max_advance_us": 291,
+				"max_step_us": 29,
 				"ok": true,
 				"phase": "physics",
 				"rounds": 2,
@@ -60117,8 +60117,8 @@
 					"7df4f95cf11bf4f2"
 				],
 				"kind": "push",
-				"max_advance_us": 288,
-				"max_step_us": 32,
+				"max_advance_us": 291,
+				"max_step_us": 29,
 				"ok": true,
 				"phase": "physics",
 				"rounds": 2,
@@ -60411,7 +60411,7 @@
 					"af9870a517150e64"
 				],
 				"kind": "walk",
-				"max_advance_us": 271,
+				"max_advance_us": 285,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -60435,7 +60435,7 @@
 					"af9870a517150e64"
 				],
 				"kind": "walk",
-				"max_advance_us": 271,
+				"max_advance_us": 285,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -60729,7 +60729,7 @@
 					"1ef33af4764d0753"
 				],
 				"kind": "walk",
-				"max_advance_us": 278,
+				"max_advance_us": 281,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -60753,7 +60753,7 @@
 					"1ef33af4764d0753"
 				],
 				"kind": "walk",
-				"max_advance_us": 278,
+				"max_advance_us": 281,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -61047,7 +61047,7 @@
 					"28a782cd78948ac0"
 				],
 				"kind": "walk",
-				"max_advance_us": 277,
+				"max_advance_us": 288,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -61071,7 +61071,7 @@
 					"28a782cd78948ac0"
 				],
 				"kind": "walk",
-				"max_advance_us": 277,
+				"max_advance_us": 288,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -61365,7 +61365,7 @@
 					"78457e35675b8c8a"
 				],
 				"kind": "walk",
-				"max_advance_us": 272,
+				"max_advance_us": 271,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -61389,7 +61389,7 @@
 					"78457e35675b8c8a"
 				],
 				"kind": "walk",
-				"max_advance_us": 272,
+				"max_advance_us": 271,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -61683,7 +61683,7 @@
 					"0738d8778fae3db1"
 				],
 				"kind": "walk",
-				"max_advance_us": 282,
+				"max_advance_us": 263,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -61707,7 +61707,7 @@
 					"0738d8778fae3db1"
 				],
 				"kind": "walk",
-				"max_advance_us": 282,
+				"max_advance_us": 263,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -62044,8 +62044,8 @@
 					"264e029a8895aa12"
 				],
 				"kind": "pour",
-				"max_advance_us": 290,
-				"max_step_us": 18,
+				"max_advance_us": 270,
+				"max_step_us": 16,
 				"ok": true,
 				"phase": "physics",
 				"rounds": 1,
@@ -62111,8 +62111,8 @@
 					"264e029a8895aa12"
 				],
 				"kind": "pour",
-				"max_advance_us": 290,
-				"max_step_us": 18,
+				"max_advance_us": 270,
+				"max_step_us": 16,
 				"ok": true,
 				"phase": "physics",
 				"rounds": 1,
@@ -62405,7 +62405,7 @@
 					"21059b504ef602ab"
 				],
 				"kind": "step",
-				"max_advance_us": 303,
+				"max_advance_us": 264,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -62429,7 +62429,7 @@
 					"21059b504ef602ab"
 				],
 				"kind": "step",
-				"max_advance_us": 303,
+				"max_advance_us": 264,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -62723,7 +62723,7 @@
 					"39ff54a6b3f7cd09"
 				],
 				"kind": "step",
-				"max_advance_us": 266,
+				"max_advance_us": 281,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -62747,7 +62747,7 @@
 					"39ff54a6b3f7cd09"
 				],
 				"kind": "step",
-				"max_advance_us": 266,
+				"max_advance_us": 281,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -65944,7 +65944,7 @@
 					"05c8c75936810b64"
 				],
 				"kind": "walk",
-				"max_advance_us": 237,
+				"max_advance_us": 225,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -65968,7 +65968,7 @@
 					"05c8c75936810b64"
 				],
 				"kind": "walk",
-				"max_advance_us": 237,
+				"max_advance_us": 225,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -66221,8 +66221,8 @@
 					"d02ba9d2fb56b337"
 				],
 				"kind": "dig",
-				"max_advance_us": 254,
-				"max_step_us": 34,
+				"max_advance_us": 242,
+				"max_step_us": 31,
 				"ok": true,
 				"phase": "physics",
 				"rounds": 3,
@@ -66256,8 +66256,8 @@
 					"d02ba9d2fb56b337"
 				],
 				"kind": "dig",
-				"max_advance_us": 254,
-				"max_step_us": 34,
+				"max_advance_us": 242,
+				"max_step_us": 31,
 				"ok": true,
 				"phase": "physics",
 				"rounds": 3,
@@ -66601,7 +66601,7 @@
 					"34a2d1a05929ea2a"
 				],
 				"kind": "walk",
-				"max_advance_us": 224,
+				"max_advance_us": 252,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -66625,7 +66625,7 @@
 					"34a2d1a05929ea2a"
 				],
 				"kind": "walk",
-				"max_advance_us": 224,
+				"max_advance_us": 252,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -66867,7 +66867,7 @@
 					"f207d8cf35dbdaac"
 				],
 				"kind": "walk",
-				"max_advance_us": 235,
+				"max_advance_us": 244,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -66891,7 +66891,7 @@
 					"f207d8cf35dbdaac"
 				],
 				"kind": "walk",
-				"max_advance_us": 235,
+				"max_advance_us": 244,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -67133,7 +67133,7 @@
 					"8e6f86ec4abefc91"
 				],
 				"kind": "walk",
-				"max_advance_us": 236,
+				"max_advance_us": 245,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -67157,7 +67157,7 @@
 					"8e6f86ec4abefc91"
 				],
 				"kind": "walk",
-				"max_advance_us": 236,
+				"max_advance_us": 245,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -67399,7 +67399,7 @@
 					"2855fa8e514623ee"
 				],
 				"kind": "walk",
-				"max_advance_us": 237,
+				"max_advance_us": 222,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -67423,7 +67423,7 @@
 					"2855fa8e514623ee"
 				],
 				"kind": "walk",
-				"max_advance_us": 237,
+				"max_advance_us": 222,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -67665,7 +67665,7 @@
 					"c9413bbdbbf8413c"
 				],
 				"kind": "walk",
-				"max_advance_us": 235,
+				"max_advance_us": 245,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -67689,7 +67689,7 @@
 					"c9413bbdbbf8413c"
 				],
 				"kind": "walk",
-				"max_advance_us": 235,
+				"max_advance_us": 245,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -67931,7 +67931,7 @@
 					"3350525d02c440c9"
 				],
 				"kind": "walk",
-				"max_advance_us": 239,
+				"max_advance_us": 235,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -67955,7 +67955,7 @@
 					"3350525d02c440c9"
 				],
 				"kind": "walk",
-				"max_advance_us": 239,
+				"max_advance_us": 235,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -68197,7 +68197,7 @@
 					"e95601f34d55ea4f"
 				],
 				"kind": "walk",
-				"max_advance_us": 249,
+				"max_advance_us": 252,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -68221,7 +68221,7 @@
 					"e95601f34d55ea4f"
 				],
 				"kind": "walk",
-				"max_advance_us": 249,
+				"max_advance_us": 252,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -70583,7 +70583,7 @@
 					"05c8c75936810b64"
 				],
 				"kind": "walk",
-				"max_advance_us": 214,
+				"max_advance_us": 223,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -70607,7 +70607,7 @@
 					"05c8c75936810b64"
 				],
 				"kind": "walk",
-				"max_advance_us": 214,
+				"max_advance_us": 223,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -70860,7 +70860,7 @@
 					"d02ba9d2fb56b337"
 				],
 				"kind": "dig",
-				"max_advance_us": 258,
+				"max_advance_us": 255,
 				"max_step_us": 32,
 				"ok": true,
 				"phase": "physics",
@@ -70895,7 +70895,7 @@
 					"d02ba9d2fb56b337"
 				],
 				"kind": "dig",
-				"max_advance_us": 258,
+				"max_advance_us": 255,
 				"max_step_us": 32,
 				"ok": true,
 				"phase": "physics",
@@ -71240,7 +71240,7 @@
 					"34a2d1a05929ea2a"
 				],
 				"kind": "walk",
-				"max_advance_us": 245,
+				"max_advance_us": 223,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -71264,7 +71264,7 @@
 					"34a2d1a05929ea2a"
 				],
 				"kind": "walk",
-				"max_advance_us": 245,
+				"max_advance_us": 223,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -71506,7 +71506,7 @@
 					"f207d8cf35dbdaac"
 				],
 				"kind": "walk",
-				"max_advance_us": 244,
+				"max_advance_us": 228,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -71530,7 +71530,7 @@
 					"f207d8cf35dbdaac"
 				],
 				"kind": "walk",
-				"max_advance_us": 244,
+				"max_advance_us": 228,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -71772,7 +71772,7 @@
 					"8e6f86ec4abefc91"
 				],
 				"kind": "walk",
-				"max_advance_us": 242,
+				"max_advance_us": 220,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -71796,7 +71796,7 @@
 					"8e6f86ec4abefc91"
 				],
 				"kind": "walk",
-				"max_advance_us": 242,
+				"max_advance_us": 220,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -72038,7 +72038,7 @@
 					"2855fa8e514623ee"
 				],
 				"kind": "walk",
-				"max_advance_us": 251,
+				"max_advance_us": 248,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -72062,7 +72062,7 @@
 					"2855fa8e514623ee"
 				],
 				"kind": "walk",
-				"max_advance_us": 251,
+				"max_advance_us": 248,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -72304,7 +72304,7 @@
 					"c9413bbdbbf8413c"
 				],
 				"kind": "walk",
-				"max_advance_us": 246,
+				"max_advance_us": 236,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -72328,7 +72328,7 @@
 					"c9413bbdbbf8413c"
 				],
 				"kind": "walk",
-				"max_advance_us": 246,
+				"max_advance_us": 236,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -72570,7 +72570,7 @@
 					"3350525d02c440c9"
 				],
 				"kind": "walk",
-				"max_advance_us": 242,
+				"max_advance_us": 245,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -72594,7 +72594,7 @@
 					"3350525d02c440c9"
 				],
 				"kind": "walk",
-				"max_advance_us": 242,
+				"max_advance_us": 245,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -72836,8 +72836,8 @@
 					"e95601f34d55ea4f"
 				],
 				"kind": "walk",
-				"max_advance_us": 247,
-				"max_step_us": 0,
+				"max_advance_us": 297,
+				"max_step_us": 1,
 				"ok": true,
 				"phase": "physics",
 				"rounds": 1,
@@ -72860,8 +72860,8 @@
 					"e95601f34d55ea4f"
 				],
 				"kind": "walk",
-				"max_advance_us": 247,
-				"max_step_us": 0,
+				"max_advance_us": 297,
+				"max_step_us": 1,
 				"ok": true,
 				"phase": "physics",
 				"rounds": 1,
@@ -75222,7 +75222,7 @@
 					"05c8c75936810b64"
 				],
 				"kind": "walk",
-				"max_advance_us": 253,
+				"max_advance_us": 211,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -75246,7 +75246,7 @@
 					"05c8c75936810b64"
 				],
 				"kind": "walk",
-				"max_advance_us": 253,
+				"max_advance_us": 211,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -75499,7 +75499,7 @@
 					"d02ba9d2fb56b337"
 				],
 				"kind": "dig",
-				"max_advance_us": 252,
+				"max_advance_us": 247,
 				"max_step_us": 32,
 				"ok": true,
 				"phase": "physics",
@@ -75534,7 +75534,7 @@
 					"d02ba9d2fb56b337"
 				],
 				"kind": "dig",
-				"max_advance_us": 252,
+				"max_advance_us": 247,
 				"max_step_us": 32,
 				"ok": true,
 				"phase": "physics",
@@ -75879,7 +75879,7 @@
 					"34a2d1a05929ea2a"
 				],
 				"kind": "walk",
-				"max_advance_us": 246,
+				"max_advance_us": 239,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -75903,7 +75903,7 @@
 					"34a2d1a05929ea2a"
 				],
 				"kind": "walk",
-				"max_advance_us": 246,
+				"max_advance_us": 239,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -76145,7 +76145,7 @@
 					"f207d8cf35dbdaac"
 				],
 				"kind": "walk",
-				"max_advance_us": 252,
+				"max_advance_us": 246,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -76169,7 +76169,7 @@
 					"f207d8cf35dbdaac"
 				],
 				"kind": "walk",
-				"max_advance_us": 252,
+				"max_advance_us": 246,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -76411,7 +76411,7 @@
 					"8e6f86ec4abefc91"
 				],
 				"kind": "walk",
-				"max_advance_us": 250,
+				"max_advance_us": 236,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -76435,7 +76435,7 @@
 					"8e6f86ec4abefc91"
 				],
 				"kind": "walk",
-				"max_advance_us": 250,
+				"max_advance_us": 236,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -76677,7 +76677,7 @@
 					"2855fa8e514623ee"
 				],
 				"kind": "walk",
-				"max_advance_us": 245,
+				"max_advance_us": 213,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -76701,7 +76701,7 @@
 					"2855fa8e514623ee"
 				],
 				"kind": "walk",
-				"max_advance_us": 245,
+				"max_advance_us": 213,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -76943,7 +76943,7 @@
 					"c9413bbdbbf8413c"
 				],
 				"kind": "walk",
-				"max_advance_us": 243,
+				"max_advance_us": 231,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -76967,7 +76967,7 @@
 					"c9413bbdbbf8413c"
 				],
 				"kind": "walk",
-				"max_advance_us": 243,
+				"max_advance_us": 231,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -77209,7 +77209,7 @@
 					"3350525d02c440c9"
 				],
 				"kind": "walk",
-				"max_advance_us": 247,
+				"max_advance_us": 221,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -77233,7 +77233,7 @@
 					"3350525d02c440c9"
 				],
 				"kind": "walk",
-				"max_advance_us": 247,
+				"max_advance_us": 221,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -77475,7 +77475,7 @@
 					"e95601f34d55ea4f"
 				],
 				"kind": "walk",
-				"max_advance_us": 245,
+				"max_advance_us": 220,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -77499,7 +77499,7 @@
 					"e95601f34d55ea4f"
 				],
 				"kind": "walk",
-				"max_advance_us": 245,
+				"max_advance_us": 220,
 				"max_step_us": 0,
 				"ok": true,
 				"phase": "physics",
@@ -79834,7 +79834,7 @@
 							"a39e68d1e09db856"
 						],
 						"kind": "walk",
-						"max_advance_us": 213,
+						"max_advance_us": 204,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -79858,7 +79858,7 @@
 							"a39e68d1e09db856"
 						],
 						"kind": "walk",
-						"max_advance_us": 213,
+						"max_advance_us": 204,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -80057,8 +80057,8 @@
 							"9ae2c19f5a9d92f7"
 						],
 						"kind": "push",
-						"max_advance_us": 212,
-						"max_step_us": 21,
+						"max_advance_us": 216,
+						"max_step_us": 22,
 						"ok": true,
 						"phase": "physics",
 						"rounds": 1,
@@ -80082,8 +80082,8 @@
 							"9ae2c19f5a9d92f7"
 						],
 						"kind": "push",
-						"max_advance_us": 212,
-						"max_step_us": 21,
+						"max_advance_us": 216,
+						"max_step_us": 22,
 						"ok": true,
 						"phase": "physics",
 						"rounds": 1,
@@ -80281,7 +80281,7 @@
 							"bf2669347dc3f80f"
 						],
 						"kind": "push",
-						"max_advance_us": 218,
+						"max_advance_us": 209,
 						"max_step_us": 21,
 						"ok": true,
 						"phase": "physics",
@@ -80306,7 +80306,7 @@
 							"bf2669347dc3f80f"
 						],
 						"kind": "push",
-						"max_advance_us": 218,
+						"max_advance_us": 209,
 						"max_step_us": 21,
 						"ok": true,
 						"phase": "physics",
@@ -80505,7 +80505,7 @@
 							"0f1a1a8f7c613c9a"
 						],
 						"kind": "push",
-						"max_advance_us": 207,
+						"max_advance_us": 211,
 						"max_step_us": 21,
 						"ok": true,
 						"phase": "physics",
@@ -80530,7 +80530,7 @@
 							"0f1a1a8f7c613c9a"
 						],
 						"kind": "push",
-						"max_advance_us": 207,
+						"max_advance_us": 211,
 						"max_step_us": 21,
 						"ok": true,
 						"phase": "physics",
@@ -81568,7 +81568,7 @@
 							"a39e68d1e09db856"
 						],
 						"kind": "walk",
-						"max_advance_us": 214,
+						"max_advance_us": 220,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -81592,7 +81592,7 @@
 							"a39e68d1e09db856"
 						],
 						"kind": "walk",
-						"max_advance_us": 214,
+						"max_advance_us": 220,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -81791,8 +81791,8 @@
 							"9ae2c19f5a9d92f7"
 						],
 						"kind": "push",
-						"max_advance_us": 209,
-						"max_step_us": 21,
+						"max_advance_us": 208,
+						"max_step_us": 20,
 						"ok": true,
 						"phase": "physics",
 						"rounds": 1,
@@ -81816,8 +81816,8 @@
 							"9ae2c19f5a9d92f7"
 						],
 						"kind": "push",
-						"max_advance_us": 209,
-						"max_step_us": 21,
+						"max_advance_us": 208,
+						"max_step_us": 20,
 						"ok": true,
 						"phase": "physics",
 						"rounds": 1,
@@ -82015,7 +82015,7 @@
 							"bf2669347dc3f80f"
 						],
 						"kind": "push",
-						"max_advance_us": 233,
+						"max_advance_us": 261,
 						"max_step_us": 21,
 						"ok": true,
 						"phase": "physics",
@@ -82040,7 +82040,7 @@
 							"bf2669347dc3f80f"
 						],
 						"kind": "push",
-						"max_advance_us": 233,
+						"max_advance_us": 261,
 						"max_step_us": 21,
 						"ok": true,
 						"phase": "physics",
@@ -82239,7 +82239,7 @@
 							"0f1a1a8f7c613c9a"
 						],
 						"kind": "push",
-						"max_advance_us": 207,
+						"max_advance_us": 209,
 						"max_step_us": 21,
 						"ok": true,
 						"phase": "physics",
@@ -82264,7 +82264,7 @@
 							"0f1a1a8f7c613c9a"
 						],
 						"kind": "push",
-						"max_advance_us": 207,
+						"max_advance_us": 209,
 						"max_step_us": 21,
 						"ok": true,
 						"phase": "physics",
@@ -83302,7 +83302,7 @@
 							"a39e68d1e09db856"
 						],
 						"kind": "walk",
-						"max_advance_us": 202,
+						"max_advance_us": 231,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -83326,7 +83326,7 @@
 							"a39e68d1e09db856"
 						],
 						"kind": "walk",
-						"max_advance_us": 202,
+						"max_advance_us": 231,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -83525,8 +83525,8 @@
 							"9ae2c19f5a9d92f7"
 						],
 						"kind": "push",
-						"max_advance_us": 217,
-						"max_step_us": 20,
+						"max_advance_us": 211,
+						"max_step_us": 27,
 						"ok": true,
 						"phase": "physics",
 						"rounds": 1,
@@ -83550,8 +83550,8 @@
 							"9ae2c19f5a9d92f7"
 						],
 						"kind": "push",
-						"max_advance_us": 217,
-						"max_step_us": 20,
+						"max_advance_us": 211,
+						"max_step_us": 27,
 						"ok": true,
 						"phase": "physics",
 						"rounds": 1,
@@ -83749,7 +83749,7 @@
 							"bf2669347dc3f80f"
 						],
 						"kind": "push",
-						"max_advance_us": 206,
+						"max_advance_us": 216,
 						"max_step_us": 21,
 						"ok": true,
 						"phase": "physics",
@@ -83774,7 +83774,7 @@
 							"bf2669347dc3f80f"
 						],
 						"kind": "push",
-						"max_advance_us": 206,
+						"max_advance_us": 216,
 						"max_step_us": 21,
 						"ok": true,
 						"phase": "physics",
@@ -83973,7 +83973,7 @@
 							"0f1a1a8f7c613c9a"
 						],
 						"kind": "push",
-						"max_advance_us": 220,
+						"max_advance_us": 214,
 						"max_step_us": 21,
 						"ok": true,
 						"phase": "physics",
@@ -83998,7 +83998,7 @@
 							"0f1a1a8f7c613c9a"
 						],
 						"kind": "push",
-						"max_advance_us": 220,
+						"max_advance_us": 214,
 						"max_step_us": 21,
 						"ok": true,
 						"phase": "physics",
@@ -84875,11 +84875,11 @@
 			],
 			"consistent": true,
 			"id": "M01",
-			"max_advance_us": 233,
+			"max_advance_us": 261,
 			"max_rounds": 1,
 			"max_settle_ticks": 5,
 			"max_ticks": 5,
-			"max_undo_us": 500,
+			"max_undo_us": 499,
 			"repeats": 3,
 			"replays": 3,
 			"round_limit": 16,
@@ -85433,7 +85433,7 @@
 							"9a5a9b9253fcc49a"
 						],
 						"kind": "walk",
-						"max_advance_us": 191,
+						"max_advance_us": 223,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -85457,7 +85457,7 @@
 							"9a5a9b9253fcc49a"
 						],
 						"kind": "walk",
-						"max_advance_us": 191,
+						"max_advance_us": 223,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -85663,7 +85663,7 @@
 							"bbff51dc1a1b4d48"
 						],
 						"kind": "climb",
-						"max_advance_us": 201,
+						"max_advance_us": 210,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -85687,7 +85687,7 @@
 							"bbff51dc1a1b4d48"
 						],
 						"kind": "climb",
-						"max_advance_us": 201,
+						"max_advance_us": 210,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -85893,7 +85893,7 @@
 							"bb61ee91030efa27"
 						],
 						"kind": "climb",
-						"max_advance_us": 222,
+						"max_advance_us": 206,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -85917,7 +85917,7 @@
 							"bb61ee91030efa27"
 						],
 						"kind": "climb",
-						"max_advance_us": 222,
+						"max_advance_us": 206,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -86123,7 +86123,7 @@
 							"e2264bebfb3553fc"
 						],
 						"kind": "step",
-						"max_advance_us": 224,
+						"max_advance_us": 213,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -86147,7 +86147,7 @@
 							"e2264bebfb3553fc"
 						],
 						"kind": "step",
-						"max_advance_us": 224,
+						"max_advance_us": 213,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -86353,7 +86353,7 @@
 							"d11997ca3a359469"
 						],
 						"kind": "walk",
-						"max_advance_us": 226,
+						"max_advance_us": 220,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -86377,7 +86377,7 @@
 							"d11997ca3a359469"
 						],
 						"kind": "walk",
-						"max_advance_us": 226,
+						"max_advance_us": 220,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -86583,7 +86583,7 @@
 							"27f1f3dcb932e186"
 						],
 						"kind": "walk",
-						"max_advance_us": 218,
+						"max_advance_us": 212,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -86607,7 +86607,7 @@
 							"27f1f3dcb932e186"
 						],
 						"kind": "walk",
-						"max_advance_us": 218,
+						"max_advance_us": 212,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -86813,7 +86813,7 @@
 							"fe8fb75da21f22c7"
 						],
 						"kind": "walk",
-						"max_advance_us": 216,
+						"max_advance_us": 233,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -86837,7 +86837,7 @@
 							"fe8fb75da21f22c7"
 						],
 						"kind": "walk",
-						"max_advance_us": 216,
+						"max_advance_us": 233,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -87043,7 +87043,7 @@
 							"742fd1d107ebe82b"
 						],
 						"kind": "walk",
-						"max_advance_us": 199,
+						"max_advance_us": 246,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -87067,7 +87067,7 @@
 							"742fd1d107ebe82b"
 						],
 						"kind": "walk",
-						"max_advance_us": 199,
+						"max_advance_us": 246,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -87285,7 +87285,7 @@
 							"9c0f81da8e186670"
 						],
 						"kind": "walk",
-						"max_advance_us": 221,
+						"max_advance_us": 225,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -87321,7 +87321,7 @@
 							"9c0f81da8e186670"
 						],
 						"kind": "walk",
-						"max_advance_us": 221,
+						"max_advance_us": 225,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -87527,7 +87527,7 @@
 							"60edb36c9110de4e"
 						],
 						"kind": "walk",
-						"max_advance_us": 212,
+						"max_advance_us": 203,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -87551,7 +87551,7 @@
 							"60edb36c9110de4e"
 						],
 						"kind": "walk",
-						"max_advance_us": 212,
+						"max_advance_us": 203,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -87758,8 +87758,8 @@
 							"9a097e0469d78cb5"
 						],
 						"kind": "push",
-						"max_advance_us": 213,
-						"max_step_us": 22,
+						"max_advance_us": 222,
+						"max_step_us": 23,
 						"ok": true,
 						"phase": "physics",
 						"rounds": 1,
@@ -87783,8 +87783,8 @@
 							"9a097e0469d78cb5"
 						],
 						"kind": "push",
-						"max_advance_us": 213,
-						"max_step_us": 22,
+						"max_advance_us": 222,
+						"max_step_us": 23,
 						"ok": true,
 						"phase": "physics",
 						"rounds": 1,
@@ -87990,8 +87990,8 @@
 							"dd7934ddb9d2ef4c"
 						],
 						"kind": "push",
-						"max_advance_us": 211,
-						"max_step_us": 21,
+						"max_advance_us": 200,
+						"max_step_us": 22,
 						"ok": true,
 						"phase": "physics",
 						"rounds": 1,
@@ -88015,8 +88015,8 @@
 							"dd7934ddb9d2ef4c"
 						],
 						"kind": "push",
-						"max_advance_us": 211,
-						"max_step_us": 21,
+						"max_advance_us": 200,
+						"max_step_us": 22,
 						"ok": true,
 						"phase": "physics",
 						"rounds": 1,
@@ -90509,7 +90509,7 @@
 							"9a5a9b9253fcc49a"
 						],
 						"kind": "walk",
-						"max_advance_us": 202,
+						"max_advance_us": 215,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -90533,7 +90533,7 @@
 							"9a5a9b9253fcc49a"
 						],
 						"kind": "walk",
-						"max_advance_us": 202,
+						"max_advance_us": 215,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -90739,7 +90739,7 @@
 							"bbff51dc1a1b4d48"
 						],
 						"kind": "climb",
-						"max_advance_us": 211,
+						"max_advance_us": 227,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -90763,7 +90763,7 @@
 							"bbff51dc1a1b4d48"
 						],
 						"kind": "climb",
-						"max_advance_us": 211,
+						"max_advance_us": 227,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -90969,7 +90969,7 @@
 							"bb61ee91030efa27"
 						],
 						"kind": "climb",
-						"max_advance_us": 212,
+						"max_advance_us": 226,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -90993,7 +90993,7 @@
 							"bb61ee91030efa27"
 						],
 						"kind": "climb",
-						"max_advance_us": 212,
+						"max_advance_us": 226,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -91199,7 +91199,7 @@
 							"e2264bebfb3553fc"
 						],
 						"kind": "step",
-						"max_advance_us": 218,
+						"max_advance_us": 226,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -91223,7 +91223,7 @@
 							"e2264bebfb3553fc"
 						],
 						"kind": "step",
-						"max_advance_us": 218,
+						"max_advance_us": 226,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -91429,7 +91429,7 @@
 							"d11997ca3a359469"
 						],
 						"kind": "walk",
-						"max_advance_us": 217,
+						"max_advance_us": 235,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -91453,7 +91453,7 @@
 							"d11997ca3a359469"
 						],
 						"kind": "walk",
-						"max_advance_us": 217,
+						"max_advance_us": 235,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -91659,8 +91659,8 @@
 							"27f1f3dcb932e186"
 						],
 						"kind": "walk",
-						"max_advance_us": 211,
-						"max_step_us": 0,
+						"max_advance_us": 240,
+						"max_step_us": 8,
 						"ok": true,
 						"phase": "physics",
 						"rounds": 1,
@@ -91683,8 +91683,8 @@
 							"27f1f3dcb932e186"
 						],
 						"kind": "walk",
-						"max_advance_us": 211,
-						"max_step_us": 0,
+						"max_advance_us": 240,
+						"max_step_us": 8,
 						"ok": true,
 						"phase": "physics",
 						"rounds": 1,
@@ -91889,7 +91889,7 @@
 							"fe8fb75da21f22c7"
 						],
 						"kind": "walk",
-						"max_advance_us": 221,
+						"max_advance_us": 224,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -91913,7 +91913,7 @@
 							"fe8fb75da21f22c7"
 						],
 						"kind": "walk",
-						"max_advance_us": 221,
+						"max_advance_us": 224,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -92119,7 +92119,7 @@
 							"742fd1d107ebe82b"
 						],
 						"kind": "walk",
-						"max_advance_us": 212,
+						"max_advance_us": 219,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -92143,7 +92143,7 @@
 							"742fd1d107ebe82b"
 						],
 						"kind": "walk",
-						"max_advance_us": 212,
+						"max_advance_us": 219,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -92361,7 +92361,7 @@
 							"9c0f81da8e186670"
 						],
 						"kind": "walk",
-						"max_advance_us": 213,
+						"max_advance_us": 226,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -92397,7 +92397,7 @@
 							"9c0f81da8e186670"
 						],
 						"kind": "walk",
-						"max_advance_us": 213,
+						"max_advance_us": 226,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -92603,7 +92603,7 @@
 							"60edb36c9110de4e"
 						],
 						"kind": "walk",
-						"max_advance_us": 222,
+						"max_advance_us": 216,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -92627,7 +92627,7 @@
 							"60edb36c9110de4e"
 						],
 						"kind": "walk",
-						"max_advance_us": 222,
+						"max_advance_us": 216,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -92834,8 +92834,8 @@
 							"9a097e0469d78cb5"
 						],
 						"kind": "push",
-						"max_advance_us": 222,
-						"max_step_us": 21,
+						"max_advance_us": 224,
+						"max_step_us": 25,
 						"ok": true,
 						"phase": "physics",
 						"rounds": 1,
@@ -92859,8 +92859,8 @@
 							"9a097e0469d78cb5"
 						],
 						"kind": "push",
-						"max_advance_us": 222,
-						"max_step_us": 21,
+						"max_advance_us": 224,
+						"max_step_us": 25,
 						"ok": true,
 						"phase": "physics",
 						"rounds": 1,
@@ -93066,8 +93066,8 @@
 							"dd7934ddb9d2ef4c"
 						],
 						"kind": "push",
-						"max_advance_us": 224,
-						"max_step_us": 21,
+						"max_advance_us": 227,
+						"max_step_us": 23,
 						"ok": true,
 						"phase": "physics",
 						"rounds": 1,
@@ -93091,8 +93091,8 @@
 							"dd7934ddb9d2ef4c"
 						],
 						"kind": "push",
-						"max_advance_us": 224,
-						"max_step_us": 21,
+						"max_advance_us": 227,
+						"max_step_us": 23,
 						"ok": true,
 						"phase": "physics",
 						"rounds": 1,
@@ -95585,7 +95585,7 @@
 							"9a5a9b9253fcc49a"
 						],
 						"kind": "walk",
-						"max_advance_us": 201,
+						"max_advance_us": 224,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -95609,7 +95609,7 @@
 							"9a5a9b9253fcc49a"
 						],
 						"kind": "walk",
-						"max_advance_us": 201,
+						"max_advance_us": 224,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -95815,7 +95815,7 @@
 							"bbff51dc1a1b4d48"
 						],
 						"kind": "climb",
-						"max_advance_us": 212,
+						"max_advance_us": 215,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -95839,7 +95839,7 @@
 							"bbff51dc1a1b4d48"
 						],
 						"kind": "climb",
-						"max_advance_us": 212,
+						"max_advance_us": 215,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -96045,7 +96045,7 @@
 							"bb61ee91030efa27"
 						],
 						"kind": "climb",
-						"max_advance_us": 214,
+						"max_advance_us": 215,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -96069,7 +96069,7 @@
 							"bb61ee91030efa27"
 						],
 						"kind": "climb",
-						"max_advance_us": 214,
+						"max_advance_us": 215,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -96275,7 +96275,7 @@
 							"e2264bebfb3553fc"
 						],
 						"kind": "step",
-						"max_advance_us": 213,
+						"max_advance_us": 230,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -96299,7 +96299,7 @@
 							"e2264bebfb3553fc"
 						],
 						"kind": "step",
-						"max_advance_us": 213,
+						"max_advance_us": 230,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -96505,7 +96505,7 @@
 							"d11997ca3a359469"
 						],
 						"kind": "walk",
-						"max_advance_us": 212,
+						"max_advance_us": 231,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -96529,7 +96529,7 @@
 							"d11997ca3a359469"
 						],
 						"kind": "walk",
-						"max_advance_us": 212,
+						"max_advance_us": 231,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -96735,7 +96735,7 @@
 							"27f1f3dcb932e186"
 						],
 						"kind": "walk",
-						"max_advance_us": 222,
+						"max_advance_us": 217,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -96759,7 +96759,7 @@
 							"27f1f3dcb932e186"
 						],
 						"kind": "walk",
-						"max_advance_us": 222,
+						"max_advance_us": 217,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -96965,7 +96965,7 @@
 							"fe8fb75da21f22c7"
 						],
 						"kind": "walk",
-						"max_advance_us": 216,
+						"max_advance_us": 218,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -96989,7 +96989,7 @@
 							"fe8fb75da21f22c7"
 						],
 						"kind": "walk",
-						"max_advance_us": 216,
+						"max_advance_us": 218,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -97195,7 +97195,7 @@
 							"742fd1d107ebe82b"
 						],
 						"kind": "walk",
-						"max_advance_us": 227,
+						"max_advance_us": 214,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -97219,7 +97219,7 @@
 							"742fd1d107ebe82b"
 						],
 						"kind": "walk",
-						"max_advance_us": 227,
+						"max_advance_us": 214,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -97437,7 +97437,7 @@
 							"9c0f81da8e186670"
 						],
 						"kind": "walk",
-						"max_advance_us": 211,
+						"max_advance_us": 220,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -97473,7 +97473,7 @@
 							"9c0f81da8e186670"
 						],
 						"kind": "walk",
-						"max_advance_us": 211,
+						"max_advance_us": 220,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -97679,7 +97679,7 @@
 							"60edb36c9110de4e"
 						],
 						"kind": "walk",
-						"max_advance_us": 221,
+						"max_advance_us": 215,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -97703,7 +97703,7 @@
 							"60edb36c9110de4e"
 						],
 						"kind": "walk",
-						"max_advance_us": 221,
+						"max_advance_us": 215,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -97910,8 +97910,8 @@
 							"9a097e0469d78cb5"
 						],
 						"kind": "push",
-						"max_advance_us": 224,
-						"max_step_us": 22,
+						"max_advance_us": 216,
+						"max_step_us": 23,
 						"ok": true,
 						"phase": "physics",
 						"rounds": 1,
@@ -97935,8 +97935,8 @@
 							"9a097e0469d78cb5"
 						],
 						"kind": "push",
-						"max_advance_us": 224,
-						"max_step_us": 22,
+						"max_advance_us": 216,
+						"max_step_us": 23,
 						"ok": true,
 						"phase": "physics",
 						"rounds": 1,
@@ -98142,8 +98142,8 @@
 							"dd7934ddb9d2ef4c"
 						],
 						"kind": "push",
-						"max_advance_us": 228,
-						"max_step_us": 23,
+						"max_advance_us": 216,
+						"max_step_us": 21,
 						"ok": true,
 						"phase": "physics",
 						"rounds": 1,
@@ -98167,8 +98167,8 @@
 							"dd7934ddb9d2ef4c"
 						],
 						"kind": "push",
-						"max_advance_us": 228,
-						"max_step_us": 23,
+						"max_advance_us": 216,
+						"max_step_us": 21,
 						"ok": true,
 						"phase": "physics",
 						"rounds": 1,
@@ -100492,11 +100492,11 @@
 			],
 			"consistent": true,
 			"id": "M02",
-			"max_advance_us": 228,
+			"max_advance_us": 246,
 			"max_rounds": 4,
 			"max_settle_ticks": 16,
 			"max_ticks": 16,
-			"max_undo_us": 593,
+			"max_undo_us": 644,
 			"repeats": 3,
 			"replays": 3,
 			"round_limit": 16,
@@ -101764,8 +101764,8 @@
 							"51ee090d4975bf10"
 						],
 						"kind": "dig",
-						"max_advance_us": 222,
-						"max_step_us": 11,
+						"max_advance_us": 203,
+						"max_step_us": 12,
 						"ok": true,
 						"phase": "physics",
 						"rounds": 1,
@@ -101789,8 +101789,8 @@
 							"51ee090d4975bf10"
 						],
 						"kind": "dig",
-						"max_advance_us": 222,
-						"max_step_us": 11,
+						"max_advance_us": 203,
+						"max_step_us": 12,
 						"ok": true,
 						"phase": "physics",
 						"rounds": 1,
@@ -101996,7 +101996,7 @@
 							"692d0547ea176c31"
 						],
 						"kind": "walk",
-						"max_advance_us": 208,
+						"max_advance_us": 212,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -102020,7 +102020,7 @@
 							"692d0547ea176c31"
 						],
 						"kind": "walk",
-						"max_advance_us": 208,
+						"max_advance_us": 212,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -102218,7 +102218,7 @@
 							"8a0b10f3c19b2875"
 						],
 						"kind": "walk",
-						"max_advance_us": 214,
+						"max_advance_us": 215,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -102242,7 +102242,7 @@
 							"8a0b10f3c19b2875"
 						],
 						"kind": "walk",
-						"max_advance_us": 214,
+						"max_advance_us": 215,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -102441,8 +102441,8 @@
 							"85443bac30bdd16d"
 						],
 						"kind": "push",
-						"max_advance_us": 210,
-						"max_step_us": 21,
+						"max_advance_us": 212,
+						"max_step_us": 22,
 						"ok": true,
 						"phase": "physics",
 						"rounds": 1,
@@ -102466,8 +102466,8 @@
 							"85443bac30bdd16d"
 						],
 						"kind": "push",
-						"max_advance_us": 210,
-						"max_step_us": 21,
+						"max_advance_us": 212,
+						"max_step_us": 22,
 						"ok": true,
 						"phase": "physics",
 						"rounds": 1,
@@ -102665,8 +102665,8 @@
 							"e6c11422e48dde9f"
 						],
 						"kind": "push",
-						"max_advance_us": 219,
-						"max_step_us": 20,
+						"max_advance_us": 211,
+						"max_step_us": 22,
 						"ok": true,
 						"phase": "physics",
 						"rounds": 1,
@@ -102690,8 +102690,8 @@
 							"e6c11422e48dde9f"
 						],
 						"kind": "push",
-						"max_advance_us": 219,
-						"max_step_us": 20,
+						"max_advance_us": 211,
+						"max_step_us": 22,
 						"ok": true,
 						"phase": "physics",
 						"rounds": 1,
@@ -103898,7 +103898,7 @@
 						],
 						"kind": "dig",
 						"max_advance_us": 211,
-						"max_step_us": 10,
+						"max_step_us": 13,
 						"ok": true,
 						"phase": "physics",
 						"rounds": 1,
@@ -103923,7 +103923,7 @@
 						],
 						"kind": "dig",
 						"max_advance_us": 211,
-						"max_step_us": 10,
+						"max_step_us": 13,
 						"ok": true,
 						"phase": "physics",
 						"rounds": 1,
@@ -104129,7 +104129,7 @@
 							"692d0547ea176c31"
 						],
 						"kind": "walk",
-						"max_advance_us": 226,
+						"max_advance_us": 218,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -104153,7 +104153,7 @@
 							"692d0547ea176c31"
 						],
 						"kind": "walk",
-						"max_advance_us": 226,
+						"max_advance_us": 218,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -104351,7 +104351,7 @@
 							"8a0b10f3c19b2875"
 						],
 						"kind": "walk",
-						"max_advance_us": 223,
+						"max_advance_us": 210,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -104375,7 +104375,7 @@
 							"8a0b10f3c19b2875"
 						],
 						"kind": "walk",
-						"max_advance_us": 223,
+						"max_advance_us": 210,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -104574,7 +104574,7 @@
 							"85443bac30bdd16d"
 						],
 						"kind": "push",
-						"max_advance_us": 218,
+						"max_advance_us": 219,
 						"max_step_us": 21,
 						"ok": true,
 						"phase": "physics",
@@ -104599,7 +104599,7 @@
 							"85443bac30bdd16d"
 						],
 						"kind": "push",
-						"max_advance_us": 218,
+						"max_advance_us": 219,
 						"max_step_us": 21,
 						"ok": true,
 						"phase": "physics",
@@ -104798,8 +104798,8 @@
 							"e6c11422e48dde9f"
 						],
 						"kind": "push",
-						"max_advance_us": 206,
-						"max_step_us": 20,
+						"max_advance_us": 218,
+						"max_step_us": 22,
 						"ok": true,
 						"phase": "physics",
 						"rounds": 1,
@@ -104823,8 +104823,8 @@
 							"e6c11422e48dde9f"
 						],
 						"kind": "push",
-						"max_advance_us": 206,
-						"max_step_us": 20,
+						"max_advance_us": 218,
+						"max_step_us": 22,
 						"ok": true,
 						"phase": "physics",
 						"rounds": 1,
@@ -106030,8 +106030,8 @@
 							"51ee090d4975bf10"
 						],
 						"kind": "dig",
-						"max_advance_us": 220,
-						"max_step_us": 11,
+						"max_advance_us": 208,
+						"max_step_us": 12,
 						"ok": true,
 						"phase": "physics",
 						"rounds": 1,
@@ -106055,8 +106055,8 @@
 							"51ee090d4975bf10"
 						],
 						"kind": "dig",
-						"max_advance_us": 220,
-						"max_step_us": 11,
+						"max_advance_us": 208,
+						"max_step_us": 12,
 						"ok": true,
 						"phase": "physics",
 						"rounds": 1,
@@ -106262,7 +106262,7 @@
 							"692d0547ea176c31"
 						],
 						"kind": "walk",
-						"max_advance_us": 218,
+						"max_advance_us": 219,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -106286,7 +106286,7 @@
 							"692d0547ea176c31"
 						],
 						"kind": "walk",
-						"max_advance_us": 218,
+						"max_advance_us": 219,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -106484,7 +106484,7 @@
 							"8a0b10f3c19b2875"
 						],
 						"kind": "walk",
-						"max_advance_us": 213,
+						"max_advance_us": 218,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -106508,7 +106508,7 @@
 							"8a0b10f3c19b2875"
 						],
 						"kind": "walk",
-						"max_advance_us": 213,
+						"max_advance_us": 218,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -106707,8 +106707,8 @@
 							"85443bac30bdd16d"
 						],
 						"kind": "push",
-						"max_advance_us": 226,
-						"max_step_us": 21,
+						"max_advance_us": 206,
+						"max_step_us": 22,
 						"ok": true,
 						"phase": "physics",
 						"rounds": 1,
@@ -106732,8 +106732,8 @@
 							"85443bac30bdd16d"
 						],
 						"kind": "push",
-						"max_advance_us": 226,
-						"max_step_us": 21,
+						"max_advance_us": 206,
+						"max_step_us": 22,
 						"ok": true,
 						"phase": "physics",
 						"rounds": 1,
@@ -106931,7 +106931,7 @@
 							"e6c11422e48dde9f"
 						],
 						"kind": "push",
-						"max_advance_us": 216,
+						"max_advance_us": 212,
 						"max_step_us": 21,
 						"ok": true,
 						"phase": "physics",
@@ -106956,7 +106956,7 @@
 							"e6c11422e48dde9f"
 						],
 						"kind": "push",
-						"max_advance_us": 216,
+						"max_advance_us": 212,
 						"max_step_us": 21,
 						"ok": true,
 						"phase": "physics",
@@ -108001,11 +108001,11 @@
 			],
 			"consistent": true,
 			"id": "M03",
-			"max_advance_us": 226,
+			"max_advance_us": 219,
 			"max_rounds": 1,
 			"max_settle_ticks": 5,
 			"max_ticks": 5,
-			"max_undo_us": 498,
+			"max_undo_us": 558,
 			"repeats": 3,
 			"replays": 3,
 			"round_limit": 16,
@@ -108660,7 +108660,7 @@
 							"1b50e8bae55fbca2"
 						],
 						"kind": "walk",
-						"max_advance_us": 225,
+						"max_advance_us": 226,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -108684,7 +108684,7 @@
 							"1b50e8bae55fbca2"
 						],
 						"kind": "walk",
-						"max_advance_us": 225,
+						"max_advance_us": 226,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -108884,7 +108884,7 @@
 							"a262ec85cb87d5fd"
 						],
 						"kind": "walk",
-						"max_advance_us": 221,
+						"max_advance_us": 224,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -108908,7 +108908,7 @@
 							"a262ec85cb87d5fd"
 						],
 						"kind": "walk",
-						"max_advance_us": 221,
+						"max_advance_us": 224,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -109151,7 +109151,7 @@
 							"d78f82d395655183"
 						],
 						"kind": "pour",
-						"max_advance_us": 215,
+						"max_advance_us": 229,
 						"max_step_us": 18,
 						"ok": true,
 						"phase": "physics",
@@ -109218,7 +109218,7 @@
 							"d78f82d395655183"
 						],
 						"kind": "pour",
-						"max_advance_us": 215,
+						"max_advance_us": 229,
 						"max_step_us": 18,
 						"ok": true,
 						"phase": "physics",
@@ -109430,7 +109430,7 @@
 							"d9e0dfd6d71b225b"
 						],
 						"kind": "step",
-						"max_advance_us": 213,
+						"max_advance_us": 223,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -109454,7 +109454,7 @@
 							"d9e0dfd6d71b225b"
 						],
 						"kind": "step",
-						"max_advance_us": 213,
+						"max_advance_us": 223,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -109654,7 +109654,7 @@
 							"5cca5e2501d241cf"
 						],
 						"kind": "step",
-						"max_advance_us": 218,
+						"max_advance_us": 236,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -109678,7 +109678,7 @@
 							"5cca5e2501d241cf"
 						],
 						"kind": "step",
-						"max_advance_us": 218,
+						"max_advance_us": 236,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -109878,7 +109878,7 @@
 							"22888024e8718b27"
 						],
 						"kind": "walk",
-						"max_advance_us": 227,
+						"max_advance_us": 224,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -109902,7 +109902,7 @@
 							"22888024e8718b27"
 						],
 						"kind": "walk",
-						"max_advance_us": 227,
+						"max_advance_us": 224,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -111334,7 +111334,7 @@
 							"1b50e8bae55fbca2"
 						],
 						"kind": "walk",
-						"max_advance_us": 227,
+						"max_advance_us": 214,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -111358,7 +111358,7 @@
 							"1b50e8bae55fbca2"
 						],
 						"kind": "walk",
-						"max_advance_us": 227,
+						"max_advance_us": 214,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -111558,7 +111558,7 @@
 							"a262ec85cb87d5fd"
 						],
 						"kind": "walk",
-						"max_advance_us": 225,
+						"max_advance_us": 230,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -111582,7 +111582,7 @@
 							"a262ec85cb87d5fd"
 						],
 						"kind": "walk",
-						"max_advance_us": 225,
+						"max_advance_us": 230,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -111825,7 +111825,7 @@
 							"d78f82d395655183"
 						],
 						"kind": "pour",
-						"max_advance_us": 219,
+						"max_advance_us": 231,
 						"max_step_us": 17,
 						"ok": true,
 						"phase": "physics",
@@ -111892,7 +111892,7 @@
 							"d78f82d395655183"
 						],
 						"kind": "pour",
-						"max_advance_us": 219,
+						"max_advance_us": 231,
 						"max_step_us": 17,
 						"ok": true,
 						"phase": "physics",
@@ -112104,7 +112104,7 @@
 							"d9e0dfd6d71b225b"
 						],
 						"kind": "step",
-						"max_advance_us": 217,
+						"max_advance_us": 228,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -112128,7 +112128,7 @@
 							"d9e0dfd6d71b225b"
 						],
 						"kind": "step",
-						"max_advance_us": 217,
+						"max_advance_us": 228,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -112328,7 +112328,7 @@
 							"5cca5e2501d241cf"
 						],
 						"kind": "step",
-						"max_advance_us": 213,
+						"max_advance_us": 229,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -112352,7 +112352,7 @@
 							"5cca5e2501d241cf"
 						],
 						"kind": "step",
-						"max_advance_us": 213,
+						"max_advance_us": 229,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -112552,7 +112552,7 @@
 							"22888024e8718b27"
 						],
 						"kind": "walk",
-						"max_advance_us": 211,
+						"max_advance_us": 233,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -112576,7 +112576,7 @@
 							"22888024e8718b27"
 						],
 						"kind": "walk",
-						"max_advance_us": 211,
+						"max_advance_us": 233,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -114008,7 +114008,7 @@
 							"1b50e8bae55fbca2"
 						],
 						"kind": "walk",
-						"max_advance_us": 217,
+						"max_advance_us": 228,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -114032,7 +114032,7 @@
 							"1b50e8bae55fbca2"
 						],
 						"kind": "walk",
-						"max_advance_us": 217,
+						"max_advance_us": 228,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -114232,7 +114232,7 @@
 							"a262ec85cb87d5fd"
 						],
 						"kind": "walk",
-						"max_advance_us": 225,
+						"max_advance_us": 241,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -114256,7 +114256,7 @@
 							"a262ec85cb87d5fd"
 						],
 						"kind": "walk",
-						"max_advance_us": 225,
+						"max_advance_us": 241,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -114499,8 +114499,8 @@
 							"d78f82d395655183"
 						],
 						"kind": "pour",
-						"max_advance_us": 227,
-						"max_step_us": 17,
+						"max_advance_us": 221,
+						"max_step_us": 20,
 						"ok": true,
 						"phase": "physics",
 						"rounds": 1,
@@ -114566,8 +114566,8 @@
 							"d78f82d395655183"
 						],
 						"kind": "pour",
-						"max_advance_us": 227,
-						"max_step_us": 17,
+						"max_advance_us": 221,
+						"max_step_us": 20,
 						"ok": true,
 						"phase": "physics",
 						"rounds": 1,
@@ -114778,7 +114778,7 @@
 							"d9e0dfd6d71b225b"
 						],
 						"kind": "step",
-						"max_advance_us": 219,
+						"max_advance_us": 230,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -114802,7 +114802,7 @@
 							"d9e0dfd6d71b225b"
 						],
 						"kind": "step",
-						"max_advance_us": 219,
+						"max_advance_us": 230,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -115002,7 +115002,7 @@
 							"5cca5e2501d241cf"
 						],
 						"kind": "step",
-						"max_advance_us": 225,
+						"max_advance_us": 228,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -115026,7 +115026,7 @@
 							"5cca5e2501d241cf"
 						],
 						"kind": "step",
-						"max_advance_us": 225,
+						"max_advance_us": 228,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -115226,7 +115226,7 @@
 							"22888024e8718b27"
 						],
 						"kind": "walk",
-						"max_advance_us": 217,
+						"max_advance_us": 237,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -115250,7 +115250,7 @@
 							"22888024e8718b27"
 						],
 						"kind": "walk",
-						"max_advance_us": 217,
+						"max_advance_us": 237,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -116513,11 +116513,11 @@
 			],
 			"consistent": true,
 			"id": "M04",
-			"max_advance_us": 227,
+			"max_advance_us": 241,
 			"max_rounds": 1,
 			"max_settle_ticks": 47,
 			"max_ticks": 47,
-			"max_undo_us": 554,
+			"max_undo_us": 599,
 			"repeats": 3,
 			"replays": 3,
 			"round_limit": 16,
@@ -117291,8 +117291,8 @@
 							"578220cc3e935b87"
 						],
 						"kind": "walk",
-						"max_advance_us": 238,
-						"max_step_us": 0,
+						"max_advance_us": 254,
+						"max_step_us": 1,
 						"ok": true,
 						"phase": "physics",
 						"rounds": 1,
@@ -117315,8 +117315,8 @@
 							"578220cc3e935b87"
 						],
 						"kind": "walk",
-						"max_advance_us": 238,
-						"max_step_us": 0,
+						"max_advance_us": 254,
+						"max_step_us": 1,
 						"ok": true,
 						"phase": "physics",
 						"rounds": 1,
@@ -117558,8 +117558,8 @@
 							"6b2f8cb47ea9a672"
 						],
 						"kind": "push",
-						"max_advance_us": 240,
-						"max_step_us": 21,
+						"max_advance_us": 588,
+						"max_step_us": 49,
 						"ok": true,
 						"phase": "physics",
 						"rounds": 1,
@@ -117583,8 +117583,8 @@
 							"6b2f8cb47ea9a672"
 						],
 						"kind": "push",
-						"max_advance_us": 240,
-						"max_step_us": 21,
+						"max_advance_us": 588,
+						"max_step_us": 49,
 						"ok": true,
 						"phase": "physics",
 						"rounds": 1,
@@ -117831,7 +117831,7 @@
 							"28de810ca1b87925"
 						],
 						"kind": "push",
-						"max_advance_us": 251,
+						"max_advance_us": 271,
 						"max_step_us": 32,
 						"ok": true,
 						"phase": "physics",
@@ -117861,7 +117861,7 @@
 							"28de810ca1b87925"
 						],
 						"kind": "push",
-						"max_advance_us": 251,
+						"max_advance_us": 271,
 						"max_step_us": 32,
 						"ok": true,
 						"phase": "physics",
@@ -118103,7 +118103,7 @@
 							"af12a7e0f339a790"
 						],
 						"kind": "walk",
-						"max_advance_us": 237,
+						"max_advance_us": 260,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -118127,7 +118127,7 @@
 							"af12a7e0f339a790"
 						],
 						"kind": "walk",
-						"max_advance_us": 237,
+						"max_advance_us": 260,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -118369,7 +118369,7 @@
 							"1fd7d87ef4f677ce"
 						],
 						"kind": "walk",
-						"max_advance_us": 240,
+						"max_advance_us": 256,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -118393,7 +118393,7 @@
 							"1fd7d87ef4f677ce"
 						],
 						"kind": "walk",
-						"max_advance_us": 240,
+						"max_advance_us": 256,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -118635,7 +118635,7 @@
 							"541b386f1644cee5"
 						],
 						"kind": "walk",
-						"max_advance_us": 236,
+						"max_advance_us": 246,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -118659,7 +118659,7 @@
 							"541b386f1644cee5"
 						],
 						"kind": "walk",
-						"max_advance_us": 236,
+						"max_advance_us": 246,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -118901,7 +118901,7 @@
 							"bc8814ded4da158d"
 						],
 						"kind": "walk",
-						"max_advance_us": 235,
+						"max_advance_us": 253,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -118925,7 +118925,7 @@
 							"bc8814ded4da158d"
 						],
 						"kind": "walk",
-						"max_advance_us": 235,
+						"max_advance_us": 253,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -119167,7 +119167,7 @@
 							"17182baedcc25dee"
 						],
 						"kind": "walk",
-						"max_advance_us": 242,
+						"max_advance_us": 253,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -119191,7 +119191,7 @@
 							"17182baedcc25dee"
 						],
 						"kind": "walk",
-						"max_advance_us": 242,
+						"max_advance_us": 253,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -121341,7 +121341,7 @@
 							"578220cc3e935b87"
 						],
 						"kind": "walk",
-						"max_advance_us": 241,
+						"max_advance_us": 234,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -121365,7 +121365,7 @@
 							"578220cc3e935b87"
 						],
 						"kind": "walk",
-						"max_advance_us": 241,
+						"max_advance_us": 234,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -121609,7 +121609,7 @@
 						],
 						"kind": "push",
 						"max_advance_us": 247,
-						"max_step_us": 21,
+						"max_step_us": 22,
 						"ok": true,
 						"phase": "physics",
 						"rounds": 1,
@@ -121634,7 +121634,7 @@
 						],
 						"kind": "push",
 						"max_advance_us": 247,
-						"max_step_us": 21,
+						"max_step_us": 22,
 						"ok": true,
 						"phase": "physics",
 						"rounds": 1,
@@ -121881,8 +121881,8 @@
 							"28de810ca1b87925"
 						],
 						"kind": "push",
-						"max_advance_us": 246,
-						"max_step_us": 31,
+						"max_advance_us": 257,
+						"max_step_us": 30,
 						"ok": true,
 						"phase": "physics",
 						"rounds": 2,
@@ -121911,8 +121911,8 @@
 							"28de810ca1b87925"
 						],
 						"kind": "push",
-						"max_advance_us": 246,
-						"max_step_us": 31,
+						"max_advance_us": 257,
+						"max_step_us": 30,
 						"ok": true,
 						"phase": "physics",
 						"rounds": 2,
@@ -122153,7 +122153,7 @@
 							"af12a7e0f339a790"
 						],
 						"kind": "walk",
-						"max_advance_us": 243,
+						"max_advance_us": 244,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -122177,7 +122177,7 @@
 							"af12a7e0f339a790"
 						],
 						"kind": "walk",
-						"max_advance_us": 243,
+						"max_advance_us": 244,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -122419,7 +122419,7 @@
 							"1fd7d87ef4f677ce"
 						],
 						"kind": "walk",
-						"max_advance_us": 241,
+						"max_advance_us": 243,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -122443,7 +122443,7 @@
 							"1fd7d87ef4f677ce"
 						],
 						"kind": "walk",
-						"max_advance_us": 241,
+						"max_advance_us": 243,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -122951,7 +122951,7 @@
 							"bc8814ded4da158d"
 						],
 						"kind": "walk",
-						"max_advance_us": 244,
+						"max_advance_us": 246,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -122975,7 +122975,7 @@
 							"bc8814ded4da158d"
 						],
 						"kind": "walk",
-						"max_advance_us": 244,
+						"max_advance_us": 246,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -123217,7 +123217,7 @@
 							"17182baedcc25dee"
 						],
 						"kind": "walk",
-						"max_advance_us": 242,
+						"max_advance_us": 267,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -123241,7 +123241,7 @@
 							"17182baedcc25dee"
 						],
 						"kind": "walk",
-						"max_advance_us": 242,
+						"max_advance_us": 267,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -125391,7 +125391,7 @@
 							"578220cc3e935b87"
 						],
 						"kind": "walk",
-						"max_advance_us": 217,
+						"max_advance_us": 239,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -125415,7 +125415,7 @@
 							"578220cc3e935b87"
 						],
 						"kind": "walk",
-						"max_advance_us": 217,
+						"max_advance_us": 239,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -125931,7 +125931,7 @@
 							"28de810ca1b87925"
 						],
 						"kind": "push",
-						"max_advance_us": 246,
+						"max_advance_us": 258,
 						"max_step_us": 31,
 						"ok": true,
 						"phase": "physics",
@@ -125961,7 +125961,7 @@
 							"28de810ca1b87925"
 						],
 						"kind": "push",
-						"max_advance_us": 246,
+						"max_advance_us": 258,
 						"max_step_us": 31,
 						"ok": true,
 						"phase": "physics",
@@ -126203,7 +126203,7 @@
 							"af12a7e0f339a790"
 						],
 						"kind": "walk",
-						"max_advance_us": 239,
+						"max_advance_us": 244,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -126227,7 +126227,7 @@
 							"af12a7e0f339a790"
 						],
 						"kind": "walk",
-						"max_advance_us": 239,
+						"max_advance_us": 244,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -126469,7 +126469,7 @@
 							"1fd7d87ef4f677ce"
 						],
 						"kind": "walk",
-						"max_advance_us": 242,
+						"max_advance_us": 249,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -126493,7 +126493,7 @@
 							"1fd7d87ef4f677ce"
 						],
 						"kind": "walk",
-						"max_advance_us": 242,
+						"max_advance_us": 249,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -126735,7 +126735,7 @@
 							"541b386f1644cee5"
 						],
 						"kind": "walk",
-						"max_advance_us": 239,
+						"max_advance_us": 246,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -126759,7 +126759,7 @@
 							"541b386f1644cee5"
 						],
 						"kind": "walk",
-						"max_advance_us": 239,
+						"max_advance_us": 246,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -127001,7 +127001,7 @@
 							"bc8814ded4da158d"
 						],
 						"kind": "walk",
-						"max_advance_us": 236,
+						"max_advance_us": 247,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -127025,7 +127025,7 @@
 							"bc8814ded4da158d"
 						],
 						"kind": "walk",
-						"max_advance_us": 236,
+						"max_advance_us": 247,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -127267,7 +127267,7 @@
 							"17182baedcc25dee"
 						],
 						"kind": "walk",
-						"max_advance_us": 238,
+						"max_advance_us": 227,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -127291,7 +127291,7 @@
 							"17182baedcc25dee"
 						],
 						"kind": "walk",
-						"max_advance_us": 238,
+						"max_advance_us": 227,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -129236,11 +129236,11 @@
 			],
 			"consistent": true,
 			"id": "M05",
-			"max_advance_us": 251,
+			"max_advance_us": 588,
 			"max_rounds": 2,
 			"max_settle_ticks": 10,
 			"max_ticks": 10,
-			"max_undo_us": 660,
+			"max_undo_us": 857,
 			"repeats": 3,
 			"replays": 3,
 			"round_limit": 16,
@@ -130398,7 +130398,7 @@
 							"dfb71f96b112f0e5"
 						],
 						"kind": "dig",
-						"max_advance_us": 252,
+						"max_advance_us": 261,
 						"max_step_us": 11,
 						"ok": true,
 						"phase": "physics",
@@ -130423,7 +130423,7 @@
 							"dfb71f96b112f0e5"
 						],
 						"kind": "dig",
-						"max_advance_us": 252,
+						"max_advance_us": 261,
 						"max_step_us": 11,
 						"ok": true,
 						"phase": "physics",
@@ -130723,8 +130723,8 @@
 							"7df4f95cf11bf4f2"
 						],
 						"kind": "push",
-						"max_advance_us": 287,
-						"max_step_us": 34,
+						"max_advance_us": 282,
+						"max_step_us": 32,
 						"ok": true,
 						"phase": "physics",
 						"rounds": 2,
@@ -130753,8 +130753,8 @@
 							"7df4f95cf11bf4f2"
 						],
 						"kind": "push",
-						"max_advance_us": 287,
-						"max_step_us": 34,
+						"max_advance_us": 282,
+						"max_step_us": 32,
 						"ok": true,
 						"phase": "physics",
 						"rounds": 2,
@@ -131047,7 +131047,7 @@
 							"af9870a517150e64"
 						],
 						"kind": "walk",
-						"max_advance_us": 251,
+						"max_advance_us": 283,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -131071,7 +131071,7 @@
 							"af9870a517150e64"
 						],
 						"kind": "walk",
-						"max_advance_us": 251,
+						"max_advance_us": 283,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -131365,7 +131365,7 @@
 							"1ef33af4764d0753"
 						],
 						"kind": "walk",
-						"max_advance_us": 271,
+						"max_advance_us": 273,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -131389,7 +131389,7 @@
 							"1ef33af4764d0753"
 						],
 						"kind": "walk",
-						"max_advance_us": 271,
+						"max_advance_us": 273,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -131683,7 +131683,7 @@
 							"28a782cd78948ac0"
 						],
 						"kind": "walk",
-						"max_advance_us": 271,
+						"max_advance_us": 278,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -131707,7 +131707,7 @@
 							"28a782cd78948ac0"
 						],
 						"kind": "walk",
-						"max_advance_us": 271,
+						"max_advance_us": 278,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -132001,7 +132001,7 @@
 							"78457e35675b8c8a"
 						],
 						"kind": "walk",
-						"max_advance_us": 268,
+						"max_advance_us": 286,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -132025,7 +132025,7 @@
 							"78457e35675b8c8a"
 						],
 						"kind": "walk",
-						"max_advance_us": 268,
+						"max_advance_us": 286,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -132319,7 +132319,7 @@
 							"0738d8778fae3db1"
 						],
 						"kind": "walk",
-						"max_advance_us": 270,
+						"max_advance_us": 281,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -132343,7 +132343,7 @@
 							"0738d8778fae3db1"
 						],
 						"kind": "walk",
-						"max_advance_us": 270,
+						"max_advance_us": 281,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -132680,7 +132680,7 @@
 							"264e029a8895aa12"
 						],
 						"kind": "pour",
-						"max_advance_us": 270,
+						"max_advance_us": 271,
 						"max_step_us": 17,
 						"ok": true,
 						"phase": "physics",
@@ -132747,7 +132747,7 @@
 							"264e029a8895aa12"
 						],
 						"kind": "pour",
-						"max_advance_us": 270,
+						"max_advance_us": 271,
 						"max_step_us": 17,
 						"ok": true,
 						"phase": "physics",
@@ -133041,7 +133041,7 @@
 							"21059b504ef602ab"
 						],
 						"kind": "step",
-						"max_advance_us": 259,
+						"max_advance_us": 271,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -133065,7 +133065,7 @@
 							"21059b504ef602ab"
 						],
 						"kind": "step",
-						"max_advance_us": 259,
+						"max_advance_us": 271,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -133359,7 +133359,7 @@
 							"39ff54a6b3f7cd09"
 						],
 						"kind": "step",
-						"max_advance_us": 277,
+						"max_advance_us": 273,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -133383,7 +133383,7 @@
 							"39ff54a6b3f7cd09"
 						],
 						"kind": "step",
-						"max_advance_us": 277,
+						"max_advance_us": 273,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -136582,7 +136582,7 @@
 							"dfb71f96b112f0e5"
 						],
 						"kind": "dig",
-						"max_advance_us": 255,
+						"max_advance_us": 264,
 						"max_step_us": 11,
 						"ok": true,
 						"phase": "physics",
@@ -136607,7 +136607,7 @@
 							"dfb71f96b112f0e5"
 						],
 						"kind": "dig",
-						"max_advance_us": 255,
+						"max_advance_us": 264,
 						"max_step_us": 11,
 						"ok": true,
 						"phase": "physics",
@@ -136907,8 +136907,8 @@
 							"7df4f95cf11bf4f2"
 						],
 						"kind": "push",
-						"max_advance_us": 279,
-						"max_step_us": 32,
+						"max_advance_us": 283,
+						"max_step_us": 31,
 						"ok": true,
 						"phase": "physics",
 						"rounds": 2,
@@ -136937,8 +136937,8 @@
 							"7df4f95cf11bf4f2"
 						],
 						"kind": "push",
-						"max_advance_us": 279,
-						"max_step_us": 32,
+						"max_advance_us": 283,
+						"max_step_us": 31,
 						"ok": true,
 						"phase": "physics",
 						"rounds": 2,
@@ -137231,7 +137231,7 @@
 							"af9870a517150e64"
 						],
 						"kind": "walk",
-						"max_advance_us": 269,
+						"max_advance_us": 257,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -137255,7 +137255,7 @@
 							"af9870a517150e64"
 						],
 						"kind": "walk",
-						"max_advance_us": 269,
+						"max_advance_us": 257,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -137549,7 +137549,7 @@
 							"1ef33af4764d0753"
 						],
 						"kind": "walk",
-						"max_advance_us": 269,
+						"max_advance_us": 259,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -137573,7 +137573,7 @@
 							"1ef33af4764d0753"
 						],
 						"kind": "walk",
-						"max_advance_us": 269,
+						"max_advance_us": 259,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -137867,7 +137867,7 @@
 							"28a782cd78948ac0"
 						],
 						"kind": "walk",
-						"max_advance_us": 269,
+						"max_advance_us": 270,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -137891,7 +137891,7 @@
 							"28a782cd78948ac0"
 						],
 						"kind": "walk",
-						"max_advance_us": 269,
+						"max_advance_us": 270,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -138185,7 +138185,7 @@
 							"78457e35675b8c8a"
 						],
 						"kind": "walk",
-						"max_advance_us": 270,
+						"max_advance_us": 280,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -138209,7 +138209,7 @@
 							"78457e35675b8c8a"
 						],
 						"kind": "walk",
-						"max_advance_us": 270,
+						"max_advance_us": 280,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -138503,7 +138503,7 @@
 							"0738d8778fae3db1"
 						],
 						"kind": "walk",
-						"max_advance_us": 271,
+						"max_advance_us": 275,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -138527,7 +138527,7 @@
 							"0738d8778fae3db1"
 						],
 						"kind": "walk",
-						"max_advance_us": 271,
+						"max_advance_us": 275,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -138864,8 +138864,8 @@
 							"264e029a8895aa12"
 						],
 						"kind": "pour",
-						"max_advance_us": 270,
-						"max_step_us": 17,
+						"max_advance_us": 256,
+						"max_step_us": 18,
 						"ok": true,
 						"phase": "physics",
 						"rounds": 1,
@@ -138931,8 +138931,8 @@
 							"264e029a8895aa12"
 						],
 						"kind": "pour",
-						"max_advance_us": 270,
-						"max_step_us": 17,
+						"max_advance_us": 256,
+						"max_step_us": 18,
 						"ok": true,
 						"phase": "physics",
 						"rounds": 1,
@@ -139225,7 +139225,7 @@
 							"21059b504ef602ab"
 						],
 						"kind": "step",
-						"max_advance_us": 268,
+						"max_advance_us": 256,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -139249,7 +139249,7 @@
 							"21059b504ef602ab"
 						],
 						"kind": "step",
-						"max_advance_us": 268,
+						"max_advance_us": 256,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -139543,7 +139543,7 @@
 							"39ff54a6b3f7cd09"
 						],
 						"kind": "step",
-						"max_advance_us": 268,
+						"max_advance_us": 262,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -139567,7 +139567,7 @@
 							"39ff54a6b3f7cd09"
 						],
 						"kind": "step",
-						"max_advance_us": 268,
+						"max_advance_us": 262,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -142766,7 +142766,7 @@
 							"dfb71f96b112f0e5"
 						],
 						"kind": "dig",
-						"max_advance_us": 269,
+						"max_advance_us": 289,
 						"max_step_us": 13,
 						"ok": true,
 						"phase": "physics",
@@ -142791,7 +142791,7 @@
 							"dfb71f96b112f0e5"
 						],
 						"kind": "dig",
-						"max_advance_us": 269,
+						"max_advance_us": 289,
 						"max_step_us": 13,
 						"ok": true,
 						"phase": "physics",
@@ -143091,8 +143091,8 @@
 							"7df4f95cf11bf4f2"
 						],
 						"kind": "push",
-						"max_advance_us": 288,
-						"max_step_us": 32,
+						"max_advance_us": 291,
+						"max_step_us": 29,
 						"ok": true,
 						"phase": "physics",
 						"rounds": 2,
@@ -143121,8 +143121,8 @@
 							"7df4f95cf11bf4f2"
 						],
 						"kind": "push",
-						"max_advance_us": 288,
-						"max_step_us": 32,
+						"max_advance_us": 291,
+						"max_step_us": 29,
 						"ok": true,
 						"phase": "physics",
 						"rounds": 2,
@@ -143415,7 +143415,7 @@
 							"af9870a517150e64"
 						],
 						"kind": "walk",
-						"max_advance_us": 271,
+						"max_advance_us": 285,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -143439,7 +143439,7 @@
 							"af9870a517150e64"
 						],
 						"kind": "walk",
-						"max_advance_us": 271,
+						"max_advance_us": 285,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -143733,7 +143733,7 @@
 							"1ef33af4764d0753"
 						],
 						"kind": "walk",
-						"max_advance_us": 278,
+						"max_advance_us": 281,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -143757,7 +143757,7 @@
 							"1ef33af4764d0753"
 						],
 						"kind": "walk",
-						"max_advance_us": 278,
+						"max_advance_us": 281,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -144051,7 +144051,7 @@
 							"28a782cd78948ac0"
 						],
 						"kind": "walk",
-						"max_advance_us": 277,
+						"max_advance_us": 288,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -144075,7 +144075,7 @@
 							"28a782cd78948ac0"
 						],
 						"kind": "walk",
-						"max_advance_us": 277,
+						"max_advance_us": 288,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -144369,7 +144369,7 @@
 							"78457e35675b8c8a"
 						],
 						"kind": "walk",
-						"max_advance_us": 272,
+						"max_advance_us": 271,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -144393,7 +144393,7 @@
 							"78457e35675b8c8a"
 						],
 						"kind": "walk",
-						"max_advance_us": 272,
+						"max_advance_us": 271,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -144687,7 +144687,7 @@
 							"0738d8778fae3db1"
 						],
 						"kind": "walk",
-						"max_advance_us": 282,
+						"max_advance_us": 263,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -144711,7 +144711,7 @@
 							"0738d8778fae3db1"
 						],
 						"kind": "walk",
-						"max_advance_us": 282,
+						"max_advance_us": 263,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -145048,8 +145048,8 @@
 							"264e029a8895aa12"
 						],
 						"kind": "pour",
-						"max_advance_us": 290,
-						"max_step_us": 18,
+						"max_advance_us": 270,
+						"max_step_us": 16,
 						"ok": true,
 						"phase": "physics",
 						"rounds": 1,
@@ -145115,8 +145115,8 @@
 							"264e029a8895aa12"
 						],
 						"kind": "pour",
-						"max_advance_us": 290,
-						"max_step_us": 18,
+						"max_advance_us": 270,
+						"max_step_us": 16,
 						"ok": true,
 						"phase": "physics",
 						"rounds": 1,
@@ -145409,7 +145409,7 @@
 							"21059b504ef602ab"
 						],
 						"kind": "step",
-						"max_advance_us": 303,
+						"max_advance_us": 264,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -145433,7 +145433,7 @@
 							"21059b504ef602ab"
 						],
 						"kind": "step",
-						"max_advance_us": 303,
+						"max_advance_us": 264,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -145727,7 +145727,7 @@
 							"39ff54a6b3f7cd09"
 						],
 						"kind": "step",
-						"max_advance_us": 266,
+						"max_advance_us": 281,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -145751,7 +145751,7 @@
 							"39ff54a6b3f7cd09"
 						],
 						"kind": "step",
-						"max_advance_us": 266,
+						"max_advance_us": 281,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -148727,11 +148727,11 @@
 			],
 			"consistent": true,
 			"id": "M06",
-			"max_advance_us": 303,
+			"max_advance_us": 291,
 			"max_rounds": 2,
 			"max_settle_ticks": 47,
 			"max_ticks": 47,
-			"max_undo_us": 757,
+			"max_undo_us": 765,
 			"repeats": 3,
 			"replays": 3,
 			"round_limit": 16,
@@ -150363,7 +150363,7 @@
 							"05c8c75936810b64"
 						],
 						"kind": "walk",
-						"max_advance_us": 237,
+						"max_advance_us": 225,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -150387,7 +150387,7 @@
 							"05c8c75936810b64"
 						],
 						"kind": "walk",
-						"max_advance_us": 237,
+						"max_advance_us": 225,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -150640,8 +150640,8 @@
 							"d02ba9d2fb56b337"
 						],
 						"kind": "dig",
-						"max_advance_us": 254,
-						"max_step_us": 34,
+						"max_advance_us": 242,
+						"max_step_us": 31,
 						"ok": true,
 						"phase": "physics",
 						"rounds": 3,
@@ -150675,8 +150675,8 @@
 							"d02ba9d2fb56b337"
 						],
 						"kind": "dig",
-						"max_advance_us": 254,
-						"max_step_us": 34,
+						"max_advance_us": 242,
+						"max_step_us": 31,
 						"ok": true,
 						"phase": "physics",
 						"rounds": 3,
@@ -151020,7 +151020,7 @@
 							"34a2d1a05929ea2a"
 						],
 						"kind": "walk",
-						"max_advance_us": 224,
+						"max_advance_us": 252,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -151044,7 +151044,7 @@
 							"34a2d1a05929ea2a"
 						],
 						"kind": "walk",
-						"max_advance_us": 224,
+						"max_advance_us": 252,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -151286,7 +151286,7 @@
 							"f207d8cf35dbdaac"
 						],
 						"kind": "walk",
-						"max_advance_us": 235,
+						"max_advance_us": 244,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -151310,7 +151310,7 @@
 							"f207d8cf35dbdaac"
 						],
 						"kind": "walk",
-						"max_advance_us": 235,
+						"max_advance_us": 244,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -151552,7 +151552,7 @@
 							"8e6f86ec4abefc91"
 						],
 						"kind": "walk",
-						"max_advance_us": 236,
+						"max_advance_us": 245,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -151576,7 +151576,7 @@
 							"8e6f86ec4abefc91"
 						],
 						"kind": "walk",
-						"max_advance_us": 236,
+						"max_advance_us": 245,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -151818,7 +151818,7 @@
 							"2855fa8e514623ee"
 						],
 						"kind": "walk",
-						"max_advance_us": 237,
+						"max_advance_us": 222,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -151842,7 +151842,7 @@
 							"2855fa8e514623ee"
 						],
 						"kind": "walk",
-						"max_advance_us": 237,
+						"max_advance_us": 222,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -152084,7 +152084,7 @@
 							"c9413bbdbbf8413c"
 						],
 						"kind": "walk",
-						"max_advance_us": 235,
+						"max_advance_us": 245,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -152108,7 +152108,7 @@
 							"c9413bbdbbf8413c"
 						],
 						"kind": "walk",
-						"max_advance_us": 235,
+						"max_advance_us": 245,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -152350,7 +152350,7 @@
 							"3350525d02c440c9"
 						],
 						"kind": "walk",
-						"max_advance_us": 239,
+						"max_advance_us": 235,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -152374,7 +152374,7 @@
 							"3350525d02c440c9"
 						],
 						"kind": "walk",
-						"max_advance_us": 239,
+						"max_advance_us": 235,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -152616,7 +152616,7 @@
 							"e95601f34d55ea4f"
 						],
 						"kind": "walk",
-						"max_advance_us": 249,
+						"max_advance_us": 252,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -152640,7 +152640,7 @@
 							"e95601f34d55ea4f"
 						],
 						"kind": "walk",
-						"max_advance_us": 249,
+						"max_advance_us": 252,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -155002,7 +155002,7 @@
 							"05c8c75936810b64"
 						],
 						"kind": "walk",
-						"max_advance_us": 214,
+						"max_advance_us": 223,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -155026,7 +155026,7 @@
 							"05c8c75936810b64"
 						],
 						"kind": "walk",
-						"max_advance_us": 214,
+						"max_advance_us": 223,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -155279,7 +155279,7 @@
 							"d02ba9d2fb56b337"
 						],
 						"kind": "dig",
-						"max_advance_us": 258,
+						"max_advance_us": 255,
 						"max_step_us": 32,
 						"ok": true,
 						"phase": "physics",
@@ -155314,7 +155314,7 @@
 							"d02ba9d2fb56b337"
 						],
 						"kind": "dig",
-						"max_advance_us": 258,
+						"max_advance_us": 255,
 						"max_step_us": 32,
 						"ok": true,
 						"phase": "physics",
@@ -155659,7 +155659,7 @@
 							"34a2d1a05929ea2a"
 						],
 						"kind": "walk",
-						"max_advance_us": 245,
+						"max_advance_us": 223,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -155683,7 +155683,7 @@
 							"34a2d1a05929ea2a"
 						],
 						"kind": "walk",
-						"max_advance_us": 245,
+						"max_advance_us": 223,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -155925,7 +155925,7 @@
 							"f207d8cf35dbdaac"
 						],
 						"kind": "walk",
-						"max_advance_us": 244,
+						"max_advance_us": 228,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -155949,7 +155949,7 @@
 							"f207d8cf35dbdaac"
 						],
 						"kind": "walk",
-						"max_advance_us": 244,
+						"max_advance_us": 228,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -156191,7 +156191,7 @@
 							"8e6f86ec4abefc91"
 						],
 						"kind": "walk",
-						"max_advance_us": 242,
+						"max_advance_us": 220,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -156215,7 +156215,7 @@
 							"8e6f86ec4abefc91"
 						],
 						"kind": "walk",
-						"max_advance_us": 242,
+						"max_advance_us": 220,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -156457,7 +156457,7 @@
 							"2855fa8e514623ee"
 						],
 						"kind": "walk",
-						"max_advance_us": 251,
+						"max_advance_us": 248,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -156481,7 +156481,7 @@
 							"2855fa8e514623ee"
 						],
 						"kind": "walk",
-						"max_advance_us": 251,
+						"max_advance_us": 248,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -156723,7 +156723,7 @@
 							"c9413bbdbbf8413c"
 						],
 						"kind": "walk",
-						"max_advance_us": 246,
+						"max_advance_us": 236,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -156747,7 +156747,7 @@
 							"c9413bbdbbf8413c"
 						],
 						"kind": "walk",
-						"max_advance_us": 246,
+						"max_advance_us": 236,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -156989,7 +156989,7 @@
 							"3350525d02c440c9"
 						],
 						"kind": "walk",
-						"max_advance_us": 242,
+						"max_advance_us": 245,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -157013,7 +157013,7 @@
 							"3350525d02c440c9"
 						],
 						"kind": "walk",
-						"max_advance_us": 242,
+						"max_advance_us": 245,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -157255,8 +157255,8 @@
 							"e95601f34d55ea4f"
 						],
 						"kind": "walk",
-						"max_advance_us": 247,
-						"max_step_us": 0,
+						"max_advance_us": 297,
+						"max_step_us": 1,
 						"ok": true,
 						"phase": "physics",
 						"rounds": 1,
@@ -157279,8 +157279,8 @@
 							"e95601f34d55ea4f"
 						],
 						"kind": "walk",
-						"max_advance_us": 247,
-						"max_step_us": 0,
+						"max_advance_us": 297,
+						"max_step_us": 1,
 						"ok": true,
 						"phase": "physics",
 						"rounds": 1,
@@ -159641,7 +159641,7 @@
 							"05c8c75936810b64"
 						],
 						"kind": "walk",
-						"max_advance_us": 253,
+						"max_advance_us": 211,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -159665,7 +159665,7 @@
 							"05c8c75936810b64"
 						],
 						"kind": "walk",
-						"max_advance_us": 253,
+						"max_advance_us": 211,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -159918,7 +159918,7 @@
 							"d02ba9d2fb56b337"
 						],
 						"kind": "dig",
-						"max_advance_us": 252,
+						"max_advance_us": 247,
 						"max_step_us": 32,
 						"ok": true,
 						"phase": "physics",
@@ -159953,7 +159953,7 @@
 							"d02ba9d2fb56b337"
 						],
 						"kind": "dig",
-						"max_advance_us": 252,
+						"max_advance_us": 247,
 						"max_step_us": 32,
 						"ok": true,
 						"phase": "physics",
@@ -160298,7 +160298,7 @@
 							"34a2d1a05929ea2a"
 						],
 						"kind": "walk",
-						"max_advance_us": 246,
+						"max_advance_us": 239,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -160322,7 +160322,7 @@
 							"34a2d1a05929ea2a"
 						],
 						"kind": "walk",
-						"max_advance_us": 246,
+						"max_advance_us": 239,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -160564,7 +160564,7 @@
 							"f207d8cf35dbdaac"
 						],
 						"kind": "walk",
-						"max_advance_us": 252,
+						"max_advance_us": 246,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -160588,7 +160588,7 @@
 							"f207d8cf35dbdaac"
 						],
 						"kind": "walk",
-						"max_advance_us": 252,
+						"max_advance_us": 246,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -160830,7 +160830,7 @@
 							"8e6f86ec4abefc91"
 						],
 						"kind": "walk",
-						"max_advance_us": 250,
+						"max_advance_us": 236,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -160854,7 +160854,7 @@
 							"8e6f86ec4abefc91"
 						],
 						"kind": "walk",
-						"max_advance_us": 250,
+						"max_advance_us": 236,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -161096,7 +161096,7 @@
 							"2855fa8e514623ee"
 						],
 						"kind": "walk",
-						"max_advance_us": 245,
+						"max_advance_us": 213,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -161120,7 +161120,7 @@
 							"2855fa8e514623ee"
 						],
 						"kind": "walk",
-						"max_advance_us": 245,
+						"max_advance_us": 213,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -161362,7 +161362,7 @@
 							"c9413bbdbbf8413c"
 						],
 						"kind": "walk",
-						"max_advance_us": 243,
+						"max_advance_us": 231,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -161386,7 +161386,7 @@
 							"c9413bbdbbf8413c"
 						],
 						"kind": "walk",
-						"max_advance_us": 243,
+						"max_advance_us": 231,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -161628,7 +161628,7 @@
 							"3350525d02c440c9"
 						],
 						"kind": "walk",
-						"max_advance_us": 247,
+						"max_advance_us": 221,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -161652,7 +161652,7 @@
 							"3350525d02c440c9"
 						],
 						"kind": "walk",
-						"max_advance_us": 247,
+						"max_advance_us": 221,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -161894,7 +161894,7 @@
 							"e95601f34d55ea4f"
 						],
 						"kind": "walk",
-						"max_advance_us": 245,
+						"max_advance_us": 220,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -161918,7 +161918,7 @@
 							"e95601f34d55ea4f"
 						],
 						"kind": "walk",
-						"max_advance_us": 245,
+						"max_advance_us": 220,
 						"max_step_us": 0,
 						"ok": true,
 						"phase": "physics",
@@ -164075,11 +164075,11 @@
 			],
 			"consistent": true,
 			"id": "M07",
-			"max_advance_us": 258,
+			"max_advance_us": 297,
 			"max_rounds": 3,
 			"max_settle_ticks": 15,
 			"max_ticks": 15,
-			"max_undo_us": 636,
+			"max_undo_us": 667,
 			"repeats": 3,
 			"replays": 3,
 			"round_limit": 16,

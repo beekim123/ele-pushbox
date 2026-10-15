@@ -17,6 +17,12 @@ uniform int cracked_id = -1;
 uniform int earth_id = 2;
 uniform int sand_id = 3;
 uniform int water_id = -1;
+// Same codes as LevelGridState.Terrain, from the actual SDK material table.
+uniform int matter_ids[13]; // gravel/fuse/acid/limeA/limeB/hard/smoke/fog/plug/decay/wood/ice/bridge
+uniform bool matter_approved = false;
+uniform sampler2D fire_sheet : filter_nearest, repeat_disable;
+uniform bool fire_approved = false;
+uniform int fire_frame = 0;
 uniform int rock_pattern = 0; // brick/block/rough/grass/marble/cloud/panel
 uniform bool hazard_trim = false;
 uniform int colors[37];
@@ -42,6 +48,7 @@ const vec4 PAL[33] = vec4[33](
  vec4(232,183,150,255)/255.0, vec4(194,133,105,255)/255.0);
 const int DIM[33] = int[33](0,6,5,22,32,6,7,26,7,8,1,2,11,14,15,16,26,25,17,18,21,22,23,24,25,26,26,8,7,28,29,32,5);
 const int BAYER[16] = int[16](0,8,2,10,12,4,14,6,3,11,1,9,15,7,13,5);
+const int PEBBLE[12] = int[12](23,22,23,24,22,23,32,24,22,23,24,22);
 
 uint h32(int x, int y, int seed) {
  uint n = uint(x)*374761393u + uint(y)*668265263u + uint(seed)*2147483647u;
@@ -71,7 +78,138 @@ int mat_at(ivec2 p) {
  if (id==earth_id) return 3;
  if (id==sand_id) return 4;
  if (id==water_id) return 5;
+ for (int i=0; i<9; i++) if (id==matter_ids[i] && id>0) return 8+i;
+ if (id==matter_ids[9] && id>0) return 16;
+ if (id==matter_ids[10] && id>0) return 17;
+ if (id==matter_ids[11] && id>0) return 18;
+ if (id==matter_ids[12] && id>0) return 7;
  return 0; // Entities and gates are rendered from approved sprites.
+}
+
+int block_frame(int c, ivec2 p, ivec4 n, int self, int frame, int bevel) {
+ if (frame==0) return c;
+ if ((p.x==0 && n.z!=self)||(p.x==15 && n.w!=self)||(p.y==0 && n.x!=self)||(p.y==15 && n.y!=self)) return frame;
+ if (bevel!=0 && ((p.x==1 && n.z!=self)||(p.y==1 && n.x!=self))) return bevel;
+ return c;
+}
+
+bool matter_open(int m) { return m==0 || m==14 || m==15; }
+bool matter_liquid(int m) { return m==5 || m==10; }
+
+float puff(ivec2 w, int seed) {
+ ivec2 centre=ivec2(floor(vec2(w)/8.0));
+ float value=0.0;
+ for (int gy=-1; gy<=1; gy++) for (int gx=-1; gx<=1; gx++) {
+  ivec2 cell=centre+ivec2(gx,gy);
+  uint hash=h32(cell.x,cell.y,seed);
+  ivec2 blob=cell*8+ivec2(int(hash&7u),int((hash>>3u)&7u));
+  int radius=4+int((hash>>6u)%4u), d2=(w.x-blob.x)*(w.x-blob.x)+(w.y-blob.y)*(w.y-blob.y);
+  if (d2<radius*radius) value=max(value,1.0-float(d2)/float(radius*radius));
+ }
+ return value;
+}
+
+// Exact palette/texture rules ported from approved workbench/js/core/matter.js.
+int matter_shade(int m, ivec2 w, ivec2 p, ivec4 n) {
+ if (m==7) return 0; // Approved device decks are drawn above SDK geometry.
+ if (!matter_approved) return ((p.x+p.y)%6<3)?27:26;
+ int c=0;
+ if (m==8) {
+  int row=w.y/4, off=(row&1)*3, col=(w.x+off)/5, lx=(w.x+off)%5, ly=w.y&3;
+  uint hash=h32(col,row,601);
+  bool corner=(lx==0||lx==4)&&(ly==0||ly==3);
+  if ((lx==4&&ly!=1&&ly!=2)||(ly==3&&lx!=1&&lx!=2)||corner) {
+   if ((matter_open(n.x)||matter_liquid(n.x))&&p.y<3) return 0;
+   return (hash&2u)!=0u?25:26;
+  }
+  int body=PEBBLE[hash%12u]; c=body;
+  if (ly==0||(lx==0&&ly==1)) c=body==32?4:body==24?23:21;
+  else if (ly==3||(lx==3&&ly==2)) c=body==32?5:24;
+  return c;
+ }
+ if (m==9) {
+  c=h32(w.x,w.y,611)%11u==0u?11:((w.x+w.y)&1)!=0?7:6;
+  if (p.y>=5&&p.y<=10) {
+   int twist=(w.x+(p.y-5)*2)%6;
+   c=p.y==5||p.y==10?26:twist<2?2:twist<4?1:8;
+   if (p.y==6&&twist==0) c=11;
+  }
+  return block_frame(c,p,n,9,26,0);
+ }
+ if (m==10) {
+  bool top=n.x!=10&&!matter_liquid(n.x); c=13;
+  if (!top||p.y>3) {
+   int deep=n.y==10?4:max(0,p.y-9);
+   if (BAYER[(w.y&3)*4+(w.x&3)]<deep*2) c=14;
+  }
+  if (top) {
+   int wave=((w.x+(visual_tick>>1))%12)<6?0:1;
+   if (p.y<wave) return 0;
+   if (p.y==wave) c=12;
+   else if (p.y==wave+1&&(w.x+visual_tick)%7==0) c=20;
+  }
+  int bx=(w.x>>3)*8+3+int(h32(w.x>>3,0,613)&1u);
+  int by=15-((visual_tick+int(h32(w.x>>3,1,613)%16u))%16);
+  if (!(top&&p.y<3)&&abs((w.x&15)-(bx&15))+abs(p.y-by)==1) c=12;
+  return c;
+ }
+ if (m==11||m==12) {
+  bool carved=abs(p.x-8)+abs(p.y-8)==3||(p.x==8&&p.y==8);
+  if (m==11) {
+   c=3;
+   if ((w.y+int(h32(w.x>>3,0,621)%3u))%5==0) c=31;
+   if (h32(w.x,w.y,623)%31u==0u) c=4;
+   if (carved) c=32;
+   return block_frame(c,p,n,11,32,20);
+  }
+  c=(w.y+int(h32(w.x>>2,1,625)%2u))%4==0?22:21;
+  if (carved) c=23;
+  return block_frame(c,p,n,12,23,20);
+ }
+ if (m==13) {
+  int col=(w.x+((w.y>>3)&1)*4)&7;
+  c=col==0?23:col==7?26:24;
+  if (h32(w.x,w.y,631)%37u==0u) c=22;
+  return block_frame(c,p,n,13,26,23);
+ }
+ if (m==14||m==15) {
+  float value=puff(m==14?w+ivec2(0,visual_tick):w+ivec2(visual_tick>>1,0),m==14?641:643);
+  int b=BAYER[(w.y&3)*4+(w.x&3)];
+  if (m==14) {
+   if (value*12.0>float(b+6)) return value>0.8?20:21;
+   return b<2&&value>0.0?22:0;
+  }
+  if (value*16.0>float(b+4)) return value>0.6?29:28;
+  return b<3?28:0;
+ }
+ if (m==16) {
+  int cx=(w.x>>2)*4+1+int(h32(w.x>>2,w.y>>2,651)&1u);
+  int cy=(w.y>>2)*4+1+int(h32(w.x>>2,w.y>>2,653)&1u); c=29;
+  if (h32(w.x>>2,w.y>>2,655)%3u==0u&&abs(w.x-cx)+abs(w.y-cy)<=1) c=w.x==cx&&w.y==cy?31:30;
+  return block_frame(c,p,n,16,28,30);
+ }
+ if (m==17) {
+  int lx=w.x&3, stake=w.x>>2;
+  c=(h32(stake,0,661)&1u)!=0u?5:2;
+  if (lx==3) c=6; else if (lx==0) c=32;
+  else if (lx==2&&h32(stake,w.y>>1,663)%5u==0u) c=6;
+  if (p.y==4||p.y==11) c=(p.x&7)==2?7:6;
+  if (p.y==3||p.y==10) c=32;
+  if (matter_open(n.x)||matter_liquid(n.x)) {
+   if (p.y==0&&lx!=1&&lx!=2) return 0;
+   if (p.y==0) c=4;
+  }
+  if ((p.x==0&&n.z!=17)||(p.x==15&&n.w!=17)) c=7;
+  return c;
+ }
+ if (m==18) {
+  c=p.y<3&&n.x!=18?19:18;
+  int glint=(w.x-w.y+64)&15;
+  if (glint<2&&((w.x+w.y)&15)<6&&p.x>1&&p.y>1) c=glint!=0?19:20;
+  if (h32(w.x,w.y,671)%53u==0u) c=21;
+  return block_frame(c,p,n,18,17,20);
+ }
+ return 0;
 }
 
 bool crack(ivec2 tile, int px, int py) {
@@ -81,13 +219,6 @@ bool crack(ivec2 tile, int px, int py) {
  if (py>=0 && py<=8 && px==int(floor(float(x0)+float((x1-x0)*py)/8.0+0.5))) return true;
  if (py>=8 && py<=15 && px==int(floor(float(x1)+float((x2-x1)*(py-8))/7.0+0.5))) return true;
  return py>=8 && py<=11 && px==x1+(((a>>12u)%2u)!=0u?1:-1)*(py-8);
-}
-
-int block_frame(int c, ivec2 p, ivec4 n, int self, int frame, int bevel) {
- if (frame==0) return c;
- if ((p.x==0 && n.z!=self)||(p.x==15 && n.w!=self)||(p.y==0 && n.x!=self)||(p.y==15 && n.y!=self)) return frame;
- if (bevel!=0 && ((p.x==1 && n.z!=self)||(p.y==1 && n.x!=self))) return bevel;
- return c;
 }
 
 bool empty_cloud(int m) { return m==0 || m==5; }
@@ -174,6 +305,7 @@ int rock(ivec2 w, ivec2 p, ivec4 n, uint hash) {
 }
 
 int shade(int m, ivec2 w, ivec2 p, ivec2 tile, ivec4 n) {
+ if (m>=7) return matter_shade(m,w,p,n);
  int seed=m==1?11:m==2?23:m==3?37:m==4?41:53;
  uint hash=h32(w.x,w.y,seed);
  if (m==1) return rock(w,p,n,hash);
@@ -224,6 +356,16 @@ void fragment() {
  ivec2 middle=tile*16+ivec2(8);
  ivec4 n=ivec4(mat_at(middle+ivec2(0,-16)),mat_at(middle+ivec2(0,16)),mat_at(middle+ivec2(-16,0)),mat_at(middle+ivec2(16,0)));
  int c=shade(mat_at(w),w,p,tile,n);
+ // The fire sheet is approved art; its visibility comes from the SDK BURNING
+ // bit, not from a preview animation or a guessed gameplay state.
+ if (sdk_mode && !cell_image_mode && fire_approved) {
+  vec4 encoded_cell=w.x>=right_origin.x?texelFetch(sdk_right,w-right_origin,0):texelFetch(sdk_left,w-left_origin,0);
+  int flags=int(round(encoded_cell.g*255.0));
+  if ((flags&64)!=0) {
+   vec4 flame=texelFetch(fire_sheet,ivec2(fire_frame*16+p.x,p.y),0);
+   if (flame.a>0.5) for (int i=1; i<33; i++) if (length(flame.rgb-PAL[i].rgb)<0.001) c=i;
+  }
+ }
  ivec2 screen=w+screen_origin;
  int distance=min(min(screen.x,screen.y-20),min(319-screen.x,179-screen.y));
  if(c!=0 && vignette_width>0 && screen.y>=20 && distance<vignette_width && BAYER[(screen.y&3)*4+(screen.x&3)]*vignette_width>=distance*16) c=DIM[c];

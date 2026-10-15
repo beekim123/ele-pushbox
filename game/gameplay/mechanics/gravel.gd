@@ -1,8 +1,5 @@
-class_name UnimplementedGravel2c2aa9
-extends "res://gameplay/mechanics/mechanic.gd"
-## mechanic:gravel: catalog path only; not registered by any playable mode.
+class_name GravelMechanic
+extends "res://gameplay/mechanics/sdk_material.gd"
 
-var unimplemented: bool = true
-
-func implementation_available() -> bool:
-	return false
+func material_names() -> Array[String]:
+	return ["gravel"]

@@ -14,4 +14,6 @@ func try_action(action: String) -> Dictionary:
 	var y: int = int(grid.player.y)
 	if int(grid.bag.sand) < 1 or not grid.is_free(x, y):
 		return {"handled": true, "accepted": false, "reason": "cannot-pour"}
+	if not session().water_can_pour(Vector2i(x, y)):
+		return {"handled": true, "accepted": false, "reason": "water-sealed"}
 	return {"handled": true, "accepted": true, "kind": "pour", "pour": Vector2i(x, y), "sand_delta": -1}

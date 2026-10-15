@@ -33,6 +33,8 @@ func _run() -> void:
 		save.data.progress[uid] = {"cleared":true,"skipped":false,"moves":4}
 	save.data.progress["level:M03"] = {"cleared":false,"skipped":true,"moves":0}
 	save.data["rule_cards_seen"] = ["mechanic:push", "mechanic:ladder", "mechanic:dig", "mechanic:pour", "mechanic:plate_door", "mechanic:fall"]
+	settings.values["music"] = 0.8
+	settings.values["sfx"] = 0.8
 	settings.values["ambience"] = "full"
 	settings.values["typewriter"] = false
 	var frame_peak: float = 0

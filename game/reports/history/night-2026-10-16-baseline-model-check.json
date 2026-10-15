@@ -1,0 +1,344 @@
+{
+  "note": "Design-model check only (tools/check-levels.mjs). Not SDK verification.",
+  "levels": [
+    {
+      "id": "M01",
+      "file": "content/levels/lab/basics/M01.json",
+      "title": "一推到位",
+      "author_steps": 4,
+      "author_ok": true,
+      "shortest": 4,
+      "shortest_solution": [
+        "R",
+        "R",
+        "R",
+        "R"
+      ],
+      "explored": 11,
+      "reachable_states": 26,
+      "dead_end_states": 8,
+      "warnings": []
+    },
+    {
+      "id": "M02",
+      "file": "content/levels/lab/basics/M02.json",
+      "title": "绕到另一边",
+      "author_steps": 12,
+      "author_ok": true,
+      "shortest": 12,
+      "shortest_solution": [
+        "L",
+        "U",
+        "U",
+        "R",
+        "R",
+        "R",
+        "R",
+        "R",
+        "R",
+        "L",
+        "L",
+        "L"
+      ],
+      "explored": 38,
+      "reachable_states": 61,
+      "dead_end_states": 26,
+      "warnings": []
+    },
+    {
+      "id": "M03",
+      "file": "content/levels/lab/basics/M03.json",
+      "title": "挖开一格",
+      "author_steps": 5,
+      "author_ok": true,
+      "shortest": 5,
+      "shortest_solution": [
+        "DIG_R",
+        "R",
+        "R",
+        "R",
+        "R"
+      ],
+      "explored": 37,
+      "reachable_states": 2413,
+      "dead_end_states": 708,
+      "warnings": []
+    },
+    {
+      "id": "M04",
+      "file": "content/levels/lab/basics/M04.json",
+      "title": "一袋沙做台阶",
+      "author_steps": 6,
+      "author_ok": true,
+      "shortest": 6,
+      "shortest_solution": [
+        "R",
+        "R",
+        "POUR_R",
+        "R",
+        "R",
+        "R"
+      ],
+      "explored": 32,
+      "reachable_states": 33,
+      "dead_end_states": 0,
+      "warnings": []
+    },
+    {
+      "id": "M05",
+      "file": "content/levels/lab/basics/M05.json",
+      "title": "箱子替我站",
+      "author_steps": 8,
+      "author_ok": true,
+      "shortest": 8,
+      "shortest_solution": [
+        "R",
+        "R",
+        "R",
+        "R",
+        "R",
+        "R",
+        "R",
+        "R"
+      ],
+      "explored": 17,
+      "reachable_states": 17,
+      "dead_end_states": 0,
+      "warnings": []
+    },
+    {
+      "id": "M06",
+      "file": "content/levels/lab/basics/M06.json",
+      "title": "沙与箱各有用",
+      "author_steps": 10,
+      "author_ok": true,
+      "shortest": 10,
+      "shortest_solution": [
+        "DIG_L",
+        "R",
+        "R",
+        "R",
+        "R",
+        "R",
+        "R",
+        "POUR_R",
+        "R",
+        "R"
+      ],
+      "explored": 213,
+      "reachable_states": 979,
+      "dead_end_states": 111,
+      "warnings": []
+    },
+    {
+      "id": "M07",
+      "file": "content/levels/lab/basics/M07.json",
+      "title": "挖掉支撑",
+      "author_steps": 9,
+      "author_ok": true,
+      "shortest": 9,
+      "shortest_solution": [
+        "R",
+        "DIG_R",
+        "R",
+        "R",
+        "R",
+        "R",
+        "R",
+        "R",
+        "R"
+      ],
+      "explored": 81,
+      "reachable_states": 114,
+      "dead_end_states": 0,
+      "warnings": []
+    },
+    {
+      "id": "W01",
+      "file": "content/levels/lab/water/W01.json",
+      "title": "开闸放水",
+      "author_steps": 6,
+      "author_ok": true,
+      "shortest": 6,
+      "shortest_solution": [
+        "R",
+        "R",
+        "U",
+        "R",
+        "R",
+        "R"
+      ],
+      "explored": 16,
+      "reachable_states": 17,
+      "dead_end_states": 0,
+      "warnings": []
+    },
+    {
+      "id": "W02",
+      "file": "content/levels/lab/water/W02.json",
+      "title": "木浮铁沉",
+      "author_steps": 10,
+      "author_ok": true,
+      "shortest": 10,
+      "shortest_solution": [
+        "L",
+        "R",
+        "R",
+        "R",
+        "R",
+        "R",
+        "R",
+        "R",
+        "R",
+        "R"
+      ],
+      "explored": 32,
+      "reachable_states": 32,
+      "dead_end_states": 0,
+      "warnings": []
+    },
+    {
+      "id": "W03",
+      "file": "content/levels/lab/water/W03.json",
+      "title": "两袋沙挤高水面",
+      "author_steps": 4,
+      "author_ok": true,
+      "shortest": 4,
+      "shortest_solution": [
+        "L",
+        "L",
+        "POUR_L",
+        "POUR_L"
+      ],
+      "explored": 78,
+      "reachable_states": 201,
+      "dead_end_states": 50,
+      "warnings": []
+    },
+    {
+      "id": "W04",
+      "file": "content/levels/lab/water/W04.json",
+      "title": "两边一样高",
+      "author_steps": 7,
+      "author_ok": true,
+      "shortest": 7,
+      "shortest_solution": [
+        "L",
+        "U",
+        "L",
+        "L",
+        "L",
+        "L",
+        "L"
+      ],
+      "explored": 19,
+      "reachable_states": 26,
+      "dead_end_states": 6,
+      "warnings": []
+    },
+    {
+      "id": "W05",
+      "file": "content/levels/lab/water/W05.json",
+      "title": "平台等我上",
+      "author_steps": 10,
+      "author_ok": true,
+      "shortest": 10,
+      "shortest_solution": [
+        "L",
+        "L",
+        "R",
+        "R",
+        "R",
+        "L",
+        "U",
+        "L",
+        "L",
+        "L"
+      ],
+      "explored": 118,
+      "reachable_states": 197,
+      "dead_end_states": 89,
+      "warnings": []
+    },
+    {
+      "id": "W07",
+      "file": "content/levels/lab/water/W07.json",
+      "title": "收一斗水",
+      "author_steps": 5,
+      "author_ok": true,
+      "shortest": 5,
+      "shortest_solution": [
+        "L",
+        "L",
+        "L",
+        "L",
+        "DIG_L"
+      ],
+      "explored": 6,
+      "reachable_states": 49,
+      "dead_end_states": 0,
+      "warnings": []
+    },
+    {
+      "id": "W08",
+      "file": "content/levels/lab/water/W08.json",
+      "title": "让桥塌下去",
+      "author_steps": 6,
+      "author_ok": true,
+      "shortest": 6,
+      "shortest_solution": [
+        "R",
+        "R",
+        "R",
+        "R",
+        "R",
+        "R"
+      ],
+      "explored": 15,
+      "reachable_states": 16,
+      "dead_end_states": 0,
+      "warnings": []
+    },
+    {
+      "id": "W09",
+      "file": "content/levels/lab/water/W09.json",
+      "title": "传送阵",
+      "author_steps": 7,
+      "author_ok": true,
+      "shortest": 7,
+      "shortest_solution": [
+        "R",
+        "R",
+        "L",
+        "U",
+        "U",
+        "U",
+        "R"
+      ],
+      "explored": 11,
+      "reachable_states": 19,
+      "dead_end_states": 0,
+      "warnings": []
+    },
+    {
+      "id": "W10",
+      "file": "content/levels/lab/water/W10.json",
+      "title": "水满自升",
+      "author_steps": 6,
+      "author_ok": true,
+      "shortest": 6,
+      "shortest_solution": [
+        "L",
+        "L",
+        "R",
+        "R",
+        "R",
+        "U"
+      ],
+      "explored": 24,
+      "reachable_states": 39,
+      "dead_end_states": 20,
+      "warnings": []
+    }
+  ]
+}

@@ -1,17 +1,17 @@
 Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
 OpenGL API 4.1 Metal - 89.4 - Compatibility - Using Device: Apple - Apple M3
 
-PERF_THEME art:theme.dungeon peak_us=1144 fps=63.999 passed=true
-PERF_THEME art:theme.ruins peak_us=1734 fps=63.976 passed=true
-PERF_THEME art:theme.cave peak_us=1467 fps=64.048 passed=true
-PERF_THEME art:theme.forest peak_us=2073 fps=63.929 passed=true
-PERF_THEME art:theme.sky peak_us=2850 fps=63.987 passed=true
-PERF_THEME art:theme.cosmos peak_us=1609 fps=63.999 passed=true
-PERF_LEVEL level:M01 begin_us=995 advance_us=2744 undo_us=5041 passed=true
-PERF_LEVEL level:M02 begin_us=1336 advance_us=3165 undo_us=6854 passed=true
-PERF_LEVEL level:M03 begin_us=1225 advance_us=2710 undo_us=5579 passed=true
-PERF_LEVEL level:M04 begin_us=1115 advance_us=2442 undo_us=5490 passed=true
-PERF_LEVEL level:M05 begin_us=1344 advance_us=3317 undo_us=6653 passed=true
-PERF_LEVEL level:M06 begin_us=1492 advance_us=3064 undo_us=6666 passed=true
-PERF_LEVEL level:M07 begin_us=1753 advance_us=2920 undo_us=7719 passed=true
-PORTITOR_PERFORMANCE_COMPLETE passed=true themes=6 levels=7 peak_frame_us=3317 peak_view_us=2829 peak_undo_us=7719 failures=0 mode=normal report=res://reports/performance.json
+PERF_THEME art:theme.dungeon peak_us=1108 fps=64.027 passed=true
+PERF_THEME art:theme.ruins peak_us=1625 fps=64.042 passed=true
+PERF_THEME art:theme.cave peak_us=1321 fps=64.019 passed=true
+PERF_THEME art:theme.forest peak_us=2186 fps=63.964 passed=true
+PERF_THEME art:theme.sky peak_us=3079 fps=64.018 passed=true
+PERF_THEME art:theme.cosmos peak_us=1673 fps=64.030 passed=true
+PERF_LEVEL level:M01 begin_us=1213 advance_us=3235 undo_us=6014 passed=true
+PERF_LEVEL level:M02 begin_us=1347 advance_us=2793 undo_us=6055 passed=true
+PERF_LEVEL level:M03 begin_us=984 advance_us=2057 undo_us=4208 passed=true
+PERF_LEVEL level:M04 begin_us=1185 advance_us=2422 undo_us=6231 passed=true
+PERF_LEVEL level:M05 begin_us=1432 advance_us=3316 undo_us=6475 passed=true
+PERF_LEVEL level:M06 begin_us=1398 advance_us=2640 undo_us=6127 passed=true
+PERF_LEVEL level:M07 begin_us=1605 advance_us=9249 undo_us=6555 passed=false
+PORTITOR_PERFORMANCE_COMPLETE passed=false themes=6 levels=7 peak_frame_us=9249 peak_view_us=3056 peak_undo_us=6555 failures=1 mode=normal report=res://reports/performance.json

@@ -59,7 +59,7 @@
 					"6974c9e27b2a37f9",
 					"cef9a81b2ce67ccb"
 				],
-				"max_step_us": 747,
+				"max_step_us": 1705,
 				"ok": true,
 				"quiet": 4,
 				"ticks": 47
@@ -109,7 +109,7 @@
 					"75cad0458c26b1e9",
 					"6db23d8c7d945a03"
 				],
-				"max_step_us": 23,
+				"max_step_us": 49,
 				"ok": true,
 				"quiet": 4,
 				"ticks": 5
@@ -129,7 +129,7 @@
 					"d4845732cba7a292",
 					"ca9c25efca32c68d"
 				],
-				"max_step_us": 10,
+				"max_step_us": 22,
 				"ok": true,
 				"quiet": 4,
 				"ticks": 5
@@ -167,7 +167,7 @@
 					"c77648183f572b57",
 					"3980177502a570f5"
 				],
-				"max_step_us": 11,
+				"max_step_us": 13,
 				"ok": true,
 				"quiet": 4,
 				"ticks": 5
@@ -187,7 +187,7 @@
 					"e5607e9d3123d2f8",
 					"e5d47bb4a8f46ef9"
 				],
-				"max_step_us": 21,
+				"max_step_us": 45,
 				"ok": true,
 				"quiet": 4,
 				"ticks": 5
@@ -225,7 +225,7 @@
 					"45b55ab246fed4e7",
 					"40912297219a21f6"
 				],
-				"max_step_us": 23,
+				"max_step_us": 44,
 				"ok": true,
 				"quiet": 4,
 				"ticks": 5
@@ -263,7 +263,7 @@
 					"167d614816392833",
 					"5e497b58a0de0dd7"
 				],
-				"max_step_us": 20,
+				"max_step_us": 22,
 				"ok": true,
 				"quiet": 4,
 				"ticks": 5
@@ -359,7 +359,7 @@
 					"5d56e2d5a346242d",
 					"357d8615af7e310b"
 				],
-				"max_step_us": 644,
+				"max_step_us": 705,
 				"ok": true,
 				"quiet": 4,
 				"ticks": 57
@@ -635,7 +635,7 @@
 					"69f78b93ca2ae72d",
 					"6b3e598c3cd7b71f"
 				],
-				"max_step_us": 609,
+				"max_step_us": 796,
 				"ok": true,
 				"quiet": 4,
 				"ticks": 5
@@ -661,7 +661,7 @@
 					"86df02690e3815d6",
 					"47c4b6b05e41272c"
 				],
-				"max_step_us": 20,
+				"max_step_us": 21,
 				"ok": true,
 				"quiet": 4,
 				"ticks": 5

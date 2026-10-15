@@ -1,8 +1,5 @@
-class_name UnimplementedGasRise08c77b
-extends "res://gameplay/mechanics/mechanic.gd"
-## mechanic:gas_rise: catalog path only; not registered by any playable mode.
+class_name GasRiseMechanic
+extends "res://gameplay/mechanics/sdk_material.gd"
 
-var unimplemented: bool = true
-
-func implementation_available() -> bool:
-	return false
+func material_names() -> Array[String]:
+	return ["smoke"]

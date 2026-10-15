@@ -1,8 +1,5 @@
-class_name UnimplementedBlastIgnite1ccd62
-extends "res://gameplay/mechanics/mechanic.gd"
-## mechanic:blast_ignite: catalog path only; not registered by any playable mode.
+class_name BlastIgniteMechanic
+extends "res://gameplay/mechanics/sdk_material.gd"
 
-var unimplemented: bool = true
-
-func implementation_available() -> bool:
-	return false
+func material_names() -> Array[String]:
+	return ["wood", "fuse"]

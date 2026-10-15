@@ -13,8 +13,11 @@ var last_error: String = ""
 var storage_dir: String = ""
 var command_errors: Array[Dictionary] = []
 var temperature_present: bool = false
+var pending_phase_ticks: int = 0
+var tick_observer: Callable = Callable()
+var profile: Dictionary = {}
 
-func open(seed_value: int, enable_rendering: bool = false) -> bool:
+func open(seed_value: int, enable_rendering: bool = false, spec: Dictionary = {}) -> bool:
 	dispose()
 	last_error = ""
 	command_errors.clear()
@@ -29,8 +32,16 @@ func open(seed_value: int, enable_rendering: bool = false) -> bool:
 	if mkdir_error != OK:
 		last_error = "Cannot create SDK storage: %d" % mkdir_error
 		return false
-	if not _write_json(storage_dir.path_join("materials.json"), Materials.definitions()) or not _write_json(storage_dir.path_join("profile.json"), Profiles.basics()):
+	var materials: Dictionary = Materials.definitions(spec)
+	var reactions: Dictionary = Materials.reactions(spec)
+	profile = Profiles.for_level(spec)
+	if not _write_json(storage_dir.path_join("materials.json"), materials) or not _write_json(storage_dir.path_join("profile.json"), profile):
 		return false
+	var reactions_path: String = ""
+	if not reactions.is_empty():
+		reactions_path = storage_dir.path_join("reactions.json")
+		if not _write_json(reactions_path, reactions):
+			return false
 	node = ClassDB.instantiate("EleWorld") as Node2D
 	node.set("world_size", Vector2i(WORLD_WIDTH, WORLD_HEIGHT))
 	node.set("seed", seed_value)
@@ -41,7 +52,7 @@ func open(seed_value: int, enable_rendering: bool = false) -> bool:
 	node.set("render_enabled", enable_rendering)
 	node.set("materials_path", storage_dir.path_join("materials.json"))
 	node.set("profile_path", storage_dir.path_join("profile.json"))
-	node.set("reactions_path", "")
+	node.set("reactions_path", reactions_path)
 	node.set("render_shader_path", "res://bin/palette.gdshader")
 	node.visible = false
 	var tree: SceneTree = Engine.get_main_loop() as SceneTree
@@ -52,7 +63,7 @@ func open(seed_value: int, enable_rendering: bool = false) -> bool:
 	if error != 0:
 		last_error = str(node.call("get_last_error"))
 		return false
-	for material: Dictionary in Materials.definitions().materials:
+	for material: Dictionary in materials.materials:
 		material_ids[material.name] = int(node.call("material_id", material.name))
 	# Only probe after start succeeds; (0, 0) is valid in this dense world,
 	# so the SDK's negative sentinel means the layer does not exist.
@@ -70,6 +81,24 @@ func clear_rect(x: int, y: int, width: int, height: int, mode: int = 0) -> int:
 
 func set_cell(x: int, y: int, material: String, mode: int = 0) -> int:
 	return _command("set_cell", [x, y, material, mode])
+
+func explode(x: int, y: int, radius: int, power: int) -> int:
+	return _command("explode", [x, y, radius, power])
+
+func set_layer_value(layer: String, x: int, y: int, value: int) -> int:
+	return _command("set_layer_value", [layer, x, y, value])
+
+func paint_layer_circle(layer: String, x: int, y: int, radius: int, value: int) -> int:
+	return _command("paint_layer_circle", [layer, x, y, radius, value])
+
+func require_phase(ticks: int) -> void:
+	pending_phase_ticks = maxi(pending_phase_ticks, maxi(0, ticks))
+
+func get_pending_phase_ticks() -> int:
+	return pending_phase_ticks
+
+func set_pending_phase_ticks(ticks: int) -> void:
+	pending_phase_ticks = maxi(0, ticks)
 
 func step(count: int = 1) -> int:
 	return _command("step", [count])
@@ -106,6 +135,7 @@ func load_snapshot(path: String) -> int:
 	var error: int = _command("load_snapshot", [path])
 	if error == 0:
 		command_errors.clear()
+		last_error = ""
 		temperature_present = int(node.call("layer_value", "temperature", 0, 0)) >= 0
 	return error
 
@@ -130,6 +160,9 @@ func dispose() -> void:
 	node = null
 	material_ids.clear()
 	temperature_present = false
+	pending_phase_ticks = 0
+	tick_observer = Callable()
+	profile.clear()
 	if not storage_dir.is_empty():
 		var absolute: String = ProjectSettings.globalize_path(storage_dir)
 		var directory: DirAccess = DirAccess.open(absolute)

@@ -1,8 +1,5 @@
-class_name UnimplementedEtchTage1e43c
-extends "res://gameplay/mechanics/mechanic.gd"
-## mechanic:etch_tag: catalog path only; not registered by any playable mode.
+class_name EtchTagMechanic
+extends "res://gameplay/mechanics/sdk_material.gd"
 
-var unimplemented: bool = true
-
-func implementation_available() -> bool:
-	return false
+func material_names() -> Array[String]:
+	return ["limestone_a", "limestone_b", "hard_rock"]

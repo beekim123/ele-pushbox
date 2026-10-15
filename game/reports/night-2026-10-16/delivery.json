@@ -1,0 +1,181 @@
+{
+  "format": "portitor.night-delivery/1",
+  "generated": "2026-10-15T17:03:13.072754+00:00",
+  "stage": "code_integrated_development_build",
+  "groups": [
+    {
+      "group": "basics",
+      "levels": [
+        "M01",
+        "M02",
+        "M03",
+        "M04",
+        "M05",
+        "M06",
+        "M07"
+      ],
+      "count": 7,
+      "code": "integrated",
+      "sdk_gameplay_verification": "not_run",
+      "user_acceptance": "not_done"
+    },
+    {
+      "group": "water",
+      "levels": [
+        "W01",
+        "W02",
+        "W03",
+        "W04",
+        "W05",
+        "W07",
+        "W08",
+        "W09",
+        "W10"
+      ],
+      "count": 9,
+      "code": "integrated",
+      "sdk_gameplay_verification": "not_run",
+      "user_acceptance": "not_done"
+    },
+    {
+      "group": "blast",
+      "levels": [
+        "Q01",
+        "Q02",
+        "Q03",
+        "Q04",
+        "Q07",
+        "Q08",
+        "Q09",
+        "Q10"
+      ],
+      "count": 8,
+      "code": "integrated",
+      "sdk_gameplay_verification": "not_run",
+      "user_acceptance": "not_done"
+    },
+    {
+      "group": "react",
+      "levels": [
+        "G01",
+        "G02",
+        "G03",
+        "G04",
+        "G05",
+        "G06",
+        "G08",
+        "G09",
+        "G10"
+      ],
+      "count": 9,
+      "code": "integrated",
+      "sdk_gameplay_verification": "not_run",
+      "user_acceptance": "not_done"
+    },
+    {
+      "group": "thermal",
+      "levels": [
+        "F01",
+        "F02",
+        "F03",
+        "F04",
+        "F07",
+        "F08",
+        "F09"
+      ],
+      "count": 7,
+      "code": "integrated",
+      "sdk_gameplay_verification": "not_run",
+      "user_acceptance": "not_done"
+    },
+    {
+      "group": "experimental",
+      "levels": [
+        "E01",
+        "E02",
+        "E03",
+        "E04",
+        "E05",
+        "E06"
+      ],
+      "count": 6,
+      "code": "integrated",
+      "sdk_gameplay_verification": "not_run",
+      "user_acceptance": "not_done"
+    }
+  ],
+  "lab_levels": 46,
+  "excluded_hell_candidates": [
+    "W06",
+    "Q05",
+    "Q06",
+    "G07",
+    "F05",
+    "F06"
+  ],
+  "content_check": {
+    "errors": 0,
+    "warnings": 0,
+    "catalog_planned_total": 52,
+    "lab_specs": 46
+  },
+  "uid_checks": {
+    "format": "portitor.id-checks/1",
+    "checks": [
+      {
+        "id": "a",
+        "ok": true
+      },
+      {
+        "id": "b",
+        "ok": true
+      },
+      {
+        "id": "c",
+        "ok": true
+      }
+    ],
+    "errors": [],
+    "uid_count": 897
+  },
+  "build": {
+    "exit_code": 0,
+    "fatal_log_entries": [],
+    "warnings": [
+      "Universal template export could not find x86_64 SDK; final binary and SDK are arm64."
+    ],
+    "app": "/Users/key_/Desktop/CURRGO/pushbox-demo/builds/PORTITOR-Night-Development.app",
+    "version": "0.2.0",
+    "pck_sha256": "32f26ccb8161901a8f078c974736b5f00e1f1f899adabfb1f3d9d38f9817b2ff",
+    "pck_contains_spec_bytes": 46,
+    "missing_spec_bytes": [],
+    "sdk_library_matches_bundled": true,
+    "sdk_sha256": "b084eb5ffad07cc4b790285156de1bf3ef1c33fd69a8bb7fd2d7c599f6c088c4",
+    "source_sha256": "00aa92493daffcef908ee1c3f78f8b96bb1a85672c9e078de3e4d12df7c6a5aa",
+    "source_changed_during_build": [],
+    "local_adhoc_signature_verified": true,
+    "developer_id_notarization": false
+  },
+  "frozen_inputs": {
+    "checked_files": 301,
+    "changed": [],
+    "ok": true
+  },
+  "not_run": [
+    "SDK samples",
+    "level automatic replay",
+    "gameplay verification",
+    "cross-process checkpoint IO verification",
+    "performance",
+    "screenshot comparison",
+    "exhaustive solving",
+    "app launch smoke"
+  ],
+  "user_acceptance": "not_done",
+  "art_acceptance": "pending_assets_remain",
+  "known_boundaries": [
+    "Missing mechanism art uses explicit placeholders.",
+    "Cross-process checkpoints preserve world and author route; undo history starts anew.",
+    "Gas settling, fuse propagation and phase lengths remain untested."
+  ]
+}

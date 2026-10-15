@@ -1,8 +1,5 @@
-class_name UnimplementedMeltd25722
-extends "res://gameplay/mechanics/mechanic.gd"
-## mechanic:melt: catalog path only; not registered by any playable mode.
+class_name MeltMechanic
+extends "res://gameplay/mechanics/sdk_material.gd"
 
-var unimplemented: bool = true
-
-func implementation_available() -> bool:
-	return false
+func material_names() -> Array[String]:
+	return ["ice", "water"]

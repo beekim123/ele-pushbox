@@ -1,0 +1,281 @@
+nice: setpriority: Operation not permitted
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+ERROR: Condition "ret != noErr" is true. Returning: ""
+   at: get_system_ca_certificates (platform/macos/os_macos.mm:1035)
+[   0% ] [90m[1mfirst_scan_filesystem[22m | Started 项目初始化 (5 steps)[39m[0m
+[   0% ] [90m[1mfirst_scan_filesystem[22m | 正在扫描文件结构……[39m[0m
+[  16% ] [90m[1mfirst_scan_filesystem[22m | 正在加载全局类名……[39m[0m
+[  33% ] [90m[1mfirst_scan_filesystem[22m | 正在校验 GDExtension……[39m[0m
+[  50% ] [90m[1mfirst_scan_filesystem[22m | 正在创建自动加载脚本……[39m[0m
+[  66% ] [90m[1mfirst_scan_filesystem[22m | 正在初始化插件……[39m[0m
+[  83% ] [90m[1mfirst_scan_filesystem[22m | 正在启动文件扫描……[39m[0m
+[92m[ DONE ][39m [1mfirst_scan_filesystem[22m
+[0m
+[   0% ] [90m[1mupdate_scripts_classes[22m | Started 正在注册全局类…… (52 steps)[39m[0m
+[   0% ] [90m[1mupdate_scripts_classes[22m | PortitorApp[39m[0m
+[   1% ] [90m[1mupdate_scripts_classes[22m | CrateWaterRules[39m[0m
+[   3% ] [90m[1mupdate_scripts_classes[22m | GridClassifier[39m[0m
+[   5% ] [90m[1mupdate_scripts_classes[22m | LevelGridState[39m[0m
+[   7% ] [90m[1mupdate_scripts_classes[22m | AcidMechanic[39m[0m
+[   9% ] [90m[1mupdate_scripts_classes[22m | BinMechanic[39m[0m
+[  11% ] [90m[1mupdate_scripts_classes[22m | BlastIgniteMechanic[39m[0m
+[  13% ] [90m[1mupdate_scripts_classes[22m | BlastThroughMechanic[39m[0m
+[  15% ] [90m[1mupdate_scripts_classes[22m | BombMechanic[39m[0m
+[  16% ] [90m[1mupdate_scripts_classes[22m | BounceMechanic[39m[0m
+[  18% ] [90m[1mupdate_scripts_classes[22m | BurnMechanic[39m[0m
+[  20% ] [90m[1mupdate_scripts_classes[22m | CommunicatingMechanic[39m[0m
+[  22% ] [90m[1mupdate_scripts_classes[22m | DisplaceMechanic[39m[0m
+[  24% ] [90m[1mupdate_scripts_classes[22m | EtchTagMechanic[39m[0m
+[  26% ] [90m[1mupdate_scripts_classes[22m | FallMechanic[39m[0m
+[  28% ] [90m[1mupdate_scripts_classes[22m | FloatSinkMechanic[39m[0m
+[  30% ] [90m[1mupdate_scripts_classes[22m | FreezeMechanic[39m[0m
+[  32% ] [90m[1mupdate_scripts_classes[22m | FuseMechanic[39m[0m
+[  33% ] [90m[1mupdate_scripts_classes[22m | GasRiseMechanic[39m[0m
+[  35% ] [90m[1mupdate_scripts_classes[22m | GasSinkMechanic[39m[0m
+[  37% ] [90m[1mupdate_scripts_classes[22m | GravelMechanic[39m[0m
+[  39% ] [90m[1mupdate_scripts_classes[22m | GustMechanic[39m[0m
+[  41% ] [90m[1mupdate_scripts_classes[22m | IceSlideMechanic[39m[0m
+[  43% ] [90m[1mupdate_scripts_classes[22m | LanternRevealMechanic[39m[0m
+[  45% ] [90m[1mupdate_scripts_classes[22m | LeverMechanic[39m[0m
+[  47% ] [90m[1mupdate_scripts_classes[22m | LifetimeMechanic[39m[0m
+[  49% ] [90m[1mupdate_scripts_classes[22m | LiftMechanic[39m[0m
+[  50% ] [90m[1mupdate_scripts_classes[22m | LoadBridgeMechanic[39m[0m
+[  52% ] [90m[1mupdate_scripts_classes[22m | MeltMechanic[39m[0m
+[  54% ] [90m[1mupdate_scripts_classes[22m | MineCartMechanic[39m[0m
+[  56% ] [90m[1mupdate_scripts_classes[22m | NestedBoxMechanic[39m[0m
+[  58% ] [90m[1mupdate_scripts_classes[22m | PlateDoorMechanic[39m[0m
+[  60% ] [90m[1mupdate_scripts_classes[22m | PortalMechanic[39m[0m
+[  62% ] [90m[1mupdate_scripts_classes[22m | PourMechanic[39m[0m
+[  64% ] [90m[1mupdate_scripts_classes[22m | PushMechanic[39m[0m
+[  66% ] [90m[1mupdate_scripts_classes[22m | SdkMaterialMechanic[39m[0m
+[  67% ] [90m[1mupdate_scripts_classes[22m | SeesawMechanic[39m[0m
+[  69% ] [90m[1mupdate_scripts_classes[22m | VineMechanic[39m[0m
+[  71% ] [90m[1mupdate_scripts_classes[22m | WaterFlowMechanic[39m[0m
+[  73% ] [90m[1mupdate_scripts_classes[22m | LevelGoals[39m[0m
+[  75% ] [90m[1mupdate_scripts_classes[22m | LevelSession[39m[0m
+[  77% ] [90m[1mupdate_scripts_classes[22m | GameplaySettleLoop[39m[0m
+[  79% ] [90m[1mupdate_scripts_classes[22m | ResourceIds[39m[0m
+[  81% ] [90m[1mupdate_scripts_classes[22m | LabController[39m[0m
+[  83% ] [90m[1mupdate_scripts_classes[22m | TerrainMaterial[39m[0m
+[  84% ] [90m[1mupdate_scripts_classes[22m | MatterPresentation[39m[0m
+[  86% ] [90m[1mupdate_scripts_classes[22m | WorldView[39m[0m
+[  88% ] [90m[1mupdate_scripts_classes[22m | PortitorScreen[39m[0m
+[  90% ] [90m[1mupdate_scripts_classes[22m | PortitorSdkWorld[39m[0m
+[  92% ] [90m[1mupdate_scripts_classes[22m | SimulationMaterials[39m[0m
+[  94% ] [90m[1mupdate_scripts_classes[22m | SimulationProfiles[39m[0m
+[  96% ] [90m[1mupdate_scripts_classes[22m | SdkSettler[39m[0m
+[92m[ DONE ][39m [1mupdate_scripts_classes[22m
+[0m
+[   0% ] [90m[1m_update_scan_actions[22m | Started 正在扫描动作…… (65 steps)[39m[0m
+[   0% ] [90m[1m_update_scan_actions[22m | fusion-pixel-10px-proportional-sc.woff2[39m[0m
+[   1% ] [90m[1m_update_scan_actions[22m | fusion-pixel-12px-proportional-zh_hans.otf.woff2[39m[0m
+[   3% ] [90m[1m_update_scan_actions[22m | char.miner.png[39m[0m
+[   4% ] [90m[1m_update_scan_actions[22m | char.portitor.png[39m[0m
+[   6% ] [90m[1m_update_scan_actions[22m | deco.cave_crystal.png[39m[0m
+[   7% ] [90m[1m_update_scan_actions[22m | deco.cave_mushroom.png[39m[0m
+[   9% ] [90m[1m_update_scan_actions[22m | deco.cosmos_sprout.png[39m[0m
+[  10% ] [90m[1m_update_scan_actions[22m | deco.dungeon_moss.png[39m[0m
+[  12% ] [90m[1m_update_scan_actions[22m | deco.dungeon_torch.png[39m[0m
+[  13% ] [90m[1m_update_scan_actions[22m | deco.forest_flower.png[39m[0m
+[  15% ] [90m[1m_update_scan_actions[22m | deco.forest_grass.png[39m[0m
+[  16% ] [90m[1m_update_scan_actions[22m | deco.ruins_lotus.png[39m[0m
+[  18% ] [90m[1m_update_scan_actions[22m | deco.ruins_vine.png[39m[0m
+[  19% ] [90m[1m_update_scan_actions[22m | deco.sky_flower.png[39m[0m
+[  21% ] [90m[1m_update_scan_actions[22m | fauna.cave_moth.png[39m[0m
+[  22% ] [90m[1m_update_scan_actions[22m | fauna.cosmos_drone.png[39m[0m
+[  24% ] [90m[1m_update_scan_actions[22m | fauna.dungeon_bat.png[39m[0m
+[  25% ] [90m[1m_update_scan_actions[22m | fauna.dungeon_rat.png[39m[0m
+[  27% ] [90m[1m_update_scan_actions[22m | fauna.forest_bird.png[39m[0m
+[  28% ] [90m[1m_update_scan_actions[22m | fauna.forest_butterfly.png[39m[0m
+[  30% ] [90m[1m_update_scan_actions[22m | fauna.ruins_scarab.png[39m[0m
+[  31% ] [90m[1m_update_scan_actions[22m | fauna.sky_cloudling.png[39m[0m
+[  33% ] [90m[1m_update_scan_actions[22m | fauna.sky_dove.png[39m[0m
+[  34% ] [90m[1m_update_scan_actions[22m | fx.dig_bits.png[39m[0m
+[  36% ] [90m[1m_update_scan_actions[22m | fx.explosion.png[39m[0m
+[  37% ] [90m[1m_update_scan_actions[22m | fx.fire.png[39m[0m
+[  39% ] [90m[1m_update_scan_actions[22m | fx.fizz.png[39m[0m
+[  40% ] [90m[1m_update_scan_actions[22m | fx.frost.png[39m[0m
+[  42% ] [90m[1m_update_scan_actions[22m | fx.goal_spark.png[39m[0m
+[  43% ] [90m[1m_update_scan_actions[22m | fx.land_dust.png[39m[0m
+[  45% ] [90m[1m_update_scan_actions[22m | fx.ripple.png[39m[0m
+[  46% ] [90m[1m_update_scan_actions[22m | fx.rubble.png[39m[0m
+[  48% ] [90m[1m_update_scan_actions[22m | fx.splash.png[39m[0m
+[  50% ] [90m[1m_update_scan_actions[22m | item.bomb.png[39m[0m
+[  51% ] [90m[1m_update_scan_actions[22m | item.sandbag.png[39m[0m
+[  53% ] [90m[1m_update_scan_actions[22m | mech.bin.png[39m[0m
+[  54% ] [90m[1m_update_scan_actions[22m | mech.bin_gauge.png[39m[0m
+[  56% ] [90m[1m_update_scan_actions[22m | mech.bridge.png[39m[0m
+[  57% ] [90m[1m_update_scan_actions[22m | mech.button.png[39m[0m
+[  59% ] [90m[1m_update_scan_actions[22m | mech.door.png[39m[0m
+[  60% ] [90m[1m_update_scan_actions[22m | mech.exit_flag.png[39m[0m
+[  62% ] [90m[1m_update_scan_actions[22m | mech.frost_vent.png[39m[0m
+[  63% ] [90m[1m_update_scan_actions[22m | mech.heat_vent.png[39m[0m
+[  65% ] [90m[1m_update_scan_actions[22m | mech.ladder.png[39m[0m
+[  66% ] [90m[1m_update_scan_actions[22m | mech.lever.png[39m[0m
+[  68% ] [90m[1m_update_scan_actions[22m | mech.lift.png[39m[0m
+[  69% ] [90m[1m_update_scan_actions[22m | mech.link_symbol.png[39m[0m
+[  71% ] [90m[1m_update_scan_actions[22m | mech.plate.png[39m[0m
+[  72% ] [90m[1m_update_scan_actions[22m | mech.portal.png[39m[0m
+[  74% ] [90m[1m_update_scan_actions[22m | mech.socket.png[39m[0m
+[  75% ] [90m[1m_update_scan_actions[22m | mech.socket_lit.png[39m[0m
+[  77% ] [90m[1m_update_scan_actions[22m | mech.torch.png[39m[0m
+[  78% ] [90m[1m_update_scan_actions[22m | mech.vine.png[39m[0m
+[  80% ] [90m[1m_update_scan_actions[22m | obj.crate_iron.png[39m[0m
+[  81% ] [90m[1m_update_scan_actions[22m | obj.crate_wood.png[39m[0m
+[  83% ] [90m[1m_update_scan_actions[22m | ui.class_icon.png[39m[0m
+[  84% ] [90m[1m_update_scan_actions[22m | ui.cursor.png[39m[0m
+[  86% ] [90m[1m_update_scan_actions[22m | ui.goal_lamp.png[39m[0m
+[  87% ] [90m[1m_update_scan_actions[22m | ui.icons.png[39m[0m
+[  89% ] [90m[1m_update_scan_actions[22m | ui.keycap.png[39m[0m
+[  90% ] [90m[1m_update_scan_actions[22m | ui.menu_icons.png[39m[0m
+[  92% ] [90m[1m_update_scan_actions[22m | ui.panel.png[39m[0m
+[  93% ] [90m[1m_update_scan_actions[22m | ui.rule_icon.png[39m[0m
+[  95% ] [90m[1m_update_scan_actions[22m | ui.target.png[39m[0m
+[  96% ] [90m[1m_update_scan_actions[22m | ui.theme_emblem.png[39m[0m
+[92m[ DONE ][39m [1m_update_scan_actions[22m
+[0m
+[   0% ] [90m[1mreimport[22m | Started 正在导入或重新导入资产 (63 steps)[39m[0m
+[   0% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[   1% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[   3% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[   4% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[   6% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[   7% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[   9% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[  10% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[  12% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[  14% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[  15% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[  17% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[  18% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[  20% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[  21% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[  23% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[  25% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[  26% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[  28% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[  29% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[  31% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[  32% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[  34% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[  35% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[  37% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[  39% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[  40% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[  42% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[  43% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[  45% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[  46% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[  48% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[  50% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[  51% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[  53% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[  54% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[  56% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[  57% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[  59% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[  60% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[  62% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[  64% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[  65% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[  67% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[  68% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[  70% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[  71% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[  73% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[  75% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[  76% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[  78% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[  79% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[  81% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[  82% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[  84% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[  85% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[  87% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[  89% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[  90% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[  92% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[  93% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[  95% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[  96% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[   0% ] [90m[1mreimport[22m | 正在执行重新导入的前置操作……[39m[0m
+[   0% ] [90m[1mreimport[22m | item.sandbag.png[39m[0m
+[   1% ] [90m[1mreimport[22m | mech.bin.png[39m[0m
+[   3% ] [90m[1mreimport[22m | mech.bin_gauge.png[39m[0m
+[   4% ] [90m[1mreimport[22m | mech.bridge.png[39m[0m
+[   6% ] [90m[1mreimport[22m | mech.button.png[39m[0m
+[   7% ] [90m[1mreimport[22m | mech.door.png[39m[0m
+[   9% ] [90m[1mreimport[22m | mech.exit_flag.png[39m[0m
+[  10% ] [90m[1mreimport[22m | mech.frost_vent.png[39m[0m
+[  12% ] [90m[1mreimport[22m | mech.heat_vent.png[39m[0m
+[  14% ] [90m[1mreimport[22m | mech.ladder.png[39m[0m
+[  15% ] [90m[1mreimport[22m | mech.lever.png[39m[0m
+[  17% ] [90m[1mreimport[22m | mech.lift.png[39m[0m
+[  18% ] [90m[1mreimport[22m | mech.link_symbol.png[39m[0m
+[  20% ] [90m[1mreimport[22m | mech.plate.png[39m[0m
+[  21% ] [90m[1mreimport[22m | mech.portal.png[39m[0m
+[  23% ] [90m[1mreimport[22m | mech.socket.png[39m[0m
+[  25% ] [90m[1mreimport[22m | mech.socket_lit.png[39m[0m
+[  26% ] [90m[1mreimport[22m | mech.torch.png[39m[0m
+[  28% ] [90m[1mreimport[22m | mech.vine.png[39m[0m
+[  29% ] [90m[1mreimport[22m | obj.crate_iron.png[39m[0m
+[  31% ] [90m[1mreimport[22m | obj.crate_wood.png[39m[0m
+[  32% ] [90m[1mreimport[22m | ui.class_icon.png[39m[0m
+[  34% ] [90m[1mreimport[22m | ui.cursor.png[39m[0m
+[  35% ] [90m[1mreimport[22m | ui.goal_lamp.png[39m[0m
+[  37% ] [90m[1mreimport[22m | ui.icons.png[39m[0m
+[  39% ] [90m[1mreimport[22m | ui.keycap.png[39m[0m
+[  40% ] [90m[1mreimport[22m | ui.menu_icons.png[39m[0m
+[  42% ] [90m[1mreimport[22m | ui.panel.png[39m[0m
+[  43% ] [90m[1mreimport[22m | ui.rule_icon.png[39m[0m
+[  45% ] [90m[1mreimport[22m | ui.target.png[39m[0m
+[  46% ] [90m[1mreimport[22m | ui.theme_emblem.png[39m[0m
+[  48% ] [90m[1mreimport[22m | char.miner.png[39m[0m
+[  50% ] [90m[1mreimport[22m | char.portitor.png[39m[0m
+[  51% ] [90m[1mreimport[22m | deco.cave_crystal.png[39m[0m
+[  53% ] [90m[1mreimport[22m | deco.cave_mushroom.png[39m[0m
+[  54% ] [90m[1mreimport[22m | deco.cosmos_sprout.png[39m[0m
+[  56% ] [90m[1mreimport[22m | deco.dungeon_moss.png[39m[0m
+[  57% ] [90m[1mreimport[22m | deco.dungeon_torch.png[39m[0m
+[  59% ] [90m[1mreimport[22m | deco.forest_flower.png[39m[0m
+[  60% ] [90m[1mreimport[22m | deco.forest_grass.png[39m[0m
+[  62% ] [90m[1mreimport[22m | deco.ruins_lotus.png[39m[0m
+[  64% ] [90m[1mreimport[22m | deco.ruins_vine.png[39m[0m
+[  65% ] [90m[1mreimport[22m | deco.sky_flower.png[39m[0m
+[  67% ] [90m[1mreimport[22m | fauna.cave_moth.png[39m[0m
+[  68% ] [90m[1mreimport[22m | fauna.cosmos_drone.png[39m[0m
+[  70% ] [90m[1mreimport[22m | fauna.dungeon_bat.png[39m[0m
+[  71% ] [90m[1mreimport[22m | fauna.dungeon_rat.png[39m[0m
+[  73% ] [90m[1mreimport[22m | fauna.forest_bird.png[39m[0m
+[  75% ] [90m[1mreimport[22m | fauna.forest_butterfly.png[39m[0m
+[  76% ] [90m[1mreimport[22m | fauna.ruins_scarab.png[39m[0m
+[  78% ] [90m[1mreimport[22m | fauna.sky_cloudling.png[39m[0m
+[  79% ] [90m[1mreimport[22m | fauna.sky_dove.png[39m[0m
+[  81% ] [90m[1mreimport[22m | fx.dig_bits.png[39m[0m
+[  82% ] [90m[1mreimport[22m | fx.explosion.png[39m[0m
+[  84% ] [90m[1mreimport[22m | fx.fire.png[39m[0m
+[  85% ] [90m[1mreimport[22m | fx.fizz.png[39m[0m
+[  87% ] [90m[1mreimport[22m | fx.frost.png[39m[0m
+[  89% ] [90m[1mreimport[22m | fx.goal_spark.png[39m[0m
+[  90% ] [90m[1mreimport[22m | fx.land_dust.png[39m[0m
+[  92% ] [90m[1mreimport[22m | fx.ripple.png[39m[0m
+[  93% ] [90m[1mreimport[22m | fx.rubble.png[39m[0m
+[  95% ] [90m[1mreimport[22m | fx.splash.png[39m[0m
+[  96% ] [90m[1mreimport[22m | item.bomb.png[39m[0m
+[  98% ] [90m[1mreimport[22m | 正在结束资产导入……[39m[0m
+[92m[ DONE ][39m [1mreimport[22m
+[0m
+[   0% ] [90m[1mreimport[22m | Started 正在导入或重新导入资产 (63 steps)[39m[0m
+[   0% ] [90m[1mreimport[22m | 正在执行重新导入的后置操作……[39m[0m
+[92m[ DONE ][39m [1mreimport[22m
+[0m
+[   0% ] [90m[1mloading_editor_layout[22m | Started 正在加载编辑器 (5 steps)[39m[0m
+[   0% ] [90m[1mloading_editor_layout[22m | 正在加载编辑器布局……[39m[0m
+[  16% ] [90m[1mloading_editor_layout[22m | 正在加载停靠面板……[39m[0m
+[92m[ DONE ][39m [1mloading_editor_layout[22m
+[0m
+ERROR: Cannot save file '/Users/key_/Library/Application Support/Godot/editor_settings-4.7.tres'.
+   at: save (scene/resources/resource_format_text.cpp:1768)
+ERROR: Error saving editor settings to /Users/key_/Library/Application Support/Godot/editor_settings-4.7.tres
+   at: save (editor/settings/editor_settings.cpp:1525)

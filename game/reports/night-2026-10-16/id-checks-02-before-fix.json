@@ -1,0 +1,32 @@
+{
+  "format": "portitor.id-checks/1",
+  "checks": [
+    {
+      "id": "a",
+      "ok": true
+    },
+    {
+      "id": "b",
+      "ok": false
+    },
+    {
+      "id": "c",
+      "ok": true
+    }
+  ],
+  "errors": [
+    {
+      "check": "b",
+      "uid": "art:mech.seesaw",
+      "path": "/Users/key_/Desktop/CURRGO/pushbox-demo/game/presentation/render/matter.gd",
+      "detail": "unknown uid in game code or scene"
+    },
+    {
+      "check": "b",
+      "uid": "art:mech.mine_cart",
+      "path": "/Users/key_/Desktop/CURRGO/pushbox-demo/game/presentation/render/matter.gd",
+      "detail": "unknown uid in game code or scene"
+    }
+  ],
+  "uid_count": 897
+}

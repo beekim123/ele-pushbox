@@ -1,0 +1,113 @@
+{
+  "format": "pushbox.levelspec/1",
+  "id": "G05",
+  "chapter": "forest",
+  "mode": "lab",
+  "group": "react",
+  "mechanisms": [
+    "lifetime"
+  ],
+  "order": 5,
+  "title": "会消失的塞子",
+  "role": "教学",
+  "teaches": [
+    "lifetime"
+  ],
+  "requires": [
+    "lever",
+    "bin"
+  ],
+  "discovery": "拉开关只是启动菌塞的寿命；菌塞在本次装置播放中自行消失，储存的沙随后落入收集斗。",
+  "map": [
+    "###########",
+    "####s######",
+    "####s######",
+    "####p######",
+    "####.....P#",
+    "####.######",
+    "####.######",
+    "###########"
+  ],
+  "devices": [
+    {
+      "type": "release",
+      "cells": [
+        [
+          4,
+          3
+        ]
+      ],
+      "to": "plug_decay",
+      "phase_ticks": 180
+    },
+    {
+      "type": "lever",
+      "at": [
+        5,
+        4
+      ],
+      "action": {
+        "release": 0
+      }
+    },
+    {
+      "type": "bin",
+      "rect": [
+        4,
+        5,
+        1,
+        2
+      ],
+      "material": "sand",
+      "need": 512,
+      "latch": true
+    }
+  ],
+  "bag": {
+    "sand": 0,
+    "bomb": 0
+  },
+  "solution": [
+    "L",
+    "L",
+    "L",
+    "L",
+    "U"
+  ],
+  "hints": [
+    "两袋沙被菌塞托着，收集斗在菌塞下面。",
+    "开关与菌塞有相同符号；拨动后等这次装置播放结束。",
+    "向左走四格，站到开关上按上；不必再走一步，也不必抢在塞子消失前行动。"
+  ],
+  "misreads": [
+    "把菌塞当成能挖的夯土：菌塞不能挖，只能由释放口激活。",
+    "以为要连续操作等待倒计时：寿命全部发生在单次装置阶段内，播放时不接受下一动作。"
+  ],
+  "sdk": {
+    "sdk": [
+      "初始 p 是不带 lifetime 的 static 菌塞；释放口只将 (4,3) 写成 plug_decay 一次。",
+      "候选 plug_decay 定义：static，SDK lifetime=120 tick，到期产物 empty，不带 burnable 或 conductor；寿命倒数和到期消失必须由 SDK 完成。",
+      "菌塞消失后，2 格共 512 cell 的 sand 由 SDK 粉末重力落入一格宽的斗。"
+    ],
+    "game_layer": [
+      "lever (5,4) 的 U 触发 release 0；release.phase_ticks=180 是接口提案，完整播放期间锁输入，然后继续正常静止判定。",
+      "收集斗 rect=(4,5,1,2)，need=512，latch=true，为唯一目标；未释放时不能启动菌塞倒数。",
+      "释放动作是一次性的状态转换；已激活或已消失的菌塞不得被再次拨动重写而重置寿命。"
+    ]
+  },
+  "checks": [
+    "待真实 SDK 样板：开局在任意普通动作后菌塞都不衰减；只有拨动开关才写入 plug_decay。",
+    "待真实 SDK 样板：get_cell.reg 实际倒数，到期由 SDK 转为空；禁用寿命规则时沙不会放下、斗不会点灯。",
+    "待真实 SDK 样板：候选 180 tick 阶段容纳 120 tick 寿命及沙落下余量；记录实际结束 tick，不得靠游戏层届时删除菌塞。",
+    "待游戏验收：连续拨动不能刷新寿命或重复写沙；撤销激活恢复静止 p 和原来的沙柱。",
+    "待真实 SDK 验收：作者解合法并点亮全部目标灯；同一 seed 从开局连续回放 3 次结果一致。",
+    "待真实 SDK 验收：每一步撤销及重开恢复人物、背包、材料与机关状态；记录逐步 tick 和结算轮数，均不得达到 1200 tick / 16 轮上限。"
+  ],
+  "notes": "候选规格；本轮仅编写与逐格静态审阅，设计模型、真实 SDK、Godot、回放与撤销验证均未运行。不得以本规格或模型结果宣布 SDK 验证通过。 接口提案：在已定义 release 的 cells/to 之外增加 phase_ticks:180，供带寿命的释放播放采用固定阶段；尚未实现。plug_decay.lifetime=120 及 to=empty 是候选材料参数，需按正式 SDK 内容格式注册并实测。",
+  "goals": [
+    {
+      "type": "bin",
+      "device": 2
+    }
+  ]
+}

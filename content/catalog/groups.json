@@ -1,7 +1,7 @@
 {
  "format": "pushbox.catalog/1",
  "kind": "groups",
- "note": "机制组与关卡计划（game-design.md 第 6 节，关卡模式 v2）。每组 = 一种 SDK 材料 + 两三个不需要 SDK 的机关，组末是组合关；一关仍然只让玩家发现一件新事。第一批交给开发方的是 basics 与 water（第 1、2 章）。",
+ "note": "机制组与关卡计划（game-design.md第6节）。2026-10-16用户授权补齐第三至第五章全部计划及第六章6个短组合关；第六章只复用已有机制，不引入气压、粒子、刚体、电路系统。候选规格、代码实现、SDK验证、用户验收分开记录，状态仍由数据派生。",
  "entries": [
   {
    "id": "basics",
@@ -441,9 +441,76 @@
    "order": 6,
    "name": "实验",
    "theme": "theme.cosmos",
-   "sdk_profile": [],
+   "sdk_profile": [
+    "cells",
+    "liquid_pressure",
+    "thermal",
+    "explosions",
+    "couplers"
+   ],
    "hidden": true,
-   "levels": []
+   "levels": [
+    {
+     "id": "E01",
+     "title": "沙替我守门",
+     "mechanisms": [
+      "pour",
+      "plate_door"
+     ],
+     "role": "短组合",
+     "discovery": "把沙留在压板坑里，自己穿门去出口"
+    },
+    {
+     "id": "E02",
+     "title": "箱子先过去",
+     "mechanisms": [
+      "portal",
+      "push"
+     ],
+     "role": "短组合",
+     "discovery": "用传送阵把箱子送到槽旁，再推入目标"
+    },
+    {
+     "id": "E03",
+     "title": "装好再放水",
+     "mechanisms": [
+      "bin",
+      "lift"
+     ],
+     "role": "短组合",
+     "discovery": "箱子先装上台面，再放水使收集斗触发升降台"
+    },
+    {
+     "id": "E04",
+     "title": "清轨再发车",
+     "mechanisms": [
+      "bomb",
+      "mine_cart"
+     ],
+     "role": "短组合",
+     "discovery": "炸开轨道前的裂岩，再推车运箱入槽"
+    },
+    {
+     "id": "E05",
+     "title": "冻道送箱",
+     "mechanisms": [
+      "freeze",
+      "ice_slide"
+     ],
+     "role": "短组合",
+     "discovery": "把一段水面冻成冰道，一次推箱滑到终点"
+    },
+    {
+     "id": "E06",
+     "title": "重箱开水门",
+     "mechanisms": [
+      "load_bridge",
+      "float_sink"
+     ],
+     "role": "短组合",
+     "discovery": "铁箱与人让桥超重，铁箱下沉压开水门"
+    }
+   ]
   },
   {
    "id": "hell-pool",

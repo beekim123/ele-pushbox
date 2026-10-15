@@ -11,8 +11,11 @@ func on_settle_step() -> bool:
 	var changed: bool = false
 	for index: int in order:
 		var crate: Dictionary = grid.crates[index]
+		var below: int = grid.terrain_at(int(crate.x), int(crate.y) + 1)
+		if str(crate.kind) == "wood" and below == grid.Terrain.WATER:
+			continue
 		if grid.is_free(int(crate.x), int(crate.y) + 1):
-			if context.move_crate(index, Vector2i(int(crate.x), int(crate.y) + 1)):
+			if context.move_crate(index, Vector2i(int(crate.x), int(crate.y) + 1), "exchange"):
 				changed = true
 	var x: int = int(grid.player.x)
 	var y: int = int(grid.player.y)

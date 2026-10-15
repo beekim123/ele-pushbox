@@ -164,10 +164,29 @@ export function buildContent(root, opts = {}) {
 
   // ---- global ids and the workbench -> game map (docs/design/ids.md) ----
   const texts = fs.existsSync(rel("content/i18n/zh-Hans.json")) ? readJson(rel("content/i18n/zh-Hans.json")) : {};
+  const extraTables = {};
+  for (const locale of ["zh-Hans", "en"]) {
+    const file = `content/i18n-extra/${locale}.json`;
+    extraTables[locale] = {};
+    if (!fs.existsSync(rel(file))) continue;
+    try { extraTables[locale] = readJson(rel(file)); }
+    catch (e) { add("error", file, "不是合法 JSON：" + e.message); continue; }
+    const approvedTexts = fs.existsSync(rel(`content/i18n/${locale}.json`)) ? readJson(rel(`content/i18n/${locale}.json`)) : {};
+    for (const [key, value] of Object.entries(extraTables[locale])) {
+      if (key === "_meta") continue;
+      if (key in approvedTexts) add("error", file, `新增文字不能覆盖已确认键：${key}`);
+      if (typeof value !== "string") add("error", file, `文字必须为字符串：${key}`);
+    }
+  }
+  const extraTexts = extraTables["zh-Hans"];
+  const extraKeys = new Set([...Object.keys(extraTexts), ...Object.keys(extraTables.en)]);
+  for (const key of extraKeys) if (key !== "_meta") {
+    for (const locale of ["zh-Hans", "en"]) if (!(key in extraTables[locale])) add("error", `content/i18n-extra/${locale}.json`, `缺少翻译：${key}`);
+  }
   const ids = buildIdMap({
     art: [...art.values()].map((a) => Object.assign({}, a, { file: artFile.get(a.id), approved: approved(a.id) })).sort((a, b) => a.id.localeCompare(b.id)),
     levels: levels.map((l) => ({ id: l.id, title: l.title, spec: l.has_spec ? l.spec : null, sha256: l.sha256 })),
-    catalogs: cat, texts,
+    catalogs: cat, texts, extraTexts,
   });
   issues.push(...ids.issues);
 

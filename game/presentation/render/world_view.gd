@@ -8,6 +8,7 @@ const Ambient = preload("res://presentation/render/ambient/ambient.gd")
 const EnvEffects = preload("res://presentation/render/env/environment.gd")
 const Sprites = preload("res://presentation/render/sprites/sprite_assets.gd")
 const Terrain = preload("res://presentation/render/terrain/terrain_material.gd")
+const Matter = preload("res://presentation/render/matter.gd")
 const PALETTE_SHADER: Shader = preload("res://presentation/render/sprites/palette.gdshader")
 const VIEW_SIZE: Vector2i = Vector2i(320, 180)
 const HUD_HEIGHT: int = 20
@@ -82,7 +83,7 @@ func set_session(value: Variant) -> void:
 		_spec = value.spec.duplicate(true)
 		_opening = _parse_opening(_spec)
 		# The starting state may include SDK settlement; use its rule classes.
-		var state: Dictionary = value.state()
+		var state: Dictionary = value.opening_state() if value.has_method("opening_state") else value.state()
 		if not state.is_empty():
 			_opening.terrain = state.terrain.duplicate()
 			_opening.crates = state.crates.duplicate(true)
@@ -288,10 +289,30 @@ func _entity_phase(state: Dictionary, tick: int) -> String:
 	var frames: Array[int] = []
 	for pair: Array in [["art:char.portitor", actor_pose], ["art:mech.socket", "idle"], ["art:mech.exit_flag", "idle"], ["art:mech.socket_lit", "lit"]]:
 		frames.append(Sprites.frame_at(Sprites.metadata(pair[0]), pair[1], tick))
-	return str([_backdrop, _lobby_scene, _origin, state.get("player"), state.get("crates"), state.get("doors"), state.get("won", false), facing_left, frames, _blocked_actor_offset(tick)])
+	for pair: Array in [["art:mech.portal", "idle"], ["art:mech.portal", "glow"], ["art:mech.torch", "lit"], ["art:mech.frost_vent", "active"], ["art:mech.heat_vent", "active"], ["art:fx.ripple", "float"]]:
+		frames.append(Sprites.frame_at(Sprites.metadata(pair[0]), pair[1], tick))
+	return str([_backdrop, _lobby_scene, _origin, state.get("player"), state.get("crates"), state.get("doors"), state.get("devices"), state.get("markers"), state.get("terrain"), state.get("moves"), state.get("won", false), facing_left, frames, _blocked_actor_offset(tick)])
 
 func _draw_targets(raster: RefCounted) -> void:
 	if target.is_empty():
+		return
+	if str(target.get("kind", "")) == "bomb" and target.has("blast_center"):
+		var centre: Vector2i = _origin + Vector2i(target.blast_center)
+		var radius: int = maxi(1, int(target.get("blast_radius", 20)))
+		# Draw the actual SDK circle. Touched tiles may only be partially cut.
+		for y: int in range(-radius, radius + 1):
+			for x: int in range(-radius, radius + 1):
+				var distance_squared: int = x * x + y * y
+				if distance_squared <= radius * radius and distance_squared >= (radius - 1) * (radius - 1):
+					raster.set_code(centre.x + x, centre.y + y, "j")
+		if not _backdrop:
+			var state: Dictionary = session.state()
+			for cell: Dictionary in target.get("cells", []):
+				var index: int = int(cell.y) * int(state.w) + int(cell.x)
+				if index >= 0 and index < state.terrain.size() and int(state.terrain[index]) == 2:
+					var at: Vector2i = _origin + Vector2i(int(cell.x), int(cell.y)) * 16
+					Matter.dashed_rect(raster, Rect2i(at + Vector2i.ONE, Vector2i(14, 14)), "F")
+		Sprites.blit(raster, "art:ui.target", "bomb", 0, _anchor(int(target.x), int(target.y)))
 		return
 	var cells: Array = target.get("cells", [target])
 	for cell: Dictionary in cells:
@@ -319,6 +340,16 @@ func _bind_materials(state: Dictionary) -> void:
 	var ids: Dictionary = world.material_ids
 	for pair: Array in [["rock_id", "bedrock"], ["cracked_id", "cracked_rock"], ["earth_id", "packed_earth"], ["sand_id", "sand"], ["water_id", "water"]]:
 		_terrain_material.set_shader_parameter(pair[0], int(ids.get(pair[1], -1)))
+	var matter_ids: PackedInt32Array = PackedInt32Array()
+	for name: String in ["gravel", "fuse", "acid", "limestone_a", "limestone_b", "hard_rock", "smoke", "fog", "plug", "plug_decay", "wood", "ice", "bridge"]:
+		matter_ids.append(int(ids.get(name, -1)))
+	_terrain_material.set_shader_parameter("matter_ids", matter_ids)
+	_terrain_material.set_shader_parameter("matter_approved", Sprites.has("art:material.chapter2_5"))
+	var fire: Dictionary = Sprites.metadata("art:fx.fire")
+	_terrain_material.set_shader_parameter("fire_approved", not fire.is_empty())
+	if not fire.is_empty():
+		_terrain_material.set_shader_parameter("fire_sheet", Sprites.texture("art:fx.fire"))
+		_terrain_material.set_shader_parameter("fire_frame", Sprites.frame_at(fire, "burn", fixed_tick if fixed_tick >= 0 else floori(_elapsed)))
 	var tiles: Array = world.get_render_tiles()
 	if tiles.is_empty():
 		var actual: Image = world.render_material_image()
@@ -379,9 +410,10 @@ func _draw_lobby_entities(raster: RefCounted, tick: int) -> void:
 	Sprites.blit(raster, "art:mech.exit_flag", "idle", tick, Vector2i(300, 124))
 
 func _draw_entities(raster: RefCounted, state: Dictionary, tick: int) -> void:
-	var w: int = _opening.w
-	for i: int in range(_opening.markers.size()):
-		var marker: int = _opening.markers[i]
+	var w: int = int(state.w)
+	var markers: Array = state.get("markers", _opening.markers)
+	for i: int in range(markers.size()):
+		var marker: int = int(markers[i])
 		if marker == 0:
 			continue
 		var p: Vector2i = _anchor(i % w, i / w)
@@ -394,9 +426,11 @@ func _draw_entities(raster: RefCounted, state: Dictionary, tick: int) -> void:
 			3: Sprites.blit(raster, "art:mech.exit_flag", "idle", tick, p)
 			4:
 				var pressed: bool = crate or (int(state.player.x) == i % w and int(state.player.y) == i / w)
+				pressed = pressed or int(state.terrain[i]) not in [0, 5, 10, 14, 15]
 				Sprites.blit(raster, "art:mech.plate", "down" if pressed else "up", 0, p)
 				if not pressed:
 					Sprites.blit(raster, "art:mech.link_symbol", _symbol(i), 0, p - Vector2i(0, 7))
+	Matter.draw_devices(raster, state, _origin, tick)
 	for group_index: int in range(_opening.groups.size()):
 		var group: Dictionary = _opening.groups[group_index]
 		var opened: bool = bool(state.doors[group_index]) if group_index < state.get("doors", []).size() else false
@@ -406,8 +440,14 @@ func _draw_entities(raster: RefCounted, state: Dictionary, tick: int) -> void:
 			Sprites.blit(raster, "art:mech.link_symbol", _symbol(i), 0, p - Vector2i(0, 12))
 	for crate: Dictionary in state.crates:
 		var p: Vector2i = _anchor(crate.x, crate.y)
-		Sprites.blit(raster, "art:obj.crate_iron" if crate.kind == "iron" else "art:obj.crate_wood", "default", 0, p)
-		if int(_opening.markers[int(crate.y) * w + int(crate.x)]) == 2:
+		var floating: bool = Matter.floating(state, crate)
+		if crate.has("nested_device"):
+			Matter.placeholder(raster, p, true, clampi(roundi(14.0 * float(crate.get("nested_scale", 1.0))), 7, 14))
+		else:
+			Sprites.blit(raster, "art:obj.crate_iron" if crate.kind == "iron" else "art:obj.crate_wood", "default", 0, p + Vector2i(0, 3 if floating else 0))
+		if floating:
+			Sprites.blit(raster, "art:fx.ripple", "float", tick, p + Vector2i(0, 2))
+		if int(markers[int(crate.y) * w + int(crate.x)]) == 2:
 			Sprites.blit(raster, "art:mech.socket_lit", "lit", tick, p)
 	Sprites.blit(raster, "art:char.portitor", "win" if state.get("won", false) else pose, tick, _anchor(state.player.x, state.player.y) + Vector2i(_blocked_actor_offset(tick), 0), facing_left)
 
@@ -432,7 +472,12 @@ func _occupied_opening(x: int, y: int) -> bool:
 		if index in group.doors:
 			return true
 	for device: Dictionary in _spec.get("devices", []):
-		if device.get("at", []) == [x, y] or device.get("button", []) == [x, y]:
+		if device.get("at", []) == [x, y] or device.get("button", []) == [x, y] or device.get("root", []) == [x, y]:
+			return true
+		for key: String in ["pads", "cells", "ends", "stops"]:
+			if [x, y] in device.get(key, []):
+				return true
+		if device.get("rect", []).size() == 4 and Matter.tile_rect(device.rect, Vector2i.ZERO).has_point(Vector2i(x, y) * 16):
 			return true
 	return false
 
@@ -455,13 +500,13 @@ static func _grid_texture(state: Dictionary) -> ImageTexture:
 static func _parse_opening(spec: Dictionary) -> Dictionary:
 	var rows: Array = spec.map
 	var width: int = str(rows[0]).length()
-	var result: Dictionary = {"w": width, "h": rows.size(), "terrain": [], "markers": [], "crates": [], "player": {}, "groups": [], "doors": [], "bag": {}, "won": false}
+	var result: Dictionary = {"w": width, "h": rows.size(), "terrain": [], "markers": [], "crates": [], "player": {}, "groups": [], "doors": [], "bag": {}, "devices": spec.get("devices", []).duplicate(true), "won": false}
 	var doors: Array[int] = []
 	var plates: Array[int] = []
 	for y: int in range(rows.size()):
 		for x: int in range(width):
 			var c: String = str(rows[y]).substr(x, 1)
-			var material: int = {"#": 1, "%": 2, "e": 3, "s": 4, "~": 5}.get(c, 0)
+			var material: int = {"#": 1, "%": 2, "e": 3, "s": 4, "~": 5, "=": 7, "g": 8, "f": 9, "a": 10, "L": 11, "M": 12, "R": 13, "^": 14, "v": 15, "p": 16, "w": 17, "i": 18}.get(c, 0)
 			var marker: int = {"H": 1, "h": 1, "o": 2, "b": 2, "X": 3, "_": 4}.get(c, 0)
 			result.terrain.append(material)
 			result.markers.append(marker)
@@ -514,6 +559,7 @@ func _draw_observe(raster: RefCounted, state: Dictionary) -> void:
 				for k: int in range(0, count + 1, 2):
 					var p: Vector2 = Vector2(a).lerp(Vector2(b), float(k) / maxi(1, count))
 					raster.set_code(floori(p.x + 0.5), floori(p.y + 0.5), "s")
+	Matter.draw_observe(raster, state, _origin, _opening.groups, session.observe())
 
 func render_texture(uid: String, tick: int = 0) -> Texture2D:
 	## Async GPU thumbnail; call with await. Uses the same shader, never a ref PNG.

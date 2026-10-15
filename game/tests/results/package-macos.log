@@ -1,5 +1,5 @@
 {
-  "uid_count": 713,
+  "uid_count": 715,
   "generated_files": 188,
   "approved_art": 70,
   "pending_art": [
@@ -641,24 +641,24 @@ Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
 [  93% ] [90m[1msavepack[22m | 正在保存文件：res://sim/profiles.gdc[39m[0m
 [  93% ] [90m[1msavepack[22m | 正在保存文件：res://sim/settle.gdc[39m[0m
 [  94% ] [90m[1msavepack[22m | 正在保存文件：res://sim/snapshot.gdc[39m[0m
-[  94% ] [90m[1msavepack[22m | 正在保存文件：res://bin/libele_godot.dylib[39m[0m
-[  94% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-ed1eb48003677e87d025187d82114689-rulecard.scn[39m[0m
+[  94% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-2e00173a1969d5965b7f61869da6f65a-settings.scn[39m[0m
+[  94% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-7a8117d0162fc8f73ce9d34cf268e7df-lobby.scn[39m[0m
 [  94% ] [90m[1msavepack[22m | 正在保存文件：res://bin/fonts/fusion-pixel-12px/LICENSES/galmuri/LICENSE.txt[39m[0m
+[  95% ] [90m[1msavepack[22m | 正在保存文件：res://bin/libele_godot.dylib[39m[0m
 [  95% ] [90m[1msavepack[22m | 正在保存文件：res://bin/fonts/fusion-pixel-12px/LICENSES/cubic-11/OFL.txt[39m[0m
-[  95% ] [90m[1msavepack[22m | 正在保存文件：res://bin/fonts/fusion-pixel-12px/LICENSES/ark-pixel/OFL.txt[39m[0m
+[  95% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-ed1eb48003677e87d025187d82114689-rulecard.scn[39m[0m
+[  96% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-3be581b2bc20d1394e6f4b0ee3f77aac-dialogue.scn[39m[0m
 WARNING: GDExtension: 未找到“x86_64”库，GDExtension：“res://ele.gdextension”。当前平台可能的特性标记：pc, s3tc, macos, universal, bptc, x86_64, arm64, template, debug, template_debug, single, portitor_stage1_candidate
      at: add_message (editor/export/editor_export_platform.h:267)
-[  95% ] [90m[1msavepack[22m | 正在保存文件：res://ele.gdextension[39m[0m
-[  96% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-a353dcd78a41ff22907d68967fa29845-levels.scn[39m[0m
-[  96% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-d4cad2969772e57c7748364345c15d4f-chapters.scn[39m[0m
+[  96% ] [90m[1msavepack[22m | 正在保存文件：res://ele.gdextension[39m[0m
+[  96% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-80b3c20456ee695091b14ef0dc0c0b17-complete.scn[39m[0m
 [  96% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-2229c9f0762c462c3aa9457c6a6dd80c-hint.scn[39m[0m
-[  96% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-7a8117d0162fc8f73ce9d34cf268e7df-lobby.scn[39m[0m
-[  97% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-3be581b2bc20d1394e6f4b0ee3f77aac-dialogue.scn[39m[0m
-[  97% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-80b3c20456ee695091b14ef0dc0c0b17-complete.scn[39m[0m
+[  97% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-d4cad2969772e57c7748364345c15d4f-chapters.scn[39m[0m
 [  97% ] [90m[1msavepack[22m | 正在保存文件：res://bin/fonts/fusion-pixel-10px/OFL.txt[39m[0m
+[  97% ] [90m[1msavepack[22m | 正在保存文件：res://bin/fonts/fusion-pixel-12px/LICENSES/ark-pixel/OFL.txt[39m[0m
 [  98% ] [90m[1msavepack[22m | 正在保存文件：res://bin/fonts/fusion-pixel-12px/OFL.txt[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-a353dcd78a41ff22907d68967fa29845-levels.scn[39m[0m
 [  98% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-bbc33c492e9d9a23a92d5ef4918da242-pause.scn[39m[0m
-[  98% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-2e00173a1969d5965b7f61869da6f65a-settings.scn[39m[0m
 [  98% ] [90m[1msavepack[22m | 正在保存文件：res://app/autoload/events.gd.remap[39m[0m
 [  98% ] [90m[1msavepack[22m | 正在保存文件：res://app/autoload/locale.gd.remap[39m[0m
 [  98% ] [90m[1msavepack[22m | 正在保存文件：res://app/autoload/registry.gd.remap[39m[0m
@@ -873,15 +873,15 @@ WARNING: GDExtension: 未找到“x86_64”库，GDExtension：“res://ele.gdex
 [  98% ] [90m[1msavepack[22m | 正在保存文件：res://sim/profiles.gd.remap[39m[0m
 [  98% ] [90m[1msavepack[22m | 正在保存文件：res://sim/settle.gd.remap[39m[0m
 [  98% ] [90m[1msavepack[22m | 正在保存文件：res://sim/snapshot.gd.remap[39m[0m
-[  98% ] [90m[1msavepack[22m | 正在保存文件：res://ui/screens/rulecard.tscn.remap[39m[0m
-[  98% ] [90m[1msavepack[22m | 正在保存文件：res://ui/screens/levels.tscn.remap[39m[0m
-[  98% ] [90m[1msavepack[22m | 正在保存文件：res://ui/screens/chapters.tscn.remap[39m[0m
-[  98% ] [90m[1msavepack[22m | 正在保存文件：res://ui/screens/hint.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://ui/screens/settings.tscn.remap[39m[0m
 [  98% ] [90m[1msavepack[22m | 正在保存文件：res://ui/screens/lobby.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://ui/screens/rulecard.tscn.remap[39m[0m
 [  98% ] [90m[1msavepack[22m | 正在保存文件：res://ui/screens/dialogue.tscn.remap[39m[0m
 [  98% ] [90m[1msavepack[22m | 正在保存文件：res://ui/screens/complete.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://ui/screens/hint.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://ui/screens/chapters.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://ui/screens/levels.tscn.remap[39m[0m
 [  98% ] [90m[1msavepack[22m | 正在保存文件：res://ui/screens/pause.tscn.remap[39m[0m
-[  98% ] [90m[1msavepack[22m | 正在保存文件：res://ui/screens/settings.tscn.remap[39m[0m
 [  98% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/global_script_class_cache.cfg[39m[0m
 [  98% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/extension_list.cfg[39m[0m
 [  98% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/uid_cache.bin[39m[0m

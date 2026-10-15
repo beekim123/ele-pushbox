@@ -54,8 +54,47 @@ function inputs(repoRoot) {
   return { map, content, art, texts };
 }
 
-export function importResources({ repoRoot = DEFAULT_REPO, gameRoot = path.join(repoRoot, 'game'), routes = null } = {}) {
+function existingRoutes(gameRoot, map) {
+  // Keep only bytes owned by the previous import and still tied to this spec.
+  // A missing, edited, or stale route is replaced by runtime author-prefix data.
+  const previousMapPath = path.join(gameRoot, 'generated/id-map.json');
+  const inventoryPath = path.join(gameRoot, 'generated/import-inventory.json');
+  if (!fs.existsSync(previousMapPath) || !fs.existsSync(inventoryPath)) return [];
+  let previousMap, inventory;
+  try {
+    previousMap = json(previousMapPath);
+    inventory = json(inventoryPath);
+  } catch {
+    return [];
+  }
+  if (previousMap.format !== 'pushbox.idmap/1' || inventory.format !== 'portitor.import-inventory/1' || !Array.isArray(previousMap.entries) || !Array.isArray(inventory.files)) return [];
+  const previousLevels = new Map(previousMap.entries.filter(e => e.domain === 'level').map(e => [e.uid, e]));
+  const files = new Map(inventory.files.map(item => [item.path, item]));
+  const preserved = [];
+  for (const entry of map.entries.filter(e => e.domain === 'level')) {
+    const previous = previousLevels.get(entry.uid);
+    if (!entry.sha256 || previous?.sha256 !== entry.sha256) continue;
+    const relative = `generated/content/routes/${entry.id}.json`;
+    const owned = files.get(relative);
+    if (!owned?.sha256 || !Array.isArray(owned.owners) || !owned.owners.includes(entry.uid)) continue;
+    const location = safe(gameRoot, relative);
+    if (!fs.existsSync(location)) continue;
+    const bytes = fs.readFileSync(location);
+    if (sha(bytes) !== owned.sha256) continue;
+    try {
+      const states = JSON.parse(bytes.toString('utf8'));
+      if (!Array.isArray(states) || states.some(state => !state || typeof state !== 'object' || Array.isArray(state))) continue;
+    } catch {
+      continue;
+    }
+    preserved.push({ relative, bytes, uid: entry.uid });
+  }
+  return preserved;
+}
+
+export function importResources({ repoRoot = DEFAULT_REPO, gameRoot = path.join(repoRoot, 'game'), routes = null, preserveRoutes = true } = {}) {
   const { map, content, art, texts } = inputs(repoRoot);
+  const preservedRoutes = preserveRoutes ? existingRoutes(gameRoot, map) : [];
   const staged = new Map();
   const allOwners = map.entries.map(e => e.uid);
   const put = (relative, data, owners) => {
@@ -130,6 +169,7 @@ export function importResources({ repoRoot = DEFAULT_REPO, gameRoot = path.join(
     }
   }
   put('generated/art-index.json', artIndex, map.entries.filter(e => e.domain === 'art').map(e => e.uid));
+  for (const route of preservedRoutes) put(route.relative, route.bytes, [route.uid]);
   if (routes) for (const [uid, steps] of Object.entries(routes)) {
     const entry = map.entries.find(e => e.uid === uid && e.domain === 'level');
     if (!entry) throw new Error(`author route has unknown level uid: ${uid}`);
@@ -148,7 +188,7 @@ export function importResources({ repoRoot = DEFAULT_REPO, gameRoot = path.join(
     const relative = slash(path.relative(fontRoot, file));
     write(safe(gameRoot, `bin/fonts/${relative}`), fs.readFileSync(file));
   }
-  return { uid_count: map.entries.length, generated_files: generated.length, approved_art: Object.values(artIndex).filter(a => a.approved).length, pending_art: Object.values(artIndex).filter(a => !a.approved).map(a => a.uid) };
+  return { uid_count: map.entries.length, generated_files: generated.length, preserved_routes: preservedRoutes.length, approved_art: Object.values(artIndex).filter(a => a.approved).length, pending_art: Object.values(artIndex).filter(a => !a.approved).map(a => a.uid) };
 }
 
 export function checkIds({ repoRoot = DEFAULT_REPO, gameRoot = path.join(repoRoot, 'game'), scanSources = true } = {}) {
@@ -234,10 +274,14 @@ if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) 
   const repoRoot = process.env.PORTITOR_REPO_ROOT || DEFAULT_REPO;
   const options = { repoRoot, gameRoot: path.join(repoRoot, 'game') };
   if (command === 'import') {
-    const exporter = path.join(repoRoot, 'game/tools/export_model.mjs');
-    if (fs.existsSync(exporter) && fs.existsSync(path.join(repoRoot, 'workbench/js/core/tilemodel.js'))) {
+    const flags = process.argv.slice(3);
+    if (flags.some(flag => !['--model-routes', '--no-model-routes'].includes(flag)) || (flags.includes('--model-routes') && flags.includes('--no-model-routes'))) throw new Error('import flags: --no-model-routes (default) or explicit --model-routes');
+    if (flags.includes('--model-routes')) {
+      // Design-model execution is opt-in; normal launch/package only preserve.
+      const exporter = path.join(repoRoot, 'game/tools/export_model.mjs');
       const module = await import(pathToFileURL(exporter).href);
-      if (module.buildModelRoutes) options.routes = module.buildModelRoutes(repoRoot);
+      if (typeof module.buildModelRoutes !== 'function') throw new Error('model route exporter is unavailable');
+      options.routes = module.buildModelRoutes(repoRoot);
     }
     console.log(JSON.stringify(importResources(options), null, 2));
   } else if (command === 'check') {
@@ -249,5 +293,5 @@ if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) 
     const result = validateRelease({ gameRoot: options.gameRoot, requiredUids });
     console.log(JSON.stringify(result, null, 2));
     process.exitCode = result.ok ? 0 : 1;
-  } else throw new Error('usage: node game/tools/import_resources.mjs [import|check|release [art:uid,...]]');
+  } else throw new Error('usage: node game/tools/import_resources.mjs [import [--no-model-routes|--model-routes]|check|release [art:uid,...]]');
 }

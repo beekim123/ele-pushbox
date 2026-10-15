@@ -19,6 +19,9 @@ var _runtime_error: String = ""
 var _pose: String = "idle"
 var _demo_running: bool = false
 var _pending_before: Dictionary = {}
+var _pending_action: String = ""
+var _last_action_accepted: bool = false
+var _bomb_dragging: bool = false
 var settle_peak_us: int = 0
 var undo_peak_us: int = 0
 var _fast_forward: bool = false
@@ -28,6 +31,7 @@ var rule_uid: String = "mechanic:dig"
 var _rule_queue: Array[String] = []
 var _target_rule_key: String = ""
 var _target_rule_accepted: bool = false
+var _refresh_pending: bool = false
 
 func _ready() -> void:
 	if not OS.is_debug_build() and UI_IS_CANDIDATE:
@@ -38,12 +42,13 @@ func _ready() -> void:
 	_apply_window_scale()
 	get_window().title = Locale.text("text:game.title")
 	lab.configure(JSON.parse_string(FileAccess.get_file_as_string("res://generated/content-manifest.json")))
+	lab.open_all_levels = bool(Settings.values.get("open_all_levels", false))
 	var renderer: Script = load("res://presentation/render/world_view.gd")
 	if renderer != null:
 		world_view = renderer.new()
 		add_child(world_view)
 	Locale.changed.connect(_refresh)
-	Settings.changed.connect(_settings_changed)
+	Settings.value_changed.connect(_settings_changed)
 	if DisplayServer.get_name() != "headless":
 		Input.set_custom_mouse_cursor(PortitorUI.atlas("art:ui.cursor"))
 	show_screen("lobby")
@@ -53,10 +58,15 @@ func _start_requested_level() -> void:
 	for argument: String in OS.get_cmdline_user_args():
 		if argument.begins_with("--level="):
 			var uid: String = argument.trim_prefix("--level=")
-			for index: int in lab.levels().size():
-				if lab.level_uid(index) == uid:
-					lab.level_index = index
-					start_level()
+			for group_index: int in range(lab.groups.size()):
+				if not lab.available(group_index):
+					continue
+				for index: int in range(lab.groups[group_index].get("levels", []).size()):
+					if "level:" + str(lab.groups[group_index].levels[index].id) == uid:
+						lab.group_index = group_index
+						lab.level_index = index
+						start_level()
+						return
 
 func _process(delta: float) -> void:
 	if world_view != null and not _busy and current_screen in ["play", "hint"]:
@@ -86,6 +96,16 @@ func _process(delta: float) -> void:
 		_update_target()
 
 func _input(event: InputEvent) -> void:
+	if _bomb_dragging and event is InputEventMouseButton:
+		var drag_mouse: InputEventMouseButton = event as InputEventMouseButton
+		if not drag_mouse.pressed and drag_mouse.button_index == MOUSE_BUTTON_LEFT:
+			_finish_bomb_drag(drag_mouse.position)
+			get_viewport().set_input_as_handled()
+			return
+		if drag_mouse.pressed and drag_mouse.button_index == MOUSE_BUTTON_RIGHT:
+			_bomb_dragging = false
+			get_viewport().set_input_as_handled()
+			return
 	if event is InputEventMouseButton and event.pressed:
 		if _busy:
 			_fast_forward = true
@@ -99,6 +119,8 @@ func _input(event: InputEvent) -> void:
 	if event is InputEventKey:
 		var key: InputEventKey = event as InputEventKey
 		if not key.pressed:
+			return
+		if key.echo and key.physical_keycode in [KEY_ENTER, KEY_KP_ENTER, KEY_SPACE, KEY_ESCAPE, KEY_H, KEY_R, KEY_Z]:
 			return
 		if current_screen == "hint" and screen != null:
 			for child: Node in screen.get_children():
@@ -118,7 +140,10 @@ func _input(event: InputEvent) -> void:
 			get_viewport().set_input_as_handled()
 			return
 		if key.physical_keycode == KEY_ESCAPE:
-			back()
+			if _bomb_dragging:
+				_bomb_dragging = false
+			else:
+				back()
 		elif current_screen == "hint" and key.physical_keycode in [KEY_ENTER, KEY_KP_ENTER, KEY_SPACE]:
 			activate_menu(int(screen.get("focus_index")) if screen != null else 0)
 		elif current_screen == "hint" and hint_level == 3 and not key.shift_pressed and not key.ctrl_pressed and key.physical_keycode in [KEY_UP, KEY_W, KEY_DOWN, KEY_S]:
@@ -133,7 +158,7 @@ func _input(event: InputEvent) -> void:
 				_:
 					var direction: String = _direction(key.physical_keycode)
 					if not direction.is_empty():
-						var action: String = ("DIG_" if key.shift_pressed else "POUR_" if key.ctrl_pressed or key.meta_pressed else "") + direction
+						var action: String = ("BOMB_" if Input.is_physical_key_pressed(KEY_B) else "DIG_" if key.shift_pressed else "POUR_" if key.ctrl_pressed or key.meta_pressed else "") + direction
 						perform(action)
 		elif current_screen == "hint" and key.physical_keycode == KEY_H:
 			hint_level = mini(3, hint_level + 1)
@@ -169,9 +194,30 @@ static func _direction(key: int) -> String:
 		KEY_DOWN, KEY_S: return "D"
 	return ""
 
+func begin_bomb_drag() -> void:
+	if session != null and not _busy and not _demo_running and current_screen in ["play", "hint"] and not _observing() and int(session.grid.bag.get("bomb", 0)) > 0:
+		_bomb_dragging = true
+
+func bomb_dragging() -> bool:
+	return _bomb_dragging
+
+func _finish_bomb_drag(position: Vector2) -> void:
+	_bomb_dragging = false
+	if session == null or _busy or current_screen not in ["play", "hint"] or _observing():
+		return
+	var offset := Vector2((320 - session.width * 16) / 2, 20 + (160 - session.height * 16) / 2)
+	var local: Vector2 = (position - offset) / 16
+	var destination := Vector2i(floori(local.x), floori(local.y))
+	var delta: Vector2i = destination - Vector2i(int(session.grid.player.x), int(session.grid.player.y))
+	if abs(delta.x) + abs(delta.y) == 1:
+		var direction: String = "L" if delta.x < 0 else "R" if delta.x > 0 else "D" if delta.y > 0 else "U"
+		perform("BOMB_" + direction)
+
 func show_screen(name: String) -> void:
+	_bomb_dragging = false
 	var within_level: bool = name in ["play", "pause", "hint", "complete", "rulecard"] or (name == "settings" and return_screen == "pause")
 	if session != null and not within_level:
+		_persist_level_checkpoint()
 		session.dispose()
 		session = null
 		_busy = false
@@ -200,16 +246,34 @@ func show_screen(name: String) -> void:
 		world_view.set("environment_mode", str(Settings.values.get("ambience", "full")))
 
 func _refresh() -> void:
-	if is_inside_tree():
-		get_window().title = Locale.text("text:game.title")
-		var focus: int = int(screen.get("focus_index")) if screen != null else 0
-		show_screen(current_screen)
-		if screen != null:
-			screen.call_deferred("set_focus", focus)
+	if not is_inside_tree() or _refresh_pending:
+		return
+	_refresh_pending = true
+	call_deferred("_flush_refresh")
 
-func _settings_changed(_key: String = "", _value: Variant = null) -> void:
-	_apply_window_scale()
-	_refresh()
+func _flush_refresh() -> void:
+	_refresh_pending = false
+	if not is_inside_tree():
+		return
+	get_window().title = Locale.text("text:game.title")
+	var focus: int = int(screen.get("focus_index")) if screen != null else 0
+	show_screen(current_screen)
+	if screen != null:
+		screen.call("set_focus", focus)
+
+func _settings_changed(key: String, _value: Variant) -> void:
+	if key == "open_all_levels":
+		lab.open_all_levels = bool(_value)
+	if key == "window_scale":
+		_apply_window_scale()
+	if current_screen == "settings" and key in ["music", "sfx"] and screen != null:
+		screen.refresh_volume(key)
+	else:
+		_refresh()
+
+func set_volume(key: String, value: float) -> void:
+	if key in ["music", "sfx"]:
+		Settings.set_value(key, roundi(clampf(value, 0, 1) * 10.0) / 10.0)
 
 func _apply_window_scale() -> void:
 	var value: Variant = Settings.values.get("window_scale", "auto")
@@ -232,7 +296,7 @@ func activate_menu(index: int) -> void:
 								if "level:" + str(lab.groups[group_index].levels[level_index].id) == resume_uid:
 									lab.group_index = group_index
 									lab.level_index = level_index
-									start_level()
+									start_level(true)
 									return
 					show_screen("chapters")
 				1: show_screen("chapters")
@@ -277,8 +341,12 @@ func change_chapter(amount: int) -> void:
 	if screen != null and old_index != lab.group_index and screen.has_method("slide_chapter"):
 		screen.call("slide_chapter", old_index, lab.group_index)
 
-func start_level() -> void:
+func start_level(resume_checkpoint: bool = false) -> void:
 	if not lab.available(lab.group_index):
+		return
+	if not lab.stage_available(lab.group_index) or not lab.has_spec():
+		_runtime_error = Locale.text("text:chapter.preview")
+		show_screen("levels")
 		return
 	_busy = false
 	_fast_forward = false
@@ -286,10 +354,17 @@ func start_level() -> void:
 	_demo_serial += 1
 	_runtime_error = ""
 	_pending_before = {}
+	_pending_action = ""
 	_target_rule_key = ""
 	if session != null:
+		_persist_level_checkpoint()
 		session.dispose()
+		session = null
 	var spec: Dictionary = Registry.level_spec(lab.level_uid())
+	if spec.is_empty():
+		_runtime_error = Locale.text("text:chapter.preview")
+		show_screen("levels")
+		return
 	var script: Script = load("res://gameplay/session/level_session.gd")
 	session = script.new()
 	if not session.setup(spec):
@@ -298,10 +373,30 @@ func start_level() -> void:
 		session = null
 		show_screen("lobby")
 		return
-	lab.route = Registry.author_route(lab.level_uid())
+	session.configure_checkpoint(lab.level_uid(), str(Registry.entry(lab.level_uid()).get("sha256", "")))
+	var opening: Dictionary = session.state().duplicate(true)
+	var checkpoint: Dictionary = session.restore_checkpoint() if resume_checkpoint else {}
+	if bool(checkpoint.get("fatal", false)) or bool(checkpoint.get("failed", false)):
+		# A failed Continue returns to the lobby with the old publication point
+		# intact. Disposal is direct, so scene-exit autosave cannot replace it.
+		_runtime_error = Locale.text("text:error.runtime", {"reason": str(session.checkpoint_error)})
+		session.dispose()
+		session = null
+		show_screen("lobby")
+		return
+	var saved_route: Variant = checkpoint.get("mode_state", {}).get("author_route", [])
+	var route: Array = saved_route if saved_route is Array and not saved_route.is_empty() else Registry.author_route(lab.level_uid())
+	lab.begin_route(opening, route, spec.get("solution", []))
+	_persist_level_checkpoint()
 	Save.data["last_level_uid"] = lab.level_uid()
 	Save.save_progress()
 	_hint_history = [session.state().duplicate(true)]
+	if bool(session.state().get("won", false)):
+		# A committed winning checkpoint is still a real goal state if a crash
+		# happened before progress.json was atomically committed.
+		Save.mark_level(lab.level_uid(), true, false, int(session.state().get("moves", 0)))
+		show_screen("complete")
+		return
 	show_screen("play")
 	_rule_queue.clear()
 	var seen_value: Variant = Save.data.get("rule_cards_seen", [])
@@ -339,6 +434,8 @@ func perform(action: String) -> void:
 	if session == null or _busy:
 		return
 	_pending_before = session.state().duplicate(true)
+	_pending_action = action
+	_last_action_accepted = false
 	var result: Dictionary = session.begin_action(action, true)
 	if world_view != null and result.get("accepted", false):
 		world_view.set("pose", {"walk":"walk","step":"walk","push":"push","dig":"dig","pour":"pour","climb":"climb"}.get(result.get("kind", ""), "idle"))
@@ -349,6 +446,7 @@ func perform(action: String) -> void:
 		_finish_action(result)
 
 func _finish_action(result: Dictionary) -> void:
+	_last_action_accepted = bool(result.get("accepted", false)) and str(result.get("error", "")).is_empty()
 	if not str(result.get("error", "")).is_empty():
 		_runtime_error = Locale.text("text:error.runtime", {"reason": str(result.error)})
 		_refresh()
@@ -357,6 +455,7 @@ func _finish_action(result: Dictionary) -> void:
 	if not result.get("accepted", false) and result.get("error", "").is_empty() and world_view != null:
 		world_view.blocked_feedback()
 	if result.get("accepted", false):
+		lab.record_action(_pending_before, _pending_action, session.state())
 		_hint_history.append(_pending_before)
 		var learned: String = {"walk":"mechanic:push", "step":"mechanic:push", "push":"mechanic:push", "climb":"mechanic:ladder", "dig":"mechanic:dig", "pour":"mechanic:pour"}.get(result.get("kind", ""), "")
 		if not learned.is_empty(): _mark_rule_seen(learned)
@@ -364,6 +463,7 @@ func _finish_action(result: Dictionary) -> void:
 		if session.state().player.y > _pending_before.player.y: _mark_rule_seen("mechanic:fall")
 		if _hint_history.size() > 200:
 			_hint_history.pop_front()
+		_persist_level_checkpoint()
 	if result.get("won", false):
 		if world_view != null: world_view.set("pose", "win")
 		Save.mark_level(lab.level_uid(), true, false, session.state().get("moves", 0))
@@ -390,11 +490,12 @@ func undo() -> void:
 		undo_peak_us = maxi(undo_peak_us, Time.get_ticks_usec() - start)
 		if _hint_history.size() > 1:
 			_hint_history.pop_back()
+		_persist_level_checkpoint()
 		show_screen("play")
 
 func restart() -> void:
-	if session != null:
-		session.restart()
+	if session != null and session.restart():
+		_persist_level_checkpoint()
 		show_screen("play")
 
 func demonstrate() -> void:
@@ -413,11 +514,15 @@ func demonstrate() -> void:
 	for step: int in range(index, actions.size()):
 		if current_screen != "play" or not _demo_running or serial != _demo_serial or active_session != session:
 			break
+		if lab.route_index(session.state()) != step:
+			break
 		perform(actions[step])
 		while _busy:
 			await get_tree().process_frame
 			if serial != _demo_serial or active_session != session:
 				return
+		if not _last_action_accepted:
+			break
 		await get_tree().create_timer(0.22).timeout
 		if serial != _demo_serial or active_session != session:
 			return
@@ -433,6 +538,7 @@ func rewind_correct() -> void:
 			return
 		if not session.undo():
 			break
+		_persist_level_checkpoint()
 	_runtime_error = Locale.text("text:hint.restart")
 	_refresh()
 
@@ -453,19 +559,16 @@ func adjust_setting(index: int, amount: int) -> void:
 	var key: String = fields[index]
 	var value: Variant = Settings.values.get(key)
 	match key:
-		"language": Locale.set_language("en" if Locale.language == "zh-Hans" else "zh-Hans"); Settings.set_value(key, Locale.language)
-		"music", "sfx": Settings.set_value(key, clampf(float(value) + amount * 0.1, 0, 1))
+		"language": Settings.set_value(key, "en" if Locale.language == "zh-Hans" else "zh-Hans")
+		"music", "sfx": set_volume(key, float(value) + amount * 0.1)
 		"ambience":
 			var choices: Array[String] = ["full", "lights", "off"]
 			Settings.set_value(key, choices[posmod(choices.find(str(value)) + amount, 3)])
 		"window_scale":
-			var scale_value: int = int(value) if str(value).is_valid_int() else 4
-			scale_value = clampi(scale_value + amount, 1, 6)
-			Settings.set_value(key, scale_value)
-			get_window().size = Vector2i(320, 180) * scale_value
+			var choices: Array = ["auto", 1, 2, 3, 4, 5, 6]
+			Settings.set_value(key, choices[posmod(choices.find(value) + amount, choices.size())])
 		"show_grid", "open_all_levels": Settings.set_value(key, not bool(value))
-		"tutorial": Save.data["rule_cards_seen"] = []; Save.save_progress()
-	_refresh()
+		"tutorial": Save.data["rule_cards_seen"] = []; Save.save_progress(); _refresh()
 
 func toggle_observe() -> void:
 	if world_view != null:
@@ -480,13 +583,13 @@ func _update_target() -> void:
 			world_view.set("target", {})
 		return
 	var state: Dictionary = session.state()
-	if current_screen == "hint" and hint_level == 1:
+	if current_screen == "hint" and hint_level == 1 and not _bomb_dragging and not Input.is_physical_key_pressed(KEY_B):
 		world_view.set("target", {"cells": _hint_target_cells()})
 		return
 	var p := Vector2i(state.player.x, state.player.y)
 	var destination := Vector2i(-1, -1)
-	var kind: String = "dig" if Input.is_physical_key_pressed(KEY_SHIFT) else "pour" if Input.is_physical_key_pressed(KEY_CTRL) or Input.is_physical_key_pressed(KEY_META) else "push"
-	for pair: Array in [[KEY_LEFT, Vector2i.LEFT], [KEY_RIGHT, Vector2i.RIGHT], [KEY_DOWN, Vector2i.DOWN]]:
+	var kind: String = "bomb" if _bomb_dragging or Input.is_physical_key_pressed(KEY_B) else "dig" if Input.is_physical_key_pressed(KEY_SHIFT) else "pour" if Input.is_physical_key_pressed(KEY_CTRL) or Input.is_physical_key_pressed(KEY_META) else "push"
+	for pair: Array in [[KEY_LEFT, Vector2i.LEFT], [KEY_A, Vector2i.LEFT], [KEY_RIGHT, Vector2i.RIGHT], [KEY_D, Vector2i.RIGHT], [KEY_UP, Vector2i.UP], [KEY_W, Vector2i.UP], [KEY_DOWN, Vector2i.DOWN], [KEY_S, Vector2i.DOWN]]:
 		if Input.is_physical_key_pressed(pair[0]):
 			destination = p + pair[1]
 	if destination.x < 0:
@@ -496,7 +599,7 @@ func _update_target() -> void:
 		world_view.set("target", {})
 		return
 	var direction: String = "L" if destination.x < p.x else "R" if destination.x > p.x else "D" if destination.y > p.y else "U"
-	var action: String = ("DIG_" if kind == "dig" else "POUR_" if kind == "pour" else "") + direction
+	var action: String = ("BOMB_" if kind == "bomb" else "DIG_" if kind == "dig" else "POUR_" if kind == "pour" else "") + direction
 	# A settled world cannot change between inputs (auto_step=false). Cache
 	# the read-only safety query by actual SDK hash plus complete game state.
 	var rule_key: String = str([action, state, session.world.get_state_hash()])
@@ -512,6 +615,8 @@ func _update_target() -> void:
 			if Vector2i(crate.x, crate.y) == destination:
 				destination += Vector2i.LEFT if direction == "L" else Vector2i.RIGHT
 				while destination.y + 1 < session.height and session.grid.is_free(destination.x, destination.y + 1):
+					if str(crate.kind) == "wood" and session.grid.terrain_at(destination.x, destination.y + 1) == session.grid.Terrain.WATER:
+						break
 					destination.y += 1
 	world_view.set("target", _target_cells(destination, kind))
 
@@ -522,6 +627,17 @@ func _target_cells(destination: Vector2i, kind: String) -> Dictionary:
 		for y: int in session.height:
 			cells.append({"x": destination.x, "y": y, "kind": kind})
 		result.cells = cells
+	elif kind == "bomb":
+		# The SDK explosion is a pixel-space circle, including its diagonal reach.
+		result.blast_center = destination * 16 + Vector2i(8, 8)
+		result.blast_radius = 20
+		var affected: Array[Dictionary] = []
+		for y: int in range(maxi(0, destination.y - 2), mini(session.height, destination.y + 3)):
+			for x: int in range(maxi(0, destination.x - 2), mini(session.width, destination.x + 3)):
+				var nearest := Vector2i(clampi(result.blast_center.x, x * 16, x * 16 + 15), clampi(result.blast_center.y, y * 16, y * 16 + 15))
+				if nearest.distance_squared_to(result.blast_center) <= 20 * 20:
+					affected.append({"x": x, "y": y, "kind": "bomb"})
+		result.cells = affected
 	return result
 
 func _hint_target_cells() -> Array[Dictionary]:
@@ -543,12 +659,43 @@ func _hint_target_cells() -> Array[Dictionary]:
 			if uid in ["level:M04", "level:M06"] and marker == session.grid.Marker.EXIT:
 				for step_y: int in range(y + 1, mini(session.height - 1, y + 3)):
 					cells.append({"x": x, "y": step_y, "kind": "push"})
+	if str(session.spec.get("group", "basics")) != "basics":
+		var selected: Dictionary = {}
+		for cell: Dictionary in cells:
+			selected[str([cell.x, cell.y])] = cell
+		for device: Dictionary in state.get("devices", []):
+			var points: Array = []
+			for field: String in ["at", "root", "button"]:
+				if device.get(field, []).size() == 2:
+					points.append(device[field])
+			for field: String in ["cells", "pads", "stops", "ends", "landings"]:
+				points.append_array(device.get(field, []))
+			if device.get("rect", []).size() == 4:
+				points.append([device.rect[0], device.rect[1]])
+			for point: Array in points:
+				selected[str(point)] = {"x": int(point[0]), "y": int(point[1]), "kind": "push"}
+		for y: int in range(session.height):
+			for x: int in range(session.width):
+				var terrain: int = session.grid.terrain_at(x, y)
+				if terrain not in [session.grid.Terrain.EMPTY, session.grid.Terrain.ROCK]:
+					selected[str([x, y])] = {"x": x, "y": y, "kind": "dig" if terrain == session.grid.Terrain.EARTH else "push"}
+		cells.clear()
+		for cell: Dictionary in selected.values():
+			cells.append(cell)
 	return cells
 
 func layout_issues() -> Array:
 	return screen.call("layout_issues") if screen != null else []
 
+func _persist_level_checkpoint() -> void:
+	if session == null or bool(session.busy):
+		return
+	if not session.save_checkpoint({"author_route": lab.route}):
+		_runtime_error = Locale.text("text:error.runtime", {"reason": str(session.checkpoint_error)})
+		push_warning(str(session.checkpoint_error))
+
 func dispose() -> void:
+	_persist_level_checkpoint()
 	_demo_running = false
 	_demo_serial += 1
 	if DisplayServer.get_name() != "headless":

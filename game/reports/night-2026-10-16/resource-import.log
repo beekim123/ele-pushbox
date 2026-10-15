@@ -1,0 +1,21 @@
+{
+  "uid_count": 897,
+  "generated_files": 217,
+  "preserved_routes": 6,
+  "approved_art": 70,
+  "pending_art": [
+    "art:char.portitor_alt",
+    "art:ui.bubble",
+    "art:ui.bubble_tail",
+    "art:ui.emote",
+    "art:ui.screen.chapters",
+    "art:ui.screen.complete",
+    "art:ui.screen.dialogue",
+    "art:ui.screen.hint",
+    "art:ui.screen.levels",
+    "art:ui.screen.lobby",
+    "art:ui.screen.pause",
+    "art:ui.screen.rulecard",
+    "art:ui.screen.settings"
+  ]
+}

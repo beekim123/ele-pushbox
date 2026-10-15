@@ -1,8 +1,5 @@
-class_name UnimplementedBlastThroughb04f86
-extends "res://gameplay/mechanics/mechanic.gd"
-## mechanic:blast_through: catalog path only; not registered by any playable mode.
+class_name BlastThroughMechanic
+extends "res://gameplay/mechanics/sdk_material.gd"
 
-var unimplemented: bool = true
-
-func implementation_available() -> bool:
-	return false
+func material_names() -> Array[String]:
+	return ["cracked_rock", "bedrock"]

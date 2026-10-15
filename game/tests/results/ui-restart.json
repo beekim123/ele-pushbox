@@ -1,0 +1,6 @@
+{
+	"failures": [],
+	"ok": true,
+	"scope": "Second OS process; real prior GUI play save, no seeded completion records",
+	"suite": "ui-restart"
+}

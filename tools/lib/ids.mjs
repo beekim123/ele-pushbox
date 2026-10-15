@@ -34,7 +34,7 @@ const uidOf = (domain, id) => `${domain}:${id}`;
 
 // art: [{id, name, kind, category, version, content_hash, approved, file}]
 // levels: [{id, spec(file), sha256, title}] ; catalogs: {kind: [entries]} ; texts: {key: zh string}
-export function buildIdMap({ art, levels, catalogs, texts }) {
+export function buildIdMap({ art, levels, catalogs, texts, extraTexts = {} }) {
   const issues = [], entries = [], seen = new Map(), paths = new Map();
   const push = (domain, e) => {
     const rule = ID_RULE[domain] || DEFAULT_RULE;
@@ -56,6 +56,7 @@ export function buildIdMap({ art, levels, catalogs, texts }) {
     for (const e of catalogs[D.catalog] || []) push(domain, { id: e.id, name: e.name || e.title || (e.cargo ? `${e.cargo} × ${e.recipient}` : ""), source: `content/catalog/${D.catalog}.json` });
   }
   for (const [k, v] of Object.entries(texts)) if (k !== "_meta") push("text", { id: k, name: typeof v === "string" ? v.slice(0, 40) : "", source: "content/i18n/zh-Hans.json" });
+  for (const [k, v] of Object.entries(extraTexts)) if (k !== "_meta") push("text", { id: k, name: typeof v === "string" ? v.slice(0, 40) : "", source: "content/i18n-extra/zh-Hans.json", extra: { origin: "i18n-extra" } });
   const counts = {}; for (const e of entries) counts[e.domain] = (counts[e.domain] || 0) + 1;
   return {
     map: {

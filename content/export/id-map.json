@@ -10,7 +10,7 @@
   "level": {
    "name": "关卡",
    "source": "content/levels/<模式>/<组>/<id>.json",
-   "count": 16
+   "count": 46
   },
   "mode": {
    "name": "模式",
@@ -80,7 +80,7 @@
   "text": {
    "name": "界面与台词文字",
    "source": "content/i18n/zh-Hans.json",
-   "count": 160
+   "count": 329
   }
  },
  "entries": [
@@ -1132,7 +1132,7 @@
    "name": "沙与箱各有用",
    "source": "content/levels/lab/basics/M06.json",
    "game": "res://generated/content/levels/lab/basics/M06.json",
-   "sha256": "0b1e1116a54f7185c8a50699cc7832b40fc25ccbe4e1f8d98c9f85a18d4084af"
+   "sha256": "5d66d2f0103af6f3156b2fbb6581369626b5b8829937c042f11aacdb63ab9763"
   },
   {
    "uid": "level:M07",
@@ -1223,6 +1223,276 @@
    "source": "content/levels/lab/water/W10.json",
    "game": "res://generated/content/levels/lab/water/W10.json",
    "sha256": "34bba94c15862a7b76aecdf2611e9bd4effc7efaca83e1e0073e7efd516519aa"
+  },
+  {
+   "uid": "level:Q01",
+   "domain": "level",
+   "id": "Q01",
+   "name": "一炸开路",
+   "source": "content/levels/lab/blast/Q01.json",
+   "game": "res://generated/content/levels/lab/blast/Q01.json",
+   "sha256": "62b016b6ef2a29db51865e551fdfec32af44e029a5787894a8d834f8edcb8e80"
+  },
+  {
+   "uid": "level:Q02",
+   "domain": "level",
+   "id": "Q02",
+   "name": "隔墙也会炸",
+   "source": "content/levels/lab/blast/Q02.json",
+   "game": "res://generated/content/levels/lab/blast/Q02.json",
+   "sha256": "7d63abf6e61763c6d8b6737f5647122fd40e90ffb685b7dd06193db31816441f"
+  },
+  {
+   "uid": "level:Q03",
+   "domain": "level",
+   "id": "Q03",
+   "name": "点燃后等结果",
+   "source": "content/levels/lab/blast/Q03.json",
+   "game": "res://generated/content/levels/lab/blast/Q03.json",
+   "sha256": "8ed9112e90f5e39c43ed9a4e2f8d6235ecc3e6cee74f335c91ed22b84dfd0a8e"
+  },
+  {
+   "uid": "level:Q04",
+   "domain": "level",
+   "id": "Q04",
+   "name": "慢慢滑下来",
+   "source": "content/levels/lab/blast/Q04.json",
+   "game": "res://generated/content/levels/lab/blast/Q04.json",
+   "sha256": "47093eb667900a7a90e86624acc5799e24fb2bfb57f669b99facd1871beb8159"
+  },
+  {
+   "uid": "level:Q07",
+   "domain": "level",
+   "id": "Q07",
+   "name": "矿车一路滚",
+   "source": "content/levels/lab/blast/Q07.json",
+   "game": "res://generated/content/levels/lab/blast/Q07.json",
+   "sha256": "f27c065bd58ce1e50953f10a769d9e3f9e24dde85dd31a29ee1fcf1350b2e045"
+  },
+  {
+   "uid": "level:Q08",
+   "domain": "level",
+   "id": "Q08",
+   "name": "灯照才实",
+   "source": "content/levels/lab/blast/Q08.json",
+   "game": "res://generated/content/levels/lab/blast/Q08.json",
+   "sha256": "21b57f28e82f58d66c86554565989ff93c23ceb0502b7db8dce5f1641557332d"
+  },
+  {
+   "uid": "level:Q09",
+   "domain": "level",
+   "id": "Q09",
+   "name": "套娃箱",
+   "source": "content/levels/lab/blast/Q09.json",
+   "game": "res://generated/content/levels/lab/blast/Q09.json",
+   "sha256": "c955b8a4c94f86bdef1a99211e7c2c76ead08533cfb91f6c16f37fccabec8fc2"
+  },
+  {
+   "uid": "level:Q10",
+   "domain": "level",
+   "id": "Q10",
+   "name": "炸开轨道",
+   "source": "content/levels/lab/blast/Q10.json",
+   "game": "res://generated/content/levels/lab/blast/Q10.json",
+   "sha256": "0eea037854fc8750010f2fe9170868ce7d1517d93c43da2725da0a09b2793740"
+  },
+  {
+   "uid": "level:G01",
+   "domain": "level",
+   "id": "G01",
+   "name": "一滴开路",
+   "source": "content/levels/lab/react/G01.json",
+   "game": "res://generated/content/levels/lab/react/G01.json",
+   "sha256": "1923a95f18bacf44d8f75688c1b87c58eb77dc10cde37c53252f41444050afdc"
+  },
+  {
+   "uid": "level:G02",
+   "domain": "level",
+   "id": "G02",
+   "name": "同纹都能蚀",
+   "source": "content/levels/lab/react/G02.json",
+   "game": "res://generated/content/levels/lab/react/G02.json",
+   "sha256": "5dbd7ca5fcf37c7ba0af65b0832669a91e4a0afdb238b0416c7708adb0f9c4fc"
+  },
+  {
+   "uid": "level:G03",
+   "domain": "level",
+   "id": "G03",
+   "name": "烟往高处走",
+   "source": "content/levels/lab/react/G03.json",
+   "game": "res://generated/content/levels/lab/react/G03.json",
+   "sha256": "ef594871174e60bdfc9069409c31baad324ef3f5767195ac7afc584910810a9e"
+  },
+  {
+   "uid": "level:G04",
+   "domain": "level",
+   "id": "G04",
+   "name": "雾往低处沉",
+   "source": "content/levels/lab/react/G04.json",
+   "game": "res://generated/content/levels/lab/react/G04.json",
+   "sha256": "6bec9479aa8b3de0892208d6583d6aea0b317f745d46516b442c1094b01cd300"
+  },
+  {
+   "uid": "level:G05",
+   "domain": "level",
+   "id": "G05",
+   "name": "会消失的塞子",
+   "source": "content/levels/lab/react/G05.json",
+   "game": "res://generated/content/levels/lab/react/G05.json",
+   "sha256": "a7010a27e601afa9adef4e8d92c743f1e3c24ce3f5a2b5acb4cd36544ff9639a"
+  },
+  {
+   "uid": "level:G06",
+   "domain": "level",
+   "id": "G06",
+   "name": "浇水长藤",
+   "source": "content/levels/lab/react/G06.json",
+   "game": "res://generated/content/levels/lab/react/G06.json",
+   "sha256": "78ac8171b8713aa06032718f821bd31b6611167a024371c330722139ffa648d8"
+  },
+  {
+   "uid": "level:G08",
+   "domain": "level",
+   "id": "G08",
+   "name": "弹跳蘑菇",
+   "source": "content/levels/lab/react/G08.json",
+   "game": "res://generated/content/levels/lab/react/G08.json",
+   "sha256": "84461ac3c9d6758e37e2e3b7be0ec66cbc4f17afb424b505c72690808e44255b"
+  },
+  {
+   "uid": "level:G09",
+   "domain": "level",
+   "id": "G09",
+   "name": "跷跷板",
+   "source": "content/levels/lab/react/G09.json",
+   "game": "res://generated/content/levels/lab/react/G09.json",
+   "sha256": "5ac0461d36ddea2154908b97dfe476996329d81e41ae15102bd209cae7577897"
+  },
+  {
+   "uid": "level:G10",
+   "domain": "level",
+   "id": "G10",
+   "name": "沙压跷跷板",
+   "source": "content/levels/lab/react/G10.json",
+   "game": "res://generated/content/levels/lab/react/G10.json",
+   "sha256": "b0e8447e69f4e1132dd11a5a857565d05d82c1864fd2991a8846a9400f156388"
+  },
+  {
+   "uid": "level:F01",
+   "domain": "level",
+   "id": "F01",
+   "name": "木栅怕火",
+   "source": "content/levels/lab/thermal/F01.json",
+   "game": "res://generated/content/levels/lab/thermal/F01.json",
+   "sha256": "7f5ac5b052bfe6bf5fc19065040d1dce97bb413ef1e785685f944290fc921712"
+  },
+  {
+   "uid": "level:F02",
+   "domain": "level",
+   "id": "F02",
+   "name": "冷一下变冰桥",
+   "source": "content/levels/lab/thermal/F02.json",
+   "game": "res://generated/content/levels/lab/thermal/F02.json",
+   "sha256": "758fa04813cecf993b4893c1e243dad96c0777c7010033b9a90a3a26f3a0ce31"
+  },
+  {
+   "uid": "level:F03",
+   "domain": "level",
+   "id": "F03",
+   "name": "热一下化开",
+   "source": "content/levels/lab/thermal/F03.json",
+   "game": "res://generated/content/levels/lab/thermal/F03.json",
+   "sha256": "80bbd7cf87695e66fec4d9af0d3c3069007c82e456857ec55e9946b3b0ee4fac"
+  },
+  {
+   "uid": "level:F04",
+   "domain": "level",
+   "id": "F04",
+   "name": "炸药也点火",
+   "source": "content/levels/lab/thermal/F04.json",
+   "game": "res://generated/content/levels/lab/thermal/F04.json",
+   "sha256": "d1392139cd5c571c1b901c5fa89778d94b9df935b2b601e376c5b74f6df5f121"
+  },
+  {
+   "uid": "level:F07",
+   "domain": "level",
+   "id": "F07",
+   "name": "冰上一滑到底",
+   "source": "content/levels/lab/thermal/F07.json",
+   "game": "res://generated/content/levels/lab/thermal/F07.json",
+   "sha256": "fa9671687e01417536b4671ed24e42a178e1445fd31375b9cbe1995c0467e899"
+  },
+  {
+   "uid": "level:F08",
+   "domain": "level",
+   "id": "F08",
+   "name": "风口",
+   "source": "content/levels/lab/thermal/F08.json",
+   "game": "res://generated/content/levels/lab/thermal/F08.json",
+   "sha256": "b27144f5749d13afbaf547fcb81cc1418458e54d41b4e2c5c074008bf49b0083"
+  },
+  {
+   "uid": "level:F09",
+   "domain": "level",
+   "id": "F09",
+   "name": "冻出冰道",
+   "source": "content/levels/lab/thermal/F09.json",
+   "game": "res://generated/content/levels/lab/thermal/F09.json",
+   "sha256": "4796eaebfb68e0f8e517f7c0c74c1be721069f795acfb2ac8dba08781afd541c"
+  },
+  {
+   "uid": "level:E01",
+   "domain": "level",
+   "id": "E01",
+   "name": "沙替我守门",
+   "source": "content/levels/lab/experimental/E01.json",
+   "game": "res://generated/content/levels/lab/experimental/E01.json",
+   "sha256": "eb083f12bd688771f3b4bd629159092e3324b30ed0e13d83b13eb5e935c0d783"
+  },
+  {
+   "uid": "level:E02",
+   "domain": "level",
+   "id": "E02",
+   "name": "箱子先过去",
+   "source": "content/levels/lab/experimental/E02.json",
+   "game": "res://generated/content/levels/lab/experimental/E02.json",
+   "sha256": "82346c65163ac50edad6ab475899209d131e42cfd5961cad7cf4fdb88a5e632b"
+  },
+  {
+   "uid": "level:E03",
+   "domain": "level",
+   "id": "E03",
+   "name": "装好再放水",
+   "source": "content/levels/lab/experimental/E03.json",
+   "game": "res://generated/content/levels/lab/experimental/E03.json",
+   "sha256": "f7b087b6489609be5cb403b60710c5693f4ab8b6b8934aefe3fcd827dabc824c"
+  },
+  {
+   "uid": "level:E04",
+   "domain": "level",
+   "id": "E04",
+   "name": "清轨再发车",
+   "source": "content/levels/lab/experimental/E04.json",
+   "game": "res://generated/content/levels/lab/experimental/E04.json",
+   "sha256": "6f05aadac75f7cf56c3653023314188734b06db9cdf888936a32f4782acdba7e"
+  },
+  {
+   "uid": "level:E05",
+   "domain": "level",
+   "id": "E05",
+   "name": "冻道送箱",
+   "source": "content/levels/lab/experimental/E05.json",
+   "game": "res://generated/content/levels/lab/experimental/E05.json",
+   "sha256": "c39249e7f4c9d08739e03b005c254deb00e8f3604260ccc8225e106c2486be57"
+  },
+  {
+   "uid": "level:E06",
+   "domain": "level",
+   "id": "E06",
+   "name": "重箱开水门",
+   "source": "content/levels/lab/experimental/E06.json",
+   "game": "res://generated/content/levels/lab/experimental/E06.json",
+   "sha256": "c2412b8427762c897f2d686469a0f2df03b17a3b2e4fd197596210aee597c3f4"
   },
   {
    "uid": "mode:lab",
@@ -6015,6 +6285,1527 @@
    "name": "新委托：把矿石送到黄金神庙",
    "source": "content/i18n/zh-Hans.json",
    "game": "tr:dlg.sample.note"
+  },
+  {
+   "uid": "text:dev.placeholder",
+   "domain": "text",
+   "id": "dev.placeholder",
+   "name": "占位",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:dev.placeholder",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:dev.pending_art",
+   "domain": "text",
+   "id": "dev.pending_art",
+   "name": "界面候选，待确认",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:dev.pending_art",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:error.runtime",
+   "domain": "text",
+   "id": "error.runtime",
+   "name": "游戏无法启动：{reason}",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:error.runtime",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:hint.restart",
+   "domain": "text",
+   "id": "hint.restart",
+   "name": "当前不在作者路线上，请重开",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:hint.restart",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:hud.controls",
+   "domain": "text",
+   "id": "hud.controls",
+   "name": "方向键 移动 · Shift 挖 · Ctrl 倒沙 · Z 撤销 · H 提示",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:hud.controls",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:extra.rule.push.name",
+   "domain": "text",
+   "id": "extra.rule.push.name",
+   "name": "推箱与登阶",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:extra.rule.push.name",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:extra.rule.push.text",
+   "domain": "text",
+   "id": "extra.rule.push.text",
+   "name": "朝箱子走就推一格；不能推一串箱子。前方只有一格高、头顶空着时，人会登上去。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:extra.rule.push.text",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:extra.rule.ladder.name",
+   "domain": "text",
+   "id": "extra.rule.ladder.name",
+   "name": "梯子",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:extra.rule.ladder.name",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:extra.rule.ladder.text",
+   "domain": "text",
+   "id": "extra.rule.ladder.text",
+   "name": "在梯子里不会下落。按上爬向上方的梯子，按下向下；梯子不支撑箱子。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:extra.rule.ladder.text",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:extra.rule.pour.name",
+   "domain": "text",
+   "id": "extra.rule.pour.name",
+   "name": "倒沙",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:extra.rule.pour.name",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:extra.rule.pour.text",
+   "domain": "text",
+   "id": "extra.rule.pour.text",
+   "name": "按 Ctrl 和左右方向倒一袋沙。落点要空着，靠墙或坑里才能堆成可靠台阶。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:extra.rule.pour.text",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:extra.rule.plate_door.name",
+   "domain": "text",
+   "id": "extra.rule.plate_door.name",
+   "name": "压板与门",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:extra.rule.plate_door.name",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:extra.rule.plate_door.text",
+   "domain": "text",
+   "id": "extra.rule.plate_door.text",
+   "name": "同符号的压板全部压住，门才打开。人、箱和沙都能压板；门内有东西时不会关闭。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:extra.rule.plate_door.text",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:extra.rule.fall.name",
+   "domain": "text",
+   "id": "extra.rule.fall.name",
+   "name": "失去支撑",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:extra.rule.fall.name",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:extra.rule.fall.text",
+   "domain": "text",
+   "id": "extra.rule.fall.text",
+   "name": "下方没支撑，人和箱就落下。箱子可以叠放；人没有摔落伤害。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:extra.rule.fall.text",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:chapter.unavailable",
+   "domain": "text",
+   "id": "chapter.unavailable",
+   "name": "本章尚未开放。当前可玩：基础组 M01–M07。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:chapter.unavailable",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:settings.unlock.available",
+   "domain": "text",
+   "id": "settings.unlock.available",
+   "name": "开放已实现的关卡",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:settings.unlock.available",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:chapter.preview",
+   "domain": "text",
+   "id": "chapter.preview",
+   "name": "本章玩法尚未实现，目前仅供浏览。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:chapter.preview",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.Q01.title",
+   "domain": "text",
+   "id": "level.Q01.title",
+   "name": "一炸开路",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.Q01.title",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.Q01.discovery",
+   "domain": "text",
+   "id": "level.Q01.discovery",
+   "name": "一份炸药炸开裂岩，基岩与箱子留下来。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.Q01.discovery",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.Q01.hint.1",
+   "domain": "text",
+   "id": "level.Q01.hint.1",
+   "name": "你与箱子之间的路被裂岩挡住了。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.Q01.hint.1",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.Q01.hint.2",
+   "domain": "text",
+   "id": "level.Q01.hint.2",
+   "name": "炸药会清掉裂岩，基岩和箱子不会被炸坏。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.Q01.hint.2",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.Q01.hint.3",
+   "domain": "text",
+   "id": "level.Q01.hint.3",
+   "name": "走到裂岩左边，向右放炸药，再把箱子推入槽。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.Q01.hint.3",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.Q02.title",
+   "domain": "text",
+   "id": "level.Q02.title",
+   "name": "隔墙也会炸",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.Q02.title",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.Q02.discovery",
+   "domain": "text",
+   "id": "level.Q02.discovery",
+   "name": "基岩挡住人，却不遮挡爆炸；墙另一侧的裂岩仍会崩落。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.Q02.discovery",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.Q02.hint.1",
+   "domain": "text",
+   "id": "level.Q02.hint.1",
+   "name": "箱子由薄墙右侧的裂岩托着。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.Q02.hint.1",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.Q02.hint.2",
+   "domain": "text",
+   "id": "level.Q02.hint.2",
+   "name": "爆炸按距离作用，基岩不会替裂岩挡住它。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.Q02.hint.2",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.Q02.hint.3",
+   "domain": "text",
+   "id": "level.Q02.hint.3",
+   "name": "走到梯子，向上爬一格，再朝右边的基岩放炸药。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.Q02.hint.3",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.Q03.title",
+   "domain": "text",
+   "id": "level.Q03.title",
+   "name": "点燃后等结果",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.Q03.title",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.Q03.discovery",
+   "domain": "text",
+   "id": "level.Q03.discovery",
+   "name": "引信会把火带到远处，烧到末端后炸开出口前的裂岩。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.Q03.discovery",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.Q03.hint.1",
+   "domain": "text",
+   "id": "level.Q03.hint.1",
+   "name": "裂岩离你很远，中间连着一排引信。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.Q03.hint.1",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.Q03.hint.2",
+   "domain": "text",
+   "id": "level.Q03.hint.2",
+   "name": "点燃左端后，火会沿引信传下去，再在远处引爆。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.Q03.hint.2",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.Q03.hint.3",
+   "domain": "text",
+   "id": "level.Q03.hint.3",
+   "name": "走到引信左端，向右放炸药，等这一轮全部结算后去出口。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.Q03.hint.3",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.Q04.title",
+   "domain": "text",
+   "id": "level.Q04.title",
+   "name": "慢慢滑下来",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.Q04.title",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.Q04.discovery",
+   "domain": "text",
+   "id": "level.Q04.discovery",
+   "name": "炸开托石，碎石慢慢落进斗里；等它停下再走下一步。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.Q04.discovery",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.Q04.hint.1",
+   "domain": "text",
+   "id": "level.Q04.hint.1",
+   "name": "碎石下面是一块裂岩，收集斗在更低处。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.Q04.hint.1",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.Q04.hint.2",
+   "domain": "text",
+   "id": "level.Q04.hint.2",
+   "name": "裂岩消失，碎石失去支撑；它落得慢，结算会等它。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.Q04.hint.2",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.Q04.hint.3",
+   "domain": "text",
+   "id": "level.Q04.hint.3",
+   "name": "走到裂岩左边，朝右放炸药，等斗的刻度满。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.Q04.hint.3",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.G01.title",
+   "domain": "text",
+   "id": "level.G01.title",
+   "name": "一滴开路",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.G01.title",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.G01.discovery",
+   "domain": "text",
+   "id": "level.G01.discovery",
+   "name": "挖开塞口后，酸液沿竖井流下，与挡路软岩接触并一起消失，井底出口露出来。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.G01.discovery",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.G01.hint.1",
+   "domain": "text",
+   "id": "level.G01.hint.1",
+   "name": "出口在竖井底下，两层带刻纹的软岩挡住了路。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.G01.hint.1",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.G01.hint.2",
+   "domain": "text",
+   "id": "level.G01.hint.2",
+   "name": "酸池的夯土塞就在你左边；挖开后，酸液会流进竖井。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.G01.hint.2",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.G01.hint.3",
+   "domain": "text",
+   "id": "level.G01.hint.3",
+   "name": "向左走三格，向左挖开塞口；等酸蚀结算完，再向左进入竖井。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.G01.hint.3",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.G02.title",
+   "domain": "text",
+   "id": "level.G02.title",
+   "name": "同纹都能蚀",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.G02.title",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.G02.discovery",
+   "domain": "text",
+   "id": "level.G02.discovery",
+   "name": "浅色与深色软岩只要刻纹相同，就都会被酸蚀；托住酸池的无纹硬岩始终不变。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.G02.discovery",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.G02.hint.1",
+   "domain": "text",
+   "id": "level.G02.hint.1",
+   "name": "酸池下面的硬岩没有刻纹；竖井里的两块岩石外观不同，却有同一个刻纹。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.G02.hint.1",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.G02.hint.2",
+   "domain": "text",
+   "id": "level.G02.hint.2",
+   "name": "看刻纹判断酸能蚀什么，不要只看岩石颜色。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.G02.hint.2",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.G02.hint.3",
+   "domain": "text",
+   "id": "level.G02.hint.3",
+   "name": "向左走三格，挖开左侧塞口；两种刻纹软岩都消失后，向左落到出口。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.G02.hint.3",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.G03.title",
+   "domain": "text",
+   "id": "level.G03.title",
+   "name": "烟往高处走",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.G03.title",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.G03.discovery",
+   "domain": "text",
+   "id": "level.G03.discovery",
+   "name": "挖开顶口，轻烟会自己向上进入顶部收集斗；刻度满后目标灯保持点亮。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.G03.discovery",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.G03.hint.1",
+   "domain": "text",
+   "id": "level.G03.hint.1",
+   "name": "唯一的目标灯在竖井上方，收集斗要接住轻烟。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.G03.hint.1",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.G03.hint.2",
+   "domain": "text",
+   "id": "level.G03.hint.2",
+   "name": "下方烟室的顶口被夯土堵住；轻烟不会往井底找路。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.G03.hint.2",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.G03.hint.3",
+   "domain": "text",
+   "id": "level.G03.hint.3",
+   "name": "向左走四格，向左挖开烟室顶口；随后看轻烟升进顶部刻度框。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.G03.hint.3",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.G04.title",
+   "domain": "text",
+   "id": "level.G04.title",
+   "name": "雾往低处沉",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.G04.title",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.G04.discovery",
+   "domain": "text",
+   "id": "level.G04.discovery",
+   "name": "沉雾与轻烟方向相反：挖开底口后，它自己落进下方收集斗，刻度满就点灯。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.G04.discovery",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.G04.hint.1",
+   "domain": "text",
+   "id": "level.G04.hint.1",
+   "name": "这次目标斗在下面，材料图标也换成了沉雾。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.G04.hint.1",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.G04.hint.2",
+   "domain": "text",
+   "id": "level.G04.hint.2",
+   "name": "不要找向上的路；沉雾沿打开的底口下沉。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.G04.hint.2",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.G04.hint.3",
+   "domain": "text",
+   "id": "level.G04.hint.3",
+   "name": "向左走四格，向左挖开雾室底口，等下方刻度达到标线。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.G04.hint.3",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.G05.title",
+   "domain": "text",
+   "id": "level.G05.title",
+   "name": "会消失的塞子",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.G05.title",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.G05.discovery",
+   "domain": "text",
+   "id": "level.G05.discovery",
+   "name": "拉开关只是启动菌塞的寿命；菌塞在本次装置播放中自行消失，储存的沙随后落入收集斗。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.G05.discovery",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.G05.hint.1",
+   "domain": "text",
+   "id": "level.G05.hint.1",
+   "name": "两袋沙被菌塞托着，收集斗在菌塞下面。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.G05.hint.1",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.G05.hint.2",
+   "domain": "text",
+   "id": "level.G05.hint.2",
+   "name": "开关与菌塞有相同符号；拨动后等这次装置播放结束。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.G05.hint.2",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.G05.hint.3",
+   "domain": "text",
+   "id": "level.G05.hint.3",
+   "name": "向左走四格，站到开关上按上；不必再走一步，也不必抢在塞子消失前行动。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.G05.hint.3",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.G06.title",
+   "domain": "text",
+   "id": "level.G06.title",
+   "name": "浇水长藤",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.G06.title",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.G06.discovery",
+   "domain": "text",
+   "id": "level.G06.discovery",
+   "name": "水流到藤根，藤就长成固定高度的梯子；水只负责浇根，爬到高处靠长出的藤梯。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.G06.discovery",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.G06.hint.1",
+   "domain": "text",
+   "id": "level.G06.hint.1",
+   "name": "出口在左上方，眼前的竖井没有梯子，井底有藤根。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.G06.hint.1",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.G06.hint.2",
+   "domain": "text",
+   "id": "level.G06.hint.2",
+   "name": "水池的夯土塞打开后，水会落到藤根；藤梯长出后会一直留在那里。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.G06.hint.2",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.G06.hint.3",
+   "domain": "text",
+   "id": "level.G06.hint.3",
+   "name": "向左走四格并向左挖；再向左进入藤梯，向上爬两格，最后向左到出口。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.G06.hint.3",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.G08.title",
+   "domain": "text",
+   "id": "level.G08.title",
+   "name": "弹跳蘑菇",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.G08.title",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.G08.discovery",
+   "domain": "text",
+   "id": "level.G08.discovery",
+   "name": "从台边落到蘑菇上，会自动竖直弹高两格；弹到藤梯处就能停住，再走向出口。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.G08.discovery",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.G08.hint.1",
+   "domain": "text",
+   "id": "level.G08.hint.1",
+   "name": "出口与藤梯比你现在的地面高一格，左下方有一朵蘑菇。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.G08.hint.1",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.G08.hint.2",
+   "domain": "text",
+   "id": "level.G08.hint.2",
+   "name": "走出台边落到蘑菇上，蘑菇会把你送到藤梯；不需要按跳跃键。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.G08.hint.2",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.G08.hint.3",
+   "domain": "text",
+   "id": "level.G08.hint.3",
+   "name": "向左走到台边，再向左落在蘑菇上；停在藤梯后，向左走到出口。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.G08.hint.3",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.G09.title",
+   "domain": "text",
+   "id": "level.G09.title",
+   "name": "跷跷板",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.G09.title",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.G09.discovery",
+   "domain": "text",
+   "id": "level.G09.discovery",
+   "name": "把铁箱推落到跷跷板一端，另一端的木箱就会被弹高两格，落到旁边的高台槽中。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.G09.discovery",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.G09.hint.1",
+   "domain": "text",
+   "id": "level.G09.hint.1",
+   "name": "木箱已经放在跷跷板左端，高处的目标槽还空着。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.G09.hint.1",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.G09.hint.2",
+   "domain": "text",
+   "id": "level.G09.hint.2",
+   "name": "右边的铁箱可以落到空着的右端；看板上画出的木箱落点。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.G09.hint.2",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.G09.hint.3",
+   "domain": "text",
+   "id": "level.G09.hint.3",
+   "name": "向左走两格，向左推铁箱两次；铁箱落上右端后，木箱自动弹进左上方目标槽。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.G09.hint.3",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.G10.title",
+   "domain": "text",
+   "id": "level.G10.title",
+   "name": "沙压跷跷板",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.G10.title",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.G10.discovery",
+   "domain": "text",
+   "id": "level.G10.discovery",
+   "name": "留在出口岸上向跷跷板右端倒沙，让沙替你压住一端，把左端箱子弹入高台槽。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.G10.discovery",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.G10.hint.1",
+   "domain": "text",
+   "id": "level.G10.hint.1",
+   "name": "箱子要进左上槽，你也要留在右岸出口；右边的深井是跷跷板一端。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.G10.hint.1",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.G10.hint.2",
+   "domain": "text",
+   "id": "level.G10.hint.2",
+   "name": "你下井就回不到出口；一袋沙能替你压下右端，让两盏目标灯同时亮。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.G10.hint.2",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.G10.hint.3",
+   "domain": "text",
+   "id": "level.G10.hint.3",
+   "name": "向左走四步站到出口，再向左倒一袋沙。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.G10.hint.3",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.F01.title",
+   "domain": "text",
+   "id": "level.F01.title",
+   "name": "木栅怕火",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.F01.title",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.F01.discovery",
+   "domain": "text",
+   "id": "level.F01.discovery",
+   "name": "拉火盆开关点燃木栅；等同一次结算内烧完，通道就打开。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.F01.discovery",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.F01.hint.1",
+   "domain": "text",
+   "id": "level.F01.hint.1",
+   "name": "出口前的两格高木栅，和火盆的作用框连在一起。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.F01.hint.1",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.F01.hint.2",
+   "domain": "text",
+   "id": "level.F01.hint.2",
+   "name": "走到火盆左边的开关，按 ↑ 点火；结算结束前不用继续操作。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.F01.hint.2",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.F01.hint.3",
+   "domain": "text",
+   "id": "level.F01.hint.3",
+   "name": "先向右走两步拨开关，木栅烧尽后一直向右走到出口。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.F01.hint.3",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.F02.title",
+   "domain": "text",
+   "id": "level.F02.title",
+   "name": "冷一下变冰桥",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.F02.title",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.F02.discovery",
+   "domain": "text",
+   "id": "level.F02.discovery",
+   "name": "冷凝喷口把框内的水当场冻成不会自行融化的实心冰，水面就成为能走过的桥。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.F02.discovery",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.F02.hint.1",
+   "domain": "text",
+   "id": "level.F02.hint.1",
+   "name": "水池有两格深，右岸太高；喷口边框只圈住最上面一排水。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.F02.hint.1",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.F02.hint.2",
+   "domain": "text",
+   "id": "level.F02.hint.2",
+   "name": "站在左岸开关按 ↑，让最上面一排水变成支撑。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.F02.hint.2",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.F02.hint.3",
+   "domain": "text",
+   "id": "level.F02.hint.3",
+   "name": "向右一步拨开关，再沿冰桥一直向右到出口；没冻就落水时，可沿左边梯子爬回岸上。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.F02.hint.3",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.F03.title",
+   "domain": "text",
+   "id": "level.F03.title",
+   "name": "热一下化开",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.F03.title",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.F03.discovery",
+   "domain": "text",
+   "id": "level.F03.discovery",
+   "name": "热喷口把框内的冰塞化成水；化出的水自己流进下方收集斗。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.F03.discovery",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.F03.hint.1",
+   "domain": "text",
+   "id": "level.F03.hint.1",
+   "name": "冰塞正下方的竖井通向收集斗；两格冰正好够点亮斗的刻度。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.F03.hint.1",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.F03.hint.2",
+   "domain": "text",
+   "id": "level.F03.hint.2",
+   "name": "冰不会自己融化，试试左侧热喷口的开关。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.F03.hint.2",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.F03.hint.3",
+   "domain": "text",
+   "id": "level.F03.hint.3",
+   "name": "向右走三步，在开关上按 ↑；等冰化成的水落进收集斗即可。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.F03.hint.3",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.F04.title",
+   "domain": "text",
+   "id": "level.F04.title",
+   "name": "炸药也点火",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.F04.title",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.F04.discovery",
+   "domain": "text",
+   "id": "level.F04.discovery",
+   "name": "爆炸也能点火：半径一半以内、没有被炸毁的木栅会先着火，再由燃烧打开通道。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.F04.discovery",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.F04.hint.1",
+   "domain": "text",
+   "id": "level.F04.hint.1",
+   "name": "这一关没有火盆，但背包里有一份炸药。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.F04.hint.1",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.F04.hint.2",
+   "domain": "text",
+   "id": "level.F04.hint.2",
+   "name": "爆炸的内圈会点燃幸存的可燃物；把爆点放在木栅左边的空格。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.F04.hint.2",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.F04.hint.3",
+   "domain": "text",
+   "id": "level.F04.hint.3",
+   "name": "向右走三步，向右放炸药；等木栅烧尽，再一直向右到出口。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.F04.hint.3",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.F07.title",
+   "domain": "text",
+   "id": "level.F07.title",
+   "name": "冰上一滑到底",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.F07.title",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.F07.discovery",
+   "domain": "text",
+   "id": "level.F07.discovery",
+   "name": "把箱子推上冰面，它会在同一次结算里一直滑到挡墙前的目标槽；人物仍留在推后的一格。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.F07.discovery",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.F07.hint.1",
+   "domain": "text",
+   "id": "level.F07.hint.1",
+   "name": "箱子右边的五格地面都是冰，目标槽紧挨着尽头的挡墙。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.F07.hint.1",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.F07.hint.2",
+   "domain": "text",
+   "id": "level.F07.hint.2",
+   "name": "箱子被推上冰后会继续滑，挡墙替你把它停在槽内。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.F07.hint.2",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.F07.hint.3",
+   "domain": "text",
+   "id": "level.F07.hint.3",
+   "name": "一直向右走四步；最后一步把箱子推上冰，等它自行滑到最右侧目标槽。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.F07.hint.3",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.F08.title",
+   "domain": "text",
+   "id": "level.F08.title",
+   "name": "风口",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.F08.title",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.F08.discovery",
+   "domain": "text",
+   "id": "level.F08.discovery",
+   "name": "每做完一个合法动作，风口就把框内的轻木箱向右吹一格；四阵风把高台木箱送进槽。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.F08.discovery",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.F08.hint.1",
+   "domain": "text",
+   "id": "level.F08.hint.1",
+   "name": "人物走不到上方高台；木箱和目标都在朝右的风口边框里。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.F08.hint.1",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.F08.hint.2",
+   "domain": "text",
+   "id": "level.F08.hint.2",
+   "name": "每个合法动作结束后风吹一格，不需要等待现实时间，也不用去碰木箱。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.F08.hint.2",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.F08.hint.3",
+   "domain": "text",
+   "id": "level.F08.hint.3",
+   "name": "在下方通道向右走四步，让四次结算把木箱从高台左端送到右端槽中。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.F08.hint.3",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.F09.title",
+   "domain": "text",
+   "id": "level.F09.title",
+   "name": "冻出冰道",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.F09.title",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.F09.discovery",
+   "domain": "text",
+   "id": "level.F09.discovery",
+   "name": "先把水池上排冻成连续冰道，再把箱子推上去；同一次滑行把箱子送到尽头的槽中。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.F09.discovery",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.F09.hint.1",
+   "domain": "text",
+   "id": "level.F09.hint.1",
+   "name": "目标槽前缺少一整段冰面；喷口边框正好覆盖水池最上排。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.F09.hint.1",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.F09.hint.2",
+   "domain": "text",
+   "id": "level.F09.hint.2",
+   "name": "先冻好连续冰道，再推箱子，才能让它像上一关一样一直滑到挡墙前。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.F09.hint.2",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.F09.hint.3",
+   "domain": "text",
+   "id": "level.F09.hint.3",
+   "name": "向右一步按 ↑ 冻水，再向右三步把箱子推上冰道；木箱会停在右墙前的槽里。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.F09.hint.3",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.Q07.title",
+   "domain": "text",
+   "id": "level.Q07.title",
+   "name": "矿车一路滚",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.Q07.title",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.Q07.discovery",
+   "domain": "text",
+   "id": "level.Q07.discovery",
+   "name": "推一下矿车，它把箱子载到轨道尽头才停下来。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.Q07.discovery",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.Q07.hint.1",
+   "domain": "text",
+   "id": "level.Q07.hint.1",
+   "name": "箱子放在矿车上，轨道通到目标槽下面。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.Q07.hint.1",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.Q07.hint.2",
+   "domain": "text",
+   "id": "level.Q07.hint.2",
+   "name": "一推矿车就会沿轨道一直滚，车上的箱子也跟着走。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.Q07.hint.2",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.Q07.hint.3",
+   "domain": "text",
+   "id": "level.Q07.hint.3",
+   "name": "走到矿车左侧，向右推一下。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.Q07.hint.3",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.Q08.title",
+   "domain": "text",
+   "id": "level.Q08.title",
+   "name": "灯照才实",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.Q08.title",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.Q08.discovery",
+   "domain": "text",
+   "id": "level.Q08.discovery",
+   "name": "把箱子推上灯照的晶桥，再退开一步，让箱子落入下面的槽。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.Q08.discovery",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.Q08.hint.1",
+   "domain": "text",
+   "id": "level.Q08.hint.1",
+   "name": "目标槽在虚影晶桥的下面。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.Q08.hint.1",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.Q08.hint.2",
+   "domain": "text",
+   "id": "level.Q08.hint.2",
+   "name": "你的灯在两格内时晶桥才托得住箱子，走远就会消失。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.Q08.hint.2",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.Q08.hint.3",
+   "domain": "text",
+   "id": "level.Q08.hint.3",
+   "name": "先向右走三步，把箱子推上桥，再向左退一步。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.Q08.hint.3",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.Q09.title",
+   "domain": "text",
+   "id": "level.Q09.title",
+   "name": "套娃箱",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.Q09.title",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.Q09.discovery",
+   "domain": "text",
+   "id": "level.Q09.discovery",
+   "name": "炸掉套娃箱的外壳，露出的内箱才放得进目标槽。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.Q09.discovery",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.Q09.hint.1",
+   "domain": "text",
+   "id": "level.Q09.hint.1",
+   "name": "这个箱子有两层外形，目标槽只收最里面的小箱。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.Q09.hint.1",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.Q09.hint.2",
+   "domain": "text",
+   "id": "level.Q09.hint.2",
+   "name": "爆炸会剥掉外壳，里面的小箱仍留在原地。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.Q09.hint.2",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.Q09.hint.3",
+   "domain": "text",
+   "id": "level.Q09.hint.3",
+   "name": "走到箱子左边，向右放炸药，再把内箱推三格进槽。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.Q09.hint.3",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.Q10.title",
+   "domain": "text",
+   "id": "level.Q10.title",
+   "name": "炸开轨道",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.Q10.title",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.Q10.discovery",
+   "domain": "text",
+   "id": "level.Q10.discovery",
+   "name": "矿车遇到裂岩会停；炸开轨道后，再推一次就能把箱子送到槽。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.Q10.discovery",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.Q10.hint.1",
+   "domain": "text",
+   "id": "level.Q10.hint.1",
+   "name": "轨道中间有一块裂岩。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.Q10.hint.1",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.Q10.hint.2",
+   "domain": "text",
+   "id": "level.Q10.hint.2",
+   "name": "矿车会在裂岩前停下，炸开后才能继续滚。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.Q10.hint.2",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.Q10.hint.3",
+   "domain": "text",
+   "id": "level.Q10.hint.3",
+   "name": "先推车到阻挡前，向右放炸药，再向右推车一次。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.Q10.hint.3",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.E04.title",
+   "domain": "text",
+   "id": "level.E04.title",
+   "name": "清轨再发车",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.E04.title",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.E04.discovery",
+   "domain": "text",
+   "id": "level.E04.discovery",
+   "name": "炸开轨道前的裂岩，再推车运箱入槽。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.E04.discovery",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.E04.hint.1",
+   "domain": "text",
+   "id": "level.E04.hint.1",
+   "name": "矿车能把箱子运到槽下，但轨道中间还堵着。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.E04.hint.1",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.E04.hint.2",
+   "domain": "text",
+   "id": "level.E04.hint.2",
+   "name": "车会先停在裂岩前；车台面和箱子不会被炸坏。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.E04.hint.2",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.E04.hint.3",
+   "domain": "text",
+   "id": "level.E04.hint.3",
+   "name": "先向右推车到阻挡前，向右放炸药，再向右推一次。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.E04.hint.3",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.E05.title",
+   "domain": "text",
+   "id": "level.E05.title",
+   "name": "冻道送箱",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.E05.title",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.E05.discovery",
+   "domain": "text",
+   "id": "level.E05.discovery",
+   "name": "把一段水面冻成冰道，一次推箱滑到终点。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.E05.discovery",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.E05.hint.1",
+   "domain": "text",
+   "id": "level.E05.hint.1",
+   "name": "箱子和槽之间隔着水，喷口框住水池最上排。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.E05.hint.1",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.E05.hint.2",
+   "domain": "text",
+   "id": "level.E05.hint.2",
+   "name": "先冻出连续冰道，箱子推上冰才会一路滑。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.E05.hint.2",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.E05.hint.3",
+   "domain": "text",
+   "id": "level.E05.hint.3",
+   "name": "向右一步拨开关，再向右两步，把箱子推上冰道。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.E05.hint.3",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.E06.title",
+   "domain": "text",
+   "id": "level.E06.title",
+   "name": "重箱开水门",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.E06.title",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.E06.discovery",
+   "domain": "text",
+   "id": "level.E06.discovery",
+   "name": "铁箱与人让桥超重，铁箱下沉压开水门。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.E06.discovery",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.E06.hint.1",
+   "domain": "text",
+   "id": "level.E06.hint.1",
+   "name": "桥能承受两份重量，桥下有一块连着门的水下压板。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.E06.hint.1",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.E06.hint.2",
+   "domain": "text",
+   "id": "level.E06.hint.2",
+   "name": "铁箱独占桥正好满载；你站上箱子才会超重。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.E06.hint.2",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.E06.hint.3",
+   "domain": "text",
+   "id": "level.E06.hint.3",
+   "name": "把铁箱推上桥，再向右登上箱子；桥塌后借铁箱登回门口。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.E06.hint.3",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:extra.controls.bomb",
+   "domain": "text",
+   "id": "extra.controls.bomb",
+   "name": "按住 B 加方向键，或将炸药拖到相邻格。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:extra.controls.bomb",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.E01.title",
+   "domain": "text",
+   "id": "level.E01.title",
+   "name": "沙替我守门",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.E01.title",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.E01.discovery",
+   "domain": "text",
+   "id": "level.E01.discovery",
+   "name": "把沙留在压板坑里，自己穿门去出口",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.E01.discovery",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.E01.hint.1",
+   "domain": "text",
+   "id": "level.E01.hint.1",
+   "name": "门与地面压板坑带着同一个圆形符号；背包有一袋沙。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.E01.hint.1",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.E01.hint.2",
+   "domain": "text",
+   "id": "level.E01.hint.2",
+   "name": "人离开压板门就会关，把沙留在压板上就能一直开着。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.E01.hint.2",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.E01.hint.3",
+   "domain": "text",
+   "id": "level.E01.hint.3",
+   "name": "向右走三格，在坑边向右倒沙；沙落稳后继续向右走五格，到门后的出口。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.E01.hint.3",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.E02.title",
+   "domain": "text",
+   "id": "level.E02.title",
+   "name": "箱子先过去",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.E02.title",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.E02.discovery",
+   "domain": "text",
+   "id": "level.E02.discovery",
+   "name": "用传送阵把箱子送到槽旁，再推入目标",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.E02.discovery",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.E02.hint.1",
+   "domain": "text",
+   "id": "level.E02.hint.1",
+   "name": "两个圆形传送阵隔着墙；右边的箱子槽离接收阵只有一格。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.E02.hint.1",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.E02.hint.2",
+   "domain": "text",
+   "id": "level.E02.hint.2",
+   "name": "先让箱子占住右阵，再从左阵上的梯子走高处通道，绕到箱子左侧。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.E02.hint.2",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.E02.hint.3",
+   "domain": "text",
+   "id": "level.E02.hint.3",
+   "name": "向右推箱上阵，再向右站上梯子；上两格、右三格、下两格，最后向右推箱入槽。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.E02.hint.3",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.E03.title",
+   "domain": "text",
+   "id": "level.E03.title",
+   "name": "装好再放水",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.E03.title",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.E03.discovery",
+   "domain": "text",
+   "id": "level.E03.discovery",
+   "name": "箱子先装上台面，再放水使收集斗触发升降台",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.E03.discovery",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.E03.hint.1",
+   "domain": "text",
+   "id": "level.E03.hint.1",
+   "name": "升降台上方是唯一箱子槽；收集斗满了会让台面升一次。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.E03.hint.1",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.E03.hint.2",
+   "domain": "text",
+   "id": "level.E03.hint.2",
+   "name": "先把箱子推到台面承载格，再拉开关；先放水会让空台升走。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.E03.hint.2",
+   "origin": "i18n-extra"
+  },
+  {
+   "uid": "text:level.E03.hint.3",
+   "domain": "text",
+   "id": "level.E03.hint.3",
+   "name": "向左推箱两次，再向右走三格到开关上，按上放水。",
+   "source": "content/i18n-extra/zh-Hans.json",
+   "game": "tr:level.E03.hint.3",
+   "origin": "i18n-extra"
   }
  ]
 }

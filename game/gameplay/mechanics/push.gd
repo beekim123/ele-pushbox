@@ -16,7 +16,9 @@ func try_action(action: String) -> Dictionary:
 	var nx: int = x + dx
 	var crate: int = grid.crate_index(nx, y)
 	if crate >= 0 and grid.is_free(nx + dx, y):
-		if not context.safe_to_move_tile(nx, y):
+		if not context.water_can_accept(crate, Vector2i(nx + dx, y)):
+			return {"handled": true, "accepted": false, "reason": "water-sealed"}
+		if not context.safe_to_move_tile(nx, y) or not context.safe_to_move_tile(nx + dx, y):
 			return {"handled": true, "accepted": false, "reason": "material-state"}
 		return {"handled": true, "accepted": true, "kind": "push", "player": {"x": nx, "y": y}, "crate": crate, "crate_to": {"x": nx + dx, "y": y}}
 	if grid.is_free(nx, y):
