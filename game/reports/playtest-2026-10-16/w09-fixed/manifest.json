@@ -1,0 +1,28 @@
+{
+  "format": "pushbox.checkpoint/1",
+  "records": [
+    {
+      "generation": "gen-1f998db1ff368fd2e7ea52b227a4ae3e",
+      "sdk_bytes": 76248,
+      "sdk_sha256": "906c31c0ffa300590d82750786e8da2dadccad10ec91faaf1049fd9e4dbf85e4",
+      "spec_hash": "777307a6abde6887cfd39e52f909cc275ce192a52fc3d41cae82845a0bfe6028",
+      "state_bytes": 6583,
+      "state_sha256": "f04a748830b6513f33697f0c20e18feb2bbb3d12bb35377c84d0f57a90c56486",
+      "uid": "level:W09",
+      "version": 1
+    },
+    {
+      "generation": "gen-3dc2ca2963d47726cdfc522491652deb",
+      "sdk_bytes": 76423.0,
+      "sdk_sha256": "dae9a962533d50f0256d30797a15299e8dbcd1804affc86ff789dae5ebf7cd15",
+      "spec_hash": "777307a6abde6887cfd39e52f909cc275ce192a52fc3d41cae82845a0bfe6028",
+      "state_bytes": 5912.0,
+      "state_sha256": "c92ef2734f70e5041d93e3e66e4778dc9ea6fc3cb89ab7ca613a6923b1877752",
+      "uid": "level:W09",
+      "version": 1.0
+    }
+  ],
+  "spec_hash": "777307a6abde6887cfd39e52f909cc275ce192a52fc3d41cae82845a0bfe6028",
+  "uid": "level:W09",
+  "version": 1
+}

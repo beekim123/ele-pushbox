@@ -313,7 +313,7 @@ func _valid_identity(uid: String, spec_hash: String) -> bool:
 
 func _json_compatible(value: Variant) -> bool:
 	match typeof(value):
-		TYPE_NIL, TYPE_BOOL, TYPE_INT, TYPE_STRING:
+		TYPE_NIL, TYPE_BOOL, TYPE_INT, TYPE_STRING, TYPE_STRING_NAME:
 			return true
 		TYPE_FLOAT:
 			return is_finite(float(value))
@@ -324,7 +324,7 @@ func _json_compatible(value: Variant) -> bool:
 			return true
 		TYPE_DICTIONARY:
 			for key: Variant in value:
-				if not key is String or not _json_compatible(value[key]):
+				if (not key is String and not key is StringName) or not _json_compatible(value[key]):
 					return false
 			return true
 	return false

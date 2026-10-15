@@ -1,0 +1,280 @@
+{
+  "kind": "readonly real SDK snapshot measurement; no ticks advanced",
+  "levels": [
+    {
+      "buoyancy": {
+        "above_count": 0,
+        "above_occupied_by_player": false,
+        "below_component_count": 512,
+        "head_cells": 0,
+        "top_y": 96
+      },
+      "counts": {
+        "acid": 0,
+        "crate": 256,
+        "iron_crate": 0,
+        "limestone_a": 0,
+        "limestone_b": 0,
+        "water": 512
+      },
+      "crates": [
+        {
+          "id": "crate-0",
+          "kind": "wood",
+          "x": 5.0,
+          "y": 5.0
+        }
+      ],
+      "id": "W01",
+      "moves": 6.0,
+      "player": {
+        "x": 6.0,
+        "y": 3.0
+      },
+      "stats": {
+        "active_chunks": 0,
+        "bodies": 0,
+        "collision_bodies": 0,
+        "collision_rebuilt": 0,
+        "collision_us": 0,
+        "commands_dropped": 0,
+        "commands_executed": 0,
+        "commands_rejected": 0,
+        "electric_heads": 0,
+        "events_dropped": 0,
+        "particles_drawn": 0,
+        "particles_us": 0,
+        "pressure_moves": 0,
+        "queue_size": 0,
+        "region_io_pending": 0,
+        "region_io_us": 0,
+        "regions_resident": 0,
+        "step_us": 0,
+        "tick": 0,
+        "tiles_dirty": 0,
+        "tiles_uploaded": 0,
+        "upload_us": 0
+      },
+      "tiles": [
+        {
+          "at": [
+            5,
+            6
+          ],
+          "counts": {
+            "water": 256
+          }
+        },
+        {
+          "at": [
+            5,
+            7
+          ],
+          "counts": {
+            "water": 256
+          }
+        }
+      ]
+    },
+    {
+      "buoyancy": {
+        "above_count": 0,
+        "above_occupied_by_player": false,
+        "below_component_count": 0,
+        "head_cells": -144,
+        "top_y": 192
+      },
+      "counts": {
+        "acid": 0,
+        "crate": 256,
+        "iron_crate": 0,
+        "limestone_a": 0,
+        "limestone_b": 0,
+        "water": 1792
+      },
+      "crates": [
+        {
+          "id": "crate-0",
+          "kind": "wood",
+          "x": 8.0,
+          "y": 2.0
+        }
+      ],
+      "id": "W09",
+      "moves": 7.0,
+      "player": {
+        "x": 3.0,
+        "y": 5.0
+      },
+      "stats": {
+        "active_chunks": 0,
+        "bodies": 0,
+        "collision_bodies": 0,
+        "collision_rebuilt": 0,
+        "collision_us": 0,
+        "commands_dropped": 0,
+        "commands_executed": 0,
+        "commands_rejected": 0,
+        "electric_heads": 0,
+        "events_dropped": 0,
+        "particles_drawn": 0,
+        "particles_us": 0,
+        "pressure_moves": 0,
+        "queue_size": 0,
+        "region_io_pending": 0,
+        "region_io_us": 0,
+        "regions_resident": 0,
+        "step_us": 0,
+        "tick": 0,
+        "tiles_dirty": 0,
+        "tiles_uploaded": 0,
+        "upload_us": 0
+      },
+      "tiles": [
+        {
+          "at": [
+            6,
+            2
+          ],
+          "counts": {
+            "water": 128
+          }
+        },
+        {
+          "at": [
+            7,
+            2
+          ],
+          "counts": {
+            "water": 128
+          }
+        },
+        {
+          "at": [
+            6,
+            3
+          ],
+          "counts": {
+            "water": 256
+          }
+        },
+        {
+          "at": [
+            7,
+            3
+          ],
+          "counts": {
+            "water": 256
+          }
+        },
+        {
+          "at": [
+            6,
+            4
+          ],
+          "counts": {
+            "water": 256
+          }
+        },
+        {
+          "at": [
+            7,
+            4
+          ],
+          "counts": {
+            "water": 256
+          }
+        },
+        {
+          "at": [
+            6,
+            5
+          ],
+          "counts": {
+            "water": 256
+          }
+        },
+        {
+          "at": [
+            7,
+            5
+          ],
+          "counts": {
+            "water": 256
+          }
+        }
+      ]
+    },
+    {
+      "acid_soft_contacts": 0,
+      "counts": {
+        "acid": 368,
+        "crate": 0,
+        "iron_crate": 0,
+        "limestone_a": 112,
+        "limestone_b": 0,
+        "water": 0
+      },
+      "crates": [],
+      "id": "G01",
+      "moves": 5.0,
+      "player": {
+        "x": 5.0,
+        "y": 7.0
+      },
+      "stats": {
+        "active_chunks": 0,
+        "bodies": 0,
+        "collision_bodies": 0,
+        "collision_rebuilt": 0,
+        "collision_us": 0,
+        "commands_dropped": 0,
+        "commands_executed": 0,
+        "commands_rejected": 0,
+        "electric_heads": 0,
+        "events_dropped": 0,
+        "particles_drawn": 0,
+        "particles_us": 0,
+        "pressure_moves": 0,
+        "queue_size": 0,
+        "region_io_pending": 0,
+        "region_io_us": 0,
+        "regions_resident": 0,
+        "step_us": 0,
+        "tick": 0,
+        "tiles_dirty": 0,
+        "tiles_uploaded": 0,
+        "upload_us": 0
+      },
+      "tiles": [
+        {
+          "at": [
+            5,
+            5
+          ],
+          "counts": {
+            "limestone_a": 112
+          }
+        },
+        {
+          "at": [
+            5,
+            6
+          ],
+          "counts": {
+            "acid": 112
+          }
+        },
+        {
+          "at": [
+            5,
+            7
+          ],
+          "counts": {
+            "acid": 256
+          }
+        }
+      ]
+    }
+  ]
+}

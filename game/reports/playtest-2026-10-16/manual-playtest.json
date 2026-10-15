@@ -1,0 +1,197 @@
+{
+  "format": "portitor.manual-playtest/1",
+  "generated": "2026-10-15T22:27:10.602569+00:00",
+  "authorization": "User explicitly authorized actual playing and bug hunting on 2026-10-16.",
+  "method": "Real native windows with CUA keyboard/mouse, real SDK. Isolated PUSHBOX_TEST_STORAGE. No automated level replay, performance, screenshot comparison or exhaustive solving.",
+  "levels": [
+    {
+      "id": "E02",
+      "manual_ui_route_won": true,
+      "steps": 10,
+      "first_pass_package": "0.2.0",
+      "three_replay_sdk_verification": "not_run"
+    },
+    {
+      "id": "F01",
+      "manual_ui_route_won": true,
+      "steps": 10,
+      "first_pass_package": "0.2.0",
+      "three_replay_sdk_verification": "not_run"
+    },
+    {
+      "id": "F02",
+      "manual_ui_route_won": true,
+      "steps": 11,
+      "first_pass_package": "0.2.0",
+      "three_replay_sdk_verification": "not_run"
+    },
+    {
+      "id": "G01",
+      "manual_ui_route_won": true,
+      "steps": 5,
+      "first_pass_package": "0.2.1",
+      "three_replay_sdk_verification": "not_run"
+    },
+    {
+      "id": "M05",
+      "manual_ui_route_won": true,
+      "steps": 8,
+      "first_pass_package": "0.2.0",
+      "three_replay_sdk_verification": "not_run"
+    },
+    {
+      "id": "Q01",
+      "manual_ui_route_won": true,
+      "steps": 7,
+      "first_pass_package": "0.2.0",
+      "three_replay_sdk_verification": "not_run"
+    },
+    {
+      "id": "W01",
+      "manual_ui_route_won": true,
+      "steps": 6,
+      "first_pass_package": "0.2.1",
+      "three_replay_sdk_verification": "not_run"
+    },
+    {
+      "id": "W05",
+      "manual_ui_route_won": true,
+      "steps": 10,
+      "first_pass_package": "0.2.0",
+      "three_replay_sdk_verification": "not_run"
+    },
+    {
+      "id": "W07",
+      "manual_ui_route_won": true,
+      "steps": 5,
+      "first_pass_package": "0.2.0",
+      "three_replay_sdk_verification": "not_run"
+    },
+    {
+      "id": "W08",
+      "manual_ui_route_won": true,
+      "steps": 6,
+      "first_pass_package": "0.2.0",
+      "three_replay_sdk_verification": "not_run"
+    },
+    {
+      "id": "W09",
+      "manual_ui_route_won": true,
+      "steps": 7,
+      "first_pass_package": "0.2.1",
+      "three_replay_sdk_verification": "not_run"
+    }
+  ],
+  "covered_unique_levels": 11,
+  "remaining_unplayed": 35,
+  "reproduced_and_fixed": [
+    {
+      "id": "checkpoint_stringname",
+      "before": "Every level save rejected valid StringName dictionary keys.",
+      "fix": "Accept only String/StringName text keys and scalar text values; retain shape/hash checks.",
+      "verified": "M05 opening and action persisted; after process restart Continue restored player(3,3),moves1; restart then undo restored that state."
+    },
+    {
+      "id": "W01_thin_water",
+      "before": "RRURRR did not win; real saved water512, above64, head0.",
+      "fix": "One retaining tile and two background ladder tiles; initial water512 and author route unchanged.",
+      "verified": "Native route won in6 steps; undo opening gate restored original pool/crate; redo won. Water count512 and crate256 in saved winning world."
+    },
+    {
+      "id": "W09_thin_water",
+      "before": "Seven-step route did not win; water1536, above90, head22.",
+      "fix": "Correct authored initial water to1792 by adding[6,2], no runtime creation; original map/route/threshold unchanged.",
+      "verified": "First push floated crate to(7,2); original7 steps won; saved world water1792/crate256."
+    },
+    {
+      "id": "G01_reaction_contact",
+      "before": "Five-step route did not win; acid263=softrock263, four-neighbor contact0.",
+      "fix": "Remove lower authored softrock tile; initial acid512, upper rock256, original route unchanged.",
+      "verified": "Native5-step route won; SDK retained112 softrock and368 acid (difference256); no forced rock deletion."
+    },
+    {
+      "id": "level_description_truncation",
+      "before": "Native level page clipped W01 discovery text and logged paragraph clipped.",
+      "fix": "Bounded ScrollContainer with all lines, mouse scrolling and PageUp/PageDown; selection focus retained.",
+      "verified": "Native PageDown showed complete final sentence while W01 stayed selected; no new layout warnings in native-03."
+    },
+    {
+      "id": "lobby_chapter_restore",
+      "before": "Restart lobby could show chapter1 while Continue referred to a later chapter.",
+      "fix": "Read existing last_level_uid and restore available chapter/level selection without progress writes.",
+      "verified": "Final package same-PCK isolated app displayed chapter4 forest and Continue G01."
+    }
+  ],
+  "other_checks": [
+    "M05 crate/door undo",
+    "G01 restart and undo restart",
+    "music slider focus/window unchanged",
+    "open-all setting via actual menu"
+  ],
+  "frozen_inputs": {
+    "files": 301,
+    "changed": []
+  },
+  "package": {
+    "version": "0.2.1",
+    "final_pck_sha256": "ed2ec53236098e023e1ce5310ef95b8758d87b3257cb609a14b44be3b964da6a",
+    "gameplay_retest_pck_sha256": "6c990f6f69b9044eb1cb53f2b663b1fad8af6b555b732eaf26687b6dba692a39",
+    "difference": "Final build additionally restores saved lobby chapter selection; final native window check passed."
+  },
+  "still_not_run": [
+    "35 other levels",
+    "three deterministic SDK replays per level",
+    "every-step undo for all levels",
+    "checkpoint corruption/failure injection",
+    "performance",
+    "pixel screenshot comparison",
+    "exhaustive solving"
+  ],
+  "user_acceptance": "not_done",
+  "known_boundaries": [
+    "Missing mechanism and UI art remains explicit placeholders.",
+    "Cross-process undo history is intentionally not preserved."
+  ],
+  "tool_incidents": [
+    "CUA quit observation reopened a default same-bundle App; it was not interacted with and was cleaned by PID. Original user Godot87531 preserved.",
+    "Final new application binding blocked for about4h23m; no additional validation occurred during that wait."
+  ],
+  "snapshot_measurement_note": "SDK counters reset when snapshots are loaded. Only exact cell counts and geometry are used; those counters are not performance or stationarity evidence.",
+  "unplayed_ids": [
+    "M01",
+    "M02",
+    "M03",
+    "M04",
+    "M06",
+    "M07",
+    "W02",
+    "W03",
+    "W04",
+    "W10",
+    "Q02",
+    "Q03",
+    "Q04",
+    "Q07",
+    "Q08",
+    "Q09",
+    "Q10",
+    "G02",
+    "G03",
+    "G04",
+    "G05",
+    "G06",
+    "G08",
+    "G09",
+    "G10",
+    "F03",
+    "F04",
+    "F07",
+    "F08",
+    "F09",
+    "E01",
+    "E03",
+    "E04",
+    "E05",
+    "E06"
+  ]
+}

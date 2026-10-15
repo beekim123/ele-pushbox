@@ -1,0 +1,28 @@
+{
+  "format": "pushbox.checkpoint/1",
+  "records": [
+    {
+      "generation": "gen-30a82232cce664db3f8cc599f3d58d45",
+      "sdk_bytes": 102507,
+      "sdk_sha256": "4ed55d9b406d30597a4083b3bc51a9463800086c0078343bc42882ac71d12217",
+      "spec_hash": "f6e34857c78a594ec5ac926e5fb75fbd29db911702ad198bad9cc0ed55439eba",
+      "state_bytes": 4996,
+      "state_sha256": "96e4a3397ccbb334bd076525512df721367d1723baadfa19042af19da476b530",
+      "uid": "level:G01",
+      "version": 1
+    },
+    {
+      "generation": "gen-ef556f1a6e7bff1be7486a232dd38ac8",
+      "sdk_bytes": 102507.0,
+      "sdk_sha256": "0dba2b7af2f551b630b1fbeeafda3a7dffcb7d9ee696456aa2a7b2182a76c304",
+      "spec_hash": "f6e34857c78a594ec5ac926e5fb75fbd29db911702ad198bad9cc0ed55439eba",
+      "state_bytes": 4449.0,
+      "state_sha256": "39f58b28d8c5ad024700104e93d7e7878539cb2bbe53f8b177abe5930fd6680b",
+      "uid": "level:G01",
+      "version": 1.0
+    }
+  ],
+  "spec_hash": "f6e34857c78a594ec5ac926e5fb75fbd29db911702ad198bad9cc0ed55439eba",
+  "uid": "level:G01",
+  "version": 1
+}

@@ -1,0 +1,28 @@
+{
+  "format": "pushbox.checkpoint/1",
+  "records": [
+    {
+      "generation": "gen-5d597f5bcf3a99ac45426ca88f3957a5",
+      "sdk_bytes": 78255,
+      "sdk_sha256": "764a7c07e4c163c6673abcaa62ab15694f1f30a45b2465baf7d1cf25cf71dfdd",
+      "spec_hash": "edd76eaef17c3e3d532368c05317d4c2f6b8070dd0117336389294f79fc325a6",
+      "state_bytes": 5832,
+      "state_sha256": "01af2e8e0216207555f2a22318d85900f450c42ebf01ee6f962b7af0ee28f6f1",
+      "uid": "level:W01",
+      "version": 1
+    },
+    {
+      "generation": "gen-834b0c5cee11d13d3cf4835c39dd6928",
+      "sdk_bytes": 78255.0,
+      "sdk_sha256": "76d48b663f42262b2cae25dac4b2fd72accdb3fb41bdba037807654c6d8baeed",
+      "spec_hash": "edd76eaef17c3e3d532368c05317d4c2f6b8070dd0117336389294f79fc325a6",
+      "state_bytes": 5255.0,
+      "state_sha256": "6b60a856b0b9ef1c42198068c55b3c7718464cd2cc6c10babcf32e773e624ab8",
+      "uid": "level:W01",
+      "version": 1.0
+    }
+  ],
+  "spec_hash": "edd76eaef17c3e3d532368c05317d4c2f6b8070dd0117336389294f79fc325a6",
+  "uid": "level:W01",
+  "version": 1
+}

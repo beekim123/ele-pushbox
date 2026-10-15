@@ -60,6 +60,17 @@ func configure(controller: Node) -> void:
 func t(key: String, params: Dictionary = {}) -> String:
 	return Locale.text("text:" + key, params)
 
+func _unhandled_key_input(event: InputEvent) -> void:
+	if screen_name != "levels" or _details == null or not event is InputEventKey:
+		return
+	var key: InputEventKey = event as InputEventKey
+	if not key.pressed or key.physical_keycode not in [KEY_PAGEUP, KEY_PAGEDOWN]:
+		return
+	var description: ScrollContainer = _details.get_node_or_null("LevelDiscoveryScroll") as ScrollContainer
+	if description != null:
+		description.scroll_vertical += -39 if key.physical_keycode == KEY_PAGEUP else 39
+		get_viewport().set_input_as_handled()
+
 func _process(delta: float) -> void:
 	_elapsed_ticks += delta * 60.0
 	var tick: int = _visual_tick()
@@ -586,8 +597,20 @@ func _update_level_details() -> void:
 		for y: int in rows.size():
 			for x: int in str(rows[y]).length():
 				_rectangle(Rect2(origin + Vector2(x * cell, y * cell), Vector2(cell, cell)), colors.get(str(rows[y]).substr(x, 1), "y"), _details)
-		var lines: int = floori(float(136 - (map_height + 10) - 4) / 13)
-		_paragraph(_level_text(spec, "discovery"), Vector2(195, 32 + map_height), 112, lines, "u", _details)
+		# Keep the full discovery available when a taller map leaves less room.
+		# This region scrolls independently; keyboard focus stays on the level row.
+		var description := ScrollContainer.new()
+		description.name = "LevelDiscoveryScroll"
+		description.position = Vector2(195, 32 + map_height)
+		description.size = Vector2(112, maxi(26, 154 - (32 + map_height)))
+		description.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
+		description.vertical_scroll_mode = ScrollContainer.SCROLL_MODE_AUTO
+		description.focus_mode = Control.FOCUS_NONE
+		_details.add_child(description)
+		description.get_v_scroll_bar().focus_mode = Control.FOCUS_NONE
+		var text_width: int = maxi(60, 110 - ceili(description.get_v_scroll_bar().get_combined_minimum_size().x))
+		var discovery: String = _level_text(spec, "discovery")
+		_paragraph(discovery, Vector2.ZERO, text_width, _wrapped(discovery, text_width).size(), "u", description)
 
 func _level_text(spec: Dictionary, field: String) -> String:
 	var key: String = "level." + str(spec.get("id", "")) + "." + field
@@ -972,14 +995,31 @@ func _scan(parent: Node, result: Array) -> void:
 			var control: Control = child as Control
 			var bounds: Rect2 = control.get_global_rect()
 			var viewport_rect := Rect2(Vector2.ZERO, get_viewport_rect().size)
-			if not viewport_rect.grow(1).encloses(bounds):
+			var discovery_scroll: ScrollContainer = _discovery_scroll_for(control)
+			var outside: bool = not viewport_rect.grow(1).encloses(bounds)
+			if discovery_scroll != null:
+				outside = bounds.position.x < -1 or bounds.end.x > viewport_rect.end.x + 1
+			if outside:
 				result.append("text outside viewport: %s %s rect=%s" % [control.name, control.get("text"), bounds])
 			var ancestor: Node = control.get_parent()
 			while ancestor != self and ancestor != null:
-				if ancestor is Control and (ancestor as Control).clip_contents and not (ancestor as Control).get_global_rect().grow(1).encloses(bounds):
-					result.append("text clipped by parent: " + str(control.name))
+				if ancestor is Control and (ancestor as Control).clip_contents:
+					var clip: Rect2 = (ancestor as Control).get_global_rect().grow(1)
+					var clipped: bool = not clip.encloses(bounds)
+					if ancestor == discovery_scroll:
+						clipped = bounds.position.x < clip.position.x or bounds.end.x > clip.end.x
+					if clipped:
+						result.append("text clipped by parent: " + str(control.name))
 				ancestor = ancestor.get_parent()
 		_scan(child, result)
+
+func _discovery_scroll_for(control: Control) -> ScrollContainer:
+	var ancestor: Node = control.get_parent()
+	while ancestor != null and ancestor != self:
+		if ancestor is ScrollContainer and ancestor.name == "LevelDiscoveryScroll":
+			return ancestor as ScrollContainer
+		ancestor = ancestor.get_parent()
+	return null
 
 func _level_has_placeholder() -> bool:
 	if app.session == null:

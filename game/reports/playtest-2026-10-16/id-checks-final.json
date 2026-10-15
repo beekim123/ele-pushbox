@@ -1,0 +1,19 @@
+{
+  "format": "portitor.id-checks/1",
+  "checks": [
+    {
+      "id": "a",
+      "ok": true
+    },
+    {
+      "id": "b",
+      "ok": true
+    },
+    {
+      "id": "c",
+      "ok": true
+    }
+  ],
+  "errors": [],
+  "uid_count": 897
+}

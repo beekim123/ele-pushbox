@@ -43,6 +43,7 @@ func _ready() -> void:
 	get_window().title = Locale.text("text:game.title")
 	lab.configure(JSON.parse_string(FileAccess.get_file_as_string("res://generated/content-manifest.json")))
 	lab.open_all_levels = bool(Settings.values.get("open_all_levels", false))
+	_restore_saved_level_selection()
 	var renderer: Script = load("res://presentation/render/world_view.gd")
 	if renderer != null:
 		world_view = renderer.new()
@@ -53,6 +54,18 @@ func _ready() -> void:
 		Input.set_custom_mouse_cursor(PortitorUI.atlas("art:ui.cursor"))
 	show_screen("lobby")
 	call_deferred("_start_requested_level")
+
+func _restore_saved_level_selection() -> void:
+	var uid: String = str(Save.data.get("last_level_uid", ""))
+	for group_index: int in range(lab.groups.size()):
+		if not lab.available(group_index):
+			continue
+		var levels: Array = lab.groups[group_index].get("levels", [])
+		for level_index: int in range(levels.size()):
+			if "level:" + str(levels[level_index].id) == uid:
+				lab.group_index = group_index
+				lab.level_index = level_index
+				return
 
 func _start_requested_level() -> void:
 	for argument: String in OS.get_cmdline_user_args():

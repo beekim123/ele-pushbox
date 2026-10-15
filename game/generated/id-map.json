@@ -1150,7 +1150,7 @@
    "name": "开闸放水",
    "source": "content/levels/lab/water/W01.json",
    "game": "res://generated/content/levels/lab/water/W01.json",
-   "sha256": "cf14dc54ebaf9601470dc1025a30f2f3d89737272291b4b71d70178f5c9277d9"
+   "sha256": "edd76eaef17c3e3d532368c05317d4c2f6b8070dd0117336389294f79fc325a6"
   },
   {
    "uid": "level:W02",
@@ -1213,7 +1213,7 @@
    "name": "传送阵",
    "source": "content/levels/lab/water/W09.json",
    "game": "res://generated/content/levels/lab/water/W09.json",
-   "sha256": "56bc04ba8a9015d99feb89f87ea5f0c1af055103fc1f092ef544531da9289d0f"
+   "sha256": "777307a6abde6887cfd39e52f909cc275ce192a52fc3d41cae82845a0bfe6028"
   },
   {
    "uid": "level:W10",
@@ -1303,7 +1303,7 @@
    "name": "一滴开路",
    "source": "content/levels/lab/react/G01.json",
    "game": "res://generated/content/levels/lab/react/G01.json",
-   "sha256": "1923a95f18bacf44d8f75688c1b87c58eb77dc10cde37c53252f41444050afdc"
+   "sha256": "f6e34857c78a594ec5ac926e5fb75fbd29db911702ad198bad9cc0ed55439eba"
   },
   {
    "uid": "level:G02",
@@ -6650,7 +6650,7 @@
    "uid": "text:level.G01.hint.1",
    "domain": "text",
    "id": "level.G01.hint.1",
-   "name": "出口在竖井底下，两层带刻纹的软岩挡住了路。",
+   "name": "出口在竖井底下，一层带刻纹的软岩挡住了路。",
    "source": "content/i18n-extra/zh-Hans.json",
    "game": "tr:level.G01.hint.1",
    "origin": "i18n-extra"

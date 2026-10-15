@@ -1,6 +1,6 @@
 {
  "format": "portitor.import-inventory/1",
- "source_id_map_sha256": "28f821e69595c767998f696f20f67d224415e3bb0d6add93eca97283e3a21eda",
+ "source_id_map_sha256": "cfcd4cd7dd065b27ff452015a7de36d5377073625e20ac0f52ba95d75f75fc47",
  "files": [
   {
    "path": "generated/id-map.json",
@@ -903,7 +903,7 @@
     "world:wonderland",
     "world:xianxia"
    ],
-   "sha256": "28f821e69595c767998f696f20f67d224415e3bb0d6add93eca97283e3a21eda"
+   "sha256": "cfcd4cd7dd065b27ff452015a7de36d5377073625e20ac0f52ba95d75f75fc47"
   },
   {
    "path": "generated/content-manifest.json",
@@ -1394,7 +1394,7 @@
     "world:wonderland",
     "world:xianxia"
    ],
-   "sha256": "f58869aa9b8bf4b268deeb87d158ec556559e436e43386bdedbf9abe2eb4813d"
+   "sha256": "950e8997043b7fd637215aaf689f0094244fd0d94e62b30ddd64fce9d99d23ff"
   },
   {
    "path": "generated/ids.gd",
@@ -2353,7 +2353,7 @@
    "owners": [
     "level:W01"
    ],
-   "sha256": "cf14dc54ebaf9601470dc1025a30f2f3d89737272291b4b71d70178f5c9277d9"
+   "sha256": "edd76eaef17c3e3d532368c05317d4c2f6b8070dd0117336389294f79fc325a6"
   },
   {
    "path": "generated/content/levels/lab/water/W02.json",
@@ -2402,7 +2402,7 @@
    "owners": [
     "level:W09"
    ],
-   "sha256": "56bc04ba8a9015d99feb89f87ea5f0c1af055103fc1f092ef544531da9289d0f"
+   "sha256": "777307a6abde6887cfd39e52f909cc275ce192a52fc3d41cae82845a0bfe6028"
   },
   {
    "path": "generated/content/levels/lab/water/W10.json",
@@ -2472,7 +2472,7 @@
    "owners": [
     "level:G01"
    ],
-   "sha256": "1923a95f18bacf44d8f75688c1b87c58eb77dc10cde37c53252f41444050afdc"
+   "sha256": "f6e34857c78a594ec5ac926e5fb75fbd29db911702ad198bad9cc0ed55439eba"
   },
   {
    "path": "generated/content/levels/lab/react/G02.json",
@@ -3391,7 +3391,7 @@
     "text:theme.ruins",
     "text:theme.sky"
    ],
-   "sha256": "7f2b9f205b345864f145ec43130bdd12347de1fc5d98319acfb324496ffcce04"
+   "sha256": "013a379445e03d0f8ad118affece96e12288bc92202e6f6f904a1fe4729475b4"
   },
   {
    "path": "generated/content/i18n/en.json",
@@ -3726,7 +3726,7 @@
     "text:theme.ruins",
     "text:theme.sky"
    ],
-   "sha256": "be8b566fa16e4bd2af9d146ae142d8b996c180b8fada80a1a8e2a69f46e0bc70"
+   "sha256": "5581e330bd8c3c7204dca4cf569cbb93c983e8f571ac8ec8fd82fc4cd0b4925a"
   },
   {
    "path": "generated/art/sheets/char.miner.png",

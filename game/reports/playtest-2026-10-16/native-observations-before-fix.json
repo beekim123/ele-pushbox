@@ -1,0 +1,22 @@
+{
+  "kind": "native UI playtest, one manual route per level",
+  "tested_package_pck": "32f26ccb8161901a8f078c974736b5f00e1f1f899adabfb1f3d9d38f9817b2ff",
+  "storage_isolated": true,
+  "actual_cleared": [
+    "level:E02",
+    "level:F01",
+    "level:F02",
+    "level:M05",
+    "level:Q01",
+    "level:W05",
+    "level:W07",
+    "level:W08"
+  ],
+  "route_not_won": [
+    "W01",
+    "W09",
+    "G01"
+  ],
+  "checkpoint_bug": "Valid StringName dictionary keys rejected before writing; source fixed, runtime retest pending",
+  "scope": "Not a full 46-level acceptance or three-replay SDK verification"
+}
