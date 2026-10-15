@@ -24,7 +24,7 @@
   "ui.menu_icons",
   "ui.panel"
  ],
- "version": 1,
+ "version": 2,
  "stage": "review",
  "size": [
   320,
@@ -57,5 +57,5 @@
  },
  "usage": "启动后的第一个界面。背景、地面与生态随玩家当前所在章节的主题切换（六种主题都有参考图）。",
  "notes": "布局参考：文字来自 content/i18n，容器按文字宽度伸缩；Godot 用 Control 容器实现，不按像素硬编码文字位置。",
- "content_hash": "3b5d15106439f6aba9a3f000efdfd5488796a0debfbcdd44b14b81c7eb113179"
+ "content_hash": "ab072b84bf489d4baf25ad39d2afe9583fb49eb8019c366e6d2d1317a3c511f2"
 }

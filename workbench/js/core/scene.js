@@ -38,19 +38,22 @@
     // Ambient life is placed from the opening layout so it never jumps when things move.
     const first = opening(spec), s0 = first.state;
     const map0 = { w: L.w, h: L.h, at: (x, y) => (x < 0 || y < 0 || x >= L.w || y >= L.h ? TR().MAT.EMPTY : toMat(s0.terrain[y * L.w + x])) };
-    const occupied = (tx, ty) => L.marker[ty * L.w + tx] !== TM().M.NONE || !!TM().crateAt(s0, tx, ty) || (s0.player.x === tx && s0.player.y === ty) || L.doors.includes(ty * L.w + tx);
-    const alive = (tx, ty) => map.at(tx, ty) === TR().MAT.EMPTY && !TM().crateAt(s, tx, ty) && map.at(tx, ty + 1) !== TR().MAT.EMPTY || map.at(tx, ty - 1) !== TR().MAT.EMPTY && map.at(tx, ty) === TR().MAT.EMPTY && !TM().crateAt(s, tx, ty);
+    // Chapter 2-5 materials (matter.js) count as EMPTY for terrain.js; keep plants and critters out of them.
+    const own = (st, tx, ty) => !!PB.matter && tx >= 0 && ty >= 0 && tx < L.w && ty < L.h && PB.matter.isOwn(st.terrain[ty * L.w + tx]);
+    const occupied = (tx, ty) => L.marker[ty * L.w + tx] !== TM().M.NONE || !!TM().crateAt(s0, tx, ty) || (s0.player.x === tx && s0.player.y === ty) || L.doors.includes(ty * L.w + tx) || own(s0, tx, ty) || own(s0, tx, ty + 1);
+    const alive = (tx, ty) => !own(s, tx, ty) && !own(s, tx, ty + 1) && (map.at(tx, ty) === TR().MAT.EMPTY && !TM().crateAt(s, tx, ty) && map.at(tx, ty + 1) !== TR().MAT.EMPTY || map.at(tx, ty - 1) !== TR().MAT.EMPTY && map.at(tx, ty) === TR().MAT.EMPTY && !TM().crateAt(s, tx, ty));
     const area = { x: ox + 16, y: oy + 16, w: Math.max(32, (L.w - 2) * 16), h: Math.max(32, (L.h - 2) * 16) };
-    const lights = [], amb = { mode: spec === SHOWCASE ? "full" : "sparse", seed: PB.ambient.seedOf(spec.id), out: lights };
+    const lights = [], amb = { mode: spec === SHOWCASE || spec.showcase ? "full" : "sparse", seed: PB.ambient.seedOf(spec.id), out: lights };
     const envCtx = { tick, area: { x: ox, y: oy, w: L.w * 16, h: L.h * 16 }, lights, weather: o.weather !== undefined ? o.weather : spec.weather, level: o.env || "full" };
     if (o.ambient !== false) for (const layer of ["back", "front"]) PB.ambient.draw(r, theme, map0, ox, oy, tick, layer, occupied, area, alive, Object.assign({}, amb, { dry: true }));
     if (PB.env) PB.env.draw(r, theme, "back", envCtx);
     amb.out = null;
     if (o.ambient !== false) PB.ambient.draw(r, theme, map0, ox, oy, tick, "back", occupied, area, alive, amb);
     TR().drawTerrain(r, map, theme, ox, oy, tick >> 3);
+    if (PB.matter) PB.matter.drawMaterials(r, PB.matter.mapOf(L, s), ox, oy, tick >> 3);
     if (o.ambient !== false) PB.ambient.draw(r, theme, map0, ox, oy, tick, "front", occupied, area, alive, amb);
     if (PB.env) PB.env.draw(r, theme, "light", envCtx);
-    const M = TM().M;
+    const M = TM().M, sym = (i) => (L.symbol && L.symbol[i]) || 0;
     // Background markers.
     for (let i = 0; i < L.w * L.h; i++) {
       const tx = i % L.w, ty = (i / L.w) | 0, px = ox + tx * 16 + 8, py = oy + ty * 16 + 16;
@@ -61,27 +64,31 @@
       if (L.marker[i] === M.PLATE) {
         const pressed = (s.player.x === tx && s.player.y === ty) || !!crate;
         S().draw(r, "mech.plate", pressed ? "down" : "up", 0, px, py);
-        if (!pressed) S().draw(r, "mech.link_symbol", 0, 0, px, py - 7);
+        if (!pressed) S().draw(r, "mech.link_symbol", sym(i), 0, px, py - 7);
       }
     }
+    if (PB.matter) PB.matter.drawDevices(r, spec, L, s, ox, oy, tick);
     for (const i of L.doors) {
       const px = ox + (i % L.w) * 16 + 8, py = oy + ((i / L.w) | 0) * 16 + 16;
       S().draw(r, "mech.door", s.doorsOpen ? "open" : "closed", 0, px, py);
-      S().draw(r, "mech.link_symbol", 0, 0, px, py - 12);
+      S().draw(r, "mech.link_symbol", sym(i), 0, px, py - 12);
     }
     for (const c of s.crates) {
       const px = ox + c.x * 16 + 8, py = oy + c.y * 16 + 16;
-      S().draw(r, c.kind === "iron" ? "obj.crate_iron" : "obj.crate_wood", "default", 0, px, py);
+      const float = !!PB.matter && PB.matter.floating(L, s, c);
+      S().draw(r, c.kind === "iron" ? "obj.crate_iron" : "obj.crate_wood", "default", 0, px, py + (float ? 3 : 0));
+      if (float) S().draw(r, "fx.ripple", "float", tick, px, py + 2);
       if (L.marker[c.y * L.w + c.x] === M.SOCKET) S().draw(r, "mech.socket_lit", "lit", tick, px, py);
     }
     const p = s.player;
     S().draw(r, "char.miner", o.pose || "idle", tick, ox + p.x * 16 + 8, oy + p.y * 16 + 16, o.facing === "left");
+    if (PB.matter) PB.matter.drawFx(r, spec, ox, oy, tick);
     if (PB.env) PB.env.draw(r, theme, "front", envCtx);
     if (o.target) {
       const t = o.target;
       S().draw(r, "ui.target", t.kind, 0, ox + t.x * 16 + 8, oy + t.y * 16 + 16);
     }
-    if (o.observe) drawObserve(r, L, s, ox, oy);
+    if (o.observe) { drawObserve(r, L, s, ox, oy); if (PB.matter) PB.matter.drawObserve(r, spec, L, s, ox, oy); }
     if (o.grid || o.observe) drawGrid(r, L, ox, oy);
     if (o.hud !== false) drawHud(r, spec, L, s, tick, o.hud || {});
     return { ox, oy };

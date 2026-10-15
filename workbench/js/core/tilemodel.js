@@ -5,6 +5,11 @@
  * and dead ends before anyone builds them in Godot. Loose sand, water, fire
  * and every other SDK material must still be verified in the real SDK.
  *
+ * Chapter 2-5 characters (§6.5) are parsed so their maps can be drawn, with
+ * only the simplest tile behaviour (powders fall, wood crates float, lift decks
+ * and grown vines can be stood on / climbed). Fluids, gases, explosions,
+ * reactions and heat are NOT modelled; those levels are verified in the SDK.
+ *
  * Shared by the workbench (browser, classic script) and the Node tools.
  */
 (function (root) {
@@ -12,7 +17,8 @@
   const PB = (root.PB = root.PB || {});
 
   // Terrain codes (static map layer).
-  const T = { EMPTY: 0, ROCK: 1, CRACKED: 2, EARTH: 3, SAND: 4, WATER: 5, DOOR: 6 };
+  const T = { EMPTY: 0, ROCK: 1, CRACKED: 2, EARTH: 3, SAND: 4, WATER: 5, DOOR: 6,
+    GRAVEL: 7, FUSE: 8, ACID: 9, LIME_A: 10, LIME_B: 11, HARD: 12, SMOKE: 13, FOG: 14, PLUG: 15, WOOD: 16, ICE: 17 };
   // Background markers (do not block).
   const M = { NONE: 0, LADDER: 1, SOCKET: 2, EXIT: 3, PLATE: 4 };
 
@@ -21,7 +27,12 @@
     "~": { t: T.WATER }, "|": { t: T.DOOR }, ".": {}, "H": { m: M.LADDER }, "o": { m: M.SOCKET },
     "X": { m: M.EXIT }, "_": { m: M.PLATE }, "P": { player: true }, "B": { crate: "wood" },
     "I": { crate: "iron" }, "b": { crate: "wood", m: M.SOCKET }, "h": { player: true, m: M.LADDER },
+    "g": { t: T.GRAVEL }, "f": { t: T.FUSE }, "a": { t: T.ACID }, "L": { t: T.LIME_A }, "M": { t: T.LIME_B },
+    "R": { t: T.HARD }, "^": { t: T.SMOKE }, "v": { t: T.FOG }, "p": { t: T.PLUG }, "w": { t: T.WOOD }, "i": { t: T.ICE },
   };
+  const POWDER = (t) => t === T.SAND || t === T.GRAVEL;
+  const LIQUID = (t) => t === T.WATER || t === T.ACID;
+  const OPEN = (t) => t === T.EMPTY || t === T.WATER || t === T.ACID || t === T.SMOKE || t === T.FOG;
 
   const DIRS = { L: [-1, 0], R: [1, 0], U: [0, -1], D: [0, 1] };
 
@@ -45,9 +56,25 @@
     if (!player) throw new Error(spec.id + ": no player");
     const bag = Object.assign({ sand: 0, bomb: 0 }, spec.bag || {});
     const level = { id: spec.id, w, h, marker, plates: [], doors: [] };
+    // Plates under water are listed in links (a cell holds one character).
+    for (const g of spec.links || []) for (const [x, y] of g.plates || []) marker[y * w + x] = M.PLATE;
     for (let i = 0; i < w * h; i++) {
       if (marker[i] === M.PLATE) level.plates.push(i);
       if (terrain[i] === T.DOOR) level.doors.push(i);
+    }
+    if (spec.links) {
+      level.symbol = {};
+      spec.links.forEach((g, k) => { for (const [x, y] of (g.plates || []).concat(g.doors || [])) level.symbol[y * w + x] = g.symbol || ["circle", "triangle", "square"][k % 3]; });
+    }
+    // Devices that change what can be stood on or climbed (drawn by matter.js).
+    // `preview` holds an illustration state for the workbench, never a rule.
+    if (spec.devices) {
+      level.deck = new Set(); level.climb = new Set();
+      for (const d of spec.devices) {
+        const pv = d.preview || {};
+        if (d.type === "lift") { const [x, y] = d.stops[pv.stop || 0]; for (let k = 0; k < (d.width || 1); k++) level.deck.add(y * w + x + k); }
+        if (d.type === "vine" && pv.grown) for (let k = 0; k < d.height; k++) level.climb.add((d.root[1] - k) * w + d.root[0]);
+      }
     }
     const state = { terrain, crates, player, bag, doorsOpen: false, moves: 0 };
     settle(level, state);
@@ -67,16 +94,17 @@
     return t === T.DOOR && s.doorsOpen ? T.EMPTY : t;
   }
   function crateAt(s, x, y) { for (const c of s.crates) if (c.x === x && c.y === y) return c; return null; }
-  function solidTerrain(t) { return t === T.ROCK || t === T.CRACKED || t === T.EARTH || t === T.SAND || t === T.DOOR; }
+  function solidTerrain(t) { return t !== T.EMPTY && !OPEN(t); }
+  function deck(L, x, y) { return !!L.deck && L.deck.has(y * L.w + x); }
   function isPlayer(s, x, y) { return s.player.x === x && s.player.y === y; }
   // Tile that holds something resting on it.
-  function supports(L, s, x, y) { return solidTerrain(terrainAt(L, s, x, y)) || !!crateAt(s, x, y); }
+  function supports(L, s, x, y) { return solidTerrain(terrainAt(L, s, x, y)) || !!crateAt(s, x, y) || deck(L, x, y); }
   // Tile a body may move into.
   function free(L, s, x, y) {
     const t = terrainAt(L, s, x, y);
-    return (t === T.EMPTY || t === T.WATER) && !crateAt(s, x, y) && !isPlayer(s, x, y);
+    return OPEN(t) && !crateAt(s, x, y) && !isPlayer(s, x, y) && !deck(L, x, y);
   }
-  function ladder(L, x, y) { return inside(L, x, y) && L.marker[y * L.w + x] === M.LADDER; }
+  function ladder(L, x, y) { return inside(L, x, y) && (L.marker[y * L.w + x] === M.LADDER || (!!L.climb && L.climb.has(y * L.w + x))); }
 
   function platesPressed(L, s) {
     if (!L.plates.length) return false;
@@ -94,15 +122,19 @@
       for (let y = L.h - 2; y >= 0; y--) {
         for (let x = 0; x < L.w; x++) {
           const i = y * L.w + x;
-          if (s.terrain[i] === T.SAND && free(L, s, x, y + 1) && terrainAt(L, s, x, y + 1) !== T.WATER) {
-            s.terrain[i] = T.EMPTY; s.terrain[i + L.w] = T.SAND; moved = true;
-          } else if (s.terrain[i] === T.SAND && terrainAt(L, s, x, y + 1) === T.WATER && !crateAt(s, x, y + 1)) {
-            s.terrain[i] = T.WATER; s.terrain[i + L.w] = T.SAND; moved = true; // sand sinks, water rises
+          const t = s.terrain[i], below = terrainAt(L, s, x, y + 1);
+          if (POWDER(t) && free(L, s, x, y + 1) && !LIQUID(below)) {
+            s.terrain[i] = below; s.terrain[i + L.w] = t; moved = true;
+          } else if (POWDER(t) && LIQUID(below) && !crateAt(s, x, y + 1)) {
+            s.terrain[i] = below; s.terrain[i + L.w] = t; moved = true; // sand sinks, water rises
           }
         }
       }
       for (const c of s.crates.slice().sort((a, b) => b.y - a.y)) {
-        if (free(L, s, c.x, c.y + 1)) { c.y += 1; moved = true; events.push("crate-fall"); }
+        // Wood floats (chapter 2 on): it rests on a water surface and rises through water.
+        if (c.kind === "wood" && terrainAt(L, s, c.x, c.y) === T.WATER && terrainAt(L, s, c.x, c.y - 1) === T.WATER && free(L, s, c.x, c.y - 1)) { c.y -= 1; moved = true; events.push("crate-float"); }
+        else if (c.kind === "wood" && terrainAt(L, s, c.x, c.y + 1) === T.WATER) continue;
+        else if (free(L, s, c.x, c.y + 1)) { c.y += 1; moved = true; events.push("crate-fall"); }
       }
       const p = s.player;
       if (!ladder(L, p.x, p.y) && !supports(L, s, p.x, p.y + 1) && free(L, s, p.x, p.y + 1)) {

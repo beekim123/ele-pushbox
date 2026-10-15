@@ -4,7 +4,7 @@
 
 横版、侧视、按格移动的推箱解谜。沙、水、气体、火和冰由 [ele-base-cpp](https://github.com/beekim123/ele-base-cpp) v1.2.0 真实模拟。
 
-**当前阶段（2026-10-15）**：设计与美术已完成，57 项美术已由用户确认。Godot 游戏本体由开发方按 [交接提示词（正式版）](docs/handoff/gpt-refactor-prompt.md) 在 `game/` 中重新构建。进度见 [docs/status.md](docs/status.md)。
+**当前阶段（2026-10-15）**：设计与第 1 章美术已完成，57 项美术已由用户确认；第 2–5 章的材料、机关与特效已在工作台中画好，等待用户确认。Godot 游戏本体由开发方按 [交接提示词（正式版）](docs/handoff/gpt-refactor-prompt.md) 在 `game/` 中重新构建。进度见 [docs/status.md](docs/status.md)。
 
 ## 从这里开始
 

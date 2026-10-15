@@ -22,7 +22,7 @@
   "ui.menu_icons",
   "ui.panel"
  ],
- "version": 1,
+ "version": 2,
  "stage": "review",
  "size": [
   320,
@@ -35,5 +35,5 @@
  },
  "usage": "跳关或首次遇到概念时显示；也可从 HUD 旁的小图标重新打开。",
  "notes": "布局参考：文字来自 content/i18n，容器按文字宽度伸缩；Godot 用 Control 容器实现，不按像素硬编码文字位置。",
- "content_hash": "85693810e3816e3730f79469b2fddc5f7a98f04bbda44abf494118e5c65b2a5a"
+ "content_hash": "85351ebb08f11b8cc95f7db5e357ad3d980632c8c4394400e0307abf6307ca74"
 }

@@ -3,7 +3,7 @@
 (function (root) {
   "use strict";
   const PB = root.PB, store = root.PBStore, el = root.PBStage.el;
-  const CAT = { theme: "主题（地形·背景·生态）", fauna: "小动物", deco: "植物与装饰", character: "角色", object: "箱子与物件", mechanism: "机关", item: "物品", fx: "特效", ui: "界面元素", screen: "界面画面", terrain: "地形与背景" };
+  const CAT = { theme: "主题（地形·背景·生态）", fauna: "小动物", deco: "植物与装饰", character: "角色", object: "箱子与物件", mechanism: "机关", item: "物品", fx: "特效", ui: "界面元素", screen: "界面画面", terrain: "地形与背景", material: "材料（第 2–5 章）" };
   const filt = { cat: "all", status: "all", q: "" };
   let selected = null, stage = null, anim = null;
 
@@ -27,6 +27,7 @@
   function firstFrame(a) { const n = Object.values(a.animations || {})[0]; return n ? n.frames[0] : 0; }
   function drawProcedural(r, a, tick) {
     if (a.category === "theme") PB.scene.renderLevel(r, PB.scene.SHOWCASE, null, { tick, theme: a.id, hud: false });
+    else if (a.category === "material") PB.matter.swatches(r);
     else PB.ui.render(r, a, tick, { focus: 0, specs: Object.fromEntries(store.levels().map((l) => [l.id, l])), levelSpec: store.level("M05"), ruleSpec: store.level("M03") });
   }
 

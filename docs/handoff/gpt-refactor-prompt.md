@@ -1,6 +1,6 @@
 # 交接提示词：重构《箱途 / Cratebound》Godot 游戏本体
 
-> **状态：正式版，可以开工。** 更新：2026-10-15。全部 57 项美术已由用户确认（记录 `APR-0001`，见 `art/approvals.json`），可以直接集成为正式美术。
+> **状态：正式版，可以开工。** 更新：2026-10-15。第 1 章与菜单所需的 57 项美术已由用户确认（记录 `APR-0001`，见 `art/approvals.json`），可以直接集成为正式美术。第 2–5 章的 18 项美术候选已在工作台中画好（待用户确认，见第 4 节）；8 个界面布局因接入第 2–5 章生成了 v2，画面与已确认的 v1 逐像素相同，待用户重新确认。
 >
 > 使用方法：把下面「你的任务」到文末的全部内容交给开发方（GPT / Codex）。它可以独立使用，不依赖任何聊天记录。
 
@@ -21,10 +21,10 @@
 2. **只用已确认的美术。** 正式画面只能使用 `art/export/manifest.json` 中 `approved` 不为空的条目，PNG 的 SHA-256 必须与 `approved.png_sha256` 一致。不得自行换图、改画、重画，也不得回退到旧实验素材。
 3. **已确认美术的冻结区，不得修改**（改了会让内容哈希变化，确认失效，发布构建无法通过）：
    - `art/source/**`、`art/approvals.json`、`art/history/**`、`art/export/approved/**`；
-   - `workbench/js/core/` 下的 `raster.js`、`sprites.js`、`font-data.js`、`terrain.js`、`ambient.js`、`env.js`、`scene.js`、`ui.js`、`i18n.js`：它们是已确认主题与界面的绘制规则，也是你移植时的规格；
+   - `workbench/js/core/` 下的 `raster.js`、`sprites.js`、`font-data.js`、`terrain.js`、`ambient.js`、`env.js`、`matter.js`、`scene.js`、`ui.js`、`i18n.js`、`tilemodel.js`：它们是主题、材料、机关与界面的绘制规则，也是你移植时的规格；
    - `content/i18n/zh-Hans.json`、`content/i18n/en.json`：已确认界面的文字。
    发现上述文件有错误时，不要自己改，写进 `docs/status.md` 的「给设计负责人的问题」。需要**新增**界面文字（游戏内提示、错误信息等）时，放进新文件 `content/i18n-extra/<语言>.json`，两种语言都要写，并在 status 中列出新增的键。
-4. **缺少的资产不要自己画。** 第 2–5 章的机关、材料着色和特效尚未制作（见 `docs/design/asset-inventory.md` 第 2 节和本文第 5b 节）。需要时把名称、尺寸、帧数、用途写进 status 的「待美术」清单。开发期间可以用纯色方块加文字标签作临时替身，但必须明显标出"占位"；发布构建遇到占位或未确认资产必须报错退出。
+4. **缺少的资产不要自己画。** 第 2–5 章的机关、材料着色和特效已在工作台中画好（第 4 节「第 2–5 章美术候选」），照着它们实现，不要另画；用户确认之前它们只能在开发构建中当占位（显示占位标记）。工作台里也没有的资产，把名称、尺寸、帧数、用途写进 status 的「待美术」清单，开发期间可以用纯色方块加文字标签作临时替身，但必须明显标出"占位"；发布构建遇到占位或未确认资产必须报错退出。
 5. **关卡必须用真实 SDK 验证。** 每关都要在 Godot headless 中用真实 SDK 回放作者解并通关。设计模型（`tools/check-levels.mjs`）和 HTML 演示都不能代替。
 6. **测试可以按新规格重建，但不能靠删除必要验证来掩盖问题。** 旧报告、旧安装包和旧测试成绩都不能证明新项目通过。
 7. **验证结论必须如实。** 没运行过的写"未运行"；失败就贴出输出；模型推演和 HTML 动画不能说成"已验证"。
@@ -121,7 +121,7 @@ game/
 
 ## 4 美术集成（已确认，正式使用）
 
-- 开工先运行：`node tools/art.mjs build && node tools/art.mjs verify`（Node 18+，无依赖），确认输出为 `verify ok: 57 assets, 1 approval records`。之后只读取 `art/export/manifest.json`。
+- 开工先运行：`node tools/art.mjs build && node tools/art.mjs verify`（Node 18+，无依赖），确认输出以 `verify ok` 开头，`build` 不应出现 `bumped`。之后只读取 `art/export/manifest.json`，每项是否可用看 `approved` 与 `current_is_approved`。
 - 已确认清单（全部 v1，`APR-0001`）：
   - 角色：`char.miner`（21 帧：待机、走、推、爬、挖、倒、落、胜利）
   - 物件：`obj.crate_wood`、`obj.crate_iron`
@@ -133,6 +133,15 @@ game/
   - 植物与装饰（10）：`deco.dungeon_moss`、`deco.dungeon_torch`、`deco.ruins_vine`、`deco.ruins_lotus`、`deco.cave_mushroom`、`deco.cave_crystal`、`deco.forest_flower`、`deco.forest_grass`、`deco.sky_flower`、`deco.cosmos_sprout`
   - 主题（程序化，6）：`theme.dungeon`、`theme.ruins`、`theme.cave`、`theme.forest`、`theme.sky`、`theme.cosmos`
   - 界面布局（程序化，8）：`ui.screen.lobby`、`chapters`、`levels`、`pause`、`hint`、`complete`、`settings`、`rulecard`
+- **界面布局的 v2**：为接入第 2–5 章，`scene.js` 和 `content/i18n/*.json` 有改动（新增材料、机关的绘制调用和 4 条代表场景标题），8 个界面因此自动升为 v2。v2 与 v1 的参考图逐像素相同（已用 `cmp` 对比全部 35 张旧参考图和 57 张已确认 PNG）。用户重新确认 v2 之前，以已确认的 `art/export/approved/ui.screen.*@v1.png` 为准；两者像素一致，所以实现上没有区别。
+- **第 2–5 章美术候选（v1，待用户确认）**：确认之前只能当占位用，但尺寸、锚点、帧序、动画、着色规则就以它们为准：
+  - 材料（程序化）：`material.chapter2_5`，规则在 `workbench/js/core/matter.js` 的 `SHADE`：碎石、引信、酸液、软岩 A / A′、硬岩、轻烟、沉雾、菌塞、木栅、冰；
+  - 第 2 章：`mech.lift`（台面 + 导轨）、`mech.button`、`mech.bin`（内衬）、`mech.bin_gauge`（0–4 + 满）、`fx.splash`、`fx.ripple`（水上木箱下沉 3 px 并画波纹）；
+  - 第 3 章：`fx.explosion`（32×32，锚点居中）、`fx.rubble`；
+  - 第 4 章：`mech.lever`、`mech.vine`（根 / 茎 / 顶）、`fx.fizz`；
+  - 第 5 章：`mech.torch`、`mech.frost_vent`、`mech.heat_vent`、`fx.fire`、`fx.frost`；
+  - 观察模式：`ui.rule_icon`（上浮、下沉、可燃、可酸蚀、冰、慢速粉末）。
+  - 画法（摆放位置、作用区虚线框、开关连线、收集斗刻度计算）按 `matter.js` 的 `drawDevices`、`floating`、`drawObserve`，与美术规范第 11 节一致。每章的整体效果见工作台「场景」页「第 2–5 章代表场景」和 `art/export/reference/chapter.<主题>.png`。
 - 写导入脚本 `game/tools/import_art.*`：
   - 只复制 `approved.png`（`art/export/approved/<id>@v<N>.png`），并校验 `png_sha256`；
   - 按 manifest 生成 SpriteFrames / AtlasTexture。图集是横向条带，第 i 帧位于 `x = i × 帧宽`；锚点、动画帧序、fps、是否循环、九宫格边距都取自 manifest，不在游戏里另行定义；
@@ -141,7 +150,8 @@ game/
 - **对照验证**：在 Godot 中把以下画面渲染到 320×180 视口并截图，与 `art/export/reference/` 中的同名 PNG 逐像素比较：
   - M01–M07 的开局状态，**关闭环境效果**，对照 `level.M0x.png`；
   - 六个主题的代表场景（地图见 `scene.js` 中的 `SHOWCASE`），对照 `showcase.<主题>.png`，默认环境效果，第 0 帧；
-  - 各界面的中、英文版本，对照 `<界面>.<语言>.png`。
+  - 各界面的中、英文版本，对照 `<界面>.<语言>.png`；
+  - 阶段二：四个章节代表场景（地图见 `matter.js` 中的 `SHOWCASES`，含插图用的 `preview` 与 `fx` 状态），对照 `chapter.<主题>.png`，默认环境效果，第 0 帧。
 
   沙、水只比较颜色集合。差异必须写进 `docs/design/art-pipeline.md` 第 7 节并说明原因，不能用"差不多"代替。
 
@@ -177,14 +187,14 @@ game/
 3. **实现机关与材料**：材料、反应、profile 写进 `game/content/`；机关按设计 6.5 的 `devices` 定义实现，状态要进入撤销快照和存档。
 4. **真实 SDK 验证**：每关作者解通关，连续回放 3 次结果一致，每一步可撤销，结算不触顶；记录 tick 数与截图。
 5. **交审核**：每完成一章，把规格清单、验证结果、截图和问题写进 `docs/status.md` 的「给设计负责人的问题」，等审核通过再做下一章。审核前，这些关卡只在"开放全部关卡"设置下可以进入。
-6. **美术**：本章缺的资产（见下表）一律用明显标出的占位，并列进 status 的「待美术」清单（名称、尺寸、帧数、用途）。正式美术由美术负责人制作、用户确认后，按第 4 节的方式导入替换。
+6. **美术**：本章的美术已在工作台中画好（下表，第 4 节有详细说明），照着实现；用户确认前在开发构建中显示占位标记，确认后按第 4 节导入正式 PNG。工作台中也没有的资产才写进 status 的「待美术」清单。
 
-| 章 | 需要但尚未制作的美术 |
-|---|---|
-| 2 黄金神庙 | 升降台、收集斗（含刻度帧）、入水水花、木箱漂浮动画；水在神庙主题下的着色沿用现有规则 |
-| 3 幽光晶窟 | 爆炸特效、裂岩崩落碎块、碎石与引信的着色规则、放置炸药的人物动作（可暂用"倒"的动作） |
-| 4 迷雾古森 | 酸液、两种软岩刻纹、硬岩、轻烟、沉雾、菌塞的着色规则，开关，藤梯生长动画 |
-| 5 云端圣域 | 木栅、火焰、冰的着色规则，火盆、冷凝 / 热喷口，燃烧特效 |
+| 章 | 工作台中的美术（v1 候选，待用户确认） | 仍然缺的 |
+|---|---|---|
+| 2 黄金神庙 | 升降台（台面、导轨）、按钮、收集斗内衬与刻度、入水水花、水上木箱波纹；水沿用现有规则 | — |
+| 3 幽光晶窟 | 爆炸、裂岩崩落、碎石与引信的着色、燃烧火焰 | 放置炸药的人物动作（可暂用"倒"的动作） |
+| 4 迷雾古森 | 酸液、软岩 A / A′（同刻纹）、硬岩、轻烟、沉雾、菌塞的着色，开关，藤梯（根 / 茎 / 顶），酸蚀气泡，规则图标 | — |
+| 5 云端圣域 | 木栅、冰的着色，火盆、冷凝 / 热喷口，燃烧火焰，结冰闪烁 | — |
 
 **阶段二每章的完成标准**：本章 SDK 样板测试全部通过；全部关卡作者解在真实 SDK 中通关并可重复；撤销与存档覆盖新机关状态；中、英文关卡文字齐全且零溢出；设计负责人审核通过。
 

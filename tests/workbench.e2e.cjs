@@ -28,7 +28,7 @@ async function decode(file) {
   page.on("console", (m) => { if (m.type() === "error") errors.push(m.text()); });
 
   // 1. Every view opens without errors.
-  for (const h of ["#scenes", "#scenes/level.M04", "#scenes/ui.screen.chapters", "#scenes/lobby.forest", "#scenes/showcase.cosmos", "#assets", "#assets/mech.door", "#edit/obj.crate_wood", "#review", "#export"]) {
+  for (const h of ["#scenes", "#scenes/level.M04", "#scenes/ui.screen.chapters", "#scenes/lobby.forest", "#scenes/showcase.cosmos", "#scenes/chapter.ruins", "#scenes/chapter.sky", "#assets", "#assets/material.chapter2_5", "#assets/mech.door", "#edit/obj.crate_wood", "#review", "#export"]) {
     await page.goto(URL + h); await page.waitForTimeout(250);
   }
   check(errors.length === 0, "all views load without console errors" + (errors.length ? ": " + errors[0] : ""));
@@ -38,6 +38,8 @@ async function decode(file) {
   for (const [name, file, expr] of [
     ["showcase", "art/export/reference/showcase.dungeon.png", "(() => { const r = new PB.Raster(320,180); PB.scene.renderLevel(r, PB.scene.SHOWCASE, null, {tick:0}); return Array.from(r.data); })()"],
     ["level M06", "art/export/reference/level.M06.png", "(() => { const r = new PB.Raster(320,180); PB.scene.renderLevel(r, PBStore.level('M06'), null, {tick:0, env:'off'}); return Array.from(r.data); })()"],
+    ["chapter 4 showcase", "art/export/reference/chapter.forest.png", "(() => { const r = new PB.Raster(320,180); PB.scene.renderLevel(r, PB.matter.SHOWCASES.forest, null, {tick:0}); return Array.from(r.data); })()"],
+    ["chapter 2-5 materials", "art/export/preview/material.chapter2_5.png", "(() => { const r = new PB.Raster(320,180); PB.matter.swatches(r); return Array.from(r.data); })()"],
     ["miner sheet", "art/export/preview/char.miner.png", "(() => { const a = PBStore.asset('char.miner'); const r = new PB.Raster(a.size[0]*a.frames.length, a.size[1]); a.frames.forEach((f,i)=>r.blitRows(f,i*a.size[0],0,false)); return Array.from(r.data); })()"],
   ]) {
     const got = await page.evaluate(expr);

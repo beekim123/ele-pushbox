@@ -16,6 +16,10 @@
       const a = store.asset(t);
       if (a) list.push({ group: "大厅（随主题切换）", id: "lobby." + t.slice(6), name: "大厅 · " + a.params.title, kind: "screen", asset: lobby, theme: t });
     }
+    for (const [key, spec] of Object.entries(PB.matter.SHOWCASES)) {
+      const t = PB.scene.CHAPTER_THEME[key], a = store.asset(t);
+      if (a) list.push({ group: "第 2–5 章代表场景（新材料与机关）", id: "chapter." + key, name: a.params.title + " · " + PB.i18n.t("level." + spec.id + ".title").replace(/^.*· */, ""), kind: "chapter", theme: t, spec, asset: store.asset("material.chapter2_5") });
+    }
     for (const lv of store.levels()) list.push({ group: "第 1 章关卡（设计模型）", id: "level." + lv.id, name: lv.id + " " + lv.title, kind: "level", level: lv });
     for (const a of store.assets().filter((x) => x.category === "screen" && x.id !== "ui.screen.lobby")) list.push({ group: "游戏界面", id: a.id, name: a.name, kind: "screen", asset: a });
     return list;
@@ -79,6 +83,7 @@
     const s = current;
     PB.i18n.takeIssues();
     if (s.kind === "showcase") { PB.scene.renderLevel(r, PB.scene.SHOWCASE, null, Object.assign({ tick, theme: s.theme, grid, observe, pose: "idle" }, envOpts())); outline(r, PB.i18n.takeIssues()); }
+    else if (s.kind === "chapter") { PB.scene.renderLevel(r, s.spec, null, Object.assign({ tick, grid, observe, pose: "idle" }, envOpts())); outline(r, PB.i18n.takeIssues()); }
     else if (s.kind === "level") {
       const st = replayState(s.level, step), p = poseFor(st.action, st.result);
       const won = step === s.level.solution.length && PB.tilemodel.won(st.parsed.level, st.parsed.state);
@@ -121,6 +126,15 @@
       }
       box.append(ul2, el("p", { class: "small muted", text: "放不下的文字会被省略或截断，打开「标出溢出」可在画面上看到红框。伪本地化把英文拉长约 40%，用来提前发现以后其他语言的排版问题，只作参考。" }));
       box.append(el("p", { class: "note small", text: "界面中的数字和进度为样例数据。确认的是布局方式、配色和元素样式；文字来自 content/i18n，各语言共用同一套布局规则。" }));
+    } else if (s.kind === "chapter") {
+      box.append(el("h2", { text: s.name }), el("p", { text: "把这一章新增的材料、机关和特效放进本章主题里，检查它们与地形、人物、HUD 是否协调、是否一眼能分清。" }));
+      box.append(el("p", { class: "small muted", text: "画面只作示意，不是可玩关卡；机关的开关状态、燃烧和爆炸是摆好的插图状态（preview / fx 字段，只在工作台使用）。流体、气体、爆炸、酸蚀和冷热的真实表现以 SDK 运行结果为准。打开「观察模式」可看到规则图标、作用区虚线框和开关连线。" }));
+      box.append(el("h3", { text: "这一章用到的新资产" }));
+      const ul = el("ul");
+      for (const id of ["material.chapter2_5", ...PB.matter.USES[s.id.slice(8)]]) if (store.asset(id)) ul.append(el("li", {}, [el("a", { href: "#assets/" + id, text: id }), " ", statusBadge(id)]));
+      box.append(ul);
+      box.append(el("h3", { text: "地形主题" }), el("p", {}, [el("a", { href: "#assets/" + s.theme, text: s.theme }), " ", statusBadge(s.theme)]));
+      box.append(el("p", { class: "note small", text: "场景数据：workbench/js/core/matter.js 的 SHOWCASES；材料着色同一文件的 SHADE。" }));
     } else {
       box.append(el("h2", { text: s.name }), el("p", { text: "把第 1 章的人物、箱子、机关、材料和 HUD 放在同一画面中检查整体协调、层级和可读性。" }));
       box.append(el("p", { class: "small muted", text: "画面中的布局只作示意，不是可玩关卡。水与沙的颗粒在游戏中会随 SDK 的格子移动，这里按格子静态绘制。" }));

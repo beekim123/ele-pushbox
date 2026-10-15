@@ -4,7 +4,7 @@
 (function (root) {
   "use strict";
   const PB = root.PB, store = root.PBStore, el = root.PBStage.el;
-  const ORDER = ["character", "object", "mechanism", "item", "fx", "ui", "terrain", "screen"];
+  const ORDER = ["character", "object", "mechanism", "item", "fx", "ui", "terrain", "material", "screen"];
 
   function approvalText() {
     const sel = store.review().selected, fb = store.review().feedback;

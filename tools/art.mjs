@@ -13,7 +13,7 @@ const cmd = argv[0];
 const opt = (name, def) => { const i = argv.indexOf("--" + name); return i >= 0 ? argv[i + 1] : def; };
 const ROOT = path.resolve(opt("root", REPO));
 const rel = (...p) => path.join(ROOT, ...p);
-const PB = loadCore(["raster", "font-data", "sprites", "i18n", "tilemodel", "terrain", "ambient", "env", "scene", "ui"]);
+const PB = loadCore(["raster", "font-data", "sprites", "i18n", "tilemodel", "terrain", "ambient", "env", "matter", "scene", "ui"]);
 const LOCALES = ["zh-Hans", "en"];
 function loadI18n() {
   const t = {};
@@ -107,6 +107,8 @@ function renderProcedural(a, specs) {
     PB.scene.renderLevel(r, PB.scene.SHOWCASE, null, { theme: a.id, tick: 0, hud: false });
   } else if (a.category === "screen") {
     PB.ui.render(r, a, 0, screenState(a, specs, "zh-Hans"));
+  } else if (a.category === "material") {
+    PB.matter.swatches(r);
   }
   return r;
 }
@@ -187,6 +189,12 @@ function build() {
     const r = new PB.Raster(320, 180); PB.scene.renderLevel(r, PB.scene.SHOWCASE, null, { tick: 0, theme: t }); writeRef("showcase." + t.slice(6), r, usesFor(t));
     const lobby = byId.get("ui.screen.lobby");
     if (lobby) { const l = new PB.Raster(320, 180); PB.ui.render(l, lobby.src, 0, { theme: t }); writeRef("lobby." + t.slice(6), l, ["ui.screen.lobby", ...usesFor(t)]); }
+  }
+  // Chapter 2-5 showcases (new materials, devices and effects in their chapter's theme).
+  for (const [key, spec] of Object.entries(PB.matter.SHOWCASES)) {
+    const t = PB.scene.CHAPTER_THEME[key], r = new PB.Raster(320, 180);
+    PB.scene.renderLevel(r, spec, null, { tick: 0 });
+    writeRef("chapter." + key, r, [...new Set([...usesFor(t), "material.chapter2_5", ...PB.matter.USES[key]])]);
   }
   for (const s of specs) { const r = new PB.Raster(320, 180); PB.scene.renderLevel(r, s, null, { tick: 0, env: "off" }); writeRef("level." + s.id, r, usesFor(PB.scene.themeFor(s))); }
   for (const { src } of byId.values()) if (src.category === "screen") for (const loc of LOCALES) {
