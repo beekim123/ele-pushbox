@@ -38,5 +38,46 @@
   "......e..1..e.......",
   "######eeeeeee#######",
   "####################"
+ ],
+ "demos": [
+  {
+   "id": "dig",
+   "mechanisms": [
+    "dig",
+    "pour",
+    "push_monster",
+    "trap_monster"
+   ],
+   "name": "挖进鼠洞：把老鼠推到底，挖坑引它掉进去，再倒沙埋住",
+   "open": {
+    "left": "low",
+    "right": "low"
+   },
+   "script": [
+    "R*5",
+    "DIG_R",
+    "R*5",
+    "DIG_D",
+    "L",
+    "wait 40",
+    "POUR_R",
+    "wait 15",
+    "R*2",
+    "DIG_R",
+    "R*9"
+   ],
+   "expect": {
+    "end": "exit:right",
+    "hearts": 3,
+    "kos": 1,
+    "ko": [
+     "buried"
+    ],
+    "events": [
+     "trap"
+    ]
+   },
+   "from": "left.low"
+  }
  ]
 }

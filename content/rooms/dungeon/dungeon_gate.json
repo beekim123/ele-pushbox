@@ -67,5 +67,26 @@
   "...1.....HH....$....",
   "#########HH#########",
   "#########HH#########"
+ ],
+ "demos": [
+  {
+   "id": "out",
+   "mechanisms": [
+    "ladder"
+   ],
+   "name": "走出渡门",
+   "open": {
+    "right": "low"
+   },
+   "script": [
+    "R*17"
+   ],
+   "expect": {
+    "end": "exit:right",
+    "hearts": 3,
+    "coins": 5
+   },
+   "from": "gate"
+  }
  ]
 }

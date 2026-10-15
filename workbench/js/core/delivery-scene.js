@@ -119,5 +119,103 @@
     for (const sp of v.spawns) r.rect(x0 + sp.x * s, y0 + sp.y * s, s, s, sp.monster ? "A" : sp.feature === "gate" ? "C" : sp.feature === "recipient" ? "m" : "j");
   }
 
-  PB.droom = { themeId, roomSpec, defaultPlayer, render, drawEntity, drawRoute, routeCells, mini, placeholder, W, H, HUD_H };
+  // ---------- live rooms (realtime.js) ----------
+  // Monster placeholder colour by state: walk, chase, flee, stunned, trapped.
+  const STATE_FILL = { walk: "A", chase: "i", flee: "C", stunned: "v", trapped: "l" };
+  // Pixel position of a body that moved at tick a.t from a.from (tween over len ticks).
+  function tween(b, tick, len) {
+    if (!b.anim || !len) return [b.x * 16, b.y * 16];
+    const k = Math.max(0, Math.min(len, tick - b.anim.t));
+    return [Math.round((b.anim.from.x * 16 * (len - k) + b.x * 16 * k) / len), Math.round((b.anim.from.y * 16 * (len - k) + b.y * 16 * k) / len)];
+  }
+  const POSE = { walk: "walk", step: "walk", push: "push", climb: "climb", dig: "dig", pour: "pour", interact: "idle", use: "idle" };
+
+  // Draws the run's current room. opts: {world, tick (display), hud: true, minimap: true}.
+  function renderLive(r, run, opts) {
+    const o = opts || {}, rm = run.room, p = rm.player, P = run.P, T = PB.tilemodel;
+    const state = { level: rm.L, state: { terrain: rm.terrain, crates: rm.crates.map((c) => ({ x: c.x, y: c.y, kind: c.kind })), player: { x: -20, y: -20 },
+      bag: { sand: run.sand, bomb: 0 }, open: rm.doors, dev: [], held: [], warped: [], moves: 0 } };
+    const spec = roomSpec(rm.v, defaultPlayer(rm.v));
+    const at = PB.scene.renderLevel(r, spec, state, { theme: themeId(o.world), tick: o.tick || run.tick, hud: false, env: o.env });
+    const ox = at.ox, oy = at.oy, tick = run.tick;
+    // Ladders put down with a rope ladder.
+    for (const i of rm.climb) if (rm.L.marker[i] !== T.M.LADDER) S().draw(r, "mech.ladder", "default", 0, ox + (i % rm.W) * 16 + 8, oy + ((i / rm.W) | 0) * 16 + 16);
+    // Background figures, then pickups, then bodies.
+    if (rm.gate) drawEntity(r, ox, oy, "gate", "gate", rm.gate.x, rm.gate.y, { tick });
+    if (rm.keeper) drawEntity(r, ox, oy, "keeper", "keeper", rm.keeper.x, rm.keeper.y, { tick });
+    for (const q of rm.pickups) {
+      if (q.kind === "sand") S().draw(r, "item.sandbag", 0, 0, ox + q.x * 16, oy + q.y * 16);
+      else drawEntity(r, ox, oy, "coin", "coin", q.x, q.y, { tick });
+    }
+    if (rm.recipient) drawEntity(r, ox, oy, "recipient", "recipient", rm.recipient.x, rm.recipient.y, { tick, recipient: rm.recipient.id, flip: rm.recipient.dir < 0, anim: run.done && run.done.ok ? "win" : undefined });
+    for (const m of rm.monsters) {
+      if (m.ko) continue;
+      const [px, py] = tween(m, tick, 6), fall = m.fallT ? Math.round((m.fallT * 16) / P.fall) : 0;
+      const sid = "monster." + m.id;
+      if (S().has(sid)) S().draw(r, sid, m.state === "trapped" ? "trapped" : m.state === "stunned" ? "stunned" : "walk", tick, ox + px + 8, oy + py + 16 + fall, m.dir < 0);
+      else {
+        const cx = ox + px + 8, by = oy + py + 16 + fall;
+        placeholder(r, "monster", m.id, cx, by);
+        r.rect(cx - 6, by - 13, 12, 2, STATE_FILL[m.state] || "A");
+        if (m.state === "trapped") PB.text.draw(r, "!", cx + 6, by - 24, "l", "z");
+        if (m.state === "stunned") PB.text.draw(r, "*", cx + 6, by - 24, "u", "z");
+      }
+    }
+    if (p) {
+      const [px, py] = tween(p, tick, P.moveAnim);
+      const air = !PB.rt.pred.ladder(rm, p.x, p.y) && !PB.rt.pred.holdsPlayer(rm, p.x, p.y + 1);
+      const fall = air ? Math.round((p.fallT * 16) / P.fall) : 0;
+      const busy = p.anim && tick - p.anim.t < (P.act[p.pose] || P.act.walk);
+      const pose = run.done && run.done.ok ? "win" : air ? "fall" : busy ? POSE[p.pose] || "idle" : "idle";
+      if (!(run.iframes > 0 && ((run.iframes >> 2) & 1))) S().draw(r, "char.portitor", pose, tick, ox + px + 8, oy + py + 16 + fall, p.face < 0);
+    }
+    if (o.hud !== false) drawRunHud(r, run, o);
+    return { ox, oy };
+  }
+
+  // Placeholder HUD (the approved-art HUD comes with the step-4 candidates):
+  // hearts, cargo and its integrity, coins, sand, item slots, time, minimap.
+  const HEART = [".zz.zz.", "ziizhiz", "ziiiiiz", ".ziiiz.", "..ziz..", "...z..."];
+  function heart(r, x, y, full) { HEART.forEach((row, yy) => [...row].forEach((c, xx) => { if (c === ".") return; r.set(x + xx, y + yy, full ? c : c === "z" ? "z" : "x"); })); }
+  function drawRunHud(r, run, o) {
+    r.rect(0, 0, W, HUD_H, "z"); r.hline(0, HUD_H - 1, W, "y");
+    let x = 4;
+    for (let i = 0; i < run.maxHearts; i++) { heart(r, x, 7, i < run.hearts); x += 8; }
+    x += 4;
+    const cargo = run.ctx.cargo, left = PB.rt.integrity(run);
+    if (cargo) {
+      const ch = { letter: "L", vase: "V", ice_cream: "I" }[cargo.id] || "?";
+      r.rect(x, 3, 13, 13, "z"); r.rect(x + 1, 4, 11, 11, "c"); PB.text.draw(r, ch, x + 3, 2, "g"); x += 15;
+      for (let i = 0; i < run.P.integrity; i++) { r.rect(x, 7, 3, 6, i < left ? "m" : "x"); x += 4; }
+      if (run.room && run.room.hot && (cargo.params || {}).melt_secs_per_point) { r.rect(x + 1, 6, 4, 8, "j"); x += 6; }
+    }
+    x += 6;
+    r.rect(x, 6, 7, 7, "z"); r.rect(x + 1, 7, 5, 5, "k"); x += 9;
+    x += PB.text.draw(r, String(run.coins), x, 3, "l") + 6;
+    S().draw(r, "item.sandbag", 0, 0, x - 2, 1); x += 13;
+    x += PB.text.draw(r, String(run.sand), x, 3, "c") + 6;
+    for (let i = 0; i < run.P.slots; i++) {
+      r.rect(x, 4, 12, 12, "y"); r.rect(x + 1, 5, 10, 10, "z");
+      const it = run.items[i];
+      if (it) PB.text.draw(r, { first_aid: "+", rope_ladder: "H" }[it] || "?", x + 3, 2, it === "first_aid" ? "i" : "d");
+      x += 14;
+    }
+    const secs = Math.floor(run.clock / run.P.hz), clock = Math.floor(secs / 60) + ":" + String(secs % 60).padStart(2, "0");
+    let rx = W - 4;
+    if (run.map && o.minimap !== false) {
+      const cw = 6, chh = 4, mw = run.map.cols * (cw + 1), mh = run.map.rows * (chh + 1);
+      rx -= mw;
+      for (const room of run.map.rooms) {
+        const seen = run.visited && run.visited.has(room.index), cur = room.index === run.roomIndex;
+        if (!seen && !cur && room.role !== "home") continue;
+        r.rect(rx + room.x * (cw + 1), 2 + room.y * (chh + 1), cw, chh, cur ? "l" : room.role === "home" ? "m" : room.role === "station" ? "j" : "w");
+      }
+      rx -= 6;
+      void mh;
+    }
+    rx -= PB.text.measure(clock);
+    PB.text.draw(r, clock, rx, 3, "u");
+  }
+
+  PB.droom = { themeId, roomSpec, defaultPlayer, render, renderLive, drawRunHud, drawEntity, drawRoute, routeCells, mini, placeholder, W, H, HUD_H };
 })(typeof window !== "undefined" ? window : globalThis);

@@ -90,7 +90,37 @@ async function decode(file) {
   check((await page.evaluate(() => location.hash)) === `#maps/3/${target.i}`, "clicking a room on the overview selects it");
   check((await page.locator("#maps-work h3").textContent()).includes("收件人之家"), "the last room of the path is the recipient's home");
   await page.goto(URL + "#maps/t/dungeon_station"); await page.waitForTimeout(250);
-  check((await page.locator("#maps-work table.grid tbody tr").count()) === 48, "station template lists its 48 checked routes");
+  check((await page.locator("#maps-work table.routes tbody tr").count()) === 48, "station template lists its 48 checked routes");
+  check((await page.locator("#maps-work table.demos tbody tr").count()) === 2, "station template lists its demo and the demo's mirror image");
+
+  // 2d. Real-time model: the browser replays the golden demos frame for frame; a demo plays in the
+  // map preview; a whole map can be played with the keyboard.
+  const replays = JSON.parse(fs.readFileSync(path.join(REPO, "content/export/delivery-golden.json"), "utf8")).replays;
+  const replayed = await page.evaluate((list) => {
+    const sl = PBStore.catalog("slices")[0], cat = { monsters: PBStore.catalog("monsters"), cargo: PBStore.catalog("cargo"), recipients: PBStore.catalog("recipients"), items: PBStore.catalog("items") };
+    return list.map((g) => { const t = PBStore.content().rooms.find((r) => r.id === g.template), r = PB.rt.runDemo(cat, sl, t, t.demos.find((d) => d.id === g.demo), g.mirror); return r.ok && r.end === g.end && JSON.stringify(r.frames) === JSON.stringify(g.frames); });
+  }, replays.map((g) => ({ template: g.template, demo: g.demo, mirror: g.mirror, end: g.end, frames: g.frames })));
+  check(replayed.length >= 20 && replayed.every(Boolean), `browser real-time model reproduces the golden replays (${replayed.filter(Boolean).length}/${replayed.length})`);
+  await page.goto(URL + "#maps/t/dungeon_guard"); await page.waitForTimeout(250);
+  await page.selectOption('select[aria-label="演示"]', "crush"); await page.waitForTimeout(150);
+  await page.selectOption('select[aria-label="播放速度"]', "4");
+  const demoDone = await page.waitForFunction(() => { const s = PBPlay.active(); return s && s.run.leaving ? { edge: s.run.leaving.edge, kos: s.run.kos, hearts: s.run.hearts } : null; }, null, { timeout: 30000 }).then((h) => h.jsonValue()).catch(() => null);
+  await page.waitForTimeout(200);
+  check(!!demoDone && demoDone.edge === "right" && demoDone.kos === 1 && demoDone.hearts === 3 && (await page.locator("#maps-info").textContent()).includes("放倒怪物（压倒）"),
+    "the crush demo plays in the map preview: the skeleton is crushed, the player leaves right unhurt");
+  await page.goto(URL + "#maps/11"); await page.waitForTimeout(300);
+  await page.click('.play-bar button:has-text("试玩整张图")'); await page.waitForTimeout(200);
+  const gateExit = await page.evaluate(() => { const r = PBPlay.active().run; return r.map.rooms[0].open.bottom || null; });
+  await page.keyboard.down("ArrowRight");
+  await page.waitForFunction(() => PBPlay.active().run.room.player.x >= 9, null, { timeout: 10000 }).catch(() => {});
+  await page.keyboard.up("ArrowRight");
+  await page.keyboard.down("ArrowDown");
+  await page.waitForFunction(() => PBPlay.active().run.roomIndex === 1, null, { timeout: 10000 }).catch(() => {});
+  await page.keyboard.up("ArrowDown");
+  const moved = await page.evaluate(() => { const r = PBPlay.active().run; return { room: r.roomIndex, entered: r.events.filter((e) => e.type === "room").length, y: r.room.player.y }; });
+  check(gateExit === "mid" && moved.room === 1 && moved.entered === 1, `keyboard play: from the gate down the shaft into the second room of seed 11 (${JSON.stringify(moved)})`);
+  await page.keyboard.press("r"); await page.waitForTimeout(150);
+  check(await page.evaluate(() => { const r = PBPlay.active().run; return r.events.some((e) => e.type === "reset") && r.room.player.y === 0; }), "R restarts the room at the door it was entered by");
 
   // 3. Hidden stages stop animating; the visible one animates.
   await page.goto(URL + "#scenes/showcase.forest"); await page.waitForTimeout(300);

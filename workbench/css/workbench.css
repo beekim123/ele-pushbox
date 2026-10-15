@@ -208,3 +208,6 @@ dl.meta.sheet dd { margin: 0; word-break: break-word; }
 .seed-row input { width: 84px; }
 .map-frame { overflow: auto; max-width: 100%; flex: none; }
 canvas.map-overview { image-rendering: pixelated; display: block; cursor: pointer; max-width: 100%; height: auto; border-radius: 4px; }
+.play-bar { flex-wrap: wrap; align-items: center; }
+ol.live-log { padding-left: 18px; margin: 4px 0; }
+.live { font-size: 13px; line-height: 1.6; padding: 6px 8px; background: var(--panel); border-radius: 4px; }

@@ -67,5 +67,57 @@
   "..$......HH...###...",
   "#########HH#########",
   "#########HH#########"
+ ],
+ "demos": [
+  {
+   "id": "miner",
+   "name": "交给老矿工",
+   "open": {
+    "left": "low"
+   },
+   "script": [
+    "R*15"
+   ],
+   "recipient": "old_miner",
+   "cargo": "letter",
+   "expect": {
+    "end": "deliver",
+    "cargo": 3
+   },
+   "from": "left.low"
+  },
+  {
+   "id": "zombie",
+   "name": "追上闲逛的僵尸",
+   "open": {
+    "left": "low"
+   },
+   "script": [
+    "R*15"
+   ],
+   "recipient": "zombie",
+   "expect": {
+    "end": "deliver"
+   },
+   "from": "left.low"
+  },
+  {
+   "id": "forge",
+   "name": "铁匠家很烫：冰淇淋化得快 3 倍",
+   "open": {
+    "left": "low"
+   },
+   "script": [
+    "wait 900",
+    "R*15"
+   ],
+   "recipient": "goblin_smith",
+   "cargo": "ice_cream",
+   "expect": {
+    "end": "deliver",
+    "cargo": 2
+   },
+   "from": "left.low"
+  }
  ]
 }

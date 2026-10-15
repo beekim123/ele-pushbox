@@ -155,6 +155,20 @@
       for (const f of list) if (!Array.isArray(f) || f.length !== 5 || typeof f[4] !== "string" || f[4].length !== 1) err(`caps ${edge} 的每一项是 [x, y, w, h, "字符"]`);
     }
     if (!spawns.some((s) => s.monster) && t.type === "room" && !(rows.join("").includes(COIN))) warn("没有怪物也没有金币");
+    // Demos: a placement this template can take, a start, a script and what it must achieve.
+    const ids = new Set();
+    for (const d of t.demos || []) {
+      const at = `演示 ${d.id}`;
+      if (!d.id || ids.has(d.id)) err(`${at}：编号缺失或重复`); ids.add(d.id);
+      for (const [e, sl] of Object.entries(d.open || {})) if (!(exits[e] || []).includes(sl)) err(`${at}：${e}.${sl} 不是这个模板的出入口`);
+      const nOpen = Object.keys(d.open || {}).length;
+      if ((t.type === "gate" || t.type === "home") ? nOpen !== 1 : nOpen !== 2) err(`${at}：open 打开的出入口数目不对`);
+      if (d.from === "gate" ? t.type !== "gate" : !(d.open || {})[String(d.from).split(".")[0]]) err(`${at}：from 必须是 gate 或一个打开的出入口`);
+      if (!Array.isArray(d.script) || !d.script.length) err(`${at}：没有 script`);
+      else for (const tok of d.script) if (!/^(wait \d+|hold [LRUD] \d+|[A-Z_0-9]+(\*\d+)?)$/.test(tok)) err(`${at}：script 写法不对：${tok}`);
+      if (!d.expect || !/^(exit:(left|right|top|bottom)|deliver|fail:(hearts|cargo))$/.test(d.expect.end || "")) err(`${at}：expect.end 写成 exit:<边>、deliver 或 fail:hearts / fail:cargo`);
+    }
+    if (t.type === "room" && !(t.demos || []).length) warn("还没有演示输入（实时模型回放）");
     return { errors, warnings };
   }
 
@@ -211,6 +225,8 @@
   function specOf(v, px, py, extra) {
     const rows = v.rows.map((r) => [...r]);
     for (const e of EDGES) if (v.exits[e]) for (const [x, y] of exitCells(e, v.exits[e])) rows[y][x] = "#";
+    // The recipient is a body in the way (touching him delivers); gate and keeper are background.
+    for (const s of v.spawns) if (s.feature === "recipient") rows[s.y][s.x] = "#";
     rows[py][px] = rows[py][px] === "H" ? "h" : "P";
     return Object.assign({ format: "pushbox.levelspec/1", id: v.id + (v.mirror ? "~m" : ""), chapter: v.world || "dungeon", map: rows.map((r) => r.join("")), bag: { sand: 0, bomb: 0 }, links: v.links }, extra || {});
   }
@@ -267,7 +283,7 @@
     return { ok: false, actions: null, ticks: null, explored: parent.size, capped: parent.size >= limit };
   }
 
-  // Goal cells for a feature: next to it in the same row (or on it).
+  // Goal cells for a feature: next to it in the same row (or on it, for the keeper in the background).
   function besides(x, y) { return [[x, y], [x - 1, y], [x + 1, y]].filter(([a]) => a >= 0 && a < W); }
   // Exits as a list of {edge, slot}.
   function exitList(exits) { const out = []; for (const e of EDGES) for (const s of exits[e] || []) out.push({ edge: e, slot: s }); return out; }

@@ -1241,7 +1241,7 @@
    "name": "鼠洞",
    "source": "content/rooms/dungeon/dungeon_burrow.json",
    "game": "res://generated/content/rooms/dungeon/dungeon_burrow.json",
-   "sha256": "8f77e94b18e91af06f9f40e7ac29af625968061f8036d8378093cfe1d137ff5a"
+   "sha256": "06f791d4b0781d7771dfb51381fc4540156b7ca410841ad8e1e0a250ebf0c382"
   },
   {
    "uid": "room:dungeon_corner",
@@ -1250,7 +1250,7 @@
    "name": "转角",
    "source": "content/rooms/dungeon/dungeon_corner.json",
    "game": "res://generated/content/rooms/dungeon/dungeon_corner.json",
-   "sha256": "8ee7a51ccfb3c243b667368e5339fc7435d81e24275f592bcc850a62619bf947"
+   "sha256": "ddc3bf673f875efd8f7ca26c4ad302a3946de2ad59868e132d5eb76988e36ad2"
   },
   {
    "uid": "room:dungeon_gate",
@@ -1259,7 +1259,7 @@
    "name": "渡门",
    "source": "content/rooms/dungeon/dungeon_gate.json",
    "game": "res://generated/content/rooms/dungeon/dungeon_gate.json",
-   "sha256": "bc4ed0aa04fc6c01b339e3b32dfaa55611a40ab9f88dc5864ee7b6a9edfd5a80"
+   "sha256": "1b049eeb720c67415e2c79ad7d31765ab7179a55bdf969684adb1871dd731700"
   },
   {
    "uid": "room:dungeon_guard",
@@ -1268,7 +1268,7 @@
    "name": "守卫廊",
    "source": "content/rooms/dungeon/dungeon_guard.json",
    "game": "res://generated/content/rooms/dungeon/dungeon_guard.json",
-   "sha256": "706d2cf670d69c0d35b7014adb0860ef2bd2b05ed74a7f9126657aecdd84a23a"
+   "sha256": "f193c385e9c489a4a4193514a3a00bfe14239bb2cca574e735eecb662cd10e2b"
   },
   {
    "uid": "room:dungeon_hall",
@@ -1277,7 +1277,7 @@
    "name": "石廊",
    "source": "content/rooms/dungeon/dungeon_hall.json",
    "game": "res://generated/content/rooms/dungeon/dungeon_hall.json",
-   "sha256": "31a63ae5c5ec7719f09705afcd1e98e3ad5fd37751717860d04f4f28f2868046"
+   "sha256": "63d7044025c7b1fbce737b675b79fca2b7c3e579ee996cdf65ae45bb3604749c"
   },
   {
    "uid": "room:dungeon_home",
@@ -1286,7 +1286,7 @@
    "name": "收件人之家",
    "source": "content/rooms/dungeon/dungeon_home.json",
    "game": "res://generated/content/rooms/dungeon/dungeon_home.json",
-   "sha256": "c0fd4d15cfae592a39b57e8d6d21e6088553112a554f06cfdccb063b00e54ca6"
+   "sha256": "6a8dbddac437d3fa78bd8ead4434e2ed5ea03bff405893f3849362df31c481f2"
   },
   {
    "uid": "room:dungeon_plate",
@@ -1295,7 +1295,7 @@
    "name": "机关门",
    "source": "content/rooms/dungeon/dungeon_plate.json",
    "game": "res://generated/content/rooms/dungeon/dungeon_plate.json",
-   "sha256": "989c338bf32f9ff759cb19f64fe86c8508d24caab6b36f99e1f1c4e5550e04da"
+   "sha256": "671e5e8787c3d2669db0e629367bad47c03727dbbd04103428001fe6c6187e2a"
   },
   {
    "uid": "room:dungeon_shaft",
@@ -1304,7 +1304,7 @@
    "name": "竖井",
    "source": "content/rooms/dungeon/dungeon_shaft.json",
    "game": "res://generated/content/rooms/dungeon/dungeon_shaft.json",
-   "sha256": "391fef4f73fe1241fad75110d912750a48c6ee9038985045c33a84af7c8f9bab"
+   "sha256": "09f9cd9cd3066c847a5e387cbca6300e7a70f979fa34eb997df93286efe1e421"
   },
   {
    "uid": "room:dungeon_station",
@@ -1313,7 +1313,7 @@
    "name": "驿站",
    "source": "content/rooms/dungeon/dungeon_station.json",
    "game": "res://generated/content/rooms/dungeon/dungeon_station.json",
-   "sha256": "890f0e1766bf16b44f035554a066992071fa972828589e0e2f8bf111167e4e76"
+   "sha256": "2943dd595148b339857da2693ae7f4ed87b74c14d3b91ae176794a02ae090a90"
   },
   {
    "uid": "room:dungeon_well",
@@ -1322,7 +1322,7 @@
    "name": "废井",
    "source": "content/rooms/dungeon/dungeon_well.json",
    "game": "res://generated/content/rooms/dungeon/dungeon_well.json",
-   "sha256": "70e51ef3078d09d710b7180267aa73b86b5009f47c7e33ba89c3722456f5458e"
+   "sha256": "7dfb90d1395d7554bd453fe0e7d24675eb219ad8126a217f4dd8d4060525494e"
   },
   {
    "uid": "mode:lab",

@@ -60,5 +60,29 @@
   "...B.....HH........#",
   "#########HH#########",
   "#########HH#########"
+ ],
+ "demos": [
+  {
+   "id": "turn",
+   "mechanisms": [
+    "push",
+    "ladder"
+   ],
+   "name": "从左边进来，箱子掉进竖井，踩着它爬下去",
+   "open": {
+    "left": "low",
+    "bottom": "mid"
+   },
+   "script": [
+    "R*9",
+    "R",
+    "D*3"
+   ],
+   "expect": {
+    "end": "exit:bottom",
+    "hearts": 3
+   },
+   "from": "left.low"
+  }
  ]
 }

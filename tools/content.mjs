@@ -186,6 +186,7 @@ export function buildContent(root, opts = {}) {
     if (!c || c.sha256 !== sha256) { add("error", file, "可通性检查结果缺失或已过期：运行 node tools/check-rooms.mjs --write"); continue; }
     for (const e of c.errors) add("error", file, e);
     for (const p of c.placements) for (const r of p.routes) if (!r.ok) add("error", file, `${p.key}：${r.from} → ${r.to} 走不通`);
+    for (const d of c.demos || []) if (!d.ok) add("error", file, `演示 ${d.id}${d.mirror ? "（翻转）" : ""} 没有达到预期：${d.failures.join("；")}`);
   }
   for (const sl of cat.slices) {
     const at = `slices/${sl.id}`;
@@ -215,7 +216,25 @@ export function buildContent(root, opts = {}) {
       });
     }
   }
+  // Delivery-only mechanisms (monsters) have no turn-based lab level: the room demos
+  // play that part (docs/design/delivery-realtime.md): a demo in the design model
+  // = specified; the Godot report's `demos` entry passing = verified.
+  const roomDemos = [];
+  for (const { room: t } of rooms) for (const d of t.demos || []) {
+    const c = checked.get(t.id), res = c ? (c.demos || []).filter((x) => x.id === d.id) : [];
+    const godot = report ? (report.demos || []).filter((x) => x.template === t.id && x.demo === d.id) : [];
+    roomDemos.push({ template: t.id, id: d.id, mechanisms: d.mechanisms || [], model_ok: res.length > 0 && res.every((x) => x.ok), verified: godot.length > 0 && godot.every((x) => x.ok === true) });
+  }
   const mechanisms = cat.mechanisms.map((m) => {
+    if (m.origin === "delivery") {
+      const ds = roomDemos.filter((d) => d.mechanisms.includes(m.id)), missingArt = (m.assets || []).filter((a) => !approved(a));
+      let status = "proposed";
+      if (ds.length) status = "designed";
+      if (ds.length && ds.every((d) => d.model_ok)) status = "specified";
+      if (status === "specified" && ds.every((d) => d.verified)) status = "verified";
+      if (status === "verified" && !missingArt.length) status = "playable";
+      return Object.assign({}, m, { status, levels: [], demos: ds.map((d) => d.template + "/" + d.id), missing_art: missingArt });
+    }
     const ls = levels.filter((l) => l.mode === "lab" && l.mechanisms.includes(m.id));
     const missingArt = (m.assets || []).filter((a) => !approved(a));
     let status = "proposed";
@@ -225,7 +244,7 @@ export function buildContent(root, opts = {}) {
     if (status === "verified" && !missingArt.length) status = "playable";
     return Object.assign({}, m, { status, levels: ls.map((l) => l.id), missing_art: missingArt });
   });
-  for (const m of mechanisms) if (m.status !== "proposed" && !m.levels.length) add("warn", `mechanisms/${m.id}`, "没有关卡模式的关卡");
+  for (const m of mechanisms) if (m.status !== "proposed" && !m.levels.length && m.origin !== "delivery") add("warn", `mechanisms/${m.id}`, "没有关卡模式的关卡");
   for (const id of results.keys()) if (!planned.has(id)) add("warn", "game/reports/verification.json", `报告里的关卡 ${id} 不在关卡计划中`);
 
   // ---- global ids and the workbench -> game map (docs/design/ids.md) ----

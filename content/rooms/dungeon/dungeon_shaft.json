@@ -69,5 +69,26 @@
   ".........HH.........",
   "#########HH#########",
   "#########HH#########"
+ ],
+ "demos": [
+  {
+   "id": "down",
+   "mechanisms": [
+    "ladder"
+   ],
+   "name": "顺着竖井爬下去",
+   "open": {
+    "top": "mid",
+    "bottom": "mid"
+   },
+   "script": [
+    "D*10"
+   ],
+   "expect": {
+    "end": "exit:bottom",
+    "hearts": 3
+   },
+   "from": "top.mid"
+  }
  ]
 }

@@ -35,8 +35,16 @@
       el("dt", { text: "内容层" }), el("dd", { text: m.layer === undefined ? "—" : "第 " + m.layer + " 层" }),
       el("dt", { text: "来自" }), el("dd", { text: !m.origin ? "关卡模式" : m.origin === "delivery" ? "配送模式" : m.origin === "sdk" ? "SDK 扩展" : ((store.catalog("worlds").find((w) => w.id === m.origin) || {}).name || m.origin) }),
     ]));
-    const levels = store.content().levels.filter((l) => m.levels.includes(l.id));
-    box.append(el("h3", { text: "关卡模式中的关卡" }), levels.length ? UI.levelTable(levels) : el("p", { class: "muted", text: "还没有关卡：按 game-design.md 6.7 在实验组加一关。" }));
+    if (m.origin === "delivery") {
+      // Monster mechanics have no turn-based lab level: room demos in the real-time model stand in for them.
+      const demos = m.demos || [];
+      box.append(el("h3", { text: "配送房间里的演示（实时模型）" }), demos.length ? el("ul", {}, demos.map((d) => { const [tid, did] = d.split("/"), t = (store.content().rooms || []).find((r) => r.id === tid), dm = t && (t.demos || []).find((x) => x.id === did), c = t && t.check && (t.check.demos || []).filter((x) => x.id === did);
+        return el("li", {}, [el("a", { href: "#maps/t/" + tid, text: (t ? t.name : tid) + " · " + (dm ? dm.name : did) }), " ", UI.mark(c && c.length ? c.every((x) => x.ok) : null, "设计模型回放（含翻转）")]); })) : el("p", { class: "muted", text: "还没有演示：在房间模板里加一段 demos（docs/design/delivery-realtime.md）。" }));
+      box.append(el("p", { class: "small muted", text: "这些机制只属于配送模式（关卡模式没有怪物），所以不进关卡模式的实验组，而是用房间模板里的演示输入在实时模型中回放；开发方在 Godot 里回放同样的演示并写进验证报告后才算已验证。" }));
+    } else {
+      const levels = store.content().levels.filter((l) => m.levels.includes(l.id));
+      box.append(el("h3", { text: "关卡模式中的关卡" }), levels.length ? UI.levelTable(levels) : el("p", { class: "muted", text: "还没有关卡：按 game-design.md 6.7 在实验组加一关。" }));
+    }
     const hell = store.content().levels.filter((l) => l.mode === "hell" && l.mechanisms.includes(m.id));
     if (hell.length) box.append(el("p", { class: "small muted", text: "地狱模式候选中也用到：" + hell.map((l) => `${l.id} ${l.title}`).join("、") }));
     box.append(el("h3", { text: "用到的美术" }));

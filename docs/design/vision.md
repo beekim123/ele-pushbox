@@ -7,6 +7,8 @@
 | [game-design.md](game-design.md) | 共用的格子规则、材料、机关、系统与界面，以及**关卡模式**的完整设计 | 有效，现在执行 |
 | [mode-delivery.md](mode-delivery.md) | **配送模式**（游戏的核心内容）：双滚轮、按格移动 + 实时世界、房间地图、怪物、商店、连送 | 设计稿 |
 | [delivery-slice.md](delivery-slice.md) | 配送模式的**第一个可玩切片**（幽暗石牢）：范围、规则、数值、交接前的步骤与验收 | 设计中 |
+| [delivery-maps.md](delivery-maps.md) | 配送模式的房间模板、按种子生成地图、可通性检查 | 有效 |
+| [delivery-realtime.md](delivery-realtime.md) | 配送模式的实时规则（设计模型）：刻、移动间隔、下落、怪物、受伤、货物、结算 | 有效 |
 | [worlds.md](worlds.md) | 万界渡口与各个地区（世界） | 设计稿 |
 | [characters.md](characters.md) | 主角、收件人、渡口居民 | 设计稿；主角美术已确认（`APR-0003`） |
 | [progression.md](progression.md) | 局外养成：属性、徽章、商店、执照、加急令 | 设计稿 |

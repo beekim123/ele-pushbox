@@ -42,7 +42,7 @@ game/
   gameplay/
     session/           level_session.gd、action.gd、settle_loop.gd、undo.gd、goals.gd
     grid/              grid_state.gd、classify.gd、rules/（support、move、ladder、dig、pour、water）
-    entities/          player.gd、crate.gd（以后 monster/）
+    entities/          player.gd、crate.gd、monster.gd（配送模式的怪物，规则见 delivery-realtime.md）
     mechanics/         mechanic.gd（基类）+ 每个机制一个文件：lever.gd、lift.gd、bin.gd、load_bridge.gd、portal.gd …
   modes/
     lab/  delivery/  hell/          每个模式：controller.gd + 本模式规则
@@ -140,6 +140,7 @@ game/
 | `dialogue.js` 的气泡排版 | `presentation/ui/widgets/bubble` |
 | `rooms.js`（配送房间模板：口位、翻转、封口） | `modes/delivery/rooms.gd` |
 | `mapgen.js`（配送地图生成：随机数与取数顺序都是规格） | `modes/delivery/mapgen.gd`，用 `content/export/delivery-golden.json` 对照 |
+| `realtime.js`（配送实时规则：刻、输入缓冲、下落、怪物、受伤、货物、驿站、换房间、结算） | `modes/delivery/realtime.gd` + `gameplay/entities/monster.gd`，用 `delivery-golden.json` 的 `replays` 逐帧对照 |
 | `delivery-scene.js`（配送房间的画法） | `presentation/render/`（实体美术确认后） |
 | `content/export/id-map.json` | `generated/` + `core/ids/registry.gd` |
 

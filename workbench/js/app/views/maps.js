@@ -9,6 +9,8 @@
   const S = 4, GAP = 8, PAD = 8;           // overview: pixels per tile, gap between rooms
   const RW = 20 * S, RH = 10 * S;
   let seed = 1, sel = 0, template = null, placementKey = null, showRoute = true, stage = null;
+  // Playback: "view" (still picture), "demo", "room" (play this room), "map" (play the whole map).
+  let mode = "view", demoChoice = null, playCargo = null, playRecipient = null;
 
   const slices = () => store.catalog("slices");
   const slice = () => slices()[0];
@@ -72,7 +74,8 @@
     const parts = (id || "").split("/");
     if (parts[0] === "t") { template = parts[1] || null; placementKey = parts[2] ? decodeURIComponent(parts[2]) : null; }
     else { template = null; if (parts[0] && /^\d+$/.test(parts[0])) seed = Number(parts[0]); sel = parts[1] ? Number(parts[1]) : 0; }
-    renderSide(); renderWork(); renderInfo();
+    renderSide(); renderWork();
+    if (mode === "view") renderInfo();
   }
 
   function renderSide() {
@@ -104,9 +107,12 @@
     const box = document.getElementById("maps-work");
     box.textContent = "";
     if (stage) { stage.destroy(); stage = null; }
+    root.PBPlay.stop();
     const sl = slice();
     if (!sl) return;
     const w = world(sl.world);
+    if (!playCargo) playCargo = sl.cargo[0];
+    if (!playRecipient) playRecipient = sl.recipients[0];
     if (template) return renderTemplate(box, sl, w);
     const map = generate();
     if (map.error) { box.append(el("p", { class: "note", text: "这个种子生成失败：" + map.error })); return; }
@@ -128,7 +134,9 @@
     const cells = routeCells(t, v, rt);
     box.append(el("h3", { text: `第 ${sel + 1} 间 · ${ROLE[room.role]} · ${t.name}${room.mirror ? "（翻转）" : ""}` }));
     const host = el("div", { class: "stage-host" });
-    box.append(host);
+    box.append(modeBar(sl, t, { mirror: room.mirror, open: room.open }, true), host);
+    const parSecs = mapPar(map);
+    if (mode !== "view") return startPlay(host, sl, w, t, { mirror: room.mirror, open: room.open }, want.from, map, parSecs, rt && rt.par_secs);
     stage = root.PBStage.create(host, {
       width: 320, height: 180, animated: true, autoplay: true, label: t.name, maxHeight: 420,
       draw: (r, tick) => { const res = PB.droom.render(r, v, { world: w, tick, player: cells ? cells[0] : undefined, route: showRoute ? cells : null, recipient: room.role === "home" ? "old_miner" : undefined }); lastPlaceholders = res.placeholders; },
@@ -146,11 +154,27 @@
     const v = p ? PB.rooms.variant(t, p.mirror, p.open) : PB.rooms.variant(t, false, null);
     const rt = p && p.routes[0], cells = rt ? routeCells(t, v, rt) : null;
     const host = el("div", { class: "stage-host" });
-    box.append(host);
+    box.append(modeBar(sl, t, p ? { mirror: p.mirror, open: p.open } : null, false), host);
+    if (mode === "map") mode = "view";
+    if (mode !== "view" && p) { startPlay(host, sl, w, t, { mirror: p.mirror, open: p.open }, rt ? rt.from : "gate", null, 0, rt && rt.par_secs); renderTemplateTable(box, t, pls, p); return; }
     stage = root.PBStage.create(host, { width: 320, height: 180, animated: true, autoplay: true, label: t.name, maxHeight: 420,
       draw: (r, tick) => PB.droom.render(r, v, { world: w, tick, player: cells ? cells[0] : undefined, route: showRoute ? cells : null, recipient: "old_miner" }),
       disclaimer: "占位：R 鼠群、S 骷髅守卫、G 渡门、D 收件人、K 龟掌柜、$ 金币。黄色虚线 = 下表第一条路线。" });
-    const table = el("table", { class: "grid" });
+    renderTemplateTable(box, t, pls, p);
+  }
+  function renderTemplateTable(box, t, pls, p) {
+    if ((t.demos || []).length) {
+      const dt = el("table", { class: "grid demos" });
+      dt.append(el("thead", {}, [el("tr", {}, ["演示", "翻转", "结局", "用时", "设计模型回放"].map((x) => el("th", { text: x })))]));
+      const db = el("tbody");
+      for (const d of t.demos) for (const r of ((t.check && t.check.demos) || []).filter((x) => x.id === d.id)) db.append(el("tr", {}, [
+        el("td", { text: d.name }), el("td", { text: r.mirror ? "是" : "否" }), el("td", { class: "mono small", text: r.end || "" }), el("td", { text: r.ticks ? (r.ticks / 60).toFixed(1) + " 秒" : "—" }),
+        el("td", {}, [root.PBContentUI.mark(r.ok, r.ok ? "达到预期" : r.failures.join("；")), " ", el("span", { class: "small muted", text: r.ok ? "" : r.failures.join("；") })]),
+      ]));
+      dt.append(db);
+      box.append(el("h3", { text: "演示输入（实时模型）" }), dt);
+    }
+    const table = el("table", { class: "grid routes" });
     table.append(el("thead", {}, [el("tr", {}, ["摆法", "翻转", "出入口", "路线", "步数", "要挖", "参考用时", ""].map((x) => el("th", { text: x })))]));
     const tb = el("tbody");
     for (const q of pls) for (const [i, r] of q.routes.entries()) tb.append(el("tr", { "aria-current": String(p && q.key === p.key && i === 0) }, [
@@ -160,6 +184,38 @@
     ]));
     table.append(tb);
     box.append(table);
+  }
+
+  // Reference seconds of a map: the checked route of every room on the path.
+  function mapPar(map) {
+    return map.rooms.reduce((n, r) => { const t = roomById(r.template), pc = placementCheck(t, PB.rooms.placementKey(r.template, r.mirror, r.open)), want = routeFor(map, r), rt = pc && pc.routes.find((x) => x.from === want.from && x.to === want.to); return n + (rt && rt.par_secs ? rt.par_secs : 0); }, 0);
+  }
+  function modeBar(sl, t, placement, onMap) {
+    const btn = (m, text) => el("button", { class: "btn", type: "button", "aria-pressed": String(mode === m), text, onclick: () => { mode = m; renderWork(); if (mode === "view") renderInfo(); } });
+    const demos = [];
+    for (const d of t.demos || []) for (const mirror of t.mirror ? [false, true] : [false]) demos.push({ key: d.id + (mirror ? "~m" : ""), d, mirror });
+    if (placement) demos.sort((a, b) => (b.mirror === !!placement.mirror) - (a.mirror === !!placement.mirror));
+    if (!demos.some((x) => x.key === demoChoice)) demoChoice = demos.length ? demos[0].key : null;
+    const dsel = el("select", { "aria-label": "演示", onchange: () => { demoChoice = dsel.value; mode = "demo"; renderWork(); } }, demos.map((x) => el("option", { value: x.key, text: x.d.name + (x.mirror ? "（翻转）" : "") })));
+    if (demoChoice) dsel.value = demoChoice;
+    const csel = el("select", { "aria-label": "货物", onchange: () => { playCargo = csel.value; if (mode === "room" || mode === "map") renderWork(); } }, sl.cargo.map((c) => el("option", { value: c, text: store.catalog("cargo").find((x) => x.id === c).name })));
+    csel.value = playCargo;
+    const rsel = el("select", { "aria-label": "收件人", onchange: () => { playRecipient = rsel.value; if (mode === "room" || mode === "map") renderWork(); } }, sl.recipients.map((c) => el("option", { value: c, text: store.catalog("recipients").find((x) => x.id === c).name })));
+    rsel.value = playRecipient;
+    return el("div", { class: "btn-row play-bar" }, [
+      btn("view", "静态"), demos.length ? btn("demo", "演示") : null, demos.length ? dsel : null, placement ? btn("room", "试玩这一间") : null, onMap ? btn("map", "试玩整张图") : null,
+      el("label", { class: "small muted" }, ["货物 ", csel]), el("label", { class: "small muted" }, ["收件人 ", rsel]),
+    ].filter(Boolean));
+  }
+  function startPlay(host, sl, w, t, placement, from, map, parSecs, roomPar) {
+    const info = document.getElementById("maps-info");
+    if (mode === "demo") {
+      const t0 = t, pick = demoChoice || "", mirror = pick.endsWith("~m"), d = (t0.demos || []).find((x) => x.id === pick.replace(/~m$/, ""));
+      if (!d) { mode = "view"; return renderWork(); }
+      return root.PBPlay.start(host, { kind: "demo", slice: sl, world: w, template: t0, demo: d, mirror, info });
+    }
+    if (mode === "map" && map) return root.PBPlay.start(host, { kind: "map", slice: sl, world: w, map, templates: sliceTemplates(sl), cargo: playCargo, recipient: playRecipient, parSecs, info });
+    return root.PBPlay.start(host, { kind: "room", slice: sl, world: w, template: t, placement, from, cargo: playCargo, recipient: playRecipient, parSecs: roomPar || 0, info });
   }
 
   function renderInfo() {
@@ -187,7 +243,7 @@
     }
     const map = generate();
     if (map.error) return;
-    const par = map.rooms.reduce((n, r) => { const t = roomById(r.template), pc = placementCheck(t, PB.rooms.placementKey(r.template, r.mirror, r.open)), want = routeFor(map, r), rt = pc && pc.routes.find((x) => x.from === want.from && x.to === want.to); return n + (rt && rt.par_secs ? rt.par_secs : 0); }, 0);
+    const par = mapPar(map);
     box.append(el("h2", { text: "这张地图" }), el("dl", { class: "meta" }, [
       el("dt", { text: "种子" }), el("dd", { class: "mono", text: String(seed) }),
       el("dt", { text: "大小" }), el("dd", { text: `${map.cols} × ${map.rows} 个房间` }),
@@ -210,5 +266,5 @@
     box.append(el("p", { class: "note small", text: "同一个种子在工作台、tools/check-rooms.mjs 和游戏里必须生成同一张图；前 30 个种子的结果写在 content/export/delivery-golden.json，供游戏对照。" }));
   }
 
-  root.PBMaps = { show, hide: () => stage && stage.setVisible(false), placeholders: () => lastPlaceholders };
+  root.PBMaps = { show, hide: () => { if (stage) stage.setVisible(false); root.PBPlay.stop(); }, placeholders: () => lastPlaceholders };
 })(window);

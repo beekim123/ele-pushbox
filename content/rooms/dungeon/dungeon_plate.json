@@ -36,5 +36,38 @@
   "#######_############",
   "####################"
  ],
+ "demos": [
+  {
+   "id": "plate",
+   "mechanisms": [
+    "plate_door",
+    "push",
+    "fall",
+    "ladder"
+   ],
+   "name": "把台上的箱子推进压板坑，门开了",
+   "open": {
+    "left": "low",
+    "right": "low"
+   },
+   "script": [
+    "R*2",
+    "U*3",
+    "R",
+    "R*3",
+    "L*4",
+    "D*3",
+    "R*18"
+   ],
+   "expect": {
+    "end": "exit:right",
+    "hearts": 3,
+    "events": [
+     "door-open"
+    ]
+   },
+   "from": "left.low"
+  }
+ ],
  "notes": "单向房间：只保证从左到右（翻转后从右到左）。门在右侧，箱子和压板都在左侧。"
 }

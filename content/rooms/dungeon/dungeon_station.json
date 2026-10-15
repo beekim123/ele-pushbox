@@ -67,5 +67,31 @@
   "....1....HH.....$...",
   "#########HH#########",
   "#########HH#########"
+ ],
+ "demos": [
+  {
+   "id": "talk",
+   "name": "和龟掌柜说话，回一颗心",
+   "open": {
+    "left": "low",
+    "right": "low"
+   },
+   "script": [
+    "R*3",
+    "U",
+    "R*17"
+   ],
+   "run": {
+    "hearts": 2
+   },
+   "expect": {
+    "end": "exit:right",
+    "hearts": 3,
+    "events": [
+     "talk"
+    ]
+   },
+   "from": "left.low"
+  }
  ]
 }

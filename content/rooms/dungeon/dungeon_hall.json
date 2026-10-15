@@ -36,5 +36,37 @@
   "....H..#.....#..$...",
   "####################",
   "####################"
+ ],
+ "demos": [
+  {
+   "id": "push",
+   "mechanisms": [
+    "push_monster",
+    "ladder"
+   ],
+   "name": "推怪：把追来的老鼠推下高台",
+   "open": {
+    "left": "low",
+    "right": "low"
+   },
+   "script": [
+    "R*4",
+    "U*4",
+    "R*10",
+    "L*10",
+    "D*4",
+    "R*16"
+   ],
+   "expect": {
+    "end": "exit:right",
+    "hearts": 3,
+    "kos": 1,
+    "ko": [
+     "fall"
+    ],
+    "coins": 20
+   },
+   "from": "left.low"
+  }
  ]
 }

@@ -1,6 +1,6 @@
 # 配送模式（核心内容，设计稿）
 
-状态：设计稿，关卡模式完成后开工（第 1 层先做技术样板，见第 14 节）。**第一个可玩切片**（幽暗石牢：3 货物 × 3 收件人、2 种怪物、约 9 个房间模板）见 [delivery-slice.md](delivery-slice.md)，正在按步骤推进。清单以 `content/catalog/` 为准：`cargo`、`recipients`、`combos`、`worlds`、`monsters`、`items`、`buffs`、`events`、`slices`（工作台「设计数据」页）。世界观见 [总纲](vision.md)，地区见 [worlds.md](worlds.md)，角色见 [characters.md](characters.md)，养成见 [progression.md](progression.md)。
+状态：设计稿，关卡模式完成后开工（第 1 层先做技术样板，见第 14 节）。**第一个可玩切片**（幽暗石牢：3 货物 × 3 收件人、2 种怪物、10 个房间模板）见 [delivery-slice.md](delivery-slice.md)，正在按步骤推进；房间与地图见 [delivery-maps.md](delivery-maps.md)，实时规则见 [delivery-realtime.md](delivery-realtime.md)。清单以 `content/catalog/` 为准：`cargo`、`recipients`、`combos`、`worlds`、`monsters`、`items`、`buffs`、`events`、`slices`（工作台「设计数据」页）。世界观见 [总纲](vision.md)，地区见 [worlds.md](worlds.md)，角色见 [characters.md](characters.md)，养成见 [progression.md](progression.md)。
 
 ## 1 定位
 
@@ -64,6 +64,7 @@
 - **世界持续运转**：SDK 每帧推进，沙会落、水会流、火会烧；怪物按自己的节奏行动；货物计时器以秒计。
 - **人物按格移动，两步之间有"移动间隔"**（2026-10-15 用户确定）：人物一次走一整格（约 0.1 秒的走路动画），之后有一小段停顿，停顿结束前不能走下一格。按住方向键，会在停顿结束的那一刻自动走下一格；在停顿中按下的方向会记住一次（输入缓冲），所以操作不会"吞键"；松开就停在格子上。
 - **移动速度 = 缩短移动间隔**：移动间隔 = 基础间隔 × 地形倍率 × 货物倍率 × (1 − 加成)。
+- **逐刻的规则**（2026-10-15 切片第 3 步）：世界每秒 60 个逻辑刻，输入缓冲、动作判断顺序、下落、怪物、受伤、换房间与结算的精确规则写在 [delivery-realtime.md](delivery-realtime.md)，代码 `workbench/js/core/realtime.js` 就是规格，工作台「地图预览」可以播放和试玩。
 
 | 动作 | 基础间隔 |
 |---|---|
@@ -167,9 +168,9 @@
 
 ## 14 开工前的技术样板
 
-1. **按格移动 + 实时 SDK**：每帧推进 SDK，人物按格移动并遵守移动间隔，推箱、挖、倒在实时下的表现与关卡模式一致；记录帧耗时。
+1. **按格移动 + 实时 SDK**：每帧推进 SDK，人物按格移动并遵守移动间隔，推箱、挖、倒在实时下的表现与关卡模式一致；记录帧耗时。规则与回放记录见 [delivery-realtime.md](delivery-realtime.md)。
 2. **房间切换**：每个房间一个 SDK 世界，离开时存快照，回来时恢复，往返结果一致（不使用刚体）。
-3. **怪物**：在格子上按固定规则行动，能被推、被压、被困、被淹；行为可以重放。
+3. **怪物**：在格子上按固定规则行动，能被推、被压、被困、被淹；行为可以重放（切片的两种怪物已写进设计模型，每个房间模板有演示输入和回放记录）。
 4. **生成器与验证器**：先在 Node 工具中实现，同一种子同一张图；工作台按种子预览。
 5. **单局存档**：中途退出后能继续这一局。
 
