@@ -4,61 +4,34 @@
 
 ## 当前阶段
 
-**R1e：关卡模式 v2 已设计完，第一批关卡已写好，等用户确认美术后交给 GPT。**
+**R1f：交给 GPT 前的最后准备（Claude）已完成，等用户确认对话气泡的美术。**
 
-- 名称《渡界人》· PORTITOR；主角 `char.portitor` 已确认（`APR-0003`）。
-- 配送模式的移动：按格移动，两步之间有移动间隔，移动速度 = 缩短这个间隔。
-- 地区加入世界各地的文化：15 个新地区，含中国风的地府·酆都。
-- **关卡模式 v2**：六张地图和第 1 组 7 关全部保留；第 2–5 组改成"一种 SDK 材料 + 几个不需要 SDK 的机关"的融合章（[game-design.md](design/game-design.md) 6.1）。
-- **第一批** = 第 1 组「基础」7 关 + 第 2 组「水与机关」9 关，共 16 关，规格齐全，全部通过设计模型。
+- 用户已确认上一轮的 17 项美术（`APR-0004`）。
+- **对话气泡**（[dialogue.md](design/dialogue.md)）：角色说的话放进贴着说话人的气泡，用 10px 小字；关卡提示改成主角说话。气泡外观已在工作台。对话数据、触发器、委托是以后的内容，结构已定。
+- **工程结构**（[architecture.md](design/architecture.md)）：Godot 工程分层、目录、注册表、事件、存档分段、机制接口、属性修正，以及"怎么加新机制 / 新系统 / 新模式"的固定步骤。
+- **资源编号**（[ids.md](design/ids.md)）：每个资源一个全局编号 `空间:编号`，以工作台为准；`content/export/id-map.json` 写明每个编号在游戏里的路径；工作台新增「编号映射」页。
+- 第一批关卡不变：第 1 组 7 关 + 第 2 组 9 关。
 
 Godot 重构（R2）**仍然暂停**，等用户说开始。
 
 | 项 | 状态 |
 |---|---|
-| 旧项目快照 | `0fae58c`（`origin/codex/art-ui-polish`），SDK、字体与许可证在 `third_party/` |
-| SDK 事实核实 | 完成（阅读源码，未编译运行）：[sdk-v1.2-verified.md](reference/sdk-v1.2-verified.md) |
-| 设计 | GD-4.1：[总纲](design/vision.md)、[规则与关卡模式](design/game-design.md)、[配送模式](design/mode-delivery.md)、[地区](design/worlds.md)、[角色](design/characters.md)、[局外养成](design/progression.md)、[地狱模式](design/mode-hell.md)、[名称](design/naming.md)、[竞品调研](research/2026-10-15-competitors.md) |
-| 关卡 | 计划 46 关（关卡模式 5 组 + 地狱候选池）；**16 关有完整规格**：`content/levels/lab/basics/`（M01–M07）、`content/levels/lab/water/`（W01–W05、W07–W10） |
-| 设计模型 | `workbench/js/core/tilemodel.js` 新增：整格的水（流动、溢出、连通器拉平、箱子进水挤开水、木箱上浮、铁箱下沉）、门是覆盖层、开关、升降台（按钮 / 开关 / 收集斗触发）、收集斗、承重桥、传送阵 |
-| 设计数据 | `content/catalog/`：39 个地区、82 位收件人、48 种货物、39 个缘分组合、77 种怪物、20 种道具、10 种增益、8 项属性、18 枚徽章、14 个事件、74 个机制 |
-| 美术 | 当前版本已确认 61 项；**待确认 17 项**：换标题和主角生成新版本的 15 项（6 个主题 v2、`material.chapter2_5` v2、8 个界面 v3），以及第 2 组新机关候选 `mech.portal`、`mech.bridge`（v1） |
-| 工作台 | 「模式与关卡」页看第 2 组 9 关；「场景」页逐步回放作者解；「设计数据 → 地区」可按文化圈筛选 |
-| 交接 | [gpt-refactor-prompt.md](handoff/gpt-refactor-prompt.md)：已按第一批（第 1、2 组）修订，状态"暂停" |
-
-## 第一批第 2 组「水与机关」（9 关）
-
-| 关 | 名称 | 融合了什么 | 模型最短步数 |
-|---|---|---|---|
-| W01 | 开闸放水 | 开关 + 水 + 浮箱 | 6 |
-| W02 | 木浮铁沉 | 水 + 水下压板 | 10 |
-| W03 | 两袋沙挤高水面 | 沙 + 水（连通的两口井） | 4 |
-| W04 | 两边一样高 | 开关 + 连通器 | 7 |
-| W05 | 平台等我上 | 升降台 + 按钮 + 梯子 | 10 |
-| W07 | 收一斗水 | 挖 + 水 + 收集斗 | 5 |
-| W08 | 让桥塌下去 | **承重桥**（新）+ 铁箱下沉 + 水下压板 | 6 |
-| W09 | 传送阵 | **传送阵**（新）+ 水 + 浮箱 + 梯子 | 7 |
-| W10 | 水满自升 | 收集斗触发升降台 + 开关 | 6 |
-
-## 待确认的 17 项美术
-
-逐像素比较过：
-
-- **6 个主题**：预览图只有主角所在的 14×16 像素不同（矿工 → 渡界人），地形、生态、光照完全相同。
-- **`material.chapter2_5`**：像素完全相同，只因字体加字而换版本。
-- **8 个界面布局**：大厅标题改成"渡界人"、主角换成渡界人；章节页的第 2–5 章简介按融合章改写；其他界面只有主角的小区域不同。
-- **`mech.portal`（传送阵）、`mech.bridge`（承重桥板）**：新画的候选，效果见 W08、W09 的参考图和工作台回放。
-
-在工作台「确认」页能看到这 17 项。你确认后，我用 `node tools/art.mjs approve` 记录为 `APR-0004`。
+| 设计 | GD-4.1 + [对话](design/dialogue.md)、[工程结构](design/architecture.md)、[编号](design/ids.md) |
+| 关卡 | 16 关有完整规格（M01–M07、W01–W05、W07–W10），全部通过设计模型 |
+| 编号 | 698 个资源、16 个编号空间（美术 83、关卡 16、机制 74、文字 160……），全部唯一 |
+| 美术 | 已确认记录 `APR-0001`–`APR-0004`；**待确认 12 项**：8 个界面布局 v4（只有提示面板的画面变了：提示改成主角的气泡）、`ui.bubble`、`ui.bubble_tail`、`ui.emote`、`ui.screen.dialogue`（对话样张） |
+| 字体 | 12px（菜单、标题）不变；新增 Fusion Pixel 10px（对话气泡，OFL，`third_party/fonts/fusion-pixel-10px/`） |
+| 交接 | [gpt-refactor-prompt.md](handoff/gpt-refactor-prompt.md)：已加入工程结构、编号规则、对话气泡；状态"暂停" |
 
 ## 已实际验证（云端 Linux 环境）
 
-- `node tools/check-levels.mjs --write`：16 关全部 ok，作者解 = 模型最短解。M01–M07 的最短步数不变；M06、M07 的可达 / 死局状态数变小，因为修掉了旧模型"往开着的门里倒沙会把门变没"的漏洞（用旧模型打补丁复核过）。
-- `node tools/art.mjs build`：79 项，再次构建 0 项变化；`verify ok: 79 assets, 3 approval records`；中英文界面零溢出。
-- 参考图：M01–M07、六个主题代表场景、四个章节代表场景与上一次提交逐像素相同；只有章节页的简介文字变了。
-- `node tools/content.mjs check`：0 错误、0 警告。
-- `node --test tests/content.test.mjs tests/art-pipeline.test.mjs`：11/11 通过（临时目录）。
-- `node tests/workbench.e2e.cjs`（Chromium）：全部通过。新增检查：第 2 组列出 9 关；W08、W09 浏览器渲染与导出图逐像素相同；9 关作者解在浏览器里的模型中都能过关；地区按文化圈筛选。
+- `node tools/art.mjs build`：83 项；只有 8 个界面布局换版本（v4），主题、材料、主角保持已确认的版本；`verify ok: 83 assets, 4 approval records`；中英文界面零溢出（含气泡）。
+- 参考图：除提示面板外，所有界面、主题、关卡的参考图与上一次提交逐像素相同。
+- 12px 字形文件逐字节不变（12px 字形改成"只增不改"：只有 12px 文字真的需要新字时才会变，避免每加一句台词就让全部美术换版本）。
+- `node tools/content.mjs build`：0 错误；生成 `content/export/id-map.json`，698 个编号全部唯一。
+- `node --test tests/content.test.mjs tests/art-pipeline.test.mjs`：12/12 通过（新增编号测试）。
+- `node tests/workbench.e2e.cjs`（Chromium）：全部通过（新增「编号映射」页、对话样张、提示面板的检查）。
+- `node tools/check-levels.mjs`：16 关全部 ok（与上次相同）。
 
 ## 未验证 / 尚缺
 
@@ -70,10 +43,10 @@ Godot 重构（R2）**仍然暂停**，等用户说开始。
 
 ## 下一步
 
-1. **用户**：在工作台确认 17 项美术（或指出问题）；看看第 2 组 9 关的设计（「场景」页可以逐步回放）。
-2. **Claude**：用户确认后记录 `APR-0004`，更新交接文档第 4 节的确认清单。
-3. **用户**：说开始后，把[交接提示词](handoff/gpt-refactor-prompt.md)交给 GPT：阶段一做第 1 组 + 全套菜单，阶段二做第 2 组。
-4. **之后（Claude）**：下一批（第 3 组「爆破与矿洞」）：先把矿车、灯照显形、套娃箱写进设计模型，再写规格。
+1. **用户**：在工作台「确认」页看对话气泡相关的 12 项（「场景」页 `ui.screen.hint`、`ui.screen.dialogue`），确认或指出问题。
+2. **Claude**：用户确认后记录 `APR-0005`，更新交接文档第 4 节的确认清单。
+3. **用户**：说开始后，把[交接提示词](handoff/gpt-refactor-prompt.md)交给 GPT：阶段一做第 1 组 + 全套菜单（按 architecture.md 建工程），阶段二做第 2 组。
+4. **之后（Claude）**：对话数据格式与渡口居民；下一批关卡（第 3 组）。
 
 ## 给设计负责人的问题
 

@@ -3,18 +3,19 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>箱途 Cratebound · 工作台</title>
+<title>渡界人 PORTITOR · 工作台</title>
 <link rel="stylesheet" href="css/workbench.css">
 <script src="js/app/appearance.js"></script>
 </head>
 <body>
 <header class="topbar">
-  <div class="brand"><strong>箱途</strong><span>Cratebound · 内容与美术工作台</span></div>
+  <div class="brand"><strong>渡界人</strong><span>PORTITOR · 内容与美术工作台</span></div>
   <nav class="tabs" aria-label="工作台页面">
     <a href="#overview" data-view="overview">总览</a>
     <a href="#modes" data-view="modes">模式与关卡</a>
     <a href="#mechanisms" data-view="mechanisms">机制</a>
     <a href="#catalog" data-view="catalog">设计数据</a>
+    <a href="#ids" data-view="ids">编号映射</a>
     <span class="tab-sep" aria-hidden="true"></span>
     <a href="#scenes" data-view="scenes">场景</a>
     <a href="#assets" data-view="assets">资产与动画</a>
@@ -49,6 +50,10 @@
     <aside class="info" id="mech-info" aria-label="说明"></aside>
   </section>
 
+  <section class="view catalog-view" id="view-ids" hidden>
+    <aside class="side" id="ids-side" aria-label="编号空间"></aside>
+    <div class="work" id="ids-work"></div>
+  </section>
   <section class="view catalog-view" id="view-catalog" hidden>
     <aside class="side" id="catalog-side" aria-label="目录"></aside>
     <div class="work" id="catalog-work"></div>
@@ -94,6 +99,7 @@
 <script src="data/content.js"></script>
 <script src="js/core/raster.js"></script>
 <script src="js/core/font-data.js"></script>
+<script src="js/core/font-small.js"></script>
 <script src="js/core/sprites.js"></script>
 <script src="js/core/i18n.js"></script>
 <script src="js/core/tilemodel.js"></script>
@@ -102,6 +108,7 @@
 <script src="js/core/env.js"></script>
 <script src="js/core/matter.js"></script>
 <script src="js/core/scene.js"></script>
+<script src="js/core/dialogue.js"></script>
 <script src="js/core/ui.js"></script>
 <script src="js/app/store.js"></script>
 <script src="js/app/stage.js"></script>
@@ -110,6 +117,7 @@
 <script src="js/app/views/modes.js"></script>
 <script src="js/app/views/mechanisms.js"></script>
 <script src="js/app/views/catalog.js"></script>
+<script src="js/app/views/ids.js"></script>
 <script src="js/app/views/scenes.js"></script>
 <script src="js/app/views/assets.js"></script>
 <script src="js/app/views/editor.js"></script>

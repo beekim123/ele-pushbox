@@ -22,7 +22,7 @@
   "ui.menu_icons",
   "ui.panel"
  ],
- "version": 3,
+ "version": 4,
  "stage": "review",
  "size": [
   320,
@@ -44,5 +44,5 @@
  },
  "usage": "局内按 Esc 打开；背景为压暗的关卡画面。",
  "notes": "布局参考：文字来自 content/i18n，容器按文字宽度伸缩；Godot 用 Control 容器实现，不按像素硬编码文字位置。",
- "content_hash": "90565d8d88964e96aced973b4e06bfe4e0da865610dd3d7effe88ceccf0da733"
+ "content_hash": "8423060d12710e97b5e078ff4fd400b2a2b747c12af96e7ae95c1cf480e47ad3"
 }

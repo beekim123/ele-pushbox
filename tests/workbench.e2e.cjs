@@ -28,7 +28,7 @@ async function decode(file) {
   page.on("console", (m) => { if (m.type() === "error") errors.push(m.text()); });
 
   // 1. Every view opens without errors.
-  for (const h of ["#overview", "#modes", "#modes/water", "#modes/basics/M03", "#modes/hell-pool", "#modes/water/W08", "#mechanisms", "#mechanisms/float_sink", "#mechanisms/portal", "#scenes/level.W09", "#assets/mech.bridge", "#catalog/cargo", "#catalog/items", "#scenes", "#scenes/level.M04", "#scenes/ui.screen.chapters", "#scenes/lobby.forest", "#scenes/showcase.cosmos", "#scenes/chapter.ruins", "#scenes/chapter.sky", "#assets", "#assets/material.chapter2_5", "#assets/char.portitor", "#catalog/worlds", "#catalog/recipients", "#catalog/combos", "#catalog/upgrades", "#assets/mech.door", "#edit/obj.crate_wood", "#review", "#export"]) {
+  for (const h of ["#overview", "#modes", "#modes/water", "#modes/basics/M03", "#modes/hell-pool", "#modes/water/W08", "#mechanisms", "#mechanisms/float_sink", "#mechanisms/portal", "#scenes/level.W09", "#assets/mech.bridge", "#catalog/cargo", "#catalog/items", "#scenes", "#scenes/level.M04", "#scenes/ui.screen.chapters", "#scenes/lobby.forest", "#scenes/showcase.cosmos", "#scenes/chapter.ruins", "#scenes/chapter.sky", "#assets", "#assets/material.chapter2_5", "#assets/char.portitor", "#catalog/worlds", "#catalog/recipients", "#catalog/combos", "#catalog/upgrades", "#ids", "#ids/level", "#scenes/ui.screen.dialogue", "#scenes/ui.screen.hint", "#assets/mech.door", "#edit/obj.crate_wood", "#review", "#export"]) {
     await page.goto(URL + h); await page.waitForTimeout(250);
   }
   check(errors.length === 0, "all views load without console errors" + (errors.length ? ": " + errors[0] : ""));
@@ -64,6 +64,10 @@ async function decode(file) {
   check(mechText.includes("M05") && mechText.includes("M06") && mechText.includes("有规格"), "mechanism page shows its levels and derived status");
   await page.goto(URL + "#overview"); await page.waitForTimeout(200);
   check((await page.locator("#overview-root").textContent()).includes("没有错误或警告"), "overview shows a clean content check");
+  await page.goto(URL + "#ids"); await page.waitForTimeout(200);
+  await page.fill("#ids-search", "W08"); await page.waitForTimeout(150);
+  const idText = await page.locator("#ids-work").textContent();
+  check(idText.includes("level:W08") && idText.includes("res://generated/content/levels/lab/water/W08.json"), "id map page finds level:W08 and its game path");
   await page.goto(URL + "#catalog/worlds"); await page.waitForTimeout(200);
   const eastAsia = JSON.parse(fs.readFileSync(path.join(REPO, "content/catalog/worlds.json"), "utf8")).entries.filter((w) => w.culture === "东亚").length;
   await page.selectOption("#catalog-culture", "东亚"); await page.waitForTimeout(150);

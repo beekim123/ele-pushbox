@@ -68,3 +68,17 @@ test("build writes the Godot content manifest and the workbench data; check exit
   edit(root, "content/catalog/groups.json", (g) => { g.entries[0].theme = "theme.nowhere"; });
   assert.throws(() => execFileSync(process.execPath, [path.join(REPO, "tools/content.mjs"), "check", "--root", root], { stdio: "pipe" }));
 });
+
+test("every resource gets one global uid and a fixed game path", () => {
+  const res = buildContent(REPO);
+  const uids = res.ids.entries.map((e) => e.uid);
+  assert.equal(new Set(uids).size, uids.length);
+  const w08 = res.ids.entries.find((e) => e.uid === "level:W08");
+  assert.equal(w08.source, "content/levels/lab/water/W08.json");
+  assert.equal(w08.game, "res://generated/content/levels/lab/water/W08.json");
+  // Same local id in two domains is fine (recipient:ghost, monster:ghost); a bad id format is not.
+  assert.ok(uids.includes("recipient:ghost") && uids.includes("monster:ghost"));
+  const root = sandbox();
+  edit(root, "content/catalog/cargo.json", (c) => { c.entries[0].id = "Bad Id"; });
+  assert.ok(errors(buildContent(root)).some((e) => e.includes("编号格式不对")));
+});

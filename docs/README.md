@@ -13,6 +13,9 @@
 | [design/mode-delivery.md](design/mode-delivery.md) | **配送模式**（核心内容，设计稿，关卡模式完成后开工） |
 | [design/progression.md](design/progression.md) | 局外养成（设计稿） |
 | [design/naming.md](design/naming.md) | 名称：《渡界人》· PORTITOR（已定） |
+| [design/architecture.md](design/architecture.md) | **工程结构与扩展机制**：分层、`game/` 目录、注册表、事件、存档、机制接口、怎么加新机制和新系统 |
+| [design/ids.md](design/ids.md) | **资源编号与游戏映射**：全局编号、id-map、以工作台为准的规则 |
+| [design/dialogue.md](design/dialogue.md) | 对话气泡与对话系统（气泡已在工作台，数据与触发器是后续） |
 | [design/workbench.md](design/workbench.md) | 工作台：统一管理美术、机制与关卡，与游戏保持一致 |
 | [design/art-direction.md](design/art-direction.md) | 美术规范 |
 | [design/art-pipeline.md](design/art-pipeline.md) | 美术源数据、版本、确认、导出与 Godot 交付 |

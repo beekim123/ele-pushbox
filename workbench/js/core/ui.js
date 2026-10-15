@@ -254,7 +254,9 @@
     keyBar(r, [{ keys: ["up", "down"], label: "keys.select" }, { keys: [{ wide: "Enter" }], label: "keys.play" }, { keys: [{ wide: "Esc" }], label: "keys.back" }], 8, H - 16, W - 8);
   }
 
-  function inLevel(r, tick, spec, extra) { PB.scene.renderLevel(r, spec, null, Object.assign({ tick }, extra || {})); }
+  function inLevel(r, tick, spec, extra) { return PB.scene.renderLevel(r, spec, null, Object.assign({ tick }, extra || {})); }
+  // Screen point just above a tile-positioned character's head.
+  function headOf(o, x, y) { return [o.ox + x * 16 + 8, o.oy + y * 16 + 2]; }
 
   function pause(r, tick, p, st) {
     inLevel(r, tick, st.levelSpec);
@@ -277,26 +279,41 @@
     return w;
   }
 
+  // Hints are spoken by the hero in a dialogue bubble (docs/design/dialogue.md);
+  // only the key bar and the level-3 buttons stay in a slim panel at the bottom.
   function hint(r, tick, p, st) {
-    inLevel(r, tick, st.levelSpec);
+    const o = inLevel(r, tick, st.levelSpec);
     const spec = st.levelSpec, level = Math.min(3, (st.focus | 0) + 1);
-    const x = 6, w = W - 12, h = level === 3 ? 66 : 50, y = H - h - 4;
-    panel(r, x, y, w, h, 0);
-    sprite(r, "ui.icons", "hint", x + 6, y + 5);
-    TX().draw(r, T("hint.title", { n: level }), x + 22, y + 3, "l");
-    if (level < 3) {
-      const more = T("hint.more"), mw = TX().measure(more) + 16;
-      key(r, "H", x + w - mw - 6, y + 4); TX().draw(r, more, x + w - mw + 10, y + 3, "v");
-    }
+    const hero = PB.tilemodel.parse(spec).state.player;
     const text = levelText(spec.id, "hint." + level, spec.hints[level - 1] || "");
-    para(r, text, x + 8, y + 18, w - 16, 2, "u", `level.${spec.id}.hint.${level}`);
-    if (level === 3) {
+    PB.dialogue.bubble(r, { text, at: headOf(o, hero.x, hero.y), style: "say", maxW: 168, name: T("hint.title", { n: level }), id: `level.${spec.id}.hint.${level}` });
+    const x = 6, w = W - 12, h = 21, y = H - h - 3;
+    panel(r, x, y, w, h, 0);
+    sprite(r, "ui.icons", "hint", x + 6, y + 4);
+    if (level < 3) {
+      const more = T("hint.more");
+      key(r, "H", x + 22, y + 3); label(r, more, x + 38, y + 3, w - 50, "v", null, "hint.more");
+    } else {
       const a = T("hint.rewind"), b = T("hint.demo");
-      const cap = (w - 24) >> 1, bw = Math.min(cap, TX().measure(a) + 14), dw = Math.min(cap, TX().measure(b) + 14);
-      button(r, a, x + w - 6 - bw, y + h - 20, false, "hint.rewind", cap);
-      button(r, b, x + w - 10 - bw - dw, y + h - 20, true, "hint.demo", cap);
+      const room = w - 30, dw = Math.min(room >> 1, TX().measure(b) + 14), bw = Math.min(room - dw - 4, TX().measure(a) + 14);
+      button(r, a, x + w - 4 - bw, y + 3, false, "hint.rewind", bw);
+      button(r, b, x + w - 8 - bw - dw, y + 3, true, "hint.demo", dw);
     }
   }
+
+  // Review sheet for the dialogue system: an NPC offering a delivery ("!"),
+  // the hero thinking aloud, and a system note.
+  function dialogue(r, tick, p, st) {
+    const spec = st.levelSpec, o = inLevel(r, tick, spec);
+    const hero = PB.tilemodel.parse(spec).state.player, npc = [hero.x + 4, hero.y];
+    S().draw(r, "char.miner", "idle", tick, o.ox + npc[0] * 16 + 8, o.oy + npc[1] * 16 + 16, true);
+    const [nx, ny] = headOf(o, npc[0], npc[1]);
+    PB.dialogue.emote(r, "quest", nx, ny - 1, tick);
+    PB.dialogue.bubble(r, { text: T("dlg.sample.npc"), at: [nx, ny - 13], style: "say", maxW: 150, name: T("dlg.sample.npc.name"), id: "dlg.sample.npc" });
+    PB.dialogue.bubble(r, { text: T("dlg.sample.self"), at: headOf(o, hero.x, hero.y), style: "think", maxW: 120, place: "below", id: "dlg.sample.self" });
+    PB.dialogue.bubble(r, { text: T("dlg.sample.note"), at: [W >> 1, H - 2], style: "sign", maxW: 220, id: "dlg.sample.note" });
+  }
+
 
   function complete(r, tick, p, st) {
     const spec = st.levelSpec;
@@ -364,7 +381,7 @@
     wideKey(r, "Esc", x + w - 14 - bw - TX().measure("Esc") - 8, y + h - 18);
   }
 
-  const SCREENS = { lobby, chapters, levels, pause, hint, complete, settings, rulecard };
+  const SCREENS = { lobby, chapters, levels, pause, hint, complete, settings, rulecard, dialogue };
   // st.locale switches the language for this render; st.showIssues outlines overflow.
   function render(r, asset, tick, st) {
     st = st || {};

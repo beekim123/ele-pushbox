@@ -44,6 +44,10 @@
     content: () => C,
     hasContent: () => !!root.PB_CONTENT,
     catalog: (kind) => C.catalogs[kind] || [],
+    // Global resource ids (docs/design/ids.md).
+    ids: () => C.ids || { domains: {}, entries: [] },
+    uid: (domain, id) => { const e = (C.ids || { entries: [] }).entries.find((x) => x.domain === domain && x.id === id); return e ? e.uid : domain + ":" + id; },
+    idEntry: (uid) => (C.ids || { entries: [] }).entries.find((x) => x.uid === uid),
     catalogNote: (kind) => (C.notes || {})[kind] || "",
     mode: (id) => (C.catalogs.modes || []).find((m) => m.id === id),
     group: (id) => (C.catalogs.groups || []).find((g) => g.id === id),

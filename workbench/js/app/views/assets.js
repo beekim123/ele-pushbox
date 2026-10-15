@@ -71,7 +71,7 @@
     if (stage) { stage.destroy(); stage = null; }
     if (!selected) { box.append(el("p", { class: "muted", text: "选择左侧的一项资产查看详情。" })); return; }
     const a = store.effective(selected), st = store.status(selected);
-    box.append(el("h2", { text: a.name }), el("div", { class: "btn-row" }, [el("span", { class: "mono", text: `${a.id} · v${a.version}` }), el("span", { class: "badge " + st, text: store.statusLabel(st) })]));
+    box.append(el("h2", { text: a.name }), el("div", { class: "btn-row" }, [el("span", { class: "mono", text: `art:${a.id} · v${a.version}` }), el("span", { class: "badge " + st, text: store.statusLabel(st) })]));
     const host = el("div", { class: "stage-host" });
     box.append(host);
     if (a.kind === "sprite") {
@@ -115,6 +115,7 @@
         a.ninepatch ? el("dt", { text: "九宫格" }) : null, a.ninepatch ? el("dd", { text: a.ninepatch.join(" / ") }) : null,
         el("dt", { text: "内容哈希" }), el("dd", { class: "mono", text: (a.content_hash || "").slice(0, 16) }),
         el("dt", { text: "导出文件" }), el("dd", { class: "mono", text: `art/export/preview/${a.id}.png` }),
+        el("dt", { text: "游戏路径" }), el("dd", { class: "mono", text: (store.idEntry("art:" + a.id) || {}).game || "—" }),
       ]));
     } else {
       stage = root.PBStage.create(host, { width: 320, height: 180, animated: true, maxHeight: 200, label: a.name, draw: (r, tick) => drawProcedural(r, a, tick) });

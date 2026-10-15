@@ -55,7 +55,8 @@
     const table = el("table", { class: "grid" });
     table.append(el("thead", {}, [el("tr", {}, [el("th", { text: "编号" })].concat(keys.map((k) => el("th", { text: LABEL[k] || k }))))]));
     const tb = el("tbody");
-    for (const e of entries) tb.append(el("tr", {}, [el("td", { class: "mono", text: e.id })].concat(keys.map((k) => cell(k, e[k])))));
+    const DOMAIN = { worlds: "world", recipients: "recipient", cargo: "cargo", combos: "combo", monsters: "monster", items: "item", buffs: "buff", upgrades: "upgrade", badges: "badge", events: "event", modes: "mode" };
+    for (const e of entries) tb.append(el("tr", {}, [el("td", { class: "mono", text: DOMAIN[kind] + ":" + e.id })].concat(keys.map((k) => cell(k, e[k])))));
     table.append(tb);
     work.append(entries.length ? table : el("p", { class: "muted", text: "空。" }));
   }

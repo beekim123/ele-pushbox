@@ -67,21 +67,13 @@ git show 0fae58c:pushbox/content/default/materials.json
 
 ## 3 游戏结构与实现要求
 
-### 3.1 工程结构（建议，可调整，调整后在 status 中说明）
+### 3.1 工程结构（必须照 `docs/design/architecture.md`）
 
-```
-game/
-  project.godot            # 320×180 视口，整数缩放（stretch mode viewport + integer），最近邻，默认窗口 1280×720
-  bin/                     # 引用 third_party/ele-sdk 的动态库（复制或配置 gdextension 路径，写进 README）
-  scripts/core/            # 纯规则：关卡规格解析、格子分类、动作合法性、游戏层状态（不依赖节点，便于 headless 测试）
-  scripts/sim/             # SDK 封装：EleWorld、profile / 材料、命令提交、逐 tick 结算、静止判定、快照
-  scripts/render/          # 地形与背景着色、生态、环境效果、精灵、HUD
-  scripts/ui/              # 大厅、章节轮播、关卡选择、暂停、设置、提示、过关、规则卡
-  scripts/i18n/            # 读取 content/i18n 与 content/i18n-extra，注册到 TranslationServer
-  content/                 # 材料、反应、profile（按组）；关卡清单读 content/export/content-manifest.json，规格读仓库的 content/levels/
-  tools/import_art.*       # 从 art/export 导入已确认美术（见第 4 节）
-  tests/                   # headless 测试与参考图对照；每次运行写 game/reports/verification.json
-```
+- 目录与分层按 `docs/design/architecture.md` 第 2、3 节：`app / core / sim / gameplay / modes / meta / presentation / generated / tools / tests`，依赖只能向下；`core`、`gameplay`、`meta` 不继承 `Node`，能在 headless 测试里直接创建。
+- 每个机制一个文件 `gameplay/mechanics/<机制编号>.gd`，实现 `mechanic.gd` 的钩子（第 4.4 节）；每个局外系统一个文件夹 `meta/<系统>/`（这次只建空的骨架和存档段，不实现商店、工坊等）；每个界面一个场景 `presentation/ui/screens/<名>.tscn`。
+- 全局单例只有 `Registry`、`Events`、`Save`、`Settings`、`Locale`；事件统一登记在 `core/events/events.gd`；数值类属性走 `core/stats/`（第 4.5 节）。
+- **资源只用全局编号找**（`docs/design/ids.md`）：导入脚本按 `content/export/id-map.json` 生成 `res://generated/`（含 `ids.gd` 常量），代码、场景、存档里只写 uid（如 `"art:mech.lift"`、`"level:W08"`），不写文件路径，不自己发明编号。测试要覆盖 ids.md 第 3 节的 (a)(b)(c)。
+- 偏离这些结构时，先写进 status 的「给设计负责人的问题」。
 
 ### 3.2 规则
 
@@ -101,6 +93,7 @@ game/
 ### 3.4 系统与界面
 
 - 按设计第 7、8 节实现：撤销、重开、三级提示（含"演示"和"回到正确位置"）、跳关与规则卡、观察模式（按住 Tab）、目标高亮（只按规则计算，不运行模拟）、存档（`user://progress.json`，先写临时文件再改名，带 `version`）、引导。
+- **对话气泡**（`docs/design/dialogue.md`）：角色说的话（这次是关卡提示）放进贴着说话人的气泡，10px 小字；按 `workbench/js/core/dialogue.js` 的排版（宽度随文字、最多 4 行、尾巴指向说话人、上方放不下就放下方）实现成 `presentation/ui/widgets/bubble`。提示面板 = 主角头顶的气泡（名牌"提示 n/3"）+ 底部细条（按键说明、第三层的演示 / 回到正确位置）。对话数据、触发器、委托这次不做，只把气泡控件做成能复用的。
 - 界面：大厅、章节（地图）轮播、关卡选择、局内 HUD、暂停、设置、提示面板、过关、规则卡。布局、元素、配色以已确认的 `ui.screen.*` 和参考图 `art/export/reference/<界面>.<语言>.png` 为准。具体要求：
   - **大厅**：背景、地面、生态和环境效果随玩家当前所在组的主题切换；右侧小场景（矿工推箱、高台出口旗）；菜单项带图标，面板宽度随文字伸缩。
   - **章节轮播**：当前地图是中间大卡（主题小景、徽章、章号、进度或锁），两侧依次缩小，外侧再压暗一级；下方依次是名称、页码指示（当前为长条）、左右键、说明栏。←→ 或点击两侧卡片切换，切换时滑动约 1 秒（带缓动）。地图数量不限：16 张以内显示页码点，更多时显示"当前 / 总数"。规格见 `workbench/js/core/ui.js` 中的 `chapters` 与 `slotAt`。
@@ -113,7 +106,7 @@ game/
 - 游戏名取 `game.title`；关卡标题、一句话发现、三级提示取 `level.<编号>.title / discovery / hint.<n>`。
 - 界面用 Container（HBox / VBox / Margin）加最小、最大宽度搭建，不按像素硬编码文字位置。段落自动换行（中文按字、英文按词，标点不出现在行首），单行文字超出时显示省略号。
 - 开发构建中检测文字溢出并输出日志。测试要覆盖：中、英两种语言下所有界面零溢出（规则同 `tools/art.mjs` 中的 `textIssues`）。
-- 字体：`third_party/fonts/fusion-pixel-12px/`，12px，最近邻，关闭抗锯齿与 hinting。工作台用同一字体预先渲染了字形，Godot 直接用字体文件；两者若有像素差异，记录到 art-pipeline 第 7 节。
+- 字体：菜单、标题、按钮用 `third_party/fonts/fusion-pixel-12px/`（12px）；对话气泡用 `third_party/fonts/fusion-pixel-10px/`（10px）。都是最近邻，关闭抗锯齿与 hinting。工作台用同一字体预先渲染了字形，Godot 直接用字体文件；两者若有像素差异，记录到 art-pipeline 第 7 节。
 
 ### 3.6 主题、生态与环境效果
 
@@ -127,7 +120,7 @@ game/
 ## 4 美术集成（已确认，正式使用）
 
 - 开工先运行：`node tools/art.mjs build && node tools/art.mjs verify`（Node 18+，无依赖），确认输出以 `verify ok` 开头、`build` 没有 `bumped`、`content: 0 error(s)`。之后只读取 `art/export/manifest.json`，每项是否可用看 `approved` 与 `current_is_approved`。
-- 确认记录在 `art/approvals.json`：`APR-0001`（57 项）、`APR-0002`（第 2–5 组与界面）、`APR-0003`（主角 `char.portitor`）。换标题和主角后，6 个主题（v2）、`material.chapter2_5`（v2）、8 个界面布局（v3）生成了新版本，等用户重新确认；新机关 `mech.portal`、`mech.bridge`（v1）是候选。以 manifest 的 `current_is_approved` 为准。
+- 确认记录在 `art/approvals.json`：`APR-0001`（57 项）、`APR-0002`（第 2–5 组与界面）、`APR-0003`（主角 `char.portitor`）、`APR-0004`（换标题和主角后的 6 个主题 v2、`material.chapter2_5` v2、8 个界面 v3，新机关 `mech.portal`、`mech.bridge`）。之后加对话气泡，8 个界面布局又生成了 v4，并新增 `ui.bubble`、`ui.bubble_tail`、`ui.emote`、`ui.screen.dialogue`，等用户确认。以 manifest 的 `current_is_approved` 为准。
 - 已确认清单（`APR-0001`，全部 v1，界面布局 v2 见 `APR-0002`）：
   - 角色：主角 `char.portitor`（21 帧：待机、走、推、爬、挖、倒、落、胜利；`APR-0003`）。旧主角 `char.miner` 已不是主角，游戏里不要用它当主角。
   - 物件：`obj.crate_wood`、`obj.crate_iron`

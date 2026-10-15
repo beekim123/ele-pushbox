@@ -23,7 +23,7 @@
     box.textContent = "";
     const m = store.mechanism(selected);
     if (!m) { box.append(el("p", { class: "muted", text: "选择左侧的一个机制。" })); return; }
-    box.append(el("h2", { text: m.name }), el("div", { class: "btn-row" }, [el("span", { class: "mono", text: m.id }), UI.mechBadge(m.status), el("span", { class: "small muted", text: OWNER[m.owner] || m.owner })]));
+    box.append(el("h2", { text: m.name }), el("div", { class: "btn-row" }, [el("span", { class: "mono", text: "mechanic:" + m.id }), UI.mechBadge(m.status), el("span", { class: "small muted", text: OWNER[m.owner] || m.owner })]));
     const at = STEPS.indexOf(m.status);
     box.append(el("ol", { class: "pipeline", "aria-label": "进度" }, STEPS.map((s, i) => el("li", { class: i < at ? "done" : i === at ? "now" : "", text: store.mechStatusLabel(s) }))));
     box.append(el("p", { text: m.summary }));

@@ -31,8 +31,9 @@
   // Tokens: one CJK character, a run of non-space non-CJK characters (a word), or spaces.
   const TOKEN = /[　-鿿가-힯＀-￯]|[^\s　-鿿가-힯＀-￯]+|\s+/g;
   const NO_START = "，。：；、！？）」』”…,.:;!?)";
-  function wrap(str, width) {
-    const measure = PB.text.measure, lines = [];
+  // `measure` defaults to the 12px UI font; dialogue bubbles pass the 10px one.
+  function wrap(str, width, measureFn) {
+    const measure = measureFn || PB.text.measure, lines = [];
     let line = "";
     for (const tok of str.match(TOKEN) || []) {
       if (/^\s+$/.test(tok)) { if (line) line += " "; continue; }

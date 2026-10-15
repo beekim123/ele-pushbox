@@ -195,3 +195,8 @@ ul.issues { list-style: none; padding: 0; margin: 0; font-size: 13px; }
 ul.issues li { padding: 3px 0; border-bottom: 1px solid var(--line); }
 a.card { text-decoration: none; }
 .card .row { flex-wrap: wrap; }
+
+/* Resource id map (#ids) */
+button.mini { font-size: 11px; padding: 0 4px; margin-left: 2px; line-height: 1.4; cursor: pointer; }
+table.ids td { vertical-align: top; word-break: break-all; }
+#ids-search { width: min(420px, 100%); }

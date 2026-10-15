@@ -14,7 +14,7 @@ const cmd = argv[0];
 const opt = (name, def) => { const i = argv.indexOf("--" + name); return i >= 0 ? argv[i + 1] : def; };
 const ROOT = path.resolve(opt("root", REPO));
 const rel = (...p) => path.join(ROOT, ...p);
-const PB = loadCore(["raster", "font-data", "sprites", "i18n", "tilemodel", "terrain", "ambient", "env", "matter", "scene", "ui"]);
+const PB = loadCore(["raster", "font-data", "font-small", "sprites", "i18n", "tilemodel", "terrain", "ambient", "env", "matter", "scene", "dialogue", "ui"]);
 const LOCALES = ["zh-Hans", "en"];
 function loadI18n() {
   const t = {};

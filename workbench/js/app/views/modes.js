@@ -41,7 +41,8 @@
     if (!g) return;
     const l = level && store.planned(level);
     if (l) {
-      box.append(el("h2", { text: `${l.id} ${l.title}` }), el("p", { class: "small muted", text: `${l.role} · 第 ${l.order} 关` }), el("p", { text: l.discovery }));
+      const ide = store.idEntry("level:" + l.id);
+      box.append(el("h2", { text: `${l.id} ${l.title}` }), el("p", { class: "small muted", text: `level:${l.id} · ${l.role} · 第 ${l.order} 关${ide ? " · 游戏路径 " + ide.game : ""}` }), el("p", { text: l.discovery }));
       box.append(el("h3", { text: "机制" }), el("div", { class: "chips" }, l.mechanisms.map(UI.mechChip)));
       const [a, b, c, d] = UI.levelMarks(l);
       box.append(el("h3", { text: "状态" }), el("dl", { class: "meta" }, [

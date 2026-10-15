@@ -159,5 +159,9 @@
  "level.W10.discovery": "A full bin can drive another device: when this one fills, the lift rises. Load the crate first, then release the water.",
  "level.W10.hint.1": "This lift has no button: it is tied to the bin.",
  "level.W10.hint.2": "Push the crate onto the lift first.",
- "level.W10.hint.3": "Then pull the lever to release the water."
+ "level.W10.hint.3": "Then pull the lever to release the water.",
+ "dlg.sample.npc.name": "Old Miner",
+ "dlg.sample.npc": "Young one, a favour: take this crate of ore to the Golden Temple. Mind the water.",
+ "dlg.sample.self": "That door has the same sign as the plate...",
+ "dlg.sample.note": "New delivery: ore to the Golden Temple"
 }
