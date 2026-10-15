@@ -1,0 +1,43 @@
+{
+ "format": "pushbox.art/1",
+ "id": "ui.screen.pause",
+ "name": "暂停菜单",
+ "category": "screen",
+ "kind": "procedural",
+ "renderer": [
+  "workbench/js/core/ui.js",
+  "workbench/js/core/scene.js",
+  "workbench/js/core/terrain.js"
+ ],
+ "depends": [
+  "terrain.mine",
+  "ui.panel",
+  "ui.icons",
+  "ui.keycap",
+  "char.miner"
+ ],
+ "version": 1,
+ "stage": "review",
+ "size": [
+  320,
+  180
+ ],
+ "layer": "ui",
+ "palette": "endesga32",
+ "params": {
+  "screen": "pause",
+  "heading": "暂停",
+  "items": [
+   "继续",
+   "提示",
+   "重开",
+   "跳过此关",
+   "选关",
+   "设置",
+   "返回大厅"
+  ]
+ },
+ "usage": "局内按 Esc 打开；背景为压暗的关卡画面。",
+ "notes": "界面布局与文字参考；Godot 中用 Control 节点实现，像素位置以本参考图为准。",
+ "content_hash": "46987b200432b9bdc81011a41397e1a980b6e30afc53eb4077c042ece4358db0"
+}

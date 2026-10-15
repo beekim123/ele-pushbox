@@ -1,0 +1,82 @@
+{
+ "format": "pushbox.art/1",
+ "id": "terrain.mine",
+ "name": "地形与背景 · 矿道",
+ "category": "terrain",
+ "kind": "procedural",
+ "renderer": [
+  "workbench/js/core/terrain.js"
+ ],
+ "version": 1,
+ "stage": "review",
+ "size": [
+  320,
+  180
+ ],
+ "layer": "terrain",
+ "palette": "endesga32",
+ "params": {
+  "rock": {
+   "base": [
+    "w",
+    "x"
+   ],
+   "seam": "y",
+   "speck": "v",
+   "light": "v",
+   "light2": "w",
+   "dark": "y",
+   "edge": "y"
+  },
+  "earth": {
+   "base": [
+    "e",
+    "F"
+   ],
+   "clump": "f",
+   "pebble": "v",
+   "pebbleShade": "g",
+   "crust": "d",
+   "crust2": "F",
+   "dark": "f"
+  },
+  "cracked": {
+   "base": [
+    "F",
+    "d"
+   ],
+   "crack": "g",
+   "crackLight": "c",
+   "light": "c",
+   "dark": "f"
+  },
+  "sand": {
+   "base": [
+    "c",
+    "d",
+    "c"
+   ],
+   "grain": "k",
+   "top": "l"
+  },
+  "water": {
+   "body": "q",
+   "upper": "r",
+   "surface": "s",
+   "glint": "t"
+  },
+  "background": {
+   "style": "mine",
+   "base": [
+    "z",
+    "g"
+   ],
+   "speck": "y",
+   "timber": "f",
+   "timberDark": "g"
+  }
+ },
+ "usage": "第 1 章地形着色参数与背景。游戏中地形由着色器按 workbench/js/core/terrain.js 的同一规则逐像素着色；背景可预渲染为 320×180 贴图。",
+ "notes": "基岩冷灰砖块、夯土暖褐带碎石、裂岩浅赭带折线裂纹；背景为近黑暖色岩壁与木支架，整体比地形暗两级。",
+ "content_hash": "d0a0bbcc7314ab038e041414e113f64faea7c20046e84f0b14c519e8cd406cba"
+}

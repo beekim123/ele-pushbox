@@ -1,0 +1,75 @@
+{
+ "format": "pushbox.art/1",
+ "id": "ui.screen.chapters",
+ "name": "章节选择",
+ "category": "screen",
+ "kind": "procedural",
+ "renderer": [
+  "workbench/js/core/ui.js",
+  "workbench/js/core/scene.js",
+  "workbench/js/core/terrain.js"
+ ],
+ "depends": [
+  "terrain.mine",
+  "ui.panel",
+  "ui.icons",
+  "ui.keycap",
+  "char.miner"
+ ],
+ "version": 1,
+ "stage": "review",
+ "size": [
+  320,
+  180
+ ],
+ "layer": "ui",
+ "palette": "endesga32",
+ "params": {
+  "screen": "chapters",
+  "heading": "选择章节",
+  "chapters": [
+   {
+    "num": "第 1 章",
+    "name": "矿道",
+    "progress": "4 / 7",
+    "theme": "terrain.mine",
+    "floor": 3,
+    "sprite": "char.miner",
+    "blurb": "推、爬、挖、倒：认识箱子、梯子、夯土和沙。"
+   },
+   {
+    "num": "第 2 章",
+    "name": "水渠",
+    "progress": "0 / 7",
+    "theme": "terrain.aqueduct",
+    "floor": 1,
+    "locked": false,
+    "blurb": "水往低处流：浮起木箱、沉下铁箱、拉平两边的水。"
+   },
+   {
+    "num": "第 3 章",
+    "name": "采石场",
+    "progress": "锁定",
+    "locked": true,
+    "unlock": "在第 2 章通关 5 关后解锁。"
+   },
+   {
+    "num": "第 4 章",
+    "name": "苔林",
+    "progress": "锁定",
+    "locked": true,
+    "unlock": "在第 3 章通关 4 关后解锁。"
+   },
+   {
+    "num": "第 5 章",
+    "name": "熔窟",
+    "progress": "锁定",
+    "locked": true,
+    "unlock": "在第 4 章通关 5 关后解锁。"
+   }
+  ]
+ },
+ "usage": "章节卡：主题小景、进度、锁定状态与解锁条件。",
+ "notes": "界面布局与文字参考；Godot 中用 Control 节点实现，像素位置以本参考图为准。",
+ "content_hash": "56a99914dfda6d630d2b02973e26cc69e2a2e25bf14543cf2795b9491f3b2891"
+}

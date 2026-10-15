@@ -1,0 +1,46 @@
+{
+ "format": "pushbox.art/1",
+ "id": "ui.screen.lobby",
+ "name": "大厅",
+ "category": "screen",
+ "kind": "procedural",
+ "renderer": [
+  "workbench/js/core/ui.js",
+  "workbench/js/core/scene.js",
+  "workbench/js/core/terrain.js"
+ ],
+ "depends": [
+  "terrain.mine",
+  "ui.panel",
+  "ui.icons",
+  "ui.keycap",
+  "char.miner",
+  "obj.crate_wood",
+  "mech.exit_flag"
+ ],
+ "version": 1,
+ "stage": "review",
+ "size": [
+  320,
+  180
+ ],
+ "layer": "ui",
+ "palette": "endesga32",
+ "params": {
+  "screen": "lobby",
+  "theme": "terrain.mine",
+  "title": "沙与水",
+  "subtitle": "推箱子 · 横版解谜",
+  "items": [
+   "继续 · M05",
+   "选择章节",
+   "设置",
+   "退出"
+  ],
+  "hint_select": "选择",
+  "hint_confirm": "确认"
+ },
+ "usage": "启动后的第一个界面。背景为当前进度章节的场景。",
+ "notes": "界面布局与文字参考；Godot 中用 Control 节点实现，像素位置以本参考图为准。",
+ "content_hash": "a38092a60ceaf8a412d0a42035a4adee448c3ee55fb6254f0a764bb5226d9311"
+}

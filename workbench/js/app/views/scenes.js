@@ -1,0 +1,123 @@
+/* View 1 · Scenes: whole-screen compositions (representative scene, chapter-1
+ * levels, UI screens). Level playback uses the design model, not the SDK. */
+(function (root) {
+  "use strict";
+  const PB = root.PB, store = root.PBStore, el = root.PBStage.el;
+  let stage = null, current = null, step = 0, grid = false;
+
+  function sceneList() {
+    const list = [
+      { group: "代表场景", id: "showcase.mine", name: "矿道 · 全要素", kind: "showcase", theme: "terrain.mine" },
+      { group: "代表场景", id: "showcase.aqueduct", name: "水渠 · 换主题对照", kind: "showcase", theme: "terrain.aqueduct" },
+    ];
+    for (const lv of store.levels()) list.push({ group: "第 1 章关卡（设计模型）", id: "level." + lv.id, name: lv.id + " " + lv.title, kind: "level", level: lv });
+    for (const a of store.assets().filter((x) => x.category === "screen")) list.push({ group: "游戏界面", id: a.id, name: a.name, kind: "screen", asset: a });
+    return list;
+  }
+
+  function renderList(listEl) {
+    listEl.textContent = "";
+    let group = null;
+    for (const s of sceneList()) {
+      if (s.group !== group) { group = s.group; listEl.append(el("div", { class: "group-title", text: group })); }
+      const badge = s.kind === "screen" ? statusBadge(s.asset.id) : null;
+      listEl.append(el("button", { class: "list-btn", type: "button", "aria-current": String(current && current.id === s.id), onclick: () => { location.hash = "#scenes/" + s.id; } }, [el("span", { text: s.name }), badge]));
+    }
+  }
+  function statusBadge(id) { const st = store.status(id); return el("span", { class: "badge " + st, text: store.statusLabel(st) }); }
+
+  function replayState(lv, n) {
+    const res = PB.tilemodel.replay(lv, lv.solution.slice(0, n));
+    const last = res.steps[res.steps.length - 1];
+    return { parsed: { level: res.level, state: last.state }, action: last.action, result: last.result };
+  }
+
+  function poseFor(action, result) {
+    if (!action) return { pose: "idle" };
+    const facing = /L$/.test(action) ? "left" : /R$/.test(action) ? "right" : undefined;
+    const kind = result && result.kind;
+    const pose = kind === "push" ? "push" : kind === "dig" ? "dig" : kind === "pour" ? "pour" : kind === "climb" ? "climb" : kind === "walk" || kind === "step" ? "walk" : "idle";
+    return { pose, facing };
+  }
+
+  function draw(r, tick) {
+    const s = current;
+    if (s.kind === "showcase") PB.scene.renderLevel(r, Object.assign({}, PB.scene.SHOWCASE, { code: "示意" }), null, { tick, theme: s.theme, grid, pose: "idle" });
+    else if (s.kind === "level") {
+      const st = replayState(s.level, step), p = poseFor(st.action, st.result);
+      const won = step === s.level.solution.length && PB.tilemodel.won(st.parsed.level, st.parsed.state);
+      PB.scene.renderLevel(r, s.level, st.parsed, { tick, grid, pose: won ? "win" : p.pose, facing: p.facing });
+    } else {
+      const lv = store.level("M05");
+      PB.ui.render(r, s.asset, tick, { focus: s.asset.params.screen === "hint" ? 2 : s.asset.params.screen === "levels" ? 4 : 0, specs: Object.fromEntries(store.levels().map((l) => [l.id, l])), levelSpec: lv });
+    }
+  }
+
+  function info(s) {
+    const box = document.getElementById("scene-info");
+    box.textContent = "";
+    if (s.kind === "level") {
+      const lv = s.level, mc = store.modelCheck(lv.id);
+      box.append(el("h2", { text: `${lv.id} ${lv.title}` }), el("p", { class: "muted small", text: `${lv.role} · 教：${lv.teaches.join("、")}` }), el("p", { text: lv.discovery }));
+      if (mc) box.append(el("dl", { class: "meta" }, [
+        el("dt", { text: "作者解" }), el("dd", { text: `${mc.author_steps} 步 ${mc.author_ok ? "（模型中通关）" : "（模型中失败）"}` }),
+        el("dt", { text: "模型最短解" }), el("dd", { text: mc.shortest + " 步" }),
+        el("dt", { text: "死局状态" }), el("dd", { text: `${mc.dead_end_states} / ${mc.reachable_states}` }),
+      ]));
+      box.append(el("h3", { text: "三级提示" }));
+      const ol = el("ol"); lv.hints.forEach((h) => ol.append(el("li", { text: h }))); box.append(ol);
+      if (lv.misreads.length) { box.append(el("h3", { text: "常见误解" })); const ul = el("ul"); lv.misreads.forEach((m) => ul.append(el("li", { text: m }))); box.append(ul); }
+      box.append(el("h3", { text: "SDK / 游戏层" }));
+      const ul2 = el("ul"); [...(lv.sdk.sdk || []).map((x) => "【SDK】" + x), ...(lv.sdk.game_layer || []).map((x) => "【游戏层】" + x)].forEach((x) => ul2.append(el("li", { class: "small", text: x }))); box.append(ul2);
+      box.append(el("h3", { text: "验收条目" })); const ul3 = el("ul"); lv.checks.forEach((c) => ul3.append(el("li", { class: "small", text: c }))); box.append(ul3);
+      box.append(el("p", { class: "note small", text: "规格文件：content/levels/ch1-mine/" + lv.id + ".json" }));
+    } else if (s.kind === "screen") {
+      const a = s.asset;
+      box.append(el("h2", { text: a.name }), el("p", { class: "small mono", text: `${a.id} @v${a.version}` }), statusBadge(a.id), el("p", { text: a.usage }), el("p", { class: "small muted", text: a.notes }));
+      box.append(el("h3", { text: "用到的资产" }));
+      const ul = el("ul"); for (const d of a.depends || []) ul.append(el("li", {}, [el("a", { href: "#assets/" + d, text: d }), " ", statusBadge(d)])); box.append(ul);
+      box.append(el("p", { class: "note small", text: "界面中的数字和进度为样例数据。确认的是布局、字号、配色和元素样式。" }));
+    } else {
+      box.append(el("h2", { text: s.name }), el("p", { text: "把第 1 章的人物、箱子、机关、材料和 HUD 放在同一画面中检查整体协调、层级和可读性。" }));
+      box.append(el("p", { class: "small muted", text: "画面中的布局只作示意，不是可玩关卡。水与沙的颗粒在游戏中会随 SDK 的格子移动，这里按格子静态绘制。" }));
+      box.append(el("h3", { text: "地形主题" }), el("p", {}, [el("a", { href: "#assets/" + s.theme, text: s.theme }), " ", statusBadge(s.theme)]));
+    }
+  }
+
+  function steps(s) {
+    const box = document.getElementById("scene-steps");
+    box.textContent = "";
+    if (s.kind !== "level") return;
+    const n = s.level.solution.length;
+    const label = el("span", { class: "mono" });
+    const range = el("input", { type: "range", min: "0", max: String(n), value: String(step), "aria-label": "作者解步骤", oninput: () => { step = Number(range.value); update(); } });
+    const prev = el("button", { class: "btn", type: "button", text: "上一步", onclick: () => { step = Math.max(0, step - 1); range.value = step; update(); } });
+    const next = el("button", { class: "btn", type: "button", text: "下一步", onclick: () => { step = Math.min(n, step + 1); range.value = step; update(); } });
+    function update() {
+      const a = step ? s.level.solution[step - 1] : "开局";
+      label.textContent = `第 ${step}/${n} 步 · ${a}`;
+      stage.refresh();
+    }
+    box.append(el("div", { class: "steps" }, [prev, range, next, label]));
+    box.append(el("p", { class: "disclaimer", text: "这是格子规则模型对作者解的推演，用来看布局与流程；沙、水等材料的真实表现以 SDK 运行结果为准。" }));
+    update();
+  }
+
+  function show(id) {
+    const list = sceneList();
+    current = list.find((s) => s.id === id) || list[0];
+    step = 0;
+    renderList(document.getElementById("scene-list"));
+    const host = document.getElementById("scene-stage");
+    if (stage) stage.destroy();
+    const gridBtn = el("button", { class: "btn", type: "button", "aria-pressed": String(grid), text: "网格", onclick: () => { grid = !grid; gridBtn.setAttribute("aria-pressed", String(grid)); stage.refresh(); } });
+    stage = root.PBStage.create(host, {
+      width: 320, height: 180, animated: true, autoplay: current.kind !== "screen" || true, draw, label: current.name,
+      extras: current.kind === "screen" ? [] : [gridBtn],
+      disclaimer: current.kind === "screen" ? "界面为布局与外观参考；交互在游戏中实现。" : "视觉示意，不代表 SDK 物理结果。",
+    });
+    info(current); steps(current);
+  }
+
+  root.PBScenes = { show, hide: () => stage && stage.setVisible(false), wake: () => stage && stage.setVisible(true) };
+})(window);

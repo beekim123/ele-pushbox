@@ -1,0 +1,111 @@
+/* Level scene composition and in-game HUD (320x180). Used for the workbench
+ * stage and for reference renders in art/export/reference/. Visual illustration
+ * only: positions come from the design model (tilemodel.js), never from the SDK. */
+(function (root) {
+  "use strict";
+  const PB = (root.PB = root.PB || {});
+  const S = () => PB.sprites, TX = () => PB.text, TM = () => PB.tilemodel, TR = () => PB.terrain;
+  const W = 320, H = 180, HUD_H = 20;
+
+  function themeOf(id) { return S().get(id).params; }
+
+  function toMat(t) {
+    const T = TM().T, M = TR().MAT;
+    return t === T.ROCK ? M.ROCK : t === T.CRACKED ? M.CRACKED : t === T.EARTH ? M.EARTH : t === T.SAND ? M.SAND : t === T.WATER ? M.WATER : M.EMPTY;
+  }
+
+  // opts: {theme, tick, hud: {title, code}, pose, facing, grid, observe}
+  function renderLevel(r, spec, state, opts) {
+    const o = opts || {};
+    const L = state ? state.level : TM().parse(spec).level;
+    const s = state ? state.state : TM().parse(spec).state;
+    const theme = themeOf(o.theme || "terrain.mine");
+    const tick = o.tick || 0;
+    const ox = (W - L.w * 16) >> 1, oy = HUD_H + ((H - HUD_H - L.h * 16) >> 1);
+    TR().drawBackground(r, theme, 0, 0, W, H, tick);
+    const map = { w: L.w, h: L.h, at: (x, y) => (x < 0 || y < 0 || x >= L.w || y >= L.h ? TR().MAT.EMPTY : toMat(s.terrain[y * L.w + x])) };
+    TR().drawTerrain(r, map, theme, ox, oy, tick >> 3);
+    const M = TM().M;
+    // Background markers.
+    for (let i = 0; i < L.w * L.h; i++) {
+      const tx = i % L.w, ty = (i / L.w) | 0, px = ox + tx * 16 + 8, py = oy + ty * 16 + 16;
+      const crate = TM().crateAt(s, tx, ty);
+      if (L.marker[i] === M.LADDER) S().draw(r, "mech.ladder", "default", 0, px, py);
+      if (L.marker[i] === M.SOCKET && !crate) S().draw(r, "mech.socket", "idle", tick, px, py);
+      if (L.marker[i] === M.EXIT) S().draw(r, "mech.exit_flag", "idle", tick, px, py);
+      if (L.marker[i] === M.PLATE) {
+        const pressed = (s.player.x === tx && s.player.y === ty) || !!crate;
+        S().draw(r, "mech.plate", pressed ? "down" : "up", 0, px, py);
+        if (!pressed) S().draw(r, "mech.link_symbol", 0, 0, px, py - 7);
+      }
+    }
+    for (const i of L.doors) {
+      const px = ox + (i % L.w) * 16 + 8, py = oy + ((i / L.w) | 0) * 16 + 16;
+      S().draw(r, "mech.door", s.doorsOpen ? "open" : "closed", 0, px, py);
+      S().draw(r, "mech.link_symbol", 0, 0, px, py - 12);
+    }
+    for (const c of s.crates) {
+      const px = ox + c.x * 16 + 8, py = oy + c.y * 16 + 16;
+      S().draw(r, c.kind === "iron" ? "obj.crate_iron" : "obj.crate_wood", "default", 0, px, py);
+      if (L.marker[c.y * L.w + c.x] === M.SOCKET) S().draw(r, "mech.socket_lit", "lit", tick, px, py);
+    }
+    const p = s.player;
+    S().draw(r, "char.miner", o.pose || "idle", tick, ox + p.x * 16 + 8, oy + p.y * 16 + 16, o.facing === "left");
+    if (o.grid) drawGrid(r, L, ox, oy);
+    if (o.hud !== false) drawHud(r, spec, L, s, tick, o.hud || {});
+    return { ox, oy };
+  }
+
+  function drawGrid(r, L, ox, oy) {
+    for (let ty = 0; ty <= L.h; ty++) for (let x = 0; x < L.w * 16; x += 2) r.set(ox + x, oy + ty * 16 - (ty === L.h ? 1 : 0), "v");
+    for (let tx = 0; tx <= L.w; tx++) for (let y = 0; y < L.h * 16; y += 2) r.set(ox + tx * 16 - (tx === L.w ? 1 : 0), oy + y, "v");
+  }
+
+  function drawHud(r, spec, L, s, tick, hud) {
+    r.rect(0, 0, W, HUD_H, "z");
+    r.hline(0, HUD_H - 1, W, "y");
+    const code = hud.code || spec.code || spec.id;
+    let x = 5;
+    x += TX().draw(r, code, x, 3, "k", "g") + 6;
+    TX().draw(r, hud.title || spec.title || "", x, 3, "u", "y");
+    // Right side: bag, lamps, buttons.
+    const goals = TM().goals(L, s);
+    let rx = W - 4;
+    const icons = ["pause", "hint", "restart", "undo"];
+    for (const name of icons) {
+      rx -= 13;
+      const idx = S().get("ui.icons").animations[name].frames[0];
+      S().draw(r, "ui.icons", idx, 0, rx, 4);
+    }
+    rx -= 8;
+    for (let i = goals.length - 1; i >= 0; i--) {
+      rx -= 10;
+      S().draw(r, "ui.goal_lamp", goals[i].lit ? 1 : 0, 0, rx, 5);
+    }
+    rx -= 6;
+    const bombs = s.bag.bomb, sand = s.bag.sand;
+    if (bombs > 0) { rx -= 16; S().draw(r, "item.bomb", 0, 0, rx, 2); if (bombs > 1) { rx -= 12; TX().draw(r, "×" + bombs, rx, 3, "u"); } rx -= 2; }
+    const canDig = spec.map.some((row) => /[es]/.test(row));
+    const shown = Math.min(3, Math.max(sand, (spec.bag && spec.bag.sand) || 0, canDig ? 1 : 0));
+    if (sand > 3) { rx -= 14; TX().draw(r, "×" + sand, rx, 3, "u"); }
+    for (let i = shown - 1; i >= 0; i--) { rx -= 15; S().draw(r, "item.sandbag", i < sand ? 0 : 1, 0, rx, 2); }
+  }
+
+  // Representative scene: every chapter-1 element plus water and cracked rock
+  // so the whole art set can be judged together. Not a playable level.
+  const SHOWCASE = {
+    id: "showcase.mine", code: "示意", title: "代表场景 · 矿道", map: [
+      "####################",
+      "#.........#........#",
+      "#H........#.....X..#",
+      "#H...ee...|...######",
+      "#H...ee...|...%%...#",
+      "#H.PBee._o#.I.%%.b.#",
+      "##########~~~~ss####",
+      "##########~~~~ss####",
+      "####################"],
+    bag: { sand: 2, bomb: 1 },
+  };
+
+  PB.scene = { renderLevel, drawHud, SHOWCASE, W, H, HUD_H };
+})(typeof window !== "undefined" ? window : globalThis);

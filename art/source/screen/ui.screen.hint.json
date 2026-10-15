@@ -1,0 +1,36 @@
+{
+ "format": "pushbox.art/1",
+ "id": "ui.screen.hint",
+ "name": "提示面板",
+ "category": "screen",
+ "kind": "procedural",
+ "renderer": [
+  "workbench/js/core/ui.js",
+  "workbench/js/core/scene.js",
+  "workbench/js/core/terrain.js"
+ ],
+ "depends": [
+  "terrain.mine",
+  "ui.panel",
+  "ui.icons",
+  "ui.keycap"
+ ],
+ "version": 1,
+ "stage": "review",
+ "size": [
+  320,
+  180
+ ],
+ "layer": "ui",
+ "palette": "endesga32",
+ "params": {
+  "screen": "hint",
+  "heading": "提示",
+  "demo": "演示",
+  "rewind": "回到正确位置",
+  "more": "再看一层"
+ },
+ "usage": "按 H 逐级展开三层提示；第三层提供演示与回到正确位置。",
+ "notes": "界面布局与文字参考；Godot 中用 Control 节点实现，像素位置以本参考图为准。",
+ "content_hash": "f74c144f224f2bfd5127dbcc5847fc343203a85edba17afdd8c9473430285bbf"
+}

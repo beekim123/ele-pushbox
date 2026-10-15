@@ -1,0 +1,38 @@
+{
+ "format": "pushbox.art/1",
+ "id": "ui.screen.complete",
+ "name": "过关",
+ "category": "screen",
+ "kind": "procedural",
+ "renderer": [
+  "workbench/js/core/ui.js",
+  "workbench/js/core/scene.js",
+  "workbench/js/core/terrain.js"
+ ],
+ "depends": [
+  "terrain.mine",
+  "ui.panel",
+  "ui.icons",
+  "ui.keycap",
+  "char.miner",
+  "mech.socket_lit"
+ ],
+ "version": 1,
+ "stage": "review",
+ "size": [
+  320,
+  180
+ ],
+ "layer": "ui",
+ "palette": "endesga32",
+ "params": {
+  "screen": "complete",
+  "heading": "过关",
+  "steps": "用了 {n} 步",
+  "next": "下一关",
+  "select": "选关"
+ },
+ "usage": "所有目标灯点亮后显示；人物播放胜利动作。",
+ "notes": "界面布局与文字参考；Godot 中用 Control 节点实现，像素位置以本参考图为准。",
+ "content_hash": "ebb2aa27a7c1c8ad1ff30929a1276516dc0b571b1fa870df3208c8e84c1de0f2"
+}
