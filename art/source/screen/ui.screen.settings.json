@@ -63,5 +63,5 @@
  },
  "usage": "设置项全部可用方向键调整。",
  "notes": "界面布局与文字参考；Godot 中用 Control 节点实现，像素位置以本参考图为准。",
- "content_hash": "49bc41d1a11fb9f1b6a4c187c607979684fbd189db21a7d0ba4e6ae9a714af71"
+ "content_hash": "e616581af893886998914cc0d78459242387d1f6c014628e3d81fce650b6305f"
 }

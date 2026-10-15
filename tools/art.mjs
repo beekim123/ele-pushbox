@@ -96,7 +96,7 @@ function renderProcedural(a, specs) {
   if (a.category === "terrain") {
     PB.scene.renderLevel(r, PB.scene.SHOWCASE, null, { theme: a.id, tick: 0, hud: false });
   } else if (a.category === "screen") {
-    const st = { focus: a.params.screen === "hint" ? 2 : a.params.screen === "levels" ? 4 : a.params.screen === "chapters" ? 0 : 0, specs: Object.fromEntries(specs.map((s) => [s.id, s])), levelSpec: specs.find((s) => s.id === "M05") };
+    const st = { focus: a.params.screen === "hint" ? 2 : a.params.screen === "levels" ? 4 : a.params.screen === "chapters" ? 0 : 0, specs: Object.fromEntries(specs.map((s) => [s.id, s])), levelSpec: specs.find((s) => s.id === "M05"), ruleSpec: specs.find((s) => s.id === "M03") };
     PB.ui.render(r, a, 0, st);
   }
   return r;
@@ -160,7 +160,7 @@ function build() {
     const unapproved = uses.filter((id) => { const e = manifest.assets.find((x) => x.id === id); return !e || !e.current_is_approved; });
     refs.push({ name, file: p, sha256: sha(buf), uses, all_approved: unapproved.length === 0, unapproved });
   };
-  const levelUses = ["terrain.mine", "char.miner", "obj.crate_wood", "obj.crate_iron", "mech.ladder", "mech.socket", "mech.socket_lit", "mech.exit_flag", "mech.plate", "mech.door", "mech.link_symbol", "ui.icons", "ui.goal_lamp", "item.sandbag", "item.bomb"];
+  const levelUses = ["terrain.mine", "deco.lantern", "ui.target", "char.miner", "obj.crate_wood", "obj.crate_iron", "mech.ladder", "mech.socket", "mech.socket_lit", "mech.exit_flag", "mech.plate", "mech.door", "mech.link_symbol", "ui.icons", "ui.goal_lamp", "item.sandbag", "item.bomb"];
   { const r = new PB.Raster(320, 180); PB.scene.renderLevel(r, PB.scene.SHOWCASE, null, { tick: 0 }); writeRef("showcase.mine", r, levelUses); }
   for (const s of specs) { const r = new PB.Raster(320, 180); PB.scene.renderLevel(r, s, null, { tick: 0 }); writeRef("level." + s.id, r, levelUses); }
   manifest.references = refs;

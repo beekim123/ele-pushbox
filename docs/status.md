@@ -1,34 +1,42 @@
 # 项目进度
 
-更新：2026-10-15。负责人：设计审核 / 美术 / 工作台 —— Claude；Godot 重构 —— GPT（待启动）。
+更新：2026-10-15。负责人：设计审核、美术、工作台 —— Claude；Godot 重构 —— GPT（尚未启动）；美术确认 —— 用户。
 
 ## 当前阶段
 
-**阶段 R1：设计重整、美术重做与交接准备**（进行中）
+**R1：设计重整、美术重做与交接准备 —— Claude 侧已完成，等待用户确认美术。**
 
 | 项 | 状态 |
 |---|---|
-| 旧项目快照 | 完成：`0fae58c`（`origin/codex/art-ui-polish`），工作树已清理 |
-| SDK 事实核实（读源码） | 完成：[sdk-v1.2-verified.md](reference/sdk-v1.2-verified.md) |
-| 设计审核与唯一设计 | 完成：[审核记录](audit/2026-10-15-design-audit.md)、[game-design.md](design/game-design.md) GD-2 |
-| 第 1 章 7 关规格 | 完成，设计模型检查通过（见下） |
-| 美术流程与工作台 | 完成：`tools/art.mjs`（build / approve / import / verify）、`workbench/index.html` |
-| 美术候选 | 第一批 28 项已就绪（待确认）：角色、箱子、机关、物品、特效、界面元素、两套地形主题、7 个界面画面 |
-| 用户美术确认 | 未开始（需要用户在工作台中查看） |
-| GPT 交接提示词 | 未开始 |
+| 旧项目快照 | 完成：`0fae58c`（`origin/codex/art-ui-polish`），工作树已清理，SDK、字体与许可证移至 `third_party/` |
+| SDK 事实核实 | 完成（阅读源码，未编译运行）：[sdk-v1.2-verified.md](reference/sdk-v1.2-verified.md) |
+| 设计审核 | 完成：[审核记录](audit/2026-10-15-design-audit.md) |
+| 唯一设计 | 完成：[game-design.md](design/game-design.md) GD-2，5 章 33 关；第 1 章 7 关已细化为完整规格 |
+| 美术流程 | 完成：`tools/art.mjs`（build / approve / import / verify），[art-pipeline.md](design/art-pipeline.md) |
+| 工作台 | 完成：`workbench/index.html`（场景 → 资产与动画 → 编辑与对比 → 确认 → 导出） |
+| 美术候选 | 33 项 v1，全部**待确认**：第 1 章与菜单的可玩闭环所需资产已齐；第 2–5 章资产见 [资产清单](design/asset-inventory.md) 第 2 节 |
+| 用户美术确认 | **未进行**：0 条确认记录 |
+| GPT 交接提示词 | 草稿完成：[gpt-refactor-prompt.md](handoff/gpt-refactor-prompt.md)（状态：美术待确认；不确认也能开始不依赖美术的工作） |
 
-## 已实际验证
+## 已实际验证（本轮，云端 Linux 环境）
 
-- `node tools/check-levels.mjs`：M01–M07 的作者解在设计模型中全部通关，且都等于模型求出的最短解。这只是格子规则模型，**不是 SDK 验证**。
-- `node tools/art.mjs verify`：28 项导出 PNG 与源数据逐字节一致。
-- `node --test tests/art-pipeline.test.mjs`：6/6 通过（全部在临时目录中运行，真实确认记录未被改动）。
-- `node tests/workbench.e2e.cjs`（Chromium）：全部通过。覆盖：工作台画面与导出 PNG 逐字节一致；隐藏视图不重绘；编辑刷新后保留并可导出；确认文字含精确版本与哈希；390px 宽度无横向滚动。
+- `node tools/check-levels.mjs`：M01–M07 的作者解在设计模型中全部通关，且都等于模型求出的最短解；M04、M05、M07 没有死局状态。**这只是格子规则模型，不是 SDK 验证。**
+- `node tools/art.mjs verify`：33 项导出 PNG 与源数据逐字节一致。
+- `node --test tests/art-pipeline.test.mjs`：6/6 通过。在临时目录中运行，覆盖：构建可复现；确认记录精确到版本和哈希；过期版本被拒；改动已确认资产会产生新版本并回到待确认；工作台确认文件做哈希校验；真实 `art/approvals.json` 未被改动。
+- `node tests/workbench.e2e.cjs`（Chromium，Playwright）：全部通过。覆盖：各视图无报错；浏览器渲染与导出 PNG 逐字节一致（代表场景、M06、矿工图集）；隐藏视图动画循环为 0；编辑会自动暂存，刷新后仍在，可导出为可导入的文件；确认文字包含精确的版本与哈希；390px 窄屏无横向滚动。
+- 已用截图实际查看工作台各视图（浅色与深色）、代表场景、8 个界面画面和全部精灵。
 
-## 尚缺
+## 未验证 / 尚缺
 
-- SDK 样板验证（所有【待验证】项）、实机回放、新手试玩 —— 都要等 Godot 重构后进行。
-- 第 2–5 章关卡细化。
+- 没有运行 Godot 和 SDK（本环境是 Linux，SDK 只有 macOS arm64 版本）。所有【待验证】项、实机回放、性能都要等 Godot 重构后验证。
+- 用户尚未在自己的机器上打开工作台；本轮的浏览器验证在云端 Chromium 中进行。
+- 第 2–5 章关卡只有概念卡；对应章节的资产尚未制作。
+- 新手试玩未进行。
 
 ## 下一步
 
-Claude：写交接提示词；用户：打开工作台查看并确认第一批美术。
+1. **用户**：拉取分支 `claude/inspiring-ride-zfnn4s`，双击打开 `workbench/index.html`：
+   - 先看「场景」里的「矿道 · 全要素」和第 1 章各关，再看「游戏界面」；
+   - 在「确认」页勾选认可的项（可以全选，也可以只选一部分），对不满意的填写修改意见，然后点「复制确认文字」发到聊天里。
+2. **Claude**：根据确认文字执行 `node tools/art.mjs approve` 记录确认；按修改意见出新版本候选；随后更新交接提示词第 4 节为"可集成正式美术"。
+3. **GPT**：可以先按 [交接提示词](handoff/gpt-refactor-prompt.md) 开始第 6 节的第 1–4 步（工程骨架、SDK 样板、核心规则、可玩闭环，美术用带标记的占位），不必等美术确认。

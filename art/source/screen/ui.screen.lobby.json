@@ -42,5 +42,5 @@
  },
  "usage": "启动后的第一个界面。背景为当前进度章节的场景。",
  "notes": "界面布局与文字参考；Godot 中用 Control 节点实现，像素位置以本参考图为准。",
- "content_hash": "a38092a60ceaf8a412d0a42035a4adee448c3ee55fb6254f0a764bb5226d9311"
+ "content_hash": "03e059b9c2b78a7337a38e028a6b63111e34665c045f376c70cfc62955599be7"
 }

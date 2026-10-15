@@ -137,6 +137,45 @@
    "ninepatch": null
   },
   {
+   "id": "deco.lantern",
+   "name": "矿灯（背景装饰）",
+   "category": "deco",
+   "kind": "sprite",
+   "layer": "background",
+   "current": {
+    "version": 1,
+    "hash": "8a57645506d7b4cd1fbda1a34e4daeca0792ec842d20983490285a0141bfb68b",
+    "status": "review",
+    "preview": "art/export/preview/deco.lantern.png",
+    "preview_sha256": "819372e7ed39b924038c6f370fcf5e8f6f4853eab3eb1cf165c9bdf3811d9c12"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    16,
+    16
+   ],
+   "frame_count": 4,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    8,
+    0
+   ],
+   "animations": {
+    "flicker": {
+     "fps": 4,
+     "loop": true,
+     "frames": [
+      0,
+      1,
+      0,
+      2
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
    "id": "fx.dig_bits",
    "name": "挖土碎屑",
    "category": "fx",
@@ -148,6 +187,44 @@
     "status": "review",
     "preview": "art/export/preview/fx.dig_bits.png",
     "preview_sha256": "42506c1a1f9d38d3c0c7fedf35e1cea88fefcaa3bf8c1826e582594bc3515e09"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    16,
+    16
+   ],
+   "frame_count": 3,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    8,
+    16
+   ],
+   "animations": {
+    "play": {
+     "fps": 12,
+     "loop": false,
+     "frames": [
+      0,
+      1,
+      2
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
+   "id": "fx.goal_spark",
+   "name": "点亮闪光",
+   "category": "fx",
+   "kind": "sprite",
+   "layer": "fx",
+   "current": {
+    "version": 1,
+    "hash": "9b6b40ade3dc85922d5080995c8269186416db4868b43d165be6682289e59dac",
+    "status": "review",
+    "preview": "art/export/preview/fx.goal_spark.png",
+    "preview_sha256": "d510a6ec040c050a1659f50b71a822dbacd8951eba1d918e8f528c04423bf5d6"
    },
    "approved": null,
    "current_is_approved": false,
@@ -678,7 +755,7 @@
    "layer": "terrain",
    "current": {
     "version": 1,
-    "hash": "065e8a0568088ce11b46beca184c4d53a17221534b5448fb5c5f905ebd7730fa",
+    "hash": "5741c43529b915ea26c77080fa26b73532e800bc44105aa73a3096fde384972f",
     "status": "review",
     "preview": "art/export/preview/terrain.aqueduct.png",
     "preview_sha256": "00db5d8b3868fd684c16fa4f2e0b0427cc580d4b5997f38475a052983a95d274"
@@ -759,10 +836,10 @@
    "layer": "terrain",
    "current": {
     "version": 1,
-    "hash": "d0a0bbcc7314ab038e041414e113f64faea7c20046e84f0b14c519e8cd406cba",
+    "hash": "a7b998e7f69640316ad9f8dd107466e3815e29aacc2a2922938638b5f29eb606",
     "status": "review",
     "preview": "art/export/preview/terrain.mine.png",
-    "preview_sha256": "f82da2a6b60af37f1cdb37eddb73bc6d99dbecd5580b96c1822f1a0ffad9dc97"
+    "preview_sha256": "d6055724ac56ad8eb6b17baea11e33c512f3cee14e312d27a4bb9829247d8bec"
    },
    "approved": null,
    "current_is_approved": false,
@@ -831,6 +908,63 @@
     }
    },
    "depends": []
+  },
+  {
+   "id": "ui.class_icon",
+   "name": "观察 · 格子类别",
+   "category": "ui",
+   "kind": "sprite",
+   "layer": "ui",
+   "current": {
+    "version": 1,
+    "hash": "e90a69439d78f4b829d7f0ac5bc6c5ce642a2291ce702091999c573241819e95",
+    "status": "review",
+    "preview": "art/export/preview/ui.class_icon.png",
+    "preview_sha256": "ad1ed35a0cbb11bd29f746a471a4d56361316bac22e6b92661d5335556e38e50"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    7,
+    7
+   ],
+   "frame_count": 4,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    3,
+    3
+   ],
+   "animations": {
+    "solid": {
+     "fps": 0,
+     "loop": false,
+     "frames": [
+      0
+     ]
+    },
+    "earth": {
+     "fps": 0,
+     "loop": false,
+     "frames": [
+      1
+     ]
+    },
+    "sand": {
+     "fps": 0,
+     "loop": false,
+     "frames": [
+      2
+     ]
+    },
+    "water": {
+     "fps": 0,
+     "loop": false,
+     "frames": [
+      3
+     ]
+    }
+   },
+   "ninepatch": null
   },
   {
    "id": "ui.cursor",
@@ -1165,7 +1299,7 @@
    "layer": "ui",
    "current": {
     "version": 1,
-    "hash": "56a99914dfda6d630d2b02973e26cc69e2a2e25bf14543cf2795b9491f3b2891",
+    "hash": "42e7013109f5f3620c1dccd5f096956117aa5c358e7afe17e36bde858aecda4c",
     "status": "review",
     "preview": "art/export/preview/ui.screen.chapters.png",
     "preview_sha256": "37a0281eb0975f4cd856a96b743c00464940253ff25184bdb3804747f219fef4"
@@ -1238,10 +1372,10 @@
    "layer": "ui",
    "current": {
     "version": 1,
-    "hash": "ebb2aa27a7c1c8ad1ff30929a1276516dc0b571b1fa870df3208c8e84c1de0f2",
+    "hash": "f06a022ac8a593144bfc862344550480798237a19f11d1e340ad1a868b119a2d",
     "status": "review",
     "preview": "art/export/preview/ui.screen.complete.png",
-    "preview_sha256": "26fff629ab65d104015f4c8ec7ee4b15ee9da4839d78089156b3546aea592cdd"
+    "preview_sha256": "5813e48a893caad88dd01bcd69203cbd8c4ad812ff71fb643ef89119af50b9c0"
    },
    "approved": null,
    "current_is_approved": false,
@@ -1274,10 +1408,10 @@
    "layer": "ui",
    "current": {
     "version": 1,
-    "hash": "f74c144f224f2bfd5127dbcc5847fc343203a85edba17afdd8c9473430285bbf",
+    "hash": "63893182003ff11018f5702a21afff21bd3d73f0f643f0f531fa72e44ce10b6b",
     "status": "review",
     "preview": "art/export/preview/ui.screen.hint.png",
-    "preview_sha256": "aaa6f450041886f8ed12faa2dc2c9fb084cd60ab411c519502ebfcec5560d8ac"
+    "preview_sha256": "5454138178a56e8f87faff1d127e77605414f8d70e76c367782fb4be72683d55"
    },
    "approved": null,
    "current_is_approved": false,
@@ -1308,7 +1442,7 @@
    "layer": "ui",
    "current": {
     "version": 1,
-    "hash": "21b2c8c96216b2b6be7178ebc21bb29a074529dcc0c69b77a6036fe9d13a2d28",
+    "hash": "4946d25f11ace22fec1536cd56554b2c3607834424797cebeb102a671e95707b",
     "status": "review",
     "preview": "art/export/preview/ui.screen.levels.png",
     "preview_sha256": "38f9486503ca467a193d70310a54cca56c63039b73a580f4c1eda79d67e1b85c"
@@ -1382,7 +1516,7 @@
    "layer": "ui",
    "current": {
     "version": 1,
-    "hash": "a38092a60ceaf8a412d0a42035a4adee448c3ee55fb6254f0a764bb5226d9311",
+    "hash": "03e059b9c2b78a7337a38e028a6b63111e34665c045f376c70cfc62955599be7",
     "status": "review",
     "preview": "art/export/preview/ui.screen.lobby.png",
     "preview_sha256": "0d14d6eb479940e5713085b50cf667a6bdf3122b161dfe63dce3417daebd6a10"
@@ -1426,10 +1560,10 @@
    "layer": "ui",
    "current": {
     "version": 1,
-    "hash": "46987b200432b9bdc81011a41397e1a980b6e30afc53eb4077c042ece4358db0",
+    "hash": "67a721a8c7d67bebe7168326b57d401bc767115c66a87e5d01c571a2bcb6acd0",
     "status": "review",
     "preview": "art/export/preview/ui.screen.pause.png",
-    "preview_sha256": "cd80e359eb63c375369716b4429a53aa343b54d74f3282ff7858180d450662d6"
+    "preview_sha256": "db9c4cf93a05e8b21fdb39d295c8f961b83dc19d9a529c7e461760291ff7a28d"
    },
    "approved": null,
    "current_is_approved": false,
@@ -1460,6 +1594,40 @@
    ]
   },
   {
+   "id": "ui.screen.rulecard",
+   "name": "规则卡",
+   "category": "screen",
+   "kind": "procedural",
+   "layer": "ui",
+   "current": {
+    "version": 1,
+    "hash": "0e1c3222a3a0757ea768792c1ff0bf55662f3a29459c1e3e24075c06aa74f039",
+    "status": "review",
+    "preview": "art/export/preview/ui.screen.rulecard.png",
+    "preview_sha256": "db2c8269a3dccc70550541a43613298be66b6b063a0b6628b79d1d432e8cb1aa"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "renderer": [
+    "workbench/js/core/ui.js",
+    "workbench/js/core/scene.js",
+    "workbench/js/core/terrain.js"
+   ],
+   "params": {
+    "screen": "rulecard",
+    "heading": "规则卡 · 夯土",
+    "text": "褐色带碎石的是夯土：可以挖，挖出一袋沙；挖掉下面的土，上面的土不会掉。",
+    "close": "知道了"
+   },
+   "depends": [
+    "terrain.mine",
+    "ui.panel",
+    "ui.icons",
+    "ui.keycap",
+    "char.miner"
+   ]
+  },
+  {
    "id": "ui.screen.settings",
    "name": "设置",
    "category": "screen",
@@ -1467,7 +1635,7 @@
    "layer": "ui",
    "current": {
     "version": 1,
-    "hash": "49bc41d1a11fb9f1b6a4c187c607979684fbd189db21a7d0ba4e6ae9a714af71",
+    "hash": "e616581af893886998914cc0d78459242387d1f6c014628e3d81fce650b6305f",
     "status": "review",
     "preview": "art/export/preview/ui.screen.settings.png",
     "preview_sha256": "7fa64f4461b51f5ae59793f9692b74eb07bf6080b37bf6e9e28046deecd7788a"
@@ -1523,15 +1691,74 @@
     "ui.icons",
     "ui.keycap"
    ]
+  },
+  {
+   "id": "ui.target",
+   "name": "目标高亮",
+   "category": "ui",
+   "kind": "sprite",
+   "layer": "fx",
+   "current": {
+    "version": 1,
+    "hash": "e9e2024de81ec519c84fb2efd7014af372e05a9799a5cbcc555c3d840b3f91e8",
+    "status": "review",
+    "preview": "art/export/preview/ui.target.png",
+    "preview_sha256": "f785dfca577e63d760a15400b0677d0007564601db25744751e6d0b9ff3ea60f"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    16,
+    16
+   ],
+   "frame_count": 4,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    8,
+    16
+   ],
+   "animations": {
+    "dig": {
+     "fps": 0,
+     "loop": false,
+     "frames": [
+      0
+     ]
+    },
+    "pour": {
+     "fps": 0,
+     "loop": false,
+     "frames": [
+      1
+     ]
+    },
+    "bomb": {
+     "fps": 0,
+     "loop": false,
+     "frames": [
+      2
+     ]
+    },
+    "invalid": {
+     "fps": 0,
+     "loop": false,
+     "frames": [
+      3
+     ]
+    }
+   },
+   "ninepatch": null
   }
  ],
  "references": [
   {
    "name": "showcase.mine",
    "file": "art/export/reference/showcase.mine.png",
-   "sha256": "6b307b33eb0b1827543304fd904ae57b066507904490ab0e8603674d458ae04e",
+   "sha256": "656704fc9ac3304982aa3bfdb72b9b7ec758a6490553ab8f9f240f0d2b5ab9e1",
    "uses": [
     "terrain.mine",
+    "deco.lantern",
+    "ui.target",
     "char.miner",
     "obj.crate_wood",
     "obj.crate_iron",
@@ -1550,6 +1777,8 @@
    "all_approved": false,
    "unapproved": [
     "terrain.mine",
+    "deco.lantern",
+    "ui.target",
     "char.miner",
     "obj.crate_wood",
     "obj.crate_iron",
@@ -1569,9 +1798,11 @@
   {
    "name": "level.M01",
    "file": "art/export/reference/level.M01.png",
-   "sha256": "8262e0701f884ca0256a10beeee60ee634449e35b443f210553b4c792d64a904",
+   "sha256": "939db4ee0ef8311820ef2634cd5a1bb7947f4d64457ffaa349d30911cc4352ed",
    "uses": [
     "terrain.mine",
+    "deco.lantern",
+    "ui.target",
     "char.miner",
     "obj.crate_wood",
     "obj.crate_iron",
@@ -1590,6 +1821,8 @@
    "all_approved": false,
    "unapproved": [
     "terrain.mine",
+    "deco.lantern",
+    "ui.target",
     "char.miner",
     "obj.crate_wood",
     "obj.crate_iron",
@@ -1609,9 +1842,11 @@
   {
    "name": "level.M02",
    "file": "art/export/reference/level.M02.png",
-   "sha256": "640e1a4d80a2608fb3607e610857e3de9ade8de870e45ceb12a5b4f00388df54",
+   "sha256": "0e03212cc22e9c37d4b08af1131279aa8d05776230fbbb61913438e2c98a24fc",
    "uses": [
     "terrain.mine",
+    "deco.lantern",
+    "ui.target",
     "char.miner",
     "obj.crate_wood",
     "obj.crate_iron",
@@ -1630,6 +1865,8 @@
    "all_approved": false,
    "unapproved": [
     "terrain.mine",
+    "deco.lantern",
+    "ui.target",
     "char.miner",
     "obj.crate_wood",
     "obj.crate_iron",
@@ -1649,9 +1886,11 @@
   {
    "name": "level.M03",
    "file": "art/export/reference/level.M03.png",
-   "sha256": "5ee66c7d5c92996692321e64ecb228f5b07a274ca71ba78d3390d3af59cb3e85",
+   "sha256": "d52d25d729ec1d6e6adcb918e5bbe3ef7783963627444da112d0c667e1ff5124",
    "uses": [
     "terrain.mine",
+    "deco.lantern",
+    "ui.target",
     "char.miner",
     "obj.crate_wood",
     "obj.crate_iron",
@@ -1670,6 +1909,8 @@
    "all_approved": false,
    "unapproved": [
     "terrain.mine",
+    "deco.lantern",
+    "ui.target",
     "char.miner",
     "obj.crate_wood",
     "obj.crate_iron",
@@ -1689,9 +1930,11 @@
   {
    "name": "level.M04",
    "file": "art/export/reference/level.M04.png",
-   "sha256": "c0681a0292c80d30789a1c8bdb5e665c91da50058defaa98fd0e8964505a3db1",
+   "sha256": "bb4527768f67c5a959dbb8ff751467864cc20319a897e5ec93fe3d62b21c1cf1",
    "uses": [
     "terrain.mine",
+    "deco.lantern",
+    "ui.target",
     "char.miner",
     "obj.crate_wood",
     "obj.crate_iron",
@@ -1710,6 +1953,8 @@
    "all_approved": false,
    "unapproved": [
     "terrain.mine",
+    "deco.lantern",
+    "ui.target",
     "char.miner",
     "obj.crate_wood",
     "obj.crate_iron",
@@ -1729,9 +1974,11 @@
   {
    "name": "level.M05",
    "file": "art/export/reference/level.M05.png",
-   "sha256": "d3203bc10e3fee187390d3e077bb3cf34354908c843dae09c263c8446339a232",
+   "sha256": "0bbf0cf755a995b460fc2fd2814f6457945d83be8bf3eb5b75a47067a34921a2",
    "uses": [
     "terrain.mine",
+    "deco.lantern",
+    "ui.target",
     "char.miner",
     "obj.crate_wood",
     "obj.crate_iron",
@@ -1750,6 +1997,8 @@
    "all_approved": false,
    "unapproved": [
     "terrain.mine",
+    "deco.lantern",
+    "ui.target",
     "char.miner",
     "obj.crate_wood",
     "obj.crate_iron",
@@ -1769,9 +2018,11 @@
   {
    "name": "level.M06",
    "file": "art/export/reference/level.M06.png",
-   "sha256": "8496b1a35ad9ffc4b51a695a5fa543a77746249215f50895b3a5c1422348e43a",
+   "sha256": "529d50e374c579260f4e476ca152d9104b72125aeeb66f8f229def383bf78258",
    "uses": [
     "terrain.mine",
+    "deco.lantern",
+    "ui.target",
     "char.miner",
     "obj.crate_wood",
     "obj.crate_iron",
@@ -1790,6 +2041,8 @@
    "all_approved": false,
    "unapproved": [
     "terrain.mine",
+    "deco.lantern",
+    "ui.target",
     "char.miner",
     "obj.crate_wood",
     "obj.crate_iron",
@@ -1809,9 +2062,11 @@
   {
    "name": "level.M07",
    "file": "art/export/reference/level.M07.png",
-   "sha256": "62689305ae0bbb43bc77ce55872f26dd66d4e92428f620c874dfb6eb74a08d5b",
+   "sha256": "92e8ff0f66a89e0038636ed36b8b48d878c3504d0794c20d1874aee4dc1791d1",
    "uses": [
     "terrain.mine",
+    "deco.lantern",
+    "ui.target",
     "char.miner",
     "obj.crate_wood",
     "obj.crate_iron",
@@ -1830,6 +2085,8 @@
    "all_approved": false,
    "unapproved": [
     "terrain.mine",
+    "deco.lantern",
+    "ui.target",
     "char.miner",
     "obj.crate_wood",
     "obj.crate_iron",

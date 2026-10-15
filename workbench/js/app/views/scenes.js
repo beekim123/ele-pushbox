@@ -3,7 +3,7 @@
 (function (root) {
   "use strict";
   const PB = root.PB, store = root.PBStore, el = root.PBStage.el;
-  let stage = null, current = null, step = 0, grid = false;
+  let stage = null, current = null, step = 0, grid = false, observe = false;
 
   function sceneList() {
     const list = [
@@ -40,16 +40,25 @@
     return { pose, facing };
   }
 
+  // Target highlight for the next author action (dig / pour / bomb).
+  function nextTarget(lv, parsed) {
+    const a = lv.solution[step];
+    const m = a && /^(DIG|POUR|BOMB)_([LRD])$/.exec(a);
+    if (!m) return null;
+    const d = { L: [-1, 0], R: [1, 0], D: [0, 1] }[m[2]], p = parsed.state.player;
+    return { kind: m[1].toLowerCase(), x: p.x + d[0], y: p.y + d[1] };
+  }
+
   function draw(r, tick) {
     const s = current;
-    if (s.kind === "showcase") PB.scene.renderLevel(r, Object.assign({}, PB.scene.SHOWCASE, { code: "示意" }), null, { tick, theme: s.theme, grid, pose: "idle" });
+    if (s.kind === "showcase") PB.scene.renderLevel(r, PB.scene.SHOWCASE, null, { tick, theme: s.theme, grid, observe, pose: "idle" });
     else if (s.kind === "level") {
       const st = replayState(s.level, step), p = poseFor(st.action, st.result);
       const won = step === s.level.solution.length && PB.tilemodel.won(st.parsed.level, st.parsed.state);
-      PB.scene.renderLevel(r, s.level, st.parsed, { tick, grid, pose: won ? "win" : p.pose, facing: p.facing });
+      PB.scene.renderLevel(r, s.level, st.parsed, { tick, grid, observe, pose: won ? "win" : p.pose, facing: p.facing, target: nextTarget(s.level, st.parsed) });
     } else {
       const lv = store.level("M05");
-      PB.ui.render(r, s.asset, tick, { focus: s.asset.params.screen === "hint" ? 2 : s.asset.params.screen === "levels" ? 4 : 0, specs: Object.fromEntries(store.levels().map((l) => [l.id, l])), levelSpec: lv });
+      PB.ui.render(r, s.asset, tick, { focus: s.asset.params.screen === "hint" ? 2 : s.asset.params.screen === "levels" ? 4 : 0, specs: Object.fromEntries(store.levels().map((l) => [l.id, l])), levelSpec: lv, ruleSpec: store.level("M03") });
     }
   }
 
@@ -111,9 +120,10 @@
     const host = document.getElementById("scene-stage");
     if (stage) stage.destroy();
     const gridBtn = el("button", { class: "btn", type: "button", "aria-pressed": String(grid), text: "网格", onclick: () => { grid = !grid; gridBtn.setAttribute("aria-pressed", String(grid)); stage.refresh(); } });
+    const obsBtn = el("button", { class: "btn", type: "button", "aria-pressed": String(observe), text: "观察模式", title: "游戏中按住 Tab 时的画面", onclick: () => { observe = !observe; obsBtn.setAttribute("aria-pressed", String(observe)); stage.refresh(); } });
     stage = root.PBStage.create(host, {
       width: 320, height: 180, animated: true, autoplay: current.kind !== "screen" || true, draw, label: current.name,
-      extras: current.kind === "screen" ? [] : [gridBtn],
+      extras: current.kind === "screen" ? [] : [gridBtn, obsBtn],
       disclaimer: current.kind === "screen" ? "界面为布局与外观参考；交互在游戏中实现。" : "视觉示意，不代表 SDK 物理结果。",
     });
     info(current); steps(current);

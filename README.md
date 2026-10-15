@@ -24,6 +24,17 @@
 | `tools/` | 关卡检查、美术构建 / 导出 / 确认脚本（Node 18+，无第三方依赖） |
 | `third_party/` | SDK 运行库（macOS arm64）、字体及全部许可证 |
 
+## 常用命令（仓库根目录，Node 18+）
+
+```sh
+node tools/check-levels.mjs --write          # 关卡设计模型检查（不是 SDK 验证）
+node tools/art.mjs build                     # 校验美术源数据、导出 PNG 与清单、更新工作台数据
+node tools/art.mjs verify                    # 导出与确认记录一致性检查
+node --test tests/art-pipeline.test.mjs      # 美术流程测试（临时目录，不碰真实确认记录）
+node tests/workbench.e2e.cjs                 # 工作台浏览器测试（需要 Playwright + Chromium）
+python3 tools/build-font.py                  # 新增界面文字后重建像素字形（需要 Pillow）
+```
+
 ## 旧实验项目
 
 此前的实验工程（v0.3 Demo、36 关实验关卡池、旧 Art Lab、旧文档与测试证据）完整保留在提交 `0fae58c`（分支 `codex/art-ui-polish`）以及 `main` 分支。查阅示例：

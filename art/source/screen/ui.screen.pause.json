@@ -39,5 +39,5 @@
  },
  "usage": "局内按 Esc 打开；背景为压暗的关卡画面。",
  "notes": "界面布局与文字参考；Godot 中用 Control 节点实现，像素位置以本参考图为准。",
- "content_hash": "46987b200432b9bdc81011a41397e1a980b6e30afc53eb4077c042ece4358db0"
+ "content_hash": "67a721a8c7d67bebe7168326b57d401bc767115c66a87e5d01c571a2bcb6acd0"
 }

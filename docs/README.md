@@ -8,6 +8,7 @@
 | [design/game-design.md](design/game-design.md) | **唯一有效的玩法设计**：规则、章节、关卡、系统、界面 |
 | [design/art-direction.md](design/art-direction.md) | 美术规范 |
 | [design/art-pipeline.md](design/art-pipeline.md) | 美术源数据、版本、确认、导出与 Godot 交付 |
+| [design/asset-inventory.md](design/asset-inventory.md) | 需要的资产、尚缺的资产、旧 42 项的去向 |
 | [audit/2026-10-15-design-audit.md](audit/2026-10-15-design-audit.md) | 本轮审核发现与决定 |
 | [reference/sdk-v1.2-verified.md](reference/sdk-v1.2-verified.md) | 逐条核对源码的 SDK 事实 |
 | [handoff/gpt-refactor-prompt.md](handoff/gpt-refactor-prompt.md) | 交给开发方（GPT）的完整重构提示词 |

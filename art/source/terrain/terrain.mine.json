@@ -78,5 +78,5 @@
  },
  "usage": "第 1 章地形着色参数与背景。游戏中地形由着色器按 workbench/js/core/terrain.js 的同一规则逐像素着色；背景可预渲染为 320×180 贴图。",
  "notes": "基岩冷灰砖块、夯土暖褐带碎石、裂岩浅赭带折线裂纹；背景为近黑暖色岩壁与木支架，整体比地形暗两级。",
- "content_hash": "d0a0bbcc7314ab038e041414e113f64faea7c20046e84f0b14c519e8cd406cba"
+ "content_hash": "a7b998e7f69640316ad9f8dd107466e3815e29aacc2a2922938638b5f29eb606"
 }

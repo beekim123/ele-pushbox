@@ -30,8 +30,9 @@
   }
   function wrap(str, width) {
     const lines = []; let line = "";
+    const NO_START = "，。：；、！？）」』”";
     for (const ch of str) {
-      if (TX().measure(line + ch) > width) { lines.push(line); line = ch === " " ? "" : ch; } else line += ch;
+      if (TX().measure(line + ch) > width && !NO_START.includes(ch)) { lines.push(line); line = ch === " " ? "" : ch; } else line += ch;
     }
     if (line) lines.push(line);
     return lines;
@@ -209,7 +210,30 @@
     });
   }
 
-  const SCREENS = { lobby, chapters, levels, pause, hint, complete, settings };
+  function rulecard(r, tick, p, st) {
+    inLevel(r, tick, st.ruleSpec || st.levelSpec);
+    dim(r);
+    const w = 200, h = 104, x = (W - w) >> 1, y = 36;
+    panel(r, x, y, w, h, 0);
+    TX().draw(r, p.heading, x + 8, y + 4, "l");
+    // Two-step illustration: earth beside the miner, then dug out with one bag.
+    const T = S().get("terrain.mine").params;
+    const ill = new PB.Raster(56, 32);
+    PB.terrain.drawBackground(ill, T, 0, 0, 56, 32, tick);
+    const dug = Math.floor(tick / 60) % 2 === 1;
+    PB.terrain.drawTerrain(ill, { w: 4, h: 2, at: (tx, ty) => (ty === 1 ? 1 : ty === 0 && tx === 2 && !dug ? 3 : 0) }, T, -4, 0, 0);
+    S().draw(ill, "char.miner", dug ? "idle" : "dig", tick, 20, 16);
+    r.blit(ill, x + 8, y + 22);
+    r.rect(x + 7, y + 21, 58, 1, "z"); r.rect(x + 7, y + 54, 58, 1, "z");
+    if (dug) S().draw(r, "item.sandbag", 0, 0, x + 70, y + 30);
+    const lines = wrap(p.text, w - 84);
+    lines.slice(0, 4).forEach((line, i) => TX().draw(r, line, x + 74 + (dug ? 16 : 0) * 0, y + 22 + i * 13, "u"));
+    const bx = x + w - 70, by = y + h - 20;
+    panel(r, bx, by, 62, 15, 1); TX().centered(r, p.close, bx + 31, by, "l");
+    wideKey(r, "Esc", x + 8, by + 1);
+  }
+
+  const SCREENS = { lobby, chapters, levels, pause, hint, complete, settings, rulecard };
   function render(r, asset, tick, st) { SCREENS[asset.params.screen](r, tick, asset.params, st || {}); }
   PB.ui = { render, SCREENS, wrap, text2x };
 })(typeof window !== "undefined" ? window : globalThis);

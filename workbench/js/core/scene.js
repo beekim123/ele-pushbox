@@ -23,6 +23,7 @@
     const tick = o.tick || 0;
     const ox = (W - L.w * 16) >> 1, oy = HUD_H + ((H - HUD_H - L.h * 16) >> 1);
     TR().drawBackground(r, theme, 0, 0, W, H, tick);
+    if (theme.background.style === "mine" && S().has("deco.lantern")) for (let x = 64; x < W; x += 80) S().draw(r, "deco.lantern", "flicker", tick + x, x, 25);
     const map = { w: L.w, h: L.h, at: (x, y) => (x < 0 || y < 0 || x >= L.w || y >= L.h ? TR().MAT.EMPTY : toMat(s.terrain[y * L.w + x])) };
     TR().drawTerrain(r, map, theme, ox, oy, tick >> 3);
     const M = TM().M;
@@ -51,9 +52,34 @@
     }
     const p = s.player;
     S().draw(r, "char.miner", o.pose || "idle", tick, ox + p.x * 16 + 8, oy + p.y * 16 + 16, o.facing === "left");
-    if (o.grid) drawGrid(r, L, ox, oy);
+    if (o.target) {
+      const t = o.target;
+      S().draw(r, "ui.target", t.kind, 0, ox + t.x * 16 + 8, oy + t.y * 16 + 16);
+    }
+    if (o.observe) drawObserve(r, L, s, ox, oy);
+    if (o.grid || o.observe) drawGrid(r, L, ox, oy);
     if (o.hud !== false) drawHud(r, spec, L, s, tick, o.hud || {});
     return { ox, oy };
+  }
+
+  // Observe mode: dim everything, then show rule classes and plate-door links.
+  function drawObserve(r, L, s, ox, oy) {
+    r.remap(ox, oy, L.w * 16, L.h * 16, PB.DIM);
+    const T = TM().T;
+    const icon = { [T.ROCK]: "solid", [T.CRACKED]: "solid", [T.DOOR]: "solid", [T.EARTH]: "earth", [T.SAND]: "sand", [T.WATER]: "water" };
+    for (let i = 0; i < L.w * L.h; i++) {
+      const name = icon[s.terrain[i]];
+      if (!name) continue;
+      const tx = i % L.w, ty = (i / L.w) | 0;
+      if (s.terrain[i] === T.DOOR && s.doorsOpen) continue;
+      S().draw(r, "ui.class_icon", name, 0, ox + tx * 16 + 8, oy + ty * 16 + 8);
+    }
+    for (const p of L.plates) for (const d of L.doors) {
+      let x0 = ox + (p % L.w) * 16 + 8, y0 = oy + ((p / L.w) | 0) * 16 + 12;
+      const x1 = ox + (d % L.w) * 16 + 8, y1 = oy + ((d / L.w) | 0) * 16 + 8;
+      const n = Math.max(Math.abs(x1 - x0), Math.abs(y1 - y0));
+      for (let k = 0; k <= n; k += 2) r.set(Math.round(x0 + ((x1 - x0) * k) / n), Math.round(y0 + ((y1 - y0) * k) / n), "s");
+    }
   }
 
   function drawGrid(r, L, ox, oy) {

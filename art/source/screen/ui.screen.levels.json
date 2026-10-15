@@ -72,5 +72,5 @@
  },
  "usage": "关卡格（编号、名称、通关 / 跳过标记）与所选关卡的示意小地图和一句话发现。",
  "notes": "界面布局与文字参考；Godot 中用 Control 节点实现，像素位置以本参考图为准。",
- "content_hash": "21b2c8c96216b2b6be7178ebc21bb29a074529dcc0c69b77a6036fe9d13a2d28"
+ "content_hash": "4946d25f11ace22fec1536cd56554b2c3607834424797cebeb102a671e95707b"
 }

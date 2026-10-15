@@ -32,5 +32,5 @@
  },
  "usage": "按 H 逐级展开三层提示；第三层提供演示与回到正确位置。",
  "notes": "界面布局与文字参考；Godot 中用 Control 节点实现，像素位置以本参考图为准。",
- "content_hash": "f74c144f224f2bfd5127dbcc5847fc343203a85edba17afdd8c9473430285bbf"
+ "content_hash": "63893182003ff11018f5702a21afff21bd3d73f0f643f0f531fa72e44ce10b6b"
 }
