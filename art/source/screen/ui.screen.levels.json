@@ -8,12 +8,16 @@
   "workbench/js/core/ui.js",
   "workbench/js/core/scene.js",
   "workbench/js/core/terrain.js",
-  "workbench/js/core/ambient.js"
+  "workbench/js/core/ambient.js",
+  "workbench/js/core/i18n.js",
+  "content/i18n/zh-Hans.json",
+  "content/i18n/en.json"
  ],
  "depends": [
   "theme.dungeon",
   "ui.icons",
   "ui.keycap",
+  "ui.menu_icons",
   "ui.panel"
  ],
  "version": 1,
@@ -26,53 +30,41 @@
  "palette": "endesga32",
  "params": {
   "screen": "levels",
-  "heading": "第 1 章 · 幽暗石牢",
-  "progress": "已通关 4 / 7",
+  "theme": "theme.dungeon",
+  "done": 4,
   "levels": [
    {
     "id": "M01",
-    "title": "一推到位",
     "state": "cleared"
    },
    {
     "id": "M02",
-    "title": "绕到另一边",
     "state": "cleared"
    },
    {
     "id": "M03",
-    "title": "挖开一格",
     "state": "skipped"
    },
    {
     "id": "M04",
-    "title": "一袋沙做台阶",
     "state": "cleared"
    },
    {
     "id": "M05",
-    "title": "箱子替我站",
     "state": "open",
-    "recommended": true
+    "next": true
    },
    {
     "id": "M06",
-    "title": "沙与箱各有用",
     "state": "cleared"
    },
    {
     "id": "M07",
-    "title": "挖掉支撑",
     "state": "open"
    }
-  ],
-  "hint_select": "选择",
-  "hint_enter": "进入",
-  "hint_back": "返回",
-  "recommended": "推荐",
-  "theme": "theme.dungeon"
+  ]
  },
  "usage": "关卡格（编号、名称、通关 / 跳过标记）与所选关卡的示意小地图和一句话发现。",
- "notes": "界面布局与文字参考；Godot 中用 Control 节点实现，像素位置以本参考图为准。",
- "content_hash": "849e266b649448ed58ffd85bbc0ff6e081ee83da15810e3ab6c861808dafbb3e"
+ "notes": "布局参考：文字来自 content/i18n，容器按文字宽度伸缩；Godot 用 Control 容器实现，不按像素硬编码文字位置。",
+ "content_hash": "0d9507235e4623d6c8ba77cf373309dbc4c588ee8f297d9a5dfe29feca42713f"
 }

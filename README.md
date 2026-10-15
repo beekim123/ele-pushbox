@@ -1,4 +1,6 @@
-# 推箱子：沙与水
+# 箱途 · Cratebound
+
+> 项目名在 2026-10-15 由「推箱子：沙与水」改为「箱途 / Cratebound」。名字只在 `content/i18n/*.json` 的 `game.title` 中定义；内部标识（如 `pushbox.art/1`）不随名字改变。
 
 横版、侧视、按格移动的推箱解谜。沙、水、气体、火和冰由 [ele-base-cpp](https://github.com/beekim123/ele-base-cpp) v1.2.0 真实模拟。
 

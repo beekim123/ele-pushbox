@@ -55,16 +55,27 @@
     return { kind: m[1].toLowerCase(), x: p.x + d[0], y: p.y + d[1] };
   }
 
+  let showIssues = false;
+  const LOCALES = [["zh-Hans", "简体中文"], ["en", "English"], ["qps", "伪本地化（长度测试）"]];
+  function screenState(s) {
+    return { focus: s.asset.params.screen === "hint" ? 2 : s.asset.params.screen === "levels" ? 4 : 0, specs: Object.fromEntries(store.levels().map((l) => [l.id, l])), levelSpec: store.level("M05"), ruleSpec: store.level("M03"), theme: s.theme, showIssues };
+  }
+  function outline(r, issues) {
+    if (!showIssues) return;
+    for (const it of issues) { const q = it.rect; r.hline(q.x, q.y, q.w, "A"); r.hline(q.x, q.y + q.h, q.w, "A"); r.vline(q.x, q.y, q.h, "A"); r.vline(q.x + q.w, q.y, q.h + 1, "A"); }
+  }
+
   function draw(r, tick) {
     const s = current;
-    if (s.kind === "showcase") PB.scene.renderLevel(r, PB.scene.SHOWCASE, null, { tick, theme: s.theme, grid, observe, pose: "idle" });
+    PB.i18n.takeIssues();
+    if (s.kind === "showcase") { PB.scene.renderLevel(r, PB.scene.SHOWCASE, null, { tick, theme: s.theme, grid, observe, pose: "idle" }); outline(r, PB.i18n.takeIssues()); }
     else if (s.kind === "level") {
       const st = replayState(s.level, step), p = poseFor(st.action, st.result);
       const won = step === s.level.solution.length && PB.tilemodel.won(st.parsed.level, st.parsed.state);
       PB.scene.renderLevel(r, s.level, st.parsed, { tick, grid, observe, pose: won ? "win" : p.pose, facing: p.facing, target: nextTarget(s.level, st.parsed) });
+      outline(r, PB.i18n.takeIssues());
     } else {
-      const lv = store.level("M05");
-      PB.ui.render(r, s.asset, tick, { focus: s.asset.params.screen === "hint" ? 2 : s.asset.params.screen === "levels" ? 4 : 0, specs: Object.fromEntries(store.levels().map((l) => [l.id, l])), levelSpec: lv, ruleSpec: store.level("M03"), theme: s.theme });
+      PB.ui.render(r, s.asset, tick, screenState(s));
     }
   }
 
@@ -91,7 +102,15 @@
       box.append(el("h2", { text: a.name }), el("p", { class: "small mono", text: `${a.id} @v${a.version}` }), statusBadge(a.id), el("p", { text: a.usage }), el("p", { class: "small muted", text: a.notes }));
       box.append(el("h3", { text: "用到的资产" }));
       const ul = el("ul"); for (const d of a.depends || []) ul.append(el("li", {}, [el("a", { href: "#assets/" + d, text: d }), " ", statusBadge(d)])); box.append(ul);
-      box.append(el("p", { class: "note small", text: "界面中的数字和进度为样例数据。确认的是布局、字号、配色和元素样式。" }));
+      box.append(el("h3", { text: "文字排版检查" }));
+      const ul2 = el("ul", { class: "small" });
+      for (const [loc, name] of LOCALES) {
+        const st = Object.assign(screenState(s), { locale: loc, showIssues: false });
+        const issues = PB.ui.render(new PB.Raster(320, 180), a, 0, st);
+        ul2.append(el("li", { text: `${name}：` + (issues.length ? `${issues.length} 处放不下（${[...new Set(issues.map((i) => i.key))].slice(0, 4).join("、")}）` : "全部放得下") }));
+      }
+      box.append(ul2, el("p", { class: "small muted", text: "放不下的文字会被省略或截断，打开「标出溢出」可在画面上看到红框。伪本地化把英文拉长约 40%，用来提前发现以后其他语言的排版问题，只作参考。" }));
+      box.append(el("p", { class: "note small", text: "界面中的数字和进度为样例数据。确认的是布局方式、配色和元素样式；文字来自 content/i18n，各语言共用同一套布局规则。" }));
     } else {
       box.append(el("h2", { text: s.name }), el("p", { text: "把第 1 章的人物、箱子、机关、材料和 HUD 放在同一画面中检查整体协调、层级和可读性。" }));
       box.append(el("p", { class: "small muted", text: "画面中的布局只作示意，不是可玩关卡。水与沙的颗粒在游戏中会随 SDK 的格子移动，这里按格子静态绘制。" }));
@@ -127,9 +146,13 @@
     if (stage) stage.destroy();
     const gridBtn = el("button", { class: "btn", type: "button", "aria-pressed": String(grid), text: "网格", onclick: () => { grid = !grid; gridBtn.setAttribute("aria-pressed", String(grid)); stage.refresh(); } });
     const obsBtn = el("button", { class: "btn", type: "button", "aria-pressed": String(observe), text: "观察模式", title: "游戏中按住 Tab 时的画面", onclick: () => { observe = !observe; obsBtn.setAttribute("aria-pressed", String(observe)); stage.refresh(); } });
+    const locSel = el("select", { "aria-label": "界面语言", onchange: () => { PB.i18n.setLocale(locSel.value); store.setPref("locale", locSel.value); stage.refresh(); } });
+    for (const [v, n] of LOCALES) locSel.append(el("option", { value: v, text: n }));
+    locSel.value = PB.i18n.getLocale();
+    const issueBtn = el("button", { class: "btn", type: "button", "aria-pressed": String(showIssues), text: "标出溢出", title: "用红框标出放不下而被省略的文字", onclick: () => { showIssues = !showIssues; issueBtn.setAttribute("aria-pressed", String(showIssues)); stage.refresh(); } });
     stage = root.PBStage.create(host, {
-      width: 320, height: 180, animated: true, autoplay: current.kind !== "screen" || true, draw, label: current.name,
-      extras: current.kind === "screen" ? [] : [gridBtn, obsBtn],
+      width: 320, height: 180, animated: true, autoplay: true, draw, label: current.name,
+      extras: (current.kind === "screen" ? [] : [gridBtn, obsBtn]).concat([el("label", { class: "small muted" }, ["语言 ", locSel]), issueBtn]),
       disclaimer: current.kind === "screen" ? "界面为布局与外观参考；交互在游戏中实现。" : "视觉示意，不代表 SDK 物理结果。",
     });
     info(current); steps(current);

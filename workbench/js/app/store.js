@@ -30,6 +30,7 @@
     return Object.assign({}, a, { frames: d.frames, _draft: true });
   }
   function registerAll() {
+    if (PB.i18n && B.i18n) { PB.i18n.setTables(B.i18n); PB.i18n.setLocale(prefs.locale || "zh-Hans"); }
     for (const a of assets.values()) PB.sprites.register(effective(a.id));
   }
   function emit(what) { for (const fn of listeners) fn(what); }

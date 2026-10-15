@@ -13,7 +13,7 @@ FONT = ROOT / "third_party/fonts/fusion-pixel-12px/fusion-pixel-12px-proportiona
 OUT = ROOT / "workbench/js/core/font-data.js"
 
 chars = set(chr(i) for i in range(32, 127))
-for path in list((ROOT / "workbench/js/core").glob("*.js")) + list((ROOT / "content/levels").rglob("*.json")) + list((ROOT / "art/source").rglob("*.json")):
+for path in list((ROOT / "workbench/js/core").glob("*.js")) + list((ROOT / "content/levels").rglob("*.json")) + list((ROOT / "art/source").rglob("*.json")) + list((ROOT / "content/i18n").glob("*.json")):
     if path.name == "font-data.js":
         continue
     chars.update(c for c in path.read_text(encoding="utf-8") if ord(c) > 127 and not c.isspace())

@@ -108,24 +108,12 @@
   function drawHud(r, spec, L, s, tick, hud) {
     r.rect(0, 0, W, HUD_H, "z");
     r.hline(0, HUD_H - 1, W, "y");
-    const code = hud.code || spec.code || spec.id;
-    let x = 5;
-    x += TX().draw(r, code, x, 3, "k", "g") + 6;
-    TX().draw(r, hud.title || spec.title || "", x, 3, "u", "y");
-    // Right side: bag, lamps, buttons.
+    // Right side first (fixed icons), then the title takes whatever room is left.
     const goals = TM().goals(L, s);
     let rx = W - 4;
-    const icons = ["pause", "hint", "restart", "undo"];
-    for (const name of icons) {
-      rx -= 13;
-      const idx = S().get("ui.icons").animations[name].frames[0];
-      S().draw(r, "ui.icons", idx, 0, rx, 4);
-    }
+    for (const name of ["pause", "hint", "restart", "undo"]) { rx -= 13; S().draw(r, "ui.icons", S().get("ui.icons").animations[name].frames[0], 0, rx, 4); }
     rx -= 8;
-    for (let i = goals.length - 1; i >= 0; i--) {
-      rx -= 10;
-      S().draw(r, "ui.goal_lamp", goals[i].lit ? 1 : 0, 0, rx, 5);
-    }
+    for (let i = goals.length - 1; i >= 0; i--) { rx -= 10; S().draw(r, "ui.goal_lamp", goals[i].lit ? 1 : 0, 0, rx, 5); }
     rx -= 6;
     const bombs = s.bag.bomb, sand = s.bag.sand;
     if (bombs > 0) { rx -= 16; S().draw(r, "item.bomb", 0, 0, rx, 2); if (bombs > 1) { rx -= 12; TX().draw(r, "×" + bombs, rx, 3, "u"); } rx -= 2; }
@@ -133,12 +121,18 @@
     const shown = Math.min(3, Math.max(sand, (spec.bag && spec.bag.sand) || 0, canDig ? 1 : 0));
     if (sand > 3) { rx -= 14; TX().draw(r, "×" + sand, rx, 3, "u"); }
     for (let i = shown - 1; i >= 0; i--) { rx -= 15; S().draw(r, "item.sandbag", i < sand ? 0 : 1, 0, rx, 2); }
+    const code = hud.code || (spec.codeKey && PB.i18n ? PB.i18n.t(spec.codeKey) : spec.code || spec.id);
+    let x = 5;
+    x += TX().draw(r, code, x, 3, "k", "g") + 6;
+    const key = "level." + spec.id + ".title";
+    const title = hud.title || (PB.i18n && PB.i18n.has(key) ? PB.i18n.t(key) : spec.title || "");
+    if (PB.ui) PB.ui.label(r, title, x, 3, rx - x - 8, "u", "y", key); else TX().draw(r, title, x, 3, "u", "y");
   }
 
   // Representative scene: every chapter-1 element plus water and cracked rock
   // so the whole art set can be judged together. Not a playable level.
   const SHOWCASE = {
-    id: "showcase.mine", code: "示意", title: "代表场景 · 全要素", map: [
+    id: "showcase", codeKey: "showcase.code", title: "", map: [
       "####################",
       "#.........#........#",
       "#H........#.....X..#",

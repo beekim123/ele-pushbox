@@ -8,7 +8,10 @@
   "workbench/js/core/ui.js",
   "workbench/js/core/scene.js",
   "workbench/js/core/terrain.js",
-  "workbench/js/core/ambient.js"
+  "workbench/js/core/ambient.js",
+  "workbench/js/core/i18n.js",
+  "content/i18n/zh-Hans.json",
+  "content/i18n/en.json"
  ],
  "depends": [
   "char.miner",
@@ -20,7 +23,9 @@
   "theme.sky",
   "ui.icons",
   "ui.keycap",
-  "ui.panel"
+  "ui.menu_icons",
+  "ui.panel",
+  "ui.theme_emblem"
  ],
  "version": 1,
  "stage": "review",
@@ -32,63 +37,39 @@
  "palette": "endesga32",
  "params": {
   "screen": "chapters",
-  "heading": "选择章节",
   "chapters": [
    {
-    "num": "第1章",
-    "name": "石牢",
-    "full": "第 1 章 · 幽暗石牢",
-    "progress": "4/7",
     "theme": "theme.dungeon",
-    "blurb": "推、爬、挖、倒：认识箱子、梯子、夯土和沙。"
+    "done": 4,
+    "total": 7
    },
    {
-    "num": "第2章",
-    "name": "神庙",
-    "full": "第 2 章 · 黄金神庙",
-    "progress": "0/7",
     "theme": "theme.ruins",
-    "blurb": "水往低处流：浮起木箱、沉下铁箱、拉平两边的水。"
+    "done": 0,
+    "total": 7
    },
    {
-    "num": "第3章",
-    "name": "晶窟",
-    "full": "第 3 章 · 幽光晶窟",
-    "progress": "锁定",
     "theme": "theme.cave",
     "locked": true,
-    "unlock": "在第 2 章通关 5 关后解锁。"
+    "need": 5
    },
    {
-    "num": "第4章",
-    "name": "古森",
-    "full": "第 4 章 · 迷雾古森",
-    "progress": "锁定",
     "theme": "theme.forest",
     "locked": true,
-    "unlock": "在第 3 章通关 4 关后解锁。"
+    "need": 4
    },
    {
-    "num": "第5章",
-    "name": "圣域",
-    "full": "第 5 章 · 云端圣域",
-    "progress": "锁定",
     "theme": "theme.sky",
     "locked": true,
-    "unlock": "在第 4 章通关 5 关后解锁。"
+    "need": 5
    },
    {
-    "num": "扩展",
-    "name": "星站",
-    "full": "扩展章 · 深空星站",
-    "progress": "未开放",
     "theme": "theme.cosmos",
-    "locked": true,
-    "unlock": "主线完成并试玩后再决定是否开放（电与机关）。"
+    "locked": true
    }
   ]
  },
  "usage": "六张章节卡：主题小景（含该主题的植物与小动物）、进度、锁定状态与解锁条件。",
- "notes": "界面布局与文字参考；Godot 中用 Control 节点实现，像素位置以本参考图为准。",
- "content_hash": "a0d3c7f43fa3e35734a20d0a0051c70dae723d5105ae381199e3c62547017d4c"
+ "notes": "布局参考：文字来自 content/i18n，容器按文字宽度伸缩；Godot 用 Control 容器实现，不按像素硬编码文字位置。",
+ "content_hash": "a21ab4089cb6a98cc8769c754393608f24be93eadf000c4403dec52ad8255838"
 }

@@ -8,7 +8,10 @@
   "workbench/js/core/ui.js",
   "workbench/js/core/scene.js",
   "workbench/js/core/terrain.js",
-  "workbench/js/core/ambient.js"
+  "workbench/js/core/ambient.js",
+  "workbench/js/core/i18n.js",
+  "content/i18n/zh-Hans.json",
+  "content/i18n/en.json"
  ],
  "depends": [
   "char.miner",
@@ -16,6 +19,7 @@
   "theme.dungeon",
   "ui.icons",
   "ui.keycap",
+  "ui.menu_icons",
   "ui.panel"
  ],
  "version": 1,
@@ -27,13 +31,9 @@
  "layer": "ui",
  "palette": "endesga32",
  "params": {
-  "screen": "complete",
-  "heading": "过关",
-  "steps": "用了 {n} 步",
-  "next": "下一关",
-  "select": "选关"
+  "screen": "complete"
  },
  "usage": "所有目标灯点亮后显示；人物播放胜利动作。",
- "notes": "界面布局与文字参考；Godot 中用 Control 节点实现，像素位置以本参考图为准。",
- "content_hash": "aa819d5bd251b27780aed66e1ab85f44af9370fce9d47482d030d89e4eef96b9"
+ "notes": "布局参考：文字来自 content/i18n，容器按文字宽度伸缩；Godot 用 Control 容器实现，不按像素硬编码文字位置。",
+ "content_hash": "415b83b21c8be42b8856bdeebf302e8f9b8801c8002f3d0e3bb4dec6b1de12d0"
 }

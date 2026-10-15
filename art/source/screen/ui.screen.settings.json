@@ -8,12 +8,16 @@
   "workbench/js/core/ui.js",
   "workbench/js/core/scene.js",
   "workbench/js/core/terrain.js",
-  "workbench/js/core/ambient.js"
+  "workbench/js/core/ambient.js",
+  "workbench/js/core/i18n.js",
+  "content/i18n/zh-Hans.json",
+  "content/i18n/en.json"
  ],
  "depends": [
   "theme.dungeon",
   "ui.icons",
   "ui.keycap",
+  "ui.menu_icons",
   "ui.panel"
  ],
  "version": 1,
@@ -26,43 +30,45 @@
  "palette": "endesga32",
  "params": {
   "screen": "settings",
-  "heading": "设置",
-  "on": "开",
-  "off": "关",
   "items": [
    {
-    "label": "音乐",
+    "key": "settings.language",
+    "type": "value",
+    "valueKey": "@language"
+   },
+   {
+    "key": "settings.music",
     "type": "slider",
     "value": 8
    },
    {
-    "label": "音效",
+    "key": "settings.sfx",
     "type": "slider",
     "value": 8
    },
    {
-    "label": "窗口放大",
+    "key": "settings.scale",
     "type": "value",
-    "value": "自动"
+    "valueKey": "settings.scale.auto"
    },
    {
-    "label": "显示网格",
+    "key": "settings.grid",
     "type": "toggle",
     "value": false
    },
    {
-    "label": "开放全部关卡",
+    "key": "settings.unlock",
     "type": "toggle",
     "value": false
    },
    {
-    "label": "重看引导",
+    "key": "settings.tutorial",
     "type": "value",
-    "value": "执行"
+    "valueKey": "settings.run"
    }
   ]
  },
  "usage": "设置项全部可用方向键调整。",
- "notes": "界面布局与文字参考；Godot 中用 Control 节点实现，像素位置以本参考图为准。",
- "content_hash": "b3a225df684f4cea274691b2794b99baf7712d326291c69e2e51d1bf1b735f68"
+ "notes": "布局参考：文字来自 content/i18n，容器按文字宽度伸缩；Godot 用 Control 容器实现，不按像素硬编码文字位置。",
+ "content_hash": "fb3d0fdebc49da97abe1f7907679aed3853ffab64b121dfa7700e28beac37c40"
 }

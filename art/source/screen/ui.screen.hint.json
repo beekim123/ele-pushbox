@@ -8,12 +8,16 @@
   "workbench/js/core/ui.js",
   "workbench/js/core/scene.js",
   "workbench/js/core/terrain.js",
-  "workbench/js/core/ambient.js"
+  "workbench/js/core/ambient.js",
+  "workbench/js/core/i18n.js",
+  "content/i18n/zh-Hans.json",
+  "content/i18n/en.json"
  ],
  "depends": [
   "theme.dungeon",
   "ui.icons",
   "ui.keycap",
+  "ui.menu_icons",
   "ui.panel"
  ],
  "version": 1,
@@ -25,13 +29,9 @@
  "layer": "ui",
  "palette": "endesga32",
  "params": {
-  "screen": "hint",
-  "heading": "提示",
-  "demo": "演示",
-  "rewind": "回到正确位置",
-  "more": "再看一层"
+  "screen": "hint"
  },
  "usage": "按 H 逐级展开三层提示；第三层提供演示与回到正确位置。",
- "notes": "界面布局与文字参考；Godot 中用 Control 节点实现，像素位置以本参考图为准。",
- "content_hash": "460e6c9f7a5dafb7ec8eb1ee0c0af6e1d9f9a0f5d59212472f1f70421076c2e4"
+ "notes": "布局参考：文字来自 content/i18n，容器按文字宽度伸缩；Godot 用 Control 容器实现，不按像素硬编码文字位置。",
+ "content_hash": "1f7c16acdf080f19f970af94428d3defaddbb9a646a03d5e8291e9587801c74c"
 }

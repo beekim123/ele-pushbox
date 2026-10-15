@@ -58,7 +58,7 @@ node tools/art.mjs import pushbox-art-edits-….json   # 写回源数据，并�
 - 精灵图是横向条带，第 i 帧位于 `x = i × 帧宽`。锚点、动画（帧序号、fps、是否循环）、九宫格边距都以 manifest 为准，不要在游戏里重新定义。
 - 导入设置：最近邻采样，关闭 mipmap 与压缩（无损），不做任何颜色处理。
 - 地形不是贴图：游戏着色器必须按 `workbench/js/core/terrain.js` 的规则逐像素着色，主题参数取已确认的 `theme.*` 资产的 `params`；生态按 `workbench/js/core/ambient.js` 的规则摆放。静态材料使用同一个 `h32` 位置哈希。
-- 界面画面（`ui.screen.*`）是布局参考图。Godot 用 Control 节点实现，元素位置、字号、颜色以参考图为准，并逐像素对照（动态文字和进度数字除外）。
+- 界面画面（`ui.screen.*`）是布局参考图，每个都有简中、英文两版（`art/export/reference/<界面>.<语言>.png`）。Godot 用 Control 节点实现，元素位置、字号、颜色以参考图为准，并逐像素对照（动态文字和进度数字除外）。
 
 ## 7 一致性检查
 
@@ -67,6 +67,7 @@ node tools/art.mjs import pushbox-art-edits-….json   # 写回源数据，并�
 | 导出 PNG = 源数据 | `node tools/art.mjs verify`：解码 PNG，与源数据重新绘制的结果逐字节比较 | 是 |
 | 工作台画面 = 导出 PNG | `tests/workbench.e2e.cjs`：浏览器内绘制的结果与参考 PNG 逐字节比较 | 是 |
 | 确认记录完整 | `verify`：已确认的 PNG 与历史源数据存在且哈希一致 | 是 |
+| 界面文字放得下 | `verify`：每个界面按简中、英文各排一次，不得有换行截断、省略或丢弃；伪本地化结果记录在 manifest 的 `text_issues` 中供参考 | 是 |
 | Godot 画面 = 参考图 | 在 Godot 中把 `showcase.mine` 与 `level.M01–M07` 按参考图同样的状态渲染到 320×180 视口并截图，与 `art/export/reference/` 逐像素比较；沙、水只比较颜色集合（SDK 颜色位随机） | 待 GPT 实现 |
 
 已知的跨渲染器差异必须如实记录在这里，不能用"差不多"代替。目前已知两处：(1) 游戏中沙、水的颗粒颜色来自 SDK 随机颜色位；(2) 游戏中材料按 SDK cell 形成坡面，工作台按整格绘制。

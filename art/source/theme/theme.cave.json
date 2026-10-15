@@ -110,5 +110,5 @@
  },
  "usage": "第 3 章的地形、背景与生态。游戏中地形按 workbench/js/core/terrain.js 着色；生态按 ambient.js 的规则摆放。",
  "notes": "粗糙的深色岩洞，顶上垂着钟乳石，石缝里有紫晶脉；荧光蘑菇与晶簇，水晶飞蛾绕着飞。",
- "content_hash": "9f601ee94441900e6a4d0212c74f74ea98414ff0ff2c5ff8591e1b961dc362c8"
+ "content_hash": "30ed340439191005a6e40e9ff83dd7bd15a8cdf719499e1f81c5aafeb38452e4"
 }

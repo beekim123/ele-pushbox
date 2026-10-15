@@ -1450,10 +1450,10 @@
    "layer": "terrain",
    "current": {
     "version": 1,
-    "hash": "9f601ee94441900e6a4d0212c74f74ea98414ff0ff2c5ff8591e1b961dc362c8",
+    "hash": "30ed340439191005a6e40e9ff83dd7bd15a8cdf719499e1f81c5aafeb38452e4",
     "status": "review",
     "preview": "art/export/preview/theme.cave.png",
-    "preview_sha256": "903cbc5cf0977602f2899e04ee38fb33e48037054c29af1359b1addce51e7490"
+    "preview_sha256": "91b8ae5d48c2a68868841bed9c24781acd4a1f97d7b04759ee94e210e6c0b073"
    },
    "approved": null,
    "current_is_approved": false,
@@ -1562,10 +1562,10 @@
    "layer": "terrain",
    "current": {
     "version": 1,
-    "hash": "c7b834587ee48ca80f494be4c0fa951899e3a2ad852a634d4a3d5d593667226c",
+    "hash": "06bd6ed2abc7e865798cfba4c78b9c29853ed837e99adfa937b4a7a295ecd8aa",
     "status": "review",
     "preview": "art/export/preview/theme.cosmos.png",
-    "preview_sha256": "32c19d0c642845e5098091c077d3ede49e90e0e9514a30df618a35aaf30cd7f9"
+    "preview_sha256": "f62278b25701afd70beab4cef93aa9f84bc1635dcc914523f26e2cc1f58cd5da"
    },
    "approved": null,
    "current_is_approved": false,
@@ -1579,16 +1579,16 @@
     "rock": {
      "pattern": "panel",
      "base": [
-      "w",
-      "x"
+      "x",
+      "y"
      ],
-     "seam": "y",
-     "speck": "v",
+     "seam": "z",
+     "speck": "w",
      "light": "v",
      "light2": "w",
-     "dark": "y",
-     "edge": "y",
-     "top": "k"
+     "dark": "z",
+     "edge": "z",
+     "top": "u"
     },
     "earth": {
      "base": [
@@ -1667,7 +1667,7 @@
    "layer": "terrain",
    "current": {
     "version": 1,
-    "hash": "af6a8c373960872b2d514bf6fd7baf0a8f55a118801b8e1376d23fcb14ba1478",
+    "hash": "6ad014210471e7715d7783bacd8f0a61af2736907ca0749c12e86eac75bf2737",
     "status": "review",
     "preview": "art/export/preview/theme.dungeon.png",
     "preview_sha256": "5bdb3eb51f015b7a46dd9cf391466ca4878bdbc5ba6707692d8d3f630b0736a0"
@@ -1782,10 +1782,10 @@
    "layer": "terrain",
    "current": {
     "version": 1,
-    "hash": "7f4e7287ff6335a4bb885e6571bff2c84c4f65412329e3fa327b20399ea6d535",
+    "hash": "7d2085f9ffa0981819b31d1cfafcd77e257e4b01910cb658076036e5a1f977d7",
     "status": "review",
     "preview": "art/export/preview/theme.forest.png",
-    "preview_sha256": "5cce742f25f1847893d05bfb6c32ea0634658405e82539a856f2fe9dfc70f250"
+    "preview_sha256": "70d3003fee2e84981e376fbc3be0939456bbcdf0064d7a9c5abe510ec1efebea"
    },
    "approved": null,
    "current_is_approved": false,
@@ -1799,15 +1799,15 @@
     "rock": {
      "pattern": "grass",
      "base": [
-      "f",
-      "e"
+      "x",
+      "w"
      ],
-     "seam": "g",
-     "speck": "F",
+     "seam": "y",
+     "speck": "n",
      "light": "m",
      "light2": "n",
-     "dark": "g",
-     "edge": "g",
+     "dark": "y",
+     "edge": "y",
      "top": "m"
     },
     "earth": {
@@ -1851,11 +1851,11 @@
      "style": "forest",
      "base": [
       "p",
-      "o"
+      "y"
      ],
-     "speck": "n",
-     "accent": "g",
-     "detail": "o"
+     "speck": "o",
+     "accent": "o",
+     "detail": "p"
     },
     "ambient": [
      {
@@ -1900,10 +1900,10 @@
    "layer": "terrain",
    "current": {
     "version": 1,
-    "hash": "d4a9665e391a034547ee7236f8f35a5c27988d2d09db8bebbd20c8de0ffa878a",
+    "hash": "6700020a704872cfa2a3200b604d6a60a43f565e9f7cfd23b8ef498eebbcdd4f",
     "status": "review",
     "preview": "art/export/preview/theme.ruins.png",
-    "preview_sha256": "c5d3dd9396446804f2440bd4f6c2d80523b63e36c623f4ad5d6444e8add3d881"
+    "preview_sha256": "7e3e967a241ee396259fa7d0520f9d1bc749f6fdaed220d176ecaecbeab0d610"
    },
    "approved": null,
    "current_is_approved": false,
@@ -1917,16 +1917,16 @@
     "rock": {
      "pattern": "block",
      "base": [
-      "d",
-      "F"
+      "v",
+      "w"
      ],
-     "seam": "e",
-     "speck": "c",
-     "light": "c",
-     "light2": "d",
-     "dark": "f",
-     "edge": "e",
-     "top": "k"
+     "seam": "x",
+     "speck": "u",
+     "light": "u",
+     "light2": "v",
+     "dark": "x",
+     "edge": "x",
+     "top": "b"
     },
     "earth": {
      "base": [
@@ -2009,10 +2009,10 @@
    "layer": "terrain",
    "current": {
     "version": 1,
-    "hash": "0b01f011ab7f27b363fb2a2919fea7db6406a55cea61f46e6b636ef254e2cc8b",
+    "hash": "3fd5fd12dfa81ed79eb43e97112ed19053b8cbcadaffe11ceb49b4f9d611f93f",
     "status": "review",
     "preview": "art/export/preview/theme.sky.png",
-    "preview_sha256": "61679f09d6cb3d09e4920bb5586c49c5982974bb2389cca21b64249b315393cb"
+    "preview_sha256": "d443ed16b794de231105461f4dbb5c1e14e7550fc9b24713a0cbbf34db64c80f"
    },
    "approved": null,
    "current_is_approved": false,
@@ -2024,7 +2024,7 @@
     "title": "云端圣域",
     "chapter": 5,
     "rock": {
-     "pattern": "marble",
+     "pattern": "cloud",
      "base": [
       "t",
       "u"
@@ -2035,7 +2035,7 @@
      "light2": "t",
      "dark": "v",
      "edge": "v",
-     "top": "k",
+     "top": "t",
      "under": "t"
     },
     "earth": {
@@ -2081,8 +2081,8 @@
       "r",
       "s"
      ],
-     "speck": "t",
-     "accent": "u",
+     "speck": "u",
+     "accent": "v",
      "detail": "v"
     },
     "ambient": [
@@ -2443,6 +2443,70 @@
    "ninepatch": null
   },
   {
+   "id": "ui.menu_icons",
+   "name": "菜单图标",
+   "category": "ui",
+   "kind": "sprite",
+   "layer": "ui",
+   "current": {
+    "version": 1,
+    "hash": "58765a11a4ab23ded7a7d5b6938a1b1f79ad784c266db34b8e0fecf03020f11f",
+    "status": "review",
+    "preview": "art/export/preview/ui.menu_icons.png",
+    "preview_sha256": "b346c9e23c2fd15373d8b54aba805dfce6dc0f598cb8741b92b57eddbf4580ad"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    12,
+    12
+   ],
+   "frame_count": 5,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    0,
+    0
+   ],
+   "animations": {
+    "continue": {
+     "fps": 0,
+     "loop": false,
+     "frames": [
+      0
+     ]
+    },
+    "chapters": {
+     "fps": 0,
+     "loop": false,
+     "frames": [
+      1
+     ]
+    },
+    "settings": {
+     "fps": 0,
+     "loop": false,
+     "frames": [
+      2
+     ]
+    },
+    "quit": {
+     "fps": 0,
+     "loop": false,
+     "frames": [
+      3
+     ]
+    },
+    "language": {
+     "fps": 0,
+     "loop": false,
+     "frames": [
+      4
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
    "id": "ui.panel",
    "name": "面板",
    "category": "ui",
@@ -2505,10 +2569,10 @@
    "layer": "ui",
    "current": {
     "version": 1,
-    "hash": "a0d3c7f43fa3e35734a20d0a0051c70dae723d5105ae381199e3c62547017d4c",
+    "hash": "a21ab4089cb6a98cc8769c754393608f24be93eadf000c4403dec52ad8255838",
     "status": "review",
     "preview": "art/export/preview/ui.screen.chapters.png",
-    "preview_sha256": "a029030443add4e880fb9969754de7fd8e23853787dc7e300cc9800e2a354ef1"
+    "preview_sha256": "7d49a8c139f594d8fc3d691dae751f28991d8fc34927fd3f7033fcb7dbe19362"
    },
    "approved": null,
    "current_is_approved": false,
@@ -2516,63 +2580,42 @@
     "workbench/js/core/ui.js",
     "workbench/js/core/scene.js",
     "workbench/js/core/terrain.js",
-    "workbench/js/core/ambient.js"
+    "workbench/js/core/ambient.js",
+    "workbench/js/core/i18n.js",
+    "content/i18n/zh-Hans.json",
+    "content/i18n/en.json"
    ],
    "params": {
     "screen": "chapters",
-    "heading": "选择章节",
     "chapters": [
      {
-      "num": "第1章",
-      "name": "石牢",
-      "full": "第 1 章 · 幽暗石牢",
-      "progress": "4/7",
       "theme": "theme.dungeon",
-      "blurb": "推、爬、挖、倒：认识箱子、梯子、夯土和沙。"
+      "done": 4,
+      "total": 7
      },
      {
-      "num": "第2章",
-      "name": "神庙",
-      "full": "第 2 章 · 黄金神庙",
-      "progress": "0/7",
       "theme": "theme.ruins",
-      "blurb": "水往低处流：浮起木箱、沉下铁箱、拉平两边的水。"
+      "done": 0,
+      "total": 7
      },
      {
-      "num": "第3章",
-      "name": "晶窟",
-      "full": "第 3 章 · 幽光晶窟",
-      "progress": "锁定",
       "theme": "theme.cave",
       "locked": true,
-      "unlock": "在第 2 章通关 5 关后解锁。"
+      "need": 5
      },
      {
-      "num": "第4章",
-      "name": "古森",
-      "full": "第 4 章 · 迷雾古森",
-      "progress": "锁定",
       "theme": "theme.forest",
       "locked": true,
-      "unlock": "在第 3 章通关 4 关后解锁。"
+      "need": 4
      },
      {
-      "num": "第5章",
-      "name": "圣域",
-      "full": "第 5 章 · 云端圣域",
-      "progress": "锁定",
       "theme": "theme.sky",
       "locked": true,
-      "unlock": "在第 4 章通关 5 关后解锁。"
+      "need": 5
      },
      {
-      "num": "扩展",
-      "name": "星站",
-      "full": "扩展章 · 深空星站",
-      "progress": "未开放",
       "theme": "theme.cosmos",
-      "locked": true,
-      "unlock": "主线完成并试玩后再决定是否开放（电与机关）。"
+      "locked": true
      }
     ]
    },
@@ -2586,7 +2629,9 @@
     "theme.sky",
     "ui.icons",
     "ui.keycap",
-    "ui.panel"
+    "ui.menu_icons",
+    "ui.panel",
+    "ui.theme_emblem"
    ]
   },
   {
@@ -2597,10 +2642,10 @@
    "layer": "ui",
    "current": {
     "version": 1,
-    "hash": "aa819d5bd251b27780aed66e1ab85f44af9370fce9d47482d030d89e4eef96b9",
+    "hash": "415b83b21c8be42b8856bdeebf302e8f9b8801c8002f3d0e3bb4dec6b1de12d0",
     "status": "review",
     "preview": "art/export/preview/ui.screen.complete.png",
-    "preview_sha256": "fb1d487936a135a758874b5c8e27fd5d31d77d4700ff9ebfaa2ada75649744fc"
+    "preview_sha256": "844ede408bb409299f4f90c2f56a97444b3e8a86641685b0161f2fa2904c33ed"
    },
    "approved": null,
    "current_is_approved": false,
@@ -2608,14 +2653,13 @@
     "workbench/js/core/ui.js",
     "workbench/js/core/scene.js",
     "workbench/js/core/terrain.js",
-    "workbench/js/core/ambient.js"
+    "workbench/js/core/ambient.js",
+    "workbench/js/core/i18n.js",
+    "content/i18n/zh-Hans.json",
+    "content/i18n/en.json"
    ],
    "params": {
-    "screen": "complete",
-    "heading": "过关",
-    "steps": "用了 {n} 步",
-    "next": "下一关",
-    "select": "选关"
+    "screen": "complete"
    },
    "depends": [
     "char.miner",
@@ -2623,6 +2667,7 @@
     "theme.dungeon",
     "ui.icons",
     "ui.keycap",
+    "ui.menu_icons",
     "ui.panel"
    ]
   },
@@ -2634,10 +2679,10 @@
    "layer": "ui",
    "current": {
     "version": 1,
-    "hash": "460e6c9f7a5dafb7ec8eb1ee0c0af6e1d9f9a0f5d59212472f1f70421076c2e4",
+    "hash": "1f7c16acdf080f19f970af94428d3defaddbb9a646a03d5e8291e9587801c74c",
     "status": "review",
     "preview": "art/export/preview/ui.screen.hint.png",
-    "preview_sha256": "f5971c00aca291b96394974f95b29f78ec7f5eb5a959e0014c1d04dd0f64067c"
+    "preview_sha256": "cc331e9c67f78489530f05a54c3100441000aae4a5563a7d1470b01d28b31861"
    },
    "approved": null,
    "current_is_approved": false,
@@ -2645,19 +2690,19 @@
     "workbench/js/core/ui.js",
     "workbench/js/core/scene.js",
     "workbench/js/core/terrain.js",
-    "workbench/js/core/ambient.js"
+    "workbench/js/core/ambient.js",
+    "workbench/js/core/i18n.js",
+    "content/i18n/zh-Hans.json",
+    "content/i18n/en.json"
    ],
    "params": {
-    "screen": "hint",
-    "heading": "提示",
-    "demo": "演示",
-    "rewind": "回到正确位置",
-    "more": "再看一层"
+    "screen": "hint"
    },
    "depends": [
     "theme.dungeon",
     "ui.icons",
     "ui.keycap",
+    "ui.menu_icons",
     "ui.panel"
    ]
   },
@@ -2669,10 +2714,10 @@
    "layer": "ui",
    "current": {
     "version": 1,
-    "hash": "849e266b649448ed58ffd85bbc0ff6e081ee83da15810e3ab6c861808dafbb3e",
+    "hash": "0d9507235e4623d6c8ba77cf373309dbc4c588ee8f297d9a5dfe29feca42713f",
     "status": "review",
     "preview": "art/export/preview/ui.screen.levels.png",
-    "preview_sha256": "4b4995e0ae319c4979304833a0d295597511d5f06f718c0bde0d849d2777f059"
+    "preview_sha256": "fceb3e0ed66b82fa5c6036ecbfa41669273166178677cd7fd690b88a66854fc2"
    },
    "approved": null,
    "current_is_approved": false,
@@ -2680,60 +2725,52 @@
     "workbench/js/core/ui.js",
     "workbench/js/core/scene.js",
     "workbench/js/core/terrain.js",
-    "workbench/js/core/ambient.js"
+    "workbench/js/core/ambient.js",
+    "workbench/js/core/i18n.js",
+    "content/i18n/zh-Hans.json",
+    "content/i18n/en.json"
    ],
    "params": {
     "screen": "levels",
-    "heading": "第 1 章 · 幽暗石牢",
-    "progress": "已通关 4 / 7",
+    "theme": "theme.dungeon",
+    "done": 4,
     "levels": [
      {
       "id": "M01",
-      "title": "一推到位",
       "state": "cleared"
      },
      {
       "id": "M02",
-      "title": "绕到另一边",
       "state": "cleared"
      },
      {
       "id": "M03",
-      "title": "挖开一格",
       "state": "skipped"
      },
      {
       "id": "M04",
-      "title": "一袋沙做台阶",
       "state": "cleared"
      },
      {
       "id": "M05",
-      "title": "箱子替我站",
       "state": "open",
-      "recommended": true
+      "next": true
      },
      {
       "id": "M06",
-      "title": "沙与箱各有用",
       "state": "cleared"
      },
      {
       "id": "M07",
-      "title": "挖掉支撑",
       "state": "open"
      }
-    ],
-    "hint_select": "选择",
-    "hint_enter": "进入",
-    "hint_back": "返回",
-    "recommended": "推荐",
-    "theme": "theme.dungeon"
+    ]
    },
    "depends": [
     "theme.dungeon",
     "ui.icons",
     "ui.keycap",
+    "ui.menu_icons",
     "ui.panel"
    ]
   },
@@ -2745,10 +2782,10 @@
    "layer": "ui",
    "current": {
     "version": 1,
-    "hash": "4639baf5af81adf269b0a39e5abc7a1cd67c1ab1cbd90fc270ddc09caef76805",
+    "hash": "4c76b8c40015e744dc4f766f9e785c8494a7da114e17d8f4b6df15ac4bf8575d",
     "status": "review",
     "preview": "art/export/preview/ui.screen.lobby.png",
-    "preview_sha256": "629203599de17e1a23a2c821b6b88d26e78d61d89e78ba953a62ded1858bc4b4"
+    "preview_sha256": "b217fbfffb56b65ae5cd924f061368a1ac488dbace2e5d46e32528e7e1648c63"
    },
    "approved": null,
    "current_is_approved": false,
@@ -2756,23 +2793,33 @@
     "workbench/js/core/ui.js",
     "workbench/js/core/scene.js",
     "workbench/js/core/terrain.js",
-    "workbench/js/core/ambient.js"
+    "workbench/js/core/ambient.js",
+    "workbench/js/core/i18n.js",
+    "content/i18n/zh-Hans.json",
+    "content/i18n/en.json"
    ],
    "params": {
     "screen": "lobby",
     "theme": "theme.dungeon",
-    "title": "沙与水",
-    "subtitle": "推箱子 · 横版解谜",
     "items": [
-     "继续 · M05",
-     "选择章节",
-     "设置",
-     "退出"
-    ],
-    "hint_select": "选择",
-    "hint_confirm": "确认",
-    "chapter_label": "当前：第 {n} 章 · ",
-    "chapter_extra": "当前：扩展章 · "
+     {
+      "key": "menu.continue",
+      "icon": "continue",
+      "detail": "M05"
+     },
+     {
+      "key": "menu.chapters",
+      "icon": "chapters"
+     },
+     {
+      "key": "menu.settings",
+      "icon": "settings"
+     },
+     {
+      "key": "menu.quit",
+      "icon": "quit"
+     }
+    ]
    },
    "depends": [
     "char.miner",
@@ -2781,6 +2828,7 @@
     "theme.dungeon",
     "ui.icons",
     "ui.keycap",
+    "ui.menu_icons",
     "ui.panel"
    ]
   },
@@ -2792,10 +2840,10 @@
    "layer": "ui",
    "current": {
     "version": 1,
-    "hash": "78665a1e314e2d9d12b024d01e43e10ed1e84985e9953627425753381185a327",
+    "hash": "675b27e49f3b1605eeef0a27cb2d6c8e7d7b346ef648bcfb64e5d1e2441e5153",
     "status": "review",
     "preview": "art/export/preview/ui.screen.pause.png",
-    "preview_sha256": "afe9da9c383f5ea80c225232fa19ae908958c9b1d726157459b63caef4818b00"
+    "preview_sha256": "955f9f6c5e80fe0d96f2b775cb7dc42aa900a6205dd9899b19e1a6daff1fd9b0"
    },
    "approved": null,
    "current_is_approved": false,
@@ -2803,19 +2851,21 @@
     "workbench/js/core/ui.js",
     "workbench/js/core/scene.js",
     "workbench/js/core/terrain.js",
-    "workbench/js/core/ambient.js"
+    "workbench/js/core/ambient.js",
+    "workbench/js/core/i18n.js",
+    "content/i18n/zh-Hans.json",
+    "content/i18n/en.json"
    ],
    "params": {
     "screen": "pause",
-    "heading": "暂停",
     "items": [
-     "继续",
-     "提示",
-     "重开",
-     "跳过此关",
-     "选关",
-     "设置",
-     "返回大厅"
+     "pause.resume",
+     "pause.hint",
+     "pause.restart",
+     "pause.skip",
+     "pause.levels",
+     "pause.settings",
+     "pause.menu"
     ]
    },
    "depends": [
@@ -2823,6 +2873,7 @@
     "theme.dungeon",
     "ui.icons",
     "ui.keycap",
+    "ui.menu_icons",
     "ui.panel"
    ]
   },
@@ -2834,10 +2885,10 @@
    "layer": "ui",
    "current": {
     "version": 1,
-    "hash": "021a4f39d85a3768c16d1758ddded7250eb2d9c07781728a6df0a63eaf52e5b9",
+    "hash": "074c5fde4eda5b76a7ff092908900117c5bc328da005645463c9dadfc527d58b",
     "status": "review",
     "preview": "art/export/preview/ui.screen.rulecard.png",
-    "preview_sha256": "df5b6660019d3894096d186d8421adf69cce1da81928dbfadd34b858b7916400"
+    "preview_sha256": "9b0dfdb4428d4432cb7684b559726e5f74e39ece17d7ec5fc78b79b5b461a73d"
    },
    "approved": null,
    "current_is_approved": false,
@@ -2845,19 +2896,20 @@
     "workbench/js/core/ui.js",
     "workbench/js/core/scene.js",
     "workbench/js/core/terrain.js",
-    "workbench/js/core/ambient.js"
+    "workbench/js/core/ambient.js",
+    "workbench/js/core/i18n.js",
+    "content/i18n/zh-Hans.json",
+    "content/i18n/en.json"
    ],
    "params": {
-    "screen": "rulecard",
-    "heading": "规则卡 · 夯土",
-    "text": "褐色带碎石的是夯土：可以挖，挖出一袋沙；挖掉下面的土，上面的土不会掉。",
-    "close": "知道了"
+    "screen": "rulecard"
    },
    "depends": [
     "char.miner",
     "theme.dungeon",
     "ui.icons",
     "ui.keycap",
+    "ui.menu_icons",
     "ui.panel"
    ]
   },
@@ -2869,10 +2921,10 @@
    "layer": "ui",
    "current": {
     "version": 1,
-    "hash": "b3a225df684f4cea274691b2794b99baf7712d326291c69e2e51d1bf1b735f68",
+    "hash": "fb3d0fdebc49da97abe1f7907679aed3853ffab64b121dfa7700e28beac37c40",
     "status": "review",
     "preview": "art/export/preview/ui.screen.settings.png",
-    "preview_sha256": "537f0eddaa99f9265f3224347821bbd5abb16626a61c6163c7d0b62fb97de2f8"
+    "preview_sha256": "316917e16d9e6be88531bce0d0bfbe651481815ef4d840bc9fe15e60acd94a53"
    },
    "approved": null,
    "current_is_approved": false,
@@ -2880,43 +2932,48 @@
     "workbench/js/core/ui.js",
     "workbench/js/core/scene.js",
     "workbench/js/core/terrain.js",
-    "workbench/js/core/ambient.js"
+    "workbench/js/core/ambient.js",
+    "workbench/js/core/i18n.js",
+    "content/i18n/zh-Hans.json",
+    "content/i18n/en.json"
    ],
    "params": {
     "screen": "settings",
-    "heading": "设置",
-    "on": "开",
-    "off": "关",
     "items": [
      {
-      "label": "音乐",
+      "key": "settings.language",
+      "type": "value",
+      "valueKey": "@language"
+     },
+     {
+      "key": "settings.music",
       "type": "slider",
       "value": 8
      },
      {
-      "label": "音效",
+      "key": "settings.sfx",
       "type": "slider",
       "value": 8
      },
      {
-      "label": "窗口放大",
+      "key": "settings.scale",
       "type": "value",
-      "value": "自动"
+      "valueKey": "settings.scale.auto"
      },
      {
-      "label": "显示网格",
+      "key": "settings.grid",
       "type": "toggle",
       "value": false
      },
      {
-      "label": "开放全部关卡",
+      "key": "settings.unlock",
       "type": "toggle",
       "value": false
      },
      {
-      "label": "重看引导",
+      "key": "settings.tutorial",
       "type": "value",
-      "value": "执行"
+      "valueKey": "settings.run"
      }
     ]
    },
@@ -2924,6 +2981,7 @@
     "theme.dungeon",
     "ui.icons",
     "ui.keycap",
+    "ui.menu_icons",
     "ui.panel"
    ]
   },
@@ -2983,6 +3041,151 @@
     }
    },
    "ninepatch": null
+  },
+  {
+   "id": "ui.theme_emblem",
+   "name": "主题徽章",
+   "category": "ui",
+   "kind": "sprite",
+   "layer": "ui",
+   "current": {
+    "version": 1,
+    "hash": "116c2633d6261bbcaf0c121b0c45cd874d52a2b53188c3dcc1025430d37c1076",
+    "status": "review",
+    "preview": "art/export/preview/ui.theme_emblem.png",
+    "preview_sha256": "6221ca8792d52a782eadebc03e2a5be32704528a4bfec8c40e927c11a39b0f88"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    16,
+    16
+   ],
+   "frame_count": 6,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    0,
+    0
+   ],
+   "animations": {
+    "dungeon": {
+     "fps": 0,
+     "loop": false,
+     "frames": [
+      0
+     ]
+    },
+    "ruins": {
+     "fps": 0,
+     "loop": false,
+     "frames": [
+      1
+     ]
+    },
+    "cave": {
+     "fps": 0,
+     "loop": false,
+     "frames": [
+      2
+     ]
+    },
+    "forest": {
+     "fps": 0,
+     "loop": false,
+     "frames": [
+      3
+     ]
+    },
+    "sky": {
+     "fps": 0,
+     "loop": false,
+     "frames": [
+      4
+     ]
+    },
+    "cosmos": {
+     "fps": 0,
+     "loop": false,
+     "frames": [
+      5
+     ]
+    }
+   },
+   "ninepatch": null
+  }
+ ],
+ "text_issues": [
+  {
+   "screen": "ui.screen.chapters",
+   "locale": "qps",
+   "kind": "ellipsis",
+   "key": "[4 / 7 ~~~~]"
+  },
+  {
+   "screen": "ui.screen.chapters",
+   "locale": "qps",
+   "kind": "ellipsis",
+   "key": "[0 / 7 ~~~~]"
+  },
+  {
+   "screen": "ui.screen.hint",
+   "locale": "qps",
+   "kind": "ellipsis",
+   "key": "hint.rewind"
+  },
+  {
+   "screen": "ui.screen.levels",
+   "locale": "qps",
+   "kind": "ellipsis",
+   "key": "levels.title"
+  },
+  {
+   "screen": "ui.screen.levels",
+   "locale": "qps",
+   "kind": "ellipsis",
+   "key": "level.M02.title"
+  },
+  {
+   "screen": "ui.screen.levels",
+   "locale": "qps",
+   "kind": "ellipsis",
+   "key": "level.M04.title"
+  },
+  {
+   "screen": "ui.screen.levels",
+   "locale": "qps",
+   "kind": "ellipsis",
+   "key": "level.M05.title"
+  },
+  {
+   "screen": "ui.screen.levels",
+   "locale": "qps",
+   "kind": "clip",
+   "key": "level.M05.discovery"
+  },
+  {
+   "screen": "ui.screen.levels",
+   "locale": "qps",
+   "kind": "dropped",
+   "key": "keybar"
+  },
+  {
+   "screen": "ui.screen.lobby",
+   "locale": "qps",
+   "kind": "clip",
+   "key": "game.tagline"
+  },
+  {
+   "screen": "ui.screen.lobby",
+   "locale": "qps",
+   "kind": "ellipsis",
+   "key": "lobby.current"
+  },
+  {
+   "screen": "ui.screen.rulecard",
+   "locale": "qps",
+   "kind": "clip",
+   "key": "rule.earth.text"
   }
  ],
  "references": [
@@ -3039,7 +3242,7 @@
   {
    "name": "lobby.dungeon",
    "file": "art/export/reference/lobby.dungeon.png",
-   "sha256": "629203599de17e1a23a2c821b6b88d26e78d61d89e78ba953a62ded1858bc4b4",
+   "sha256": "b217fbfffb56b65ae5cd924f061368a1ac488dbace2e5d46e32528e7e1648c63",
    "uses": [
     "ui.screen.lobby",
     "theme.dungeon",
@@ -3091,7 +3294,7 @@
   {
    "name": "showcase.ruins",
    "file": "art/export/reference/showcase.ruins.png",
-   "sha256": "3b2ac2205fa6d1d9d8d421ec5ef06fcdd89e67f4d9fae953a605f6c461ac495a",
+   "sha256": "1fcfe63162df39c75c43f9dd0313ef9115c7e4d606b98dab6a77f1717c5efd44",
    "uses": [
     "theme.ruins",
     "deco.ruins_lotus",
@@ -3139,7 +3342,7 @@
   {
    "name": "lobby.ruins",
    "file": "art/export/reference/lobby.ruins.png",
-   "sha256": "8f0f133d17e524f955ae058393730a476ea83b260cb29dab9f594362201e9998",
+   "sha256": "0e8a7d8bbea6b7423ebe438df29a0ac794ca3df68c7d129e7218bc1f8712e126",
    "uses": [
     "ui.screen.lobby",
     "theme.ruins",
@@ -3189,7 +3392,7 @@
   {
    "name": "showcase.cave",
    "file": "art/export/reference/showcase.cave.png",
-   "sha256": "f7fb9e7dfeb510c621344dad23cdc6e3cef065a27d7bc307fb20fce886c25f06",
+   "sha256": "87d31d73ef05e91d77e9494ea28b047ecf9a53e306d4aa6850c3ec9c837775a7",
    "uses": [
     "theme.cave",
     "deco.cave_crystal",
@@ -3237,7 +3440,7 @@
   {
    "name": "lobby.cave",
    "file": "art/export/reference/lobby.cave.png",
-   "sha256": "444ac3fd87c240f8be184d32f68f9b6ec3c2c0142fd45fe2e7b6eaef1ce393f8",
+   "sha256": "9cf9cab67f475710ba7c914e00679dcd0e6bedf80bd1de0f3ed330931ca14d11",
    "uses": [
     "ui.screen.lobby",
     "theme.cave",
@@ -3287,7 +3490,7 @@
   {
    "name": "showcase.forest",
    "file": "art/export/reference/showcase.forest.png",
-   "sha256": "da10fa9e5a434a3094f2aae120e8221c0f6ce2162ceee93cc2dcfb24ee84dc7d",
+   "sha256": "a3b1ccd03c26c2d64aaf040d77034110c13de4a3c9df39cb35fbf1fbc62dec33",
    "uses": [
     "theme.forest",
     "deco.forest_flower",
@@ -3337,7 +3540,7 @@
   {
    "name": "lobby.forest",
    "file": "art/export/reference/lobby.forest.png",
-   "sha256": "eefa73ac371309768758bfea4843ad79027390683dd6b7beca45566af2469f30",
+   "sha256": "b30ee830322cb8b99daf5aa2117c279c1f0103ca286de314274447ae1fde16b8",
    "uses": [
     "ui.screen.lobby",
     "theme.forest",
@@ -3389,7 +3592,7 @@
   {
    "name": "showcase.sky",
    "file": "art/export/reference/showcase.sky.png",
-   "sha256": "739905b0d40e8b7b7fb46af6a16f9eef2515d65bf8fca27550ad0c3529216ebb",
+   "sha256": "ed3142754c7a0e2d2a0a2017025ea020296e47022da932a6ffb01bcb4714ec0e",
    "uses": [
     "theme.sky",
     "deco.sky_flower",
@@ -3437,7 +3640,7 @@
   {
    "name": "lobby.sky",
    "file": "art/export/reference/lobby.sky.png",
-   "sha256": "3bae69d57f57a71a94b77759a227adc3dee5f461f8b51f35afdf04adf64ab107",
+   "sha256": "9c4adb4463427f5c154f89530abdcada17e2e42b1687010c7acdbf31859b1e11",
    "uses": [
     "ui.screen.lobby",
     "theme.sky",
@@ -3487,7 +3690,7 @@
   {
    "name": "showcase.cosmos",
    "file": "art/export/reference/showcase.cosmos.png",
-   "sha256": "1097cf27132834ffc2738a3f35391cc1d1a745e437f06e707593ffcacffb3054",
+   "sha256": "08f5879c1b81a6c3ff193c168e1eb519d0a6235263b842f58e86970bbc29d526",
    "uses": [
     "theme.cosmos",
     "deco.cosmos_sprout",
@@ -3533,7 +3736,7 @@
   {
    "name": "lobby.cosmos",
    "file": "art/export/reference/lobby.cosmos.png",
-   "sha256": "4683bae88ec4697f636303c9eeb645cdc51311b11c31c5d5e5a97478c3a1866d",
+   "sha256": "acad68ca91b2f7577ac2928de35b9bf3be08aa1c7ae9b23c5de5ded68225813e",
    "uses": [
     "ui.screen.lobby",
     "theme.cosmos",
@@ -3926,6 +4129,414 @@
     "ui.goal_lamp",
     "item.sandbag",
     "item.bomb"
+   ]
+  },
+  {
+   "name": "chapters.zh-Hans",
+   "file": "art/export/reference/chapters.zh-Hans.png",
+   "sha256": "7d49a8c139f594d8fc3d691dae751f28991d8fc34927fd3f7033fcb7dbe19362",
+   "uses": [
+    "ui.screen.chapters",
+    "char.miner",
+    "theme.cave",
+    "theme.cosmos",
+    "theme.dungeon",
+    "theme.forest",
+    "theme.ruins",
+    "theme.sky",
+    "ui.icons",
+    "ui.keycap",
+    "ui.menu_icons",
+    "ui.panel",
+    "ui.theme_emblem"
+   ],
+   "all_approved": false,
+   "unapproved": [
+    "ui.screen.chapters",
+    "char.miner",
+    "theme.cave",
+    "theme.cosmos",
+    "theme.dungeon",
+    "theme.forest",
+    "theme.ruins",
+    "theme.sky",
+    "ui.icons",
+    "ui.keycap",
+    "ui.menu_icons",
+    "ui.panel",
+    "ui.theme_emblem"
+   ]
+  },
+  {
+   "name": "chapters.en",
+   "file": "art/export/reference/chapters.en.png",
+   "sha256": "5b56e61be98bec13393f1eaa890a2d62b80fb2d8d551a776c38b5c43ff7bfa1e",
+   "uses": [
+    "ui.screen.chapters",
+    "char.miner",
+    "theme.cave",
+    "theme.cosmos",
+    "theme.dungeon",
+    "theme.forest",
+    "theme.ruins",
+    "theme.sky",
+    "ui.icons",
+    "ui.keycap",
+    "ui.menu_icons",
+    "ui.panel",
+    "ui.theme_emblem"
+   ],
+   "all_approved": false,
+   "unapproved": [
+    "ui.screen.chapters",
+    "char.miner",
+    "theme.cave",
+    "theme.cosmos",
+    "theme.dungeon",
+    "theme.forest",
+    "theme.ruins",
+    "theme.sky",
+    "ui.icons",
+    "ui.keycap",
+    "ui.menu_icons",
+    "ui.panel",
+    "ui.theme_emblem"
+   ]
+  },
+  {
+   "name": "complete.zh-Hans",
+   "file": "art/export/reference/complete.zh-Hans.png",
+   "sha256": "844ede408bb409299f4f90c2f56a97444b3e8a86641685b0161f2fa2904c33ed",
+   "uses": [
+    "ui.screen.complete",
+    "char.miner",
+    "mech.socket_lit",
+    "theme.dungeon",
+    "ui.icons",
+    "ui.keycap",
+    "ui.menu_icons",
+    "ui.panel"
+   ],
+   "all_approved": false,
+   "unapproved": [
+    "ui.screen.complete",
+    "char.miner",
+    "mech.socket_lit",
+    "theme.dungeon",
+    "ui.icons",
+    "ui.keycap",
+    "ui.menu_icons",
+    "ui.panel"
+   ]
+  },
+  {
+   "name": "complete.en",
+   "file": "art/export/reference/complete.en.png",
+   "sha256": "54f2b6537dd95436a709dbbe483f83532a88d3b34a75ee6ae6faad37b8da9f42",
+   "uses": [
+    "ui.screen.complete",
+    "char.miner",
+    "mech.socket_lit",
+    "theme.dungeon",
+    "ui.icons",
+    "ui.keycap",
+    "ui.menu_icons",
+    "ui.panel"
+   ],
+   "all_approved": false,
+   "unapproved": [
+    "ui.screen.complete",
+    "char.miner",
+    "mech.socket_lit",
+    "theme.dungeon",
+    "ui.icons",
+    "ui.keycap",
+    "ui.menu_icons",
+    "ui.panel"
+   ]
+  },
+  {
+   "name": "hint.zh-Hans",
+   "file": "art/export/reference/hint.zh-Hans.png",
+   "sha256": "cc331e9c67f78489530f05a54c3100441000aae4a5563a7d1470b01d28b31861",
+   "uses": [
+    "ui.screen.hint",
+    "theme.dungeon",
+    "ui.icons",
+    "ui.keycap",
+    "ui.menu_icons",
+    "ui.panel"
+   ],
+   "all_approved": false,
+   "unapproved": [
+    "ui.screen.hint",
+    "theme.dungeon",
+    "ui.icons",
+    "ui.keycap",
+    "ui.menu_icons",
+    "ui.panel"
+   ]
+  },
+  {
+   "name": "hint.en",
+   "file": "art/export/reference/hint.en.png",
+   "sha256": "8d146e93976a676bbebc459f9a58ccf2338c8f1a05132f22233b239844ea28ae",
+   "uses": [
+    "ui.screen.hint",
+    "theme.dungeon",
+    "ui.icons",
+    "ui.keycap",
+    "ui.menu_icons",
+    "ui.panel"
+   ],
+   "all_approved": false,
+   "unapproved": [
+    "ui.screen.hint",
+    "theme.dungeon",
+    "ui.icons",
+    "ui.keycap",
+    "ui.menu_icons",
+    "ui.panel"
+   ]
+  },
+  {
+   "name": "levels.zh-Hans",
+   "file": "art/export/reference/levels.zh-Hans.png",
+   "sha256": "fceb3e0ed66b82fa5c6036ecbfa41669273166178677cd7fd690b88a66854fc2",
+   "uses": [
+    "ui.screen.levels",
+    "theme.dungeon",
+    "ui.icons",
+    "ui.keycap",
+    "ui.menu_icons",
+    "ui.panel"
+   ],
+   "all_approved": false,
+   "unapproved": [
+    "ui.screen.levels",
+    "theme.dungeon",
+    "ui.icons",
+    "ui.keycap",
+    "ui.menu_icons",
+    "ui.panel"
+   ]
+  },
+  {
+   "name": "levels.en",
+   "file": "art/export/reference/levels.en.png",
+   "sha256": "f576891c4059dd5cc144756ccc792dc7b0fa05e6ebe598be0d60a0f93828d977",
+   "uses": [
+    "ui.screen.levels",
+    "theme.dungeon",
+    "ui.icons",
+    "ui.keycap",
+    "ui.menu_icons",
+    "ui.panel"
+   ],
+   "all_approved": false,
+   "unapproved": [
+    "ui.screen.levels",
+    "theme.dungeon",
+    "ui.icons",
+    "ui.keycap",
+    "ui.menu_icons",
+    "ui.panel"
+   ]
+  },
+  {
+   "name": "lobby.zh-Hans",
+   "file": "art/export/reference/lobby.zh-Hans.png",
+   "sha256": "b217fbfffb56b65ae5cd924f061368a1ac488dbace2e5d46e32528e7e1648c63",
+   "uses": [
+    "ui.screen.lobby",
+    "char.miner",
+    "mech.exit_flag",
+    "obj.crate_wood",
+    "theme.dungeon",
+    "ui.icons",
+    "ui.keycap",
+    "ui.menu_icons",
+    "ui.panel"
+   ],
+   "all_approved": false,
+   "unapproved": [
+    "ui.screen.lobby",
+    "char.miner",
+    "mech.exit_flag",
+    "obj.crate_wood",
+    "theme.dungeon",
+    "ui.icons",
+    "ui.keycap",
+    "ui.menu_icons",
+    "ui.panel"
+   ]
+  },
+  {
+   "name": "lobby.en",
+   "file": "art/export/reference/lobby.en.png",
+   "sha256": "2ed07a0804c754a4a454cee54b83b8d47784c1a9e30824ca2d18905af6bb84cc",
+   "uses": [
+    "ui.screen.lobby",
+    "char.miner",
+    "mech.exit_flag",
+    "obj.crate_wood",
+    "theme.dungeon",
+    "ui.icons",
+    "ui.keycap",
+    "ui.menu_icons",
+    "ui.panel"
+   ],
+   "all_approved": false,
+   "unapproved": [
+    "ui.screen.lobby",
+    "char.miner",
+    "mech.exit_flag",
+    "obj.crate_wood",
+    "theme.dungeon",
+    "ui.icons",
+    "ui.keycap",
+    "ui.menu_icons",
+    "ui.panel"
+   ]
+  },
+  {
+   "name": "pause.zh-Hans",
+   "file": "art/export/reference/pause.zh-Hans.png",
+   "sha256": "955f9f6c5e80fe0d96f2b775cb7dc42aa900a6205dd9899b19e1a6daff1fd9b0",
+   "uses": [
+    "ui.screen.pause",
+    "char.miner",
+    "theme.dungeon",
+    "ui.icons",
+    "ui.keycap",
+    "ui.menu_icons",
+    "ui.panel"
+   ],
+   "all_approved": false,
+   "unapproved": [
+    "ui.screen.pause",
+    "char.miner",
+    "theme.dungeon",
+    "ui.icons",
+    "ui.keycap",
+    "ui.menu_icons",
+    "ui.panel"
+   ]
+  },
+  {
+   "name": "pause.en",
+   "file": "art/export/reference/pause.en.png",
+   "sha256": "7a317707841a4befaea1d40f22f2c58f3c80bfae1047fe118373eb663f10989b",
+   "uses": [
+    "ui.screen.pause",
+    "char.miner",
+    "theme.dungeon",
+    "ui.icons",
+    "ui.keycap",
+    "ui.menu_icons",
+    "ui.panel"
+   ],
+   "all_approved": false,
+   "unapproved": [
+    "ui.screen.pause",
+    "char.miner",
+    "theme.dungeon",
+    "ui.icons",
+    "ui.keycap",
+    "ui.menu_icons",
+    "ui.panel"
+   ]
+  },
+  {
+   "name": "rulecard.zh-Hans",
+   "file": "art/export/reference/rulecard.zh-Hans.png",
+   "sha256": "9b0dfdb4428d4432cb7684b559726e5f74e39ece17d7ec5fc78b79b5b461a73d",
+   "uses": [
+    "ui.screen.rulecard",
+    "char.miner",
+    "theme.dungeon",
+    "ui.icons",
+    "ui.keycap",
+    "ui.menu_icons",
+    "ui.panel"
+   ],
+   "all_approved": false,
+   "unapproved": [
+    "ui.screen.rulecard",
+    "char.miner",
+    "theme.dungeon",
+    "ui.icons",
+    "ui.keycap",
+    "ui.menu_icons",
+    "ui.panel"
+   ]
+  },
+  {
+   "name": "rulecard.en",
+   "file": "art/export/reference/rulecard.en.png",
+   "sha256": "2f6fd7d7316cd87e65359d3de57cd7ac660cd6a94dd6fa665c84758fef752972",
+   "uses": [
+    "ui.screen.rulecard",
+    "char.miner",
+    "theme.dungeon",
+    "ui.icons",
+    "ui.keycap",
+    "ui.menu_icons",
+    "ui.panel"
+   ],
+   "all_approved": false,
+   "unapproved": [
+    "ui.screen.rulecard",
+    "char.miner",
+    "theme.dungeon",
+    "ui.icons",
+    "ui.keycap",
+    "ui.menu_icons",
+    "ui.panel"
+   ]
+  },
+  {
+   "name": "settings.zh-Hans",
+   "file": "art/export/reference/settings.zh-Hans.png",
+   "sha256": "316917e16d9e6be88531bce0d0bfbe651481815ef4d840bc9fe15e60acd94a53",
+   "uses": [
+    "ui.screen.settings",
+    "theme.dungeon",
+    "ui.icons",
+    "ui.keycap",
+    "ui.menu_icons",
+    "ui.panel"
+   ],
+   "all_approved": false,
+   "unapproved": [
+    "ui.screen.settings",
+    "theme.dungeon",
+    "ui.icons",
+    "ui.keycap",
+    "ui.menu_icons",
+    "ui.panel"
+   ]
+  },
+  {
+   "name": "settings.en",
+   "file": "art/export/reference/settings.en.png",
+   "sha256": "fc63806fedf68236fe7765cff13392c710afe71f30e909888758effd4657cf88",
+   "uses": [
+    "ui.screen.settings",
+    "theme.dungeon",
+    "ui.icons",
+    "ui.keycap",
+    "ui.menu_icons",
+    "ui.panel"
+   ],
+   "all_approved": false,
+   "unapproved": [
+    "ui.screen.settings",
+    "theme.dungeon",
+    "ui.icons",
+    "ui.keycap",
+    "ui.menu_icons",
+    "ui.panel"
    ]
   }
  ]

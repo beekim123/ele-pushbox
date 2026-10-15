@@ -97,15 +97,18 @@
       if (h32(wx >> 2, band, 17) % 11 === 0 && (wy & 3) === 0) c = P.seam;
       if (hash % 97 === 0) c = P.speck;
     } else if (P.pattern === "grass") {
-      c = pick(P.base, h32(wx >> 1, wy >> 2, 13) % 4 === 0 ? 1 : 0);
-      if (h32(wx, wy >> 1, 19) % 23 === 0) c = P.seam;
-      if (hash % 41 === 0) c = P.speck;
+      // Mossy stone: big soft patches, a few cracks and moss flecks.
+      c = pick(P.base, h32(wx >> 3, (wy + ((wx >> 3) & 1) * 4) >> 3, 13) % 3 === 0 ? 1 : 0);
+      if ((wy & 7) === 7 && h32(wx >> 2, wy >> 3, 19) % 5 === 0) c = P.seam;
+      if (h32(wx >> 1, wy >> 1, 43) % 37 === 0) c = P.speck;
     } else if (P.pattern === "marble") {
       // Polished slabs (16x8) with a thin vein now and then.
       const row = wy >> 3, col = (wx + (row & 1) * 8) >> 4;
       c = P.base[0];
       if ((wy & 7) === 7 || ((wx + (row & 1) * 8) & 15) === 15) c = P.base[1];
       else if (h32(col, row, 15) % 3 === 0 && (wx + wy * 2 + (h32(col, row, 16) % 9)) % 17 === 0) c = P.seam;
+    } else if (P.pattern === "cloud") {
+      return cloud(P, wx, wy, px, py, n, hash);
     } else if (P.pattern === "panel") {
       const ex = px === 0 || px === 15, ey = py === 0 || py === 15;
       seam = ex || ey;
@@ -127,7 +130,7 @@
         else if (py === 2) c = blade < 2 ? P.light2 : c;
         else if (py === 3 && blade === 0) c = P.light2;
       } else if (P.pattern === "panel") {
-        if (py <= 2) c = ((wx + py) >> 2) & 1 ? P.top : "z";
+        if (py === 0) c = P.light; else if (py === 1) c = (wx & 7) === 3 ? P.top : P.light2;
       } else if (P.pattern === "marble" || P.pattern === "block") {
         if (py === 0) c = P.top; else if (py === 1) c = P.light;
       } else if (P.pattern === "rough") {
@@ -145,6 +148,34 @@
       } else if (py === 15) c = P.dark;
     }
     if ((px === 0 && n.left === MAT.EMPTY && py > 0) || (px === 15 && n.right === MAT.EMPTY && py > 0)) c = P.edge;
+    if ((P.pattern === "rough" || P.pattern === "grass") && corner(n, px, py, 2)) return null;
+    return c;
+  }
+
+  // True for pixels cut away to round an exposed corner of radius rad.
+  function corner(n, px, py, rad) {
+    const E = (m) => m === MAT.EMPTY;
+    const u = E(n.up), d = E(n.down), l = E(n.left), r = E(n.right);
+    return (u && l && px + py < rad) || (u && r && 15 - px + py < rad) || (d && l && px + 15 - py < rad) || (d && r && 30 - px - py < rad);
+  }
+
+  // Sky platforms are solid clouds: white puffs, scalloped top, shaded underside, round corners.
+  function cloud(P, wx, wy, px, py, n, hash) {
+    const E = (m) => m === MAT.EMPTY || m === MAT.WATER;
+    if (corner(n, px, py, 4)) return null;
+    const bumpTop = h32(wx >> 2, 0, 33) % 2;          // 0..1 px dips along an exposed top
+    const bumpBot = 1 + (h32(wx >> 2, 1, 33) % 3);    // 1..3 px scallops along an exposed bottom
+    if (E(n.up) && py < bumpTop) return null;
+    if (E(n.down) && py > 15 - bumpBot) return null;
+    if (E(n.left) && px < (h32(0, wy >> 2, 35) % 2)) return null;
+    if (E(n.right) && px > 15 - (h32(1, wy >> 2, 35) % 2)) return null;
+    let c = P.base[0];
+    // Stacked puffs: each 8-px layer has a scalloped, lightly shaded lower edge.
+    const layer = wy >> 3, scallop = 6 - (h32(wx >> 2, layer, 39) % 3);
+    if ((wy & 7) >= scallop && (wy & 7) <= scallop + 1 && h32(wx >> 3, layer, 41) % 4 !== 0) c = P.base[1];
+    if (E(n.down)) { const fromBottom = 15 - bumpBot - py; if (fromBottom <= 0) c = P.dark; else if (fromBottom <= 3) c = P.base[1]; }
+    if (E(n.right) && px >= 14) c = c === P.dark ? P.dark : P.base[1];
+    if (E(n.up) && py === bumpTop) c = P.light;
     return c;
   }
 

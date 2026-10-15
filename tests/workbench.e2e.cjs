@@ -79,7 +79,18 @@ async function decode(file) {
   const v = await page.evaluate(() => { const a = PBStore.asset("obj.crate_wood"); return `obj.crate_wood@v${a.version} #${a.content_hash.slice(0, 12)}`; });
   check(text.includes(v), "review text lists the exact version and hash");
 
-  // 6. Narrow window: no horizontal page scroll, navigation still reachable.
+  // 6. Every UI screen lays out in Chinese and English without cut text.
+  const textIssues = await page.evaluate(() => {
+    const out = [];
+    for (const a of PBStore.assets().filter((x) => x.category === "screen")) for (const locale of ["zh-Hans", "en"]) {
+      const st = { locale, focus: 0, specs: Object.fromEntries(PBStore.levels().map((l) => [l.id, l])), levelSpec: PBStore.level("M05"), ruleSpec: PBStore.level("M03") };
+      for (const i of PB.ui.render(new PB.Raster(320, 180), a, 0, st)) out.push(`${a.id}/${locale}/${i.key}`);
+    }
+    return out;
+  });
+  check(textIssues.length === 0, "all screens fit in zh-Hans and en" + (textIssues.length ? ": " + textIssues.slice(0, 3).join(", ") : ""));
+
+  // 7. Narrow window: no horizontal page scroll, navigation still reachable.
   await page.setViewportSize({ width: 390, height: 800 });
   for (const h of ["#scenes", "#assets/char.miner", "#review"]) {
     await page.goto(URL + h); await page.waitForTimeout(250);
