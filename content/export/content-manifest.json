@@ -2102,7 +2102,11 @@
     "love_letter"
    ],
    "layer": 1,
-   "status": "concept"
+   "status": "concept",
+   "params": {
+    "move": "wander",
+    "step_secs": 0.8
+   }
   },
   {
    "id": "old_miner",
@@ -2118,7 +2122,10 @@
     "letter"
    ],
    "layer": 1,
-   "status": "concept"
+   "status": "concept",
+   "params": {
+    "move": "stay"
+   }
   },
   {
    "id": "moth_king",
@@ -2526,7 +2533,11 @@
     "magnet"
    ],
    "layer": 2,
-   "status": "concept"
+   "status": "concept",
+   "params": {
+    "move": "stay",
+    "home_melt_mult": 3
+   }
   },
   {
    "id": "dwarf",
@@ -3265,7 +3276,11 @@
    "rarity": "common",
    "carry": "small",
    "layer": 1,
-   "status": "concept"
+   "status": "concept",
+   "params": {
+    "pay": 30,
+    "water_damage": 1
+   }
   },
   {
    "id": "ice_cream",
@@ -3280,7 +3295,11 @@
    "rarity": "common",
    "carry": "medium",
    "layer": 1,
-   "status": "concept"
+   "status": "concept",
+   "params": {
+    "pay": 40,
+    "melt_secs_per_point": 80
+   }
   },
   {
    "id": "piano",
@@ -3310,7 +3329,13 @@
    "rarity": "common",
    "carry": "medium",
    "layer": 1,
-   "status": "concept"
+   "status": "concept",
+   "params": {
+    "pay": 45,
+    "fragile_fall_rows": 2,
+    "hurt_damage": 1,
+    "sand_cushion": true
+   }
   },
   {
    "id": "fish_tank",
@@ -4268,7 +4293,22 @@
    "pushable": true,
    "mode": "delivery",
    "layer": 1,
-   "status": "concept"
+   "status": "concept",
+   "params": {
+    "move": "chase",
+    "step_secs": 0.3,
+    "chase_step_secs": 0.25,
+    "sight_tiles": 5,
+    "cliff_rows": 2,
+    "contact": "steal",
+    "steal_sand": 1,
+    "steal_coins": 5,
+    "flee_secs": 3,
+    "flee_step_secs": 0.2,
+    "push_stun_secs": 0.5,
+    "trap_secs": 3,
+    "coins": 5
+   }
   },
   {
    "id": "skeleton_guard",
@@ -4279,7 +4319,15 @@
    "pushable": false,
    "mode": "delivery",
    "layer": 1,
-   "status": "concept"
+   "status": "concept",
+   "params": {
+    "move": "patrol",
+    "step_secs": 0.5,
+    "cliff_rows": 2,
+    "contact": "hurt",
+    "trap_secs": 5,
+    "coins": 10
+   }
   },
   {
    "id": "scarab_swarm",
@@ -5118,7 +5166,10 @@
    "price": 10,
    "assets": [
     "item.sandbag"
-   ]
+   ],
+   "params": {
+    "sand": 1
+   }
   },
   {
    "id": "bomb",
@@ -5139,7 +5190,10 @@
    "summary": "在当前位置向下放一段梯子",
    "status": "concept",
    "layer": 1,
-   "price": 25
+   "price": 25,
+   "params": {
+    "max_tiles": 6
+   }
   },
   {
    "id": "plank",
@@ -5274,7 +5328,10 @@
    "summary": "回 1 颗心",
    "status": "concept",
    "layer": 1,
-   "price": 50
+   "price": 50,
+   "params": {
+    "heal": 1
+   }
   },
   {
    "id": "pocket_watch",
@@ -5767,6 +5824,111 @@
    "mode": "delivery",
    "layer": 2,
    "status": "concept"
+  }
+ ],
+ "slices": [
+  {
+   "id": "dungeon_1",
+   "name": "第一个可玩切片 · 幽暗石牢",
+   "mode": "delivery",
+   "status": "design",
+   "doc": "docs/design/delivery-slice.md",
+   "world": "dungeon",
+   "cargo": [
+    "letter",
+    "vase",
+    "ice_cream"
+   ],
+   "recipients": [
+    "old_miner",
+    "zombie",
+    "goblin_smith"
+   ],
+   "monsters": [
+    "rat_swarm",
+    "skeleton_guard"
+   ],
+   "mechanisms": [
+    "push",
+    "ladder",
+    "dig",
+    "pour",
+    "plate_door",
+    "fall",
+    "push_monster",
+    "crush_monster",
+    "trap_monster"
+   ],
+   "station": {
+    "items": [
+     "sandbag",
+     "first_aid",
+     "rope_ladder"
+    ],
+    "stock": {
+     "sandbag": 5,
+     "first_aid": 1,
+     "rope_ladder": 2
+    },
+    "heal": 1
+   },
+   "reels": {
+    "rerolls": 1,
+    "weights": {
+     "common": 4,
+     "rare": 2,
+     "legendary": 1
+    }
+   },
+   "map": {
+    "cols": 4,
+    "rows": 3,
+    "path_min": 5,
+    "path_max": 9,
+    "directions": [
+     "down",
+     "up"
+    ]
+   },
+   "time": {
+    "tick_hz": 60,
+    "transition_secs": 0.3
+   },
+   "intervals": {
+    "walk": 0.22,
+    "climb": 0.22,
+    "push": 0.3,
+    "dig": 0.35,
+    "pour": 0.35,
+    "interact": 0.4,
+    "move_anim": 0.1
+   },
+   "gravity": {
+    "tiles_per_sec": 12
+   },
+   "player": {
+    "hearts": 3,
+    "iframe_secs": 1.5,
+    "fall_hurt_rows": 3,
+    "sand_max": 9,
+    "item_slots": 3
+   },
+   "monster_fall_ko_rows": 3,
+   "cargo_integrity": 3,
+   "coins": {
+    "pickup": 5
+   },
+   "tip": {
+    "time_fast": 1.5,
+    "time_floor": 0.5,
+    "like": 1.5
+   },
+   "rating": {
+    "S": 1.4,
+    "A": 1,
+    "B": 0.6
+   },
+   "fail_keep": 0.5
   }
  ]
 }

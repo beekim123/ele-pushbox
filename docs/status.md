@@ -4,48 +4,47 @@
 
 ## 当前阶段
 
-**R2 开始：用户确认了全部美术（`APR-0005`），交接提示词已交给 GPT。** GPT 先做阶段一（工程骨架 + 第 1 组 + 全套菜单），再做阶段二（第 2 组）。
+两条线同时进行：
 
-- 用户已确认上一轮的 17 项美术（`APR-0004`）和对话气泡的 12 项（`APR-0005`）。
-- **对话气泡**（[dialogue.md](design/dialogue.md)）：角色说的话放进贴着说话人的气泡，用 10px 小字；关卡提示改成主角说话。气泡外观已在工作台。对话数据、触发器、委托是以后的内容，结构已定。
-- **工程结构**（[architecture.md](design/architecture.md)）：Godot 工程分层、目录、注册表、事件、存档分段、机制接口、属性修正，以及"怎么加新机制 / 新系统 / 新模式"的固定步骤。
-- **资源编号**（[ids.md](design/ids.md)）：每个资源一个全局编号 `空间:编号`，以工作台为准；`content/export/id-map.json` 写明每个编号在游戏里的路径；工作台新增「编号映射」页。
-- 第一批关卡不变：第 1 组 7 关 + 第 2 组 9 关。
+1. **R2 关卡模式（GPT，进行中）**：用户已确认全部美术（`APR-0001`–`APR-0005`），交接提示词已交给 GPT。GPT 先做阶段一（工程骨架 + 第 1 组 + 全套菜单），再做阶段二（第 2 组）。这一条线的规格和美术本次**没有改动**。
+2. **R3 配送模式第一个可玩切片（Claude，设计中）**：用户安排四步——① 定范围 → ② 房间模板、地图生成器、可通性检查、工作台「地图预览」→ ③ 实时规则写进设计模型、工作台能播放 → ④ 画切片要用的美术候选，等用户确认。**第 1 步已完成**：
 
-Godot 重构（R2）已开始，执行者 GPT。
+- [delivery-slice.md](design/delivery-slice.md)：一局 = 双滚轮开局 → 幽暗石牢 4 × 3 个房间（主路径 5–9 间）→ 驿站 → 送达结算。3 种货物（信件 / 花瓶 / 冰淇淋：轻松、小心、赶时间）、3 位收件人（老矿工、会闲逛的僵尸、家里很烫的地精铁匠）、2 种怪物（能推、会偷东西的鼠群；不能推、会伤人的骷髅守卫）、约 9 个房间模板、龟掌柜的驿站（回一颗心，卖沙袋、急救包、绳梯）。
+- 数据：新目录 `content/catalog/slices.json`（切片 `dungeon_1`：内容清单 + 这一局的数值）；切片用到的货物、收件人、怪物、道具在各自条目里加了 `params`（行为数值）。工作台「设计数据 → 可玩切片」可以查看；内容检查会核对切片引用的东西是否存在、收件人是否住在这个地区、怪物是否属于这个地区。
+- 规则细化（同步进 [mode-delivery.md](design/mode-delivery.md)、[vision.md](design/vision.md)）：困怪改为坑不自己填回，玩家把挖出的沙倒回去埋住怪物；上下相邻的房间用双梯子竖井相连；实时模式没有撤销，暂停菜单加"重来这个房间"（时间不倒流）。
 
 | 项 | 状态 |
 |---|---|
-| 设计 | GD-4.1 + [对话](design/dialogue.md)、[工程结构](design/architecture.md)、[编号](design/ids.md) |
-| 关卡 | 16 关有完整规格（M01–M07、W01–W05、W07–W10），全部通过设计模型 |
-| 编号 | 698 个资源、16 个编号空间（美术 83、关卡 16、机制 74、文字 160……），全部唯一 |
-| 美术 | 已确认记录 `APR-0001`–`APR-0005`：83 项中 82 项当前版本已确认（`char.portitor_alt` 是概念草图，不进游戏） |
-| 字体 | 12px（菜单、标题）不变；新增 Fusion Pixel 10px（对话气泡，OFL，`third_party/fonts/fusion-pixel-10px/`） |
-| 交接 | [gpt-refactor-prompt.md](handoff/gpt-refactor-prompt.md)：已加入工程结构、编号规则、对话气泡；已交给 GPT |
+| 设计 | GD-4.1 + [对话](design/dialogue.md)、[工程结构](design/architecture.md)、[编号](design/ids.md)、[配送切片](design/delivery-slice.md)（第 1/4 步） |
+| 关卡 | 16 关有完整规格（M01–M07、W01–W05、W07–W10），全部通过设计模型（本次未改） |
+| 编号 | 699 个资源、17 个编号空间（新增 `slice`），全部唯一 |
+| 美术 | 已确认记录 `APR-0001`–`APR-0005`：83 项中 82 项当前版本已确认（`char.portitor_alt` 是概念草图，不进游戏）；本次没有改动任何美术 |
+| 交接 | 关卡模式：[gpt-refactor-prompt.md](handoff/gpt-refactor-prompt.md)，已交给 GPT。配送切片：四步完成、美术确认后再写交接提示词 |
 
-## 已实际验证（云端 Linux 环境）
+## 已实际验证（云端 Linux 环境，本次）
 
-- `node tools/art.mjs build`：83 项；只有 8 个界面布局换版本（v4），主题、材料、主角保持已确认的版本；`verify ok: 83 assets, 4 approval records`；中英文界面零溢出（含气泡）。
-- 参考图：除提示面板外，所有界面、主题、关卡的参考图与上一次提交逐像素相同。
-- 12px 字形文件逐字节不变（12px 字形改成"只增不改"：只有 12px 文字真的需要新字时才会变，避免每加一句台词就让全部美术换版本）。
-- `node tools/content.mjs build`：0 错误；生成 `content/export/id-map.json`，698 个编号全部唯一。
-- `node --test tests/content.test.mjs tests/art-pipeline.test.mjs`：12/12 通过（新增编号测试）。
-- `node tests/workbench.e2e.cjs`（Chromium）：全部通过（新增「编号映射」页、对话样张、提示面板的检查）。
+- `node tools/content.mjs check`：0 错误、0 警告（新增切片检查）。
+- `node --test tests/content.test.mjs tests/art-pipeline.test.mjs`：13/13 通过（新增"切片引用检查"测试）。
+- `node tools/art.mjs build`：83 项，0 项换版本；`node tools/art.mjs verify`：`verify ok`。
+- 已确认美术没有被碰：`art/export/` 下全部 PNG、`art/source`、`art/history`、`art/approvals.json`、`content/i18n`、`workbench/js/core` 与本次开工前逐字节相同（用 SHA-256 清单对比）。
+- `node tests/workbench.e2e.cjs`（Chromium）：全部通过（新增「可玩切片」页和它在 390px 窄屏下的检查）。
 - `node tools/check-levels.mjs`：16 关全部 ok（与上次相同）。
 
 ## 未验证 / 尚缺
 
+- 配送切片：房间模板、地图生成器、可通性检查（第 2 步）；实时规则的设计模型与回放（第 3 步）；美术候选（第 4 步）都还没做。切片里的数值是初稿，要等第 3 步用模型回放后再调。
+- 推怪、压怪、困怪没有回合制版本，不能按 game-design.md 6.7 进关卡模式验证；切片里改为在配送模式的试验房间里验证（第 3 步定具体做法）。
 - 没有运行 Godot 与 SDK（本环境是 Linux，SDK 只有 macOS arm64 版本）。
-- 设计模型里的水是**整格近似**，不等于 SDK 结果。要在 SDK 里验证的点都写在各关规格的 `checks` 和交接文档 5b 节：箱子进水不删水、木箱上浮的 1.5 格判定、W03 沙子经过井与水渠的交叉口不滑进水渠等。
-- 第 3–5 组只有概念卡；其中的新机关（矿车、灯照显形、套娃箱、弹跳蘑菇、跷跷板、冰面滑行、阵风）还没写进设计模型。
-- 17 项美术等用户确认。
+- 关卡模式的水是设计模型里的**整格近似**，不等于 SDK 结果（各关 `checks` 和交接文档 5b 节）。
+- 第 3–5 组只有概念卡；其中的新机关还没写进设计模型。
 - 名称没有查商标；新手试玩未进行。
 
 ## 下一步
 
-1. **GPT**：按[交接提示词](handoff/gpt-refactor-prompt.md)做阶段一（按 architecture.md 建 `game/`、SDK 样板、第 1 组 7 关、全套菜单、导入美术、验证报告），完成后写 status 并交审核。
-2. **Claude**：审核阶段一（SDK 验证报告、参考图对照、编号映射测试）；同时准备对话数据格式和下一批关卡（第 3 组）。
-3. **用户**：阶段一里程碑出来后试玩（新手试玩只能由用户组织）。
+1. **Claude**：配送切片第 2 步——房间模板格式、石牢的约 9 个模板、地图生成器、可通性检查、工作台「地图预览」页。
+2. **GPT**：按[交接提示词](handoff/gpt-refactor-prompt.md)继续关卡模式阶段一，完成后写 status 并交审核。
+3. **Claude**：GPT 阶段一交审后审核（SDK 验证报告、参考图对照、编号映射测试）。
+4. **用户**：第 4 步的美术候选出来后在工作台确认；阶段一里程碑出来后试玩。
 
 ## 给设计负责人的问题
 

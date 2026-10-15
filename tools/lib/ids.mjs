@@ -20,6 +20,7 @@ export const DOMAINS = {
   upgrade:   { name: "属性升级", catalog: "upgrades" },
   badge:     { name: "徽章", catalog: "badges" },
   event:     { name: "随机事件", catalog: "events" },
+  slice:     { name: "可玩切片（配送局配置）", catalog: "slices" },
   text:      { name: "界面与台词文字", source: "content/i18n/zh-Hans.json", game: (e) => `tr:${e.id}` },
 };
 function proceduralPath(e) {

@@ -4,11 +4,14 @@
 (function (root) {
   "use strict";
   const store = root.PBStore, el = root.PBStage.el, UI = root.PBContentUI;
-  const KINDS = [["worlds", "地区"], ["recipients", "收件人"], ["cargo", "货物"], ["combos", "缘分组合"], ["monsters", "怪物"], ["items", "道具"], ["buffs", "增益"], ["upgrades", "属性升级"], ["badges", "徽章"], ["events", "随机事件"], ["modes", "模式"]];
+  const KINDS = [["slices", "可玩切片"], ["worlds", "地区"], ["recipients", "收件人"], ["cargo", "货物"], ["combos", "缘分组合"], ["monsters", "怪物"], ["items", "道具"], ["buffs", "增益"], ["upgrades", "属性升级"], ["badges", "徽章"], ["events", "随机事件"], ["modes", "模式"]];
   const LABEL = { name: "名称", summary: "说明", rule: "规则", counter: "怎么应对", behavior: "行为", effect: "效果", mechanisms: "机制", assets: "美术", difficulty: "难度", mode: "模式", status: "状态", doc: "文档", order: "顺序",
     style: "风格", theme: "主题资产", layer: "层", worlds: "地区", world: "地区", rarity: "稀有度", temper: "脾气", likes: "喜欢", carry: "拿法", cargo: "货物", recipient: "收件人", reward: "奖励",
     pushable: "能推", price: "价格", base: "初始", step: "每级", max_level: "级数", max: "最高", price_growth: "涨价", gate: "前置", cost: "点数", source: "来源", setup: "场景", choices: "选择",
-    culture: "文化圈", inspiration: "取材", care: "注意", origin: "来源地区" };
+    culture: "文化圈", inspiration: "取材", care: "注意", origin: "来源地区",
+    params: "行为数值", recipients: "收件人", monsters: "怪物", rooms: "房间模板", station: "驿站", reels: "滚轮", map: "地图",
+    time: "时间", intervals: "移动间隔（秒）", gravity: "下落", player: "人物", monster_fall_ko_rows: "怪物摔晕（格）",
+    cargo_integrity: "完好度", coins: "金币", tip: "小费", rating: "评级", fail_keep: "失败带回" };
   const STATUS = { concept: "设计稿", active: "在用", design: "设计稿" };
   const RARITY = { common: "常见", rare: "稀有", legendary: "传说" };
   const CARRY = { small: "小件", medium: "手拿", bulky: "大件", living: "活物" };
@@ -23,6 +26,9 @@
     if (key === "worlds" || key === "world") return el("td", { text: [].concat(v || []).map((w) => nameOf("worlds", w)).join("、") });
     if (key === "likes" || key === "cargo") return el("td", { text: [].concat(v || []).map((c) => nameOf("cargo", c)).join("、") });
     if (key === "recipient") return el("td", { text: nameOf("recipients", v) });
+    if (key === "recipients" || key === "monsters") return el("td", { text: [].concat(v || []).map((x) => nameOf(key, x)).join("、") });
+    // Parameter blocks (slices, params): compact "key value" lines, nested one level.
+    if (v && typeof v === "object" && !Array.isArray(v)) return el("td", { class: "small mono params", text: Object.entries(v).map(([k, x]) => `${k} ${x && typeof x === "object" ? (Array.isArray(x) ? x.join("、") : Object.entries(x).map(([a, b]) => a + "=" + b).join(" ")) : x}`).join("；") });
     if (key === "theme") return el("td", {}, v ? [UI.assetLink(v)] : ["—"]);
     if (key === "rarity") return el("td", { text: RARITY[v] || v });
     if (key === "carry") return el("td", { text: CARRY[v] || v });
@@ -55,7 +61,16 @@
     const table = el("table", { class: "grid" });
     table.append(el("thead", {}, [el("tr", {}, [el("th", { text: "编号" })].concat(keys.map((k) => el("th", { text: LABEL[k] || k }))))]));
     const tb = el("tbody");
-    const DOMAIN = { worlds: "world", recipients: "recipient", cargo: "cargo", combos: "combo", monsters: "monster", items: "item", buffs: "buff", upgrades: "upgrade", badges: "badge", events: "event", modes: "mode" };
+    const DOMAIN = { worlds: "world", recipients: "recipient", cargo: "cargo", combos: "combo", monsters: "monster", items: "item", buffs: "buff", upgrades: "upgrade", badges: "badge", events: "event", modes: "mode", slices: "slice" };
+    // A few entries with many fields (run configurations) read better as one key / value sheet per entry.
+    if (entries.length <= 3 && keys.length > 12) {
+      for (const e of entries) {
+        const dl = el("dl", { class: "meta sheet" });
+        for (const k of keys) { const td = cell(k, e[k]); dl.append(el("dt", { text: LABEL[k] || k }), el("dd", { class: td.className }, [...td.childNodes])); }
+        work.append(el("section", { class: "ov-section" }, [el("h3", {}, [el("span", { class: "mono", text: DOMAIN[kind] + ":" + e.id }), " ", e.name || ""]), dl]));
+      }
+      return;
+    }
     for (const e of entries) tb.append(el("tr", {}, [el("td", { class: "mono", text: DOMAIN[kind] + ":" + e.id })].concat(keys.map((k) => cell(k, e[k])))));
     table.append(tb);
     work.append(entries.length ? table : el("p", { class: "muted", text: "空。" }));

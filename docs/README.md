@@ -11,6 +11,7 @@
 | [design/game-design.md](design/game-design.md) | **玩法规则与关卡模式**：格子规则、材料、机关、系统、界面、关卡模式的组与关卡 |
 | [design/mode-hell.md](design/mode-hell.md) | 地狱模式（设计稿） |
 | [design/mode-delivery.md](design/mode-delivery.md) | **配送模式**（核心内容，设计稿，关卡模式完成后开工） |
+| [design/delivery-slice.md](design/delivery-slice.md) | 配送模式的**第一个可玩切片**（幽暗石牢）：范围、规则、数值、交接前的步骤与验收 |
 | [design/progression.md](design/progression.md) | 局外养成（设计稿） |
 | [design/naming.md](design/naming.md) | 名称：《渡界人》· PORTITOR（已定） |
 | [design/architecture.md](design/architecture.md) | **工程结构与扩展机制**：分层、`game/` 目录、注册表、事件、存档、机制接口、怎么加新机制和新系统 |

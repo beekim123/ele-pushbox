@@ -77,6 +77,11 @@
    "source": "content/catalog/events.json",
    "count": 14
   },
+  "slice": {
+   "name": "可玩切片（配送局配置）",
+   "source": "content/catalog/slices.json",
+   "count": 1
+  },
   "text": {
    "name": "界面与台词文字",
    "source": "content/i18n/zh-Hans.json",
@@ -4735,6 +4740,14 @@
    "name": "牛群过路",
    "source": "content/catalog/events.json",
    "game": "res://generated/content/catalog/events.json#cattle_crossing"
+  },
+  {
+   "uid": "slice:dungeon_1",
+   "domain": "slice",
+   "id": "dungeon_1",
+   "name": "第一个可玩切片 · 幽暗石牢",
+   "source": "content/catalog/slices.json",
+   "game": "res://generated/content/catalog/slices.json#dungeon_1"
   },
   {
    "uid": "text:game.title",

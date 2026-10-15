@@ -200,3 +200,6 @@ a.card { text-decoration: none; }
 button.mini { font-size: 11px; padding: 0 4px; margin-left: 2px; line-height: 1.4; cursor: pointer; }
 table.ids td { vertical-align: top; word-break: break-all; }
 #ids-search { width: min(420px, 100%); }
+table.grid td.params { min-width: 240px; line-height: 1.5; }
+dl.meta.sheet { grid-template-columns: minmax(96px, max-content) minmax(0, 1fr); max-width: 980px; }
+dl.meta.sheet dd { margin: 0; word-break: break-word; }

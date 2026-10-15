@@ -13,7 +13,10 @@
    "price": 10,
    "assets": [
     "item.sandbag"
-   ]
+   ],
+   "params": {
+    "sand": 1
+   }
   },
   {
    "id": "bomb",
@@ -34,7 +37,10 @@
    "summary": "在当前位置向下放一段梯子",
    "status": "concept",
    "layer": 1,
-   "price": 25
+   "price": 25,
+   "params": {
+    "max_tiles": 6
+   }
   },
   {
    "id": "plank",
@@ -169,7 +175,10 @@
    "summary": "回 1 颗心",
    "status": "concept",
    "layer": 1,
-   "price": 50
+   "price": 50,
+   "params": {
+    "heal": 1
+   }
   },
   {
    "id": "pocket_watch",

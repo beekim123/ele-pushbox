@@ -148,7 +148,11 @@
     "love_letter"
    ],
    "layer": 1,
-   "status": "concept"
+   "status": "concept",
+   "params": {
+    "move": "wander",
+    "step_secs": 0.8
+   }
   },
   {
    "id": "old_miner",
@@ -164,7 +168,10 @@
     "letter"
    ],
    "layer": 1,
-   "status": "concept"
+   "status": "concept",
+   "params": {
+    "move": "stay"
+   }
   },
   {
    "id": "moth_king",
@@ -572,7 +579,11 @@
     "magnet"
    ],
    "layer": 2,
-   "status": "concept"
+   "status": "concept",
+   "params": {
+    "move": "stay",
+    "home_melt_mult": 3
+   }
   },
   {
    "id": "dwarf",

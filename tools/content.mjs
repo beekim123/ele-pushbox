@@ -11,7 +11,7 @@ import { fileURLToPath, pathToFileURL } from "node:url";
 import { buildIdMap } from "./lib/ids.mjs";
 
 const REPO = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-export const CATALOGS = ["modes", "groups", "mechanisms", "worlds", "recipients", "cargo", "combos", "monsters", "items", "buffs", "upgrades", "badges", "events"];
+export const CATALOGS = ["modes", "groups", "mechanisms", "worlds", "recipients", "cargo", "combos", "monsters", "items", "buffs", "upgrades", "badges", "events", "slices"];
 const sha = (buf) => crypto.createHash("sha256").update(buf).digest("hex");
 const readJson = (p) => JSON.parse(fs.readFileSync(p, "utf8"));
 function walk(dir) {
@@ -132,6 +132,36 @@ export function buildContent(root, opts = {}) {
     for (const m of e.mechanisms || []) if (!mechs.has(m)) add("error", `${kind}/${e.id}`, `机制 ${m} 不在机制目录中`);
     if (e.mode && !modes.has(e.mode)) add("error", `${kind}/${e.id}`, `模式 ${e.mode} 不存在`);
   }
+  // Playable slices (docs/design/delivery-slice.md): one run configuration each.
+  const monsters = byId(cat.monsters), items = byId(cat.items);
+  for (const sl of cat.slices) {
+    const at = `slices/${sl.id}`;
+    if (!modes.has(sl.mode)) add("error", at, `模式 ${sl.mode} 不存在`);
+    if (!worlds.has(sl.world)) add("error", at, `地区 ${sl.world} 不在 worlds.json 中`);
+    for (const c of sl.cargo || []) {
+      const e = cargo.get(c);
+      if (!e) add("error", at, `货物 ${c} 不在 cargo.json 中`);
+      else if (!e.params || typeof e.params.pay !== "number") add("error", at, `货物 ${c} 缺少 params.pay（基础报酬）`);
+    }
+    for (const r of sl.recipients || []) {
+      const e = recipients.get(r);
+      if (!e) add("error", at, `收件人 ${r} 不在 recipients.json 中`);
+      else if (!(e.worlds || []).includes(sl.world)) add("error", at, `收件人 ${r} 不住在 ${sl.world}`);
+      else if (!e.params || !e.params.move) add("error", at, `收件人 ${r} 缺少 params.move`);
+    }
+    for (const m of sl.monsters || []) {
+      const e = monsters.get(m);
+      if (!e) add("error", at, `怪物 ${m} 不在 monsters.json 中`);
+      else if (e.world !== sl.world) add("error", at, `怪物 ${m} 属于 ${e.world}，不是 ${sl.world}`);
+      else if (!e.params || !e.params.move || !(e.params.step_secs > 0)) add("error", at, `怪物 ${m} 缺少 params.move / step_secs`);
+    }
+    for (const m of sl.mechanisms || []) if (!mechs.has(m)) add("error", at, `机制 ${m} 不在机制目录中`);
+    const st = sl.station || {};
+    for (const it of st.items || []) if (!items.has(it)) add("error", at, `驿站商品 ${it} 不在 items.json 中`);
+    for (const it of Object.keys(st.stock || {})) if (!(st.items || []).includes(it)) add("error", at, `库存 ${it} 不是驿站商品`);
+    if (!sl.cargo || !sl.cargo.length || !sl.recipients || !sl.recipients.length) add("error", at, "两个滚轮都至少要有一个符号");
+    if (!sl.time || !(sl.time.tick_hz > 0)) add("error", at, "time.tick_hz 必须大于 0");
+  }
 
   // ---- derived statuses ----
   const levelAssets = (l, g) => [...new Set([g.theme, ...(l.mechanisms || []).flatMap((m) => (mechs.get(m) || {}).assets || [])])];
@@ -188,7 +218,7 @@ export function buildContent(root, opts = {}) {
           levels: levels.filter((l) => l.group === g.id).map((l) => ({ id: l.id, title: l.title, mechanisms: l.mechanisms, spec: l.has_spec ? l.spec : null, sha256: l.has_spec ? l.sha256 : null })) })),
         mechanisms: mechanisms.map((m) => ({ id: m.id, name: m.name, group: m.group, owner: m.owner, sdk: m.sdk, levels: m.levels, status: m.status })),
         worlds: cat.worlds, recipients: cat.recipients, cargo: cat.cargo, combos: cat.combos, monsters: cat.monsters,
-        items: cat.items, buffs: cat.buffs, upgrades: cat.upgrades, badges: cat.badges, events: cat.events,
+        items: cat.items, buffs: cat.buffs, upgrades: cat.upgrades, badges: cat.badges, events: cat.events, slices: cat.slices,
       };
       fs.mkdirSync(rel("content/export"), { recursive: true });
       fs.writeFileSync(rel("content/export/content-manifest.json"), JSON.stringify(manifest, null, 1) + "\n");
