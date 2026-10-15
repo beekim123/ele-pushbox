@@ -2,6 +2,11 @@
   "format": "pushbox.levelspec/1",
   "id": "M01",
   "chapter": "dungeon",
+  "mode": "lab",
+  "group": "basics",
+  "mechanisms": [
+    "push"
+  ],
   "order": 1,
   "title": "一推到位",
   "role": "教学",

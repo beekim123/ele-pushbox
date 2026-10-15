@@ -2,6 +2,11 @@
   "format": "pushbox.levelspec/1",
   "id": "M03",
   "chapter": "dungeon",
+  "mode": "lab",
+  "group": "basics",
+  "mechanisms": [
+    "dig"
+  ],
   "order": 3,
   "title": "挖开一格",
   "role": "教学",

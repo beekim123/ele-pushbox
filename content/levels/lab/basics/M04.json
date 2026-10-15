@@ -2,6 +2,11 @@
   "format": "pushbox.levelspec/1",
   "id": "M04",
   "chapter": "dungeon",
+  "mode": "lab",
+  "group": "basics",
+  "mechanisms": [
+    "pour"
+  ],
   "order": 4,
   "title": "一袋沙做台阶",
   "role": "教学",

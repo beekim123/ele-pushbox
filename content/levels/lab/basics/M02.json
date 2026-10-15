@@ -2,6 +2,11 @@
   "format": "pushbox.levelspec/1",
   "id": "M02",
   "chapter": "dungeon",
+  "mode": "lab",
+  "group": "basics",
+  "mechanisms": [
+    "ladder"
+  ],
   "order": 2,
   "title": "绕到另一边",
   "role": "教学",

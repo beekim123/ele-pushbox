@@ -1,0 +1,59 @@
+{
+ "format": "pushbox.catalog/1",
+ "kind": "items",
+ "note": "背包物品。lab = 关卡模式已在用；delivery = 配送模式设计稿。",
+ "entries": [
+  {
+   "id": "sandbag",
+   "name": "沙袋",
+   "mode": "lab",
+   "summary": "挖夯土或散沙得到，倒出一格沙。上限 9 袋。",
+   "status": "active",
+   "assets": [
+    "item.sandbag"
+   ]
+  },
+  {
+   "id": "bomb",
+   "name": "炸药",
+   "mode": "lab",
+   "summary": "放在相邻格，炸开裂岩（第 3 组起）。",
+   "status": "active",
+   "assets": [
+    "item.bomb"
+   ]
+  },
+  {
+   "id": "rope_ladder",
+   "name": "绳梯",
+   "mode": "delivery",
+   "summary": "在当前位置向下放一段梯子。",
+   "status": "concept",
+   "assets": []
+  },
+  {
+   "id": "plank",
+   "name": "木板",
+   "mode": "delivery",
+   "summary": "在一格宽的缺口上搭桥。",
+   "status": "concept",
+   "assets": []
+  },
+  {
+   "id": "ice_cube",
+   "name": "冰块",
+   "mode": "delivery",
+   "summary": "给冰淇淋降温。",
+   "status": "concept",
+   "assets": []
+  },
+  {
+   "id": "bait",
+   "name": "诱饵",
+   "mode": "delivery",
+   "summary": "吸引追踪者。",
+   "status": "concept",
+   "assets": []
+  }
+ ]
+}

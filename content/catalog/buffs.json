@@ -1,0 +1,49 @@
+{
+ "format": "pushbox.catalog/1",
+ "kind": "buffs",
+ "note": "配送模式的本局增益（设计稿，mode-delivery.md 第 5 节）。",
+ "entries": [
+  {
+   "id": "cart",
+   "name": "手推车",
+   "mode": "delivery",
+   "effect": "大件货物不减速",
+   "status": "concept"
+  },
+  {
+   "id": "energy_drink",
+   "name": "力气饮料",
+   "mode": "delivery",
+   "effect": "若干步内大件货物不减速",
+   "status": "concept"
+  },
+  {
+   "id": "cooler",
+   "name": "保冷箱",
+   "mode": "delivery",
+   "effect": "冰淇淋融化速度减半",
+   "status": "concept"
+  },
+  {
+   "id": "padding",
+   "name": "护垫",
+   "mode": "delivery",
+   "effect": "易碎品防摔一次",
+   "status": "concept"
+  },
+  {
+   "id": "waterproof",
+   "name": "防水袋",
+   "mode": "delivery",
+   "effect": "货物不怕水",
+   "status": "concept"
+  },
+  {
+   "id": "compass",
+   "name": "指南针",
+   "mode": "delivery",
+   "effect": "小地图显示收件人方向",
+   "status": "concept"
+  }
+ ]
+}

@@ -1,0 +1,129 @@
+{
+ "format": "pushbox.catalog/1",
+ "kind": "cargo",
+ "note": "配送模式的货物（设计稿，docs/design/mode-delivery.md 第 2 节）。每种货物只加一条主规则，只用关卡模式验证过的机制。",
+ "entries": [
+  {
+   "id": "letter",
+   "name": "信件",
+   "mode": "delivery",
+   "rule": "很轻；落水会湿，完好度下降",
+   "counter": "绕开水，或找防水袋",
+   "mechanisms": [
+    "water_flow"
+   ],
+   "difficulty": "入门",
+   "status": "concept"
+  },
+  {
+   "id": "ice_cream",
+   "name": "冰淇淋",
+   "mode": "delivery",
+   "rule": "融化度每回合增加，靠近热源更快，到 100% 失败",
+   "counter": "冷凝喷口、冰块、保冷箱；规划短路线",
+   "mechanisms": [
+    "freeze",
+    "burn"
+   ],
+   "difficulty": "中",
+   "status": "concept"
+  },
+  {
+   "id": "bulky",
+   "name": "大件货物",
+   "mode": "delivery",
+   "rule": "双手抬着：每走一格算两回合，不能爬梯、挖、倒沙",
+   "counter": "手推车、力气饮料、升降台、水上漂运",
+   "mechanisms": [
+    "lift",
+    "float_sink"
+   ],
+   "difficulty": "高",
+   "status": "concept"
+  },
+  {
+   "id": "fragile",
+   "name": "易碎品",
+   "mode": "delivery",
+   "rule": "从 2 格及以上落下就碎；附近爆炸会碎；落在沙上不碎",
+   "counter": "搭台阶、走梯子、倒沙做垫子",
+   "mechanisms": [
+    "pour",
+    "bomb"
+   ],
+   "difficulty": "中",
+   "status": "concept"
+  },
+  {
+   "id": "fish_tank",
+   "name": "鱼缸",
+   "mode": "delivery",
+   "rule": "每隔若干回合要在水边补水",
+   "counter": "规划经过水的路线",
+   "mechanisms": [
+    "water_flow"
+   ],
+   "difficulty": "中",
+   "status": "concept"
+  },
+  {
+   "id": "hot_soup",
+   "name": "热汤 / 披萨",
+   "mode": "delivery",
+   "rule": "温度随回合下降，靠近火回升；凉了少给小费",
+   "counter": "顺路经过火盆",
+   "mechanisms": [
+    "burn"
+   ],
+   "difficulty": "低",
+   "status": "concept"
+  },
+  {
+   "id": "explosive",
+   "name": "炸药包",
+   "mode": "delivery",
+   "rule": "碰到火就爆；从 2 格及以上落下也会爆",
+   "counter": "绕开火源，下落走梯子",
+   "mechanisms": [
+    "burn",
+    "bomb"
+   ],
+   "difficulty": "高",
+   "status": "concept"
+  },
+  {
+   "id": "balloons",
+   "name": "气球花束",
+   "mode": "delivery",
+   "rule": "放下后往上飘，直到碰到天花板",
+   "counter": "让它先飘上高台，再爬上去拿",
+   "mechanisms": [],
+   "difficulty": "中",
+   "status": "concept"
+  },
+  {
+   "id": "plant",
+   "name": "盆栽",
+   "mode": "delivery",
+   "rule": "途中至少浇一次水；碰到酸液或火就枯萎",
+   "counter": "找水，绕开酸和火",
+   "mechanisms": [
+    "water_flow",
+    "acid",
+    "burn"
+   ],
+   "difficulty": "低",
+   "status": "concept"
+  },
+  {
+   "id": "secret",
+   "name": "秘密文件",
+   "mode": "delivery",
+   "rule": "被巡逻者看见就会被抢走",
+   "counter": "用箱子、墙挡住视线",
+   "mechanisms": [],
+   "difficulty": "高",
+   "status": "concept"
+  }
+ ]
+}

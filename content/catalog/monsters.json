@@ -1,0 +1,47 @@
+{
+ "format": "pushbox.catalog/1",
+ "kind": "monsters",
+ "note": "配送模式的怪物（设计稿，mode-delivery.md 第 4 节）。回合制：玩家行动并结算后各走一步；没有攻击键，用环境对付。",
+ "entries": [
+  {
+   "id": "patroller",
+   "name": "巡逻者",
+   "mode": "delivery",
+   "behavior": "沿地面左右走，碰墙回头",
+   "counter": "绕开；挖坑困住；推箱子或倒沙压住",
+   "status": "concept"
+  },
+  {
+   "id": "chaser",
+   "name": "追踪者",
+   "mode": "delivery",
+   "behavior": "每回合朝玩家靠近一格（只走地面和梯子）",
+   "counter": "引进坑、水或冰面",
+   "status": "concept"
+  },
+  {
+   "id": "guard",
+   "name": "守门者",
+   "mode": "delivery",
+   "behavior": "守在通道口不动，推不动",
+   "counter": "炸开旁边的裂岩绕过去；用水冲走",
+   "status": "concept"
+  },
+  {
+   "id": "flyer",
+   "name": "飞行者",
+   "mode": "delivery",
+   "behavior": "不受重力，直线飞，碰墙折返",
+   "counter": "用烟雾驱散；等它飞过",
+   "status": "concept"
+  },
+  {
+   "id": "thief",
+   "name": "偷件者",
+   "mode": "delivery",
+   "behavior": "专门抢秘密文件，视线是一整行",
+   "counter": "遮挡视线",
+   "status": "concept"
+  }
+ ]
+}

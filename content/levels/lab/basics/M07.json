@@ -2,6 +2,11 @@
   "format": "pushbox.levelspec/1",
   "id": "M07",
   "chapter": "dungeon",
+  "mode": "lab",
+  "group": "basics",
+  "mechanisms": [
+    "fall"
+  ],
   "order": 7,
   "title": "挖掉支撑",
   "role": "轻组合",

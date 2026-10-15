@@ -3,7 +3,7 @@
   "levels": [
     {
       "id": "M01",
-      "file": "content/levels/ch1-mine/M01.json",
+      "file": "content/levels/lab/basics/M01.json",
       "title": "一推到位",
       "author_steps": 4,
       "author_ok": true,
@@ -21,7 +21,7 @@
     },
     {
       "id": "M02",
-      "file": "content/levels/ch1-mine/M02.json",
+      "file": "content/levels/lab/basics/M02.json",
       "title": "绕到另一边",
       "author_steps": 12,
       "author_ok": true,
@@ -47,7 +47,7 @@
     },
     {
       "id": "M03",
-      "file": "content/levels/ch1-mine/M03.json",
+      "file": "content/levels/lab/basics/M03.json",
       "title": "挖开一格",
       "author_steps": 5,
       "author_ok": true,
@@ -66,7 +66,7 @@
     },
     {
       "id": "M04",
-      "file": "content/levels/ch1-mine/M04.json",
+      "file": "content/levels/lab/basics/M04.json",
       "title": "一袋沙做台阶",
       "author_steps": 6,
       "author_ok": true,
@@ -86,7 +86,7 @@
     },
     {
       "id": "M05",
-      "file": "content/levels/ch1-mine/M05.json",
+      "file": "content/levels/lab/basics/M05.json",
       "title": "箱子替我站",
       "author_steps": 8,
       "author_ok": true,
@@ -108,7 +108,7 @@
     },
     {
       "id": "M06",
-      "file": "content/levels/ch1-mine/M06.json",
+      "file": "content/levels/lab/basics/M06.json",
       "title": "沙与箱各有用",
       "author_steps": 10,
       "author_ok": true,
@@ -132,7 +132,7 @@
     },
     {
       "id": "M07",
-      "file": "content/levels/ch1-mine/M07.json",
+      "file": "content/levels/lab/basics/M07.json",
       "title": "挖掉支撑",
       "author_steps": 9,
       "author_ok": true,

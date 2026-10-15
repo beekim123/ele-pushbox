@@ -410,6 +410,198 @@
      "png_sha256": "6221ca8792d52a782eadebc03e2a5be32704528a4bfec8c40e927c11a39b0f88"
     }
    ]
+  },
+  {
+   "id": "APR-0002",
+   "date": "2026-10-15T08:02:17.725Z",
+   "by": "用户",
+   "via": "chat",
+   "scope": "第 2–5 章 18 项候选（v1）与 8 个界面布局 v2（画面与 v1 逐像素相同）",
+   "note": "2026-10-15 用户在聊天中回复：「我看了下你设计的，都通过了。」针对上一条消息列出的待确认项：第 2–5 章 18 项候选和 8 个界面的 v2。",
+   "items": [
+    {
+     "asset": "fx.explosion",
+     "version": 1,
+     "hash": "6b528c3caa75862754b45a6556e8e0cb8fcbd76d57325e3ae26813151d13a406",
+     "png": "art/export/approved/fx.explosion@v1.png",
+     "png_sha256": "e6f62de86cc9d03c292d1d52c4dd07fcb59f597905a24710ec4b9eb23536ccbd"
+    },
+    {
+     "asset": "fx.fire",
+     "version": 1,
+     "hash": "61ce4bde702c4e712f1dca644f7b3090b2e938ec9ad175812e841b121d1c6688",
+     "png": "art/export/approved/fx.fire@v1.png",
+     "png_sha256": "c5f3e3660d42f489b85e984624479aaf2d741b66791d88a225fad917a57d09fc"
+    },
+    {
+     "asset": "fx.fizz",
+     "version": 1,
+     "hash": "c3166badef9fa050b3d339b63de0144288f283fb3cb52782da35cd255059fc2f",
+     "png": "art/export/approved/fx.fizz@v1.png",
+     "png_sha256": "b3db62d8c631781dbfffe7930e46b7924d5592e303304446e5e69ba9381a078a"
+    },
+    {
+     "asset": "fx.frost",
+     "version": 1,
+     "hash": "d592dedcf4293922e6cd464c77b4cf3d29a43ea77bb53b8e2a65eda8fc4a472e",
+     "png": "art/export/approved/fx.frost@v1.png",
+     "png_sha256": "df01446229e0245e7f4dd1e75307b9dfbe42c155871db25b18429b2a5d146910"
+    },
+    {
+     "asset": "fx.ripple",
+     "version": 1,
+     "hash": "b92da45e9dcc0d385018c7ebab5c1e0859b8bb8df7d4978553e3acb0a5ee01fc",
+     "png": "art/export/approved/fx.ripple@v1.png",
+     "png_sha256": "77577ec570a288fef0a026b4cbc0196219e948028c76c705a51d743aa1985a5f"
+    },
+    {
+     "asset": "fx.rubble",
+     "version": 1,
+     "hash": "9e399c1b0318d9e857b93d882769180f12a16a42cd4905888dc97468d900ebe2",
+     "png": "art/export/approved/fx.rubble@v1.png",
+     "png_sha256": "3deff0f64cc93570d86a6b399c4fbda5341f0de4c14b814c4133add8e75e422a"
+    },
+    {
+     "asset": "fx.splash",
+     "version": 1,
+     "hash": "3c34dbec7ff7ecad8148b49547f1649a9000d5bcde56514260f2a26ddab8db55",
+     "png": "art/export/approved/fx.splash@v1.png",
+     "png_sha256": "ab311b73989a17f6ca93168139e1b4660789efae9182a3d9a33e1356e2fd5ca8"
+    },
+    {
+     "asset": "material.chapter2_5",
+     "version": 1,
+     "hash": "ceaeea0afc5dfb0b4a190fdcfb5db55fda0512350c19d5cecee3839ddec96a5a",
+     "png": "art/export/approved/material.chapter2_5@v1.png",
+     "png_sha256": "7f75a512c1ff10c2fe6effd0e1156435bb4f9e342c567a5ef0541ab67b1e80e4"
+    },
+    {
+     "asset": "mech.bin",
+     "version": 1,
+     "hash": "3adce5bc8d6ca1c4a2db17072308a245aca4574fa3a4404fd512b23a6a2cc913",
+     "png": "art/export/approved/mech.bin@v1.png",
+     "png_sha256": "a9970b38b606d25be829841b345271f04a81b7434ec49cd33938295a272139ec"
+    },
+    {
+     "asset": "mech.bin_gauge",
+     "version": 1,
+     "hash": "73f54395ea1cbbcbdcd8b45c0b6c16b0afcdfb0aca45d3694a340cead4a6cd36",
+     "png": "art/export/approved/mech.bin_gauge@v1.png",
+     "png_sha256": "e3c068df944ae2f4c7ca75d87d205579076cf9dd9058fa4262543028fc6ee263"
+    },
+    {
+     "asset": "mech.button",
+     "version": 1,
+     "hash": "07dcc1ae82b3a1613c2aaa5f80cf0a2accf56471a97fa291517e3069b25ae87b",
+     "png": "art/export/approved/mech.button@v1.png",
+     "png_sha256": "284b5db6c28f787c11736c9e7bc20aa1baa53d34e482eb9c8b28b0aba439bd31"
+    },
+    {
+     "asset": "mech.frost_vent",
+     "version": 1,
+     "hash": "b5df0602f0371d9ebee340faa18add27d902ce254ebe4eb90d30a6b22641dc3b",
+     "png": "art/export/approved/mech.frost_vent@v1.png",
+     "png_sha256": "d0457d7ae17fa5b3a5291733de94dd7ce39931f32ab5cd20c47a5da5c894150a"
+    },
+    {
+     "asset": "mech.heat_vent",
+     "version": 1,
+     "hash": "209d87777324350081358077a14054505123733c2172b2214c113dab79cffef7",
+     "png": "art/export/approved/mech.heat_vent@v1.png",
+     "png_sha256": "ab14fbc94501bd0e796c15856b021261ecaafe0cf1acedef64b04cf973d5131a"
+    },
+    {
+     "asset": "mech.lever",
+     "version": 1,
+     "hash": "3a67b3c41cd505bf63ca3f97c8c60bd9c3f9183d88098dfe3b16a937ebd37d58",
+     "png": "art/export/approved/mech.lever@v1.png",
+     "png_sha256": "f74730d40c4c8ab9dcbee70ce58a2a9e5753bc344b6c45f07ed408970a552bb4"
+    },
+    {
+     "asset": "mech.lift",
+     "version": 1,
+     "hash": "55e8155989a4c06d20ac854276d0591fcb81450c56d1bd652f9bf03660f45978",
+     "png": "art/export/approved/mech.lift@v1.png",
+     "png_sha256": "2a4ee688232c74c3d4d6699ff0aaffadd79abe6d5bf1dd3aef4cf34b4858227a"
+    },
+    {
+     "asset": "mech.torch",
+     "version": 1,
+     "hash": "e276eda21aee67de1bf4dd896ed57f469f50bce134f9657ca0e289a1678a8038",
+     "png": "art/export/approved/mech.torch@v1.png",
+     "png_sha256": "5dd7e4bc9c7fb1b25d589fea6aa816b18249cdb0efe9b0521acf05b6bef4019d"
+    },
+    {
+     "asset": "mech.vine",
+     "version": 1,
+     "hash": "d24a082c0bf9f8e3a31b2115f2c2ba00626b0a3c7a67801410eea5e15f2d3e25",
+     "png": "art/export/approved/mech.vine@v1.png",
+     "png_sha256": "53174d357f5350abe776929805943e20c4a9c8a783c87da35a9c234e13629bbf"
+    },
+    {
+     "asset": "ui.rule_icon",
+     "version": 1,
+     "hash": "6a48e52b1ce771144f7435a220d71024d35c2864a5833dfa2cddde38ca1ff878",
+     "png": "art/export/approved/ui.rule_icon@v1.png",
+     "png_sha256": "ce690b538b57bdd3fd2644b1253795f8f01ea5f85357b623e45cf03038843511"
+    },
+    {
+     "asset": "ui.screen.chapters",
+     "version": 2,
+     "hash": "f0d7d871f85f9df8a593322868081ce4fd79c580dc95a8e6efe2926ec06e2bbf",
+     "png": "art/export/approved/ui.screen.chapters@v2.png",
+     "png_sha256": "69941857503656192a4341e29112c59a7146f984a8981382c9da9ad7591b2883"
+    },
+    {
+     "asset": "ui.screen.complete",
+     "version": 2,
+     "hash": "2ace29d731512ad493dd7be095542889a68bb89fe392cc28e077c584a97357fe",
+     "png": "art/export/approved/ui.screen.complete@v2.png",
+     "png_sha256": "ca72bef72a6bf3bd327c85a99fe1464fd12a37417dd24cc0c6b3dadde3d64df3"
+    },
+    {
+     "asset": "ui.screen.hint",
+     "version": 2,
+     "hash": "c30a799af4eb60952ba97232575cd0ee7d4d39ed29b8c13b453bdf68fc6eaa42",
+     "png": "art/export/approved/ui.screen.hint@v2.png",
+     "png_sha256": "3ffc54ae4d510443c0b1b470f727fba857dda769a36f6b6961c4d9469036bdfe"
+    },
+    {
+     "asset": "ui.screen.levels",
+     "version": 2,
+     "hash": "f7be454221f326e18016dd0cd4daf2be36746bf31aacba6337ba27d0b61d4923",
+     "png": "art/export/approved/ui.screen.levels@v2.png",
+     "png_sha256": "a68b73f6186398c469cf18415a71b2b50ac10d14edc9c4c05be2e03982528d63"
+    },
+    {
+     "asset": "ui.screen.lobby",
+     "version": 2,
+     "hash": "ab072b84bf489d4baf25ad39d2afe9583fb49eb8019c366e6d2d1317a3c511f2",
+     "png": "art/export/approved/ui.screen.lobby@v2.png",
+     "png_sha256": "6d7e845f9bcba10753b18357d2e8f70bd71300d57dd14bc650cdf6cc5eb55007"
+    },
+    {
+     "asset": "ui.screen.pause",
+     "version": 2,
+     "hash": "bb57633e90b5ab54fd1b8850dbb71265f3236ca989a926b1ea229e441fe56215",
+     "png": "art/export/approved/ui.screen.pause@v2.png",
+     "png_sha256": "a1f9aa24b4543de3789e67eb74ee6d10565f1dca3dfdf16d5e2b930ada76764c"
+    },
+    {
+     "asset": "ui.screen.rulecard",
+     "version": 2,
+     "hash": "85351ebb08f11b8cc95f7db5e357ad3d980632c8c4394400e0307abf6307ca74",
+     "png": "art/export/approved/ui.screen.rulecard@v2.png",
+     "png_sha256": "d02e69d90b75029085272c715dd4159bbb801ba47c3463c678b718e540af7a2a"
+    },
+    {
+     "asset": "ui.screen.settings",
+     "version": 2,
+     "hash": "07b657b8eddb9897df8ed0ec3d07f7f5b7e8cf21818663215737c88d94d1589f",
+     "png": "art/export/approved/ui.screen.settings@v2.png",
+     "png_sha256": "a6dd69fa825db739e3b58a41a56d296a4f5eed531b400f0b6dfecc308c688f29"
+    }
+   ]
   }
  ]
 }

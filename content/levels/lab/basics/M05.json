@@ -2,6 +2,11 @@
   "format": "pushbox.levelspec/1",
   "id": "M05",
   "chapter": "dungeon",
+  "mode": "lab",
+  "group": "basics",
+  "mechanisms": [
+    "plate_door"
+  ],
   "order": 5,
   "title": "箱子替我站",
   "role": "教学",

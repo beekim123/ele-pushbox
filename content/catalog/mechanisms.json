@@ -1,0 +1,568 @@
+{
+ "format": "pushbox.catalog/1",
+ "kind": "mechanisms",
+ "note": "机制目录。每个机制先在关卡模式中做成关卡并验证，才能用于配送模式和地狱模式（game-design.md 6.7）。状态由工具根据关卡计划、规格、验证报告和美术确认自动算出，不在这里手写。owner：sdk = SDK 物理求解器完成；game = 游戏层规则；both = 两者配合。",
+ "entries": [
+  {
+   "id": "push",
+   "name": "推箱",
+   "group": "basics",
+   "owner": "game",
+   "summary": "朝箱子走就是推；一次只推一个，箱子前方要空。",
+   "sdk": [],
+   "assets": [
+    "obj.crate_wood",
+    "mech.socket",
+    "mech.socket_lit"
+   ],
+   "chars": [
+    "B",
+    "o",
+    "b"
+   ],
+   "doc": "docs/design/game-design.md 4.2",
+   "risk": ""
+  },
+  {
+   "id": "ladder",
+   "name": "梯子",
+   "group": "basics",
+   "owner": "game",
+   "summary": "只在梯子格内上下；梯子格里不下落。",
+   "sdk": [],
+   "assets": [
+    "mech.ladder"
+   ],
+   "chars": [
+    "H",
+    "h"
+   ],
+   "doc": "docs/design/game-design.md 4.3",
+   "risk": ""
+  },
+  {
+   "id": "dig",
+   "name": "挖取",
+   "group": "basics",
+   "owner": "both",
+   "summary": "挖夯土或散沙，背包加一袋沙；夯土不坍塌。",
+   "sdk": [
+    "static diggable tag",
+    "set_cell"
+   ],
+   "assets": [
+    "fx.dig_bits",
+    "item.sandbag"
+   ],
+   "chars": [
+    "e"
+   ],
+   "doc": "docs/design/game-design.md 4.4",
+   "risk": ""
+  },
+  {
+   "id": "pour",
+   "name": "倒沙",
+   "group": "basics",
+   "owner": "sdk",
+   "summary": "倒出一格沙，沙下落堆积，可以当台阶。",
+   "sdk": [
+    "powder"
+   ],
+   "assets": [
+    "item.sandbag"
+   ],
+   "chars": [
+    "s"
+   ],
+   "doc": "docs/design/game-design.md 4.5",
+   "risk": "靠墙倒沙的溢出量需样板验证（<128 cell）"
+  },
+  {
+   "id": "plate_door",
+   "name": "压板与门",
+   "group": "basics",
+   "owner": "game",
+   "summary": "压板被压住时门打开；可以让箱子替你压着。",
+   "sdk": [],
+   "assets": [
+    "mech.plate",
+    "mech.door",
+    "mech.link_symbol"
+   ],
+   "chars": [
+    "_",
+    "|"
+   ],
+   "doc": "docs/design/game-design.md 4.7",
+   "risk": ""
+  },
+  {
+   "id": "fall",
+   "name": "失去支撑",
+   "group": "basics",
+   "owner": "both",
+   "summary": "支撑被挖走后，箱子和人会下落。",
+   "sdk": [
+    "static"
+   ],
+   "assets": [
+    "fx.land_dust"
+   ],
+   "chars": [],
+   "doc": "docs/design/game-design.md 4.1",
+   "risk": ""
+  },
+  {
+   "id": "water_flow",
+   "name": "水流",
+   "group": "water",
+   "owner": "sdk",
+   "summary": "开闸后水流动、找平。",
+   "sdk": [
+    "liquid",
+    "liquid_pressure"
+   ],
+   "assets": [
+    "fx.splash"
+   ],
+   "chars": [
+    "~"
+   ],
+   "doc": "docs/design/game-design.md 6.4",
+   "risk": "开闸后需要唤醒相邻水体（EXT-09 的替代做法）"
+  },
+  {
+   "id": "float_sink",
+   "name": "木浮铁沉",
+   "group": "water",
+   "owner": "both",
+   "summary": "木箱浮在水面，铁箱沉底。",
+   "sdk": [
+    "liquid"
+   ],
+   "assets": [
+    "obj.crate_wood",
+    "obj.crate_iron",
+    "fx.ripple",
+    "fx.splash"
+   ],
+   "chars": [
+    "B",
+    "I",
+    "~"
+   ],
+   "doc": "docs/design/game-design.md 6.4",
+   "risk": "浮箱是游戏层规则"
+  },
+  {
+   "id": "displace",
+   "name": "沙挤水位",
+   "group": "water",
+   "owner": "sdk",
+   "summary": "沙沉入水中，水位上升。",
+   "sdk": [
+    "powder",
+    "liquid"
+   ],
+   "assets": [
+    "item.sandbag"
+   ],
+   "chars": [
+    "s",
+    "~"
+   ],
+   "doc": "docs/design/game-design.md 6.4",
+   "risk": "一袋沙能抬高多少水位待验证"
+  },
+  {
+   "id": "communicating",
+   "name": "连通器",
+   "group": "water",
+   "owner": "sdk",
+   "summary": "打开阀门后两侧液面拉平。",
+   "sdk": [
+    "liquid_pressure"
+   ],
+   "assets": [
+    "mech.door"
+   ],
+   "chars": [
+    "~",
+    "|"
+   ],
+   "doc": "docs/design/game-design.md 6.4",
+   "risk": "被 static 盖住的液面不算开口"
+  },
+  {
+   "id": "lift",
+   "name": "升降台",
+   "group": "water",
+   "owner": "game",
+   "summary": "按按钮去另一站；载物受阻时拒绝移动；到站等待。",
+   "sdk": [],
+   "assets": [
+    "mech.lift",
+    "mech.button"
+   ],
+   "chars": [],
+   "doc": "docs/design/game-design.md 6.5",
+   "risk": ""
+  },
+  {
+   "id": "bin",
+   "name": "收集斗",
+   "group": "water",
+   "owner": "both",
+   "summary": "斗内材料达到刻度后锁存，点亮一盏目标灯。",
+   "sdk": [
+    "count_materials"
+   ],
+   "assets": [
+    "mech.bin",
+    "mech.bin_gauge"
+   ],
+   "chars": [],
+   "doc": "docs/design/game-design.md 6.5",
+   "risk": ""
+  },
+  {
+   "id": "bomb",
+   "name": "炸药与裂岩",
+   "group": "blast",
+   "owner": "both",
+   "summary": "炸药清掉裂岩，基岩和箱子不受影响。",
+   "sdk": [
+    "explode"
+   ],
+   "assets": [
+    "item.bomb",
+    "fx.explosion",
+    "fx.rubble"
+   ],
+   "chars": [
+    "%"
+   ],
+   "doc": "docs/design/game-design.md 4.6",
+   "risk": "崩落阈值是游戏层规则"
+  },
+  {
+   "id": "blast_through",
+   "name": "隔墙爆破",
+   "group": "blast",
+   "owner": "sdk",
+   "summary": "爆炸不被墙挡，能炸开薄墙另一侧的裂岩。",
+   "sdk": [
+    "explode"
+   ],
+   "assets": [
+    "fx.explosion",
+    "ui.target"
+   ],
+   "chars": [
+    "%"
+   ],
+   "doc": "docs/design/game-design.md 6.4",
+   "risk": "悬停高亮必须如实显示影响范围"
+  },
+  {
+   "id": "fuse",
+   "name": "引信",
+   "group": "blast",
+   "owner": "sdk",
+   "summary": "引信被点燃后一路燃烧，烧完即爆，可以连锁。",
+   "sdk": [
+    "explosive",
+    "burnable",
+    "thermal"
+   ],
+   "assets": [
+    "material.chapter2_5",
+    "fx.fire",
+    "fx.explosion"
+   ],
+   "chars": [
+    "f"
+   ],
+   "doc": "docs/design/game-design.md 6.4",
+   "risk": "固定阶段长度 = 燃烧时长 + 余量"
+  },
+  {
+   "id": "gravel",
+   "name": "碎石慢落",
+   "group": "blast",
+   "owner": "sdk",
+   "summary": "碎石慢慢滑落，结算会等它停下。",
+   "sdk": [
+    "powder move_chance"
+   ],
+   "assets": [
+    "material.chapter2_5"
+   ],
+   "chars": [
+    "g"
+   ],
+   "doc": "docs/design/game-design.md 6.4",
+   "risk": "结算时长不能触顶"
+  },
+  {
+   "id": "acid",
+   "name": "酸蚀",
+   "group": "react",
+   "owner": "sdk",
+   "summary": "酸液接触可蚀岩石，两者一起消失。",
+   "sdk": [
+    "reactions"
+   ],
+   "assets": [
+    "material.chapter2_5",
+    "fx.fizz"
+   ],
+   "chars": [
+    "a",
+    "L"
+   ],
+   "doc": "docs/design/game-design.md 6.4",
+   "risk": "接触面要宽，反应概率设高，避免残留"
+  },
+  {
+   "id": "etch_tag",
+   "name": "同纹标签",
+   "group": "react",
+   "owner": "sdk",
+   "summary": "刻纹相同的岩石都会被蚀，其他岩石不受影响。",
+   "sdk": [
+    "tags"
+   ],
+   "assets": [
+    "material.chapter2_5",
+    "ui.rule_icon"
+   ],
+   "chars": [
+    "L",
+    "M",
+    "R"
+   ],
+   "doc": "docs/design/game-design.md 6.4",
+   "risk": ""
+  },
+  {
+   "id": "gas_rise",
+   "name": "轻烟上浮",
+   "group": "react",
+   "owner": "sdk",
+   "summary": "轻烟往上走，可以送进顶部收集斗。",
+   "sdk": [
+    "gas"
+   ],
+   "assets": [
+    "material.chapter2_5",
+    "mech.bin",
+    "mech.bin_gauge",
+    "ui.rule_icon"
+   ],
+   "chars": [
+    "^"
+   ],
+   "doc": "docs/design/game-design.md 6.4",
+   "risk": ""
+  },
+  {
+   "id": "gas_sink",
+   "name": "沉雾下沉",
+   "group": "react",
+   "owner": "sdk",
+   "summary": "沉雾往下沉，不进入液体。",
+   "sdk": [
+    "gas sinks"
+   ],
+   "assets": [
+    "material.chapter2_5",
+    "mech.bin",
+    "mech.bin_gauge",
+    "ui.rule_icon"
+   ],
+   "chars": [
+    "v"
+   ],
+   "doc": "docs/design/game-design.md 6.4",
+   "risk": ""
+  },
+  {
+   "id": "lifetime",
+   "name": "寿命塞",
+   "group": "react",
+   "owner": "both",
+   "summary": "开关触发后，菌塞按寿命消失。",
+   "sdk": [
+    "lifetime"
+   ],
+   "assets": [
+    "material.chapter2_5",
+    "mech.lever"
+   ],
+   "chars": [
+    "p"
+   ],
+   "doc": "docs/design/game-design.md 6.5",
+   "risk": "寿命不超过 255 tick"
+  },
+  {
+   "id": "vine",
+   "name": "吸水藤梯",
+   "group": "react",
+   "owner": "game",
+   "summary": "根部有水后长出固定高度的梯子。",
+   "sdk": [
+    "count_materials"
+   ],
+   "assets": [
+    "mech.vine"
+   ],
+   "chars": [],
+   "doc": "docs/design/game-design.md 6.5",
+   "risk": ""
+  },
+  {
+   "id": "burn",
+   "name": "点火烧栅",
+   "group": "thermal",
+   "owner": "both",
+   "summary": "火盆点燃木栅，烧完即通行。",
+   "sdk": [
+    "thermal",
+    "burnable"
+   ],
+   "assets": [
+    "mech.torch",
+    "mech.lever",
+    "material.chapter2_5",
+    "fx.fire"
+   ],
+   "chars": [
+    "w"
+   ],
+   "doc": "docs/design/game-design.md 6.4",
+   "risk": "固定阶段长度"
+  },
+  {
+   "id": "freeze",
+   "name": "冷凝成冰",
+   "group": "thermal",
+   "owner": "both",
+   "summary": "冷凝喷口把作用区里的水当场变成冰。",
+   "sdk": [
+    "couplers layer_to_material"
+   ],
+   "assets": [
+    "mech.frost_vent",
+    "mech.lever",
+    "material.chapter2_5",
+    "fx.frost"
+   ],
+   "chars": [
+    "i",
+    "~"
+   ],
+   "doc": "docs/design/game-design.md 6.4",
+   "risk": "耦合器 stride = 1；冰不带 phase_up"
+  },
+  {
+   "id": "melt",
+   "name": "热喷化冰",
+   "group": "thermal",
+   "owner": "both",
+   "summary": "热喷口把作用区里的冰化成水。",
+   "sdk": [
+    "couplers layer_to_material"
+   ],
+   "assets": [
+    "mech.heat_vent",
+    "mech.lever",
+    "material.chapter2_5"
+   ],
+   "chars": [
+    "i"
+   ],
+   "doc": "docs/design/game-design.md 6.4",
+   "risk": ""
+  },
+  {
+   "id": "blast_ignite",
+   "name": "爆炸点火",
+   "group": "thermal",
+   "owner": "sdk",
+   "summary": "爆炸点燃半径一半以内的可燃物。",
+   "sdk": [
+    "explode",
+    "burnable"
+   ],
+   "assets": [
+    "fx.explosion",
+    "fx.fire",
+    "material.chapter2_5"
+   ],
+   "chars": [
+    "w"
+   ],
+   "doc": "docs/design/game-design.md 6.4",
+   "risk": ""
+  },
+  {
+   "id": "power",
+   "name": "电与机关",
+   "group": "lab",
+   "owner": "sdk",
+   "summary": "电源脉冲沿导线到达，门接收后锁存。",
+   "sdk": [
+    "electric"
+   ],
+   "assets": [],
+   "chars": [],
+   "doc": "docs/design/game-design.md 9",
+   "risk": "有电源时世界永远无法静止，需要固定阶段"
+  },
+  {
+   "id": "particles",
+   "name": "沙炮",
+   "group": "lab",
+   "owner": "sdk",
+   "summary": "定向粒子喷沙进收集斗。",
+   "sdk": [
+    "particles"
+   ],
+   "assets": [],
+   "chars": [],
+   "doc": "docs/design/game-design.md 9",
+   "risk": "Godot 侧读不到粒子，只能等固定阶段后数沉积量"
+  },
+  {
+   "id": "rigid",
+   "name": "落石",
+   "group": "lab",
+   "owner": "sdk",
+   "summary": "刚体重物落入接收槽。",
+   "sdk": [
+    "rigid bodies"
+   ],
+   "assets": [],
+   "chars": [],
+   "doc": "docs/design/game-design.md 9",
+   "risk": "撤销须从开局重放"
+  },
+  {
+   "id": "pressure",
+   "name": "风道",
+   "group": "lab",
+   "owner": "sdk",
+   "summary": "气压推动气体与粒子。",
+   "sdk": [
+    "air pressure"
+   ],
+   "assets": [],
+   "chars": [],
+   "doc": "docs/design/game-design.md 9",
+   "risk": "只推动气体格与粒子，不推动沙、水、箱子"
+  }
+ ]
+}

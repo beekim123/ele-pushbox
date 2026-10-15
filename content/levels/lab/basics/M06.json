@@ -2,6 +2,12 @@
   "format": "pushbox.levelspec/1",
   "id": "M06",
   "chapter": "dungeon",
+  "mode": "lab",
+  "group": "basics",
+  "mechanisms": [
+    "pour",
+    "plate_door"
+  ],
   "order": 6,
   "title": "沙与箱各有用",
   "role": "轻组合",

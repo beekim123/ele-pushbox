@@ -111,7 +111,7 @@
       box.append(el("h3", { text: "SDK / 游戏层" }));
       const ul2 = el("ul"); [...(lv.sdk.sdk || []).map((x) => "【SDK】" + x), ...(lv.sdk.game_layer || []).map((x) => "【游戏层】" + x)].forEach((x) => ul2.append(el("li", { class: "small", text: x }))); box.append(ul2);
       box.append(el("h3", { text: "验收条目" })); const ul3 = el("ul"); lv.checks.forEach((c) => ul3.append(el("li", { class: "small", text: c }))); box.append(ul3);
-      box.append(el("p", { class: "note small", text: "规格文件：content/levels/ch1-mine/" + lv.id + ".json" }));
+      box.append(el("p", { class: "note small", text: "规格文件：content/levels/lab/basics/" + lv.id + ".json" }));
     } else if (s.kind === "screen") {
       const a = s.asset;
       box.append(el("h2", { text: a.name }), el("p", { class: "small mono", text: `${a.id} @v${a.version}` }), statusBadge(a.id), el("p", { text: a.usage }), el("p", { class: "small muted", text: a.notes }));

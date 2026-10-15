@@ -1,0 +1,31 @@
+{
+ "format": "pushbox.catalog/1",
+ "kind": "modes",
+ "note": "三个游戏模式。设计见 docs/design/vision.md。",
+ "entries": [
+  {
+   "id": "lab",
+   "name": "关卡模式",
+   "summary": "每关只演示一个机制，也是新机制的试验场和 SDK 回归测试。",
+   "status": "active",
+   "doc": "docs/design/game-design.md",
+   "order": 1
+  },
+  {
+   "id": "hell",
+   "name": "地狱模式",
+   "summary": "纯推箱解谜，难度高，不给提示，允许多解；奖励进入局外养成。",
+   "status": "design",
+   "doc": "docs/design/mode-hell.md",
+   "order": 2
+  },
+  {
+   "id": "delivery",
+   "name": "配送模式",
+   "summary": "每局随机一件带规则的货物，穿过多个房间，避开或放倒怪物，送到收件人手里。",
+   "status": "design",
+   "doc": "docs/design/mode-delivery.md",
+   "order": 3
+  }
+ ]
+}
