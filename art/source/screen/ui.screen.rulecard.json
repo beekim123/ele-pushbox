@@ -11,7 +11,8 @@
   "workbench/js/core/ambient.js",
   "workbench/js/core/i18n.js",
   "content/i18n/zh-Hans.json",
-  "content/i18n/en.json"
+  "content/i18n/en.json",
+  "workbench/js/core/env.js"
  ],
  "depends": [
   "char.miner",
@@ -34,5 +35,5 @@
  },
  "usage": "跳关或首次遇到概念时显示；也可从 HUD 旁的小图标重新打开。",
  "notes": "布局参考：文字来自 content/i18n，容器按文字宽度伸缩；Godot 用 Control 容器实现，不按像素硬编码文字位置。",
- "content_hash": "4223a532322d1f055994695b9e34f6816a6962d18f900e69cd79f9667f841acf"
+ "content_hash": "85693810e3816e3730f79469b2fddc5f7a98f04bbda44abf494118e5c65b2a5a"
 }

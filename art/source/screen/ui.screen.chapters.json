@@ -11,7 +11,8 @@
   "workbench/js/core/ambient.js",
   "workbench/js/core/i18n.js",
   "content/i18n/zh-Hans.json",
-  "content/i18n/en.json"
+  "content/i18n/en.json",
+  "workbench/js/core/env.js"
  ],
  "depends": [
   "char.miner",
@@ -71,5 +72,5 @@
  },
  "usage": "章节（地图）选择：左右轮播。当前地图是中间的大卡（主题小景、徽章、章号、进度或锁），两侧依次缩小变暗；下方是名称、页码指示与左右键、说明栏。地图数量不限：16 张以内显示页码点，更多时显示「当前 / 总数」。←→ 或点击两侧卡片切换，Enter 进入。",
  "notes": "布局参考：文字来自 content/i18n，容器按文字宽度伸缩；Godot 用 Control 容器实现，不按像素硬编码文字位置。",
- "content_hash": "dcc5c5ae501bb2567f8d62c9f0ca96613984a3071e6f77cd3665ee7641e71df8"
+ "content_hash": "2c715347965477e88a19abdffc75e1b1d144173bdce4409f977b7db71ea8da59"
 }

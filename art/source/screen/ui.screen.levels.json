@@ -11,7 +11,8 @@
   "workbench/js/core/ambient.js",
   "workbench/js/core/i18n.js",
   "content/i18n/zh-Hans.json",
-  "content/i18n/en.json"
+  "content/i18n/en.json",
+  "workbench/js/core/env.js"
  ],
  "depends": [
   "theme.dungeon",
@@ -66,5 +67,5 @@
  },
  "usage": "关卡格（编号、名称、通关 / 跳过标记）与所选关卡的示意小地图和一句话发现。",
  "notes": "布局参考：文字来自 content/i18n，容器按文字宽度伸缩；Godot 用 Control 容器实现，不按像素硬编码文字位置。",
- "content_hash": "da65075154cccce0a69046f7b102b39ded94e81e6a15cdd98eb0bd1cdfe6f4c4"
+ "content_hash": "1feddb30d14e1452b6008db1389377691f6be30fb80ab0ee6cdd24441d4c02bd"
 }

@@ -47,12 +47,30 @@
   // alive(tx, ty): whether a decoration placed from the opening layout still fits now.
   // layer: "back" (behind terrain) or "front" (after terrain, behind entities).
   // area: {x, y, w, h} screen rectangle used by flyers.
-  function draw(r, theme, map, ox, oy, tick, layer, occupied, area, alive) {
+  const MOVERS = new Set(["walker", "percher", "flyer", "hanger"]);
+  // Which moving critter (if any) appears in this room. Rules (art direction §6):
+  // "full" = every critter (review scenes only); "one" = exactly one, chosen by seed
+  // (menus); "sparse" = at most one, and only if its own chance passes for this seed.
+  function pickMover(list, opts) {
+    const mode = (opts && opts.mode) || "sparse", seed = (opts && opts.seed) | 0;
+    const movers = list.filter((a) => MOVERS.has(a.type));
+    if (mode === "full" || !movers.length) return mode === "full" ? new Set(movers) : new Set();
+    const order = movers.map((a, i) => ({ a, h: h32(seed, i, 901) })).sort((x, y) => x.h - y.h);
+    if (mode === "one") return new Set([order[0].a]);
+    const hit = order.find((o) => (o.h % 100) < Math.round((o.a.chance == null ? 0.3 : o.a.chance) * 100));
+    return new Set(hit ? [hit.a] : []);
+  }
+  function seedOf(str) { let h = 0; for (const ch of String(str)) h = h32(h, ch.charCodeAt(0), 907); return h; }
+
+  // opts: { mode, seed, out } - out collects decoration positions (light sources).
+  function draw(r, theme, map, ox, oy, tick, layer, occupied, area, alive, opts) {
     const list = (theme.ambient || []);
-    const used = new Set();
+    const used = new Set(), movers = pickMover(list, opts), out = opts && opts.out;
+    const S = opts && opts.dry ? () => ({ draw() {}, has: (id) => PB.sprites.has(id) }) : () => PB.sprites;
     let flyerIndex = 0;
     for (const a of list) {
       if (!S().has(a.id)) continue;
+      if (MOVERS.has(a.type) && !movers.has(a)) continue;
       const back = a.type === "wall" || a.type === "hanger" || a.type === "flyer";
       if ((layer === "back") !== back) { if (a.type === "flyer") flyerIndex += a.count || 1; continue; }
       if (a.type === "floor" || a.type === "hang") {
@@ -63,6 +81,7 @@
           if (alive && !alive(c.tx, c.ty)) continue;
           const x = ox + c.tx * 16 + 5 + (c.h % 7), y = oy + c.ty * 16 + (a.type === "floor" ? 16 : 0);
           S().draw(r, a.id, a.anim || "default", tick + (c.h % 97), x, y, (c.h >> 3) & 1);
+          if (out) out.push({ id: a.id, x, y });
         }
       } else if (a.type === "walker") {
         const run = longestRun(candidates(map, occupied, "floor", 5));
@@ -84,7 +103,10 @@
         const anim = phase === 2 || phase === 3 ? "peck" : "idle";
         S().draw(r, a.id, anim, tick, ox + edge.tx * 16 + 8, oy + edge.ty * 16 + 16, flip);
       } else if (a.type === "wall") {
-        for (let x = area.x + (a.spacing >> 1); x < area.x + area.w; x += a.spacing) S().draw(r, a.id, a.anim, tick + x, x, area.y + a.y);
+        for (let x = area.x + (a.spacing >> 1); x < area.x + area.w; x += a.spacing) {
+          S().draw(r, a.id, a.anim, tick + x, x, area.y + a.y);
+          if (out) out.push({ id: a.id, x, y: area.y + a.y });
+        }
       } else if (a.type === "hanger") {
         const c = candidates(map, occupied, "ceiling", 3)[0];
         if (!c) continue;
@@ -107,5 +129,5 @@
     }
   }
 
-  PB.ambient = { draw, tri };
+  PB.ambient = { draw, tri, pickMover, seedOf };
 })(typeof window !== "undefined" ? window : globalThis);

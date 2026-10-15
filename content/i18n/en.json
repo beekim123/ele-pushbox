@@ -106,5 +106,9 @@
  "level.M07.hint.2": "Under the earth is the plate pit.",
  "level.M07.hint.3": "Dig the earth under the crate.",
  "showcase.code": "DEMO",
- "level.showcase.title": "Showcase · every element"
+ "level.showcase.title": "Showcase · every element",
+ "settings.env": "Ambience",
+ "env.full": "Full",
+ "env.lite": "Lighting only",
+ "env.off": "Off"
 }

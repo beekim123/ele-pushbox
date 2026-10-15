@@ -106,5 +106,9 @@
  "level.M07.hint.2": "土下面是压板坑，和门是同一个符号。",
  "level.M07.hint.3": "挖掉箱子下面的土。",
  "showcase.code": "示意",
- "level.showcase.title": "代表场景 · 全要素"
+ "level.showcase.title": "代表场景 · 全要素",
+ "settings.env": "环境效果",
+ "env.full": "全部",
+ "env.lite": "只要光照",
+ "env.off": "关闭"
 }

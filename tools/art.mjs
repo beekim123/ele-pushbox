@@ -13,7 +13,7 @@ const cmd = argv[0];
 const opt = (name, def) => { const i = argv.indexOf("--" + name); return i >= 0 ? argv[i + 1] : def; };
 const ROOT = path.resolve(opt("root", REPO));
 const rel = (...p) => path.join(ROOT, ...p);
-const PB = loadCore(["raster", "font-data", "sprites", "i18n", "tilemodel", "terrain", "ambient", "scene", "ui"]);
+const PB = loadCore(["raster", "font-data", "sprites", "i18n", "tilemodel", "terrain", "ambient", "env", "scene", "ui"]);
 const LOCALES = ["zh-Hans", "en"];
 function loadI18n() {
   const t = {};
@@ -188,7 +188,7 @@ function build() {
     const lobby = byId.get("ui.screen.lobby");
     if (lobby) { const l = new PB.Raster(320, 180); PB.ui.render(l, lobby.src, 0, { theme: t }); writeRef("lobby." + t.slice(6), l, ["ui.screen.lobby", ...usesFor(t)]); }
   }
-  for (const s of specs) { const r = new PB.Raster(320, 180); PB.scene.renderLevel(r, s, null, { tick: 0 }); writeRef("level." + s.id, r, usesFor(PB.scene.themeFor(s))); }
+  for (const s of specs) { const r = new PB.Raster(320, 180); PB.scene.renderLevel(r, s, null, { tick: 0, env: "off" }); writeRef("level." + s.id, r, usesFor(PB.scene.themeFor(s))); }
   for (const { src } of byId.values()) if (src.category === "screen") for (const loc of LOCALES) {
     const r = new PB.Raster(320, 180); PB.ui.render(r, src, 0, screenState(src, specs, loc));
     writeRef(`${src.id.slice(10)}.${loc}`, r, [src.id, ...(src.depends || [])]);

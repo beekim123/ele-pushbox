@@ -72,5 +72,10 @@
   const DIM = { a: "f", b: "e", c: "v", d: "F", e: "f", f: "g", g: "z", h: "g", i: "h", j: "a", k: "b", l: "k", m: "n", n: "o", o: "p", p: "z",
     q: "y", r: "q", s: "r", t: "u", u: "v", v: "w", w: "x", x: "y", y: "z", z: "z", A: "h", B: "g", C: "B", D: "C", E: "F", F: "e" };
 
+  // One step brighter along the palette's own ramps (lighting).
+  const LIGHT = { z: "y", y: "x", x: "w", w: "v", v: "u", u: "t", t: "t", g: "f", f: "e", e: "F", F: "d", d: "c", c: "t", a: "b", b: "d",
+    h: "i", i: "D", D: "E", E: "c", j: "k", k: "l", l: "t", p: "o", o: "n", n: "m", m: "l", q: "r", r: "s", s: "t", B: "C", C: "D", A: "D" };
+
+  PB.LIGHT = LIGHT;
   PB.PALETTE = PALETTE; PB.RGB = RGB; PB.CODES = CODES; PB.h32 = h32; PB.Raster = Raster; PB.DIM = DIM; PB.codeOf = codeOf;
 })(typeof window !== "undefined" ? window : globalThis);

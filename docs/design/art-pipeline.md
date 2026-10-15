@@ -67,6 +67,7 @@ node tools/art.mjs import pushbox-art-edits-….json   # 写回源数据，并�
 | 导出 PNG = 源数据 | `node tools/art.mjs verify`：解码 PNG，与源数据重新绘制的结果逐字节比较 | 是 |
 | 工作台画面 = 导出 PNG | `tests/workbench.e2e.cjs`：浏览器内绘制的结果与参考 PNG 逐字节比较 | 是 |
 | 确认记录完整 | `verify`：已确认的 PNG 与历史源数据存在且哈希一致 | 是 |
+| 关卡参考图 | `level.*.png` 关闭环境效果绘制，供 Godot 逐像素对照；`showcase.*.png` 开启默认环境效果，供审稿 | 是 |
 | 界面文字放得下 | `verify`：每个界面按简中、英文各排一次，不得有换行截断、省略或丢弃；伪本地化结果记录在 manifest 的 `text_issues` 中供参考 | 是 |
 | Godot 画面 = 参考图 | 在 Godot 中把 `showcase.mine` 与 `level.M01–M07` 按参考图同样的状态渲染到 320×180 视口并截图，与 `art/export/reference/` 逐像素比较；沙、水只比较颜色集合（SDK 颜色位随机） | 待 GPT 实现 |
 

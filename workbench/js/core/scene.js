@@ -41,9 +41,15 @@
     const occupied = (tx, ty) => L.marker[ty * L.w + tx] !== TM().M.NONE || !!TM().crateAt(s0, tx, ty) || (s0.player.x === tx && s0.player.y === ty) || L.doors.includes(ty * L.w + tx);
     const alive = (tx, ty) => map.at(tx, ty) === TR().MAT.EMPTY && !TM().crateAt(s, tx, ty) && map.at(tx, ty + 1) !== TR().MAT.EMPTY || map.at(tx, ty - 1) !== TR().MAT.EMPTY && map.at(tx, ty) === TR().MAT.EMPTY && !TM().crateAt(s, tx, ty);
     const area = { x: ox + 16, y: oy + 16, w: Math.max(32, (L.w - 2) * 16), h: Math.max(32, (L.h - 2) * 16) };
-    if (o.ambient !== false) PB.ambient.draw(r, theme, map0, ox, oy, tick, "back", occupied, area, alive);
+    const lights = [], amb = { mode: spec === SHOWCASE ? "full" : "sparse", seed: PB.ambient.seedOf(spec.id), out: lights };
+    const envCtx = { tick, area: { x: ox, y: oy, w: L.w * 16, h: L.h * 16 }, lights, weather: o.weather !== undefined ? o.weather : spec.weather, level: o.env || "full" };
+    if (o.ambient !== false) for (const layer of ["back", "front"]) PB.ambient.draw(r, theme, map0, ox, oy, tick, layer, occupied, area, alive, Object.assign({}, amb, { dry: true }));
+    if (PB.env) PB.env.draw(r, theme, "back", envCtx);
+    amb.out = null;
+    if (o.ambient !== false) PB.ambient.draw(r, theme, map0, ox, oy, tick, "back", occupied, area, alive, amb);
     TR().drawTerrain(r, map, theme, ox, oy, tick >> 3);
-    if (o.ambient !== false) PB.ambient.draw(r, theme, map0, ox, oy, tick, "front", occupied, area, alive);
+    if (o.ambient !== false) PB.ambient.draw(r, theme, map0, ox, oy, tick, "front", occupied, area, alive, amb);
+    if (PB.env) PB.env.draw(r, theme, "light", envCtx);
     const M = TM().M;
     // Background markers.
     for (let i = 0; i < L.w * L.h; i++) {
@@ -70,6 +76,7 @@
     }
     const p = s.player;
     S().draw(r, "char.miner", o.pose || "idle", tick, ox + p.x * 16 + 8, oy + p.y * 16 + 16, o.facing === "left");
+    if (PB.env) PB.env.draw(r, theme, "front", envCtx);
     if (o.target) {
       const t = o.target;
       S().draw(r, "ui.target", t.kind, 0, ox + t.x * 16 + 8, oy + t.y * 16 + 16);

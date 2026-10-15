@@ -11,7 +11,8 @@
   "workbench/js/core/ambient.js",
   "workbench/js/core/i18n.js",
   "content/i18n/zh-Hans.json",
-  "content/i18n/en.json"
+  "content/i18n/en.json",
+  "workbench/js/core/env.js"
  ],
  "depends": [
   "char.miner",
@@ -35,5 +36,5 @@
  },
  "usage": "所有目标灯点亮后显示；人物播放胜利动作。",
  "notes": "布局参考：文字来自 content/i18n，容器按文字宽度伸缩；Godot 用 Control 容器实现，不按像素硬编码文字位置。",
- "content_hash": "5b2521411186c07bb5dfbba018c3c29206181916da10f18d313fecfd298716a3"
+ "content_hash": "d8c2649d71470334b13c0fd3ac83b8c922179cbd28dd461a860029e8286c3f48"
 }

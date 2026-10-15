@@ -55,10 +55,20 @@
     return { kind: m[1].toLowerCase(), x: p.x + d[0], y: p.y + d[1] };
   }
 
-  let showIssues = false;
+  let showIssues = false, envMode = "default";
   const LOCALES = [["zh-Hans", "简体中文"], ["en", "English"], ["qps", "伪本地化（长度测试）"]];
+  // "default" = the level / theme setting; "lite" = lighting only; "off"; or a weather name.
+  function envOpts() {
+    if (envMode === "default") return {};
+    if (envMode === "lite" || envMode === "off") return { env: envMode };
+    return { weather: envMode };
+  }
+  function themeOfCurrent() {
+    const s = current; if (!s) return null;
+    return s.theme || (s.level ? PB.scene.themeFor(s.level) : s.asset && s.asset.params.theme) || "theme.dungeon";
+  }
   function screenState(s) {
-    return { focus: s.asset.params.screen === "hint" ? 2 : s.asset.params.screen === "levels" ? 4 : 0, specs: Object.fromEntries(store.levels().map((l) => [l.id, l])), levelSpec: store.level("M05"), ruleSpec: store.level("M03"), theme: s.theme, showIssues, animate: true };
+    return { focus: s.asset.params.screen === "hint" ? 2 : s.asset.params.screen === "levels" ? 4 : 0, specs: Object.fromEntries(store.levels().map((l) => [l.id, l])), levelSpec: store.level("M05"), ruleSpec: store.level("M03"), theme: s.theme, showIssues, animate: true, env: envMode === "lite" || envMode === "off" ? envMode : "full" };
   }
   function outline(r, issues) {
     if (!showIssues) return;
@@ -68,11 +78,11 @@
   function draw(r, tick) {
     const s = current;
     PB.i18n.takeIssues();
-    if (s.kind === "showcase") { PB.scene.renderLevel(r, PB.scene.SHOWCASE, null, { tick, theme: s.theme, grid, observe, pose: "idle" }); outline(r, PB.i18n.takeIssues()); }
+    if (s.kind === "showcase") { PB.scene.renderLevel(r, PB.scene.SHOWCASE, null, Object.assign({ tick, theme: s.theme, grid, observe, pose: "idle" }, envOpts())); outline(r, PB.i18n.takeIssues()); }
     else if (s.kind === "level") {
       const st = replayState(s.level, step), p = poseFor(st.action, st.result);
       const won = step === s.level.solution.length && PB.tilemodel.won(st.parsed.level, st.parsed.state);
-      PB.scene.renderLevel(r, s.level, st.parsed, { tick, grid, observe, pose: won ? "win" : p.pose, facing: p.facing, target: nextTarget(s.level, st.parsed) });
+      PB.scene.renderLevel(r, s.level, st.parsed, Object.assign({ tick, grid, observe, pose: won ? "win" : p.pose, facing: p.facing, target: nextTarget(s.level, st.parsed) }, envOpts()));
       outline(r, PB.i18n.takeIssues());
     } else {
       PB.ui.render(r, s.asset, tick, screenState(s));
@@ -115,6 +125,7 @@
       box.append(el("h2", { text: s.name }), el("p", { text: "把第 1 章的人物、箱子、机关、材料和 HUD 放在同一画面中检查整体协调、层级和可读性。" }));
       box.append(el("p", { class: "small muted", text: "画面中的布局只作示意，不是可玩关卡。水与沙的颗粒在游戏中会随 SDK 的格子移动，这里按格子静态绘制。" }));
       box.append(el("h3", { text: "地形主题" }), el("p", {}, [el("a", { href: "#assets/" + s.theme, text: s.theme }), " ", statusBadge(s.theme)]));
+      box.append(el("h3", { text: "生态与环境" }), el("p", { class: "small", text: "本场景为了审稿显示该主题的全部小动物；实际关卡中每张图最多出现 1 只会动的小动物，约三分之一的关卡才有。光照只作用在背景上，不改变地形、箱子和机关的颜色；天气每关最多一种，可在上方「环境」中切换预览。" }));
     }
   }
 
@@ -149,10 +160,17 @@
     const locSel = el("select", { "aria-label": "界面语言", onchange: () => { PB.i18n.setLocale(locSel.value); store.setPref("locale", locSel.value); stage.refresh(); } });
     for (const [v, n] of LOCALES) locSel.append(el("option", { value: v, text: n }));
     locSel.value = PB.i18n.getLocale();
+    const T = PB.sprites.get(themeOfCurrent()).params, envSel = el("select", { "aria-label": "环境效果", onchange: () => { envMode = envSel.value; stage.refresh(); } });
+    const wDefault = (T.env && T.env.weather) || "none";
+    envSel.append(el("option", { value: "default", text: "默认（" + (wDefault === "none" ? "只有光照" : "光照 + " + PB.env.NAMES[wDefault]) + "）" }));
+    for (const w of (T.env && T.env.weathers) || []) if (w !== wDefault) envSel.append(el("option", { value: w, text: "光照 + " + PB.env.NAMES[w] }));
+    envSel.append(el("option", { value: "lite", text: "只要光照" }), el("option", { value: "off", text: "关闭环境效果" }));
+    if (![...envSel.options].some((o) => o.value === envMode)) envMode = "default";
+    envSel.value = envMode;
     const issueBtn = el("button", { class: "btn", type: "button", "aria-pressed": String(showIssues), text: "标出溢出", title: "用红框标出放不下而被省略的文字", onclick: () => { showIssues = !showIssues; issueBtn.setAttribute("aria-pressed", String(showIssues)); stage.refresh(); } });
     stage = root.PBStage.create(host, {
       width: 320, height: 180, animated: true, autoplay: true, draw, label: current.name,
-      extras: (current.kind === "screen" ? [] : [gridBtn, obsBtn]).concat([el("label", { class: "small muted" }, ["语言 ", locSel]), issueBtn]),
+      extras: (current.kind === "screen" ? [] : [gridBtn, obsBtn]).concat([el("label", { class: "small muted" }, ["环境 ", envSel]), el("label", { class: "small muted" }, ["语言 ", locSel]), issueBtn]),
       disclaimer: current.kind === "screen" ? "界面为布局与外观参考；交互在游戏中实现。" : "视觉示意，不代表 SDK 物理结果。",
     });
     info(current); steps(current);

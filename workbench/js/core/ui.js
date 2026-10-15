@@ -76,14 +76,21 @@
   function themeName(id) { return T("theme." + id.slice(6)); }
 
   // Themed backdrop: background, a floor (plus optional extra solid tiles), ambient life.
+  let envLevel = "full";
   function backdrop(r, theme, tick, extraSolid, occupied) {
     const Tm = S().get(theme).params, M = PB.terrain.MAT, oy = 12;
     const map = { w: 21, h: 11, at: (x, y) => (x < 0 || x >= 21 || y < 0 ? M.EMPTY : y >= 9 ? M.ROCK : extraSolid && extraSolid(x, y) ? M.ROCK : M.EMPTY) };
     PB.terrain.drawBackground(r, Tm, 0, 0, W, H, tick);
-    const area = { x: 0, y: 0, w: W, h: 150 };
-    PB.ambient.draw(r, Tm, map, 0, oy, tick, "back", occupied, area);
+    const area = { x: 0, y: 0, w: W, h: 150 }, lights = [], amb = { mode: "one", seed: PB.ambient.seedOf(theme), out: lights };
+    const envCtx = { tick, area: { x: 0, y: 20, w: W, h: 136 }, lights, level: envLevel };
+    for (const layer of ["back", "front"]) PB.ambient.draw(r, Tm, map, 0, oy, tick, layer, occupied, area, null, Object.assign({}, amb, { dry: true }));
+    PB.env.draw(r, Tm, "back", envCtx);
+    amb.out = null;
+    PB.ambient.draw(r, Tm, map, 0, oy, tick, "back", occupied, area, null, amb);
     PB.terrain.drawTerrain(r, map, Tm, 0, oy, tick >> 3);
-    PB.ambient.draw(r, Tm, map, 0, oy, tick, "front", occupied, area);
+    PB.ambient.draw(r, Tm, map, 0, oy, tick, "front", occupied, area, null, amb);
+    PB.env.draw(r, Tm, "light", envCtx);
+    PB.env.draw(r, Tm, "front", envCtx);
     return Tm;
   }
   function bottomBar(r) { r.rect(0, H - 19, W, 19, "z"); r.hline(0, H - 19, W, "y"); }
@@ -152,10 +159,11 @@
     const map = { w: cols, h: floorRow + 2, at: (tx, ty) => (tx >= 0 && tx < cols && ty >= floorRow ? M.ROCK : M.EMPTY) };
     const busy = withHero ? (tx, ty) => ty === floorRow - 1 && (tx === 1 || tx === 2) : null;
     const area = { x: 0, y: 0, w, h: h - 14 };
+    const amb = { mode: "one", seed: PB.ambient.seedOf(ch.theme) };
     PB.terrain.drawBackground(tmp, Tm, 0, 0, w, h, tick);
-    PB.ambient.draw(tmp, Tm, map, 0, oy, tick, "back", busy, area);
+    PB.ambient.draw(tmp, Tm, map, 0, oy, tick, "back", busy, area, null, amb);
     PB.terrain.drawTerrain(tmp, map, Tm, 0, oy, tick >> 3);
-    PB.ambient.draw(tmp, Tm, map, 0, oy, tick, "front", busy, area);
+    PB.ambient.draw(tmp, Tm, map, 0, oy, tick, "front", busy, area, null, amb);
     if (withHero) { S().draw(tmp, "char.miner", "idle", tick, 24, oy + floorRow * 16); S().draw(tmp, "obj.crate_wood", "default", 0, 40, oy + floorRow * 16); }
     return tmp;
   }
@@ -362,6 +370,7 @@
     st = st || {};
     const prev = I().getLocale();
     if (st.locale) I().setLocale(st.locale);
+    envLevel = st.env || "full";
     I().takeIssues();
     try { SCREENS[asset.params.screen](r, tick, asset.params, st); }
     finally { if (st.locale) I().setLocale(prev); }

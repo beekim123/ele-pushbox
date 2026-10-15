@@ -6,7 +6,8 @@
  "kind": "procedural",
  "renderer": [
   "workbench/js/core/terrain.js",
-  "workbench/js/core/ambient.js"
+  "workbench/js/core/ambient.js",
+  "workbench/js/core/env.js"
  ],
  "depends": [
   "deco.forest_flower",
@@ -108,17 +109,35 @@
    },
    {
     "type": "percher",
-    "id": "fauna.forest_bird"
+    "id": "fauna.forest_bird",
+    "chance": 0.35
    },
    {
     "type": "flyer",
     "id": "fauna.forest_butterfly",
     "anim": "fly",
-    "count": 1
+    "count": 1,
+    "chance": 0.35
    }
-  ]
+  ],
+  "env": {
+   "beams": {
+    "count": 3,
+    "slope": [
+     1,
+     4
+    ],
+    "width": 10
+   },
+   "mist": true,
+   "weathers": [
+    "rain",
+    "fireflies"
+   ],
+   "weather": "none"
+  }
  },
  "usage": "第 4 章的地形、背景与生态。游戏中地形按 workbench/js/core/terrain.js 着色；生态按 ambient.js 的规则摆放。",
  "notes": "盘根褐土顶着一层草皮，背景是雾中的树干与树冠；野花和草丛，知更鸟在边上啄食，蝴蝶飞舞。",
- "content_hash": "d1f37865968817988c029199f4209cb58c75283b68ba22ef0059291600131dfa"
+ "content_hash": "e90b4ba521c3de9c9eda5928061aa2efa49f1315dfcddfd355b0a540f524463b"
 }

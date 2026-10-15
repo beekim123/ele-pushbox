@@ -79,6 +79,8 @@ game/
 
 **3.4 系统与界面**：按设计第 7、8 节实现撤销、重开、三级提示（含"演示"与"回到正确位置"）、跳关与规则卡、观察模式（按住 Tab）、目标高亮（只按规则计算，不运行模拟）、存档（`user://progress.json`，先写临时文件再改名）、引导，以及大厅、章节选择、关卡选择、暂停、设置、过关界面。界面的布局、字号和颜色以 `art/export/preview/ui.screen.*.png` 为准，用 Control 节点实现；文字使用 `third_party/fonts/fusion-pixel-12px/`，最近邻渲染，关闭抗锯齿与 hinting。
 
+**3.4b 生态与环境效果**：植物与小动物按 `workbench/js/core/ambient.js` 摆放（每关最多 1 只会动的小动物，由关卡编号决定，见美术规范第 6 节）；光照与天气按 `workbench/js/core/env.js` 实现（美术规范第 9 节）：光照只作用于背景层（在地形与实体之前绘制，可用 CanvasItem 着色器或预合成背景纹理实现），天气为稀疏的像素粒子，画在实体之上、HUD 之下。设置项「环境效果」三档：全部 / 只要光照 / 关闭。参考图 `level.*.png` 是关闭环境效果的状态，用于逐像素对照；环境效果按代表场景审稿，不要求逐像素一致。
+
 **3.4a 多语言**：界面文字只能来自 `content/i18n/*.json`（简体中文、英文），用 Godot 的 TranslationServer 加载（可以写脚本转成 CSV 或 .po，但源文件只有这一份）。界面用 Container（HBox / VBox / Margin）与最小、最大宽度搭建，不按像素硬编码文字位置；Label 开启按词或按字自动换行，单行文字超出时显示省略号。开发构建中检测溢出并输出日志，测试要覆盖中、英两种语言下所有界面都不溢出（参考 `tools/art.mjs` 中的 `textIssues`）。界面参考图有中、英两版：`art/export/reference/<界面>.zh-Hans.png`、`.en.png`。
 
 **3.5 键位**：方向键 / WASD 移动；Shift + 方向挖；Ctrl + 方向倒沙；B + 方向放炸药；Z 撤销；R 重开；H 提示；按住 Tab 观察；Esc 暂停。鼠标：左键点相邻格挖，右键点相邻格倒，拖动炸药图标放置。

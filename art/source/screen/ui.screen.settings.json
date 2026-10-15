@@ -11,7 +11,8 @@
   "workbench/js/core/ambient.js",
   "workbench/js/core/i18n.js",
   "content/i18n/zh-Hans.json",
-  "content/i18n/en.json"
+  "content/i18n/en.json",
+  "workbench/js/core/env.js"
  ],
  "depends": [
   "theme.dungeon",
@@ -52,6 +53,11 @@
     "valueKey": "settings.scale.auto"
    },
    {
+    "key": "settings.env",
+    "type": "value",
+    "valueKey": "env.full"
+   },
+   {
     "key": "settings.grid",
     "type": "toggle",
     "value": false
@@ -70,5 +76,5 @@
  },
  "usage": "设置项全部可用方向键调整。",
  "notes": "布局参考：文字来自 content/i18n，容器按文字宽度伸缩；Godot 用 Control 容器实现，不按像素硬编码文字位置。",
- "content_hash": "49c21a5fe06e3286b80812283551de98b55a294b19c01108710db4d656fe1a88"
+ "content_hash": "bfd2a11b89fab1de823dee2fcf84874347004d4d5422ab972ae898e8a6de69fe"
 }

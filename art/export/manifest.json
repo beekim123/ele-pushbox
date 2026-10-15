@@ -1450,16 +1450,17 @@
    "layer": "terrain",
    "current": {
     "version": 1,
-    "hash": "fc9363cc99c2d70db6e4166cb9927ba0795ea7399de6d858b76d42be660384e5",
+    "hash": "527e1a896c5a2e0cea32b1c848694dc1ce165d3163a7ac8cfb163b5324bbc86f",
     "status": "review",
     "preview": "art/export/preview/theme.cave.png",
-    "preview_sha256": "a9294651cb69aaeb0f2ceeff223e3fc5ca35cb217b67dd6c9a7ab0ea67af6390"
+    "preview_sha256": "531d542d5bd82687dfc6ab6f25cf28b46faec9c01bb54738ceed99c1b62a3ae1"
    },
    "approved": null,
    "current_is_approved": false,
    "renderer": [
     "workbench/js/core/terrain.js",
-    "workbench/js/core/ambient.js"
+    "workbench/js/core/ambient.js",
+    "workbench/js/core/env.js"
    ],
    "params": {
     "title": "幽光晶窟",
@@ -1548,9 +1549,30 @@
       "type": "flyer",
       "id": "fauna.cave_moth",
       "anim": "fly",
-      "count": 2
+      "count": 1,
+      "chance": 0.45
      }
-    ]
+    ],
+    "env": {
+     "lights": {
+      "sources": {
+       "deco.cave_mushroom": {
+        "radius": 16,
+        "dy": -6
+       },
+       "deco.cave_crystal": {
+        "radius": 14,
+        "dy": -4,
+        "flicker": false
+       }
+      }
+     },
+     "vignette": 12,
+     "weathers": [
+      "drips"
+     ],
+     "weather": "drips"
+    }
    },
    "depends": [
     "deco.cave_crystal",
@@ -1566,16 +1588,17 @@
    "layer": "terrain",
    "current": {
     "version": 1,
-    "hash": "49c2a0242721b3d3471c23a4e89e3c7a06f0046df6a9c432947310c3a289e1bb",
+    "hash": "df990dbccaf3405ff7dc8628df7f26440bbdede84095601beeaa4d9e880ca704",
     "status": "review",
     "preview": "art/export/preview/theme.cosmos.png",
-    "preview_sha256": "0a2be57f70dd6f20187cba4603441abaf8189ae036340a3b1ed29a37205c6870"
+    "preview_sha256": "4f24fec72837f16f56eaaf42d1c4c842438994b645315bcea9161bc2154394a5"
    },
    "approved": null,
    "current_is_approved": false,
    "renderer": [
     "workbench/js/core/terrain.js",
-    "workbench/js/core/ambient.js"
+    "workbench/js/core/ambient.js",
+    "workbench/js/core/env.js"
    ],
    "params": {
     "title": "深空星站",
@@ -1659,9 +1682,17 @@
       "id": "fauna.cosmos_drone",
       "anim": "hover",
       "count": 1,
-      "path": "hover"
+      "path": "hover",
+      "chance": 0.35
      }
-    ]
+    ],
+    "env": {
+     "vignette": 10,
+     "weathers": [
+      "meteors"
+     ],
+     "weather": "meteors"
+    }
    },
    "depends": [
     "deco.cosmos_sprout",
@@ -1676,16 +1707,17 @@
    "layer": "terrain",
    "current": {
     "version": 1,
-    "hash": "7ac3e157caf6e469ae5362ec14c6c0e49783958bf6307f9944ccc7ce751688df",
+    "hash": "c3881552b196c87ce21cd7d76954f6d058b388a060a010676167686326ed1e25",
     "status": "review",
     "preview": "art/export/preview/theme.dungeon.png",
-    "preview_sha256": "5cfb8bd8ee12d4c34bdbec3c0444b67e900102e16bb02c0fbe9fd78198e6d2de"
+    "preview_sha256": "fc36e75e2a6d115577bf015a6e5de05d98913ae05259995172c0c631d83ac00f"
    },
    "approved": null,
    "current_is_approved": false,
    "renderer": [
     "workbench/js/core/terrain.js",
-    "workbench/js/core/ambient.js"
+    "workbench/js/core/ambient.js",
+    "workbench/js/core/env.js"
    ],
    "params": {
     "title": "幽暗石牢",
@@ -1766,7 +1798,8 @@
      {
       "type": "hanger",
       "id": "fauna.dungeon_bat",
-      "count": 1
+      "count": 1,
+      "chance": 0.35
      },
      {
       "type": "floor",
@@ -1776,9 +1809,26 @@
      },
      {
       "type": "walker",
-      "id": "fauna.dungeon_rat"
+      "id": "fauna.dungeon_rat",
+      "chance": 0.15
      }
-    ]
+    ],
+    "env": {
+     "lights": {
+      "sources": {
+       "deco.dungeon_torch": {
+        "radius": 28,
+        "dy": -6
+       }
+      }
+     },
+     "vignette": 10,
+     "weathers": [
+      "embers",
+      "drips"
+     ],
+     "weather": "none"
+    }
    },
    "depends": [
     "deco.dungeon_moss",
@@ -1795,16 +1845,17 @@
    "layer": "terrain",
    "current": {
     "version": 1,
-    "hash": "d1f37865968817988c029199f4209cb58c75283b68ba22ef0059291600131dfa",
+    "hash": "e90b4ba521c3de9c9eda5928061aa2efa49f1315dfcddfd355b0a540f524463b",
     "status": "review",
     "preview": "art/export/preview/theme.forest.png",
-    "preview_sha256": "e6b88119033b3bf472f08653ddd666ec14687efe9dd54eea907b3b66238c57ae"
+    "preview_sha256": "5af596861b06dccf90804dfd7a6e9bf6e68e029d6bacbb3103c307958f616626"
    },
    "approved": null,
    "current_is_approved": false,
    "renderer": [
     "workbench/js/core/terrain.js",
-    "workbench/js/core/ambient.js"
+    "workbench/js/core/ambient.js",
+    "workbench/js/core/env.js"
    ],
    "params": {
     "title": "迷雾古森",
@@ -1892,15 +1943,33 @@
      },
      {
       "type": "percher",
-      "id": "fauna.forest_bird"
+      "id": "fauna.forest_bird",
+      "chance": 0.35
      },
      {
       "type": "flyer",
       "id": "fauna.forest_butterfly",
       "anim": "fly",
-      "count": 1
+      "count": 1,
+      "chance": 0.35
      }
-    ]
+    ],
+    "env": {
+     "beams": {
+      "count": 3,
+      "slope": [
+       1,
+       4
+      ],
+      "width": 10
+     },
+     "mist": true,
+     "weathers": [
+      "rain",
+      "fireflies"
+     ],
+     "weather": "none"
+    }
    },
    "depends": [
     "deco.forest_flower",
@@ -1917,16 +1986,17 @@
    "layer": "terrain",
    "current": {
     "version": 1,
-    "hash": "8e5a919505eee72d27ac01e60fa972433d9094d485cb826b0366a819902e444e",
+    "hash": "d73b763e7af2267f8997d64c06d08a80558accd2703d2d04e1da551734c3e7d2",
     "status": "review",
     "preview": "art/export/preview/theme.ruins.png",
-    "preview_sha256": "f04547c589a7c0878ecfd2747eae666adcf4d01f7d752fccd0d23afebaf7bb0c"
+    "preview_sha256": "0057aaf5ee62524f9560e233b3a24a278c941aa5fa0ad590a3c4e6d2872fb370"
    },
    "approved": null,
    "current_is_approved": false,
    "renderer": [
     "workbench/js/core/terrain.js",
-    "workbench/js/core/ambient.js"
+    "workbench/js/core/ambient.js",
+    "workbench/js/core/env.js"
    ],
    "params": {
     "title": "黄金神庙",
@@ -2012,9 +2082,25 @@
      },
      {
       "type": "walker",
-      "id": "fauna.ruins_scarab"
+      "id": "fauna.ruins_scarab",
+      "chance": 0.3
      }
-    ]
+    ],
+    "env": {
+     "beams": {
+      "count": 2,
+      "slope": [
+       1,
+       2
+      ],
+      "width": 14
+     },
+     "motes": true,
+     "weathers": [
+      "sandstorm"
+     ],
+     "weather": "none"
+    }
    },
    "depends": [
     "deco.ruins_lotus",
@@ -2030,16 +2116,17 @@
    "layer": "terrain",
    "current": {
     "version": 1,
-    "hash": "226da76ebc70d8ddb6ca27ef64821b83faa60e29f509651d5a0bf05ac3274249",
+    "hash": "da7d99f444b82552d47d2f41a22b1306d8ac154226716b2cb0366b8cd94d20e9",
     "status": "review",
     "preview": "art/export/preview/theme.sky.png",
-    "preview_sha256": "ef1ceea75d33fa2826421a3d6bc3cb20678b7f83060a77cc87f91fce26064d64"
+    "preview_sha256": "bfe03ac8546cfeafbda14c84e89703417edeaf5db7c1be23ad3a8380306a6c14"
    },
    "approved": null,
    "current_is_approved": false,
    "renderer": [
     "workbench/js/core/terrain.js",
-    "workbench/js/core/ambient.js"
+    "workbench/js/core/ambient.js",
+    "workbench/js/core/env.js"
    ],
    "params": {
     "title": "云端圣域",
@@ -2123,16 +2210,30 @@
       "id": "fauna.sky_dove",
       "anim": "fly",
       "count": 1,
-      "path": "cross"
+      "path": "cross",
+      "chance": 0.35
      },
      {
       "type": "flyer",
       "id": "fauna.sky_cloudling",
       "anim": "float",
       "count": 1,
-      "path": "drift"
+      "path": "drift",
+      "chance": 0.25
      }
-    ]
+    ],
+    "env": {
+     "sun": {
+      "x": 292,
+      "y": 34,
+      "radius": 24
+     },
+     "weathers": [
+      "wind",
+      "snow"
+     ],
+     "weather": "wind"
+    }
    },
    "depends": [
     "deco.sky_flower",
@@ -2594,10 +2695,10 @@
    "layer": "ui",
    "current": {
     "version": 1,
-    "hash": "dcc5c5ae501bb2567f8d62c9f0ca96613984a3071e6f77cd3665ee7641e71df8",
+    "hash": "2c715347965477e88a19abdffc75e1b1d144173bdce4409f977b7db71ea8da59",
     "status": "review",
     "preview": "art/export/preview/ui.screen.chapters.png",
-    "preview_sha256": "b78b600ae5e16dda2d1222f45557ce78f4110b10a57f2a201a2afb97467ca303"
+    "preview_sha256": "69941857503656192a4341e29112c59a7146f984a8981382c9da9ad7591b2883"
    },
    "approved": null,
    "current_is_approved": false,
@@ -2608,7 +2709,8 @@
     "workbench/js/core/ambient.js",
     "workbench/js/core/i18n.js",
     "content/i18n/zh-Hans.json",
-    "content/i18n/en.json"
+    "content/i18n/en.json",
+    "workbench/js/core/env.js"
    ],
    "params": {
     "screen": "chapters",
@@ -2667,10 +2769,10 @@
    "layer": "ui",
    "current": {
     "version": 1,
-    "hash": "5b2521411186c07bb5dfbba018c3c29206181916da10f18d313fecfd298716a3",
+    "hash": "d8c2649d71470334b13c0fd3ac83b8c922179cbd28dd461a860029e8286c3f48",
     "status": "review",
     "preview": "art/export/preview/ui.screen.complete.png",
-    "preview_sha256": "844ede408bb409299f4f90c2f56a97444b3e8a86641685b0161f2fa2904c33ed"
+    "preview_sha256": "ca72bef72a6bf3bd327c85a99fe1464fd12a37417dd24cc0c6b3dadde3d64df3"
    },
    "approved": null,
    "current_is_approved": false,
@@ -2681,7 +2783,8 @@
     "workbench/js/core/ambient.js",
     "workbench/js/core/i18n.js",
     "content/i18n/zh-Hans.json",
-    "content/i18n/en.json"
+    "content/i18n/en.json",
+    "workbench/js/core/env.js"
    ],
    "params": {
     "screen": "complete"
@@ -2704,10 +2807,10 @@
    "layer": "ui",
    "current": {
     "version": 1,
-    "hash": "f0f959eb8a94b8277be2403ec444404fcf683edea65adce27ce4279a44aa88dc",
+    "hash": "d25c4c928e6d915a8861f6902696eed8afb2c8650c2c707294350925ae6b04d5",
     "status": "review",
     "preview": "art/export/preview/ui.screen.hint.png",
-    "preview_sha256": "cc331e9c67f78489530f05a54c3100441000aae4a5563a7d1470b01d28b31861"
+    "preview_sha256": "3ffc54ae4d510443c0b1b470f727fba857dda769a36f6b6961c4d9469036bdfe"
    },
    "approved": null,
    "current_is_approved": false,
@@ -2718,7 +2821,8 @@
     "workbench/js/core/ambient.js",
     "workbench/js/core/i18n.js",
     "content/i18n/zh-Hans.json",
-    "content/i18n/en.json"
+    "content/i18n/en.json",
+    "workbench/js/core/env.js"
    ],
    "params": {
     "screen": "hint"
@@ -2739,10 +2843,10 @@
    "layer": "ui",
    "current": {
     "version": 1,
-    "hash": "da65075154cccce0a69046f7b102b39ded94e81e6a15cdd98eb0bd1cdfe6f4c4",
+    "hash": "1feddb30d14e1452b6008db1389377691f6be30fb80ab0ee6cdd24441d4c02bd",
     "status": "review",
     "preview": "art/export/preview/ui.screen.levels.png",
-    "preview_sha256": "fceb3e0ed66b82fa5c6036ecbfa41669273166178677cd7fd690b88a66854fc2"
+    "preview_sha256": "a68b73f6186398c469cf18415a71b2b50ac10d14edc9c4c05be2e03982528d63"
    },
    "approved": null,
    "current_is_approved": false,
@@ -2753,7 +2857,8 @@
     "workbench/js/core/ambient.js",
     "workbench/js/core/i18n.js",
     "content/i18n/zh-Hans.json",
-    "content/i18n/en.json"
+    "content/i18n/en.json",
+    "workbench/js/core/env.js"
    ],
    "params": {
     "screen": "levels",
@@ -2807,10 +2912,10 @@
    "layer": "ui",
    "current": {
     "version": 1,
-    "hash": "46887fb7e1e6b45862321fd24ca1acf93fadebdbb4a621a6b64bdf949469d284",
+    "hash": "3b5d15106439f6aba9a3f000efdfd5488796a0debfbcdd44b14b81c7eb113179",
     "status": "review",
     "preview": "art/export/preview/ui.screen.lobby.png",
-    "preview_sha256": "b217fbfffb56b65ae5cd924f061368a1ac488dbace2e5d46e32528e7e1648c63"
+    "preview_sha256": "6d7e845f9bcba10753b18357d2e8f70bd71300d57dd14bc650cdf6cc5eb55007"
    },
    "approved": null,
    "current_is_approved": false,
@@ -2821,7 +2926,8 @@
     "workbench/js/core/ambient.js",
     "workbench/js/core/i18n.js",
     "content/i18n/zh-Hans.json",
-    "content/i18n/en.json"
+    "content/i18n/en.json",
+    "workbench/js/core/env.js"
    ],
    "params": {
     "screen": "lobby",
@@ -2865,10 +2971,10 @@
    "layer": "ui",
    "current": {
     "version": 1,
-    "hash": "b9ca4c2bc080ae119914408a8c9558192686856628b3c7f95d3da322e431ff5b",
+    "hash": "4c3bb26f1a651f3548a7eee8e62b26ba76fc13f784f7343bd84cfdd9e1d68027",
     "status": "review",
     "preview": "art/export/preview/ui.screen.pause.png",
-    "preview_sha256": "955f9f6c5e80fe0d96f2b775cb7dc42aa900a6205dd9899b19e1a6daff1fd9b0"
+    "preview_sha256": "a1f9aa24b4543de3789e67eb74ee6d10565f1dca3dfdf16d5e2b930ada76764c"
    },
    "approved": null,
    "current_is_approved": false,
@@ -2879,7 +2985,8 @@
     "workbench/js/core/ambient.js",
     "workbench/js/core/i18n.js",
     "content/i18n/zh-Hans.json",
-    "content/i18n/en.json"
+    "content/i18n/en.json",
+    "workbench/js/core/env.js"
    ],
    "params": {
     "screen": "pause",
@@ -2910,7 +3017,7 @@
    "layer": "ui",
    "current": {
     "version": 1,
-    "hash": "4223a532322d1f055994695b9e34f6816a6962d18f900e69cd79f9667f841acf",
+    "hash": "85693810e3816e3730f79469b2fddc5f7a98f04bbda44abf494118e5c65b2a5a",
     "status": "review",
     "preview": "art/export/preview/ui.screen.rulecard.png",
     "preview_sha256": "d02e69d90b75029085272c715dd4159bbb801ba47c3463c678b718e540af7a2a"
@@ -2924,7 +3031,8 @@
     "workbench/js/core/ambient.js",
     "workbench/js/core/i18n.js",
     "content/i18n/zh-Hans.json",
-    "content/i18n/en.json"
+    "content/i18n/en.json",
+    "workbench/js/core/env.js"
    ],
    "params": {
     "screen": "rulecard"
@@ -2946,10 +3054,10 @@
    "layer": "ui",
    "current": {
     "version": 1,
-    "hash": "49c21a5fe06e3286b80812283551de98b55a294b19c01108710db4d656fe1a88",
+    "hash": "bfd2a11b89fab1de823dee2fcf84874347004d4d5422ab972ae898e8a6de69fe",
     "status": "review",
     "preview": "art/export/preview/ui.screen.settings.png",
-    "preview_sha256": "316917e16d9e6be88531bce0d0bfbe651481815ef4d840bc9fe15e60acd94a53"
+    "preview_sha256": "a6dd69fa825db739e3b58a41a56d296a4f5eed531b400f0b6dfecc308c688f29"
    },
    "approved": null,
    "current_is_approved": false,
@@ -2960,7 +3068,8 @@
     "workbench/js/core/ambient.js",
     "workbench/js/core/i18n.js",
     "content/i18n/zh-Hans.json",
-    "content/i18n/en.json"
+    "content/i18n/en.json",
+    "workbench/js/core/env.js"
    ],
    "params": {
     "screen": "settings",
@@ -2984,6 +3093,11 @@
       "key": "settings.scale",
       "type": "value",
       "valueKey": "settings.scale.auto"
+     },
+     {
+      "key": "settings.env",
+      "type": "value",
+      "valueKey": "env.full"
      },
      {
       "key": "settings.grid",
@@ -3205,7 +3319,7 @@
   {
    "name": "showcase.dungeon",
    "file": "art/export/reference/showcase.dungeon.png",
-   "sha256": "6ba15e7f12193c6345bddf23c423785abdf6749d47cc79f18b243ae39035768c",
+   "sha256": "01f93e4268c095fa00e5664a02776c679d2c0951d852a76ee2e0bab5a84302b3",
    "uses": [
     "theme.dungeon",
     "deco.dungeon_moss",
@@ -3255,7 +3369,7 @@
   {
    "name": "lobby.dungeon",
    "file": "art/export/reference/lobby.dungeon.png",
-   "sha256": "b217fbfffb56b65ae5cd924f061368a1ac488dbace2e5d46e32528e7e1648c63",
+   "sha256": "6d7e845f9bcba10753b18357d2e8f70bd71300d57dd14bc650cdf6cc5eb55007",
    "uses": [
     "ui.screen.lobby",
     "theme.dungeon",
@@ -3307,7 +3421,7 @@
   {
    "name": "showcase.ruins",
    "file": "art/export/reference/showcase.ruins.png",
-   "sha256": "235e595c214e20a2db04bef2748cd50a7f398bbd967f1bec3f489c49ffca196d",
+   "sha256": "0ab14bcc39282e1c2919bda5ffe943eb49ffce68856e7b84bd7bcb0c2e7544f4",
    "uses": [
     "theme.ruins",
     "deco.ruins_lotus",
@@ -3355,7 +3469,7 @@
   {
    "name": "lobby.ruins",
    "file": "art/export/reference/lobby.ruins.png",
-   "sha256": "8367dc752a228f07b00a138fff77aff60ff4a17f65ecec73009755df0a79e56f",
+   "sha256": "42478697ef96640ce6499ee221c95e9dd9ffe7b5c075025032250a7803fbb84a",
    "uses": [
     "ui.screen.lobby",
     "theme.ruins",
@@ -3405,7 +3519,7 @@
   {
    "name": "showcase.cave",
    "file": "art/export/reference/showcase.cave.png",
-   "sha256": "3e049b0a910c21a2eb808c11df7989726f8a4bdded5b13b44544d4cb904e2f56",
+   "sha256": "e9a812bc06a50072d109d8c2b7e219ff9b9338582851c44a72d5a17538f4dcbd",
    "uses": [
     "theme.cave",
     "deco.cave_crystal",
@@ -3453,7 +3567,7 @@
   {
    "name": "lobby.cave",
    "file": "art/export/reference/lobby.cave.png",
-   "sha256": "b90fed204b1c01482904aebff3cc571a616171bb56f8d3283d45c8c2bb299ef1",
+   "sha256": "1a560bce9ea1e480fbe96989ac7807f338c8fabe01c36ffef0b31e72d6308954",
    "uses": [
     "ui.screen.lobby",
     "theme.cave",
@@ -3503,7 +3617,7 @@
   {
    "name": "showcase.forest",
    "file": "art/export/reference/showcase.forest.png",
-   "sha256": "c763da2265f0b347dc2f2338fe87313c15772a29b55072c85fa2f609144f0582",
+   "sha256": "ed5e444f8266b00d2426604fecc2553eb0d8e36ea2af59fd23952b41b6109472",
    "uses": [
     "theme.forest",
     "deco.forest_flower",
@@ -3553,7 +3667,7 @@
   {
    "name": "lobby.forest",
    "file": "art/export/reference/lobby.forest.png",
-   "sha256": "3926750dfb37f6a7c4617445bb40cbfd3e7b2e3b48c62ec7e1e9559418e31ab9",
+   "sha256": "a987e6e358ceeeb6803017ec77ba8fc02ddcf79901635ab4d4e7d1fec8b7f985",
    "uses": [
     "ui.screen.lobby",
     "theme.forest",
@@ -3605,7 +3719,7 @@
   {
    "name": "showcase.sky",
    "file": "art/export/reference/showcase.sky.png",
-   "sha256": "bf3769aa332f02d7d4d6d54ad3839077e1e8143ea797cc70a06af96a082ec5f5",
+   "sha256": "ecadff7f7c3e72e3d284fb50fd2ddb058a094ce5415375ed6d45095ce5021293",
    "uses": [
     "theme.sky",
     "deco.sky_flower",
@@ -3653,7 +3767,7 @@
   {
    "name": "lobby.sky",
    "file": "art/export/reference/lobby.sky.png",
-   "sha256": "9c4adb4463427f5c154f89530abdcada17e2e42b1687010c7acdbf31859b1e11",
+   "sha256": "d4a94a5a75079b58707ffdf0d50d1a2e855db926588313681e1238cf315d69eb",
    "uses": [
     "ui.screen.lobby",
     "theme.sky",
@@ -3703,7 +3817,7 @@
   {
    "name": "showcase.cosmos",
    "file": "art/export/reference/showcase.cosmos.png",
-   "sha256": "01bd053ebc00ee7473f431080fc99af4d2025d55186164cc90a10055e38c370f",
+   "sha256": "41e69a4480bdef219a956ea1e14c77639fa699decbb30f7129373037d428a5b4",
    "uses": [
     "theme.cosmos",
     "deco.cosmos_sprout",
@@ -3749,7 +3863,7 @@
   {
    "name": "lobby.cosmos",
    "file": "art/export/reference/lobby.cosmos.png",
-   "sha256": "c8f8544d1264a194c6d25596a1ea853e78b6f31f962a8824c392497fdb405afc",
+   "sha256": "d8c5b31908161d7e9da2d8f388b384a6d68b4a97e49b8b9a0ba099fd7611e79c",
    "uses": [
     "ui.screen.lobby",
     "theme.cosmos",
@@ -3797,7 +3911,7 @@
   {
    "name": "level.M01",
    "file": "art/export/reference/level.M01.png",
-   "sha256": "bcdfe3ec768dc2e94a7b9e0eb7d752e1e84198dee66bc537c59617205a1883a7",
+   "sha256": "e8f560ad14341316e92ab88872e8a139aead3233e93b540499ee6ef5d3f641db",
    "uses": [
     "theme.dungeon",
     "deco.dungeon_moss",
@@ -3847,7 +3961,7 @@
   {
    "name": "level.M02",
    "file": "art/export/reference/level.M02.png",
-   "sha256": "2147d9e432743e653fbf41861589fec7dde28ae2b0c35e9e80a88ca38ed2ab05",
+   "sha256": "fee232187104cf92bc1939a18298dda4ab60b68614a700e79c911e9dd5a004fe",
    "uses": [
     "theme.dungeon",
     "deco.dungeon_moss",
@@ -3897,7 +4011,7 @@
   {
    "name": "level.M03",
    "file": "art/export/reference/level.M03.png",
-   "sha256": "9e8bbb4e6590473b7d187c897ee242fc6aec7c98aea135f86a165e35aa825c95",
+   "sha256": "494527083f0f054e3bc54589b423b1dc7141e5b12f14be553203b9ac3dd5df04",
    "uses": [
     "theme.dungeon",
     "deco.dungeon_moss",
@@ -3947,7 +4061,7 @@
   {
    "name": "level.M04",
    "file": "art/export/reference/level.M04.png",
-   "sha256": "dd9ccad37e0977e69d9436b89aa9b21c771a469a7495818fafe8a5d4cc4fdaff",
+   "sha256": "525fc0abb031c2acfd7aceaa7b9f550b4267c47cb7161f47725d9e403b8c30d8",
    "uses": [
     "theme.dungeon",
     "deco.dungeon_moss",
@@ -4047,7 +4161,7 @@
   {
    "name": "level.M06",
    "file": "art/export/reference/level.M06.png",
-   "sha256": "f6d20d5caf6916d14b687fc144df2d4b53dc266ee6aae023d7f268b6a2de8f5c",
+   "sha256": "9827aa9b31ba961e7f1b375cf64202245e65c2d398cfc53125ae5d4ef357aa93",
    "uses": [
     "theme.dungeon",
     "deco.dungeon_moss",
@@ -4097,7 +4211,7 @@
   {
    "name": "level.M07",
    "file": "art/export/reference/level.M07.png",
-   "sha256": "9d8ebce4f0607ee3ba37584ca5f0fade5045df30643cbe01e388353b9eef16ee",
+   "sha256": "d615539a6298eaebf0efddeaf1b3c022cdab2edcfabc339618d0d31958b3efe2",
    "uses": [
     "theme.dungeon",
     "deco.dungeon_moss",
@@ -4147,7 +4261,7 @@
   {
    "name": "chapters.zh-Hans",
    "file": "art/export/reference/chapters.zh-Hans.png",
-   "sha256": "b78b600ae5e16dda2d1222f45557ce78f4110b10a57f2a201a2afb97467ca303",
+   "sha256": "69941857503656192a4341e29112c59a7146f984a8981382c9da9ad7591b2883",
    "uses": [
     "ui.screen.chapters",
     "char.miner",
@@ -4183,7 +4297,7 @@
   {
    "name": "chapters.en",
    "file": "art/export/reference/chapters.en.png",
-   "sha256": "b905bdd43b342497d87d08d6b6d893cf7a66de914569af8589cd23ca24436fc5",
+   "sha256": "329df5c80df53fea26ce80b229c4c7b545efdcce4d85cadc599c5100a3354bc6",
    "uses": [
     "ui.screen.chapters",
     "char.miner",
@@ -4219,7 +4333,7 @@
   {
    "name": "complete.zh-Hans",
    "file": "art/export/reference/complete.zh-Hans.png",
-   "sha256": "844ede408bb409299f4f90c2f56a97444b3e8a86641685b0161f2fa2904c33ed",
+   "sha256": "ca72bef72a6bf3bd327c85a99fe1464fd12a37417dd24cc0c6b3dadde3d64df3",
    "uses": [
     "ui.screen.complete",
     "char.miner",
@@ -4245,7 +4359,7 @@
   {
    "name": "complete.en",
    "file": "art/export/reference/complete.en.png",
-   "sha256": "54f2b6537dd95436a709dbbe483f83532a88d3b34a75ee6ae6faad37b8da9f42",
+   "sha256": "7dafe2db7e0af788027b988e9cffcd2d50f87e8b7f3ff7d6736db02df2162475",
    "uses": [
     "ui.screen.complete",
     "char.miner",
@@ -4271,7 +4385,7 @@
   {
    "name": "hint.zh-Hans",
    "file": "art/export/reference/hint.zh-Hans.png",
-   "sha256": "cc331e9c67f78489530f05a54c3100441000aae4a5563a7d1470b01d28b31861",
+   "sha256": "3ffc54ae4d510443c0b1b470f727fba857dda769a36f6b6961c4d9469036bdfe",
    "uses": [
     "ui.screen.hint",
     "theme.dungeon",
@@ -4293,7 +4407,7 @@
   {
    "name": "hint.en",
    "file": "art/export/reference/hint.en.png",
-   "sha256": "8d146e93976a676bbebc459f9a58ccf2338c8f1a05132f22233b239844ea28ae",
+   "sha256": "cd992adf87e2d1e2b5b3d6bb03ff4ae87b70f7ee1b5e5807b0a4c566a6ade2d1",
    "uses": [
     "ui.screen.hint",
     "theme.dungeon",
@@ -4315,7 +4429,7 @@
   {
    "name": "levels.zh-Hans",
    "file": "art/export/reference/levels.zh-Hans.png",
-   "sha256": "fceb3e0ed66b82fa5c6036ecbfa41669273166178677cd7fd690b88a66854fc2",
+   "sha256": "a68b73f6186398c469cf18415a71b2b50ac10d14edc9c4c05be2e03982528d63",
    "uses": [
     "ui.screen.levels",
     "theme.dungeon",
@@ -4337,7 +4451,7 @@
   {
    "name": "levels.en",
    "file": "art/export/reference/levels.en.png",
-   "sha256": "f576891c4059dd5cc144756ccc792dc7b0fa05e6ebe598be0d60a0f93828d977",
+   "sha256": "49e815ef596e3cf7147309c90c8c4fca5387f0e33a2324b92829fc42cf1feeba",
    "uses": [
     "ui.screen.levels",
     "theme.dungeon",
@@ -4359,7 +4473,7 @@
   {
    "name": "lobby.zh-Hans",
    "file": "art/export/reference/lobby.zh-Hans.png",
-   "sha256": "b217fbfffb56b65ae5cd924f061368a1ac488dbace2e5d46e32528e7e1648c63",
+   "sha256": "6d7e845f9bcba10753b18357d2e8f70bd71300d57dd14bc650cdf6cc5eb55007",
    "uses": [
     "ui.screen.lobby",
     "char.miner",
@@ -4387,7 +4501,7 @@
   {
    "name": "lobby.en",
    "file": "art/export/reference/lobby.en.png",
-   "sha256": "2ed07a0804c754a4a454cee54b83b8d47784c1a9e30824ca2d18905af6bb84cc",
+   "sha256": "2092c4eadfbb6c3b2bdbd7c6903216c5210497e9b3c944da11552b33cd78c4a0",
    "uses": [
     "ui.screen.lobby",
     "char.miner",
@@ -4415,7 +4529,7 @@
   {
    "name": "pause.zh-Hans",
    "file": "art/export/reference/pause.zh-Hans.png",
-   "sha256": "955f9f6c5e80fe0d96f2b775cb7dc42aa900a6205dd9899b19e1a6daff1fd9b0",
+   "sha256": "a1f9aa24b4543de3789e67eb74ee6d10565f1dca3dfdf16d5e2b930ada76764c",
    "uses": [
     "ui.screen.pause",
     "char.miner",
@@ -4439,7 +4553,7 @@
   {
    "name": "pause.en",
    "file": "art/export/reference/pause.en.png",
-   "sha256": "7a317707841a4befaea1d40f22f2c58f3c80bfae1047fe118373eb663f10989b",
+   "sha256": "f0764b6b88257da78e722c0852fc167a57b368fe1ee4aa0c8fddbce6b6e7a7cd",
    "uses": [
     "ui.screen.pause",
     "char.miner",
@@ -4511,7 +4625,7 @@
   {
    "name": "settings.zh-Hans",
    "file": "art/export/reference/settings.zh-Hans.png",
-   "sha256": "316917e16d9e6be88531bce0d0bfbe651481815ef4d840bc9fe15e60acd94a53",
+   "sha256": "a6dd69fa825db739e3b58a41a56d296a4f5eed531b400f0b6dfecc308c688f29",
    "uses": [
     "ui.screen.settings",
     "theme.dungeon",
@@ -4533,7 +4647,7 @@
   {
    "name": "settings.en",
    "file": "art/export/reference/settings.en.png",
-   "sha256": "fc63806fedf68236fe7765cff13392c710afe71f30e909888758effd4657cf88",
+   "sha256": "3e24c01fddd32455718d66f2d40d948db86d946e297bc89f176776157770a062",
    "uses": [
     "ui.screen.settings",
     "theme.dungeon",
