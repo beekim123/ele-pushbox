@@ -123,39 +123,92 @@
     keyBar(r, [{ keys: ["up", "down"], label: "keys.select" }, { keys: [{ wide: "Enter" }], label: "keys.confirm" }], 8, H - 16, W - 8);
   }
 
+  // Chapter select: a carousel. The focused map is a large card in the middle,
+  // neighbours shrink and darken towards the edges, a page indicator and arrows
+  // sit below. Works for any number of maps (no wrap-around; the ends stay empty).
+  const SLOT = [
+    { dx: 0, w: 116, h: 96, dim: 0 },
+    { dx: 94, w: 64, h: 74, dim: 1 },
+    { dx: 140, w: 40, h: 54, dim: 2 },
+  ];
+  function slotAt(d) {
+    const a = Math.min(2, Math.abs(d)), i = Math.floor(a), f = a - i, A = SLOT[i], B = SLOT[Math.min(2, i + 1)];
+    const lerp = (u, v) => Math.round(u + (v - u) * f);
+    return { cx: 160 + Math.sign(d) * lerp(A.dx, B.dx), w: lerp(A.w, B.w), h: lerp(A.h, B.h), center: a < 0.5, dim: a < 1.5 ? 0 : 1 };
+  }
+  function focusOf(st, n) {
+    if (!st.animate) return st.focus | 0;
+    // Workbench demo: hold, then slide to the next map; bounce at the ends.
+    const period = 240, k = Math.floor(st.tick / period), t = st.tick % period, steps = Math.max(1, 2 * (n - 1));
+    const idx = (j) => { const m = j % steps; return m < n ? m : steps - m; };
+    const a = idx(k), b = idx(k + 1);
+    if (t < 180) return a;
+    const u = (t - 180) / 60, e = u * u * (3 - 2 * u);
+    return a + (b - a) * e;
+  }
+  function mapThumb(ch, w, h, tick, withHero) {
+    const tmp = new PB.Raster(w, h), Tm = S().get(ch.theme).params, M = PB.terrain.MAT;
+    const cols = Math.ceil(w / 16) + 1, floorRow = Math.floor((h - 12) / 16), oy = h - 12 - floorRow * 16;
+    const map = { w: cols, h: floorRow + 2, at: (tx, ty) => (tx >= 0 && tx < cols && ty >= floorRow ? M.ROCK : M.EMPTY) };
+    const busy = withHero ? (tx, ty) => ty === floorRow - 1 && (tx === 1 || tx === 2) : null;
+    const area = { x: 0, y: 0, w, h: h - 14 };
+    PB.terrain.drawBackground(tmp, Tm, 0, 0, w, h, tick);
+    PB.ambient.draw(tmp, Tm, map, 0, oy, tick, "back", busy, area);
+    PB.terrain.drawTerrain(tmp, map, Tm, 0, oy, tick >> 3);
+    PB.ambient.draw(tmp, Tm, map, 0, oy, tick, "front", busy, area);
+    if (withHero) { S().draw(tmp, "char.miner", "idle", tick, 24, oy + floorRow * 16); S().draw(tmp, "obj.crate_wood", "default", 0, 40, oy + floorRow * 16); }
+    return tmp;
+  }
+
   function chapters(r, tick, p, st) {
-    const sel = st.focus | 0, cur = p.chapters[sel];
+    const n = p.chapters.length, focus = focusOf(Object.assign({ tick }, st), n), sel = Math.round(focus), cur = p.chapters[sel];
     backdrop(r, cur.theme, tick);
     dim(r);
     label(r, T("chapters.title"), 10, 4, 200, "l", "z", "chapters.title");
-    const n = p.chapters.length, gap = 4, cw = Math.floor((W - 12 - gap * (n - 1)) / n), x0 = (W - (cw * n + gap * (n - 1))) >> 1, y0 = 22;
-    p.chapters.forEach((ch, i) => {
-      const x = x0 + i * (cw + gap), y = y0 + (i === sel ? -2 : 0);
-      panel(r, x, y, cw, 108, i === sel ? 1 : 0);
-      const th = { x: x + 5, y: y + 5, w: cw - 10, h: 46 };
-      const tmp = new PB.Raster(th.w, th.h), Tm = S().get(ch.theme).params, M = PB.terrain.MAT;
-      const map = { w: 3, h: 3, at: (tx, ty) => (ty >= 2 && tx >= 0 && tx < 3 ? M.ROCK : M.EMPTY) };
-      const area = { x: 0, y: 0, w: th.w, h: 30 };
-      PB.terrain.drawBackground(tmp, Tm, 0, 0, th.w, th.h, tick);
-      PB.ambient.draw(tmp, Tm, map, -4, -4, tick + i * 97, "back", null, area);
-      PB.terrain.drawTerrain(tmp, map, Tm, -4, -4, tick >> 3);
-      PB.ambient.draw(tmp, Tm, map, -4, -4, tick + i * 97, "front", null, area);
-      if (ch.locked) tmp.remap(0, 0, th.w, th.h, PB.DIM);
-      r.blit(tmp, th.x, th.y);
-      r.rect(th.x - 1, th.y - 1, th.w + 2, 1, "z"); r.rect(th.x - 1, th.y + th.h, th.w + 2, 1, "z");
-      // Number badge + emblem + progress: no words on the card.
+    const cy = 66;
+    const order = p.chapters.map((ch, i) => ({ ch, i, d: i - focus })).filter((o) => Math.abs(o.d) <= 2.4).sort((a, b) => Math.abs(b.d) - Math.abs(a.d));
+    for (const { ch, i, d } of order) {
+      const g = slotAt(d), x = g.cx - (g.w >> 1), y = cy - (g.h >> 1), Tm = S().get(ch.theme).params, center = g.center;
+      const card = new PB.Raster(g.w, g.h);
+      S().ninepatch(card, "ui.panel", center ? 1 : 0, 0, 0, g.w, g.h);
+      const inner = { x: 4, y: 4, w: g.w - 8, h: g.h - (center ? 28 : 18) };
+      card.blit(mapThumb(ch, inner.w, inner.h, tick + i * 97, center), inner.x, inner.y);
+      card.rect(inner.x - 1, inner.y - 1, inner.w + 2, 1, "z"); card.rect(inner.x - 1, inner.y + inner.h, inner.w + 2, 1, "z");
       const num = Tm.chapter <= 5 ? String(Tm.chapter) : "+";
-      text2x(r, num, x + (cw >> 1) - TX().measure(num), y + 54, ch.locked ? "w" : i === sel ? "l" : "u", "z");
-      sprite(r, "ui.theme_emblem", ch.theme.slice(6), x + (cw >> 1) - 8, y + 72);
-      if (ch.locked) sprite(r, "ui.icons", "lock", x + (cw >> 1) - 6, y + 91);
-      else centered(r, T("progress", { a: ch.done, b: ch.total }), x + (cw >> 1), y + 90, cw - 6, i === sel ? "l" : "k");
-    });
-    // The detail strip carries all the words, with the full width available.
+      if (center) {
+        S().draw(card, "ui.theme_emblem", S().get("ui.theme_emblem").animations[ch.theme.slice(6)].frames[0], 0, inner.x + 3, inner.y + 3);
+        text2x(card, num, 8, g.h - 25, ch.locked ? "w" : "l", "z");
+        if (ch.locked) S().draw(card, "ui.icons", S().get("ui.icons").animations.lock.frames[0], 0, g.w - 20, g.h - 20);
+        else { const pr = T("progress", { a: ch.done, b: ch.total }); TX().draw(card, pr, g.w - 8 - TX().measure(pr), g.h - 21, "k"); }
+      } else {
+        if (ch.locked) S().draw(card, "ui.icons", S().get("ui.icons").animations.lock.frames[0], 0, (g.w >> 1) - 6, g.h - 15);
+        else TX().draw(card, num, (g.w >> 1) - (TX().measure(num) >> 1), g.h - 16, "u");
+      }
+      if (ch.locked && center) card.remap(inner.x, inner.y, inner.w, inner.h, PB.DIM);
+      for (let k = 0; k < g.dim; k++) card.remap(0, 0, g.w, g.h, PB.DIM);
+      r.blit(card, x, y);
+    }
+    // Name of the focused map under the big card.
     const Tc = S().get(cur.theme).params;
-    panel(r, 6, 134, W - 12, 42, 0);
-    label(r, chapterLabel(Tc.chapter) + " · " + themeName(cur.theme), 12, 136, W - 24, "l", null, "chapter.name");
+    centered(r, chapterLabel(Tc.chapter) + " · " + themeName(cur.theme), 160, cy + 50, 300, "l", "z", "chapter.name");
+    // Page indicator with arrows: one mark per map, the current one is a long bar.
+    const iy = cy + 68;
+    if (n <= 16) {
+      const widths = p.chapters.map((c, i) => (i === sel ? 14 : 6)), total = widths.reduce((a, b) => a + b, 0) + (n - 1) * 4;
+      let x = 160 - (total >> 1);
+      p.chapters.forEach((c, i) => {
+        if (i === sel) r.rect(x, iy + 2, widths[i], 3, "l");
+        else { r.rect(x, iy + 2, 6, 3, "z"); r.rect(x + 1, iy + 3, 4, 1, c.locked ? "x" : "v"); }
+        x += widths[i] + 4;
+      });
+      key(r, "left", 160 - (total >> 1) - 20, iy - 3); key(r, "right", 160 + (total >> 1) + 7, iy - 3);
+    } else {
+      const s = T("progress", { a: sel + 1, b: n }); TX().draw(r, s, 160 - (TX().measure(s) >> 1), iy - 2, "u");
+      key(r, "left", 130, iy - 3); key(r, "right", 177, iy - 3);
+    }
     const body = !cur.locked ? T(`chapter.${Tc.chapter}.blurb`) : Tc.chapter <= 5 ? T("chapters.unlock", { chapter: chapterLabel(Tc.chapter - 1), n: cur.need }) : T("chapters.later");
-    para(r, body, 12, 150, W - 24, 2, cur.locked ? "v" : "u", "chapter.blurb");
+    panel(r, 6, 148, W - 12, 30, 0);
+    para(r, body, 12, 149, W - 24, 2, cur.locked ? "v" : "u", "chapter.blurb");
   }
 
   function levelText(id, field, fallback) { const k = `level.${id}.${field}`; return I().has(k) ? T(k) : fallback; }

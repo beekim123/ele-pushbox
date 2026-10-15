@@ -33,5 +33,5 @@
  },
  "usage": "按 H 逐级展开三层提示；第三层提供演示与回到正确位置。",
  "notes": "布局参考：文字来自 content/i18n，容器按文字宽度伸缩；Godot 用 Control 容器实现，不按像素硬编码文字位置。",
- "content_hash": "1f7c16acdf080f19f970af94428d3defaddbb9a646a03d5e8291e9587801c74c"
+ "content_hash": "f0f959eb8a94b8277be2403ec444404fcf683edea65adce27ce4279a44aa88dc"
 }

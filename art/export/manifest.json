@@ -1450,10 +1450,10 @@
    "layer": "terrain",
    "current": {
     "version": 1,
-    "hash": "30ed340439191005a6e40e9ff83dd7bd15a8cdf719499e1f81c5aafeb38452e4",
+    "hash": "fc9363cc99c2d70db6e4166cb9927ba0795ea7399de6d858b76d42be660384e5",
     "status": "review",
     "preview": "art/export/preview/theme.cave.png",
-    "preview_sha256": "91b8ae5d48c2a68868841bed9c24781acd4a1f97d7b04759ee94e210e6c0b073"
+    "preview_sha256": "a9294651cb69aaeb0f2ceeff223e3fc5ca35cb217b67dd6c9a7ab0ea67af6390"
    },
    "approved": null,
    "current_is_approved": false,
@@ -1488,7 +1488,9 @@
      "pebbleShade": "g",
      "crust": "d",
      "crust2": "F",
-     "dark": "f"
+     "dark": "f",
+     "frame": "g",
+     "bevel": "d"
     },
     "cracked": {
      "base": [
@@ -1498,7 +1500,9 @@
      "crack": "g",
      "crackLight": "c",
      "light": "c",
-     "dark": "f"
+     "dark": "f",
+     "frame": "f",
+     "bevel": "c"
     },
     "sand": {
      "base": [
@@ -1562,10 +1566,10 @@
    "layer": "terrain",
    "current": {
     "version": 1,
-    "hash": "06bd6ed2abc7e865798cfba4c78b9c29853ed837e99adfa937b4a7a295ecd8aa",
+    "hash": "49c2a0242721b3d3471c23a4e89e3c7a06f0046df6a9c432947310c3a289e1bb",
     "status": "review",
     "preview": "art/export/preview/theme.cosmos.png",
-    "preview_sha256": "f62278b25701afd70beab4cef93aa9f84bc1635dcc914523f26e2cc1f58cd5da"
+    "preview_sha256": "0a2be57f70dd6f20187cba4603441abaf8189ae036340a3b1ed29a37205c6870"
    },
    "approved": null,
    "current_is_approved": false,
@@ -1579,16 +1583,17 @@
     "rock": {
      "pattern": "panel",
      "base": [
-      "x",
-      "y"
+      "w",
+      "x"
      ],
-     "seam": "z",
-     "speck": "w",
+     "seam": "y",
+     "speck": "v",
      "light": "v",
      "light2": "w",
-     "dark": "z",
-     "edge": "z",
-     "top": "u"
+     "dark": "y",
+     "edge": "y",
+     "top": "k",
+     "trim": "hazard"
     },
     "earth": {
      "base": [
@@ -1600,7 +1605,9 @@
      "pebbleShade": "g",
      "crust": "d",
      "crust2": "F",
-     "dark": "f"
+     "dark": "f",
+     "frame": "g",
+     "bevel": "d"
     },
     "cracked": {
      "base": [
@@ -1610,7 +1617,9 @@
      "crack": "g",
      "crackLight": "c",
      "light": "c",
-     "dark": "f"
+     "dark": "f",
+     "frame": "f",
+     "bevel": "c"
     },
     "sand": {
      "base": [
@@ -1667,10 +1676,10 @@
    "layer": "terrain",
    "current": {
     "version": 1,
-    "hash": "6ad014210471e7715d7783bacd8f0a61af2736907ca0749c12e86eac75bf2737",
+    "hash": "7ac3e157caf6e469ae5362ec14c6c0e49783958bf6307f9944ccc7ce751688df",
     "status": "review",
     "preview": "art/export/preview/theme.dungeon.png",
-    "preview_sha256": "5bdb3eb51f015b7a46dd9cf391466ca4878bdbc5ba6707692d8d3f630b0736a0"
+    "preview_sha256": "5cfb8bd8ee12d4c34bdbec3c0444b67e900102e16bb02c0fbe9fd78198e6d2de"
    },
    "approved": null,
    "current_is_approved": false,
@@ -1705,7 +1714,9 @@
      "pebbleShade": "g",
      "crust": "d",
      "crust2": "F",
-     "dark": "f"
+     "dark": "f",
+     "frame": "g",
+     "bevel": "d"
     },
     "cracked": {
      "base": [
@@ -1715,7 +1726,9 @@
      "crack": "g",
      "crackLight": "c",
      "light": "c",
-     "dark": "f"
+     "dark": "f",
+     "frame": "f",
+     "bevel": "c"
     },
     "sand": {
      "base": [
@@ -1782,10 +1795,10 @@
    "layer": "terrain",
    "current": {
     "version": 1,
-    "hash": "7d2085f9ffa0981819b31d1cfafcd77e257e4b01910cb658076036e5a1f977d7",
+    "hash": "d1f37865968817988c029199f4209cb58c75283b68ba22ef0059291600131dfa",
     "status": "review",
     "preview": "art/export/preview/theme.forest.png",
-    "preview_sha256": "70d3003fee2e84981e376fbc3be0939456bbcdf0064d7a9c5abe510ec1efebea"
+    "preview_sha256": "e6b88119033b3bf472f08653ddd666ec14687efe9dd54eea907b3b66238c57ae"
    },
    "approved": null,
    "current_is_approved": false,
@@ -1799,15 +1812,15 @@
     "rock": {
      "pattern": "grass",
      "base": [
-      "x",
-      "w"
+      "f",
+      "e"
      ],
-     "seam": "y",
-     "speck": "n",
+     "seam": "g",
+     "speck": "F",
      "light": "m",
      "light2": "n",
-     "dark": "y",
-     "edge": "y",
+     "dark": "g",
+     "edge": "g",
      "top": "m"
     },
     "earth": {
@@ -1820,7 +1833,9 @@
      "pebbleShade": "g",
      "crust": "d",
      "crust2": "F",
-     "dark": "f"
+     "dark": "f",
+     "frame": "g",
+     "bevel": "d"
     },
     "cracked": {
      "base": [
@@ -1830,7 +1845,9 @@
      "crack": "g",
      "crackLight": "c",
      "light": "c",
-     "dark": "f"
+     "dark": "f",
+     "frame": "f",
+     "bevel": "c"
     },
     "sand": {
      "base": [
@@ -1851,11 +1868,11 @@
      "style": "forest",
      "base": [
       "p",
-      "y"
+      "o"
      ],
-     "speck": "o",
-     "accent": "o",
-     "detail": "p"
+     "speck": "n",
+     "accent": "g",
+     "detail": "o"
     },
     "ambient": [
      {
@@ -1900,10 +1917,10 @@
    "layer": "terrain",
    "current": {
     "version": 1,
-    "hash": "6700020a704872cfa2a3200b604d6a60a43f565e9f7cfd23b8ef498eebbcdd4f",
+    "hash": "8e5a919505eee72d27ac01e60fa972433d9094d485cb826b0366a819902e444e",
     "status": "review",
     "preview": "art/export/preview/theme.ruins.png",
-    "preview_sha256": "7e3e967a241ee396259fa7d0520f9d1bc749f6fdaed220d176ecaecbeab0d610"
+    "preview_sha256": "f04547c589a7c0878ecfd2747eae666adcf4d01f7d752fccd0d23afebaf7bb0c"
    },
    "approved": null,
    "current_is_approved": false,
@@ -1917,16 +1934,16 @@
     "rock": {
      "pattern": "block",
      "base": [
-      "v",
-      "w"
+      "d",
+      "F"
      ],
-     "seam": "x",
-     "speck": "u",
-     "light": "u",
-     "light2": "v",
-     "dark": "x",
-     "edge": "x",
-     "top": "b"
+     "seam": "e",
+     "speck": "c",
+     "light": "c",
+     "light2": "d",
+     "dark": "f",
+     "edge": "e",
+     "top": "k"
     },
     "earth": {
      "base": [
@@ -1938,7 +1955,9 @@
      "pebbleShade": "g",
      "crust": "d",
      "crust2": "F",
-     "dark": "f"
+     "dark": "f",
+     "frame": "g",
+     "bevel": "d"
     },
     "cracked": {
      "base": [
@@ -1948,7 +1967,9 @@
      "crack": "g",
      "crackLight": "c",
      "light": "c",
-     "dark": "f"
+     "dark": "f",
+     "frame": "f",
+     "bevel": "c"
     },
     "sand": {
      "base": [
@@ -2009,10 +2030,10 @@
    "layer": "terrain",
    "current": {
     "version": 1,
-    "hash": "3fd5fd12dfa81ed79eb43e97112ed19053b8cbcadaffe11ceb49b4f9d611f93f",
+    "hash": "226da76ebc70d8ddb6ca27ef64821b83faa60e29f509651d5a0bf05ac3274249",
     "status": "review",
     "preview": "art/export/preview/theme.sky.png",
-    "preview_sha256": "d443ed16b794de231105461f4dbb5c1e14e7550fc9b24713a0cbbf34db64c80f"
+    "preview_sha256": "ef1ceea75d33fa2826421a3d6bc3cb20678b7f83060a77cc87f91fce26064d64"
    },
    "approved": null,
    "current_is_approved": false,
@@ -2048,7 +2069,9 @@
      "pebbleShade": "g",
      "crust": "d",
      "crust2": "F",
-     "dark": "f"
+     "dark": "f",
+     "frame": "g",
+     "bevel": "d"
     },
     "cracked": {
      "base": [
@@ -2058,7 +2081,9 @@
      "crack": "g",
      "crackLight": "c",
      "light": "c",
-     "dark": "f"
+     "dark": "f",
+     "frame": "f",
+     "bevel": "c"
     },
     "sand": {
      "base": [
@@ -2569,10 +2594,10 @@
    "layer": "ui",
    "current": {
     "version": 1,
-    "hash": "a21ab4089cb6a98cc8769c754393608f24be93eadf000c4403dec52ad8255838",
+    "hash": "dcc5c5ae501bb2567f8d62c9f0ca96613984a3071e6f77cd3665ee7641e71df8",
     "status": "review",
     "preview": "art/export/preview/ui.screen.chapters.png",
-    "preview_sha256": "7d49a8c139f594d8fc3d691dae751f28991d8fc34927fd3f7033fcb7dbe19362"
+    "preview_sha256": "b78b600ae5e16dda2d1222f45557ce78f4110b10a57f2a201a2afb97467ca303"
    },
    "approved": null,
    "current_is_approved": false,
@@ -2642,7 +2667,7 @@
    "layer": "ui",
    "current": {
     "version": 1,
-    "hash": "415b83b21c8be42b8856bdeebf302e8f9b8801c8002f3d0e3bb4dec6b1de12d0",
+    "hash": "5b2521411186c07bb5dfbba018c3c29206181916da10f18d313fecfd298716a3",
     "status": "review",
     "preview": "art/export/preview/ui.screen.complete.png",
     "preview_sha256": "844ede408bb409299f4f90c2f56a97444b3e8a86641685b0161f2fa2904c33ed"
@@ -2679,7 +2704,7 @@
    "layer": "ui",
    "current": {
     "version": 1,
-    "hash": "1f7c16acdf080f19f970af94428d3defaddbb9a646a03d5e8291e9587801c74c",
+    "hash": "f0f959eb8a94b8277be2403ec444404fcf683edea65adce27ce4279a44aa88dc",
     "status": "review",
     "preview": "art/export/preview/ui.screen.hint.png",
     "preview_sha256": "cc331e9c67f78489530f05a54c3100441000aae4a5563a7d1470b01d28b31861"
@@ -2714,7 +2739,7 @@
    "layer": "ui",
    "current": {
     "version": 1,
-    "hash": "0d9507235e4623d6c8ba77cf373309dbc4c588ee8f297d9a5dfe29feca42713f",
+    "hash": "da65075154cccce0a69046f7b102b39ded94e81e6a15cdd98eb0bd1cdfe6f4c4",
     "status": "review",
     "preview": "art/export/preview/ui.screen.levels.png",
     "preview_sha256": "fceb3e0ed66b82fa5c6036ecbfa41669273166178677cd7fd690b88a66854fc2"
@@ -2782,7 +2807,7 @@
    "layer": "ui",
    "current": {
     "version": 1,
-    "hash": "4c76b8c40015e744dc4f766f9e785c8494a7da114e17d8f4b6df15ac4bf8575d",
+    "hash": "46887fb7e1e6b45862321fd24ca1acf93fadebdbb4a621a6b64bdf949469d284",
     "status": "review",
     "preview": "art/export/preview/ui.screen.lobby.png",
     "preview_sha256": "b217fbfffb56b65ae5cd924f061368a1ac488dbace2e5d46e32528e7e1648c63"
@@ -2840,7 +2865,7 @@
    "layer": "ui",
    "current": {
     "version": 1,
-    "hash": "675b27e49f3b1605eeef0a27cb2d6c8e7d7b346ef648bcfb64e5d1e2441e5153",
+    "hash": "b9ca4c2bc080ae119914408a8c9558192686856628b3c7f95d3da322e431ff5b",
     "status": "review",
     "preview": "art/export/preview/ui.screen.pause.png",
     "preview_sha256": "955f9f6c5e80fe0d96f2b775cb7dc42aa900a6205dd9899b19e1a6daff1fd9b0"
@@ -2885,10 +2910,10 @@
    "layer": "ui",
    "current": {
     "version": 1,
-    "hash": "074c5fde4eda5b76a7ff092908900117c5bc328da005645463c9dadfc527d58b",
+    "hash": "4223a532322d1f055994695b9e34f6816a6962d18f900e69cd79f9667f841acf",
     "status": "review",
     "preview": "art/export/preview/ui.screen.rulecard.png",
-    "preview_sha256": "9b0dfdb4428d4432cb7684b559726e5f74e39ece17d7ec5fc78b79b5b461a73d"
+    "preview_sha256": "d02e69d90b75029085272c715dd4159bbb801ba47c3463c678b718e540af7a2a"
    },
    "approved": null,
    "current_is_approved": false,
@@ -2921,7 +2946,7 @@
    "layer": "ui",
    "current": {
     "version": 1,
-    "hash": "fb3d0fdebc49da97abe1f7907679aed3853ffab64b121dfa7700e28beac37c40",
+    "hash": "49c21a5fe06e3286b80812283551de98b55a294b19c01108710db4d656fe1a88",
     "status": "review",
     "preview": "art/export/preview/ui.screen.settings.png",
     "preview_sha256": "316917e16d9e6be88531bce0d0bfbe651481815ef4d840bc9fe15e60acd94a53"
@@ -3116,18 +3141,6 @@
  ],
  "text_issues": [
   {
-   "screen": "ui.screen.chapters",
-   "locale": "qps",
-   "kind": "ellipsis",
-   "key": "[4 / 7 ~~~~]"
-  },
-  {
-   "screen": "ui.screen.chapters",
-   "locale": "qps",
-   "kind": "ellipsis",
-   "key": "[0 / 7 ~~~~]"
-  },
-  {
    "screen": "ui.screen.hint",
    "locale": "qps",
    "kind": "ellipsis",
@@ -3192,7 +3205,7 @@
   {
    "name": "showcase.dungeon",
    "file": "art/export/reference/showcase.dungeon.png",
-   "sha256": "761cb3d2fe097dc07979dfac20dba19ebafced2affb0196f2e3b790964c6c20e",
+   "sha256": "6ba15e7f12193c6345bddf23c423785abdf6749d47cc79f18b243ae39035768c",
    "uses": [
     "theme.dungeon",
     "deco.dungeon_moss",
@@ -3294,7 +3307,7 @@
   {
    "name": "showcase.ruins",
    "file": "art/export/reference/showcase.ruins.png",
-   "sha256": "1fcfe63162df39c75c43f9dd0313ef9115c7e4d606b98dab6a77f1717c5efd44",
+   "sha256": "235e595c214e20a2db04bef2748cd50a7f398bbd967f1bec3f489c49ffca196d",
    "uses": [
     "theme.ruins",
     "deco.ruins_lotus",
@@ -3342,7 +3355,7 @@
   {
    "name": "lobby.ruins",
    "file": "art/export/reference/lobby.ruins.png",
-   "sha256": "0e8a7d8bbea6b7423ebe438df29a0ac794ca3df68c7d129e7218bc1f8712e126",
+   "sha256": "8367dc752a228f07b00a138fff77aff60ff4a17f65ecec73009755df0a79e56f",
    "uses": [
     "ui.screen.lobby",
     "theme.ruins",
@@ -3392,7 +3405,7 @@
   {
    "name": "showcase.cave",
    "file": "art/export/reference/showcase.cave.png",
-   "sha256": "87d31d73ef05e91d77e9494ea28b047ecf9a53e306d4aa6850c3ec9c837775a7",
+   "sha256": "3e049b0a910c21a2eb808c11df7989726f8a4bdded5b13b44544d4cb904e2f56",
    "uses": [
     "theme.cave",
     "deco.cave_crystal",
@@ -3440,7 +3453,7 @@
   {
    "name": "lobby.cave",
    "file": "art/export/reference/lobby.cave.png",
-   "sha256": "9cf9cab67f475710ba7c914e00679dcd0e6bedf80bd1de0f3ed330931ca14d11",
+   "sha256": "b90fed204b1c01482904aebff3cc571a616171bb56f8d3283d45c8c2bb299ef1",
    "uses": [
     "ui.screen.lobby",
     "theme.cave",
@@ -3490,7 +3503,7 @@
   {
    "name": "showcase.forest",
    "file": "art/export/reference/showcase.forest.png",
-   "sha256": "a3b1ccd03c26c2d64aaf040d77034110c13de4a3c9df39cb35fbf1fbc62dec33",
+   "sha256": "c763da2265f0b347dc2f2338fe87313c15772a29b55072c85fa2f609144f0582",
    "uses": [
     "theme.forest",
     "deco.forest_flower",
@@ -3540,7 +3553,7 @@
   {
    "name": "lobby.forest",
    "file": "art/export/reference/lobby.forest.png",
-   "sha256": "b30ee830322cb8b99daf5aa2117c279c1f0103ca286de314274447ae1fde16b8",
+   "sha256": "3926750dfb37f6a7c4617445bb40cbfd3e7b2e3b48c62ec7e1e9559418e31ab9",
    "uses": [
     "ui.screen.lobby",
     "theme.forest",
@@ -3592,7 +3605,7 @@
   {
    "name": "showcase.sky",
    "file": "art/export/reference/showcase.sky.png",
-   "sha256": "ed3142754c7a0e2d2a0a2017025ea020296e47022da932a6ffb01bcb4714ec0e",
+   "sha256": "bf3769aa332f02d7d4d6d54ad3839077e1e8143ea797cc70a06af96a082ec5f5",
    "uses": [
     "theme.sky",
     "deco.sky_flower",
@@ -3690,7 +3703,7 @@
   {
    "name": "showcase.cosmos",
    "file": "art/export/reference/showcase.cosmos.png",
-   "sha256": "08f5879c1b81a6c3ff193c168e1eb519d0a6235263b842f58e86970bbc29d526",
+   "sha256": "01bd053ebc00ee7473f431080fc99af4d2025d55186164cc90a10055e38c370f",
    "uses": [
     "theme.cosmos",
     "deco.cosmos_sprout",
@@ -3736,7 +3749,7 @@
   {
    "name": "lobby.cosmos",
    "file": "art/export/reference/lobby.cosmos.png",
-   "sha256": "acad68ca91b2f7577ac2928de35b9bf3be08aa1c7ae9b23c5de5ded68225813e",
+   "sha256": "c8f8544d1264a194c6d25596a1ea853e78b6f31f962a8824c392497fdb405afc",
    "uses": [
     "ui.screen.lobby",
     "theme.cosmos",
@@ -3884,7 +3897,7 @@
   {
    "name": "level.M03",
    "file": "art/export/reference/level.M03.png",
-   "sha256": "dc830b61e795e6a2797e9bae2432c66af6f4c9e97f63702e223ede9e82c1e63e",
+   "sha256": "9e8bbb4e6590473b7d187c897ee242fc6aec7c98aea135f86a165e35aa825c95",
    "uses": [
     "theme.dungeon",
     "deco.dungeon_moss",
@@ -4034,7 +4047,7 @@
   {
    "name": "level.M06",
    "file": "art/export/reference/level.M06.png",
-   "sha256": "7cb83768ca4faab9d68e73cdbec98e96082f54be2db633e0abac712b2d215cae",
+   "sha256": "f6d20d5caf6916d14b687fc144df2d4b53dc266ee6aae023d7f268b6a2de8f5c",
    "uses": [
     "theme.dungeon",
     "deco.dungeon_moss",
@@ -4084,7 +4097,7 @@
   {
    "name": "level.M07",
    "file": "art/export/reference/level.M07.png",
-   "sha256": "ba2721b2c53d62713eb44cd9dd98c0d72b3919829761a6d6f626689fb1918fac",
+   "sha256": "9d8ebce4f0607ee3ba37584ca5f0fade5045df30643cbe01e388353b9eef16ee",
    "uses": [
     "theme.dungeon",
     "deco.dungeon_moss",
@@ -4134,7 +4147,7 @@
   {
    "name": "chapters.zh-Hans",
    "file": "art/export/reference/chapters.zh-Hans.png",
-   "sha256": "7d49a8c139f594d8fc3d691dae751f28991d8fc34927fd3f7033fcb7dbe19362",
+   "sha256": "b78b600ae5e16dda2d1222f45557ce78f4110b10a57f2a201a2afb97467ca303",
    "uses": [
     "ui.screen.chapters",
     "char.miner",
@@ -4170,7 +4183,7 @@
   {
    "name": "chapters.en",
    "file": "art/export/reference/chapters.en.png",
-   "sha256": "5b56e61be98bec13393f1eaa890a2d62b80fb2d8d551a776c38b5c43ff7bfa1e",
+   "sha256": "b905bdd43b342497d87d08d6b6d893cf7a66de914569af8589cd23ca24436fc5",
    "uses": [
     "ui.screen.chapters",
     "char.miner",
@@ -4450,7 +4463,7 @@
   {
    "name": "rulecard.zh-Hans",
    "file": "art/export/reference/rulecard.zh-Hans.png",
-   "sha256": "9b0dfdb4428d4432cb7684b559726e5f74e39ece17d7ec5fc78b79b5b461a73d",
+   "sha256": "d02e69d90b75029085272c715dd4159bbb801ba47c3463c678b718e540af7a2a",
    "uses": [
     "ui.screen.rulecard",
     "char.miner",
@@ -4474,7 +4487,7 @@
   {
    "name": "rulecard.en",
    "file": "art/export/reference/rulecard.en.png",
-   "sha256": "2f6fd7d7316cd87e65359d3de57cd7ac660cd6a94dd6fa665c84758fef752972",
+   "sha256": "f0c6ea41f67dd8fb8f3c3ef8f0c69cfa7fd9e2d69e35d2e225c9a8b560d9452a",
    "uses": [
     "ui.screen.rulecard",
     "char.miner",

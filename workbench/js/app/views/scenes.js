@@ -58,7 +58,7 @@
   let showIssues = false;
   const LOCALES = [["zh-Hans", "简体中文"], ["en", "English"], ["qps", "伪本地化（长度测试）"]];
   function screenState(s) {
-    return { focus: s.asset.params.screen === "hint" ? 2 : s.asset.params.screen === "levels" ? 4 : 0, specs: Object.fromEntries(store.levels().map((l) => [l.id, l])), levelSpec: store.level("M05"), ruleSpec: store.level("M03"), theme: s.theme, showIssues };
+    return { focus: s.asset.params.screen === "hint" ? 2 : s.asset.params.screen === "levels" ? 4 : 0, specs: Object.fromEntries(store.levels().map((l) => [l.id, l])), levelSpec: store.level("M05"), ruleSpec: store.level("M03"), theme: s.theme, showIssues, animate: true };
   }
   function outline(r, issues) {
     if (!showIssues) return;

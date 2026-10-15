@@ -70,5 +70,5 @@
  },
  "usage": "设置项全部可用方向键调整。",
  "notes": "布局参考：文字来自 content/i18n，容器按文字宽度伸缩；Godot 用 Control 容器实现，不按像素硬编码文字位置。",
- "content_hash": "fb3d0fdebc49da97abe1f7907679aed3853ffab64b121dfa7700e28beac37c40"
+ "content_hash": "49c21a5fe06e3286b80812283551de98b55a294b19c01108710db4d656fe1a88"
 }

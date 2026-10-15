@@ -111,7 +111,7 @@ function renderProcedural(a, specs) {
   return r;
 }
 function screenState(a, specs, locale) {
-  return { focus: a.params.screen === "hint" ? 2 : a.params.screen === "levels" ? 4 : 0, specs: Object.fromEntries(specs.map((s) => [s.id, s])), levelSpec: specs.find((s) => s.id === "M05"), ruleSpec: specs.find((s) => s.id === "M03"), locale };
+  return { focus: a.params.screen === "hint" ? 2 : a.params.screen === "levels" ? 4 : a.params.screen === "chapters" ? 1 : 0, specs: Object.fromEntries(specs.map((s) => [s.id, s])), levelSpec: specs.find((s) => s.id === "M05"), ruleSpec: specs.find((s) => s.id === "M03"), locale };
 }
 // Overflow check: every screen in every shipped locale must lay out without cut text.
 function textIssues(byId, specs) {

@@ -45,7 +45,7 @@
       }
       if (py === 15 && n.down === MAT.EMPTY) c = P.dark;
       if ((px === 0 && n.left === MAT.EMPTY) || (px === 15 && n.right === MAT.EMPTY)) c = P.dark;
-      return c;
+      return blockFrame(c, px, py, n, MAT.EARTH, P.frame, P.bevel);
     }
     if (m === MAT.CRACKED) {
       const P = T.cracked;
@@ -54,7 +54,7 @@
       else if (crack(n.tx, n.ty, px - 1, py)) c = P.crackLight;
       if (py === 0 && n.up === MAT.EMPTY) c = P.light;
       if (py === 15 && n.down === MAT.EMPTY) c = P.dark;
-      return c;
+      return blockFrame(c, px, py, n, MAT.CRACKED, P.frame, P.bevel);
     }
     if (m === MAT.SAND) {
       const P = T.sand;
@@ -97,10 +97,9 @@
       if (h32(wx >> 2, band, 17) % 11 === 0 && (wy & 3) === 0) c = P.seam;
       if (hash % 97 === 0) c = P.speck;
     } else if (P.pattern === "grass") {
-      // Mossy stone: big soft patches, a few cracks and moss flecks.
-      c = pick(P.base, h32(wx >> 3, (wy + ((wx >> 3) & 1) * 4) >> 3, 13) % 3 === 0 ? 1 : 0);
-      if ((wy & 7) === 7 && h32(wx >> 2, wy >> 3, 19) % 5 === 0) c = P.seam;
-      if (h32(wx >> 1, wy >> 1, 43) % 37 === 0) c = P.speck;
+      c = pick(P.base, h32(wx >> 1, wy >> 2, 13) % 4 === 0 ? 1 : 0);
+      if (h32(wx, wy >> 1, 19) % 23 === 0) c = P.seam;
+      if (hash % 41 === 0) c = P.speck;
     } else if (P.pattern === "marble") {
       // Polished slabs (16x8) with a thin vein now and then.
       const row = wy >> 3, col = (wx + (row & 1) * 8) >> 4;
@@ -130,7 +129,8 @@
         else if (py === 2) c = blade < 2 ? P.light2 : c;
         else if (py === 3 && blade === 0) c = P.light2;
       } else if (P.pattern === "panel") {
-        if (py === 0) c = P.light; else if (py === 1) c = (wx & 7) === 3 ? P.top : P.light2;
+        if (P.trim === "hazard") { if (py <= 2) c = ((wx + py) >> 2) & 1 ? P.top : "z"; }
+        else if (py === 0) c = P.light; else if (py === 1) c = (wx & 7) === 3 ? P.top : P.light2;
       } else if (P.pattern === "marble" || P.pattern === "block") {
         if (py === 0) c = P.top; else if (py === 1) c = P.light;
       } else if (P.pattern === "rough") {
@@ -148,7 +148,15 @@
       } else if (py === 15) c = P.dark;
     }
     if ((px === 0 && n.left === MAT.EMPTY && py > 0) || (px === 15 && n.right === MAT.EMPTY && py > 0)) c = P.edge;
-    if ((P.pattern === "rough" || P.pattern === "grass") && corner(n, px, py, 2)) return null;
+    return c;
+  }
+
+  // Rule materials (packed earth, cracked rock) carry their own block outline so they
+  // read as "a block you can act on" against any theme's natural ground.
+  function blockFrame(c, px, py, n, self, frame, bevel) {
+    if (!frame) return c;
+    if ((px === 0 && n.left !== self) || (px === 15 && n.right !== self) || (py === 0 && n.up !== self) || (py === 15 && n.down !== self)) return frame;
+    if (bevel && ((px === 1 && n.left !== self) || (py === 1 && n.up !== self))) return bevel;
     return c;
   }
 

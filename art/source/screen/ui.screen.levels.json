@@ -66,5 +66,5 @@
  },
  "usage": "关卡格（编号、名称、通关 / 跳过标记）与所选关卡的示意小地图和一句话发现。",
  "notes": "布局参考：文字来自 content/i18n，容器按文字宽度伸缩；Godot 用 Control 容器实现，不按像素硬编码文字位置。",
- "content_hash": "0d9507235e4623d6c8ba77cf373309dbc4c588ee8f297d9a5dfe29feca42713f"
+ "content_hash": "da65075154cccce0a69046f7b102b39ded94e81e6a15cdd98eb0bd1cdfe6f4c4"
 }

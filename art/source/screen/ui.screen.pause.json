@@ -43,5 +43,5 @@
  },
  "usage": "局内按 Esc 打开；背景为压暗的关卡画面。",
  "notes": "布局参考：文字来自 content/i18n，容器按文字宽度伸缩；Godot 用 Control 容器实现，不按像素硬编码文字位置。",
- "content_hash": "675b27e49f3b1605eeef0a27cb2d6c8e7d7b346ef648bcfb64e5d1e2441e5153"
+ "content_hash": "b9ca4c2bc080ae119914408a8c9558192686856628b3c7f95d3da322e431ff5b"
 }

@@ -28,15 +28,15 @@
   "rock": {
    "pattern": "grass",
    "base": [
-    "x",
-    "w"
+    "f",
+    "e"
    ],
-   "seam": "y",
-   "speck": "n",
+   "seam": "g",
+   "speck": "F",
    "light": "m",
    "light2": "n",
-   "dark": "y",
-   "edge": "y",
+   "dark": "g",
+   "edge": "g",
    "top": "m"
   },
   "earth": {
@@ -49,7 +49,9 @@
    "pebbleShade": "g",
    "crust": "d",
    "crust2": "F",
-   "dark": "f"
+   "dark": "f",
+   "frame": "g",
+   "bevel": "d"
   },
   "cracked": {
    "base": [
@@ -59,7 +61,9 @@
    "crack": "g",
    "crackLight": "c",
    "light": "c",
-   "dark": "f"
+   "dark": "f",
+   "frame": "f",
+   "bevel": "c"
   },
   "sand": {
    "base": [
@@ -80,11 +84,11 @@
    "style": "forest",
    "base": [
     "p",
-    "y"
+    "o"
    ],
-   "speck": "o",
-   "accent": "o",
-   "detail": "p"
+   "speck": "n",
+   "accent": "g",
+   "detail": "o"
   },
   "ambient": [
    {
@@ -115,6 +119,6 @@
   ]
  },
  "usage": "第 4 章的地形、背景与生态。游戏中地形按 workbench/js/core/terrain.js 着色；生态按 ambient.js 的规则摆放。",
- "notes": "地面是长满青苔的灰石，顶上一层草皮；刻意避开褐色，免得和可挖的夯土混淆。背景是雾中树林。",
- "content_hash": "7d2085f9ffa0981819b31d1cfafcd77e257e4b01910cb658076036e5a1f977d7"
+ "notes": "盘根褐土顶着一层草皮，背景是雾中的树干与树冠；野花和草丛，知更鸟在边上啄食，蝴蝶飞舞。",
+ "content_hash": "d1f37865968817988c029199f4209cb58c75283b68ba22ef0059291600131dfa"
 }

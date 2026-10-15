@@ -48,7 +48,9 @@
    "pebbleShade": "g",
    "crust": "d",
    "crust2": "F",
-   "dark": "f"
+   "dark": "f",
+   "frame": "g",
+   "bevel": "d"
   },
   "cracked": {
    "base": [
@@ -58,7 +60,9 @@
    "crack": "g",
    "crackLight": "c",
    "light": "c",
-   "dark": "f"
+   "dark": "f",
+   "frame": "f",
+   "bevel": "c"
   },
   "sand": {
    "base": [
@@ -110,5 +114,5 @@
  },
  "usage": "第 3 章的地形、背景与生态。游戏中地形按 workbench/js/core/terrain.js 着色；生态按 ambient.js 的规则摆放。",
  "notes": "粗糙的深色岩洞，顶上垂着钟乳石，石缝里有紫晶脉；荧光蘑菇与晶簇，水晶飞蛾绕着飞。",
- "content_hash": "30ed340439191005a6e40e9ff83dd7bd15a8cdf719499e1f81c5aafeb38452e4"
+ "content_hash": "fc9363cc99c2d70db6e4166cb9927ba0795ea7399de6d858b76d42be660384e5"
 }

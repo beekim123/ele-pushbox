@@ -26,16 +26,17 @@
   "rock": {
    "pattern": "panel",
    "base": [
-    "x",
-    "y"
+    "w",
+    "x"
    ],
-   "seam": "z",
-   "speck": "w",
+   "seam": "y",
+   "speck": "v",
    "light": "v",
    "light2": "w",
-   "dark": "z",
-   "edge": "z",
-   "top": "u"
+   "dark": "y",
+   "edge": "y",
+   "top": "k",
+   "trim": "hazard"
   },
   "earth": {
    "base": [
@@ -47,7 +48,9 @@
    "pebbleShade": "g",
    "crust": "d",
    "crust2": "F",
-   "dark": "f"
+   "dark": "f",
+   "frame": "g",
+   "bevel": "d"
   },
   "cracked": {
    "base": [
@@ -57,7 +60,9 @@
    "crack": "g",
    "crackLight": "c",
    "light": "c",
-   "dark": "f"
+   "dark": "f",
+   "frame": "f",
+   "bevel": "c"
   },
   "sand": {
    "base": [
@@ -102,6 +107,6 @@
   ]
  },
  "usage": "扩展章的地形、背景与生态。游戏中地形按 workbench/js/core/terrain.js 着色；生态按 ambient.js 的规则摆放。",
- "notes": "深色舱板、铆钉与顶边灯带；不用黄黑警示条（那是危险的信号，本作没有危险地形），也与铁箱的浅灰拉开。",
- "content_hash": "06bd6ed2abc7e865798cfba4c78b9c29853ed837e99adfa937b4a7a295ecd8aa"
+ "notes": "金属舱板，顶边黄黑警示条，背景是星空、行星与站体桁架；异星球芽，巡检无人机在远处悬停。",
+ "content_hash": "49c2a0242721b3d3471c23a4e89e3c7a06f0046df6a9c432947310c3a289e1bb"
 }
