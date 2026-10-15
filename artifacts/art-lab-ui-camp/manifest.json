@@ -1,0 +1,109 @@
+{
+  "viewport": [
+    320,
+    180
+  ],
+  "font": "Fusion Pixel 12px bitmap subset",
+  "source": "Art Lab integer Canvas primitives; not a browser or Godot screenshot",
+  "sourceHashes": {
+    "js/data/palette.js": "3bbea65be6957b0a47795fd960d9c3b295ccd314c91765927ab34af3323c7c24",
+    "js/data/assets.js": "5c4c898b8eef181fd0b33d0e0845c36d20bd642249940cd4a0816c5da4f14cd0",
+    "js/data/campaign.js": "3814bfd3a663c77347331244942d67d7811c7cf1f2405010f7df1ae9293f519c",
+    "js/ui/font.js": "1690f21ef663da14c5cfcf5264885d522ce87de7df4e4638183be9dc624f626a",
+    "js/ui/state.js": "ca85db6348794983e975e8e88809dd7a81ee1693ae87d0836599f3c48ad86583",
+    "js/ui/draw.js": "00f19af141e953c5be657b85352c04b4d539374977e690cb75aef75a99c7e9b8",
+    "js/ui/scenery.js": "265582f7cfe9198210f05c8f13e70531a7eb023e6bac81e755d988a2a756098b",
+    "js/ui/screens.js": "69c9c8e2cca9e273b9e7a53476d875b8ef93b2a17d403c05e0c8171f52aa05b6"
+  },
+  "screens": [
+    {
+      "theme": "dungeon",
+      "type": "ui_lobby",
+      "file": "dungeon-lobby-native.png",
+      "sha256": "9c329fc970c3641ba1e8006cb397c6607ab1e853b1ebe173b10adf5687fef46f"
+    },
+    {
+      "theme": "dungeon",
+      "type": "ui_campaign",
+      "file": "dungeon-campaign-native.png",
+      "sha256": "7c11a95db53e1dd20e7a820c8826e2a967cb525bcb4d7cf3994dc277d8d5ad86"
+    },
+    {
+      "theme": "forest",
+      "type": "ui_lobby",
+      "file": "forest-lobby-native.png",
+      "sha256": "31a0f7ac9deb849232987aacb8787a00c336daa841e77973fc4e7042c9c20fa8"
+    },
+    {
+      "theme": "forest",
+      "type": "ui_campaign",
+      "file": "forest-campaign-native.png",
+      "sha256": "5a8a4f786401a236a4d17f8f479b5259c71261db9494f715e89df888fa95abd4"
+    },
+    {
+      "theme": "ruins",
+      "type": "ui_lobby",
+      "file": "ruins-lobby-native.png",
+      "sha256": "d299ddc4b67d84798fd3b7f9cf65af440d1445c51e336e29331a15124ad4bddf"
+    },
+    {
+      "theme": "ruins",
+      "type": "ui_campaign",
+      "file": "ruins-campaign-native.png",
+      "sha256": "7e2307992938cda0ac1a41448a3da121d21f686a98a7cab2a4f07f87a2c7d866"
+    },
+    {
+      "theme": "cave",
+      "type": "ui_lobby",
+      "file": "cave-lobby-native.png",
+      "sha256": "161577f8f0d4163d0e419d637fd1d91185dfe3e7fe0e1b388b338c6d36d0bd31"
+    },
+    {
+      "theme": "cave",
+      "type": "ui_campaign",
+      "file": "cave-campaign-native.png",
+      "sha256": "282cb5cdbbe8e923fd6735d026deab17e8c05673f3863085704359a445653283"
+    },
+    {
+      "theme": "sky_island",
+      "type": "ui_lobby",
+      "file": "sky_island-lobby-native.png",
+      "sha256": "c00f1b03ff17fccc5fbcf7e4a6a82ef4b7b3cc0f5d56e13cf4543cb1d0d80828"
+    },
+    {
+      "theme": "sky_island",
+      "type": "ui_campaign",
+      "file": "sky_island-campaign-native.png",
+      "sha256": "6b73f5cbe54bf40f0b2b4f598941167b7e2ca39313acf03883308dab46130010"
+    },
+    {
+      "theme": "cosmos",
+      "type": "ui_lobby",
+      "file": "cosmos-lobby-native.png",
+      "sha256": "0e516ccf09a288e2e6dfff65b19585bae39cd70bf5b347cce21038c58adba881"
+    },
+    {
+      "theme": "cosmos",
+      "type": "ui_campaign",
+      "file": "cosmos-campaign-native.png",
+      "sha256": "de04d33d1014021e68dfa773097e17e62667e0efcab91624a072025084b3b8f6"
+    }
+  ],
+  "states": [
+    {
+      "preset": "new",
+      "theme": "dungeon",
+      "file": "dungeon-campaign-new-native.png"
+    },
+    {
+      "preset": "mid",
+      "theme": "forest",
+      "file": "forest-campaign-mid-native.png"
+    },
+    {
+      "preset": "complete",
+      "theme": "forest",
+      "file": "forest-campaign-complete-native.png"
+    }
+  ]
+}

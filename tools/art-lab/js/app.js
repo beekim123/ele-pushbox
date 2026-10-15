@@ -4,9 +4,14 @@ function animateLoop(now) {
   if (isPlaying) clock += dt;
 
   // 更新画廊中所有可见卡片的 Canvas
-  document.querySelectorAll("canvas[data-asset-id]").forEach(c => {
+  if(!document.getElementById("assetLibrary").hidden)document.querySelectorAll("canvas[data-asset-id]").forEach(c => {
     const item = ASSET_CATALOG.find(a => a.id === c.dataset.assetId);
     if (!item) return;
+    if(item.renderType && item.renderType.startsWith("ui_")) {
+      const key=campFrameKey(item.renderType,clock);
+      if(c.dataset.uiFrameKey===key)return;
+      c.dataset.uiFrameKey=key;
+    }
     const cx = c.getContext("2d");
     cx.clearRect(0, 0, c.width, c.height);
     if (item.wide) {
@@ -22,14 +27,21 @@ function animateLoop(now) {
   });
 
   // 更新右侧检视器大图
-  if (selectedAsset) {
+  if (selectedAsset && !document.getElementById("assetLibrary").hidden) {
     if (selectedAsset.wide) {
-      inspCanvas.width = 320; inspCanvas.height = 180;
+      if(inspCanvas.width!==320 || inspCanvas.height!==180) {
+        inspCanvas.width=320;inspCanvas.height=180;
+        delete inspCanvas.dataset.uiFrameKey;
+      }
       inspCanvas.style.width = "320px"; inspCanvas.style.height = "180px";
       if (selectedAsset.renderType === "map") {
         renderLiveMapToCtx(inspCtx, selectedAsset.biomeIdx, clock);
       } else {
-        renderUIPreviewToCtx(inspCtx, selectedAsset.renderType, clock);
+        const key=campFrameKey(selectedAsset.renderType,clock);
+        if(inspCanvas.dataset.uiFrameKey!==key) {
+          renderUIPreviewToCtx(inspCtx, selectedAsset.renderType, clock);
+          inspCanvas.dataset.uiFrameKey=key;
+        }
       }
     } else {
       const fIdx = isPlaying ? (Math.floor(clock * selectedAsset.fps) % selectedAsset.frames.length) : selectedFrameIdx;
@@ -43,13 +55,19 @@ function animateLoop(now) {
     }
   }
 
+  renderCampViewer(clock);
+  renderCampShowcase(clock);
   requestAnimationFrame(animateLoop);
 }
 
 // Bind document controls here; dynamically created sprite controls live in
 // gallery.js / inspector.js. Scripts are ordered in index.html for file:// use.
 function bindControls() {
-  document.getElementById("searchInput").addEventListener("input", renderGallery);
+  initCampViewer();
+  initCampShowcase();
+  document.getElementById("searchInput").addEventListener("input", ()=>{
+    setWorkbenchView("library");renderGallery();
+  });
   document.getElementById("themeSelect").addEventListener("change", event => setTheme(event.target.value));
   document.querySelectorAll("[data-cat]").forEach(button => {
     button.addEventListener("click", () => selectCategory(button.dataset.cat));

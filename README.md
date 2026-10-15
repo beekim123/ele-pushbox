@@ -2,6 +2,8 @@
 
 六大风格地图、36 个有解闯关，保留四个教学关与五个经典横版推箱房间。沙、水和爆破由真实 ele-base-cpp v1.2.0（dacb93e）模拟，地图独特机关由确定性 GDScript 实现。Godot 4.7.2，macOS Apple silicon；工程已包含 SDK dylib。
 
+文档从 [项目文档导航](docs/README.md) 开始：新版设计、技术参考与历史资料已分类；[当前关卡重设计草案](docs/design/mode-and-level-design.md)描述后续方案，以下运行说明仍对应现有实验版本。
+
 ## 获取与运行
 
 ```sh
@@ -11,7 +13,7 @@ cd ele-pushbox
 
 仓库随附约 1.2 MB 的 macOS arm64 SDK 动态库及许可证，运行需要 macOS 15.6 或更新版本、Apple silicon 和 Godot 4.7.2，无需先编译 SDK。其他操作系统和架构尚未适配。
 
-成品目标与持续补充入口见 [项目目标与需求记录](docs/project-goals.md)。第一阶段的大厅、教学模式和纯代码美术已获用户验收并封存于 `feaa6ba`。阶段 1.5 六风格美术已获验收。当前第二阶段 A 在现有 SDK v1.2.0 上实现六地图、36 关有解池、观察池与满 3 关解锁机制；C++ 引擎与 bin 保持不变，交付状态见 [阶段 2A 报告](artifacts/stage2a/README.md)。
+成品目标与持续补充入口见 [项目目标与需求记录](docs/design/project-goals.md)。第一阶段的大厅、教学模式和纯代码美术已获用户验收并封存于 `feaa6ba`。阶段 1.5 六风格美术已获验收。当前第二阶段 A 在现有 SDK v1.2.0 上实现六地图、36 关有解池、观察池与满 3 关解锁机制；C++ 引擎与 bin 保持不变，交付状态见 [阶段 2A 报告](artifacts/stage2a/README.md)。
 
 双击根目录 **Run Demo.command** 即可启动。本机启动脚本会自动找到已有 Godot；其他机器可指定可执行文件：
 
@@ -31,7 +33,7 @@ Z 撤销（可按住），R 重开，均无确认。结算时按任意键或点�
 
 关卡基础布局为 320×180，默认窗口 1280×720，最小窗口 320×180。按窗口宽高扩展逻辑画布并整数放大，保持像素清晰；关卡居中、菜单居中、背包靠右，鼠标目标跟随实际画面。非整除尺寸只留下少于一个放大逻辑像素的余量边框。SDK 世界仍为 320×192，cell_scale=1，每格16像素，模拟与房间裁剪保持原样。沙袋按图标显示，一个满袋是一格沙；炸药每枚一个图标。
 
-关内引导在做对后消失，并记住已学过的操作。要给新的试玩者重看，先用 Esc → 设置 → 重看引导，再重开 D1。精灵和 UI 素材由 `pushbox/scripts/art/` 的分类模块在内存中生成，`ui/procedural_art.gd` 保留兼容转发；地形由 `world.gdshader` 绘制。`Style.texture(name)` 始终使用原始基线，`Style.themed_texture(name, theme_id)` 按需缓存主题变体。原始尺寸、动作和锚点元数据保留在 `pushbox/assets/sprites/manifest.json`，视觉规范见 `docs/v3/ui-art-direction.md`。字体和许可证随包交付。
+关内引导在做对后消失，并记住已学过的操作。要给新的试玩者重看，先用 Esc → 设置 → 重看引导，再重开 D1。精灵和 UI 素材由 `pushbox/scripts/art/` 的分类模块在内存中生成，`ui/procedural_art.gd` 保留兼容转发；地形由 `world.gdshader` 绘制。`Style.texture(name)` 始终使用原始基线，`Style.themed_texture(name, theme_id)` 按需缓存主题变体。原始尺寸、动作和锚点元数据保留在 `pushbox/assets/sprites/manifest.json`，视觉规范见 `docs/reference/ui-art-direction.md`。字体和许可证随包交付。
 
 验证命令（严格顺序、单 worker；启动前检查其他聊天的计算进程）：
 
@@ -70,4 +72,4 @@ PUSHBOX_GODOT_BIN='/完整路径/Godot.app/Contents/MacOS/Godot' \
 
 快照保存在 Godot user://undo，退出时清理；最多200步。引导记录保存在 user://guides-v03.json。
 
-当前候选、技术审核和真人验收状态见 [项目进度](docs/v2/status.md)，新版证据见 [v0.3 报告](docs/v3/report.md)。v0.2历史报告保留在 docs/v2/report.md，不作为v0.3通过证据。
+当前候选、技术审核和真人验收状态见 [项目进度](docs/v2/status.md)。旧版本证据分别见 [v0.3 历史报告](docs/archive/v0.3/report.md)和 [v0.2 历史报告](docs/archive/v0.2/report.md)，不作为当前源码通过全部门禁的证明。

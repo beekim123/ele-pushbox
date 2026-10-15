@@ -509,14 +509,14 @@ const ASSET_CATALOG = [
 
   // -------------------- 【6. 界面与图标 UI & Icons】 --------------------
   {
-    id: "ui_campaign_screen", name: "闯关选关页 UI (航线条+动态实景窗)", category: "ui", biome: "all", fps: 8,
+    id: "ui_campaign_screen", name: "闯关选关 UI · 营地路线", category: "ui", biome: "all", fps: 8,
     wide: true, renderType: "ui_campaign",
-    desc: "重构后的 320×180 闯关模式选关页：顶部 6 大地图图标航线条 + 左侧带蝴蝶飞舞的微缩实景窗 + 右侧 2×3 纯图标关卡卡槽。"
+    desc: "六主题营地路线：关卡化为路边木牌，矿工站在所选路牌旁，旗帜记录通关；可放大预演、切换主题并检查解锁状态。"
   },
   {
-    id: "ui_lobby_screen", name: "主大厅 UI (动态背景+三模式精修卡)", category: "ui", biome: "all", fps: 8,
+    id: "ui_lobby_screen", name: "主大厅 UI · 矿井营地", category: "ui", biome: "all", fps: 8,
     wide: true, renderType: "ui_lobby",
-    desc: "重构后的 320×180 主界面大厅：背景随当前进度展示动态生态，三张九宫格卡片留足呼吸内边距。"
+    desc: "练习台、亮灯矿口与封闭矿道分别作为教学、闯关和挑战筹备入口；点阵字体、分层地景与克制生态动画统一在 320×180 中。"
   },
   {
     id: "ui_keycaps", name: "引导键帽与鼠标手势图标组", category: "ui", biome: "all", fps: 2,

@@ -29,6 +29,7 @@ inspectorMedia.addEventListener("change", () => {
 });
 document.addEventListener("keydown", event => {
   if (!inspectorMedia.matches || document.documentElement.dataset.inspectorOpen !== "true") return;
+  if(event.target && !inspectorPanel.contains(event.target))return;
   if (event.key === "Escape") { event.preventDefault(); setInspectorOpen(false); }
   if (event.key === "Tab") {
     const controls = [...inspectorPanel.querySelectorAll('button:not([disabled]), textarea, [tabindex="0"], summary')].filter(el => el.getClientRects().length);

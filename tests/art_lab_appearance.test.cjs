@@ -266,7 +266,6 @@ test('scripts boot in HTML order and bind search, filters and animation', () => 
   // Minimal DOM/canvas adapter for integration checks; this is not a browser
   // layout test. Evaluate every real script in one shared classic-script scope.
   const all = [];
-  const context2d = new Proxy({}, { get: (object, key) => object[key] ?? (() => {}) });
   function element(tag, attributes = {}) {
     const node = {
       tag, attributes: { ...attributes }, dataset: {}, style: {}, children: [], listeners: {},
@@ -275,7 +274,10 @@ test('scripts boot in HTML order and bind search, filters and animation', () => 
       removeAttribute(name) { delete this.attributes[name]; },
       addEventListener(name, callback) { (this.listeners[name] ??= []).push(callback); },
       appendChild(child) { this.children.push(child); child.parentElement = this; },
-      getContext() { return context2d; },
+      getContext() {
+        return this.context2d ??= new Proxy({ fillRect() { node.paintCount = (node.paintCount ?? 0) + 1; } },
+          { get: (object, key) => object[key] ?? (() => {}) });
+      },
       focus() { document.activeElement = this; },
       getClientRects() { return [1]; },
       querySelector(selector) { return this.children.find(child => matches(child, selector)) ?? null; }
@@ -338,12 +340,46 @@ test('scripts boot in HTML order and bind search, filters and animation', () => 
   for (const script of pageScripts) vm.runInContext(script.source, context, { filename: script.src });
   const byId = id => document.getElementById(id);
   const click = node => node.listeners.click[0]({ target: node });
+  assert.equal(byId('campShowcase')?.hidden, false, 'Completed artwork must be the default view');
+  assert.equal(byId('assetLibrary').hidden, true);
+  assert.equal(byId('showcaseChapterSelect').value, '1');
+  assert.equal(byId('showcaseChapterSelect').children.length, 6);
+  vm.runInContext('renderCampShowcase(0)', context);
+  for (const id of ['showcaseLobbyCanvas', 'showcaseCampaignCanvas']) assert.ok(byId(id).paintCount > 500, id + ' must draw a complete scene');
+  assert.ok(byId('showcaseMinerCanvas').paintCount > 0);
+  const firstPaint = byId('showcaseCampaignCanvas').paintCount;
+  vm.runInContext('renderCampShowcase(0.03)', context);
+  assert.equal(byId('showcaseCampaignCanvas').paintCount, firstPaint, 'Showcase must use the shared 8 FPS cache');
+  byId('showcaseChapterSelect').value = '4';
+  byId('showcaseChapterSelect').listeners.change[0]({ target: byId('showcaseChapterSelect') });
+  assert.equal(vm.runInContext('campPreviewState.chapter', context), 4);
+  assert.equal(byId('uiChapterSelect').value, '4', 'Showcase and enlarged preview must share the selected theme');
+  byId('showcaseProgressSelect').value = 'new';
+  byId('showcaseProgressSelect').listeners.change[0]({ target: byId('showcaseProgressSelect') });
+  assert.equal(byId('showcaseChapterSelect').value, '0');
+  assert.equal(byId('showcaseChapterSelect').children[4].disabled, true);
+  click(byId('showcasePlayPause'));
+  assert.equal(vm.runInContext('isPlaying', context), false);
+  click(byId('showcasePlayPause'));
+  click(byId('libraryViewButton'));
+  assert.equal(byId('campShowcase').hidden, true);
+  assert.equal(byId('assetLibrary').hidden, false);
+  vm.runInContext('renderCampShowcase(1)', context);
+  assert.equal(byId('showcaseCampaignCanvas').paintCount, firstPaint, 'Hidden showcase must not redraw');
+  click(byId('showcaseViewButton'));
+  assert.equal(byId('campShowcase').hidden, false);
   assert.equal(byId('galleryCount').textContent, '42 项素材');
   assert.equal(byId('inspId').textContent, 'forest_bird');
   assert.equal(byId('inspPaletteBar').children.length, 33);
   assert.equal(frames.length, 1);
+  byId('showcaseMinerInspect').focus();
+  click(byId('showcaseMinerInspect'));
+  assert.equal(byId('inspId').textContent, 'miner_dig');
+  assert.equal(document.activeElement, byId('libraryViewButton'), 'Pixel editing link must leave focus on a visible library entry');
+  click(byId('showcaseViewButton'));
   byId('searchInput').value = 'forest_bird';
   byId('searchInput').listeners.input[0]();
+  assert.equal(byId('assetLibrary').hidden, false, 'Searching must reveal its results');
   assert.equal(byId('galleryCount').textContent, '1 项素材');
   byId('galleryContainer').listeners.click[0]({ target: { closest: () => true } });
   assert.equal(byId('galleryCount').textContent, '42 项素材');

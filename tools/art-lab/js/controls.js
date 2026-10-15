@@ -45,4 +45,5 @@ function togglePlay() {
   isPlaying = !isPlaying;
   document.getElementById("playPauseBtn").textContent = isPlaying ? "暂停动画" : "播放动画";
   document.getElementById("playPauseBtn").setAttribute("aria-pressed", String(isPlaying));
+  syncCampShowcase();
 }

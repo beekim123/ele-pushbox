@@ -39,14 +39,17 @@ function paintOnInspectorCanvas(e) {
   const gy = Math.floor(((e.clientY - rect.top) / rect.height) * h);
   if (gx >= 0 && gx < w && gy >= 0 && gy < h) {
     const arr = rows[gy].split("");
+    if(arr[gx]===activePaintCode)return;
     arr[gx] = activePaintCode;
     rows[gy] = arr.join("");
+    campPreviewState.revision++;
     updateInspectorCode();
   }
 }
 
 function selectAssetForInspector(item, reveal = true) {
   selectedAsset = item;
+  delete inspCanvas.dataset.uiFrameKey;
   selectedFrameIdx = 0;
   document.querySelectorAll(".asset-card").forEach(el => {
     const c = el.querySelector("canvas");
@@ -60,14 +63,18 @@ function selectAssetForInspector(item, reveal = true) {
   document.getElementById("specCat").textContent = CATEGORY_TITLES[item.category][0];
   document.getElementById("specBiome").textContent = BIOME_NAMES[item.biome];
   document.getElementById("specSize").textContent = item.wide ? "320 × 180 px" : `${item.frames[0][0].length} × ${item.frames[0].length} px`;
-  document.getElementById("specFps").textContent = item.wide ? "60 Hz 实时推演" : `${item.frames.length} 帧 / ${item.fps} FPS`;
+  const isUI=!!item.renderType && item.renderType.startsWith("ui_");
+  document.getElementById("specFps").textContent = isUI ? "8 FPS 生态动画" : item.wide ? "60 Hz 实时推演" : `${item.frames.length} 帧 / ${item.fps} FPS`;
   document.getElementById("specDesc").textContent = item.desc;
   document.getElementById("paletteSection").style.display = item.wide ? "none" : "block";
   document.getElementById("frameSection").hidden = !!item.wide;
-  document.getElementById("inspHintText").textContent = item.wide
+  document.getElementById("inspHintText").textContent = isUI
+    ? "放大预演可试选入口、主题和关卡；进度为独立样例。"
+    : item.wide
     ? "320 × 180 原生场景 · 随全局动画播放。"
     : "暂停动画后，可选择色板并点击像素修改。";
   document.getElementById("copyStatus").textContent = "";
+  syncCampInspector(item);
 
   // 渲染动作帧缩略条
   const strip = document.getElementById("inspFrameStrip");
@@ -113,7 +120,7 @@ function updateInspectorCode() {
         map: BIOME_MAPS[selectedAsset.biomeIdx]
       }, null, 2);
     } else {
-      box.value = `# UI 布局组件: ${selectedAsset.id}\n# 基准分辨率: 320x180 整数缩放\n# 包含: 顶部6图航线条 + 动态微缩景窗 + 2x3纯图标卡槽`;
+      box.value = JSON.stringify(campExport(selectedAsset.renderType), null, 2);
     }
     return;
   }
@@ -131,6 +138,7 @@ function resetSelectedAsset() {
   const orig = BACKUP_CATALOG.find(a => a.id === selectedAsset.id);
   if (orig) {
     selectedAsset.frames = JSON.parse(JSON.stringify(orig.frames));
+    campPreviewState.revision++;
     selectAssetForInspector(selectedAsset);
   }
 }

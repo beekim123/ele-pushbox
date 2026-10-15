@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-workbench-view="showcase">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -53,8 +53,70 @@
         检视器
       </button>
     </div>
+    <nav class="workbench-nav" aria-label="工作台视图">
+      <button id="showcaseViewButton" class="view-button active" aria-pressed="true" aria-controls="campShowcase">本次改稿</button>
+      <button id="libraryViewButton" class="view-button" aria-pressed="false" aria-controls="assetLibrary">素材图鉴</button>
+    </nav>
   </header>
-  <div class="viewer-body">
+  <main class="camp-showcase" id="campShowcase" aria-labelledby="showcaseTitle">
+    <div class="showcase-content">
+      <div class="showcase-heading">
+        <div>
+          <p class="showcase-eyebrow">沙与水 / 矿井营地</p>
+          <h1 id="showcaseTitle">大厅与路线选关</h1>
+          <p class="showcase-description">点击画面可放大操作，六个主题都可以直接查看。</p>
+        </div>
+        <button class="btn-outline" id="showcasePlayPause" aria-pressed="true">暂停动画</button>
+      </div>
+      <div class="showcase-controls">
+        <label>场景主题 <select id="showcaseChapterSelect" aria-label="改稿场景主题"></select></label>
+        <label>进度样例
+          <select id="showcaseProgressSelect">
+            <option value="open">全关开放 · 古森已通3关</option>
+            <option value="new">正常解锁 · 刚开始</option>
+            <option value="mid">正常解锁 · 古森已通3关</option>
+            <option value="complete">六图全部完成</option>
+          </select>
+        </label>
+        <span class="showcase-caption">网页候选 · 尚未同步游戏</span>
+      </div>
+      <div class="showcase-screens">
+        <section class="showcase-screen" aria-labelledby="showcaseLobbyTitle">
+          <div class="showcase-screen-heading"><h2 id="showcaseLobbyTitle">01 / 营地大厅</h2><span>ui_lobby_screen</span></div>
+          <div class="showcase-stage">
+            <button class="showcase-open-stage" id="showcaseLobbyOpen" aria-label="放大操作营地大厅">
+              <canvas id="showcaseLobbyCanvas" class="pixel-canvas" width="320" height="180" aria-label="营地大厅动画预览"></canvas>
+            </button>
+          </div>
+          <p class="showcase-screen-note">练习台、亮灯矿口与封闭矿道，对应教学、闯关和挑战筹备。</p>
+        </section>
+        <section class="showcase-screen" aria-labelledby="showcaseCampaignTitle">
+          <div class="showcase-screen-heading"><h2 id="showcaseCampaignTitle">02 / 路线选关</h2><span>ui_campaign_screen</span></div>
+          <div class="showcase-stage">
+            <button class="showcase-open-stage" id="showcaseCampaignOpen" aria-label="放大操作路线选关">
+              <canvas id="showcaseCampaignCanvas" class="pixel-canvas" width="320" height="180" aria-label="路线选关动画预览"></canvas>
+            </button>
+          </div>
+          <p class="showcase-screen-note">沿木牌选择关卡，金旗标记通关；银灯与金冠记录章节进度。</p>
+        </section>
+      </div>
+      <section class="showcase-sprite" aria-labelledby="showcaseMinerTitle">
+        <div class="showcase-sprite-intro">
+          <p class="showcase-eyebrow">角色动作改稿</p>
+          <h2 id="showcaseMinerTitle">矿工 · 挖掘</h2>
+          <p>铲头朝前下方，准备、下挖、收铲三帧循环。</p>
+          <button class="text-button" id="showcaseMinerInspect">在图鉴中调整像素</button>
+        </div>
+        <div class="showcase-sprite-stage bg-checker"><canvas id="showcaseMinerCanvas" class="pixel-canvas" width="96" height="96" aria-label="矿工挖掘循环动画"></canvas></div>
+        <div class="showcase-sprite-frames" aria-label="挖掘动作三帧">
+          <figure><canvas id="showcaseMinerFrame0" class="pixel-canvas" width="64" height="64" aria-label="准备"></canvas><figcaption>01 准备</figcaption></figure>
+          <figure><canvas id="showcaseMinerFrame1" class="pixel-canvas" width="64" height="64" aria-label="下挖"></canvas><figcaption>02 下挖</figcaption></figure>
+          <figure><canvas id="showcaseMinerFrame2" class="pixel-canvas" width="64" height="64" aria-label="收铲"></canvas><figcaption>03 收铲</figcaption></figure>
+        </div>
+      </section>
+    </div>
+  </main>
+  <div class="viewer-body" id="assetLibrary" hidden>
     <aside class="category-nav" id="categoryNav" aria-label="素材筛选">
       <div class="nav-group-label">
         资源库
@@ -248,6 +310,7 @@
         <p class="inspector-hint" id="inspHintText">
           暂停动画后，可选择色板并点击像素修改。
         </p>
+        <button class="btn-outline ui-open-preview" id="uiOpenPreview" hidden>放大交互预演</button>
       </div>
       <section id="frameSection">
         <h2 class="section-label">
@@ -328,13 +391,53 @@
   <button class="inspector-scrim" id="inspectorScrim" aria-label="关闭素材检视器" data-inspector="close" tabindex="-1" hidden>
   </button>
 
+  <dialog class="ui-focus-dialog" id="uiFocusDialog" aria-labelledby="uiFocusTitle">
+    <div class="ui-focus-header">
+      <h2 id="uiFocusTitle">矿井营地 · 界面预演</h2>
+      <button class="btn-outline" id="uiClosePreview" aria-label="关闭界面预演">关闭</button>
+    </div>
+    <div class="ui-focus-controls">
+      <label>页面
+        <select id="uiScreenSelect"><option value="lobby">营地大厅</option><option value="campaign">路线选关</option></select>
+      </label>
+      <label>主题 <select id="uiChapterSelect"></select></label>
+      <label>进度样例
+        <select id="uiProgressSelect">
+          <option value="open">全关开放 · 古森已通3关</option>
+          <option value="new">正常解锁 · 刚开始</option>
+          <option value="mid">正常解锁 · 古森已通3关</option>
+          <option value="complete">六图全部完成</option>
+        </select>
+      </label>
+    </div>
+    <div class="ui-focus-stage">
+      <canvas id="uiFocusCanvas" class="pixel-canvas" width="320" height="180" tabindex="0" role="img" aria-label="矿井营地交互界面" aria-describedby="uiFocusKeys"></canvas>
+    </div>
+    <div class="ui-focus-actions">
+      <button class="btn-outline" id="uiBackToCamp">回到营地</button>
+      <button class="btn-outline" id="uiPreviousItem">上一项</button>
+      <button class="btn-outline" id="uiNextItem">下一项</button>
+      <button class="btn-outline" id="uiActivateItem">确认选择</button>
+    </div>
+    <p class="ui-focus-help" id="uiFocusKeys">点击入口或路牌；方向键选择，回车确认，PageUp / PageDown 换主题，Esc 返回。</p>
+    <p class="ui-focus-status" id="uiFocusStatus" role="status" aria-live="polite">通关状态为示例，不会写入游戏存档。</p>
+  </dialog>
+
   <script id="workspace-script" src="js/workspace.js"></script>
   <script id="palette-script" src="js/data/palette.js"></script>
   <script id="assets-script" src="js/data/assets.js"></script>
   <script id="biomes-script" src="js/data/biomes.js"></script>
+  <script id="campaign-data-script" src="js/data/campaign.js"></script>
   <script id="state-script" src="js/state.js"></script>
+  <script id="ui-font-script" src="js/ui/font.js"></script>
+  <script id="ui-state-script" src="js/ui/state.js"></script>
+  <script id="ui-draw-script" src="js/ui/draw.js"></script>
+  <script id="ui-scenery-script" src="js/ui/scenery.js"></script>
+  <script id="ui-screens-script" src="js/ui/screens.js"></script>
   <script id="gallery-script" src="js/gallery.js"></script>
   <script id="renderers-script" src="js/renderers.js"></script>
+  <script id="ui-viewer-script" src="js/ui/viewer.js"></script>
+  <script id="ui-showcase-script" src="js/ui/showcase.js"></script>
   <script id="inspector-script" src="js/inspector.js"></script>
   <script id="controls-script" src="js/controls.js"></script>
   <script id="app-script" src="js/app.js"></script>
