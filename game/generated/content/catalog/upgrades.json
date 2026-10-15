@@ -1,0 +1,105 @@
+{
+ "format": "pushbox.catalog/1",
+ "kind": "upgrades",
+ "note": "工坊的属性升级（progression.md 第 3 节）。每级价格 +50%，有上限，随时可以免费全部重置。数值是草案。",
+ "entries": [
+  {
+   "id": "hp",
+   "name": "生命",
+   "base": "3 颗心",
+   "step": "+1 颗",
+   "max_level": 3,
+   "max": "6 颗",
+   "price": 120,
+   "price_growth": "每级 +50%",
+   "mode": "delivery",
+   "status": "concept",
+   "gate": "第 3 级需要执照 3"
+  },
+  {
+   "id": "speed",
+   "name": "移动速度（移动间隔）",
+   "base": "两步间隔 0.22 秒",
+   "step": "间隔 −5%",
+   "max_level": 5,
+   "max": "0.165 秒（−25%）",
+   "price": 100,
+   "price_growth": "每级 +50%",
+   "mode": "delivery",
+   "status": "concept"
+  },
+  {
+   "id": "bag",
+   "name": "背包格",
+   "base": "3",
+   "step": "+1",
+   "max_level": 4,
+   "max": "7",
+   "price": 150,
+   "price_growth": "每级 +50%",
+   "mode": "delivery",
+   "status": "concept",
+   "gate": "第 3 级起需要执照 4"
+  },
+  {
+   "id": "cargo_guard",
+   "name": "货物保护",
+   "base": "完好度 3",
+   "step": "+1",
+   "max_level": 2,
+   "max": "5",
+   "price": 150,
+   "price_growth": "每级 +50%",
+   "mode": "delivery",
+   "status": "concept"
+  },
+  {
+   "id": "light",
+   "name": "灯光半径",
+   "base": "3 格",
+   "step": "+1 格",
+   "max_level": 3,
+   "max": "6 格",
+   "price": 80,
+   "price_growth": "每级 +50%",
+   "mode": "delivery",
+   "status": "concept"
+  },
+  {
+   "id": "reroll",
+   "name": "重转券",
+   "base": "每局 0 张",
+   "step": "+1 张",
+   "max_level": 3,
+   "max": "3 张",
+   "price": 200,
+   "price_growth": "每级 +50%",
+   "mode": "delivery",
+   "status": "concept"
+  },
+  {
+   "id": "discount",
+   "name": "驿站折扣",
+   "base": "0",
+   "step": "−5%",
+   "max_level": 4,
+   "max": "−20%",
+   "price": 120,
+   "price_growth": "每级 +50%",
+   "mode": "delivery",
+   "status": "concept"
+  },
+  {
+   "id": "start_gold",
+   "name": "起始金币",
+   "base": "0",
+   "step": "+15",
+   "max_level": 4,
+   "max": "60",
+   "price": 60,
+   "price_growth": "每级 +50%",
+   "mode": "delivery",
+   "status": "concept"
+  }
+ ]
+}

@@ -1,0 +1,4 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+OpenGL API 4.1 Metal - 89.4 - Compatibility - Using Device: Apple - Apple M3
+
+{"captures":16,"different_reference_count":16,"layout_issues":0,"performance":{"fps_observed":36.0,"full_performance_acceptance":false,"memory_static_peak_bytes":49322361.0,"note":"Short capture run only; includes Control/layout construction. A sustained all-level benchmark is still required.","process_frame_peak_ms":149.91,"settle_advance_peak_us":603,"undo_peak_us":3270},"suite":"ui-gpu"}

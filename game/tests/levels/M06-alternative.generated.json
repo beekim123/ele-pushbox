@@ -1,0 +1,22 @@
+{
+  "format": "portitor.design-search/1",
+  "id": "M06",
+  "runtime": "design-model-only",
+  "found": false,
+  "complete": true,
+  "explored": 979,
+  "queued": 979,
+  "state_limit": 20000,
+  "target": {
+    "sand_plate": [
+      5,
+      5
+    ],
+    "crate_step": [
+      10,
+      4
+    ],
+    "all_goals_lit": true
+  },
+  "solution": []
+}

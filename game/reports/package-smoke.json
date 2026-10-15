@@ -1,0 +1,43 @@
+{
+  "format": "portitor.package-smoke/1",
+  "passed": true,
+  "run_incomplete": false,
+  "app": "/Users/key_/Desktop/CURRGO/pushbox-demo/builds/PORTITOR-Stage1-Candidate.app",
+  "binary_architecture": "arm64",
+  "executable_sha256": "a379dbff1a9db1a45b28d28addbeea74b8d54ecf749b3d6b3ce113d4ad40d2fd",
+  "pck_sha256": "d16340c7a8a1fe1053d2e78674557382c50b0d4a6542c2a81c54a8c52add030d",
+  "cases": [
+    {
+      "mode": "headless",
+      "passed": true,
+      "exit_code": 0,
+      "last_level_uid": "level:M01",
+      "command": [
+        "/Users/key_/Desktop/CURRGO/pushbox-demo/builds/PORTITOR-Stage1-Candidate.app/Contents/MacOS/PORTITOR",
+        "--headless",
+        "--quit-after",
+        "30",
+        "--",
+        "--level=level:M01"
+      ]
+    },
+    {
+      "mode": "window",
+      "passed": true,
+      "exit_code": 0,
+      "last_level_uid": "level:M01",
+      "command": [
+        "/Users/key_/Desktop/CURRGO/pushbox-demo/builds/PORTITOR-Stage1-Candidate.app/Contents/MacOS/PORTITOR",
+        "--display-driver",
+        "macos",
+        "--audio-driver",
+        "Dummy",
+        "--quit-after",
+        "30",
+        "--",
+        "--level=level:M01"
+      ]
+    }
+  ],
+  "scope": "Actual exported app, real SDK M01 setup in headless and macOS window; no novice playtest or full packaged author replay claimed"
+}

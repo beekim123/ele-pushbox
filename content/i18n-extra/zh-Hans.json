@@ -1,0 +1,17 @@
+{
+ "dev.placeholder": "占位",
+ "dev.pending_art": "界面候选，待确认",
+ "error.runtime": "游戏无法启动：{reason}",
+ "hint.restart": "当前不在作者路线上，请重开",
+ "hud.controls": "方向键 移动 · Shift 挖 · Ctrl 倒沙 · Z 撤销 · H 提示 · Esc 暂停",
+ "extra.rule.push.name": "推箱与登阶",
+ "extra.rule.push.text": "朝箱子走就推一格；不能推一串箱子。前方只有一格高、头顶空着时，人会登上去。",
+ "extra.rule.ladder.name": "梯子",
+ "extra.rule.ladder.text": "在梯子里不会下落。按上爬向上方的梯子，按下向下；梯子不支撑箱子。",
+ "extra.rule.pour.name": "倒沙",
+ "extra.rule.pour.text": "按 Ctrl 和左右方向倒一袋沙。落点要空着，靠墙或坑里才能堆成可靠台阶。",
+ "extra.rule.plate_door.name": "压板与门",
+ "extra.rule.plate_door.text": "同符号的压板全部压住，门才打开。人、箱和沙都能压板；门内有东西时不会关闭。",
+ "extra.rule.fall.name": "失去支撑",
+ "extra.rule.fall.text": "下方没支撑，人和箱就落下。箱子可以叠放；人没有摔落伤害。"
+}

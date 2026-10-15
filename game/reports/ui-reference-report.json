@@ -1,0 +1,192 @@
+{
+  "behaviors": [
+    {
+      "actual_ink_pixels": 571,
+      "id": "ui.hint_body_visible.zh-Hans",
+      "ok": true
+    },
+    {
+      "actual_ink_pixels": 453,
+      "id": "ui.hint_body_visible.en",
+      "ok": true
+    },
+    {
+      "id": "ui.blocked_feedback_and_no_move",
+      "moves_and_sdk_unchanged": true,
+      "ok": true,
+      "pixels_changed": true
+    }
+  ],
+  "layout_issues": [],
+  "performance": {
+    "fps_observed": 36.0,
+    "full_performance_acceptance": false,
+    "memory_static_peak_bytes": 49322361.0,
+    "note": "Short capture run only; includes Control/layout construction. A sustained all-level benchmark is still required.",
+    "process_frame_peak_ms": 149.91,
+    "settle_advance_peak_us": 603,
+    "undo_peak_us": 3270
+  },
+  "references": [
+    {
+      "approved": false,
+      "diff_pixels": 178,
+      "name": "lobby.zh-Hans",
+      "note": "Development Control layout; pending UI/bubble approvals. Geometry and glyph differences are unresolved, not waived.",
+      "pixels": 57600,
+      "screenshot": "game/reports/shots/lobby.zh-Hans.png"
+    },
+    {
+      "approved": false,
+      "diff_pixels": 88,
+      "name": "chapters.zh-Hans",
+      "note": "Development Control layout; pending UI/bubble approvals. Geometry and glyph differences are unresolved, not waived. Chapter availability is a UI-only reference fixture; real manifest counts are retained and no SDK unlock is claimed.",
+      "pixels": 57600,
+      "screenshot": "game/reports/shots/chapters.zh-Hans.png",
+      "ui_fixture": {
+        "available_group_indices": [
+          0,
+          1
+        ],
+        "kind": "presentation_only_availability",
+        "manifest_level_counts": {
+          "basics": 7,
+          "blast": 8,
+          "experimental": 0,
+          "react": 9,
+          "thermal": 7,
+          "water": 9
+        },
+        "sdk_unlocked": false
+      }
+    },
+    {
+      "approved": false,
+      "diff_pixels": 61,
+      "name": "levels.zh-Hans",
+      "note": "Development Control layout; pending UI/bubble approvals. Geometry and glyph differences are unresolved, not waived.",
+      "pixels": 57600,
+      "screenshot": "game/reports/shots/levels.zh-Hans.png"
+    },
+    {
+      "approved": false,
+      "diff_pixels": 491,
+      "name": "pause.zh-Hans",
+      "note": "Development Control layout; pending UI/bubble approvals. Geometry and glyph differences are unresolved, not waived.",
+      "pixels": 57600,
+      "screenshot": "game/reports/shots/pause.zh-Hans.png"
+    },
+    {
+      "approved": false,
+      "diff_pixels": 151,
+      "name": "settings.zh-Hans",
+      "note": "Development Control layout; pending UI/bubble approvals. Geometry and glyph differences are unresolved, not waived.",
+      "pixels": 57600,
+      "screenshot": "game/reports/shots/settings.zh-Hans.png"
+    },
+    {
+      "approved": false,
+      "diff_pixels": 5877,
+      "name": "hint.zh-Hans",
+      "note": "Development Control layout; pending UI/bubble approvals. Geometry and glyph differences are unresolved, not waived.",
+      "pixels": 57600,
+      "screenshot": "game/reports/shots/hint.zh-Hans.png"
+    },
+    {
+      "approved": false,
+      "diff_pixels": 923,
+      "name": "complete.zh-Hans",
+      "note": "Development Control layout; pending UI/bubble approvals. Geometry and glyph differences are unresolved, not waived.",
+      "pixels": 57600,
+      "screenshot": "game/reports/shots/complete.zh-Hans.png"
+    },
+    {
+      "approved": false,
+      "diff_pixels": 471,
+      "name": "rulecard.zh-Hans",
+      "note": "Development Control layout; pending UI/bubble approvals. Geometry and glyph differences are unresolved, not waived.",
+      "pixels": 57600,
+      "screenshot": "game/reports/shots/rulecard.zh-Hans.png"
+    },
+    {
+      "approved": false,
+      "diff_pixels": 225,
+      "name": "lobby.en",
+      "note": "Development Control layout; pending UI/bubble approvals. Geometry and glyph differences are unresolved, not waived.",
+      "pixels": 57600,
+      "screenshot": "game/reports/shots/lobby.en.png"
+    },
+    {
+      "approved": false,
+      "diff_pixels": 483,
+      "name": "chapters.en",
+      "note": "Development Control layout; pending UI/bubble approvals. Geometry and glyph differences are unresolved, not waived. Chapter availability is a UI-only reference fixture; real manifest counts are retained and no SDK unlock is claimed.",
+      "pixels": 57600,
+      "screenshot": "game/reports/shots/chapters.en.png",
+      "ui_fixture": {
+        "available_group_indices": [
+          0,
+          1
+        ],
+        "kind": "presentation_only_availability",
+        "manifest_level_counts": {
+          "basics": 7,
+          "blast": 8,
+          "experimental": 0,
+          "react": 9,
+          "thermal": 7,
+          "water": 9
+        },
+        "sdk_unlocked": false
+      }
+    },
+    {
+      "approved": false,
+      "diff_pixels": 721,
+      "name": "levels.en",
+      "note": "Development Control layout; pending UI/bubble approvals. Geometry and glyph differences are unresolved, not waived.",
+      "pixels": 57600,
+      "screenshot": "game/reports/shots/levels.en.png"
+    },
+    {
+      "approved": false,
+      "diff_pixels": 656,
+      "name": "pause.en",
+      "note": "Development Control layout; pending UI/bubble approvals. Geometry and glyph differences are unresolved, not waived.",
+      "pixels": 57600,
+      "screenshot": "game/reports/shots/pause.en.png"
+    },
+    {
+      "approved": false,
+      "diff_pixels": 197,
+      "name": "settings.en",
+      "note": "Development Control layout; pending UI/bubble approvals. Geometry and glyph differences are unresolved, not waived.",
+      "pixels": 57600,
+      "screenshot": "game/reports/shots/settings.en.png"
+    },
+    {
+      "approved": false,
+      "diff_pixels": 5822,
+      "name": "hint.en",
+      "note": "Development Control layout; pending UI/bubble approvals. Geometry and glyph differences are unresolved, not waived.",
+      "pixels": 57600,
+      "screenshot": "game/reports/shots/hint.en.png"
+    },
+    {
+      "approved": false,
+      "diff_pixels": 916,
+      "name": "complete.en",
+      "note": "Development Control layout; pending UI/bubble approvals. Geometry and glyph differences are unresolved, not waived.",
+      "pixels": 57600,
+      "screenshot": "game/reports/shots/complete.en.png"
+    },
+    {
+      "approved": false,
+      "diff_pixels": 782,
+      "name": "rulecard.en",
+      "note": "Development Control layout; pending UI/bubble approvals. Geometry and glyph differences are unresolved, not waived.",
+      "pixels": 57600,
+      "screenshot": "game/reports/shots/rulecard.en.png"
+    }
+  ]
+}

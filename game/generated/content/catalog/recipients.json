@@ -1,0 +1,1301 @@
+{
+ "format": "pushbox.catalog/1",
+ "kind": "recipients",
+ "note": "收件人（characters.md 第 2 节）。worlds 按顺序，先用已开放的地区。likes 是会触发缘分组合或更多小费的货物。",
+ "entries": [
+  {
+   "id": "kid",
+   "name": "小孩",
+   "worlds": [
+    "countryside",
+    "candy"
+   ],
+   "rarity": "common",
+   "temper": "急性子",
+   "rule": "用时最影响小费",
+   "likes": [
+    "balloons",
+    "ice_cream"
+   ],
+   "layer": 1,
+   "status": "concept"
+  },
+  {
+   "id": "granny",
+   "name": "老奶奶",
+   "worlds": [
+    "countryside"
+   ],
+   "rarity": "common",
+   "temper": "慢性子",
+   "rule": "只在乎完好；住三楼，楼里有货梯",
+   "likes": [
+    "piano",
+    "hot_soup"
+   ],
+   "layer": 1,
+   "status": "concept"
+  },
+  {
+   "id": "elephant",
+   "name": "大象",
+   "worlds": [
+    "savanna",
+    "ruins"
+   ],
+   "rarity": "rare",
+   "temper": "温和",
+   "rule": "收大件；好感高时用鼻子喷水帮你灭火",
+   "likes": [
+    "peanuts",
+    "watermelon"
+   ],
+   "layer": 1,
+   "status": "concept"
+  },
+  {
+   "id": "pharaoh_cat",
+   "name": "法老猫",
+   "worlds": [
+    "ruins"
+   ],
+   "rarity": "rare",
+   "temper": "傲娇",
+   "rule": "小费随心情浮动",
+   "likes": [
+    "fish"
+   ],
+   "layer": 1,
+   "status": "concept"
+  },
+  {
+   "id": "fairy",
+   "name": "妖精",
+   "worlds": [
+    "wonderland",
+    "forest"
+   ],
+   "rarity": "rare",
+   "temper": "害羞",
+   "rule": "家门只有半格高",
+   "likes": [
+    "plant",
+    "honey"
+   ],
+   "layer": 1,
+   "status": "concept"
+  },
+  {
+   "id": "ent",
+   "name": "树人爷爷",
+   "worlds": [
+    "forest"
+   ],
+   "rarity": "common",
+   "temper": "极慢",
+   "rule": "要等他慢慢转过身",
+   "likes": [
+    "plant",
+    "water_bucket"
+   ],
+   "layer": 1,
+   "status": "concept"
+  },
+  {
+   "id": "alien",
+   "name": "外星人",
+   "worlds": [
+    "spaceport",
+    "cosmos"
+   ],
+   "rarity": "rare",
+   "temper": "好奇",
+   "rule": "门牌是外星文字，要对照图鉴找家",
+   "likes": [
+    "alien_egg"
+   ],
+   "layer": 1,
+   "status": "concept"
+  },
+  {
+   "id": "engineer",
+   "name": "星站工程师",
+   "worlds": [
+    "cosmos"
+   ],
+   "rarity": "common",
+   "temper": "较真",
+   "rule": "准时最重要",
+   "likes": [
+    "hot_soup",
+    "letter"
+   ],
+   "layer": 1,
+   "status": "concept"
+  },
+  {
+   "id": "zombie",
+   "name": "僵尸",
+   "worlds": [
+    "graveyard",
+    "dungeon"
+   ],
+   "rarity": "common",
+   "temper": "迷糊",
+   "rule": "到处闲逛，要追上他",
+   "likes": [
+    "brains",
+    "love_letter"
+   ],
+   "layer": 1,
+   "status": "concept"
+  },
+  {
+   "id": "old_miner",
+   "name": "老矿工",
+   "worlds": [
+    "dungeon"
+   ],
+   "rarity": "common",
+   "temper": "念旧",
+   "rule": "旧主角改做的收件人",
+   "likes": [
+    "lantern",
+    "letter"
+   ],
+   "layer": 1,
+   "status": "concept"
+  },
+  {
+   "id": "moth_king",
+   "name": "水晶蛾王",
+   "worlds": [
+    "cave"
+   ],
+   "rarity": "rare",
+   "temper": "痴迷光",
+   "rule": "会扑向光：送灯要小心",
+   "likes": [
+    "lantern"
+   ],
+   "layer": 1,
+   "status": "concept"
+  },
+  {
+   "id": "cloud_spirit",
+   "name": "云灵",
+   "worlds": [
+    "sky"
+   ],
+   "rarity": "common",
+   "temper": "飘忽",
+   "rule": "住在会飘的云上",
+   "likes": [
+    "water_bucket",
+    "balloons"
+   ],
+   "layer": 1,
+   "status": "concept"
+  },
+  {
+   "id": "farmer",
+   "name": "农夫",
+   "worlds": [
+    "countryside"
+   ],
+   "rarity": "common",
+   "temper": "忙碌",
+   "rule": "在地里干活，要去田里找他",
+   "likes": [
+    "seeds",
+    "egg"
+   ],
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "ghost",
+   "name": "幽灵",
+   "worlds": [
+    "graveyard"
+   ],
+   "rarity": "rare",
+   "temper": "怕生",
+   "rule": "只在灯光下看得见",
+   "likes": [
+    "love_letter",
+    "lantern"
+   ],
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "vampire",
+   "name": "吸血鬼伯爵",
+   "worlds": [
+    "graveyard"
+   ],
+   "rarity": "legendary",
+   "temper": "高傲",
+   "rule": "只在夜里收件，怕光：别用灯照他",
+   "likes": [
+    "safe",
+    "snow_globe"
+   ],
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "dragon_king",
+   "name": "龙王",
+   "worlds": [
+    "undersea"
+   ],
+   "rarity": "legendary",
+   "temper": "威严",
+   "rule": "宫殿在海底，要带够氧气",
+   "likes": [
+    "pearl",
+    "sword"
+   ],
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "mermaid",
+   "name": "美人鱼",
+   "worlds": [
+    "undersea",
+    "pirate_cove"
+   ],
+   "rarity": "rare",
+   "temper": "浪漫",
+   "rule": "只在水里收件",
+   "likes": [
+    "snow_globe",
+    "letter"
+   ],
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "sea_turtle",
+   "name": "老海龟",
+   "worlds": [
+    "undersea"
+   ],
+   "rarity": "common",
+   "temper": "慢悠悠",
+   "rule": "住在会移动的珊瑚礁上",
+   "likes": [
+    "fish"
+   ],
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "scholar",
+   "name": "书生",
+   "worlds": [
+    "ink_town"
+   ],
+   "rarity": "common",
+   "temper": "斯文",
+   "rule": "在桥上等你",
+   "likes": [
+    "love_letter",
+    "letter"
+   ],
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "embroiderer",
+   "name": "绣娘",
+   "worlds": [
+    "ink_town"
+   ],
+   "rarity": "common",
+   "temper": "细致",
+   "rule": "怕墨：货物被墨灵染黑就不收",
+   "likes": [
+    "tea_set",
+    "vase"
+   ],
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "storyteller",
+   "name": "说书人",
+   "worlds": [
+    "ink_town"
+   ],
+   "rarity": "rare",
+   "temper": "话多",
+   "rule": "收件前要听他讲完一段（几秒）",
+   "likes": [
+    "tea_set"
+   ],
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "immortal",
+   "name": "仙人",
+   "worlds": [
+    "xianxia"
+   ],
+   "rarity": "legendary",
+   "temper": "超然",
+   "rule": "住在山顶云上",
+   "likes": [
+    "peach"
+   ],
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "panda",
+   "name": "熊猫",
+   "worlds": [
+    "bamboo"
+   ],
+   "rarity": "rare",
+   "temper": "慵懒",
+   "rule": "抱着竹子睡觉，要先叫醒",
+   "likes": [
+    "plant",
+    "peach"
+   ],
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "kungfu_master",
+   "name": "功夫大师",
+   "worlds": [
+    "bamboo"
+   ],
+   "rarity": "rare",
+   "temper": "严格",
+   "rule": "收件前要过一道小试炼",
+   "likes": [
+    "tea_set"
+   ],
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "snowman",
+   "name": "雪人",
+   "worlds": [
+    "polar"
+   ],
+   "rarity": "common",
+   "temper": "怕热",
+   "rule": "热的货物会让他化掉一点",
+   "likes": [
+    "carrot",
+    "ice_cream"
+   ],
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "fisher",
+   "name": "极地渔夫",
+   "worlds": [
+    "polar"
+   ],
+   "rarity": "common",
+   "temper": "耐心",
+   "rule": "守在冰窟窿边",
+   "likes": [
+    "hot_soup"
+   ],
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "genie",
+   "name": "神灯精灵",
+   "worlds": [
+    "desert"
+   ],
+   "rarity": "legendary",
+   "temper": "爱热闹",
+   "rule": "住在神灯里：把货物塞进灯里",
+   "likes": [
+    "lantern"
+   ],
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "camel",
+   "name": "商队骆驼",
+   "worlds": [
+    "desert"
+   ],
+   "rarity": "common",
+   "temper": "沉稳",
+   "rule": "商队在移动，要追上",
+   "likes": [
+    "water_bucket",
+    "watermelon"
+   ],
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "baby_dino",
+   "name": "恐龙宝宝",
+   "worlds": [
+    "dino"
+   ],
+   "rarity": "rare",
+   "temper": "黏人",
+   "rule": "在巢里，旁边就是妈妈",
+   "likes": [
+    "egg",
+    "meat"
+   ],
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "trex_mom",
+   "name": "霸王龙妈妈",
+   "worlds": [
+    "dino"
+   ],
+   "rarity": "legendary",
+   "temper": "暴躁",
+   "rule": "送慢了会吼，吼声会震落碎石",
+   "likes": [
+    "meat"
+   ],
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "fire_spirit",
+   "name": "火精灵",
+   "worlds": [
+    "dino"
+   ],
+   "rarity": "rare",
+   "temper": "热情",
+   "rule": "身边很烫，靠近会加速融化",
+   "likes": [
+    "hot_soup"
+   ],
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "inventor",
+   "name": "发明家",
+   "worlds": [
+    "steam_city"
+   ],
+   "rarity": "common",
+   "temper": "心急",
+   "rule": "实验室在传送带尽头",
+   "likes": [
+    "magnet",
+    "chip"
+   ],
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "robot_butler",
+   "name": "机器人管家",
+   "worlds": [
+    "steam_city",
+    "cyber_market"
+   ],
+   "rarity": "common",
+   "temper": "精确",
+   "rule": "准时最重要",
+   "likes": [
+    "chip"
+   ],
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "candy_princess",
+   "name": "糖果公主",
+   "worlds": [
+    "candy"
+   ],
+   "rarity": "rare",
+   "temper": "挑剔",
+   "rule": "不收融化的东西",
+   "likes": [
+    "cake",
+    "ice_cream"
+   ],
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "archaeologist",
+   "name": "考古学家",
+   "worlds": [
+    "ruins"
+   ],
+   "rarity": "common",
+   "temper": "专注",
+   "rule": "在挖掘坑里",
+   "likes": [
+    "treasure_map",
+    "vase"
+   ],
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "goblin_smith",
+   "name": "地精铁匠",
+   "worlds": [
+    "dungeon"
+   ],
+   "rarity": "common",
+   "temper": "粗犷",
+   "rule": "铁砧旁很烫",
+   "likes": [
+    "sword",
+    "magnet"
+   ],
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "dwarf",
+   "name": "地底矮人",
+   "worlds": [
+    "cave"
+   ],
+   "rarity": "common",
+   "temper": "豪爽",
+   "rule": "喜欢爆炸",
+   "likes": [
+    "explosive"
+   ],
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "red_hood",
+   "name": "小红帽",
+   "worlds": [
+    "forest"
+   ],
+   "rarity": "common",
+   "temper": "机灵",
+   "rule": "灰狼也在找她",
+   "likes": [
+    "cake",
+    "honey"
+   ],
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "angel_courier",
+   "name": "天使信差",
+   "worlds": [
+    "sky"
+   ],
+   "rarity": "rare",
+   "temper": "好胜",
+   "rule": "同行：会和你比谁先到",
+   "likes": [
+    "letter"
+   ],
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "giraffe",
+   "name": "长颈鹿",
+   "worlds": [
+    "savanna"
+   ],
+   "rarity": "common",
+   "temper": "温顺",
+   "rule": "收件在高处",
+   "likes": [
+    "plant"
+   ],
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "astronaut",
+   "name": "宇航员",
+   "worlds": [
+    "spaceport"
+   ],
+   "rarity": "common",
+   "temper": "乐观",
+   "rule": "在气闸另一侧",
+   "likes": [
+    "letter",
+    "hot_soup"
+   ],
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "mad_hatter",
+   "name": "疯帽匠",
+   "worlds": [
+    "wonderland"
+   ],
+   "rarity": "rare",
+   "temper": "古怪",
+   "rule": "只在下午茶时间收件",
+   "likes": [
+    "tea_set",
+    "cake"
+   ],
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "chang_e",
+   "name": "嫦娥",
+   "worlds": [
+    "moon"
+   ],
+   "rarity": "legendary",
+   "temper": "清冷",
+   "rule": "住在月宫深处",
+   "likes": [
+    "mooncake"
+   ],
+   "layer": 4,
+   "status": "concept"
+  },
+  {
+   "id": "jade_rabbit",
+   "name": "玉兔",
+   "worlds": [
+    "moon"
+   ],
+   "rarity": "rare",
+   "temper": "活泼",
+   "rule": "跳来跳去",
+   "likes": [
+    "carrot",
+    "mooncake"
+   ],
+   "layer": 4,
+   "status": "concept"
+  },
+  {
+   "id": "pirate_captain",
+   "name": "海盗船长",
+   "worlds": [
+    "pirate_cove"
+   ],
+   "rarity": "rare",
+   "temper": "豪迈",
+   "rule": "在船头等你",
+   "likes": [
+    "treasure_map",
+    "fireworks"
+   ],
+   "layer": 4,
+   "status": "concept"
+  },
+  {
+   "id": "cyber_girl",
+   "name": "赛博少女",
+   "worlds": [
+    "cyber_market"
+   ],
+   "rarity": "rare",
+   "temper": "酷",
+   "rule": "在霓虹招牌后面",
+   "likes": [
+    "chip"
+   ],
+   "layer": 4,
+   "status": "concept"
+  },
+  {
+   "id": "robot_chef",
+   "name": "机器人厨师",
+   "worlds": [
+    "cyber_market"
+   ],
+   "rarity": "common",
+   "temper": "热情",
+   "rule": "在小吃摊后面",
+   "likes": [
+    "fish"
+   ],
+   "layer": 4,
+   "status": "concept"
+  },
+  {
+   "id": "meng_po",
+   "name": "孟婆",
+   "worlds": [
+    "diyu"
+   ],
+   "rarity": "rare",
+   "temper": "和蔼",
+   "rule": "汤亭在奈何桥头：要先过承重桥",
+   "likes": [
+    "hot_soup",
+    "carrot"
+   ],
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "judge",
+   "name": "判官",
+   "worlds": [
+    "diyu"
+   ],
+   "rarity": "rare",
+   "temper": "一丝不苟",
+   "rule": "完好度不满会被“记一笔”：小费减半",
+   "likes": [
+    "ink_brush",
+    "letter"
+   ],
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "wuchang",
+   "name": "黑白无常",
+   "worlds": [
+    "diyu"
+   ],
+   "rarity": "rare",
+   "temper": "一个爱笑，一个板着脸",
+   "rule": "两人分头巡夜：货物要分成两份，分别交到两人手里",
+   "likes": [
+    "lantern",
+    "paper_house"
+   ],
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "yama",
+   "name": "阎王",
+   "worlds": [
+    "diyu"
+   ],
+   "rarity": "legendary",
+   "temper": "威严但怕热",
+   "rule": "阎罗殿外火很旺",
+   "likes": [
+    "ice_cream",
+    "tea_set"
+   ],
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "ancestor",
+   "name": "先人",
+   "worlds": [
+    "diyu",
+    "muertos"
+   ],
+   "rarity": "common",
+   "temper": "慈祥",
+   "rule": "住在小院里，家书要在灯下读",
+   "likes": [
+    "letter",
+    "qingtuan",
+    "paper_house"
+   ],
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "fox_bride",
+   "name": "狐狸新娘",
+   "worlds": [
+    "inari"
+   ],
+   "rarity": "rare",
+   "temper": "害羞",
+   "rule": "只在太阳雨时出现",
+   "likes": [
+    "fried_tofu"
+   ],
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "kappa_kid",
+   "name": "小河童",
+   "worlds": [
+    "inari"
+   ],
+   "rarity": "common",
+   "temper": "淘气",
+   "rule": "住在水里，要在水边等它冒头",
+   "likes": [
+    "cucumber"
+   ],
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "onsen_host",
+   "name": "温泉旅馆老板娘",
+   "worlds": [
+    "inari"
+   ],
+   "rarity": "common",
+   "temper": "热情",
+   "rule": "旅馆里到处是温泉：冰类货物要绕开",
+   "likes": [
+    "tea_set",
+    "egg"
+   ],
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "haenyeo",
+   "name": "海女奶奶",
+   "worlds": [
+    "jeju"
+   ],
+   "rarity": "rare",
+   "temper": "爽朗",
+   "rule": "在海里潜水：要到码头等她上岸",
+   "likes": [
+    "hot_soup",
+    "fish"
+   ],
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "goblin_chief",
+   "name": "鬼怪大王",
+   "worlds": [
+    "jeju"
+   ],
+   "rarity": "rare",
+   "temper": "爱摔跤",
+   "rule": "先陪它摔一跤（把它推出两格）才肯收货",
+   "likes": [
+    "buckwheat_jelly"
+   ],
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "spice_merchant",
+   "name": "香料商人",
+   "worlds": [
+    "stepwell"
+   ],
+   "rarity": "common",
+   "temper": "精明",
+   "rule": "只收没被水泡过的货",
+   "likes": [
+    "honey",
+    "spice_box"
+   ],
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "diwali_sisters",
+   "name": "排灯节姐妹",
+   "worlds": [
+    "stepwell"
+   ],
+   "rarity": "common",
+   "temper": "活泼",
+   "rule": "天黑前要送到：她们要点灯",
+   "likes": [
+    "lantern",
+    "fireworks"
+   ],
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "boat_vendor",
+   "name": "船娘",
+   "worlds": [
+    "floating_market"
+   ],
+   "rarity": "common",
+   "temper": "爽快",
+   "rule": "小船一直在漂，要追上她",
+   "likes": [
+    "watermelon",
+    "durian"
+   ],
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "puppeteer",
+   "name": "皮影艺人",
+   "worlds": [
+    "floating_market",
+    "ink_town"
+   ],
+   "rarity": "rare",
+   "temper": "安静",
+   "rule": "只在夜里演出，跟着灯光找他",
+   "likes": [
+    "lantern"
+   ],
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "anansi",
+   "name": "蜘蛛阿南西",
+   "worlds": [
+    "mud_town"
+   ],
+   "rarity": "legendary",
+   "temper": "狡黠",
+   "rule": "收货前要先答对他一个谜语",
+   "likes": [
+    "story_box"
+   ],
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "indigo_dyer",
+   "name": "靛蓝染匠",
+   "worlds": [
+    "mud_town"
+   ],
+   "rarity": "common",
+   "temper": "爱干净",
+   "rule": "只收没沾泥的货",
+   "likes": [
+    "water_bucket"
+   ],
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "troll_granny",
+   "name": "巨魔奶奶",
+   "worlds": [
+    "fjord"
+   ],
+   "rarity": "rare",
+   "temper": "和蔼但怕光",
+   "rule": "只在夜里或山洞里收货",
+   "likes": [
+    "cake",
+    "fish"
+   ],
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "boatwright",
+   "name": "长船木匠",
+   "worlds": [
+    "fjord"
+   ],
+   "rarity": "common",
+   "temper": "倔强",
+   "rule": "在船坞高处干活：要爬上去",
+   "likes": [
+    "treasure_map",
+    "sword"
+   ],
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "sisyphus",
+   "name": "西西弗斯",
+   "worlds": [
+    "aegean"
+   ],
+   "rarity": "legendary",
+   "temper": "乐观",
+   "rule": "一直在推石头上山：要在他推到山顶前送到",
+   "likes": [
+    "safe"
+   ],
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "olive_grower",
+   "name": "橄榄农",
+   "worlds": [
+    "aegean"
+   ],
+   "rarity": "common",
+   "temper": "慢性子",
+   "rule": "住在迷宫外的山坡上",
+   "likes": [
+    "water_bucket",
+    "seeds"
+   ],
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "gondolier",
+   "name": "贡多拉船夫",
+   "worlds": [
+    "venice"
+   ],
+   "rarity": "common",
+   "temper": "爱唱歌",
+   "rule": "船一直在运河里转：跟着歌声找他",
+   "likes": [
+    "fish",
+    "cake"
+   ],
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "glassblower",
+   "name": "玻璃匠",
+   "worlds": [
+    "venice"
+   ],
+   "rarity": "rare",
+   "temper": "挑剔",
+   "rule": "易碎品完好就多给小费，碎一点也要扣",
+   "likes": [
+    "vase",
+    "water_bucket"
+   ],
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "tulip_farmer",
+   "name": "郁金香农",
+   "worlds": [
+    "polder"
+   ],
+   "rarity": "common",
+   "temper": "朴实",
+   "rule": "住在堤坝下面的圩田里",
+   "likes": [
+    "seeds",
+    "plant"
+   ],
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "miller",
+   "name": "风车磨坊主",
+   "worlds": [
+    "polder"
+   ],
+   "rarity": "common",
+   "temper": "忙碌",
+   "rule": "风车转着的时候进不去，要等风停",
+   "likes": [
+    "egg",
+    "cake"
+   ],
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "baba_yaga",
+   "name": "雅加婆婆",
+   "worlds": [
+    "baba_yaga"
+   ],
+   "rarity": "rare",
+   "temper": "古怪",
+   "rule": "小屋会走：要对它说“小屋小屋，背对森林，面对我”才会转过来开门",
+   "likes": [
+    "hot_soup",
+    "matryoshka"
+   ],
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "firebird",
+   "name": "火鸟",
+   "worlds": [
+    "baba_yaga"
+   ],
+   "rarity": "legendary",
+   "temper": "高傲",
+   "rule": "在花园里飞来飞去，只停一会儿",
+   "likes": [
+    "golden_apple"
+   ],
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "cacao_trader",
+   "name": "可可商人",
+   "worlds": [
+    "cenote"
+   ],
+   "rarity": "common",
+   "temper": "精明",
+   "rule": "在天然井边摆摊",
+   "likes": [
+    "cacao_beans",
+    "honey"
+   ],
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "stargazer",
+   "name": "观星老人",
+   "worlds": [
+    "cenote"
+   ],
+   "rarity": "rare",
+   "temper": "安静",
+   "rule": "住在金字塔顶：只在夜里出来",
+   "likes": [
+    "lantern",
+    "treasure_map"
+   ],
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "great_grandma",
+   "name": "曾祖母",
+   "worlds": [
+    "muertos"
+   ],
+   "rarity": "rare",
+   "temper": "慈祥",
+   "rule": "只在亡灵节的夜里回家：沿着花瓣路找到她",
+   "likes": [
+    "cake",
+    "letter"
+   ],
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "mariachi",
+   "name": "骷髅乐手",
+   "worlds": [
+    "muertos"
+   ],
+   "rarity": "common",
+   "temper": "热闹",
+   "rule": "一直在街上演奏：跟着音乐找他",
+   "likes": [
+    "fireworks",
+    "balloons"
+   ],
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "xolo",
+   "name": "无毛犬",
+   "worlds": [
+    "muertos"
+   ],
+   "rarity": "common",
+   "temper": "忠心",
+   "rule": "在河边等人：要先过河",
+   "likes": [
+    "meat"
+   ],
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "weaver",
+   "name": "织布阿妈",
+   "worlds": [
+    "andes"
+   ],
+   "rarity": "common",
+   "temper": "耐心",
+   "rule": "住在绳桥对岸",
+   "likes": [
+    "seeds",
+    "tea_set"
+   ],
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "llama",
+   "name": "羊驼",
+   "worlds": [
+    "andes"
+   ],
+   "rarity": "common",
+   "temper": "傲娇",
+   "rule": "站在梯田最高处",
+   "likes": [
+    "carrot"
+   ],
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "sheriff",
+   "name": "警长",
+   "worlds": [
+    "frontier"
+   ],
+   "rarity": "rare",
+   "temper": "较真",
+   "rule": "被偷过一次的货要扣小费",
+   "likes": [
+    "safe",
+    "treasure_map"
+   ],
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "prospector",
+   "name": "淘金老人",
+   "worlds": [
+    "frontier"
+   ],
+   "rarity": "common",
+   "temper": "乐天",
+   "rule": "住在矿洞深处：要坐矿车进去",
+   "likes": [
+    "water_bucket",
+    "treasure_map"
+   ],
+   "layer": 2,
+   "status": "concept"
+  }
+ ]
+}

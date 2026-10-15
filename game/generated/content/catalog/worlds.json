@@ -1,0 +1,578 @@
+{
+ "format": "pushbox.catalog/1",
+ "kind": "worlds",
+ "note": "配送模式的地区（世界）。第 0 层的六个主题已确认，直接用作第 1 层地区。新地区的专属机制先登记为提议中的机制，进实验组验证。culture 是文化圈，inspiration 是取材来源，care 是表现时要注意的地方（worlds.md 2.1）。设计见 docs/design/worlds.md。",
+ "entries": [
+  {
+   "id": "dungeon",
+   "name": "幽暗石牢",
+   "culture": "幻想",
+   "inspiration": "训练场主题：地牢",
+   "style": "冷灰石砖、壁挂火把",
+   "mechanisms": [
+    "push",
+    "ladder",
+    "dig",
+    "pour",
+    "plate_door"
+   ],
+   "theme": "theme.dungeon",
+   "layer": 1,
+   "status": "active"
+  },
+  {
+   "id": "ruins",
+   "name": "黄金神庙",
+   "culture": "西亚与非洲",
+   "inspiration": "古埃及神庙与法老传说",
+   "style": "砂岩、金饰、斜射光柱",
+   "mechanisms": [
+    "water_flow",
+    "float_sink",
+    "communicating",
+    "lift"
+   ],
+   "theme": "theme.ruins",
+   "layer": 1,
+   "status": "active"
+  },
+  {
+   "id": "cave",
+   "name": "幽光晶窟",
+   "culture": "幻想",
+   "inspiration": "训练场主题：晶洞",
+   "style": "深色岩洞、荧光蘑菇",
+   "mechanisms": [
+    "bomb",
+    "fuse",
+    "gravel"
+   ],
+   "theme": "theme.cave",
+   "layer": 1,
+   "status": "active"
+  },
+  {
+   "id": "forest",
+   "name": "迷雾古森",
+   "culture": "幻想",
+   "inspiration": "训练场主题：雾林",
+   "style": "草皮褐土、雾林",
+   "mechanisms": [
+    "acid",
+    "gas_rise",
+    "gas_sink",
+    "vine"
+   ],
+   "theme": "theme.forest",
+   "layer": 1,
+   "status": "active"
+  },
+  {
+   "id": "sky",
+   "name": "云端圣域",
+   "culture": "幻想",
+   "inspiration": "训练场主题：云上圣域",
+   "style": "白云、金饰、晴空",
+   "mechanisms": [
+    "burn",
+    "freeze",
+    "melt"
+   ],
+   "theme": "theme.sky",
+   "layer": 1,
+   "status": "active"
+  },
+  {
+   "id": "cosmos",
+   "name": "深空星站",
+   "culture": "科幻",
+   "inspiration": "训练场主题：空间站",
+   "style": "舱板与警示条",
+   "mechanisms": [
+    "power"
+   ],
+   "theme": "theme.cosmos",
+   "layer": 1,
+   "status": "active"
+  },
+  {
+   "id": "countryside",
+   "name": "乡村小路",
+   "culture": "田园",
+   "inspiration": "不限国家的乡间：麦田、篱笆、风车",
+   "style": "麦田、篱笆、风车、午后阳光",
+   "mechanisms": [
+    "mud"
+   ],
+   "theme": null,
+   "layer": 1,
+   "status": "concept"
+  },
+  {
+   "id": "ink_town",
+   "name": "水墨江南",
+   "culture": "东亚",
+   "inspiration": "中国江南水乡与水墨画",
+   "style": "黑白灰水墨、红灯笼、拱桥",
+   "mechanisms": [
+    "moving_platform"
+   ],
+   "theme": null,
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "xianxia",
+   "name": "仙山云海",
+   "culture": "东亚",
+   "inspiration": "中国神话与青绿山水画",
+   "style": "青绿山水、云海、仙鹤",
+   "mechanisms": [
+    "moving_platform"
+   ],
+   "theme": null,
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "bamboo",
+   "name": "熊猫竹林",
+   "culture": "东亚",
+   "inspiration": "中国西南的竹海与熊猫",
+   "style": "竹海、雨、石阶",
+   "mechanisms": [
+    "vine"
+   ],
+   "theme": null,
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "wonderland",
+   "name": "奇幻仙境",
+   "culture": "欧洲",
+   "inspiration": "英国童话《爱丽丝漫游奇境》",
+   "style": "巨型蘑菇、扑克牌、下午茶",
+   "mechanisms": [
+    "size_change",
+    "portal",
+    "bounce"
+   ],
+   "theme": null,
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "graveyard",
+   "name": "墓园鬼镇",
+   "culture": "欧洲",
+   "inspiration": "欧美万圣节与哥特故事",
+   "style": "夜色、墓碑、南瓜灯",
+   "mechanisms": [
+    "darkness",
+    "gas_sink"
+   ],
+   "theme": null,
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "spaceport",
+   "name": "星际港",
+   "culture": "科幻",
+   "inspiration": "外星殖民港",
+   "style": "外星植物、气闸、霓虹",
+   "mechanisms": [
+    "low_gravity",
+    "acid"
+   ],
+   "theme": null,
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "savanna",
+   "name": "草原象谷",
+   "culture": "西亚与非洲",
+   "inspiration": "东非草原与猴面包树",
+   "style": "金色草原、猴面包树",
+   "mechanisms": [
+    "moving_platform",
+    "burn"
+   ],
+   "theme": null,
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "undersea",
+   "name": "东海龙宫",
+   "culture": "东亚",
+   "inspiration": "中国东海龙宫传说",
+   "style": "珊瑚、宫殿、鱼群",
+   "mechanisms": [
+    "underwater",
+    "tide",
+    "bubble_lift"
+   ],
+   "theme": null,
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "candy",
+   "name": "糖果王国",
+   "culture": "幻想",
+   "inspiration": "糖果童话",
+   "style": "糖果色、巧克力河",
+   "mechanisms": [
+    "bounce",
+    "melt"
+   ],
+   "theme": null,
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "desert",
+   "name": "沙漠集市",
+   "culture": "西亚与非洲",
+   "inspiration": "《一千零一夜》的沙漠集市",
+   "style": "沙丘、帐篷、驼铃",
+   "mechanisms": [
+    "quicksand"
+   ],
+   "theme": null,
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "polar",
+   "name": "极地雪村",
+   "culture": "极地",
+   "inspiration": "北极冰原",
+   "style": "冰屋、极光",
+   "mechanisms": [
+    "ice_slide",
+    "snowball",
+    "warmth"
+   ],
+   "theme": null,
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "dino",
+   "name": "恐龙谷",
+   "culture": "史前",
+   "inspiration": "恐龙时代",
+   "style": "蕨类、火山、恐龙蛋",
+   "mechanisms": [
+    "tar",
+    "lava"
+   ],
+   "theme": null,
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "steam_city",
+   "name": "蒸汽工坊城",
+   "culture": "欧洲",
+   "inspiration": "维多利亚时代的蒸汽机械",
+   "style": "铜管、齿轮、蒸汽",
+   "mechanisms": [
+    "conveyor",
+    "gas_rise"
+   ],
+   "theme": null,
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "cyber_market",
+   "name": "赛博夜市",
+   "culture": "科幻",
+   "inspiration": "赛博朋克夜市",
+   "style": "霓虹、雨夜、小吃摊",
+   "mechanisms": [
+    "laser_mirror",
+    "magnet"
+   ],
+   "theme": null,
+   "layer": 4,
+   "status": "concept"
+  },
+  {
+   "id": "pirate_cove",
+   "name": "海盗湾",
+   "culture": "美洲",
+   "inspiration": "加勒比海盗传说",
+   "style": "海滩、沉船、宝箱",
+   "mechanisms": [
+    "tide"
+   ],
+   "theme": null,
+   "layer": 4,
+   "status": "concept"
+  },
+  {
+   "id": "moon",
+   "name": "月宫",
+   "culture": "东亚",
+   "inspiration": "中国嫦娥奔月传说",
+   "style": "环形山、桂花树、宫灯",
+   "mechanisms": [
+    "low_gravity",
+    "day_night"
+   ],
+   "theme": null,
+   "layer": 4,
+   "status": "concept"
+  },
+  {
+   "id": "styx",
+   "name": "冥河",
+   "culture": "冥界",
+   "inspiration": "希腊冥河与渡夫卡戎；九层可借各地冥界意象",
+   "style": "冥河、彼岸花、九层地底（地狱模式）",
+   "mechanisms": [],
+   "theme": null,
+   "layer": 3,
+   "status": "concept"
+  },
+  {
+   "id": "diyu",
+   "name": "地府·酆都",
+   "culture": "东亚",
+   "inspiration": "中国民间的阴间：鬼门关、黄泉路、彼岸花、忘川、奈何桥、孟婆、判官、黑白无常、酆都城",
+   "care": "热闹诙谐、温暖，不血腥；不画佛教的菩萨与佛像；十八层地狱的刑罚一律不表现",
+   "style": "青黑城墙、幽蓝鬼火、红灯笼、彼岸花、纸扎铺",
+   "mechanisms": [
+    "load_bridge",
+    "drift",
+    "lantern_reveal",
+    "hold_breath",
+    "paper"
+   ],
+   "theme": null,
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "inari",
+   "name": "稻荷狐町",
+   "culture": "东亚",
+   "inspiration": "日本：狐狸出嫁（太阳雨）的传说、山道上成排的红色鸟居、忍者机关屋的翻转墙、温泉、河童等妖怪",
+   "care": "鸟居只作远景和通道装饰，不能被推倒、炸毁；不画神社正殿",
+   "style": "朱红鸟居、石灯笼、雨中纸伞、温泉白雾",
+   "mechanisms": [
+    "rotating_wall",
+    "melt"
+   ],
+   "theme": null,
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "jeju",
+   "name": "济州海女村",
+   "culture": "东亚",
+   "inspiration": "韩国济州岛：黑色火山石墙、石头爷爷、橘子园、海女（联合国非物质文化遗产）、风多；韩国节日的跳板游戏；民间鬼怪도깨비",
+   "care": "石头爷爷是守护石像，只作地标，不能推倒",
+   "style": "黑色玄武岩石墙、橘子树、海边码头",
+   "mechanisms": [
+    "seesaw",
+    "gust"
+   ],
+   "theme": null,
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "stepwell",
+   "name": "季风阶梯井",
+   "culture": "南亚与东南亚",
+   "inspiration": "印度：拉贾斯坦的阶梯井、季风、排灯节的油灯与彩色地画、洒红节的彩粉、香料市场、孔雀",
+   "care": "不画神像和庙宇内部；节日只表现灯、花、彩粉与团聚；不用耍蛇人等刻板形象",
+   "style": "砂岩台阶层层下沉、油灯、彩粉、雨季乌云",
+   "mechanisms": [
+    "monsoon",
+    "color_powder",
+    "communicating"
+   ],
+   "theme": null,
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "floating_market",
+   "name": "水上市场",
+   "culture": "南亚与东南亚",
+   "inspiration": "泰国、越南的水上市场与高脚屋；巴厘岛的梯田灌溉（世界文化遗产）；印尼的皮影戏",
+   "care": "服饰与船取自具体地区，不混成笼统的“东南亚风”",
+   "style": "小船、高脚屋、热带水果、梯田",
+   "mechanisms": [
+    "moving_platform",
+    "drift",
+    "water_flow"
+   ],
+   "theme": null,
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "mud_town",
+   "name": "泥城鼓市",
+   "culture": "西亚与非洲",
+   "inspiration": "西非：马里杰内一带的泥砖建筑和每年一起重新抹泥的传统、靛蓝染布、金贝鼓、加纳阿坎人的蜘蛛阿南西故事",
+   "care": "不画杰内大清真寺本身；纹样与服饰取自具体民族，不混成笼统的“非洲风”",
+   "style": "赭色泥墙与木椽、靛蓝布、鼓、猴面包树",
+   "mechanisms": [
+    "mud_brick",
+    "drum_beat"
+   ],
+   "theme": null,
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "fjord",
+   "name": "峡湾巨魔谷",
+   "culture": "欧洲",
+   "inspiration": "北欧：挪威的峡湾与草顶木屋、维京长船、符文石、极光；民间故事里照到阳光会变成石头的巨魔",
+   "care": "不使用现实中的极端组织借用过的符号",
+   "style": "草顶木屋、长船、极光、雪松",
+   "mechanisms": [
+    "sun_petrify",
+    "ice_slide"
+   ],
+   "theme": null,
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "aegean",
+   "name": "爱琴迷宫",
+   "culture": "欧洲",
+   "inspiration": "希腊神话：克里特迷宫与牛头怪、美杜莎的凝视、西西弗斯推石；爱琴海的白墙蓝门与橄榄树",
+   "care": "神话人物可爱化，不表现暴力情节",
+   "style": "白墙蓝门、石柱、橄榄树、迷宫",
+   "mechanisms": [
+    "gaze",
+    "laser_mirror"
+   ],
+   "theme": null,
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "venice",
+   "name": "威尼斯水城",
+   "culture": "欧洲",
+   "inspiration": "意大利威尼斯：运河与贡多拉、狂欢节面具、穆拉诺玻璃、冬天的涨潮；与水墨江南是一对东西方水城",
+   "care": "",
+   "style": "运河、拱桥、面具、彩色玻璃",
+   "mechanisms": [
+    "tide",
+    "moving_platform",
+    "drift"
+   ],
+   "theme": null,
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "polder",
+   "name": "风车堤坝",
+   "culture": "欧洲",
+   "inspiration": "荷兰：圩田与堤坝（用风车把低地的水抽走）、郁金香田、木鞋、冬天运河上溜冰",
+   "care": "",
+   "style": "风车、堤坝、郁金香田、运河冰面",
+   "mechanisms": [
+    "wind_pump",
+    "water_flow",
+    "ice_slide"
+   ],
+   "theme": null,
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "baba_yaga",
+   "name": "雅加婆婆的森林",
+   "culture": "欧洲",
+   "inspiration": "斯拉夫民间故事：住在会走路的鸡腿小屋里的雅加婆婆、火鸟、林精；套娃；白桦林",
+   "care": "",
+   "style": "白桦林、木雕小屋、套娃、火鸟的光",
+   "mechanisms": [
+    "nested_box"
+   ],
+   "theme": null,
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "cenote",
+   "name": "雨林天然井",
+   "culture": "美洲",
+   "inspiration": "玛雅：尤卡坦半岛的天然井（石灰岩塌陷形成的水井）、阶梯金字塔、可可、天文历法与春分时台阶上的光影羽蛇、美洲豹",
+   "care": "不表现人祭；不使用真实的玛雅文字，纹样自创",
+   "style": "雨林、天然井、阶梯金字塔、藤蔓",
+   "mechanisms": [
+    "gravel",
+    "water_flow",
+    "day_night"
+   ],
+   "theme": null,
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "muertos",
+   "name": "亡灵节小镇",
+   "culture": "美洲",
+   "inspiration": "墨西哥亡灵节（联合国非物质文化遗产）：万寿菊花瓣为亡魂引路、剪纸彩旗、糖骷髅、家中的祭坛、无毛犬；与地府是两种怀念先人的方式",
+   "care": "亡灵节是纪念家人的温暖节日，不是万圣节，不画成恐怖片",
+   "style": "万寿菊、剪纸彩旗、烛光、彩色骷髅",
+   "mechanisms": [
+    "petal_trail",
+    "darkness"
+   ],
+   "theme": null,
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "andes",
+   "name": "安第斯绳桥",
+   "culture": "美洲",
+   "inspiration": "秘鲁安第斯山区：盖丘亚人每年用草绳重编的凯斯瓦恰卡绳桥（世界文化遗产）、梯田与土豆、羊驼、结绳记事",
+   "care": "",
+   "style": "云雾山城、草绳桥、梯田、羊驼",
+   "mechanisms": [
+    "load_bridge",
+    "pack_animal"
+   ],
+   "theme": null,
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "frontier",
+   "name": "西部小镇",
+   "culture": "美洲",
+   "inspiration": "美国西部：木栈道小镇、淘金热、矿车轨道、风滚草、仙人掌",
+   "care": "不表现与美洲原住民的冲突，不使用原住民的圣物和服饰",
+   "style": "木栈道、矿车、风滚草、红岩荒漠",
+   "mechanisms": [
+    "mine_cart",
+    "gust",
+    "burn"
+   ],
+   "theme": null,
+   "layer": 2,
+   "status": "concept"
+  }
+ ]
+}

@@ -1,0 +1,17 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+OpenGL API 4.1 Metal - 89.4 - Compatibility - Using Device: Apple - Apple M3
+
+PERF_THEME art:theme.dungeon peak_us=1112 fps=64.067 passed=true
+PERF_THEME art:theme.ruins peak_us=1806 fps=62.815 passed=true
+PERF_THEME art:theme.cave peak_us=1645 fps=64.007 passed=true
+PERF_THEME art:theme.forest peak_us=2146 fps=64.004 passed=true
+PERF_THEME art:theme.sky peak_us=3100 fps=64.001 passed=true
+PERF_THEME art:theme.cosmos peak_us=1488 fps=63.977 passed=true
+PERF_LEVEL level:M01 begin_us=1905 advance_us=5230 undo_us=5342 passed=false
+PERF_LEVEL level:M02 begin_us=4018 advance_us=3445 undo_us=6834 passed=false
+PERF_LEVEL level:M03 begin_us=1609 advance_us=3555 undo_us=2750 passed=true
+PERF_LEVEL level:M04 begin_us=3295 advance_us=1554 undo_us=5328 passed=true
+PERF_LEVEL level:M05 begin_us=4764 advance_us=3834 undo_us=6075 passed=false
+PERF_LEVEL level:M06 begin_us=4011 advance_us=4554 undo_us=6023 passed=false
+PERF_LEVEL level:M07 begin_us=3439 advance_us=3090 undo_us=5638 passed=true
+PORTITOR_PERFORMANCE_COMPLETE passed=false themes=6 levels=7 peak_frame_us=5230 peak_view_us=3077 peak_undo_us=6834 failures=5 mode=normal report=res://reports/performance.json

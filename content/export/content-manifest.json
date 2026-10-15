@@ -557,7 +557,7 @@
    "levels": [
     "M01"
    ],
-   "status": "specified"
+   "status": "playable"
   },
   {
    "id": "ladder",
@@ -568,7 +568,7 @@
    "levels": [
     "M02"
    ],
-   "status": "specified"
+   "status": "playable"
   },
   {
    "id": "dig",
@@ -582,7 +582,7 @@
    "levels": [
     "M03"
    ],
-   "status": "specified"
+   "status": "playable"
   },
   {
    "id": "pour",
@@ -622,7 +622,7 @@
    "levels": [
     "M07"
    ],
-   "status": "specified"
+   "status": "playable"
   },
   {
    "id": "water_flow",

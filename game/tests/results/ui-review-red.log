@@ -1,0 +1,8 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+FAIL: a newly started app applies the saved integer window scale
+FAIL: physical Enter advances the revealed first hint
+FAIL: physical Enter starts the third-hint demonstration
+FAIL: physical S selects the third-hint rewind button
+FAIL: physical Enter rewinds to an author-route state
+{"failures":["a newly started app applies the saved integer window scale","physical Enter advances the revealed first hint","physical Enter starts the third-hint demonstration","physical S selects the third-hint rewind button","physical Enter rewinds to an author-route state"],"ok":false,"suite":"ui-contracts"}

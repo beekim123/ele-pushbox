@@ -1,0 +1,83 @@
+{
+  "cases": [
+    {
+      "capture": "res://reports/shots/world-M01.png",
+      "dynamic_palette_invalid": 0,
+      "first_difference": [],
+      "level": "M01",
+      "limitation": "",
+      "passed": true,
+      "reference_error": 0,
+      "sdk_dynamic_pixels_excluded": 0,
+      "static_pixel_differences": 0
+    },
+    {
+      "capture": "res://reports/shots/world-M02.png",
+      "dynamic_palette_invalid": 0,
+      "first_difference": [],
+      "level": "M02",
+      "limitation": "",
+      "passed": true,
+      "reference_error": 0,
+      "sdk_dynamic_pixels_excluded": 0,
+      "static_pixel_differences": 0
+    },
+    {
+      "capture": "res://reports/shots/world-M03.png",
+      "dynamic_palette_invalid": 0,
+      "first_difference": [],
+      "level": "M03",
+      "limitation": "",
+      "passed": true,
+      "reference_error": 0,
+      "sdk_dynamic_pixels_excluded": 0,
+      "static_pixel_differences": 0
+    },
+    {
+      "capture": "res://reports/shots/world-M04.png",
+      "dynamic_palette_invalid": 0,
+      "first_difference": [],
+      "level": "M04",
+      "limitation": "",
+      "passed": true,
+      "reference_error": 0,
+      "sdk_dynamic_pixels_excluded": 0,
+      "static_pixel_differences": 0
+    },
+    {
+      "capture": "res://reports/shots/world-M05.png",
+      "dynamic_palette_invalid": 0,
+      "first_difference": [],
+      "level": "M05",
+      "limitation": "",
+      "passed": true,
+      "reference_error": 0,
+      "sdk_dynamic_pixels_excluded": 0,
+      "static_pixel_differences": 0
+    },
+    {
+      "capture": "res://reports/shots/world-M06.png",
+      "dynamic_palette_invalid": 0,
+      "first_difference": [],
+      "level": "M06",
+      "limitation": "",
+      "passed": true,
+      "reference_error": 0,
+      "sdk_dynamic_pixels_excluded": 0,
+      "static_pixel_differences": 0
+    },
+    {
+      "capture": "res://reports/shots/world-M07.png",
+      "dynamic_palette_invalid": 0,
+      "first_difference": [],
+      "level": "M07",
+      "limitation": "",
+      "passed": true,
+      "reference_error": 0,
+      "sdk_dynamic_pixels_excluded": 0,
+      "static_pixel_differences": 0
+    }
+  ],
+  "format": "portitor.world-references/1",
+  "hud": "excluded; separate UI validation"
+}

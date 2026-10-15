@@ -1,0 +1,6 @@
+[configuration]
+entry_symbol="ele_library_init"
+compatibility_minimum="4.7"
+
+[libraries]
+macos.arm64="res://bin/libele_godot.dylib"

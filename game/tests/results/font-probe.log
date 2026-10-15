@@ -1,0 +1,7 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+[{ "name": "spacing_glyph", "class_name": &"", "type": 2, "hint": 0, "hint_string": "suffix:px", "usage": 6 }, { "name": "spacing_space", "class_name": &"", "type": 2, "hint": 0, "hint_string": "suffix:px", "usage": 6 }, { "name": "spacing_top", "class_name": &"", "type": 2, "hint": 0, "hint_string": "suffix:px", "usage": 6 }, { "name": "spacing_bottom", "class_name": &"", "type": 2, "hint": 0, "hint_string": "suffix:px", "usage": 6 }]
+VARIATION_METRICS=11.0,14.0
+{"ascent":13.0,"descent":3.0,"fixed_size":0,"height":16.0,"label_font_size":12,"label_height":16.0,"resource_path":"res://bin/fonts/fusion-pixel-12px/fusion-pixel-12px-proportional-zh_hans.otf.woff2","small":false}
+{"ascent":12.0,"descent":4.0,"fixed_size":0,"height":16.0,"label_font_size":10,"label_height":16.0,"resource_path":"res://bin/fonts/fusion-pixel-10px/fusion-pixel-10px-proportional-sc.woff2","small":true}
+{"ascent":12.0,"coverage":true,"font":"res://bin/fonts/fusion-pixel-10px/fusion-pixel-10px-proportional-sc.woff2","font_size":10,"lines":1,"marker":"界面候选，待确认","minimum":"(1.0, 16.0)","size":"(210.0, 16.0)"}

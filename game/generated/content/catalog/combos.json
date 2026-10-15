@@ -1,0 +1,358 @@
+{
+ "format": "pushbox.catalog/1",
+ "kind": "combos",
+ "note": "缘分组合（mode-delivery.md 3.3）：特定货物 × 收件人的特殊效果。",
+ "entries": [
+  {
+   "id": "snow_cone",
+   "cargo": "ice_cream",
+   "recipient": "snowman",
+   "effect": "冰淇淋不会化",
+   "reward": "小费 ×0.5（太容易了）",
+   "mode": "delivery",
+   "status": "concept"
+  },
+  {
+   "id": "too_hot",
+   "cargo": "hot_soup",
+   "recipient": "fire_spirit",
+   "effect": "越靠近收件人越烫，热汤反而会沸腾溢出",
+   "reward": "小费 ×2",
+   "mode": "delivery",
+   "status": "concept"
+  },
+  {
+   "id": "brain_food",
+   "cargo": "brains",
+   "recipient": "zombie",
+   "effect": "一路上的僵尸都会追你",
+   "reward": "小费 ×2",
+   "mode": "delivery",
+   "status": "concept"
+  },
+  {
+   "id": "royal_fish",
+   "cargo": "fish",
+   "recipient": "pharaoh_cat",
+   "effect": "路上的野猫会来偷",
+   "reward": "法老猫心情大好，小费 ×2",
+   "mode": "delivery",
+   "status": "concept"
+  },
+  {
+   "id": "ghost_mail",
+   "cargo": "love_letter",
+   "recipient": "ghost",
+   "effect": "只有在灯光下才看得见收件人",
+   "reward": "解锁幽灵的小故事",
+   "mode": "delivery",
+   "status": "concept"
+  },
+  {
+   "id": "lost_balloon",
+   "cargo": "balloons",
+   "recipient": "kid",
+   "effect": "每丢一个气球小费减半",
+   "reward": "全部送到小费 ×2",
+   "mode": "delivery",
+   "status": "concept"
+  },
+  {
+   "id": "moon_festival",
+   "cargo": "mooncake",
+   "recipient": "jade_rabbit",
+   "effect": "月宫低重力",
+   "reward": "特殊谢礼：玉兔灯",
+   "mode": "delivery",
+   "status": "concept"
+  },
+  {
+   "id": "elephant_snack",
+   "cargo": "peanuts",
+   "recipient": "elephant",
+   "effect": "大象亲自出门接你，最后一个房间省掉",
+   "reward": "好感 +2",
+   "mode": "delivery",
+   "status": "concept"
+  },
+  {
+   "id": "third_floor",
+   "cargo": "piano",
+   "recipient": "granny",
+   "effect": "老奶奶住三楼，楼里有货梯",
+   "reward": "小费 ×2",
+   "mode": "delivery",
+   "status": "concept"
+  },
+  {
+   "id": "hatchling",
+   "cargo": "alien_egg",
+   "recipient": "alien",
+   "effect": "蛋在路上孵化成跟着你走的小外星宠物",
+   "reward": "获得宠物外观",
+   "mode": "delivery",
+   "status": "concept"
+  },
+  {
+   "id": "moth_to_flame",
+   "cargo": "lantern",
+   "recipient": "moth_king",
+   "effect": "蛾群会扑向你的灯",
+   "reward": "小费 ×2",
+   "mode": "delivery",
+   "status": "concept"
+  },
+  {
+   "id": "lamp_wish",
+   "cargo": "lantern",
+   "recipient": "genie",
+   "effect": "把灯笼送进神灯，精灵许你一个愿望",
+   "reward": "随机徽章",
+   "mode": "delivery",
+   "status": "concept"
+  },
+  {
+   "id": "sibling",
+   "cargo": "egg",
+   "recipient": "baby_dino",
+   "effect": "霸王龙妈妈会护送你走最后一段",
+   "reward": "好感 +2",
+   "mode": "delivery",
+   "status": "concept"
+  },
+  {
+   "id": "snowman_nose",
+   "cargo": "carrot",
+   "recipient": "snowman",
+   "effect": "雪人装上鼻子活了过来，帮你推一次雪球",
+   "reward": "徽章碎片",
+   "mode": "delivery",
+   "status": "concept"
+  },
+  {
+   "id": "immortal_peach",
+   "cargo": "peach",
+   "recipient": "immortal",
+   "effect": "路上总想吃掉它（每次受伤会弹出提示）",
+   "reward": "传说外观",
+   "mode": "delivery",
+   "status": "concept"
+  },
+  {
+   "id": "tea_party",
+   "cargo": "tea_set",
+   "recipient": "mad_hatter",
+   "effect": "最后一个房间时间静止（怪物不动）",
+   "reward": "小费 ×2",
+   "mode": "delivery",
+   "status": "concept"
+  },
+  {
+   "id": "big_bang",
+   "cargo": "explosive",
+   "recipient": "dwarf",
+   "effect": "矮人允许你在他家里随便炸",
+   "reward": "小费 ×2",
+   "mode": "delivery",
+   "status": "concept"
+  },
+  {
+   "id": "x_marks",
+   "cargo": "treasure_map",
+   "recipient": "pirate_captain",
+   "effect": "藏宝图显示一个隐藏宝箱房",
+   "reward": "额外宝箱",
+   "mode": "delivery",
+   "status": "concept"
+  },
+  {
+   "id": "dinner_time",
+   "cargo": "meat",
+   "recipient": "trex_mom",
+   "effect": "迅猛龙会被引到你身后",
+   "reward": "小费 ×3",
+   "mode": "delivery",
+   "status": "concept"
+  },
+  {
+   "id": "family_letter",
+   "cargo": "letter",
+   "recipient": "ancestor",
+   "effect": "家书送到时，先人会在灯下读出家人写的话",
+   "reward": "好感 +2，小费 ×1.5",
+   "mode": "delivery",
+   "status": "concept"
+  },
+  {
+   "id": "yama_ice",
+   "cargo": "ice_cream",
+   "recipient": "yama",
+   "effect": "阎罗殿外火很旺，冰淇淋化得更快",
+   "reward": "阎王赐一块免死金牌：本局倒下时复活一次",
+   "mode": "delivery",
+   "status": "concept"
+  },
+  {
+   "id": "meng_po_recipe",
+   "cargo": "hot_soup",
+   "recipient": "meng_po",
+   "effect": "孟婆尝了一口，把配方抄走了",
+   "reward": "以后孟婆亭的汤回两颗心",
+   "mode": "delivery",
+   "status": "concept"
+  },
+  {
+   "id": "paper_mansion",
+   "cargo": "paper_house",
+   "recipient": "ancestor",
+   "effect": "纸扎小楼送到后变成真的小楼，先人请你进屋歇脚",
+   "reward": "回满生命",
+   "mode": "delivery",
+   "status": "concept"
+  },
+  {
+   "id": "wuchang_lantern",
+   "cargo": "lantern",
+   "recipient": "wuchang",
+   "effect": "黑白无常提着你送的灯笼替你开路",
+   "reward": "下一个房间的游魂全部退散",
+   "mode": "delivery",
+   "status": "concept"
+  },
+  {
+   "id": "fox_wedding",
+   "cargo": "fried_tofu",
+   "recipient": "fox_bride",
+   "effect": "送到时下起太阳雨，出嫁的狐狸队伍为你照亮回去的路",
+   "reward": "回程直接回到渡门",
+   "mode": "delivery",
+   "status": "concept"
+  },
+  {
+   "id": "kappa_snack",
+   "cargo": "cucumber",
+   "recipient": "kappa_kid",
+   "effect": "一路上的河童闻到黄瓜，都给你让路",
+   "reward": "小费 ×1.5",
+   "mode": "delivery",
+   "status": "concept"
+  },
+  {
+   "id": "goblin_feast",
+   "cargo": "buckwheat_jelly",
+   "recipient": "goblin_chief",
+   "effect": "鬼怪大王吃得高兴，用魔法棒给你敲出一件礼物",
+   "reward": "随机道具一件",
+   "mode": "delivery",
+   "status": "concept"
+  },
+  {
+   "id": "diver_soup",
+   "cargo": "hot_soup",
+   "recipient": "haenyeo",
+   "effect": "海女奶奶刚上岸，热汤刚好",
+   "reward": "小费 ×2",
+   "mode": "delivery",
+   "status": "concept"
+  },
+  {
+   "id": "festival_of_lights",
+   "cargo": "lantern",
+   "recipient": "diwali_sisters",
+   "effect": "她们把灯笼挂起来，整个地区天黑后都亮了",
+   "reward": "黑暗不再影响视野",
+   "mode": "delivery",
+   "status": "concept"
+  },
+  {
+   "id": "durian_lover",
+   "cargo": "durian",
+   "recipient": "boat_vendor",
+   "effect": "船娘拿一船水果换你的榴莲",
+   "reward": "三件随机道具",
+   "mode": "delivery",
+   "status": "concept"
+  },
+  {
+   "id": "all_the_stories",
+   "cargo": "story_box",
+   "recipient": "anansi",
+   "effect": "阿南西听完所有故事，讲一个新的给你",
+   "reward": "解锁一个新事件",
+   "mode": "delivery",
+   "status": "concept"
+  },
+  {
+   "id": "kindred_spirit",
+   "cargo": "safe",
+   "recipient": "sisyphus",
+   "effect": "西西弗斯：“这个我熟。”",
+   "reward": "下一单的大件不减速",
+   "mode": "delivery",
+   "status": "concept"
+  },
+  {
+   "id": "glass_for_glass",
+   "cargo": "vase",
+   "recipient": "glassblower",
+   "effect": "玻璃匠仔细检查花瓶",
+   "reward": "完好则小费 ×3，碎一点扣一半",
+   "mode": "delivery",
+   "status": "concept"
+  },
+  {
+   "id": "house_turns",
+   "cargo": "matryoshka",
+   "recipient": "baba_yaga",
+   "effect": "雅加婆婆把套娃一层层打开，最里面是给你的回礼",
+   "reward": "一枚随机徽章",
+   "mode": "delivery",
+   "status": "concept"
+  },
+  {
+   "id": "firebird_feather",
+   "cargo": "golden_apple",
+   "recipient": "firebird",
+   "effect": "火鸟送你一根发光的羽毛",
+   "reward": "本局灯光半径 +2",
+   "mode": "delivery",
+   "status": "concept"
+  },
+  {
+   "id": "ancient_price",
+   "cargo": "cacao_beans",
+   "recipient": "cacao_trader",
+   "effect": "他按古时的价钱付账",
+   "reward": "小费 ×2",
+   "mode": "delivery",
+   "status": "concept"
+  },
+  {
+   "id": "welcome_home",
+   "cargo": "cake",
+   "recipient": "great_grandma",
+   "effect": "曾祖母把面包摆上祭坛，全家人都来道谢",
+   "reward": "好感 +2",
+   "mode": "delivery",
+   "status": "concept"
+  },
+  {
+   "id": "llama_friend",
+   "cargo": "carrot",
+   "recipient": "llama",
+   "effect": "羊驼吃饱了，愿意跟你走一段",
+   "reward": "下一个房间里羊驼帮你驮大件",
+   "mode": "delivery",
+   "status": "concept"
+  },
+  {
+   "id": "strike_gold",
+   "cargo": "treasure_map",
+   "recipient": "prospector",
+   "effect": "他终于找到了金矿",
+   "reward": "小费 ×3",
+   "mode": "delivery",
+   "status": "concept"
+  }
+ ]
+}

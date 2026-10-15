@@ -1,0 +1,519 @@
+{
+ "format": "pushbox.catalog/1",
+ "kind": "groups",
+ "note": "机制组与关卡计划（game-design.md 第 6 节，关卡模式 v2）。每组 = 一种 SDK 材料 + 两三个不需要 SDK 的机关，组末是组合关；一关仍然只让玩家发现一件新事。第一批交给开发方的是 basics 与 water（第 1、2 章）。",
+ "entries": [
+  {
+   "id": "basics",
+   "mode": "lab",
+   "order": 1,
+   "name": "基础",
+   "theme": "theme.dungeon",
+   "sdk_profile": [
+    "cells"
+   ],
+   "levels": [
+    {
+     "id": "M01",
+     "title": "一推到位",
+     "mechanisms": [
+      "push"
+     ],
+     "role": "教学",
+     "discovery": "朝箱子走就是推，箱子进槽即点亮"
+    },
+    {
+     "id": "M02",
+     "title": "绕到另一边",
+     "mechanisms": [
+      "ladder"
+     ],
+     "role": "教学",
+     "discovery": "爬梯绕到箱子另一侧"
+    },
+    {
+     "id": "M03",
+     "title": "挖开一格",
+     "mechanisms": [
+      "dig"
+     ],
+     "role": "教学",
+     "discovery": "夯土能挖，挖出来是一袋沙"
+    },
+    {
+     "id": "M04",
+     "title": "一袋沙做台阶",
+     "mechanisms": [
+      "pour"
+     ],
+     "role": "教学",
+     "discovery": "倒出的沙成为台阶；人能登一格高"
+    },
+    {
+     "id": "M05",
+     "title": "箱子替我站",
+     "mechanisms": [
+      "plate_door"
+     ],
+     "role": "教学",
+     "discovery": "压板让门打开，让箱子替你压着"
+    },
+    {
+     "id": "M06",
+     "title": "沙与箱各有用",
+     "mechanisms": [
+      "pour",
+      "plate_door"
+     ],
+     "role": "巩固",
+     "discovery": "箱子压板开门，沙做台阶"
+    },
+    {
+     "id": "M07",
+     "title": "挖掉支撑",
+     "mechanisms": [
+      "fall"
+     ],
+     "role": "巩固",
+     "discovery": "挖走箱子下面的土，箱子就会落进压板坑"
+    }
+   ]
+  },
+  {
+   "id": "water",
+   "mode": "lab",
+   "order": 2,
+   "name": "水与机关",
+   "theme": "theme.ruins",
+   "sdk_profile": [
+    "cells",
+    "liquid_pressure"
+   ],
+   "levels": [
+    {
+     "id": "W01",
+     "title": "开闸放水",
+     "mechanisms": [
+      "water_flow",
+      "lever"
+     ],
+     "role": "教学",
+     "discovery": "拉开关开闸，水流下来灌满井，木箱浮起来当台阶"
+    },
+    {
+     "id": "W02",
+     "title": "木浮铁沉",
+     "mechanisms": [
+      "float_sink"
+     ],
+     "role": "教学",
+     "discovery": "铁箱沉底压住水下压板，木箱浮着当桥"
+    },
+    {
+     "id": "W03",
+     "title": "两袋沙挤高水面",
+     "mechanisms": [
+      "displace"
+     ],
+     "role": "教学",
+     "discovery": "沙沉到水底把水挤上来，连通的井一起升高，木箱浮进槽里"
+    },
+    {
+     "id": "W04",
+     "title": "两边一样高",
+     "mechanisms": [
+      "communicating"
+     ],
+     "role": "教学",
+     "discovery": "打开阀门，两边水面拉平，木箱升成台阶"
+    },
+    {
+     "id": "W05",
+     "title": "平台等我上",
+     "mechanisms": [
+      "lift"
+     ],
+     "role": "教学",
+     "discovery": "箱子推上升降台，踩按钮到上层"
+    },
+    {
+     "id": "W07",
+     "title": "收一斗水",
+     "mechanisms": [
+      "bin"
+     ],
+     "role": "教学",
+     "discovery": "挖开塞子，水流进收集斗，刻度满后锁住目标灯"
+    },
+    {
+     "id": "W08",
+     "title": "让桥塌下去",
+     "mechanisms": [
+      "load_bridge"
+     ],
+     "role": "教学（新机制）",
+     "discovery": "旧石桥超重就塌：人踩上铁箱，铁箱沉下去压住水下压板"
+    },
+    {
+     "id": "W09",
+     "title": "传送阵",
+     "mechanisms": [
+      "portal"
+     ],
+     "role": "教学（新机制）",
+     "discovery": "停在阵上就到另一个阵；传进水井的木箱会浮上来"
+    },
+    {
+     "id": "W10",
+     "title": "水满自升",
+     "mechanisms": [
+      "bin",
+      "lift"
+     ],
+     "role": "组合",
+     "discovery": "收集斗满了带动升降台：先放箱子，再放水"
+    }
+   ]
+  },
+  {
+   "id": "blast",
+   "mode": "lab",
+   "order": 3,
+   "name": "爆破与矿洞",
+   "theme": "theme.cave",
+   "sdk_profile": [
+    "cells",
+    "thermal",
+    "explosions"
+   ],
+   "levels": [
+    {
+     "id": "Q01",
+     "title": "一炸开路",
+     "mechanisms": [
+      "bomb"
+     ],
+     "role": "教学",
+     "discovery": "炸药清掉裂岩，基岩和箱子不受影响"
+    },
+    {
+     "id": "Q02",
+     "title": "隔墙也会炸",
+     "mechanisms": [
+      "blast_through"
+     ],
+     "role": "教学",
+     "discovery": "爆炸不被墙挡：隔着基岩薄墙炸开另一侧的裂岩"
+    },
+    {
+     "id": "Q03",
+     "title": "点燃后等结果",
+     "mechanisms": [
+      "fuse"
+     ],
+     "role": "教学",
+     "discovery": "炸开引信一端，引信一路燃烧并炸开远处"
+    },
+    {
+     "id": "Q04",
+     "title": "慢慢滑下来",
+     "mechanisms": [
+      "gravel"
+     ],
+     "role": "教学",
+     "discovery": "炸开托住碎石的裂岩，碎石慢慢填满坑"
+    },
+    {
+     "id": "Q07",
+     "title": "矿车一路滚",
+     "mechanisms": [
+      "mine_cart"
+     ],
+     "role": "教学（新机制）",
+     "discovery": "推一下矿车，它沿轨道滚到撞上东西为止，车上的箱子跟着走"
+    },
+    {
+     "id": "Q08",
+     "title": "灯照才实",
+     "mechanisms": [
+      "lantern_reveal"
+     ],
+     "role": "教学（新机制）",
+     "discovery": "晶桥只在你的灯照到时才是实的，你一走开，上面的箱子就掉下去"
+    },
+    {
+     "id": "Q09",
+     "title": "套娃箱",
+     "mechanisms": [
+      "nested_box"
+     ],
+     "role": "教学（新机制）",
+     "discovery": "炸掉外层，里面还有一个小一号的箱子"
+    },
+    {
+     "id": "Q10",
+     "title": "炸开轨道",
+     "mechanisms": [
+      "bomb",
+      "mine_cart"
+     ],
+     "role": "组合",
+     "discovery": "炸开挡在轨道上的裂岩，矿车才能载着箱子滚到槽边"
+    }
+   ]
+  },
+  {
+   "id": "react",
+   "mode": "lab",
+   "order": 4,
+   "name": "酸、雾与藤",
+   "theme": "theme.forest",
+   "sdk_profile": [
+    "cells"
+   ],
+   "levels": [
+    {
+     "id": "G01",
+     "title": "一滴开路",
+     "mechanisms": [
+      "acid"
+     ],
+     "role": "教学",
+     "discovery": "挖开塞口，酸液流下蚀穿软岩"
+    },
+    {
+     "id": "G02",
+     "title": "同纹都能蚀",
+     "mechanisms": [
+      "etch_tag"
+     ],
+     "role": "教学",
+     "discovery": "刻纹相同的两种岩都会被蚀，其他岩不受影响"
+    },
+    {
+     "id": "G03",
+     "title": "烟往高处走",
+     "mechanisms": [
+      "gas_rise"
+     ],
+     "role": "教学",
+     "discovery": "打开通道，轻烟进入顶部收集斗"
+    },
+    {
+     "id": "G04",
+     "title": "雾往低处沉",
+     "mechanisms": [
+      "gas_sink"
+     ],
+     "role": "教学",
+     "discovery": "沉雾进入下方收集斗"
+    },
+    {
+     "id": "G05",
+     "title": "会消失的塞子",
+     "mechanisms": [
+      "lifetime"
+     ],
+     "role": "教学",
+     "discovery": "拉开关后菌塞按寿命消失，放出储存的沙"
+    },
+    {
+     "id": "G06",
+     "title": "浇水长藤",
+     "mechanisms": [
+      "vine"
+     ],
+     "role": "教学",
+     "discovery": "水到藤根，长出梯子"
+    },
+    {
+     "id": "G08",
+     "title": "弹跳蘑菇",
+     "mechanisms": [
+      "bounce"
+     ],
+     "role": "教学（新机制）",
+     "discovery": "人或箱子落在蘑菇上会被弹起两格"
+    },
+    {
+     "id": "G09",
+     "title": "跷跷板",
+     "mechanisms": [
+      "seesaw"
+     ],
+     "role": "教学（新机制）",
+     "discovery": "一端落下重物，另一端的东西被弹起来"
+    },
+    {
+     "id": "G10",
+     "title": "沙压跷跷板",
+     "mechanisms": [
+      "pour",
+      "seesaw"
+     ],
+     "role": "组合",
+     "discovery": "在跷跷板一端倒沙，把另一端的箱子弹上平台"
+    }
+   ]
+  },
+  {
+   "id": "thermal",
+   "mode": "lab",
+   "order": 5,
+   "name": "冷热与风",
+   "theme": "theme.sky",
+   "sdk_profile": [
+    "cells",
+    "thermal",
+    "explosions",
+    "couplers"
+   ],
+   "levels": [
+    {
+     "id": "F01",
+     "title": "木栅怕火",
+     "mechanisms": [
+      "burn"
+     ],
+     "role": "教学",
+     "discovery": "拉火盆开关点燃木栅，烧完即通行"
+    },
+    {
+     "id": "F02",
+     "title": "冷一下变冰桥",
+     "mechanisms": [
+      "freeze"
+     ],
+     "role": "教学",
+     "discovery": "冷凝喷口把作用区里的水变成冰，人和箱都能走"
+    },
+    {
+     "id": "F03",
+     "title": "热一下化开",
+     "mechanisms": [
+      "melt"
+     ],
+     "role": "教学",
+     "discovery": "热喷口把冰塞化成水"
+    },
+    {
+     "id": "F04",
+     "title": "炸药也点火",
+     "mechanisms": [
+      "blast_ignite"
+     ],
+     "role": "教学",
+     "discovery": "爆炸点燃半径一半以内的可燃物"
+    },
+    {
+     "id": "F07",
+     "title": "冰上一滑到底",
+     "mechanisms": [
+      "ice_slide"
+     ],
+     "role": "教学（新机制）",
+     "discovery": "推上冰面的箱子一直滑到撞上东西为止"
+    },
+    {
+     "id": "F08",
+     "title": "风口",
+     "mechanisms": [
+      "gust"
+     ],
+     "role": "教学（新机制）",
+     "discovery": "风口每回合把轻的东西吹动一格"
+    },
+    {
+     "id": "F09",
+     "title": "冻出冰道",
+     "mechanisms": [
+      "freeze",
+      "ice_slide"
+     ],
+     "role": "组合",
+     "discovery": "冷凝喷口把水冻成冰，箱子才能一路滑过去"
+    }
+   ]
+  },
+  {
+   "id": "experimental",
+   "mode": "lab",
+   "order": 6,
+   "name": "实验",
+   "theme": "theme.cosmos",
+   "sdk_profile": [],
+   "hidden": true,
+   "levels": []
+  },
+  {
+   "id": "hell-pool",
+   "mode": "hell",
+   "order": 1,
+   "name": "地狱模式候选池",
+   "theme": "theme.dungeon",
+   "sdk_profile": [],
+   "levels": [
+    {
+     "id": "W06",
+     "title": "放水当电梯",
+     "mechanisms": [
+      "water_flow",
+      "float_sink"
+     ],
+     "role": "组合",
+     "discovery": "放水托木箱当台阶"
+    },
+    {
+     "id": "Q05",
+     "title": "炸出台阶",
+     "mechanisms": [
+      "bomb",
+      "dig"
+     ],
+     "role": "组合",
+     "discovery": "炸药和挖取配合造出落脚点"
+    },
+    {
+     "id": "Q06",
+     "title": "一次引发两次",
+     "mechanisms": [
+      "bomb",
+      "fuse"
+     ],
+     "role": "组合",
+     "discovery": "首爆点燃引信形成连锁"
+    },
+    {
+     "id": "G07",
+     "title": "雾下烟上",
+     "mechanisms": [
+      "gas_rise",
+      "gas_sink",
+      "bin"
+     ],
+     "role": "组合",
+     "discovery": "两种气体分别送进上下两个收集斗"
+    },
+    {
+     "id": "F05",
+     "title": "冰水两用",
+     "mechanisms": [
+      "freeze",
+      "melt"
+     ],
+     "role": "组合",
+     "discovery": "先冻桥运箱，再化冰放水"
+    },
+    {
+     "id": "F06",
+     "title": "留下一段木栅",
+     "mechanisms": [
+      "burn"
+     ],
+     "role": "组合",
+     "discovery": "先浇湿或隔开要保留的木栅，再点火"
+    }
+   ]
+  }
+ ]
+}

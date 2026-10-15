@@ -1,0 +1,9 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+ERROR: Condition "ret != noErr" is true. Returning: ""
+   at: get_system_ca_certificates (platform/macos/os_macos.mm:1035)
+FAIL: core service has not been implemented: res://core/stats/stat.gd
+FAIL: core service has not been implemented: res://core/save/save_store.gd
+FAIL: core service has not been implemented: res://app/autoload/settings.gd
+FAIL: core service has not been implemented: res://app/autoload/locale.gd
+core services: 4 failure(s)

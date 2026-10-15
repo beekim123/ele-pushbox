@@ -1,0 +1,658 @@
+{
+ "format": "pushbox.catalog/1",
+ "kind": "cargo",
+ "note": "配送模式的货物（mode-delivery.md 第 3 节）。每种货物只加一条主规则，只用关卡模式验证过的机制。carry：small 小件、medium 手拿、bulky 大件（举过头顶，变慢）、living 活物。",
+ "entries": [
+  {
+   "id": "letter",
+   "name": "信件",
+   "mode": "delivery",
+   "rule": "很轻；落水会湿，完好度下降",
+   "counter": "绕开水，或找防水袋",
+   "mechanisms": [
+    "water_flow"
+   ],
+   "rarity": "common",
+   "carry": "small",
+   "layer": 1,
+   "status": "concept"
+  },
+  {
+   "id": "ice_cream",
+   "name": "冰淇淋",
+   "mode": "delivery",
+   "rule": "持续融化，靠近热源更快，化完失败",
+   "counter": "冷凝喷口、冰块、保冷箱；走短路",
+   "mechanisms": [
+    "freeze",
+    "burn"
+   ],
+   "rarity": "common",
+   "carry": "medium",
+   "layer": 1,
+   "status": "concept"
+  },
+  {
+   "id": "piano",
+   "name": "钢琴",
+   "mode": "delivery",
+   "rule": "大件：举着走得慢，不能爬梯、挖、倒沙",
+   "counter": "手推车、力气饮料、升降台",
+   "mechanisms": [
+    "lift",
+    "carry_bulky"
+   ],
+   "rarity": "rare",
+   "carry": "bulky",
+   "layer": 1,
+   "status": "concept"
+  },
+  {
+   "id": "vase",
+   "name": "花瓶",
+   "mode": "delivery",
+   "rule": "从 2 格及以上落下就碎；附近爆炸会碎；落在沙上不碎",
+   "counter": "搭台阶、走梯子、倒沙做垫子",
+   "mechanisms": [
+    "pour",
+    "bomb"
+   ],
+   "rarity": "common",
+   "carry": "medium",
+   "layer": 1,
+   "status": "concept"
+  },
+  {
+   "id": "fish_tank",
+   "name": "鱼缸",
+   "mode": "delivery",
+   "rule": "每隔一段时间要在水边补水",
+   "counter": "规划经过水的路线",
+   "mechanisms": [
+    "water_flow"
+   ],
+   "rarity": "common",
+   "carry": "medium",
+   "layer": 1,
+   "status": "concept"
+  },
+  {
+   "id": "hot_soup",
+   "name": "热汤",
+   "mode": "delivery",
+   "rule": "慢慢变凉，靠近火回温；凉了少给小费",
+   "counter": "顺路经过火盆、保温壶",
+   "mechanisms": [
+    "burn"
+   ],
+   "rarity": "common",
+   "carry": "medium",
+   "layer": 1,
+   "status": "concept"
+  },
+  {
+   "id": "explosive",
+   "name": "炸药包",
+   "mode": "delivery",
+   "rule": "碰到火就爆，从 2 格及以上落下也会爆",
+   "counter": "绕开火源，下落走梯子",
+   "mechanisms": [
+    "burn",
+    "bomb"
+   ],
+   "rarity": "rare",
+   "carry": "medium",
+   "layer": 1,
+   "status": "concept"
+  },
+  {
+   "id": "balloons",
+   "name": "气球花束",
+   "mode": "delivery",
+   "rule": "一放手就往上飘，碰到天花板才停",
+   "counter": "先让它飘上高台，再爬上去拿",
+   "mechanisms": [],
+   "rarity": "common",
+   "carry": "small",
+   "layer": 1,
+   "status": "concept"
+  },
+  {
+   "id": "plant",
+   "name": "盆栽",
+   "mode": "delivery",
+   "rule": "途中至少浇一次水；碰到酸液或火就枯萎",
+   "counter": "找水，绕开酸和火",
+   "mechanisms": [
+    "water_flow",
+    "acid",
+    "burn"
+   ],
+   "rarity": "common",
+   "carry": "medium",
+   "layer": 1,
+   "status": "concept"
+  },
+  {
+   "id": "egg",
+   "name": "鸡蛋",
+   "mode": "delivery",
+   "rule": "易碎；一段时间后会孵出小鸡，小鸡会自己跟着走",
+   "counter": "快点送，或者照顾好小鸡",
+   "mechanisms": [
+    "fall"
+   ],
+   "rarity": "common",
+   "carry": "small",
+   "layer": 1,
+   "status": "concept"
+  },
+  {
+   "id": "brains",
+   "name": "脑子罐头",
+   "mode": "delivery",
+   "rule": "附近的僵尸闻得到，会追着你跑",
+   "counter": "绕路、诱饵、用箱子堵路",
+   "mechanisms": [
+    "push_monster"
+   ],
+   "rarity": "rare",
+   "carry": "small",
+   "layer": 1,
+   "status": "concept"
+  },
+  {
+   "id": "peanuts",
+   "name": "花生",
+   "mode": "delivery",
+   "rule": "很轻；猴子和松鼠会来抢",
+   "counter": "护好背包，或者分一点给它们",
+   "mechanisms": [],
+   "rarity": "common",
+   "carry": "small",
+   "layer": 1,
+   "status": "concept"
+  },
+  {
+   "id": "love_letter",
+   "name": "情书",
+   "mode": "delivery",
+   "rule": "被别人看见（同一行没有遮挡）会害羞得走不动一会儿",
+   "counter": "绕开人群、挡住视线",
+   "mechanisms": [],
+   "rarity": "common",
+   "carry": "small",
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "fish",
+   "name": "鲜鱼",
+   "mode": "delivery",
+   "rule": "会变质；路上的猫会来偷",
+   "counter": "保冷箱、绕开猫",
+   "mechanisms": [
+    "freeze"
+   ],
+   "rarity": "common",
+   "carry": "medium",
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "honey",
+   "name": "蜂蜜",
+   "mode": "delivery",
+   "rule": "蜂群会一路跟着你",
+   "counter": "用烟驱赶蜂群",
+   "mechanisms": [
+    "gas_rise"
+   ],
+   "rarity": "common",
+   "carry": "medium",
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "mooncake",
+   "name": "月饼",
+   "mode": "delivery",
+   "rule": "很好吃：饿的时候可以吃掉回 1 颗心，但那样就送不成了",
+   "counter": "忍住",
+   "mechanisms": [],
+   "rarity": "rare",
+   "carry": "small",
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "alien_egg",
+   "name": "外星蛋",
+   "mode": "delivery",
+   "rule": "会发光（照亮周围），一段时间后孵出跟着你的小外星宠物",
+   "counter": "护好它",
+   "mechanisms": [],
+   "rarity": "rare",
+   "carry": "small",
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "watermelon",
+   "name": "大西瓜",
+   "mode": "delivery",
+   "rule": "大件；放在斜坡上会滚走",
+   "counter": "放平稳，或者用它当滚石压怪",
+   "mechanisms": [
+    "carry_bulky",
+    "crush_monster"
+   ],
+   "rarity": "common",
+   "carry": "bulky",
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "safe",
+   "name": "保险箱",
+   "mode": "delivery",
+   "rule": "非常重，会沉入水底，可以压住压板",
+   "counter": "利用它的重量开机关",
+   "mechanisms": [
+    "float_sink",
+    "plate_door",
+    "carry_bulky"
+   ],
+   "rarity": "rare",
+   "carry": "bulky",
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "fireworks",
+   "name": "烟花",
+   "mode": "delivery",
+   "rule": "被点燃就会向上飞出去爆炸",
+   "counter": "远离火；也可以故意点燃炸开天花板",
+   "mechanisms": [
+    "burn",
+    "bomb"
+   ],
+   "rarity": "rare",
+   "carry": "medium",
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "magnet",
+   "name": "大磁铁",
+   "mode": "delivery",
+   "rule": "会把附近的铁箱吸过来，粘在一起",
+   "counter": "拆开再走，或者利用它拖铁箱",
+   "mechanisms": [
+    "magnet"
+   ],
+   "rarity": "rare",
+   "carry": "medium",
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "lantern",
+   "name": "灯笼",
+   "mode": "delivery",
+   "rule": "会照亮周围；飞蛾和精灵会被吸引",
+   "counter": "利用光，也要小心光",
+   "mechanisms": [
+    "darkness"
+   ],
+   "rarity": "common",
+   "carry": "medium",
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "seeds",
+   "name": "种子",
+   "mode": "delivery",
+   "rule": "种进土里浇水，会长成一架可以爬的藤",
+   "counter": "把它当临时梯子用，但别忘了还要送达",
+   "mechanisms": [
+    "vine"
+   ],
+   "rarity": "common",
+   "carry": "small",
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "water_bucket",
+   "name": "一桶水",
+   "mode": "delivery",
+   "rule": "可以倒出来变成一小池水（倒掉就少了）",
+   "counter": "灭火、浇花、让木箱浮起来",
+   "mechanisms": [
+    "water_flow",
+    "float_sink"
+   ],
+   "rarity": "common",
+   "carry": "medium",
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "kitten",
+   "name": "小猫",
+   "mode": "delivery",
+   "rule": "活物：放下就会跑，看到鱼就追",
+   "counter": "别放下；用鱼引回来",
+   "mechanisms": [],
+   "rarity": "rare",
+   "carry": "living",
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "puppy",
+   "name": "小狗",
+   "mode": "delivery",
+   "rule": "活物：会冲着怪物叫，吓跑小怪，也会吵醒睡着的大怪",
+   "counter": "利用它开路",
+   "mechanisms": [],
+   "rarity": "rare",
+   "carry": "living",
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "pearl",
+   "name": "夜明珠",
+   "mode": "delivery",
+   "rule": "传说：发光，很贵，掉进水里会沉",
+   "counter": "护好它",
+   "mechanisms": [
+    "float_sink"
+   ],
+   "rarity": "legendary",
+   "carry": "small",
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "sword",
+   "name": "宝剑",
+   "mode": "delivery",
+   "rule": "很重；可以砍断藤蔓和绳子",
+   "counter": "用它开路",
+   "mechanisms": [],
+   "rarity": "rare",
+   "carry": "medium",
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "snow_globe",
+   "name": "雪花球",
+   "mode": "delivery",
+   "rule": "易碎；摇一摇会让这个房间下雪（水面结冰）",
+   "counter": "在合适的地方摇它",
+   "mechanisms": [
+    "freeze"
+   ],
+   "rarity": "rare",
+   "carry": "small",
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "tea_set",
+   "name": "茶具",
+   "mode": "delivery",
+   "rule": "非常易碎：受到任何碰撞都会损坏",
+   "counter": "慢慢走，避开怪物",
+   "mechanisms": [],
+   "rarity": "rare",
+   "carry": "medium",
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "chip",
+   "name": "芯片",
+   "mode": "delivery",
+   "rule": "靠近磁铁会被清空",
+   "counter": "绕开磁铁",
+   "mechanisms": [
+    "magnet"
+   ],
+   "rarity": "common",
+   "carry": "small",
+   "layer": 4,
+   "status": "concept"
+  },
+  {
+   "id": "treasure_map",
+   "name": "藏宝图",
+   "mode": "delivery",
+   "rule": "怕水；带着它能在小地图上看到一个隐藏房间",
+   "counter": "绕开水，顺路去拿宝藏",
+   "mechanisms": [],
+   "rarity": "rare",
+   "carry": "small",
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "cake",
+   "name": "蛋糕",
+   "mode": "delivery",
+   "rule": "易碎又会坏：两条规则都有",
+   "counter": "快、稳",
+   "mechanisms": [
+    "fall"
+   ],
+   "rarity": "common",
+   "carry": "medium",
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "peach",
+   "name": "仙桃",
+   "mode": "delivery",
+   "rule": "传说：吃掉能回满心，但那样就送不成了",
+   "counter": "忍住",
+   "mechanisms": [],
+   "rarity": "legendary",
+   "carry": "small",
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "carrot",
+   "name": "胡萝卜",
+   "mode": "delivery",
+   "rule": "兔子和雪人都喜欢；兔子会来抢",
+   "counter": "护好它",
+   "mechanisms": [],
+   "rarity": "common",
+   "carry": "small",
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "meat",
+   "name": "生肉",
+   "mode": "delivery",
+   "rule": "恐龙闻得到，会追你",
+   "counter": "绕路，或者用它把恐龙引开",
+   "mechanisms": [
+    "push_monster"
+   ],
+   "rarity": "common",
+   "carry": "medium",
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "qingtuan",
+   "name": "青团",
+   "mode": "delivery",
+   "rule": "清明的点心，放久了会变硬：完好度随时间慢慢下降",
+   "counter": "走短路",
+   "mechanisms": [],
+   "rarity": "common",
+   "carry": "small",
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "paper_house",
+   "name": "纸扎小楼",
+   "mode": "delivery",
+   "rule": "很轻，会浮在水上、被风吹走；碰到火立刻烧光",
+   "counter": "远离火盆和鬼火；起风时用重物压住",
+   "mechanisms": [
+    "paper",
+    "burn",
+    "float_sink"
+   ],
+   "rarity": "rare",
+   "carry": "medium",
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "ink_brush",
+   "name": "文房四宝",
+   "mode": "delivery",
+   "rule": "砚台里有墨：倒着拿（攀爬、下落超过 2 格）会洒墨，完好度 −1",
+   "counter": "走楼梯和升降台，少跳",
+   "mechanisms": [
+    "fall",
+    "ladder"
+   ],
+   "rarity": "common",
+   "carry": "medium",
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "fried_tofu",
+   "name": "油豆腐",
+   "mode": "delivery",
+   "rule": "很香，一路上的狐狸都会来讨",
+   "counter": "用诱饵引开",
+   "mechanisms": [],
+   "rarity": "common",
+   "carry": "small",
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "cucumber",
+   "name": "黄瓜",
+   "mode": "delivery",
+   "rule": "河童闻到就会来抢",
+   "counter": "绕开水边",
+   "mechanisms": [],
+   "rarity": "common",
+   "carry": "small",
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "buckwheat_jelly",
+   "name": "荞麦凉粉",
+   "mode": "delivery",
+   "rule": "软软的，落下超过 1 格就会碎一块",
+   "counter": "慢慢走，带护垫",
+   "mechanisms": [
+    "fall"
+   ],
+   "rarity": "common",
+   "carry": "medium",
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "spice_box",
+   "name": "香料盒",
+   "mode": "delivery",
+   "rule": "打翻了会让你打喷嚏，几秒不能动",
+   "counter": "别摔",
+   "mechanisms": [
+    "fall"
+   ],
+   "rarity": "common",
+   "carry": "small",
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "durian",
+   "name": "榴莲",
+   "mode": "delivery",
+   "rule": "很臭：怪物闻着味道追来，但有的收件人特别爱",
+   "counter": "防水袋能封住味道",
+   "mechanisms": [],
+   "rarity": "rare",
+   "carry": "medium",
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "story_box",
+   "name": "故事匣",
+   "mode": "delivery",
+   "rule": "每进一个新房间，匣子里就冒出一个故事：随机发生一件小事",
+   "counter": "随机应变",
+   "mechanisms": [],
+   "rarity": "legendary",
+   "carry": "small",
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "matryoshka",
+   "name": "套娃",
+   "mode": "delivery",
+   "rule": "摔一次少一层：完好度就是层数（3 层）",
+   "counter": "护垫；少跳",
+   "mechanisms": [
+    "nested_box",
+    "fall"
+   ],
+   "rarity": "rare",
+   "carry": "medium",
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "golden_apple",
+   "name": "金苹果",
+   "mode": "delivery",
+   "rule": "会发光，夜里很显眼，怪物会被吸引",
+   "counter": "照亮黑暗，同时绕开怪物",
+   "mechanisms": [
+    "darkness"
+   ],
+   "rarity": "legendary",
+   "carry": "small",
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "cacao_beans",
+   "name": "可可豆",
+   "mode": "delivery",
+   "rule": "古时当钱用：驿站可以用它付账，但每付一次完好度 −1",
+   "counter": "忍住别花",
+   "mechanisms": [],
+   "rarity": "rare",
+   "carry": "small",
+   "layer": 2,
+   "status": "concept"
+  }
+ ]
+}

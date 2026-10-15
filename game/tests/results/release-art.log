@@ -1,0 +1,92 @@
+{
+  "format": "portitor.release-art-check/1",
+  "checked": [
+    "art:ui.screen.lobby",
+    "art:char.portitor",
+    "art:mech.exit_flag",
+    "art:obj.crate_wood",
+    "art:theme.dungeon",
+    "art:deco.dungeon_moss",
+    "art:deco.dungeon_torch",
+    "art:fauna.dungeon_bat",
+    "art:fauna.dungeon_rat",
+    "art:ui.icons",
+    "art:ui.keycap",
+    "art:ui.menu_icons",
+    "art:ui.panel",
+    "art:ui.screen.chapters",
+    "art:theme.cave",
+    "art:deco.cave_crystal",
+    "art:deco.cave_mushroom",
+    "art:fauna.cave_moth",
+    "art:theme.cosmos",
+    "art:deco.cosmos_sprout",
+    "art:fauna.cosmos_drone",
+    "art:theme.forest",
+    "art:deco.forest_flower",
+    "art:deco.forest_grass",
+    "art:fauna.forest_bird",
+    "art:fauna.forest_butterfly",
+    "art:theme.ruins",
+    "art:deco.ruins_lotus",
+    "art:deco.ruins_vine",
+    "art:fauna.ruins_scarab",
+    "art:theme.sky",
+    "art:deco.sky_flower",
+    "art:fauna.sky_cloudling",
+    "art:fauna.sky_dove",
+    "art:ui.theme_emblem",
+    "art:ui.screen.levels",
+    "art:ui.screen.pause",
+    "art:ui.screen.hint",
+    "art:ui.bubble",
+    "art:ui.bubble_tail",
+    "art:ui.screen.complete",
+    "art:mech.socket_lit",
+    "art:ui.screen.settings",
+    "art:ui.screen.rulecard"
+  ],
+  "errors": [
+    {
+      "uid": "art:ui.screen.lobby",
+      "detail": "Current art approval is pending; release build refused"
+    },
+    {
+      "uid": "art:ui.screen.chapters",
+      "detail": "Current art approval is pending; release build refused"
+    },
+    {
+      "uid": "art:ui.screen.levels",
+      "detail": "Current art approval is pending; release build refused"
+    },
+    {
+      "uid": "art:ui.screen.pause",
+      "detail": "Current art approval is pending; release build refused"
+    },
+    {
+      "uid": "art:ui.screen.hint",
+      "detail": "Current art approval is pending; release build refused"
+    },
+    {
+      "uid": "art:ui.bubble",
+      "detail": "Current art approval is pending; release build refused"
+    },
+    {
+      "uid": "art:ui.bubble_tail",
+      "detail": "Current art approval is pending; release build refused"
+    },
+    {
+      "uid": "art:ui.screen.complete",
+      "detail": "Current art approval is pending; release build refused"
+    },
+    {
+      "uid": "art:ui.screen.settings",
+      "detail": "Current art approval is pending; release build refused"
+    },
+    {
+      "uid": "art:ui.screen.rulecard",
+      "detail": "Current art approval is pending; release build refused"
+    }
+  ],
+  "ok": false
+}

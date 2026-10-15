@@ -1,0 +1,59 @@
+{
+  "cases": [
+    {
+      "capture": "res://reports/shots/showcase-dungeon.png",
+      "first_difference": [],
+      "fixture": "Frozen scene.js SHOWCASE, HUD excluded",
+      "passed": true,
+      "pixel_differences": 0,
+      "sdk_validation": false,
+      "theme": "art:theme.dungeon"
+    },
+    {
+      "capture": "res://reports/shots/showcase-ruins.png",
+      "first_difference": [],
+      "fixture": "Frozen scene.js SHOWCASE, HUD excluded",
+      "passed": true,
+      "pixel_differences": 0,
+      "sdk_validation": false,
+      "theme": "art:theme.ruins"
+    },
+    {
+      "capture": "res://reports/shots/showcase-cave.png",
+      "first_difference": [],
+      "fixture": "Frozen scene.js SHOWCASE, HUD excluded",
+      "passed": true,
+      "pixel_differences": 0,
+      "sdk_validation": false,
+      "theme": "art:theme.cave"
+    },
+    {
+      "capture": "res://reports/shots/showcase-forest.png",
+      "first_difference": [],
+      "fixture": "Frozen scene.js SHOWCASE, HUD excluded",
+      "passed": true,
+      "pixel_differences": 0,
+      "sdk_validation": false,
+      "theme": "art:theme.forest"
+    },
+    {
+      "capture": "res://reports/shots/showcase-sky.png",
+      "first_difference": [],
+      "fixture": "Frozen scene.js SHOWCASE, HUD excluded",
+      "passed": true,
+      "pixel_differences": 0,
+      "sdk_validation": false,
+      "theme": "art:theme.sky"
+    },
+    {
+      "capture": "res://reports/shots/showcase-cosmos.png",
+      "first_difference": [],
+      "fixture": "Frozen scene.js SHOWCASE, HUD excluded",
+      "passed": true,
+      "pixel_differences": 0,
+      "sdk_validation": false,
+      "theme": "art:theme.cosmos"
+    }
+  ],
+  "format": "portitor.showcase-references/1"
+}

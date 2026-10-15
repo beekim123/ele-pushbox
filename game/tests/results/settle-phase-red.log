@@ -1,0 +1,3 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+PORTITOR_TEST_RESULT={"check_count":153,"failed":["settle.phase.physics_yields_before_classification","settle.phase.classification_without_extra_ticks","settle.phase.final_result"],"ok":false,"report":"res://tests/results/gameplay.json","suite":"gameplay"}

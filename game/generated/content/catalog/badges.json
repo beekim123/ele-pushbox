@@ -1,0 +1,169 @@
+{
+ "format": "pushbox.catalog/1",
+ "kind": "badges",
+ "note": "徽章（progression.md 第 4 节）：永久收藏的被动效果，出门前装上；徽章点上限初始 3，最多 8。",
+ "entries": [
+  {
+   "id": "featherfall",
+   "name": "轻功",
+   "cost": 1,
+   "effect": "从 3 格高落下不受伤",
+   "source": "宝箱",
+   "mode": "delivery",
+   "status": "concept"
+  },
+  {
+   "id": "ice_heart",
+   "name": "冰心",
+   "cost": 1,
+   "effect": "冰淇淋类融化慢 30%",
+   "source": "商店",
+   "mode": "delivery",
+   "status": "concept"
+  },
+  {
+   "id": "fortune",
+   "name": "招财",
+   "cost": 2,
+   "effect": "小费 +10%",
+   "source": "商店",
+   "mode": "delivery",
+   "status": "concept"
+  },
+  {
+   "id": "insurance",
+   "name": "运费险",
+   "cost": 2,
+   "effect": "失败时带回 75% 金币",
+   "source": "商店",
+   "mode": "delivery",
+   "status": "concept"
+  },
+  {
+   "id": "bulldozer",
+   "name": "推土机",
+   "cost": 2,
+   "effect": "能推动一排两个小怪",
+   "source": "强敌",
+   "mode": "delivery",
+   "status": "concept"
+  },
+  {
+   "id": "night_cat",
+   "name": "夜猫",
+   "cost": 1,
+   "effect": "黑暗中视野 +2 格",
+   "source": "事件",
+   "mode": "delivery",
+   "status": "concept"
+  },
+  {
+   "id": "rejuvenate",
+   "name": "回春",
+   "cost": 3,
+   "effect": "每送达一单回 1 颗心",
+   "source": "强敌",
+   "mode": "delivery",
+   "status": "concept"
+  },
+  {
+   "id": "elephant_friend",
+   "name": "象之友",
+   "cost": 1,
+   "effect": "大象类收件人小费 +50%，并且一定出门接你",
+   "source": "好感",
+   "mode": "delivery",
+   "status": "concept"
+  },
+  {
+   "id": "courier_soul",
+   "name": "快递之魂",
+   "cost": 3,
+   "effect": "连送倍率每单额外 +0.2",
+   "source": "执照",
+   "mode": "delivery",
+   "status": "concept"
+  },
+  {
+   "id": "ghost_step",
+   "name": "鬼步",
+   "cost": 2,
+   "effect": "受伤后的无敌时间加倍",
+   "source": "事件",
+   "mode": "delivery",
+   "status": "concept"
+  },
+  {
+   "id": "thrifty",
+   "name": "节俭",
+   "cost": 1,
+   "effect": "驿站 −10%",
+   "source": "商店",
+   "mode": "delivery",
+   "status": "concept"
+  },
+  {
+   "id": "tough_box",
+   "name": "硬壳",
+   "cost": 2,
+   "effect": "每个房间第一次货损无效",
+   "source": "强敌",
+   "mode": "delivery",
+   "status": "concept"
+  },
+  {
+   "id": "quick_hands",
+   "name": "快手",
+   "cost": 1,
+   "effect": "推、挖、倒、放炸药的动作间隔缩短 25%（不影响走路的移动间隔）",
+   "source": "商店",
+   "mode": "delivery",
+   "status": "concept"
+  },
+  {
+   "id": "lucky_reel",
+   "name": "好运签",
+   "cost": 2,
+   "effect": "滚轮出稀有符号的几率提高",
+   "source": "神秘商人",
+   "mode": "delivery",
+   "status": "concept"
+  },
+  {
+   "id": "lantern_bearer",
+   "name": "提灯人",
+   "cost": 2,
+   "effect": "灯光半径 +1，幽灵不敢靠近",
+   "source": "好感",
+   "mode": "delivery",
+   "status": "concept"
+  },
+  {
+   "id": "bounty",
+   "name": "赏金",
+   "cost": 1,
+   "effect": "放倒怪物多掉金币",
+   "source": "强敌",
+   "mode": "delivery",
+   "status": "concept"
+  },
+  {
+   "id": "scout",
+   "name": "侦察",
+   "cost": 1,
+   "effect": "开局小地图显示所有驿站",
+   "source": "商店",
+   "mode": "delivery",
+   "status": "concept"
+  },
+  {
+   "id": "glutton",
+   "name": "铁胃",
+   "cost": 1,
+   "effect": "吃掉食物类货物回的心翻倍（那单就送不成了）",
+   "source": "事件",
+   "mode": "delivery",
+   "status": "concept"
+  }
+ ]
+}

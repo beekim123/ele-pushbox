@@ -1,0 +1,16 @@
+✔ imports only verified approved sprite bytes and preserves uid resource metadata (13.092084ms)
+✔ refuses a corrupted level before destroying the previous generated tree (5.362541ms)
+✔ refuses approved PNG hash mismatch and stale approval metadata (4.012708ms)
+✔ checks id destinations, code uid references and unowned generated files separately (23.687084ms)
+✔ reimport removes stale generated output and tracks every generated dependency owner (9.650208ms)
+✔ release validation refuses pending UI and traverses required art dependencies (7.184416ms)
+✔ unowned Godot sidecars are rejected while owned texture sidecars are tolerated (6.611792ms)
+✔ adds explicitly unavailable scripts only for missing authoring mechanic destinations (4.487833ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 8
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 157.349708

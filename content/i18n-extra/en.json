@@ -1,0 +1,17 @@
+{
+ "dev.placeholder": "Placeholder",
+ "dev.pending_art": "UI candidate · approval pending",
+ "error.runtime": "Unable to start: {reason}",
+ "hint.restart": "Off the solution path. Restart to continue.",
+ "hud.controls": "Arrows Move · Shift Dig · Ctrl Pour · Z Undo · H Hint · Esc Pause",
+ "extra.rule.push.name": "Push and step up",
+ "extra.rule.push.text": "Walk into one crate to push it. Crate chains cannot move. Step up one tile when both spaces above are clear.",
+ "extra.rule.ladder.name": "Ladders",
+ "extra.rule.ladder.text": "You stay in a ladder. Up enters the rung above; Down goes lower. Ladders do not support crates.",
+ "extra.rule.pour.name": "Pour sand",
+ "extra.rule.pour.text": "Ctrl and Left or Right pours one bag into a free tile. Pour beside a wall or into a pit for a reliable step.",
+ "extra.rule.plate_door.name": "Plates and doors",
+ "extra.rule.plate_door.text": "Press every plate with the same sign to open its door. You, crates and sand press plates. Occupied doors stay open.",
+ "extra.rule.fall.name": "Losing support",
+ "extra.rule.fall.text": "You and crates fall without support. Crates can stack. There is no fall damage."
+}

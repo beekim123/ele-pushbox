@@ -1,0 +1,59 @@
+{
+  "format": "pushbox.levelspec/1",
+  "id": "M03",
+  "chapter": "dungeon",
+  "mode": "lab",
+  "group": "basics",
+  "mechanisms": [
+    "dig"
+  ],
+  "order": 3,
+  "title": "挖开一格",
+  "role": "教学",
+  "teaches": [
+    "dig",
+    "bag"
+  ],
+  "requires": [
+    "push"
+  ],
+  "discovery": "褐色夯土可以挖掉，挖出的土变成背包里的一袋沙。",
+  "map": [
+    "##########",
+    "#........#",
+    "#..e.....#",
+    "#.Pe.B.o.#",
+    "##########"
+  ],
+  "bag": {
+    "sand": 0,
+    "bomb": 0
+  },
+  "solution": [
+    "DIG_R",
+    "R",
+    "R",
+    "R",
+    "R"
+  ],
+  "hints": [
+    "你被两格高的土墙挡住，跨不过去。",
+    "褐色带碎石的是夯土，可以挖。",
+    "对着右侧的土挖一下，然后去推箱子。"
+  ],
+  "misreads": [
+    "以为上面那格土会掉下来：夯土是固定的，只有黄色散沙会落下。"
+  ],
+  "sdk": {
+    "sdk": [
+      "packed_earth 为 static 材料，带 tag diggable；挖取时以 clear_rect 清除该格 256 个 cell"
+    ],
+    "game_layer": [
+      "挖取规则、背包计数（1 格 = 1 袋）"
+    ]
+  },
+  "checks": [
+    "箱子进入目标槽后目标灯在同一结算结束时点亮，撤销后熄灭",
+    "挖取后背包 +1 袋且图标立即更新；被挖格上方的夯土保持不动"
+  ]
+}

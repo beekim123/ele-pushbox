@@ -1,0 +1,45 @@
+Resource-budget assessments from the actual run. Full read-only process inventory is retained in ignored local history.
+Before stage: importer
+{"blocked": false, "worker_count": 1, "before_stage": "importer", "available": true, "other_compute_processes": []}
+Before stage: resources
+{"blocked": false, "worker_count": 1, "before_stage": "resources", "available": true, "other_compute_processes": []}
+Before stage: model-export
+{"blocked": false, "worker_count": 1, "before_stage": "model-export", "available": true, "other_compute_processes": []}
+Before stage: reference-export
+{"blocked": false, "worker_count": 1, "before_stage": "reference-export", "available": true, "other_compute_processes": []}
+Before stage: godot-import
+{"blocked": false, "worker_count": 1, "before_stage": "godot-import", "available": true, "other_compute_processes": []}
+Before stage: core
+{"blocked": false, "worker_count": 1, "before_stage": "core", "available": true, "other_compute_processes": []}
+Before stage: sdk
+{"blocked": false, "worker_count": 1, "before_stage": "sdk", "available": true, "other_compute_processes": []}
+Before stage: gameplay
+{"blocked": false, "worker_count": 1, "before_stage": "gameplay", "available": true, "other_compute_processes": []}
+Before stage: levels
+{"blocked": false, "worker_count": 1, "before_stage": "levels", "available": true, "other_compute_processes": []}
+Before stage: ids
+{"blocked": false, "worker_count": 1, "before_stage": "ids", "available": true, "other_compute_processes": []}
+Before stage: render
+{"blocked": false, "worker_count": 1, "before_stage": "render", "available": true, "other_compute_processes": []}
+Before stage: lab
+{"blocked": false, "worker_count": 1, "before_stage": "lab", "available": true, "other_compute_processes": []}
+Before stage: ui
+{"blocked": false, "worker_count": 1, "before_stage": "ui", "available": true, "other_compute_processes": []}
+Before stage: ui-contracts
+{"blocked": false, "worker_count": 1, "before_stage": "ui-contracts", "available": true, "other_compute_processes": []}
+Before stage: terrain-gpu
+{"blocked": false, "worker_count": 1, "before_stage": "terrain-gpu", "available": true, "other_compute_processes": []}
+Before stage: world-gpu
+{"blocked": false, "worker_count": 1, "before_stage": "world-gpu", "available": true, "other_compute_processes": []}
+Before stage: showcase-gpu
+{"blocked": false, "worker_count": 1, "before_stage": "showcase-gpu", "available": true, "other_compute_processes": []}
+Before stage: dynamic-gpu
+{"blocked": false, "worker_count": 1, "before_stage": "dynamic-gpu", "available": true, "other_compute_processes": []}
+Before stage: sdk-seam-gpu
+{"blocked": false, "worker_count": 1, "before_stage": "sdk-seam-gpu", "available": true, "other_compute_processes": []}
+Before stage: performance
+{"blocked": false, "worker_count": 1, "before_stage": "performance", "available": true, "other_compute_processes": []}
+Before stage: performance-capacity
+{"blocked": false, "worker_count": 1, "before_stage": "performance-capacity", "available": true, "other_compute_processes": []}
+Before stage: ui-gpu
+{"blocked": false, "worker_count": 1, "before_stage": "ui-gpu", "available": true, "other_compute_processes": []}

@@ -1,0 +1,47 @@
+{
+  "cases": [
+    {
+      "passed": true,
+      "pixel_differences": 0,
+      "real_sdk_tiles": 2,
+      "seam_x": 256,
+      "theme": "art:theme.dungeon"
+    },
+    {
+      "passed": true,
+      "pixel_differences": 0,
+      "real_sdk_tiles": 2,
+      "seam_x": 256,
+      "theme": "art:theme.ruins"
+    },
+    {
+      "passed": true,
+      "pixel_differences": 0,
+      "real_sdk_tiles": 2,
+      "seam_x": 256,
+      "theme": "art:theme.cave"
+    },
+    {
+      "passed": true,
+      "pixel_differences": 0,
+      "real_sdk_tiles": 2,
+      "seam_x": 256,
+      "theme": "art:theme.forest"
+    },
+    {
+      "passed": true,
+      "pixel_differences": 0,
+      "real_sdk_tiles": 2,
+      "seam_x": 256,
+      "theme": "art:theme.sky"
+    },
+    {
+      "passed": true,
+      "pixel_differences": 0,
+      "real_sdk_tiles": 2,
+      "seam_x": 256,
+      "theme": "art:theme.cosmos"
+    }
+  ],
+  "format": "portitor.sdk-seam-references/1"
+}

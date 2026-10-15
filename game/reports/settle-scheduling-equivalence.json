@@ -1,0 +1,17 @@
+{
+  "format": "portitor.settle-scheduling-equivalence/1",
+  "passed": true,
+  "levels": [
+    "M01",
+    "M02",
+    "M03",
+    "M04",
+    "M05",
+    "M06",
+    "M07"
+  ],
+  "comparison": "All seven author-route step states/final hashes/tick counts plus complete per-tick hash arrays for all three replays before and after separating classification from physics; timings excluded",
+  "mismatches": [],
+  "baseline": "game/tests/results/settle-before-scheduling.json",
+  "current": "game/tests/results/levels.json"
+}
