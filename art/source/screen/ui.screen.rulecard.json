@@ -35,5 +35,5 @@
  },
  "usage": "跳关或首次遇到概念时显示；也可从 HUD 旁的小图标重新打开。",
  "notes": "布局参考：文字来自 content/i18n，容器按文字宽度伸缩；Godot 用 Control 容器实现，不按像素硬编码文字位置。",
- "content_hash": "372200467b498ad8758620120348768cf9f9e7e1dd4ebdb837b6c100939e3d3e"
+ "content_hash": "884aac48c36bdb7a544eac2f57d661b313e44c190ab22d2c48663e57327c10be"
 }

@@ -187,9 +187,13 @@
     const cells = tiles * 256, need = Math.max(1, d.need || 256);
     return { level: Math.min(4, Math.floor((cells * 4) / need)), full: cells >= need };
   }
+  // Device states come from the design model (s.dev, tilemodel.js); `preview`
+  // only seeds them for showcases.
   function drawDevices(r, spec, L, s, ox, oy, tick) {
     const list = spec.devices || [];
-    const on = (d) => !!(d.preview && d.preview.on);
+    const st = (d) => s.dev ? s.dev[list.indexOf(d)] : (d.preview && d.preview.on ? 1 : 0);
+    const on = (d) => !!st(d);
+    const occupied = (x, y) => (s.player.x === x && s.player.y === y) || !!TM().crateAt(s, x, y);
     for (const d of list) {
       if (d.type === "lift") {
         const [a, b] = d.stops, w = d.width || 1, top = Math.min(a[1], b[1]), bot = Math.max(a[1], b[1]);
@@ -202,16 +206,32 @@
     for (const d of list) {
       const pv = d.preview || {};
       if (d.type === "lift") {
-        const [x, y] = d.stops[pv.stop || 0];
+        const [x, y] = d.stops[s.dev ? st(d) : pv.stop || 0];
         for (let k = 0; k < (d.width || 1); k++) S().draw(r, "mech.lift", "deck", 0, cellX(ox, x + k), cellY(oy, y));
-        const [bx, by] = d.button, pressed = s.player.x === bx && s.player.y === by;
-        S().draw(r, "mech.button", pressed ? "down" : "up", 0, cellX(ox, bx), cellY(oy, by));
+        if (d.button) { const [bx, by] = d.button; S().draw(r, "mech.button", occupied(bx, by) ? "down" : "up", 0, cellX(ox, bx), cellY(oy, by)); }
+      } else if (d.type === "portal") {
+        const sym = d.symbol || ["circle", "triangle", "square"][list.filter((e) => e.type === "portal").indexOf(d) % 3];
+        for (const [x, y] of d.pads) {
+          const lit = (s.warped || []).includes(y * L.w + x);
+          S().draw(r, "mech.portal", lit ? "glow" : "idle", tick, cellX(ox, x), cellY(oy, y));
+          if (!occupied(x, y)) S().draw(r, "mech.link_symbol", sym, 0, cellX(ox, x), cellY(oy, y) - 7);
+        }
+      } else if (d.type === "bridge") {
+        if (on(d)) continue; // collapsed
+        const cap = d.capacity || 1, load = TM().bridgeLoad ? TM().bridgeLoad(L, s, list.indexOf(d)) : 0;
+        for (const [x, y] of d.cells) S().draw(r, "mech.bridge", load >= cap ? "strained" : "intact", 0, cellX(ox, x), cellY(oy, y));
+        // Load notches carved in the slab face: dark = free, yellow = weight on it, red = full.
+        const [x0, y0] = d.cells[0], span = d.cells.length * 16, px0 = ox + x0 * 16 + ((span - (cap * 3 - 2)) >> 1), py = oy + y0 * 16 + 1;
+        for (let k = 0; k < cap; k++) {
+          const c = k < load ? (load >= cap ? "i" : "l") : "F";
+          for (let j = 0; j < 3; j++) r.set(px0 + k * 3, py + j, c);
+        }
       } else if (d.type === "bin") {
         const [x0, y0, w, h] = d.rect;
         for (let y = y0; y < y0 + h; y++) { S().draw(r, "mech.bin", "left", 0, cellX(ox, x0), cellY(oy, y)); S().draw(r, "mech.bin", "right", 0, cellX(ox, x0 + w - 1), cellY(oy, y)); }
         for (let x = x0; x < x0 + w; x++) S().draw(r, "mech.bin", "bottom", 0, cellX(ox, x), cellY(oy, y0 + h - 1));
         const f = binFill(d, L, s);
-        S().draw(r, "mech.bin_gauge", f.full ? "full" : String(f.level), 0, ox + (x0 + w) * 16 + 3, cellY(oy, y0 + h - 1));
+        S().draw(r, "mech.bin_gauge", f.full || on(d) ? "full" : String(f.level), 0, ox + (x0 + w) * 16 + 3, cellY(oy, y0 + h - 1));
       } else if (d.type === "lever") {
         S().draw(r, "mech.lever", on(d) ? "on" : "off", 0, cellX(ox, d.at[0]), cellY(oy, d.at[1]));
       } else if (d.type === "torch") {
@@ -263,13 +283,19 @@
     }
     const list = spec.devices || [];
     const AREA = { torch: "j", frost_vent: "s", heat_vent: "k" };
-    const centre = (d) => d.type === "lift" ? d.stops[0] : d.type === "bin" ? [d.rect[0], d.rect[1]] : d.type === "release" ? d.cells[0] : d.at || d.root;
+    const centre = (d) => d.type === "lift" ? d.stops[0] : d.type === "bin" ? [d.rect[0], d.rect[1]] : d.type === "release" || d.type === "bridge" ? d.cells[0] : d.type === "portal" ? d.pads[0] : d.at || d.root;
     for (const d of list) {
       if (AREA[d.type]) { const [x, y, w, h] = d.area; dashedRect(r, ox + x * 16, oy + y * 16, w * 16, h * 16, AREA[d.type]); }
       if (d.type === "release") for (const [x, y] of d.cells) dashedRect(r, ox + x * 16 + 1, oy + y * 16 + 1, 14, 14, "C");
       if (d.type === "bin") { const [x, y, w, h] = d.rect; dashedRect(r, ox + x * 16, oy + y * 16, w * 16, h * 16, "l"); }
-      if (d.type === "lift") { const [bx, by] = d.button, [sx, sy] = d.stops[(d.preview && d.preview.stop) || 0]; dotted(r, cellX(ox, bx), cellY(oy, by) - 4, cellX(ox, sx), oy + sy * 16 + 4, "s"); }
+      if (d.type === "lift" && d.button) { const [bx, by] = d.button, [sx, sy] = d.stops[s.dev ? s.dev[list.indexOf(d)] : (d.preview && d.preview.stop) || 0]; dotted(r, cellX(ox, bx), cellY(oy, by) - 4, cellX(ox, sx), oy + sy * 16 + 4, "s"); }
+      if (d.type === "portal") { const [[ax, ay], [bx, by]] = d.pads; dotted(r, cellX(ox, ax), oy + ay * 16 + 8, cellX(ox, bx), oy + by * 16 + 8, "s"); }
+      if (d.type === "bin" && d.trigger && list[d.trigger.device]) { const c = centre(list[d.trigger.device]); dotted(r, ox + d.rect[0] * 16 + 8, oy + d.rect[1] * 16 + 8, cellX(ox, c[0]), oy + c[1] * 16 + 8, "s"); }
       if (d.type === "lever" && d.action) {
+        if (d.action.link !== undefined && L.groups && L.groups[d.action.link]) {
+          for (const i of L.groups[d.action.link].doors) dotted(r, cellX(ox, d.at[0]), cellY(oy, d.at[1]) - 6, ox + (i % L.w) * 16 + 8, oy + ((i / L.w) | 0) * 16 + 8, "s");
+          continue;
+        }
         const t = list[d.action.device !== undefined ? d.action.device : d.action.release];
         const c = t && centre(t);
         if (c) dotted(r, cellX(ox, d.at[0]), cellY(oy, d.at[1]) - 6, cellX(ox, c[0]), oy + c[1] * 16 + 8, "s");

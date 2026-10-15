@@ -131,5 +131,5 @@
  },
  "usage": "第 5 章的地形、背景与生态。游戏中地形按 workbench/js/core/terrain.js 着色；生态按 ambient.js 的规则摆放。",
  "notes": "实心台是云朵：白色云团、顶面微微起伏、底部有阴影和圆弧；背景是晴空、远处浮岛与淡蓝色远云（比实心云暗一级，不会误认成落脚点）。",
- "content_hash": "60ea02fc11477784bd4d2572f1a275f43d5e31f01eed12f6c931149f588415ce"
+ "content_hash": "0269ad0d1be7b19eb5ea0747abf5302f780d77058c230249803aa834cdc3a39e"
 }

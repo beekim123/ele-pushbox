@@ -155,7 +155,7 @@
    "style": "巨型蘑菇、扑克牌、下午茶",
    "mechanisms": [
     "size_change",
-    "rabbit_hole",
+    "portal",
     "bounce"
    ],
    "theme": null,

@@ -1710,7 +1710,7 @@
    "layer": "terrain",
    "current": {
     "version": 2,
-    "hash": "12b23fd1abdd7de3b7c2f2936274651f6b634f08a15ae4d9da9a3ac3c662a0f5",
+    "hash": "73251b76ebb2c8ed4160bb14be86fcd14b4417d640eb25b4d0ac454089ab82f0",
     "status": "review",
     "preview": "art/export/preview/material.chapter2_5.png",
     "preview_sha256": "7f75a512c1ff10c2fe6effd0e1156435bb4f9e342c567a5ef0541ab67b1e80e4"
@@ -1874,6 +1874,49 @@
      "loop": false,
      "frames": [
       5
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
+   "id": "mech.bridge",
+   "name": "承重桥板",
+   "category": "mechanism",
+   "kind": "sprite",
+   "layer": "entity",
+   "current": {
+    "version": 1,
+    "hash": "06251883be328e1bde199c2bb9aaf0c7a9f6a799d5721c34819a4269f495f311",
+    "status": "review",
+    "preview": "art/export/preview/mech.bridge.png",
+    "preview_sha256": "6460e7db4d7fc0595d8e42bb9975784cc83fe3508ec671992180dd6c5facedb6"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    16,
+    16
+   ],
+   "frame_count": 2,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    8,
+    16
+   ],
+   "animations": {
+    "intact": {
+     "fps": 0,
+     "loop": false,
+     "frames": [
+      0
+     ]
+    },
+    "strained": {
+     "fps": 0,
+     "loop": false,
+     "frames": [
+      1
      ]
     }
    },
@@ -2400,6 +2443,53 @@
    "ninepatch": null
   },
   {
+   "id": "mech.portal",
+   "name": "传送阵",
+   "category": "mechanism",
+   "kind": "sprite",
+   "layer": "marker",
+   "current": {
+    "version": 1,
+    "hash": "9af53570813e095414f58f0d53a3f71514d7c5290a690a1336bb2723e2095c76",
+    "status": "review",
+    "preview": "art/export/preview/mech.portal.png",
+    "preview_sha256": "c0cf82c7892e8346f89330627f92682b297563fb1174b61b5f79ac128515f189"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    16,
+    16
+   ],
+   "frame_count": 6,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    8,
+    16
+   ],
+   "animations": {
+    "idle": {
+     "fps": 4,
+     "loop": true,
+     "frames": [
+      0,
+      1,
+      2,
+      3
+     ]
+    },
+    "glow": {
+     "fps": 8,
+     "loop": true,
+     "frames": [
+      4,
+      5
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
    "id": "mech.socket",
    "name": "目标槽",
    "category": "mechanism",
@@ -2689,7 +2779,7 @@
    "layer": "terrain",
    "current": {
     "version": 2,
-    "hash": "a40f0df26884bc38bb043057fe89f0637343494bacc89f24f6dd655865b9a621",
+    "hash": "18c853c5cd95a1a07151457043379573db87bc8b72965a1a96d06b3a3d65722b",
     "status": "review",
     "preview": "art/export/preview/theme.cave.png",
     "preview_sha256": "a326a7081b4d66600d82ec38caabc4a0579f642fface92f8bfd502f24e23833b"
@@ -2834,7 +2924,7 @@
    "layer": "terrain",
    "current": {
     "version": 2,
-    "hash": "3ac5d299b95abfcf0a6d1c0ec09f654b94aa426ea00e35682623c1651cf15ea1",
+    "hash": "a9fdc7fe0b8172325c60dc6c122134e382e4c132d6dff5ae496a2fc3b0d626f3",
     "status": "review",
     "preview": "art/export/preview/theme.cosmos.png",
     "preview_sha256": "da045b3759800c3967f0253965c17758eadef15f24171c43e4c802ac8ba05167"
@@ -2960,7 +3050,7 @@
    "layer": "terrain",
    "current": {
     "version": 2,
-    "hash": "ead4a408a21710d76a47ecf9dace263d0aafb1aeeefb1bd4867ee0aea90f69a9",
+    "hash": "bc4a7374b10e3c512c5bdf40cada25d6eec155767b7deafbebf17adc714dc6bd",
     "status": "review",
     "preview": "art/export/preview/theme.dungeon.png",
     "preview_sha256": "11c63082cdfa6ce301a5c0771c58626f148c197bcf91d9c3fa03e48bf527d66d"
@@ -3105,7 +3195,7 @@
    "layer": "terrain",
    "current": {
     "version": 2,
-    "hash": "ca48adca19ce570006876bad71963f4ea980fe0f4137c8b28439f781fa080dce",
+    "hash": "ec6077066b21197ba11f6d2ed9cb68831fda36a6968e85903b9ff28b457f6a86",
     "status": "review",
     "preview": "art/export/preview/theme.forest.png",
     "preview_sha256": "02f4705d2f8c979d5b3dd035a4923a6c63e672f8f3337118e245079bb14afe7d"
@@ -3253,7 +3343,7 @@
    "layer": "terrain",
    "current": {
     "version": 2,
-    "hash": "82d96a02aff85b73c60a5ead7b383f3c99315d0df6bc1f15f1def0a646d0e796",
+    "hash": "05ecd9e14ce99e1d40588f0d052a99725afc67a6cac6637d930abc818e844dc8",
     "status": "review",
     "preview": "art/export/preview/theme.ruins.png",
     "preview_sha256": "a817e714179eb06a97a446158c2935c79abab3a655804aa9ab2737444bb0454f"
@@ -3390,7 +3480,7 @@
    "layer": "terrain",
    "current": {
     "version": 2,
-    "hash": "60ea02fc11477784bd4d2572f1a275f43d5e31f01eed12f6c931149f588415ce",
+    "hash": "0269ad0d1be7b19eb5ea0747abf5302f780d77058c230249803aa834cdc3a39e",
     "status": "review",
     "preview": "art/export/preview/theme.sky.png",
     "preview_sha256": "04dc3c832133190b3e7eedbdc698bf8fe0c5f2438951b6dd1eecd5c922be8ca5"
@@ -4103,10 +4193,10 @@
    "layer": "ui",
    "current": {
     "version": 3,
-    "hash": "c92466fdabd05595fe6e3b9f0a1363d5c0afac5e70bff3fb198c55d7b4f1f4a1",
+    "hash": "4b43ae6fbda47c21bad730198e75f004db5ba037204a81d21996be465bfacb9c",
     "status": "review",
     "preview": "art/export/preview/ui.screen.chapters.png",
-    "preview_sha256": "f772ba7d956c39fa43b8aba0b34efcc613d54410cc769f00ea1b2b05d7297495"
+    "preview_sha256": "fc3569ec75857ca8d8851f4680b17eb500bd5cc7e3a03a7af693cc90a1d4a3f6"
    },
    "approved": {
     "version": 2,
@@ -4184,7 +4274,7 @@
    "layer": "ui",
    "current": {
     "version": 3,
-    "hash": "cf643ab0eea21c17fe3ad9abbfac44009979ca74bb7e73048f4d6474ab3ef6e4",
+    "hash": "edc3894c0c6600fdf8ca0f6249466f269d3d6e861cd2eed88f4ee83da65e69d6",
     "status": "review",
     "preview": "art/export/preview/ui.screen.complete.png",
     "preview_sha256": "f36e91ecb4b76df9e973798a2fdd3aa9d355d1b8466a6bba4f226f4c1e6e6e31"
@@ -4229,7 +4319,7 @@
    "layer": "ui",
    "current": {
     "version": 3,
-    "hash": "315bd54e858adfd9cddc9a892443a2f7dc3b7ba92612facae338b19a9ff319c1",
+    "hash": "a0cebcbd7fd5019ae3807c643560f7d095f83fcc03d2f137f8221ff17e40ef5a",
     "status": "review",
     "preview": "art/export/preview/ui.screen.hint.png",
     "preview_sha256": "560440f4a2ef5317a9c5e8562159897b4c5e5a08fffc5e23c77627e253939427"
@@ -4272,7 +4362,7 @@
    "layer": "ui",
    "current": {
     "version": 3,
-    "hash": "7843340417d8b0255187a7ac4d06773c5a05ddd591b91f298232763f47b45886",
+    "hash": "b18828072451f352e747ddf47c2d4b06fa8df5f9f111fab248b1d67fcccc315f",
     "status": "review",
     "preview": "art/export/preview/ui.screen.levels.png",
     "preview_sha256": "a68b73f6186398c469cf18415a71b2b50ac10d14edc9c4c05be2e03982528d63"
@@ -4348,7 +4438,7 @@
    "layer": "ui",
    "current": {
     "version": 3,
-    "hash": "3c90e60813334580c3fc0cd79a79a1121514eeb68617797a0a54a4799536cebd",
+    "hash": "6830a9b79f5e4b72c513a25148522e8e42e5e34913440e09f55e8e26cb1cfa2a",
     "status": "review",
     "preview": "art/export/preview/ui.screen.lobby.png",
     "preview_sha256": "a4648cd5bc92eee42fc7cae190d4e5794d007dcd223b2187f54a7a7f9fe1e084"
@@ -4414,7 +4504,7 @@
    "layer": "ui",
    "current": {
     "version": 3,
-    "hash": "52a918c2c354c17f88f64718f76421f2ac017c505331cf30e46824dad992031f",
+    "hash": "90565d8d88964e96aced973b4e06bfe4e0da865610dd3d7effe88ceccf0da733",
     "status": "review",
     "preview": "art/export/preview/ui.screen.pause.png",
     "preview_sha256": "32fcbca857c11ffeeaaea1a248b3ae7d48b55019fd86114a8f3af41e760a12cf"
@@ -4467,7 +4557,7 @@
    "layer": "ui",
    "current": {
     "version": 3,
-    "hash": "372200467b498ad8758620120348768cf9f9e7e1dd4ebdb837b6c100939e3d3e",
+    "hash": "884aac48c36bdb7a544eac2f57d661b313e44c190ab22d2c48663e57327c10be",
     "status": "review",
     "preview": "art/export/preview/ui.screen.rulecard.png",
     "preview_sha256": "4ca35c9e81bca9825738f2eb591c159202eb156841a5cfea7b1573a249436be3"
@@ -4511,7 +4601,7 @@
    "layer": "ui",
    "current": {
     "version": 3,
-    "hash": "651e3d4879fe06c572e4ee216a23b4fd9e42338146f11f962b440f32cff39198",
+    "hash": "c074c120a24d01f34b7a8f065dfa16fb527925602c2e6e291e70f92f323f83ef",
     "status": "review",
     "preview": "art/export/preview/ui.screen.settings.png",
     "preview_sha256": "a6dd69fa825db739e3b58a41a56d296a4f5eed531b400f0b6dfecc308c688f29"
@@ -5530,9 +5620,279 @@
    ]
   },
   {
+   "name": "level.W01",
+   "file": "art/export/reference/level.W01.png",
+   "sha256": "35b3389e7ea3a9192506a28983c7e8a70511c1d3f47d9d60be38f0b896a36495",
+   "uses": [
+    "theme.ruins",
+    "deco.ruins_lotus",
+    "deco.ruins_vine",
+    "fauna.ruins_scarab",
+    "ui.target",
+    "char.portitor",
+    "obj.crate_wood",
+    "obj.crate_iron",
+    "mech.ladder",
+    "mech.socket",
+    "mech.socket_lit",
+    "mech.exit_flag",
+    "mech.plate",
+    "mech.door",
+    "mech.link_symbol",
+    "ui.icons",
+    "ui.goal_lamp",
+    "item.sandbag",
+    "item.bomb"
+   ],
+   "all_approved": false,
+   "unapproved": [
+    "theme.ruins"
+   ]
+  },
+  {
+   "name": "level.W02",
+   "file": "art/export/reference/level.W02.png",
+   "sha256": "a3614300766cf49deeee9a9dd7d0738dec1262ca170cd3370558a404eab1ded9",
+   "uses": [
+    "theme.ruins",
+    "deco.ruins_lotus",
+    "deco.ruins_vine",
+    "fauna.ruins_scarab",
+    "ui.target",
+    "char.portitor",
+    "obj.crate_wood",
+    "obj.crate_iron",
+    "mech.ladder",
+    "mech.socket",
+    "mech.socket_lit",
+    "mech.exit_flag",
+    "mech.plate",
+    "mech.door",
+    "mech.link_symbol",
+    "ui.icons",
+    "ui.goal_lamp",
+    "item.sandbag",
+    "item.bomb"
+   ],
+   "all_approved": false,
+   "unapproved": [
+    "theme.ruins"
+   ]
+  },
+  {
+   "name": "level.W03",
+   "file": "art/export/reference/level.W03.png",
+   "sha256": "8dfeb4c3cbeed8b0465489b683cedd5e79348b2198ab492d3c2da033507f85af",
+   "uses": [
+    "theme.ruins",
+    "deco.ruins_lotus",
+    "deco.ruins_vine",
+    "fauna.ruins_scarab",
+    "ui.target",
+    "char.portitor",
+    "obj.crate_wood",
+    "obj.crate_iron",
+    "mech.ladder",
+    "mech.socket",
+    "mech.socket_lit",
+    "mech.exit_flag",
+    "mech.plate",
+    "mech.door",
+    "mech.link_symbol",
+    "ui.icons",
+    "ui.goal_lamp",
+    "item.sandbag",
+    "item.bomb"
+   ],
+   "all_approved": false,
+   "unapproved": [
+    "theme.ruins"
+   ]
+  },
+  {
+   "name": "level.W04",
+   "file": "art/export/reference/level.W04.png",
+   "sha256": "23744d7f5d034029b5782cc3b18bd1ee56895b5f5a8aa316b91197af3e977824",
+   "uses": [
+    "theme.ruins",
+    "deco.ruins_lotus",
+    "deco.ruins_vine",
+    "fauna.ruins_scarab",
+    "ui.target",
+    "char.portitor",
+    "obj.crate_wood",
+    "obj.crate_iron",
+    "mech.ladder",
+    "mech.socket",
+    "mech.socket_lit",
+    "mech.exit_flag",
+    "mech.plate",
+    "mech.door",
+    "mech.link_symbol",
+    "ui.icons",
+    "ui.goal_lamp",
+    "item.sandbag",
+    "item.bomb"
+   ],
+   "all_approved": false,
+   "unapproved": [
+    "theme.ruins"
+   ]
+  },
+  {
+   "name": "level.W05",
+   "file": "art/export/reference/level.W05.png",
+   "sha256": "4ae625d99b7750fbdb342ac78e30650cbefd6ae3b2aca2b8bd072411d0fe21a8",
+   "uses": [
+    "theme.ruins",
+    "deco.ruins_lotus",
+    "deco.ruins_vine",
+    "fauna.ruins_scarab",
+    "ui.target",
+    "char.portitor",
+    "obj.crate_wood",
+    "obj.crate_iron",
+    "mech.ladder",
+    "mech.socket",
+    "mech.socket_lit",
+    "mech.exit_flag",
+    "mech.plate",
+    "mech.door",
+    "mech.link_symbol",
+    "ui.icons",
+    "ui.goal_lamp",
+    "item.sandbag",
+    "item.bomb"
+   ],
+   "all_approved": false,
+   "unapproved": [
+    "theme.ruins"
+   ]
+  },
+  {
+   "name": "level.W07",
+   "file": "art/export/reference/level.W07.png",
+   "sha256": "123bbea1f8815c687a3d8e8c55e430536980989dfbf8974072f66f4b72382efb",
+   "uses": [
+    "theme.ruins",
+    "deco.ruins_lotus",
+    "deco.ruins_vine",
+    "fauna.ruins_scarab",
+    "ui.target",
+    "char.portitor",
+    "obj.crate_wood",
+    "obj.crate_iron",
+    "mech.ladder",
+    "mech.socket",
+    "mech.socket_lit",
+    "mech.exit_flag",
+    "mech.plate",
+    "mech.door",
+    "mech.link_symbol",
+    "ui.icons",
+    "ui.goal_lamp",
+    "item.sandbag",
+    "item.bomb"
+   ],
+   "all_approved": false,
+   "unapproved": [
+    "theme.ruins"
+   ]
+  },
+  {
+   "name": "level.W08",
+   "file": "art/export/reference/level.W08.png",
+   "sha256": "556c210e5983e3f39ee0e76638fd584738998c7ff5e0efca8d03a713fb0dacb2",
+   "uses": [
+    "theme.ruins",
+    "deco.ruins_lotus",
+    "deco.ruins_vine",
+    "fauna.ruins_scarab",
+    "ui.target",
+    "char.portitor",
+    "obj.crate_wood",
+    "obj.crate_iron",
+    "mech.ladder",
+    "mech.socket",
+    "mech.socket_lit",
+    "mech.exit_flag",
+    "mech.plate",
+    "mech.door",
+    "mech.link_symbol",
+    "ui.icons",
+    "ui.goal_lamp",
+    "item.sandbag",
+    "item.bomb"
+   ],
+   "all_approved": false,
+   "unapproved": [
+    "theme.ruins"
+   ]
+  },
+  {
+   "name": "level.W09",
+   "file": "art/export/reference/level.W09.png",
+   "sha256": "3ba01072d11a1f8b7e430fcc405316cb8c2f16fb6ce3409f3e6276bae5777b98",
+   "uses": [
+    "theme.ruins",
+    "deco.ruins_lotus",
+    "deco.ruins_vine",
+    "fauna.ruins_scarab",
+    "ui.target",
+    "char.portitor",
+    "obj.crate_wood",
+    "obj.crate_iron",
+    "mech.ladder",
+    "mech.socket",
+    "mech.socket_lit",
+    "mech.exit_flag",
+    "mech.plate",
+    "mech.door",
+    "mech.link_symbol",
+    "ui.icons",
+    "ui.goal_lamp",
+    "item.sandbag",
+    "item.bomb"
+   ],
+   "all_approved": false,
+   "unapproved": [
+    "theme.ruins"
+   ]
+  },
+  {
+   "name": "level.W10",
+   "file": "art/export/reference/level.W10.png",
+   "sha256": "91c4a11e2cde895c6c13fe32b5f0b88550bde6a7cd07a19b8cbadbd19618b4a5",
+   "uses": [
+    "theme.ruins",
+    "deco.ruins_lotus",
+    "deco.ruins_vine",
+    "fauna.ruins_scarab",
+    "ui.target",
+    "char.portitor",
+    "obj.crate_wood",
+    "obj.crate_iron",
+    "mech.ladder",
+    "mech.socket",
+    "mech.socket_lit",
+    "mech.exit_flag",
+    "mech.plate",
+    "mech.door",
+    "mech.link_symbol",
+    "ui.icons",
+    "ui.goal_lamp",
+    "item.sandbag",
+    "item.bomb"
+   ],
+   "all_approved": false,
+   "unapproved": [
+    "theme.ruins"
+   ]
+  },
+  {
    "name": "chapters.zh-Hans",
    "file": "art/export/reference/chapters.zh-Hans.png",
-   "sha256": "f772ba7d956c39fa43b8aba0b34efcc613d54410cc769f00ea1b2b05d7297495",
+   "sha256": "fc3569ec75857ca8d8851f4680b17eb500bd5cc7e3a03a7af693cc90a1d4a3f6",
    "uses": [
     "ui.screen.chapters",
     "char.portitor",
@@ -5562,7 +5922,7 @@
   {
    "name": "chapters.en",
    "file": "art/export/reference/chapters.en.png",
-   "sha256": "57d3596145627244358c28ec5d48e1477d8c7a9cb1af37b7a1ec83ed8c84f0e9",
+   "sha256": "e923251f4aff3d83218831f6426fa95bdc7fd65855bb84b3493c87438bf6c112",
    "uses": [
     "ui.screen.chapters",
     "char.portitor",

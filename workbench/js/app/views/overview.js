@@ -68,7 +68,8 @@
     box.append(section("内容检查", [C.issues.length ? list : el("p", { class: "muted", text: "没有错误或警告（node tools/content.mjs check）。" })]));
 
     box.append(section("待你决定", [el("ul", {}, [
-      el("li", { text: "确认换上新主角和新名字后生成新版本的 15 项（6 个主题、material.chapter2_5、8 个界面布局），在「确认」页。只有标题和主角变了，见 docs/status.md。" }),
+      el("li", { text: "确认换上新主角和新名字后生成新版本的 15 项（6 个主题、material.chapter2_5、8 个界面布局），以及第 2 组的新机关候选 mech.portal（传送阵）、mech.bridge（承重桥板），都在「确认」页。改了什么见 docs/status.md。" }),
+      el("li", { text: "看第一批关卡：「模式与关卡」页第 2 组「水与机关」9 关，「场景」页可以逐步回放每关的作者解。" }),
       el("li", { text: "说开始后，把 docs/handoff/gpt-refactor-prompt.md 交给 GPT。" }),
     ])]));
   }

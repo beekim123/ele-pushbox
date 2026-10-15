@@ -8,6 +8,14 @@
   const W = 320, H = 180, HUD_H = 20;
 
   function themeOf(id) { return S().get(id).params; }
+  // Device cells (levers, buttons, pads, bridge planks): keep plants and critters off them.
+  function deviceAt(spec, x, y) {
+    for (const d of spec.devices || []) {
+      const cells = d.type === "portal" ? d.pads : d.type === "bridge" ? d.cells : d.type === "lift" ? (d.button ? [d.button] : []) : d.at ? [d.at] : [];
+      if (cells.some(([cx, cy]) => cx === x && cy === y)) return true;
+    }
+    return false;
+  }
 
   // Chapter -> visual theme (docs/design/game-design.md §6.1). Themes are skins only.
   const CHAPTER_THEME = { dungeon: "theme.dungeon", ruins: "theme.ruins", cave: "theme.cave", forest: "theme.forest", sky: "theme.sky", cosmos: "theme.cosmos" };
@@ -40,7 +48,7 @@
     const map0 = { w: L.w, h: L.h, at: (x, y) => (x < 0 || y < 0 || x >= L.w || y >= L.h ? TR().MAT.EMPTY : toMat(s0.terrain[y * L.w + x])) };
     // Chapter 2-5 materials (matter.js) count as EMPTY for terrain.js; keep plants and critters out of them.
     const own = (st, tx, ty) => !!PB.matter && tx >= 0 && ty >= 0 && tx < L.w && ty < L.h && PB.matter.isOwn(st.terrain[ty * L.w + tx]);
-    const occupied = (tx, ty) => L.marker[ty * L.w + tx] !== TM().M.NONE || !!TM().crateAt(s0, tx, ty) || (s0.player.x === tx && s0.player.y === ty) || L.doors.includes(ty * L.w + tx) || own(s0, tx, ty) || own(s0, tx, ty + 1);
+    const occupied = (tx, ty) => L.marker[ty * L.w + tx] !== TM().M.NONE || !!TM().crateAt(s0, tx, ty) || (s0.player.x === tx && s0.player.y === ty) || L.doors.includes(ty * L.w + tx) || own(s0, tx, ty) || own(s0, tx, ty + 1) || (!spec.showcase && deviceAt(spec, tx, ty));
     const alive = (tx, ty) => !own(s, tx, ty) && !own(s, tx, ty + 1) && (map.at(tx, ty) === TR().MAT.EMPTY && !TM().crateAt(s, tx, ty) && map.at(tx, ty + 1) !== TR().MAT.EMPTY || map.at(tx, ty - 1) !== TR().MAT.EMPTY && map.at(tx, ty) === TR().MAT.EMPTY && !TM().crateAt(s, tx, ty));
     const area = { x: ox + 16, y: oy + 16, w: Math.max(32, (L.w - 2) * 16), h: Math.max(32, (L.h - 2) * 16) };
     const lights = [], amb = { mode: spec === SHOWCASE || spec.showcase ? "full" : "sparse", seed: PB.ambient.seedOf(spec.id), out: lights };
@@ -70,7 +78,7 @@
     if (PB.matter) PB.matter.drawDevices(r, spec, L, s, ox, oy, tick);
     for (const i of L.doors) {
       const px = ox + (i % L.w) * 16 + 8, py = oy + ((i / L.w) | 0) * 16 + 16;
-      S().draw(r, "mech.door", s.doorsOpen ? "open" : "closed", 0, px, py);
+      S().draw(r, "mech.door", TM().doorClosed(L, s, i) ? "closed" : "open", 0, px, py);
       S().draw(r, "mech.link_symbol", sym(i), 0, px, py - 12);
     }
     for (const c of s.crates) {
@@ -100,13 +108,12 @@
     const T = TM().T;
     const icon = { [T.ROCK]: "solid", [T.CRACKED]: "solid", [T.DOOR]: "solid", [T.EARTH]: "earth", [T.SAND]: "sand", [T.WATER]: "water" };
     for (let i = 0; i < L.w * L.h; i++) {
-      const name = icon[s.terrain[i]];
+      const name = icon[TM().doorClosed(L, s, i) ? T.DOOR : s.terrain[i]];
       if (!name) continue;
       const tx = i % L.w, ty = (i / L.w) | 0;
-      if (s.terrain[i] === T.DOOR && s.doorsOpen) continue;
       S().draw(r, "ui.class_icon", name, 0, ox + tx * 16 + 8, oy + ty * 16 + 8);
     }
-    for (const p of L.plates) for (const d of L.doors) {
+    for (const g of L.groups) for (const p of g.plates) for (const d of g.doors) {
       let x0 = ox + (p % L.w) * 16 + 8, y0 = oy + ((p / L.w) | 0) * 16 + 12;
       const x1 = ox + (d % L.w) * 16 + 8, y1 = oy + ((d / L.w) | 0) * 16 + 8;
       const n = Math.max(Math.abs(x1 - x0), Math.abs(y1 - y0));
@@ -146,7 +153,7 @@
   // Representative scene: every chapter-1 element plus water and cracked rock
   // so the whole art set can be judged together. Not a playable level.
   const SHOWCASE = {
-    id: "showcase", codeKey: "showcase.code", title: "", map: [
+    id: "showcase", showcase: true, codeKey: "showcase.code", title: "", map: [
       "####################",
       "#.........#........#",
       "#H........#.....X..#",

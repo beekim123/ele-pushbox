@@ -205,6 +205,21 @@
    "layer": 0
   },
   {
+   "id": "lever",
+   "name": "开关",
+   "group": "water",
+   "owner": "game",
+   "summary": "站在开关上按 ↑ 拨动一次：打开或关上同符号的门，或者触发释放口、火盆、喷口、升降台",
+   "sdk": [],
+   "assets": [
+    "mech.lever"
+   ],
+   "chars": [],
+   "doc": "docs/design/game-design.md 4.7",
+   "risk": "",
+   "layer": 0
+  },
+  {
    "id": "lift",
    "name": "升降台",
    "group": "water",
@@ -671,15 +686,15 @@
   {
    "id": "ice_slide",
    "name": "冰面滑行",
-   "group": "experimental",
+   "group": "thermal",
    "owner": "game",
    "summary": "在冰上移动会一直滑到撞上东西",
    "sdk": [],
    "assets": [],
    "chars": [],
-   "doc": "docs/design/worlds.md 4",
+   "doc": "docs/design/game-design.md 6.4",
    "risk": "与 SDK 冰材料共用",
-   "layer": 2,
+   "layer": 0,
    "origin": "polar"
   },
   {
@@ -713,17 +728,20 @@
    "origin": "graveyard"
   },
   {
-   "id": "rabbit_hole",
-   "name": "兔子洞传送",
-   "group": "experimental",
+   "id": "portal",
+   "name": "传送阵",
+   "group": "water",
    "owner": "game",
-   "summary": "成对的洞口互相传送人和货物",
+   "summary": "成对的传送阵：人或箱子停在一个阵上，就被送到另一个（另一个阵要空着）；刚传过来的东西离开前不会被传回。兔子洞、鸟居是同一机制换美术",
    "sdk": [],
-   "assets": [],
+   "assets": [
+    "mech.portal",
+    "mech.link_symbol"
+   ],
    "chars": [],
-   "doc": "docs/design/worlds.md 4",
+   "doc": "docs/design/game-design.md 4.11",
    "risk": "",
-   "layer": 2,
+   "layer": 0,
    "origin": "wonderland"
   },
   {
@@ -743,15 +761,15 @@
   {
    "id": "bounce",
    "name": "弹跳蘑菇",
-   "group": "experimental",
+   "group": "react",
    "owner": "game",
    "summary": "落到蘑菇上被弹起若干格",
    "sdk": [],
    "assets": [],
    "chars": [],
-   "doc": "docs/design/worlds.md 4",
+   "doc": "docs/design/game-design.md 6.4",
    "risk": "",
-   "layer": 2,
+   "layer": 0,
    "origin": "wonderland"
   },
   {
@@ -952,15 +970,17 @@
   {
    "id": "load_bridge",
    "name": "承重桥",
-   "group": "experimental",
+   "group": "water",
    "owner": "game",
-   "summary": "桥板只承受一定重量（例如人加一个箱子），超重就塌下一格",
+   "summary": "桥板只承受一定重量（人 1、木箱 1、铁箱 2、沙每格 1），超重就整座塌下；奈何桥、安第斯绳桥是同一机制换美术",
    "sdk": [],
-   "assets": [],
+   "assets": [
+    "mech.bridge"
+   ],
    "chars": [],
-   "doc": "docs/design/worlds.md 4",
+   "doc": "docs/design/game-design.md 4.10",
    "risk": "",
-   "layer": 2,
+   "layer": 0,
    "origin": "diyu"
   },
   {
@@ -982,15 +1002,15 @@
   {
    "id": "lantern_reveal",
    "name": "灯照显形",
-   "group": "experimental",
+   "group": "blast",
    "owner": "game",
    "summary": "虚影木板只有被灯照到时才是实心的；灯移开，上面的东西就会掉下",
    "sdk": [],
    "assets": [],
    "chars": [],
-   "doc": "docs/design/worlds.md 4",
+   "doc": "docs/design/game-design.md 6.4",
    "risk": "",
-   "layer": 2,
+   "layer": 0,
    "origin": "diyu"
   },
   {
@@ -1040,29 +1060,29 @@
   {
    "id": "seesaw",
    "name": "跷跷板",
-   "group": "experimental",
+   "group": "react",
    "owner": "game",
    "summary": "一端落下重物，另一端上的东西被弹起若干格（韩国的跳板游戏）",
    "sdk": [],
    "assets": [],
    "chars": [],
-   "doc": "docs/design/worlds.md 4",
+   "doc": "docs/design/game-design.md 6.4",
    "risk": "",
-   "layer": 2,
+   "layer": 0,
    "origin": "jeju"
   },
   {
    "id": "gust",
    "name": "阵风",
-   "group": "experimental",
+   "group": "thermal",
    "owner": "game",
    "summary": "按节奏刮风，把轻的东西（纸扎、气球、风滚草）吹动一格",
    "sdk": [],
    "assets": [],
    "chars": [],
-   "doc": "docs/design/worlds.md 4",
+   "doc": "docs/design/game-design.md 6.4",
    "risk": "",
-   "layer": 2,
+   "layer": 0,
    "origin": "jeju"
   },
   {
@@ -1174,15 +1194,15 @@
   {
    "id": "nested_box",
    "name": "套娃箱",
-   "group": "experimental",
+   "group": "blast",
    "owner": "game",
    "summary": "被炸、被烧、被酸蚀时，里面掉出一个小一号的箱子（最多三层）",
    "sdk": [],
    "assets": [],
    "chars": [],
-   "doc": "docs/design/worlds.md 4",
+   "doc": "docs/design/game-design.md 6.4",
    "risk": "",
-   "layer": 2,
+   "layer": 0,
    "origin": "baba_yaga"
   },
   {
@@ -1216,15 +1236,15 @@
   {
    "id": "mine_cart",
    "name": "矿车",
-   "group": "experimental",
+   "group": "blast",
    "owner": "game",
    "summary": "矿车沿轨道一直滚到撞上东西为止，可以载人或载货",
    "sdk": [],
    "assets": [],
    "chars": [],
-   "doc": "docs/design/worlds.md 4",
+   "doc": "docs/design/game-design.md 6.4",
    "risk": "",
-   "layer": 2,
+   "layer": 0,
    "origin": "frontier"
   }
  ]

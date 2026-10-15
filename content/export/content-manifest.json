@@ -109,7 +109,7 @@
    "id": "water",
    "mode": "lab",
    "order": 2,
-   "name": "水",
+   "name": "水与机关",
    "theme": "theme.ruins",
    "sdk_profile": [
     "cells",
@@ -121,10 +121,11 @@
      "id": "W01",
      "title": "开闸放水",
      "mechanisms": [
-      "water_flow"
+      "water_flow",
+      "lever"
      ],
-     "spec": null,
-     "sha256": null
+     "spec": "content/levels/lab/water/W01.json",
+     "sha256": "cf14dc54ebaf9601470dc1025a30f2f3d89737272291b4b71d70178f5c9277d9"
     },
     {
      "id": "W02",
@@ -132,17 +133,17 @@
      "mechanisms": [
       "float_sink"
      ],
-     "spec": null,
-     "sha256": null
+     "spec": "content/levels/lab/water/W02.json",
+     "sha256": "d131c0f5b3d6627276e793c8ec9e58d34ab3dcb8dcff1553f173e02c3971f485"
     },
     {
      "id": "W03",
-     "title": "一袋沙挤高水面",
+     "title": "两袋沙挤高水面",
      "mechanisms": [
       "displace"
      ],
-     "spec": null,
-     "sha256": null
+     "spec": "content/levels/lab/water/W03.json",
+     "sha256": "e34adb5339108830e6a1dcc818329eda258edfd0de68a65e8b77e22c1df09dc5"
     },
     {
      "id": "W04",
@@ -150,8 +151,8 @@
      "mechanisms": [
       "communicating"
      ],
-     "spec": null,
-     "sha256": null
+     "spec": "content/levels/lab/water/W04.json",
+     "sha256": "568ae3ee6701fa5404d58e88401c63162d2019439e2b9eff08e6f72ccc715f80"
     },
     {
      "id": "W05",
@@ -159,8 +160,8 @@
      "mechanisms": [
       "lift"
      ],
-     "spec": null,
-     "sha256": null
+     "spec": "content/levels/lab/water/W05.json",
+     "sha256": "81c482caba88ee010807b7ac36aab2966bc52feeb1e518389ce05999ef76c736"
     },
     {
      "id": "W07",
@@ -168,8 +169,36 @@
      "mechanisms": [
       "bin"
      ],
-     "spec": null,
-     "sha256": null
+     "spec": "content/levels/lab/water/W07.json",
+     "sha256": "6d0c755a80cdc461598a72c848a5bf56d38c2dc99f324a3c32b36a76aa502cd7"
+    },
+    {
+     "id": "W08",
+     "title": "让桥塌下去",
+     "mechanisms": [
+      "load_bridge"
+     ],
+     "spec": "content/levels/lab/water/W08.json",
+     "sha256": "dbaab1d343579b4a8439824448e71db104681e46d2e3d938a393ac9cb0c519c4"
+    },
+    {
+     "id": "W09",
+     "title": "传送阵",
+     "mechanisms": [
+      "portal"
+     ],
+     "spec": "content/levels/lab/water/W09.json",
+     "sha256": "56bc04ba8a9015d99feb89f87ea5f0c1af055103fc1f092ef544531da9289d0f"
+    },
+    {
+     "id": "W10",
+     "title": "水满自升",
+     "mechanisms": [
+      "bin",
+      "lift"
+     ],
+     "spec": "content/levels/lab/water/W10.json",
+     "sha256": "34bba94c15862a7b76aecdf2611e9bd4effc7efaca83e1e0073e7efd516519aa"
     }
    ]
   },
@@ -177,7 +206,7 @@
    "id": "blast",
    "mode": "lab",
    "order": 3,
-   "name": "爆破",
+   "name": "爆破与矿洞",
    "theme": "theme.cave",
    "sdk_profile": [
     "cells",
@@ -221,6 +250,43 @@
      ],
      "spec": null,
      "sha256": null
+    },
+    {
+     "id": "Q07",
+     "title": "矿车一路滚",
+     "mechanisms": [
+      "mine_cart"
+     ],
+     "spec": null,
+     "sha256": null
+    },
+    {
+     "id": "Q08",
+     "title": "灯照才实",
+     "mechanisms": [
+      "lantern_reveal"
+     ],
+     "spec": null,
+     "sha256": null
+    },
+    {
+     "id": "Q09",
+     "title": "套娃箱",
+     "mechanisms": [
+      "nested_box"
+     ],
+     "spec": null,
+     "sha256": null
+    },
+    {
+     "id": "Q10",
+     "title": "炸开轨道",
+     "mechanisms": [
+      "bomb",
+      "mine_cart"
+     ],
+     "spec": null,
+     "sha256": null
     }
    ]
   },
@@ -228,7 +294,7 @@
    "id": "react",
    "mode": "lab",
    "order": 4,
-   "name": "反应与气体",
+   "name": "酸、雾与藤",
    "theme": "theme.forest",
    "sdk_profile": [
     "cells"
@@ -288,6 +354,34 @@
      ],
      "spec": null,
      "sha256": null
+    },
+    {
+     "id": "G08",
+     "title": "弹跳蘑菇",
+     "mechanisms": [
+      "bounce"
+     ],
+     "spec": null,
+     "sha256": null
+    },
+    {
+     "id": "G09",
+     "title": "跷跷板",
+     "mechanisms": [
+      "seesaw"
+     ],
+     "spec": null,
+     "sha256": null
+    },
+    {
+     "id": "G10",
+     "title": "沙压跷跷板",
+     "mechanisms": [
+      "pour",
+      "seesaw"
+     ],
+     "spec": null,
+     "sha256": null
     }
    ]
   },
@@ -295,7 +389,7 @@
    "id": "thermal",
    "mode": "lab",
    "order": 5,
-   "name": "冷与热",
+   "name": "冷热与风",
    "theme": "theme.sky",
    "sdk_profile": [
     "cells",
@@ -337,6 +431,34 @@
      "title": "炸药也点火",
      "mechanisms": [
       "blast_ignite"
+     ],
+     "spec": null,
+     "sha256": null
+    },
+    {
+     "id": "F07",
+     "title": "冰上一滑到底",
+     "mechanisms": [
+      "ice_slide"
+     ],
+     "spec": null,
+     "sha256": null
+    },
+    {
+     "id": "F08",
+     "title": "风口",
+     "mechanisms": [
+      "gust"
+     ],
+     "spec": null,
+     "sha256": null
+    },
+    {
+     "id": "F09",
+     "title": "冻出冰道",
+     "mechanisms": [
+      "freeze",
+      "ice_slide"
      ],
      "spec": null,
      "sha256": null
@@ -472,9 +594,10 @@
    ],
    "levels": [
     "M04",
-    "M06"
+    "M06",
+    "G10"
    ],
-   "status": "specified"
+   "status": "designed"
   },
   {
    "id": "plate_door",
@@ -513,7 +636,7 @@
    "levels": [
     "W01"
    ],
-   "status": "designed"
+   "status": "specified"
   },
   {
    "id": "float_sink",
@@ -526,7 +649,7 @@
    "levels": [
     "W02"
    ],
-   "status": "designed"
+   "status": "specified"
   },
   {
    "id": "displace",
@@ -540,7 +663,7 @@
    "levels": [
     "W03"
    ],
-   "status": "designed"
+   "status": "specified"
   },
   {
    "id": "communicating",
@@ -553,7 +676,18 @@
    "levels": [
     "W04"
    ],
-   "status": "designed"
+   "status": "specified"
+  },
+  {
+   "id": "lever",
+   "name": "开关",
+   "group": "water",
+   "owner": "game",
+   "sdk": [],
+   "levels": [
+    "W01"
+   ],
+   "status": "specified"
   },
   {
    "id": "lift",
@@ -562,9 +696,10 @@
    "owner": "game",
    "sdk": [],
    "levels": [
-    "W05"
+    "W05",
+    "W10"
    ],
-   "status": "designed"
+   "status": "specified"
   },
   {
    "id": "bin",
@@ -575,9 +710,10 @@
     "count_materials"
    ],
    "levels": [
-    "W07"
+    "W07",
+    "W10"
    ],
-   "status": "designed"
+   "status": "specified"
   },
   {
    "id": "bomb",
@@ -588,7 +724,8 @@
     "explode"
    ],
    "levels": [
-    "Q01"
+    "Q01",
+    "Q10"
    ],
    "status": "designed"
   },
@@ -734,7 +871,8 @@
     "couplers layer_to_material"
    ],
    "levels": [
-    "F02"
+    "F02",
+    "F09"
    ],
    "status": "designed"
   },
@@ -857,11 +995,14 @@
   {
    "id": "ice_slide",
    "name": "冰面滑行",
-   "group": "experimental",
+   "group": "thermal",
    "owner": "game",
    "sdk": [],
-   "levels": [],
-   "status": "proposed"
+   "levels": [
+    "F07",
+    "F09"
+   ],
+   "status": "designed"
   },
   {
    "id": "low_gravity",
@@ -884,13 +1025,15 @@
    "status": "proposed"
   },
   {
-   "id": "rabbit_hole",
-   "name": "兔子洞传送",
-   "group": "experimental",
+   "id": "portal",
+   "name": "传送阵",
+   "group": "water",
    "owner": "game",
    "sdk": [],
-   "levels": [],
-   "status": "proposed"
+   "levels": [
+    "W09"
+   ],
+   "status": "specified"
   },
   {
    "id": "size_change",
@@ -904,11 +1047,13 @@
   {
    "id": "bounce",
    "name": "弹跳蘑菇",
-   "group": "experimental",
+   "group": "react",
    "owner": "game",
    "sdk": [],
-   "levels": [],
-   "status": "proposed"
+   "levels": [
+    "G08"
+   ],
+   "status": "designed"
   },
   {
    "id": "conveyor",
@@ -1043,11 +1188,13 @@
   {
    "id": "load_bridge",
    "name": "承重桥",
-   "group": "experimental",
+   "group": "water",
    "owner": "game",
    "sdk": [],
-   "levels": [],
-   "status": "proposed"
+   "levels": [
+    "W08"
+   ],
+   "status": "specified"
   },
   {
    "id": "drift",
@@ -1063,11 +1210,13 @@
   {
    "id": "lantern_reveal",
    "name": "灯照显形",
-   "group": "experimental",
+   "group": "blast",
    "owner": "game",
    "sdk": [],
-   "levels": [],
-   "status": "proposed"
+   "levels": [
+    "Q08"
+   ],
+   "status": "designed"
   },
   {
    "id": "hold_breath",
@@ -1101,20 +1250,25 @@
   {
    "id": "seesaw",
    "name": "跷跷板",
-   "group": "experimental",
+   "group": "react",
    "owner": "game",
    "sdk": [],
-   "levels": [],
-   "status": "proposed"
+   "levels": [
+    "G09",
+    "G10"
+   ],
+   "status": "designed"
   },
   {
    "id": "gust",
    "name": "阵风",
-   "group": "experimental",
+   "group": "thermal",
    "owner": "game",
    "sdk": [],
-   "levels": [],
-   "status": "proposed"
+   "levels": [
+    "F08"
+   ],
+   "status": "designed"
   },
   {
    "id": "monsoon",
@@ -1190,11 +1344,13 @@
   {
    "id": "nested_box",
    "name": "套娃箱",
-   "group": "experimental",
+   "group": "blast",
    "owner": "game",
    "sdk": [],
-   "levels": [],
-   "status": "proposed"
+   "levels": [
+    "Q09"
+   ],
+   "status": "designed"
   },
   {
    "id": "petal_trail",
@@ -1217,11 +1373,14 @@
   {
    "id": "mine_cart",
    "name": "矿车",
-   "group": "experimental",
+   "group": "blast",
    "owner": "game",
    "sdk": [],
-   "levels": [],
-   "status": "proposed"
+   "levels": [
+    "Q07",
+    "Q10"
+   ],
+   "status": "designed"
   }
  ],
  "worlds": [
@@ -1377,7 +1536,7 @@
    "style": "巨型蘑菇、扑克牌、下午茶",
    "mechanisms": [
     "size_change",
-    "rabbit_hole",
+    "portal",
     "bounce"
    ],
    "theme": null,

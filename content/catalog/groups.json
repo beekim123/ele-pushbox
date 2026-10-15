@@ -1,7 +1,7 @@
 {
  "format": "pushbox.catalog/1",
  "kind": "groups",
- "note": "关卡模式的机制组与关卡计划（顺序即推荐顺序），以及地狱模式的候选池。关卡规格写好后放在 content/levels/<mode>/<group>/<id>.json，规格中的 mechanisms 必须与这里一致。",
+ "note": "机制组与关卡计划（game-design.md 第 6 节，关卡模式 v2）。每组 = 一种 SDK 材料 + 两三个不需要 SDK 的机关，组末是组合关；一关仍然只让玩家发现一件新事。第一批交给开发方的是 basics 与 water（第 1、2 章）。",
  "entries": [
   {
    "id": "basics",
@@ -83,7 +83,7 @@
    "id": "water",
    "mode": "lab",
    "order": 2,
-   "name": "水",
+   "name": "水与机关",
    "theme": "theme.ruins",
    "sdk_profile": [
     "cells",
@@ -94,10 +94,11 @@
      "id": "W01",
      "title": "开闸放水",
      "mechanisms": [
-      "water_flow"
+      "water_flow",
+      "lever"
      ],
      "role": "教学",
-     "discovery": "压板开闸，水流进渠"
+     "discovery": "拉开关开闸，水流下来灌满井，木箱浮起来当台阶"
     },
     {
      "id": "W02",
@@ -110,12 +111,12 @@
     },
     {
      "id": "W03",
-     "title": "一袋沙挤高水面",
+     "title": "两袋沙挤高水面",
      "mechanisms": [
       "displace"
      ],
      "role": "教学",
-     "discovery": "往窄池倒沙，水位上升，木箱浮到出口高度"
+     "discovery": "沙沉到水底把水挤上来，连通的井一起升高，木箱浮进槽里"
     },
     {
      "id": "W04",
@@ -124,7 +125,7 @@
       "communicating"
      ],
      "role": "教学",
-     "discovery": "打开 U 形管的阀门，两侧液面拉平"
+     "discovery": "打开阀门，两边水面拉平，木箱升成台阶"
     },
     {
      "id": "W05",
@@ -133,7 +134,7 @@
       "lift"
      ],
      "role": "教学",
-     "discovery": "箱子放上升降台，按按钮到上层"
+     "discovery": "箱子推上升降台，踩按钮到上层"
     },
     {
      "id": "W07",
@@ -142,7 +143,35 @@
       "bin"
      ],
      "role": "教学",
-     "discovery": "导水进收集斗，刻度满后锁存，点亮目标灯"
+     "discovery": "挖开塞子，水流进收集斗，刻度满后锁住目标灯"
+    },
+    {
+     "id": "W08",
+     "title": "让桥塌下去",
+     "mechanisms": [
+      "load_bridge"
+     ],
+     "role": "教学（新机制）",
+     "discovery": "旧石桥超重就塌：人踩上铁箱，铁箱沉下去压住水下压板"
+    },
+    {
+     "id": "W09",
+     "title": "传送阵",
+     "mechanisms": [
+      "portal"
+     ],
+     "role": "教学（新机制）",
+     "discovery": "停在阵上就到另一个阵；传进水井的木箱会浮上来"
+    },
+    {
+     "id": "W10",
+     "title": "水满自升",
+     "mechanisms": [
+      "bin",
+      "lift"
+     ],
+     "role": "组合",
+     "discovery": "收集斗满了带动升降台：先放箱子，再放水"
     }
    ]
   },
@@ -150,7 +179,7 @@
    "id": "blast",
    "mode": "lab",
    "order": 3,
-   "name": "爆破",
+   "name": "爆破与矿洞",
    "theme": "theme.cave",
    "sdk_profile": [
     "cells",
@@ -193,6 +222,43 @@
      ],
      "role": "教学",
      "discovery": "炸开托住碎石的裂岩，碎石慢慢填满坑"
+    },
+    {
+     "id": "Q07",
+     "title": "矿车一路滚",
+     "mechanisms": [
+      "mine_cart"
+     ],
+     "role": "教学（新机制）",
+     "discovery": "推一下矿车，它沿轨道滚到撞上东西为止，车上的箱子跟着走"
+    },
+    {
+     "id": "Q08",
+     "title": "灯照才实",
+     "mechanisms": [
+      "lantern_reveal"
+     ],
+     "role": "教学（新机制）",
+     "discovery": "晶桥只在你的灯照到时才是实的，你一走开，上面的箱子就掉下去"
+    },
+    {
+     "id": "Q09",
+     "title": "套娃箱",
+     "mechanisms": [
+      "nested_box"
+     ],
+     "role": "教学（新机制）",
+     "discovery": "炸掉外层，里面还有一个小一号的箱子"
+    },
+    {
+     "id": "Q10",
+     "title": "炸开轨道",
+     "mechanisms": [
+      "bomb",
+      "mine_cart"
+     ],
+     "role": "组合",
+     "discovery": "炸开挡在轨道上的裂岩，矿车才能载着箱子滚到槽边"
     }
    ]
   },
@@ -200,7 +266,7 @@
    "id": "react",
    "mode": "lab",
    "order": 4,
-   "name": "反应与气体",
+   "name": "酸、雾与藤",
    "theme": "theme.forest",
    "sdk_profile": [
     "cells"
@@ -259,6 +325,34 @@
      ],
      "role": "教学",
      "discovery": "水到藤根，长出梯子"
+    },
+    {
+     "id": "G08",
+     "title": "弹跳蘑菇",
+     "mechanisms": [
+      "bounce"
+     ],
+     "role": "教学（新机制）",
+     "discovery": "人或箱子落在蘑菇上会被弹起两格"
+    },
+    {
+     "id": "G09",
+     "title": "跷跷板",
+     "mechanisms": [
+      "seesaw"
+     ],
+     "role": "教学（新机制）",
+     "discovery": "一端落下重物，另一端的东西被弹起来"
+    },
+    {
+     "id": "G10",
+     "title": "沙压跷跷板",
+     "mechanisms": [
+      "pour",
+      "seesaw"
+     ],
+     "role": "组合",
+     "discovery": "在跷跷板一端倒沙，把另一端的箱子弹上平台"
     }
    ]
   },
@@ -266,7 +360,7 @@
    "id": "thermal",
    "mode": "lab",
    "order": 5,
-   "name": "冷与热",
+   "name": "冷热与风",
    "theme": "theme.sky",
    "sdk_profile": [
     "cells",
@@ -310,6 +404,34 @@
      ],
      "role": "教学",
      "discovery": "爆炸点燃半径一半以内的可燃物"
+    },
+    {
+     "id": "F07",
+     "title": "冰上一滑到底",
+     "mechanisms": [
+      "ice_slide"
+     ],
+     "role": "教学（新机制）",
+     "discovery": "推上冰面的箱子一直滑到撞上东西为止"
+    },
+    {
+     "id": "F08",
+     "title": "风口",
+     "mechanisms": [
+      "gust"
+     ],
+     "role": "教学（新机制）",
+     "discovery": "风口每回合把轻的东西吹动一格"
+    },
+    {
+     "id": "F09",
+     "title": "冻出冰道",
+     "mechanisms": [
+      "freeze",
+      "ice_slide"
+     ],
+     "role": "组合",
+     "discovery": "冷凝喷口把水冻成冰，箱子才能一路滑过去"
     }
    ]
   },
