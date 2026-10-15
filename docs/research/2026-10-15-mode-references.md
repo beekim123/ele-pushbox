@@ -1,4 +1,4 @@
-# 参考资料：配送模式、地狱模式与局外养成（2026-10-15）
+# 参考资料：配送模式、地狱模式、局外养成与名称（2026-10-15）
 
 为 [总纲](../design/vision.md)、[配送模式](../design/mode-delivery.md)、[地狱模式](../design/mode-hell.md)、[局外养成](../design/progression.md) 收集的参考。来源以评测、开发者分享和社区 wiki 为主，不是官方文档；具体数字以原作为准，本文只提取可借鉴的**设计做法**。
 
@@ -63,3 +63,24 @@
 | *sarcina* | 包裹、行囊（士兵随身的背包）。 | 标准拉丁词典（未能在线复核） |
 
 重名检索（2026-10-15，网页搜索，仅作初筛，最终需查商标和各商店）：没有找到名为 Perfer、Cursus、Portitor、Sarcina 的游戏；Capsarius 是《RuneScape》中一个首领的名字（[Prima Games](https://primagames.com/gaming/runescape-capsarius-soul-guide)）；最接近 Portitor 的是解谜游戏 *Portarius*（[GamingOnLinux](https://www.gamingonlinux.com/2018/05/portal-puzzler-portarius-is-now-available-on-linux)）。搜索结果里都是拼写相近的其他作品，没有同名游戏。
+
+## 7 局外养成如何影响局内又不破坏平衡（GD-4 补充）
+
+| 参考 | 做法 | 我们怎么用 |
+|---|---|---|
+| 吸血鬼幸存者（PowerUps） | 每购买一次，下一次价格按基础价加 10%；可以随时一键退款重新分配，开发者说明退款没有损失 | 工坊属性逐级加价；随时免费重置 |
+| Rogue Legacy 2（庄园升级） | 每次升级都让其他升级变贵，同样的属性加成越来越贵；也有评论批评重复加属性的节点太多 | 每级加价，并且每项都有上限，避免无聊的"堆数值" |
+| Hades II（Arcana 与 Grasp） | 用 Grasp 上限限制同时生效的卡牌，上限远低于全部卡牌的总花费，所以每局都要取舍 | 徽章点上限 |
+| 空洞骑士（护符槽） | 开局 3 个护符槽，最多 11 个；每个护符占 1 个以上的槽 | 徽章占 1–3 点 |
+| 死亡细胞（收藏家） | 血瓶次数是永久升级，高级升级要先解锁足够多的物品；细胞死亡即失去 | 高级属性设前置条件；失败只带回一半金币 |
+| 挺进地牢（Hegemony Credits） | 用局外货币在大本营购买新物品，买下后它们才会出现在之后的局里；局内另有商人用局内金币交易 | 解锁进奖池；局内驿站与局外商店分开 |
+| Hades（惩罚契约） | 首次逃出后开放，叠加修正项提高 Heat，热度越高奖励越多 | 加急令 |
+| 炸弹人 | 加速、炸弹数、火力范围都是拾取强化，各有上限，堆太多速度反而难控制 | 局内增益有上限；移动速度上限 +25% |
+| Boulder Dash | 按格挖掘的实时游戏；落石会压扁敌人，也会压到自己；每个洞穴有时限，越往后越短 | 配送模式采用网格实时；压怪 |
+| Luck be a Landlord | 以老虎机为核心的肉鸽游戏，用重转令、移除令改变随机结果；有玩家抱怨选项不能重转 | 双滚轮的重转、锁定、推一格 |
+
+来源：[吸血鬼幸存者 PowerUps 价格与顺序](https://gamerjournalist.com/vampire-survivors-powerups/)、[Steam 指南（加价与退款）](https://steamah.com/vampire-survivors-optimal-powerup-selection-order-guide/)、[Vampire Survivors Wiki：PowerUp](https://vampire-survivors.fandom.com/wiki/PowerUp?oldid=5168)、[Steam 讨论（退款无损）](https://steamcommunity.com/app/1794680/discussions/0/3201493834358639726)、[Game Informer：Rogue Legacy 2 评测](https://gameinformer.com/review/rogue-legacy-2/generations-of-greatness)、[GGRecon：Rogue Legacy 2 技能树](https://www.ggrecon.com/guides/rogue-legacy-2-skill-tree/)、[Maxroll：Hades 2 Arcana](https://maxroll.gg/hades-2/guides/hades-2-arcana-guide)、[RogueRanker：Hades 2 Arcana](https://rogueranker.com/hades-2-arcana/)、[Team Cherry：Charm Collection](https://teamcherry.com.au/revealing-the-power-of-the-charms)、[TrueAchievements：Hollow Knight 基础](https://www.trueachievements.com/game/Hollow-Knight/walkthrough/2)、[Dead Cells Wiki：Health Flask](https://deadcells.wiki.gg/wiki/Health_Flask)、[Dead Cells Wiki：Cells](https://deadcells.wiki.gg/wiki/Cells)、[Enter the Gungeon Wiki：Hegemony Credit](https://enterthegungeon.wiki.gg/wiki/Hegemony_Credit)、[Enter the Gungeon Wiki：Ox and Cadence](https://enterthegungeon.wiki.gg/wiki/Ox_and_Cadence)、[RPG Site：Hades 惩罚契约](https://www.rpgsite.net/feature/10287-hades-pact-of-punishment-heat-modifiers-and-how-to-maximize-your-rewards)、[Bomberman Wiki：Power-Ups](https://bomberman.fandom.com/wiki/Power-Ups?oldid=3938)、[Saturn Bomberman（Sega Retro）](https://segaretro.org/Bomberman_SS)、[Giant Bomb：Boulder Dash](https://www.giantbomb.com/boulder-dash/3030-2991/)、[Sinclair User：Boulder Dash 评测](https://everygamegoing.com/larticle/Boulder-Dash-1-000/37039)、[Twinfinite：Luck be a Landlord 移除令](https://twinfinite.net/guides/how-remove-symbols-luck-be-a-landlord/)、[Steam 讨论：Luck be a Landlord 选项重转](https://steamcommunity.com/app/1404850/discussions/0/3128289956327877528)。
+
+## 8 中文名检索
+
+搜索"万物摆渡人""渡界人"没有找到同名游戏或小说；相近题材有《灵魂摆渡者》（Spiritfarer 的中文名，见[机核](https://www.gcores.com/articles/216965)）。

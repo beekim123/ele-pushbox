@@ -1,0 +1,133 @@
+{
+ "format": "pushbox.catalog/1",
+ "kind": "events",
+ "note": "随机事件（mode-delivery.md 第 9 节）：事件房里的场景和选择。",
+ "entries": [
+  {
+   "id": "fortune_teller",
+   "name": "算命先生",
+   "setup": "路边的算命先生说你今天不宜送这一单",
+   "choices": "花 30 金币重转收件人 / 不信",
+   "mode": "delivery",
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "lost_kid",
+   "name": "迷路的小孩",
+   "setup": "一个小孩找不到妈妈",
+   "choices": "带他找妈妈（多走两个房间，好感 +1，获得徽章碎片）/ 指个方向",
+   "mode": "delivery",
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "cat_in_well",
+   "name": "井里的猫",
+   "setup": "一只猫掉进了井里",
+   "choices": "放绳梯救它（消耗绳梯，猫以后会帮你）/ 走开",
+   "mode": "delivery",
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "broken_bridge",
+   "name": "断桥",
+   "setup": "桥断了",
+   "choices": "付 40 金币请人修 / 自己用木板和箱子搭",
+   "mode": "delivery",
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "sudden_rain",
+   "name": "骤雨",
+   "setup": "突然下起大雨",
+   "choices": "躲雨（等一会儿）/ 冒雨前进（火都灭了，地面变滑，信件会湿）",
+   "mode": "delivery",
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "mystery_merchant",
+   "name": "神秘商人",
+   "setup": "戴兜帽的商人只收「心」",
+   "choices": "用 1 颗心换一件稀有道具 / 不换",
+   "mode": "delivery",
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "rival_courier",
+   "name": "同行",
+   "setup": "天使信差也要去同一个地方",
+   "choices": "比赛：先到的人拿双倍小费 / 让她先走",
+   "mode": "delivery",
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "lost_parcel",
+   "name": "遗失的包裹",
+   "setup": "路边有一个写着别人名字的包裹",
+   "choices": "顺路送（占一格背包，送到给金币）/ 不管",
+   "mode": "delivery",
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "fairy_ring",
+   "name": "仙女环",
+   "setup": "一圈蘑菇在发光",
+   "choices": "走进去（随机传送到地图另一处）/ 绕开",
+   "mode": "delivery",
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "toll_troll",
+   "name": "收费桥",
+   "setup": "桥头的巨魔要收过路费",
+   "choices": "付 25 金币 / 解开他出的谜题（一个小推箱房间）",
+   "mode": "delivery",
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "wishing_well",
+   "name": "许愿池",
+   "setup": "许愿池里闪着金币",
+   "choices": "投 20 金币换一个随机本局增益 / 捞 10 金币（运气变差）",
+   "mode": "delivery",
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "haunted_crate",
+   "name": "闹鬼的箱子",
+   "setup": "一只在发抖的箱子",
+   "choices": "打开（可能是宝物，也可能是怪）/ 推进水里",
+   "mode": "delivery",
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "temple_fair",
+   "name": "庙会",
+   "setup": "正赶上庙会",
+   "choices": "驿站全部半价，但人多走得慢",
+   "mode": "delivery",
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "cattle_crossing",
+   "name": "牛群过路",
+   "setup": "一群牛慢慢走过",
+   "choices": "等它们过去 / 从牛背上跳过去（弹簧鞋）",
+   "mode": "delivery",
+   "layer": 2,
+   "status": "concept"
+  }
+ ]
+}

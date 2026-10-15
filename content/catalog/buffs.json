@@ -1,27 +1,38 @@
 {
  "format": "pushbox.catalog/1",
  "kind": "buffs",
- "note": "配送模式的本局增益（设计稿，mode-delivery.md 第 5 节）。",
+ "note": "配送模式的本局增益（mode-delivery.md 第 8 节），持续到本局结束。price 是驿站参考价。",
  "entries": [
   {
    "id": "cart",
    "name": "手推车",
    "mode": "delivery",
    "effect": "大件货物不减速",
+   "price": 120,
    "status": "concept"
   },
   {
    "id": "energy_drink",
    "name": "力气饮料",
    "mode": "delivery",
-   "effect": "若干步内大件货物不减速",
+   "effect": "接下来两个房间大件货物不减速",
+   "price": 40,
    "status": "concept"
   },
   {
    "id": "cooler",
    "name": "保冷箱",
    "mode": "delivery",
-   "effect": "冰淇淋融化速度减半",
+   "effect": "冰淇淋、鲜鱼变化速度减半",
+   "price": 60,
+   "status": "concept"
+  },
+  {
+   "id": "thermos",
+   "name": "保温壶",
+   "mode": "delivery",
+   "effect": "热汤变凉速度减半",
+   "price": 50,
    "status": "concept"
   },
   {
@@ -29,6 +40,7 @@
    "name": "护垫",
    "mode": "delivery",
    "effect": "易碎品防摔一次",
+   "price": 45,
    "status": "concept"
   },
   {
@@ -36,6 +48,7 @@
    "name": "防水袋",
    "mode": "delivery",
    "effect": "货物不怕水",
+   "price": 50,
    "status": "concept"
   },
   {
@@ -43,6 +56,31 @@
    "name": "指南针",
    "mode": "delivery",
    "effect": "小地图显示收件人方向",
+   "price": 30,
+   "status": "concept"
+  },
+  {
+   "id": "running_shoes",
+   "name": "跑鞋",
+   "mode": "delivery",
+   "effect": "移动速度 +10%（与属性分开计算，总加成仍有上限）",
+   "price": 80,
+   "status": "concept"
+  },
+  {
+   "id": "night_vision",
+   "name": "夜视",
+   "mode": "delivery",
+   "effect": "黑暗中视野 +2 格",
+   "price": 60,
+   "status": "concept"
+  },
+  {
+   "id": "lucky_charm",
+   "name": "幸运签",
+   "mode": "delivery",
+   "effect": "宝箱多开出一件东西",
+   "price": 70,
    "status": "concept"
   }
  ]

@@ -16,7 +16,7 @@
         box.append(el("button", { class: "list-btn", type: "button", "aria-current": String(g.id === group), onclick: () => { location.hash = "#modes/" + g.id; } }, [
           el("span", { text: (m.id === "lab" ? g.order + " " : "") + g.name }), el("span", { class: "small muted", text: n.total ? `${n.spec}/${n.total}` : "0" })]));
       }
-      if (!gs.length) box.append(el("a", { class: "list-btn", href: "#catalog/cargo" }, [el("span", { text: "设计数据（货物、怪物、增益）" })]));
+      if (!gs.length) box.append(el("a", { class: "list-btn", href: "#catalog/worlds" }, [el("span", { text: "设计数据（地区、收件人、货物、怪物……）" })]));
     }
   }
 

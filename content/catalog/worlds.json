@@ -1,0 +1,297 @@
+{
+ "format": "pushbox.catalog/1",
+ "kind": "worlds",
+ "note": "配送模式的地区（世界）。第 0 层的六个主题已确认，直接用作第 1 层地区。新地区的专属机制先登记为提议中的机制，进实验组验证。设计见 docs/design/worlds.md。",
+ "entries": [
+  {
+   "id": "dungeon",
+   "name": "幽暗石牢",
+   "style": "冷灰石砖、壁挂火把",
+   "mechanisms": [
+    "push",
+    "ladder",
+    "dig",
+    "pour",
+    "plate_door"
+   ],
+   "theme": "theme.dungeon",
+   "layer": 1,
+   "status": "active"
+  },
+  {
+   "id": "ruins",
+   "name": "黄金神庙",
+   "style": "砂岩、金饰、斜射光柱",
+   "mechanisms": [
+    "water_flow",
+    "float_sink",
+    "communicating",
+    "lift"
+   ],
+   "theme": "theme.ruins",
+   "layer": 1,
+   "status": "active"
+  },
+  {
+   "id": "cave",
+   "name": "幽光晶窟",
+   "style": "深色岩洞、荧光蘑菇",
+   "mechanisms": [
+    "bomb",
+    "fuse",
+    "gravel"
+   ],
+   "theme": "theme.cave",
+   "layer": 1,
+   "status": "active"
+  },
+  {
+   "id": "forest",
+   "name": "迷雾古森",
+   "style": "草皮褐土、雾林",
+   "mechanisms": [
+    "acid",
+    "gas_rise",
+    "gas_sink",
+    "vine"
+   ],
+   "theme": "theme.forest",
+   "layer": 1,
+   "status": "active"
+  },
+  {
+   "id": "sky",
+   "name": "云端圣域",
+   "style": "白云、金饰、晴空",
+   "mechanisms": [
+    "burn",
+    "freeze",
+    "melt"
+   ],
+   "theme": "theme.sky",
+   "layer": 1,
+   "status": "active"
+  },
+  {
+   "id": "cosmos",
+   "name": "深空星站",
+   "style": "舱板与警示条",
+   "mechanisms": [
+    "power"
+   ],
+   "theme": "theme.cosmos",
+   "layer": 1,
+   "status": "active"
+  },
+  {
+   "id": "countryside",
+   "name": "乡村小路",
+   "style": "麦田、篱笆、风车、午后阳光",
+   "mechanisms": [
+    "mud"
+   ],
+   "theme": null,
+   "layer": 1,
+   "status": "concept"
+  },
+  {
+   "id": "ink_town",
+   "name": "水墨江南",
+   "style": "黑白灰水墨、红灯笼、拱桥",
+   "mechanisms": [
+    "moving_platform"
+   ],
+   "theme": null,
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "xianxia",
+   "name": "仙山云海",
+   "style": "青绿山水、云海、仙鹤",
+   "mechanisms": [
+    "moving_platform"
+   ],
+   "theme": null,
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "bamboo",
+   "name": "熊猫竹林",
+   "style": "竹海、雨、石阶",
+   "mechanisms": [
+    "vine"
+   ],
+   "theme": null,
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "wonderland",
+   "name": "奇幻仙境",
+   "style": "巨型蘑菇、扑克牌、下午茶",
+   "mechanisms": [
+    "size_change",
+    "rabbit_hole",
+    "bounce"
+   ],
+   "theme": null,
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "graveyard",
+   "name": "墓园鬼镇",
+   "style": "夜色、墓碑、南瓜灯",
+   "mechanisms": [
+    "darkness",
+    "gas_sink"
+   ],
+   "theme": null,
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "spaceport",
+   "name": "星际港",
+   "style": "外星植物、气闸、霓虹",
+   "mechanisms": [
+    "low_gravity",
+    "acid"
+   ],
+   "theme": null,
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "savanna",
+   "name": "草原象谷",
+   "style": "金色草原、猴面包树",
+   "mechanisms": [
+    "moving_platform",
+    "burn"
+   ],
+   "theme": null,
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "undersea",
+   "name": "东海龙宫",
+   "style": "珊瑚、宫殿、鱼群",
+   "mechanisms": [
+    "underwater",
+    "tide",
+    "bubble_lift"
+   ],
+   "theme": null,
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "candy",
+   "name": "糖果王国",
+   "style": "糖果色、巧克力河",
+   "mechanisms": [
+    "bounce",
+    "melt"
+   ],
+   "theme": null,
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "desert",
+   "name": "沙漠集市",
+   "style": "沙丘、帐篷、驼铃",
+   "mechanisms": [
+    "quicksand"
+   ],
+   "theme": null,
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "polar",
+   "name": "极地雪村",
+   "style": "冰屋、极光",
+   "mechanisms": [
+    "ice_slide",
+    "snowball",
+    "warmth"
+   ],
+   "theme": null,
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "dino",
+   "name": "恐龙谷",
+   "style": "蕨类、火山、恐龙蛋",
+   "mechanisms": [
+    "tar",
+    "lava"
+   ],
+   "theme": null,
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "steam_city",
+   "name": "蒸汽工坊城",
+   "style": "铜管、齿轮、蒸汽",
+   "mechanisms": [
+    "conveyor",
+    "gas_rise"
+   ],
+   "theme": null,
+   "layer": 2,
+   "status": "concept"
+  },
+  {
+   "id": "cyber_market",
+   "name": "赛博夜市",
+   "style": "霓虹、雨夜、小吃摊",
+   "mechanisms": [
+    "laser_mirror",
+    "magnet"
+   ],
+   "theme": null,
+   "layer": 4,
+   "status": "concept"
+  },
+  {
+   "id": "pirate_cove",
+   "name": "海盗湾",
+   "style": "海滩、沉船、宝箱",
+   "mechanisms": [
+    "tide"
+   ],
+   "theme": null,
+   "layer": 4,
+   "status": "concept"
+  },
+  {
+   "id": "moon",
+   "name": "月宫",
+   "style": "环形山、桂花树、宫灯",
+   "mechanisms": [
+    "low_gravity",
+    "day_night"
+   ],
+   "theme": null,
+   "layer": 4,
+   "status": "concept"
+  },
+  {
+   "id": "styx",
+   "name": "冥河",
+   "style": "冥河、彼岸花、九层地底（地狱模式）",
+   "mechanisms": [],
+   "theme": null,
+   "layer": 3,
+   "status": "concept"
+  }
+ ]
+}

@@ -1,30 +1,30 @@
 {
  "format": "pushbox.catalog/1",
  "kind": "modes",
- "note": "三个游戏模式。设计见 docs/design/vision.md。",
+ "note": "三个游戏模式。开发顺序：关卡模式 → 配送模式 → 地狱模式（2026-10-15 用户决定）。设计见 docs/design/vision.md。",
  "entries": [
   {
    "id": "lab",
    "name": "关卡模式",
-   "summary": "每关只演示一个机制，也是新机制的试验场和 SDK 回归测试。",
+   "summary": "渡口训练场：每关只演示一个机制，也是新机制的试验场和 SDK 回归测试。回合制。",
    "status": "active",
    "doc": "docs/design/game-design.md",
    "order": 1
   },
   {
-   "id": "hell",
-   "name": "地狱模式",
-   "summary": "纯推箱解谜，难度高，不给提示，允许多解；奖励进入局外养成。",
+   "id": "delivery",
+   "name": "配送模式",
+   "summary": "游戏的核心：双滚轮定货物和收件人，网格实时穿越多个房间，推怪压怪，驿站购物，连送。",
    "status": "design",
-   "doc": "docs/design/mode-hell.md",
+   "doc": "docs/design/mode-delivery.md",
    "order": 2
   },
   {
-   "id": "delivery",
-   "name": "配送模式",
-   "summary": "每局随机一件带规则的货物，穿过多个房间，避开或放倒怪物，送到收件人手里。",
+   "id": "hell",
+   "name": "地狱模式",
+   "summary": "冥河加急件：纯推箱解谜，难度高，不给提示，允许多解。回合制。",
    "status": "design",
-   "doc": "docs/design/mode-delivery.md",
+   "doc": "docs/design/mode-hell.md",
    "order": 3
   }
  ]

@@ -10,7 +10,7 @@ import path from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 
 const REPO = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-export const CATALOGS = ["modes", "groups", "mechanisms", "items", "cargo", "monsters", "buffs"];
+export const CATALOGS = ["modes", "groups", "mechanisms", "worlds", "recipients", "cargo", "combos", "monsters", "items", "buffs", "upgrades", "badges", "events"];
 const sha = (buf) => crypto.createHash("sha256").update(buf).digest("hex");
 const readJson = (p) => JSON.parse(fs.readFileSync(p, "utf8"));
 function walk(dir) {
@@ -108,6 +108,23 @@ export function buildContent(root, opts = {}) {
     if (!["sdk", "game", "both"].includes(m.owner)) add("error", `mechanisms/${m.id}`, "owner 只能是 sdk、game、both");
     for (const a of m.assets || []) if (!art.has(a)) add("error", `mechanisms/${m.id}`, `美术资产 ${a} 不存在`);
   }
+  // ---- design data (delivery mode and beyond) ----
+  const worlds = byId(cat.worlds), recipients = byId(cat.recipients), cargo = byId(cat.cargo);
+  for (const w of cat.worlds) {
+    if (w.theme && !art.has(w.theme)) add("error", `worlds/${w.id}`, `主题 ${w.theme} 不是已有的美术资产`);
+    for (const m of w.mechanisms || []) if (!mechs.has(m)) add("error", `worlds/${w.id}`, `机制 ${m} 不在机制目录中`);
+  }
+  for (const r of cat.recipients) {
+    if (!(r.worlds || []).length) add("error", `recipients/${r.id}`, "没有写去哪个地区");
+    for (const w of r.worlds || []) if (!worlds.has(w)) add("error", `recipients/${r.id}`, `地区 ${w} 不在 worlds.json 中`);
+    for (const c of r.likes || []) if (!cargo.has(c)) add("error", `recipients/${r.id}`, `喜欢的货物 ${c} 不在 cargo.json 中`);
+  }
+  for (const x of cat.combos) {
+    if (!cargo.has(x.cargo)) add("error", `combos/${x.id}`, `货物 ${x.cargo} 不在 cargo.json 中`);
+    if (!recipients.has(x.recipient)) add("error", `combos/${x.id}`, `收件人 ${x.recipient} 不在 recipients.json 中`);
+  }
+  for (const mo of cat.monsters) if (mo.world && !worlds.has(mo.world)) add("error", `monsters/${mo.id}`, `地区 ${mo.world} 不在 worlds.json 中`);
+  for (const m of cat.mechanisms) if (m.origin && !["delivery", "sdk"].includes(m.origin) && !worlds.has(m.origin)) add("error", `mechanisms/${m.id}`, `来源 ${m.origin} 不是地区，也不是 delivery / sdk`);
   for (const kind of ["items", "cargo"]) for (const e of cat[kind]) {
     for (const a of e.assets || []) if (!art.has(a)) add("error", `${kind}/${e.id}`, `美术资产 ${a} 不存在`);
     for (const m of e.mechanisms || []) if (!mechs.has(m)) add("error", `${kind}/${e.id}`, `机制 ${m} 不在机制目录中`);
@@ -159,7 +176,8 @@ export function buildContent(root, opts = {}) {
         groups: cat.groups.map((g) => ({ id: g.id, mode: g.mode, order: g.order, name: g.name, theme: g.theme, sdk_profile: g.sdk_profile, hidden: !!g.hidden,
           levels: levels.filter((l) => l.group === g.id).map((l) => ({ id: l.id, title: l.title, mechanisms: l.mechanisms, spec: l.has_spec ? l.spec : null, sha256: l.has_spec ? l.sha256 : null })) })),
         mechanisms: mechanisms.map((m) => ({ id: m.id, name: m.name, group: m.group, owner: m.owner, sdk: m.sdk, levels: m.levels, status: m.status })),
-        items: cat.items, cargo: cat.cargo, monsters: cat.monsters, buffs: cat.buffs,
+        worlds: cat.worlds, recipients: cat.recipients, cargo: cat.cargo, combos: cat.combos, monsters: cat.monsters,
+        items: cat.items, buffs: cat.buffs, upgrades: cat.upgrades, badges: cat.badges, events: cat.events,
       };
       fs.mkdirSync(rel("content/export"), { recursive: true });
       fs.writeFileSync(rel("content/export/content-manifest.json"), JSON.stringify(manifest, null, 1) + "\n");

@@ -32,6 +32,8 @@
       el("dt", { text: "地图字符" }), el("dd", { class: "mono", text: (m.chars || []).join(" ") || "—" }),
       el("dt", { text: "风险" }), el("dd", { text: m.risk || "—" }),
       el("dt", { text: "设计文档" }), el("dd", { class: "mono", text: m.doc || "—" }),
+      el("dt", { text: "内容层" }), el("dd", { text: m.layer === undefined ? "—" : "第 " + m.layer + " 层" }),
+      el("dt", { text: "来自" }), el("dd", { text: !m.origin ? "关卡模式" : m.origin === "delivery" ? "配送模式" : m.origin === "sdk" ? "SDK 扩展" : ((store.catalog("worlds").find((w) => w.id === m.origin) || {}).name || m.origin) }),
     ]));
     const levels = store.content().levels.filter((l) => m.levels.includes(l.id));
     box.append(el("h3", { text: "关卡模式中的关卡" }), levels.length ? UI.levelTable(levels) : el("p", { class: "muted", text: "还没有关卡：按 game-design.md 6.7 在实验组加一关。" }));

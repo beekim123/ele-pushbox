@@ -1,7 +1,7 @@
 {
  "format": "pushbox.catalog/1",
  "kind": "mechanisms",
- "note": "机制目录。每个机制先在关卡模式中做成关卡并验证，才能用于配送模式和地狱模式（game-design.md 6.7）。状态由工具根据关卡计划、规格、验证报告和美术确认自动算出，不在这里手写。owner：sdk = SDK 物理求解器完成；game = 游戏层规则；both = 两者配合。",
+ "note": "机制目录。每个机制先在关卡模式中做成关卡并验证，才能用于配送模式和地狱模式（game-design.md 6.7）。状态由工具根据关卡计划、规格、验证报告和美术确认自动算出，不在这里手写。owner：sdk = SDK 物理求解器完成；game = 游戏层规则；both = 两者配合。layer：内容层（vision.md 第 4 节）；origin：提议这个机制的地区或系统。",
  "entries": [
   {
    "id": "push",
@@ -21,7 +21,8 @@
     "b"
    ],
    "doc": "docs/design/game-design.md 4.2",
-   "risk": ""
+   "risk": "",
+   "layer": 0
   },
   {
    "id": "ladder",
@@ -38,7 +39,8 @@
     "h"
    ],
    "doc": "docs/design/game-design.md 4.3",
-   "risk": ""
+   "risk": "",
+   "layer": 0
   },
   {
    "id": "dig",
@@ -58,7 +60,8 @@
     "e"
    ],
    "doc": "docs/design/game-design.md 4.4",
-   "risk": ""
+   "risk": "",
+   "layer": 0
   },
   {
    "id": "pour",
@@ -76,7 +79,8 @@
     "s"
    ],
    "doc": "docs/design/game-design.md 4.5",
-   "risk": "靠墙倒沙的溢出量需样板验证（<128 cell）"
+   "risk": "靠墙倒沙的溢出量需样板验证（<128 cell）",
+   "layer": 0
   },
   {
    "id": "plate_door",
@@ -95,7 +99,8 @@
     "|"
    ],
    "doc": "docs/design/game-design.md 4.7",
-   "risk": ""
+   "risk": "",
+   "layer": 0
   },
   {
    "id": "fall",
@@ -111,7 +116,8 @@
    ],
    "chars": [],
    "doc": "docs/design/game-design.md 4.1",
-   "risk": ""
+   "risk": "",
+   "layer": 0
   },
   {
    "id": "water_flow",
@@ -130,7 +136,8 @@
     "~"
    ],
    "doc": "docs/design/game-design.md 6.4",
-   "risk": "开闸后需要唤醒相邻水体（EXT-09 的替代做法）"
+   "risk": "开闸后需要唤醒相邻水体（EXT-09 的替代做法）",
+   "layer": 0
   },
   {
    "id": "float_sink",
@@ -153,7 +160,8 @@
     "~"
    ],
    "doc": "docs/design/game-design.md 6.4",
-   "risk": "浮箱是游戏层规则"
+   "risk": "浮箱是游戏层规则",
+   "layer": 0
   },
   {
    "id": "displace",
@@ -173,7 +181,8 @@
     "~"
    ],
    "doc": "docs/design/game-design.md 6.4",
-   "risk": "一袋沙能抬高多少水位待验证"
+   "risk": "一袋沙能抬高多少水位待验证",
+   "layer": 0
   },
   {
    "id": "communicating",
@@ -192,7 +201,8 @@
     "|"
    ],
    "doc": "docs/design/game-design.md 6.4",
-   "risk": "被 static 盖住的液面不算开口"
+   "risk": "被 static 盖住的液面不算开口",
+   "layer": 0
   },
   {
    "id": "lift",
@@ -207,7 +217,8 @@
    ],
    "chars": [],
    "doc": "docs/design/game-design.md 6.5",
-   "risk": ""
+   "risk": "",
+   "layer": 0
   },
   {
    "id": "bin",
@@ -224,7 +235,8 @@
    ],
    "chars": [],
    "doc": "docs/design/game-design.md 6.5",
-   "risk": ""
+   "risk": "",
+   "layer": 0
   },
   {
    "id": "bomb",
@@ -244,7 +256,8 @@
     "%"
    ],
    "doc": "docs/design/game-design.md 4.6",
-   "risk": "崩落阈值是游戏层规则"
+   "risk": "崩落阈值是游戏层规则",
+   "layer": 0
   },
   {
    "id": "blast_through",
@@ -263,7 +276,8 @@
     "%"
    ],
    "doc": "docs/design/game-design.md 6.4",
-   "risk": "悬停高亮必须如实显示影响范围"
+   "risk": "悬停高亮必须如实显示影响范围",
+   "layer": 0
   },
   {
    "id": "fuse",
@@ -285,7 +299,8 @@
     "f"
    ],
    "doc": "docs/design/game-design.md 6.4",
-   "risk": "固定阶段长度 = 燃烧时长 + 余量"
+   "risk": "固定阶段长度 = 燃烧时长 + 余量",
+   "layer": 0
   },
   {
    "id": "gravel",
@@ -303,7 +318,8 @@
     "g"
    ],
    "doc": "docs/design/game-design.md 6.4",
-   "risk": "结算时长不能触顶"
+   "risk": "结算时长不能触顶",
+   "layer": 0
   },
   {
    "id": "acid",
@@ -323,7 +339,8 @@
     "L"
    ],
    "doc": "docs/design/game-design.md 6.4",
-   "risk": "接触面要宽，反应概率设高，避免残留"
+   "risk": "接触面要宽，反应概率设高，避免残留",
+   "layer": 0
   },
   {
    "id": "etch_tag",
@@ -344,7 +361,8 @@
     "R"
    ],
    "doc": "docs/design/game-design.md 6.4",
-   "risk": ""
+   "risk": "",
+   "layer": 0
   },
   {
    "id": "gas_rise",
@@ -365,7 +383,8 @@
     "^"
    ],
    "doc": "docs/design/game-design.md 6.4",
-   "risk": ""
+   "risk": "",
+   "layer": 0
   },
   {
    "id": "gas_sink",
@@ -386,7 +405,8 @@
     "v"
    ],
    "doc": "docs/design/game-design.md 6.4",
-   "risk": ""
+   "risk": "",
+   "layer": 0
   },
   {
    "id": "lifetime",
@@ -405,7 +425,8 @@
     "p"
    ],
    "doc": "docs/design/game-design.md 6.5",
-   "risk": "寿命不超过 255 tick"
+   "risk": "寿命不超过 255 tick",
+   "layer": 0
   },
   {
    "id": "vine",
@@ -421,7 +442,8 @@
    ],
    "chars": [],
    "doc": "docs/design/game-design.md 6.5",
-   "risk": ""
+   "risk": "",
+   "layer": 0
   },
   {
    "id": "burn",
@@ -443,7 +465,8 @@
     "w"
    ],
    "doc": "docs/design/game-design.md 6.4",
-   "risk": "固定阶段长度"
+   "risk": "固定阶段长度",
+   "layer": 0
   },
   {
    "id": "freeze",
@@ -465,7 +488,8 @@
     "~"
    ],
    "doc": "docs/design/game-design.md 6.4",
-   "risk": "耦合器 stride = 1；冰不带 phase_up"
+   "risk": "耦合器 stride = 1；冰不带 phase_up",
+   "layer": 0
   },
   {
    "id": "melt",
@@ -485,7 +509,8 @@
     "i"
    ],
    "doc": "docs/design/game-design.md 6.4",
-   "risk": ""
+   "risk": "",
+   "layer": 0
   },
   {
    "id": "blast_ignite",
@@ -506,7 +531,8 @@
     "w"
    ],
    "doc": "docs/design/game-design.md 6.4",
-   "risk": ""
+   "risk": "",
+   "layer": 0
   },
   {
    "id": "power",
@@ -520,7 +546,9 @@
    "assets": [],
    "chars": [],
    "doc": "docs/design/game-design.md 9",
-   "risk": "有电源时世界永远无法静止，需要固定阶段"
+   "risk": "有电源时世界永远无法静止，需要固定阶段",
+   "layer": 4,
+   "origin": "sdk"
   },
   {
    "id": "particles",
@@ -534,7 +562,9 @@
    "assets": [],
    "chars": [],
    "doc": "docs/design/game-design.md 9",
-   "risk": "Godot 侧读不到粒子，只能等固定阶段后数沉积量"
+   "risk": "Godot 侧读不到粒子，只能等固定阶段后数沉积量",
+   "layer": 4,
+   "origin": "sdk"
   },
   {
    "id": "rigid",
@@ -548,7 +578,9 @@
    "assets": [],
    "chars": [],
    "doc": "docs/design/game-design.md 9",
-   "risk": "撤销须从开局重放"
+   "risk": "撤销须从开局重放",
+   "layer": 4,
+   "origin": "sdk"
   },
   {
    "id": "pressure",
@@ -562,7 +594,360 @@
    "assets": [],
    "chars": [],
    "doc": "docs/design/game-design.md 9",
-   "risk": "只推动气体格与粒子，不推动沙、水、箱子"
+   "risk": "只推动气体格与粒子，不推动沙、水、箱子",
+   "layer": 4,
+   "origin": "sdk"
+  },
+  {
+   "id": "push_monster",
+   "name": "推怪",
+   "group": "experimental",
+   "owner": "game",
+   "summary": "小怪可以像箱子一样被推一格，推进坑、水、火里",
+   "sdk": [],
+   "assets": [],
+   "chars": [],
+   "doc": "docs/design/worlds.md 4",
+   "risk": "",
+   "layer": 1,
+   "origin": "delivery"
+  },
+  {
+   "id": "crush_monster",
+   "name": "压怪",
+   "group": "experimental",
+   "owner": "game",
+   "summary": "支撑被挖掉后，箱子、沙、碎石砸下来压倒怪物",
+   "sdk": [],
+   "assets": [],
+   "chars": [],
+   "doc": "docs/design/worlds.md 4",
+   "risk": "",
+   "layer": 1,
+   "origin": "delivery"
+  },
+  {
+   "id": "trap_monster",
+   "name": "困怪",
+   "group": "experimental",
+   "owner": "game",
+   "summary": "挖坑让怪掉进去，坑过一会儿被沙填回",
+   "sdk": [],
+   "assets": [],
+   "chars": [],
+   "doc": "docs/design/worlds.md 4",
+   "risk": "",
+   "layer": 1,
+   "origin": "delivery"
+  },
+  {
+   "id": "carry_bulky",
+   "name": "抬大件",
+   "group": "experimental",
+   "owner": "game",
+   "summary": "举着大件货物移动变慢，不能爬梯、挖、倒",
+   "sdk": [],
+   "assets": [],
+   "chars": [],
+   "doc": "docs/design/worlds.md 4",
+   "risk": "",
+   "layer": 1,
+   "origin": "delivery"
+  },
+  {
+   "id": "mud",
+   "name": "泥地减速",
+   "group": "experimental",
+   "owner": "game",
+   "summary": "站在泥上移动速度减半",
+   "sdk": [],
+   "assets": [],
+   "chars": [],
+   "doc": "docs/design/worlds.md 4",
+   "risk": "",
+   "layer": 2,
+   "origin": "countryside"
+  },
+  {
+   "id": "ice_slide",
+   "name": "冰面滑行",
+   "group": "experimental",
+   "owner": "game",
+   "summary": "在冰上移动会一直滑到撞上东西",
+   "sdk": [],
+   "assets": [],
+   "chars": [],
+   "doc": "docs/design/worlds.md 4",
+   "risk": "与 SDK 冰材料共用",
+   "layer": 2,
+   "origin": "polar"
+  },
+  {
+   "id": "low_gravity",
+   "name": "低重力",
+   "group": "experimental",
+   "owner": "both",
+   "summary": "落得慢，人能安全落下更多格",
+   "sdk": [
+    "gravity"
+   ],
+   "assets": [],
+   "chars": [],
+   "doc": "docs/design/worlds.md 4",
+   "risk": "需要 SDK 支持按世界调重力",
+   "layer": 2,
+   "origin": "spaceport"
+  },
+  {
+   "id": "darkness",
+   "name": "黑暗与灯光",
+   "group": "experimental",
+   "owner": "game",
+   "summary": "黑暗地区只看得见灯光照到的范围",
+   "sdk": [],
+   "assets": [],
+   "chars": [],
+   "doc": "docs/design/worlds.md 4",
+   "risk": "",
+   "layer": 2,
+   "origin": "graveyard"
+  },
+  {
+   "id": "rabbit_hole",
+   "name": "兔子洞传送",
+   "group": "experimental",
+   "owner": "game",
+   "summary": "成对的洞口互相传送人和货物",
+   "sdk": [],
+   "assets": [],
+   "chars": [],
+   "doc": "docs/design/worlds.md 4",
+   "risk": "",
+   "layer": 2,
+   "origin": "wonderland"
+  },
+  {
+   "id": "size_change",
+   "name": "缩小与放大",
+   "group": "experimental",
+   "owner": "game",
+   "summary": "缩小后能钻半格高的通道，但推不动箱子",
+   "sdk": [],
+   "assets": [],
+   "chars": [],
+   "doc": "docs/design/worlds.md 4",
+   "risk": "格子规则要支持半格，复杂度高",
+   "layer": 2,
+   "origin": "wonderland"
+  },
+  {
+   "id": "bounce",
+   "name": "弹跳蘑菇",
+   "group": "experimental",
+   "owner": "game",
+   "summary": "落到蘑菇上被弹起若干格",
+   "sdk": [],
+   "assets": [],
+   "chars": [],
+   "doc": "docs/design/worlds.md 4",
+   "risk": "",
+   "layer": 2,
+   "origin": "wonderland"
+  },
+  {
+   "id": "conveyor",
+   "name": "传送带",
+   "group": "experimental",
+   "owner": "game",
+   "summary": "持续把上面的人和箱子往一个方向送",
+   "sdk": [],
+   "assets": [],
+   "chars": [],
+   "doc": "docs/design/worlds.md 4",
+   "risk": "",
+   "layer": 2,
+   "origin": "steam_city"
+  },
+  {
+   "id": "tide",
+   "name": "潮汐",
+   "group": "experimental",
+   "owner": "both",
+   "summary": "水位按节奏涨落",
+   "sdk": [
+    "liquid"
+   ],
+   "assets": [],
+   "chars": [],
+   "doc": "docs/design/worlds.md 4",
+   "risk": "大量写水，性能要测",
+   "layer": 2,
+   "origin": "undersea"
+  },
+  {
+   "id": "quicksand",
+   "name": "流沙",
+   "group": "experimental",
+   "owner": "both",
+   "summary": "站在流沙上会慢慢陷下去",
+   "sdk": [
+    "powder"
+   ],
+   "assets": [],
+   "chars": [],
+   "doc": "docs/design/worlds.md 4",
+   "risk": "",
+   "layer": 2,
+   "origin": "desert"
+  },
+  {
+   "id": "tar",
+   "name": "焦油",
+   "group": "experimental",
+   "owner": "sdk",
+   "summary": "很稠的液体，进去会被粘住",
+   "sdk": [
+    "liquid viscosity"
+   ],
+   "assets": [],
+   "chars": [],
+   "doc": "docs/design/worlds.md 4",
+   "risk": "需要 SDK 的黏度能力",
+   "layer": 2,
+   "origin": "dino"
+  },
+  {
+   "id": "lava",
+   "name": "熔岩",
+   "group": "experimental",
+   "owner": "sdk",
+   "summary": "会流动、会点燃的液体",
+   "sdk": [
+    "liquid",
+    "thermal",
+    "burnable"
+   ],
+   "assets": [],
+   "chars": [],
+   "doc": "docs/design/worlds.md 4",
+   "risk": "温度与燃烧联动要测",
+   "layer": 2,
+   "origin": "dino"
+  },
+  {
+   "id": "magnet",
+   "name": "磁力",
+   "group": "experimental",
+   "owner": "game",
+   "summary": "磁铁吸引铁箱",
+   "sdk": [],
+   "assets": [],
+   "chars": [],
+   "doc": "docs/design/worlds.md 4",
+   "risk": "",
+   "layer": 2,
+   "origin": "cyber_market"
+  },
+  {
+   "id": "laser_mirror",
+   "name": "激光与镜子",
+   "group": "experimental",
+   "owner": "game",
+   "summary": "激光被镜子反射，照到开关打开机关",
+   "sdk": [],
+   "assets": [],
+   "chars": [],
+   "doc": "docs/design/worlds.md 4",
+   "risk": "",
+   "layer": 4,
+   "origin": "cyber_market"
+  },
+  {
+   "id": "moving_platform",
+   "name": "移动平台",
+   "group": "experimental",
+   "owner": "game",
+   "summary": "小船、飞剑、河马按路线移动，可以站在上面",
+   "sdk": [],
+   "assets": [],
+   "chars": [],
+   "doc": "docs/design/worlds.md 4",
+   "risk": "与浮箱规则配合",
+   "layer": 2,
+   "origin": "ink_town"
+  },
+  {
+   "id": "day_night",
+   "name": "昼夜",
+   "group": "experimental",
+   "owner": "game",
+   "summary": "有的东西只在夜里出现或活动",
+   "sdk": [],
+   "assets": [],
+   "chars": [],
+   "doc": "docs/design/worlds.md 4",
+   "risk": "",
+   "layer": 4,
+   "origin": "moon"
+  },
+  {
+   "id": "snowball",
+   "name": "雪球",
+   "group": "experimental",
+   "owner": "game",
+   "summary": "推动雪球会越滚越大，变成能压怪的大球",
+   "sdk": [],
+   "assets": [],
+   "chars": [],
+   "doc": "docs/design/worlds.md 4",
+   "risk": "",
+   "layer": 2,
+   "origin": "polar"
+  },
+  {
+   "id": "bubble_lift",
+   "name": "气泡托举",
+   "group": "experimental",
+   "owner": "both",
+   "summary": "水下的气泡能把人和轻货托上去",
+   "sdk": [
+    "gas",
+    "liquid"
+   ],
+   "assets": [],
+   "chars": [],
+   "doc": "docs/design/worlds.md 4",
+   "risk": "",
+   "layer": 2,
+   "origin": "undersea"
+  },
+  {
+   "id": "underwater",
+   "name": "水下与氧气",
+   "group": "experimental",
+   "owner": "game",
+   "summary": "在水里有氧气条",
+   "sdk": [],
+   "assets": [],
+   "chars": [],
+   "doc": "docs/design/worlds.md 4",
+   "risk": "",
+   "layer": 2,
+   "origin": "undersea"
+  },
+  {
+   "id": "warmth",
+   "name": "冷暖值",
+   "group": "experimental",
+   "owner": "game",
+   "summary": "寒冷地区要靠火堆取暖",
+   "sdk": [],
+   "assets": [],
+   "chars": [],
+   "doc": "docs/design/worlds.md 4",
+   "risk": "",
+   "layer": 2,
+   "origin": "polar"
   }
  ]
 }

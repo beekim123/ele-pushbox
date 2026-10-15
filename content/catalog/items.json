@@ -1,14 +1,16 @@
 {
  "format": "pushbox.catalog/1",
  "kind": "items",
- "note": "背包物品。lab = 关卡模式已在用；delivery = 配送模式设计稿。",
+ "note": "背包物品。lab = 关卡模式已在用；delivery = 配送模式（设计稿）。price 是驿站的参考价（金币）。",
  "entries": [
   {
    "id": "sandbag",
    "name": "沙袋",
    "mode": "lab",
-   "summary": "挖夯土或散沙得到，倒出一格沙。上限 9 袋。",
+   "summary": "挖夯土或散沙得到，倒出一格沙",
    "status": "active",
+   "layer": 1,
+   "price": 10,
    "assets": [
     "item.sandbag"
    ]
@@ -17,8 +19,10 @@
    "id": "bomb",
    "name": "炸药",
    "mode": "lab",
-   "summary": "放在相邻格，炸开裂岩（第 3 组起）。",
+   "summary": "放在相邻格，炸开裂岩（第 3 组起）",
    "status": "active",
+   "layer": 1,
+   "price": 30,
    "assets": [
     "item.bomb"
    ]
@@ -27,33 +31,163 @@
    "id": "rope_ladder",
    "name": "绳梯",
    "mode": "delivery",
-   "summary": "在当前位置向下放一段梯子。",
+   "summary": "在当前位置向下放一段梯子",
    "status": "concept",
-   "assets": []
+   "layer": 1,
+   "price": 25
   },
   {
    "id": "plank",
    "name": "木板",
    "mode": "delivery",
-   "summary": "在一格宽的缺口上搭桥。",
+   "summary": "在一格宽的缺口上搭桥",
    "status": "concept",
-   "assets": []
+   "layer": 1,
+   "price": 15
   },
   {
    "id": "ice_cube",
    "name": "冰块",
    "mode": "delivery",
-   "summary": "给冰淇淋降温。",
+   "summary": "给冰淇淋类货物降温；扔进水里会结一小块冰",
    "status": "concept",
-   "assets": []
+   "layer": 1,
+   "price": 15
   },
   {
    "id": "bait",
    "name": "诱饵",
    "mode": "delivery",
-   "summary": "吸引追踪者。",
+   "summary": "扔出去吸引追踪类怪物",
    "status": "concept",
-   "assets": []
+   "layer": 1,
+   "price": 20
+  },
+  {
+   "id": "water_jug",
+   "name": "水壶",
+   "mode": "delivery",
+   "summary": "倒出一格水：灭火、浇花",
+   "status": "concept",
+   "layer": 1,
+   "price": 15
+  },
+  {
+   "id": "matches",
+   "name": "火柴",
+   "mode": "delivery",
+   "summary": "点燃相邻的可燃物",
+   "status": "concept",
+   "layer": 1,
+   "price": 10
+  },
+  {
+   "id": "extinguisher",
+   "name": "灭火器",
+   "mode": "delivery",
+   "summary": "扑灭前方三格的火",
+   "status": "concept",
+   "layer": 1,
+   "price": 30
+  },
+  {
+   "id": "umbrella",
+   "name": "雨伞",
+   "mode": "delivery",
+   "summary": "下落时缓降，落得再高也不受伤",
+   "status": "concept",
+   "layer": 1,
+   "price": 35
+  },
+  {
+   "id": "spring_shoes",
+   "name": "弹簧鞋",
+   "mode": "delivery",
+   "summary": "向上弹一格半，用三次",
+   "status": "concept",
+   "layer": 1,
+   "price": 40
+  },
+  {
+   "id": "horseshoe_magnet",
+   "name": "马蹄磁铁",
+   "mode": "delivery",
+   "summary": "把一只铁箱吸到身边",
+   "status": "concept",
+   "layer": 1,
+   "price": 35
+  },
+  {
+   "id": "flare",
+   "name": "照明弹",
+   "mode": "delivery",
+   "summary": "照亮整个房间一段时间",
+   "status": "concept",
+   "layer": 1,
+   "price": 25
+  },
+  {
+   "id": "hourglass",
+   "name": "回溯沙漏",
+   "mode": "delivery",
+   "summary": "倒回 5 秒前（用 SDK 快照实现）",
+   "status": "concept",
+   "layer": 1,
+   "price": 80
+  },
+  {
+   "id": "seal",
+   "name": "封条",
+   "mode": "delivery",
+   "summary": "封住一扇门，或者定住一只怪一段时间",
+   "status": "concept",
+   "layer": 1,
+   "price": 40
+  },
+  {
+   "id": "beacon",
+   "name": "传送信标",
+   "mode": "delivery",
+   "summary": "放下后随时可以传回放置点",
+   "status": "concept",
+   "layer": 1,
+   "price": 60
+  },
+  {
+   "id": "map_piece",
+   "name": "地图碎片",
+   "mode": "delivery",
+   "summary": "在小地图上显示整张地图",
+   "status": "concept",
+   "layer": 1,
+   "price": 30
+  },
+  {
+   "id": "first_aid",
+   "name": "急救包",
+   "mode": "delivery",
+   "summary": "回 1 颗心",
+   "status": "concept",
+   "layer": 1,
+   "price": 50
+  },
+  {
+   "id": "pocket_watch",
+   "name": "时停怀表",
+   "mode": "delivery",
+   "summary": "一段时间内只有你移动时时间才流动",
+   "status": "concept",
+   "layer": 1,
+   "price": 70
+  },
+  {
+   "id": "whistle",
+   "name": "哨子",
+   "mode": "delivery",
+   "summary": "把附近的怪物吓退一格",
+   "status": "concept",
+   "layer": 1,
+   "price": 20
   }
  ]
 }

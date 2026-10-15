@@ -8,7 +8,7 @@
 
 ## 你的任务
 
-你负责重构横版推箱解谜游戏的 Godot 本体（现名《箱途 / Cratebound》，新名待用户从 `docs/design/naming.md` 中挑选）。主角是一名什么都送的配送员；游戏有三个模式（`docs/design/vision.md`）。**本次只做关卡模式**：每关只演示一个机制（SDK 机制或游戏层机制），地图都很简单；它同时是新机制的试验场和 SDK 的回归测试。分两个阶段：
+你负责重构横版推箱解谜游戏 **PORTITOR**（中文名待用户从 `docs/design/naming.md` 中挑选；代码和界面里暂用现名《箱途 / Cratebound》）的 Godot 本体。主角是万界渡口的摆渡人，什么都送；游戏有三个模式（`docs/design/vision.md`），开发顺序是关卡模式 → 配送模式 → 地狱模式。**本次只做关卡模式**：每关只演示一个机制（SDK 机制或游戏层机制），地图都很简单；它同时是新机制的试验场和 SDK 的回归测试。分两个阶段：
 
 - **阶段一**：按新的设计规格从零建一个干净的 Godot 工程，用真实 SDK 做出**基础组 7 关（M01–M07）+ 全套菜单**的可玩闭环，并自动生成验证报告。
 - **阶段二**：按关卡计划 `content/catalog/groups.json`，逐组细化并实现水、爆破、反应与气体、冷与热四个组（共 20 关），每组交设计审核。
@@ -125,7 +125,7 @@ game/
 
 - 开工先运行：`node tools/art.mjs build && node tools/art.mjs verify`（Node 18+，无依赖），确认输出以 `verify ok` 开头、`build` 没有 `bumped`、`content: 0 error(s)`。之后只读取 `art/export/manifest.json`，每项是否可用看 `approved` 与 `current_is_approved`。
 - 已确认清单（`APR-0001`，全部 v1，界面布局 v2 见 `APR-0002`）：
-  - 角色：`char.miner`（21 帧：待机、走、推、爬、挖、倒、落、胜利；以后可能改画成配送员，届时会有新版本和新的确认）
+  - 角色：`char.miner`（21 帧：待机、走、推、爬、挖、倒、落、胜利）。主角正在重新设计（`char.portitor`，待确认）；确认后会替换，动作名称和帧结构保持不变，所以代码只需要换资产编号。
   - 物件：`obj.crate_wood`、`obj.crate_iron`
   - 机关：`mech.door`、`mech.plate`、`mech.link_symbol`、`mech.socket`、`mech.socket_lit`、`mech.exit_flag`、`mech.ladder`
   - 物品：`item.sandbag`、`item.bomb`

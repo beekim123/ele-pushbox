@@ -24,8 +24,8 @@
         for (const x of C.mechanisms) st[x.status] = (st[x.status] || 0) + 1;
         stat = `${store.catalog("groups").filter((g) => g.mode === "lab").length} 组，计划 ${n.total} 关（有规格 ${n.spec}、SDK 验证 ${n.sdk}）；机制 ${C.mechanisms.length} 个：` + ["playable", "verified", "specified", "designed", "proposed"].filter((k) => st[k]).map((k) => `${store.mechStatusLabel(k)} ${st[k]}`).join("、");
       } else if (m.id === "hell") stat = `候选关卡 ${levels.length} 个（来自原组合关）`;
-      else stat = `设计数据：货物 ${store.catalog("cargo").length}、怪物 ${store.catalog("monsters").length}、增益 ${store.catalog("buffs").length}、道具 ${store.catalog("items").filter((i) => i.mode === "delivery").length}`;
-      cards.append(el("a", { class: "mode-card", href: m.id === "delivery" ? "#catalog/cargo" : "#modes/" + (m.id === "lab" ? "basics" : "hell-pool") }, [
+      else stat = `设计数据：地区 ${store.catalog("worlds").length}、收件人 ${store.catalog("recipients").length}、货物 ${store.catalog("cargo").length}、缘分组合 ${store.catalog("combos").length}、怪物 ${store.catalog("monsters").length}、道具 ${store.catalog("items").filter((i) => i.mode === "delivery").length}、增益 ${store.catalog("buffs").length}、徽章 ${store.catalog("badges").length}、事件 ${store.catalog("events").length}`;
+      cards.append(el("a", { class: "mode-card", href: m.id === "delivery" ? "#catalog/worlds" : "#modes/" + (m.id === "lab" ? "basics" : "hell-pool") }, [
         el("div", { class: "row" }, [el("strong", { text: m.name }), UI.modeBadge(m)]),
         el("p", { class: "small", text: m.summary }),
         el("p", { class: "small muted", text: stat }),
@@ -68,9 +68,9 @@
     box.append(section("内容检查", [C.issues.length ? list : el("p", { class: "muted", text: "没有错误或警告（node tools/content.mjs check）。" })]));
 
     box.append(section("待你决定", [el("ul", {}, [
-      el("li", { text: "游戏名：候选见 docs/design/naming.md。" }),
-      el("li", { text: "主角是否改画成配送员、何时改画：docs/design/vision.md 第 4 节。" }),
-      el("li", { text: "地狱模式是否放在配送模式之前做：docs/design/vision.md 第 6 节。" }),
+      el("li", { text: "中文名：候选见 docs/design/naming.md（英文名 PORTITOR 已定）。" }),
+      el("li", {}, ["新主角候选：「资产」页 ", el("a", { href: "#assets/char.portitor", text: "char.portitor" }), "；「场景」页可以切换主角预览。"]),
+      el("li", { text: "配送模式改为网格实时：docs/design/vision.md 第 3 节。" }),
     ])]));
   }
 
