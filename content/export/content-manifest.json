@@ -249,7 +249,7 @@
       "gravel"
      ],
      "spec": "content/levels/lab/blast/Q04.json",
-     "sha256": "3c837bdd888d057c093fc78792b83373b42d3bad46175cef8d38fbb6e4c34f8d"
+     "sha256": "9beca0fbcf01b1211f660960ac5650f71a4a53a9eb657945aabeb314f5d9e728"
     },
     {
      "id": "Q07",
@@ -317,7 +317,7 @@
       "etch_tag"
      ],
      "spec": "content/levels/lab/react/G02.json",
-     "sha256": "0909bf156f740c1b4ab84b0411b0e615a209be34c169bad95741ead10e95ddc4"
+     "sha256": "0728694eb262f5f3d9a768bac7f76f4478e040fa15fde2435d6dabbe29600296"
     },
     {
      "id": "G03",
@@ -344,7 +344,7 @@
       "lifetime"
      ],
      "spec": "content/levels/lab/react/G05.json",
-     "sha256": "db8eb702a64e5b046076cdc6747953fae2d798df85df1b4f2855198f643d3d52"
+     "sha256": "cae48f26d5070aa7dea2805f0723cfbf0d18de3143c752ea02a677dd91af2b29"
     },
     {
      "id": "G06",
@@ -518,7 +518,7 @@
       "load_bridge"
      ],
      "spec": "content/levels/lab/experimental/E04.json",
-     "sha256": "3300226027e99825b057a73102ac11f18eb0a35d42a90a0c6d9aba99eb90321c"
+     "sha256": "129c0d6d942f2ca5cc521bb241d36d29763c701887e95aab8f599b56dd2d95a1"
     },
     {
      "id": "E05",
@@ -903,7 +903,7 @@
    "levels": [
     "G05"
    ],
-   "status": "playable"
+   "status": "specified"
   },
   {
    "id": "vine",
