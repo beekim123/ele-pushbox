@@ -434,12 +434,12 @@
    "uid": "art:deco.diyu_lantern",
    "domain": "art",
    "id": "deco.diyu_lantern",
-   "name": "地府 · 红灯笼",
+   "name": "地府 · 引魂灯",
    "source": "art/source/deco/deco.diyu_lantern.json",
    "game": "res://generated/art/deco.diyu_lantern.tres",
    "category": "deco",
    "version": 1,
-   "hash": "451435f0230ee530b3b2828e7e66f3e3ebb5f60278908f35d140e8aa30001df0",
+   "hash": "3df6d3cb39ed5ef60828ddaa100bd958dd54bcedcacd1366f6f9c0d6c4d92183",
    "approved": false
   },
   {
@@ -1286,12 +1286,12 @@
    "uid": "art:theme.diyu",
    "domain": "art",
    "id": "theme.diyu",
-   "name": "主题 · 地府·酆都",
+   "name": "主题 · 地府（荒郊野岭）",
    "source": "art/source/theme/theme.diyu.json",
    "game": "res://generated/themes/theme.diyu.tres",
    "category": "theme",
    "version": 1,
-   "hash": "3d89a9882337e64af3ab4dfd9e9c211c2ee34d7c4c0eaad5af3d7a6e1e2fe515",
+   "hash": "e7d67e5a07bb6afb1d6146e07ad45860e373e18b92c3a90537f709c89deba834",
    "approved": false
   },
   {
