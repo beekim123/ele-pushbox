@@ -1,0 +1,1722 @@
+{
+  "format": "portitor.lv11-initial/1",
+  "run_id": "20261016T094907529159Z-97809",
+  "tested_source_sha256": "7ebc28e2b42891f6dbdcc0d249789bb926264011db14918e5eff1d5cae00392c",
+  "commit": "cefa04829a160fd084ae4de83708f537a6fc22fd",
+  "suites": [
+    {
+      "name": "importer",
+      "ok": true,
+      "completed": true,
+      "exit_code": 0,
+      "engine_errors": false,
+      "seconds": 0.365,
+      "command": [
+        "node",
+        "--test",
+        "--test-concurrency=1",
+        "game/tests/core/import_resources.test.mjs",
+        "game/tests/core/mechanic_stubs.test.mjs"
+      ],
+      "log": "game/tests/results/importer.log"
+    },
+    {
+      "name": "resources",
+      "ok": true,
+      "completed": true,
+      "exit_code": 0,
+      "engine_errors": false,
+      "seconds": 0.244,
+      "command": [
+        "node",
+        "game/tools/import_resources.mjs",
+        "import"
+      ],
+      "log": "game/tests/results/resources.log"
+    },
+    {
+      "name": "model-export",
+      "ok": true,
+      "completed": true,
+      "exit_code": 0,
+      "engine_errors": false,
+      "seconds": 0.041,
+      "command": [
+        "node",
+        "game/tools/export_model.mjs"
+      ],
+      "log": "game/tests/results/model-export.log"
+    },
+    {
+      "name": "ladder-reference-export",
+      "ok": true,
+      "completed": true,
+      "exit_code": 0,
+      "engine_errors": false,
+      "seconds": 0.095,
+      "command": [
+        "node",
+        "game/tests/refs/generate_ladder_refs.mjs"
+      ],
+      "log": "game/tests/results/ladder-reference-export.log"
+    },
+    {
+      "name": "reference-export",
+      "ok": true,
+      "completed": true,
+      "exit_code": 0,
+      "engine_errors": false,
+      "seconds": 0.555,
+      "command": [
+        "node",
+        "game/tests/refs/generate_workbench_refs.mjs"
+      ],
+      "log": "game/tests/results/reference-export.log"
+    },
+    {
+      "name": "godot-import",
+      "ok": true,
+      "completed": true,
+      "exit_code": 0,
+      "engine_errors": false,
+      "seconds": 3.062,
+      "command": [
+        "/Users/key_/Desktop/CURRGO/pushbox-demo/../ele-proj/zips/Godot.app/Contents/MacOS/Godot",
+        "--headless",
+        "--path",
+        "/Users/key_/Desktop/CURRGO/pushbox-demo/game",
+        "--import"
+      ],
+      "log": "game/tests/results/godot-import.log"
+    },
+    {
+      "name": "chapter-text",
+      "ok": true,
+      "completed": true,
+      "exit_code": 0,
+      "engine_errors": false,
+      "seconds": 0.347,
+      "command": [
+        "/Users/key_/Desktop/CURRGO/pushbox-demo/../ele-proj/zips/Godot.app/Contents/MacOS/Godot",
+        "--headless",
+        "--path",
+        "/Users/key_/Desktop/CURRGO/pushbox-demo/game",
+        "--script",
+        "res://tests/ui/chapter_text.gd"
+      ],
+      "log": "game/tests/results/chapter-text.log"
+    },
+    {
+      "name": "bridge-gravel",
+      "ok": true,
+      "completed": true,
+      "exit_code": 0,
+      "engine_errors": false,
+      "seconds": 0.685,
+      "command": [
+        "/Users/key_/Desktop/CURRGO/pushbox-demo/../ele-proj/zips/Godot.app/Contents/MacOS/Godot",
+        "--headless",
+        "--path",
+        "/Users/key_/Desktop/CURRGO/pushbox-demo/game",
+        "--script",
+        "res://tests/chapters/bridge_gravel.gd"
+      ],
+      "log": "game/tests/results/bridge-gravel.log"
+    },
+    {
+      "name": "chapters",
+      "ok": false,
+      "completed": true,
+      "exit_code": 1,
+      "engine_errors": false,
+      "seconds": 23.669,
+      "command": [
+        "/Users/key_/Desktop/CURRGO/pushbox-demo/../ele-proj/zips/Godot.app/Contents/MacOS/Godot",
+        "--headless",
+        "--path",
+        "/Users/key_/Desktop/CURRGO/pushbox-demo/game",
+        "--script",
+        "res://tests/chapters/run.gd"
+      ],
+      "log": "game/tests/results/chapters.log"
+    }
+  ],
+  "levels": [
+    {
+      "id": "Q01",
+      "spec_sha256": "c896c95b7970bcdbaa2d755bcfd1f308dea51b05f2fa7045e55cd0964a2362ae",
+      "author_solution_verified": true,
+      "sdk_verified": true,
+      "consistent": true,
+      "undo_ok": true,
+      "restart_ok": true,
+      "max_ticks": 6,
+      "max_rounds": 1,
+      "runs": [
+        {
+          "accepted_steps": 8,
+          "restart_ok": true,
+          "sequence_sha256": "5249188fb0516672976a95af171c6e92c81c0f18be85616246d076e278ae3c63",
+          "undo_ok": true,
+          "won": true
+        },
+        {
+          "accepted_steps": 8,
+          "restart_ok": true,
+          "sequence_sha256": "5249188fb0516672976a95af171c6e92c81c0f18be85616246d076e278ae3c63",
+          "undo_ok": true,
+          "won": true
+        },
+        {
+          "accepted_steps": 8,
+          "restart_ok": true,
+          "sequence_sha256": "5249188fb0516672976a95af171c6e92c81c0f18be85616246d076e278ae3c63",
+          "undo_ok": true,
+          "won": true
+        }
+      ],
+      "spec_checks": [
+        {
+          "text": "SDK 核对高位爆心[4,2]摧毁[4,2]裂岩，但保留对角的[5,3]裂岩支撑；若实际半径导致对角支撑崩落则报告模型/SDK分歧，不脚本强保留。",
+          "status": "pass"
+        },
+        {
+          "text": "低位诱饵爆心[4,3]清掉墙[4,2]及支撑[5,3]，箱子落到[5,3]后无法回到上层槽。",
+          "status": "pass"
+        },
+        {
+          "text": "作者路线后箱子[8,2]入槽；真实SDK连续回放3次一致，逐步撤销，结算不得触顶。",
+          "status": "pass"
+        }
+      ]
+    },
+    {
+      "id": "Q02",
+      "spec_sha256": "3a867dffb8291d0e43eaa7a9a56401693d0ee099b0c4ddd4497b2c81c596e3e9",
+      "author_solution_verified": true,
+      "sdk_verified": true,
+      "consistent": true,
+      "undo_ok": true,
+      "restart_ok": true,
+      "max_ticks": 26,
+      "max_rounds": 5,
+      "runs": [
+        {
+          "accepted_steps": 8,
+          "restart_ok": true,
+          "sequence_sha256": "dc9baca68b2e52a97fc6065980a0517890624e68f2a0755b3b38e8673f9fadcc",
+          "undo_ok": true,
+          "won": true
+        },
+        {
+          "accepted_steps": 8,
+          "restart_ok": true,
+          "sequence_sha256": "dc9baca68b2e52a97fc6065980a0517890624e68f2a0755b3b38e8673f9fadcc",
+          "undo_ok": true,
+          "won": true
+        },
+        {
+          "accepted_steps": 8,
+          "restart_ok": true,
+          "sequence_sha256": "dc9baca68b2e52a97fc6065980a0517890624e68f2a0755b3b38e8673f9fadcc",
+          "undo_ok": true,
+          "won": true
+        }
+      ],
+      "spec_checks": [
+        {
+          "text": "真实 SDK 核对爆心[4,3]隔着完整基岩命中[5,3]裂岩，墙不消失；比较低位诱饵是否真的不能让[5,3]跨128cell阈值。",
+          "status": "pass"
+        },
+        {
+          "text": "箱子从[5,2]落到[5,6]，人物到[2,2]时两目标同时点亮。",
+          "status": "pass"
+        },
+        {
+          "text": "逐步撤销恢复井内箱子高度、裂岩cell、炸药与出口灯，1200tick/16轮内稳定。",
+          "status": "pass"
+        }
+      ]
+    },
+    {
+      "id": "Q03",
+      "spec_sha256": "84219881704cc18de926d13741e139154100f537ffa1f7b0d04f646e78755574",
+      "author_solution_verified": true,
+      "sdk_verified": true,
+      "consistent": true,
+      "undo_ok": true,
+      "restart_ok": true,
+      "max_ticks": 968,
+      "max_rounds": 2,
+      "runs": [
+        {
+          "accepted_steps": 9,
+          "restart_ok": true,
+          "sequence_sha256": "7dd209e6f11da0c9abb9a95502df45c5be62402c183212865a888c33c8f570cf",
+          "undo_ok": true,
+          "won": true
+        },
+        {
+          "accepted_steps": 9,
+          "restart_ok": true,
+          "sequence_sha256": "7dd209e6f11da0c9abb9a95502df45c5be62402c183212865a888c33c8f570cf",
+          "undo_ok": true,
+          "won": true
+        },
+        {
+          "accepted_steps": 9,
+          "restart_ok": true,
+          "sequence_sha256": "7dd209e6f11da0c9abb9a95502df45c5be62402c183212865a888c33c8f570cf",
+          "undo_ok": true,
+          "won": true
+        }
+      ],
+      "spec_checks": [
+        {
+          "text": "模型只按四邻连接与每段独立十字爆炸推导终态，不模拟热传播或480tick；SDK必须证明右支逐段燃烧，末端才破坏[8,3]裂岩。",
+          "status": "pass"
+        },
+        {
+          "text": "左支点燃只能影响其附近裂岩[2,3]，不能点燃不相连的右支；若真实热传播跨空隙则报告分歧。",
+          "status": "pass"
+        },
+        {
+          "text": "固定960tick阶段结束前引信应燃尽（LV-06实测828tick，余量132），之后静止判断；超过阶段或1200tick/16轮必须报告，不伪造终态。",
+          "status": "pass"
+        },
+        {
+          "text": "真实SDK作者解连续回放3次、逐步撤销，恢复全部燃烧/寿命状态。",
+          "status": "pass"
+        }
+      ]
+    },
+    {
+      "id": "Q04",
+      "spec_sha256": "9beca0fbcf01b1211f660960ac5650f71a4a53a9eb657945aabeb314f5d9e728",
+      "author_solution_verified": true,
+      "sdk_verified": false,
+      "consistent": true,
+      "undo_ok": true,
+      "restart_ok": true,
+      "max_ticks": 200,
+      "max_rounds": 2,
+      "runs": [
+        {
+          "accepted_steps": 10,
+          "restart_ok": true,
+          "sequence_sha256": "2d92f235090c51d0bf6561c0387ea2e3edd2319c12f4bdf6ab5812f508d572b2",
+          "undo_ok": true,
+          "won": true
+        },
+        {
+          "accepted_steps": 10,
+          "restart_ok": true,
+          "sequence_sha256": "2d92f235090c51d0bf6561c0387ea2e3edd2319c12f4bdf6ab5812f508d572b2",
+          "undo_ok": true,
+          "won": true
+        },
+        {
+          "accepted_steps": 10,
+          "restart_ok": true,
+          "sequence_sha256": "2d92f235090c51d0bf6561c0387ea2e3edd2319c12f4bdf6ab5812f508d572b2",
+          "undo_ok": true,
+          "won": true
+        }
+      ],
+      "spec_checks": [
+        {
+          "text": "SDK真实粉末move_chance128、抗爆65535：炸开[6,3]后碎石落入封闭的斗[6,4..5]，斗真实计数≥448并锁存（LV-10实测500：下落时各有6cell滑到[5,3]、[7,3]，属正常），512总量守恒。",
+          "status": "fail"
+        },
+        {
+          "text": "验证斗内碎石顶面能按128cell分类支撑人物跨井；不得脚本摆成整格台阶，粉末溢出或不能支撑必须报告。",
+          "status": "pass"
+        },
+        {
+          "text": "SDK 核对诱饵：从[5,6]朝右炸斗底[6,6]，再上去炸托石[6,3]，碎石漏入[6,6..7]并可散进[5,6]，顶面过低不能跨到右台；最终斗内计数不足512。设计模型bin可能在瞬时经过刻度时锁存，因此诱饵以无法抵达出口为判据，真实SDK必须静止后读计数。",
+          "status": "pass"
+        },
+        {
+          "text": "作者路线抵达[9,3]且斗灯亮，连续回放3次一致；慢落与撤销由SDK核对，结算不触顶。",
+          "status": "pass"
+        }
+      ]
+    },
+    {
+      "id": "Q07",
+      "spec_sha256": "570b6b629d4debbc8841fe0a552bec93e09131a452006986e5ad788de35a81ce",
+      "author_solution_verified": true,
+      "sdk_verified": true,
+      "consistent": true,
+      "undo_ok": true,
+      "restart_ok": true,
+      "max_ticks": 10,
+      "max_rounds": 2,
+      "runs": [
+        {
+          "accepted_steps": 8,
+          "restart_ok": true,
+          "sequence_sha256": "7aa75797af5fe8c77e4c114c4ea579f0d6e4abbc25686fae26dd62bd72aabacc",
+          "undo_ok": true,
+          "won": true
+        },
+        {
+          "accepted_steps": 8,
+          "restart_ok": true,
+          "sequence_sha256": "7aa75797af5fe8c77e4c114c4ea579f0d6e4abbc25686fae26dd62bd72aabacc",
+          "undo_ok": true,
+          "won": true
+        },
+        {
+          "accepted_steps": 8,
+          "restart_ok": true,
+          "sequence_sha256": "7aa75797af5fe8c77e4c114c4ea579f0d6e4abbc25686fae26dd62bd72aabacc",
+          "undo_ok": true,
+          "won": true
+        }
+      ],
+      "spec_checks": [
+        {
+          "text": "装货后箱子[6,4]由车[6,5]支撑；侧推一次逐格扫掠到车[10,5]、箱[10,4]，推车人停[6,5]。",
+          "status": "pass"
+        },
+        {
+          "text": "先推空车的诱饵路线无法再把高台箱子装上末端车；不能越墙回推。",
+          "status": "pass"
+        },
+        {
+          "text": "车台面与箱子用static cell清旧写新，不用刚体；全局禁搬规则不豁免；逐步撤销恢复整次滚动及目标灯。",
+          "status": "pass"
+        }
+      ]
+    },
+    {
+      "id": "Q08",
+      "spec_sha256": "d67fff1c216b75fa4c79661dd67b45cecefa5ba35745f53df2e036ed54d0ac78",
+      "author_solution_verified": true,
+      "sdk_verified": true,
+      "consistent": true,
+      "undo_ok": true,
+      "restart_ok": true,
+      "max_ticks": 19,
+      "max_rounds": 4,
+      "runs": [
+        {
+          "accepted_steps": 13,
+          "restart_ok": true,
+          "sequence_sha256": "9cfda9c58de750a233b4165ac1605763e2b475d77ec236e9cb7b0db82189ce72",
+          "undo_ok": true,
+          "won": true
+        },
+        {
+          "accepted_steps": 13,
+          "restart_ok": true,
+          "sequence_sha256": "9cfda9c58de750a233b4165ac1605763e2b475d77ec236e9cb7b0db82189ce72",
+          "undo_ok": true,
+          "won": true
+        },
+        {
+          "accepted_steps": 13,
+          "restart_ok": true,
+          "sequence_sha256": "9cfda9c58de750a233b4165ac1605763e2b475d77ec236e9cb7b0db82189ce72",
+          "undo_ok": true,
+          "won": true
+        }
+      ],
+      "spec_checks": [
+        {
+          "text": "晶桥[5,4]按欧氏半径2格、动作后先更新实心再重力；先后从下方经过时也应正确点亮。",
+          "status": "pass"
+        },
+        {
+          "text": "箱子推到[5,3]时由晶桥支撑；人物由[4,3]退到[3,3]，桥熄灭，箱子落到[5,6]。",
+          "status": "pass"
+        },
+        {
+          "text": "模型验证绕行、诱饵死局与卸货；SDK核对只写/清该设备自有cell，环境视觉设置不改变机关。",
+          "status": "pass"
+        },
+        {
+          "text": "逐步撤销覆盖灯的上下方照亮、箱子过桥与深槽下落，真实回放3次一致。",
+          "status": "pass"
+        }
+      ]
+    },
+    {
+      "id": "Q09",
+      "spec_sha256": "2c86776c334b72977c563b7534594d89e47779b12deac630c777084738945494",
+      "author_solution_verified": true,
+      "sdk_verified": true,
+      "consistent": true,
+      "undo_ok": true,
+      "restart_ok": true,
+      "max_ticks": 25,
+      "max_rounds": 5,
+      "runs": [
+        {
+          "accepted_steps": 12,
+          "restart_ok": true,
+          "sequence_sha256": "891d12529ff878de8669369d4e85f54afde8ad6bac5f249343aebb03844b1adb",
+          "undo_ok": true,
+          "won": true
+        },
+        {
+          "accepted_steps": 12,
+          "restart_ok": true,
+          "sequence_sha256": "891d12529ff878de8669369d4e85f54afde8ad6bac5f249343aebb03844b1adb",
+          "undo_ok": true,
+          "won": true
+        },
+        {
+          "accepted_steps": 12,
+          "restart_ok": true,
+          "sequence_sha256": "891d12529ff878de8669369d4e85f54afde8ad6bac5f249343aebb03844b1adb",
+          "undo_ok": true,
+          "won": true
+        }
+      ],
+      "spec_checks": [
+        {
+          "text": "同一独立SDK爆炸只剥一层，连续两次由3层→2层→1层；两次均不挪动箱子，仍真实调用explode。",
+          "status": "pass"
+        },
+        {
+          "text": "单层箱在[7,6]点亮小箱槽，人物回到[4,2]旗时同时通关；只剥一层后跟下去补炸不能再从深井回旗。",
+          "status": "pass"
+        },
+        {
+          "text": "每次爆炸、推箱、下落撤销均恢复层数、实体绑定、cell、炸药与灯；烧/酸剥壳不由本关模型证明。",
+          "status": "pass"
+        }
+      ]
+    },
+    {
+      "id": "Q10",
+      "spec_sha256": "a3cd2540c04d30e47197fcfc6cc10e5a62a42f8ce31e42fa168375522e951305",
+      "author_solution_verified": true,
+      "sdk_verified": true,
+      "consistent": true,
+      "undo_ok": true,
+      "restart_ok": true,
+      "max_ticks": 11,
+      "max_rounds": 2,
+      "runs": [
+        {
+          "accepted_steps": 11,
+          "restart_ok": true,
+          "sequence_sha256": "f19fbd784037e162dc531419ddb421878caf7287343fcf2a486042c8427cb04d",
+          "undo_ok": true,
+          "won": true
+        },
+        {
+          "accepted_steps": 11,
+          "restart_ok": true,
+          "sequence_sha256": "f19fbd784037e162dc531419ddb421878caf7287343fcf2a486042c8427cb04d",
+          "undo_ok": true,
+          "won": true
+        },
+        {
+          "accepted_steps": 11,
+          "restart_ok": true,
+          "sequence_sha256": "f19fbd784037e162dc531419ddb421878caf7287343fcf2a486042c8427cb04d",
+          "undo_ok": true,
+          "won": true
+        }
+      ],
+      "spec_checks": [
+        {
+          "text": "第一次侧推空车停[7,6]，箱子仍在[7,4]、由[7,5]支撑；推车人仅跟进到[3,6]。",
+          "status": "pass"
+        },
+        {
+          "text": "爆心[7,6]真实SDK同时破坏[7,5]支撑与[8,6]轨道裂岩，保留车与箱；箱子落到[7,5]由车接住，车不自动滚。",
+          "status": "pass"
+        },
+        {
+          "text": "第二次侧推扫掠至车[10,6]、箱[10,5]，推车人[7,6]；验证上层先炸的真实死局与所有中间位置。",
+          "status": "pass"
+        },
+        {
+          "text": "全局禁搬规则不豁免；真实SDK作者解3次一致，逐步撤销两次滚动与同次破坏，结算不得触顶。",
+          "status": "pass"
+        }
+      ]
+    },
+    {
+      "id": "G01",
+      "spec_sha256": "e5f6d73086d3e503a0f7da6b00ee566d034b86088dbdb33e058e3a87912d08aa",
+      "author_solution_verified": true,
+      "sdk_verified": true,
+      "consistent": true,
+      "undo_ok": true,
+      "restart_ok": true,
+      "max_ticks": 57,
+      "max_rounds": 3,
+      "runs": [
+        {
+          "accepted_steps": 9,
+          "restart_ok": true,
+          "sequence_sha256": "4ff35d7e05a024f5472fdc238c5d407b7499390b630f6256fd19b0daf29bab47",
+          "undo_ok": true,
+          "won": true
+        },
+        {
+          "accepted_steps": 9,
+          "restart_ok": true,
+          "sequence_sha256": "4ff35d7e05a024f5472fdc238c5d407b7499390b630f6256fd19b0daf29bab47",
+          "undo_ok": true,
+          "won": true
+        },
+        {
+          "accepted_steps": 9,
+          "restart_ok": true,
+          "sequence_sha256": "4ff35d7e05a024f5472fdc238c5d407b7499390b630f6256fd19b0daf29bab47",
+          "undo_ok": true,
+          "won": true
+        }
+      ],
+      "spec_checks": [
+        {
+          "text": "待SDK：挖塞后256 acid cell全部落进[4,3]，与L[4,4]的256cell一对一反应，最终两者都为0；[3,4]夯土、[3,3]硬岩、底部基岩不被蚀、不漏酸。若有残岩≥128或酸漏出井外，报告实际分布。",
+          "status": "pass"
+        },
+        {
+          "text": "待SDK：人物向左进入[4,2]后落到[4,4]，挖开[3,4]夯土，向左两步到出口[2,4]。人物所在走廊[5..9,2]与井口同高、没有更低的去处，酸只能落进井里。",
+          "status": "pass"
+        },
+        {
+          "text": "待LV-07真实SDK / 游戏联合验收：同一seed从开局连续回放3次，逐步结果一致；每步撤销与重开恢复材料、人物、背包、目标灯及机关状态。",
+          "status": "pass"
+        },
+        {
+          "text": "待LV-07真实SDK / 游戏联合验收：记录逐步tick、结算轮数与材料计数，不得达到1200tick / 16轮上限；模型通过不代替SDK验证。",
+          "status": "pass"
+        }
+      ]
+    },
+    {
+      "id": "G02",
+      "spec_sha256": "0728694eb262f5f3d9a768bac7f76f4478e040fa15fde2435d6dabbe29600296",
+      "author_solution_verified": true,
+      "sdk_verified": false,
+      "consistent": true,
+      "undo_ok": true,
+      "restart_ok": true,
+      "max_ticks": 486,
+      "max_rounds": 5,
+      "runs": [
+        {
+          "accepted_steps": 10,
+          "restart_ok": true,
+          "sequence_sha256": "582a34d716d308b7a46aa6f6112bc824016c1de6053ae437dc5440af913a69fc",
+          "undo_ok": true,
+          "won": true
+        },
+        {
+          "accepted_steps": 10,
+          "restart_ok": true,
+          "sequence_sha256": "582a34d716d308b7a46aa6f6112bc824016c1de6053ae437dc5440af913a69fc",
+          "undo_ok": true,
+          "won": true
+        },
+        {
+          "accepted_steps": 10,
+          "restart_ok": true,
+          "sequence_sha256": "582a34d716d308b7a46aa6f6112bc824016c1de6053ae437dc5440af913a69fc",
+          "undo_ok": true,
+          "won": true
+        }
+      ],
+      "spec_checks": [
+        {
+          "text": "待SDK：挖开左塞[4,2]后池中512 acid cell全部流入左井，依次与L[4,5]、M[4,6]一对一反应，最终酸、L、M都为0；[3,6]夯土与井壁不漏酸。若池底残留酸或有残岩≥128，报告实际分布。",
+          "status": "fail"
+        },
+        {
+          "text": "待SDK：挖开左塞[4,2]后池中512 acid cell全部流入左井，与M[4,6]一对一反应，M最终为0，余下约256酸留在左井底；[3,6]夯土与井壁不漏酸。若M残留≥128，报告实际分布。",
+          "status": "fail"
+        },
+        {
+          "text": "待SDK诱饵：挖开右塞[7,2]（从[7,1]向下挖或在池里向右挖）后512酸全部进右井，L[7,5]耗尽、R[7,6]的256cell不变，剩256酸停在R上；左塞随后挖开也没有酸流进左井，左井M不变。",
+          "status": "fail"
+        },
+        {
+          "text": "待LV-07真实SDK / 游戏联合验收：记录逐步tick、结算轮数与材料计数，不得达到1200tick / 16轮上限；模型通过不代替SDK验证。",
+          "status": "pass"
+        }
+      ]
+    },
+    {
+      "id": "G03",
+      "spec_sha256": "761cc00d3e5eee589cd854be3d2d73b988c296b6237750451cf31124e4e94bb8",
+      "author_solution_verified": true,
+      "sdk_verified": true,
+      "consistent": true,
+      "undo_ok": true,
+      "restart_ok": true,
+      "max_ticks": 340,
+      "max_rounds": 2,
+      "runs": [
+        {
+          "accepted_steps": 12,
+          "restart_ok": true,
+          "sequence_sha256": "7005cf32e7bdfe8c2e3a53cf901844e141c2aedcc3ba1a6f0be29a2d20f49587",
+          "undo_ok": true,
+          "won": true
+        },
+        {
+          "accepted_steps": 12,
+          "restart_ok": true,
+          "sequence_sha256": "7005cf32e7bdfe8c2e3a53cf901844e141c2aedcc3ba1a6f0be29a2d20f49587",
+          "undo_ok": true,
+          "won": true
+        },
+        {
+          "accepted_steps": 12,
+          "restart_ok": true,
+          "sequence_sha256": "7005cf32e7bdfe8c2e3a53cf901844e141c2aedcc3ba1a6f0be29a2d20f49587",
+          "undo_ok": true,
+          "won": true
+        }
+      ],
+      "spec_checks": [
+        {
+          "text": "待模型及游戏反例：开顶口得到的唯一沙袋不足以从三格深烟室造阶回到外廊；下井后尝试倒沙补阶仍不能到独立人物出口。",
+          "status": "pass"
+        },
+        {
+          "text": "待SDK：源室初始4格1024cell；逐tick实数收集斗对应气体，峰值达到512cell才锁存，不补气、不传送气体、不按动作直接点灯。",
+          "status": "pass"
+        },
+        {
+          "text": "待游戏：确认进入气井或诱饵水坑后不能回到人物出口；气斗与人物出口必须同时亮。",
+          "status": "pass"
+        },
+        {
+          "text": "待LV-07真实SDK / 游戏联合验收：同一seed从开局连续回放3次，逐步结果一致；每步撤销与重开恢复材料、人物、背包、目标灯及机关状态。",
+          "status": "pass"
+        },
+        {
+          "text": "待LV-07真实SDK / 游戏联合验收：记录逐步tick、结算轮数与材料计数，不得达到1200tick / 16轮上限；模型通过不代替SDK验证。",
+          "status": "pass"
+        }
+      ]
+    },
+    {
+      "id": "G04",
+      "spec_sha256": "8e96ad66b6c29ff8cc0e9c62dc8fae9838305c0ef71f63279183d8f872ab6030",
+      "author_solution_verified": true,
+      "sdk_verified": true,
+      "consistent": true,
+      "undo_ok": true,
+      "restart_ok": true,
+      "max_ticks": 676,
+      "max_rounds": 2,
+      "runs": [
+        {
+          "accepted_steps": 11,
+          "restart_ok": true,
+          "sequence_sha256": "f02055b0e05c0867154e7ad4b2afe9db499c0dca98664f4ca2b459d03a75a195",
+          "undo_ok": true,
+          "won": true
+        },
+        {
+          "accepted_steps": 11,
+          "restart_ok": true,
+          "sequence_sha256": "f02055b0e05c0867154e7ad4b2afe9db499c0dca98664f4ca2b459d03a75a195",
+          "undo_ok": true,
+          "won": true
+        },
+        {
+          "accepted_steps": 11,
+          "restart_ok": true,
+          "sequence_sha256": "f02055b0e05c0867154e7ad4b2afe9db499c0dca98664f4ca2b459d03a75a195",
+          "undo_ok": true,
+          "won": true
+        }
+      ],
+      "spec_checks": [
+        {
+          "text": "待SDK：源室初始4格1024cell；逐tick实数收集斗对应气体，峰值达到512cell才锁存，不补气、不传送气体、不按动作直接点灯。",
+          "status": "pass"
+        },
+        {
+          "text": "待游戏：确认进入气井或诱饵水坑后不能回到人物出口；气斗与人物出口必须同时亮。",
+          "status": "pass"
+        },
+        {
+          "text": "待LV-07真实SDK / 游戏联合验收：同一seed从开局连续回放3次，逐步结果一致；每步撤销与重开恢复材料、人物、背包、目标灯及机关状态。",
+          "status": "pass"
+        },
+        {
+          "text": "待LV-07真实SDK / 游戏联合验收：记录逐步tick、结算轮数与材料计数，不得达到1200tick / 16轮上限；模型通过不代替SDK验证。",
+          "status": "pass"
+        }
+      ]
+    },
+    {
+      "id": "G05",
+      "spec_sha256": "cae48f26d5070aa7dea2805f0723cfbf0d18de3143c752ea02a677dd91af2b29",
+      "author_solution_verified": true,
+      "sdk_verified": true,
+      "consistent": true,
+      "undo_ok": true,
+      "restart_ok": true,
+      "max_ticks": 213,
+      "max_rounds": 2,
+      "runs": [
+        {
+          "accepted_steps": 9,
+          "restart_ok": true,
+          "sequence_sha256": "7723e0c6be183f4f2bcca3bb3454bd88183750584da9c0a8389e5385a3154364",
+          "undo_ok": true,
+          "won": true
+        },
+        {
+          "accepted_steps": 9,
+          "restart_ok": true,
+          "sequence_sha256": "7723e0c6be183f4f2bcca3bb3454bd88183750584da9c0a8389e5385a3154364",
+          "undo_ok": true,
+          "won": true
+        },
+        {
+          "accepted_steps": 9,
+          "restart_ok": true,
+          "sequence_sha256": "7723e0c6be183f4f2bcca3bb3454bd88183750584da9c0a8389e5385a3154364",
+          "undo_ok": true,
+          "won": true
+        }
+      ],
+      "spec_checks": [
+        {
+          "text": "待SDK：静止p普通动作后不衰减；开关只写一次plug_decay，SDK lifetime=120到期转empty，禁用寿命后沙斗不得满。",
+          "status": "pass"
+        },
+        {
+          "text": "待SDK / 游戏：斗[8,5..6]两侧与斗底都是封闭固体，512cell沙真实全部落进斗、触发升降台一次；先开关再装箱必须失败，反复拨动不能刷新寿命或再触发空台。",
+          "status": "pass"
+        },
+        {
+          "text": "待LV-07真实SDK / 游戏联合验收：同一seed从开局连续回放3次，逐步结果一致；每步撤销与重开恢复材料、人物、背包、目标灯及机关状态。",
+          "status": "pass"
+        },
+        {
+          "text": "待LV-07真实SDK / 游戏联合验收：记录逐步tick、结算轮数与材料计数，不得达到1200tick / 16轮上限；模型通过不代替SDK验证。",
+          "status": "pass"
+        }
+      ]
+    },
+    {
+      "id": "G06",
+      "spec_sha256": "d371964679484ae655c5ce3b75deb158c5c51cb9f84419aeb395b52e379f56a8",
+      "author_solution_verified": true,
+      "sdk_verified": true,
+      "consistent": true,
+      "undo_ok": true,
+      "restart_ok": true,
+      "max_ticks": 432,
+      "max_rounds": 2,
+      "runs": [
+        {
+          "accepted_steps": 9,
+          "restart_ok": true,
+          "sequence_sha256": "714b7402f5b60fe1254a12e3ca1e57822a88080274136bcc625893207103ffe1",
+          "undo_ok": true,
+          "won": true
+        },
+        {
+          "accepted_steps": 9,
+          "restart_ok": true,
+          "sequence_sha256": "714b7402f5b60fe1254a12e3ca1e57822a88080274136bcc625893207103ffe1",
+          "undo_ok": true,
+          "won": true
+        },
+        {
+          "accepted_steps": 9,
+          "restart_ok": true,
+          "sequence_sha256": "714b7402f5b60fe1254a12e3ca1e57822a88080274136bcc625893207103ffe1",
+          "undo_ok": true,
+          "won": true
+        }
+      ],
+      "spec_checks": [
+        {
+          "text": "待模型及SDK反例：挖左塞[4,4]后水分流——LV-07实测256进左井[4,7]，另256摊在右岸[7..10,4]各64；右根之后拿不到256，藤不长。判据是“右根water<256且藤不长”，不要求512全部进左井；两格夯土给的两袋沙也抬不回右根（实测224<256）。",
+          "status": "pass"
+        },
+        {
+          "text": "待SDK：512cell水从右塞流入右根[6,7]，实际根部water达到256才长藤；左塞分流反例须保留真实材料。",
+          "status": "pass"
+        },
+        {
+          "text": "待游戏：height=7包含root，生成[6,1]至[6,7]背景梯子；成长锁存且不删水，撤销恢复该分支未长状态。",
+          "status": "pass"
+        },
+        {
+          "text": "待LV-07真实SDK / 游戏联合验收：同一seed从开局连续回放3次，逐步结果一致；每步撤销与重开恢复材料、人物、背包、目标灯及机关状态。",
+          "status": "pass"
+        },
+        {
+          "text": "待LV-07真实SDK / 游戏联合验收：记录逐步tick、结算轮数与材料计数，不得达到1200tick / 16轮上限；模型通过不代替SDK验证。",
+          "status": "pass"
+        }
+      ]
+    },
+    {
+      "id": "G08",
+      "spec_sha256": "295ebfb609e1939c9987035b242f4aebc8a3a9cc385b6d85ba0119e3fc0e61ec",
+      "author_solution_verified": true,
+      "sdk_verified": true,
+      "consistent": true,
+      "undo_ok": true,
+      "restart_ok": true,
+      "max_ticks": 8,
+      "max_rounds": 2,
+      "runs": [
+        {
+          "accepted_steps": 8,
+          "restart_ok": true,
+          "sequence_sha256": "3a9f76b050e24c0c55e61bf2d911cb27b180dc289569b21f92724d212b23608c",
+          "undo_ok": true,
+          "won": true
+        },
+        {
+          "accepted_steps": 8,
+          "restart_ok": true,
+          "sequence_sha256": "3a9f76b050e24c0c55e61bf2d911cb27b180dc289569b21f92724d212b23608c",
+          "undo_ok": true,
+          "won": true
+        },
+        {
+          "accepted_steps": 8,
+          "restart_ok": true,
+          "sequence_sha256": "3a9f76b050e24c0c55e61bf2d911cb27b180dc289569b21f92724d212b23608c",
+          "undo_ok": true,
+          "won": true
+        }
+      ],
+      "spec_checks": [
+        {
+          "text": "待游戏：人物从[5,5]横移到[4,5]后真实下落至[4,6]，才弹到[4,4]梯子；水平走上台面不触发，竖直扫掠被挡时拒绝。",
+          "status": "pass"
+        },
+        {
+          "text": "待游戏隔离样板：箱子落台、人物落台、上升受阻与重复结算均不穿墙、不丢实体、不无限弹射；箱子不因梯子而悬空。",
+          "status": "pass"
+        },
+        {
+          "text": "待LV-07真实SDK / 游戏联合验收：同一seed从开局连续回放3次，逐步结果一致；每步撤销与重开恢复材料、人物、背包、目标灯及机关状态。",
+          "status": "pass"
+        },
+        {
+          "text": "待LV-07真实SDK / 游戏联合验收：记录逐步tick、结算轮数与材料计数，不得达到1200tick / 16轮上限；模型通过不代替SDK验证。",
+          "status": "pass"
+        }
+      ]
+    },
+    {
+      "id": "G09",
+      "spec_sha256": "ee79dee8e53216e201eae95b6401dbd0b519e4296124e64be04a6db68921941f",
+      "author_solution_verified": true,
+      "sdk_verified": true,
+      "consistent": true,
+      "undo_ok": true,
+      "restart_ok": true,
+      "max_ticks": 15,
+      "max_rounds": 3,
+      "runs": [
+        {
+          "accepted_steps": 13,
+          "restart_ok": true,
+          "sequence_sha256": "80e42b27b07e37d2cafc46f213612f3bd89c87d246a0dc261a803e6e57a125d8",
+          "undo_ok": true,
+          "won": true
+        },
+        {
+          "accepted_steps": 13,
+          "restart_ok": true,
+          "sequence_sha256": "80e42b27b07e37d2cafc46f213612f3bd89c87d246a0dc261a803e6e57a125d8",
+          "undo_ok": true,
+          "won": true
+        },
+        {
+          "accepted_steps": 13,
+          "restart_ok": true,
+          "sequence_sha256": "80e42b27b07e37d2cafc46f213612f3bd89c87d246a0dc261a803e6e57a125d8",
+          "undo_ok": true,
+          "won": true
+        }
+      ],
+      "spec_checks": [
+        {
+          "text": "待游戏：开局载重仅作基线；净空门关闭时新落载受阻，之后只开门不能让同一静置铁箱重试。完整作者路线先开门再落载成功。",
+          "status": "pass"
+        },
+        {
+          "text": "待游戏：左端载物从[4,6]升至[4,4]后横移一格至[3,4]槽；右端对称落点[7,4]；高度固定2，不由重量放大。",
+          "status": "pass"
+        },
+        {
+          "text": "待游戏：人物跳右井只能亮箱槽，不能到[9,4]出口；两盏灯必须同时亮。",
+          "status": "pass"
+        },
+        {
+          "text": "待LV-07真实SDK / 游戏联合验收：同一seed从开局连续回放3次，逐步结果一致；每步撤销与重开恢复材料、人物、背包、目标灯及机关状态。",
+          "status": "pass"
+        },
+        {
+          "text": "待LV-07真实SDK / 游戏联合验收：记录逐步tick、结算轮数与材料计数，不得达到1200tick / 16轮上限；模型通过不代替SDK验证。",
+          "status": "pass"
+        }
+      ]
+    },
+    {
+      "id": "G10",
+      "spec_sha256": "3aa5a0da7a0528cf3e51a8734602727706e8cba728a52ca0a4d17ac41f01ce1c",
+      "author_solution_verified": true,
+      "sdk_verified": true,
+      "consistent": true,
+      "undo_ok": true,
+      "restart_ok": true,
+      "max_ticks": 21,
+      "max_rounds": 2,
+      "runs": [
+        {
+          "accepted_steps": 14,
+          "restart_ok": true,
+          "sequence_sha256": "84060d54fc148ee8b0b2ba8ffe348e6f52e979150718afdc97d91b3d46e123b3",
+          "undo_ok": true,
+          "won": true
+        },
+        {
+          "accepted_steps": 14,
+          "restart_ok": true,
+          "sequence_sha256": "84060d54fc148ee8b0b2ba8ffe348e6f52e979150718afdc97d91b3d46e123b3",
+          "undo_ok": true,
+          "won": true
+        },
+        {
+          "accepted_steps": 14,
+          "restart_ok": true,
+          "sequence_sha256": "84060d54fc148ee8b0b2ba8ffe348e6f52e979150718afdc97d91b3d46e123b3",
+          "undo_ok": true,
+          "won": true
+        }
+      ],
+      "spec_checks": [
+        {
+          "text": "待游戏：开局[6,4]门闭，起点POUR_R拒绝；只有人物站[7,4]压板才开口。倒沙落稳后离开压板关门，不删除下方沙，不重复触发。",
+          "status": "pass"
+        },
+        {
+          "text": "待游戏：建立初始端点载重基线，不开局弹射；只有新落载触发对端一次，竖直段、横移段和明确落点分别扫掠，受阻拒绝且不因持续载重重试。",
+          "status": "pass"
+        },
+        {
+          "text": "待游戏：左端载物从[4,6]升至[4,4]后横移一格至[3,4]槽；右端对称落点[7,4]；高度固定2，不由重量放大。",
+          "status": "pass"
+        },
+        {
+          "text": "待游戏：人物跳右井只能亮箱槽，不能到[9,4]出口；两盏灯必须同时亮。",
+          "status": "pass"
+        },
+        {
+          "text": "待SDK：唯一沙袋来自挖[4,4]；256sand cell从[6,4]自然落到[6,6]封闭窄井，分类达到128/256后才计重量1并触发；持续留沙不重复发射、不删除沙。",
+          "status": "pass"
+        },
+        {
+          "text": "待LV-07真实SDK / 游戏联合验收：同一seed从开局连续回放3次，逐步结果一致；每步撤销与重开恢复材料、人物、背包、目标灯及机关状态。",
+          "status": "pass"
+        },
+        {
+          "text": "待LV-07真实SDK / 游戏联合验收：记录逐步tick、结算轮数与材料计数，不得达到1200tick / 16轮上限；模型通过不代替SDK验证。",
+          "status": "pass"
+        }
+      ]
+    },
+    {
+      "id": "F01",
+      "spec_sha256": "30b92b24ef563d71a14861f14a6c49f54b0b1fee8205e97e418c84332c675dd0",
+      "author_solution_verified": true,
+      "sdk_verified": true,
+      "consistent": true,
+      "undo_ok": true,
+      "restart_ok": true,
+      "max_ticks": 199,
+      "max_rounds": 4,
+      "runs": [
+        {
+          "accepted_steps": 8,
+          "restart_ok": true,
+          "sequence_sha256": "da3ce2b62c0e0a86b31c4d48d771918ac50134e2b9e3c9d7fff2fa0d876dbb72",
+          "undo_ok": true,
+          "won": true
+        },
+        {
+          "accepted_steps": 8,
+          "restart_ok": true,
+          "sequence_sha256": "da3ce2b62c0e0a86b31c4d48d771918ac50134e2b9e3c9d7fff2fa0d876dbb72",
+          "undo_ok": true,
+          "won": true
+        },
+        {
+          "accepted_steps": 8,
+          "restart_ok": true,
+          "sequence_sha256": "da3ce2b62c0e0a86b31c4d48d771918ac50134e2b9e3c9d7fff2fa0d876dbb72",
+          "undo_ok": true,
+          "won": true
+        }
+      ],
+      "spec_checks": [
+        {
+          "text": "设计模型作者解 8 步；未点火不能跨过木栅；点火后箱子 [6,5]，人物最后 [8,3]。",
+          "status": "pass"
+        },
+        {
+          "text": "SDK 逐 tick 确认 wood 出现 burning 后烧尽；crate 与基岩不被火盆删除，检查温度圆边界及传播。",
+          "status": "pass"
+        },
+        {
+          "text": "测定 180 tick 是否足够；记录结算 tick，不触顶。逐步撤销恢复温度、燃烧、木栅、木箱、人物和开关；同序列三次一致。",
+          "status": "pass"
+        }
+      ]
+    },
+    {
+      "id": "F02",
+      "spec_sha256": "fdaead7b0c27e1e0c491fd643cb31b7551e79b95e9c87cbb6346c4d041bba217",
+      "author_solution_verified": true,
+      "sdk_verified": true,
+      "consistent": true,
+      "undo_ok": true,
+      "restart_ok": true,
+      "max_ticks": 8,
+      "max_rounds": 1,
+      "runs": [
+        {
+          "accepted_steps": 8,
+          "restart_ok": true,
+          "sequence_sha256": "07bf422fb3ae172c192d91a997632b90210d76faf454a536049b864297c0facd",
+          "undo_ok": true,
+          "won": true
+        },
+        {
+          "accepted_steps": 8,
+          "restart_ok": true,
+          "sequence_sha256": "07bf422fb3ae172c192d91a997632b90210d76faf454a536049b864297c0facd",
+          "undo_ok": true,
+          "won": true
+        },
+        {
+          "accepted_steps": 8,
+          "restart_ok": true,
+          "sequence_sha256": "07bf422fb3ae172c192d91a997632b90210d76faf454a536049b864297c0facd",
+          "undo_ok": true,
+          "won": true
+        }
+      ],
+      "spec_checks": [
+        {
+          "text": "模型作者解 8 步；省略开关时右行落水，能沿 x=3 梯子回到开关。",
+          "status": "pass"
+        },
+        {
+          "text": "真实 SDK 核对上排 1024 cell 转换、框外下排水保留、stride=1 即时转换及后续无自然融化。",
+          "status": "pass"
+        },
+        {
+          "text": "按格阈值验证冰桥承重；逐步撤销恢复 frost 层、水冰、梯子、人物与开关；三次回放一致、不触顶。",
+          "status": "pass"
+        }
+      ]
+    },
+    {
+      "id": "F03",
+      "spec_sha256": "17459734821f7293b832649044282496958e3dd09517fffaed376d806f7a0008",
+      "author_solution_verified": true,
+      "sdk_verified": true,
+      "consistent": true,
+      "undo_ok": true,
+      "restart_ok": true,
+      "max_ticks": 21,
+      "max_rounds": 2,
+      "runs": [
+        {
+          "accepted_steps": 9,
+          "restart_ok": true,
+          "sequence_sha256": "c67f4a3d892d637e23b88d97e027bfdbf5e2d4bfd1e71d0dd27b7bafcbf2f173",
+          "undo_ok": true,
+          "won": true
+        },
+        {
+          "accepted_steps": 9,
+          "restart_ok": true,
+          "sequence_sha256": "c67f4a3d892d637e23b88d97e027bfdbf5e2d4bfd1e71d0dd27b7bafcbf2f173",
+          "undo_ok": true,
+          "won": true
+        },
+        {
+          "accepted_steps": 9,
+          "restart_ok": true,
+          "sequence_sha256": "c67f4a3d892d637e23b88d97e027bfdbf5e2d4bfd1e71d0dd27b7bafcbf2f173",
+          "undo_ok": true,
+          "won": true
+        }
+      ],
+      "spec_checks": [
+        {
+          "text": "模型作者解 9 步；开局 U 后再尝试推箱无法点亮高处槽，须撤销。",
+          "status": "pass"
+        },
+        {
+          "text": "真实 SDK 核对一格冰转换为等量 256 water cell 后全进收集斗；木箱正确浮起，不能穿井壁或被水删除。",
+          "status": "pass"
+        },
+        {
+          "text": "正确路线推箱的目的格脚下均是基岩，不提前引入冰面滑行。逐步撤销恢复热层、冰水、箱子与斗锁存；三次回放一致、不触顶。",
+          "status": "pass"
+        }
+      ]
+    },
+    {
+      "id": "F04",
+      "spec_sha256": "578a9f0743cf95e4b39d9ffbc92254d7d7f8463e982b0244df5c3c13ad696c4c",
+      "author_solution_verified": true,
+      "sdk_verified": true,
+      "consistent": true,
+      "undo_ok": true,
+      "restart_ok": true,
+      "max_ticks": 184,
+      "max_rounds": 2,
+      "runs": [
+        {
+          "accepted_steps": 8,
+          "restart_ok": true,
+          "sequence_sha256": "f2062f20578ff7a049d4dff60618cd614538b20674304e2b65df29d25edde80c",
+          "undo_ok": true,
+          "won": true
+        },
+        {
+          "accepted_steps": 8,
+          "restart_ok": true,
+          "sequence_sha256": "f2062f20578ff7a049d4dff60618cd614538b20674304e2b65df29d25edde80c",
+          "undo_ok": true,
+          "won": true
+        },
+        {
+          "accepted_steps": 8,
+          "restart_ok": true,
+          "sequence_sha256": "f2062f20578ff7a049d4dff60618cd614538b20674304e2b65df29d25edde80c",
+          "undo_ok": true,
+          "won": true
+        }
+      ],
+      "spec_checks": [
+        {
+          "text": "模型作者解 8 步；在 [4,4] BOMB_R 的斜角爆点不能点燃木栅，耗尽炸药形成死局。",
+          "status": "pass"
+        },
+        {
+          "text": "SDK 必须逐 tick 确认 [6,3] 幸存 wood cell 被内圈点火、向上蔓延后才烧尽；验证基岩中的爆点不被遮挡。",
+          "status": "pass"
+        },
+        {
+          "text": "SDK 实测木栅 blast_resistance 与燃烧阶段，180 tick 不足就修订候选，不能直接删栅冒充。三次回放、逐步撤销与结算 tick 记录交 LV-08。",
+          "status": "pass"
+        }
+      ]
+    },
+    {
+      "id": "F07",
+      "spec_sha256": "b41977588e60cefb8c784faec44f35d43ebab64e3f1cf8613f17f39f01020212",
+      "author_solution_verified": true,
+      "sdk_verified": true,
+      "consistent": true,
+      "undo_ok": true,
+      "restart_ok": true,
+      "max_ticks": 5,
+      "max_rounds": 1,
+      "runs": [
+        {
+          "accepted_steps": 13,
+          "restart_ok": true,
+          "sequence_sha256": "5366edb8e0cb0a46467b142961afafb2f344039f75e12af2b417657b02ab1c37",
+          "undo_ok": true,
+          "won": true
+        },
+        {
+          "accepted_steps": 13,
+          "restart_ok": true,
+          "sequence_sha256": "5366edb8e0cb0a46467b142961afafb2f344039f75e12af2b417657b02ab1c37",
+          "undo_ok": true,
+          "won": true
+        },
+        {
+          "accepted_steps": 13,
+          "restart_ok": true,
+          "sequence_sha256": "5366edb8e0cb0a46467b142961afafb2f344039f75e12af2b417657b02ab1c37",
+          "undo_ok": true,
+          "won": true
+        }
+      ],
+      "spec_checks": [
+        {
+          "text": "模型作者解 13 步；正确路线保留 [8,3] 夯土，箱子最终 [7,3]，人物 [4,3]。",
+          "status": "pass"
+        },
+        {
+          "text": "挖掉夯土再从右推箱会滑进左侧死角；没有把槽当成自动刹车。模型非引入死局 >0。",
+          "status": "pass"
+        },
+        {
+          "text": "逐格扫掠不穿墙、不推箱链，滑出连续冰时在第一格非冰处停；一次撤销还原整段滑行，SDK 占位无残留，三次一致且不触顶。",
+          "status": "pass"
+        }
+      ]
+    },
+    {
+      "id": "F08",
+      "spec_sha256": "a4adf8a53597ff22d39bfb735758fc9bedb0679cce7f2747b85eed6b616efdc1",
+      "author_solution_verified": true,
+      "sdk_verified": true,
+      "consistent": true,
+      "undo_ok": true,
+      "restart_ok": true,
+      "max_ticks": 15,
+      "max_rounds": 3,
+      "runs": [
+        {
+          "accepted_steps": 10,
+          "restart_ok": true,
+          "sequence_sha256": "93ac780370de6a25853c305f499fda119bb950d0581fe1904737cbb663e60405",
+          "undo_ok": true,
+          "won": true
+        },
+        {
+          "accepted_steps": 10,
+          "restart_ok": true,
+          "sequence_sha256": "93ac780370de6a25853c305f499fda119bb950d0581fe1904737cbb663e60405",
+          "undo_ok": true,
+          "won": true
+        },
+        {
+          "accepted_steps": 10,
+          "restart_ok": true,
+          "sequence_sha256": "93ac780370de6a25853c305f499fda119bb950d0581fe1904737cbb663e60405",
+          "undo_ok": true,
+          "won": true
+        }
+      ],
+      "spec_checks": [
+        {
+          "text": "模型作者解 10 步；两个箱槽与 [2,1] 出口同时亮。开局 U、U 再继续向左会使木箱到 [8,4]，无法从墙侧推回。",
+          "status": "pass"
+        },
+        {
+          "text": "在 SDK 占位中确认铁箱先下落、后执行本动作阵风；木箱每次只移动一格，铁箱、人物、水沙都不受该 gust 推动。",
+          "status": "pass"
+        },
+        {
+          "text": "撤销保存动作相位、两个箱子、人物和所有占位；受阻/观察/提示不增加回合，三次回放一致且不触顶。",
+          "status": "pass"
+        }
+      ]
+    },
+    {
+      "id": "F09",
+      "spec_sha256": "f99068ad7b98857169ba43614b0eb1c8a1330e025dfdf1b9548de01f8842f1fa",
+      "author_solution_verified": true,
+      "sdk_verified": true,
+      "consistent": true,
+      "undo_ok": true,
+      "restart_ok": true,
+      "max_ticks": 53,
+      "max_rounds": 2,
+      "runs": [
+        {
+          "accepted_steps": 13,
+          "restart_ok": true,
+          "sequence_sha256": "d7492d8073d8f3ad1e4be349a96c5742f1e160809df12553db4beff89bbf35e4",
+          "undo_ok": true,
+          "won": true
+        },
+        {
+          "accepted_steps": 13,
+          "restart_ok": true,
+          "sequence_sha256": "d7492d8073d8f3ad1e4be349a96c5742f1e160809df12553db4beff89bbf35e4",
+          "undo_ok": true,
+          "won": true
+        },
+        {
+          "accepted_steps": 13,
+          "restart_ok": true,
+          "sequence_sha256": "d7492d8073d8f3ad1e4be349a96c5742f1e160809df12553db4beff89bbf35e4",
+          "undo_ok": true,
+          "won": true
+        }
+      ],
+      "spec_checks": [
+        {
+          "text": "模型作者解 13 步，铁箱 [7,3]、人物 [5,3]，沙 [8,3]；缺冷喷、缺沙刹车均不能用该路线通关。",
+          "status": "pass"
+        },
+        {
+          "text": "SDK 核对上排 768 cell 转冰、下排水保留；墙边沙实心阈值达标并稳定，未冻时同一落沙进入水底。",
+          "status": "pass"
+        },
+        {
+          "text": "铁箱在冻前会下沉；冻后水平推触发整段扫掠，槽不自动刹车，沙才挡住铁箱。",
+          "status": "pass"
+        },
+        {
+          "text": "逐步撤销分别恢复整次滑行、倒沙与冻结；同序列三次一致，记录每步 tick、不触顶；若墙边沙不足128cell，本候选须调整而非判定正式通过。",
+          "status": "pass"
+        }
+      ]
+    },
+    {
+      "id": "E01",
+      "spec_sha256": "949d5c3ead031c004473bfd22c9f56ca61c2a0d6b1a718b56bf2bd11cec1bdc1",
+      "author_solution_verified": true,
+      "sdk_verified": true,
+      "consistent": true,
+      "undo_ok": true,
+      "restart_ok": true,
+      "max_ticks": 62,
+      "max_rounds": 3,
+      "runs": [
+        {
+          "accepted_steps": 10,
+          "restart_ok": true,
+          "sequence_sha256": "a3c5dad70105cb9d47908b4b95fed11161d723258303f0d4bc4789be4dc4f7a3",
+          "undo_ok": true,
+          "won": true
+        },
+        {
+          "accepted_steps": 10,
+          "restart_ok": true,
+          "sequence_sha256": "a3c5dad70105cb9d47908b4b95fed11161d723258303f0d4bc4789be4dc4f7a3",
+          "undo_ok": true,
+          "won": true
+        },
+        {
+          "accepted_steps": 10,
+          "restart_ok": true,
+          "sequence_sha256": "a3c5dad70105cb9d47908b4b95fed11161d723258303f0d4bc4789be4dc4f7a3",
+          "undo_ok": true,
+          "won": true
+        }
+      ],
+      "spec_checks": [
+        {
+          "text": "本图初始256 acid cell，门打开后经[6,2]、[6,3]落到[6,4]软岩256cell上一对一反应，最终两者都为0；[7,4]夯土与井壁不漏酸。若有残岩≥128或酸漏到走廊，报告实际分布，不补酸、不删残岩。",
+          "status": "pass"
+        },
+        {
+          "text": "因果断言：箱子推到[1,2]后门保持打开；人物从门口落到[6,4]，挖开[7,4]，向右到出口[8,4]。",
+          "status": "pass"
+        },
+        {
+          "text": "诱饵：人物自己站上压板时门开、酸落下，离开后门关闭；本关latch=false，不能把瞬时按下写成锁存。",
+          "status": "pass"
+        },
+        {
+          "text": "候选设计模型结果不能代替真实SDK：同一seed从开局回放3次并比较逐步状态；逐步撤销、重开恢复材料/人物/箱子/背包/目标/全部机关。",
+          "status": "pass"
+        },
+        {
+          "text": "逐步记录tick及结算轮数，不得达到1200tick/16轮。",
+          "status": "pass"
+        }
+      ]
+    },
+    {
+      "id": "E02",
+      "spec_sha256": "474fe7aaaee09a1075241635d5fdfbeb7bf2e1a371ddb13ca18b9fd93b715dda",
+      "author_solution_verified": true,
+      "sdk_verified": true,
+      "consistent": true,
+      "undo_ok": true,
+      "restart_ok": true,
+      "max_ticks": 24,
+      "max_rounds": 5,
+      "runs": [
+        {
+          "accepted_steps": 9,
+          "restart_ok": true,
+          "sequence_sha256": "33071adbb66590e445c64d29176e515e532a1ce5cf1da825adcee489a72d0014",
+          "undo_ok": true,
+          "won": true
+        },
+        {
+          "accepted_steps": 9,
+          "restart_ok": true,
+          "sequence_sha256": "33071adbb66590e445c64d29176e515e532a1ce5cf1da825adcee489a72d0014",
+          "undo_ok": true,
+          "won": true
+        },
+        {
+          "accepted_steps": 9,
+          "restart_ok": true,
+          "sequence_sha256": "33071adbb66590e445c64d29176e515e532a1ce5cf1da825adcee489a72d0014",
+          "undo_ok": true,
+          "won": true
+        }
+      ],
+      "spec_checks": [
+        {
+          "text": "人物退到[3,3]后[5,4]熄灭，箱子先真实落到[5,6]，结算静止后传送至[9,3]；不能把退灯直接实现成远程移箱。",
+          "status": "pass"
+        },
+        {
+          "text": "目标阵与箱子槽按同一背景格共存；返回保护保持至离阵，箱子不能立刻传回。",
+          "status": "pass"
+        },
+        {
+          "text": "SDK只清晶桥自有cell，传送清旧写新且保留箱材抗爆规则；灯光视觉设置不影响逻辑。",
+          "status": "pass"
+        },
+        {
+          "text": "候选设计模型结果不能代替真实SDK：同一seed从开局回放3次并比较逐步状态；逐步撤销、重开恢复材料/人物/箱子/背包/目标/全部机关。",
+          "status": "pass"
+        },
+        {
+          "text": "逐步记录tick及结算轮数，不得达到1200tick/16轮。",
+          "status": "pass"
+        }
+      ]
+    },
+    {
+      "id": "E03",
+      "spec_sha256": "96e358e6015e8e0a06cb3df2ad99013ba0e468dd6396648bfbdae78558e6acda",
+      "author_solution_verified": true,
+      "sdk_verified": true,
+      "consistent": true,
+      "undo_ok": true,
+      "restart_ok": true,
+      "max_ticks": 21,
+      "max_rounds": 2,
+      "runs": [
+        {
+          "accepted_steps": 14,
+          "restart_ok": true,
+          "sequence_sha256": "1241048a6ad28cb3c1dfc34f54084c6fa88ed57165256e00126eb1a26fb1451e",
+          "undo_ok": true,
+          "won": true
+        },
+        {
+          "accepted_steps": 14,
+          "restart_ok": true,
+          "sequence_sha256": "1241048a6ad28cb3c1dfc34f54084c6fa88ed57165256e00126eb1a26fb1451e",
+          "undo_ok": true,
+          "won": true
+        },
+        {
+          "accepted_steps": 14,
+          "restart_ok": true,
+          "sequence_sha256": "1241048a6ad28cb3c1dfc34f54084c6fa88ed57165256e00126eb1a26fb1451e",
+          "undo_ok": true,
+          "won": true
+        }
+      ],
+      "spec_checks": [
+        {
+          "text": "SDK heat=1、stride1耦合器将[4,4]256ice cell变成同量水，水真实落到根[4,6]后count_materials达256才锁存生长。",
+          "status": "pass"
+        },
+        {
+          "text": "先移箱后融冰：箱在[6,3]，root到顶包含6格藤梯[4,1..6]，人物到[6,1]时两灯同时亮。",
+          "status": "pass"
+        },
+        {
+          "text": "提前融冰的木箱浮在井底，无法回高槽；逐步核对木箱挤水守恒、藤梯状态撤销。",
+          "status": "pass"
+        },
+        {
+          "text": "候选设计模型结果不能代替真实SDK：同一seed从开局回放3次并比较逐步状态；逐步撤销、重开恢复材料/人物/箱子/背包/目标/全部机关。",
+          "status": "pass"
+        },
+        {
+          "text": "逐步记录tick及结算轮数，不得达到1200tick/16轮。",
+          "status": "pass"
+        }
+      ]
+    },
+    {
+      "id": "E04",
+      "spec_sha256": "129c0d6d942f2ca5cc521bb241d36d29763c701887e95aab8f599b56dd2d95a1",
+      "author_solution_verified": true,
+      "sdk_verified": false,
+      "consistent": true,
+      "undo_ok": true,
+      "restart_ok": true,
+      "max_ticks": 331,
+      "max_rounds": 4,
+      "runs": [
+        {
+          "accepted_steps": 11,
+          "restart_ok": true,
+          "sequence_sha256": "1c58610ee8404e0c0ebd7a1d33daf0f6f96441a0cd47d6426d9aedd6a521d3f5",
+          "undo_ok": true,
+          "won": true
+        },
+        {
+          "accepted_steps": 11,
+          "restart_ok": true,
+          "sequence_sha256": "1c58610ee8404e0c0ebd7a1d33daf0f6f96441a0cd47d6426d9aedd6a521d3f5",
+          "undo_ok": true,
+          "won": true
+        },
+        {
+          "accepted_steps": 11,
+          "restart_ok": true,
+          "sequence_sha256": "1c58610ee8404e0c0ebd7a1d33daf0f6f96441a0cd47d6426d9aedd6a521d3f5",
+          "undo_ok": true,
+          "won": true
+        }
+      ],
+      "spec_checks": [
+        {
+          "text": "SDK中爆心基岩[5,4]破坏托石[6,4]，256 gravel cell自然落到[6,5]箱顶并留在[6,4]（两侧基岩），分类≥128，不得用脚本搬粉末。",
+          "status": "fail"
+        },
+        {
+          "text": "桥由箱1+碎石1达到2/1才坍塌，箱子由[6,5]落到[6,7]槽，碎石随后落到箱顶[6,6]；只有箱子或只有碎石（1/1）时只显示裂纹而不塌。",
+          "status": "fail"
+        },
+        {
+          "text": "先炸托石后尝试推箱应失败：碎石停在桥面[6,5]，箱子推不上去；核对真实分类、桥cell清除与物料守恒。",
+          "status": "fail"
+        },
+        {
+          "text": "结算预算：炸药这一步（碎石落1格→超重→箱落2格→碎石再落2格）总tick必须低于1200并记录实际值；超过就报告，不提高上限、不减承重、不脚本强塌。",
+          "status": "pass"
+        },
+        {
+          "text": "候选设计模型结果不能代替真实SDK：同一seed从开局回放3次并比较逐步状态；逐步撤销、重开恢复材料/人物/箱子/背包/目标/全部机关。",
+          "status": "pass"
+        },
+        {
+          "text": "逐步记录tick及结算轮数，不得达到1200tick/16轮。",
+          "status": "pass"
+        }
+      ]
+    },
+    {
+      "id": "E05",
+      "spec_sha256": "30f75fe6b00d430301cf106d253fa7c2c9dddb1e32719e7f3f5370c836e999d3",
+      "author_solution_verified": true,
+      "sdk_verified": true,
+      "consistent": true,
+      "undo_ok": true,
+      "restart_ok": true,
+      "max_ticks": 15,
+      "max_rounds": 3,
+      "runs": [
+        {
+          "accepted_steps": 11,
+          "restart_ok": true,
+          "sequence_sha256": "23c19c69aa1f36ffa4ebbcecd4ef239a820ab36d2e52d596525b4d0f94b37b3b",
+          "undo_ok": true,
+          "won": true
+        },
+        {
+          "accepted_steps": 11,
+          "restart_ok": true,
+          "sequence_sha256": "23c19c69aa1f36ffa4ebbcecd4ef239a820ab36d2e52d596525b4d0f94b37b3b",
+          "undo_ok": true,
+          "won": true
+        },
+        {
+          "accepted_steps": 11,
+          "restart_ok": true,
+          "sequence_sha256": "23c19c69aa1f36ffa4ebbcecd4ef239a820ab36d2e52d596525b4d0f94b37b3b",
+          "undo_ok": true,
+          "won": true
+        }
+      ],
+      "spec_checks": [
+        {
+          "text": "首次推车从[3,6]到[8,6]、人只跟到[3,6]；高台箱子仍[5,3]。",
+          "status": "pass"
+        },
+        {
+          "text": "推箱进入[6,3]脚下ice后滑经[7,3]，进入首格非冰[8,3]停止水平滑行，再重力落至车上[8,5]槽。",
+          "status": "pass"
+        },
+        {
+          "text": "先滑箱会落到[8,8]；再移车不升降、不吸附货物；核对冰/车/箱的static占位同步与整个滑行一次撤销。",
+          "status": "pass"
+        },
+        {
+          "text": "候选设计模型结果不能代替真实SDK：同一seed从开局回放3次并比较逐步状态；逐步撤销、重开恢复材料/人物/箱子/背包/目标/全部机关。",
+          "status": "pass"
+        },
+        {
+          "text": "逐步记录tick及结算轮数，不得达到1200tick/16轮。",
+          "status": "pass"
+        }
+      ]
+    },
+    {
+      "id": "E06",
+      "spec_sha256": "3a18b89ec70ad22921592e025ab0539e85e8230ebd58deffe80f98d377023a18",
+      "author_solution_verified": true,
+      "sdk_verified": true,
+      "consistent": true,
+      "undo_ok": true,
+      "restart_ok": true,
+      "max_ticks": 29,
+      "max_rounds": 6,
+      "runs": [
+        {
+          "accepted_steps": 11,
+          "restart_ok": true,
+          "sequence_sha256": "551b7ecdf1e4f3c840f7888446ffcef9b33f2a580487db1ef7aac4f2b0011b36",
+          "undo_ok": true,
+          "won": true
+        },
+        {
+          "accepted_steps": 11,
+          "restart_ok": true,
+          "sequence_sha256": "551b7ecdf1e4f3c840f7888446ffcef9b33f2a580487db1ef7aac4f2b0011b36",
+          "undo_ok": true,
+          "won": true
+        },
+        {
+          "accepted_steps": 11,
+          "restart_ok": true,
+          "sequence_sha256": "551b7ecdf1e4f3c840f7888446ffcef9b33f2a580487db1ef7aac4f2b0011b36",
+          "undo_ok": true,
+          "won": true
+        }
+      ],
+      "spec_checks": [
+        {
+          "text": "关闭的[3,3]门挡住gust，准备路线的每次动作都不能提前吹动箱[2,3]；受阻输入不推进风相位。",
+          "status": "pass"
+        },
+        {
+          "text": "人物站[6,6]拨开关后，gust只吹木箱[2,3]→[3,3]一格，再真实游戏层重力落[3,6]，新落载使对端人物竖升2格再右移到[7,4]。",
+          "status": "pass"
+        },
+        {
+          "text": "先按[2,2]近开关时对端无人，事件消耗；之后箱子静置不能重试。无真实时间门槛，玩家可无限观察或撤销。",
+          "status": "pass"
+        },
+        {
+          "text": "核对动作内先常规重力再一次gust、再重力/跷跷板；所有设备状态与整次弹射保存至撤销，SDKstatic占位不残留。",
+          "status": "pass"
+        },
+        {
+          "text": "候选设计模型结果不能代替真实SDK：同一seed从开局回放3次并比较逐步状态；逐步撤销、重开恢复材料/人物/箱子/背包/目标/全部机关。",
+          "status": "pass"
+        },
+        {
+          "text": "逐步记录tick及结算轮数，不得达到1200tick/16轮。",
+          "status": "pass"
+        }
+      ]
+    }
+  ]
+}

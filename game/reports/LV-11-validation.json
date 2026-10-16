@@ -1,0 +1,83 @@
+{
+  "format": "portitor.lv11-validation/1",
+  "run_id": "20261016T095112532446Z-99977",
+  "commit": "cefa04829a160fd084ae4de83708f537a6fc22fd",
+  "working_tree": true,
+  "tested_source_sha256": "6604ec38629cc99d4c94d38796aba9ab6f043864e5554748dec159de2733cf8b",
+  "sdk_command": "env OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1 nice -n 10 tools/run-tests.sh",
+  "sdk_exit_code": 1,
+  "sdk_stages": 26,
+  "sdk_stages_passed": 25,
+  "sdk_failed_stages": [
+    {
+      "name": "chapters",
+      "ok": false,
+      "completed": true,
+      "exit_code": 1,
+      "engine_errors": false,
+      "seconds": 26.718,
+      "command": [
+        "/Users/key_/Desktop/CURRGO/pushbox-demo/../ele-proj/zips/Godot.app/Contents/MacOS/Godot",
+        "--headless",
+        "--path",
+        "/Users/key_/Desktop/CURRGO/pushbox-demo/game",
+        "--script",
+        "res://tests/chapters/run.gd"
+      ],
+      "log": "game/tests/results/chapters.log"
+    }
+  ],
+  "chapters": 30,
+  "author_solution_verified": 30,
+  "sdk_verified": 29,
+  "spec_checks": {
+    "pass": 123,
+    "fail": 1
+  },
+  "spec_failures": [
+    {
+      "id": "G02",
+      "text": "待SDK：挖开左塞[4,2]后池中512 acid cell全部流入左井，依次与L[4,5]、M[4,6]一对一反应，最终酸、L、M都为0；[3,6]夯土与井壁不漏酸。若池底残留酸或有残岩≥128，报告实际分布。",
+      "status": "fail"
+    }
+  ],
+  "chapter_text": {
+    "checked": 180,
+    "issues": [],
+    "ok": true,
+    "suite": "chapter-text"
+  },
+  "powder_occupancy": {
+    "ok": true,
+    "cases": 30,
+    "failures": []
+  },
+  "node_command": "env OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1 nice -n 10 node --test --test-concurrency=1 tests/*.test.mjs",
+  "node_exit_code": 0,
+  "node": {
+    "tests": 141,
+    "pass": 141,
+    "fail": 0,
+    "cancelled": 0,
+    "skipped": 0
+  },
+  "content_command": "node tools/content.mjs check",
+  "content_exit_code": 0,
+  "content_errors": 0,
+  "content_warnings": 0,
+  "worker_count": 1,
+  "resource_budget": {
+    "blocked": false,
+    "worker_count": 1,
+    "before_stage": "chapters",
+    "available": true,
+    "other_compute_processes": []
+  },
+  "evidence": "game/reports/chapter-sdk.json",
+  "evidence_sha256": "8cb85abc267095224284a74b8797d13637be32ac3cc700fbfaa93f0940a2f08f",
+  "limitations": [
+    "G02 source checks retain a superseded acid/L/M-zero clause alongside the new single-M clause; the old clause fails and is not waived.",
+    "All four chapter groups ran because the required default test runner includes thermal; only blast/react/experimental have new LV-11 indices.",
+    "SDK self-tests do not constitute formal design review, user playtest acceptance or art approval."
+  ]
+}

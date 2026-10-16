@@ -94,13 +94,25 @@ func _acid(spec: Dictionary, trace: Array, summary: Dictionary, extra: Dictionar
 	var walls_intact: bool = H.material(final,"bedrock")==H.material(opening,"bedrock") and H.material(final,"hard_rock")==H.material(opening,"hard_rock")
 	var after_release: Dictionary = H.action(trace,"DIG_L")
 	var earth_intact: bool = H.material(after_release,"packed_earth")==H.material(opening,"packed_earth")-256
-	out["挖塞后256 acid cell" if str(spec.id)=="G01" else "挖开左塞[4,2]"] = _claim(conserved and tagged_rule and contacts_ok and main_clear and acid_clear and walls_intact and earth_intact,{"scope":"author-sdk-cell-ledger-and-isolated-tag-contact-controls","ledger":ledger,"reaction_table":rule,"isolated_contacts":contacts,"target_rock_clear":main_clear,"acid_clear":acid_clear,"walls_intact":walls_intact,"after_release":after_release},not opening.is_empty() and contacts_available)
+	var detail: Dictionary = {"scope":"author-sdk-cell-ledger-and-isolated-tag-contact-controls","ledger":ledger,"reaction_table":rule,"isolated_contacts":contacts,"target_rock_clear":main_clear,"acid_clear":acid_clear,"walls_intact":walls_intact,"after_release":after_release}
+	var available: bool = not opening.is_empty() and not after_release.is_empty() and contacts_available
 	if str(spec.id)=="G01":
+		out["挖塞后256 acid cell"] = _claim(conserved and tagged_rule and contacts_ok and main_clear and acid_clear and walls_intact and earth_intact,detail,available)
 		out["人物向左进入[4,2]"] = _claim(H.player(H.sample(trace,6),4,4) and H.player(final,2,4) and _light(final,"exit"),{"entry":H.sample(trace,6),"final":final},trace.size()>6)
 	else:
+		# The source retains the superseded two-rock clause alongside LV-11's
+		# single-M clause. Evaluate both honestly; never let one phrase match both.
+		out["依次与L[4,5]、M[4,6]"] = _claim(conserved and tagged_rule and contacts_ok and main_clear and acid_clear and walls_intact and earth_intact,detail,available)
+		var single_m: bool = H.tile(opening,4,5,"limestone_a")==0 and H.tile(opening,4,6,"limestone_b")==256 and H.tile(after_release,4,6,"limestone_b")==0 and main_clear
+		var retained: bool = H.material(after_release,"acid")==256 and H.tile(after_release,4,6,"acid")==256 and H.material(final,"acid")==256 and H.tile(after_release,3,6,"packed_earth")==256
+		var single_detail: Dictionary = detail.duplicate()
+		single_detail["scope"] = "single-M author reaction; sealed-well residual measured before the later deliberate exit excavation"
+		single_detail["single_m"] = single_m
+		single_detail["retained_acid_before_exit_dig"] = retained
+		out["与M[4,6]一对一反应"] = _claim(conserved and tagged_rule and contacts_ok and single_m and retained and walls_intact and earth_intact,single_detail,available)
 		var branch: Dictionary = extra.get("decoy",{})
 		var measured: Dictionary = branch.get("final",{})
-		var decoy_ok: bool = _complete(branch) and H.tile(measured,7,5,"limestone_a")==0 and H.tile(measured,7,6,"hard_rock")==256 and H.material(measured,"acid")==256 and H.tile(measured,4,5,"limestone_a")==256 and H.tile(measured,4,6,"limestone_b")==256 and not bool(branch.get("won",false))
+		var decoy_ok: bool = _complete(branch) and H.tile(measured,7,5,"limestone_a")==0 and H.tile(measured,7,6,"hard_rock")==256 and H.material(measured,"acid")==256 and H.tile(measured,4,5,"limestone_a")==0 and H.tile(measured,4,6,"limestone_b")==256 and not bool(branch.get("won",false))
 		out["挖开右塞[7,2]"] = _claim(decoy_ok,{"decoy_branch":branch},_ready(branch))
 
 func _gas(spec: Dictionary, trace: Array, summary: Dictionary, extra: Dictionary, out: Dictionary) -> void:

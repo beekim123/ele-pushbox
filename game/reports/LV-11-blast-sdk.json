@@ -1,0 +1,2087 @@
+{
+  "format": "portitor.chapter-sdk-summary/1",
+  "group": "blast",
+  "complete": true,
+  "ok": true,
+  "run_id": "20261016T095112532446Z-99977",
+  "tested_source_sha256": "6604ec38629cc99d4c94d38796aba9ab6f043864e5554748dec159de2733cf8b",
+  "evidence": "game/reports/chapter-sdk.json",
+  "evidence_sha256": "8cb85abc267095224284a74b8797d13637be32ac3cc700fbfaa93f0940a2f08f",
+  "levels": [
+    {
+      "author_solution_verified": true,
+      "consistent": true,
+      "group": "blast",
+      "id": "Q01",
+      "issues": [],
+      "max_rounds": 1,
+      "max_ticks": 6,
+      "replays": 3,
+      "restart_ok": true,
+      "round_limit": 16,
+      "runs": [
+        {
+          "accepted_steps": 8,
+          "restart_ok": true,
+          "sequence_sha256": "5249188fb0516672976a95af171c6e92c81c0f18be85616246d076e278ae3c63",
+          "undo_ok": true,
+          "won": true
+        },
+        {
+          "accepted_steps": 8,
+          "restart_ok": true,
+          "sequence_sha256": "5249188fb0516672976a95af171c6e92c81c0f18be85616246d076e278ae3c63",
+          "undo_ok": true,
+          "won": true
+        },
+        {
+          "accepted_steps": 8,
+          "restart_ok": true,
+          "sequence_sha256": "5249188fb0516672976a95af171c6e92c81c0f18be85616246d076e278ae3c63",
+          "undo_ok": true,
+          "won": true
+        }
+      ],
+      "sdk_verified": true,
+      "spec_sha256": "c896c95b7970bcdbaa2d755bcfd1f308dea51b05f2fa7045e55cd0964a2362ae",
+      "tick_limit": 1200,
+      "uid": "level:Q01",
+      "undo_ok": true,
+      "won": true,
+      "checks": [
+        {
+          "ok": true,
+          "status": "pass",
+          "text": "author solution wins on real SDK in three runs"
+        },
+        {
+          "ok": true,
+          "status": "pass",
+          "text": "three complete tick hash sequences agree"
+        },
+        {
+          "ok": true,
+          "status": "pass",
+          "text": "every accepted action restores game, SDK and observations on undo"
+        },
+        {
+          "ok": true,
+          "status": "pass",
+          "text": "restart and undo-restart preserve opening and final snapshots"
+        },
+        {
+          "ok": true,
+          "status": "pass",
+          "text": "settlement stays below 1200 ticks and 16 rounds"
+        },
+        {
+          "ok": true,
+          "status": "pass",
+          "text": "SDK 核对高位爆心[4,2]摧毁[4,2]裂岩，但保留对角的[5,3]裂岩支撑；若实际半径导致对角支撑崩落则报告模型/SDK分歧，不脚本强保留。"
+        },
+        {
+          "ok": true,
+          "status": "pass",
+          "text": "低位诱饵爆心[4,3]清掉墙[4,2]及支撑[5,3]，箱子落到[5,3]后无法回到上层槽。"
+        },
+        {
+          "ok": true,
+          "status": "pass",
+          "text": "作者路线后箱子[8,2]入槽；真实SDK连续回放3次一致，逐步撤销，结算不得触顶。"
+        }
+      ],
+      "step_metrics": [
+        {
+          "step": 0,
+          "action": "opening"
+        },
+        {
+          "step": 1,
+          "action": "R",
+          "accepted": true,
+          "error": "",
+          "finished": true,
+          "kind": "walk",
+          "max_advance_us": 3334,
+          "max_step_us": 0,
+          "ok": true,
+          "phase": "physics",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "b722b0a23ad09c5d0168c229b2e0a0628192061ddaa8a71e52f63b5522c087c9",
+          "ticks": 4,
+          "won": false
+        },
+        {
+          "step": 2,
+          "action": "R",
+          "accepted": true,
+          "error": "",
+          "finished": true,
+          "kind": "walk",
+          "max_advance_us": 2989,
+          "max_step_us": 1,
+          "ok": true,
+          "phase": "physics",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "05a4ed8afeb86f7ad1a140e3c2f7a6819bab0a4f73a35d926e73ff15845959a1",
+          "ticks": 4,
+          "won": false
+        },
+        {
+          "step": 3,
+          "action": "U",
+          "accepted": true,
+          "error": "",
+          "finished": true,
+          "kind": "climb",
+          "max_advance_us": 3034,
+          "max_step_us": 0,
+          "ok": true,
+          "phase": "physics",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "b043d9474138558a67dc1e0271416ee110d85cdbb592445ff77bfa5a2fd5c654",
+          "ticks": 4,
+          "won": false
+        },
+        {
+          "step": 4,
+          "action": "BOMB_R",
+          "accepted": true,
+          "error": "",
+          "finished": true,
+          "kind": "bomb",
+          "max_advance_us": 2916,
+          "max_step_us": 23,
+          "ok": true,
+          "phase": "physics",
+          "rounds": 1,
+          "tick_hash_count": 6,
+          "tick_sequence_sha256": "db8d943bfba870a0297a7e776b94284d0f0d83c6f02b3ce829295123f3d1629f",
+          "ticks": 6,
+          "won": false
+        },
+        {
+          "step": 5,
+          "action": "R",
+          "accepted": true,
+          "error": "",
+          "finished": true,
+          "kind": "walk",
+          "max_advance_us": 2887,
+          "max_step_us": 0,
+          "ok": true,
+          "phase": "physics",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "ffbf255c7d11d03c05e59c713fa9a68d3c5e94fdc46cacb7e01102442a3e68d4",
+          "ticks": 4,
+          "won": false
+        },
+        {
+          "step": 6,
+          "action": "R",
+          "accepted": true,
+          "error": "",
+          "finished": true,
+          "kind": "push",
+          "max_advance_us": 2972,
+          "max_step_us": 23,
+          "ok": true,
+          "phase": "physics",
+          "rounds": 1,
+          "tick_hash_count": 5,
+          "tick_sequence_sha256": "98e4fa165d4ed7d82944d294e045854e0a19b2c732ce7c7846cef3f4f30fc819",
+          "ticks": 5,
+          "won": false
+        },
+        {
+          "step": 7,
+          "action": "R",
+          "accepted": true,
+          "error": "",
+          "finished": true,
+          "kind": "push",
+          "max_advance_us": 2948,
+          "max_step_us": 23,
+          "ok": true,
+          "phase": "physics",
+          "rounds": 1,
+          "tick_hash_count": 5,
+          "tick_sequence_sha256": "df5624670e8c8b9418dd7cb7860dc457309b3dcd78c70c9a127dd5777eb3e591",
+          "ticks": 5,
+          "won": false
+        },
+        {
+          "step": 8,
+          "action": "R",
+          "accepted": true,
+          "error": "",
+          "finished": true,
+          "kind": "push",
+          "max_advance_us": 3034,
+          "max_step_us": 22,
+          "ok": true,
+          "phase": "physics",
+          "rounds": 1,
+          "tick_hash_count": 5,
+          "tick_sequence_sha256": "07311b62b8d2d0be19baaaf41fc1b509ce3e1600a5035f035878c408cd828d0b",
+          "ticks": 5,
+          "won": true
+        }
+      ]
+    },
+    {
+      "author_solution_verified": true,
+      "consistent": true,
+      "group": "blast",
+      "id": "Q02",
+      "issues": [],
+      "max_rounds": 5,
+      "max_ticks": 26,
+      "replays": 3,
+      "restart_ok": true,
+      "round_limit": 16,
+      "runs": [
+        {
+          "accepted_steps": 8,
+          "restart_ok": true,
+          "sequence_sha256": "dc9baca68b2e52a97fc6065980a0517890624e68f2a0755b3b38e8673f9fadcc",
+          "undo_ok": true,
+          "won": true
+        },
+        {
+          "accepted_steps": 8,
+          "restart_ok": true,
+          "sequence_sha256": "dc9baca68b2e52a97fc6065980a0517890624e68f2a0755b3b38e8673f9fadcc",
+          "undo_ok": true,
+          "won": true
+        },
+        {
+          "accepted_steps": 8,
+          "restart_ok": true,
+          "sequence_sha256": "dc9baca68b2e52a97fc6065980a0517890624e68f2a0755b3b38e8673f9fadcc",
+          "undo_ok": true,
+          "won": true
+        }
+      ],
+      "sdk_verified": true,
+      "spec_sha256": "3a867dffb8291d0e43eaa7a9a56401693d0ee099b0c4ddd4497b2c81c596e3e9",
+      "tick_limit": 1200,
+      "uid": "level:Q02",
+      "undo_ok": true,
+      "won": true,
+      "checks": [
+        {
+          "ok": true,
+          "status": "pass",
+          "text": "author solution wins on real SDK in three runs"
+        },
+        {
+          "ok": true,
+          "status": "pass",
+          "text": "three complete tick hash sequences agree"
+        },
+        {
+          "ok": true,
+          "status": "pass",
+          "text": "every accepted action restores game, SDK and observations on undo"
+        },
+        {
+          "ok": true,
+          "status": "pass",
+          "text": "restart and undo-restart preserve opening and final snapshots"
+        },
+        {
+          "ok": true,
+          "status": "pass",
+          "text": "settlement stays below 1200 ticks and 16 rounds"
+        },
+        {
+          "ok": true,
+          "status": "pass",
+          "text": "真实 SDK 核对爆心[4,3]隔着完整基岩命中[5,3]裂岩，墙不消失；比较低位诱饵是否真的不能让[5,3]跨128cell阈值。"
+        },
+        {
+          "ok": true,
+          "status": "pass",
+          "text": "箱子从[5,2]落到[5,6]，人物到[2,2]时两目标同时点亮。"
+        },
+        {
+          "ok": true,
+          "status": "pass",
+          "text": "逐步撤销恢复井内箱子高度、裂岩cell、炸药与出口灯，1200tick/16轮内稳定。"
+        }
+      ],
+      "step_metrics": [
+        {
+          "step": 0,
+          "action": "opening"
+        },
+        {
+          "step": 1,
+          "action": "R",
+          "accepted": true,
+          "error": "",
+          "finished": true,
+          "kind": "walk",
+          "max_advance_us": 3275,
+          "max_step_us": 2,
+          "ok": true,
+          "phase": "physics",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "736642f923ce1745cd2d05808d2f2e4ccf4bda2d95b2800bb85ca99b0c48b49a",
+          "ticks": 4,
+          "won": false
+        },
+        {
+          "step": 2,
+          "action": "R",
+          "accepted": true,
+          "error": "",
+          "finished": true,
+          "kind": "walk",
+          "max_advance_us": 3234,
+          "max_step_us": 1,
+          "ok": true,
+          "phase": "physics",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "8a69fb6c706b5d1416f241a7a928f2538d04e90239548b44eb42c41059a1c841",
+          "ticks": 4,
+          "won": false
+        },
+        {
+          "step": 3,
+          "action": "U",
+          "accepted": true,
+          "error": "",
+          "finished": true,
+          "kind": "climb",
+          "max_advance_us": 3877,
+          "max_step_us": 1,
+          "ok": true,
+          "phase": "physics",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "33fa4d0da9d4f19a8752f0291de8b3a0e211e3181c75b164d8f8d613ff6db822",
+          "ticks": 4,
+          "won": false
+        },
+        {
+          "step": 4,
+          "action": "U",
+          "accepted": true,
+          "error": "",
+          "finished": true,
+          "kind": "climb",
+          "max_advance_us": 3280,
+          "max_step_us": 1,
+          "ok": true,
+          "phase": "physics",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "98795c05c89f2bf72d6b2f941293a5bb8e2b7d60fd50423eea6af4fd94d9891c",
+          "ticks": 4,
+          "won": false
+        },
+        {
+          "step": 5,
+          "action": "U",
+          "accepted": true,
+          "error": "",
+          "finished": true,
+          "kind": "climb",
+          "max_advance_us": 3216,
+          "max_step_us": 1,
+          "ok": true,
+          "phase": "physics",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "ccc116c91a9e0cc892a02cf4797129b49bb6afca95c72ccfb76764d4e536764f",
+          "ticks": 4,
+          "won": false
+        },
+        {
+          "step": 6,
+          "action": "BOMB_R",
+          "accepted": true,
+          "error": "",
+          "finished": true,
+          "kind": "bomb",
+          "max_advance_us": 9343,
+          "max_step_us": 22,
+          "ok": true,
+          "phase": "physics",
+          "rounds": 5,
+          "tick_hash_count": 26,
+          "tick_sequence_sha256": "006a5219b087b751150049e487f0d63e5b0d23e847a37cf4288a42869a6dd63e",
+          "ticks": 26,
+          "won": false
+        },
+        {
+          "step": 7,
+          "action": "U",
+          "accepted": true,
+          "error": "",
+          "finished": true,
+          "kind": "climb",
+          "max_advance_us": 3484,
+          "max_step_us": 0,
+          "ok": true,
+          "phase": "physics",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "159e0c52740899df86ebb71e8e271536ed95d65a8c8bfb0ccdc8b343b9530dcb",
+          "ticks": 4,
+          "won": false
+        },
+        {
+          "step": 8,
+          "action": "L",
+          "accepted": true,
+          "error": "",
+          "finished": true,
+          "kind": "walk",
+          "max_advance_us": 3329,
+          "max_step_us": 0,
+          "ok": true,
+          "phase": "physics",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "b9c46886042ce9c1c0ddcce15810dc8ea2060ad243d3148321a3923dfbd7e5c1",
+          "ticks": 4,
+          "won": true
+        }
+      ]
+    },
+    {
+      "author_solution_verified": true,
+      "consistent": true,
+      "group": "blast",
+      "id": "Q03",
+      "issues": [],
+      "max_rounds": 2,
+      "max_ticks": 968,
+      "replays": 3,
+      "restart_ok": true,
+      "round_limit": 16,
+      "runs": [
+        {
+          "accepted_steps": 9,
+          "restart_ok": true,
+          "sequence_sha256": "7dd209e6f11da0c9abb9a95502df45c5be62402c183212865a888c33c8f570cf",
+          "undo_ok": true,
+          "won": true
+        },
+        {
+          "accepted_steps": 9,
+          "restart_ok": true,
+          "sequence_sha256": "7dd209e6f11da0c9abb9a95502df45c5be62402c183212865a888c33c8f570cf",
+          "undo_ok": true,
+          "won": true
+        },
+        {
+          "accepted_steps": 9,
+          "restart_ok": true,
+          "sequence_sha256": "7dd209e6f11da0c9abb9a95502df45c5be62402c183212865a888c33c8f570cf",
+          "undo_ok": true,
+          "won": true
+        }
+      ],
+      "sdk_verified": true,
+      "spec_sha256": "84219881704cc18de926d13741e139154100f537ffa1f7b0d04f646e78755574",
+      "tick_limit": 1200,
+      "uid": "level:Q03",
+      "undo_ok": true,
+      "won": true,
+      "checks": [
+        {
+          "ok": true,
+          "status": "pass",
+          "text": "author solution wins on real SDK in three runs"
+        },
+        {
+          "ok": true,
+          "status": "pass",
+          "text": "three complete tick hash sequences agree"
+        },
+        {
+          "ok": true,
+          "status": "pass",
+          "text": "every accepted action restores game, SDK and observations on undo"
+        },
+        {
+          "ok": true,
+          "status": "pass",
+          "text": "restart and undo-restart preserve opening and final snapshots"
+        },
+        {
+          "ok": true,
+          "status": "pass",
+          "text": "settlement stays below 1200 ticks and 16 rounds"
+        },
+        {
+          "ok": true,
+          "status": "pass",
+          "text": "模型只按四邻连接与每段独立十字爆炸推导终态，不模拟热传播或480tick；SDK必须证明右支逐段燃烧，末端才破坏[8,3]裂岩。"
+        },
+        {
+          "ok": true,
+          "status": "pass",
+          "text": "左支点燃只能影响其附近裂岩[2,3]，不能点燃不相连的右支；若真实热传播跨空隙则报告分歧。"
+        },
+        {
+          "ok": true,
+          "status": "pass",
+          "text": "固定960tick阶段结束前引信应燃尽（LV-06实测828tick，余量132），之后静止判断；超过阶段或1200tick/16轮必须报告，不伪造终态。"
+        },
+        {
+          "ok": true,
+          "status": "pass",
+          "text": "真实SDK作者解连续回放3次、逐步撤销，恢复全部燃烧/寿命状态。"
+        }
+      ],
+      "step_metrics": [
+        {
+          "step": 0,
+          "action": "opening"
+        },
+        {
+          "step": 1,
+          "action": "R",
+          "accepted": true,
+          "error": "",
+          "finished": true,
+          "kind": "walk",
+          "max_advance_us": 3465,
+          "max_step_us": 3,
+          "ok": true,
+          "phase": "physics",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "06e2e3774fe5113d6246bdf8871e3e645fd3b6779cf23c531d4d9378db405bf4",
+          "ticks": 4,
+          "won": false
+        },
+        {
+          "step": 2,
+          "action": "R",
+          "accepted": true,
+          "error": "",
+          "finished": true,
+          "kind": "walk",
+          "max_advance_us": 3780,
+          "max_step_us": 1,
+          "ok": true,
+          "phase": "physics",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "8c55e80b371df8bc619a433f519da0936c56175344d53f5c0ef1a12f5f015294",
+          "ticks": 4,
+          "won": false
+        },
+        {
+          "step": 3,
+          "action": "BOMB_R",
+          "accepted": true,
+          "error": "",
+          "finished": true,
+          "kind": "bomb",
+          "max_advance_us": 61323,
+          "max_step_us": 34272,
+          "ok": true,
+          "phase": "physics",
+          "rounds": 2,
+          "tick_hash_count": 968,
+          "tick_sequence_sha256": "a31d804dc4565322ee46f0040503971636ac67ccbea1e23fa15472e291d65e13",
+          "ticks": 968,
+          "won": false
+        },
+        {
+          "step": 4,
+          "action": "R",
+          "accepted": true,
+          "error": "",
+          "finished": true,
+          "kind": "walk",
+          "max_advance_us": 12745,
+          "max_step_us": 5414,
+          "ok": true,
+          "phase": "physics",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "6d234d949b50b67b45cf3f7f6c46347b169df869fc0bdd1d78f979e65f3007a6",
+          "ticks": 4,
+          "won": false
+        },
+        {
+          "step": 5,
+          "action": "R",
+          "accepted": true,
+          "error": "",
+          "finished": true,
+          "kind": "walk",
+          "max_advance_us": 7774,
+          "max_step_us": 1252,
+          "ok": true,
+          "phase": "physics",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "18225d4061beb998470bcabb348588fcac0d5e7167d74d301599313d8ba2b9ea",
+          "ticks": 4,
+          "won": false
+        },
+        {
+          "step": 6,
+          "action": "U",
+          "accepted": true,
+          "error": "",
+          "finished": true,
+          "kind": "climb",
+          "max_advance_us": 7401,
+          "max_step_us": 1185,
+          "ok": true,
+          "phase": "physics",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "1ed10ee2a81d38b98dbfb899c30421fa21b83943ac570db16280b381ca6f9a34",
+          "ticks": 4,
+          "won": false
+        },
+        {
+          "step": 7,
+          "action": "R",
+          "accepted": true,
+          "error": "",
+          "finished": true,
+          "kind": "step",
+          "max_advance_us": 7415,
+          "max_step_us": 1213,
+          "ok": true,
+          "phase": "physics",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "0242855588ffc34c634031b357aa7ec03662994dc5f9231a3cdc9c7dc64e2969",
+          "ticks": 4,
+          "won": false
+        },
+        {
+          "step": 8,
+          "action": "R",
+          "accepted": true,
+          "error": "",
+          "finished": true,
+          "kind": "walk",
+          "max_advance_us": 7326,
+          "max_step_us": 1195,
+          "ok": true,
+          "phase": "physics",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "91810a437d0206c44676b12f367c55e89041c2f174e3e742972ba3bb691b2322",
+          "ticks": 4,
+          "won": false
+        },
+        {
+          "step": 9,
+          "action": "R",
+          "accepted": true,
+          "error": "",
+          "finished": true,
+          "kind": "walk",
+          "max_advance_us": 7216,
+          "max_step_us": 1166,
+          "ok": true,
+          "phase": "physics",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "49756bc21f62823c960175d518283ca2951cc9d67c99a98bfa5b1f873bbda135",
+          "ticks": 4,
+          "won": true
+        }
+      ]
+    },
+    {
+      "author_solution_verified": true,
+      "consistent": true,
+      "group": "blast",
+      "id": "Q04",
+      "issues": [],
+      "max_rounds": 2,
+      "max_ticks": 200,
+      "replays": 3,
+      "restart_ok": true,
+      "round_limit": 16,
+      "runs": [
+        {
+          "accepted_steps": 10,
+          "restart_ok": true,
+          "sequence_sha256": "2d92f235090c51d0bf6561c0387ea2e3edd2319c12f4bdf6ab5812f508d572b2",
+          "undo_ok": true,
+          "won": true
+        },
+        {
+          "accepted_steps": 10,
+          "restart_ok": true,
+          "sequence_sha256": "2d92f235090c51d0bf6561c0387ea2e3edd2319c12f4bdf6ab5812f508d572b2",
+          "undo_ok": true,
+          "won": true
+        },
+        {
+          "accepted_steps": 10,
+          "restart_ok": true,
+          "sequence_sha256": "2d92f235090c51d0bf6561c0387ea2e3edd2319c12f4bdf6ab5812f508d572b2",
+          "undo_ok": true,
+          "won": true
+        }
+      ],
+      "sdk_verified": true,
+      "spec_sha256": "9beca0fbcf01b1211f660960ac5650f71a4a53a9eb657945aabeb314f5d9e728",
+      "tick_limit": 1200,
+      "uid": "level:Q04",
+      "undo_ok": true,
+      "won": true,
+      "checks": [
+        {
+          "ok": true,
+          "status": "pass",
+          "text": "author solution wins on real SDK in three runs"
+        },
+        {
+          "ok": true,
+          "status": "pass",
+          "text": "three complete tick hash sequences agree"
+        },
+        {
+          "ok": true,
+          "status": "pass",
+          "text": "every accepted action restores game, SDK and observations on undo"
+        },
+        {
+          "ok": true,
+          "status": "pass",
+          "text": "restart and undo-restart preserve opening and final snapshots"
+        },
+        {
+          "ok": true,
+          "status": "pass",
+          "text": "settlement stays below 1200 ticks and 16 rounds"
+        },
+        {
+          "ok": true,
+          "status": "pass",
+          "text": "SDK真实粉末move_chance128、抗爆65535：炸开[6,3]后碎石落入封闭的斗[6,4..5]，斗真实计数≥448并锁存（LV-10实测500：下落时各有6cell滑到[5,3]、[7,3]，属正常），512总量守恒。"
+        },
+        {
+          "ok": true,
+          "status": "pass",
+          "text": "验证斗内碎石顶面能按128cell分类支撑人物跨井；不得脚本摆成整格台阶，粉末溢出或不能支撑必须报告。"
+        },
+        {
+          "ok": true,
+          "status": "pass",
+          "text": "SDK 核对诱饵：从[5,6]朝右炸斗底[6,6]，再上去炸托石[6,3]，碎石漏入[6,6..7]并可散进[5,6]，顶面过低不能跨到右台；最终斗内计数不足512。设计模型bin可能在瞬时经过刻度时锁存，因此诱饵以无法抵达出口为判据，真实SDK必须静止后读计数。"
+        },
+        {
+          "ok": true,
+          "status": "pass",
+          "text": "作者路线抵达[9,3]且斗灯亮，连续回放3次一致；慢落与撤销由SDK核对，结算不触顶。"
+        }
+      ],
+      "step_metrics": [
+        {
+          "step": 0,
+          "action": "opening"
+        },
+        {
+          "step": 1,
+          "action": "R",
+          "accepted": true,
+          "error": "",
+          "finished": true,
+          "kind": "walk",
+          "max_advance_us": 4473,
+          "max_step_us": 1,
+          "ok": true,
+          "phase": "physics",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "870612469ac8ff647f5c3908ebbecf840b23262f6bafe147e6bb1ebb1abd5642",
+          "ticks": 4,
+          "won": false
+        },
+        {
+          "step": 2,
+          "action": "R",
+          "accepted": true,
+          "error": "",
+          "finished": true,
+          "kind": "walk",
+          "max_advance_us": 4343,
+          "max_step_us": 1,
+          "ok": true,
+          "phase": "physics",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "8ca5110b37e31392a5a8f2bf4cc1efd6cd028ef1b27c96ca5b066980caeee558",
+          "ticks": 4,
+          "won": false
+        },
+        {
+          "step": 3,
+          "action": "U",
+          "accepted": true,
+          "error": "",
+          "finished": true,
+          "kind": "climb",
+          "max_advance_us": 4517,
+          "max_step_us": 1,
+          "ok": true,
+          "phase": "physics",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "322ffcf5ec0cfa30f77a2a1ccca2e5e8fb3231e7303b2bc059e589e15167e2cb",
+          "ticks": 4,
+          "won": false
+        },
+        {
+          "step": 4,
+          "action": "U",
+          "accepted": true,
+          "error": "",
+          "finished": true,
+          "kind": "climb",
+          "max_advance_us": 4533,
+          "max_step_us": 1,
+          "ok": true,
+          "phase": "physics",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "9e4e53c17715068beca3fe43a12b1b341f3ca47e305acc519b50e8dbc4351bb3",
+          "ticks": 4,
+          "won": false
+        },
+        {
+          "step": 5,
+          "action": "BOMB_R",
+          "accepted": true,
+          "error": "",
+          "finished": true,
+          "kind": "bomb",
+          "max_advance_us": 11285,
+          "max_step_us": 36,
+          "ok": true,
+          "phase": "physics",
+          "rounds": 2,
+          "tick_hash_count": 200,
+          "tick_sequence_sha256": "278edb51f6118808ea2cdf84ddde5aa92a305eba8a76a9226ff47e36a3349665",
+          "ticks": 200,
+          "won": false
+        },
+        {
+          "step": 6,
+          "action": "R",
+          "accepted": true,
+          "error": "",
+          "finished": true,
+          "kind": "walk",
+          "max_advance_us": 4388,
+          "max_step_us": 1,
+          "ok": true,
+          "phase": "physics",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "997ba534d08e4a810f4793c0247d76b2a9e8181b8ddd2d744a009c0cf73d287c",
+          "ticks": 4,
+          "won": false
+        },
+        {
+          "step": 7,
+          "action": "R",
+          "accepted": true,
+          "error": "",
+          "finished": true,
+          "kind": "walk",
+          "max_advance_us": 4312,
+          "max_step_us": 1,
+          "ok": true,
+          "phase": "physics",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "3b0e09164a982901628bb5dd446590b7b8d4ec98ec689c4f66b0913d4e8fc4de",
+          "ticks": 4,
+          "won": false
+        },
+        {
+          "step": 8,
+          "action": "R",
+          "accepted": true,
+          "error": "",
+          "finished": true,
+          "kind": "walk",
+          "max_advance_us": 4452,
+          "max_step_us": 1,
+          "ok": true,
+          "phase": "physics",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "1b4817d802efa6371fc023112ac0227d3227990bf2765080ed8e78366ec89d52",
+          "ticks": 4,
+          "won": false
+        },
+        {
+          "step": 9,
+          "action": "R",
+          "accepted": true,
+          "error": "",
+          "finished": true,
+          "kind": "walk",
+          "max_advance_us": 4272,
+          "max_step_us": 1,
+          "ok": true,
+          "phase": "physics",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "77766ba85c3e24da2577831242fba835a594b219fa6834cc6505c5f77c66b01c",
+          "ticks": 4,
+          "won": false
+        },
+        {
+          "step": 10,
+          "action": "R",
+          "accepted": true,
+          "error": "",
+          "finished": true,
+          "kind": "walk",
+          "max_advance_us": 4422,
+          "max_step_us": 1,
+          "ok": true,
+          "phase": "physics",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "799c087a2a4b609b9257a2f6167b6524a47e7f874ba66062d09e91b1ba05a3f5",
+          "ticks": 4,
+          "won": true
+        }
+      ]
+    },
+    {
+      "author_solution_verified": true,
+      "consistent": true,
+      "group": "blast",
+      "id": "Q07",
+      "issues": [],
+      "max_rounds": 2,
+      "max_ticks": 10,
+      "replays": 3,
+      "restart_ok": true,
+      "round_limit": 16,
+      "runs": [
+        {
+          "accepted_steps": 8,
+          "restart_ok": true,
+          "sequence_sha256": "7aa75797af5fe8c77e4c114c4ea579f0d6e4abbc25686fae26dd62bd72aabacc",
+          "undo_ok": true,
+          "won": true
+        },
+        {
+          "accepted_steps": 8,
+          "restart_ok": true,
+          "sequence_sha256": "7aa75797af5fe8c77e4c114c4ea579f0d6e4abbc25686fae26dd62bd72aabacc",
+          "undo_ok": true,
+          "won": true
+        },
+        {
+          "accepted_steps": 8,
+          "restart_ok": true,
+          "sequence_sha256": "7aa75797af5fe8c77e4c114c4ea579f0d6e4abbc25686fae26dd62bd72aabacc",
+          "undo_ok": true,
+          "won": true
+        }
+      ],
+      "sdk_verified": true,
+      "spec_sha256": "570b6b629d4debbc8841fe0a552bec93e09131a452006986e5ad788de35a81ce",
+      "tick_limit": 1200,
+      "uid": "level:Q07",
+      "undo_ok": true,
+      "won": true,
+      "checks": [
+        {
+          "ok": true,
+          "status": "pass",
+          "text": "author solution wins on real SDK in three runs"
+        },
+        {
+          "ok": true,
+          "status": "pass",
+          "text": "three complete tick hash sequences agree"
+        },
+        {
+          "ok": true,
+          "status": "pass",
+          "text": "every accepted action restores game, SDK and observations on undo"
+        },
+        {
+          "ok": true,
+          "status": "pass",
+          "text": "restart and undo-restart preserve opening and final snapshots"
+        },
+        {
+          "ok": true,
+          "status": "pass",
+          "text": "settlement stays below 1200 ticks and 16 rounds"
+        },
+        {
+          "ok": true,
+          "status": "pass",
+          "text": "装货后箱子[6,4]由车[6,5]支撑；侧推一次逐格扫掠到车[10,5]、箱[10,4]，推车人停[6,5]。"
+        },
+        {
+          "ok": true,
+          "status": "pass",
+          "text": "先推空车的诱饵路线无法再把高台箱子装上末端车；不能越墙回推。"
+        },
+        {
+          "ok": true,
+          "status": "pass",
+          "text": "车台面与箱子用static cell清旧写新，不用刚体；全局禁搬规则不豁免；逐步撤销恢复整次滚动及目标灯。"
+        }
+      ],
+      "step_metrics": [
+        {
+          "step": 0,
+          "action": "opening"
+        },
+        {
+          "step": 1,
+          "action": "R",
+          "accepted": true,
+          "error": "",
+          "finished": true,
+          "kind": "walk",
+          "max_advance_us": 3206,
+          "max_step_us": 1,
+          "ok": true,
+          "phase": "physics",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "a2b8cbc2277486e3d5aa8019adf2ce5d0dddf9ca40af23d33715d929406a8ee4",
+          "ticks": 4,
+          "won": false
+        },
+        {
+          "step": 2,
+          "action": "R",
+          "accepted": true,
+          "error": "",
+          "finished": true,
+          "kind": "walk",
+          "max_advance_us": 3183,
+          "max_step_us": 1,
+          "ok": true,
+          "phase": "physics",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "29d8838aecc23eb6932c75d92cdec47fc9eb7de5e2f8304f3648fdab3757a4b8",
+          "ticks": 4,
+          "won": false
+        },
+        {
+          "step": 3,
+          "action": "R",
+          "accepted": true,
+          "error": "",
+          "finished": true,
+          "kind": "push",
+          "max_advance_us": 4967,
+          "max_step_us": 25,
+          "ok": true,
+          "phase": "physics",
+          "rounds": 2,
+          "tick_hash_count": 10,
+          "tick_sequence_sha256": "f2171b712c0e31c223d52ef62f43faaf90e533b761ff4ea25cff276967ada3d9",
+          "ticks": 10,
+          "won": false
+        },
+        {
+          "step": 4,
+          "action": "L",
+          "accepted": true,
+          "error": "",
+          "finished": true,
+          "kind": "walk",
+          "max_advance_us": 3357,
+          "max_step_us": 1,
+          "ok": true,
+          "phase": "physics",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "2c66763b4b6fb7580e7e753a4df6d17ae27ec39eeeb1d1093954756e2a254b43",
+          "ticks": 4,
+          "won": false
+        },
+        {
+          "step": 5,
+          "action": "D",
+          "accepted": true,
+          "error": "",
+          "finished": true,
+          "kind": "climb",
+          "max_advance_us": 3300,
+          "max_step_us": 0,
+          "ok": true,
+          "phase": "physics",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "efba6f33d701b3cfdb6710be12c59eb643d66bd0954bbb6c6a91302535f81348",
+          "ticks": 4,
+          "won": false
+        },
+        {
+          "step": 6,
+          "action": "D",
+          "accepted": true,
+          "error": "",
+          "finished": true,
+          "kind": "climb",
+          "max_advance_us": 3576,
+          "max_step_us": 1,
+          "ok": true,
+          "phase": "physics",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "6d2cc36da54d8479cc36202bd342c4544ec3a87152ebeba85718ab0f582e1900",
+          "ticks": 4,
+          "won": false
+        },
+        {
+          "step": 7,
+          "action": "R",
+          "accepted": true,
+          "error": "",
+          "finished": true,
+          "kind": "walk",
+          "max_advance_us": 3344,
+          "max_step_us": 1,
+          "ok": true,
+          "phase": "physics",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "74e5bcf912057fdba3e62bf319201c113b38e525add39c98d365278bd0fc69e7",
+          "ticks": 4,
+          "won": false
+        },
+        {
+          "step": 8,
+          "action": "R",
+          "accepted": true,
+          "error": "",
+          "finished": true,
+          "kind": "mine_cart",
+          "max_advance_us": 3445,
+          "max_step_us": 163,
+          "ok": true,
+          "phase": "physics",
+          "rounds": 1,
+          "tick_hash_count": 5,
+          "tick_sequence_sha256": "e220abbbe01e3b66ff1a92f40a0bd26d16e67211e2b8e43fe3b789ef7482c168",
+          "ticks": 5,
+          "won": true
+        }
+      ]
+    },
+    {
+      "author_solution_verified": true,
+      "consistent": true,
+      "group": "blast",
+      "id": "Q08",
+      "issues": [],
+      "max_rounds": 4,
+      "max_ticks": 19,
+      "replays": 3,
+      "restart_ok": true,
+      "round_limit": 16,
+      "runs": [
+        {
+          "accepted_steps": 13,
+          "restart_ok": true,
+          "sequence_sha256": "9cfda9c58de750a233b4165ac1605763e2b475d77ec236e9cb7b0db82189ce72",
+          "undo_ok": true,
+          "won": true
+        },
+        {
+          "accepted_steps": 13,
+          "restart_ok": true,
+          "sequence_sha256": "9cfda9c58de750a233b4165ac1605763e2b475d77ec236e9cb7b0db82189ce72",
+          "undo_ok": true,
+          "won": true
+        },
+        {
+          "accepted_steps": 13,
+          "restart_ok": true,
+          "sequence_sha256": "9cfda9c58de750a233b4165ac1605763e2b475d77ec236e9cb7b0db82189ce72",
+          "undo_ok": true,
+          "won": true
+        }
+      ],
+      "sdk_verified": true,
+      "spec_sha256": "d67fff1c216b75fa4c79661dd67b45cecefa5ba35745f53df2e036ed54d0ac78",
+      "tick_limit": 1200,
+      "uid": "level:Q08",
+      "undo_ok": true,
+      "won": true,
+      "checks": [
+        {
+          "ok": true,
+          "status": "pass",
+          "text": "author solution wins on real SDK in three runs"
+        },
+        {
+          "ok": true,
+          "status": "pass",
+          "text": "three complete tick hash sequences agree"
+        },
+        {
+          "ok": true,
+          "status": "pass",
+          "text": "every accepted action restores game, SDK and observations on undo"
+        },
+        {
+          "ok": true,
+          "status": "pass",
+          "text": "restart and undo-restart preserve opening and final snapshots"
+        },
+        {
+          "ok": true,
+          "status": "pass",
+          "text": "settlement stays below 1200 ticks and 16 rounds"
+        },
+        {
+          "ok": true,
+          "status": "pass",
+          "text": "晶桥[5,4]按欧氏半径2格、动作后先更新实心再重力；先后从下方经过时也应正确点亮。"
+        },
+        {
+          "ok": true,
+          "status": "pass",
+          "text": "箱子推到[5,3]时由晶桥支撑；人物由[4,3]退到[3,3]，桥熄灭，箱子落到[5,6]。"
+        },
+        {
+          "ok": true,
+          "status": "pass",
+          "text": "模型验证绕行、诱饵死局与卸货；SDK核对只写/清该设备自有cell，环境视觉设置不改变机关。"
+        },
+        {
+          "ok": true,
+          "status": "pass",
+          "text": "逐步撤销覆盖灯的上下方照亮、箱子过桥与深槽下落，真实回放3次一致。"
+        }
+      ],
+      "step_metrics": [
+        {
+          "step": 0,
+          "action": "opening"
+        },
+        {
+          "step": 1,
+          "action": "R",
+          "accepted": true,
+          "error": "",
+          "finished": true,
+          "kind": "walk",
+          "max_advance_us": 4073,
+          "max_step_us": 1,
+          "ok": true,
+          "phase": "physics",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "536bfba0ec40ca9049a79b2c73c7cd169eae2ad9cf6003bea85d73d25945ea66",
+          "ticks": 4,
+          "won": false
+        },
+        {
+          "step": 2,
+          "action": "R",
+          "accepted": true,
+          "error": "",
+          "finished": true,
+          "kind": "walk",
+          "max_advance_us": 3316,
+          "max_step_us": 1,
+          "ok": true,
+          "phase": "physics",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "45c9389b6301c62186da41deef63cdd5744b09fc2a2f7ad7a4bb2c9f0c7ee6b3",
+          "ticks": 4,
+          "won": false
+        },
+        {
+          "step": 3,
+          "action": "D",
+          "accepted": true,
+          "error": "",
+          "finished": true,
+          "kind": "climb",
+          "max_advance_us": 3261,
+          "max_step_us": 0,
+          "ok": true,
+          "phase": "physics",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "d431b0868ab1409303ba65dcf4d07f88ef0336451238930034a897ded9e2a04a",
+          "ticks": 4,
+          "won": false
+        },
+        {
+          "step": 4,
+          "action": "D",
+          "accepted": true,
+          "error": "",
+          "finished": true,
+          "kind": "climb",
+          "max_advance_us": 3120,
+          "max_step_us": 0,
+          "ok": true,
+          "phase": "physics",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "b08a528daeec45a02fd203f96397b96aa9e29e5078e284c60373882d066f8311",
+          "ticks": 4,
+          "won": false
+        },
+        {
+          "step": 5,
+          "action": "L",
+          "accepted": true,
+          "error": "",
+          "finished": true,
+          "kind": "walk",
+          "max_advance_us": 3174,
+          "max_step_us": 0,
+          "ok": true,
+          "phase": "physics",
+          "rounds": 2,
+          "tick_hash_count": 8,
+          "tick_sequence_sha256": "05a4dcf7e4ec81d86a18927076621a5decacdd5f2c41456347f7e1035166cb5e",
+          "ticks": 8,
+          "won": false
+        },
+        {
+          "step": 6,
+          "action": "L",
+          "accepted": true,
+          "error": "",
+          "finished": true,
+          "kind": "step",
+          "max_advance_us": 3229,
+          "max_step_us": 0,
+          "ok": true,
+          "phase": "physics",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "9483ef41b02cb09cac5f0ba2b8c0811dfd3469d56a5e08432d5fe9597d5e26c2",
+          "ticks": 4,
+          "won": false
+        },
+        {
+          "step": 7,
+          "action": "L",
+          "accepted": true,
+          "error": "",
+          "finished": true,
+          "kind": "walk",
+          "max_advance_us": 3454,
+          "max_step_us": 14,
+          "ok": true,
+          "phase": "physics",
+          "rounds": 2,
+          "tick_hash_count": 9,
+          "tick_sequence_sha256": "58dcc840c72c3266bd9eaa5b6db34f72d47fe0cafb72b4d3376581a9ddf84e75",
+          "ticks": 9,
+          "won": false
+        },
+        {
+          "step": 8,
+          "action": "L",
+          "accepted": true,
+          "error": "",
+          "finished": true,
+          "kind": "walk",
+          "max_advance_us": 3157,
+          "max_step_us": 0,
+          "ok": true,
+          "phase": "physics",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "cf8ac641c8b827a46af0f83755ca08b2da27aabb21ab289484c36cb0612cb677",
+          "ticks": 4,
+          "won": false
+        },
+        {
+          "step": 9,
+          "action": "U",
+          "accepted": true,
+          "error": "",
+          "finished": true,
+          "kind": "climb",
+          "max_advance_us": 3147,
+          "max_step_us": 0,
+          "ok": true,
+          "phase": "physics",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "386ce18430ce466af816ab910500f8e2855e807d6aeffe87ce98905d01612578",
+          "ticks": 4,
+          "won": false
+        },
+        {
+          "step": 10,
+          "action": "U",
+          "accepted": true,
+          "error": "",
+          "finished": true,
+          "kind": "climb",
+          "max_advance_us": 3150,
+          "max_step_us": 0,
+          "ok": true,
+          "phase": "physics",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "bc21c2b37c94e95c3e6357ebd2fba7bc96f54a1a19e74b0fb76614f6aa097b92",
+          "ticks": 4,
+          "won": false
+        },
+        {
+          "step": 11,
+          "action": "R",
+          "accepted": true,
+          "error": "",
+          "finished": true,
+          "kind": "push",
+          "max_advance_us": 3047,
+          "max_step_us": 24,
+          "ok": true,
+          "phase": "physics",
+          "rounds": 1,
+          "tick_hash_count": 5,
+          "tick_sequence_sha256": "ea108314326bcc304070eb134bc81fff63e840100ec7def55e2882f73e31916f",
+          "ticks": 5,
+          "won": false
+        },
+        {
+          "step": 12,
+          "action": "R",
+          "accepted": true,
+          "error": "",
+          "finished": true,
+          "kind": "push",
+          "max_advance_us": 3176,
+          "max_step_us": 23,
+          "ok": true,
+          "phase": "physics",
+          "rounds": 2,
+          "tick_hash_count": 10,
+          "tick_sequence_sha256": "081746fde2a6ef81c066cdec97f52d21c58f28a5056ee23e3076e4cdbfc486b0",
+          "ticks": 10,
+          "won": false
+        },
+        {
+          "step": 13,
+          "action": "L",
+          "accepted": true,
+          "error": "",
+          "finished": true,
+          "kind": "walk",
+          "max_advance_us": 4285,
+          "max_step_us": 31,
+          "ok": true,
+          "phase": "physics",
+          "rounds": 4,
+          "tick_hash_count": 19,
+          "tick_sequence_sha256": "74f73d4afe4d4ee2c3b994a695260ab1bd63cfc26c5bdf59739d35c6b682d67f",
+          "ticks": 19,
+          "won": true
+        }
+      ]
+    },
+    {
+      "author_solution_verified": true,
+      "consistent": true,
+      "group": "blast",
+      "id": "Q09",
+      "issues": [],
+      "max_rounds": 5,
+      "max_ticks": 25,
+      "replays": 3,
+      "restart_ok": true,
+      "round_limit": 16,
+      "runs": [
+        {
+          "accepted_steps": 12,
+          "restart_ok": true,
+          "sequence_sha256": "891d12529ff878de8669369d4e85f54afde8ad6bac5f249343aebb03844b1adb",
+          "undo_ok": true,
+          "won": true
+        },
+        {
+          "accepted_steps": 12,
+          "restart_ok": true,
+          "sequence_sha256": "891d12529ff878de8669369d4e85f54afde8ad6bac5f249343aebb03844b1adb",
+          "undo_ok": true,
+          "won": true
+        },
+        {
+          "accepted_steps": 12,
+          "restart_ok": true,
+          "sequence_sha256": "891d12529ff878de8669369d4e85f54afde8ad6bac5f249343aebb03844b1adb",
+          "undo_ok": true,
+          "won": true
+        }
+      ],
+      "sdk_verified": true,
+      "spec_sha256": "2c86776c334b72977c563b7534594d89e47779b12deac630c777084738945494",
+      "tick_limit": 1200,
+      "uid": "level:Q09",
+      "undo_ok": true,
+      "won": true,
+      "checks": [
+        {
+          "ok": true,
+          "status": "pass",
+          "text": "author solution wins on real SDK in three runs"
+        },
+        {
+          "ok": true,
+          "status": "pass",
+          "text": "three complete tick hash sequences agree"
+        },
+        {
+          "ok": true,
+          "status": "pass",
+          "text": "every accepted action restores game, SDK and observations on undo"
+        },
+        {
+          "ok": true,
+          "status": "pass",
+          "text": "restart and undo-restart preserve opening and final snapshots"
+        },
+        {
+          "ok": true,
+          "status": "pass",
+          "text": "settlement stays below 1200 ticks and 16 rounds"
+        },
+        {
+          "ok": true,
+          "status": "pass",
+          "text": "同一独立SDK爆炸只剥一层，连续两次由3层→2层→1层；两次均不挪动箱子，仍真实调用explode。"
+        },
+        {
+          "ok": true,
+          "status": "pass",
+          "text": "单层箱在[7,6]点亮小箱槽，人物回到[4,2]旗时同时通关；只剥一层后跟下去补炸不能再从深井回旗。"
+        },
+        {
+          "ok": true,
+          "status": "pass",
+          "text": "每次爆炸、推箱、下落撤销均恢复层数、实体绑定、cell、炸药与灯；烧/酸剥壳不由本关模型证明。"
+        }
+      ],
+      "step_metrics": [
+        {
+          "step": 0,
+          "action": "opening"
+        },
+        {
+          "step": 1,
+          "action": "R",
+          "accepted": true,
+          "error": "",
+          "finished": true,
+          "kind": "walk",
+          "max_advance_us": 3877,
+          "max_step_us": 2,
+          "ok": true,
+          "phase": "physics",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "b8e6bed52618bd224b7cd4126f8fa2efa7ba3fe875abe169669b5a8a1b8377aa",
+          "ticks": 4,
+          "won": false
+        },
+        {
+          "step": 2,
+          "action": "R",
+          "accepted": true,
+          "error": "",
+          "finished": true,
+          "kind": "walk",
+          "max_advance_us": 4812,
+          "max_step_us": 2,
+          "ok": true,
+          "phase": "physics",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "6cb6cf7e8127d77c8930d272d2828ed2e666f069f6bfa37138222a0de6a1a298",
+          "ticks": 4,
+          "won": false
+        },
+        {
+          "step": 3,
+          "action": "U",
+          "accepted": true,
+          "error": "",
+          "finished": true,
+          "kind": "climb",
+          "max_advance_us": 4330,
+          "max_step_us": 2,
+          "ok": true,
+          "phase": "physics",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "65c9865b376c22d61f9812c2e8f2e26fa30e001ee7812a12607814396c4080a7",
+          "ticks": 4,
+          "won": false
+        },
+        {
+          "step": 4,
+          "action": "U",
+          "accepted": true,
+          "error": "",
+          "finished": true,
+          "kind": "climb",
+          "max_advance_us": 4204,
+          "max_step_us": 1,
+          "ok": true,
+          "phase": "physics",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "53717bb596b0919d3db5200eda192ac86a7fd4d3b92e3e55a78203f5887f100b",
+          "ticks": 4,
+          "won": false
+        },
+        {
+          "step": 5,
+          "action": "U",
+          "accepted": true,
+          "error": "",
+          "finished": true,
+          "kind": "climb",
+          "max_advance_us": 3980,
+          "max_step_us": 3,
+          "ok": true,
+          "phase": "physics",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "0524ffb0c613443be315a0319b76cb31f219d33ca62d0340e3a4bcb0f790cf93",
+          "ticks": 4,
+          "won": false
+        },
+        {
+          "step": 6,
+          "action": "R",
+          "accepted": true,
+          "error": "",
+          "finished": true,
+          "kind": "walk",
+          "max_advance_us": 9401,
+          "max_step_us": 2,
+          "ok": true,
+          "phase": "physics",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "f6caa15c413e67e4347e1ee4b2022f29377a6e163270da2208458dc69d720f14",
+          "ticks": 4,
+          "won": false
+        },
+        {
+          "step": 7,
+          "action": "BOMB_R",
+          "accepted": true,
+          "error": "",
+          "finished": true,
+          "kind": "bomb",
+          "max_advance_us": 3933,
+          "max_step_us": 23,
+          "ok": true,
+          "phase": "physics",
+          "rounds": 1,
+          "tick_hash_count": 5,
+          "tick_sequence_sha256": "79234c2854a6ddbc7f4ee41f6154bf74d81e6b3342a55b7190137e57cdb561f7",
+          "ticks": 5,
+          "won": false
+        },
+        {
+          "step": 8,
+          "action": "BOMB_R",
+          "accepted": true,
+          "error": "",
+          "finished": true,
+          "kind": "bomb",
+          "max_advance_us": 4285,
+          "max_step_us": 22,
+          "ok": true,
+          "phase": "physics",
+          "rounds": 1,
+          "tick_hash_count": 5,
+          "tick_sequence_sha256": "132ba173d25983740aeb4c32923630e7fafecac0c02c76f9fa9b695210c8f6ba",
+          "ticks": 5,
+          "won": false
+        },
+        {
+          "step": 9,
+          "action": "R",
+          "accepted": true,
+          "error": "",
+          "finished": true,
+          "kind": "walk",
+          "max_advance_us": 4792,
+          "max_step_us": 2,
+          "ok": true,
+          "phase": "physics",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "5dc2cf853483a00bc919d1f05a5103124b6559b25390cbcc81a66895c71fdb79",
+          "ticks": 4,
+          "won": false
+        },
+        {
+          "step": 10,
+          "action": "R",
+          "accepted": true,
+          "error": "",
+          "finished": true,
+          "kind": "push",
+          "max_advance_us": 6566,
+          "max_step_us": 42,
+          "ok": true,
+          "phase": "physics",
+          "rounds": 5,
+          "tick_hash_count": 25,
+          "tick_sequence_sha256": "58952f4e458c0ce9acfc404b7b050d6cbd3017071db39434eb53051fb290f533",
+          "ticks": 25,
+          "won": false
+        },
+        {
+          "step": 11,
+          "action": "L",
+          "accepted": true,
+          "error": "",
+          "finished": true,
+          "kind": "walk",
+          "max_advance_us": 4069,
+          "max_step_us": 1,
+          "ok": true,
+          "phase": "physics",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "2ad36884b091fd2ab2cef1eba9ee9a33a9cacfbc030b295ced107c001212e5df",
+          "ticks": 4,
+          "won": false
+        },
+        {
+          "step": 12,
+          "action": "L",
+          "accepted": true,
+          "error": "",
+          "finished": true,
+          "kind": "walk",
+          "max_advance_us": 4050,
+          "max_step_us": 2,
+          "ok": true,
+          "phase": "physics",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "4bbec1f5b75e218bd6b5a7096e14686a0fdbe536a34dd3d3753c06c4367499e9",
+          "ticks": 4,
+          "won": true
+        }
+      ]
+    },
+    {
+      "author_solution_verified": true,
+      "consistent": true,
+      "group": "blast",
+      "id": "Q10",
+      "issues": [],
+      "max_rounds": 2,
+      "max_ticks": 11,
+      "replays": 3,
+      "restart_ok": true,
+      "round_limit": 16,
+      "runs": [
+        {
+          "accepted_steps": 11,
+          "restart_ok": true,
+          "sequence_sha256": "f19fbd784037e162dc531419ddb421878caf7287343fcf2a486042c8427cb04d",
+          "undo_ok": true,
+          "won": true
+        },
+        {
+          "accepted_steps": 11,
+          "restart_ok": true,
+          "sequence_sha256": "f19fbd784037e162dc531419ddb421878caf7287343fcf2a486042c8427cb04d",
+          "undo_ok": true,
+          "won": true
+        },
+        {
+          "accepted_steps": 11,
+          "restart_ok": true,
+          "sequence_sha256": "f19fbd784037e162dc531419ddb421878caf7287343fcf2a486042c8427cb04d",
+          "undo_ok": true,
+          "won": true
+        }
+      ],
+      "sdk_verified": true,
+      "spec_sha256": "a3cd2540c04d30e47197fcfc6cc10e5a62a42f8ce31e42fa168375522e951305",
+      "tick_limit": 1200,
+      "uid": "level:Q10",
+      "undo_ok": true,
+      "won": true,
+      "checks": [
+        {
+          "ok": true,
+          "status": "pass",
+          "text": "author solution wins on real SDK in three runs"
+        },
+        {
+          "ok": true,
+          "status": "pass",
+          "text": "three complete tick hash sequences agree"
+        },
+        {
+          "ok": true,
+          "status": "pass",
+          "text": "every accepted action restores game, SDK and observations on undo"
+        },
+        {
+          "ok": true,
+          "status": "pass",
+          "text": "restart and undo-restart preserve opening and final snapshots"
+        },
+        {
+          "ok": true,
+          "status": "pass",
+          "text": "settlement stays below 1200 ticks and 16 rounds"
+        },
+        {
+          "ok": true,
+          "status": "pass",
+          "text": "第一次侧推空车停[7,6]，箱子仍在[7,4]、由[7,5]支撑；推车人仅跟进到[3,6]。"
+        },
+        {
+          "ok": true,
+          "status": "pass",
+          "text": "爆心[7,6]真实SDK同时破坏[7,5]支撑与[8,6]轨道裂岩，保留车与箱；箱子落到[7,5]由车接住，车不自动滚。"
+        },
+        {
+          "ok": true,
+          "status": "pass",
+          "text": "第二次侧推扫掠至车[10,6]、箱[10,5]，推车人[7,6]；验证上层先炸的真实死局与所有中间位置。"
+        },
+        {
+          "ok": true,
+          "status": "pass",
+          "text": "全局禁搬规则不豁免；真实SDK作者解3次一致，逐步撤销两次滚动与同次破坏，结算不得触顶。"
+        }
+      ],
+      "step_metrics": [
+        {
+          "step": 0,
+          "action": "opening"
+        },
+        {
+          "step": 1,
+          "action": "L",
+          "accepted": true,
+          "error": "",
+          "finished": true,
+          "kind": "walk",
+          "max_advance_us": 4574,
+          "max_step_us": 3,
+          "ok": true,
+          "phase": "physics",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "0334105d1ab9cf9120d73d1bb49e681746b33fb7e66d0863db04a941ccf9b755",
+          "ticks": 4,
+          "won": false
+        },
+        {
+          "step": 2,
+          "action": "L",
+          "accepted": true,
+          "error": "",
+          "finished": true,
+          "kind": "walk",
+          "max_advance_us": 7414,
+          "max_step_us": 2,
+          "ok": true,
+          "phase": "physics",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "d4de17014e1e5dcfad0b3cd561078c58c3afc359866d90889ef3eb43ef3cbb0e",
+          "ticks": 4,
+          "won": false
+        },
+        {
+          "step": 3,
+          "action": "D",
+          "accepted": true,
+          "error": "",
+          "finished": true,
+          "kind": "climb",
+          "max_advance_us": 3878,
+          "max_step_us": 2,
+          "ok": true,
+          "phase": "physics",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "8df92ed782406a9d03704c306d88e608cd7a92178a12a8f5ae702fdb1815280a",
+          "ticks": 4,
+          "won": false
+        },
+        {
+          "step": 4,
+          "action": "D",
+          "accepted": true,
+          "error": "",
+          "finished": true,
+          "kind": "climb",
+          "max_advance_us": 3831,
+          "max_step_us": 1,
+          "ok": true,
+          "phase": "physics",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "46e443d14ef370b11e2ae6bd89187cb54932097598a637045612a0b940489855",
+          "ticks": 4,
+          "won": false
+        },
+        {
+          "step": 5,
+          "action": "D",
+          "accepted": true,
+          "error": "",
+          "finished": true,
+          "kind": "climb",
+          "max_advance_us": 3819,
+          "max_step_us": 1,
+          "ok": true,
+          "phase": "physics",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "f790a1c4da22ec5982757ece6bb0e001cb16ba4d7e11a81ce327009ee56f980e",
+          "ticks": 4,
+          "won": false
+        },
+        {
+          "step": 6,
+          "action": "R",
+          "accepted": true,
+          "error": "",
+          "finished": true,
+          "kind": "mine_cart",
+          "max_advance_us": 3898,
+          "max_step_us": 116,
+          "ok": true,
+          "phase": "physics",
+          "rounds": 1,
+          "tick_hash_count": 5,
+          "tick_sequence_sha256": "7aafacd80bfa9a8a08ba4e4e9ecc4ae1534b0487dd007dbc6dd2ff29398b68f9",
+          "ticks": 5,
+          "won": false
+        },
+        {
+          "step": 7,
+          "action": "R",
+          "accepted": true,
+          "error": "",
+          "finished": true,
+          "kind": "walk",
+          "max_advance_us": 4511,
+          "max_step_us": 1,
+          "ok": true,
+          "phase": "physics",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "63d04af2456f7c12410870eb6084c07b85508400a62a23070cc19652ffc537fa",
+          "ticks": 4,
+          "won": false
+        },
+        {
+          "step": 8,
+          "action": "R",
+          "accepted": true,
+          "error": "",
+          "finished": true,
+          "kind": "walk",
+          "max_advance_us": 7765,
+          "max_step_us": 2,
+          "ok": true,
+          "phase": "physics",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "f0bd31fd673aa7c89d0c43c87a95526df2db84743b288b78a7c0af10032b65e6",
+          "ticks": 4,
+          "won": false
+        },
+        {
+          "step": 9,
+          "action": "R",
+          "accepted": true,
+          "error": "",
+          "finished": true,
+          "kind": "walk",
+          "max_advance_us": 12883,
+          "max_step_us": 4,
+          "ok": true,
+          "phase": "physics",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "ea0e1b5aa4f9e7f042df6727a9ac43f6c5c6fb3179c01447dda5145a3028fed2",
+          "ticks": 4,
+          "won": false
+        },
+        {
+          "step": 10,
+          "action": "BOMB_R",
+          "accepted": true,
+          "error": "",
+          "finished": true,
+          "kind": "bomb",
+          "max_advance_us": 10113,
+          "max_step_us": 43,
+          "ok": true,
+          "phase": "physics",
+          "rounds": 2,
+          "tick_hash_count": 11,
+          "tick_sequence_sha256": "80f395f6f1921b8b2e93e8a112d5d5a5f97055fd9e8803195294caa7e0185989",
+          "ticks": 11,
+          "won": false
+        },
+        {
+          "step": 11,
+          "action": "R",
+          "accepted": true,
+          "error": "",
+          "finished": true,
+          "kind": "mine_cart",
+          "max_advance_us": 3762,
+          "max_step_us": 117,
+          "ok": true,
+          "phase": "physics",
+          "rounds": 1,
+          "tick_hash_count": 5,
+          "tick_sequence_sha256": "907aa0c17fa0cceb637be2b1ad0f18d610109e3a3630cb1589a7e260024e923a",
+          "ticks": 5,
+          "won": true
+        }
+      ]
+    }
+  ]
+}

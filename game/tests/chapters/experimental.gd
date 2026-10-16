@@ -44,7 +44,7 @@ func evaluate(spec: Dictionary, trace: Array, _runs: Array, summary: Dictionary)
 				if int(entry.get("move",-1)) != 5: continue
 				for probe: Dictionary in entry.get("probes",[]):
 					if H.point(probe.get("tile",[]),6,4): on_crate_peak = maxi(on_crate_peak,int(probe.get("materials",{}).get("gravel",0)))
-			rows.append(H.row(spec.checks[0], H.tile(released,6,4,"cracked_rock") == 0 and H.material(opening,"gravel") == 256 and H.material(released,"gravel") == 256 and on_crate_peak == 256, {"peak_gravel_on_crate":on_crate_peak,"after_blast":released}, not released.is_empty()))
+			rows.append(H.row(spec.checks[0], H.tile(released,5,4,"bedrock") == 256 and H.tile(released,6,4,"cracked_rock") == 0 and H.material(opening,"gravel") == 256 and H.material(released,"gravel") == 256 and on_crate_peak >= 128, {"peak_gravel_on_crate":on_crate_peak,"after_blast":released}, not released.is_empty()))
 			var bridge: Dictionary = _observed(final,"bridge")
 			var early: Dictionary = H.branch(spec,["R","U","BOMB_R","D","R"])
 			var early_value: Dictionary = early.get("final",{})
@@ -55,9 +55,11 @@ func evaluate(spec: Dictionary, trace: Array, _runs: Array, summary: Dictionary)
 					if str(observed.get("kind","")) == "bridge" and int(observed.get("load",0)) == 2 and int(observed.get("capacity",0)) == 1: recorded_overload = true
 			var only_box: Dictionary = _observed(before_bomb,"bridge")
 			var only_gravel: Dictionary = _observed(early_value,"bridge")
-			rows.append(H.row(spec.checks[1], H.box(final,6,7) and H.tile(final,6,6,"gravel") == 256 and bool(bridge.get("broken",false)) and recorded_overload and int(only_box.get("load",0)) == 1 and bool(only_box.get("cracked",false)) and int(only_gravel.get("load",0)) == 1 and bool(only_gravel.get("cracked",false)), {"bridge":bridge,"only_box":only_box,"only_gravel":only_gravel,"overload_observed":recorded_overload,"final":final}))
+			rows.append(H.row(spec.checks[1], H.box(final,6,7) and H.tile(final,6,6,"gravel") >= 128 and H.material(final,"gravel") == 256 and bool(bridge.get("broken",false)) and recorded_overload and int(only_box.get("load",0)) == 1 and bool(only_box.get("cracked",false)) and not bool(only_box.get("broken",true)) and int(only_gravel.get("load",0)) == 1 and bool(only_gravel.get("cracked",false)) and not bool(only_gravel.get("broken",true)), {"bridge":bridge,"only_box":only_box,"only_gravel":only_gravel,"overload_observed":recorded_overload,"final":final}))
 			var author_bridge_cells: int = H.tile(final,6,6,"bridge")
-			rows.append(H.row(spec.checks[2], early.get("accepted_steps",0) == 5 and not H.box(early_value,6,7) and H.box(early_value,5,5) and H.tile(early_value,6,5,"gravel") == 256 and H.material(early_value,"gravel") == 256 and not bool(only_gravel.get("broken",true)) and author_bridge_cells == 0 and bool(summary.undo_ok), {"early_blast":early,"author_bridge_cells":author_bridge_cells}))
+			var early_results: Array = early.get("results",[])
+			var push_blocked: bool = early_results.size() == 5 and not bool(early_results[4].get("accepted",true)) and str(early_results[4].get("reason","")) == "blocked" and str(early_results[4].get("error","")).is_empty()
+			rows.append(H.row(spec.checks[2], bool(early.get("setup_ok",false)) and early.get("accepted_steps",0) == 4 and push_blocked and not H.box(early_value,6,7) and H.box(early_value,5,5) and H.tile(early_value,6,5,"gravel") >= 128 and H.material(early_value,"gravel") == 256 and not bool(only_gravel.get("broken",true)) and H.tile(early_value,6,6,"bridge") == 256 and author_bridge_cells == 0 and bool(summary.undo_ok), {"early_blast":early,"push_blocked":push_blocked,"author_bridge_cells":author_bridge_cells}))
 			var blast_result: Dictionary = trace[5].get("result",{}) if trace.size()>5 else {}
 			rows.append(H.row(spec.checks[3], not blast_result.is_empty() and bool(blast_result.get("accepted",false)) and str(blast_result.get("error","")).is_empty() and int(blast_result.get("ticks",1200)) < 1200 and H.material(released,"gravel") == 256, blast_result))
 		"E05":

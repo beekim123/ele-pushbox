@@ -1,6 +1,6 @@
 {
  "format": "portitor.import-inventory/1",
- "source_id_map_sha256": "eb9f3b2db4395062eb1cf16dec4ae234fba7adbda347476d17ad2a1088807188",
+ "source_id_map_sha256": "2fab4bb0e853bbf170c3d812c9d15332408d47c4c1318273629b3ab9ca20d5cc",
  "files": [
   {
    "path": "generated/id-map.json",
@@ -997,7 +997,7 @@
     "world:wonderland",
     "world:xianxia"
    ],
-   "sha256": "eb9f3b2db4395062eb1cf16dec4ae234fba7adbda347476d17ad2a1088807188"
+   "sha256": "2fab4bb0e853bbf170c3d812c9d15332408d47c4c1318273629b3ab9ca20d5cc"
   },
   {
    "path": "generated/content-manifest.json",
@@ -1499,7 +1499,7 @@
     "world:wonderland",
     "world:xianxia"
    ],
-   "sha256": "4379763e27b6ad0abb31b19e130c2faeb78a93fb7383764426b885d9d5ddee0c"
+   "sha256": "fae6e7f819c294c08977948a4194eeb286d9204a911c2e336948d031d1256183"
   },
   {
    "path": "generated/ids.gd",
@@ -2636,7 +2636,7 @@
    "owners": [
     "level:Q04"
    ],
-   "sha256": "3c837bdd888d057c093fc78792b83373b42d3bad46175cef8d38fbb6e4c34f8d"
+   "sha256": "9beca0fbcf01b1211f660960ac5650f71a4a53a9eb657945aabeb314f5d9e728"
   },
   {
    "path": "generated/content/levels/lab/blast/Q07.json",
@@ -2678,7 +2678,7 @@
    "owners": [
     "level:G02"
    ],
-   "sha256": "0909bf156f740c1b4ab84b0411b0e615a209be34c169bad95741ead10e95ddc4"
+   "sha256": "0728694eb262f5f3d9a768bac7f76f4478e040fa15fde2435d6dabbe29600296"
   },
   {
    "path": "generated/content/levels/lab/react/G03.json",
@@ -2699,7 +2699,7 @@
    "owners": [
     "level:G05"
    ],
-   "sha256": "db8eb702a64e5b046076cdc6747953fae2d798df85df1b4f2855198f643d3d52"
+   "sha256": "cae48f26d5070aa7dea2805f0723cfbf0d18de3143c752ea02a677dd91af2b29"
   },
   {
    "path": "generated/content/levels/lab/react/G06.json",
@@ -2804,7 +2804,7 @@
    "owners": [
     "level:E04"
    ],
-   "sha256": "3300226027e99825b057a73102ac11f18eb0a35d42a90a0c6d9aba99eb90321c"
+   "sha256": "129c0d6d942f2ca5cc521bb241d36d29763c701887e95aab8f599b56dd2d95a1"
   },
   {
    "path": "generated/content/levels/lab/experimental/E05.json",
@@ -3724,7 +3724,7 @@
     "text:theme.ruins",
     "text:theme.sky"
    ],
-   "sha256": "fdf3d61d342537361f6049cbd20651887ebe216096f4fd687172354d13e2a77a"
+   "sha256": "cf1afaccb03994d3871fa5b8686eef06e53e8348e8aba2582db51d5f12a298ac"
   },
   {
    "path": "generated/content/i18n/en.json",
@@ -4116,7 +4116,7 @@
     "text:theme.ruins",
     "text:theme.sky"
    ],
-   "sha256": "95134644cf4dd76313c36831cd7b0d4070af6d5a5c8789bf6150f3192cd007b9"
+   "sha256": "3afd8ac4faac8bf05ebc034a6947726dfe2bbe959845e89afae7d5b82e851ee2"
   },
   {
    "path": "generated/art/sheets/avatar.goblin_smith.png",
