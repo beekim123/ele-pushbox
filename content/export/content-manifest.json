@@ -240,7 +240,7 @@
       "fuse"
      ],
      "spec": "content/levels/lab/blast/Q03.json",
-     "sha256": "ae2cdd3d7ef4b9f57e74d494e901c3d55333e0679d6eeda57401c5e347ebb1b7"
+     "sha256": "84219881704cc18de926d13741e139154100f537ffa1f7b0d04f646e78755574"
     },
     {
      "id": "Q04",
@@ -249,7 +249,7 @@
       "gravel"
      ],
      "spec": "content/levels/lab/blast/Q04.json",
-     "sha256": "f541a96b33f2594cd24420f6349ac2ea2ab36c643f0e53b587db67a56b818a73"
+     "sha256": "3c837bdd888d057c093fc78792b83373b42d3bad46175cef8d38fbb6e4c34f8d"
     },
     {
      "id": "Q07",
@@ -308,7 +308,7 @@
       "acid"
      ],
      "spec": "content/levels/lab/react/G01.json",
-     "sha256": "3997be008c9cb6351a62725ee52dc0cf19e4283c698fa058a9c642e8499872bf"
+     "sha256": "1dcf015db584c00986affb8da7310b3fcce04941ad94e86bf983b5a38bc3ad6f"
     },
     {
      "id": "G02",
@@ -317,7 +317,7 @@
       "etch_tag"
      ],
      "spec": "content/levels/lab/react/G02.json",
-     "sha256": "a26663855ea6ddeb088dce9b3fe73de83c79d9cbca8be7db4e63b8972fa2aae3"
+     "sha256": "9ccacbf3eae75e59626b54a955f70d8d7399553b78d8a1b24e4e05c59beb823b"
     },
     {
      "id": "G03",
@@ -344,7 +344,7 @@
       "lifetime"
      ],
      "spec": "content/levels/lab/react/G05.json",
-     "sha256": "dbb0efbc542af2836889ff9b1496bf82518b87cfd78e77348b84536e97001c52"
+     "sha256": "5eee891d18065f2a44bf1db0904e065e2cdbc824ddcf4a2bf81c77c21f2f84b2"
     },
     {
      "id": "G06",
@@ -353,7 +353,7 @@
       "vine"
      ],
      "spec": "content/levels/lab/react/G06.json",
-     "sha256": "975c89da2af54a873f1d05437f057b31412e5fb7c130ab1188c9029117e15c8f"
+     "sha256": "2e91896b9c5c80c206f6054fc1e6663129ea23d51e4c9285ef2cdb62bee87da3"
     },
     {
      "id": "G08",
@@ -482,13 +482,13 @@
    "levels": [
     {
      "id": "E01",
-     "title": "蚀脚压门",
+     "title": "开门放酸",
      "mechanisms": [
       "acid",
       "plate_door"
      ],
      "spec": "content/levels/lab/experimental/E01.json",
-     "sha256": "b77c682bbefe1db9e2bdd826d88736d53a277778808fceb43c40f31c4caa6abb"
+     "sha256": "f08b39d171169e0a2e6b9ea04637453f8c7a2bb85e26d401dbdf59031be4a232"
     },
     {
      "id": "E02",
@@ -518,7 +518,7 @@
       "load_bridge"
      ],
      "spec": "content/levels/lab/experimental/E04.json",
-     "sha256": "fab689349958ef8adf4e5f701f88975ad02840ad652096058f10acf5658d555e"
+     "sha256": "fe2dfa9555e4812a92053c00b3f25afbd66a8777b8a257304709a7aaba590ef6"
     },
     {
      "id": "E05",

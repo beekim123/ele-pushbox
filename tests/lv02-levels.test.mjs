@@ -29,7 +29,7 @@ const lures = {
   Q01: ['R', 'R', 'BOMB_R'],
   Q02: ['R', 'R', 'U', 'U', 'BOMB_R'],
   Q03: ['BOMB_L'],
-  Q04: ['R', 'R', 'R', 'BOMB_R', 'L', 'U', 'U', 'BOMB_R'],
+  Q04: ['R', 'R', 'D', 'R', 'BOMB_R', 'L', 'U', 'U', 'U', 'BOMB_R'],
   Q07: ['R', 'R', 'D', 'D', 'R', 'R'],
   Q08: ['L'],
   Q09: ['R', 'R', 'U', 'U', 'U', 'R', 'BOMB_R', 'R', 'R'],

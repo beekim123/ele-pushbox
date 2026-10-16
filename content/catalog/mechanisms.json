@@ -329,10 +329,12 @@
    "risk": "固定阶段长度 = 燃烧时长 + 余量",
    "layer": 0,
    "spec_contract": {
-    "phase_ticks": 480,
+    "phase_ticks": 960,
     "phase_scope": "该次引燃动作后固定阶段，之后再判静止",
     "blast_resistance": 65535,
-    "burn_ticks_candidate": 32
+    "burn_ticks_candidate": 32,
+    "max_path_tiles": 5,
+    "measured": "LV-06：5格引信从点燃到燃尽828tick（约166tick/格）；960阶段留约130tick余量，引信路径不超过5格"
    }
   },
   {
@@ -354,9 +356,10 @@
    "risk": "结算时长不能触顶",
    "layer": 0,
    "spec_contract": {
-    "move_chance": 64,
+    "move_chance": 128,
     "blast_resistance": 65535,
-    "reason": "炸托石时保留待下落碎石；真实SDK粉末"
+    "reason": "炸托石时保留待下落碎石；真实SDK粉末",
+    "measured": "LV-06/LV-09：move_chance64时两格碎石落2–3格要1000tick以上（Q04 1026、E04约1006），一次结算放不下后续动作；改为128，仍明显慢于沙"
    }
   },
   {

@@ -1571,7 +1571,7 @@
    "name": "点燃后等结果",
    "source": "content/levels/lab/blast/Q03.json",
    "game": "res://generated/content/levels/lab/blast/Q03.json",
-   "sha256": "ae2cdd3d7ef4b9f57e74d494e901c3d55333e0679d6eeda57401c5e347ebb1b7"
+   "sha256": "84219881704cc18de926d13741e139154100f537ffa1f7b0d04f646e78755574"
   },
   {
    "uid": "level:Q04",
@@ -1580,7 +1580,7 @@
    "name": "慢慢滑下来",
    "source": "content/levels/lab/blast/Q04.json",
    "game": "res://generated/content/levels/lab/blast/Q04.json",
-   "sha256": "f541a96b33f2594cd24420f6349ac2ea2ab36c643f0e53b587db67a56b818a73"
+   "sha256": "3c837bdd888d057c093fc78792b83373b42d3bad46175cef8d38fbb6e4c34f8d"
   },
   {
    "uid": "level:Q07",
@@ -1625,7 +1625,7 @@
    "name": "一滴开路",
    "source": "content/levels/lab/react/G01.json",
    "game": "res://generated/content/levels/lab/react/G01.json",
-   "sha256": "3997be008c9cb6351a62725ee52dc0cf19e4283c698fa058a9c642e8499872bf"
+   "sha256": "1dcf015db584c00986affb8da7310b3fcce04941ad94e86bf983b5a38bc3ad6f"
   },
   {
    "uid": "level:G02",
@@ -1634,7 +1634,7 @@
    "name": "同纹都能蚀",
    "source": "content/levels/lab/react/G02.json",
    "game": "res://generated/content/levels/lab/react/G02.json",
-   "sha256": "a26663855ea6ddeb088dce9b3fe73de83c79d9cbca8be7db4e63b8972fa2aae3"
+   "sha256": "9ccacbf3eae75e59626b54a955f70d8d7399553b78d8a1b24e4e05c59beb823b"
   },
   {
    "uid": "level:G03",
@@ -1661,7 +1661,7 @@
    "name": "会消失的塞子",
    "source": "content/levels/lab/react/G05.json",
    "game": "res://generated/content/levels/lab/react/G05.json",
-   "sha256": "dbb0efbc542af2836889ff9b1496bf82518b87cfd78e77348b84536e97001c52"
+   "sha256": "5eee891d18065f2a44bf1db0904e065e2cdbc824ddcf4a2bf81c77c21f2f84b2"
   },
   {
    "uid": "level:G06",
@@ -1670,7 +1670,7 @@
    "name": "浇水长藤",
    "source": "content/levels/lab/react/G06.json",
    "game": "res://generated/content/levels/lab/react/G06.json",
-   "sha256": "975c89da2af54a873f1d05437f057b31412e5fb7c130ab1188c9029117e15c8f"
+   "sha256": "2e91896b9c5c80c206f6054fc1e6663129ea23d51e4c9285ef2cdb62bee87da3"
   },
   {
    "uid": "level:G08",
@@ -1766,10 +1766,10 @@
    "uid": "level:E01",
    "domain": "level",
    "id": "E01",
-   "name": "蚀脚压门",
+   "name": "开门放酸",
    "source": "content/levels/lab/experimental/E01.json",
    "game": "res://generated/content/levels/lab/experimental/E01.json",
-   "sha256": "b77c682bbefe1db9e2bdd826d88736d53a277778808fceb43c40f31c4caa6abb"
+   "sha256": "f08b39d171169e0a2e6b9ea04637453f8c7a2bb85e26d401dbdf59031be4a232"
   },
   {
    "uid": "level:E02",
@@ -1796,7 +1796,7 @@
    "name": "碎石压断桥",
    "source": "content/levels/lab/experimental/E04.json",
    "game": "res://generated/content/levels/lab/experimental/E04.json",
-   "sha256": "fab689349958ef8adf4e5f701f88975ad02840ad652096058f10acf5658d555e"
+   "sha256": "fe2dfa9555e4812a92053c00b3f25afbd66a8777b8a257304709a7aaba590ef6"
   },
   {
    "uid": "level:E05",
@@ -7438,7 +7438,7 @@
    "uid": "text:level.Q04.hint.2",
    "domain": "text",
    "id": "level.Q04.hint.2",
-   "name": "斗底破了，碎石会漏到刻度以下；只有保住斗底，碎石顶面才接上两侧平台。",
+   "name": "斗底在下层，从梯子底下就能炸到；一旦破了，碎石会漏到刻度以下。只有保住斗底，碎石",
    "source": "content/i18n-extra/zh-Hans.json",
    "game": "tr:level.Q04.hint.2"
   },
@@ -7462,7 +7462,7 @@
    "uid": "text:level.G01.discovery",
    "domain": "text",
    "id": "level.G01.discovery",
-   "name": "出口上方的刻纹软岩不能挖；先上到酸池塞口，让酸沿竖井消耗软岩，再走回井口下落。",
+   "name": "刻纹软岩挖不动；挖开它头顶的塞子，酸滴下去把它蚀掉，再下到它的位置挖开旁边的夯土",
    "source": "content/i18n-extra/zh-Hans.json",
    "game": "tr:level.G01.discovery"
   },
@@ -7470,7 +7470,7 @@
    "uid": "text:level.G01.hint.1",
    "domain": "text",
    "id": "level.G01.hint.1",
-   "name": "井底是出口，上方的软岩不是夯土，直接走过去只会停在岩顶。",
+   "name": "出口被一块刻纹软岩和一块夯土挡着；软岩挖不动。",
    "source": "content/i18n-extra/zh-Hans.json",
    "game": "tr:level.G01.hint.1"
   },
@@ -7478,7 +7478,7 @@
    "uid": "text:level.G01.hint.2",
    "domain": "text",
    "id": "level.G01.hint.2",
-   "name": "沿右侧梯子上到酸池塞口，放酸先清井，再下井。",
+   "name": "软岩正上方有一格酸，中间隔着塞子。先放酸，等它蚀完再下去。",
    "source": "content/i18n-extra/zh-Hans.json",
    "game": "tr:level.G01.hint.2"
   },
@@ -7486,7 +7486,7 @@
    "uid": "text:level.G01.hint.3",
    "domain": "text",
    "id": "level.G01.hint.3",
-   "name": "向上两次，向左三次，向左挖，最后向左落进出口。",
+   "name": "向左四次，向左挖塞子；向左落进井底，再向左挖、向左走两步到出口。",
    "source": "content/i18n-extra/zh-Hans.json",
    "game": "tr:level.G01.hint.3"
   },
@@ -7502,7 +7502,7 @@
    "uid": "text:level.G02.discovery",
    "domain": "text",
    "id": "level.G02.discovery",
-   "name": "判断酸蚀看同一刻纹，不看颜色；两份酸应先后消耗出口井里的浅、深软岩，不能漏到旁边",
+   "name": "判断能不能蚀看刻纹，不看颜色：深红的M和浅色的L刻纹相同，两格酸能把它们一起蚀穿",
    "source": "content/i18n-extra/zh-Hans.json",
    "game": "tr:level.G02.discovery"
   },
@@ -7510,7 +7510,7 @@
    "uid": "text:level.G02.hint.1",
    "domain": "text",
    "id": "level.G02.hint.1",
-   "name": "出口井里的两种岩有相同刻纹；旁边还有一块会耗酸的软岩。",
+   "name": "池里的两格酸只够用一次：开哪个塞子，酸就全流进哪口井。",
    "source": "content/i18n-extra/zh-Hans.json",
    "game": "tr:level.G02.hint.1"
   },
@@ -7518,7 +7518,7 @@
    "uid": "text:level.G02.hint.2",
    "domain": "text",
    "id": "level.G02.hint.2",
-   "name": "保留池底塞，只打开右侧塞，让两份酸用在出口井。",
+   "name": "两口井上层都是浅色L；下层一块深红有刻纹，一块深色没有刻纹。",
    "source": "content/i18n-extra/zh-Hans.json",
    "game": "tr:level.G02.hint.2"
   },
@@ -7526,7 +7526,7 @@
    "uid": "text:level.G02.hint.3",
    "domain": "text",
    "id": "level.G02.hint.3",
-   "name": "左四次，上两次，向左挖开右侧塞，再向左进井。",
+   "name": "向左走进酸池，再向左一步，向左挖开左塞；落进左井后向左挖、向左走两步到出口。",
    "source": "content/i18n-extra/zh-Hans.json",
    "game": "tr:level.G02.hint.3"
   },
@@ -7646,7 +7646,7 @@
    "uid": "text:level.G05.hint.3",
    "domain": "text",
    "id": "level.G05.hint.3",
-   "name": "向左推箱三次，再向右走四次到开关，按上。",
+   "name": "向左推箱四次，再向右走四次回到开关，按上。",
    "source": "content/i18n-extra/zh-Hans.json",
    "game": "tr:level.G05.hint.3"
   },
@@ -8262,7 +8262,7 @@
    "uid": "text:level.E04.discovery",
    "domain": "text",
    "id": "level.E04.discovery",
-   "name": "两格碎石本身正好压满桥；先装一只箱子，碎石再落下才会超重，把箱子送进深槽。",
+   "name": "一格碎石本身正好压满桥；先把箱子推上桥，再炸开托石让碎石落到箱顶，才会超重，把箱",
    "source": "content/i18n-extra/zh-Hans.json",
    "game": "tr:level.E04.discovery"
   },
@@ -8270,7 +8270,7 @@
    "uid": "text:level.E04.hint.1",
    "domain": "text",
    "id": "level.E04.hint.1",
-   "name": "桥刻了两份承重；上面有两格碎石，旁边还有一只箱子。",
+   "name": "桥刻着一份承重；上面悬着一格碎石，旁边有一只箱子。",
    "source": "content/i18n-extra/zh-Hans.json",
    "game": "tr:level.E04.hint.1"
   },
@@ -8278,7 +8278,7 @@
    "uid": "text:level.E04.hint.2",
    "domain": "text",
    "id": "level.E04.hint.2",
-   "name": "两格碎石只会满载不塌，箱子才是让它超重的那一份。",
+   "name": "一格碎石只会把桥压满、不会压塌，箱子才是让它超重的那一份。",
    "source": "content/i18n-extra/zh-Hans.json",
    "game": "tr:level.E04.hint.2"
   },
@@ -8286,7 +8286,7 @@
    "uid": "text:level.E04.hint.3",
    "domain": "text",
    "id": "level.E04.hint.3",
-   "name": "先右推箱上桥，再退到梯上朝右炸托石；箱落深槽后爬上左旗。",
+   "name": "向右走、向右推箱上桥，退回梯子上一格，朝右炸托石；箱子落进槽后爬到顶层，向左到旗",
    "source": "content/i18n-extra/zh-Hans.json",
    "game": "tr:level.E04.hint.3"
   },
@@ -8382,7 +8382,7 @@
    "uid": "text:level.E01.title",
    "domain": "text",
    "id": "level.E01.title",
-   "name": "蚀脚压门",
+   "name": "开门放酸",
    "source": "content/i18n-extra/zh-Hans.json",
    "game": "tr:level.E01.title"
   },
@@ -8390,7 +8390,7 @@
    "uid": "text:level.E01.discovery",
    "domain": "text",
    "id": "level.E01.discovery",
-   "name": "酸能蚀掉箱底软岩，让箱子落到低处压板；这份重量才会替你持续开门。",
+   "name": "门也是酸池的闸：箱子压住压板，门一直开着，酸才落下去蚀掉软岩，你再从同一个门口下",
    "source": "content/i18n-extra/zh-Hans.json",
    "game": "tr:level.E01.discovery"
   },
@@ -8398,7 +8398,7 @@
    "uid": "text:level.E01.hint.1",
    "domain": "text",
    "id": "level.E01.hint.1",
-   "name": "压板坑在箱子正下方，门挡在右侧出口前。",
+   "name": "门的正上方是一格酸，门下面是通到软岩的竖井。",
    "source": "content/i18n-extra/zh-Hans.json",
    "game": "tr:level.E01.hint.1"
   },
@@ -8406,7 +8406,7 @@
    "uid": "text:level.E01.hint.2",
    "domain": "text",
    "id": "level.E01.hint.2",
-   "name": "自己压板留不住门；酸池塞口和箱底软岩相邻。",
+   "name": "人站在压板上门才开，一离开就关；让箱子替你压着。",
    "source": "content/i18n-extra/zh-Hans.json",
    "game": "tr:level.E01.hint.2"
   },
@@ -8414,7 +8414,7 @@
    "uid": "text:level.E01.hint.3",
    "domain": "text",
    "id": "level.E01.hint.3",
-   "name": "上左梯挖掉[5,3]土塞，等酸蚀[6,3]、箱子落[6,5]，再返回下层过门。",
+   "name": "向左推箱两次压住压板，向右走四步进门落到井底，向右挖夯土，再向右两步到出口。",
    "source": "content/i18n-extra/zh-Hans.json",
    "game": "tr:level.E01.hint.3"
   },

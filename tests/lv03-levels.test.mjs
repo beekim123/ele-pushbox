@@ -27,7 +27,7 @@ function canStillWin(level, initial, budget = 3000) {
 }
 
 for (const [id, actions, reason] of [
-  ["G02", ["L", "L", "L", "L", "L", "DIG_L"], "bottom outlet wastes reagent on the decoy rock"],
+  ["G02", ["L", "L", "L", "DIG_D"], "the near right plug sends all acid onto the unmarked rock"],
   ["G03", ["L", "L", "L", "L", "DIG_L", "L"], "following smoke down loses the separate exit"],
   ["G04", ["L", "L", "DIG_D"], "the tempting floor plug opens a sealed water pit"],
   ["G06", ["L", "L", "L", "L", "L", "DIG_L"], "left outlet drains water away from the root"],
@@ -52,7 +52,7 @@ for (const source of sources) test(source.id + ": author route, shortest route, 
 
 test("G05: firing the lifetime stage before loading the lift cannot be repaired by toggling again", () => {
   const source = sources.find((s) => s.id === "G05"), { level, state } = TM.parse(source);
-  for (const action of ["R", "U", "U"]) assert.ok(TM.act(level, state, action).ok, action);
+  for (const action of ["U", "U"]) assert.ok(TM.act(level, state, action).ok, action);
   assert.equal(state.dev[3], 1);
   for (const action of ["L", "L", "L", "L", "L"]) TM.act(level, state, action);
   assert.equal(TM.won(level, state), false);

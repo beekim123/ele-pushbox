@@ -27,11 +27,12 @@ test('opening crate landing is stable after it moves; new rope extends rather th
  assert.equal(LT.isTop(s,new Set([2,8,14,20]),2,1),false);
  assert.deepEqual(caps(spec(['######','#....#','##.###','#....#','######']),[8,14,20]),[8]);
 });
-test('all 46 lab maps are audited; 33 static platform heads in 24 maps', () => {
+// Counts follow the 2026-10-16 design review maps (G01, G02, E01 lost their ladders; Q04, E04 redrawn).
+test('all 46 lab maps are audited; 29 static platform heads in 22 maps', () => {
  const found=listJson('content/levels/lab').map(readJson).map(s=>({id:s.id,cells:caps(s)}));
  assert.equal(found.length,46);
- assert.equal(found.filter(x=>x.cells.length).length,24);
- assert.equal(found.reduce((n,x)=>n+x.cells.length,0),33);
+ assert.equal(found.filter(x=>x.cells.length).length,22);
+ assert.equal(found.reduce((n,x)=>n+x.cells.length,0),29);
  assert.equal(found.find(x=>x.id==='F07').cells.length,2);
 });
 test('crop reuses approved pixels and restores context after an exception; independent sprite previews stay whole', () => {

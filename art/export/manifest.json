@@ -7609,7 +7609,7 @@
   {
    "name": "level.Q04",
    "file": "art/export/reference/level.Q04.png",
-   "sha256": "cef328a0cded15cf3e22460dd36836eb6d1fdd9e641581818b32a744de436d09",
+   "sha256": "ec4f36c7a6a1e1328578f2542bad1625a355c18bbc774c06ae6964fbe372e818",
    "uses": [
     "theme.cave",
     "deco.cave_crystal",
@@ -7749,7 +7749,7 @@
   {
    "name": "level.E01",
    "file": "art/export/reference/level.E01.png",
-   "sha256": "0cca9a040740bfd1208772250cd2f0372d92a72a99d67150d333d8c1d478f3a0",
+   "sha256": "d90e3cfa8e7c31cbfdd5390d9070da9f0e1e1dc2ae20b3acbac529b7db872fcd",
    "uses": [
     "theme.cosmos",
     "deco.cosmos_sprout",
@@ -7830,7 +7830,7 @@
   {
    "name": "level.E04",
    "file": "art/export/reference/level.E04.png",
-   "sha256": "3065cfcc44755161319d982be6e473b2a68458f3ff18b40ce4b1b8662dbfce55",
+   "sha256": "3974e4b9f64a3cf5dc5f0257c3a0d71689946dc55fb06d08f24709787a6fdbba",
    "uses": [
     "theme.cosmos",
     "deco.cosmos_sprout",
@@ -7911,7 +7911,7 @@
   {
    "name": "level.G01",
    "file": "art/export/reference/level.G01.png",
-   "sha256": "8858adcaa97b479858c69b033cd9c6baacae093d0f1c3d34ba5d6c50fa17900e",
+   "sha256": "3f025fbaf361446cbb9be689540cd9072eb839aaecd50293d3cd9473cd977737",
    "uses": [
     "theme.forest",
     "deco.forest_flower",
@@ -7940,7 +7940,7 @@
   {
    "name": "level.G02",
    "file": "art/export/reference/level.G02.png",
-   "sha256": "332767bc1bc705d4456d85776156802b96f1c8426ca64e6af87a68b3d904c129",
+   "sha256": "51f95c4c118f03c8a69ac42c49a8643f81f68b9bb7f9e0a966ffece5212d7318",
    "uses": [
     "theme.forest",
     "deco.forest_flower",
@@ -8027,7 +8027,7 @@
   {
    "name": "level.G05",
    "file": "art/export/reference/level.G05.png",
-   "sha256": "e733f256c4077886b7b43c9303aec539118a9a150c28c4b2535daed205c784cf",
+   "sha256": "9c537567a882d104372387e4a8520c07284e9cdbc6c58acf11046be17b711381",
    "uses": [
     "theme.forest",
     "deco.forest_flower",

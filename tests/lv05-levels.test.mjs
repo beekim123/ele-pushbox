@@ -30,19 +30,16 @@ const replay = id => {
 };
 const at = (s, i = 0) => [s.crates[i].x, s.crates[i].y];
 
-test('E01 acid removes the crate support, whose new weight keeps the plate door open', () => {
-  const r = replay('E01');
-  assert.deepEqual(at(r.steps[2].state), [6, 2]);
-  assert.deepEqual(at(r.steps[3].state), [6, 5]);
-  assert.equal(r.steps[3].state.terrain[3 * r.level.w + 6], TM.T.EMPTY);
+test('E01 the crate on the plate holds the door open, and the door is the dam that releases the acid', () => {
+  const r = replay('E01'), w = r.level.w;
+  assert.equal(r.steps[2].state.open[0], 0, 'door shut until the crate reaches the plate');
+  assert.equal(r.steps[2].state.terrain[1 * w + 6], TM.T.ACID, 'acid still held above the door');
+  assert.equal(r.steps[2].state.terrain[4 * w + 6], TM.T.LIME_A);
+  assert.deepEqual(at(r.steps[3].state), [1, 2]);
   assert.equal(r.steps[3].state.open[0], 1);
+  assert.equal(r.steps[3].state.terrain[4 * w + 6], TM.T.EMPTY, 'released acid etches the rock under the shaft');
+  assert.equal([...r.steps[3].state.terrain].filter(t => t === TM.T.ACID).length, 0, 'one acid tile for one rock tile');
   assert.equal(r.steps.at(-1).state.open[0], 1);
-  const spec = readJson('content/levels/lab/experimental/E01.json');
-  const lure = TM.replay(spec, ['R', 'D', 'R', 'R', 'R']);
-  assert.equal(lure.reason, undefined, 'direct pressure-plate lure is reachable');
-  assert.equal(lure.steps[4].state.open[0], 1, 'person alone can briefly open it');
-  assert.equal(lure.steps[5].state.open[0], 0, 'person leaving cannot keep it open');
-  assert.equal(lure.won, false);
 });
 
 test('E02 the box stays above the portal until the lamp retreats, then falls and teleports', () => {
@@ -65,13 +62,13 @@ test('E03 melt conserves one water tile at the root, whose grown vine reaches th
   assert.deepEqual(r.steps.at(-1).state.player, { x: 6, y: 1 });
 });
 
-test('E04 bridge needs the crate and two gravel tiles together before it overloads', () => {
+test('E04 bridge needs the crate and the gravel tile together before it overloads', () => {
   const r = replay('E04');
   assert.deepEqual(at(r.steps[2].state), [6, 5]);
   assert.equal(r.steps[4].state.dev[0], 0);
   assert.equal(r.steps[5].state.dev[0], 1);
-  assert.deepEqual(at(r.steps[5].state), [6, 8]);
-  assert.equal([...r.steps[5].state.terrain].filter(t => t === TM.T.GRAVEL).length, 2);
+  assert.deepEqual(at(r.steps[5].state), [6, 7]);
+  assert.equal([...r.steps[5].state.terrain].filter(t => t === TM.T.GRAVEL).length, 1);
   assert.ok(r.steps[5].result.events.includes('bridge-break'));
 });
 
