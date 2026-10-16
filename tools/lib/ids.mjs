@@ -22,7 +22,7 @@ export const DOMAINS = {
   badge:     { name: "徽章", catalog: "badges" },
   event:     { name: "随机事件", catalog: "events" },
   slice:     { name: "可玩切片（配送局配置）", catalog: "slices" },
-  text:      { name: "界面与台词文字", source: "content/i18n/zh-Hans.json", game: (e) => `tr:${e.id}` },
+  text:      { name: "界面与台词文字", source: "content/i18n/zh-Hans.json 与 content/i18n-<名>/zh-Hans.json", game: (e) => `tr:${e.id}` },
 };
 function proceduralPath(e) {
   const [cat, ...rest] = e.id.split(".");
@@ -36,7 +36,7 @@ const uidOf = (domain, id) => `${domain}:${id}`;
 
 // art: [{id, name, kind, category, version, content_hash, approved, file}]
 // levels: [{id, spec(file), sha256, title}] ; catalogs: {kind: [entries]} ; texts: {key: zh string}
-export function buildIdMap({ art, levels, rooms, catalogs, texts }) {
+export function buildIdMap({ art, levels, rooms, catalogs, texts, textSource }) {
   const issues = [], entries = [], seen = new Map(), paths = new Map();
   const push = (domain, e) => {
     const rule = ID_RULE[domain] || DEFAULT_RULE;
@@ -58,7 +58,7 @@ export function buildIdMap({ art, levels, rooms, catalogs, texts }) {
     if (!D.catalog) continue;
     for (const e of catalogs[D.catalog] || []) push(domain, { id: e.id, name: e.name || e.title || (e.cargo ? `${e.cargo} × ${e.recipient}` : ""), source: `content/catalog/${D.catalog}.json` });
   }
-  for (const [k, v] of Object.entries(texts)) if (k !== "_meta") push("text", { id: k, name: typeof v === "string" ? v.slice(0, 40) : "", source: "content/i18n/zh-Hans.json" });
+  for (const [k, v] of Object.entries(texts)) if (k !== "_meta") push("text", { id: k, name: typeof v === "string" ? v.slice(0, 40) : "", source: (textSource && textSource[k]) || "content/i18n/zh-Hans.json" });
   const counts = {}; for (const e of entries) counts[e.domain] = (counts[e.domain] || 0) + 1;
   return {
     map: {

@@ -68,9 +68,9 @@
     box.append(section("内容检查", [C.issues.length ? list : el("p", { class: "muted", text: "没有错误或警告（node tools/content.mjs check）。" })]));
 
     box.append(section("现在", [el("ul", {}, [
-      el("li", { text: "全部美术已确认（APR-0001–APR-0005）。Godot 重构已交给 GPT：阶段一 = 工程骨架 + 第 1 组 + 全套菜单，阶段二 = 第 2 组「水与机关」。" }),
+      el("li", { text: "关卡模式的美术已全部确认（APR-0001–APR-0005）。Godot 重构已交给 GPT：阶段一 = 工程骨架 + 第 1 组 + 全套菜单，阶段二 = 第 2 组「水与机关」。" }),
       el("li", { text: "GPT 每次运行测试都会写 game/reports/verification.json，这里和「模式与关卡」页会显示每关的 SDK 验证状态。" }),
-      el("li", { text: "配送模式：第一个可玩切片（幽暗石牢）正在设计，按 ① 定范围 → ② 房间模板与地图生成 → ③ 实时规则模型 → ④ 美术候选 推进（docs/design/delivery-slice.md）。" }),
+      el("li", { text: "配送模式：第一个可玩切片（幽暗石牢）的 ①–③ 已完成；④ 美术候选（26 项）已画好，在「确认」页等用户确认，「地图预览」里可以在房间和实时播放中一起看（docs/design/delivery-slice.md）。" }),
     ])]));
   }
 

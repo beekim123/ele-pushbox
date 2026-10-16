@@ -14,7 +14,7 @@
 | `mode` `group` | 模式、机制组（章） | `content/catalog/modes.json`、`groups.json` | `res://generated/content/catalog/<目录>.json#<编号>` |
 | `mechanic` | 机制 | `content/catalog/mechanisms.json` | 规则代码 `res://gameplay/mechanics/<编号>.gd` |
 | `world` `recipient` `cargo` `combo` `monster` `item` `buff` `upgrade` `badge` `event` `slice` | 设计目录里的条目（`slice` 是可玩切片，即一局配送的配置） | `content/catalog/<目录>.json` | `res://generated/content/catalog/<目录>.json#<编号>` |
-| `text` | 界面与台词文字的键 | `content/i18n/zh-Hans.json`（英文在 `en.json`） | `tr:<键>`（TranslationServer） |
+| `text` | 界面与台词文字的键 | `content/i18n/zh-Hans.json` 与 `content/i18n-<名>/zh-Hans.json`（英文在同目录 `en.json`；一个键只在一张表里） | `tr:<键>`（TranslationServer） |
 
 以后新增的空间（`dialogue` 对话、`quest` 委托、`npc` 居民、`sfx` 音效、`music` 音乐、`shop` 商店货架……）照同样的方式加进 `tools/lib/ids.mjs` 的 `DOMAINS`，写清来源和游戏路径。
 

@@ -39,7 +39,12 @@
   }
 
   // Sprite id each entity uses once its art exists; until then a placeholder.
-  const ART = { coin: "item.coin", gate: "mech.ferry_gate", keeper: "npc.turtle_keeper" };
+  // The workbench can restrict drawing to approved art (setArtFilter); the
+  // step-4 candidates are then shown as placeholders again.
+  const ART = { coin: "item.coin", gate: "mech.ferry_gate", keeper: "char.turtle_keeper" };
+  let artFilter = () => true;
+  function setArtFilter(fn) { artFilter = fn || (() => true); }
+  const usable = (id) => !!id && S().has(id) && artFilter(id);
   const MONSTER_ART = (id) => "monster." + id;
   const RECIPIENT_ART = { old_miner: "char.miner" };
   const PLACEHOLDER = { monster: ["A", "t"], gate: ["C", "t"], recipient: ["m", "z"], keeper: ["j", "z"], coin: ["l", "z"] };
@@ -65,7 +70,7 @@
   function drawEntity(r, ox, oy, kind, id, tx, ty, o) {
     const cx = ox + tx * 16 + 8, by = oy + ty * 16 + 16;
     const sid = artFor(kind, id, o && o.recipient);
-    if (sid && S().has(sid)) {
+    if (usable(sid)) {
       const a = S().get(sid), anim = (o && o.anim) || (a.animations && (a.animations.idle ? "idle" : Object.keys(a.animations)[0]));
       S().draw(r, sid, anim, (o && o.tick) || 0, cx, by, !!(o && o.flip));
       return true;
@@ -78,15 +83,23 @@
   // recipient, route: [[x, y], ...], hud: false, env}.
   function render(r, v, opts) {
     const o = opts || {};
-    const spec = roomSpec(v, o.player || defaultPlayer(v));
-    const at = PB.scene.renderLevel(r, spec, null, { theme: themeId(o.world), tick: o.tick || 0, hud: false, facing: o.facing, env: o.env, pose: "idle" });
+    const pl = o.player || defaultPlayer(v), spec = roomSpec(v, pl);
+    // The level renderer draws the room without the player; background figures
+    // (gate, keeper) go behind the player, pickups and bodies in front of them.
+    const parsed = PB.tilemodel.parse(spec);
+    parsed.state.player = { x: -20, y: -20 };
+    const at = PB.scene.renderLevel(r, spec, parsed, { theme: themeId(o.world), tick: o.tick || 0, hud: false, env: o.env, pose: "idle" });
     const ox = at.ox, oy = at.oy;
     const used = { placeholders: [] };
-    for (const [x, y] of v.coins) if (!drawEntity(r, ox, oy, "coin", "coin", x, y, o)) used.placeholders.push("coin");
-    for (const s of v.spawns) {
+    const figure = (s) => {
       const kind = s.monster ? "monster" : s.feature, id = s.monster || s.feature;
       if (!drawEntity(r, ox, oy, kind, id, s.x, s.y, Object.assign({}, o, { flip: s.dir === "left" }))) used.placeholders.push(kind === "recipient" ? "recipient:" + (o.recipient || "?") : id);
-    }
+    };
+    const back = (s) => s.feature === "gate" || s.feature === "keeper";
+    v.spawns.filter(back).forEach(figure);
+    S().draw(r, "char.portitor", "idle", o.tick || 0, ox + pl[0] * 16 + 8, oy + pl[1] * 16 + 16, o.facing === "left");
+    for (const [x, y] of v.coins) if (!drawEntity(r, ox, oy, "coin", "coin", x, y, o)) used.placeholders.push("coin");
+    v.spawns.filter((s) => !back(s)).forEach(figure);
     if (o.route) drawRoute(r, ox, oy, o.route);
     if (o.hud !== false) { r.rect(0, 0, W, HUD_H, "z"); r.hline(0, HUD_H - 1, W, "y"); }
     used.placeholders = [...new Set(used.placeholders)];
@@ -139,7 +152,8 @@
     const at = PB.scene.renderLevel(r, spec, state, { theme: themeId(o.world), tick: o.tick || run.tick, hud: false, env: o.env });
     const ox = at.ox, oy = at.oy, tick = run.tick;
     // Ladders put down with a rope ladder.
-    for (const i of rm.climb) if (rm.L.marker[i] !== T.M.LADDER) S().draw(r, "mech.ladder", "default", 0, ox + (i % rm.W) * 16 + 8, oy + ((i / rm.W) | 0) * 16 + 16);
+    const rope = usable("mech.rope_ladder") ? "mech.rope_ladder" : "mech.ladder";
+    for (const i of rm.climb) if (rm.L.marker[i] !== T.M.LADDER) S().draw(r, rope, "default", 0, ox + (i % rm.W) * 16 + 8, oy + ((i / rm.W) | 0) * 16 + 16);
     // Background figures, then pickups, then bodies.
     if (rm.gate) drawEntity(r, ox, oy, "gate", "gate", rm.gate.x, rm.gate.y, { tick });
     if (rm.keeper) drawEntity(r, ox, oy, "keeper", "keeper", rm.keeper.x, rm.keeper.y, { tick });
@@ -147,12 +161,16 @@
       if (q.kind === "sand") S().draw(r, "item.sandbag", 0, 0, ox + q.x * 16, oy + q.y * 16);
       else drawEntity(r, ox, oy, "coin", "coin", q.x, q.y, { tick });
     }
-    if (rm.recipient) drawEntity(r, ox, oy, "recipient", "recipient", rm.recipient.x, rm.recipient.y, { tick, recipient: rm.recipient.id, flip: rm.recipient.dir < 0, anim: run.done && run.done.ok ? "win" : undefined });
+    if (rm.recipient) drawEntity(r, ox, oy, "recipient", "recipient", rm.recipient.x, rm.recipient.y, { tick, recipient: rm.recipient.id, flip: rm.recipient.dir < 0, anim: run.done && run.done.ok ? "win" : rm.recipient.move === "wander" ? "walk" : undefined });
     for (const m of rm.monsters) {
-      if (m.ko) continue;
+      if (m.ko) {
+        // A puff of smoke where it went down, for a third of a second.
+        if (usable("fx.monster_poof") && m.koT != null && tick - m.koT < 20) S().draw(r, "fx.monster_poof", "default", tick - m.koT, ox + m.x * 16 + 8, oy + m.y * 16 + 16);
+        continue;
+      }
       const [px, py] = tween(m, tick, 6), fall = m.fallT ? Math.round((m.fallT * 16) / P.fall) : 0;
       const sid = "monster." + m.id;
-      if (S().has(sid)) S().draw(r, sid, m.state === "trapped" ? "trapped" : m.state === "stunned" ? "stunned" : "walk", tick, ox + px + 8, oy + py + 16 + fall, m.dir < 0);
+      if (usable(sid)) { const anims = S().get(sid).animations; S().draw(r, sid, anims[m.state] ? m.state : "walk", tick, ox + px + 8, oy + py + 16 + fall, m.dir < 0); }
       else {
         const cx = ox + px + 8, by = oy + py + 16 + fall;
         placeholder(r, "monster", m.id, cx, by);
@@ -169,9 +187,22 @@
       const pose = run.done && run.done.ok ? "win" : air ? "fall" : busy ? POSE[p.pose] || "idle" : "idle";
       if (!(run.iframes > 0 && ((run.iframes >> 2) & 1))) S().draw(r, "char.portitor", pose, tick, ox + px + 8, oy + py + 16 + fall, p.face < 0);
     }
-    if (o.hud !== false) drawRunHud(r, run, o);
+    if (o.hud !== false) {
+      const h = hudState(run, o);
+      if (PB.dui && hudArt(h).every(usable)) PB.dui.hud(r, h); else drawRunHud(r, run, o);
+    }
     return { ox, oy };
   }
+  // The run as the HUD shows it (ui-delivery.js).
+  const RULE = { vase: "fragile", ice_cream: "melt" };
+  function hudState(run, o) {
+    const c = run.ctx.cargo, map = run.map && o.minimap !== false ? run.map : null;
+    return { hearts: run.hearts, maxHearts: run.maxHearts, cargo: c ? c.id : null, left: PB.rt.integrity(run), max: run.P.integrity, rule: c ? RULE[c.id] || null : null,
+      hot: !!(run.room && run.room.hot && c && (c.params || {}).melt_secs_per_point), coins: run.coins, sand: run.sand, items: run.items.slice(), slots: run.P.slots,
+      secs: Math.floor(run.clock / run.P.hz),
+      minimap: map ? { cols: map.cols, rows: map.rows, cur: run.roomIndex, rooms: map.rooms.map((rm) => ({ index: rm.index, x: rm.x, y: rm.y, role: rm.role, seen: !!(run.visited && run.visited.has(rm.index)) })) } : null };
+  }
+  function hudArt(h) { return ["ui.delivery_icons", "item.coin", "item.sandbag", "item.first_aid", "item.rope_ladder"].concat(h.cargo ? ["cargo." + h.cargo] : []); }
 
   // Placeholder HUD (the approved-art HUD comes with the step-4 candidates):
   // hearts, cargo and its integrity, coins, sand, item slots, time, minimap.
@@ -217,5 +248,5 @@
     PB.text.draw(r, clock, rx, 3, "u");
   }
 
-  PB.droom = { themeId, roomSpec, defaultPlayer, render, renderLive, drawRunHud, drawEntity, drawRoute, routeCells, mini, placeholder, W, H, HUD_H };
+  PB.droom = { themeId, roomSpec, defaultPlayer, render, renderLive, drawRunHud, hudState, drawEntity, drawRoute, routeCells, mini, placeholder, setArtFilter, W, H, HUD_H };
 })(typeof window !== "undefined" ? window : globalThis);

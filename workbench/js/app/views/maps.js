@@ -11,6 +11,21 @@
   let seed = 1, sel = 0, template = null, placementKey = null, showRoute = true, stage = null;
   // Playback: "view" (still picture), "demo", "room" (play this room), "map" (play the whole map).
   let mode = "view", demoChoice = null, playCargo = null, playRecipient = null;
+  // Step-4 art candidates (not yet confirmed) are drawn when this is on; off = approved art and placeholders only.
+  let showCandidates = true;
+  function applyArtFilter() {
+    PB.droom.setArtFilter((id) => { if (showCandidates) return true; try { return store.status(id) === "approved"; } catch (e) { return false; } });
+  }
+  // Unconfirmed sprites this room would draw (for the note under the picture).
+  function candidatesIn() {
+    if (!showCandidates) return [];
+    const ids = ["item.coin", "mech.ferry_gate", "char.turtle_keeper", "monster.rat_swarm", "monster.skeleton_guard", "char.zombie", "char.goblin_smith", "ui.delivery_icons", "mech.rope_ladder", "fx.monster_poof"];
+    return ids.filter((id) => { try { return store.status(id) !== "approved"; } catch (e) { return false; } });
+  }
+  function artNote(base) {
+    const c = candidatesIn();
+    return base + (c.length ? " 美术候选（未确认，确认前不进游戏）：" + c.join("、") + "。左栏可关掉候选、改看占位。" : "");
+  }
 
   const slices = () => store.catalog("slices");
   const slice = () => slices()[0];
@@ -93,7 +108,8 @@
       el("button", { class: "btn", type: "button", text: "随机", onclick: () => { location.hash = "#maps/" + (1 + Math.floor(Math.random() * 99999)); } }),
     ]));
     const routeBtn = el("button", { class: "btn", type: "button", "aria-pressed": String(showRoute), text: "显示路线", title: "检查工具在格子模型里找到的路线（不含怪物）", onclick: () => { showRoute = !showRoute; routeBtn.setAttribute("aria-pressed", String(showRoute)); if (stage) stage.refresh(); } });
-    box.append(el("p", {}, [routeBtn]));
+    const artBtn = el("button", { class: "btn", type: "button", "aria-pressed": String(showCandidates), text: "美术候选", title: "画出第 4 步的美术候选（未确认）；关掉后只用已确认的美术，其余是字母方块占位", onclick: () => { showCandidates = !showCandidates; artBtn.setAttribute("aria-pressed", String(showCandidates)); applyArtFilter(); renderWork(); } });
+    box.append(el("p", { class: "btn-row" }, [routeBtn, artBtn]));
     box.append(el("div", { class: "group-title", text: "房间模板" }));
     for (const t of sliceTemplates(sl)) {
       const ok = t.check && !t.check.errors.length && t.check.placements.every((p) => p.ok);
@@ -104,6 +120,7 @@
   }
 
   function renderWork() {
+    applyArtFilter();
     const box = document.getElementById("maps-work");
     box.textContent = "";
     if (stage) { stage.destroy(); stage = null; }
@@ -140,7 +157,7 @@
     stage = root.PBStage.create(host, {
       width: 320, height: 180, animated: true, autoplay: true, label: t.name, maxHeight: 420,
       draw: (r, tick) => { const res = PB.droom.render(r, v, { world: w, tick, player: cells ? cells[0] : undefined, route: showRoute ? cells : null, recipient: room.role === "home" ? "old_miner" : undefined }); lastPlaceholders = res.placeholders; },
-      disclaimer: "地形、生态与光照用已确认的主题；怪物（R 鼠群、S 骷髅守卫）、渡门 G、收件人 D、龟掌柜 K、金币 $ 是占位，美术在第 4 步。黄色虚线是检查工具在格子模型里找到的路线：不含怪物与时间。",
+      disclaimer: artNote("地形、生态与光照用已确认的主题。占位（字母方块）：R 鼠群、S 骷髅守卫、G 渡门、D 收件人、K 龟掌柜、$ 金币。黄色虚线是检查工具在格子模型里找到的路线：不含怪物与时间。"),
     });
   }
   let lastPlaceholders = [];
@@ -159,7 +176,7 @@
     if (mode !== "view" && p) { startPlay(host, sl, w, t, { mirror: p.mirror, open: p.open }, rt ? rt.from : "gate", null, 0, rt && rt.par_secs); renderTemplateTable(box, t, pls, p); return; }
     stage = root.PBStage.create(host, { width: 320, height: 180, animated: true, autoplay: true, label: t.name, maxHeight: 420,
       draw: (r, tick) => PB.droom.render(r, v, { world: w, tick, player: cells ? cells[0] : undefined, route: showRoute ? cells : null, recipient: "old_miner" }),
-      disclaimer: "占位：R 鼠群、S 骷髅守卫、G 渡门、D 收件人、K 龟掌柜、$ 金币。黄色虚线 = 下表第一条路线。" });
+      disclaimer: artNote("占位（字母方块）：R 鼠群、S 骷髅守卫、G 渡门、D 收件人、K 龟掌柜、$ 金币。黄色虚线 = 下表第一条路线。") });
     renderTemplateTable(box, t, pls, p);
   }
   function renderTemplateTable(box, t, pls, p) {
@@ -209,13 +226,14 @@
   }
   function startPlay(host, sl, w, t, placement, from, map, parSecs, roomPar) {
     const info = document.getElementById("maps-info");
+    const note = artNote("");
     if (mode === "demo") {
       const t0 = t, pick = demoChoice || "", mirror = pick.endsWith("~m"), d = (t0.demos || []).find((x) => x.id === pick.replace(/~m$/, ""));
       if (!d) { mode = "view"; return renderWork(); }
-      return root.PBPlay.start(host, { kind: "demo", slice: sl, world: w, template: t0, demo: d, mirror, info });
+      return root.PBPlay.start(host, { kind: "demo", slice: sl, world: w, template: t0, demo: d, mirror, info, note });
     }
-    if (mode === "map" && map) return root.PBPlay.start(host, { kind: "map", slice: sl, world: w, map, templates: sliceTemplates(sl), cargo: playCargo, recipient: playRecipient, parSecs, info });
-    return root.PBPlay.start(host, { kind: "room", slice: sl, world: w, template: t, placement, from, cargo: playCargo, recipient: playRecipient, parSecs: roomPar || 0, info });
+    if (mode === "map" && map) return root.PBPlay.start(host, { kind: "map", slice: sl, world: w, map, templates: sliceTemplates(sl), cargo: playCargo, recipient: playRecipient, parSecs, info, note });
+    return root.PBPlay.start(host, { kind: "room", slice: sl, world: w, template: t, placement, from, cargo: playCargo, recipient: playRecipient, parSecs: roomPar || 0, info, note });
   }
 
   function renderInfo() {

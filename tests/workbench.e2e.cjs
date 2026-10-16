@@ -122,6 +122,18 @@ async function decode(file) {
   await page.keyboard.press("r"); await page.waitForTimeout(150);
   check(await page.evaluate(() => { const r = PBPlay.active().run; return r.events.some((e) => e.type === "reset") && r.room.player.y === 0; }), "R restarts the room at the door it was entered by");
 
+  // 2e. Step-4 art candidates: drawn in the map preview while "美术候选" is on, placeholders when off.
+  await page.goto(URL + "#maps/7/4"); await page.waitForTimeout(300);
+  await page.click('.play-bar button:has-text("静态")'); await page.waitForTimeout(400);
+  const withArt = await page.evaluate(() => PBMaps.placeholders());
+  await page.click('#maps-side button:has-text("美术候选")');
+  await page.waitForFunction(() => PBMaps.placeholders().length > 0, null, { timeout: 5000 }).catch(() => {});
+  const without = await page.evaluate(() => PBMaps.placeholders());
+  await page.click('#maps-side button:has-text("美术候选")'); await page.waitForTimeout(200);
+  check(!withArt.includes("rat_swarm") && !withArt.includes("coin") && without.includes("rat_swarm") && without.includes("coin"),
+    `map preview draws the candidates only while the switch is on (on: ${JSON.stringify(withArt)}, off: ${JSON.stringify(without)})`);
+  check((await page.locator("#maps-work").textContent()).includes("美术候选（未确认"), "the preview says which drawn art is unconfirmed");
+
   // 3. Hidden stages stop animating; the visible one animates.
   await page.goto(URL + "#scenes/showcase.forest"); await page.waitForTimeout(300);
   let before = await page.evaluate(() => window.__raf); await page.waitForTimeout(1000);

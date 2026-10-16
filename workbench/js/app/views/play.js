@@ -59,8 +59,8 @@
       width: 320, height: 180, animated: true, autoplay: true, label: "实时模型", maxHeight: 460,
       extras: [el("label", { class: "small muted" }, ["速度 ", speedSel]), restart, reset].filter(Boolean),
       draw: (r, tick) => draw(session, r, tick),
-      disclaimer: o.kind === "demo" ? "实时设计模型回放演示输入（不是 SDK）。占位：R 鼠群、S 骷髅守卫（底下的色条：红 = 巡逻、亮红 = 追、紫 = 逃、灰 = 被推晕、黄 = 被困）、G 渡门、K 龟掌柜、D 收件人、$ 金币。" :
-        "键盘：方向键或 WASD 走 / 爬，Shift + 方向挖，Ctrl + 方向倒沙，↑ 和龟掌柜说话，1–3 用道具，R 重来这个房间。实时设计模型，不是 SDK；占位美术同上。",
+      disclaimer: (o.kind === "demo" ? "实时设计模型回放演示输入（不是 SDK）。占位：R 鼠群、S 骷髅守卫（底下的色条：红 = 巡逻、亮红 = 追、紫 = 逃、灰 = 被推晕、黄 = 被困）、G 渡门、K 龟掌柜、D 收件人、$ 金币。" :
+        "键盘：方向键或 WASD 走 / 爬，Shift + 方向挖，Ctrl + 方向倒沙，↑ 和龟掌柜说话，1–3 用道具，R 重来这个房间。实时设计模型，不是 SDK；占位同上。") + (o.note || ""),
     });
     session.stage.frame.focus();
     renderInfo(session, true);

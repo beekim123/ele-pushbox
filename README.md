@@ -4,7 +4,7 @@
 
 横版、侧视、按格移动的推箱解谜。沙、水、气体、火和冰由 [ele-base-cpp](https://github.com/beekim123/ele-base-cpp) v1.2.0 真实模拟。
 
-**当前阶段（2026-10-15）**：游戏分为关卡模式、配送模式（核心）、地狱模式，见[总纲](docs/design/vision.md)；先重构游戏并做关卡模式。第一批关卡是第 1 组「基础」7 关 + 第 2 组「水与机关」9 关，规格已写好（`content/levels/lab/`）。主角是万界渡口的渡界人（`char.portitor`，已确认）。Godot 重构按 [交接提示词](docs/handoff/gpt-refactor-prompt.md) 进行，**已开始（执行者 GPT）**。同时在设计配送模式的第一个可玩切片（[delivery-slice.md](docs/design/delivery-slice.md)：房间模板、按种子生成地图、实时规则已完成，美术候选待画）。进度见 [docs/status.md](docs/status.md)。
+**当前阶段（2026-10-15）**：游戏分为关卡模式、配送模式（核心）、地狱模式，见[总纲](docs/design/vision.md)；先重构游戏并做关卡模式。第一批关卡是第 1 组「基础」7 关 + 第 2 组「水与机关」9 关，规格已写好（`content/levels/lab/`）。主角是万界渡口的渡界人（`char.portitor`，已确认）。Godot 重构按 [交接提示词](docs/handoff/gpt-refactor-prompt.md) 进行，**已开始（执行者 GPT）**。同时在设计配送模式的第一个可玩切片（[delivery-slice.md](docs/design/delivery-slice.md)：房间模板、按种子生成地图、实时规则已完成，美术候选已画好、等用户确认）。进度见 [docs/status.md](docs/status.md)。
 
 ## 从这里开始
 
@@ -36,9 +36,9 @@ node tools/check-rooms.mjs --write           # 配送房间模板、按种子生
 node tools/art.mjs build                     # 校验美术源数据、导出 PNG 与清单，再构建内容目录，更新工作台数据
 node tools/art.mjs verify                    # 导出、确认记录与内容目录的一致性检查
 node tools/content.mjs check                 # 只检查目录与关卡规格（机制、关卡计划、美术引用）
-node --test tests/art-pipeline.test.mjs tests/content.test.mjs tests/rooms.test.mjs tests/realtime.test.mjs   # 流程与规则测试（临时目录，不碰真实数据）
+node --test tests/art-pipeline.test.mjs tests/content.test.mjs tests/rooms.test.mjs tests/realtime.test.mjs tests/i18n.test.mjs   # 流程与规则测试（临时目录，不碰真实数据）
 node tests/workbench.e2e.cjs                 # 工作台浏览器测试（需要 Playwright + Chromium）
-python3 tools/build-font.py                  # 新增界面文字后重建像素字形（需要 Pillow）
+python3 tools/build-font.py --ext delivery   # 新文字表缺的字形写进 font-delivery.js，不动已确认的字体文件（需要 Pillow）
 ```
 
 ## 旧实验项目

@@ -5,7 +5,7 @@
   "art": {
    "name": "美术资产",
    "source": "art/source/<分类>/<id>.json",
-   "count": 83
+   "count": 109
   },
   "level": {
    "name": "关卡",
@@ -89,11 +89,107 @@
   },
   "text": {
    "name": "界面与台词文字",
-   "source": "content/i18n/zh-Hans.json",
-   "count": 160
+   "source": "content/i18n/zh-Hans.json 与 content/i18n-<名>/zh-Hans.json",
+   "count": 215
   }
  },
  "entries": [
+  {
+   "uid": "art:avatar.goblin_smith",
+   "domain": "art",
+   "id": "avatar.goblin_smith",
+   "name": "滚轮头像 · 地精铁匠",
+   "source": "art/source/avatar/avatar.goblin_smith.json",
+   "game": "res://generated/art/avatar.goblin_smith.tres",
+   "category": "avatar",
+   "version": 1,
+   "hash": "b901baf70b30239fa027bf78bcad072eee4aa8e5197ca6d97acabc8dd866d29d",
+   "approved": false
+  },
+  {
+   "uid": "art:avatar.old_miner",
+   "domain": "art",
+   "id": "avatar.old_miner",
+   "name": "滚轮头像 · 老矿工",
+   "source": "art/source/avatar/avatar.old_miner.json",
+   "game": "res://generated/art/avatar.old_miner.tres",
+   "category": "avatar",
+   "version": 1,
+   "hash": "c607836c63d2102ccb6d1bc7e4a74a4869cc6badd4b48c385dbc18e961a51aee",
+   "approved": false
+  },
+  {
+   "uid": "art:avatar.zombie",
+   "domain": "art",
+   "id": "avatar.zombie",
+   "name": "滚轮头像 · 僵尸",
+   "source": "art/source/avatar/avatar.zombie.json",
+   "game": "res://generated/art/avatar.zombie.tres",
+   "category": "avatar",
+   "version": 1,
+   "hash": "fea509a9818ab135825d06410c991cc2e7258c52e4ade9cf72817bb1ae5410c8",
+   "approved": false
+  },
+  {
+   "uid": "art:cargo.ice_cream",
+   "domain": "art",
+   "id": "cargo.ice_cream",
+   "name": "货物 · 冰淇淋",
+   "source": "art/source/cargo/cargo.ice_cream.json",
+   "game": "res://generated/art/cargo.ice_cream.tres",
+   "category": "cargo",
+   "version": 1,
+   "hash": "4a0426f3f3bc60493a8f13bed4735f04ae784511e6160e3f453e69d5479fe09f",
+   "approved": false
+  },
+  {
+   "uid": "art:cargo.letter",
+   "domain": "art",
+   "id": "cargo.letter",
+   "name": "货物 · 信件",
+   "source": "art/source/cargo/cargo.letter.json",
+   "game": "res://generated/art/cargo.letter.tres",
+   "category": "cargo",
+   "version": 1,
+   "hash": "755d60fe4cd9fddc356cb2154695834209935dfed6da8e443721c2c4a0df3bb4",
+   "approved": false
+  },
+  {
+   "uid": "art:cargo.vase",
+   "domain": "art",
+   "id": "cargo.vase",
+   "name": "货物 · 花瓶",
+   "source": "art/source/cargo/cargo.vase.json",
+   "game": "res://generated/art/cargo.vase.tres",
+   "category": "cargo",
+   "version": 1,
+   "hash": "0eeb7e49c72daafc67a145c3641528958e97b447d184c3bc777a8cd2d7947944",
+   "approved": false
+  },
+  {
+   "uid": "art:char.goblin_smith",
+   "domain": "art",
+   "id": "char.goblin_smith",
+   "name": "地精铁匠（收件人）",
+   "source": "art/source/character/char.goblin_smith.json",
+   "game": "res://generated/art/char.goblin_smith.tres",
+   "category": "character",
+   "version": 1,
+   "hash": "aec499b0c22bf603343aa32f4dc22069ff84091db6a009a78d0accc8c2211359",
+   "approved": false
+  },
+  {
+   "uid": "art:char.lucky_cat",
+   "domain": "art",
+   "id": "char.lucky_cat",
+   "name": "招财猫",
+   "source": "art/source/character/char.lucky_cat.json",
+   "game": "res://generated/art/char.lucky_cat.tres",
+   "category": "character",
+   "version": 1,
+   "hash": "d9cee704ae0f93f988d6a502847e83b696af6e68c5a1d4dda5ebeb18bcb5901a",
+   "approved": false
+  },
   {
    "uid": "art:char.miner",
    "domain": "art",
@@ -128,6 +224,30 @@
    "category": "character",
    "version": 1,
    "hash": "67b8374148a76242dbc4bdc02bd445c1f7975b72c4bb2904b073b7a9a3d0d097",
+   "approved": false
+  },
+  {
+   "uid": "art:char.turtle_keeper",
+   "domain": "art",
+   "id": "char.turtle_keeper",
+   "name": "龟掌柜",
+   "source": "art/source/character/char.turtle_keeper.json",
+   "game": "res://generated/art/char.turtle_keeper.tres",
+   "category": "character",
+   "version": 1,
+   "hash": "5aacda67d54282cd2f56c94c7db447f6a74898ec2bba5582705b28fc3eadf7a3",
+   "approved": false
+  },
+  {
+   "uid": "art:char.zombie",
+   "domain": "art",
+   "id": "char.zombie",
+   "name": "僵尸（收件人）",
+   "source": "art/source/character/char.zombie.json",
+   "game": "res://generated/art/char.zombie.tres",
+   "category": "character",
+   "version": 1,
+   "hash": "08946939bb3666a5d227126f97ef86fced41faf9abafea67ac87d92d0d1364c4",
    "approved": false
   },
   {
@@ -443,6 +563,18 @@
    "approved": true
   },
   {
+   "uid": "art:fx.monster_poof",
+   "domain": "art",
+   "id": "fx.monster_poof",
+   "name": "放倒怪物的烟",
+   "source": "art/source/fx/fx.monster_poof.json",
+   "game": "res://generated/art/fx.monster_poof.tres",
+   "category": "fx",
+   "version": 1,
+   "hash": "4d8b333246e8eee6c0e46d6e3f36e04be38abf7d25b353d5db95be076a941024",
+   "approved": false
+  },
+  {
    "uid": "art:fx.ripple",
    "domain": "art",
    "id": "fx.ripple",
@@ -489,6 +621,42 @@
    "version": 1,
    "hash": "f50e0501ea870a20c7addf1fad72f70ce4dac2a54ffe88ccaff3c474ca7b049b",
    "approved": true
+  },
+  {
+   "uid": "art:item.coin",
+   "domain": "art",
+   "id": "item.coin",
+   "name": "金币",
+   "source": "art/source/item/item.coin.json",
+   "game": "res://generated/art/item.coin.tres",
+   "category": "item",
+   "version": 1,
+   "hash": "fd0ca3ecbf8bbb46f7fb7b189d0203f8d70b37634f63741b42e085c7b6849b15",
+   "approved": false
+  },
+  {
+   "uid": "art:item.first_aid",
+   "domain": "art",
+   "id": "item.first_aid",
+   "name": "急救包",
+   "source": "art/source/item/item.first_aid.json",
+   "game": "res://generated/art/item.first_aid.tres",
+   "category": "item",
+   "version": 1,
+   "hash": "b12924b897291b98bd811835cd315f8ecbe7de4d466ae353648be839b2768d16",
+   "approved": false
+  },
+  {
+   "uid": "art:item.rope_ladder",
+   "domain": "art",
+   "id": "item.rope_ladder",
+   "name": "绳梯",
+   "source": "art/source/item/item.rope_ladder.json",
+   "game": "res://generated/art/item.rope_ladder.tres",
+   "category": "item",
+   "version": 1,
+   "hash": "4c236edf6c23baae3db3bdc8053becc19aa5f665b4b201825c60e87792a42309",
+   "approved": false
   },
   {
    "uid": "art:item.sandbag",
@@ -587,6 +755,18 @@
    "approved": true
   },
   {
+   "uid": "art:mech.ferry_gate",
+   "domain": "art",
+   "id": "mech.ferry_gate",
+   "name": "渡门",
+   "source": "art/source/mechanism/mech.ferry_gate.json",
+   "game": "res://generated/art/mech.ferry_gate.tres",
+   "category": "mechanism",
+   "version": 1,
+   "hash": "720202b73f57c2131b1a3758086b96322478feb5a90bdb6b9bc7333ef839402c",
+   "approved": false
+  },
+  {
    "uid": "art:mech.frost_vent",
    "domain": "art",
    "id": "mech.frost_vent",
@@ -683,6 +863,18 @@
    "approved": true
   },
   {
+   "uid": "art:mech.rope_ladder",
+   "domain": "art",
+   "id": "mech.rope_ladder",
+   "name": "绳梯（放下后）",
+   "source": "art/source/mechanism/mech.rope_ladder.json",
+   "game": "res://generated/art/mech.rope_ladder.tres",
+   "category": "mechanism",
+   "version": 1,
+   "hash": "eca5efe295502dc73850ee0c41a84ee44e30225c2773e5cf27e6d6798d186440",
+   "approved": false
+  },
+  {
    "uid": "art:mech.socket",
    "domain": "art",
    "id": "mech.socket",
@@ -731,6 +923,30 @@
    "approved": true
   },
   {
+   "uid": "art:monster.rat_swarm",
+   "domain": "art",
+   "id": "monster.rat_swarm",
+   "name": "鼠群",
+   "source": "art/source/monster/monster.rat_swarm.json",
+   "game": "res://generated/art/monster.rat_swarm.tres",
+   "category": "monster",
+   "version": 1,
+   "hash": "1e741865f806cbbae9da2a28998cf7d31dab13e8a7827352cbeaee5b8f7e4ad0",
+   "approved": false
+  },
+  {
+   "uid": "art:monster.skeleton_guard",
+   "domain": "art",
+   "id": "monster.skeleton_guard",
+   "name": "骷髅守卫",
+   "source": "art/source/monster/monster.skeleton_guard.json",
+   "game": "res://generated/art/monster.skeleton_guard.tres",
+   "category": "monster",
+   "version": 1,
+   "hash": "7c5340f68c1fd3df4414a6516cb5baf45a446f260307ab676f94258d4c5f2ace",
+   "approved": false
+  },
+  {
    "uid": "art:obj.crate_iron",
    "domain": "art",
    "id": "obj.crate_iron",
@@ -753,6 +969,18 @@
    "version": 1,
    "hash": "8004b9b3ca8f9b25e809e24c6fdbc770db5a1da7b2528049f4f2da0cd6ca381f",
    "approved": true
+  },
+  {
+   "uid": "art:obj.goblin_forge",
+   "domain": "art",
+   "id": "obj.goblin_forge",
+   "name": "铁砧与炉子（地精铁匠家）",
+   "source": "art/source/object/obj.goblin_forge.json",
+   "game": "res://generated/art/obj.goblin_forge.tres",
+   "category": "object",
+   "version": 1,
+   "hash": "998d67321e65cb3691a38501a378a86eb630347fd85395363d42795293d6930b",
+   "approved": false
   },
   {
    "uid": "art:theme.cave",
@@ -875,6 +1103,18 @@
    "approved": true
   },
   {
+   "uid": "art:ui.delivery_icons",
+   "domain": "art",
+   "id": "ui.delivery_icons",
+   "name": "配送 HUD 图标",
+   "source": "art/source/ui/ui.delivery_icons.json",
+   "game": "res://generated/art/ui.delivery_icons.tres",
+   "category": "ui",
+   "version": 1,
+   "hash": "d565e6a8da680492da9427133d2803f4e10221b45fb56a082706be4aabd6282d",
+   "approved": false
+  },
+  {
    "uid": "art:ui.emote",
    "domain": "art",
    "id": "ui.emote",
@@ -983,6 +1223,30 @@
    "approved": true
   },
   {
+   "uid": "art:ui.screen.delivery_hud",
+   "domain": "art",
+   "id": "ui.screen.delivery_hud",
+   "name": "局内 HUD（配送）",
+   "source": "art/source/screen/ui.screen.delivery_hud.json",
+   "game": "res://ui/screens/delivery_hud.tscn",
+   "category": "screen",
+   "version": 1,
+   "hash": "23c03f3921674452382a4ef6731bf5aacf26cca8e8a8f55c753d2a06289c361b",
+   "approved": false
+  },
+  {
+   "uid": "art:ui.screen.delivery_pause",
+   "domain": "art",
+   "id": "ui.screen.delivery_pause",
+   "name": "暂停菜单（配送）",
+   "source": "art/source/screen/ui.screen.delivery_pause.json",
+   "game": "res://ui/screens/delivery_pause.tscn",
+   "category": "screen",
+   "version": 1,
+   "hash": "6f1e53c3dac19938cd506249fa827483ea8e31778fe6f1a6574ad4427b6099f1",
+   "approved": false
+  },
+  {
    "uid": "art:ui.screen.dialogue",
    "domain": "art",
    "id": "ui.screen.dialogue",
@@ -1043,6 +1307,18 @@
    "approved": true
   },
   {
+   "uid": "art:ui.screen.reels",
+   "domain": "art",
+   "id": "ui.screen.reels",
+   "name": "滚轮台（配送开局）",
+   "source": "art/source/screen/ui.screen.reels.json",
+   "game": "res://ui/screens/reels.tscn",
+   "category": "screen",
+   "version": 1,
+   "hash": "138cda5479dee0fd74e3ae7909f908ad3cacb0c2852f2592418e12d337190146",
+   "approved": false
+  },
+  {
    "uid": "art:ui.screen.rulecard",
    "domain": "art",
    "id": "ui.screen.rulecard",
@@ -1065,6 +1341,42 @@
    "version": 4,
    "hash": "4c6df2e53a82b5b26efcfea702f0332847c7cb07b829d2352b04c3e21fa3df1a",
    "approved": true
+  },
+  {
+   "uid": "art:ui.screen.settlement",
+   "domain": "art",
+   "id": "ui.screen.settlement",
+   "name": "送达结算",
+   "source": "art/source/screen/ui.screen.settlement.json",
+   "game": "res://ui/screens/settlement.tscn",
+   "category": "screen",
+   "version": 1,
+   "hash": "5e949d677dd27100d1860b728932206d1e9053f2ff1e8b5d28f71ca5b44ed929",
+   "approved": false
+  },
+  {
+   "uid": "art:ui.screen.settlement_fail",
+   "domain": "art",
+   "id": "ui.screen.settlement_fail",
+   "name": "失败结算",
+   "source": "art/source/screen/ui.screen.settlement_fail.json",
+   "game": "res://ui/screens/settlement_fail.tscn",
+   "category": "screen",
+   "version": 1,
+   "hash": "e46ea2a5a1354fc34a6227afad82fc4785c81de39900d891fb46fca7106cfee5",
+   "approved": false
+  },
+  {
+   "uid": "art:ui.screen.shop",
+   "domain": "art",
+   "id": "ui.screen.shop",
+   "name": "驿站货架",
+   "source": "art/source/screen/ui.screen.shop.json",
+   "game": "res://ui/screens/shop.tscn",
+   "category": "screen",
+   "version": 1,
+   "hash": "267d16250937ed3619c685b049c770d516487ec82e69364d75c7a3a4bf98c85a",
+   "approved": false
   },
   {
    "uid": "art:ui.target",
@@ -6123,6 +6435,446 @@
    "name": "新委托：把矿石送到黄金神庙",
    "source": "content/i18n/zh-Hans.json",
    "game": "tr:dlg.sample.note"
+  },
+  {
+   "uid": "text:dlv.reels.title",
+   "domain": "text",
+   "id": "dlv.reels.title",
+   "name": "今天送什么？",
+   "source": "content/i18n-delivery/zh-Hans.json",
+   "game": "tr:dlv.reels.title"
+  },
+  {
+   "uid": "text:dlv.reels.cargo",
+   "domain": "text",
+   "id": "dlv.reels.cargo",
+   "name": "货物",
+   "source": "content/i18n-delivery/zh-Hans.json",
+   "game": "tr:dlv.reels.cargo"
+  },
+  {
+   "uid": "text:dlv.reels.recipient",
+   "domain": "text",
+   "id": "dlv.reels.recipient",
+   "name": "收件人",
+   "source": "content/i18n-delivery/zh-Hans.json",
+   "game": "tr:dlv.reels.recipient"
+  },
+  {
+   "uid": "text:dlv.reels.reroll",
+   "domain": "text",
+   "id": "dlv.reels.reroll",
+   "name": "重转券 ×{n}",
+   "source": "content/i18n-delivery/zh-Hans.json",
+   "game": "tr:dlv.reels.reroll"
+  },
+  {
+   "uid": "text:dlv.reels.likes",
+   "domain": "text",
+   "id": "dlv.reels.likes",
+   "name": "{name}喜欢{cargo}：小费 ×1.5",
+   "source": "content/i18n-delivery/zh-Hans.json",
+   "game": "tr:dlv.reels.likes"
+  },
+  {
+   "uid": "text:dlv.keys.reel",
+   "domain": "text",
+   "id": "dlv.keys.reel",
+   "name": "选滚轮",
+   "source": "content/i18n-delivery/zh-Hans.json",
+   "game": "tr:dlv.keys.reel"
+  },
+  {
+   "uid": "text:dlv.keys.reroll",
+   "domain": "text",
+   "id": "dlv.keys.reroll",
+   "name": "重转",
+   "source": "content/i18n-delivery/zh-Hans.json",
+   "game": "tr:dlv.keys.reroll"
+  },
+  {
+   "uid": "text:dlv.keys.go",
+   "domain": "text",
+   "id": "dlv.keys.go",
+   "name": "出发",
+   "source": "content/i18n-delivery/zh-Hans.json",
+   "game": "tr:dlv.keys.go"
+  },
+  {
+   "uid": "text:dlv.keys.buy",
+   "domain": "text",
+   "id": "dlv.keys.buy",
+   "name": "买",
+   "source": "content/i18n-delivery/zh-Hans.json",
+   "game": "tr:dlv.keys.buy"
+  },
+  {
+   "uid": "text:dlv.keys.leave",
+   "domain": "text",
+   "id": "dlv.keys.leave",
+   "name": "离开",
+   "source": "content/i18n-delivery/zh-Hans.json",
+   "game": "tr:dlv.keys.leave"
+  },
+  {
+   "uid": "text:cargo.letter.name",
+   "domain": "text",
+   "id": "cargo.letter.name",
+   "name": "信件",
+   "source": "content/i18n-delivery/zh-Hans.json",
+   "game": "tr:cargo.letter.name"
+  },
+  {
+   "uid": "text:cargo.letter.rule",
+   "domain": "text",
+   "id": "cargo.letter.rule",
+   "name": "很轻；石牢里没有特别的规矩",
+   "source": "content/i18n-delivery/zh-Hans.json",
+   "game": "tr:cargo.letter.rule"
+  },
+  {
+   "uid": "text:cargo.vase.name",
+   "domain": "text",
+   "id": "cargo.vase.name",
+   "name": "花瓶",
+   "source": "content/i18n-delivery/zh-Hans.json",
+   "game": "tr:cargo.vase.name"
+  },
+  {
+   "uid": "text:cargo.vase.rule",
+   "domain": "text",
+   "id": "cargo.vase.rule",
+   "name": "易碎：摔 2 格会裂，受伤也会裂",
+   "source": "content/i18n-delivery/zh-Hans.json",
+   "game": "tr:cargo.vase.rule"
+  },
+  {
+   "uid": "text:cargo.ice_cream.name",
+   "domain": "text",
+   "id": "cargo.ice_cream.name",
+   "name": "冰淇淋",
+   "source": "content/i18n-delivery/zh-Hans.json",
+   "game": "tr:cargo.ice_cream.name"
+  },
+  {
+   "uid": "text:cargo.ice_cream.rule",
+   "domain": "text",
+   "id": "cargo.ice_cream.rule",
+   "name": "会化：45 秒化 1 格，热的地方更快",
+   "source": "content/i18n-delivery/zh-Hans.json",
+   "game": "tr:cargo.ice_cream.rule"
+  },
+  {
+   "uid": "text:recipient.old_miner.name",
+   "domain": "text",
+   "id": "recipient.old_miner.name",
+   "name": "老矿工",
+   "source": "content/i18n-delivery/zh-Hans.json",
+   "game": "tr:recipient.old_miner.name"
+  },
+  {
+   "uid": "text:recipient.old_miner.rule",
+   "domain": "text",
+   "id": "recipient.old_miner.rule",
+   "name": "在家门口等你",
+   "source": "content/i18n-delivery/zh-Hans.json",
+   "game": "tr:recipient.old_miner.rule"
+  },
+  {
+   "uid": "text:recipient.old_miner.thanks",
+   "domain": "text",
+   "id": "recipient.old_miner.thanks",
+   "name": "哎呀，是我的信！",
+   "source": "content/i18n-delivery/zh-Hans.json",
+   "game": "tr:recipient.old_miner.thanks"
+  },
+  {
+   "uid": "text:recipient.zombie.name",
+   "domain": "text",
+   "id": "recipient.zombie.name",
+   "name": "僵尸",
+   "source": "content/i18n-delivery/zh-Hans.json",
+   "game": "tr:recipient.zombie.name"
+  },
+  {
+   "uid": "text:recipient.zombie.rule",
+   "domain": "text",
+   "id": "recipient.zombie.rule",
+   "name": "到处闲逛：要追上他",
+   "source": "content/i18n-delivery/zh-Hans.json",
+   "game": "tr:recipient.zombie.rule"
+  },
+  {
+   "uid": "text:recipient.zombie.thanks",
+   "domain": "text",
+   "id": "recipient.zombie.thanks",
+   "name": "呃……谢……谢……",
+   "source": "content/i18n-delivery/zh-Hans.json",
+   "game": "tr:recipient.zombie.thanks"
+  },
+  {
+   "uid": "text:recipient.goblin_smith.name",
+   "domain": "text",
+   "id": "recipient.goblin_smith.name",
+   "name": "地精铁匠",
+   "source": "content/i18n-delivery/zh-Hans.json",
+   "game": "tr:recipient.goblin_smith.name"
+  },
+  {
+   "uid": "text:recipient.goblin_smith.rule",
+   "domain": "text",
+   "id": "recipient.goblin_smith.rule",
+   "name": "家里很烫：冰淇淋化得快 3 倍",
+   "source": "content/i18n-delivery/zh-Hans.json",
+   "game": "tr:recipient.goblin_smith.rule"
+  },
+  {
+   "uid": "text:recipient.goblin_smith.thanks",
+   "domain": "text",
+   "id": "recipient.goblin_smith.thanks",
+   "name": "正好解暑！",
+   "source": "content/i18n-delivery/zh-Hans.json",
+   "game": "tr:recipient.goblin_smith.thanks"
+  },
+  {
+   "uid": "text:item.sandbag.name",
+   "domain": "text",
+   "id": "item.sandbag.name",
+   "name": "沙袋",
+   "source": "content/i18n-delivery/zh-Hans.json",
+   "game": "tr:item.sandbag.name"
+  },
+  {
+   "uid": "text:item.sandbag.desc",
+   "domain": "text",
+   "id": "item.sandbag.desc",
+   "name": "直接加进沙袋，最多 9 袋。",
+   "source": "content/i18n-delivery/zh-Hans.json",
+   "game": "tr:item.sandbag.desc"
+  },
+  {
+   "uid": "text:item.first_aid.name",
+   "domain": "text",
+   "id": "item.first_aid.name",
+   "name": "急救包",
+   "source": "content/i18n-delivery/zh-Hans.json",
+   "game": "tr:item.first_aid.name"
+  },
+  {
+   "uid": "text:item.first_aid.desc",
+   "domain": "text",
+   "id": "item.first_aid.desc",
+   "name": "回 1 颗心。占 1 个背包格。",
+   "source": "content/i18n-delivery/zh-Hans.json",
+   "game": "tr:item.first_aid.desc"
+  },
+  {
+   "uid": "text:item.rope_ladder.name",
+   "domain": "text",
+   "id": "item.rope_ladder.name",
+   "name": "绳梯",
+   "source": "content/i18n-delivery/zh-Hans.json",
+   "game": "tr:item.rope_ladder.name"
+  },
+  {
+   "uid": "text:item.rope_ladder.desc",
+   "domain": "text",
+   "id": "item.rope_ladder.desc",
+   "name": "在面前往下放一段梯子，最多 6 格。占 1 个背包格。",
+   "source": "content/i18n-delivery/zh-Hans.json",
+   "game": "tr:item.rope_ladder.desc"
+  },
+  {
+   "uid": "text:dlv.shop.title",
+   "domain": "text",
+   "id": "dlv.shop.title",
+   "name": "龟掌柜的货架",
+   "source": "content/i18n-delivery/zh-Hans.json",
+   "game": "tr:dlv.shop.title"
+  },
+  {
+   "uid": "text:dlv.shop.greet",
+   "domain": "text",
+   "id": "dlv.shop.greet",
+   "name": "来了？先歇口气，回你一颗心。",
+   "source": "content/i18n-delivery/zh-Hans.json",
+   "game": "tr:dlv.shop.greet"
+  },
+  {
+   "uid": "text:dlv.shop.left",
+   "domain": "text",
+   "id": "dlv.shop.left",
+   "name": "剩 {n}",
+   "source": "content/i18n-delivery/zh-Hans.json",
+   "game": "tr:dlv.shop.left"
+  },
+  {
+   "uid": "text:dlv.shop.sold_out",
+   "domain": "text",
+   "id": "dlv.shop.sold_out",
+   "name": "卖完了",
+   "source": "content/i18n-delivery/zh-Hans.json",
+   "game": "tr:dlv.shop.sold_out"
+  },
+  {
+   "uid": "text:dlv.shop.bag",
+   "domain": "text",
+   "id": "dlv.shop.bag",
+   "name": "背包",
+   "source": "content/i18n-delivery/zh-Hans.json",
+   "game": "tr:dlv.shop.bag"
+  },
+  {
+   "uid": "text:dlv.done.title",
+   "domain": "text",
+   "id": "dlv.done.title",
+   "name": "送到了！",
+   "source": "content/i18n-delivery/zh-Hans.json",
+   "game": "tr:dlv.done.title"
+  },
+  {
+   "uid": "text:dlv.done.integrity",
+   "domain": "text",
+   "id": "dlv.done.integrity",
+   "name": "完好度",
+   "source": "content/i18n-delivery/zh-Hans.json",
+   "game": "tr:dlv.done.integrity"
+  },
+  {
+   "uid": "text:dlv.done.time",
+   "domain": "text",
+   "id": "dlv.done.time",
+   "name": "用时",
+   "source": "content/i18n-delivery/zh-Hans.json",
+   "game": "tr:dlv.done.time"
+  },
+  {
+   "uid": "text:dlv.done.time_value",
+   "domain": "text",
+   "id": "dlv.done.time_value",
+   "name": "{t} / {par} 秒",
+   "source": "content/i18n-delivery/zh-Hans.json",
+   "game": "tr:dlv.done.time_value"
+  },
+  {
+   "uid": "text:dlv.done.like",
+   "domain": "text",
+   "id": "dlv.done.like",
+   "name": "喜欢",
+   "source": "content/i18n-delivery/zh-Hans.json",
+   "game": "tr:dlv.done.like"
+  },
+  {
+   "uid": "text:dlv.done.tip",
+   "domain": "text",
+   "id": "dlv.done.tip",
+   "name": "小费",
+   "source": "content/i18n-delivery/zh-Hans.json",
+   "game": "tr:dlv.done.tip"
+  },
+  {
+   "uid": "text:dlv.done.picked",
+   "domain": "text",
+   "id": "dlv.done.picked",
+   "name": "路上拾到",
+   "source": "content/i18n-delivery/zh-Hans.json",
+   "game": "tr:dlv.done.picked"
+  },
+  {
+   "uid": "text:dlv.done.total",
+   "domain": "text",
+   "id": "dlv.done.total",
+   "name": "合计",
+   "source": "content/i18n-delivery/zh-Hans.json",
+   "game": "tr:dlv.done.total"
+  },
+  {
+   "uid": "text:dlv.done.rating",
+   "domain": "text",
+   "id": "dlv.done.rating",
+   "name": "评级",
+   "source": "content/i18n-delivery/zh-Hans.json",
+   "game": "tr:dlv.done.rating"
+  },
+  {
+   "uid": "text:dlv.done.again",
+   "domain": "text",
+   "id": "dlv.done.again",
+   "name": "再送一单",
+   "source": "content/i18n-delivery/zh-Hans.json",
+   "game": "tr:dlv.done.again"
+  },
+  {
+   "uid": "text:dlv.done.hub",
+   "domain": "text",
+   "id": "dlv.done.hub",
+   "name": "回大厅",
+   "source": "content/i18n-delivery/zh-Hans.json",
+   "game": "tr:dlv.done.hub"
+  },
+  {
+   "uid": "text:dlv.fail.title",
+   "domain": "text",
+   "id": "dlv.fail.title",
+   "name": "这一单没送成",
+   "source": "content/i18n-delivery/zh-Hans.json",
+   "game": "tr:dlv.fail.title"
+  },
+  {
+   "uid": "text:dlv.fail.hearts",
+   "domain": "text",
+   "id": "dlv.fail.hearts",
+   "name": "心掉光了。",
+   "source": "content/i18n-delivery/zh-Hans.json",
+   "game": "tr:dlv.fail.hearts"
+  },
+  {
+   "uid": "text:dlv.fail.cargo",
+   "domain": "text",
+   "id": "dlv.fail.cargo",
+   "name": "货物坏了。",
+   "source": "content/i18n-delivery/zh-Hans.json",
+   "game": "tr:dlv.fail.cargo"
+  },
+  {
+   "uid": "text:dlv.fail.keep",
+   "domain": "text",
+   "id": "dlv.fail.keep",
+   "name": "路上拾到 {a} 金币，带回一半：{b}",
+   "source": "content/i18n-delivery/zh-Hans.json",
+   "game": "tr:dlv.fail.keep"
+  },
+  {
+   "uid": "text:dlv.pause.restart_room",
+   "domain": "text",
+   "id": "dlv.pause.restart_room",
+   "name": "重来这个房间",
+   "source": "content/i18n-delivery/zh-Hans.json",
+   "game": "tr:dlv.pause.restart_room"
+  },
+  {
+   "uid": "text:dlv.pause.give_up",
+   "domain": "text",
+   "id": "dlv.pause.give_up",
+   "name": "放弃这一单",
+   "source": "content/i18n-delivery/zh-Hans.json",
+   "game": "tr:dlv.pause.give_up"
+  },
+  {
+   "uid": "text:npc.turtle_keeper.name",
+   "domain": "text",
+   "id": "npc.turtle_keeper.name",
+   "name": "龟掌柜",
+   "source": "content/i18n-delivery/zh-Hans.json",
+   "game": "tr:npc.turtle_keeper.name"
+  },
+  {
+   "uid": "text:dlv.done.base",
+   "domain": "text",
+   "id": "dlv.done.base",
+   "name": "基础 {n}",
+   "source": "content/i18n-delivery/zh-Hans.json",
+   "game": "tr:dlv.done.base"
   }
  ]
 }

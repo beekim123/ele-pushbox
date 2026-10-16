@@ -294,7 +294,7 @@
 
   function knockOut(run, m, how) {
     const rm = run.room;
-    m.ko = true; m.state = "ko"; run.kos += 1;
+    m.ko = true; m.state = "ko"; m.koT = run.tick; run.kos += 1;
     // Drops land where it fell; if that cell is now filled, on top of it.
     let dy = m.y; while (dy > 0 && (solid(run.room, m.x, dy) || crateAt(rm, m.x, dy))) dy -= 1;
     if (m.M.coins + m.carry.coins > 0) rm.pickups.push({ x: m.x, y: dy, kind: "coin", value: m.M.coins + m.carry.coins });

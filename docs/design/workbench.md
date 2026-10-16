@@ -19,7 +19,7 @@
 | 机制目录 | `content/catalog/mechanisms.json` | 设计负责人 | 同上 |
 | 物品、货物、怪物、增益 | `content/catalog/items.json`、`cargo.json`、`monsters.json`、`buffs.json` | 设计负责人 | 同上 |
 | 关卡规格 | `content/levels/<模式>/<组>/<编号>.json` | 设计负责人或开发方 | 工作台、`check-levels.mjs`、Godot |
-| 界面文字 | `content/i18n/`、`content/i18n-extra/` | 设计负责人；开发方只加 `i18n-extra` | 工作台、Godot |
+| 界面文字 | `content/i18n/`（已确认界面用，冻结）、`content/i18n-<名>/`（新一批界面的表，如 `i18n-delivery`）、`content/i18n-extra/` | 设计负责人；开发方只加 `i18n-extra` | 工作台、Godot（[美术流程](art-pipeline.md) 第 2 节） |
 | 游戏验证报告 | `game/reports/verification.json` | Godot headless 测试自动生成 | `content.mjs` 读入，工作台显示 |
 
 规则：任何列表（有哪些机制、哪些关、哪些货物）只在目录文件里维护一份；设计文档里的表格是说明，编号与状态以目录文件为准。

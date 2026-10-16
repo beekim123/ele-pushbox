@@ -10,6 +10,7 @@ import path from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { buildIdMap } from "./lib/ids.mjs";
 import { loadRooms } from "./check-rooms.mjs";
+import { loadTextTables } from "./lib/i18n.mjs";
 
 const REPO = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 export const CATALOGS = ["modes", "groups", "mechanisms", "worlds", "recipients", "cargo", "combos", "monsters", "items", "buffs", "upgrades", "badges", "events", "slices"];
@@ -248,12 +249,17 @@ export function buildContent(root, opts = {}) {
   for (const id of results.keys()) if (!planned.has(id)) add("warn", "game/reports/verification.json", `报告里的关卡 ${id} 不在关卡计划中`);
 
   // ---- global ids and the workbench -> game map (docs/design/ids.md) ----
-  const texts = fs.existsSync(rel("content/i18n/zh-Hans.json")) ? readJson(rel("content/i18n/zh-Hans.json")) : {};
+  // Text keys from content/i18n and the content/i18n-<name> tables (tools/lib/i18n.mjs).
+  let texts = {}, textSource = {};
+  if (fs.existsSync(rel("content/i18n/zh-Hans.json"))) {
+    try { const t = loadTextTables(root); texts = t.tables["zh-Hans"]; textSource = t.source; for (const q of t.problems) add("error", q.where, q.msg); }
+    catch (e) { add("error", "content/i18n", e.message); }
+  }
   const ids = buildIdMap({
     art: [...art.values()].map((a) => Object.assign({}, a, { file: artFile.get(a.id), approved: approved(a.id) })).sort((a, b) => a.id.localeCompare(b.id)),
     levels: levels.map((l) => ({ id: l.id, title: l.title, spec: l.has_spec ? l.spec : null, sha256: l.sha256 })),
     rooms: rooms.map(({ file, sha256, room }) => ({ id: room.id, name: room.name, source: file, sha256 })),
-    catalogs: cat, texts,
+    catalogs: cat, texts, textSource,
   });
   issues.push(...ids.issues);
 

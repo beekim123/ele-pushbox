@@ -8,21 +8,22 @@ import path from "node:path";
 import { ROOT as REPO, loadCore } from "./lib/load-core.mjs";
 import { encodePng, decodePng } from "./lib/png.mjs";
 import { buildContent, printIssues } from "./content.mjs";
+import { loadTextTables, missingGlyphs } from "./lib/i18n.mjs";
 
 const argv = process.argv.slice(2);
 const cmd = argv[0];
 const opt = (name, def) => { const i = argv.indexOf("--" + name); return i >= 0 ? argv[i + 1] : def; };
 const ROOT = path.resolve(opt("root", REPO));
 const rel = (...p) => path.join(ROOT, ...p);
-const PB = loadCore(["raster", "font-data", "font-small", "sprites", "i18n", "tilemodel", "terrain", "ambient", "env", "matter", "scene", "dialogue", "ui"]);
+// font-delivery adds glyphs only; ui-delivery registers new screens next to ui.js (neither changes what ui.js draws).
+const PB = loadCore(["raster", "font-data", "font-small", "font-delivery", "sprites", "i18n", "tilemodel", "terrain", "ambient", "env", "matter", "scene", "dialogue", "ui", "ui-delivery"]);
 const LOCALES = ["zh-Hans", "en"];
+// content/i18n (frozen) plus the content/i18n-<name> tables (tools/lib/i18n.mjs).
 function loadI18n() {
-  const t = {};
-  for (const f of fs.readdirSync(path.join(REPO, "content/i18n")).filter((n) => n.endsWith(".json"))) t[f.replace(/\.json$/, "")] = JSON.parse(fs.readFileSync(path.join(REPO, "content/i18n", f), "utf8"));
-  const keys = Object.keys(t["zh-Hans"]).filter((k) => k !== "_meta");
-  for (const [loc, tab] of Object.entries(t)) for (const k of keys) if (!(k in tab)) throw new Error(`i18n: ${loc} is missing ${k}`);
-  PB.i18n.setTables(t); PB.i18n.setLocale("zh-Hans");
-  return t;
+  const { tables, problems } = loadTextTables(REPO);
+  for (const q of problems) console.error(`i18n: ${q.where}: ${q.msg}`);
+  PB.i18n.setTables(tables); PB.i18n.setLocale("zh-Hans");
+  return tables;
 }
 const I18N = loadI18n();
 
@@ -207,6 +208,8 @@ function build() {
   manifest.text_issues = text;
   const shipped = text.filter((x) => x.locale !== "qps");
   console.log(`text layout: ${shipped.length} issue(s) in shipped locales, ${text.length - shipped.length} in the pseudo-locale (informational)`);
+  const glyphs = missingGlyphs(PB, I18N);
+  if (glyphs.length) console.log(`glyphs: ${glyphs.length} string(s) use characters the fonts lack (run python3 tools/build-font.py --ext <table>)`);
   manifest.references = refs;
   writeJson(rel("art/export/manifest.json"), manifest);
   // Workbench bundle (classic script so file:// works).
@@ -305,6 +308,7 @@ function verify() {
     else if (readJson(hp).content_hash !== item.hash) fail(`${item.asset}@v${item.version}: history hash mismatch`);
   }
   for (const x of textIssues(byId, specs)) if (x.locale !== "qps") fail(`text does not fit: ${x.screen} [${x.locale}] ${x.key} (${x.kind})`);
+  for (const x of missingGlyphs(PB, I18N)) fail(`no glyph for "${x.chars}" in ${x.key} [${x.locale}] (python3 tools/build-font.py --ext <table>)`);
   for (const x of buildContent(ROOT).issues) if (x.level === "error") fail(`content: ${x.where}: ${x.msg}`);
   console.log(bad ? `verify: ${bad} problem(s)` : `verify ok: ${byId.size} assets, ${approvals.records.length} approval records`);
   process.exit(bad ? 1 : 0);
