@@ -218,6 +218,8 @@ table.r2 tr[aria-current="true"] td{background:var(--panel-2)}
 .r2-reels{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:8px}
 .r2-reel{border:1px solid var(--line);border-radius:var(--radius);padding:8px 10px;background:var(--panel);display:flex;flex-direction:column;gap:4px}
 .r2-reel .big{font-size:16px;font-weight:600}
+.r2-reel-main{display:flex;align-items:center;gap:8px;min-height:48px}
+canvas.r2-pic{image-rendering:pixelated;display:block;flex:none}
 .r2-status{font-size:13px;margin:0}
 ol.r2-hints{margin:4px 0;padding-left:22px;font-size:13px}
 ol.r2-hints li[aria-current="true"]{font-weight:600}

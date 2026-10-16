@@ -182,6 +182,18 @@
     renderWork(); renderInfo();
   }
   const picksOf = (rr) => (rr ? { [REELS[rr.reel]]: rr.value } : undefined);
+  // Picture of a reel result: the recipient's avatar.<id> or the cargo.<id> sprite (none for the map reel).
+  function reelPicture(k, id) {
+    const sid = k === 1 ? "avatar." + id : k === 2 ? "cargo." + id : null;
+    if (!sid || !PB.sprites.has(sid)) return null;
+    if (!showCandidates && statusOf(sid) !== "approved") return el("span", { class: "small muted", text: sid + " 未确认（候选已关掉）" });
+    const a = PB.sprites.get(sid), [w, h] = a.size, r = new PB.Raster(w, h), z = Math.max(1, Math.floor(48 / Math.max(w, h)));
+    r.blitRows(a.frames[PB.sprites.frameAt(a, "default", 0)], 0, 0, false);
+    const c = el("canvas", { class: "r2-pic", width: w, height: h, title: sid + (statusOf(sid) === "approved" ? "" : "（候选）") });
+    c.getContext("2d").putImageData(new ImageData(r.data, w, h), 0, 0);
+    c.style.width = w * z + "px"; c.style.height = h * z + "px";
+    return c;
+  }
 
   // Overview of a run: every screen at OS pixels per tile; screens of one room are drawn across the grid gap.
   const OS = 3, OGAP = 4, OPAD = 6, OSW = 20 * OS, OSH = 10 * OS;
@@ -254,7 +266,7 @@
       const kind = k === 1 ? "recipients" : "cargo";
       const lines = [
         el("span", { class: "small muted", text: REEL_NAME[k] + (k === 0 ? "" : " · " + RARITY[rarityOf(kind, val)]) }),
-        el("span", { class: "big", text: reelText(k, val) }),
+        el("span", { class: "r2-reel-main" }, [reelPicture(k, val), el("span", { class: "big", text: reelText(k, val) })]),
         el("span", { class: "small muted", text: `${opts.length} 选 1 · 抽中概率 ${mine ? Math.round((mine.w / total) * 100) : 0}%` }),
       ];
       if (spun && spun.reel === k) lines.push(el("span", { class: "small", text: "重转过，原来是 " + reelText(k, spun.from) }));
