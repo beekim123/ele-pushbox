@@ -487,10 +487,10 @@
         "L",
         "L"
       ],
-      "explored": 74,
+      "explored": 70,
       "shortcut": false,
-      "reachable_states": 74,
-      "dead_end_states": 37,
+      "reachable_states": 70,
+      "dead_end_states": 34,
       "search_capped": false,
       "unknown_mechanisms": [],
       "warnings": []
@@ -597,7 +597,7 @@
       ],
       "explored": 106,
       "shortcut": false,
-      "reachable_states": 414,
+      "reachable_states": 554,
       "dead_end_states": 81,
       "search_capped": false,
       "unknown_mechanisms": [],

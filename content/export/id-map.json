@@ -1580,7 +1580,7 @@
    "name": "慢慢滑下来",
    "source": "content/levels/lab/blast/Q04.json",
    "game": "res://generated/content/levels/lab/blast/Q04.json",
-   "sha256": "3c837bdd888d057c093fc78792b83373b42d3bad46175cef8d38fbb6e4c34f8d"
+   "sha256": "9beca0fbcf01b1211f660960ac5650f71a4a53a9eb657945aabeb314f5d9e728"
   },
   {
    "uid": "level:Q07",
@@ -1634,7 +1634,7 @@
    "name": "同纹都能蚀",
    "source": "content/levels/lab/react/G02.json",
    "game": "res://generated/content/levels/lab/react/G02.json",
-   "sha256": "0909bf156f740c1b4ab84b0411b0e615a209be34c169bad95741ead10e95ddc4"
+   "sha256": "0728694eb262f5f3d9a768bac7f76f4478e040fa15fde2435d6dabbe29600296"
   },
   {
    "uid": "level:G03",
@@ -1661,7 +1661,7 @@
    "name": "会消失的塞子",
    "source": "content/levels/lab/react/G05.json",
    "game": "res://generated/content/levels/lab/react/G05.json",
-   "sha256": "db8eb702a64e5b046076cdc6747953fae2d798df85df1b4f2855198f643d3d52"
+   "sha256": "cae48f26d5070aa7dea2805f0723cfbf0d18de3143c752ea02a677dd91af2b29"
   },
   {
    "uid": "level:G06",
@@ -1796,7 +1796,7 @@
    "name": "碎石压断桥",
    "source": "content/levels/lab/experimental/E04.json",
    "game": "res://generated/content/levels/lab/experimental/E04.json",
-   "sha256": "3300226027e99825b057a73102ac11f18eb0a35d42a90a0c6d9aba99eb90321c"
+   "sha256": "129c0d6d942f2ca5cc521bb241d36d29763c701887e95aab8f599b56dd2d95a1"
   },
   {
    "uid": "level:E05",
@@ -7438,7 +7438,7 @@
    "uid": "text:level.Q04.hint.2",
    "domain": "text",
    "id": "level.Q04.hint.2",
-   "name": "斗底在下层，从梯子底下就能炸到；一旦破了，碎石会漏到刻度以下。只有保住斗底，碎石",
+   "name": "斗底在下层，梯子底下就能炸到；斗底一破，碎石就漏到刻度以下。保住斗底，碎石顶面才",
    "source": "content/i18n-extra/zh-Hans.json",
    "game": "tr:level.Q04.hint.2"
   },
@@ -7502,7 +7502,7 @@
    "uid": "text:level.G02.discovery",
    "domain": "text",
    "id": "level.G02.discovery",
-   "name": "判断能不能蚀看刻纹，不看颜色：深红的M和浅色的L刻纹相同，两格酸能把它们一起蚀穿",
+   "name": "判断能不能蚀看刻纹，不看颜色：深红的M和浅色的L刻纹相同，一样会被酸蚀掉；没有刻",
    "source": "content/i18n-extra/zh-Hans.json",
    "game": "tr:level.G02.discovery"
   },
@@ -7518,7 +7518,7 @@
    "uid": "text:level.G02.hint.2",
    "domain": "text",
    "id": "level.G02.hint.2",
-   "name": "两口井上层都是浅色L；下层一块深红有刻纹，一块深色没有刻纹。",
+   "name": "左井底是一块深红、有刻纹的M；右井是浅色L压在深色、没有刻纹的R上。",
    "source": "content/i18n-extra/zh-Hans.json",
    "game": "tr:level.G02.hint.2"
   },
@@ -8286,7 +8286,7 @@
    "uid": "text:level.E04.hint.3",
    "domain": "text",
    "id": "level.E04.hint.3",
-   "name": "向右走、向右推箱上桥，退回梯子上一格，朝右炸托石；箱子落进槽后爬到顶层，向左到旗",
+   "name": "向右走、推箱上桥，退回梯子上一格朝右炸；箱子落槽后爬到顶层，向左到旗。",
    "source": "content/i18n-extra/zh-Hans.json",
    "game": "tr:level.E04.hint.3"
   },

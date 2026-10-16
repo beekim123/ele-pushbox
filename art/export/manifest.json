@@ -7830,7 +7830,7 @@
   {
    "name": "level.E04",
    "file": "art/export/reference/level.E04.png",
-   "sha256": "3974e4b9f64a3cf5dc5f0257c3a0d71689946dc55fb06d08f24709787a6fdbba",
+   "sha256": "de3a5bdbc6d07efa15f4ac1d326e87fe81b2a3819e247f104f0e76c45b4e0766",
    "uses": [
     "theme.cosmos",
     "deco.cosmos_sprout",
@@ -7940,7 +7940,7 @@
   {
    "name": "level.G02",
    "file": "art/export/reference/level.G02.png",
-   "sha256": "51f95c4c118f03c8a69ac42c49a8643f81f68b9bb7f9e0a966ffece5212d7318",
+   "sha256": "76e3f07adf023d2e54466b4f7361371a0478169309bdc66dc13a79f2c9407ec1",
    "uses": [
     "theme.forest",
     "deco.forest_flower",
