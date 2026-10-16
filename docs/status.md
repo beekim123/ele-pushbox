@@ -10,6 +10,16 @@
 
 - 机制范围（用户 2026-10-16 决定）：关卡模式暂时只用现有的 33 个机制；SDK 已有但没进关卡的 `power`、`particles`、`rigid`、`pressure` 和各地区新机制，等现有关卡跑通后再开新章节（[关卡质量标准](design/level-quality.md) 第 4 节）。
 
+## 三条线合到一个分支（2026-10-16，用户要求）
+
+`claude/inspiring-ride-zfnn4s` 现在同时包含：关卡线（`codex/portitor-stage1` @ `31e29e0`，含 LV-12）、界面定稿（`ui/style-proposals` @ `47f3bbe`）、配送模式改造（`claude/delivery-redesign` @ `986cce0`）。**没有合进 `main`。**
+
+- **LV-12**：G02 修正后第 4 章 9/9；四组真实 SDK **30/30**，原始检查 124/124，`run-tests.sh` 26/26。改动只在评估器和报告里，接受。关卡线 SDK 候选全部通过，还没有用户试玩验收。
+- **配送模式改造**（用户已确认设计；未完成，制作方在补文档和工作台页面）：新房间格式 room/2（1×1 到 2×2 屏、浮空地块、撑篙、提示动物）、开局抽池（地图 → 收件人 → 货物）、23 间房（石牢 10、地府 13）、检查工具 `tools/check-rooms2.mjs`、24 个美术候选（**待确认，没有记录批准**）。机制目录新增 `float_block`、`pole`、`hint_animal`，它们引用的 `docs/design/delivery-puzzle-rules.md` 还没写。等制作方交完文档再做设计审核。
+- **合并冲突**：`tools/art.mjs`（两边的模块列表合并：保留 `font-extra`、加 `terrain-diyu`）、`content/catalog/mechanisms.json`（保留矿车契约，加三个新机制）；生成文件按规则重新生成。
+- **验证**（云端 Linux）：`art.mjs build` 133 项（109 + 24 候选）、0 bumped、6 条确认记录；`art.mjs verify` ok；`content.mjs check` 0 错误 0 警告；`check-levels.mjs` 46 关 ok；`check-rooms.mjs`、`check-rooms2.mjs`（300 个种子都能生成）通过；`node --test` 141/141；`workbench.e2e.cjs` 全部通过。
+- **工作台菜单改版**：用户要求改成左侧分类折叠菜单，拆成 [WB-01](packages/WB-01.md)，建议在 UI-05 和配送工作台页面之前做。
+
 ## 第三轮审核：LV-11 与界面定稿（2026-10-16）
 
 ### LV-11（`codex/portitor-stage1` @ `001b71f`）
