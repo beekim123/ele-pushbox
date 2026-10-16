@@ -1,6 +1,6 @@
 # 角色：主角、收件人与渡口居民（设计稿）
 
-状态：主角美术 `char.portitor`（21 帧）已由用户确认（`APR-0003`，2026-10-15），所有场景、大厅和界面已换成新主角；`char.portitor_alt` 是当时比较用的概念草图，不进游戏。收件人和怪物仍是设计稿；配送切片要用的僵尸、地精铁匠、龟掌柜、招财猫、鼠群、骷髅守卫画好了候选（2026-10-16，待用户确认，见 [资产清单](asset-inventory.md) 3c）。收件人、怪物清单以 `content/catalog/recipients.json`、`monsters.json` 为准。总纲见 [vision.md](vision.md)。
+状态：主角美术 `char.portitor`（21 帧）已由用户确认（`APR-0003`，2026-10-15），所有场景、大厅和界面已换成新主角；`char.portitor_alt` 是当时比较用的概念草图，不进游戏。收件人和怪物仍是设计稿；配送切片要用的僵尸、地精铁匠、龟掌柜、招财猫、鼠群、骷髅守卫的美术已确认（2026-10-16，`APR-0006`，见 [资产清单](asset-inventory.md) 3c）。收件人、怪物清单以 `content/catalog/recipients.json`、`monsters.json` 为准。总纲见 [vision.md](vision.md)。
 
 ## 1 主角：渡界人
 

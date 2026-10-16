@@ -104,7 +104,7 @@
    "category": "avatar",
    "version": 1,
    "hash": "b901baf70b30239fa027bf78bcad072eee4aa8e5197ca6d97acabc8dd866d29d",
-   "approved": false
+   "approved": true
   },
   {
    "uid": "art:avatar.old_miner",
@@ -116,7 +116,7 @@
    "category": "avatar",
    "version": 1,
    "hash": "c607836c63d2102ccb6d1bc7e4a74a4869cc6badd4b48c385dbc18e961a51aee",
-   "approved": false
+   "approved": true
   },
   {
    "uid": "art:avatar.zombie",
@@ -128,7 +128,7 @@
    "category": "avatar",
    "version": 1,
    "hash": "fea509a9818ab135825d06410c991cc2e7258c52e4ade9cf72817bb1ae5410c8",
-   "approved": false
+   "approved": true
   },
   {
    "uid": "art:cargo.ice_cream",
@@ -140,7 +140,7 @@
    "category": "cargo",
    "version": 1,
    "hash": "4a0426f3f3bc60493a8f13bed4735f04ae784511e6160e3f453e69d5479fe09f",
-   "approved": false
+   "approved": true
   },
   {
    "uid": "art:cargo.letter",
@@ -152,7 +152,7 @@
    "category": "cargo",
    "version": 1,
    "hash": "755d60fe4cd9fddc356cb2154695834209935dfed6da8e443721c2c4a0df3bb4",
-   "approved": false
+   "approved": true
   },
   {
    "uid": "art:cargo.vase",
@@ -164,7 +164,7 @@
    "category": "cargo",
    "version": 1,
    "hash": "0eeb7e49c72daafc67a145c3641528958e97b447d184c3bc777a8cd2d7947944",
-   "approved": false
+   "approved": true
   },
   {
    "uid": "art:char.goblin_smith",
@@ -176,7 +176,7 @@
    "category": "character",
    "version": 1,
    "hash": "aec499b0c22bf603343aa32f4dc22069ff84091db6a009a78d0accc8c2211359",
-   "approved": false
+   "approved": true
   },
   {
    "uid": "art:char.lucky_cat",
@@ -188,7 +188,7 @@
    "category": "character",
    "version": 1,
    "hash": "d9cee704ae0f93f988d6a502847e83b696af6e68c5a1d4dda5ebeb18bcb5901a",
-   "approved": false
+   "approved": true
   },
   {
    "uid": "art:char.miner",
@@ -236,7 +236,7 @@
    "category": "character",
    "version": 1,
    "hash": "5aacda67d54282cd2f56c94c7db447f6a74898ec2bba5582705b28fc3eadf7a3",
-   "approved": false
+   "approved": true
   },
   {
    "uid": "art:char.zombie",
@@ -248,7 +248,7 @@
    "category": "character",
    "version": 1,
    "hash": "08946939bb3666a5d227126f97ef86fced41faf9abafea67ac87d92d0d1364c4",
-   "approved": false
+   "approved": true
   },
   {
    "uid": "art:deco.cave_crystal",
@@ -572,7 +572,7 @@
    "category": "fx",
    "version": 1,
    "hash": "4d8b333246e8eee6c0e46d6e3f36e04be38abf7d25b353d5db95be076a941024",
-   "approved": false
+   "approved": true
   },
   {
    "uid": "art:fx.ripple",
@@ -632,7 +632,7 @@
    "category": "item",
    "version": 1,
    "hash": "fd0ca3ecbf8bbb46f7fb7b189d0203f8d70b37634f63741b42e085c7b6849b15",
-   "approved": false
+   "approved": true
   },
   {
    "uid": "art:item.first_aid",
@@ -644,7 +644,7 @@
    "category": "item",
    "version": 1,
    "hash": "b12924b897291b98bd811835cd315f8ecbe7de4d466ae353648be839b2768d16",
-   "approved": false
+   "approved": true
   },
   {
    "uid": "art:item.rope_ladder",
@@ -656,7 +656,7 @@
    "category": "item",
    "version": 1,
    "hash": "4c236edf6c23baae3db3bdc8053becc19aa5f665b4b201825c60e87792a42309",
-   "approved": false
+   "approved": true
   },
   {
    "uid": "art:item.sandbag",
@@ -764,7 +764,7 @@
    "category": "mechanism",
    "version": 1,
    "hash": "720202b73f57c2131b1a3758086b96322478feb5a90bdb6b9bc7333ef839402c",
-   "approved": false
+   "approved": true
   },
   {
    "uid": "art:mech.frost_vent",
@@ -872,7 +872,7 @@
    "category": "mechanism",
    "version": 1,
    "hash": "eca5efe295502dc73850ee0c41a84ee44e30225c2773e5cf27e6d6798d186440",
-   "approved": false
+   "approved": true
   },
   {
    "uid": "art:mech.socket",
@@ -932,7 +932,7 @@
    "category": "monster",
    "version": 1,
    "hash": "1e741865f806cbbae9da2a28998cf7d31dab13e8a7827352cbeaee5b8f7e4ad0",
-   "approved": false
+   "approved": true
   },
   {
    "uid": "art:monster.skeleton_guard",
@@ -944,7 +944,7 @@
    "category": "monster",
    "version": 1,
    "hash": "7c5340f68c1fd3df4414a6516cb5baf45a446f260307ab676f94258d4c5f2ace",
-   "approved": false
+   "approved": true
   },
   {
    "uid": "art:obj.crate_iron",
@@ -980,7 +980,7 @@
    "category": "object",
    "version": 1,
    "hash": "998d67321e65cb3691a38501a378a86eb630347fd85395363d42795293d6930b",
-   "approved": false
+   "approved": true
   },
   {
    "uid": "art:theme.cave",
@@ -1112,7 +1112,7 @@
    "category": "ui",
    "version": 1,
    "hash": "d565e6a8da680492da9427133d2803f4e10221b45fb56a082706be4aabd6282d",
-   "approved": false
+   "approved": true
   },
   {
    "uid": "art:ui.emote",
@@ -1232,7 +1232,7 @@
    "category": "screen",
    "version": 1,
    "hash": "23c03f3921674452382a4ef6731bf5aacf26cca8e8a8f55c753d2a06289c361b",
-   "approved": false
+   "approved": true
   },
   {
    "uid": "art:ui.screen.delivery_pause",
@@ -1244,7 +1244,7 @@
    "category": "screen",
    "version": 1,
    "hash": "6f1e53c3dac19938cd506249fa827483ea8e31778fe6f1a6574ad4427b6099f1",
-   "approved": false
+   "approved": true
   },
   {
    "uid": "art:ui.screen.dialogue",
@@ -1316,7 +1316,7 @@
    "category": "screen",
    "version": 1,
    "hash": "138cda5479dee0fd74e3ae7909f908ad3cacb0c2852f2592418e12d337190146",
-   "approved": false
+   "approved": true
   },
   {
    "uid": "art:ui.screen.rulecard",
@@ -1352,7 +1352,7 @@
    "category": "screen",
    "version": 1,
    "hash": "5e949d677dd27100d1860b728932206d1e9053f2ff1e8b5d28f71ca5b44ed929",
-   "approved": false
+   "approved": true
   },
   {
    "uid": "art:ui.screen.settlement_fail",
@@ -1364,7 +1364,7 @@
    "category": "screen",
    "version": 1,
    "hash": "e46ea2a5a1354fc34a6227afad82fc4785c81de39900d891fb46fca7106cfee5",
-   "approved": false
+   "approved": true
   },
   {
    "uid": "art:ui.screen.shop",
@@ -1376,7 +1376,7 @@
    "category": "screen",
    "version": 1,
    "hash": "267d16250937ed3619c685b049c770d516487ec82e69364d75c7a3a4bf98c85a",
-   "approved": false
+   "approved": true
   },
   {
    "uid": "art:ui.target",

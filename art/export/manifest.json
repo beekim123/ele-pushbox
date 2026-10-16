@@ -45,12 +45,19 @@
    "current": {
     "version": 1,
     "hash": "b901baf70b30239fa027bf78bcad072eee4aa8e5197ca6d97acabc8dd866d29d",
-    "status": "review",
+    "status": "approved",
     "preview": "art/export/preview/avatar.goblin_smith.png",
     "preview_sha256": "e4796a022839e4c5ef833ee60cb2ea9feba58c05ab2c9b4f0cacb8ff1b119ebf"
    },
-   "approved": null,
-   "current_is_approved": false,
+   "approved": {
+    "version": 1,
+    "hash": "b901baf70b30239fa027bf78bcad072eee4aa8e5197ca6d97acabc8dd866d29d",
+    "png": "art/export/approved/avatar.goblin_smith@v1.png",
+    "png_sha256": "e4796a022839e4c5ef833ee60cb2ea9feba58c05ab2c9b4f0cacb8ff1b119ebf",
+    "approval": "APR-0006",
+    "date": "2026-10-16T03:45:02.583Z"
+   },
+   "current_is_approved": true,
    "frame_size": [
     24,
     24
@@ -81,12 +88,19 @@
    "current": {
     "version": 1,
     "hash": "c607836c63d2102ccb6d1bc7e4a74a4869cc6badd4b48c385dbc18e961a51aee",
-    "status": "review",
+    "status": "approved",
     "preview": "art/export/preview/avatar.old_miner.png",
     "preview_sha256": "4dce7c7b60fc4b5597b546c12173e6204a29cc285e1d45b2d70d980fc3cf3981"
    },
-   "approved": null,
-   "current_is_approved": false,
+   "approved": {
+    "version": 1,
+    "hash": "c607836c63d2102ccb6d1bc7e4a74a4869cc6badd4b48c385dbc18e961a51aee",
+    "png": "art/export/approved/avatar.old_miner@v1.png",
+    "png_sha256": "4dce7c7b60fc4b5597b546c12173e6204a29cc285e1d45b2d70d980fc3cf3981",
+    "approval": "APR-0006",
+    "date": "2026-10-16T03:45:02.583Z"
+   },
+   "current_is_approved": true,
    "frame_size": [
     24,
     24
@@ -117,12 +131,19 @@
    "current": {
     "version": 1,
     "hash": "fea509a9818ab135825d06410c991cc2e7258c52e4ade9cf72817bb1ae5410c8",
-    "status": "review",
+    "status": "approved",
     "preview": "art/export/preview/avatar.zombie.png",
     "preview_sha256": "770aeabf60988fb214be6a7648e0765715ddb20ea3e14e0904b3b4fb3c288cd6"
    },
-   "approved": null,
-   "current_is_approved": false,
+   "approved": {
+    "version": 1,
+    "hash": "fea509a9818ab135825d06410c991cc2e7258c52e4ade9cf72817bb1ae5410c8",
+    "png": "art/export/approved/avatar.zombie@v1.png",
+    "png_sha256": "770aeabf60988fb214be6a7648e0765715ddb20ea3e14e0904b3b4fb3c288cd6",
+    "approval": "APR-0006",
+    "date": "2026-10-16T03:45:02.583Z"
+   },
+   "current_is_approved": true,
    "frame_size": [
     24,
     24
@@ -153,12 +174,19 @@
    "current": {
     "version": 1,
     "hash": "4a0426f3f3bc60493a8f13bed4735f04ae784511e6160e3f453e69d5479fe09f",
-    "status": "review",
+    "status": "approved",
     "preview": "art/export/preview/cargo.ice_cream.png",
     "preview_sha256": "654824ef2892c06109bb6233ce9da651d3eecb105c1f7f7759550de18060505a"
    },
-   "approved": null,
-   "current_is_approved": false,
+   "approved": {
+    "version": 1,
+    "hash": "4a0426f3f3bc60493a8f13bed4735f04ae784511e6160e3f453e69d5479fe09f",
+    "png": "art/export/approved/cargo.ice_cream@v1.png",
+    "png_sha256": "654824ef2892c06109bb6233ce9da651d3eecb105c1f7f7759550de18060505a",
+    "approval": "APR-0006",
+    "date": "2026-10-16T03:45:02.583Z"
+   },
+   "current_is_approved": true,
    "frame_size": [
     16,
     16
@@ -197,12 +225,19 @@
    "current": {
     "version": 1,
     "hash": "755d60fe4cd9fddc356cb2154695834209935dfed6da8e443721c2c4a0df3bb4",
-    "status": "review",
+    "status": "approved",
     "preview": "art/export/preview/cargo.letter.png",
     "preview_sha256": "109024957813201bc8ecf5abb5cd7090cdbb572704a8353551be972fca6dafb1"
    },
-   "approved": null,
-   "current_is_approved": false,
+   "approved": {
+    "version": 1,
+    "hash": "755d60fe4cd9fddc356cb2154695834209935dfed6da8e443721c2c4a0df3bb4",
+    "png": "art/export/approved/cargo.letter@v1.png",
+    "png_sha256": "109024957813201bc8ecf5abb5cd7090cdbb572704a8353551be972fca6dafb1",
+    "approval": "APR-0006",
+    "date": "2026-10-16T03:45:02.583Z"
+   },
+   "current_is_approved": true,
    "frame_size": [
     16,
     16
@@ -233,12 +268,19 @@
    "current": {
     "version": 1,
     "hash": "0eeb7e49c72daafc67a145c3641528958e97b447d184c3bc777a8cd2d7947944",
-    "status": "review",
+    "status": "approved",
     "preview": "art/export/preview/cargo.vase.png",
     "preview_sha256": "bae4114d96e52ae037b2df0b03369b27c4a9439e7d6f1f27b5703b9293072495"
    },
-   "approved": null,
-   "current_is_approved": false,
+   "approved": {
+    "version": 1,
+    "hash": "0eeb7e49c72daafc67a145c3641528958e97b447d184c3bc777a8cd2d7947944",
+    "png": "art/export/approved/cargo.vase@v1.png",
+    "png_sha256": "bae4114d96e52ae037b2df0b03369b27c4a9439e7d6f1f27b5703b9293072495",
+    "approval": "APR-0006",
+    "date": "2026-10-16T03:45:02.583Z"
+   },
+   "current_is_approved": true,
    "frame_size": [
     16,
     16
@@ -276,12 +318,19 @@
    "current": {
     "version": 1,
     "hash": "aec499b0c22bf603343aa32f4dc22069ff84091db6a009a78d0accc8c2211359",
-    "status": "review",
+    "status": "approved",
     "preview": "art/export/preview/char.goblin_smith.png",
     "preview_sha256": "204f08410a6082a5eaab5660c7ef853b4c9d1c1ec39a2a520df29323a6f063c6"
    },
-   "approved": null,
-   "current_is_approved": false,
+   "approved": {
+    "version": 1,
+    "hash": "aec499b0c22bf603343aa32f4dc22069ff84091db6a009a78d0accc8c2211359",
+    "png": "art/export/approved/char.goblin_smith@v1.png",
+    "png_sha256": "204f08410a6082a5eaab5660c7ef853b4c9d1c1ec39a2a520df29323a6f063c6",
+    "approval": "APR-0006",
+    "date": "2026-10-16T03:45:02.583Z"
+   },
+   "current_is_approved": true,
    "frame_size": [
     16,
     16
@@ -325,12 +374,19 @@
    "current": {
     "version": 1,
     "hash": "d9cee704ae0f93f988d6a502847e83b696af6e68c5a1d4dda5ebeb18bcb5901a",
-    "status": "review",
+    "status": "approved",
     "preview": "art/export/preview/char.lucky_cat.png",
     "preview_sha256": "a3aa778b4f4f691e735c445f9bd6bb602079f7fe8aede9527952429704e6a89e"
    },
-   "approved": null,
-   "current_is_approved": false,
+   "approved": {
+    "version": 1,
+    "hash": "d9cee704ae0f93f988d6a502847e83b696af6e68c5a1d4dda5ebeb18bcb5901a",
+    "png": "art/export/approved/char.lucky_cat@v1.png",
+    "png_sha256": "a3aa778b4f4f691e735c445f9bd6bb602079f7fe8aede9527952429704e6a89e",
+    "approval": "APR-0006",
+    "date": "2026-10-16T03:45:02.583Z"
+   },
+   "current_is_approved": true,
    "frame_size": [
     32,
     32
@@ -637,12 +693,19 @@
    "current": {
     "version": 1,
     "hash": "5aacda67d54282cd2f56c94c7db447f6a74898ec2bba5582705b28fc3eadf7a3",
-    "status": "review",
+    "status": "approved",
     "preview": "art/export/preview/char.turtle_keeper.png",
     "preview_sha256": "932c5c4d160dc7311a61717e4a011c935be20460676c094726d17a08f72a83ab"
    },
-   "approved": null,
-   "current_is_approved": false,
+   "approved": {
+    "version": 1,
+    "hash": "5aacda67d54282cd2f56c94c7db447f6a74898ec2bba5582705b28fc3eadf7a3",
+    "png": "art/export/approved/char.turtle_keeper@v1.png",
+    "png_sha256": "932c5c4d160dc7311a61717e4a011c935be20460676c094726d17a08f72a83ab",
+    "approval": "APR-0006",
+    "date": "2026-10-16T03:45:02.583Z"
+   },
+   "current_is_approved": true,
    "frame_size": [
     32,
     32
@@ -683,12 +746,19 @@
    "current": {
     "version": 1,
     "hash": "08946939bb3666a5d227126f97ef86fced41faf9abafea67ac87d92d0d1364c4",
-    "status": "review",
+    "status": "approved",
     "preview": "art/export/preview/char.zombie.png",
     "preview_sha256": "9e8e2a46985949fe9e076ca86ec37d069c63b63d6a44f2fe68155e06dcf54240"
    },
-   "approved": null,
-   "current_is_approved": false,
+   "approved": {
+    "version": 1,
+    "hash": "08946939bb3666a5d227126f97ef86fced41faf9abafea67ac87d92d0d1364c4",
+    "png": "art/export/approved/char.zombie@v1.png",
+    "png_sha256": "9e8e2a46985949fe9e076ca86ec37d069c63b63d6a44f2fe68155e06dcf54240",
+    "approval": "APR-0006",
+    "date": "2026-10-16T03:45:02.583Z"
+   },
+   "current_is_approved": true,
    "frame_size": [
     16,
     16
@@ -1920,12 +1990,19 @@
    "current": {
     "version": 1,
     "hash": "4d8b333246e8eee6c0e46d6e3f36e04be38abf7d25b353d5db95be076a941024",
-    "status": "review",
+    "status": "approved",
     "preview": "art/export/preview/fx.monster_poof.png",
     "preview_sha256": "8f556aebbf1a88de5549d7f1bb608de9fee6ed22cb2169656a3bf046b6f2c273"
    },
-   "approved": null,
-   "current_is_approved": false,
+   "approved": {
+    "version": 1,
+    "hash": "4d8b333246e8eee6c0e46d6e3f36e04be38abf7d25b353d5db95be076a941024",
+    "png": "art/export/approved/fx.monster_poof@v1.png",
+    "png_sha256": "8f556aebbf1a88de5549d7f1bb608de9fee6ed22cb2169656a3bf046b6f2c273",
+    "approval": "APR-0006",
+    "date": "2026-10-16T03:45:02.583Z"
+   },
+   "current_is_approved": true,
    "frame_size": [
     16,
     16
@@ -2136,12 +2213,19 @@
    "current": {
     "version": 1,
     "hash": "fd0ca3ecbf8bbb46f7fb7b189d0203f8d70b37634f63741b42e085c7b6849b15",
-    "status": "review",
+    "status": "approved",
     "preview": "art/export/preview/item.coin.png",
     "preview_sha256": "e050c58c6fbfe34a2ec6b570f229f19169dc0e8c590919a7a508b198d7153f08"
    },
-   "approved": null,
-   "current_is_approved": false,
+   "approved": {
+    "version": 1,
+    "hash": "fd0ca3ecbf8bbb46f7fb7b189d0203f8d70b37634f63741b42e085c7b6849b15",
+    "png": "art/export/approved/item.coin@v1.png",
+    "png_sha256": "e050c58c6fbfe34a2ec6b570f229f19169dc0e8c590919a7a508b198d7153f08",
+    "approval": "APR-0006",
+    "date": "2026-10-16T03:45:02.583Z"
+   },
+   "current_is_approved": true,
    "frame_size": [
     16,
     16
@@ -2182,12 +2266,19 @@
    "current": {
     "version": 1,
     "hash": "b12924b897291b98bd811835cd315f8ecbe7de4d466ae353648be839b2768d16",
-    "status": "review",
+    "status": "approved",
     "preview": "art/export/preview/item.first_aid.png",
     "preview_sha256": "25b2dfdded865d8f9a666525d87b2f1f983eddeefbb75541f84c5da973aa6091"
    },
-   "approved": null,
-   "current_is_approved": false,
+   "approved": {
+    "version": 1,
+    "hash": "b12924b897291b98bd811835cd315f8ecbe7de4d466ae353648be839b2768d16",
+    "png": "art/export/approved/item.first_aid@v1.png",
+    "png_sha256": "25b2dfdded865d8f9a666525d87b2f1f983eddeefbb75541f84c5da973aa6091",
+    "approval": "APR-0006",
+    "date": "2026-10-16T03:45:02.583Z"
+   },
+   "current_is_approved": true,
    "frame_size": [
     16,
     16
@@ -2218,12 +2309,19 @@
    "current": {
     "version": 1,
     "hash": "4c236edf6c23baae3db3bdc8053becc19aa5f665b4b201825c60e87792a42309",
-    "status": "review",
+    "status": "approved",
     "preview": "art/export/preview/item.rope_ladder.png",
     "preview_sha256": "d1efe03b7464554adf058c7bf00bc3657f0d1a07f4dfe438f91b0117f12f987a"
    },
-   "approved": null,
-   "current_is_approved": false,
+   "approved": {
+    "version": 1,
+    "hash": "4c236edf6c23baae3db3bdc8053becc19aa5f665b4b201825c60e87792a42309",
+    "png": "art/export/approved/item.rope_ladder@v1.png",
+    "png_sha256": "d1efe03b7464554adf058c7bf00bc3657f0d1a07f4dfe438f91b0117f12f987a",
+    "approval": "APR-0006",
+    "date": "2026-10-16T03:45:02.583Z"
+   },
+   "current_is_approved": true,
    "frame_size": [
     16,
     16
@@ -2699,12 +2797,19 @@
    "current": {
     "version": 1,
     "hash": "720202b73f57c2131b1a3758086b96322478feb5a90bdb6b9bc7333ef839402c",
-    "status": "review",
+    "status": "approved",
     "preview": "art/export/preview/mech.ferry_gate.png",
     "preview_sha256": "afc0e272b27ed0a547262623fcd6d467d81a2fc16259c48fc32dad6af1ad7194"
    },
-   "approved": null,
-   "current_is_approved": false,
+   "approved": {
+    "version": 1,
+    "hash": "720202b73f57c2131b1a3758086b96322478feb5a90bdb6b9bc7333ef839402c",
+    "png": "art/export/approved/mech.ferry_gate@v1.png",
+    "png_sha256": "afc0e272b27ed0a547262623fcd6d467d81a2fc16259c48fc32dad6af1ad7194",
+    "approval": "APR-0006",
+    "date": "2026-10-16T03:45:02.583Z"
+   },
+   "current_is_approved": true,
    "frame_size": [
     32,
     32
@@ -3144,12 +3249,19 @@
    "current": {
     "version": 1,
     "hash": "eca5efe295502dc73850ee0c41a84ee44e30225c2773e5cf27e6d6798d186440",
-    "status": "review",
+    "status": "approved",
     "preview": "art/export/preview/mech.rope_ladder.png",
     "preview_sha256": "f336892c8f31c586ca3ea268a068af45a3e63b761b178641de485a2e3d3ac4b8"
    },
-   "approved": null,
-   "current_is_approved": false,
+   "approved": {
+    "version": 1,
+    "hash": "eca5efe295502dc73850ee0c41a84ee44e30225c2773e5cf27e6d6798d186440",
+    "png": "art/export/approved/mech.rope_ladder@v1.png",
+    "png_sha256": "f336892c8f31c586ca3ea268a068af45a3e63b761b178641de485a2e3d3ac4b8",
+    "approval": "APR-0006",
+    "date": "2026-10-16T03:45:02.583Z"
+   },
+   "current_is_approved": true,
    "frame_size": [
     16,
     16
@@ -3376,12 +3488,19 @@
    "current": {
     "version": 1,
     "hash": "1e741865f806cbbae9da2a28998cf7d31dab13e8a7827352cbeaee5b8f7e4ad0",
-    "status": "review",
+    "status": "approved",
     "preview": "art/export/preview/monster.rat_swarm.png",
     "preview_sha256": "a31ca7b267edf16dfbe0fdbeb4723f0b95b57b19ffd4ff2481da2c5aae97a187"
    },
-   "approved": null,
-   "current_is_approved": false,
+   "approved": {
+    "version": 1,
+    "hash": "1e741865f806cbbae9da2a28998cf7d31dab13e8a7827352cbeaee5b8f7e4ad0",
+    "png": "art/export/approved/monster.rat_swarm@v1.png",
+    "png_sha256": "a31ca7b267edf16dfbe0fdbeb4723f0b95b57b19ffd4ff2481da2c5aae97a187",
+    "approval": "APR-0006",
+    "date": "2026-10-16T03:45:02.583Z"
+   },
+   "current_is_approved": true,
    "frame_size": [
     16,
     16
@@ -3445,12 +3564,19 @@
    "current": {
     "version": 1,
     "hash": "7c5340f68c1fd3df4414a6516cb5baf45a446f260307ab676f94258d4c5f2ace",
-    "status": "review",
+    "status": "approved",
     "preview": "art/export/preview/monster.skeleton_guard.png",
     "preview_sha256": "35676571bcec2e716dec39bb9eaceefffd68ca03da071da154b1ddfdbeba0744"
    },
-   "approved": null,
-   "current_is_approved": false,
+   "approved": {
+    "version": 1,
+    "hash": "7c5340f68c1fd3df4414a6516cb5baf45a446f260307ab676f94258d4c5f2ace",
+    "png": "art/export/approved/monster.skeleton_guard@v1.png",
+    "png_sha256": "35676571bcec2e716dec39bb9eaceefffd68ca03da071da154b1ddfdbeba0744",
+    "approval": "APR-0006",
+    "date": "2026-10-16T03:45:02.583Z"
+   },
+   "current_is_approved": true,
    "frame_size": [
     16,
     16
@@ -3593,12 +3719,19 @@
    "current": {
     "version": 1,
     "hash": "998d67321e65cb3691a38501a378a86eb630347fd85395363d42795293d6930b",
-    "status": "review",
+    "status": "approved",
     "preview": "art/export/preview/obj.goblin_forge.png",
     "preview_sha256": "6218386b2972841df51b610e25e23068e610b7b9348baf0fccd5f0d34a324e22"
    },
-   "approved": null,
-   "current_is_approved": false,
+   "approved": {
+    "version": 1,
+    "hash": "998d67321e65cb3691a38501a378a86eb630347fd85395363d42795293d6930b",
+    "png": "art/export/approved/obj.goblin_forge@v1.png",
+    "png_sha256": "6218386b2972841df51b610e25e23068e610b7b9348baf0fccd5f0d34a324e22",
+    "approval": "APR-0006",
+    "date": "2026-10-16T03:45:02.583Z"
+   },
+   "current_is_approved": true,
    "frame_size": [
     16,
     16
@@ -4713,12 +4846,19 @@
    "current": {
     "version": 1,
     "hash": "d565e6a8da680492da9427133d2803f4e10221b45fb56a082706be4aabd6282d",
-    "status": "review",
+    "status": "approved",
     "preview": "art/export/preview/ui.delivery_icons.png",
     "preview_sha256": "b53006f0781b2249e0a6e6b2829b4cb3f273d9f45a37713ea96f8b749d3c847a"
    },
-   "approved": null,
-   "current_is_approved": false,
+   "approved": {
+    "version": 1,
+    "hash": "d565e6a8da680492da9427133d2803f4e10221b45fb56a082706be4aabd6282d",
+    "png": "art/export/approved/ui.delivery_icons@v1.png",
+    "png_sha256": "b53006f0781b2249e0a6e6b2829b4cb3f273d9f45a37713ea96f8b749d3c847a",
+    "approval": "APR-0006",
+    "date": "2026-10-16T03:45:02.583Z"
+   },
+   "current_is_approved": true,
    "frame_size": [
     16,
     16
@@ -5466,12 +5606,19 @@
    "current": {
     "version": 1,
     "hash": "23c03f3921674452382a4ef6731bf5aacf26cca8e8a8f55c753d2a06289c361b",
-    "status": "review",
+    "status": "approved",
     "preview": "art/export/preview/ui.screen.delivery_hud.png",
     "preview_sha256": "2da6481b4516ccea14010f5cea87d5e24c1b2dcc4b277bb3870d17393dafbf2a"
    },
-   "approved": null,
-   "current_is_approved": false,
+   "approved": {
+    "version": 1,
+    "hash": "23c03f3921674452382a4ef6731bf5aacf26cca8e8a8f55c753d2a06289c361b",
+    "png": "art/export/approved/ui.screen.delivery_hud@v1.png",
+    "png_sha256": "2da6481b4516ccea14010f5cea87d5e24c1b2dcc4b277bb3870d17393dafbf2a",
+    "approval": "APR-0006",
+    "date": "2026-10-16T03:45:02.583Z"
+   },
+   "current_is_approved": true,
    "renderer": [
     "workbench/js/core/ui-delivery.js",
     "workbench/js/core/ui.js",
@@ -5621,12 +5768,19 @@
    "current": {
     "version": 1,
     "hash": "6f1e53c3dac19938cd506249fa827483ea8e31778fe6f1a6574ad4427b6099f1",
-    "status": "review",
+    "status": "approved",
     "preview": "art/export/preview/ui.screen.delivery_pause.png",
     "preview_sha256": "73e5d4dfa94a5c104b58edfe24319dbbf74cc6ab6f653ea8f91644fa97a16835"
    },
-   "approved": null,
-   "current_is_approved": false,
+   "approved": {
+    "version": 1,
+    "hash": "6f1e53c3dac19938cd506249fa827483ea8e31778fe6f1a6574ad4427b6099f1",
+    "png": "art/export/approved/ui.screen.delivery_pause@v1.png",
+    "png_sha256": "73e5d4dfa94a5c104b58edfe24319dbbf74cc6ab6f653ea8f91644fa97a16835",
+    "approval": "APR-0006",
+    "date": "2026-10-16T03:45:02.583Z"
+   },
+   "current_is_approved": true,
    "renderer": [
     "workbench/js/core/ui.js",
     "workbench/js/core/scene.js",
@@ -5961,12 +6115,19 @@
    "current": {
     "version": 1,
     "hash": "138cda5479dee0fd74e3ae7909f908ad3cacb0c2852f2592418e12d337190146",
-    "status": "review",
+    "status": "approved",
     "preview": "art/export/preview/ui.screen.reels.png",
     "preview_sha256": "00804379afa9a8688b32f3af8913239d00ce5f8e2bf5a88ac057feec67648418"
    },
-   "approved": null,
-   "current_is_approved": false,
+   "approved": {
+    "version": 1,
+    "hash": "138cda5479dee0fd74e3ae7909f908ad3cacb0c2852f2592418e12d337190146",
+    "png": "art/export/approved/ui.screen.reels@v1.png",
+    "png_sha256": "00804379afa9a8688b32f3af8913239d00ce5f8e2bf5a88ac057feec67648418",
+    "approval": "APR-0006",
+    "date": "2026-10-16T03:45:02.583Z"
+   },
+   "current_is_approved": true,
    "renderer": [
     "workbench/js/core/ui-delivery.js",
     "workbench/js/core/ui.js",
@@ -6155,12 +6316,19 @@
    "current": {
     "version": 1,
     "hash": "5e949d677dd27100d1860b728932206d1e9053f2ff1e8b5d28f71ca5b44ed929",
-    "status": "review",
+    "status": "approved",
     "preview": "art/export/preview/ui.screen.settlement.png",
     "preview_sha256": "b114d60aff616f4aba48462e19d97e6808bdfe9364e59e69ad53e78f9c58a9c3"
    },
-   "approved": null,
-   "current_is_approved": false,
+   "approved": {
+    "version": 1,
+    "hash": "5e949d677dd27100d1860b728932206d1e9053f2ff1e8b5d28f71ca5b44ed929",
+    "png": "art/export/approved/ui.screen.settlement@v1.png",
+    "png_sha256": "b114d60aff616f4aba48462e19d97e6808bdfe9364e59e69ad53e78f9c58a9c3",
+    "approval": "APR-0006",
+    "date": "2026-10-16T03:45:02.583Z"
+   },
+   "current_is_approved": true,
    "renderer": [
     "workbench/js/core/ui-delivery.js",
     "workbench/js/core/ui.js",
@@ -6212,12 +6380,19 @@
    "current": {
     "version": 1,
     "hash": "e46ea2a5a1354fc34a6227afad82fc4785c81de39900d891fb46fca7106cfee5",
-    "status": "review",
+    "status": "approved",
     "preview": "art/export/preview/ui.screen.settlement_fail.png",
     "preview_sha256": "eeb785399ebcef22a61140ed10e60772b7a9b70e30b9920617a8f63a9078084d"
    },
-   "approved": null,
-   "current_is_approved": false,
+   "approved": {
+    "version": 1,
+    "hash": "e46ea2a5a1354fc34a6227afad82fc4785c81de39900d891fb46fca7106cfee5",
+    "png": "art/export/approved/ui.screen.settlement_fail@v1.png",
+    "png_sha256": "eeb785399ebcef22a61140ed10e60772b7a9b70e30b9920617a8f63a9078084d",
+    "approval": "APR-0006",
+    "date": "2026-10-16T03:45:02.583Z"
+   },
+   "current_is_approved": true,
    "renderer": [
     "workbench/js/core/ui-delivery.js",
     "workbench/js/core/ui.js",
@@ -6260,12 +6435,19 @@
    "current": {
     "version": 1,
     "hash": "267d16250937ed3619c685b049c770d516487ec82e69364d75c7a3a4bf98c85a",
-    "status": "review",
+    "status": "approved",
     "preview": "art/export/preview/ui.screen.shop.png",
     "preview_sha256": "3a877284256a00ba2293e19af9ed628d069cb4151cd61d99041450da9618de7b"
    },
-   "approved": null,
-   "current_is_approved": false,
+   "approved": {
+    "version": 1,
+    "hash": "267d16250937ed3619c685b049c770d516487ec82e69364d75c7a3a4bf98c85a",
+    "png": "art/export/approved/ui.screen.shop@v1.png",
+    "png_sha256": "3a877284256a00ba2293e19af9ed628d069cb4151cd61d99041450da9618de7b",
+    "approval": "APR-0006",
+    "date": "2026-10-16T03:45:02.583Z"
+   },
+   "current_is_approved": true,
    "renderer": [
     "workbench/js/core/ui-delivery.js",
     "workbench/js/core/ui.js",
@@ -7687,16 +7869,8 @@
     "item.first_aid",
     "item.rope_ladder"
    ],
-   "all_approved": false,
-   "unapproved": [
-    "ui.screen.delivery_hud",
-    "monster.rat_swarm",
-    "item.coin",
-    "ui.delivery_icons",
-    "cargo.vase",
-    "item.first_aid",
-    "item.rope_ladder"
-   ]
+   "all_approved": true,
+   "unapproved": []
   },
   {
    "name": "delivery_hud.en",
@@ -7715,16 +7889,8 @@
     "item.first_aid",
     "item.rope_ladder"
    ],
-   "all_approved": false,
-   "unapproved": [
-    "ui.screen.delivery_hud",
-    "monster.rat_swarm",
-    "item.coin",
-    "ui.delivery_icons",
-    "cargo.vase",
-    "item.first_aid",
-    "item.rope_ladder"
-   ]
+   "all_approved": true,
+   "unapproved": []
   },
   {
    "name": "delivery_pause.zh-Hans",
@@ -7739,10 +7905,8 @@
     "ui.menu_icons",
     "ui.panel"
    ],
-   "all_approved": false,
-   "unapproved": [
-    "ui.screen.delivery_pause"
-   ]
+   "all_approved": true,
+   "unapproved": []
   },
   {
    "name": "delivery_pause.en",
@@ -7757,10 +7921,8 @@
     "ui.menu_icons",
     "ui.panel"
    ],
-   "all_approved": false,
-   "unapproved": [
-    "ui.screen.delivery_pause"
-   ]
+   "all_approved": true,
+   "unapproved": []
   },
   {
    "name": "dialogue.zh-Hans",
@@ -7954,18 +8116,8 @@
     "avatar.goblin_smith",
     "ui.delivery_icons"
    ],
-   "all_approved": false,
-   "unapproved": [
-    "ui.screen.reels",
-    "char.lucky_cat",
-    "cargo.letter",
-    "cargo.vase",
-    "cargo.ice_cream",
-    "avatar.old_miner",
-    "avatar.zombie",
-    "avatar.goblin_smith",
-    "ui.delivery_icons"
-   ]
+   "all_approved": true,
+   "unapproved": []
   },
   {
    "name": "reels.en",
@@ -7985,18 +8137,8 @@
     "avatar.goblin_smith",
     "ui.delivery_icons"
    ],
-   "all_approved": false,
-   "unapproved": [
-    "ui.screen.reels",
-    "char.lucky_cat",
-    "cargo.letter",
-    "cargo.vase",
-    "cargo.ice_cream",
-    "avatar.old_miner",
-    "avatar.zombie",
-    "avatar.goblin_smith",
-    "ui.delivery_icons"
-   ]
+   "all_approved": true,
+   "unapproved": []
   },
   {
    "name": "rulecard.zh-Hans",
@@ -8071,12 +8213,8 @@
     "avatar.zombie",
     "cargo.vase"
    ],
-   "all_approved": false,
-   "unapproved": [
-    "ui.screen.settlement_fail",
-    "avatar.zombie",
-    "cargo.vase"
-   ]
+   "all_approved": true,
+   "unapproved": []
   },
   {
    "name": "settlement_fail.en",
@@ -8089,12 +8227,8 @@
     "avatar.zombie",
     "cargo.vase"
    ],
-   "all_approved": false,
-   "unapproved": [
-    "ui.screen.settlement_fail",
-    "avatar.zombie",
-    "cargo.vase"
-   ]
+   "all_approved": true,
+   "unapproved": []
   },
   {
    "name": "settlement.zh-Hans",
@@ -8108,13 +8242,8 @@
     "item.coin",
     "ui.delivery_icons"
    ],
-   "all_approved": false,
-   "unapproved": [
-    "ui.screen.settlement",
-    "avatar.old_miner",
-    "item.coin",
-    "ui.delivery_icons"
-   ]
+   "all_approved": true,
+   "unapproved": []
   },
   {
    "name": "settlement.en",
@@ -8128,13 +8257,8 @@
     "item.coin",
     "ui.delivery_icons"
    ],
-   "all_approved": false,
-   "unapproved": [
-    "ui.screen.settlement",
-    "avatar.old_miner",
-    "item.coin",
-    "ui.delivery_icons"
-   ]
+   "all_approved": true,
+   "unapproved": []
   },
   {
    "name": "shop.zh-Hans",
@@ -8154,15 +8278,8 @@
     "item.rope_ladder",
     "ui.delivery_icons"
    ],
-   "all_approved": false,
-   "unapproved": [
-    "ui.screen.shop",
-    "char.turtle_keeper",
-    "item.coin",
-    "item.first_aid",
-    "item.rope_ladder",
-    "ui.delivery_icons"
-   ]
+   "all_approved": true,
+   "unapproved": []
   },
   {
    "name": "shop.en",
@@ -8182,15 +8299,8 @@
     "item.rope_ladder",
     "ui.delivery_icons"
    ],
-   "all_approved": false,
-   "unapproved": [
-    "ui.screen.shop",
-    "char.turtle_keeper",
-    "item.coin",
-    "item.first_aid",
-    "item.rope_ladder",
-    "ui.delivery_icons"
-   ]
+   "all_approved": true,
+   "unapproved": []
   }
  ]
 }
