@@ -1,6 +1,20 @@
 # PORTITOR 试玩与修复进度
 
-更新：2026-10-16 LV-11 交付。最新证据与交接见 [LV-11 工作包](../packages/LV-11.md)，LV-10 历史记录保留在下方。
+更新：2026-10-16 LV-12 交付。最新证据与交接见 [LV-12 工作包](../packages/LV-12.md)，LV-11 / LV-10 历史记录保留在下方。
+
+## 本轮 LV-12
+
+本次结果：在 `codex/portitor-stage1` 拉取并无冲突快进合入设计分支 `cf8fd68`，清理 `react.gd` 中 G02 旧 L+M 条目的三行专门处理，重新导入新 G02 SHA 并完成真实 SDK 复验。制作方未改生产逻辑、关卡源规格、目录、冻结区或界面线文件；`docs/status.md` 保留设计负责人的合并原文。开工已有的 `import.log` 与 `ui-proposals.html` 内容不变、不纳入交付。
+
+实际验证：react **9/9**，所有作者解连续三次通关、一致、逐步撤销、重开 / 撤销重开及 tick 限额通过。G02 的四条新检查全过，最大 **486 tick / 5 轮**；首次 `DIG_L` 后、开出口前，M 为 **0**、井底 / 全图余酸 **256**，[3,6] 夯土 **256**。默认 runner 本轮实际重跑四组，blast **8/8**、react **9/9**、thermal **7/7**、experimental **6/6**；作者解 **30/30**、严格 SDK **30/30**，原始检查 **124 pass、0 fail、0 not_run**。runner **26/26**，Node **141/141**，内容 **0 error / 0 warning**，提示 **180 条零溢出**。单 worker、隔离存档；SDK 以 nice 10 执行，Node 的 nice 设置被沙箱拒绝后以普通优先级串行完成，结果如实记录。无引擎错误、源变更、中断或预算阻塞。证据见 [本轮汇总](../../game/reports/LV-12-validation.json)、[react 索引](../../game/reports/LV-12-react-sdk.json)。
+
+当前阶段：**LV-12 制作 / 自测已完成，关卡线 30/30 SDK 通过的候选**；只读技术复核未发现问题，正式设计审核由 Claude 按既定批次汇总，用户试玩验收 / 美术确认未新增。不能把候选自测通过写成正式版本通过。报告基线为 `cf8fd68`、`working_tree=true`，对应本轮实测源码指纹；没有回填虚假的提交后复验。
+
+下一步及执行人：本轮交付提交与推送到 `origin/codex/portitor-stage1` 由 **当前 Codex 会话**完成；随后 **Claude 设计负责人**读取 LV-12 交付，核对验收结果与范围并汇总审核，后续按 `docs/status.md` 分支整理计划执行 `main` 集成。界面线由其制作方按包继续。本轮不做 `main` 集成或清理分支。
+
+用户现在的交接操作：在原 **Claude 设计负责人聊天**发送：
+
+> LV-12 已推回 origin/codex/portitor-stage1。请拉取并读取 docs/packages/LV-12.md 的交付：react 9/9、四组真实 SDK 30/30、原始检查124/124、runner 26/26、Node 141/141、内容0错误0警告。请按既定批次核对交付并汇总审核；这是候选自测通过，未新增用户验收或美术确认。后续按 docs/status.md 的分支整理计划处理。
 
 ## 本轮 LV-11
 

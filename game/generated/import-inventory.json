@@ -1,6 +1,6 @@
 {
  "format": "portitor.import-inventory/1",
- "source_id_map_sha256": "2fab4bb0e853bbf170c3d812c9d15332408d47c4c1318273629b3ab9ca20d5cc",
+ "source_id_map_sha256": "47550e80b9c2358c503ad9820a9a94c29a7dd5a3dfa7d00a06748e8fb8b882ff",
  "files": [
   {
    "path": "generated/id-map.json",
@@ -997,7 +997,7 @@
     "world:wonderland",
     "world:xianxia"
    ],
-   "sha256": "2fab4bb0e853bbf170c3d812c9d15332408d47c4c1318273629b3ab9ca20d5cc"
+   "sha256": "47550e80b9c2358c503ad9820a9a94c29a7dd5a3dfa7d00a06748e8fb8b882ff"
   },
   {
    "path": "generated/content-manifest.json",
@@ -1499,7 +1499,7 @@
     "world:wonderland",
     "world:xianxia"
    ],
-   "sha256": "fae6e7f819c294c08977948a4194eeb286d9204a911c2e336948d031d1256183"
+   "sha256": "9ba5a1e466bc2a49fb847826df17b049762a8308ba8683b44b86462673d06ea0"
   },
   {
    "path": "generated/ids.gd",
@@ -2678,7 +2678,7 @@
    "owners": [
     "level:G02"
    ],
-   "sha256": "0728694eb262f5f3d9a768bac7f76f4478e040fa15fde2435d6dabbe29600296"
+   "sha256": "defbee51352d54b611d403979ba2ae052e5a643af2019ea92f33374bbecb74dc"
   },
   {
    "path": "generated/content/levels/lab/react/G03.json",

@@ -1,0 +1,121 @@
+{
+  "format": "portitor.lv12-validation/1",
+  "run_id": "20261016T103014977223Z-29684",
+  "commit": "cf8fd684735fe8291b943de45a7df0c03a251993",
+  "working_tree": true,
+  "tested_source_sha256": "0c80eb98dcf54d18f0623bc995569d61fdf7190b8888abe78355e74e1cdf2476",
+  "source_sha256_at_end": "0c80eb98dcf54d18f0623bc995569d61fdf7190b8888abe78355e74e1cdf2476",
+  "source_changed": false,
+  "run_incomplete": false,
+  "sdk_command": "env OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1 nice -n 10 tools/run-tests.sh",
+  "sdk_exit_code": 0,
+  "sdk_stages": 26,
+  "sdk_stages_passed": 26,
+  "sdk_failed_stages": [],
+  "chapters": 30,
+  "author_solution_verified": 30,
+  "sdk_verified": 30,
+  "spec_checks": {
+    "pass": 124
+  },
+  "spec_failures": [],
+  "groups": {
+    "blast": {
+      "levels": 8,
+      "sdk_verified": 8,
+      "author_solution_verified": 8,
+      "spec_checks": {
+        "pass": 28
+      }
+    },
+    "react": {
+      "levels": 9,
+      "sdk_verified": 9,
+      "author_solution_verified": 9,
+      "spec_checks": {
+        "pass": 42
+      }
+    },
+    "thermal": {
+      "levels": 7,
+      "sdk_verified": 7,
+      "author_solution_verified": 7,
+      "spec_checks": {
+        "pass": 22
+      }
+    },
+    "experimental": {
+      "levels": 6,
+      "sdk_verified": 6,
+      "author_solution_verified": 6,
+      "spec_checks": {
+        "pass": 32
+      }
+    }
+  },
+  "chapter_text": {
+    "checked": 180,
+    "issues": [],
+    "ok": true,
+    "suite": "chapter-text"
+  },
+  "node_command": "env OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1 nice -n 10 node --test --test-concurrency=1 tests/*.test.mjs",
+  "node_exit_code": 0,
+  "node": {
+    "tests": 141,
+    "pass": 141,
+    "fail": 0,
+    "cancelled": 0,
+    "skipped": 0
+  },
+  "node_nice_applied": false,
+  "content_command": "node tools/content.mjs check",
+  "content_exit_code": 0,
+  "content_errors": 0,
+  "content_warnings": 0,
+  "worker_count": 1,
+  "resource_budget": {
+    "blocked": false,
+    "worker_count": 1,
+    "before_stage": "chapters",
+    "available": true,
+    "other_compute_processes": []
+  },
+  "evidence": "game/reports/chapter-sdk.json",
+  "evidence_sha256": "426411910a2d937cd6647339c147b07c29f9c76f0869326645f66f4637a0a7c0",
+  "react_index": "game/reports/LV-12-react-sdk.json",
+  "g02": {
+    "spec_sha256": "defbee51352d54b611d403979ba2ae052e5a643af2019ea92f33374bbecb74dc",
+    "max_ticks": 486,
+    "max_rounds": 5,
+    "after_first_dig_left": {
+      "acid_total": 256,
+      "acid_at_4_6": 256,
+      "M_at_4_6": 0,
+      "packed_earth_at_3_6": 256
+    },
+    "checks": [
+      {
+        "text": "待SDK：挖开左塞[4,2]后池中512 acid cell全部流入左井，与M[4,6]一对一反应，M最终为0，余下约256酸留在左井底（在挖开[3,6]之前测；挖开后酸流进出口走廊，总量仍是256）；[3,6]夯土与井壁不漏酸。若M残留≥128，报告实际分布。",
+        "status": "pass"
+      },
+      {
+        "text": "待SDK诱饵：挖开右塞[7,2]（从[7,1]向下挖或在池里向右挖）后512酸全部进右井，L[7,5]耗尽、R[7,6]的256cell不变，剩256酸停在R上；左塞随后挖开也没有酸流进左井，左井M不变。",
+        "status": "pass"
+      },
+      {
+        "text": "待LV-07真实SDK / 游戏联合验收：同一seed从开局连续回放3次，逐步结果一致；每步撤销与重开恢复材料、人物、背包、目标灯及机关状态。",
+        "status": "pass"
+      },
+      {
+        "text": "待LV-07真实SDK / 游戏联合验收：记录逐步tick、结算轮数与材料计数，不得达到1200tick / 16轮上限；模型通过不代替SDK验证。",
+        "status": "pass"
+      }
+    ]
+  },
+  "limitations": [
+    "All four groups were freshly replayed because the required default runner includes all chapters.",
+    "Node tests completed serially with exit 0; the sandbox denied nice priority, so that invocation ran at normal priority.",
+    "SDK self-tests do not constitute Claude design review, user playtest acceptance, art approval, or permission to integrate main."
+  ]
+}

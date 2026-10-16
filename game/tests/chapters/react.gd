@@ -100,9 +100,6 @@ func _acid(spec: Dictionary, trace: Array, summary: Dictionary, extra: Dictionar
 		out["挖塞后256 acid cell"] = _claim(conserved and tagged_rule and contacts_ok and main_clear and acid_clear and walls_intact and earth_intact,detail,available)
 		out["人物向左进入[4,2]"] = _claim(H.player(H.sample(trace,6),4,4) and H.player(final,2,4) and _light(final,"exit"),{"entry":H.sample(trace,6),"final":final},trace.size()>6)
 	else:
-		# The source retains the superseded two-rock clause alongside LV-11's
-		# single-M clause. Evaluate both honestly; never let one phrase match both.
-		out["依次与L[4,5]、M[4,6]"] = _claim(conserved and tagged_rule and contacts_ok and main_clear and acid_clear and walls_intact and earth_intact,detail,available)
 		var single_m: bool = H.tile(opening,4,5,"limestone_a")==0 and H.tile(opening,4,6,"limestone_b")==256 and H.tile(after_release,4,6,"limestone_b")==0 and main_clear
 		var retained: bool = H.material(after_release,"acid")==256 and H.tile(after_release,4,6,"acid")==256 and H.material(final,"acid")==256 and H.tile(after_release,3,6,"packed_earth")==256
 		var single_detail: Dictionary = detail.duplicate()
