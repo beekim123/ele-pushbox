@@ -16,16 +16,21 @@
   "workbench/js/core/i18n.js",
   "workbench/js/core/font-delivery.js",
   "content/i18n-delivery/zh-Hans.json",
-  "content/i18n-delivery/en.json"
+  "content/i18n-delivery/en.json",
+  "workbench/js/core/ui-kit.js",
+  "workbench/js/core/ui-style.js",
+  "workbench/js/core/font-ui.js",
+  "content/i18n-ui/zh-Hans.json",
+  "content/i18n-ui/en.json"
  ],
  "depends": [
-  "theme.dungeon",
-  "ui.panel",
   "avatar.old_miner",
   "item.coin",
-  "ui.delivery_icons"
+  "theme.dungeon",
+  "ui.delivery_icons",
+  "ui.panel"
  ],
- "version": 1,
+ "version": 2,
  "stage": "review",
  "size": [
   320,
@@ -51,9 +56,51 @@
   "tip": 61,
   "picked": 25,
   "total": 86,
-  "rating": "A"
+  "rating": "A",
+  "room": {
+   "map": [
+    "####################",
+    "####............####",
+    "##................##",
+    "#...H..............#",
+    "#...H##########....#",
+    "#...H..............#",
+    "....H...............",
+    "..P.H..#.....#......",
+    "####################",
+    "####################"
+   ],
+   "entities": [
+    {
+     "sprite": "monster.rat_swarm",
+     "anim": "walk",
+     "x": 12,
+     "y": 3,
+     "flip": true
+    },
+    {
+     "sprite": "item.coin",
+     "anim": "spin",
+     "x": 7,
+     "y": 3
+    },
+    {
+     "sprite": "item.coin",
+     "anim": "spin",
+     "x": 10,
+     "y": 3
+    },
+    {
+     "sprite": "item.coin",
+     "anim": "spin",
+     "x": 16,
+     "y": 7
+    }
+   ],
+   "facing": "right"
+  }
  },
  "usage": "送到以后：完好度、用时（和参考时间比）、喜欢三个系数，小费 = 基础报酬 × 三个系数（整数算法见 delivery-realtime.md 第 11 节），加上路上拾到的金币；右上角是评级。示例：给老矿工送信，3/3 完好，41.2 秒（参考 36 秒），小费 61，合计 86，评级 A。",
- "notes": "布局参考：文字来自 content/i18n-delivery（与已确认界面的文字表分开），缺的字形在 font-delivery.js；画法在 ui-delivery.js，没有改 ui.js。Godot 用 Control 容器实现。第 4 步美术候选（配送切片），等用户在工作台确认；确认前不得进游戏。",
- "content_hash": "5e949d677dd27100d1860b728932206d1e9053f2ff1e8b5d28f71ca5b44ed929"
+ "notes": "布局参考：文字来自 content/i18n-delivery（与已确认界面的文字表分开），缺的字形在 font-delivery.js；画法在 ui-delivery.js，没有改 ui.js。Godot 用 Control 容器实现。第 4 步美术候选（配送切片），等用户在工作台确认；确认前不得进游戏。 2026-10-16 界面定稿：画法见 workbench/js/core/ui-style.js（移植 tools/ui-proposals 的已确认效果图）。",
+ "content_hash": "198a6c09f26fccf18b5438ab08f364ec8caea76b6e71f43b82262259d740cef8"
 }

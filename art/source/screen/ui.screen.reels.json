@@ -16,22 +16,27 @@
   "workbench/js/core/i18n.js",
   "workbench/js/core/font-delivery.js",
   "content/i18n-delivery/zh-Hans.json",
-  "content/i18n-delivery/en.json"
+  "content/i18n-delivery/en.json",
+  "workbench/js/core/ui-kit.js",
+  "workbench/js/core/ui-style.js",
+  "workbench/js/core/font-ui.js",
+  "content/i18n-ui/zh-Hans.json",
+  "content/i18n-ui/en.json"
  ],
  "depends": [
-  "theme.dungeon",
-  "ui.panel",
-  "ui.keycap",
-  "char.lucky_cat",
-  "cargo.letter",
-  "cargo.vase",
-  "cargo.ice_cream",
+  "avatar.goblin_smith",
   "avatar.old_miner",
   "avatar.zombie",
-  "avatar.goblin_smith",
-  "ui.delivery_icons"
+  "cargo.ice_cream",
+  "cargo.letter",
+  "cargo.vase",
+  "char.lucky_cat",
+  "theme.dungeon",
+  "ui.delivery_icons",
+  "ui.keycap",
+  "ui.panel"
  ],
- "version": 1,
+ "version": 2,
  "stage": "review",
  "size": [
   320,
@@ -62,6 +67,6 @@
   "cat": "idle"
  },
  "usage": "一局配送从这里开始：招财猫拉下拉杆，货物轮和收件人轮先后停下；下面写出两边的规矩和\"喜欢\"加成。←→ 选滚轮，R 用重转券，Enter 出发。",
- "notes": "布局参考：文字来自 content/i18n-delivery（与已确认界面的文字表分开），缺的字形在 font-delivery.js；画法在 ui-delivery.js，没有改 ui.js。Godot 用 Control 容器实现。第 4 步美术候选（配送切片），等用户在工作台确认；确认前不得进游戏。",
- "content_hash": "138cda5479dee0fd74e3ae7909f908ad3cacb0c2852f2592418e12d337190146"
+ "notes": "布局参考：文字来自 content/i18n-delivery（与已确认界面的文字表分开），缺的字形在 font-delivery.js；画法在 ui-delivery.js，没有改 ui.js。Godot 用 Control 容器实现。第 4 步美术候选（配送切片），等用户在工作台确认；确认前不得进游戏。 2026-10-16 界面定稿：画法见 workbench/js/core/ui-style.js（移植 tools/ui-proposals 的已确认效果图）。",
+ "content_hash": "4e9f8918cc8c80a4c6b1a056b9d1b2378cca5bbe2eba74b3173cb00403d6ae8a"
 }

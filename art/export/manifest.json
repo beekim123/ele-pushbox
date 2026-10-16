@@ -6714,11 +6714,11 @@
    "kind": "procedural",
    "layer": "ui",
    "current": {
-    "version": 4,
-    "hash": "616c8a1a09bf2ad32f24c8cf1e70d8059bdb14d9c394ebbe86eb4703feaeb781",
-    "status": "approved",
+    "version": 5,
+    "hash": "1608a3a4e43c613b73b2eb46f5187008d23506d11352b7e9c16fd219d0c8a1b0",
+    "status": "review",
     "preview": "art/export/preview/ui.screen.chapters.png",
-    "preview_sha256": "fc3569ec75857ca8d8851f4680b17eb500bd5cc7e3a03a7af693cc90a1d4a3f6"
+    "preview_sha256": "3312c4cc691c0b093ad587c2aa415b2e9253d0983e1fbbcb9f37394c26e4147c"
    },
    "approved": {
     "version": 4,
@@ -6728,7 +6728,7 @@
     "approval": "APR-0005",
     "date": "2026-10-15T10:55:30.036Z"
    },
-   "current_is_approved": true,
+   "current_is_approved": false,
    "renderer": [
     "workbench/js/core/ui.js",
     "workbench/js/core/scene.js",
@@ -6737,7 +6737,12 @@
     "workbench/js/core/i18n.js",
     "content/i18n/zh-Hans.json",
     "content/i18n/en.json",
-    "workbench/js/core/env.js"
+    "workbench/js/core/env.js",
+    "workbench/js/core/ui-kit.js",
+    "workbench/js/core/ui-style.js",
+    "workbench/js/core/font-ui.js",
+    "content/i18n-ui/zh-Hans.json",
+    "content/i18n-ui/en.json"
    ],
    "params": {
     "screen": "chapters",
@@ -6771,10 +6776,13 @@
       "theme": "theme.cosmos",
       "locked": true
      }
-    ]
+    ],
+    "focus": 1
    },
    "depends": [
     "char.portitor",
+    "mech.exit_flag",
+    "obj.crate_wood",
     "theme.cave",
     "theme.cosmos",
     "theme.dungeon",
@@ -6795,11 +6803,11 @@
    "kind": "procedural",
    "layer": "ui",
    "current": {
-    "version": 4,
-    "hash": "fbb067b0492c0dd3cc479c65713e8cc6dabf0f93f55e2d6a628bfb458c14d9bf",
-    "status": "approved",
+    "version": 5,
+    "hash": "167131851bdaa444b9f5b349191fed04d05322f2f0776f4aedb853224f8140ab",
+    "status": "review",
     "preview": "art/export/preview/ui.screen.complete.png",
-    "preview_sha256": "f36e91ecb4b76df9e973798a2fdd3aa9d355d1b8466a6bba4f226f4c1e6e6e31"
+    "preview_sha256": "406e0da2e582399e4661ae9b05e1d059f5cf69cd03229dec5e87852c511cc064"
    },
    "approved": {
     "version": 4,
@@ -6809,7 +6817,7 @@
     "approval": "APR-0005",
     "date": "2026-10-15T10:55:30.036Z"
    },
-   "current_is_approved": true,
+   "current_is_approved": false,
    "renderer": [
     "workbench/js/core/ui.js",
     "workbench/js/core/scene.js",
@@ -6818,15 +6826,189 @@
     "workbench/js/core/i18n.js",
     "content/i18n/zh-Hans.json",
     "content/i18n/en.json",
-    "workbench/js/core/env.js"
+    "workbench/js/core/env.js",
+    "workbench/js/core/ui-kit.js",
+    "workbench/js/core/ui-style.js",
+    "workbench/js/core/font-ui.js",
+    "content/i18n-ui/zh-Hans.json",
+    "content/i18n-ui/en.json"
    ],
    "params": {
     "screen": "complete"
    },
    "depends": [
     "char.portitor",
+    "item.sandbag",
     "mech.socket_lit",
     "theme.dungeon",
+    "ui.class_icon",
+    "ui.goal_lamp",
+    "ui.icons",
+    "ui.keycap",
+    "ui.menu_icons",
+    "ui.panel"
+   ]
+  },
+  {
+   "id": "ui.screen.confirm",
+   "name": "放弃这一单确认框",
+   "category": "screen",
+   "kind": "procedural",
+   "layer": "ui",
+   "current": {
+    "version": 1,
+    "hash": "777956c08c1bf55c6c1f50a78c4781535239a511f7a7b4483839c97c8cad34a5",
+    "status": "review",
+    "preview": "art/export/preview/ui.screen.confirm.png",
+    "preview_sha256": "19e42ce7b87d0f88db06124222d7e5ec50f5694748cc3a5abc3b3be03e0b815d"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "renderer": [
+    "workbench/js/core/ui.js",
+    "workbench/js/core/scene.js",
+    "workbench/js/core/terrain.js",
+    "workbench/js/core/ambient.js",
+    "workbench/js/core/i18n.js",
+    "content/i18n/zh-Hans.json",
+    "content/i18n/en.json",
+    "workbench/js/core/env.js",
+    "workbench/js/core/font-delivery.js",
+    "content/i18n-delivery/zh-Hans.json",
+    "content/i18n-delivery/en.json",
+    "workbench/js/core/ui-kit.js",
+    "workbench/js/core/ui-style.js",
+    "workbench/js/core/font-ui.js",
+    "content/i18n-ui/zh-Hans.json",
+    "content/i18n-ui/en.json",
+    "workbench/js/core/ui-delivery.js",
+    "workbench/js/core/tilemodel.js",
+    "workbench/js/core/matter.js"
+   ],
+   "params": {
+    "screen": "confirm",
+    "theme": "theme.dungeon",
+    "exclude": [
+     "fauna.dungeon_rat"
+    ],
+    "focus": 1,
+    "room": {
+     "map": [
+      "####################",
+      "####............####",
+      "##................##",
+      "#...H..............#",
+      "#...H##########....#",
+      "#...H..............#",
+      "....H...............",
+      "..P.H..#.....#......",
+      "####################",
+      "####################"
+     ],
+     "entities": [
+      {
+       "sprite": "monster.rat_swarm",
+       "anim": "walk",
+       "x": 12,
+       "y": 3,
+       "flip": true
+      },
+      {
+       "sprite": "item.coin",
+       "anim": "spin",
+       "x": 7,
+       "y": 3
+      },
+      {
+       "sprite": "item.coin",
+       "anim": "spin",
+       "x": 10,
+       "y": 3
+      },
+      {
+       "sprite": "item.coin",
+       "anim": "spin",
+       "x": 16,
+       "y": 7
+      }
+     ],
+     "facing": "right"
+    },
+    "hud": {
+     "hearts": 2,
+     "maxHearts": 3,
+     "cargo": "vase",
+     "left": 2,
+     "max": 3,
+     "rule": "fragile",
+     "hot": false,
+     "coins": 35,
+     "sand": 2,
+     "items": [
+      "first_aid",
+      "rope_ladder"
+     ],
+     "slots": 3,
+     "secs": 83,
+     "minimap": {
+      "cols": 4,
+      "rows": 3,
+      "cur": 4,
+      "rooms": [
+       {
+        "index": 0,
+        "x": 3,
+        "y": 0,
+        "role": "gate",
+        "seen": true
+       },
+       {
+        "index": 1,
+        "x": 2,
+        "y": 0,
+        "role": "room",
+        "seen": true
+       },
+       {
+        "index": 2,
+        "x": 2,
+        "y": 1,
+        "role": "station",
+        "seen": true
+       },
+       {
+        "index": 3,
+        "x": 2,
+        "y": 2,
+        "role": "room",
+        "seen": true
+       },
+       {
+        "index": 4,
+        "x": 1,
+        "y": 2,
+        "role": "room",
+        "seen": true
+       },
+       {
+        "index": 5,
+        "x": 0,
+        "y": 2,
+        "role": "home",
+        "seen": false
+       }
+      ]
+     }
+    }
+   },
+   "depends": [
+    "cargo.vase",
+    "char.portitor",
+    "item.first_aid",
+    "item.rope_ladder",
+    "item.sandbag",
+    "theme.dungeon",
+    "ui.delivery_icons",
     "ui.icons",
     "ui.keycap",
     "ui.menu_icons",
@@ -6840,11 +7022,11 @@
    "kind": "procedural",
    "layer": "ui",
    "current": {
-    "version": 1,
-    "hash": "23c03f3921674452382a4ef6731bf5aacf26cca8e8a8f55c753d2a06289c361b",
-    "status": "approved",
+    "version": 2,
+    "hash": "f76b62b58c9f8a802eb28cb56cfe2983038dcd829b015f9838cbd4c9fe81a0c0",
+    "status": "review",
     "preview": "art/export/preview/ui.screen.delivery_hud.png",
-    "preview_sha256": "2da6481b4516ccea14010f5cea87d5e24c1b2dcc4b277bb3870d17393dafbf2a"
+    "preview_sha256": "357edfd2dc3eef34c65c9ae868574e3c9f20b87d8e06a855e45d4388da3942f6"
    },
    "approved": {
     "version": 1,
@@ -6854,7 +7036,7 @@
     "approval": "APR-0006",
     "date": "2026-10-16T03:45:02.583Z"
    },
-   "current_is_approved": true,
+   "current_is_approved": false,
    "renderer": [
     "workbench/js/core/ui-delivery.js",
     "workbench/js/core/ui.js",
@@ -6867,7 +7049,12 @@
     "workbench/js/core/i18n.js",
     "workbench/js/core/font-delivery.js",
     "content/i18n-delivery/zh-Hans.json",
-    "content/i18n-delivery/en.json"
+    "content/i18n-delivery/en.json",
+    "workbench/js/core/ui-kit.js",
+    "workbench/js/core/ui-style.js",
+    "workbench/js/core/font-ui.js",
+    "content/i18n-ui/zh-Hans.json",
+    "content/i18n-ui/en.json"
    ],
    "params": {
     "screen": "delivery_hud",
@@ -6983,16 +7170,16 @@
     }
    },
    "depends": [
-    "theme.dungeon",
+    "cargo.vase",
     "char.portitor",
+    "item.coin",
+    "item.first_aid",
+    "item.rope_ladder",
+    "item.sandbag",
     "mech.ladder",
     "monster.rat_swarm",
-    "item.coin",
-    "ui.delivery_icons",
-    "cargo.vase",
-    "item.sandbag",
-    "item.first_aid",
-    "item.rope_ladder"
+    "theme.dungeon",
+    "ui.delivery_icons"
    ]
   },
   {
@@ -7002,11 +7189,11 @@
    "kind": "procedural",
    "layer": "ui",
    "current": {
-    "version": 1,
-    "hash": "6f1e53c3dac19938cd506249fa827483ea8e31778fe6f1a6574ad4427b6099f1",
-    "status": "approved",
+    "version": 2,
+    "hash": "b7a69ebf520049bc6c4eb3225847e4bb0158c6160db5c6b4a152205514f18dda",
+    "status": "review",
     "preview": "art/export/preview/ui.screen.delivery_pause.png",
-    "preview_sha256": "73e5d4dfa94a5c104b58edfe24319dbbf74cc6ab6f653ea8f91644fa97a16835"
+    "preview_sha256": "5a856e33fefb5e668c79aad10dc232623373a486ef12e9dc51593a902a3ae5e6"
    },
    "approved": {
     "version": 1,
@@ -7016,7 +7203,7 @@
     "approval": "APR-0006",
     "date": "2026-10-16T03:45:02.583Z"
    },
-   "current_is_approved": true,
+   "current_is_approved": false,
    "renderer": [
     "workbench/js/core/ui.js",
     "workbench/js/core/scene.js",
@@ -7028,7 +7215,15 @@
     "workbench/js/core/env.js",
     "workbench/js/core/font-delivery.js",
     "content/i18n-delivery/zh-Hans.json",
-    "content/i18n-delivery/en.json"
+    "content/i18n-delivery/en.json",
+    "workbench/js/core/ui-kit.js",
+    "workbench/js/core/ui-style.js",
+    "workbench/js/core/font-ui.js",
+    "content/i18n-ui/zh-Hans.json",
+    "content/i18n-ui/en.json",
+    "workbench/js/core/ui-delivery.js",
+    "workbench/js/core/tilemodel.js",
+    "workbench/js/core/matter.js"
    ],
    "params": {
     "screen": "pause",
@@ -7038,11 +7233,124 @@
      "dlv.pause.give_up",
      "pause.settings",
      "pause.menu"
-    ]
+    ],
+    "room": {
+     "map": [
+      "####################",
+      "####............####",
+      "##................##",
+      "#...H..............#",
+      "#...H##########....#",
+      "#...H..............#",
+      "....H...............",
+      "..P.H..#.....#......",
+      "####################",
+      "####################"
+     ],
+     "entities": [
+      {
+       "sprite": "monster.rat_swarm",
+       "anim": "walk",
+       "x": 12,
+       "y": 3,
+       "flip": true
+      },
+      {
+       "sprite": "item.coin",
+       "anim": "spin",
+       "x": 7,
+       "y": 3
+      },
+      {
+       "sprite": "item.coin",
+       "anim": "spin",
+       "x": 10,
+       "y": 3
+      },
+      {
+       "sprite": "item.coin",
+       "anim": "spin",
+       "x": 16,
+       "y": 7
+      }
+     ],
+     "facing": "right"
+    },
+    "hud": {
+     "hearts": 2,
+     "maxHearts": 3,
+     "cargo": "vase",
+     "left": 2,
+     "max": 3,
+     "rule": "fragile",
+     "hot": false,
+     "coins": 35,
+     "sand": 2,
+     "items": [
+      "first_aid",
+      "rope_ladder"
+     ],
+     "slots": 3,
+     "secs": 83,
+     "minimap": {
+      "cols": 4,
+      "rows": 3,
+      "cur": 4,
+      "rooms": [
+       {
+        "index": 0,
+        "x": 3,
+        "y": 0,
+        "role": "gate",
+        "seen": true
+       },
+       {
+        "index": 1,
+        "x": 2,
+        "y": 0,
+        "role": "room",
+        "seen": true
+       },
+       {
+        "index": 2,
+        "x": 2,
+        "y": 1,
+        "role": "station",
+        "seen": true
+       },
+       {
+        "index": 3,
+        "x": 2,
+        "y": 2,
+        "role": "room",
+        "seen": true
+       },
+       {
+        "index": 4,
+        "x": 1,
+        "y": 2,
+        "role": "room",
+        "seen": true
+       },
+       {
+        "index": 5,
+        "x": 0,
+        "y": 2,
+        "role": "home",
+        "seen": false
+       }
+      ]
+     }
+    }
    },
    "depends": [
+    "cargo.vase",
     "char.portitor",
+    "item.first_aid",
+    "item.rope_ladder",
+    "item.sandbag",
     "theme.dungeon",
+    "ui.delivery_icons",
     "ui.icons",
     "ui.keycap",
     "ui.menu_icons",
@@ -7056,11 +7364,11 @@
    "kind": "procedural",
    "layer": "ui",
    "current": {
-    "version": 1,
-    "hash": "ea330683e10b2adfdef4f733182869535eea2cb27b750adf982b3410e8de85e5",
-    "status": "approved",
+    "version": 2,
+    "hash": "f05e9a2b368fe45071f5613b2eb08714ef96cfcae3511a5499321884cb72d504",
+    "status": "review",
     "preview": "art/export/preview/ui.screen.dialogue.png",
-    "preview_sha256": "2da5cbf5dd3e6251790133aa70959b5825fdbd34a28b36dc5cd36e727b3322d2"
+    "preview_sha256": "7fabe84bdbdd2887dd79bb246f7b79d602257015ab0a2760ebc7e7bd0e01b6d4"
    },
    "approved": {
     "version": 1,
@@ -7070,7 +7378,7 @@
     "approval": "APR-0005",
     "date": "2026-10-15T10:55:30.036Z"
    },
-   "current_is_approved": true,
+   "current_is_approved": false,
    "renderer": [
     "workbench/js/core/ui.js",
     "workbench/js/core/scene.js",
@@ -7081,7 +7389,12 @@
     "content/i18n/en.json",
     "workbench/js/core/env.js",
     "workbench/js/core/dialogue.js",
-    "workbench/js/core/font-small.js"
+    "workbench/js/core/font-small.js",
+    "workbench/js/core/ui-kit.js",
+    "workbench/js/core/ui-style.js",
+    "workbench/js/core/font-ui.js",
+    "content/i18n-ui/zh-Hans.json",
+    "content/i18n-ui/en.json"
    ],
    "params": {
     "screen": "dialogue"
@@ -7089,10 +7402,13 @@
    "depends": [
     "char.miner",
     "char.portitor",
+    "item.sandbag",
     "theme.dungeon",
     "ui.bubble",
     "ui.bubble_tail",
+    "ui.class_icon",
     "ui.emote",
+    "ui.goal_lamp",
     "ui.icons",
     "ui.keycap",
     "ui.menu_icons",
@@ -7106,11 +7422,11 @@
    "kind": "procedural",
    "layer": "ui",
    "current": {
-    "version": 4,
-    "hash": "89aa4fe24b01333d1c56f8e7144b9db5c38ef0777cc35a615c4e41b064b470d9",
-    "status": "approved",
+    "version": 5,
+    "hash": "3704ee50ef7f890fd0589b54719af9c33d18507c6d0ba9f29590c64ce7f38d2c",
+    "status": "review",
     "preview": "art/export/preview/ui.screen.hint.png",
-    "preview_sha256": "1025ad73199499b956d99392f4f95366707134fb78172b3caee881b7ede5dec3"
+    "preview_sha256": "b04ee687ee4d93119ab6d7d83b7cf532e33fb21bfefab3b58fdae99480f898c8"
    },
    "approved": {
     "version": 4,
@@ -7120,7 +7436,7 @@
     "approval": "APR-0005",
     "date": "2026-10-15T10:55:30.036Z"
    },
-   "current_is_approved": true,
+   "current_is_approved": false,
    "renderer": [
     "workbench/js/core/ui.js",
     "workbench/js/core/scene.js",
@@ -7131,16 +7447,25 @@
     "content/i18n/en.json",
     "workbench/js/core/env.js",
     "workbench/js/core/dialogue.js",
-    "workbench/js/core/font-small.js"
+    "workbench/js/core/font-small.js",
+    "workbench/js/core/ui-kit.js",
+    "workbench/js/core/ui-style.js",
+    "workbench/js/core/font-ui.js",
+    "content/i18n-ui/zh-Hans.json",
+    "content/i18n-ui/en.json"
    ],
    "params": {
-    "screen": "hint"
+    "screen": "hint",
+    "level": 3
    },
    "depends": [
     "char.portitor",
+    "item.sandbag",
     "theme.dungeon",
     "ui.bubble",
     "ui.bubble_tail",
+    "ui.class_icon",
+    "ui.goal_lamp",
     "ui.icons",
     "ui.keycap",
     "ui.menu_icons",
@@ -7154,11 +7479,11 @@
    "kind": "procedural",
    "layer": "ui",
    "current": {
-    "version": 4,
-    "hash": "3ce7d34a0b822daa3fb5d01c243a606e06de7c4ae367565e2c06dec2c5ca4b24",
-    "status": "approved",
+    "version": 5,
+    "hash": "4affa813901206fe5845bdb809fa0f1ee81bbc4234d13d12618191959eec393a",
+    "status": "review",
     "preview": "art/export/preview/ui.screen.levels.png",
-    "preview_sha256": "a68b73f6186398c469cf18415a71b2b50ac10d14edc9c4c05be2e03982528d63"
+    "preview_sha256": "1c5b2c995e60acc3025cabb500c8641806cd114b04639caa82b0ba4f38a4a5f8"
    },
    "approved": {
     "version": 4,
@@ -7168,7 +7493,7 @@
     "approval": "APR-0005",
     "date": "2026-10-15T10:55:30.036Z"
    },
-   "current_is_approved": true,
+   "current_is_approved": false,
    "renderer": [
     "workbench/js/core/ui.js",
     "workbench/js/core/scene.js",
@@ -7177,7 +7502,12 @@
     "workbench/js/core/i18n.js",
     "content/i18n/zh-Hans.json",
     "content/i18n/en.json",
-    "workbench/js/core/env.js"
+    "workbench/js/core/env.js",
+    "workbench/js/core/ui-kit.js",
+    "workbench/js/core/ui-style.js",
+    "workbench/js/core/font-ui.js",
+    "content/i18n-ui/zh-Hans.json",
+    "content/i18n-ui/en.json"
    ],
    "params": {
     "screen": "levels",
@@ -7213,14 +7543,16 @@
       "id": "M07",
       "state": "open"
      }
-    ]
+    ],
+    "focus": 4
    },
    "depends": [
     "theme.dungeon",
     "ui.icons",
     "ui.keycap",
     "ui.menu_icons",
-    "ui.panel"
+    "ui.panel",
+    "ui.theme_emblem"
    ]
   },
   {
@@ -7230,11 +7562,11 @@
    "kind": "procedural",
    "layer": "ui",
    "current": {
-    "version": 4,
-    "hash": "e2ec45838d3dcccf1f97feee4dcfc767b831ab3945d6ac07366db546cec5282e",
-    "status": "approved",
+    "version": 5,
+    "hash": "d26fbdaec9c31d7b585cba36ba266d536351205d8512ebfdd6a35b06b3addbc7",
+    "status": "review",
     "preview": "art/export/preview/ui.screen.lobby.png",
-    "preview_sha256": "a4648cd5bc92eee42fc7cae190d4e5794d007dcd223b2187f54a7a7f9fe1e084"
+    "preview_sha256": "4d76a4de23e2118590b5a3ef942d37eec214f11290988261f92504b0a9d11633"
    },
    "approved": {
     "version": 4,
@@ -7244,7 +7576,7 @@
     "approval": "APR-0005",
     "date": "2026-10-15T10:55:30.036Z"
    },
-   "current_is_approved": true,
+   "current_is_approved": false,
    "renderer": [
     "workbench/js/core/ui.js",
     "workbench/js/core/scene.js",
@@ -7253,7 +7585,13 @@
     "workbench/js/core/i18n.js",
     "content/i18n/zh-Hans.json",
     "content/i18n/en.json",
-    "workbench/js/core/env.js"
+    "workbench/js/core/env.js",
+    "workbench/js/core/ui-kit.js",
+    "workbench/js/core/ui-style.js",
+    "workbench/js/core/font-ui.js",
+    "content/i18n-ui/zh-Hans.json",
+    "content/i18n-ui/en.json",
+    "workbench/js/core/ui-skins.js"
    ],
    "params": {
     "screen": "lobby",
@@ -7276,7 +7614,8 @@
       "key": "menu.quit",
       "icon": "quit"
      }
-    ]
+    ],
+    "coins": 1280
    },
    "depends": [
     "char.portitor",
@@ -7286,7 +7625,8 @@
     "ui.icons",
     "ui.keycap",
     "ui.menu_icons",
-    "ui.panel"
+    "ui.panel",
+    "ui.theme_emblem"
    ]
   },
   {
@@ -7296,11 +7636,11 @@
    "kind": "procedural",
    "layer": "ui",
    "current": {
-    "version": 4,
-    "hash": "8423060d12710e97b5e078ff4fd400b2a2b747c12af96e7ae95c1cf480e47ad3",
-    "status": "approved",
+    "version": 5,
+    "hash": "5f6d6a3caa551f3a0faeaef77c71ef22624a5c5827a625667666227c3f212b33",
+    "status": "review",
     "preview": "art/export/preview/ui.screen.pause.png",
-    "preview_sha256": "32fcbca857c11ffeeaaea1a248b3ae7d48b55019fd86114a8f3af41e760a12cf"
+    "preview_sha256": "d9af7bc09049017173d9a84f21f013b93d2a54a1a6a7ae4a4f4d5d67512b922e"
    },
    "approved": {
     "version": 4,
@@ -7310,7 +7650,7 @@
     "approval": "APR-0005",
     "date": "2026-10-15T10:55:30.036Z"
    },
-   "current_is_approved": true,
+   "current_is_approved": false,
    "renderer": [
     "workbench/js/core/ui.js",
     "workbench/js/core/scene.js",
@@ -7319,7 +7659,12 @@
     "workbench/js/core/i18n.js",
     "content/i18n/zh-Hans.json",
     "content/i18n/en.json",
-    "workbench/js/core/env.js"
+    "workbench/js/core/env.js",
+    "workbench/js/core/ui-kit.js",
+    "workbench/js/core/ui-style.js",
+    "workbench/js/core/font-ui.js",
+    "content/i18n-ui/zh-Hans.json",
+    "content/i18n-ui/en.json"
    ],
    "params": {
     "screen": "pause",
@@ -7335,7 +7680,10 @@
    },
    "depends": [
     "char.portitor",
+    "item.sandbag",
     "theme.dungeon",
+    "ui.class_icon",
+    "ui.goal_lamp",
     "ui.icons",
     "ui.keycap",
     "ui.menu_icons",
@@ -7349,11 +7697,11 @@
    "kind": "procedural",
    "layer": "ui",
    "current": {
-    "version": 1,
-    "hash": "138cda5479dee0fd74e3ae7909f908ad3cacb0c2852f2592418e12d337190146",
-    "status": "approved",
+    "version": 2,
+    "hash": "4e9f8918cc8c80a4c6b1a056b9d1b2378cca5bbe2eba74b3173cb00403d6ae8a",
+    "status": "review",
     "preview": "art/export/preview/ui.screen.reels.png",
-    "preview_sha256": "00804379afa9a8688b32f3af8913239d00ce5f8e2bf5a88ac057feec67648418"
+    "preview_sha256": "6e282bb84e8821e153b79e678ece5549cf87428a88ab9b438264cf931a1a79e7"
    },
    "approved": {
     "version": 1,
@@ -7363,7 +7711,7 @@
     "approval": "APR-0006",
     "date": "2026-10-16T03:45:02.583Z"
    },
-   "current_is_approved": true,
+   "current_is_approved": false,
    "renderer": [
     "workbench/js/core/ui-delivery.js",
     "workbench/js/core/ui.js",
@@ -7376,7 +7724,12 @@
     "workbench/js/core/i18n.js",
     "workbench/js/core/font-delivery.js",
     "content/i18n-delivery/zh-Hans.json",
-    "content/i18n-delivery/en.json"
+    "content/i18n-delivery/en.json",
+    "workbench/js/core/ui-kit.js",
+    "workbench/js/core/ui-style.js",
+    "workbench/js/core/font-ui.js",
+    "content/i18n-ui/zh-Hans.json",
+    "content/i18n-ui/en.json"
    ],
    "params": {
     "screen": "reels",
@@ -7401,17 +7754,17 @@
     "cat": "idle"
    },
    "depends": [
-    "theme.dungeon",
-    "ui.panel",
-    "ui.keycap",
-    "char.lucky_cat",
-    "cargo.letter",
-    "cargo.vase",
-    "cargo.ice_cream",
+    "avatar.goblin_smith",
     "avatar.old_miner",
     "avatar.zombie",
-    "avatar.goblin_smith",
-    "ui.delivery_icons"
+    "cargo.ice_cream",
+    "cargo.letter",
+    "cargo.vase",
+    "char.lucky_cat",
+    "theme.dungeon",
+    "ui.delivery_icons",
+    "ui.keycap",
+    "ui.panel"
    ]
   },
   {
@@ -7421,11 +7774,11 @@
    "kind": "procedural",
    "layer": "ui",
    "current": {
-    "version": 4,
-    "hash": "e14dc3f027abd88493efd7491799dce58263e3bb9fcf26911dedf8f08c1e59f5",
-    "status": "approved",
+    "version": 5,
+    "hash": "e85147b2439950cac3a0b99fa298ab7572faa8eead65174cf0ba8fe45c8bc760",
+    "status": "review",
     "preview": "art/export/preview/ui.screen.rulecard.png",
-    "preview_sha256": "4ca35c9e81bca9825738f2eb591c159202eb156841a5cfea7b1573a249436be3"
+    "preview_sha256": "8a7c4fb05277396122e09a4511c82667840bbe314ec8ec147b4497d87e47683b"
    },
    "approved": {
     "version": 4,
@@ -7435,7 +7788,7 @@
     "approval": "APR-0005",
     "date": "2026-10-15T10:55:30.036Z"
    },
-   "current_is_approved": true,
+   "current_is_approved": false,
    "renderer": [
     "workbench/js/core/ui.js",
     "workbench/js/core/scene.js",
@@ -7444,14 +7797,22 @@
     "workbench/js/core/i18n.js",
     "content/i18n/zh-Hans.json",
     "content/i18n/en.json",
-    "workbench/js/core/env.js"
+    "workbench/js/core/env.js",
+    "workbench/js/core/ui-kit.js",
+    "workbench/js/core/ui-style.js",
+    "workbench/js/core/font-ui.js",
+    "content/i18n-ui/zh-Hans.json",
+    "content/i18n-ui/en.json"
    ],
    "params": {
     "screen": "rulecard"
    },
    "depends": [
     "char.portitor",
+    "item.sandbag",
     "theme.dungeon",
+    "ui.class_icon",
+    "ui.goal_lamp",
     "ui.icons",
     "ui.keycap",
     "ui.menu_icons",
@@ -7465,11 +7826,11 @@
    "kind": "procedural",
    "layer": "ui",
    "current": {
-    "version": 4,
-    "hash": "4c6df2e53a82b5b26efcfea702f0332847c7cb07b829d2352b04c3e21fa3df1a",
-    "status": "approved",
+    "version": 5,
+    "hash": "632383cf270671f15ef30e4969628acce9b984f7887868b58f7b05e2d6e1cfb2",
+    "status": "review",
     "preview": "art/export/preview/ui.screen.settings.png",
-    "preview_sha256": "a6dd69fa825db739e3b58a41a56d296a4f5eed531b400f0b6dfecc308c688f29"
+    "preview_sha256": "da3519e19ad9e2820f180dc7cb02e66f1b0e98e5ee7bfcf4755f7c7f37864f50"
    },
    "approved": {
     "version": 4,
@@ -7479,7 +7840,7 @@
     "approval": "APR-0005",
     "date": "2026-10-15T10:55:30.036Z"
    },
-   "current_is_approved": true,
+   "current_is_approved": false,
    "renderer": [
     "workbench/js/core/ui.js",
     "workbench/js/core/scene.js",
@@ -7488,7 +7849,13 @@
     "workbench/js/core/i18n.js",
     "content/i18n/zh-Hans.json",
     "content/i18n/en.json",
-    "workbench/js/core/env.js"
+    "workbench/js/core/env.js",
+    "workbench/js/core/ui-kit.js",
+    "workbench/js/core/ui-style.js",
+    "workbench/js/core/font-ui.js",
+    "content/i18n-ui/zh-Hans.json",
+    "content/i18n-ui/en.json",
+    "workbench/js/core/ui-skins.js"
    ],
    "params": {
     "screen": "settings",
@@ -7533,10 +7900,17 @@
       "type": "value",
       "valueKey": "settings.run"
      }
-    ]
+    ],
+    "focus": 1
    },
    "depends": [
+    "char.portitor",
+    "mech.exit_flag",
+    "obj.crate_wood",
+    "theme.cave",
     "theme.dungeon",
+    "theme.ruins",
+    "theme.sky",
     "ui.icons",
     "ui.keycap",
     "ui.menu_icons",
@@ -7550,11 +7924,11 @@
    "kind": "procedural",
    "layer": "ui",
    "current": {
-    "version": 1,
-    "hash": "5e949d677dd27100d1860b728932206d1e9053f2ff1e8b5d28f71ca5b44ed929",
-    "status": "approved",
+    "version": 2,
+    "hash": "198a6c09f26fccf18b5438ab08f364ec8caea76b6e71f43b82262259d740cef8",
+    "status": "review",
     "preview": "art/export/preview/ui.screen.settlement.png",
-    "preview_sha256": "b114d60aff616f4aba48462e19d97e6808bdfe9364e59e69ad53e78f9c58a9c3"
+    "preview_sha256": "b48fc1998afa708f8c5d1b1531d5cfce3d3144476b8bc46349034bf1d78290f1"
    },
    "approved": {
     "version": 1,
@@ -7564,7 +7938,7 @@
     "approval": "APR-0006",
     "date": "2026-10-16T03:45:02.583Z"
    },
-   "current_is_approved": true,
+   "current_is_approved": false,
    "renderer": [
     "workbench/js/core/ui-delivery.js",
     "workbench/js/core/ui.js",
@@ -7577,7 +7951,12 @@
     "workbench/js/core/i18n.js",
     "workbench/js/core/font-delivery.js",
     "content/i18n-delivery/zh-Hans.json",
-    "content/i18n-delivery/en.json"
+    "content/i18n-delivery/en.json",
+    "workbench/js/core/ui-kit.js",
+    "workbench/js/core/ui-style.js",
+    "workbench/js/core/font-ui.js",
+    "content/i18n-ui/zh-Hans.json",
+    "content/i18n-ui/en.json"
    ],
    "params": {
     "screen": "settlement",
@@ -7597,14 +7976,56 @@
     "tip": 61,
     "picked": 25,
     "total": 86,
-    "rating": "A"
+    "rating": "A",
+    "room": {
+     "map": [
+      "####################",
+      "####............####",
+      "##................##",
+      "#...H..............#",
+      "#...H##########....#",
+      "#...H..............#",
+      "....H...............",
+      "..P.H..#.....#......",
+      "####################",
+      "####################"
+     ],
+     "entities": [
+      {
+       "sprite": "monster.rat_swarm",
+       "anim": "walk",
+       "x": 12,
+       "y": 3,
+       "flip": true
+      },
+      {
+       "sprite": "item.coin",
+       "anim": "spin",
+       "x": 7,
+       "y": 3
+      },
+      {
+       "sprite": "item.coin",
+       "anim": "spin",
+       "x": 10,
+       "y": 3
+      },
+      {
+       "sprite": "item.coin",
+       "anim": "spin",
+       "x": 16,
+       "y": 7
+      }
+     ],
+     "facing": "right"
+    }
    },
    "depends": [
-    "theme.dungeon",
-    "ui.panel",
     "avatar.old_miner",
     "item.coin",
-    "ui.delivery_icons"
+    "theme.dungeon",
+    "ui.delivery_icons",
+    "ui.panel"
    ]
   },
   {
@@ -7614,11 +8035,11 @@
    "kind": "procedural",
    "layer": "ui",
    "current": {
-    "version": 1,
-    "hash": "e46ea2a5a1354fc34a6227afad82fc4785c81de39900d891fb46fca7106cfee5",
-    "status": "approved",
+    "version": 2,
+    "hash": "384c4e69dda55c998906adf11dcbd7b1429908262a554ace36e79fc4a57231a8",
+    "status": "review",
     "preview": "art/export/preview/ui.screen.settlement_fail.png",
-    "preview_sha256": "eeb785399ebcef22a61140ed10e60772b7a9b70e30b9920617a8f63a9078084d"
+    "preview_sha256": "8212f04d5520a0cda13a830a8799076e3e0d282a853981a94bad96c2065d3bf3"
    },
    "approved": {
     "version": 1,
@@ -7628,7 +8049,7 @@
     "approval": "APR-0006",
     "date": "2026-10-16T03:45:02.583Z"
    },
-   "current_is_approved": true,
+   "current_is_approved": false,
    "renderer": [
     "workbench/js/core/ui-delivery.js",
     "workbench/js/core/ui.js",
@@ -7641,7 +8062,12 @@
     "workbench/js/core/i18n.js",
     "workbench/js/core/font-delivery.js",
     "content/i18n-delivery/zh-Hans.json",
-    "content/i18n-delivery/en.json"
+    "content/i18n-delivery/en.json",
+    "workbench/js/core/ui-kit.js",
+    "workbench/js/core/ui-style.js",
+    "workbench/js/core/font-ui.js",
+    "content/i18n-ui/zh-Hans.json",
+    "content/i18n-ui/en.json"
    ],
    "params": {
     "screen": "settlement_fail",
@@ -7653,13 +8079,56 @@
     "cargo": "vase",
     "reason": "hearts",
     "picked": 30,
-    "kept": 15
+    "kept": 15,
+    "room": {
+     "map": [
+      "####################",
+      "####............####",
+      "##................##",
+      "#...H..............#",
+      "#...H##########....#",
+      "#...H..............#",
+      "....H...............",
+      "..P.H..#.....#......",
+      "####################",
+      "####################"
+     ],
+     "entities": [
+      {
+       "sprite": "monster.rat_swarm",
+       "anim": "walk",
+       "x": 12,
+       "y": 3,
+       "flip": true
+      },
+      {
+       "sprite": "item.coin",
+       "anim": "spin",
+       "x": 7,
+       "y": 3
+      },
+      {
+       "sprite": "item.coin",
+       "anim": "spin",
+       "x": 10,
+       "y": 3
+      },
+      {
+       "sprite": "item.coin",
+       "anim": "spin",
+       "x": 16,
+       "y": 7
+      }
+     ],
+     "facing": "right"
+    }
    },
    "depends": [
-    "theme.dungeon",
-    "ui.panel",
     "avatar.zombie",
-    "cargo.vase"
+    "cargo.vase",
+    "theme.dungeon",
+    "ui.delivery_icons",
+    "ui.panel"
    ]
   },
   {
@@ -7669,11 +8138,11 @@
    "kind": "procedural",
    "layer": "ui",
    "current": {
-    "version": 1,
-    "hash": "267d16250937ed3619c685b049c770d516487ec82e69364d75c7a3a4bf98c85a",
-    "status": "approved",
+    "version": 2,
+    "hash": "56cb41aba4ff725b2caa5aae42ef7f9212c48e469946439873f1cd0c93639b4b",
+    "status": "review",
     "preview": "art/export/preview/ui.screen.shop.png",
-    "preview_sha256": "3a877284256a00ba2293e19af9ed628d069cb4151cd61d99041450da9618de7b"
+    "preview_sha256": "fe75475bcae4e6a5e01656d8f5a35a399b577631482798b5dcc49ccee44e9fab"
    },
    "approved": {
     "version": 1,
@@ -7683,7 +8152,7 @@
     "approval": "APR-0006",
     "date": "2026-10-16T03:45:02.583Z"
    },
-   "current_is_approved": true,
+   "current_is_approved": false,
    "renderer": [
     "workbench/js/core/ui-delivery.js",
     "workbench/js/core/ui.js",
@@ -7700,7 +8169,12 @@
     "workbench/js/core/dialogue.js",
     "workbench/js/core/font-small.js",
     "content/i18n/zh-Hans.json",
-    "content/i18n/en.json"
+    "content/i18n/en.json",
+    "workbench/js/core/ui-kit.js",
+    "workbench/js/core/ui-style.js",
+    "workbench/js/core/font-ui.js",
+    "content/i18n-ui/zh-Hans.json",
+    "content/i18n-ui/en.json"
    ],
    "params": {
     "screen": "shop",
@@ -7731,20 +8205,62 @@
      "first_aid"
     ],
     "slots": 3,
-    "sand": 2
+    "sand": 2,
+    "room": {
+     "map": [
+      "####################",
+      "####............####",
+      "##................##",
+      "#...H..............#",
+      "#...H##########....#",
+      "#...H..............#",
+      "....H...............",
+      "..P.H..#.....#......",
+      "####################",
+      "####################"
+     ],
+     "entities": [
+      {
+       "sprite": "monster.rat_swarm",
+       "anim": "walk",
+       "x": 12,
+       "y": 3,
+       "flip": true
+      },
+      {
+       "sprite": "item.coin",
+       "anim": "spin",
+       "x": 7,
+       "y": 3
+      },
+      {
+       "sprite": "item.coin",
+       "anim": "spin",
+       "x": 10,
+       "y": 3
+      },
+      {
+       "sprite": "item.coin",
+       "anim": "spin",
+       "x": 16,
+       "y": 7
+      }
+     ],
+     "facing": "right"
+    }
    },
    "depends": [
-    "theme.dungeon",
-    "ui.panel",
-    "ui.keycap",
-    "ui.bubble",
-    "ui.bubble_tail",
     "char.turtle_keeper",
     "item.coin",
-    "item.sandbag",
     "item.first_aid",
     "item.rope_ladder",
-    "ui.delivery_icons"
+    "item.sandbag",
+    "theme.dungeon",
+    "ui.bubble",
+    "ui.bubble_tail",
+    "ui.delivery_icons",
+    "ui.keycap",
+    "ui.panel"
    ]
   },
   {
@@ -7890,188 +8406,7 @@
    "ninepatch": null
   }
  ],
- "text_issues": [
-  {
-   "screen": "ui.screen.dialogue",
-   "locale": "qps",
-   "kind": "clip",
-   "key": "dlg.sample.npc"
-  },
-  {
-   "screen": "ui.screen.hint",
-   "locale": "qps",
-   "kind": "ellipsis",
-   "key": "hint.rewind"
-  },
-  {
-   "screen": "ui.screen.levels",
-   "locale": "qps",
-   "kind": "ellipsis",
-   "key": "levels.title"
-  },
-  {
-   "screen": "ui.screen.levels",
-   "locale": "qps",
-   "kind": "ellipsis",
-   "key": "level.M02.title"
-  },
-  {
-   "screen": "ui.screen.levels",
-   "locale": "qps",
-   "kind": "ellipsis",
-   "key": "level.M04.title"
-  },
-  {
-   "screen": "ui.screen.levels",
-   "locale": "qps",
-   "kind": "ellipsis",
-   "key": "level.M05.title"
-  },
-  {
-   "screen": "ui.screen.levels",
-   "locale": "qps",
-   "kind": "clip",
-   "key": "level.M05.discovery"
-  },
-  {
-   "screen": "ui.screen.levels",
-   "locale": "qps",
-   "kind": "dropped",
-   "key": "keybar"
-  },
-  {
-   "screen": "ui.screen.lobby",
-   "locale": "qps",
-   "kind": "ellipsis",
-   "key": "lobby.current"
-  },
-  {
-   "screen": "ui.screen.reels",
-   "locale": "qps",
-   "kind": "ellipsis",
-   "key": "dlv.reels.title"
-  },
-  {
-   "screen": "ui.screen.reels",
-   "locale": "qps",
-   "kind": "ellipsis",
-   "key": "dlv.reels.rule.0"
-  },
-  {
-   "screen": "ui.screen.reels",
-   "locale": "qps",
-   "kind": "dropped",
-   "key": "keybar"
-  },
-  {
-   "screen": "ui.screen.rulecard",
-   "locale": "qps",
-   "kind": "clip",
-   "key": "rule.earth.text"
-  },
-  {
-   "screen": "ui.screen.settlement_fail",
-   "locale": "qps",
-   "kind": "clip",
-   "key": "dlv.fail.reason"
-  },
-  {
-   "screen": "ui.screen.settlement_fail",
-   "locale": "qps",
-   "kind": "clip",
-   "key": "dlv.fail.keep"
-  },
-  {
-   "screen": "ui.screen.settlement_fail",
-   "locale": "qps",
-   "kind": "ellipsis",
-   "key": "dlv.done.again"
-  },
-  {
-   "screen": "ui.screen.settlement_fail",
-   "locale": "qps",
-   "kind": "ellipsis",
-   "key": "dlv.done.hub"
-  },
-  {
-   "screen": "ui.screen.settlement",
-   "locale": "qps",
-   "kind": "ellipsis",
-   "key": "recipient.old_miner.name"
-  },
-  {
-   "screen": "ui.screen.settlement",
-   "locale": "qps",
-   "kind": "ellipsis",
-   "key": "dlv.done.integrity"
-  },
-  {
-   "screen": "ui.screen.settlement",
-   "locale": "qps",
-   "kind": "ellipsis",
-   "key": "dlv.done.time_value"
-  },
-  {
-   "screen": "ui.screen.settlement",
-   "locale": "qps",
-   "kind": "ellipsis",
-   "key": "dlv.done.like"
-  },
-  {
-   "screen": "ui.screen.settlement",
-   "locale": "qps",
-   "kind": "ellipsis",
-   "key": "dlv.done.picked"
-  },
-  {
-   "screen": "ui.screen.settlement",
-   "locale": "qps",
-   "kind": "ellipsis",
-   "key": "dlv.done.again"
-  },
-  {
-   "screen": "ui.screen.settlement",
-   "locale": "qps",
-   "kind": "ellipsis",
-   "key": "dlv.done.hub"
-  },
-  {
-   "screen": "ui.screen.shop",
-   "locale": "qps",
-   "kind": "clip",
-   "key": "dlv.shop.greet"
-  },
-  {
-   "screen": "ui.screen.shop",
-   "locale": "qps",
-   "kind": "ellipsis",
-   "key": "dlv.shop.title"
-  },
-  {
-   "screen": "ui.screen.shop",
-   "locale": "qps",
-   "kind": "ellipsis",
-   "key": "item.sandbag.name"
-  },
-  {
-   "screen": "ui.screen.shop",
-   "locale": "qps",
-   "kind": "ellipsis",
-   "key": "item.first_aid.name"
-  },
-  {
-   "screen": "ui.screen.shop",
-   "locale": "qps",
-   "kind": "ellipsis",
-   "key": "item.rope_ladder.name"
-  },
-  {
-   "screen": "ui.screen.shop",
-   "locale": "qps",
-   "kind": "dropped",
-   "key": "keybar"
-  }
- ],
+ "text_issues": [],
  "references": [
   {
    "name": "showcase.dungeon",
@@ -8105,7 +8440,7 @@
   {
    "name": "lobby.dungeon",
    "file": "art/export/reference/lobby.dungeon.png",
-   "sha256": "a4648cd5bc92eee42fc7cae190d4e5794d007dcd223b2187f54a7a7f9fe1e084",
+   "sha256": "4d76a4de23e2118590b5a3ef942d37eec214f11290988261f92504b0a9d11633",
    "uses": [
     "ui.screen.lobby",
     "theme.dungeon",
@@ -8129,8 +8464,10 @@
     "item.sandbag",
     "item.bomb"
    ],
-   "all_approved": true,
-   "unapproved": []
+   "all_approved": false,
+   "unapproved": [
+    "ui.screen.lobby"
+   ]
   },
   {
    "name": "showcase.ruins",
@@ -8163,7 +8500,7 @@
   {
    "name": "lobby.ruins",
    "file": "art/export/reference/lobby.ruins.png",
-   "sha256": "edd26f4ec8a0d265b39460f5011f056453d09138d9299ee7e9988fc655e3c706",
+   "sha256": "20eb821fc5a5200713a08e1e6b229577404e658523803c14c6137d08245dce05",
    "uses": [
     "ui.screen.lobby",
     "theme.ruins",
@@ -8186,8 +8523,10 @@
     "item.sandbag",
     "item.bomb"
    ],
-   "all_approved": true,
-   "unapproved": []
+   "all_approved": false,
+   "unapproved": [
+    "ui.screen.lobby"
+   ]
   },
   {
    "name": "showcase.cave",
@@ -8220,7 +8559,7 @@
   {
    "name": "lobby.cave",
    "file": "art/export/reference/lobby.cave.png",
-   "sha256": "491360dfc6673ee7fda2c5c9ed720c9ee2ebbda497522ff4a684e598f69467b6",
+   "sha256": "62e20b9f61252b87c59d4bf1ea57a042a31ef7e715ed3f31bbe62c3b3f7dfd65",
    "uses": [
     "ui.screen.lobby",
     "theme.cave",
@@ -8243,8 +8582,10 @@
     "item.sandbag",
     "item.bomb"
    ],
-   "all_approved": true,
-   "unapproved": []
+   "all_approved": false,
+   "unapproved": [
+    "ui.screen.lobby"
+   ]
   },
   {
    "name": "showcase.forest",
@@ -8278,7 +8619,7 @@
   {
    "name": "lobby.forest",
    "file": "art/export/reference/lobby.forest.png",
-   "sha256": "146564fa93c3a9c16668801b0a98ffb24eb9ad0cb4edef28a82209bde93e74e0",
+   "sha256": "2a4449c8b090b9a5b6795ca714e6f233364e786b8dcbbacb78b8c3211ee3687c",
    "uses": [
     "ui.screen.lobby",
     "theme.forest",
@@ -8302,8 +8643,10 @@
     "item.sandbag",
     "item.bomb"
    ],
-   "all_approved": true,
-   "unapproved": []
+   "all_approved": false,
+   "unapproved": [
+    "ui.screen.lobby"
+   ]
   },
   {
    "name": "showcase.sky",
@@ -8336,7 +8679,7 @@
   {
    "name": "lobby.sky",
    "file": "art/export/reference/lobby.sky.png",
-   "sha256": "85b79090381ad3364bfef950953fb771259c8c32fdb1667433c15935c1680568",
+   "sha256": "1bb6156ffbe8fe4e9f52d8f73b3e99568fd2fbfe3b9f87be9747137c475ddda6",
    "uses": [
     "ui.screen.lobby",
     "theme.sky",
@@ -8359,8 +8702,10 @@
     "item.sandbag",
     "item.bomb"
    ],
-   "all_approved": true,
-   "unapproved": []
+   "all_approved": false,
+   "unapproved": [
+    "ui.screen.lobby"
+   ]
   },
   {
    "name": "showcase.cosmos",
@@ -8392,7 +8737,7 @@
   {
    "name": "lobby.cosmos",
    "file": "art/export/reference/lobby.cosmos.png",
-   "sha256": "4c26887e3fe3ed36927461d88424fb0f6b995dbf7d90cdcb8c5bb846bf1d2908",
+   "sha256": "e4f25814d44fba804b66ba0daec9bd0fd563139936deb9c0ee5631ef809a62db",
    "uses": [
     "ui.screen.lobby",
     "theme.cosmos",
@@ -8414,8 +8759,10 @@
     "item.sandbag",
     "item.bomb"
    ],
-   "all_approved": true,
-   "unapproved": []
+   "all_approved": false,
+   "unapproved": [
+    "ui.screen.lobby"
+   ]
   },
   {
    "name": "chapter.ruins",
@@ -9856,10 +10203,12 @@
   {
    "name": "chapters.zh-Hans",
    "file": "art/export/reference/chapters.zh-Hans.png",
-   "sha256": "fc3569ec75857ca8d8851f4680b17eb500bd5cc7e3a03a7af693cc90a1d4a3f6",
+   "sha256": "3312c4cc691c0b093ad587c2aa415b2e9253d0983e1fbbcb9f37394c26e4147c",
    "uses": [
     "ui.screen.chapters",
     "char.portitor",
+    "mech.exit_flag",
+    "obj.crate_wood",
     "theme.cave",
     "theme.cosmos",
     "theme.dungeon",
@@ -9872,16 +10221,20 @@
     "ui.panel",
     "ui.theme_emblem"
    ],
-   "all_approved": true,
-   "unapproved": []
+   "all_approved": false,
+   "unapproved": [
+    "ui.screen.chapters"
+   ]
   },
   {
    "name": "chapters.en",
    "file": "art/export/reference/chapters.en.png",
-   "sha256": "e923251f4aff3d83218831f6426fa95bdc7fd65855bb84b3493c87438bf6c112",
+   "sha256": "a17cd7d3ac321c8af61312ef97627d84c77bc7d831adccd6e2a739df3d1ffc69",
    "uses": [
     "ui.screen.chapters",
     "char.portitor",
+    "mech.exit_flag",
+    "obj.crate_wood",
     "theme.cave",
     "theme.cosmos",
     "theme.dungeon",
@@ -9894,225 +10247,327 @@
     "ui.panel",
     "ui.theme_emblem"
    ],
-   "all_approved": true,
-   "unapproved": []
+   "all_approved": false,
+   "unapproved": [
+    "ui.screen.chapters"
+   ]
   },
   {
    "name": "complete.zh-Hans",
    "file": "art/export/reference/complete.zh-Hans.png",
-   "sha256": "f36e91ecb4b76df9e973798a2fdd3aa9d355d1b8466a6bba4f226f4c1e6e6e31",
+   "sha256": "406e0da2e582399e4661ae9b05e1d059f5cf69cd03229dec5e87852c511cc064",
    "uses": [
     "ui.screen.complete",
     "char.portitor",
+    "item.sandbag",
     "mech.socket_lit",
     "theme.dungeon",
+    "ui.class_icon",
+    "ui.goal_lamp",
     "ui.icons",
     "ui.keycap",
     "ui.menu_icons",
     "ui.panel"
    ],
-   "all_approved": true,
-   "unapproved": []
+   "all_approved": false,
+   "unapproved": [
+    "ui.screen.complete"
+   ]
   },
   {
    "name": "complete.en",
    "file": "art/export/reference/complete.en.png",
-   "sha256": "e12d1da4ab37a69de1ae9afed23570a451a1f113d6afe479cf908d2b3a2f9a96",
+   "sha256": "e16eed87754f6f27f9c4ad32a9bd9ac26cc8c503580bd833193972c549d6ccba",
    "uses": [
     "ui.screen.complete",
     "char.portitor",
+    "item.sandbag",
     "mech.socket_lit",
     "theme.dungeon",
+    "ui.class_icon",
+    "ui.goal_lamp",
     "ui.icons",
     "ui.keycap",
     "ui.menu_icons",
     "ui.panel"
    ],
-   "all_approved": true,
-   "unapproved": []
+   "all_approved": false,
+   "unapproved": [
+    "ui.screen.complete"
+   ]
+  },
+  {
+   "name": "confirm.zh-Hans",
+   "file": "art/export/reference/confirm.zh-Hans.png",
+   "sha256": "19e42ce7b87d0f88db06124222d7e5ec50f5694748cc3a5abc3b3be03e0b815d",
+   "uses": [
+    "ui.screen.confirm",
+    "cargo.vase",
+    "char.portitor",
+    "item.first_aid",
+    "item.rope_ladder",
+    "item.sandbag",
+    "theme.dungeon",
+    "ui.delivery_icons",
+    "ui.icons",
+    "ui.keycap",
+    "ui.menu_icons",
+    "ui.panel"
+   ],
+   "all_approved": false,
+   "unapproved": [
+    "ui.screen.confirm"
+   ]
+  },
+  {
+   "name": "confirm.en",
+   "file": "art/export/reference/confirm.en.png",
+   "sha256": "03dd181bfc3784c93654cd1305867e7ac2d456b9e79516d2a49f8a60fcdf1b9d",
+   "uses": [
+    "ui.screen.confirm",
+    "cargo.vase",
+    "char.portitor",
+    "item.first_aid",
+    "item.rope_ladder",
+    "item.sandbag",
+    "theme.dungeon",
+    "ui.delivery_icons",
+    "ui.icons",
+    "ui.keycap",
+    "ui.menu_icons",
+    "ui.panel"
+   ],
+   "all_approved": false,
+   "unapproved": [
+    "ui.screen.confirm"
+   ]
   },
   {
    "name": "delivery_hud.zh-Hans",
    "file": "art/export/reference/delivery_hud.zh-Hans.png",
-   "sha256": "2da6481b4516ccea14010f5cea87d5e24c1b2dcc4b277bb3870d17393dafbf2a",
+   "sha256": "357edfd2dc3eef34c65c9ae868574e3c9f20b87d8e06a855e45d4388da3942f6",
    "uses": [
     "ui.screen.delivery_hud",
-    "theme.dungeon",
+    "cargo.vase",
     "char.portitor",
+    "item.coin",
+    "item.first_aid",
+    "item.rope_ladder",
+    "item.sandbag",
     "mech.ladder",
     "monster.rat_swarm",
-    "item.coin",
-    "ui.delivery_icons",
-    "cargo.vase",
-    "item.sandbag",
-    "item.first_aid",
-    "item.rope_ladder"
+    "theme.dungeon",
+    "ui.delivery_icons"
    ],
-   "all_approved": true,
-   "unapproved": []
+   "all_approved": false,
+   "unapproved": [
+    "ui.screen.delivery_hud"
+   ]
   },
   {
    "name": "delivery_hud.en",
    "file": "art/export/reference/delivery_hud.en.png",
-   "sha256": "2da6481b4516ccea14010f5cea87d5e24c1b2dcc4b277bb3870d17393dafbf2a",
+   "sha256": "357edfd2dc3eef34c65c9ae868574e3c9f20b87d8e06a855e45d4388da3942f6",
    "uses": [
     "ui.screen.delivery_hud",
-    "theme.dungeon",
+    "cargo.vase",
     "char.portitor",
+    "item.coin",
+    "item.first_aid",
+    "item.rope_ladder",
+    "item.sandbag",
     "mech.ladder",
     "monster.rat_swarm",
-    "item.coin",
-    "ui.delivery_icons",
-    "cargo.vase",
-    "item.sandbag",
-    "item.first_aid",
-    "item.rope_ladder"
+    "theme.dungeon",
+    "ui.delivery_icons"
    ],
-   "all_approved": true,
-   "unapproved": []
+   "all_approved": false,
+   "unapproved": [
+    "ui.screen.delivery_hud"
+   ]
   },
   {
    "name": "delivery_pause.zh-Hans",
    "file": "art/export/reference/delivery_pause.zh-Hans.png",
-   "sha256": "73e5d4dfa94a5c104b58edfe24319dbbf74cc6ab6f653ea8f91644fa97a16835",
+   "sha256": "5a856e33fefb5e668c79aad10dc232623373a486ef12e9dc51593a902a3ae5e6",
    "uses": [
     "ui.screen.delivery_pause",
+    "cargo.vase",
     "char.portitor",
+    "item.first_aid",
+    "item.rope_ladder",
+    "item.sandbag",
     "theme.dungeon",
+    "ui.delivery_icons",
     "ui.icons",
     "ui.keycap",
     "ui.menu_icons",
     "ui.panel"
    ],
-   "all_approved": true,
-   "unapproved": []
+   "all_approved": false,
+   "unapproved": [
+    "ui.screen.delivery_pause"
+   ]
   },
   {
    "name": "delivery_pause.en",
    "file": "art/export/reference/delivery_pause.en.png",
-   "sha256": "c9442a22be8b151c43ad23eedd329984d6379732329972ce1f5b315813670eb0",
+   "sha256": "03e91e1f1441fc5914309b2ba53a6884c6bd05d56c22243f5328954a190a2a19",
    "uses": [
     "ui.screen.delivery_pause",
+    "cargo.vase",
     "char.portitor",
+    "item.first_aid",
+    "item.rope_ladder",
+    "item.sandbag",
     "theme.dungeon",
+    "ui.delivery_icons",
     "ui.icons",
     "ui.keycap",
     "ui.menu_icons",
     "ui.panel"
    ],
-   "all_approved": true,
-   "unapproved": []
+   "all_approved": false,
+   "unapproved": [
+    "ui.screen.delivery_pause"
+   ]
   },
   {
    "name": "dialogue.zh-Hans",
    "file": "art/export/reference/dialogue.zh-Hans.png",
-   "sha256": "2da5cbf5dd3e6251790133aa70959b5825fdbd34a28b36dc5cd36e727b3322d2",
+   "sha256": "7fabe84bdbdd2887dd79bb246f7b79d602257015ab0a2760ebc7e7bd0e01b6d4",
    "uses": [
     "ui.screen.dialogue",
     "char.miner",
     "char.portitor",
+    "item.sandbag",
     "theme.dungeon",
     "ui.bubble",
     "ui.bubble_tail",
+    "ui.class_icon",
     "ui.emote",
+    "ui.goal_lamp",
     "ui.icons",
     "ui.keycap",
     "ui.menu_icons",
     "ui.panel"
    ],
-   "all_approved": true,
-   "unapproved": []
+   "all_approved": false,
+   "unapproved": [
+    "ui.screen.dialogue"
+   ]
   },
   {
    "name": "dialogue.en",
    "file": "art/export/reference/dialogue.en.png",
-   "sha256": "1858789afb3603dab29a8450025fd77273432ba14c34b2a6d0484cb01afb957c",
+   "sha256": "655b8a0c1d8ce6a9d572f950c1d20316097129a01ea6f4cf987fd290a7c673b1",
    "uses": [
     "ui.screen.dialogue",
     "char.miner",
     "char.portitor",
+    "item.sandbag",
     "theme.dungeon",
     "ui.bubble",
     "ui.bubble_tail",
+    "ui.class_icon",
     "ui.emote",
+    "ui.goal_lamp",
     "ui.icons",
     "ui.keycap",
     "ui.menu_icons",
     "ui.panel"
    ],
-   "all_approved": true,
-   "unapproved": []
+   "all_approved": false,
+   "unapproved": [
+    "ui.screen.dialogue"
+   ]
   },
   {
    "name": "hint.zh-Hans",
    "file": "art/export/reference/hint.zh-Hans.png",
-   "sha256": "1025ad73199499b956d99392f4f95366707134fb78172b3caee881b7ede5dec3",
+   "sha256": "b04ee687ee4d93119ab6d7d83b7cf532e33fb21bfefab3b58fdae99480f898c8",
    "uses": [
     "ui.screen.hint",
     "char.portitor",
+    "item.sandbag",
     "theme.dungeon",
     "ui.bubble",
     "ui.bubble_tail",
+    "ui.class_icon",
+    "ui.goal_lamp",
     "ui.icons",
     "ui.keycap",
     "ui.menu_icons",
     "ui.panel"
    ],
-   "all_approved": true,
-   "unapproved": []
+   "all_approved": false,
+   "unapproved": [
+    "ui.screen.hint"
+   ]
   },
   {
    "name": "hint.en",
    "file": "art/export/reference/hint.en.png",
-   "sha256": "850473e7a02b3e39126b64125daa70956ce84a215961649fe7331a46b57ecb44",
+   "sha256": "1b7151c4f001f0a5c108e9f42309e44c02623b7ecb14b935eb544b57b7d1a290",
    "uses": [
     "ui.screen.hint",
     "char.portitor",
+    "item.sandbag",
     "theme.dungeon",
     "ui.bubble",
     "ui.bubble_tail",
+    "ui.class_icon",
+    "ui.goal_lamp",
     "ui.icons",
     "ui.keycap",
     "ui.menu_icons",
     "ui.panel"
    ],
-   "all_approved": true,
-   "unapproved": []
+   "all_approved": false,
+   "unapproved": [
+    "ui.screen.hint"
+   ]
   },
   {
    "name": "levels.zh-Hans",
    "file": "art/export/reference/levels.zh-Hans.png",
-   "sha256": "a68b73f6186398c469cf18415a71b2b50ac10d14edc9c4c05be2e03982528d63",
+   "sha256": "1c5b2c995e60acc3025cabb500c8641806cd114b04639caa82b0ba4f38a4a5f8",
    "uses": [
     "ui.screen.levels",
     "theme.dungeon",
     "ui.icons",
     "ui.keycap",
     "ui.menu_icons",
-    "ui.panel"
+    "ui.panel",
+    "ui.theme_emblem"
    ],
-   "all_approved": true,
-   "unapproved": []
+   "all_approved": false,
+   "unapproved": [
+    "ui.screen.levels"
+   ]
   },
   {
    "name": "levels.en",
    "file": "art/export/reference/levels.en.png",
-   "sha256": "49e815ef596e3cf7147309c90c8c4fca5387f0e33a2324b92829fc42cf1feeba",
+   "sha256": "64a34e00ddeda8e5e77bc19b3d1177cef2feee1a23a1c714127fc7091ba5f880",
    "uses": [
     "ui.screen.levels",
     "theme.dungeon",
     "ui.icons",
     "ui.keycap",
     "ui.menu_icons",
-    "ui.panel"
+    "ui.panel",
+    "ui.theme_emblem"
    ],
-   "all_approved": true,
-   "unapproved": []
+   "all_approved": false,
+   "unapproved": [
+    "ui.screen.levels"
+   ]
   },
   {
    "name": "lobby.zh-Hans",
    "file": "art/export/reference/lobby.zh-Hans.png",
-   "sha256": "a4648cd5bc92eee42fc7cae190d4e5794d007dcd223b2187f54a7a7f9fe1e084",
+   "sha256": "4d76a4de23e2118590b5a3ef942d37eec214f11290988261f92504b0a9d11633",
    "uses": [
     "ui.screen.lobby",
     "char.portitor",
@@ -10122,15 +10577,18 @@
     "ui.icons",
     "ui.keycap",
     "ui.menu_icons",
-    "ui.panel"
+    "ui.panel",
+    "ui.theme_emblem"
    ],
-   "all_approved": true,
-   "unapproved": []
+   "all_approved": false,
+   "unapproved": [
+    "ui.screen.lobby"
+   ]
   },
   {
    "name": "lobby.en",
    "file": "art/export/reference/lobby.en.png",
-   "sha256": "cba921517d9a72af24c007af832559e927c5034081bd84a94e2350c9d4a8c0bf",
+   "sha256": "eb9851e714eef5a4aa6e55228a77e8a42a40f6527653836256d03f2293434263",
    "uses": [
     "ui.screen.lobby",
     "char.portitor",
@@ -10140,246 +10598,303 @@
     "ui.icons",
     "ui.keycap",
     "ui.menu_icons",
-    "ui.panel"
+    "ui.panel",
+    "ui.theme_emblem"
    ],
-   "all_approved": true,
-   "unapproved": []
+   "all_approved": false,
+   "unapproved": [
+    "ui.screen.lobby"
+   ]
   },
   {
    "name": "pause.zh-Hans",
    "file": "art/export/reference/pause.zh-Hans.png",
-   "sha256": "32fcbca857c11ffeeaaea1a248b3ae7d48b55019fd86114a8f3af41e760a12cf",
+   "sha256": "d9af7bc09049017173d9a84f21f013b93d2a54a1a6a7ae4a4f4d5d67512b922e",
    "uses": [
     "ui.screen.pause",
     "char.portitor",
+    "item.sandbag",
     "theme.dungeon",
+    "ui.class_icon",
+    "ui.goal_lamp",
     "ui.icons",
     "ui.keycap",
     "ui.menu_icons",
     "ui.panel"
    ],
-   "all_approved": true,
-   "unapproved": []
+   "all_approved": false,
+   "unapproved": [
+    "ui.screen.pause"
+   ]
   },
   {
    "name": "pause.en",
    "file": "art/export/reference/pause.en.png",
-   "sha256": "1b13cfbb4b51533be14da7b067e24bde0f9beb5395574ff353223d31a5b65f4c",
+   "sha256": "8070e97aa0bac63d51cc10bf9a5dca5350e7ff376aa96cd4da85d92d8bde05f4",
    "uses": [
     "ui.screen.pause",
     "char.portitor",
+    "item.sandbag",
     "theme.dungeon",
+    "ui.class_icon",
+    "ui.goal_lamp",
     "ui.icons",
     "ui.keycap",
     "ui.menu_icons",
     "ui.panel"
    ],
-   "all_approved": true,
-   "unapproved": []
+   "all_approved": false,
+   "unapproved": [
+    "ui.screen.pause"
+   ]
   },
   {
    "name": "reels.zh-Hans",
    "file": "art/export/reference/reels.zh-Hans.png",
-   "sha256": "00804379afa9a8688b32f3af8913239d00ce5f8e2bf5a88ac057feec67648418",
+   "sha256": "6e282bb84e8821e153b79e678ece5549cf87428a88ab9b438264cf931a1a79e7",
    "uses": [
     "ui.screen.reels",
-    "theme.dungeon",
-    "ui.panel",
-    "ui.keycap",
-    "char.lucky_cat",
-    "cargo.letter",
-    "cargo.vase",
-    "cargo.ice_cream",
+    "avatar.goblin_smith",
     "avatar.old_miner",
     "avatar.zombie",
-    "avatar.goblin_smith",
-    "ui.delivery_icons"
+    "cargo.ice_cream",
+    "cargo.letter",
+    "cargo.vase",
+    "char.lucky_cat",
+    "theme.dungeon",
+    "ui.delivery_icons",
+    "ui.keycap",
+    "ui.panel"
    ],
-   "all_approved": true,
-   "unapproved": []
+   "all_approved": false,
+   "unapproved": [
+    "ui.screen.reels"
+   ]
   },
   {
    "name": "reels.en",
    "file": "art/export/reference/reels.en.png",
-   "sha256": "86b28d5732a71dd2655e0db4132b530b867e80feb75d34e7b78f7f5a1c3c6817",
+   "sha256": "75153bc66085c3e7d782c4ea22af74a75844ca9d26510726c5683ef06da7796c",
    "uses": [
     "ui.screen.reels",
-    "theme.dungeon",
-    "ui.panel",
-    "ui.keycap",
-    "char.lucky_cat",
-    "cargo.letter",
-    "cargo.vase",
-    "cargo.ice_cream",
+    "avatar.goblin_smith",
     "avatar.old_miner",
     "avatar.zombie",
-    "avatar.goblin_smith",
-    "ui.delivery_icons"
+    "cargo.ice_cream",
+    "cargo.letter",
+    "cargo.vase",
+    "char.lucky_cat",
+    "theme.dungeon",
+    "ui.delivery_icons",
+    "ui.keycap",
+    "ui.panel"
    ],
-   "all_approved": true,
-   "unapproved": []
+   "all_approved": false,
+   "unapproved": [
+    "ui.screen.reels"
+   ]
   },
   {
    "name": "rulecard.zh-Hans",
    "file": "art/export/reference/rulecard.zh-Hans.png",
-   "sha256": "4ca35c9e81bca9825738f2eb591c159202eb156841a5cfea7b1573a249436be3",
+   "sha256": "8a7c4fb05277396122e09a4511c82667840bbe314ec8ec147b4497d87e47683b",
    "uses": [
     "ui.screen.rulecard",
     "char.portitor",
+    "item.sandbag",
     "theme.dungeon",
+    "ui.class_icon",
+    "ui.goal_lamp",
     "ui.icons",
     "ui.keycap",
     "ui.menu_icons",
     "ui.panel"
    ],
-   "all_approved": true,
-   "unapproved": []
+   "all_approved": false,
+   "unapproved": [
+    "ui.screen.rulecard"
+   ]
   },
   {
    "name": "rulecard.en",
    "file": "art/export/reference/rulecard.en.png",
-   "sha256": "84639cdb80647b2634a0f8feb378ccda9b1bbfd9f2f5e9e08c5b70e4cef1eb46",
+   "sha256": "4ebf6ca96f39c185a119ee9b3566d153549d7a4cc0e093873a16125ba1aec13e",
    "uses": [
     "ui.screen.rulecard",
     "char.portitor",
+    "item.sandbag",
     "theme.dungeon",
+    "ui.class_icon",
+    "ui.goal_lamp",
     "ui.icons",
     "ui.keycap",
     "ui.menu_icons",
     "ui.panel"
    ],
-   "all_approved": true,
-   "unapproved": []
+   "all_approved": false,
+   "unapproved": [
+    "ui.screen.rulecard"
+   ]
   },
   {
    "name": "settings.zh-Hans",
    "file": "art/export/reference/settings.zh-Hans.png",
-   "sha256": "a6dd69fa825db739e3b58a41a56d296a4f5eed531b400f0b6dfecc308c688f29",
+   "sha256": "da3519e19ad9e2820f180dc7cb02e66f1b0e98e5ee7bfcf4755f7c7f37864f50",
    "uses": [
     "ui.screen.settings",
+    "char.portitor",
+    "mech.exit_flag",
+    "obj.crate_wood",
+    "theme.cave",
     "theme.dungeon",
+    "theme.ruins",
+    "theme.sky",
     "ui.icons",
     "ui.keycap",
     "ui.menu_icons",
     "ui.panel"
    ],
-   "all_approved": true,
-   "unapproved": []
+   "all_approved": false,
+   "unapproved": [
+    "ui.screen.settings"
+   ]
   },
   {
    "name": "settings.en",
    "file": "art/export/reference/settings.en.png",
-   "sha256": "3e24c01fddd32455718d66f2d40d948db86d946e297bc89f176776157770a062",
+   "sha256": "a135bb56ebd3124ce6b5725a337be4316a52d8680bd43b047e0d297963891e09",
    "uses": [
     "ui.screen.settings",
+    "char.portitor",
+    "mech.exit_flag",
+    "obj.crate_wood",
+    "theme.cave",
     "theme.dungeon",
+    "theme.ruins",
+    "theme.sky",
     "ui.icons",
     "ui.keycap",
     "ui.menu_icons",
     "ui.panel"
    ],
-   "all_approved": true,
-   "unapproved": []
+   "all_approved": false,
+   "unapproved": [
+    "ui.screen.settings"
+   ]
   },
   {
    "name": "settlement_fail.zh-Hans",
    "file": "art/export/reference/settlement_fail.zh-Hans.png",
-   "sha256": "eeb785399ebcef22a61140ed10e60772b7a9b70e30b9920617a8f63a9078084d",
+   "sha256": "8212f04d5520a0cda13a830a8799076e3e0d282a853981a94bad96c2065d3bf3",
    "uses": [
     "ui.screen.settlement_fail",
-    "theme.dungeon",
-    "ui.panel",
     "avatar.zombie",
-    "cargo.vase"
+    "cargo.vase",
+    "theme.dungeon",
+    "ui.delivery_icons",
+    "ui.panel"
    ],
-   "all_approved": true,
-   "unapproved": []
+   "all_approved": false,
+   "unapproved": [
+    "ui.screen.settlement_fail"
+   ]
   },
   {
    "name": "settlement_fail.en",
    "file": "art/export/reference/settlement_fail.en.png",
-   "sha256": "4ec1435b61b4ba0ea53ce063c44792e30e96ff92ffd24e9cc82776a5815ff39e",
+   "sha256": "a38eeffb38c35f93476fb513832e94bf2853c8b77c82827dc1be70d0c6efe200",
    "uses": [
     "ui.screen.settlement_fail",
-    "theme.dungeon",
-    "ui.panel",
     "avatar.zombie",
-    "cargo.vase"
+    "cargo.vase",
+    "theme.dungeon",
+    "ui.delivery_icons",
+    "ui.panel"
    ],
-   "all_approved": true,
-   "unapproved": []
+   "all_approved": false,
+   "unapproved": [
+    "ui.screen.settlement_fail"
+   ]
   },
   {
    "name": "settlement.zh-Hans",
    "file": "art/export/reference/settlement.zh-Hans.png",
-   "sha256": "b114d60aff616f4aba48462e19d97e6808bdfe9364e59e69ad53e78f9c58a9c3",
+   "sha256": "b48fc1998afa708f8c5d1b1531d5cfce3d3144476b8bc46349034bf1d78290f1",
    "uses": [
     "ui.screen.settlement",
-    "theme.dungeon",
-    "ui.panel",
     "avatar.old_miner",
     "item.coin",
-    "ui.delivery_icons"
+    "theme.dungeon",
+    "ui.delivery_icons",
+    "ui.panel"
    ],
-   "all_approved": true,
-   "unapproved": []
+   "all_approved": false,
+   "unapproved": [
+    "ui.screen.settlement"
+   ]
   },
   {
    "name": "settlement.en",
    "file": "art/export/reference/settlement.en.png",
-   "sha256": "2fdbe8f62407592423b1196b7aee4a1ee921586e5b0b37cdce808067226471e0",
+   "sha256": "edfdb91f7b00d4e60dfd67bee586ba2f194bb13e81da7d0cd93442a519771754",
    "uses": [
     "ui.screen.settlement",
-    "theme.dungeon",
-    "ui.panel",
     "avatar.old_miner",
     "item.coin",
-    "ui.delivery_icons"
+    "theme.dungeon",
+    "ui.delivery_icons",
+    "ui.panel"
    ],
-   "all_approved": true,
-   "unapproved": []
+   "all_approved": false,
+   "unapproved": [
+    "ui.screen.settlement"
+   ]
   },
   {
    "name": "shop.zh-Hans",
    "file": "art/export/reference/shop.zh-Hans.png",
-   "sha256": "3a877284256a00ba2293e19af9ed628d069cb4151cd61d99041450da9618de7b",
+   "sha256": "fe75475bcae4e6a5e01656d8f5a35a399b577631482798b5dcc49ccee44e9fab",
    "uses": [
     "ui.screen.shop",
-    "theme.dungeon",
-    "ui.panel",
-    "ui.keycap",
-    "ui.bubble",
-    "ui.bubble_tail",
     "char.turtle_keeper",
     "item.coin",
-    "item.sandbag",
     "item.first_aid",
     "item.rope_ladder",
-    "ui.delivery_icons"
+    "item.sandbag",
+    "theme.dungeon",
+    "ui.bubble",
+    "ui.bubble_tail",
+    "ui.delivery_icons",
+    "ui.keycap",
+    "ui.panel"
    ],
-   "all_approved": true,
-   "unapproved": []
+   "all_approved": false,
+   "unapproved": [
+    "ui.screen.shop"
+   ]
   },
   {
    "name": "shop.en",
    "file": "art/export/reference/shop.en.png",
-   "sha256": "b0284bab7f531753de050596951e822e277fb465acc59388bfd66e0e10696f1d",
+   "sha256": "a7b9aaf969198962cbbe9f248cf81e16018ff31d182c90bae3c9a2a1350a7fd3",
    "uses": [
     "ui.screen.shop",
-    "theme.dungeon",
-    "ui.panel",
-    "ui.keycap",
-    "ui.bubble",
-    "ui.bubble_tail",
     "char.turtle_keeper",
     "item.coin",
-    "item.sandbag",
     "item.first_aid",
     "item.rope_ladder",
-    "ui.delivery_icons"
+    "item.sandbag",
+    "theme.dungeon",
+    "ui.bubble",
+    "ui.bubble_tail",
+    "ui.delivery_icons",
+    "ui.keycap",
+    "ui.panel"
    ],
-   "all_approved": true,
-   "unapproved": []
+   "all_approved": false,
+   "unapproved": [
+    "ui.screen.shop"
+   ]
   }
  ]
 }

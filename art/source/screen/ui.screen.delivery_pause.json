@@ -15,17 +15,30 @@
   "workbench/js/core/env.js",
   "workbench/js/core/font-delivery.js",
   "content/i18n-delivery/zh-Hans.json",
-  "content/i18n-delivery/en.json"
+  "content/i18n-delivery/en.json",
+  "workbench/js/core/ui-kit.js",
+  "workbench/js/core/ui-style.js",
+  "workbench/js/core/font-ui.js",
+  "content/i18n-ui/zh-Hans.json",
+  "content/i18n-ui/en.json",
+  "workbench/js/core/ui-delivery.js",
+  "workbench/js/core/tilemodel.js",
+  "workbench/js/core/matter.js"
  ],
  "depends": [
+  "cargo.vase",
   "char.portitor",
+  "item.first_aid",
+  "item.rope_ladder",
+  "item.sandbag",
   "theme.dungeon",
+  "ui.delivery_icons",
   "ui.icons",
   "ui.keycap",
   "ui.menu_icons",
   "ui.panel"
  ],
- "version": 1,
+ "version": 2,
  "stage": "review",
  "size": [
   320,
@@ -41,9 +54,117 @@
    "dlv.pause.give_up",
    "pause.settings",
    "pause.menu"
-  ]
+  ],
+  "room": {
+   "map": [
+    "####################",
+    "####............####",
+    "##................##",
+    "#...H..............#",
+    "#...H##########....#",
+    "#...H..............#",
+    "....H...............",
+    "..P.H..#.....#......",
+    "####################",
+    "####################"
+   ],
+   "entities": [
+    {
+     "sprite": "monster.rat_swarm",
+     "anim": "walk",
+     "x": 12,
+     "y": 3,
+     "flip": true
+    },
+    {
+     "sprite": "item.coin",
+     "anim": "spin",
+     "x": 7,
+     "y": 3
+    },
+    {
+     "sprite": "item.coin",
+     "anim": "spin",
+     "x": 10,
+     "y": 3
+    },
+    {
+     "sprite": "item.coin",
+     "anim": "spin",
+     "x": 16,
+     "y": 7
+    }
+   ],
+   "facing": "right"
+  },
+  "hud": {
+   "hearts": 2,
+   "maxHearts": 3,
+   "cargo": "vase",
+   "left": 2,
+   "max": 3,
+   "rule": "fragile",
+   "hot": false,
+   "coins": 35,
+   "sand": 2,
+   "items": [
+    "first_aid",
+    "rope_ladder"
+   ],
+   "slots": 3,
+   "secs": 83,
+   "minimap": {
+    "cols": 4,
+    "rows": 3,
+    "cur": 4,
+    "rooms": [
+     {
+      "index": 0,
+      "x": 3,
+      "y": 0,
+      "role": "gate",
+      "seen": true
+     },
+     {
+      "index": 1,
+      "x": 2,
+      "y": 0,
+      "role": "room",
+      "seen": true
+     },
+     {
+      "index": 2,
+      "x": 2,
+      "y": 1,
+      "role": "station",
+      "seen": true
+     },
+     {
+      "index": 3,
+      "x": 2,
+      "y": 2,
+      "role": "room",
+      "seen": true
+     },
+     {
+      "index": 4,
+      "x": 1,
+      "y": 2,
+      "role": "room",
+      "seen": true
+     },
+     {
+      "index": 5,
+      "x": 0,
+      "y": 2,
+      "role": "home",
+      "seen": false
+     }
+    ]
+   }
+  }
  },
  "usage": "配送局内按 Esc：沿用已确认的暂停菜单（ui.screen.pause）的布局和画法，只换菜单项——继续、重来这个房间（时间不倒流）、放弃这一单、设置、回大厅。背景沿用暂停菜单参考图的关卡画面。",
- "notes": "画法就是 ui.js 的 pause，没有改动；新菜单项的文字在 content/i18n-delivery。第 4 步美术候选（配送切片），等用户在工作台确认；确认前不得进游戏。",
- "content_hash": "6f1e53c3dac19938cd506249fa827483ea8e31778fe6f1a6574ad4427b6099f1"
+ "notes": "画法就是 ui.js 的 pause，没有改动；新菜单项的文字在 content/i18n-delivery。第 4 步美术候选（配送切片），等用户在工作台确认；确认前不得进游戏。 2026-10-16 界面定稿：画法见 workbench/js/core/ui-style.js（移植 tools/ui-proposals 的已确认效果图）。",
+ "content_hash": "b7a69ebf520049bc6c4eb3225847e4bb0158c6160db5c6b4a152205514f18dda"
 }

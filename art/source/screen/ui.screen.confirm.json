@@ -1,0 +1,168 @@
+{
+ "format": "pushbox.art/1",
+ "id": "ui.screen.confirm",
+ "name": "放弃这一单确认框",
+ "category": "screen",
+ "kind": "procedural",
+ "renderer": [
+  "workbench/js/core/ui.js",
+  "workbench/js/core/scene.js",
+  "workbench/js/core/terrain.js",
+  "workbench/js/core/ambient.js",
+  "workbench/js/core/i18n.js",
+  "content/i18n/zh-Hans.json",
+  "content/i18n/en.json",
+  "workbench/js/core/env.js",
+  "workbench/js/core/font-delivery.js",
+  "content/i18n-delivery/zh-Hans.json",
+  "content/i18n-delivery/en.json",
+  "workbench/js/core/ui-kit.js",
+  "workbench/js/core/ui-style.js",
+  "workbench/js/core/font-ui.js",
+  "content/i18n-ui/zh-Hans.json",
+  "content/i18n-ui/en.json",
+  "workbench/js/core/ui-delivery.js",
+  "workbench/js/core/tilemodel.js",
+  "workbench/js/core/matter.js"
+ ],
+ "depends": [
+  "cargo.vase",
+  "char.portitor",
+  "item.first_aid",
+  "item.rope_ladder",
+  "item.sandbag",
+  "theme.dungeon",
+  "ui.delivery_icons",
+  "ui.icons",
+  "ui.keycap",
+  "ui.menu_icons",
+  "ui.panel"
+ ],
+ "version": 1,
+ "stage": "review",
+ "size": [
+  320,
+  180
+ ],
+ "layer": "ui",
+ "palette": "endesga32",
+ "params": {
+  "screen": "confirm",
+  "theme": "theme.dungeon",
+  "exclude": [
+   "fauna.dungeon_rat"
+  ],
+  "focus": 1,
+  "room": {
+   "map": [
+    "####################",
+    "####............####",
+    "##................##",
+    "#...H..............#",
+    "#...H##########....#",
+    "#...H..............#",
+    "....H...............",
+    "..P.H..#.....#......",
+    "####################",
+    "####################"
+   ],
+   "entities": [
+    {
+     "sprite": "monster.rat_swarm",
+     "anim": "walk",
+     "x": 12,
+     "y": 3,
+     "flip": true
+    },
+    {
+     "sprite": "item.coin",
+     "anim": "spin",
+     "x": 7,
+     "y": 3
+    },
+    {
+     "sprite": "item.coin",
+     "anim": "spin",
+     "x": 10,
+     "y": 3
+    },
+    {
+     "sprite": "item.coin",
+     "anim": "spin",
+     "x": 16,
+     "y": 7
+    }
+   ],
+   "facing": "right"
+  },
+  "hud": {
+   "hearts": 2,
+   "maxHearts": 3,
+   "cargo": "vase",
+   "left": 2,
+   "max": 3,
+   "rule": "fragile",
+   "hot": false,
+   "coins": 35,
+   "sand": 2,
+   "items": [
+    "first_aid",
+    "rope_ladder"
+   ],
+   "slots": 3,
+   "secs": 83,
+   "minimap": {
+    "cols": 4,
+    "rows": 3,
+    "cur": 4,
+    "rooms": [
+     {
+      "index": 0,
+      "x": 3,
+      "y": 0,
+      "role": "gate",
+      "seen": true
+     },
+     {
+      "index": 1,
+      "x": 2,
+      "y": 0,
+      "role": "room",
+      "seen": true
+     },
+     {
+      "index": 2,
+      "x": 2,
+      "y": 1,
+      "role": "station",
+      "seen": true
+     },
+     {
+      "index": 3,
+      "x": 2,
+      "y": 2,
+      "role": "room",
+      "seen": true
+     },
+     {
+      "index": 4,
+      "x": 1,
+      "y": 2,
+      "role": "room",
+      "seen": true
+     },
+     {
+      "index": 5,
+      "x": 0,
+      "y": 2,
+      "role": "home",
+      "seen": false
+     }
+    ]
+   }
+  }
+ },
+ "usage": "配送暂停里选「放弃这一单」后弹出：按失败结算（路上拾到的金币只带回一半），默认选中「再想想」。",
+ "notes": "2026-10-16 界面定稿新增（docs/design/ui-style.md C7，规则见 mode-delivery.md 第 4 节）。画法见 workbench/js/core/ui-style.js。",
+ "content_hash": "777956c08c1bf55c6c1f50a78c4781535239a511f7a7b4483839c97c8cad34a5"
+}

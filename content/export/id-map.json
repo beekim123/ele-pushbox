@@ -5,7 +5,7 @@
   "art": {
    "name": "美术资产",
    "source": "art/source/<分类>/<id>.json",
-   "count": 133
+   "count": 134
   },
   "level": {
    "name": "关卡",
@@ -90,7 +90,7 @@
   "text": {
    "name": "界面与台词文字",
    "source": "content/i18n/zh-Hans.json 与 content/i18n-<名>/zh-Hans.json",
-   "count": 386
+   "count": 404
   }
  },
  "entries": [
@@ -1494,9 +1494,9 @@
    "source": "art/source/screen/ui.screen.chapters.json",
    "game": "res://ui/screens/chapters.tscn",
    "category": "screen",
-   "version": 4,
-   "hash": "616c8a1a09bf2ad32f24c8cf1e70d8059bdb14d9c394ebbe86eb4703feaeb781",
-   "approved": true
+   "version": 5,
+   "hash": "1608a3a4e43c613b73b2eb46f5187008d23506d11352b7e9c16fd219d0c8a1b0",
+   "approved": false
   },
   {
    "uid": "art:ui.screen.complete",
@@ -1506,9 +1506,21 @@
    "source": "art/source/screen/ui.screen.complete.json",
    "game": "res://ui/screens/complete.tscn",
    "category": "screen",
-   "version": 4,
-   "hash": "fbb067b0492c0dd3cc479c65713e8cc6dabf0f93f55e2d6a628bfb458c14d9bf",
-   "approved": true
+   "version": 5,
+   "hash": "167131851bdaa444b9f5b349191fed04d05322f2f0776f4aedb853224f8140ab",
+   "approved": false
+  },
+  {
+   "uid": "art:ui.screen.confirm",
+   "domain": "art",
+   "id": "ui.screen.confirm",
+   "name": "放弃这一单确认框",
+   "source": "art/source/screen/ui.screen.confirm.json",
+   "game": "res://ui/screens/confirm.tscn",
+   "category": "screen",
+   "version": 1,
+   "hash": "777956c08c1bf55c6c1f50a78c4781535239a511f7a7b4483839c97c8cad34a5",
+   "approved": false
   },
   {
    "uid": "art:ui.screen.delivery_hud",
@@ -1518,9 +1530,9 @@
    "source": "art/source/screen/ui.screen.delivery_hud.json",
    "game": "res://ui/screens/delivery_hud.tscn",
    "category": "screen",
-   "version": 1,
-   "hash": "23c03f3921674452382a4ef6731bf5aacf26cca8e8a8f55c753d2a06289c361b",
-   "approved": true
+   "version": 2,
+   "hash": "f76b62b58c9f8a802eb28cb56cfe2983038dcd829b015f9838cbd4c9fe81a0c0",
+   "approved": false
   },
   {
    "uid": "art:ui.screen.delivery_pause",
@@ -1530,9 +1542,9 @@
    "source": "art/source/screen/ui.screen.delivery_pause.json",
    "game": "res://ui/screens/delivery_pause.tscn",
    "category": "screen",
-   "version": 1,
-   "hash": "6f1e53c3dac19938cd506249fa827483ea8e31778fe6f1a6574ad4427b6099f1",
-   "approved": true
+   "version": 2,
+   "hash": "b7a69ebf520049bc6c4eb3225847e4bb0158c6160db5c6b4a152205514f18dda",
+   "approved": false
   },
   {
    "uid": "art:ui.screen.dialogue",
@@ -1542,9 +1554,9 @@
    "source": "art/source/screen/ui.screen.dialogue.json",
    "game": "res://ui/screens/dialogue.tscn",
    "category": "screen",
-   "version": 1,
-   "hash": "ea330683e10b2adfdef4f733182869535eea2cb27b750adf982b3410e8de85e5",
-   "approved": true
+   "version": 2,
+   "hash": "f05e9a2b368fe45071f5613b2eb08714ef96cfcae3511a5499321884cb72d504",
+   "approved": false
   },
   {
    "uid": "art:ui.screen.hint",
@@ -1554,9 +1566,9 @@
    "source": "art/source/screen/ui.screen.hint.json",
    "game": "res://ui/screens/hint.tscn",
    "category": "screen",
-   "version": 4,
-   "hash": "89aa4fe24b01333d1c56f8e7144b9db5c38ef0777cc35a615c4e41b064b470d9",
-   "approved": true
+   "version": 5,
+   "hash": "3704ee50ef7f890fd0589b54719af9c33d18507c6d0ba9f29590c64ce7f38d2c",
+   "approved": false
   },
   {
    "uid": "art:ui.screen.levels",
@@ -1566,9 +1578,9 @@
    "source": "art/source/screen/ui.screen.levels.json",
    "game": "res://ui/screens/levels.tscn",
    "category": "screen",
-   "version": 4,
-   "hash": "3ce7d34a0b822daa3fb5d01c243a606e06de7c4ae367565e2c06dec2c5ca4b24",
-   "approved": true
+   "version": 5,
+   "hash": "4affa813901206fe5845bdb809fa0f1ee81bbc4234d13d12618191959eec393a",
+   "approved": false
   },
   {
    "uid": "art:ui.screen.lobby",
@@ -1578,9 +1590,9 @@
    "source": "art/source/screen/ui.screen.lobby.json",
    "game": "res://ui/screens/lobby.tscn",
    "category": "screen",
-   "version": 4,
-   "hash": "e2ec45838d3dcccf1f97feee4dcfc767b831ab3945d6ac07366db546cec5282e",
-   "approved": true
+   "version": 5,
+   "hash": "d26fbdaec9c31d7b585cba36ba266d536351205d8512ebfdd6a35b06b3addbc7",
+   "approved": false
   },
   {
    "uid": "art:ui.screen.pause",
@@ -1590,9 +1602,9 @@
    "source": "art/source/screen/ui.screen.pause.json",
    "game": "res://ui/screens/pause.tscn",
    "category": "screen",
-   "version": 4,
-   "hash": "8423060d12710e97b5e078ff4fd400b2a2b747c12af96e7ae95c1cf480e47ad3",
-   "approved": true
+   "version": 5,
+   "hash": "5f6d6a3caa551f3a0faeaef77c71ef22624a5c5827a625667666227c3f212b33",
+   "approved": false
   },
   {
    "uid": "art:ui.screen.reels",
@@ -1602,9 +1614,9 @@
    "source": "art/source/screen/ui.screen.reels.json",
    "game": "res://ui/screens/reels.tscn",
    "category": "screen",
-   "version": 1,
-   "hash": "138cda5479dee0fd74e3ae7909f908ad3cacb0c2852f2592418e12d337190146",
-   "approved": true
+   "version": 2,
+   "hash": "4e9f8918cc8c80a4c6b1a056b9d1b2378cca5bbe2eba74b3173cb00403d6ae8a",
+   "approved": false
   },
   {
    "uid": "art:ui.screen.rulecard",
@@ -1614,9 +1626,9 @@
    "source": "art/source/screen/ui.screen.rulecard.json",
    "game": "res://ui/screens/rulecard.tscn",
    "category": "screen",
-   "version": 4,
-   "hash": "e14dc3f027abd88493efd7491799dce58263e3bb9fcf26911dedf8f08c1e59f5",
-   "approved": true
+   "version": 5,
+   "hash": "e85147b2439950cac3a0b99fa298ab7572faa8eead65174cf0ba8fe45c8bc760",
+   "approved": false
   },
   {
    "uid": "art:ui.screen.settings",
@@ -1626,9 +1638,9 @@
    "source": "art/source/screen/ui.screen.settings.json",
    "game": "res://ui/screens/settings.tscn",
    "category": "screen",
-   "version": 4,
-   "hash": "4c6df2e53a82b5b26efcfea702f0332847c7cb07b829d2352b04c3e21fa3df1a",
-   "approved": true
+   "version": 5,
+   "hash": "632383cf270671f15ef30e4969628acce9b984f7887868b58f7b05e2d6e1cfb2",
+   "approved": false
   },
   {
    "uid": "art:ui.screen.settlement",
@@ -1638,9 +1650,9 @@
    "source": "art/source/screen/ui.screen.settlement.json",
    "game": "res://ui/screens/settlement.tscn",
    "category": "screen",
-   "version": 1,
-   "hash": "5e949d677dd27100d1860b728932206d1e9053f2ff1e8b5d28f71ca5b44ed929",
-   "approved": true
+   "version": 2,
+   "hash": "198a6c09f26fccf18b5438ab08f364ec8caea76b6e71f43b82262259d740cef8",
+   "approved": false
   },
   {
    "uid": "art:ui.screen.settlement_fail",
@@ -1650,9 +1662,9 @@
    "source": "art/source/screen/ui.screen.settlement_fail.json",
    "game": "res://ui/screens/settlement_fail.tscn",
    "category": "screen",
-   "version": 1,
-   "hash": "e46ea2a5a1354fc34a6227afad82fc4785c81de39900d891fb46fca7106cfee5",
-   "approved": true
+   "version": 2,
+   "hash": "384c4e69dda55c998906adf11dcbd7b1429908262a554ace36e79fc4a57231a8",
+   "approved": false
   },
   {
    "uid": "art:ui.screen.shop",
@@ -1662,9 +1674,9 @@
    "source": "art/source/screen/ui.screen.shop.json",
    "game": "res://ui/screens/shop.tscn",
    "category": "screen",
-   "version": 1,
-   "hash": "267d16250937ed3619c685b049c770d516487ec82e69364d75c7a3a4bf98c85a",
-   "approved": true
+   "version": 2,
+   "hash": "56cb41aba4ff725b2caa5aae42ef7f9212c48e469946439873f1cd0c93639b4b",
+   "approved": false
   },
   {
    "uid": "art:ui.target",
@@ -9064,6 +9076,150 @@
    "name": "跨章组合复习：让前一章的机关改变后一章的用法。",
    "source": "content/i18n-extra/zh-Hans.json",
    "game": "tr:extra.chapter.review_blurb"
+  },
+  {
+   "uid": "text:ui.title_alt",
+   "domain": "text",
+   "id": "ui.title_alt",
+   "name": "PORTITOR",
+   "source": "content/i18n-ui/zh-Hans.json",
+   "game": "tr:ui.title_alt"
+  },
+  {
+   "uid": "text:lobby.current_tag",
+   "domain": "text",
+   "id": "lobby.current_tag",
+   "name": "当前",
+   "source": "content/i18n-ui/zh-Hans.json",
+   "game": "tr:lobby.current_tag"
+  },
+  {
+   "uid": "text:keys.adjust",
+   "domain": "text",
+   "id": "keys.adjust",
+   "name": "调整",
+   "source": "content/i18n-ui/zh-Hans.json",
+   "game": "tr:keys.adjust"
+  },
+  {
+   "uid": "text:settings.ui_style",
+   "domain": "text",
+   "id": "settings.ui_style",
+   "name": "界面风格",
+   "source": "content/i18n-ui/zh-Hans.json",
+   "game": "tr:settings.ui_style"
+  },
+  {
+   "uid": "text:settings.ui_style.note1",
+   "domain": "text",
+   "id": "settings.ui_style.note1",
+   "name": "大厅随地图换风格，",
+   "source": "content/i18n-ui/zh-Hans.json",
+   "game": "tr:settings.ui_style.note1"
+  },
+  {
+   "uid": "text:settings.ui_style.note2",
+   "domain": "text",
+   "id": "settings.ui_style.note2",
+   "name": "其他界面用这一套。",
+   "source": "content/i18n-ui/zh-Hans.json",
+   "game": "tr:settings.ui_style.note2"
+  },
+  {
+   "uid": "text:ui_style.s1",
+   "domain": "text",
+   "id": "ui_style.s1",
+   "name": "晶石琉璃",
+   "source": "content/i18n-ui/zh-Hans.json",
+   "game": "tr:ui_style.s1"
+  },
+  {
+   "uid": "text:ui_style.s2",
+   "domain": "text",
+   "id": "ui_style.s2",
+   "name": "漂浮符文",
+   "source": "content/i18n-ui/zh-Hans.json",
+   "game": "tr:ui_style.s2"
+  },
+  {
+   "uid": "text:ui_style.s3",
+   "domain": "text",
+   "id": "ui_style.s3",
+   "name": "祥云玉简",
+   "source": "content/i18n-ui/zh-Hans.json",
+   "game": "tr:ui_style.s3"
+  },
+  {
+   "uid": "text:ui_style.s4",
+   "domain": "text",
+   "id": "ui_style.s4",
+   "name": "梦泡糖霜",
+   "source": "content/i18n-ui/zh-Hans.json",
+   "game": "tr:ui_style.s4"
+  },
+  {
+   "uid": "text:ui_style.s1.mark",
+   "domain": "text",
+   "id": "ui_style.s1.mark",
+   "name": "晶",
+   "source": "content/i18n-ui/zh-Hans.json",
+   "game": "tr:ui_style.s1.mark"
+  },
+  {
+   "uid": "text:ui_style.s2.mark",
+   "domain": "text",
+   "id": "ui_style.s2.mark",
+   "name": "符",
+   "source": "content/i18n-ui/zh-Hans.json",
+   "game": "tr:ui_style.s2.mark"
+  },
+  {
+   "uid": "text:ui_style.s3.mark",
+   "domain": "text",
+   "id": "ui_style.s3.mark",
+   "name": "玉",
+   "source": "content/i18n-ui/zh-Hans.json",
+   "game": "tr:ui_style.s3.mark"
+  },
+  {
+   "uid": "text:ui_style.s4.mark",
+   "domain": "text",
+   "id": "ui_style.s4.mark",
+   "name": "泡",
+   "source": "content/i18n-ui/zh-Hans.json",
+   "game": "tr:ui_style.s4.mark"
+  },
+  {
+   "uid": "text:dlv.confirm.title",
+   "domain": "text",
+   "id": "dlv.confirm.title",
+   "name": "放弃这一单？",
+   "source": "content/i18n-ui/zh-Hans.json",
+   "game": "tr:dlv.confirm.title"
+  },
+  {
+   "uid": "text:dlv.confirm.text",
+   "domain": "text",
+   "id": "dlv.confirm.text",
+   "name": "路上拾到的金币只带回一半。",
+   "source": "content/i18n-ui/zh-Hans.json",
+   "game": "tr:dlv.confirm.text"
+  },
+  {
+   "uid": "text:dlv.confirm.yes",
+   "domain": "text",
+   "id": "dlv.confirm.yes",
+   "name": "放弃",
+   "source": "content/i18n-ui/zh-Hans.json",
+   "game": "tr:dlv.confirm.yes"
+  },
+  {
+   "uid": "text:dlv.confirm.no",
+   "domain": "text",
+   "id": "dlv.confirm.no",
+   "name": "再想想",
+   "source": "content/i18n-ui/zh-Hans.json",
+   "game": "tr:dlv.confirm.no"
   }
  ]
 }

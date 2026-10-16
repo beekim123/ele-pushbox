@@ -16,21 +16,26 @@
   "workbench/js/core/i18n.js",
   "workbench/js/core/font-delivery.js",
   "content/i18n-delivery/zh-Hans.json",
-  "content/i18n-delivery/en.json"
+  "content/i18n-delivery/en.json",
+  "workbench/js/core/ui-kit.js",
+  "workbench/js/core/ui-style.js",
+  "workbench/js/core/font-ui.js",
+  "content/i18n-ui/zh-Hans.json",
+  "content/i18n-ui/en.json"
  ],
  "depends": [
-  "theme.dungeon",
+  "cargo.vase",
   "char.portitor",
+  "item.coin",
+  "item.first_aid",
+  "item.rope_ladder",
+  "item.sandbag",
   "mech.ladder",
   "monster.rat_swarm",
-  "item.coin",
-  "ui.delivery_icons",
-  "cargo.vase",
-  "item.sandbag",
-  "item.first_aid",
-  "item.rope_ladder"
+  "theme.dungeon",
+  "ui.delivery_icons"
  ],
- "version": 1,
+ "version": 2,
  "stage": "review",
  "size": [
   320,
@@ -152,6 +157,6 @@
   }
  },
  "usage": "配送局内的 HUD（顶部 20 像素）：心、货物与完好度、货物规矩图标（易碎 / 会化 / 很热）、金币、沙袋、3 个背包格、用时、小地图（走过的房间、当前房间、收件人之家）。背景是石廊房间。",
- "notes": "布局参考：文字来自 content/i18n-delivery（与已确认界面的文字表分开），缺的字形在 font-delivery.js；画法在 ui-delivery.js，没有改 ui.js。Godot 用 Control 容器实现。第 4 步美术候选（配送切片），等用户在工作台确认；确认前不得进游戏。",
- "content_hash": "23c03f3921674452382a4ef6731bf5aacf26cca8e8a8f55c753d2a06289c361b"
+ "notes": "布局参考：文字来自 content/i18n-delivery（与已确认界面的文字表分开），缺的字形在 font-delivery.js；画法在 ui-delivery.js，没有改 ui.js。Godot 用 Control 容器实现。第 4 步美术候选（配送切片），等用户在工作台确认；确认前不得进游戏。 2026-10-16 界面定稿：画法见 workbench/js/core/ui-style.js（移植 tools/ui-proposals 的已确认效果图）。",
+ "content_hash": "f76b62b58c9f8a802eb28cb56cfe2983038dcd829b015f9838cbd4c9fe81a0c0"
 }

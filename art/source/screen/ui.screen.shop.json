@@ -20,22 +20,27 @@
   "workbench/js/core/dialogue.js",
   "workbench/js/core/font-small.js",
   "content/i18n/zh-Hans.json",
-  "content/i18n/en.json"
+  "content/i18n/en.json",
+  "workbench/js/core/ui-kit.js",
+  "workbench/js/core/ui-style.js",
+  "workbench/js/core/font-ui.js",
+  "content/i18n-ui/zh-Hans.json",
+  "content/i18n-ui/en.json"
  ],
  "depends": [
-  "theme.dungeon",
-  "ui.panel",
-  "ui.keycap",
-  "ui.bubble",
-  "ui.bubble_tail",
   "char.turtle_keeper",
   "item.coin",
-  "item.sandbag",
   "item.first_aid",
   "item.rope_ladder",
-  "ui.delivery_icons"
+  "item.sandbag",
+  "theme.dungeon",
+  "ui.bubble",
+  "ui.bubble_tail",
+  "ui.delivery_icons",
+  "ui.keycap",
+  "ui.panel"
  ],
- "version": 1,
+ "version": 2,
  "stage": "review",
  "size": [
   320,
@@ -72,9 +77,51 @@
    "first_aid"
   ],
   "slots": 3,
-  "sand": 2
+  "sand": 2,
+  "room": {
+   "map": [
+    "####################",
+    "####............####",
+    "##................##",
+    "#...H..............#",
+    "#...H##########....#",
+    "#...H..............#",
+    "....H...............",
+    "..P.H..#.....#......",
+    "####################",
+    "####################"
+   ],
+   "entities": [
+    {
+     "sprite": "monster.rat_swarm",
+     "anim": "walk",
+     "x": 12,
+     "y": 3,
+     "flip": true
+    },
+    {
+     "sprite": "item.coin",
+     "anim": "spin",
+     "x": 7,
+     "y": 3
+    },
+    {
+     "sprite": "item.coin",
+     "anim": "spin",
+     "x": 10,
+     "y": 3
+    },
+    {
+     "sprite": "item.coin",
+     "anim": "spin",
+     "x": 16,
+     "y": 7
+    }
+   ],
+   "facing": "right"
+  }
  },
  "usage": "在驿站和龟掌柜说话时打开（世界暂停）：每站回 1 颗心一次；货架上每样东西有价格和库存，卖完的变暗；下面是背包格和沙袋数。",
- "notes": "布局参考：文字来自 content/i18n-delivery（与已确认界面的文字表分开），缺的字形在 font-delivery.js；画法在 ui-delivery.js，没有改 ui.js。Godot 用 Control 容器实现。第 4 步美术候选（配送切片），等用户在工作台确认；确认前不得进游戏。",
- "content_hash": "267d16250937ed3619c685b049c770d516487ec82e69364d75c7a3a4bf98c85a"
+ "notes": "布局参考：文字来自 content/i18n-delivery（与已确认界面的文字表分开），缺的字形在 font-delivery.js；画法在 ui-delivery.js，没有改 ui.js。Godot 用 Control 容器实现。第 4 步美术候选（配送切片），等用户在工作台确认；确认前不得进游戏。 2026-10-16 界面定稿：画法见 workbench/js/core/ui-style.js（移植 tools/ui-proposals 的已确认效果图）。",
+ "content_hash": "56cb41aba4ff725b2caa5aae42ef7f9212c48e469946439873f1cd0c93639b4b"
 }

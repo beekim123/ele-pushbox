@@ -6,7 +6,7 @@
 
 **关卡线（R2 关卡模式）**：LV-11 在真实 SDK 里 **30 关作者解全部通关，29/30 逐条通过**；唯一的失败是设计负责人写错的 G02 检查条目，已改正，交 [LV-12](packages/LV-12.md) 重跑第 4 章。英文提示 180 条 0 溢出。这不是正式版本，也没有用户验收。
 
-**界面线**：用户已定稿（[ui-style.md](design/ui-style.md)），分支 `ui/style-proposals` 已推送并审核，下一步 [UI-05](packages/UI-05.md)。
+**界面线**：用户已定稿（[ui-style.md](design/ui-style.md)）。[UI-05](packages/UI-05.md) 的大厅（6 套皮肤）和 16 个固定界面已由 Claude 转进工作台（用户要求），和 Python 设计稿逐像素对照一致，**待用户在「确认」页确认**。
 
 - 机制范围（用户 2026-10-16 决定）：关卡模式暂时只用现有的 33 个机制；SDK 已有但没进关卡的 `power`、`particles`、`rigid`、`pressure` 和各地区新机制，等现有关卡跑通后再开新章节（[关卡质量标准](design/level-quality.md) 第 4 节）。
 
@@ -106,7 +106,7 @@ game-design 第 8 节的大厅、设置两行同步了。
 ## 还缺什么
 
 - LV-12：G02 修正后重跑第 4 章；通过后关卡线 SDK 就是 30/30。
-- 界面：UI-05 画工作台里的新界面 →【用户】确认 → UI-06 同步进游戏；UI-07 画另外三套固定界面并加「界面风格」。
+- 界面：UI-05 大厅与固定界面已转进工作台 →【用户】确认 16 个 `ui.screen.*` → UI-06 同步进游戏；UI-07 画另外三套固定界面并加「界面风格」。
 - F04 只有 1 tick 余量，阵风只测了一种配置（见 LV-08）。
 - 全部 46 关还没有用户试玩验收；梯顶显示修复要用户看过；缺美术的机关仍是占位。
 
@@ -117,7 +117,7 @@ game-design 第 8 节的大厅、设置两行同步了。
 1. **制作方（关卡线，GPT）**：在 `codex/portitor-stage1` 上合进 `origin/claude/inspiring-ride-zfnn4s`，做 [LV-12](packages/LV-12.md)。
 2. **界面线执行方**：在 `ui/style-proposals` 上合进 `origin/claude/inspiring-ride-zfnn4s`，做 [UI-05](packages/UI-05.md)。两条线互不等待。
 3. **Claude**：LV-12、UI-05 交回后审核；LV-12 通过就按「分支整理计划」先把关卡线合进 `main`。
-4. **用户**：UI-05 做完后在工作台确认新界面美术；现在不需要操作。
+4. **用户**：`git pull` 后打开 `workbench/index.html`，看新大厅和各界面，在「确认」页确认（告诉 Claude 原话，由 Claude 记录）。
 
 ## 分支整理计划（用户 2026-10-16 决定；当日更新）
 
