@@ -1,6 +1,6 @@
 # LAB-01 合并 Claude 分支并重新导入（交给 GPT）
 
-状态：待做（执行者：GPT）
+状态：第 1 批 · 待做（执行者：GPT）
 设计依据：[status.md](../status.md)「审核：GPT 关卡模式阶段一」；AGENTS.md
 
 ## 目标
