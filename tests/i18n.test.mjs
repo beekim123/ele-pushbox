@@ -22,7 +22,7 @@ test("the repository's text tables merge without clashes and every glyph exists"
   const { tables, source } = loadTextTables(ROOT);
   assert.equal(source["dlv.reels.title"], "content/i18n-delivery/zh-Hans.json");
   assert.equal(source["pause.title"], "content/i18n/zh-Hans.json");
-  const PB = loadCore(["raster", "font-data", "font-small", "font-delivery", "sprites"]);
+  const PB = loadCore(["raster", "font-data", "font-small", "font-delivery", "font-rooms2", "sprites"]);
   assert.deepEqual(missingGlyphs(PB, tables), []);
 });
 

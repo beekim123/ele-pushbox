@@ -90,7 +90,7 @@
   "text": {
    "name": "界面与台词文字",
    "source": "content/i18n/zh-Hans.json 与 content/i18n-<名>/zh-Hans.json",
-   "count": 215
+   "count": 292
   }
  },
  "entries": [
@@ -7426,6 +7426,622 @@
    "name": "基础 {n}",
    "source": "content/i18n-delivery/zh-Hans.json",
    "game": "tr:dlv.done.base"
+  },
+  {
+   "uid": "text:room2.diyu_fengdu.name",
+   "domain": "text",
+   "id": "room2.diyu_fengdu.name",
+   "name": "酆都城 · 钟楼的锣",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.diyu_fengdu.name"
+  },
+  {
+   "uid": "text:room2.diyu_fengdu.hint.0",
+   "domain": "text",
+   "id": "room2.diyu_fengdu.hint.0",
+   "name": "推纸台过坑：箱子坐在上面一起走。",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.diyu_fengdu.hint.0"
+  },
+  {
+   "uid": "text:room2.diyu_fengdu.hint.1",
+   "domain": "text",
+   "id": "room2.diyu_fengdu.hint.1",
+   "name": "踩上纸台，把箱子推到钟楼下面当台阶。",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.diyu_fengdu.hint.1"
+  },
+  {
+   "uid": "text:room2.diyu_fengdu.hint.2",
+   "domain": "text",
+   "id": "room2.diyu_fengdu.hint.2",
+   "name": "踩着箱子上钟楼，敲锣：城门开了。",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.diyu_fengdu.hint.2"
+  },
+  {
+   "uid": "text:room2.diyu_fengdu.hint.3",
+   "domain": "text",
+   "id": "room2.diyu_fengdu.hint.3",
+   "name": "从梯子下去，穿过城门。",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.diyu_fengdu.hint.3"
+  },
+  {
+   "uid": "text:room2.diyu_gate.name",
+   "domain": "text",
+   "id": "room2.diyu_gate.name",
+   "name": "鬼门关",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.diyu_gate.name"
+  },
+  {
+   "uid": "text:room2.diyu_ghostfire.name",
+   "domain": "text",
+   "id": "room2.diyu_ghostfire.name",
+   "name": "鬼火回廊",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.diyu_ghostfire.name"
+  },
+  {
+   "uid": "text:room2.diyu_home_hall.name",
+   "domain": "text",
+   "id": "room2.diyu_home_hall.name",
+   "name": "收件人之家 · 判官殿",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.diyu_home_hall.name"
+  },
+  {
+   "uid": "text:room2.diyu_home_yard.name",
+   "domain": "text",
+   "id": "room2.diyu_home_yard.name",
+   "name": "收件人之家 · 先人小院",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.diyu_home_yard.name"
+  },
+  {
+   "uid": "text:room2.diyu_huangquan.name",
+   "domain": "text",
+   "id": "room2.diyu_huangquan.name",
+   "name": "黄泉路 · 喘口气",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.diyu_huangquan.name"
+  },
+  {
+   "uid": "text:room2.diyu_lantern.name",
+   "domain": "text",
+   "id": "room2.diyu_lantern.name",
+   "name": "孔明灯台 · 从槽里推出来",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.diyu_lantern.name"
+  },
+  {
+   "uid": "text:room2.diyu_lantern.hint.0",
+   "domain": "text",
+   "id": "room2.diyu_lantern.hint.0",
+   "name": "跳进槽里，从侧面走进纸台的一端：它会被推着走。",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.diyu_lantern.hint.0"
+  },
+  {
+   "uid": "text:room2.diyu_lantern.hint.1",
+   "domain": "text",
+   "id": "room2.diyu_lantern.hint.1",
+   "name": "纸台悬在坑上，不会掉：踩上去走过去。",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.diyu_lantern.hint.1"
+  },
+  {
+   "uid": "text:room2.diyu_naihe.name",
+   "domain": "text",
+   "id": "room2.diyu_naihe.name",
+   "name": "奈何桥 · 一次只过一个",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.diyu_naihe.name"
+  },
+  {
+   "uid": "text:room2.diyu_naihe.hint.0",
+   "domain": "text",
+   "id": "room2.diyu_naihe.hint.0",
+   "name": "奈何桥一次只承一个：先把箱子推上桥。",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.diyu_naihe.hint.0"
+  },
+  {
+   "uid": "text:room2.diyu_naihe.hint.1",
+   "domain": "text",
+   "id": "room2.diyu_naihe.hint.1",
+   "name": "再推一下：你和箱子都在桥上，桥就塌了——箱子正好压住桥下的压板。",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.diyu_naihe.hint.1"
+  },
+  {
+   "uid": "text:room2.diyu_naihe.hint.2",
+   "domain": "text",
+   "id": "room2.diyu_naihe.hint.2",
+   "name": "门开了：踩着箱子爬上梯子，走过去。",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.diyu_naihe.hint.2"
+  },
+  {
+   "uid": "text:room2.diyu_paper_bridge.name",
+   "domain": "text",
+   "id": "room2.diyu_paper_bridge.name",
+   "name": "纸台过桥 · 灯台不压桥",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.diyu_paper_bridge.name"
+  },
+  {
+   "uid": "text:room2.diyu_paper_bridge.hint.0",
+   "domain": "text",
+   "id": "room2.diyu_paper_bridge.hint.0",
+   "name": "推纸台上桥：纸台和上面的箱子都不压桥，桥上只有你一个。",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.diyu_paper_bridge.hint.0"
+  },
+  {
+   "uid": "text:room2.diyu_paper_bridge.hint.1",
+   "domain": "text",
+   "id": "room2.diyu_paper_bridge.hint.1",
+   "name": "踩上纸台，把箱子推上对岸的压板。",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.diyu_paper_bridge.hint.1"
+  },
+  {
+   "uid": "text:room2.diyu_paper_bridge.hint.2",
+   "domain": "text",
+   "id": "room2.diyu_paper_bridge.hint.2",
+   "name": "门开了：从箱子上翻过去。",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.diyu_paper_bridge.hint.2"
+  },
+  {
+   "uid": "text:room2.diyu_sand_bridge.name",
+   "domain": "text",
+   "id": "room2.diyu_sand_bridge.name",
+   "name": "黄泉沙 · 沙也有分量",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.diyu_sand_bridge.name"
+  },
+  {
+   "uid": "text:room2.diyu_sand_bridge.hint.0",
+   "domain": "text",
+   "id": "room2.diyu_sand_bridge.hint.0",
+   "name": "挖一袋黄泉沙。",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.diyu_sand_bridge.hint.0"
+  },
+  {
+   "uid": "text:room2.diyu_sand_bridge.hint.1",
+   "domain": "text",
+   "id": "room2.diyu_sand_bridge.hint.1",
+   "name": "把沙倒在桥上：沙也有分量，一格沙算一个。",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.diyu_sand_bridge.hint.1"
+  },
+  {
+   "uid": "text:room2.diyu_sand_bridge.hint.2",
+   "domain": "text",
+   "id": "room2.diyu_sand_bridge.hint.2",
+   "name": "踩上沙堆：桥塌了，沙正好压住桥下的压板。",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.diyu_sand_bridge.hint.2"
+  },
+  {
+   "uid": "text:room2.diyu_sand_bridge.hint.3",
+   "domain": "text",
+   "id": "room2.diyu_sand_bridge.hint.3",
+   "name": "门开了：爬上梯子走过去。",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.diyu_sand_bridge.hint.3"
+  },
+  {
+   "uid": "text:room2.diyu_teahouse.name",
+   "domain": "text",
+   "id": "room2.diyu_teahouse.name",
+   "name": "驿站 · 桥头茶摊",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.diyu_teahouse.name"
+  },
+  {
+   "uid": "text:room2.diyu_wangchuan.name",
+   "domain": "text",
+   "id": "room2.diyu_wangchuan.name",
+   "name": "忘川渡 · 木浮铁沉",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.diyu_wangchuan.name"
+  },
+  {
+   "uid": "text:room2.diyu_wangchuan.hint.0",
+   "domain": "text",
+   "id": "room2.diyu_wangchuan.hint.0",
+   "name": "木箱浮在忘川上：推下去当垫脚石。",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.diyu_wangchuan.hint.0"
+  },
+  {
+   "uid": "text:room2.diyu_wangchuan.hint.1",
+   "domain": "text",
+   "id": "room2.diyu_wangchuan.hint.1",
+   "name": "铁箱会沉：推进浅水坑，压住水底的压板。",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.diyu_wangchuan.hint.1"
+  },
+  {
+   "uid": "text:room2.diyu_wangchuan.hint.2",
+   "domain": "text",
+   "id": "room2.diyu_wangchuan.hint.2",
+   "name": "跳进槽里，把纸台推出去搭过忘川。",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.diyu_wangchuan.hint.2"
+  },
+  {
+   "uid": "text:room2.diyu_wangchuan.hint.3",
+   "domain": "text",
+   "id": "room2.diyu_wangchuan.hint.3",
+   "name": "踩着纸台过河。",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.diyu_wangchuan.hint.3"
+  },
+  {
+   "uid": "text:room2.diyu_wangxiang.name",
+   "domain": "text",
+   "id": "room2.diyu_wangxiang.name",
+   "name": "望乡台 · 吊篮卡住了",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.diyu_wangxiang.name"
+  },
+  {
+   "uid": "text:room2.diyu_wangxiang.hint.0",
+   "domain": "text",
+   "id": "room2.diyu_wangxiang.hint.0",
+   "name": "吊篮下不去：井道里的门关着，它的压板在水井底下。把铁箱推进去，它会沉。",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.diyu_wangxiang.hint.0"
+  },
+  {
+   "uid": "text:room2.diyu_wangxiang.hint.1",
+   "domain": "text",
+   "id": "room2.diyu_wangxiang.hint.1",
+   "name": "门开了：回到吊篮上，再踩一次按钮。",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.diyu_wangxiang.hint.1"
+  },
+  {
+   "uid": "text:room2.diyu_wangxiang.hint.2",
+   "domain": "text",
+   "id": "room2.diyu_wangxiang.hint.2",
+   "name": "到底了，走出去。",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.diyu_wangxiang.hint.2"
+  },
+  {
+   "uid": "text:room2.dungeon2_bridge.name",
+   "domain": "text",
+   "id": "room2.dungeon2_bridge.name",
+   "name": "断桥 · 推浮石",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.dungeon2_bridge.name"
+  },
+  {
+   "uid": "text:room2.dungeon2_bridge.hint.0",
+   "domain": "text",
+   "id": "room2.dungeon2_bridge.hint.0",
+   "name": "走进浮石的一端就能推动它；浮石悬在空中，不会掉。",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.dungeon2_bridge.hint.0"
+  },
+  {
+   "uid": "text:room2.dungeon2_bridge.hint.1",
+   "domain": "text",
+   "id": "room2.dungeon2_bridge.hint.1",
+   "name": "推不动了就踩上去，从上面走过坑。",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.dungeon2_bridge.hint.1"
+  },
+  {
+   "uid": "text:room2.dungeon2_corridor.name",
+   "domain": "text",
+   "id": "room2.dungeon2_corridor.name",
+   "name": "鼠道 · 喘口气",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.dungeon2_corridor.name"
+  },
+  {
+   "uid": "text:room2.dungeon2_ferry.name",
+   "domain": "text",
+   "id": "room2.dungeon2_ferry.name",
+   "name": "渡箱 · 浮石载货",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.dungeon2_ferry.name"
+  },
+  {
+   "uid": "text:room2.dungeon2_ferry.hint.0",
+   "domain": "text",
+   "id": "room2.dungeon2_ferry.hint.0",
+   "name": "浮石载着箱子一起走：把它推过坑。",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.dungeon2_ferry.hint.0"
+  },
+  {
+   "uid": "text:room2.dungeon2_ferry.hint.1",
+   "domain": "text",
+   "id": "room2.dungeon2_ferry.hint.1",
+   "name": "踩上浮石，把箱子推上对岸的压板。",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.dungeon2_ferry.hint.1"
+  },
+  {
+   "uid": "text:room2.dungeon2_ferry.hint.2",
+   "domain": "text",
+   "id": "room2.dungeon2_ferry.hint.2",
+   "name": "门开了：踩着箱子翻过矮墙。",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.dungeon2_ferry.hint.2"
+  },
+  {
+   "uid": "text:room2.dungeon2_gate.name",
+   "domain": "text",
+   "id": "room2.dungeon2_gate.name",
+   "name": "渡门 · 符文监狱",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.dungeon2_gate.name"
+  },
+  {
+   "uid": "text:room2.dungeon2_home.name",
+   "domain": "text",
+   "id": "room2.dungeon2_home.name",
+   "name": "收件人之家 · 牢房小屋",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.dungeon2_home.name"
+  },
+  {
+   "uid": "text:room2.dungeon2_pole.name",
+   "domain": "text",
+   "id": "room2.dungeon2_pole.name",
+   "name": "撑岸 · 站在浮石上用铲子",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.dungeon2_pole.name"
+  },
+  {
+   "uid": "text:room2.dungeon2_pole.hint.0",
+   "domain": "text",
+   "id": "room2.dungeon2_pole.hint.0",
+   "name": "跳到浮石上。",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.dungeon2_pole.hint.0"
+  },
+  {
+   "uid": "text:room2.dungeon2_pole.hint.1",
+   "domain": "text",
+   "id": "room2.dungeon2_pole.hint.1",
+   "name": "对着身后的墙挖：挖不动，就撑——浮石往反方向漂一格。",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.dungeon2_pole.hint.1"
+  },
+  {
+   "uid": "text:room2.dungeon2_pole.hint.2",
+   "domain": "text",
+   "id": "room2.dungeon2_pole.hint.2",
+   "name": "上岸。",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.dungeon2_pole.hint.2"
+  },
+  {
+   "uid": "text:room2.dungeon2_sandpour.name",
+   "domain": "text",
+   "id": "room2.dungeon2_sandpour.name",
+   "name": "沙井 · 站在浮石上倒沙",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.dungeon2_sandpour.name"
+  },
+  {
+   "uid": "text:room2.dungeon2_sandpour.hint.0",
+   "domain": "text",
+   "id": "room2.dungeon2_sandpour.hint.0",
+   "name": "先挖一袋沙。",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.dungeon2_sandpour.hint.0"
+  },
+  {
+   "uid": "text:room2.dungeon2_sandpour.hint.1",
+   "domain": "text",
+   "id": "room2.dungeon2_sandpour.hint.1",
+   "name": "站到浮石右端，把沙倒进坑里：沙落到底，压住压板。",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.dungeon2_sandpour.hint.1"
+  },
+  {
+   "uid": "text:room2.dungeon2_sandpour.hint.2",
+   "domain": "text",
+   "id": "room2.dungeon2_sandpour.hint.2",
+   "name": "门开了：对着岸撑一下，上对岸。",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.dungeon2_sandpour.hint.2"
+  },
+  {
+   "uid": "text:room2.dungeon2_station.name",
+   "domain": "text",
+   "id": "room2.dungeon2_station.name",
+   "name": "驿站 · 牢房分号",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.dungeon2_station.name"
+  },
+  {
+   "uid": "text:room2.dungeon2_well.name",
+   "domain": "text",
+   "id": "room2.dungeon2_well.name",
+   "name": "落井 · 一路撑下去",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.dungeon2_well.name"
+  },
+  {
+   "uid": "text:room2.dungeon2_well.hint.0",
+   "domain": "text",
+   "id": "room2.dungeon2_well.hint.0",
+   "name": "跳上浮石，对着来时的岸撑一下。",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.dungeon2_well.hint.0"
+  },
+  {
+   "uid": "text:room2.dungeon2_well.hint.1",
+   "domain": "text",
+   "id": "room2.dungeon2_well.hint.1",
+   "name": "这块往左撑：走到它右端，对着石墙用铲子。",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.dungeon2_well.hint.1"
+  },
+  {
+   "uid": "text:room2.dungeon2_well.hint.2",
+   "domain": "text",
+   "id": "room2.dungeon2_well.hint.2",
+   "name": "最后一块往右撑。",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.dungeon2_well.hint.2"
+  },
+  {
+   "uid": "text:room2.dungeon2_well.hint.3",
+   "domain": "text",
+   "id": "room2.dungeon2_well.hint.3",
+   "name": "落到下面的石台上，向右出去。",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.dungeon2_well.hint.3"
+  },
+  {
+   "uid": "text:room2.dungeon2_yard.name",
+   "domain": "text",
+   "id": "room2.dungeon2_yard.name",
+   "name": "放风场 · 高台上的拉杆",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.dungeon2_yard.name"
+  },
+  {
+   "uid": "text:room2.dungeon2_yard.hint.0",
+   "domain": "text",
+   "id": "room2.dungeon2_yard.hint.0",
+   "name": "推浮石把箱子运过坑。",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.dungeon2_yard.hint.0"
+  },
+  {
+   "uid": "text:room2.dungeon2_yard.hint.1",
+   "domain": "text",
+   "id": "room2.dungeon2_yard.hint.1",
+   "name": "把箱子推到高台下面当台阶。",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.dungeon2_yard.hint.1"
+  },
+  {
+   "uid": "text:room2.dungeon2_yard.hint.2",
+   "domain": "text",
+   "id": "room2.dungeon2_yard.hint.2",
+   "name": "上高台拉下拉杆：下层的门开了。",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.dungeon2_yard.hint.2"
+  },
+  {
+   "uid": "text:room2.dungeon2_yard.hint.3",
+   "domain": "text",
+   "id": "room2.dungeon2_yard.hint.3",
+   "name": "从梯子下去，穿过下层的门。",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.dungeon2_yard.hint.3"
+  },
+  {
+   "uid": "text:dlg.fauna.dungeon_bat.fed",
+   "domain": "text",
+   "id": "dlg.fauna.dungeon_bat.fed",
+   "name": "只帮牢猫传话：喂零食要找猫",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:dlg.fauna.dungeon_bat.fed"
+  },
+  {
+   "uid": "text:dlg.fauna.diyu_butterfly.fed",
+   "domain": "text",
+   "id": "dlg.fauna.diyu_butterfly.fed",
+   "name": "只帮小白狗带路：喂零食要找狗",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:dlg.fauna.diyu_butterfly.fed"
+  },
+  {
+   "uid": "text:dlg.r2.hurt",
+   "domain": "text",
+   "id": "dlg.r2.hurt",
+   "name": "太高了，跳下去会摔伤。",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:dlg.r2.hurt"
+  },
+  {
+   "uid": "text:dlg.r2.no_snack",
+   "domain": "text",
+   "id": "dlg.r2.no_snack",
+   "name": "零食吃完了。",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:dlg.r2.no_snack"
+  },
+  {
+   "uid": "text:dlg.r2.no_hint",
+   "domain": "text",
+   "id": "dlg.r2.no_hint",
+   "name": "这间没有要提示的，往出口走吧。",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:dlg.r2.no_hint"
+  },
+  {
+   "uid": "text:dlg.r2.done_hint",
+   "domain": "text",
+   "id": "dlg.r2.done_hint",
+   "name": "都做完了：去出口吧。",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:dlg.r2.done_hint"
+  },
+  {
+   "uid": "text:dlg.r2.exit",
+   "domain": "text",
+   "id": "dlg.r2.exit",
+   "name": "到出口了！",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:dlg.r2.exit"
+  },
+  {
+   "uid": "text:r2.hud.moves",
+   "domain": "text",
+   "id": "r2.hud.moves",
+   "name": "{n} 步",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:r2.hud.moves"
+  },
+  {
+   "uid": "text:r2.hud.hint",
+   "domain": "text",
+   "id": "r2.hud.hint",
+   "name": "提示 {i}/{n}",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:r2.hud.hint"
+  },
+  {
+   "uid": "text:r2.hud.step",
+   "domain": "text",
+   "id": "r2.hud.step",
+   "name": "第 {i}/{n} 步",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:r2.hud.step"
+  },
+  {
+   "uid": "text:r2.hud.cleared",
+   "domain": "text",
+   "id": "r2.hud.cleared",
+   "name": "通过",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:r2.hud.cleared"
+  },
+  {
+   "uid": "text:r2.hud.snack",
+   "domain": "text",
+   "id": "r2.hud.snack",
+   "name": "×{n}",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:r2.hud.snack"
   }
  ]
 }

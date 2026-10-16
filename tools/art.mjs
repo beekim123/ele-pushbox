@@ -15,8 +15,8 @@ const cmd = argv[0];
 const opt = (name, def) => { const i = argv.indexOf("--" + name); return i >= 0 ? argv[i + 1] : def; };
 const ROOT = path.resolve(opt("root", REPO));
 const rel = (...p) => path.join(ROOT, ...p);
-// font-delivery adds glyphs only; ui-delivery registers new screens next to ui.js (neither changes what ui.js draws).
-const PB = loadCore(["raster", "font-data", "font-small", "font-delivery", "sprites", "i18n", "tilemodel", "terrain", "terrain-diyu", "ambient", "env", "matter", "scene", "dialogue", "ui", "ui-delivery"]);
+// font-delivery and font-rooms2 add glyphs only; ui-delivery registers new screens next to ui.js (neither changes what ui.js draws).
+const PB = loadCore(["raster", "font-data", "font-small", "font-delivery", "font-rooms2", "sprites", "i18n", "tilemodel", "terrain", "terrain-diyu", "ambient", "env", "matter", "scene", "dialogue", "ui", "ui-delivery"]);
 const LOCALES = ["zh-Hans", "en"];
 // content/i18n (frozen) plus the content/i18n-<name> tables (tools/lib/i18n.mjs).
 function loadI18n() {
