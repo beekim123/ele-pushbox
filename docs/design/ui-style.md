@@ -22,10 +22,17 @@
 | 第 1 章 幽暗石牢（dungeon） | S2 漂浮符文 |
 | 第 2 章 黄金神庙（ruins） | S3 祥云玉简 |
 | 第 3 章（cave） | S1 晶石琉璃 |
+| 第 4 章 迷雾古森（forest） | S5 藤木萤光（只用于大厅） |
 | 第 5 章（sky） | S4 梦泡糖霜 |
-| 第 4 章（forest）、第 6 章（cosmos，实验） | 暂不画；画好之前先用 S1 晶石琉璃（设计负责人 2026-10-16 定） |
+| 第 6 章 深空星站（cosmos） | S6 星港舱板（只用于大厅） |
 
 对应图：[lobby/mapping.png](ui-style/lobby/mapping.png)。
+
+S5、S6 只有大厅皮肤，不进设置里的「界面风格」（那里仍是 S1–S4 四套）：
+- S5 藤木萤光：钉子木板 + 草皮苔边、土块字标题（字顶长草）、年轮木墩托徽章、叶片光标；装饰是垂藤、红蘑菇、萤火虫。
+- S6 星港舱板：铆钉舱板 + 黄黑警示条、站牌点阵灯标题、舷窗托徽章、火箭光标、紫色选中条；装饰是金环小行星、红色信号灯、星光。
+
+效果图：[lobby/S5_forest.png](ui-style/lobby/S5_forest.png)、[lobby/S6_cosmos.png](ui-style/lobby/S6_cosmos.png)（2 倍），320×180 原尺寸图是同名的 `.native.png`。
 
 ## 3 固定界面：默认 S1 晶石琉璃 · 素版
 
@@ -56,7 +63,7 @@
 
 ## 5 还没做的
 
-- forest、cosmos 的大厅皮肤（等用户决定用哪套或另画）；S2–S4 的固定界面组件（UI-07）。
+- S2–S4 的固定界面组件（[UI-07](../packages/UI-07.md)）。
 - 渡口设施（工坊、徽章柜等）的界面没有设计。
 - 英文版没有出图。
 
@@ -66,5 +73,6 @@
 
 ```sh
 cd tools/ui-proposals && python3 make2.py                 # 大厅四套（out2/）
+python3 make3.py                                          # 第 4、6 章大厅皮肤 S5、S6 和 mapping.png（out2/）
 cd fixed && python3 screens_a.py && python3 screens_b.py && python3 screens_c.py && python3 make.py   # 固定界面（fixed/out/）
 ```
