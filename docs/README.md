@@ -30,6 +30,7 @@
 | [research/2026-10-15-competitors.md](research/2026-10-15-competitors.md) | 市面上有没有类似的游戏、我们的独特之处、要避开的坑 |
 | [reference/sdk-v1.2-verified.md](reference/sdk-v1.2-verified.md) | 逐条核对源码的 SDK 事实 |
 | [handoff/gpt-refactor-prompt.md](handoff/gpt-refactor-prompt.md) | 交给开发方（GPT）的完整重构提示词 |
+| [handoff/delivery-redesign-handover.md](handoff/delivery-redesign-handover.md) | 配送模式重做（分支 `claude/delivery-redesign`）的交接文档和提示词：第 1–3 步已完成，第 4–7 步待做 |
 
 关卡规格在 `content/levels/`，机制、模式、物品等目录在 `content/catalog/`，美术数据在 `art/`。
 
