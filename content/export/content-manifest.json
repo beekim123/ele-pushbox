@@ -1029,7 +1029,7 @@
    "owner": "game",
    "sdk": [],
    "levels": [],
-   "status": "proposed"
+   "status": "specified"
   },
   {
    "id": "crush_monster",
@@ -1038,7 +1038,7 @@
    "owner": "game",
    "sdk": [],
    "levels": [],
-   "status": "proposed"
+   "status": "specified"
   },
   {
    "id": "trap_monster",
@@ -1047,7 +1047,7 @@
    "owner": "game",
    "sdk": [],
    "levels": [],
-   "status": "proposed"
+   "status": "specified"
   },
   {
    "id": "carry_bulky",
@@ -1477,6 +1477,9 @@
     "plate_door"
    ],
    "theme": "theme.dungeon",
+   "ambient_exclude": [
+    "fauna.dungeon_rat"
+   ],
    "layer": 1,
    "status": "active"
   },
@@ -2181,7 +2184,11 @@
     "love_letter"
    ],
    "layer": 1,
-   "status": "concept"
+   "status": "concept",
+   "params": {
+    "move": "wander",
+    "step_secs": 0.8
+   }
   },
   {
    "id": "old_miner",
@@ -2197,7 +2204,10 @@
     "letter"
    ],
    "layer": 1,
-   "status": "concept"
+   "status": "concept",
+   "params": {
+    "move": "stay"
+   }
   },
   {
    "id": "moth_king",
@@ -2605,7 +2615,11 @@
     "magnet"
    ],
    "layer": 2,
-   "status": "concept"
+   "status": "concept",
+   "params": {
+    "move": "stay",
+    "home_melt_mult": 3
+   }
   },
   {
    "id": "dwarf",
@@ -3344,7 +3358,11 @@
    "rarity": "common",
    "carry": "small",
    "layer": 1,
-   "status": "concept"
+   "status": "concept",
+   "params": {
+    "pay": 30,
+    "water_damage": 1
+   }
   },
   {
    "id": "ice_cream",
@@ -3359,7 +3377,11 @@
    "rarity": "common",
    "carry": "medium",
    "layer": 1,
-   "status": "concept"
+   "status": "concept",
+   "params": {
+    "pay": 40,
+    "melt_secs_per_point": 45
+   }
   },
   {
    "id": "piano",
@@ -3389,7 +3411,13 @@
    "rarity": "common",
    "carry": "medium",
    "layer": 1,
-   "status": "concept"
+   "status": "concept",
+   "params": {
+    "pay": 45,
+    "fragile_fall_rows": 2,
+    "hurt_damage": 1,
+    "sand_cushion": true
+   }
   },
   {
    "id": "fish_tank",
@@ -4347,7 +4375,22 @@
    "pushable": true,
    "mode": "delivery",
    "layer": 1,
-   "status": "concept"
+   "status": "concept",
+   "params": {
+    "move": "chase",
+    "step_secs": 0.3,
+    "chase_step_secs": 0.25,
+    "sight_tiles": 5,
+    "cliff_rows": 2,
+    "contact": "steal",
+    "steal_sand": 1,
+    "steal_coins": 5,
+    "flee_secs": 3,
+    "flee_step_secs": 0.2,
+    "push_stun_secs": 0.5,
+    "trap_secs": 3,
+    "coins": 5
+   }
   },
   {
    "id": "skeleton_guard",
@@ -4358,7 +4401,15 @@
    "pushable": false,
    "mode": "delivery",
    "layer": 1,
-   "status": "concept"
+   "status": "concept",
+   "params": {
+    "move": "patrol",
+    "step_secs": 0.5,
+    "cliff_rows": 2,
+    "contact": "hurt",
+    "trap_secs": 5,
+    "coins": 10
+   }
   },
   {
    "id": "scarab_swarm",
@@ -5197,7 +5248,10 @@
    "price": 10,
    "assets": [
     "item.sandbag"
-   ]
+   ],
+   "params": {
+    "sand": 1
+   }
   },
   {
    "id": "bomb",
@@ -5218,7 +5272,10 @@
    "summary": "在当前位置向下放一段梯子",
    "status": "concept",
    "layer": 1,
-   "price": 25
+   "price": 25,
+   "params": {
+    "max_tiles": 6
+   }
   },
   {
    "id": "plank",
@@ -5353,7 +5410,10 @@
    "summary": "回 1 颗心",
    "status": "concept",
    "layer": 1,
-   "price": 50
+   "price": 50,
+   "params": {
+    "heal": 1
+   }
   },
   {
    "id": "pocket_watch",
@@ -5847,5 +5907,197 @@
    "layer": 2,
    "status": "concept"
   }
- ]
+ ],
+ "slices": [
+  {
+   "id": "dungeon_1",
+   "name": "第一个可玩切片 · 幽暗石牢",
+   "mode": "delivery",
+   "status": "design",
+   "doc": "docs/design/delivery-slice.md",
+   "world": "dungeon",
+   "cargo": [
+    "letter",
+    "vase",
+    "ice_cream"
+   ],
+   "recipients": [
+    "old_miner",
+    "zombie",
+    "goblin_smith"
+   ],
+   "monsters": [
+    "rat_swarm",
+    "skeleton_guard"
+   ],
+   "rooms": [
+    "dungeon_gate",
+    "dungeon_home",
+    "dungeon_station",
+    "dungeon_hall",
+    "dungeon_guard",
+    "dungeon_burrow",
+    "dungeon_plate",
+    "dungeon_shaft",
+    "dungeon_corner",
+    "dungeon_well"
+   ],
+   "mechanisms": [
+    "push",
+    "ladder",
+    "dig",
+    "pour",
+    "plate_door",
+    "fall",
+    "push_monster",
+    "crush_monster",
+    "trap_monster"
+   ],
+   "station": {
+    "items": [
+     "sandbag",
+     "first_aid",
+     "rope_ladder"
+    ],
+    "stock": {
+     "sandbag": 5,
+     "first_aid": 1,
+     "rope_ladder": 2
+    },
+    "heal": 1
+   },
+   "reels": {
+    "rerolls": 1,
+    "weights": {
+     "common": 4,
+     "rare": 2,
+     "legendary": 1
+    }
+   },
+   "map": {
+    "cols": 4,
+    "rows": 3,
+    "path_min": 5,
+    "path_max": 9,
+    "directions": [
+     "down",
+     "up"
+    ],
+    "drop_pct": 30,
+    "end_pct": 20
+   },
+   "time": {
+    "tick_hz": 60,
+    "transition_secs": 0.3
+   },
+   "intervals": {
+    "walk": 0.22,
+    "climb": 0.22,
+    "push": 0.3,
+    "dig": 0.35,
+    "pour": 0.35,
+    "interact": 0.4,
+    "move_anim": 0.1
+   },
+   "gravity": {
+    "tiles_per_sec": 12
+   },
+   "player": {
+    "hearts": 3,
+    "iframe_secs": 1.5,
+    "fall_hurt_rows": 3,
+    "sand_max": 9,
+    "item_slots": 3
+   },
+   "monster_fall_ko_rows": 3,
+   "cargo_integrity": 3,
+   "coins": {
+    "pickup": 5
+   },
+   "tip": {
+    "time_fast": 1.5,
+    "time_floor": 0.5,
+    "like": 1.5
+   },
+   "rating": {
+    "S": 1.4,
+    "A": 1,
+    "B": 0.6
+   },
+   "fail_keep": 0.5
+  }
+ ],
+ "rooms": [
+  {
+   "id": "dungeon_burrow",
+   "world": "dungeon",
+   "type": "room",
+   "spec": "content/rooms/dungeon/dungeon_burrow.json",
+   "sha256": "06f791d4b0781d7771dfb51381fc4540156b7ca410841ad8e1e0a250ebf0c382"
+  },
+  {
+   "id": "dungeon_corner",
+   "world": "dungeon",
+   "type": "room",
+   "spec": "content/rooms/dungeon/dungeon_corner.json",
+   "sha256": "ddc3bf673f875efd8f7ca26c4ad302a3946de2ad59868e132d5eb76988e36ad2"
+  },
+  {
+   "id": "dungeon_gate",
+   "world": "dungeon",
+   "type": "gate",
+   "spec": "content/rooms/dungeon/dungeon_gate.json",
+   "sha256": "1b049eeb720c67415e2c79ad7d31765ab7179a55bdf969684adb1871dd731700"
+  },
+  {
+   "id": "dungeon_guard",
+   "world": "dungeon",
+   "type": "room",
+   "spec": "content/rooms/dungeon/dungeon_guard.json",
+   "sha256": "f193c385e9c489a4a4193514a3a00bfe14239bb2cca574e735eecb662cd10e2b"
+  },
+  {
+   "id": "dungeon_hall",
+   "world": "dungeon",
+   "type": "room",
+   "spec": "content/rooms/dungeon/dungeon_hall.json",
+   "sha256": "63d7044025c7b1fbce737b675b79fca2b7c3e579ee996cdf65ae45bb3604749c"
+  },
+  {
+   "id": "dungeon_home",
+   "world": "dungeon",
+   "type": "home",
+   "spec": "content/rooms/dungeon/dungeon_home.json",
+   "sha256": "6a8dbddac437d3fa78bd8ead4434e2ed5ea03bff405893f3849362df31c481f2"
+  },
+  {
+   "id": "dungeon_plate",
+   "world": "dungeon",
+   "type": "room",
+   "spec": "content/rooms/dungeon/dungeon_plate.json",
+   "sha256": "671e5e8787c3d2669db0e629367bad47c03727dbbd04103428001fe6c6187e2a"
+  },
+  {
+   "id": "dungeon_shaft",
+   "world": "dungeon",
+   "type": "room",
+   "spec": "content/rooms/dungeon/dungeon_shaft.json",
+   "sha256": "09f9cd9cd3066c847a5e387cbca6300e7a70f979fa34eb997df93286efe1e421"
+  },
+  {
+   "id": "dungeon_station",
+   "world": "dungeon",
+   "type": "station",
+   "spec": "content/rooms/dungeon/dungeon_station.json",
+   "sha256": "2943dd595148b339857da2693ae7f4ed87b74c14d3b91ae176794a02ae090a90"
+  },
+  {
+   "id": "dungeon_well",
+   "world": "dungeon",
+   "type": "room",
+   "spec": "content/rooms/dungeon/dungeon_well.json",
+   "sha256": "7dfb90d1395d7554bd453fe0e7d24675eb219ad8126a217f4dd8d4060525494e"
+  }
+ ],
+ "delivery_golden": "content/export/delivery-golden.json"
 }

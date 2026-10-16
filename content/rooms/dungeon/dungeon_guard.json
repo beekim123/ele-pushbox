@@ -1,0 +1,142 @@
+{
+ "format": "pushbox.room/1",
+ "id": "dungeon_guard",
+ "world": "dungeon",
+ "type": "room",
+ "name": "守卫廊",
+ "idea": "骷髅守卫在下面巡逻：从梯子上台子，等它走到下面时把箱子推下去砸它；或者在土地上挖一个坑困住它。",
+ "weight": 12,
+ "mirror": true,
+ "exits": {
+  "left": [
+   "low"
+  ],
+  "right": [
+   "low"
+  ]
+ },
+ "legend": {
+  "1": {
+   "monster": "skeleton_guard",
+   "dir": "left"
+  }
+ },
+ "mechanisms": [
+  "ladder",
+  "push",
+  "dig",
+  "crush_monster",
+  "trap_monster"
+ ],
+ "map": [
+  "####################",
+  "#..................#",
+  "#..................#",
+  "#..................#",
+  "#..H.B.$...........#",
+  "#..H######.........#",
+  "...H................",
+  "...H.....1.......$..",
+  "######eeee##########",
+  "####################"
+ ],
+ "demos": [
+  {
+   "id": "crush",
+   "mechanisms": [
+    "crush_monster",
+    "push",
+    "ladder"
+   ],
+   "name": "压怪：等骷髅走到台下，把箱子推下去",
+   "open": {
+    "left": "low",
+    "right": "low"
+   },
+   "script": [
+    "R*3",
+    "U*3",
+    "R",
+    "R*4",
+    "wait 205",
+    "R",
+    "R",
+    "R*10"
+   ],
+   "expect": {
+    "end": "exit:right",
+    "hearts": 3,
+    "kos": 1,
+    "ko": [
+     "crushed"
+    ],
+    "coins": 20,
+    "cargo": 3
+   },
+   "from": "left.low"
+  },
+  {
+   "id": "vase",
+   "mechanisms": [
+    "fall"
+   ],
+   "name": "花瓶怕摔：从台上跳到箱子上（落 2 格）会裂一道",
+   "open": {
+    "left": "low",
+    "right": "low"
+   },
+   "script": [
+    "R*3",
+    "U*3",
+    "R",
+    "R*4",
+    "wait 205",
+    "R",
+    "R",
+    "R*10"
+   ],
+   "cargo": "vase",
+   "expect": {
+    "end": "exit:right",
+    "cargo": 2
+   },
+   "from": "left.low"
+  },
+  {
+   "id": "trap",
+   "mechanisms": [
+    "trap_monster",
+    "dig",
+    "pour"
+   ],
+   "name": "困怪：在土地上挖坑，骷髅掉进去后倒沙把它埋了",
+   "open": {
+    "left": "low",
+    "right": "low"
+   },
+   "script": [
+    "R*2",
+    "wait 270",
+    "R*5",
+    "DIG_D",
+    "L",
+    "wait 650",
+    "POUR_R",
+    "wait 20",
+    "R*14"
+   ],
+   "expect": {
+    "end": "exit:right",
+    "hearts": 3,
+    "kos": 1,
+    "ko": [
+     "buried"
+    ],
+    "events": [
+     "trap"
+    ]
+   },
+   "from": "left.low"
+  }
+ ]
+}

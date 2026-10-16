@@ -19,7 +19,7 @@
 | 机制目录 | `content/catalog/mechanisms.json` | 设计负责人 | 同上 |
 | 物品、货物、怪物、增益 | `content/catalog/items.json`、`cargo.json`、`monsters.json`、`buffs.json` | 设计负责人 | 同上 |
 | 关卡规格 | `content/levels/<模式>/<组>/<编号>.json` | 设计负责人或开发方 | 工作台、`check-levels.mjs`、Godot |
-| 界面文字 | `content/i18n/`、`content/i18n-extra/` | 设计负责人；开发方只加 `i18n-extra` | 工作台、Godot |
+| 界面文字 | `content/i18n/`（已确认界面用，冻结）、`content/i18n-<名>/`（新一批界面的表，如 `i18n-delivery`）、`content/i18n-extra/` | 设计负责人；开发方只加 `i18n-extra` | 工作台、Godot（[美术流程](art-pipeline.md) 第 2 节） |
 | 游戏验证报告 | `game/reports/verification.json` | Godot headless 测试自动生成 | `content.mjs` 读入，工作台显示 |
 
 规则：任何列表（有哪些机制、哪些关、哪些货物）只在目录文件里维护一份；设计文档里的表格是说明，编号与状态以目录文件为准。
@@ -63,6 +63,7 @@
 | `node tools/content.mjs check` | 检查目录和关卡规格：编号重复、引用不存在的机制 / 资产 / 主题、关卡规格与计划不一致、规格放错目录等。有错误时退出码非 0 |
 | `node tools/content.mjs build` | 检查后写出 `content/export/content-manifest.json`（给 Godot：模式、组、按顺序的关卡和规格文件的哈希、机制）和 `workbench/data/content.js`（给工作台） |
 | `node tools/art.mjs verify` | 美术校验，同时要求内容检查没有错误 |
+| `node tools/check-rooms.mjs --write` | 配送房间模板的静态检查与可通性检查，按切片生成 300 个种子的地图逐间核对，再用实时规则回放每个模板的演示（含翻转）；写出 `content/rooms-check.generated.json` 与 `content/export/delivery-golden.json`（地图对照表 + 回放记录）。模板改了没重跑、演示没达到预期，内容检查都会报错 |
 
 ## 6 页面
 
@@ -71,7 +72,8 @@
 | 总览 | 三个模式的状态；关卡模式各组的进度；美术确认数量；内容检查的错误与警告；最近一次游戏验证报告 |
 | 模式与关卡 | 模式 → 组 → 关卡；每关显示规格、设计模型、SDK 验证、美术四项状态，有地图的关可以直接打开预览 |
 | 机制 | 机制目录：归属（SDK / 游戏层）、需要的 SDK 能力、状态、对应关卡、用到的美术及确认情况 |
-| 设计数据 | 物品、货物、怪物、增益的目录（配送模式的设计数据） |
+| 地图预览 | 配送模式：按种子生成整张地图（和游戏同一套代码）、每一间的模板与检查过的路线、全部房间模板的检查结果（[delivery-maps.md](delivery-maps.md)）；用实时规则播放每个模板的演示、用键盘试玩一间或整张图，右栏显示时间、心、金币、货物和结算（[delivery-realtime.md](delivery-realtime.md) 第 15 节） |
+| 设计数据 | 可玩切片、地区、收件人、货物、怪物、道具、增益等目录（配送模式的设计数据） |
 | 场景 | 代表场景、关卡、界面画面的预览（原有） |
 | 资产与动画、编辑与对比、确认、导出 | 原有的美术流程 |
 

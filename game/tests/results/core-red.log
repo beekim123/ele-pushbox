@@ -1,6 +1,0 @@
-Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
-
-FAIL: volume is clamped to supported range
-FAIL: invalid environment choice preserves a valid mode
-FAIL: locale substitutes named parameters
-core services: 3 failure(s)

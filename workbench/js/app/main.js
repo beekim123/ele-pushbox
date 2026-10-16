@@ -2,7 +2,7 @@
 (function (root) {
   "use strict";
   const store = root.PBStore;
-  const VIEWS = { overview: root.PBOverview, modes: root.PBModes, mechanisms: root.PBMechanisms, catalog: root.PBCatalog, ids: root.PBIds, scenes: root.PBScenes, assets: root.PBAssets, edit: root.PBEditor, review: root.PBReview, export: root.PBExport };
+  const VIEWS = { overview: root.PBOverview, modes: root.PBModes, mechanisms: root.PBMechanisms, catalog: root.PBCatalog, maps: root.PBMaps, ids: root.PBIds, scenes: root.PBScenes, assets: root.PBAssets, edit: root.PBEditor, review: root.PBReview, export: root.PBExport };
   let active = null;
 
   function toast(msg) {

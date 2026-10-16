@@ -4,6 +4,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import crypto from 'node:crypto';
 import { fileURLToPath, pathToFileURL } from 'node:url';
+import { loadTextTables } from '../../tools/lib/i18n.mjs';
 
 const DEFAULT_REPO = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
 const sha = (bytes) => crypto.createHash('sha256').update(bytes).digest('hex');
@@ -25,26 +26,17 @@ function inputs(repoRoot) {
   const content = json(path.join(repoRoot, 'content/export/content-manifest.json'));
   const art = json(path.join(repoRoot, 'art/export/manifest.json'));
   if (map.format !== 'pushbox.idmap/1' || content.format !== 'pushbox.content-manifest/1' || art.format !== 'pushbox.art-manifest/1') throw new Error('unsupported input manifest format');
-  const texts = {};
-  for (const locale of ['zh-Hans', 'en']) {
-    texts[locale] = json(path.join(repoRoot, `content/i18n/${locale}.json`));
-    const extra = path.join(repoRoot, `content/i18n-extra/${locale}.json`);
-    if (fs.existsSync(extra)) {
-      for (const [key, value] of Object.entries(json(extra))) {
-        if (key === '_meta') continue;
-        if (key in texts[locale]) throw new Error(`extra translation shadows approved key: ${key}`);
-        if (typeof value !== 'string') throw new Error(`translation must be a string: ${locale}/${key}`);
-        texts[locale][key] = value;
-      }
+  const { tables: texts, source: textSource, problems } = loadTextTables(repoRoot);
+  if (problems.length) throw new Error('translation tables: ' + problems.map(p => `${p.where}: ${p.msg}`).join('; '));
+  for (const [locale, table] of Object.entries(texts)) {
+    for (const [key, value] of Object.entries(table)) {
+      if (key !== '_meta' && typeof value !== 'string') throw new Error(`translation must be a string: ${locale}/${key}`);
     }
   }
   const baseText = new Set(map.entries.filter(e => e.domain === 'text').map(e => e.id));
-  const extraKeys = [...new Set(Object.keys(texts['zh-Hans']).filter(k => k !== '_meta' && !baseText.has(k)))];
-  for (const key of extraKeys) {
-    if (!(key in texts.en)) throw new Error(`missing English extra translation: ${key}`);
-    map.entries.push({ uid: `text:${key}`, domain: 'text', id: key, name: texts['zh-Hans'][key], source: 'content/i18n-extra/zh-Hans.json', game: `tr:${key}`, origin: 'i18n-extra' });
+  for (const key of Object.keys(texts['zh-Hans']).filter(k => k !== '_meta' && !baseText.has(k))) {
+    map.entries.push({ uid: `text:${key}`, domain: 'text', id: key, name: texts['zh-Hans'][key], source: textSource[key], game: `tr:${key}` });
   }
-  for (const key of Object.keys(texts.en)) if (key !== '_meta' && !(key in texts['zh-Hans'])) throw new Error(`missing Chinese translation: ${key}`);
   if (map.domains?.text) map.domains.text.count = map.entries.filter(e => e.domain === 'text').length;
   const uids = new Set();
   for (const e of map.entries) {

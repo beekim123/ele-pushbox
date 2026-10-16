@@ -1,0 +1,92 @@
+{
+ "format": "pushbox.room/1",
+ "id": "dungeon_gate",
+ "world": "dungeon",
+ "type": "gate",
+ "name": "渡门",
+ "idea": "起点：人物从渡门走出来；一枚金币，没有怪。",
+ "weight": 10,
+ "mirror": true,
+ "exits": {
+  "left": [
+   "low"
+  ],
+  "right": [
+   "low"
+  ],
+  "top": [
+   "mid"
+  ],
+  "bottom": [
+   "mid"
+  ]
+ },
+ "legend": {
+  "1": {
+   "feature": "gate"
+  }
+ },
+ "caps": {
+  "top": [
+   [
+    9,
+    0,
+    2,
+    6,
+    "#"
+   ],
+   [
+    9,
+    6,
+    2,
+    2,
+    "."
+   ]
+  ],
+  "bottom": [
+   [
+    9,
+    8,
+    2,
+    2,
+    "#"
+   ]
+  ]
+ },
+ "mechanisms": [
+  "ladder"
+ ],
+ "map": [
+  "#########HH#########",
+  "####.....HH.....####",
+  "##.......HH.......##",
+  "#........HH........#",
+  "#........HH........#",
+  "#........HH........#",
+  ".........HH.........",
+  "...1.....HH....$....",
+  "#########HH#########",
+  "#########HH#########"
+ ],
+ "demos": [
+  {
+   "id": "out",
+   "mechanisms": [
+    "ladder"
+   ],
+   "name": "走出渡门",
+   "open": {
+    "right": "low"
+   },
+   "script": [
+    "R*17"
+   ],
+   "expect": {
+    "end": "exit:right",
+    "hearts": 3,
+    "coins": 5
+   },
+   "from": "gate"
+  }
+ ]
+}

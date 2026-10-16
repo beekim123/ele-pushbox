@@ -37,6 +37,397 @@
  },
  "assets": [
   {
+   "id": "avatar.goblin_smith",
+   "name": "滚轮头像 · 地精铁匠",
+   "category": "avatar",
+   "kind": "sprite",
+   "layer": "ui",
+   "current": {
+    "version": 1,
+    "hash": "b901baf70b30239fa027bf78bcad072eee4aa8e5197ca6d97acabc8dd866d29d",
+    "status": "approved",
+    "preview": "art/export/preview/avatar.goblin_smith.png",
+    "preview_sha256": "e4796a022839e4c5ef833ee60cb2ea9feba58c05ab2c9b4f0cacb8ff1b119ebf"
+   },
+   "approved": {
+    "version": 1,
+    "hash": "b901baf70b30239fa027bf78bcad072eee4aa8e5197ca6d97acabc8dd866d29d",
+    "png": "art/export/approved/avatar.goblin_smith@v1.png",
+    "png_sha256": "e4796a022839e4c5ef833ee60cb2ea9feba58c05ab2c9b4f0cacb8ff1b119ebf",
+    "approval": "APR-0006",
+    "date": "2026-10-16T03:45:02.583Z"
+   },
+   "current_is_approved": true,
+   "frame_size": [
+    24,
+    24
+   ],
+   "frame_count": 1,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    0,
+    0
+   ],
+   "animations": {
+    "default": {
+     "fps": 1,
+     "loop": false,
+     "frames": [
+      0
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
+   "id": "avatar.old_miner",
+   "name": "滚轮头像 · 老矿工",
+   "category": "avatar",
+   "kind": "sprite",
+   "layer": "ui",
+   "current": {
+    "version": 1,
+    "hash": "c607836c63d2102ccb6d1bc7e4a74a4869cc6badd4b48c385dbc18e961a51aee",
+    "status": "approved",
+    "preview": "art/export/preview/avatar.old_miner.png",
+    "preview_sha256": "4dce7c7b60fc4b5597b546c12173e6204a29cc285e1d45b2d70d980fc3cf3981"
+   },
+   "approved": {
+    "version": 1,
+    "hash": "c607836c63d2102ccb6d1bc7e4a74a4869cc6badd4b48c385dbc18e961a51aee",
+    "png": "art/export/approved/avatar.old_miner@v1.png",
+    "png_sha256": "4dce7c7b60fc4b5597b546c12173e6204a29cc285e1d45b2d70d980fc3cf3981",
+    "approval": "APR-0006",
+    "date": "2026-10-16T03:45:02.583Z"
+   },
+   "current_is_approved": true,
+   "frame_size": [
+    24,
+    24
+   ],
+   "frame_count": 1,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    0,
+    0
+   ],
+   "animations": {
+    "default": {
+     "fps": 1,
+     "loop": false,
+     "frames": [
+      0
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
+   "id": "avatar.zombie",
+   "name": "滚轮头像 · 僵尸",
+   "category": "avatar",
+   "kind": "sprite",
+   "layer": "ui",
+   "current": {
+    "version": 1,
+    "hash": "fea509a9818ab135825d06410c991cc2e7258c52e4ade9cf72817bb1ae5410c8",
+    "status": "approved",
+    "preview": "art/export/preview/avatar.zombie.png",
+    "preview_sha256": "770aeabf60988fb214be6a7648e0765715ddb20ea3e14e0904b3b4fb3c288cd6"
+   },
+   "approved": {
+    "version": 1,
+    "hash": "fea509a9818ab135825d06410c991cc2e7258c52e4ade9cf72817bb1ae5410c8",
+    "png": "art/export/approved/avatar.zombie@v1.png",
+    "png_sha256": "770aeabf60988fb214be6a7648e0765715ddb20ea3e14e0904b3b4fb3c288cd6",
+    "approval": "APR-0006",
+    "date": "2026-10-16T03:45:02.583Z"
+   },
+   "current_is_approved": true,
+   "frame_size": [
+    24,
+    24
+   ],
+   "frame_count": 1,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    0,
+    0
+   ],
+   "animations": {
+    "default": {
+     "fps": 1,
+     "loop": false,
+     "frames": [
+      0
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
+   "id": "cargo.ice_cream",
+   "name": "货物 · 冰淇淋",
+   "category": "cargo",
+   "kind": "sprite",
+   "layer": "ui",
+   "current": {
+    "version": 1,
+    "hash": "4a0426f3f3bc60493a8f13bed4735f04ae784511e6160e3f453e69d5479fe09f",
+    "status": "approved",
+    "preview": "art/export/preview/cargo.ice_cream.png",
+    "preview_sha256": "654824ef2892c06109bb6233ce9da651d3eecb105c1f7f7759550de18060505a"
+   },
+   "approved": {
+    "version": 1,
+    "hash": "4a0426f3f3bc60493a8f13bed4735f04ae784511e6160e3f453e69d5479fe09f",
+    "png": "art/export/approved/cargo.ice_cream@v1.png",
+    "png_sha256": "654824ef2892c06109bb6233ce9da651d3eecb105c1f7f7759550de18060505a",
+    "approval": "APR-0006",
+    "date": "2026-10-16T03:45:02.583Z"
+   },
+   "current_is_approved": true,
+   "frame_size": [
+    16,
+    16
+   ],
+   "frame_count": 2,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    0,
+    0
+   ],
+   "animations": {
+    "default": {
+     "fps": 1,
+     "loop": false,
+     "frames": [
+      0
+     ]
+    },
+    "melting": {
+     "fps": 2,
+     "loop": true,
+     "frames": [
+      1,
+      0
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
+   "id": "cargo.letter",
+   "name": "货物 · 信件",
+   "category": "cargo",
+   "kind": "sprite",
+   "layer": "ui",
+   "current": {
+    "version": 1,
+    "hash": "755d60fe4cd9fddc356cb2154695834209935dfed6da8e443721c2c4a0df3bb4",
+    "status": "approved",
+    "preview": "art/export/preview/cargo.letter.png",
+    "preview_sha256": "109024957813201bc8ecf5abb5cd7090cdbb572704a8353551be972fca6dafb1"
+   },
+   "approved": {
+    "version": 1,
+    "hash": "755d60fe4cd9fddc356cb2154695834209935dfed6da8e443721c2c4a0df3bb4",
+    "png": "art/export/approved/cargo.letter@v1.png",
+    "png_sha256": "109024957813201bc8ecf5abb5cd7090cdbb572704a8353551be972fca6dafb1",
+    "approval": "APR-0006",
+    "date": "2026-10-16T03:45:02.583Z"
+   },
+   "current_is_approved": true,
+   "frame_size": [
+    16,
+    16
+   ],
+   "frame_count": 1,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    0,
+    0
+   ],
+   "animations": {
+    "default": {
+     "fps": 1,
+     "loop": false,
+     "frames": [
+      0
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
+   "id": "cargo.vase",
+   "name": "货物 · 花瓶",
+   "category": "cargo",
+   "kind": "sprite",
+   "layer": "ui",
+   "current": {
+    "version": 1,
+    "hash": "0eeb7e49c72daafc67a145c3641528958e97b447d184c3bc777a8cd2d7947944",
+    "status": "approved",
+    "preview": "art/export/preview/cargo.vase.png",
+    "preview_sha256": "bae4114d96e52ae037b2df0b03369b27c4a9439e7d6f1f27b5703b9293072495"
+   },
+   "approved": {
+    "version": 1,
+    "hash": "0eeb7e49c72daafc67a145c3641528958e97b447d184c3bc777a8cd2d7947944",
+    "png": "art/export/approved/cargo.vase@v1.png",
+    "png_sha256": "bae4114d96e52ae037b2df0b03369b27c4a9439e7d6f1f27b5703b9293072495",
+    "approval": "APR-0006",
+    "date": "2026-10-16T03:45:02.583Z"
+   },
+   "current_is_approved": true,
+   "frame_size": [
+    16,
+    16
+   ],
+   "frame_count": 2,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    0,
+    0
+   ],
+   "animations": {
+    "default": {
+     "fps": 1,
+     "loop": false,
+     "frames": [
+      0
+     ]
+    },
+    "cracked": {
+     "fps": 1,
+     "loop": false,
+     "frames": [
+      1
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
+   "id": "char.goblin_smith",
+   "name": "地精铁匠（收件人）",
+   "category": "character",
+   "kind": "sprite",
+   "layer": "entity",
+   "current": {
+    "version": 1,
+    "hash": "aec499b0c22bf603343aa32f4dc22069ff84091db6a009a78d0accc8c2211359",
+    "status": "approved",
+    "preview": "art/export/preview/char.goblin_smith.png",
+    "preview_sha256": "204f08410a6082a5eaab5660c7ef853b4c9d1c1ec39a2a520df29323a6f063c6"
+   },
+   "approved": {
+    "version": 1,
+    "hash": "aec499b0c22bf603343aa32f4dc22069ff84091db6a009a78d0accc8c2211359",
+    "png": "art/export/approved/char.goblin_smith@v1.png",
+    "png_sha256": "204f08410a6082a5eaab5660c7ef853b4c9d1c1ec39a2a520df29323a6f063c6",
+    "approval": "APR-0006",
+    "date": "2026-10-16T03:45:02.583Z"
+   },
+   "current_is_approved": true,
+   "frame_size": [
+    16,
+    16
+   ],
+   "frame_count": 7,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    8,
+    16
+   ],
+   "animations": {
+    "work": {
+     "fps": 6,
+     "loop": true,
+     "frames": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      0
+     ]
+    },
+    "win": {
+     "fps": 4,
+     "loop": true,
+     "frames": [
+      5,
+      6
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
+   "id": "char.lucky_cat",
+   "name": "招财猫",
+   "category": "character",
+   "kind": "sprite",
+   "layer": "ui",
+   "current": {
+    "version": 1,
+    "hash": "d9cee704ae0f93f988d6a502847e83b696af6e68c5a1d4dda5ebeb18bcb5901a",
+    "status": "approved",
+    "preview": "art/export/preview/char.lucky_cat.png",
+    "preview_sha256": "a3aa778b4f4f691e735c445f9bd6bb602079f7fe8aede9527952429704e6a89e"
+   },
+   "approved": {
+    "version": 1,
+    "hash": "d9cee704ae0f93f988d6a502847e83b696af6e68c5a1d4dda5ebeb18bcb5901a",
+    "png": "art/export/approved/char.lucky_cat@v1.png",
+    "png_sha256": "a3aa778b4f4f691e735c445f9bd6bb602079f7fe8aede9527952429704e6a89e",
+    "approval": "APR-0006",
+    "date": "2026-10-16T03:45:02.583Z"
+   },
+   "current_is_approved": true,
+   "frame_size": [
+    32,
+    32
+   ],
+   "frame_count": 4,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    16,
+    32
+   ],
+   "animations": {
+    "idle": {
+     "fps": 2,
+     "loop": true,
+     "frames": [
+      0,
+      1
+     ]
+    },
+    "pull": {
+     "fps": 8,
+     "loop": false,
+     "frames": [
+      0,
+      1,
+      2,
+      2
+     ]
+    },
+    "win": {
+     "fps": 4,
+     "loop": true,
+     "frames": [
+      3,
+      0
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
    "id": "char.miner",
    "name": "矿工",
    "category": "character",
@@ -288,6 +679,121 @@
      "loop": false,
      "frames": [
       1
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
+   "id": "char.turtle_keeper",
+   "name": "龟掌柜",
+   "category": "character",
+   "kind": "sprite",
+   "layer": "entity",
+   "current": {
+    "version": 1,
+    "hash": "5aacda67d54282cd2f56c94c7db447f6a74898ec2bba5582705b28fc3eadf7a3",
+    "status": "approved",
+    "preview": "art/export/preview/char.turtle_keeper.png",
+    "preview_sha256": "932c5c4d160dc7311a61717e4a011c935be20460676c094726d17a08f72a83ab"
+   },
+   "approved": {
+    "version": 1,
+    "hash": "5aacda67d54282cd2f56c94c7db447f6a74898ec2bba5582705b28fc3eadf7a3",
+    "png": "art/export/approved/char.turtle_keeper@v1.png",
+    "png_sha256": "932c5c4d160dc7311a61717e4a011c935be20460676c094726d17a08f72a83ab",
+    "approval": "APR-0006",
+    "date": "2026-10-16T03:45:02.583Z"
+   },
+   "current_is_approved": true,
+   "frame_size": [
+    32,
+    32
+   ],
+   "frame_count": 3,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    16,
+    32
+   ],
+   "animations": {
+    "idle": {
+     "fps": 2,
+     "loop": true,
+     "frames": [
+      0,
+      0,
+      1
+     ]
+    },
+    "talk": {
+     "fps": 4,
+     "loop": true,
+     "frames": [
+      2,
+      0
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
+   "id": "char.zombie",
+   "name": "僵尸（收件人）",
+   "category": "character",
+   "kind": "sprite",
+   "layer": "entity",
+   "current": {
+    "version": 1,
+    "hash": "08946939bb3666a5d227126f97ef86fced41faf9abafea67ac87d92d0d1364c4",
+    "status": "approved",
+    "preview": "art/export/preview/char.zombie.png",
+    "preview_sha256": "9e8e2a46985949fe9e076ca86ec37d069c63b63d6a44f2fe68155e06dcf54240"
+   },
+   "approved": {
+    "version": 1,
+    "hash": "08946939bb3666a5d227126f97ef86fced41faf9abafea67ac87d92d0d1364c4",
+    "png": "art/export/approved/char.zombie@v1.png",
+    "png_sha256": "9e8e2a46985949fe9e076ca86ec37d069c63b63d6a44f2fe68155e06dcf54240",
+    "approval": "APR-0006",
+    "date": "2026-10-16T03:45:02.583Z"
+   },
+   "current_is_approved": true,
+   "frame_size": [
+    16,
+    16
+   ],
+   "frame_count": 6,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    8,
+    16
+   ],
+   "animations": {
+    "idle": {
+     "fps": 2,
+     "loop": true,
+     "frames": [
+      0,
+      1
+     ]
+    },
+    "walk": {
+     "fps": 6,
+     "loop": true,
+     "frames": [
+      0,
+      2,
+      3,
+      2
+     ]
+    },
+    "win": {
+     "fps": 4,
+     "loop": true,
+     "frames": [
+      4,
+      5
      ]
     }
    },
@@ -1476,6 +1982,52 @@
    "ninepatch": null
   },
   {
+   "id": "fx.monster_poof",
+   "name": "放倒怪物的烟",
+   "category": "fx",
+   "kind": "sprite",
+   "layer": "fx",
+   "current": {
+    "version": 1,
+    "hash": "4d8b333246e8eee6c0e46d6e3f36e04be38abf7d25b353d5db95be076a941024",
+    "status": "approved",
+    "preview": "art/export/preview/fx.monster_poof.png",
+    "preview_sha256": "8f556aebbf1a88de5549d7f1bb608de9fee6ed22cb2169656a3bf046b6f2c273"
+   },
+   "approved": {
+    "version": 1,
+    "hash": "4d8b333246e8eee6c0e46d6e3f36e04be38abf7d25b353d5db95be076a941024",
+    "png": "art/export/approved/fx.monster_poof@v1.png",
+    "png_sha256": "8f556aebbf1a88de5549d7f1bb608de9fee6ed22cb2169656a3bf046b6f2c273",
+    "approval": "APR-0006",
+    "date": "2026-10-16T03:45:02.583Z"
+   },
+   "current_is_approved": true,
+   "frame_size": [
+    16,
+    16
+   ],
+   "frame_count": 4,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    8,
+    16
+   ],
+   "animations": {
+    "default": {
+     "fps": 12,
+     "loop": false,
+     "frames": [
+      0,
+      1,
+      2,
+      3
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
    "id": "fx.ripple",
    "name": "漂浮波纹",
    "category": "fx",
@@ -1644,6 +2196,145 @@
    "animations": {
     "default": {
      "fps": 0,
+     "loop": false,
+     "frames": [
+      0
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
+   "id": "item.coin",
+   "name": "金币",
+   "category": "item",
+   "kind": "sprite",
+   "layer": "entity",
+   "current": {
+    "version": 1,
+    "hash": "fd0ca3ecbf8bbb46f7fb7b189d0203f8d70b37634f63741b42e085c7b6849b15",
+    "status": "approved",
+    "preview": "art/export/preview/item.coin.png",
+    "preview_sha256": "e050c58c6fbfe34a2ec6b570f229f19169dc0e8c590919a7a508b198d7153f08"
+   },
+   "approved": {
+    "version": 1,
+    "hash": "fd0ca3ecbf8bbb46f7fb7b189d0203f8d70b37634f63741b42e085c7b6849b15",
+    "png": "art/export/approved/item.coin@v1.png",
+    "png_sha256": "e050c58c6fbfe34a2ec6b570f229f19169dc0e8c590919a7a508b198d7153f08",
+    "approval": "APR-0006",
+    "date": "2026-10-16T03:45:02.583Z"
+   },
+   "current_is_approved": true,
+   "frame_size": [
+    16,
+    16
+   ],
+   "frame_count": 3,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    8,
+    16
+   ],
+   "animations": {
+    "default": {
+     "fps": 1,
+     "loop": false,
+     "frames": [
+      0
+     ]
+    },
+    "spin": {
+     "fps": 8,
+     "loop": true,
+     "frames": [
+      0,
+      1,
+      2,
+      1
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
+   "id": "item.first_aid",
+   "name": "急救包",
+   "category": "item",
+   "kind": "sprite",
+   "layer": "ui",
+   "current": {
+    "version": 1,
+    "hash": "b12924b897291b98bd811835cd315f8ecbe7de4d466ae353648be839b2768d16",
+    "status": "approved",
+    "preview": "art/export/preview/item.first_aid.png",
+    "preview_sha256": "25b2dfdded865d8f9a666525d87b2f1f983eddeefbb75541f84c5da973aa6091"
+   },
+   "approved": {
+    "version": 1,
+    "hash": "b12924b897291b98bd811835cd315f8ecbe7de4d466ae353648be839b2768d16",
+    "png": "art/export/approved/item.first_aid@v1.png",
+    "png_sha256": "25b2dfdded865d8f9a666525d87b2f1f983eddeefbb75541f84c5da973aa6091",
+    "approval": "APR-0006",
+    "date": "2026-10-16T03:45:02.583Z"
+   },
+   "current_is_approved": true,
+   "frame_size": [
+    16,
+    16
+   ],
+   "frame_count": 1,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    0,
+    0
+   ],
+   "animations": {
+    "default": {
+     "fps": 1,
+     "loop": false,
+     "frames": [
+      0
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
+   "id": "item.rope_ladder",
+   "name": "绳梯",
+   "category": "item",
+   "kind": "sprite",
+   "layer": "ui",
+   "current": {
+    "version": 1,
+    "hash": "4c236edf6c23baae3db3bdc8053becc19aa5f665b4b201825c60e87792a42309",
+    "status": "approved",
+    "preview": "art/export/preview/item.rope_ladder.png",
+    "preview_sha256": "d1efe03b7464554adf058c7bf00bc3657f0d1a07f4dfe438f91b0117f12f987a"
+   },
+   "approved": {
+    "version": 1,
+    "hash": "4c236edf6c23baae3db3bdc8053becc19aa5f665b4b201825c60e87792a42309",
+    "png": "art/export/approved/item.rope_ladder@v1.png",
+    "png_sha256": "d1efe03b7464554adf058c7bf00bc3657f0d1a07f4dfe438f91b0117f12f987a",
+    "approval": "APR-0006",
+    "date": "2026-10-16T03:45:02.583Z"
+   },
+   "current_is_approved": true,
+   "frame_size": [
+    16,
+    16
+   ],
+   "frame_count": 1,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    0,
+    0
+   ],
+   "animations": {
+    "default": {
+     "fps": 1,
      "loop": false,
      "frames": [
       0
@@ -2098,6 +2789,52 @@
    "ninepatch": null
   },
   {
+   "id": "mech.ferry_gate",
+   "name": "渡门",
+   "category": "mechanism",
+   "kind": "sprite",
+   "layer": "background",
+   "current": {
+    "version": 1,
+    "hash": "720202b73f57c2131b1a3758086b96322478feb5a90bdb6b9bc7333ef839402c",
+    "status": "approved",
+    "preview": "art/export/preview/mech.ferry_gate.png",
+    "preview_sha256": "afc0e272b27ed0a547262623fcd6d467d81a2fc16259c48fc32dad6af1ad7194"
+   },
+   "approved": {
+    "version": 1,
+    "hash": "720202b73f57c2131b1a3758086b96322478feb5a90bdb6b9bc7333ef839402c",
+    "png": "art/export/approved/mech.ferry_gate@v1.png",
+    "png_sha256": "afc0e272b27ed0a547262623fcd6d467d81a2fc16259c48fc32dad6af1ad7194",
+    "approval": "APR-0006",
+    "date": "2026-10-16T03:45:02.583Z"
+   },
+   "current_is_approved": true,
+   "frame_size": [
+    32,
+    32
+   ],
+   "frame_count": 4,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    16,
+    32
+   ],
+   "animations": {
+    "idle": {
+     "fps": 4,
+     "loop": true,
+     "frames": [
+      0,
+      1,
+      2,
+      3
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
    "id": "mech.frost_vent",
    "name": "冷凝喷口",
    "category": "mechanism",
@@ -2504,6 +3241,49 @@
    "ninepatch": null
   },
   {
+   "id": "mech.rope_ladder",
+   "name": "绳梯（放下后）",
+   "category": "mechanism",
+   "kind": "sprite",
+   "layer": "marker",
+   "current": {
+    "version": 1,
+    "hash": "eca5efe295502dc73850ee0c41a84ee44e30225c2773e5cf27e6d6798d186440",
+    "status": "approved",
+    "preview": "art/export/preview/mech.rope_ladder.png",
+    "preview_sha256": "f336892c8f31c586ca3ea268a068af45a3e63b761b178641de485a2e3d3ac4b8"
+   },
+   "approved": {
+    "version": 1,
+    "hash": "eca5efe295502dc73850ee0c41a84ee44e30225c2773e5cf27e6d6798d186440",
+    "png": "art/export/approved/mech.rope_ladder@v1.png",
+    "png_sha256": "f336892c8f31c586ca3ea268a068af45a3e63b761b178641de485a2e3d3ac4b8",
+    "approval": "APR-0006",
+    "date": "2026-10-16T03:45:02.583Z"
+   },
+   "current_is_approved": true,
+   "frame_size": [
+    16,
+    16
+   ],
+   "frame_count": 1,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    8,
+    16
+   ],
+   "animations": {
+    "default": {
+     "fps": 1,
+     "loop": false,
+     "frames": [
+      0
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
    "id": "mech.socket",
    "name": "目标槽",
    "category": "mechanism",
@@ -2700,6 +3480,151 @@
    "ninepatch": null
   },
   {
+   "id": "monster.rat_swarm",
+   "name": "鼠群",
+   "category": "monster",
+   "kind": "sprite",
+   "layer": "entity",
+   "current": {
+    "version": 1,
+    "hash": "1e741865f806cbbae9da2a28998cf7d31dab13e8a7827352cbeaee5b8f7e4ad0",
+    "status": "approved",
+    "preview": "art/export/preview/monster.rat_swarm.png",
+    "preview_sha256": "a31ca7b267edf16dfbe0fdbeb4723f0b95b57b19ffd4ff2481da2c5aae97a187"
+   },
+   "approved": {
+    "version": 1,
+    "hash": "1e741865f806cbbae9da2a28998cf7d31dab13e8a7827352cbeaee5b8f7e4ad0",
+    "png": "art/export/approved/monster.rat_swarm@v1.png",
+    "png_sha256": "a31ca7b267edf16dfbe0fdbeb4723f0b95b57b19ffd4ff2481da2c5aae97a187",
+    "approval": "APR-0006",
+    "date": "2026-10-16T03:45:02.583Z"
+   },
+   "current_is_approved": true,
+   "frame_size": [
+    16,
+    16
+   ],
+   "frame_count": 10,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    8,
+    16
+   ],
+   "animations": {
+    "walk": {
+     "fps": 8,
+     "loop": true,
+     "frames": [
+      0,
+      1
+     ]
+    },
+    "chase": {
+     "fps": 12,
+     "loop": true,
+     "frames": [
+      2,
+      3
+     ]
+    },
+    "flee": {
+     "fps": 12,
+     "loop": true,
+     "frames": [
+      4,
+      5
+     ]
+    },
+    "stunned": {
+     "fps": 4,
+     "loop": true,
+     "frames": [
+      6,
+      7
+     ]
+    },
+    "trapped": {
+     "fps": 4,
+     "loop": true,
+     "frames": [
+      8,
+      9
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
+   "id": "monster.skeleton_guard",
+   "name": "骷髅守卫",
+   "category": "monster",
+   "kind": "sprite",
+   "layer": "entity",
+   "current": {
+    "version": 1,
+    "hash": "7c5340f68c1fd3df4414a6516cb5baf45a446f260307ab676f94258d4c5f2ace",
+    "status": "approved",
+    "preview": "art/export/preview/monster.skeleton_guard.png",
+    "preview_sha256": "35676571bcec2e716dec39bb9eaceefffd68ca03da071da154b1ddfdbeba0744"
+   },
+   "approved": {
+    "version": 1,
+    "hash": "7c5340f68c1fd3df4414a6516cb5baf45a446f260307ab676f94258d4c5f2ace",
+    "png": "art/export/approved/monster.skeleton_guard@v1.png",
+    "png_sha256": "35676571bcec2e716dec39bb9eaceefffd68ca03da071da154b1ddfdbeba0744",
+    "approval": "APR-0006",
+    "date": "2026-10-16T03:45:02.583Z"
+   },
+   "current_is_approved": true,
+   "frame_size": [
+    16,
+    16
+   ],
+   "frame_count": 7,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    8,
+    16
+   ],
+   "animations": {
+    "walk": {
+     "fps": 6,
+     "loop": true,
+     "frames": [
+      0,
+      1,
+      2,
+      1
+     ]
+    },
+    "trapped": {
+     "fps": 4,
+     "loop": true,
+     "frames": [
+      3,
+      4
+     ]
+    },
+    "attack": {
+     "fps": 8,
+     "loop": false,
+     "frames": [
+      5,
+      0
+     ]
+    },
+    "ko": {
+     "fps": 4,
+     "loop": false,
+     "frames": [
+      6
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
    "id": "obj.crate_iron",
    "name": "铁箱",
    "category": "object",
@@ -2780,6 +3705,52 @@
      "loop": false,
      "frames": [
       0
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
+   "id": "obj.goblin_forge",
+   "name": "铁砧与炉子（地精铁匠家）",
+   "category": "object",
+   "kind": "sprite",
+   "layer": "entity",
+   "current": {
+    "version": 1,
+    "hash": "998d67321e65cb3691a38501a378a86eb630347fd85395363d42795293d6930b",
+    "status": "approved",
+    "preview": "art/export/preview/obj.goblin_forge.png",
+    "preview_sha256": "6218386b2972841df51b610e25e23068e610b7b9348baf0fccd5f0d34a324e22"
+   },
+   "approved": {
+    "version": 1,
+    "hash": "998d67321e65cb3691a38501a378a86eb630347fd85395363d42795293d6930b",
+    "png": "art/export/approved/obj.goblin_forge@v1.png",
+    "png_sha256": "6218386b2972841df51b610e25e23068e610b7b9348baf0fccd5f0d34a324e22",
+    "approval": "APR-0006",
+    "date": "2026-10-16T03:45:02.583Z"
+   },
+   "current_is_approved": true,
+   "frame_size": [
+    16,
+    16
+   ],
+   "frame_count": 3,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    8,
+    16
+   ],
+   "animations": {
+    "idle": {
+     "fps": 4,
+     "loop": true,
+     "frames": [
+      0,
+      1,
+      2,
+      1
      ]
     }
    },
@@ -3635,12 +4606,19 @@
    "current": {
     "version": 1,
     "hash": "2ae0ff3e9b905d64ec2e7f0923a20d46b3645614be59aa9bc9e448af26749130",
-    "status": "review",
+    "status": "approved",
     "preview": "art/export/preview/ui.bubble.png",
     "preview_sha256": "39fe4ac19d6469a54eecc539b44088a5cf826f95cb3be4dfe42c1c0d9e83fb02"
    },
-   "approved": null,
-   "current_is_approved": false,
+   "approved": {
+    "version": 1,
+    "hash": "2ae0ff3e9b905d64ec2e7f0923a20d46b3645614be59aa9bc9e448af26749130",
+    "png": "art/export/approved/ui.bubble@v1.png",
+    "png_sha256": "39fe4ac19d6469a54eecc539b44088a5cf826f95cb3be4dfe42c1c0d9e83fb02",
+    "approval": "APR-0005",
+    "date": "2026-10-15T10:55:30.036Z"
+   },
+   "current_is_approved": true,
    "frame_size": [
     12,
     12
@@ -3690,12 +4668,19 @@
    "current": {
     "version": 1,
     "hash": "93a98ba7445f1e1f18e32d2e11f45a358c18b52cc1dae76ac883b83b088c727f",
-    "status": "review",
+    "status": "approved",
     "preview": "art/export/preview/ui.bubble_tail.png",
     "preview_sha256": "4779f3942363cd7dae7cc42aede1d34ccae1a1748019627b1b6acaf1bb145ce5"
    },
-   "approved": null,
-   "current_is_approved": false,
+   "approved": {
+    "version": 1,
+    "hash": "93a98ba7445f1e1f18e32d2e11f45a358c18b52cc1dae76ac883b83b088c727f",
+    "png": "art/export/approved/ui.bubble_tail@v1.png",
+    "png_sha256": "4779f3942363cd7dae7cc42aede1d34ccae1a1748019627b1b6acaf1bb145ce5",
+    "approval": "APR-0005",
+    "date": "2026-10-15T10:55:30.036Z"
+   },
+   "current_is_approved": true,
    "frame_size": [
     7,
     6
@@ -3853,6 +4838,119 @@
    "ninepatch": null
   },
   {
+   "id": "ui.delivery_icons",
+   "name": "配送 HUD 图标",
+   "category": "ui",
+   "kind": "sprite",
+   "layer": "ui",
+   "current": {
+    "version": 1,
+    "hash": "d565e6a8da680492da9427133d2803f4e10221b45fb56a082706be4aabd6282d",
+    "status": "approved",
+    "preview": "art/export/preview/ui.delivery_icons.png",
+    "preview_sha256": "b53006f0781b2249e0a6e6b2829b4cb3f273d9f45a37713ea96f8b749d3c847a"
+   },
+   "approved": {
+    "version": 1,
+    "hash": "d565e6a8da680492da9427133d2803f4e10221b45fb56a082706be4aabd6282d",
+    "png": "art/export/approved/ui.delivery_icons@v1.png",
+    "png_sha256": "b53006f0781b2249e0a6e6b2829b4cb3f273d9f45a37713ea96f8b749d3c847a",
+    "approval": "APR-0006",
+    "date": "2026-10-16T03:45:02.583Z"
+   },
+   "current_is_approved": true,
+   "frame_size": [
+    16,
+    16
+   ],
+   "frame_count": 11,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    0,
+    0
+   ],
+   "animations": {
+    "heart": {
+     "fps": 1,
+     "loop": false,
+     "frames": [
+      0
+     ]
+    },
+    "heart_empty": {
+     "fps": 1,
+     "loop": false,
+     "frames": [
+      1
+     ]
+    },
+    "clock": {
+     "fps": 1,
+     "loop": false,
+     "frames": [
+      2
+     ]
+    },
+    "fragile": {
+     "fps": 1,
+     "loop": false,
+     "frames": [
+      3
+     ]
+    },
+    "melt": {
+     "fps": 1,
+     "loop": false,
+     "frames": [
+      4
+     ]
+    },
+    "hot": {
+     "fps": 1,
+     "loop": false,
+     "frames": [
+      5
+     ]
+    },
+    "pip": {
+     "fps": 1,
+     "loop": false,
+     "frames": [
+      6
+     ]
+    },
+    "pip_empty": {
+     "fps": 1,
+     "loop": false,
+     "frames": [
+      7
+     ]
+    },
+    "slot": {
+     "fps": 1,
+     "loop": false,
+     "frames": [
+      8
+     ]
+    },
+    "arrow": {
+     "fps": 1,
+     "loop": false,
+     "frames": [
+      9
+     ]
+    },
+    "kill": {
+     "fps": 1,
+     "loop": false,
+     "frames": [
+      10
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
    "id": "ui.emote",
    "name": "头顶标记",
    "category": "ui",
@@ -3861,12 +4959,19 @@
    "current": {
     "version": 1,
     "hash": "d8d3b3ddd80f9d40b108ee0829f5a28ffdd6943fe04e1c3d2956130a5c234546",
-    "status": "review",
+    "status": "approved",
     "preview": "art/export/preview/ui.emote.png",
     "preview_sha256": "7088ab708b7164b55697d6d91d56bcd301f47dea764a72a317cc5c1365a532b5"
    },
-   "approved": null,
-   "current_is_approved": false,
+   "approved": {
+    "version": 1,
+    "hash": "d8d3b3ddd80f9d40b108ee0829f5a28ffdd6943fe04e1c3d2956130a5c234546",
+    "png": "art/export/approved/ui.emote@v1.png",
+    "png_sha256": "7088ab708b7164b55697d6d91d56bcd301f47dea764a72a317cc5c1365a532b5",
+    "approval": "APR-0005",
+    "date": "2026-10-15T10:55:30.036Z"
+   },
+   "current_is_approved": true,
    "frame_size": [
     9,
     12
@@ -4375,19 +5480,19 @@
    "current": {
     "version": 4,
     "hash": "616c8a1a09bf2ad32f24c8cf1e70d8059bdb14d9c394ebbe86eb4703feaeb781",
-    "status": "review",
+    "status": "approved",
     "preview": "art/export/preview/ui.screen.chapters.png",
     "preview_sha256": "fc3569ec75857ca8d8851f4680b17eb500bd5cc7e3a03a7af693cc90a1d4a3f6"
    },
    "approved": {
-    "version": 3,
-    "hash": "4b43ae6fbda47c21bad730198e75f004db5ba037204a81d21996be465bfacb9c",
-    "png": "art/export/approved/ui.screen.chapters@v3.png",
+    "version": 4,
+    "hash": "616c8a1a09bf2ad32f24c8cf1e70d8059bdb14d9c394ebbe86eb4703feaeb781",
+    "png": "art/export/approved/ui.screen.chapters@v4.png",
     "png_sha256": "fc3569ec75857ca8d8851f4680b17eb500bd5cc7e3a03a7af693cc90a1d4a3f6",
-    "approval": "APR-0004",
-    "date": "2026-10-15T10:31:19.993Z"
+    "approval": "APR-0005",
+    "date": "2026-10-15T10:55:30.036Z"
    },
-   "current_is_approved": false,
+   "current_is_approved": true,
    "renderer": [
     "workbench/js/core/ui.js",
     "workbench/js/core/scene.js",
@@ -4456,19 +5561,19 @@
    "current": {
     "version": 4,
     "hash": "fbb067b0492c0dd3cc479c65713e8cc6dabf0f93f55e2d6a628bfb458c14d9bf",
-    "status": "review",
+    "status": "approved",
     "preview": "art/export/preview/ui.screen.complete.png",
     "preview_sha256": "f36e91ecb4b76df9e973798a2fdd3aa9d355d1b8466a6bba4f226f4c1e6e6e31"
    },
    "approved": {
-    "version": 3,
-    "hash": "edc3894c0c6600fdf8ca0f6249466f269d3d6e861cd2eed88f4ee83da65e69d6",
-    "png": "art/export/approved/ui.screen.complete@v3.png",
+    "version": 4,
+    "hash": "fbb067b0492c0dd3cc479c65713e8cc6dabf0f93f55e2d6a628bfb458c14d9bf",
+    "png": "art/export/approved/ui.screen.complete@v4.png",
     "png_sha256": "f36e91ecb4b76df9e973798a2fdd3aa9d355d1b8466a6bba4f226f4c1e6e6e31",
-    "approval": "APR-0004",
-    "date": "2026-10-15T10:31:19.993Z"
+    "approval": "APR-0005",
+    "date": "2026-10-15T10:55:30.036Z"
    },
-   "current_is_approved": false,
+   "current_is_approved": true,
    "renderer": [
     "workbench/js/core/ui.js",
     "workbench/js/core/scene.js",
@@ -4493,6 +5598,222 @@
    ]
   },
   {
+   "id": "ui.screen.delivery_hud",
+   "name": "局内 HUD（配送）",
+   "category": "screen",
+   "kind": "procedural",
+   "layer": "ui",
+   "current": {
+    "version": 1,
+    "hash": "23c03f3921674452382a4ef6731bf5aacf26cca8e8a8f55c753d2a06289c361b",
+    "status": "approved",
+    "preview": "art/export/preview/ui.screen.delivery_hud.png",
+    "preview_sha256": "2da6481b4516ccea14010f5cea87d5e24c1b2dcc4b277bb3870d17393dafbf2a"
+   },
+   "approved": {
+    "version": 1,
+    "hash": "23c03f3921674452382a4ef6731bf5aacf26cca8e8a8f55c753d2a06289c361b",
+    "png": "art/export/approved/ui.screen.delivery_hud@v1.png",
+    "png_sha256": "2da6481b4516ccea14010f5cea87d5e24c1b2dcc4b277bb3870d17393dafbf2a",
+    "approval": "APR-0006",
+    "date": "2026-10-16T03:45:02.583Z"
+   },
+   "current_is_approved": true,
+   "renderer": [
+    "workbench/js/core/ui-delivery.js",
+    "workbench/js/core/ui.js",
+    "workbench/js/core/scene.js",
+    "workbench/js/core/tilemodel.js",
+    "workbench/js/core/matter.js",
+    "workbench/js/core/terrain.js",
+    "workbench/js/core/ambient.js",
+    "workbench/js/core/env.js",
+    "workbench/js/core/i18n.js",
+    "workbench/js/core/font-delivery.js",
+    "content/i18n-delivery/zh-Hans.json",
+    "content/i18n-delivery/en.json"
+   ],
+   "params": {
+    "screen": "delivery_hud",
+    "theme": "theme.dungeon",
+    "exclude": [
+     "fauna.dungeon_rat"
+    ],
+    "room": [
+     "####################",
+     "####............####",
+     "##................##",
+     "#...H..............#",
+     "#...H##########....#",
+     "#...H..............#",
+     "....H...............",
+     "..P.H..#.....#......",
+     "####################",
+     "####################"
+    ],
+    "facing": "right",
+    "entities": [
+     {
+      "sprite": "monster.rat_swarm",
+      "anim": "walk",
+      "x": 12,
+      "y": 3,
+      "flip": true
+     },
+     {
+      "sprite": "item.coin",
+      "anim": "spin",
+      "x": 7,
+      "y": 3
+     },
+     {
+      "sprite": "item.coin",
+      "anim": "spin",
+      "x": 10,
+      "y": 3
+     },
+     {
+      "sprite": "item.coin",
+      "anim": "spin",
+      "x": 16,
+      "y": 7
+     }
+    ],
+    "hud": {
+     "hearts": 2,
+     "maxHearts": 3,
+     "cargo": "vase",
+     "left": 2,
+     "max": 3,
+     "rule": "fragile",
+     "hot": false,
+     "coins": 35,
+     "sand": 2,
+     "items": [
+      "first_aid",
+      "rope_ladder"
+     ],
+     "slots": 3,
+     "secs": 83,
+     "minimap": {
+      "cols": 4,
+      "rows": 3,
+      "cur": 4,
+      "rooms": [
+       {
+        "index": 0,
+        "x": 3,
+        "y": 0,
+        "role": "gate",
+        "seen": true
+       },
+       {
+        "index": 1,
+        "x": 2,
+        "y": 0,
+        "role": "room",
+        "seen": true
+       },
+       {
+        "index": 2,
+        "x": 2,
+        "y": 1,
+        "role": "station",
+        "seen": true
+       },
+       {
+        "index": 3,
+        "x": 2,
+        "y": 2,
+        "role": "room",
+        "seen": true
+       },
+       {
+        "index": 4,
+        "x": 1,
+        "y": 2,
+        "role": "room",
+        "seen": true
+       },
+       {
+        "index": 5,
+        "x": 0,
+        "y": 2,
+        "role": "home",
+        "seen": false
+       }
+      ]
+     }
+    }
+   },
+   "depends": [
+    "theme.dungeon",
+    "char.portitor",
+    "mech.ladder",
+    "monster.rat_swarm",
+    "item.coin",
+    "ui.delivery_icons",
+    "cargo.vase",
+    "item.sandbag",
+    "item.first_aid",
+    "item.rope_ladder"
+   ]
+  },
+  {
+   "id": "ui.screen.delivery_pause",
+   "name": "暂停菜单（配送）",
+   "category": "screen",
+   "kind": "procedural",
+   "layer": "ui",
+   "current": {
+    "version": 1,
+    "hash": "6f1e53c3dac19938cd506249fa827483ea8e31778fe6f1a6574ad4427b6099f1",
+    "status": "approved",
+    "preview": "art/export/preview/ui.screen.delivery_pause.png",
+    "preview_sha256": "73e5d4dfa94a5c104b58edfe24319dbbf74cc6ab6f653ea8f91644fa97a16835"
+   },
+   "approved": {
+    "version": 1,
+    "hash": "6f1e53c3dac19938cd506249fa827483ea8e31778fe6f1a6574ad4427b6099f1",
+    "png": "art/export/approved/ui.screen.delivery_pause@v1.png",
+    "png_sha256": "73e5d4dfa94a5c104b58edfe24319dbbf74cc6ab6f653ea8f91644fa97a16835",
+    "approval": "APR-0006",
+    "date": "2026-10-16T03:45:02.583Z"
+   },
+   "current_is_approved": true,
+   "renderer": [
+    "workbench/js/core/ui.js",
+    "workbench/js/core/scene.js",
+    "workbench/js/core/terrain.js",
+    "workbench/js/core/ambient.js",
+    "workbench/js/core/i18n.js",
+    "content/i18n/zh-Hans.json",
+    "content/i18n/en.json",
+    "workbench/js/core/env.js",
+    "workbench/js/core/font-delivery.js",
+    "content/i18n-delivery/zh-Hans.json",
+    "content/i18n-delivery/en.json"
+   ],
+   "params": {
+    "screen": "pause",
+    "items": [
+     "pause.resume",
+     "dlv.pause.restart_room",
+     "dlv.pause.give_up",
+     "pause.settings",
+     "pause.menu"
+    ]
+   },
+   "depends": [
+    "char.portitor",
+    "theme.dungeon",
+    "ui.icons",
+    "ui.keycap",
+    "ui.menu_icons",
+    "ui.panel"
+   ]
+  },
+  {
    "id": "ui.screen.dialogue",
    "name": "对话气泡示例",
    "category": "screen",
@@ -4501,12 +5822,19 @@
    "current": {
     "version": 1,
     "hash": "ea330683e10b2adfdef4f733182869535eea2cb27b750adf982b3410e8de85e5",
-    "status": "review",
+    "status": "approved",
     "preview": "art/export/preview/ui.screen.dialogue.png",
     "preview_sha256": "2da5cbf5dd3e6251790133aa70959b5825fdbd34a28b36dc5cd36e727b3322d2"
    },
-   "approved": null,
-   "current_is_approved": false,
+   "approved": {
+    "version": 1,
+    "hash": "ea330683e10b2adfdef4f733182869535eea2cb27b750adf982b3410e8de85e5",
+    "png": "art/export/approved/ui.screen.dialogue@v1.png",
+    "png_sha256": "2da5cbf5dd3e6251790133aa70959b5825fdbd34a28b36dc5cd36e727b3322d2",
+    "approval": "APR-0005",
+    "date": "2026-10-15T10:55:30.036Z"
+   },
+   "current_is_approved": true,
    "renderer": [
     "workbench/js/core/ui.js",
     "workbench/js/core/scene.js",
@@ -4544,19 +5872,19 @@
    "current": {
     "version": 4,
     "hash": "89aa4fe24b01333d1c56f8e7144b9db5c38ef0777cc35a615c4e41b064b470d9",
-    "status": "review",
+    "status": "approved",
     "preview": "art/export/preview/ui.screen.hint.png",
     "preview_sha256": "1025ad73199499b956d99392f4f95366707134fb78172b3caee881b7ede5dec3"
    },
    "approved": {
-    "version": 3,
-    "hash": "a0cebcbd7fd5019ae3807c643560f7d095f83fcc03d2f137f8221ff17e40ef5a",
-    "png": "art/export/approved/ui.screen.hint@v3.png",
-    "png_sha256": "560440f4a2ef5317a9c5e8562159897b4c5e5a08fffc5e23c77627e253939427",
-    "approval": "APR-0004",
-    "date": "2026-10-15T10:31:19.993Z"
+    "version": 4,
+    "hash": "89aa4fe24b01333d1c56f8e7144b9db5c38ef0777cc35a615c4e41b064b470d9",
+    "png": "art/export/approved/ui.screen.hint@v4.png",
+    "png_sha256": "1025ad73199499b956d99392f4f95366707134fb78172b3caee881b7ede5dec3",
+    "approval": "APR-0005",
+    "date": "2026-10-15T10:55:30.036Z"
    },
-   "current_is_approved": false,
+   "current_is_approved": true,
    "renderer": [
     "workbench/js/core/ui.js",
     "workbench/js/core/scene.js",
@@ -4592,19 +5920,19 @@
    "current": {
     "version": 4,
     "hash": "3ce7d34a0b822daa3fb5d01c243a606e06de7c4ae367565e2c06dec2c5ca4b24",
-    "status": "review",
+    "status": "approved",
     "preview": "art/export/preview/ui.screen.levels.png",
     "preview_sha256": "a68b73f6186398c469cf18415a71b2b50ac10d14edc9c4c05be2e03982528d63"
    },
    "approved": {
-    "version": 3,
-    "hash": "b18828072451f352e747ddf47c2d4b06fa8df5f9f111fab248b1d67fcccc315f",
-    "png": "art/export/approved/ui.screen.levels@v3.png",
+    "version": 4,
+    "hash": "3ce7d34a0b822daa3fb5d01c243a606e06de7c4ae367565e2c06dec2c5ca4b24",
+    "png": "art/export/approved/ui.screen.levels@v4.png",
     "png_sha256": "a68b73f6186398c469cf18415a71b2b50ac10d14edc9c4c05be2e03982528d63",
-    "approval": "APR-0004",
-    "date": "2026-10-15T10:31:19.993Z"
+    "approval": "APR-0005",
+    "date": "2026-10-15T10:55:30.036Z"
    },
-   "current_is_approved": false,
+   "current_is_approved": true,
    "renderer": [
     "workbench/js/core/ui.js",
     "workbench/js/core/scene.js",
@@ -4668,19 +5996,19 @@
    "current": {
     "version": 4,
     "hash": "e2ec45838d3dcccf1f97feee4dcfc767b831ab3945d6ac07366db546cec5282e",
-    "status": "review",
+    "status": "approved",
     "preview": "art/export/preview/ui.screen.lobby.png",
     "preview_sha256": "a4648cd5bc92eee42fc7cae190d4e5794d007dcd223b2187f54a7a7f9fe1e084"
    },
    "approved": {
-    "version": 3,
-    "hash": "6830a9b79f5e4b72c513a25148522e8e42e5e34913440e09f55e8e26cb1cfa2a",
-    "png": "art/export/approved/ui.screen.lobby@v3.png",
+    "version": 4,
+    "hash": "e2ec45838d3dcccf1f97feee4dcfc767b831ab3945d6ac07366db546cec5282e",
+    "png": "art/export/approved/ui.screen.lobby@v4.png",
     "png_sha256": "a4648cd5bc92eee42fc7cae190d4e5794d007dcd223b2187f54a7a7f9fe1e084",
-    "approval": "APR-0004",
-    "date": "2026-10-15T10:31:19.993Z"
+    "approval": "APR-0005",
+    "date": "2026-10-15T10:55:30.036Z"
    },
-   "current_is_approved": false,
+   "current_is_approved": true,
    "renderer": [
     "workbench/js/core/ui.js",
     "workbench/js/core/scene.js",
@@ -4734,19 +6062,19 @@
    "current": {
     "version": 4,
     "hash": "8423060d12710e97b5e078ff4fd400b2a2b747c12af96e7ae95c1cf480e47ad3",
-    "status": "review",
+    "status": "approved",
     "preview": "art/export/preview/ui.screen.pause.png",
     "preview_sha256": "32fcbca857c11ffeeaaea1a248b3ae7d48b55019fd86114a8f3af41e760a12cf"
    },
    "approved": {
-    "version": 3,
-    "hash": "90565d8d88964e96aced973b4e06bfe4e0da865610dd3d7effe88ceccf0da733",
-    "png": "art/export/approved/ui.screen.pause@v3.png",
+    "version": 4,
+    "hash": "8423060d12710e97b5e078ff4fd400b2a2b747c12af96e7ae95c1cf480e47ad3",
+    "png": "art/export/approved/ui.screen.pause@v4.png",
     "png_sha256": "32fcbca857c11ffeeaaea1a248b3ae7d48b55019fd86114a8f3af41e760a12cf",
-    "approval": "APR-0004",
-    "date": "2026-10-15T10:31:19.993Z"
+    "approval": "APR-0005",
+    "date": "2026-10-15T10:55:30.036Z"
    },
-   "current_is_approved": false,
+   "current_is_approved": true,
    "renderer": [
     "workbench/js/core/ui.js",
     "workbench/js/core/scene.js",
@@ -4779,6 +6107,78 @@
    ]
   },
   {
+   "id": "ui.screen.reels",
+   "name": "滚轮台（配送开局）",
+   "category": "screen",
+   "kind": "procedural",
+   "layer": "ui",
+   "current": {
+    "version": 1,
+    "hash": "138cda5479dee0fd74e3ae7909f908ad3cacb0c2852f2592418e12d337190146",
+    "status": "approved",
+    "preview": "art/export/preview/ui.screen.reels.png",
+    "preview_sha256": "00804379afa9a8688b32f3af8913239d00ce5f8e2bf5a88ac057feec67648418"
+   },
+   "approved": {
+    "version": 1,
+    "hash": "138cda5479dee0fd74e3ae7909f908ad3cacb0c2852f2592418e12d337190146",
+    "png": "art/export/approved/ui.screen.reels@v1.png",
+    "png_sha256": "00804379afa9a8688b32f3af8913239d00ce5f8e2bf5a88ac057feec67648418",
+    "approval": "APR-0006",
+    "date": "2026-10-16T03:45:02.583Z"
+   },
+   "current_is_approved": true,
+   "renderer": [
+    "workbench/js/core/ui-delivery.js",
+    "workbench/js/core/ui.js",
+    "workbench/js/core/scene.js",
+    "workbench/js/core/tilemodel.js",
+    "workbench/js/core/matter.js",
+    "workbench/js/core/terrain.js",
+    "workbench/js/core/ambient.js",
+    "workbench/js/core/env.js",
+    "workbench/js/core/i18n.js",
+    "workbench/js/core/font-delivery.js",
+    "content/i18n-delivery/zh-Hans.json",
+    "content/i18n-delivery/en.json"
+   ],
+   "params": {
+    "screen": "reels",
+    "theme": "theme.dungeon",
+    "exclude": [
+     "fauna.dungeon_rat"
+    ],
+    "cargoList": [
+     "letter",
+     "vase",
+     "ice_cream"
+    ],
+    "recipientList": [
+     "old_miner",
+     "zombie",
+     "goblin_smith"
+    ],
+    "cargo": "letter",
+    "recipient": "old_miner",
+    "liked": true,
+    "rerolls": 1,
+    "cat": "idle"
+   },
+   "depends": [
+    "theme.dungeon",
+    "ui.panel",
+    "ui.keycap",
+    "char.lucky_cat",
+    "cargo.letter",
+    "cargo.vase",
+    "cargo.ice_cream",
+    "avatar.old_miner",
+    "avatar.zombie",
+    "avatar.goblin_smith",
+    "ui.delivery_icons"
+   ]
+  },
+  {
    "id": "ui.screen.rulecard",
    "name": "规则卡",
    "category": "screen",
@@ -4787,19 +6187,19 @@
    "current": {
     "version": 4,
     "hash": "e14dc3f027abd88493efd7491799dce58263e3bb9fcf26911dedf8f08c1e59f5",
-    "status": "review",
+    "status": "approved",
     "preview": "art/export/preview/ui.screen.rulecard.png",
     "preview_sha256": "4ca35c9e81bca9825738f2eb591c159202eb156841a5cfea7b1573a249436be3"
    },
    "approved": {
-    "version": 3,
-    "hash": "884aac48c36bdb7a544eac2f57d661b313e44c190ab22d2c48663e57327c10be",
-    "png": "art/export/approved/ui.screen.rulecard@v3.png",
+    "version": 4,
+    "hash": "e14dc3f027abd88493efd7491799dce58263e3bb9fcf26911dedf8f08c1e59f5",
+    "png": "art/export/approved/ui.screen.rulecard@v4.png",
     "png_sha256": "4ca35c9e81bca9825738f2eb591c159202eb156841a5cfea7b1573a249436be3",
-    "approval": "APR-0004",
-    "date": "2026-10-15T10:31:19.993Z"
+    "approval": "APR-0005",
+    "date": "2026-10-15T10:55:30.036Z"
    },
-   "current_is_approved": false,
+   "current_is_approved": true,
    "renderer": [
     "workbench/js/core/ui.js",
     "workbench/js/core/scene.js",
@@ -4831,19 +6231,19 @@
    "current": {
     "version": 4,
     "hash": "4c6df2e53a82b5b26efcfea702f0332847c7cb07b829d2352b04c3e21fa3df1a",
-    "status": "review",
+    "status": "approved",
     "preview": "art/export/preview/ui.screen.settings.png",
     "preview_sha256": "a6dd69fa825db739e3b58a41a56d296a4f5eed531b400f0b6dfecc308c688f29"
    },
    "approved": {
-    "version": 3,
-    "hash": "c074c120a24d01f34b7a8f065dfa16fb527925602c2e6e291e70f92f323f83ef",
-    "png": "art/export/approved/ui.screen.settings@v3.png",
+    "version": 4,
+    "hash": "4c6df2e53a82b5b26efcfea702f0332847c7cb07b829d2352b04c3e21fa3df1a",
+    "png": "art/export/approved/ui.screen.settings@v4.png",
     "png_sha256": "a6dd69fa825db739e3b58a41a56d296a4f5eed531b400f0b6dfecc308c688f29",
-    "approval": "APR-0004",
-    "date": "2026-10-15T10:31:19.993Z"
+    "approval": "APR-0005",
+    "date": "2026-10-15T10:55:30.036Z"
    },
-   "current_is_approved": false,
+   "current_is_approved": true,
    "renderer": [
     "workbench/js/core/ui.js",
     "workbench/js/core/scene.js",
@@ -4905,6 +6305,210 @@
     "ui.keycap",
     "ui.menu_icons",
     "ui.panel"
+   ]
+  },
+  {
+   "id": "ui.screen.settlement",
+   "name": "送达结算",
+   "category": "screen",
+   "kind": "procedural",
+   "layer": "ui",
+   "current": {
+    "version": 1,
+    "hash": "5e949d677dd27100d1860b728932206d1e9053f2ff1e8b5d28f71ca5b44ed929",
+    "status": "approved",
+    "preview": "art/export/preview/ui.screen.settlement.png",
+    "preview_sha256": "b114d60aff616f4aba48462e19d97e6808bdfe9364e59e69ad53e78f9c58a9c3"
+   },
+   "approved": {
+    "version": 1,
+    "hash": "5e949d677dd27100d1860b728932206d1e9053f2ff1e8b5d28f71ca5b44ed929",
+    "png": "art/export/approved/ui.screen.settlement@v1.png",
+    "png_sha256": "b114d60aff616f4aba48462e19d97e6808bdfe9364e59e69ad53e78f9c58a9c3",
+    "approval": "APR-0006",
+    "date": "2026-10-16T03:45:02.583Z"
+   },
+   "current_is_approved": true,
+   "renderer": [
+    "workbench/js/core/ui-delivery.js",
+    "workbench/js/core/ui.js",
+    "workbench/js/core/scene.js",
+    "workbench/js/core/tilemodel.js",
+    "workbench/js/core/matter.js",
+    "workbench/js/core/terrain.js",
+    "workbench/js/core/ambient.js",
+    "workbench/js/core/env.js",
+    "workbench/js/core/i18n.js",
+    "workbench/js/core/font-delivery.js",
+    "content/i18n-delivery/zh-Hans.json",
+    "content/i18n-delivery/en.json"
+   ],
+   "params": {
+    "screen": "settlement",
+    "theme": "theme.dungeon",
+    "exclude": [
+     "fauna.dungeon_rat"
+    ],
+    "recipient": "old_miner",
+    "cargo": "letter",
+    "integrity": 3,
+    "max": 3,
+    "secs": 41.2,
+    "par": 36,
+    "timePct": 136,
+    "likePct": 150,
+    "pay": 30,
+    "tip": 61,
+    "picked": 25,
+    "total": 86,
+    "rating": "A"
+   },
+   "depends": [
+    "theme.dungeon",
+    "ui.panel",
+    "avatar.old_miner",
+    "item.coin",
+    "ui.delivery_icons"
+   ]
+  },
+  {
+   "id": "ui.screen.settlement_fail",
+   "name": "失败结算",
+   "category": "screen",
+   "kind": "procedural",
+   "layer": "ui",
+   "current": {
+    "version": 1,
+    "hash": "e46ea2a5a1354fc34a6227afad82fc4785c81de39900d891fb46fca7106cfee5",
+    "status": "approved",
+    "preview": "art/export/preview/ui.screen.settlement_fail.png",
+    "preview_sha256": "eeb785399ebcef22a61140ed10e60772b7a9b70e30b9920617a8f63a9078084d"
+   },
+   "approved": {
+    "version": 1,
+    "hash": "e46ea2a5a1354fc34a6227afad82fc4785c81de39900d891fb46fca7106cfee5",
+    "png": "art/export/approved/ui.screen.settlement_fail@v1.png",
+    "png_sha256": "eeb785399ebcef22a61140ed10e60772b7a9b70e30b9920617a8f63a9078084d",
+    "approval": "APR-0006",
+    "date": "2026-10-16T03:45:02.583Z"
+   },
+   "current_is_approved": true,
+   "renderer": [
+    "workbench/js/core/ui-delivery.js",
+    "workbench/js/core/ui.js",
+    "workbench/js/core/scene.js",
+    "workbench/js/core/tilemodel.js",
+    "workbench/js/core/matter.js",
+    "workbench/js/core/terrain.js",
+    "workbench/js/core/ambient.js",
+    "workbench/js/core/env.js",
+    "workbench/js/core/i18n.js",
+    "workbench/js/core/font-delivery.js",
+    "content/i18n-delivery/zh-Hans.json",
+    "content/i18n-delivery/en.json"
+   ],
+   "params": {
+    "screen": "settlement_fail",
+    "theme": "theme.dungeon",
+    "exclude": [
+     "fauna.dungeon_rat"
+    ],
+    "recipient": "zombie",
+    "cargo": "vase",
+    "reason": "hearts",
+    "picked": 30,
+    "kept": 15
+   },
+   "depends": [
+    "theme.dungeon",
+    "ui.panel",
+    "avatar.zombie",
+    "cargo.vase"
+   ]
+  },
+  {
+   "id": "ui.screen.shop",
+   "name": "驿站货架",
+   "category": "screen",
+   "kind": "procedural",
+   "layer": "ui",
+   "current": {
+    "version": 1,
+    "hash": "267d16250937ed3619c685b049c770d516487ec82e69364d75c7a3a4bf98c85a",
+    "status": "approved",
+    "preview": "art/export/preview/ui.screen.shop.png",
+    "preview_sha256": "3a877284256a00ba2293e19af9ed628d069cb4151cd61d99041450da9618de7b"
+   },
+   "approved": {
+    "version": 1,
+    "hash": "267d16250937ed3619c685b049c770d516487ec82e69364d75c7a3a4bf98c85a",
+    "png": "art/export/approved/ui.screen.shop@v1.png",
+    "png_sha256": "3a877284256a00ba2293e19af9ed628d069cb4151cd61d99041450da9618de7b",
+    "approval": "APR-0006",
+    "date": "2026-10-16T03:45:02.583Z"
+   },
+   "current_is_approved": true,
+   "renderer": [
+    "workbench/js/core/ui-delivery.js",
+    "workbench/js/core/ui.js",
+    "workbench/js/core/scene.js",
+    "workbench/js/core/tilemodel.js",
+    "workbench/js/core/matter.js",
+    "workbench/js/core/terrain.js",
+    "workbench/js/core/ambient.js",
+    "workbench/js/core/env.js",
+    "workbench/js/core/i18n.js",
+    "workbench/js/core/font-delivery.js",
+    "content/i18n-delivery/zh-Hans.json",
+    "content/i18n-delivery/en.json",
+    "workbench/js/core/dialogue.js",
+    "workbench/js/core/font-small.js",
+    "content/i18n/zh-Hans.json",
+    "content/i18n/en.json"
+   ],
+   "params": {
+    "screen": "shop",
+    "theme": "theme.dungeon",
+    "exclude": [
+     "fauna.dungeon_rat"
+    ],
+    "coins": 45,
+    "goods": [
+     {
+      "id": "sandbag",
+      "price": 10,
+      "stock": 5
+     },
+     {
+      "id": "first_aid",
+      "price": 50,
+      "stock": 1
+     },
+     {
+      "id": "rope_ladder",
+      "price": 25,
+      "stock": 0
+     }
+    ],
+    "focus": 0,
+    "bag": [
+     "first_aid"
+    ],
+    "slots": 3,
+    "sand": 2
+   },
+   "depends": [
+    "theme.dungeon",
+    "ui.panel",
+    "ui.keycap",
+    "ui.bubble",
+    "ui.bubble_tail",
+    "char.turtle_keeper",
+    "item.coin",
+    "item.sandbag",
+    "item.first_aid",
+    "item.rope_ladder",
+    "ui.delivery_icons"
    ]
   },
   {
@@ -5106,10 +6710,130 @@
    "key": "lobby.current"
   },
   {
+   "screen": "ui.screen.reels",
+   "locale": "qps",
+   "kind": "ellipsis",
+   "key": "dlv.reels.title"
+  },
+  {
+   "screen": "ui.screen.reels",
+   "locale": "qps",
+   "kind": "ellipsis",
+   "key": "dlv.reels.rule.0"
+  },
+  {
+   "screen": "ui.screen.reels",
+   "locale": "qps",
+   "kind": "dropped",
+   "key": "keybar"
+  },
+  {
    "screen": "ui.screen.rulecard",
    "locale": "qps",
    "kind": "clip",
    "key": "rule.earth.text"
+  },
+  {
+   "screen": "ui.screen.settlement_fail",
+   "locale": "qps",
+   "kind": "clip",
+   "key": "dlv.fail.reason"
+  },
+  {
+   "screen": "ui.screen.settlement_fail",
+   "locale": "qps",
+   "kind": "clip",
+   "key": "dlv.fail.keep"
+  },
+  {
+   "screen": "ui.screen.settlement_fail",
+   "locale": "qps",
+   "kind": "ellipsis",
+   "key": "dlv.done.again"
+  },
+  {
+   "screen": "ui.screen.settlement_fail",
+   "locale": "qps",
+   "kind": "ellipsis",
+   "key": "dlv.done.hub"
+  },
+  {
+   "screen": "ui.screen.settlement",
+   "locale": "qps",
+   "kind": "ellipsis",
+   "key": "recipient.old_miner.name"
+  },
+  {
+   "screen": "ui.screen.settlement",
+   "locale": "qps",
+   "kind": "ellipsis",
+   "key": "dlv.done.integrity"
+  },
+  {
+   "screen": "ui.screen.settlement",
+   "locale": "qps",
+   "kind": "ellipsis",
+   "key": "dlv.done.time_value"
+  },
+  {
+   "screen": "ui.screen.settlement",
+   "locale": "qps",
+   "kind": "ellipsis",
+   "key": "dlv.done.like"
+  },
+  {
+   "screen": "ui.screen.settlement",
+   "locale": "qps",
+   "kind": "ellipsis",
+   "key": "dlv.done.picked"
+  },
+  {
+   "screen": "ui.screen.settlement",
+   "locale": "qps",
+   "kind": "ellipsis",
+   "key": "dlv.done.again"
+  },
+  {
+   "screen": "ui.screen.settlement",
+   "locale": "qps",
+   "kind": "ellipsis",
+   "key": "dlv.done.hub"
+  },
+  {
+   "screen": "ui.screen.shop",
+   "locale": "qps",
+   "kind": "clip",
+   "key": "dlv.shop.greet"
+  },
+  {
+   "screen": "ui.screen.shop",
+   "locale": "qps",
+   "kind": "ellipsis",
+   "key": "dlv.shop.title"
+  },
+  {
+   "screen": "ui.screen.shop",
+   "locale": "qps",
+   "kind": "ellipsis",
+   "key": "item.sandbag.name"
+  },
+  {
+   "screen": "ui.screen.shop",
+   "locale": "qps",
+   "kind": "ellipsis",
+   "key": "item.first_aid.name"
+  },
+  {
+   "screen": "ui.screen.shop",
+   "locale": "qps",
+   "kind": "ellipsis",
+   "key": "item.rope_ladder.name"
+  },
+  {
+   "screen": "ui.screen.shop",
+   "locale": "qps",
+   "kind": "dropped",
+   "key": "keybar"
   }
  ],
  "references": [
@@ -5169,10 +6893,8 @@
     "item.sandbag",
     "item.bomb"
    ],
-   "all_approved": false,
-   "unapproved": [
-    "ui.screen.lobby"
-   ]
+   "all_approved": true,
+   "unapproved": []
   },
   {
    "name": "showcase.ruins",
@@ -5228,10 +6950,8 @@
     "item.sandbag",
     "item.bomb"
    ],
-   "all_approved": false,
-   "unapproved": [
-    "ui.screen.lobby"
-   ]
+   "all_approved": true,
+   "unapproved": []
   },
   {
    "name": "showcase.cave",
@@ -5287,10 +7007,8 @@
     "item.sandbag",
     "item.bomb"
    ],
-   "all_approved": false,
-   "unapproved": [
-    "ui.screen.lobby"
-   ]
+   "all_approved": true,
+   "unapproved": []
   },
   {
    "name": "showcase.forest",
@@ -5348,10 +7066,8 @@
     "item.sandbag",
     "item.bomb"
    ],
-   "all_approved": false,
-   "unapproved": [
-    "ui.screen.lobby"
-   ]
+   "all_approved": true,
+   "unapproved": []
   },
   {
    "name": "showcase.sky",
@@ -5407,10 +7123,8 @@
     "item.sandbag",
     "item.bomb"
    ],
-   "all_approved": false,
-   "unapproved": [
-    "ui.screen.lobby"
-   ]
+   "all_approved": true,
+   "unapproved": []
   },
   {
    "name": "showcase.cosmos",
@@ -5464,10 +7178,8 @@
     "item.sandbag",
     "item.bomb"
    ],
-   "all_approved": false,
-   "unapproved": [
-    "ui.screen.lobby"
-   ]
+   "all_approved": true,
+   "unapproved": []
   },
   {
    "name": "chapter.ruins",
@@ -5811,9 +7523,852 @@
    "unapproved": []
   },
   {
+   "name": "level.Q01",
+   "file": "art/export/reference/level.Q01.png",
+   "sha256": "087d52b2b3cddeaceab692fd2647d3414a5b4506a43c24d01f597ab445f89b95",
+   "uses": [
+    "theme.cave",
+    "deco.cave_crystal",
+    "deco.cave_mushroom",
+    "fauna.cave_moth",
+    "ui.target",
+    "char.portitor",
+    "obj.crate_wood",
+    "obj.crate_iron",
+    "mech.ladder",
+    "mech.socket",
+    "mech.socket_lit",
+    "mech.exit_flag",
+    "mech.plate",
+    "mech.door",
+    "mech.link_symbol",
+    "ui.icons",
+    "ui.goal_lamp",
+    "item.sandbag",
+    "item.bomb"
+   ],
+   "all_approved": true,
+   "unapproved": []
+  },
+  {
+   "name": "level.Q02",
+   "file": "art/export/reference/level.Q02.png",
+   "sha256": "fc724d564f7643b9953087a481e8ea8bbd34d8009b603bc6054505a913ed41d0",
+   "uses": [
+    "theme.cave",
+    "deco.cave_crystal",
+    "deco.cave_mushroom",
+    "fauna.cave_moth",
+    "ui.target",
+    "char.portitor",
+    "obj.crate_wood",
+    "obj.crate_iron",
+    "mech.ladder",
+    "mech.socket",
+    "mech.socket_lit",
+    "mech.exit_flag",
+    "mech.plate",
+    "mech.door",
+    "mech.link_symbol",
+    "ui.icons",
+    "ui.goal_lamp",
+    "item.sandbag",
+    "item.bomb"
+   ],
+   "all_approved": true,
+   "unapproved": []
+  },
+  {
+   "name": "level.Q03",
+   "file": "art/export/reference/level.Q03.png",
+   "sha256": "5abade4a29a055abb0bd2e779d1642a9994379d058c502192d91c552c57340c6",
+   "uses": [
+    "theme.cave",
+    "deco.cave_crystal",
+    "deco.cave_mushroom",
+    "fauna.cave_moth",
+    "ui.target",
+    "char.portitor",
+    "obj.crate_wood",
+    "obj.crate_iron",
+    "mech.ladder",
+    "mech.socket",
+    "mech.socket_lit",
+    "mech.exit_flag",
+    "mech.plate",
+    "mech.door",
+    "mech.link_symbol",
+    "ui.icons",
+    "ui.goal_lamp",
+    "item.sandbag",
+    "item.bomb"
+   ],
+   "all_approved": true,
+   "unapproved": []
+  },
+  {
+   "name": "level.Q04",
+   "file": "art/export/reference/level.Q04.png",
+   "sha256": "5e1f7ef55ea51039e9cf4a3db53d4c03dd7399fe2dfafefcab849dc984f7660e",
+   "uses": [
+    "theme.cave",
+    "deco.cave_crystal",
+    "deco.cave_mushroom",
+    "fauna.cave_moth",
+    "ui.target",
+    "char.portitor",
+    "obj.crate_wood",
+    "obj.crate_iron",
+    "mech.ladder",
+    "mech.socket",
+    "mech.socket_lit",
+    "mech.exit_flag",
+    "mech.plate",
+    "mech.door",
+    "mech.link_symbol",
+    "ui.icons",
+    "ui.goal_lamp",
+    "item.sandbag",
+    "item.bomb"
+   ],
+   "all_approved": true,
+   "unapproved": []
+  },
+  {
+   "name": "level.Q07",
+   "file": "art/export/reference/level.Q07.png",
+   "sha256": "767df3baa66981f564405bfc0e27e4ed292f5851017de0beeea8512f4d50032c",
+   "uses": [
+    "theme.cave",
+    "deco.cave_crystal",
+    "deco.cave_mushroom",
+    "fauna.cave_moth",
+    "ui.target",
+    "char.portitor",
+    "obj.crate_wood",
+    "obj.crate_iron",
+    "mech.ladder",
+    "mech.socket",
+    "mech.socket_lit",
+    "mech.exit_flag",
+    "mech.plate",
+    "mech.door",
+    "mech.link_symbol",
+    "ui.icons",
+    "ui.goal_lamp",
+    "item.sandbag",
+    "item.bomb"
+   ],
+   "all_approved": true,
+   "unapproved": []
+  },
+  {
+   "name": "level.Q08",
+   "file": "art/export/reference/level.Q08.png",
+   "sha256": "508657e81d33355aeaeb5113433f8c23e28128543563542662c33a9a1a197e5e",
+   "uses": [
+    "theme.cave",
+    "deco.cave_crystal",
+    "deco.cave_mushroom",
+    "fauna.cave_moth",
+    "ui.target",
+    "char.portitor",
+    "obj.crate_wood",
+    "obj.crate_iron",
+    "mech.ladder",
+    "mech.socket",
+    "mech.socket_lit",
+    "mech.exit_flag",
+    "mech.plate",
+    "mech.door",
+    "mech.link_symbol",
+    "ui.icons",
+    "ui.goal_lamp",
+    "item.sandbag",
+    "item.bomb"
+   ],
+   "all_approved": true,
+   "unapproved": []
+  },
+  {
+   "name": "level.Q09",
+   "file": "art/export/reference/level.Q09.png",
+   "sha256": "fe34a4737951c42e0f91ede850b0d581de4fc120a70c0c1dbe15832c460b9f7a",
+   "uses": [
+    "theme.cave",
+    "deco.cave_crystal",
+    "deco.cave_mushroom",
+    "fauna.cave_moth",
+    "ui.target",
+    "char.portitor",
+    "obj.crate_wood",
+    "obj.crate_iron",
+    "mech.ladder",
+    "mech.socket",
+    "mech.socket_lit",
+    "mech.exit_flag",
+    "mech.plate",
+    "mech.door",
+    "mech.link_symbol",
+    "ui.icons",
+    "ui.goal_lamp",
+    "item.sandbag",
+    "item.bomb"
+   ],
+   "all_approved": true,
+   "unapproved": []
+  },
+  {
+   "name": "level.Q10",
+   "file": "art/export/reference/level.Q10.png",
+   "sha256": "f28d276b6716770f86f85f941114a132079b5af8299264cfd00f3e839b146394",
+   "uses": [
+    "theme.cave",
+    "deco.cave_crystal",
+    "deco.cave_mushroom",
+    "fauna.cave_moth",
+    "ui.target",
+    "char.portitor",
+    "obj.crate_wood",
+    "obj.crate_iron",
+    "mech.ladder",
+    "mech.socket",
+    "mech.socket_lit",
+    "mech.exit_flag",
+    "mech.plate",
+    "mech.door",
+    "mech.link_symbol",
+    "ui.icons",
+    "ui.goal_lamp",
+    "item.sandbag",
+    "item.bomb"
+   ],
+   "all_approved": true,
+   "unapproved": []
+  },
+  {
+   "name": "level.E01",
+   "file": "art/export/reference/level.E01.png",
+   "sha256": "3d661e798eb98d3345b9551b1af409799e60c7971231eef8b3176036798d9187",
+   "uses": [
+    "theme.cosmos",
+    "deco.cosmos_sprout",
+    "fauna.cosmos_drone",
+    "ui.target",
+    "char.portitor",
+    "obj.crate_wood",
+    "obj.crate_iron",
+    "mech.ladder",
+    "mech.socket",
+    "mech.socket_lit",
+    "mech.exit_flag",
+    "mech.plate",
+    "mech.door",
+    "mech.link_symbol",
+    "ui.icons",
+    "ui.goal_lamp",
+    "item.sandbag",
+    "item.bomb"
+   ],
+   "all_approved": true,
+   "unapproved": []
+  },
+  {
+   "name": "level.E02",
+   "file": "art/export/reference/level.E02.png",
+   "sha256": "dc00fd26219f583cbd3227a82e1182cc8a434c50a5924e715212d86e777bea4d",
+   "uses": [
+    "theme.cosmos",
+    "deco.cosmos_sprout",
+    "fauna.cosmos_drone",
+    "ui.target",
+    "char.portitor",
+    "obj.crate_wood",
+    "obj.crate_iron",
+    "mech.ladder",
+    "mech.socket",
+    "mech.socket_lit",
+    "mech.exit_flag",
+    "mech.plate",
+    "mech.door",
+    "mech.link_symbol",
+    "ui.icons",
+    "ui.goal_lamp",
+    "item.sandbag",
+    "item.bomb"
+   ],
+   "all_approved": true,
+   "unapproved": []
+  },
+  {
+   "name": "level.E03",
+   "file": "art/export/reference/level.E03.png",
+   "sha256": "a6aabb68ff2d4613c250273c8914b082880fdf6e3a9c521a9c609eb5d69aa7ee",
+   "uses": [
+    "theme.cosmos",
+    "deco.cosmos_sprout",
+    "fauna.cosmos_drone",
+    "ui.target",
+    "char.portitor",
+    "obj.crate_wood",
+    "obj.crate_iron",
+    "mech.ladder",
+    "mech.socket",
+    "mech.socket_lit",
+    "mech.exit_flag",
+    "mech.plate",
+    "mech.door",
+    "mech.link_symbol",
+    "ui.icons",
+    "ui.goal_lamp",
+    "item.sandbag",
+    "item.bomb"
+   ],
+   "all_approved": true,
+   "unapproved": []
+  },
+  {
+   "name": "level.E04",
+   "file": "art/export/reference/level.E04.png",
+   "sha256": "7e389c133c6a883c13bbf0fb3faecad8a8385e0a0e83a379ea1bc1da6014ff8e",
+   "uses": [
+    "theme.cosmos",
+    "deco.cosmos_sprout",
+    "fauna.cosmos_drone",
+    "ui.target",
+    "char.portitor",
+    "obj.crate_wood",
+    "obj.crate_iron",
+    "mech.ladder",
+    "mech.socket",
+    "mech.socket_lit",
+    "mech.exit_flag",
+    "mech.plate",
+    "mech.door",
+    "mech.link_symbol",
+    "ui.icons",
+    "ui.goal_lamp",
+    "item.sandbag",
+    "item.bomb"
+   ],
+   "all_approved": true,
+   "unapproved": []
+  },
+  {
+   "name": "level.E05",
+   "file": "art/export/reference/level.E05.png",
+   "sha256": "066bd9f472ccce2f4231c30169c53294f9fefa95e8a98af975b8122c738c5173",
+   "uses": [
+    "theme.cosmos",
+    "deco.cosmos_sprout",
+    "fauna.cosmos_drone",
+    "ui.target",
+    "char.portitor",
+    "obj.crate_wood",
+    "obj.crate_iron",
+    "mech.ladder",
+    "mech.socket",
+    "mech.socket_lit",
+    "mech.exit_flag",
+    "mech.plate",
+    "mech.door",
+    "mech.link_symbol",
+    "ui.icons",
+    "ui.goal_lamp",
+    "item.sandbag",
+    "item.bomb"
+   ],
+   "all_approved": true,
+   "unapproved": []
+  },
+  {
+   "name": "level.E06",
+   "file": "art/export/reference/level.E06.png",
+   "sha256": "b2ae93687b32fadb85296765e9a11ce355e668731d365a8068f2c4827cdc397c",
+   "uses": [
+    "theme.cosmos",
+    "deco.cosmos_sprout",
+    "fauna.cosmos_drone",
+    "ui.target",
+    "char.portitor",
+    "obj.crate_wood",
+    "obj.crate_iron",
+    "mech.ladder",
+    "mech.socket",
+    "mech.socket_lit",
+    "mech.exit_flag",
+    "mech.plate",
+    "mech.door",
+    "mech.link_symbol",
+    "ui.icons",
+    "ui.goal_lamp",
+    "item.sandbag",
+    "item.bomb"
+   ],
+   "all_approved": true,
+   "unapproved": []
+  },
+  {
+   "name": "level.G01",
+   "file": "art/export/reference/level.G01.png",
+   "sha256": "75851bd49b8065fa4863a223cfafd31aa38eac9b044e7c60b4b60822f8d67beb",
+   "uses": [
+    "theme.forest",
+    "deco.forest_flower",
+    "deco.forest_grass",
+    "fauna.forest_bird",
+    "fauna.forest_butterfly",
+    "ui.target",
+    "char.portitor",
+    "obj.crate_wood",
+    "obj.crate_iron",
+    "mech.ladder",
+    "mech.socket",
+    "mech.socket_lit",
+    "mech.exit_flag",
+    "mech.plate",
+    "mech.door",
+    "mech.link_symbol",
+    "ui.icons",
+    "ui.goal_lamp",
+    "item.sandbag",
+    "item.bomb"
+   ],
+   "all_approved": true,
+   "unapproved": []
+  },
+  {
+   "name": "level.G02",
+   "file": "art/export/reference/level.G02.png",
+   "sha256": "342502db03ae6b95467cb52b35e2ff6314e5c8685dcbb7eb5839f2a6f206c4b0",
+   "uses": [
+    "theme.forest",
+    "deco.forest_flower",
+    "deco.forest_grass",
+    "fauna.forest_bird",
+    "fauna.forest_butterfly",
+    "ui.target",
+    "char.portitor",
+    "obj.crate_wood",
+    "obj.crate_iron",
+    "mech.ladder",
+    "mech.socket",
+    "mech.socket_lit",
+    "mech.exit_flag",
+    "mech.plate",
+    "mech.door",
+    "mech.link_symbol",
+    "ui.icons",
+    "ui.goal_lamp",
+    "item.sandbag",
+    "item.bomb"
+   ],
+   "all_approved": true,
+   "unapproved": []
+  },
+  {
+   "name": "level.G03",
+   "file": "art/export/reference/level.G03.png",
+   "sha256": "e273e4c04f6e54851144e0f081e47bd06253df18758b74164249d7a45472ba2f",
+   "uses": [
+    "theme.forest",
+    "deco.forest_flower",
+    "deco.forest_grass",
+    "fauna.forest_bird",
+    "fauna.forest_butterfly",
+    "ui.target",
+    "char.portitor",
+    "obj.crate_wood",
+    "obj.crate_iron",
+    "mech.ladder",
+    "mech.socket",
+    "mech.socket_lit",
+    "mech.exit_flag",
+    "mech.plate",
+    "mech.door",
+    "mech.link_symbol",
+    "ui.icons",
+    "ui.goal_lamp",
+    "item.sandbag",
+    "item.bomb"
+   ],
+   "all_approved": true,
+   "unapproved": []
+  },
+  {
+   "name": "level.G04",
+   "file": "art/export/reference/level.G04.png",
+   "sha256": "befd78c8be9af3388b818c53f425d754d22430c7d9b14058a81714d2aaa1d431",
+   "uses": [
+    "theme.forest",
+    "deco.forest_flower",
+    "deco.forest_grass",
+    "fauna.forest_bird",
+    "fauna.forest_butterfly",
+    "ui.target",
+    "char.portitor",
+    "obj.crate_wood",
+    "obj.crate_iron",
+    "mech.ladder",
+    "mech.socket",
+    "mech.socket_lit",
+    "mech.exit_flag",
+    "mech.plate",
+    "mech.door",
+    "mech.link_symbol",
+    "ui.icons",
+    "ui.goal_lamp",
+    "item.sandbag",
+    "item.bomb"
+   ],
+   "all_approved": true,
+   "unapproved": []
+  },
+  {
+   "name": "level.G05",
+   "file": "art/export/reference/level.G05.png",
+   "sha256": "6c715d5eeba48c75f45bc2ea45e6d73c21be75bba1602526f3702ebdb515d262",
+   "uses": [
+    "theme.forest",
+    "deco.forest_flower",
+    "deco.forest_grass",
+    "fauna.forest_bird",
+    "fauna.forest_butterfly",
+    "ui.target",
+    "char.portitor",
+    "obj.crate_wood",
+    "obj.crate_iron",
+    "mech.ladder",
+    "mech.socket",
+    "mech.socket_lit",
+    "mech.exit_flag",
+    "mech.plate",
+    "mech.door",
+    "mech.link_symbol",
+    "ui.icons",
+    "ui.goal_lamp",
+    "item.sandbag",
+    "item.bomb"
+   ],
+   "all_approved": true,
+   "unapproved": []
+  },
+  {
+   "name": "level.G06",
+   "file": "art/export/reference/level.G06.png",
+   "sha256": "7f68643e2901beb0b633985d469d6ba52ba437ed14d0c36965b54ed301a3b41f",
+   "uses": [
+    "theme.forest",
+    "deco.forest_flower",
+    "deco.forest_grass",
+    "fauna.forest_bird",
+    "fauna.forest_butterfly",
+    "ui.target",
+    "char.portitor",
+    "obj.crate_wood",
+    "obj.crate_iron",
+    "mech.ladder",
+    "mech.socket",
+    "mech.socket_lit",
+    "mech.exit_flag",
+    "mech.plate",
+    "mech.door",
+    "mech.link_symbol",
+    "ui.icons",
+    "ui.goal_lamp",
+    "item.sandbag",
+    "item.bomb"
+   ],
+   "all_approved": true,
+   "unapproved": []
+  },
+  {
+   "name": "level.G08",
+   "file": "art/export/reference/level.G08.png",
+   "sha256": "2e4f372af23e2cbcb93f781d9184fdb7e134cad6d1e2bb922cf98a4d0b54f02f",
+   "uses": [
+    "theme.forest",
+    "deco.forest_flower",
+    "deco.forest_grass",
+    "fauna.forest_bird",
+    "fauna.forest_butterfly",
+    "ui.target",
+    "char.portitor",
+    "obj.crate_wood",
+    "obj.crate_iron",
+    "mech.ladder",
+    "mech.socket",
+    "mech.socket_lit",
+    "mech.exit_flag",
+    "mech.plate",
+    "mech.door",
+    "mech.link_symbol",
+    "ui.icons",
+    "ui.goal_lamp",
+    "item.sandbag",
+    "item.bomb"
+   ],
+   "all_approved": true,
+   "unapproved": []
+  },
+  {
+   "name": "level.G09",
+   "file": "art/export/reference/level.G09.png",
+   "sha256": "0a735555b440e46f5b118899802d1c8567bc55d41a5dbc554276b5d86a02b1fc",
+   "uses": [
+    "theme.forest",
+    "deco.forest_flower",
+    "deco.forest_grass",
+    "fauna.forest_bird",
+    "fauna.forest_butterfly",
+    "ui.target",
+    "char.portitor",
+    "obj.crate_wood",
+    "obj.crate_iron",
+    "mech.ladder",
+    "mech.socket",
+    "mech.socket_lit",
+    "mech.exit_flag",
+    "mech.plate",
+    "mech.door",
+    "mech.link_symbol",
+    "ui.icons",
+    "ui.goal_lamp",
+    "item.sandbag",
+    "item.bomb"
+   ],
+   "all_approved": true,
+   "unapproved": []
+  },
+  {
+   "name": "level.G10",
+   "file": "art/export/reference/level.G10.png",
+   "sha256": "3f89d52bcf891c949af3afcc253f5560264c31a3f281c53a4a14a89b0e27a4e1",
+   "uses": [
+    "theme.forest",
+    "deco.forest_flower",
+    "deco.forest_grass",
+    "fauna.forest_bird",
+    "fauna.forest_butterfly",
+    "ui.target",
+    "char.portitor",
+    "obj.crate_wood",
+    "obj.crate_iron",
+    "mech.ladder",
+    "mech.socket",
+    "mech.socket_lit",
+    "mech.exit_flag",
+    "mech.plate",
+    "mech.door",
+    "mech.link_symbol",
+    "ui.icons",
+    "ui.goal_lamp",
+    "item.sandbag",
+    "item.bomb"
+   ],
+   "all_approved": true,
+   "unapproved": []
+  },
+  {
+   "name": "level.F01",
+   "file": "art/export/reference/level.F01.png",
+   "sha256": "0867cd21bbf538a0e8d121385b1169aba2c86fffeed5adb85a3b850341f20b7b",
+   "uses": [
+    "theme.sky",
+    "deco.sky_flower",
+    "fauna.sky_cloudling",
+    "fauna.sky_dove",
+    "ui.target",
+    "char.portitor",
+    "obj.crate_wood",
+    "obj.crate_iron",
+    "mech.ladder",
+    "mech.socket",
+    "mech.socket_lit",
+    "mech.exit_flag",
+    "mech.plate",
+    "mech.door",
+    "mech.link_symbol",
+    "ui.icons",
+    "ui.goal_lamp",
+    "item.sandbag",
+    "item.bomb"
+   ],
+   "all_approved": true,
+   "unapproved": []
+  },
+  {
+   "name": "level.F02",
+   "file": "art/export/reference/level.F02.png",
+   "sha256": "13914e0f87c8d152d740bed559213f919427d19ac5e2c31922fedcae93919dc0",
+   "uses": [
+    "theme.sky",
+    "deco.sky_flower",
+    "fauna.sky_cloudling",
+    "fauna.sky_dove",
+    "ui.target",
+    "char.portitor",
+    "obj.crate_wood",
+    "obj.crate_iron",
+    "mech.ladder",
+    "mech.socket",
+    "mech.socket_lit",
+    "mech.exit_flag",
+    "mech.plate",
+    "mech.door",
+    "mech.link_symbol",
+    "ui.icons",
+    "ui.goal_lamp",
+    "item.sandbag",
+    "item.bomb"
+   ],
+   "all_approved": true,
+   "unapproved": []
+  },
+  {
+   "name": "level.F03",
+   "file": "art/export/reference/level.F03.png",
+   "sha256": "d32b318c80ac045b8bd833e42ec4e87905b5032291cb6aff225a2b7bb4cfaee7",
+   "uses": [
+    "theme.sky",
+    "deco.sky_flower",
+    "fauna.sky_cloudling",
+    "fauna.sky_dove",
+    "ui.target",
+    "char.portitor",
+    "obj.crate_wood",
+    "obj.crate_iron",
+    "mech.ladder",
+    "mech.socket",
+    "mech.socket_lit",
+    "mech.exit_flag",
+    "mech.plate",
+    "mech.door",
+    "mech.link_symbol",
+    "ui.icons",
+    "ui.goal_lamp",
+    "item.sandbag",
+    "item.bomb"
+   ],
+   "all_approved": true,
+   "unapproved": []
+  },
+  {
+   "name": "level.F04",
+   "file": "art/export/reference/level.F04.png",
+   "sha256": "61f0f99155a699cc9a8fb5380118e955b734a0acb1ee1c5db56788b3e8311be8",
+   "uses": [
+    "theme.sky",
+    "deco.sky_flower",
+    "fauna.sky_cloudling",
+    "fauna.sky_dove",
+    "ui.target",
+    "char.portitor",
+    "obj.crate_wood",
+    "obj.crate_iron",
+    "mech.ladder",
+    "mech.socket",
+    "mech.socket_lit",
+    "mech.exit_flag",
+    "mech.plate",
+    "mech.door",
+    "mech.link_symbol",
+    "ui.icons",
+    "ui.goal_lamp",
+    "item.sandbag",
+    "item.bomb"
+   ],
+   "all_approved": true,
+   "unapproved": []
+  },
+  {
+   "name": "level.F07",
+   "file": "art/export/reference/level.F07.png",
+   "sha256": "5b790dd3e30d51d368ad81a508a35169d4febc9f5c5971b018a8c4f9984535d6",
+   "uses": [
+    "theme.sky",
+    "deco.sky_flower",
+    "fauna.sky_cloudling",
+    "fauna.sky_dove",
+    "ui.target",
+    "char.portitor",
+    "obj.crate_wood",
+    "obj.crate_iron",
+    "mech.ladder",
+    "mech.socket",
+    "mech.socket_lit",
+    "mech.exit_flag",
+    "mech.plate",
+    "mech.door",
+    "mech.link_symbol",
+    "ui.icons",
+    "ui.goal_lamp",
+    "item.sandbag",
+    "item.bomb"
+   ],
+   "all_approved": true,
+   "unapproved": []
+  },
+  {
+   "name": "level.F08",
+   "file": "art/export/reference/level.F08.png",
+   "sha256": "4abcb9023f4b7d0762c0c1ee3b7772fc4fc67dd98635bbb26302d310eac1c233",
+   "uses": [
+    "theme.sky",
+    "deco.sky_flower",
+    "fauna.sky_cloudling",
+    "fauna.sky_dove",
+    "ui.target",
+    "char.portitor",
+    "obj.crate_wood",
+    "obj.crate_iron",
+    "mech.ladder",
+    "mech.socket",
+    "mech.socket_lit",
+    "mech.exit_flag",
+    "mech.plate",
+    "mech.door",
+    "mech.link_symbol",
+    "ui.icons",
+    "ui.goal_lamp",
+    "item.sandbag",
+    "item.bomb"
+   ],
+   "all_approved": true,
+   "unapproved": []
+  },
+  {
+   "name": "level.F09",
+   "file": "art/export/reference/level.F09.png",
+   "sha256": "e08af5b0a94aa62028afdf42ec95c7215c9fedc6461ffc00b86183da13dc9547",
+   "uses": [
+    "theme.sky",
+    "deco.sky_flower",
+    "fauna.sky_cloudling",
+    "fauna.sky_dove",
+    "ui.target",
+    "char.portitor",
+    "obj.crate_wood",
+    "obj.crate_iron",
+    "mech.ladder",
+    "mech.socket",
+    "mech.socket_lit",
+    "mech.exit_flag",
+    "mech.plate",
+    "mech.door",
+    "mech.link_symbol",
+    "ui.icons",
+    "ui.goal_lamp",
+    "item.sandbag",
+    "item.bomb"
+   ],
+   "all_approved": true,
+   "unapproved": []
+  },
+  {
    "name": "level.W01",
    "file": "art/export/reference/level.W01.png",
-   "sha256": "35b3389e7ea3a9192506a28983c7e8a70511c1d3f47d9d60be38f0b896a36495",
+   "sha256": "b9c2fe12a52e756edd49f3d6dd6371ff0a3700c70ae56398931ba1c5c31d5bed",
    "uses": [
     "theme.ruins",
     "deco.ruins_lotus",
@@ -6009,7 +8564,7 @@
   {
    "name": "level.W09",
    "file": "art/export/reference/level.W09.png",
-   "sha256": "3ba01072d11a1f8b7e430fcc405316cb8c2f16fb6ce3409f3e6276bae5777b98",
+   "sha256": "c9876876358ff7d0b3c012775092cc5048feb2cdc96db47492a01468eeebbb05",
    "uses": [
     "theme.ruins",
     "deco.ruins_lotus",
@@ -6081,10 +8636,8 @@
     "ui.panel",
     "ui.theme_emblem"
    ],
-   "all_approved": false,
-   "unapproved": [
-    "ui.screen.chapters"
-   ]
+   "all_approved": true,
+   "unapproved": []
   },
   {
    "name": "chapters.en",
@@ -6105,10 +8658,8 @@
     "ui.panel",
     "ui.theme_emblem"
    ],
-   "all_approved": false,
-   "unapproved": [
-    "ui.screen.chapters"
-   ]
+   "all_approved": true,
+   "unapproved": []
   },
   {
    "name": "complete.zh-Hans",
@@ -6124,10 +8675,8 @@
     "ui.menu_icons",
     "ui.panel"
    ],
-   "all_approved": false,
-   "unapproved": [
-    "ui.screen.complete"
-   ]
+   "all_approved": true,
+   "unapproved": []
   },
   {
    "name": "complete.en",
@@ -6143,10 +8692,80 @@
     "ui.menu_icons",
     "ui.panel"
    ],
-   "all_approved": false,
-   "unapproved": [
-    "ui.screen.complete"
-   ]
+   "all_approved": true,
+   "unapproved": []
+  },
+  {
+   "name": "delivery_hud.zh-Hans",
+   "file": "art/export/reference/delivery_hud.zh-Hans.png",
+   "sha256": "2da6481b4516ccea14010f5cea87d5e24c1b2dcc4b277bb3870d17393dafbf2a",
+   "uses": [
+    "ui.screen.delivery_hud",
+    "theme.dungeon",
+    "char.portitor",
+    "mech.ladder",
+    "monster.rat_swarm",
+    "item.coin",
+    "ui.delivery_icons",
+    "cargo.vase",
+    "item.sandbag",
+    "item.first_aid",
+    "item.rope_ladder"
+   ],
+   "all_approved": true,
+   "unapproved": []
+  },
+  {
+   "name": "delivery_hud.en",
+   "file": "art/export/reference/delivery_hud.en.png",
+   "sha256": "2da6481b4516ccea14010f5cea87d5e24c1b2dcc4b277bb3870d17393dafbf2a",
+   "uses": [
+    "ui.screen.delivery_hud",
+    "theme.dungeon",
+    "char.portitor",
+    "mech.ladder",
+    "monster.rat_swarm",
+    "item.coin",
+    "ui.delivery_icons",
+    "cargo.vase",
+    "item.sandbag",
+    "item.first_aid",
+    "item.rope_ladder"
+   ],
+   "all_approved": true,
+   "unapproved": []
+  },
+  {
+   "name": "delivery_pause.zh-Hans",
+   "file": "art/export/reference/delivery_pause.zh-Hans.png",
+   "sha256": "73e5d4dfa94a5c104b58edfe24319dbbf74cc6ab6f653ea8f91644fa97a16835",
+   "uses": [
+    "ui.screen.delivery_pause",
+    "char.portitor",
+    "theme.dungeon",
+    "ui.icons",
+    "ui.keycap",
+    "ui.menu_icons",
+    "ui.panel"
+   ],
+   "all_approved": true,
+   "unapproved": []
+  },
+  {
+   "name": "delivery_pause.en",
+   "file": "art/export/reference/delivery_pause.en.png",
+   "sha256": "c9442a22be8b151c43ad23eedd329984d6379732329972ce1f5b315813670eb0",
+   "uses": [
+    "ui.screen.delivery_pause",
+    "char.portitor",
+    "theme.dungeon",
+    "ui.icons",
+    "ui.keycap",
+    "ui.menu_icons",
+    "ui.panel"
+   ],
+   "all_approved": true,
+   "unapproved": []
   },
   {
    "name": "dialogue.zh-Hans",
@@ -6165,13 +8784,8 @@
     "ui.menu_icons",
     "ui.panel"
    ],
-   "all_approved": false,
-   "unapproved": [
-    "ui.screen.dialogue",
-    "ui.bubble",
-    "ui.bubble_tail",
-    "ui.emote"
-   ]
+   "all_approved": true,
+   "unapproved": []
   },
   {
    "name": "dialogue.en",
@@ -6190,13 +8804,8 @@
     "ui.menu_icons",
     "ui.panel"
    ],
-   "all_approved": false,
-   "unapproved": [
-    "ui.screen.dialogue",
-    "ui.bubble",
-    "ui.bubble_tail",
-    "ui.emote"
-   ]
+   "all_approved": true,
+   "unapproved": []
   },
   {
    "name": "hint.zh-Hans",
@@ -6213,12 +8822,8 @@
     "ui.menu_icons",
     "ui.panel"
    ],
-   "all_approved": false,
-   "unapproved": [
-    "ui.screen.hint",
-    "ui.bubble",
-    "ui.bubble_tail"
-   ]
+   "all_approved": true,
+   "unapproved": []
   },
   {
    "name": "hint.en",
@@ -6235,12 +8840,8 @@
     "ui.menu_icons",
     "ui.panel"
    ],
-   "all_approved": false,
-   "unapproved": [
-    "ui.screen.hint",
-    "ui.bubble",
-    "ui.bubble_tail"
-   ]
+   "all_approved": true,
+   "unapproved": []
   },
   {
    "name": "levels.zh-Hans",
@@ -6254,10 +8855,8 @@
     "ui.menu_icons",
     "ui.panel"
    ],
-   "all_approved": false,
-   "unapproved": [
-    "ui.screen.levels"
-   ]
+   "all_approved": true,
+   "unapproved": []
   },
   {
    "name": "levels.en",
@@ -6271,10 +8870,8 @@
     "ui.menu_icons",
     "ui.panel"
    ],
-   "all_approved": false,
-   "unapproved": [
-    "ui.screen.levels"
-   ]
+   "all_approved": true,
+   "unapproved": []
   },
   {
    "name": "lobby.zh-Hans",
@@ -6291,10 +8888,8 @@
     "ui.menu_icons",
     "ui.panel"
    ],
-   "all_approved": false,
-   "unapproved": [
-    "ui.screen.lobby"
-   ]
+   "all_approved": true,
+   "unapproved": []
   },
   {
    "name": "lobby.en",
@@ -6311,10 +8906,8 @@
     "ui.menu_icons",
     "ui.panel"
    ],
-   "all_approved": false,
-   "unapproved": [
-    "ui.screen.lobby"
-   ]
+   "all_approved": true,
+   "unapproved": []
   },
   {
    "name": "pause.zh-Hans",
@@ -6329,10 +8922,8 @@
     "ui.menu_icons",
     "ui.panel"
    ],
-   "all_approved": false,
-   "unapproved": [
-    "ui.screen.pause"
-   ]
+   "all_approved": true,
+   "unapproved": []
   },
   {
    "name": "pause.en",
@@ -6347,10 +8938,50 @@
     "ui.menu_icons",
     "ui.panel"
    ],
-   "all_approved": false,
-   "unapproved": [
-    "ui.screen.pause"
-   ]
+   "all_approved": true,
+   "unapproved": []
+  },
+  {
+   "name": "reels.zh-Hans",
+   "file": "art/export/reference/reels.zh-Hans.png",
+   "sha256": "00804379afa9a8688b32f3af8913239d00ce5f8e2bf5a88ac057feec67648418",
+   "uses": [
+    "ui.screen.reels",
+    "theme.dungeon",
+    "ui.panel",
+    "ui.keycap",
+    "char.lucky_cat",
+    "cargo.letter",
+    "cargo.vase",
+    "cargo.ice_cream",
+    "avatar.old_miner",
+    "avatar.zombie",
+    "avatar.goblin_smith",
+    "ui.delivery_icons"
+   ],
+   "all_approved": true,
+   "unapproved": []
+  },
+  {
+   "name": "reels.en",
+   "file": "art/export/reference/reels.en.png",
+   "sha256": "86b28d5732a71dd2655e0db4132b530b867e80feb75d34e7b78f7f5a1c3c6817",
+   "uses": [
+    "ui.screen.reels",
+    "theme.dungeon",
+    "ui.panel",
+    "ui.keycap",
+    "char.lucky_cat",
+    "cargo.letter",
+    "cargo.vase",
+    "cargo.ice_cream",
+    "avatar.old_miner",
+    "avatar.zombie",
+    "avatar.goblin_smith",
+    "ui.delivery_icons"
+   ],
+   "all_approved": true,
+   "unapproved": []
   },
   {
    "name": "rulecard.zh-Hans",
@@ -6365,10 +8996,8 @@
     "ui.menu_icons",
     "ui.panel"
    ],
-   "all_approved": false,
-   "unapproved": [
-    "ui.screen.rulecard"
-   ]
+   "all_approved": true,
+   "unapproved": []
   },
   {
    "name": "rulecard.en",
@@ -6383,10 +9012,8 @@
     "ui.menu_icons",
     "ui.panel"
    ],
-   "all_approved": false,
-   "unapproved": [
-    "ui.screen.rulecard"
-   ]
+   "all_approved": true,
+   "unapproved": []
   },
   {
    "name": "settings.zh-Hans",
@@ -6400,10 +9027,8 @@
     "ui.menu_icons",
     "ui.panel"
    ],
-   "all_approved": false,
-   "unapproved": [
-    "ui.screen.settings"
-   ]
+   "all_approved": true,
+   "unapproved": []
   },
   {
    "name": "settings.en",
@@ -6417,10 +9042,108 @@
     "ui.menu_icons",
     "ui.panel"
    ],
-   "all_approved": false,
-   "unapproved": [
-    "ui.screen.settings"
-   ]
+   "all_approved": true,
+   "unapproved": []
+  },
+  {
+   "name": "settlement_fail.zh-Hans",
+   "file": "art/export/reference/settlement_fail.zh-Hans.png",
+   "sha256": "eeb785399ebcef22a61140ed10e60772b7a9b70e30b9920617a8f63a9078084d",
+   "uses": [
+    "ui.screen.settlement_fail",
+    "theme.dungeon",
+    "ui.panel",
+    "avatar.zombie",
+    "cargo.vase"
+   ],
+   "all_approved": true,
+   "unapproved": []
+  },
+  {
+   "name": "settlement_fail.en",
+   "file": "art/export/reference/settlement_fail.en.png",
+   "sha256": "4ec1435b61b4ba0ea53ce063c44792e30e96ff92ffd24e9cc82776a5815ff39e",
+   "uses": [
+    "ui.screen.settlement_fail",
+    "theme.dungeon",
+    "ui.panel",
+    "avatar.zombie",
+    "cargo.vase"
+   ],
+   "all_approved": true,
+   "unapproved": []
+  },
+  {
+   "name": "settlement.zh-Hans",
+   "file": "art/export/reference/settlement.zh-Hans.png",
+   "sha256": "b114d60aff616f4aba48462e19d97e6808bdfe9364e59e69ad53e78f9c58a9c3",
+   "uses": [
+    "ui.screen.settlement",
+    "theme.dungeon",
+    "ui.panel",
+    "avatar.old_miner",
+    "item.coin",
+    "ui.delivery_icons"
+   ],
+   "all_approved": true,
+   "unapproved": []
+  },
+  {
+   "name": "settlement.en",
+   "file": "art/export/reference/settlement.en.png",
+   "sha256": "2fdbe8f62407592423b1196b7aee4a1ee921586e5b0b37cdce808067226471e0",
+   "uses": [
+    "ui.screen.settlement",
+    "theme.dungeon",
+    "ui.panel",
+    "avatar.old_miner",
+    "item.coin",
+    "ui.delivery_icons"
+   ],
+   "all_approved": true,
+   "unapproved": []
+  },
+  {
+   "name": "shop.zh-Hans",
+   "file": "art/export/reference/shop.zh-Hans.png",
+   "sha256": "3a877284256a00ba2293e19af9ed628d069cb4151cd61d99041450da9618de7b",
+   "uses": [
+    "ui.screen.shop",
+    "theme.dungeon",
+    "ui.panel",
+    "ui.keycap",
+    "ui.bubble",
+    "ui.bubble_tail",
+    "char.turtle_keeper",
+    "item.coin",
+    "item.sandbag",
+    "item.first_aid",
+    "item.rope_ladder",
+    "ui.delivery_icons"
+   ],
+   "all_approved": true,
+   "unapproved": []
+  },
+  {
+   "name": "shop.en",
+   "file": "art/export/reference/shop.en.png",
+   "sha256": "b0284bab7f531753de050596951e822e277fb465acc59388bfd66e0e10696f1d",
+   "uses": [
+    "ui.screen.shop",
+    "theme.dungeon",
+    "ui.panel",
+    "ui.keycap",
+    "ui.bubble",
+    "ui.bubble_tail",
+    "char.turtle_keeper",
+    "item.coin",
+    "item.sandbag",
+    "item.first_aid",
+    "item.rope_ladder",
+    "ui.delivery_icons"
+   ],
+   "all_approved": true,
+   "unapproved": []
   }
  ]
 }

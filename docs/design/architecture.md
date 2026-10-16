@@ -42,7 +42,7 @@ game/
   gameplay/
     session/           level_session.gd、action.gd、settle_loop.gd、undo.gd、goals.gd
     grid/              grid_state.gd、classify.gd、rules/（support、move、ladder、dig、pour、water）
-    entities/          player.gd、crate.gd（以后 monster/）
+    entities/          player.gd、crate.gd、monster.gd（配送模式的怪物，规则见 delivery-realtime.md）
     mechanics/         mechanic.gd（基类）+ 每个机制一个文件：lever.gd、lift.gd、bin.gd、load_bridge.gd、portal.gd …
   modes/
     lab/  delivery/  hell/          每个模式：controller.gd + 本模式规则
@@ -117,8 +117,9 @@ game/
 |---|---|---|
 | `docs/design/` | 每个系统一份设计文档（总纲、规则、各模式、地区、角色、养成、对话、编号、本文件…） | 设计负责人 |
 | `content/catalog/` | 全部清单数据，一个目录一种东西 | 设计负责人 |
+| `content/rooms/<地区>/` | 配送模式的房间模板（`pushbox.room/1`） | 设计负责人 |
 | `content/levels/<模式>/<组>/` | 关卡规格 | 设计负责人（以后的批次可由开发方细化，审核后合入） |
-| `content/i18n/`、`content/i18n-extra/` | 文字 | 美术负责人 / 开发方 |
+| `content/i18n/`、`content/i18n-<名>/`（如 `i18n-delivery`）、`content/i18n-extra/` | 文字（一个键只在一张表里） | 美术负责人 / 开发方（`i18n-extra`） |
 | `content/dialogue/`、`content/quests/`（以后） | 对话、委托数据 | 设计负责人 |
 | `content/export/` | 生成：`content-manifest.json`、`id-map.json` | 工具 |
 | `art/` | 美术源数据、确认记录、导出 | 美术负责人 |
@@ -137,6 +138,11 @@ game/
 | `scene.js` 的关卡画面与 HUD | `presentation/render/` + `presentation/ui/widgets/` |
 | `ui.js` 的各界面 | `presentation/ui/screens/` |
 | `dialogue.js` 的气泡排版 | `presentation/ui/widgets/bubble` |
+| `rooms.js`（配送房间模板：口位、翻转、封口） | `modes/delivery/rooms.gd` |
+| `mapgen.js`（配送地图生成：随机数与取数顺序都是规格） | `modes/delivery/mapgen.gd`，用 `content/export/delivery-golden.json` 对照 |
+| `realtime.js`（配送实时规则：刻、输入缓冲、下落、怪物、受伤、货物、驿站、换房间、结算） | `modes/delivery/realtime.gd` + `gameplay/entities/monster.gd`，用 `delivery-golden.json` 的 `replays` 逐帧对照 |
+| `delivery-scene.js`（配送房间的画法） | `presentation/render/`（实体美术确认后） |
+| `ui-delivery.js`（配送界面：滚轮台、驿站货架、结算、HUD）与 `font-delivery.js`（补的字形） | `presentation/ui/screens/`、`presentation/ui/widgets/`（美术确认后） |
 | `content/export/id-map.json` | `generated/` + `core/ids/registry.gd` |
 
 游戏实现与规格不同时，以 SDK 实测为准、记录差异，交设计负责人改规格；不要只改游戏。

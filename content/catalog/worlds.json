@@ -1,7 +1,7 @@
 {
  "format": "pushbox.catalog/1",
  "kind": "worlds",
- "note": "配送模式的地区（世界）。第 0 层的六个主题已确认，直接用作第 1 层地区。新地区的专属机制先登记为提议中的机制，进实验组验证。culture 是文化圈，inspiration 是取材来源，care 是表现时要注意的地方（worlds.md 2.1）。设计见 docs/design/worlds.md。",
+ "note": "配送模式的地区（世界）。第 0 层的六个主题已确认，直接用作第 1 层地区。新地区的专属机制先登记为提议中的机制，进实验组验证。culture 是文化圈，inspiration 是取材来源，care 是表现时要注意的地方（worlds.md 2.1）。设计见 docs/design/worlds.md。 ambient_exclude：配送模式里这个地区关掉的生态（外形容易和本地怪物混淆，美术规范第 6 节）。",
  "entries": [
   {
    "id": "dungeon",
@@ -17,6 +17,9 @@
     "plate_door"
    ],
    "theme": "theme.dungeon",
+   "ambient_exclude": [
+    "fauna.dungeon_rat"
+   ],
    "layer": 1,
    "status": "active"
   },

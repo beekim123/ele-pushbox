@@ -69,6 +69,25 @@ test("build writes the Godot content manifest and the workbench data; check exit
   assert.throws(() => execFileSync(process.execPath, [path.join(REPO, "tools/content.mjs"), "check", "--root", root], { stdio: "pipe" }));
 });
 
+test("a playable slice must reference real cargo, residents of its region and its own monsters", () => {
+  const res = buildContent(REPO);
+  const sl = res.catalogs.slices.find((s) => s.id === "dungeon_1");
+  assert.ok(sl && sl.cargo.length === 3 && sl.recipients.length === 3 && sl.monsters.length === 2);
+  assert.ok(res.ids.entries.some((e) => e.uid === "slice:dungeon_1"));
+  const root = sandbox();
+  edit(root, "content/catalog/slices.json", (c) => {
+    const s = c.entries[0];
+    s.cargo.push("piano_x"); s.recipients.push("alien"); s.monsters.push("ghost"); s.station.items.push("teleporter");
+  });
+  const e = errors(buildContent(root));
+  assert.ok(e.some((x) => x.includes("piano_x")), "unknown cargo");
+  assert.ok(e.some((x) => x.includes("alien") && x.includes("dungeon")), "recipient living elsewhere");
+  assert.ok(e.some((x) => x.includes("ghost") && x.includes("graveyard")), "monster of another region");
+  assert.ok(e.some((x) => x.includes("teleporter")), "unknown station item");
+  edit(root, "content/catalog/slices.json", (c) => { c.entries[0] = Object.assign(c.entries[0], { cargo: ["brains"], recipients: ["old_miner"], monsters: [], station: {} }); });
+  assert.ok(errors(buildContent(root)).some((x) => x.includes("brains") && x.includes("params.pay")), "slice cargo needs a base pay");
+});
+
 test("every resource gets one global uid and a fixed game path", () => {
   const res = buildContent(REPO);
   const uids = res.ids.entries.map((e) => e.uid);

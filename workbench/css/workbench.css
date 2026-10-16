@@ -200,3 +200,14 @@ a.card { text-decoration: none; }
 button.mini { font-size: 11px; padding: 0 4px; margin-left: 2px; line-height: 1.4; cursor: pointer; }
 table.ids td { vertical-align: top; word-break: break-all; }
 #ids-search { width: min(420px, 100%); }
+table.grid td.params { min-width: 240px; line-height: 1.5; }
+dl.meta.sheet { grid-template-columns: minmax(96px, max-content) minmax(0, 1fr); max-width: 980px; }
+dl.meta.sheet dd { margin: 0; word-break: break-word; }
+/* Map preview (#maps) */
+.seed-row { display: flex; gap: 4px; align-items: center; flex-wrap: wrap; }
+.seed-row input { width: 84px; }
+.map-frame { overflow: auto; max-width: 100%; flex: none; }
+canvas.map-overview { image-rendering: pixelated; display: block; cursor: pointer; max-width: 100%; height: auto; border-radius: 4px; }
+.play-bar { flex-wrap: wrap; align-items: center; }
+ol.live-log { padding-left: 18px; margin: 4px 0; }
+.live { font-size: 13px; line-height: 1.6; padding: 6px 8px; background: var(--panel); border-radius: 4px; }

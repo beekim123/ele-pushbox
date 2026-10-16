@@ -15,7 +15,11 @@
    "rarity": "common",
    "carry": "small",
    "layer": 1,
-   "status": "concept"
+   "status": "concept",
+   "params": {
+    "pay": 30,
+    "water_damage": 1
+   }
   },
   {
    "id": "ice_cream",
@@ -30,7 +34,11 @@
    "rarity": "common",
    "carry": "medium",
    "layer": 1,
-   "status": "concept"
+   "status": "concept",
+   "params": {
+    "pay": 40,
+    "melt_secs_per_point": 45
+   }
   },
   {
    "id": "piano",
@@ -60,7 +68,13 @@
    "rarity": "common",
    "carry": "medium",
    "layer": 1,
-   "status": "concept"
+   "status": "concept",
+   "params": {
+    "pay": 45,
+    "fragile_fall_rows": 2,
+    "hurt_damage": 1,
+    "sand_cushion": true
+   }
   },
   {
    "id": "fish_tank",

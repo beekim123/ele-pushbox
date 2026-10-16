@@ -1,0 +1,124 @@
+{
+ "format": "pushbox.catalog/1",
+ "kind": "slices",
+ "note": "可玩切片：一局配送的完整配置——用到的地区、货物、收件人、怪物、驿站商品和这一局的数值。货物、收件人、怪物、道具各自的行为数值写在它们自己目录条目的 params 里。时间一律写秒，模型按 time.tick_hz 换算成刻（四舍五入）。第一个切片见 docs/design/delivery-slice.md。",
+ "entries": [
+  {
+   "id": "dungeon_1",
+   "name": "第一个可玩切片 · 幽暗石牢",
+   "mode": "delivery",
+   "status": "design",
+   "doc": "docs/design/delivery-slice.md",
+   "world": "dungeon",
+   "cargo": [
+    "letter",
+    "vase",
+    "ice_cream"
+   ],
+   "recipients": [
+    "old_miner",
+    "zombie",
+    "goblin_smith"
+   ],
+   "monsters": [
+    "rat_swarm",
+    "skeleton_guard"
+   ],
+   "rooms": [
+    "dungeon_gate",
+    "dungeon_home",
+    "dungeon_station",
+    "dungeon_hall",
+    "dungeon_guard",
+    "dungeon_burrow",
+    "dungeon_plate",
+    "dungeon_shaft",
+    "dungeon_corner",
+    "dungeon_well"
+   ],
+   "mechanisms": [
+    "push",
+    "ladder",
+    "dig",
+    "pour",
+    "plate_door",
+    "fall",
+    "push_monster",
+    "crush_monster",
+    "trap_monster"
+   ],
+   "station": {
+    "items": [
+     "sandbag",
+     "first_aid",
+     "rope_ladder"
+    ],
+    "stock": {
+     "sandbag": 5,
+     "first_aid": 1,
+     "rope_ladder": 2
+    },
+    "heal": 1
+   },
+   "reels": {
+    "rerolls": 1,
+    "weights": {
+     "common": 4,
+     "rare": 2,
+     "legendary": 1
+    }
+   },
+   "map": {
+    "cols": 4,
+    "rows": 3,
+    "path_min": 5,
+    "path_max": 9,
+    "directions": [
+     "down",
+     "up"
+    ],
+    "drop_pct": 30,
+    "end_pct": 20
+   },
+   "time": {
+    "tick_hz": 60,
+    "transition_secs": 0.3
+   },
+   "intervals": {
+    "walk": 0.22,
+    "climb": 0.22,
+    "push": 0.3,
+    "dig": 0.35,
+    "pour": 0.35,
+    "interact": 0.4,
+    "move_anim": 0.1
+   },
+   "gravity": {
+    "tiles_per_sec": 12
+   },
+   "player": {
+    "hearts": 3,
+    "iframe_secs": 1.5,
+    "fall_hurt_rows": 3,
+    "sand_max": 9,
+    "item_slots": 3
+   },
+   "monster_fall_ko_rows": 3,
+   "cargo_integrity": 3,
+   "coins": {
+    "pickup": 5
+   },
+   "tip": {
+    "time_fast": 1.5,
+    "time_floor": 0.5,
+    "like": 1.5
+   },
+   "rating": {
+    "S": 1.4,
+    "A": 1.0,
+    "B": 0.6
+   },
+   "fail_keep": 0.5
+  }
+ ]
+}

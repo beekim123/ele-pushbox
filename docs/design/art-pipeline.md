@@ -23,6 +23,12 @@
 
 **内容哈希**：对 `kind`、`size`、`anchor`、`palette`、`frames`、`animations`、`ninepatch`、`params`、`renderer`、`depends` 做规范化 JSON 后取 SHA-256。程序化资产还要加上绘制代码文件的哈希，以及所依赖资产的内容哈希。因此修改绘制代码或改动被引用的精灵，界面画面也会生成新版本。
 
+**新界面不碰已确认的文件**（2026-10-16，配送切片第 4 步起）：`content/i18n/*.json`、`font-data.js`、`font-small.js`、`ui.js` 参与已确认界面的哈希，改它们会让那些界面全部回到待确认。所以新的一批界面：
+
+- 文字放自己的表 `content/i18n-<名>/<语言>.json`（配送切片是 `content/i18n-delivery/`；开发方是 `content/i18n-extra/`）。工具把所有表合并读入，一个键只能出现在一张表里，每张表都要有每种语言，否则内容检查报错。
+- 缺的字形用 `python3 tools/build-font.py --ext <名>` 生成 `workbench/js/core/font-<名>.js`：只补字体里没有的字，不替换任何已有字形，已画好的东西一个像素都不变。直接运行 `build-font.py` 会拒绝改冻结的字体文件（要改必须加 `--rebuild-frozen`，只有美术负责人在用户要求下才这样做）。`art.mjs verify` 检查每条文字的每个字都有字形（缺字形会悄悄画成"?"）。
+- 画法写在新文件里（配送切片：`workbench/js/core/ui-delivery.js`，把新界面登记进 `PB.ui.SCREENS`），不改 `ui.js`。新界面的 `renderer` 列出它真正用到的文件（含自己的文字表和字形文件），`depends` 列出它画的所有精灵。
+
 ## 3 版本与状态
 
 - 每次 `build` 都会重新计算哈希。若与 `content_hash` 不同，`version + 1`，阶段回到 `review`。旧的已确认版本仍保留在 `history/` 与 `export/approved/` 中。

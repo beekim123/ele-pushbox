@@ -24,8 +24,8 @@
         for (const x of C.mechanisms) st[x.status] = (st[x.status] || 0) + 1;
         stat = `${store.catalog("groups").filter((g) => g.mode === "lab").length} 组，计划 ${n.total} 关（有规格 ${n.spec}、SDK 验证 ${n.sdk}）；机制 ${C.mechanisms.length} 个：` + ["playable", "verified", "specified", "designed", "proposed"].filter((k) => st[k]).map((k) => `${store.mechStatusLabel(k)} ${st[k]}`).join("、");
       } else if (m.id === "hell") stat = `候选关卡 ${levels.length} 个（来自原组合关）`;
-      else stat = `设计数据：地区 ${store.catalog("worlds").length}、收件人 ${store.catalog("recipients").length}、货物 ${store.catalog("cargo").length}、缘分组合 ${store.catalog("combos").length}、怪物 ${store.catalog("monsters").length}、道具 ${store.catalog("items").filter((i) => i.mode === "delivery").length}、增益 ${store.catalog("buffs").length}、徽章 ${store.catalog("badges").length}、事件 ${store.catalog("events").length}`;
-      cards.append(el("a", { class: "mode-card", href: m.id === "delivery" ? "#catalog/worlds" : "#modes/" + (m.id === "lab" ? "basics" : "hell-pool") }, [
+      else stat = `可玩切片 ${store.catalog("slices").length} 个（${store.catalog("slices").map((x) => x.name).join("、")}）；设计数据：地区 ${store.catalog("worlds").length}、收件人 ${store.catalog("recipients").length}、货物 ${store.catalog("cargo").length}、缘分组合 ${store.catalog("combos").length}、怪物 ${store.catalog("monsters").length}、道具 ${store.catalog("items").filter((i) => i.mode === "delivery").length}、增益 ${store.catalog("buffs").length}、徽章 ${store.catalog("badges").length}、事件 ${store.catalog("events").length}`;
+      cards.append(el("a", { class: "mode-card", href: m.id === "delivery" ? "#catalog/slices" : "#modes/" + (m.id === "lab" ? "basics" : "hell-pool") }, [
         el("div", { class: "row" }, [el("strong", { text: m.name }), UI.modeBadge(m)]),
         el("p", { class: "small", text: m.summary }),
         el("p", { class: "small muted", text: stat }),
@@ -67,11 +67,10 @@
     for (const i of C.issues) list.append(el("li", { class: "issue " + i.level }, [el("span", { class: "badge " + (i.level === "error" ? "no" : "review"), text: i.level === "error" ? "错误" : "警告" }), " ", el("span", { class: "mono", text: i.where }), "：", i.msg]));
     box.append(section("内容检查", [C.issues.length ? list : el("p", { class: "muted", text: "没有错误或警告（node tools/content.mjs check）。" })]));
 
-    box.append(section("待你决定", [el("ul", {}, [
-      el("li", { text: "确认对话气泡：8 个界面布局 v4（提示改成主角的气泡）、ui.bubble、ui.bubble_tail、ui.emote、ui.screen.dialogue（样张），都在「确认」页。" }),
-      el("li", { text: "看「编号映射」页：每个资源的全局编号和它在游戏里的路径。" }),
-      el("li", { text: "看第一批关卡：「模式与关卡」页第 2 组「水与机关」9 关，「场景」页可以逐步回放每关的作者解。" }),
-      el("li", { text: "说开始后，把 docs/handoff/gpt-refactor-prompt.md 交给 GPT。" }),
+    box.append(section("现在", [el("ul", {}, [
+      el("li", { text: "关卡模式与配送切片的美术已全部确认（APR-0001–APR-0006）。Godot 重构已交给 GPT：阶段一 = 工程骨架 + 第 1 组 + 全套菜单，阶段二 = 第 2 组「水与机关」。" }),
+      el("li", { text: "GPT 每次运行测试都会写 game/reports/verification.json，这里和「模式与关卡」页会显示每关的 SDK 验证状态。" }),
+      el("li", { text: "配送模式：第一个可玩切片（幽暗石牢）的 ①–③ 已完成；④ 美术已确认（APR-0006，26 项）。之后的实现按 AGENTS.md 第 0 条拆成工作包交给制作方 AI（docs/packages/）。" }),
     ])]));
   }
 

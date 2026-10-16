@@ -144,3 +144,17 @@ test('unowned Godot sidecars are rejected while owned texture sidecars are toler
   assert.ok(result.errors.some(e => e.check === 'c' && e.path.endsWith('orphan.import')));
   assert.equal(result.errors.some(e => e.path.endsWith('obj.crate_wood.png.import')), false);
 });
+
+
+test('imports every named text table through the shared loader', async (t) => {
+  const api = await implementation();
+  const f = fixture(t);
+  write(f.repoRoot, 'content/i18n-delivery/zh-Hans.json', { 'delivery.test': '配送' });
+  write(f.repoRoot, 'content/i18n-delivery/en.json', { 'delivery.test': 'Delivery' });
+  const map = read(f.repoRoot, 'content/export/id-map.json');
+  map.entries.push({ uid: 'text:delivery.test', domain: 'text', id: 'delivery.test', game: 'tr:delivery.test' });
+  write(f.repoRoot, 'content/export/id-map.json', map);
+  api.importResources(f);
+  assert.equal(read(f.gameRoot, 'generated/content/i18n/en.json')['delivery.test'], 'Delivery');
+  assert.deepEqual(api.checkIds(f).errors, []);
+});

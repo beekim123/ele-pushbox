@@ -1,8 +1,6 @@
 # 交接提示词：重构《渡界人 / PORTITOR》Godot 游戏本体
 
-> **状态：暂停（2026-10-15 用户决定："目前暂时还不要开始做"）。** 已按 GD-4.1（关卡模式 v2）修订：本次只做**关卡模式**，第一批 = 第 1 组「基础」7 关 + 第 2 组「水与机关」9 关，规格都已写好并通过设计模型。用户说开始后，再把「你的任务」到文末交给开发方。
->
-> 交出前请确认：用户已在工作台确认换标题和主角后的 15 项新版本（6 个主题、`material.chapter2_5`、8 个界面布局）以及新机关候选 `mech.portal`、`mech.bridge`；确认后把第 4 节的清单改成最新的确认记录编号。
+> **状态：已交出（2026-10-15 用户决定开始）。** 依据 GD-4.1（关卡模式 v2）：本次只做**关卡模式**，第一批 = 第 1 组「基础」7 关 + 第 2 组「水与机关」9 关，规格都已写好并通过设计模型。全部美术已由用户确认（`APR-0001`–`APR-0005`）。
 >
 > 使用方法：把下面「你的任务」到文末的全部内容交给开发方（GPT / Codex）。它可以独立使用，不依赖任何聊天记录。
 
@@ -120,7 +118,7 @@ git show 0fae58c:pushbox/content/default/materials.json
 ## 4 美术集成（已确认，正式使用）
 
 - 开工先运行：`node tools/art.mjs build && node tools/art.mjs verify`（Node 18+，无依赖），确认输出以 `verify ok` 开头、`build` 没有 `bumped`、`content: 0 error(s)`。之后只读取 `art/export/manifest.json`，每项是否可用看 `approved` 与 `current_is_approved`。
-- 确认记录在 `art/approvals.json`：`APR-0001`（57 项）、`APR-0002`（第 2–5 组与界面）、`APR-0003`（主角 `char.portitor`）、`APR-0004`（换标题和主角后的 6 个主题 v2、`material.chapter2_5` v2、8 个界面 v3，新机关 `mech.portal`、`mech.bridge`）。之后加对话气泡，8 个界面布局又生成了 v4，并新增 `ui.bubble`、`ui.bubble_tail`、`ui.emote`、`ui.screen.dialogue`，等用户确认。以 manifest 的 `current_is_approved` 为准。
+- 确认记录在 `art/approvals.json`：`APR-0001`（57 项）、`APR-0002`（第 2–5 组与界面）、`APR-0003`（主角 `char.portitor`）、`APR-0004`（换标题和主角后的 6 个主题 v2、`material.chapter2_5` v2，新机关 `mech.portal`、`mech.bridge`）、`APR-0005`（对话气泡：8 个界面布局 v4、`ui.bubble`、`ui.bubble_tail`、`ui.emote`、`ui.screen.dialogue`）。除概念草图 `char.portitor_alt`（不进游戏）外，manifest 里全部 82 项当前版本都已确认。以 manifest 的 `current_is_approved` 为准。
 - 已确认清单（`APR-0001`，全部 v1，界面布局 v2 见 `APR-0002`）：
   - 角色：主角 `char.portitor`（21 帧：待机、走、推、爬、挖、倒、落、胜利；`APR-0003`）。旧主角 `char.miner` 已不是主角，游戏里不要用它当主角。
   - 物件：`obj.crate_wood`、`obj.crate_iron`

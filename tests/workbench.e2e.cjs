@@ -28,7 +28,7 @@ async function decode(file) {
   page.on("console", (m) => { if (m.type() === "error") errors.push(m.text()); });
 
   // 1. Every view opens without errors.
-  for (const h of ["#overview", "#modes", "#modes/water", "#modes/basics/M03", "#modes/hell-pool", "#modes/water/W08", "#mechanisms", "#mechanisms/float_sink", "#mechanisms/portal", "#scenes/level.W09", "#assets/mech.bridge", "#catalog/cargo", "#catalog/items", "#scenes", "#scenes/level.M04", "#scenes/ui.screen.chapters", "#scenes/lobby.forest", "#scenes/showcase.cosmos", "#scenes/chapter.ruins", "#scenes/chapter.sky", "#assets", "#assets/material.chapter2_5", "#assets/char.portitor", "#catalog/worlds", "#catalog/recipients", "#catalog/combos", "#catalog/upgrades", "#ids", "#ids/level", "#scenes/ui.screen.dialogue", "#scenes/ui.screen.hint", "#assets/mech.door", "#edit/obj.crate_wood", "#review", "#export"]) {
+  for (const h of ["#overview", "#modes", "#modes/water", "#modes/basics/M03", "#modes/hell-pool", "#modes/water/W08", "#mechanisms", "#mechanisms/float_sink", "#mechanisms/portal", "#scenes/level.W09", "#assets/mech.bridge", "#catalog/cargo", "#catalog/items", "#catalog/slices", "#maps", "#maps/7/2", "#maps/t/dungeon_guard", "#maps/t/dungeon_plate", "#scenes", "#scenes/level.M04", "#scenes/ui.screen.chapters", "#scenes/lobby.forest", "#scenes/showcase.cosmos", "#scenes/chapter.ruins", "#scenes/chapter.sky", "#assets", "#assets/material.chapter2_5", "#assets/char.portitor", "#catalog/worlds", "#catalog/recipients", "#catalog/combos", "#catalog/upgrades", "#ids", "#ids/level", "#scenes/ui.screen.dialogue", "#scenes/ui.screen.hint", "#assets/mech.door", "#edit/obj.crate_wood", "#review", "#export"]) {
     await page.goto(URL + h); await page.waitForTimeout(250);
   }
   check(errors.length === 0, "all views load without console errors" + (errors.length ? ": " + errors[0] : ""));
@@ -73,6 +73,66 @@ async function decode(file) {
   await page.selectOption("#catalog-culture", "东亚"); await page.waitForTimeout(150);
   const rows = await page.locator("#catalog-work table.grid tbody tr").count();
   check(rows === eastAsia && (await page.locator("#catalog-work").textContent()).includes("地府·酆都"), `region catalog filters by culture sphere (${rows}/${eastAsia} 东亚 rows, 地府 listed)`);
+
+  // 2c. Map preview: the browser generator reproduces the golden maps; rooms are clickable.
+  const golden = JSON.parse(fs.readFileSync(path.join(REPO, "content/export/delivery-golden.json"), "utf8")).maps.slice(0, 8);
+  await page.goto(URL + "#maps/3"); await page.waitForTimeout(300);
+  const same = await page.evaluate((g) => {
+    const sl = PBStore.catalog("slices")[0], list = sl.rooms.map((id) => PBStore.content().rooms.find((r) => r.id === id)).sort((a, b) => a.id.localeCompare(b.id));
+    return g.map((m) => JSON.stringify(PB.mapgen.generate(m.seed, sl, list).rooms) === JSON.stringify(m.rooms));
+  }, golden);
+  check(same.every(Boolean), `browser map generator matches the golden table (${same.filter(Boolean).length}/${same.length} seeds)`);
+  const box3 = await page.locator("canvas.map-overview").boundingBox();
+  const target = await page.evaluate(() => { const sl = PBStore.catalog("slices")[0], list = sl.rooms.map((id) => PBStore.content().rooms.find((r) => r.id === id)).sort((a, b) => a.id.localeCompare(b.id)); const m = PB.mapgen.generate(3, sl, list), r = m.rooms[m.rooms.length - 1]; return { x: r.x, y: r.y, i: r.index, cols: m.cols, rows: m.rows }; });
+  const cw = await page.evaluate(() => document.querySelector("canvas.map-overview").width), ch = await page.evaluate(() => document.querySelector("canvas.map-overview").height);
+  await page.mouse.click(box3.x + ((8 + target.x * 88 + 40) / cw) * box3.width, box3.y + ((8 + target.y * 48 + 20) / ch) * box3.height);
+  await page.waitForTimeout(250);
+  check((await page.evaluate(() => location.hash)) === `#maps/3/${target.i}`, "clicking a room on the overview selects it");
+  check((await page.locator("#maps-work h3").textContent()).includes("收件人之家"), "the last room of the path is the recipient's home");
+  await page.goto(URL + "#maps/t/dungeon_station"); await page.waitForTimeout(250);
+  check((await page.locator("#maps-work table.routes tbody tr").count()) === 48, "station template lists its 48 checked routes");
+  check((await page.locator("#maps-work table.demos tbody tr").count()) === 2, "station template lists its demo and the demo's mirror image");
+
+  // 2d. Real-time model: the browser replays the golden demos frame for frame; a demo plays in the
+  // map preview; a whole map can be played with the keyboard.
+  const replays = JSON.parse(fs.readFileSync(path.join(REPO, "content/export/delivery-golden.json"), "utf8")).replays;
+  const replayed = await page.evaluate((list) => {
+    const sl = PBStore.catalog("slices")[0], cat = { monsters: PBStore.catalog("monsters"), cargo: PBStore.catalog("cargo"), recipients: PBStore.catalog("recipients"), items: PBStore.catalog("items") };
+    return list.map((g) => { const t = PBStore.content().rooms.find((r) => r.id === g.template), r = PB.rt.runDemo(cat, sl, t, t.demos.find((d) => d.id === g.demo), g.mirror); return r.ok && r.end === g.end && JSON.stringify(r.frames) === JSON.stringify(g.frames); });
+  }, replays.map((g) => ({ template: g.template, demo: g.demo, mirror: g.mirror, end: g.end, frames: g.frames })));
+  check(replayed.length >= 20 && replayed.every(Boolean), `browser real-time model reproduces the golden replays (${replayed.filter(Boolean).length}/${replayed.length})`);
+  await page.goto(URL + "#maps/t/dungeon_guard"); await page.waitForTimeout(250);
+  await page.selectOption('select[aria-label="演示"]', "crush"); await page.waitForTimeout(150);
+  await page.selectOption('select[aria-label="播放速度"]', "4");
+  const demoDone = await page.waitForFunction(() => { const s = PBPlay.active(); return s && s.run.leaving ? { edge: s.run.leaving.edge, kos: s.run.kos, hearts: s.run.hearts } : null; }, null, { timeout: 30000 }).then((h) => h.jsonValue()).catch(() => null);
+  await page.waitForTimeout(200);
+  check(!!demoDone && demoDone.edge === "right" && demoDone.kos === 1 && demoDone.hearts === 3 && (await page.locator("#maps-info").textContent()).includes("放倒怪物（压倒）"),
+    "the crush demo plays in the map preview: the skeleton is crushed, the player leaves right unhurt");
+  await page.goto(URL + "#maps/11"); await page.waitForTimeout(300);
+  await page.click('.play-bar button:has-text("试玩整张图")'); await page.waitForTimeout(200);
+  const gateExit = await page.evaluate(() => { const r = PBPlay.active().run; return r.map.rooms[0].open.bottom || null; });
+  await page.keyboard.down("ArrowRight");
+  await page.waitForFunction(() => PBPlay.active().run.room.player.x >= 9, null, { timeout: 10000 }).catch(() => {});
+  await page.keyboard.up("ArrowRight");
+  await page.keyboard.down("ArrowDown");
+  await page.waitForFunction(() => PBPlay.active().run.roomIndex === 1, null, { timeout: 10000 }).catch(() => {});
+  await page.keyboard.up("ArrowDown");
+  const moved = await page.evaluate(() => { const r = PBPlay.active().run; return { room: r.roomIndex, entered: r.events.filter((e) => e.type === "room").length, y: r.room.player.y }; });
+  check(gateExit === "mid" && moved.room === 1 && moved.entered === 1, `keyboard play: from the gate down the shaft into the second room of seed 11 (${JSON.stringify(moved)})`);
+  await page.keyboard.press("r"); await page.waitForTimeout(150);
+  check(await page.evaluate(() => { const r = PBPlay.active().run; return r.events.some((e) => e.type === "reset") && r.room.player.y === 0; }), "R restarts the room at the door it was entered by");
+
+  // 2e. Step-4 art candidates: drawn in the map preview while "美术候选" is on, placeholders when off.
+  await page.goto(URL + "#maps/7/4"); await page.waitForTimeout(300);
+  await page.click('.play-bar button:has-text("静态")'); await page.waitForTimeout(400);
+  const withArt = await page.evaluate(() => PBMaps.placeholders());
+  await page.click('#maps-side button:has-text("美术候选")');
+  await page.waitForFunction(() => PBMaps.placeholders().length > 0, null, { timeout: 5000 }).catch(() => {});
+  const without = await page.evaluate(() => PBMaps.placeholders());
+  await page.click('#maps-side button:has-text("美术候选")'); await page.waitForTimeout(200);
+  check(!withArt.includes("rat_swarm") && !withArt.includes("coin") && without.includes("rat_swarm") && without.includes("coin"),
+    `map preview draws the candidates only while the switch is on (on: ${JSON.stringify(withArt)}, off: ${JSON.stringify(without)})`);
+  check((await page.locator("#maps-work").textContent()).includes("美术候选（未确认"), "the preview says which drawn art is unconfirmed");
 
   // 3. Hidden stages stop animating; the visible one animates.
   await page.goto(URL + "#scenes/showcase.forest"); await page.waitForTimeout(300);
@@ -132,7 +192,7 @@ async function decode(file) {
 
   // 7. Narrow window: no horizontal page scroll, navigation still reachable.
   await page.setViewportSize({ width: 390, height: 800 });
-  for (const h of ["#overview", "#modes/water", "#mechanisms/acid", "#catalog/cargo", "#scenes", "#assets/char.miner", "#review"]) {
+  for (const h of ["#overview", "#modes/water", "#mechanisms/acid", "#catalog/cargo", "#catalog/slices", "#maps/5/1", "#maps/t/dungeon_well", "#scenes", "#assets/char.miner", "#review"]) {
     await page.goto(URL + h); await page.waitForTimeout(250);
     const overflow = await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
     check(overflow <= 0, `${h} at 390px has no horizontal page scroll (${overflow}px)`);
