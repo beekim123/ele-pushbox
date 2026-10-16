@@ -1,6 +1,6 @@
 # 配送模式 · 第一个可玩切片（幽暗石牢）
 
-状态：**设计（步骤 3/4 完成：范围、房间模板与地图生成、实时规则；第 4 步美术已确认 APR-0006）**，2026-10-15。数据：`content/catalog/slices.json` 的 `dungeon_1`，以及货物、收件人、怪物、道具条目里的 `params`（工作台「设计数据 → 可玩切片」）。上位设计见 [mode-delivery.md](mode-delivery.md)；关卡模式不受影响。
+状态：**设计（步骤 3/4 完成：范围、房间模板与地图生成、实时规则；第 4 步美术已确认 APR-0006）**，2026-10-15。**2026-10-16**：石牢改为 v2 地图 `dungeon_2`（[delivery-dungeon.md](delivery-dungeon.md)，规则见 [delivery-puzzle-rules.md](delivery-puzzle-rules.md)）；本文的 `dungeon_1` 规格和已确认的美术保留作 v1 参照。数据：`content/catalog/slices.json` 的 `dungeon_1`，以及货物、收件人、怪物、道具条目里的 `params`（工作台「设计数据 → 可玩切片」）。上位设计见 [mode-delivery.md](mode-delivery.md)；关卡模式不受影响。
 
 ## 0 目的
 

@@ -1,6 +1,6 @@
 # 配送模式：房间模板、地图生成与可通性检查
 
-状态：**有效（第一个可玩切片的第 2 步，2026-10-15）**。上位设计见 [mode-delivery.md](mode-delivery.md) 第 6 节，切片范围见 [delivery-slice.md](delivery-slice.md)。
+状态：**有效，v1（第一个可玩切片的第 2 步，2026-10-15）**。配送 v2（2026-10-16）的房间格式 `pushbox.room/2`、三滚轮开局池和按角色顺序的地图布局见 [delivery-puzzle-rules.md](delivery-puzzle-rules.md)；本文的 v1 格式、生成器、检查工具和 `dungeon_1` 对照表保留不变。上位设计见 [mode-delivery.md](mode-delivery.md) 第 6 节，切片范围见 [delivery-slice.md](delivery-slice.md)。
 
 本文件规定三件事：房间模板怎么写（第 1–2 节）、地图怎么按种子生成（第 3 节）、怎么证明生成的地图走得通（第 4 节）。规格以代码为准，代码就是游戏移植时的规格：
 
@@ -103,3 +103,4 @@
 |---|---|
 | 2026-10-15 | 第一版：格式、口位、封口、单向房间、生成器（xorshift32 + 蛇形路径 + 回溯）、可通性检查、对照表、工作台「地图预览」；石牢 10 个模板。 |
 | 2026-10-15 | 第 3 步：模板加 `demos`（演示输入），检查工具同时回放全部演示，对照表加 `replays`；「地图预览」可以播放演示、试玩一间或整张图。 |
+| 2026-10-16 | 配送 v2 另起一套：`pushbox.room/2`（1×1–2×2 屏、浮块、撑篙、提示步骤）、`mapgen2.js`（三滚轮 + 按角色顺序布局）、`check-rooms2.mjs`，规则写在 [delivery-puzzle-rules.md](delivery-puzzle-rules.md)。本文的 v1 内容不变；`check-rooms.mjs` 跳过 format 2 的切片和开局池。 |

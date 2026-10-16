@@ -14,6 +14,9 @@
 | [design/delivery-slice.md](design/delivery-slice.md) | 配送模式的**第一个可玩切片**（幽暗石牢）：范围、规则、数值、交接前的步骤与验收 |
 | [design/delivery-maps.md](design/delivery-maps.md) | 配送模式的房间模板格式、按种子生成地图、可通性检查、工作台「地图预览」 |
 | [design/delivery-realtime.md](design/delivery-realtime.md) | 配送模式的**实时规则**（设计模型）：刻、移动间隔、下落、怪物、推 / 压 / 困、受伤、货物、驿站、换房间、结算、演示与回放记录 |
+| [design/delivery-puzzle-rules.md](design/delivery-puzzle-rules.md) | 配送 **v2** 的解谜规则：房间格式 `pushbox.room/2`、浮块与撑篙、跟随镜头、提示动物、三滚轮开局池与地图布局、检查工具与工作台 |
+| [design/delivery-dungeon.md](design/delivery-dungeon.md) | 配送 v2 地图：幽暗石牢 `dungeon_2`（10 间房、牢猫 + 蝙蝠） |
+| [design/delivery-diyu.md](design/delivery-diyu.md) | 配送 v2 地图：地府 `diyu_1`（荒郊野岭画风、13 间房、收件人、怪物、小白狗 + 彼岸蝶、美术候选） |
 | [design/level-quality.md](design/level-quality.md) | **关卡质量标准**：一关要满足的 7 条、一章的结构（第 3–6 章补强用） |
 | [packages/README.md](packages/README.md) | **工作包**：拆给制作方 AI 的任务、模板与当前状态 |
 | [design/progression.md](design/progression.md) | 局外养成（设计稿） |
@@ -28,9 +31,10 @@
 | [audit/2026-10-15-design-audit.md](audit/2026-10-15-design-audit.md) | 本轮审核发现与决定 |
 | [research/2026-10-15-mode-references.md](research/2026-10-15-mode-references.md) | 配送模式、地狱模式、局外养成与名称的调研来源 |
 | [research/2026-10-15-competitors.md](research/2026-10-15-competitors.md) | 市面上有没有类似的游戏、我们的独特之处、要避开的坑 |
+| [research/2026-10-16-delivery-redesign.md](research/2026-10-16-delivery-redesign.md) | 配送重做的调研：参考游戏、地府民俗资料、画风决定、岩浆评估 |
 | [reference/sdk-v1.2-verified.md](reference/sdk-v1.2-verified.md) | 逐条核对源码的 SDK 事实 |
 | [handoff/gpt-refactor-prompt.md](handoff/gpt-refactor-prompt.md) | 交给开发方（GPT）的完整重构提示词 |
-| [handoff/delivery-redesign-handover.md](handoff/delivery-redesign-handover.md) | 配送模式重做（分支 `claude/delivery-redesign`）的交接文档和提示词：第 1–3 步已完成，第 4–7 步待做 |
+| [handoff/delivery-redesign-handover.md](handoff/delivery-redesign-handover.md) | 配送模式重做（分支 `claude/delivery-redesign`）的交接文档和提示词：第 1–7 步已完成（第 4–7 步在分支 `claude/delivery-redesign-next`） |
 
 关卡规格在 `content/levels/`，机制、模式、物品等目录在 `content/catalog/`，美术数据在 `art/`。
 

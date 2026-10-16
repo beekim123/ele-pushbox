@@ -1,5 +1,7 @@
 # 交接：配送模式重做（分支 `claude/delivery-redesign`）
 
+> **更新（2026-10-16）**：第 4–7 步已在分支 `claude/delivery-redesign-next` 完成（基于 `3f59913`）。工作台「配送 v2」页的 HTML 在提交 `676e89e`、`34dc229`；工作台界面改版后按 [UI-08](../packages/UI-08.md) 重新接入。下面是开工前的交接内容，保留作记录。
+>
 > **状态（2026-10-16）**：第 1–3 步已完成并提交（`986cce0`，全部检查通过）；第 4–7 步**还没开始**，没有写了一半的代码。用户额度用完，换账号继续。新会话照本文做；文末第 6 节「交接提示词」可以直接交给新会话。
 >
 > 用户会附上 `delivery-redesign-handover.zip`：`ele-pushbox-delivery-redesign.bundle`（本分支完整 git 历史）、`scratch/`（生成脚本，不进仓库）、`research_cache/`（调研原文）、本文副本 `HANDOVER.md`、`PROMPT.md`（第 6 节）。
@@ -44,7 +46,7 @@
 | --- | --- |
 | `workbench/js/core/rooms2.js` | `PB.rooms2`：房间格式 `pushbox.room/2`（`validate`、`variant` 镜像与封口、出入口 `<edge>.<段>.<slot>`，slot = `low` / `high`（左右）或 `mid`（上下）），浮块与撑篙（`act`、`floatAt`、`riders`），BFS 求解 `solve(v, from, to, {limit, frozen})`、回放 `replay`、`hurts`（落 ≥ 3 格摔伤，沙上不算），提示 `holds` / `nextHint` / `hintTrace`，`monsterProblems`（巡逻范围不进解谜区），镜头 `CAM`（视野 320×160，死区 ±24，前瞻 32，12 刻后生效，缓动，纵向跟随脚下平台）/ `cameraStart` / `cameraStep` / `clampCam` |
 | `workbench/js/core/mapgen2.js` | `PB.mapgen2`：三个滚轮 `reels`（地图 → 收件人 → 货物，稀有度权重，`picks` = 重转后玩家选的结果，抽签次数不变）、`layout`（按地图的 `layout.sequence` 角色顺序深度优先摆房间，`FORBID_OUT` 禁止往回走，只用检查过的 `routes`）、`generate(seed, pool, maps, cat, templatesOf, picks)`、`tileRect`、`joints`。同种子 = 同一局 |
-| `workbench/js/core/terrain-diyu.js` | 包装 `PB.terrain.drawBackground`，只在 `style: "diyu"` 时画地府背景（夜空渐变、地平线青绿光、远山、带垛口城墙、城楼 + 宝塔、闪烁暗红窗灯）；已加入 `index.html` 和 `tools/art.mjs` 的 `loadCore` |
+| `workbench/js/core/terrain-diyu.js` | 包装 `PB.terrain.drawTerrain` / `drawBackground`，只接管岩石图案 `wild` 和背景 `diyu`：荒郊野岭（wild 地形：深色泥土、枯草、根须；背景：夜空、残月、三层荒山、枯树、坟包和木牌、招魂幡和乌鸦、鬼火、两层夜雾）。第一版画的是城墙、城楼，2026-10-16 按用户反馈重做（提交 `988c9ba`）；已加入 `index.html` 和 `tools/art.mjs` 的 `loadCore` |
 | `tools/check-rooms2.mjs` | 检查全部 v2 房间（每个摆法、每条 route：最短解、作者解、`requires` 必需机制、提示顺序、怪物不进解谜区）和开局池（默认 300 个种子）；`--write` 写 `content/rooms2-check.generated.json`；`--seeds N`、`--only <房间>`；导出 `loadRooms2`、`poolInput` |
 | `tools/content.mjs` | 读 v2 房间和检查结果（缺失 / 过期报错）；`workbench/data/content.js` 多了 `rooms2`（房间 + `check`）和 `pools2`；`content-manifest.json` 多了 `rooms2` |
 | `tools/check-rooms.mjs` | 跳过 format 2 的切片和开局池 |
@@ -64,7 +66,7 @@
 ### 3.4 美术候选（24 项，status `review`，notes「配送重做的美术候选，等用户确认」）
 
 - 石牢：`mech.rune_float`（left / mid / right 及 `*_move`）、`fauna.dungeon_cat`（sit / walk / meow）、`item.snack`（default / dungeon 小鱼饼干 / diyu 桂花糕）。
-- 地府环境：`deco.diyu_lantern`、`deco.diyu_lily`（彼岸花）、`fauna.diyu_dog`（小白狗 sit / wag / walk / bark；原计划小黑狗在暗背景上看不见，所以改白）、`fauna.diyu_butterfly`（fly / rest）、`mech.lantern_float`、`theme.diyu`（procedural；规则材料沿用石牢；夜里有灯笼光、萤火虫 / 余烬）。
+- 地府环境：`deco.diyu_lantern`（引魂灯：插在地上的竹竿纸灯；第一版是城墙上的红灯笼）、`deco.diyu_lily`（彼岸花）、`fauna.diyu_dog`（小白狗 sit / wag / walk / bark；原计划小黑狗在暗背景上看不见，所以改白）、`fauna.diyu_butterfly`（fly / rest）、`mech.lantern_float`、`theme.diyu`（procedural；荒郊野岭：wild 岩石图案 + 荒野夜色背景，引魂灯的光、萤火虫 / 余烬；规则材料和其他主题相同；第一版的城墙城楼已重做）。
 - 地府角色：`monster.imp`（walk / chase / flee / stunned / trapped）、`monster.wandering_soul`（float / fade）、`monster.jiangshi`（idle / hop / trapped / ko）、`char.meng_po` / `judge` / `wuchang`（24×16，左白右黑）/ `yama` / `ancestor`（idle / win）、`avatar.<同上>`（24×24）、`cargo.qingtuan`（default / stale）、`cargo.paper_house`（default / damaged）。
 - 改图：改 `/data/scratch/art/gen_dungeon.mjs`、`gen_diyu_env.mjs`、`gen_diyu_chars.mjs` → `node gen_*.mjs`（新资产总写成 version 1、无 hash；`DRY=1` 只预览）→ 回仓库 `node tools/art.mjs build && node tools/art.mjs verify`。预览：`node pv_pick.mjs out.png 6 <id> ...`、`pv_theme.mjs`（环境变量 VARIANTS / SCALE / TICK / OUT）。
 
