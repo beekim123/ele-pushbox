@@ -10,7 +10,7 @@
 
 1. **两条线、两个分支**：
    - **关卡线**在集成分支 `codex/portitor-stage1` 上做（LAB-01 先把 Claude 分支和 LV-01 合并进来）。
-   - **界面线只改 HTML 工作台**（`workbench/`、`art/`、`tools/`、`docs/`），在自己的分支 `ui/redo-html` 上做（从 `origin/claude/ui-01-research` 开出），不碰 `game/`；做完、用户确认后由 UI-06 单独同步到项目（合并进集成分支，再更新 Godot）。
+   - **界面线只改 HTML 工作台**（`workbench/`、`art/`、`tools/`、`docs/`），在自己的分支 `ui/style-proposals` 上做（2026-10-16 起；UI-02–04 已取消），不碰 `game/`；做完、用户确认后由 UI-06 单独同步到项目（合并进集成分支，再更新 Godot）。
    - 开工前 `git pull`，做完推回自己那条线的分支；用合并，不要 rebase 别人的提交、不要强推。
 2. **生成文件不手工合并**：`art/export/**`、`workbench/data/*.js`、`content/export/*.json`、`content/*.generated.json`、`game/generated/**` 冲突时任取一边，然后用工具重新生成（`node tools/art.mjs build`、`node tools/check-levels.mjs --write`、`node tools/check-rooms.mjs --write`、Godot 导入）。
 3. **不等审核**：下一个包直接用上一个包写在「交付」里的结果开工，不需要等 Claude 审核。遇到拿不准的事，写进自己包的「交付 · 问题」，先做能做的部分，不要自作主张改设计（设计文件、`content/catalog/**` 只在包里写明允许时才改）。
@@ -30,16 +30,18 @@
 | 4 | [LV-06](LV-06.md)、[LV-07](LV-07.md)、[LV-08](LV-08.md)、[LV-09](LV-09.md) | 第 3、4、5、6 章在 Godot / SDK 里验证 |
 | 5 | [LV-10](LV-10.md) | 按 2026-10-16 设计审核修订重跑 SDK（Q03、Q04、G01、G02、G05、G06、E01、E04 与 F09 占位规则；四组整组重跑） |
 | 6 | [LV-11](LV-11.md) | 第二轮修订复验：Q04、G02、E04 与两条英文提示（三组整组重跑） |
+| 7 | [LV-12](LV-12.md) | G02 检查条目修正后复验（第 4 章整组） |
 
-**界面线**（只改 HTML 工作台，分支 `ui/redo-html`）：
+**界面线**（只改 HTML 工作台，分支 `ui/style-proposals`）：
 
 | 步 | 包 | 说明 |
 |---|---|---|
-| 1 | [UI-02](UI-02.md) | 方案比较台 + 方向 A 样稿 |
-| 2 | [UI-03](UI-03.md)、[UI-04](UI-04.md) | 方向 B、C 样稿 |
+| 1 | ~~[UI-02](UI-02.md)~~ | 已取消 |
+| 2 | ~~[UI-03](UI-03.md)、[UI-04](UI-04.md)~~ | 已取消 |
 | 3 | 【用户】[UI-CHOICE](UI-CHOICE.md) | **已选定（2026-10-16）**：UI-02–04 改为对话里的视觉提案，定稿见 [ui-style.md](../design/ui-style.md) |
 | 4 | [UI-05](UI-05.md) | 按选定方向重做全部界面美术（HTML 工作台） |
-| 5 | 【用户】确认新界面美术，然后 [UI-06](UI-06.md) | 同步到项目：合并进集成分支，更新 Godot 界面 |
+| 5 | 【用户】确认新界面美术，然后 [UI-06](UI-06.md) | 同步到项目：关卡线合进 `main` 之后再合进 `main`，更新 Godot 界面 |
+| 6 | [UI-07](UI-07.md)，再【用户】确认 | 另外三套固定界面 + 设置里的「界面风格」（等 UI-05 确认后做；可以排在 UI-06 之前或之后） |
 
 两条线互不依赖，可以同时做；只会在生成文件上撞车，按共同规则第 2 条重新生成。全部做完后 Claude 一次性汇总审核。已完成：[UI-01](UI-01.md)（调研报告，在 `claude/ui-01-research`）、[LV-01](LV-01.md)（设计模型插件接口，在 `claude/lv-01-model`）。配送切片的实现这次不在计划里（用户说暂时不做）。
 

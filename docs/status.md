@@ -1,13 +1,37 @@
 # 项目进度
 
-更新：2026-10-16（第二轮审核：LV-10）。负责人（AGENTS.md 第 0 条）：设计、拆工作包、汇总审核 —— Claude；制作（美术、游戏 / 工作台 / 工具代码、数据、验证）—— 其他 AI 按工作包完成；美术确认与方向决定 —— 用户。
+更新：2026-10-16（第三轮审核：LV-11 + 界面定稿）。负责人（AGENTS.md 第 0 条）：设计、拆工作包、汇总审核 —— Claude；制作（美术、游戏 / 工作台 / 工具代码、数据、验证）—— 其他 AI 按工作包完成；美术确认与方向决定 —— 用户。
 
 ## 当前阶段
 
-**关卡线（R2 关卡模式）**：第 1–4 批交付后做了整批审核，修订内容由 [LV-10](packages/LV-10.md) 实现并在真实 SDK 里重跑：**30 关中 27 关逐条通过**。剩下 Q04、G02、E04 三关和两条英文提示溢出已经第二轮修订，**新规格还没在 SDK 里跑过**，交给 [LV-11](packages/LV-11.md)。这不是正式版本，也没有用户验收。
+**关卡线（R2 关卡模式）**：LV-11 在真实 SDK 里 **30 关作者解全部通关，29/30 逐条通过**；唯一的失败是设计负责人写错的 G02 检查条目，已改正，交 [LV-12](packages/LV-12.md) 重跑第 4 章。英文提示 180 条 0 溢出。这不是正式版本，也没有用户验收。
 
-- 界面线（`ui/redo-html`）这次不在审核范围内，状态不变。
+**界面线**：用户已定稿（[ui-style.md](design/ui-style.md)），分支 `ui/style-proposals` 已推送并审核，下一步 [UI-05](packages/UI-05.md)。
+
 - 机制范围（用户 2026-10-16 决定）：关卡模式暂时只用现有的 33 个机制；SDK 已有但没进关卡的 `power`、`particles`、`rigid`、`pressure` 和各地区新机制，等现有关卡跑通后再开新章节（[关卡质量标准](design/level-quality.md) 第 4 节）。
+
+## 第三轮审核：LV-11 与界面定稿（2026-10-16）
+
+### LV-11（`codex/portitor-stage1` @ `001b71f`）
+
+制作方按 LV-11 改了评估器断言，没有改生产逻辑、规格、目录、冻结区。真实 SDK：四组作者解 **30/30**、逐条 **29/30**，`checks` 123 通过、1 失败；`run-tests.sh` 26 阶段 25 通过；`chapter-text` 180 条 0 溢出。Q04 斗 500 ≥ 448；E04 碎石留在箱顶（峰值 253）、桥 2/1 塌、箱落 [6,7]，这一步 331 tick；G05 照常通过。
+
+唯一失败是**设计负责人的错误**：上一轮把"模型边界"说明移出 `checks` 后，G02 的条目往前挪了一位，第二轮按旧位置改，结果旧的"L、M、酸都为 0"留在第 0 条，"三次回放 / 撤销"那一条被覆盖丢了。已改正：G02 的 `checks` 现在是 ①左塞后 M 为 0、余约 256 酸（挖开 [3,6] 之前测）②右塞诱饵 ③三次回放与撤销 / 重开 ④tick 与轮数。其他改过的关都核对过，回放条目都在。交 [LV-12](packages/LV-12.md) 重跑第 4 章。
+
+### 界面定稿（`ui/style-proposals` @ `47f3bbe`，已合进本分支）
+
+界面线的提交因为那台电脑的 GitHub 登录失效没推上去，用户把打包文件传上来，由 Claude 核对后推送。内容：[ui-style.md](design/ui-style.md)（四套风格 S1–S4、大厅按章节换皮肤、固定界面默认 S1 素版、新文字）、44 张效果图、`tools/ui-proposals/` 画图脚本、UI-CHOICE 记录了用户原话。**没有改 `art/`、`content/`、`workbench/`、`game/`**；效果图只是提案，不是已确认的美术。
+
+审核结论：接受。界面里的跳过此关、提示演示 / 回到正确位置、规则卡都和 game-design 第 7、8 节一致。补了四个设计决定：
+
+1. 第 4 章（forest）、第 6 章（cosmos）的大厅皮肤还没画，先用 S1。
+2. 设置里的「界面风格」：四套固定界面画齐并经用户确认之前**不显示**；S2–S4 的固定界面交给新包 [UI-07](packages/UI-07.md)。
+3. C7「放弃这一单」写进 [mode-delivery.md](design/mode-delivery.md) 第 4 节：按失败结算（金币带回一半），先确认，默认选「再想想」。
+4. 分支：UI-05 / 06 改到 `ui/style-proposals`；UI-02–04 已取消；UI-06 改为关卡线先合进 `main`，界面线再合。
+
+game-design 第 8 节的大厅、设置两行同步了。
+
+本次实际验证（云端 Linux，Node 侧）：`check-levels.mjs --write` 46 关全部 ok；`art.mjs build` 109 项、0 bumped；`art.mjs verify` ok；`content.mjs check` 0 错误；`node --test tests/*.test.mjs` 141/141。没看界面效果图在 Godot 里的样子（还没做）。
 
 ## 第二轮审核：LV-10（`codex/portitor-stage1` @ `2c72e68`，2026-10-16）
 
@@ -71,18 +95,19 @@
 
 ## 还缺什么
 
-- LV-11：Q04、G02、E04 三关和英文提示在真实 SDK / Godot 里复验（三组整组重跑）。
+- LV-12：G02 修正后重跑第 4 章；通过后关卡线 SDK 就是 30/30。
+- 界面：UI-05 画工作台里的新界面 →【用户】确认 → UI-06 同步进游戏；UI-07 画另外三套固定界面并加「界面风格」；forest、cosmos 的大厅皮肤等用户定。
 - F04 只有 1 tick 余量，阵风只测了一种配置（见 LV-08）。
 - 全部 46 关还没有用户试玩验收；梯顶显示修复要用户看过；缺美术的机关仍是占位。
-- 界面线等用户选方向。
 
 ## 下一步与执行人
 
 （分支怎么合、怎么清理见下一节「分支整理计划」。）
 
-1. **制作方（关卡线）**：先在 `codex/portitor-stage1` 上合进 `origin/claude/inspiring-ride-zfnn4s`，再做 [LV-11](packages/LV-11.md)。还对不上时写进包里，不改规格。
-2. **Claude**：LV-11 交回后审核；全部通过就按「分支整理计划」准备合进 `main`。
-3. **用户**：现在不需要操作。
+1. **制作方（关卡线，GPT）**：在 `codex/portitor-stage1` 上合进 `origin/claude/inspiring-ride-zfnn4s`，做 [LV-12](packages/LV-12.md)。
+2. **界面线执行方**：在 `ui/style-proposals` 上合进 `origin/claude/inspiring-ride-zfnn4s`，做 [UI-05](packages/UI-05.md)。两条线互不等待。
+3. **Claude**：LV-12、UI-05 交回后审核；LV-12 通过就按「分支整理计划」先把关卡线合进 `main`。
+4. **用户**：UI-05 做完后在工作台确认新界面美术；现在不需要操作。
 
 ## 分支整理计划（用户 2026-10-16 决定）
 
@@ -90,7 +115,7 @@
 
 1. **两条线各自做完**
    - 关卡线：GPT 在 `codex/portitor-stage1` 上先 `git merge origin/claude/inspiring-ride-zfnn4s`（本次设计审核只在这个分支上），再做 [LV-10](packages/LV-10.md)，推回 `codex/portitor-stage1`；Claude 审核通过。
-   - 界面线：在用户新开的界面分支上做完，用户确认新界面美术。
+   - 界面线：在 `ui/style-proposals` 上做完 UI-05，用户确认新界面美术。
 2. **依次合进 `main`，一次一条**
    - 先合关卡线：`codex/portitor-stage1` → `main`（已包含 Claude 分支）。
    - 再合界面线：界面分支先合进最新的 `main`，重新生成美术，确认 `node tools/art.mjs build` 为 0 bumped、测试通过，再合进 `main`；按 UI-06 更新 Godot 界面。

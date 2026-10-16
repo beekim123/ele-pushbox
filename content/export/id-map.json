@@ -1634,7 +1634,7 @@
    "name": "同纹都能蚀",
    "source": "content/levels/lab/react/G02.json",
    "game": "res://generated/content/levels/lab/react/G02.json",
-   "sha256": "0728694eb262f5f3d9a768bac7f76f4478e040fa15fde2435d6dabbe29600296"
+   "sha256": "defbee51352d54b611d403979ba2ae052e5a643af2019ea92f33374bbecb74dc"
   },
   {
    "uid": "level:G03",
