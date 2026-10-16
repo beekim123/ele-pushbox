@@ -12,7 +12,22 @@
    "pushable": true,
    "mode": "delivery",
    "layer": 1,
-   "status": "concept"
+   "status": "concept",
+   "params": {
+    "move": "chase",
+    "step_secs": 0.3,
+    "chase_step_secs": 0.25,
+    "sight_tiles": 5,
+    "cliff_rows": 2,
+    "contact": "steal",
+    "steal_sand": 1,
+    "steal_coins": 5,
+    "flee_secs": 3,
+    "flee_step_secs": 0.2,
+    "push_stun_secs": 0.5,
+    "trap_secs": 3,
+    "coins": 5
+   }
   },
   {
    "id": "skeleton_guard",
@@ -23,7 +38,15 @@
    "pushable": false,
    "mode": "delivery",
    "layer": 1,
-   "status": "concept"
+   "status": "concept",
+   "params": {
+    "move": "patrol",
+    "step_secs": 0.5,
+    "cliff_rows": 2,
+    "contact": "hurt",
+    "trap_secs": 5,
+    "coins": 10
+   }
   },
   {
    "id": "scarab_swarm",

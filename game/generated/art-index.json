@@ -1,4 +1,595 @@
 {
+ "art:avatar.goblin_smith": {
+  "uid": "art:avatar.goblin_smith",
+  "id": "avatar.goblin_smith",
+  "kind": "sprite",
+  "version": 1,
+  "hash": "b901baf70b30239fa027bf78bcad072eee4aa8e5197ca6d97acabc8dd866d29d",
+  "approved": true,
+  "placeholder": false,
+  "texture": "res://generated/art/sheets/avatar.goblin_smith.png",
+  "texture_path": "res://generated/art/sheets/avatar.goblin_smith.png",
+  "png_sha256": "e4796a022839e4c5ef833ee60cb2ea9feba58c05ab2c9b4f0cacb8ff1b119ebf",
+  "size": [
+   24,
+   24
+  ],
+  "frame_count": 1,
+  "anchor": [
+   0,
+   0
+  ],
+  "animations": {
+   "default": {
+    "fps": 1,
+    "loop": false,
+    "frames": [
+     0
+    ]
+   }
+  },
+  "ninepatch": null,
+  "params": {},
+  "palette": {
+   "a": "#be4a2f",
+   "b": "#d77643",
+   "c": "#ead4aa",
+   "d": "#e4a672",
+   "e": "#b86f50",
+   "f": "#733e39",
+   "g": "#3e2731",
+   "h": "#a22633",
+   "i": "#e43b44",
+   "j": "#f77622",
+   "k": "#feae34",
+   "l": "#fee761",
+   "m": "#63c74d",
+   "n": "#3e8948",
+   "o": "#265c42",
+   "p": "#193c3e",
+   "q": "#124e89",
+   "r": "#0099db",
+   "s": "#2ce8f5",
+   "t": "#ffffff",
+   "u": "#c0cbdc",
+   "v": "#8b9bb4",
+   "w": "#5a6988",
+   "x": "#3a4466",
+   "y": "#262b44",
+   "z": "#181425",
+   "A": "#ff0044",
+   "B": "#68386c",
+   "C": "#b55088",
+   "D": "#f6757a",
+   "E": "#e8b796",
+   "F": "#c28569"
+  },
+  "depends": [],
+  "resource": "res://generated/art/avatar.goblin_smith.tres"
+ },
+ "art:avatar.old_miner": {
+  "uid": "art:avatar.old_miner",
+  "id": "avatar.old_miner",
+  "kind": "sprite",
+  "version": 1,
+  "hash": "c607836c63d2102ccb6d1bc7e4a74a4869cc6badd4b48c385dbc18e961a51aee",
+  "approved": true,
+  "placeholder": false,
+  "texture": "res://generated/art/sheets/avatar.old_miner.png",
+  "texture_path": "res://generated/art/sheets/avatar.old_miner.png",
+  "png_sha256": "4dce7c7b60fc4b5597b546c12173e6204a29cc285e1d45b2d70d980fc3cf3981",
+  "size": [
+   24,
+   24
+  ],
+  "frame_count": 1,
+  "anchor": [
+   0,
+   0
+  ],
+  "animations": {
+   "default": {
+    "fps": 1,
+    "loop": false,
+    "frames": [
+     0
+    ]
+   }
+  },
+  "ninepatch": null,
+  "params": {},
+  "palette": {
+   "a": "#be4a2f",
+   "b": "#d77643",
+   "c": "#ead4aa",
+   "d": "#e4a672",
+   "e": "#b86f50",
+   "f": "#733e39",
+   "g": "#3e2731",
+   "h": "#a22633",
+   "i": "#e43b44",
+   "j": "#f77622",
+   "k": "#feae34",
+   "l": "#fee761",
+   "m": "#63c74d",
+   "n": "#3e8948",
+   "o": "#265c42",
+   "p": "#193c3e",
+   "q": "#124e89",
+   "r": "#0099db",
+   "s": "#2ce8f5",
+   "t": "#ffffff",
+   "u": "#c0cbdc",
+   "v": "#8b9bb4",
+   "w": "#5a6988",
+   "x": "#3a4466",
+   "y": "#262b44",
+   "z": "#181425",
+   "A": "#ff0044",
+   "B": "#68386c",
+   "C": "#b55088",
+   "D": "#f6757a",
+   "E": "#e8b796",
+   "F": "#c28569"
+  },
+  "depends": [],
+  "resource": "res://generated/art/avatar.old_miner.tres"
+ },
+ "art:avatar.zombie": {
+  "uid": "art:avatar.zombie",
+  "id": "avatar.zombie",
+  "kind": "sprite",
+  "version": 1,
+  "hash": "fea509a9818ab135825d06410c991cc2e7258c52e4ade9cf72817bb1ae5410c8",
+  "approved": true,
+  "placeholder": false,
+  "texture": "res://generated/art/sheets/avatar.zombie.png",
+  "texture_path": "res://generated/art/sheets/avatar.zombie.png",
+  "png_sha256": "770aeabf60988fb214be6a7648e0765715ddb20ea3e14e0904b3b4fb3c288cd6",
+  "size": [
+   24,
+   24
+  ],
+  "frame_count": 1,
+  "anchor": [
+   0,
+   0
+  ],
+  "animations": {
+   "default": {
+    "fps": 1,
+    "loop": false,
+    "frames": [
+     0
+    ]
+   }
+  },
+  "ninepatch": null,
+  "params": {},
+  "palette": {
+   "a": "#be4a2f",
+   "b": "#d77643",
+   "c": "#ead4aa",
+   "d": "#e4a672",
+   "e": "#b86f50",
+   "f": "#733e39",
+   "g": "#3e2731",
+   "h": "#a22633",
+   "i": "#e43b44",
+   "j": "#f77622",
+   "k": "#feae34",
+   "l": "#fee761",
+   "m": "#63c74d",
+   "n": "#3e8948",
+   "o": "#265c42",
+   "p": "#193c3e",
+   "q": "#124e89",
+   "r": "#0099db",
+   "s": "#2ce8f5",
+   "t": "#ffffff",
+   "u": "#c0cbdc",
+   "v": "#8b9bb4",
+   "w": "#5a6988",
+   "x": "#3a4466",
+   "y": "#262b44",
+   "z": "#181425",
+   "A": "#ff0044",
+   "B": "#68386c",
+   "C": "#b55088",
+   "D": "#f6757a",
+   "E": "#e8b796",
+   "F": "#c28569"
+  },
+  "depends": [],
+  "resource": "res://generated/art/avatar.zombie.tres"
+ },
+ "art:cargo.ice_cream": {
+  "uid": "art:cargo.ice_cream",
+  "id": "cargo.ice_cream",
+  "kind": "sprite",
+  "version": 1,
+  "hash": "4a0426f3f3bc60493a8f13bed4735f04ae784511e6160e3f453e69d5479fe09f",
+  "approved": true,
+  "placeholder": false,
+  "texture": "res://generated/art/sheets/cargo.ice_cream.png",
+  "texture_path": "res://generated/art/sheets/cargo.ice_cream.png",
+  "png_sha256": "654824ef2892c06109bb6233ce9da651d3eecb105c1f7f7759550de18060505a",
+  "size": [
+   16,
+   16
+  ],
+  "frame_count": 2,
+  "anchor": [
+   0,
+   0
+  ],
+  "animations": {
+   "default": {
+    "fps": 1,
+    "loop": false,
+    "frames": [
+     0
+    ]
+   },
+   "melting": {
+    "fps": 2,
+    "loop": true,
+    "frames": [
+     1,
+     0
+    ]
+   }
+  },
+  "ninepatch": null,
+  "params": {},
+  "palette": {
+   "a": "#be4a2f",
+   "b": "#d77643",
+   "c": "#ead4aa",
+   "d": "#e4a672",
+   "e": "#b86f50",
+   "f": "#733e39",
+   "g": "#3e2731",
+   "h": "#a22633",
+   "i": "#e43b44",
+   "j": "#f77622",
+   "k": "#feae34",
+   "l": "#fee761",
+   "m": "#63c74d",
+   "n": "#3e8948",
+   "o": "#265c42",
+   "p": "#193c3e",
+   "q": "#124e89",
+   "r": "#0099db",
+   "s": "#2ce8f5",
+   "t": "#ffffff",
+   "u": "#c0cbdc",
+   "v": "#8b9bb4",
+   "w": "#5a6988",
+   "x": "#3a4466",
+   "y": "#262b44",
+   "z": "#181425",
+   "A": "#ff0044",
+   "B": "#68386c",
+   "C": "#b55088",
+   "D": "#f6757a",
+   "E": "#e8b796",
+   "F": "#c28569"
+  },
+  "depends": [],
+  "resource": "res://generated/art/cargo.ice_cream.tres"
+ },
+ "art:cargo.letter": {
+  "uid": "art:cargo.letter",
+  "id": "cargo.letter",
+  "kind": "sprite",
+  "version": 1,
+  "hash": "755d60fe4cd9fddc356cb2154695834209935dfed6da8e443721c2c4a0df3bb4",
+  "approved": true,
+  "placeholder": false,
+  "texture": "res://generated/art/sheets/cargo.letter.png",
+  "texture_path": "res://generated/art/sheets/cargo.letter.png",
+  "png_sha256": "109024957813201bc8ecf5abb5cd7090cdbb572704a8353551be972fca6dafb1",
+  "size": [
+   16,
+   16
+  ],
+  "frame_count": 1,
+  "anchor": [
+   0,
+   0
+  ],
+  "animations": {
+   "default": {
+    "fps": 1,
+    "loop": false,
+    "frames": [
+     0
+    ]
+   }
+  },
+  "ninepatch": null,
+  "params": {},
+  "palette": {
+   "a": "#be4a2f",
+   "b": "#d77643",
+   "c": "#ead4aa",
+   "d": "#e4a672",
+   "e": "#b86f50",
+   "f": "#733e39",
+   "g": "#3e2731",
+   "h": "#a22633",
+   "i": "#e43b44",
+   "j": "#f77622",
+   "k": "#feae34",
+   "l": "#fee761",
+   "m": "#63c74d",
+   "n": "#3e8948",
+   "o": "#265c42",
+   "p": "#193c3e",
+   "q": "#124e89",
+   "r": "#0099db",
+   "s": "#2ce8f5",
+   "t": "#ffffff",
+   "u": "#c0cbdc",
+   "v": "#8b9bb4",
+   "w": "#5a6988",
+   "x": "#3a4466",
+   "y": "#262b44",
+   "z": "#181425",
+   "A": "#ff0044",
+   "B": "#68386c",
+   "C": "#b55088",
+   "D": "#f6757a",
+   "E": "#e8b796",
+   "F": "#c28569"
+  },
+  "depends": [],
+  "resource": "res://generated/art/cargo.letter.tres"
+ },
+ "art:cargo.vase": {
+  "uid": "art:cargo.vase",
+  "id": "cargo.vase",
+  "kind": "sprite",
+  "version": 1,
+  "hash": "0eeb7e49c72daafc67a145c3641528958e97b447d184c3bc777a8cd2d7947944",
+  "approved": true,
+  "placeholder": false,
+  "texture": "res://generated/art/sheets/cargo.vase.png",
+  "texture_path": "res://generated/art/sheets/cargo.vase.png",
+  "png_sha256": "bae4114d96e52ae037b2df0b03369b27c4a9439e7d6f1f27b5703b9293072495",
+  "size": [
+   16,
+   16
+  ],
+  "frame_count": 2,
+  "anchor": [
+   0,
+   0
+  ],
+  "animations": {
+   "default": {
+    "fps": 1,
+    "loop": false,
+    "frames": [
+     0
+    ]
+   },
+   "cracked": {
+    "fps": 1,
+    "loop": false,
+    "frames": [
+     1
+    ]
+   }
+  },
+  "ninepatch": null,
+  "params": {},
+  "palette": {
+   "a": "#be4a2f",
+   "b": "#d77643",
+   "c": "#ead4aa",
+   "d": "#e4a672",
+   "e": "#b86f50",
+   "f": "#733e39",
+   "g": "#3e2731",
+   "h": "#a22633",
+   "i": "#e43b44",
+   "j": "#f77622",
+   "k": "#feae34",
+   "l": "#fee761",
+   "m": "#63c74d",
+   "n": "#3e8948",
+   "o": "#265c42",
+   "p": "#193c3e",
+   "q": "#124e89",
+   "r": "#0099db",
+   "s": "#2ce8f5",
+   "t": "#ffffff",
+   "u": "#c0cbdc",
+   "v": "#8b9bb4",
+   "w": "#5a6988",
+   "x": "#3a4466",
+   "y": "#262b44",
+   "z": "#181425",
+   "A": "#ff0044",
+   "B": "#68386c",
+   "C": "#b55088",
+   "D": "#f6757a",
+   "E": "#e8b796",
+   "F": "#c28569"
+  },
+  "depends": [],
+  "resource": "res://generated/art/cargo.vase.tres"
+ },
+ "art:char.goblin_smith": {
+  "uid": "art:char.goblin_smith",
+  "id": "char.goblin_smith",
+  "kind": "sprite",
+  "version": 1,
+  "hash": "aec499b0c22bf603343aa32f4dc22069ff84091db6a009a78d0accc8c2211359",
+  "approved": true,
+  "placeholder": false,
+  "texture": "res://generated/art/sheets/char.goblin_smith.png",
+  "texture_path": "res://generated/art/sheets/char.goblin_smith.png",
+  "png_sha256": "204f08410a6082a5eaab5660c7ef853b4c9d1c1ec39a2a520df29323a6f063c6",
+  "size": [
+   16,
+   16
+  ],
+  "frame_count": 7,
+  "anchor": [
+   8,
+   16
+  ],
+  "animations": {
+   "work": {
+    "fps": 6,
+    "loop": true,
+    "frames": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     0
+    ]
+   },
+   "win": {
+    "fps": 4,
+    "loop": true,
+    "frames": [
+     5,
+     6
+    ]
+   }
+  },
+  "ninepatch": null,
+  "params": {},
+  "palette": {
+   "a": "#be4a2f",
+   "b": "#d77643",
+   "c": "#ead4aa",
+   "d": "#e4a672",
+   "e": "#b86f50",
+   "f": "#733e39",
+   "g": "#3e2731",
+   "h": "#a22633",
+   "i": "#e43b44",
+   "j": "#f77622",
+   "k": "#feae34",
+   "l": "#fee761",
+   "m": "#63c74d",
+   "n": "#3e8948",
+   "o": "#265c42",
+   "p": "#193c3e",
+   "q": "#124e89",
+   "r": "#0099db",
+   "s": "#2ce8f5",
+   "t": "#ffffff",
+   "u": "#c0cbdc",
+   "v": "#8b9bb4",
+   "w": "#5a6988",
+   "x": "#3a4466",
+   "y": "#262b44",
+   "z": "#181425",
+   "A": "#ff0044",
+   "B": "#68386c",
+   "C": "#b55088",
+   "D": "#f6757a",
+   "E": "#e8b796",
+   "F": "#c28569"
+  },
+  "depends": [],
+  "resource": "res://generated/art/char.goblin_smith.tres"
+ },
+ "art:char.lucky_cat": {
+  "uid": "art:char.lucky_cat",
+  "id": "char.lucky_cat",
+  "kind": "sprite",
+  "version": 1,
+  "hash": "d9cee704ae0f93f988d6a502847e83b696af6e68c5a1d4dda5ebeb18bcb5901a",
+  "approved": true,
+  "placeholder": false,
+  "texture": "res://generated/art/sheets/char.lucky_cat.png",
+  "texture_path": "res://generated/art/sheets/char.lucky_cat.png",
+  "png_sha256": "a3aa778b4f4f691e735c445f9bd6bb602079f7fe8aede9527952429704e6a89e",
+  "size": [
+   32,
+   32
+  ],
+  "frame_count": 4,
+  "anchor": [
+   16,
+   32
+  ],
+  "animations": {
+   "idle": {
+    "fps": 2,
+    "loop": true,
+    "frames": [
+     0,
+     1
+    ]
+   },
+   "pull": {
+    "fps": 8,
+    "loop": false,
+    "frames": [
+     0,
+     1,
+     2,
+     2
+    ]
+   },
+   "win": {
+    "fps": 4,
+    "loop": true,
+    "frames": [
+     3,
+     0
+    ]
+   }
+  },
+  "ninepatch": null,
+  "params": {},
+  "palette": {
+   "a": "#be4a2f",
+   "b": "#d77643",
+   "c": "#ead4aa",
+   "d": "#e4a672",
+   "e": "#b86f50",
+   "f": "#733e39",
+   "g": "#3e2731",
+   "h": "#a22633",
+   "i": "#e43b44",
+   "j": "#f77622",
+   "k": "#feae34",
+   "l": "#fee761",
+   "m": "#63c74d",
+   "n": "#3e8948",
+   "o": "#265c42",
+   "p": "#193c3e",
+   "q": "#124e89",
+   "r": "#0099db",
+   "s": "#2ce8f5",
+   "t": "#ffffff",
+   "u": "#c0cbdc",
+   "v": "#8b9bb4",
+   "w": "#5a6988",
+   "x": "#3a4466",
+   "y": "#262b44",
+   "z": "#181425",
+   "A": "#ff0044",
+   "B": "#68386c",
+   "C": "#b55088",
+   "D": "#f6757a",
+   "E": "#e8b796",
+   "F": "#c28569"
+  },
+  "depends": [],
+  "resource": "res://generated/art/char.lucky_cat.tres"
+ },
  "art:char.miner": {
   "uid": "art:char.miner",
   "id": "char.miner",
@@ -337,6 +928,171 @@
   },
   "depends": [],
   "resource": "res://generated/art/char.portitor_alt.tres"
+ },
+ "art:char.turtle_keeper": {
+  "uid": "art:char.turtle_keeper",
+  "id": "char.turtle_keeper",
+  "kind": "sprite",
+  "version": 1,
+  "hash": "5aacda67d54282cd2f56c94c7db447f6a74898ec2bba5582705b28fc3eadf7a3",
+  "approved": true,
+  "placeholder": false,
+  "texture": "res://generated/art/sheets/char.turtle_keeper.png",
+  "texture_path": "res://generated/art/sheets/char.turtle_keeper.png",
+  "png_sha256": "932c5c4d160dc7311a61717e4a011c935be20460676c094726d17a08f72a83ab",
+  "size": [
+   32,
+   32
+  ],
+  "frame_count": 3,
+  "anchor": [
+   16,
+   32
+  ],
+  "animations": {
+   "idle": {
+    "fps": 2,
+    "loop": true,
+    "frames": [
+     0,
+     0,
+     1
+    ]
+   },
+   "talk": {
+    "fps": 4,
+    "loop": true,
+    "frames": [
+     2,
+     0
+    ]
+   }
+  },
+  "ninepatch": null,
+  "params": {},
+  "palette": {
+   "a": "#be4a2f",
+   "b": "#d77643",
+   "c": "#ead4aa",
+   "d": "#e4a672",
+   "e": "#b86f50",
+   "f": "#733e39",
+   "g": "#3e2731",
+   "h": "#a22633",
+   "i": "#e43b44",
+   "j": "#f77622",
+   "k": "#feae34",
+   "l": "#fee761",
+   "m": "#63c74d",
+   "n": "#3e8948",
+   "o": "#265c42",
+   "p": "#193c3e",
+   "q": "#124e89",
+   "r": "#0099db",
+   "s": "#2ce8f5",
+   "t": "#ffffff",
+   "u": "#c0cbdc",
+   "v": "#8b9bb4",
+   "w": "#5a6988",
+   "x": "#3a4466",
+   "y": "#262b44",
+   "z": "#181425",
+   "A": "#ff0044",
+   "B": "#68386c",
+   "C": "#b55088",
+   "D": "#f6757a",
+   "E": "#e8b796",
+   "F": "#c28569"
+  },
+  "depends": [],
+  "resource": "res://generated/art/char.turtle_keeper.tres"
+ },
+ "art:char.zombie": {
+  "uid": "art:char.zombie",
+  "id": "char.zombie",
+  "kind": "sprite",
+  "version": 1,
+  "hash": "08946939bb3666a5d227126f97ef86fced41faf9abafea67ac87d92d0d1364c4",
+  "approved": true,
+  "placeholder": false,
+  "texture": "res://generated/art/sheets/char.zombie.png",
+  "texture_path": "res://generated/art/sheets/char.zombie.png",
+  "png_sha256": "9e8e2a46985949fe9e076ca86ec37d069c63b63d6a44f2fe68155e06dcf54240",
+  "size": [
+   16,
+   16
+  ],
+  "frame_count": 6,
+  "anchor": [
+   8,
+   16
+  ],
+  "animations": {
+   "idle": {
+    "fps": 2,
+    "loop": true,
+    "frames": [
+     0,
+     1
+    ]
+   },
+   "walk": {
+    "fps": 6,
+    "loop": true,
+    "frames": [
+     0,
+     2,
+     3,
+     2
+    ]
+   },
+   "win": {
+    "fps": 4,
+    "loop": true,
+    "frames": [
+     4,
+     5
+    ]
+   }
+  },
+  "ninepatch": null,
+  "params": {},
+  "palette": {
+   "a": "#be4a2f",
+   "b": "#d77643",
+   "c": "#ead4aa",
+   "d": "#e4a672",
+   "e": "#b86f50",
+   "f": "#733e39",
+   "g": "#3e2731",
+   "h": "#a22633",
+   "i": "#e43b44",
+   "j": "#f77622",
+   "k": "#feae34",
+   "l": "#fee761",
+   "m": "#63c74d",
+   "n": "#3e8948",
+   "o": "#265c42",
+   "p": "#193c3e",
+   "q": "#124e89",
+   "r": "#0099db",
+   "s": "#2ce8f5",
+   "t": "#ffffff",
+   "u": "#c0cbdc",
+   "v": "#8b9bb4",
+   "w": "#5a6988",
+   "x": "#3a4466",
+   "y": "#262b44",
+   "z": "#181425",
+   "A": "#ff0044",
+   "B": "#68386c",
+   "C": "#b55088",
+   "D": "#f6757a",
+   "E": "#e8b796",
+   "F": "#c28569"
+  },
+  "depends": [],
+  "resource": "res://generated/art/char.zombie.tres"
  },
  "art:deco.cave_crystal": {
   "uid": "art:deco.cave_crystal",
@@ -2170,6 +2926,77 @@
   "depends": [],
   "resource": "res://generated/art/fx.land_dust.tres"
  },
+ "art:fx.monster_poof": {
+  "uid": "art:fx.monster_poof",
+  "id": "fx.monster_poof",
+  "kind": "sprite",
+  "version": 1,
+  "hash": "4d8b333246e8eee6c0e46d6e3f36e04be38abf7d25b353d5db95be076a941024",
+  "approved": true,
+  "placeholder": false,
+  "texture": "res://generated/art/sheets/fx.monster_poof.png",
+  "texture_path": "res://generated/art/sheets/fx.monster_poof.png",
+  "png_sha256": "8f556aebbf1a88de5549d7f1bb608de9fee6ed22cb2169656a3bf046b6f2c273",
+  "size": [
+   16,
+   16
+  ],
+  "frame_count": 4,
+  "anchor": [
+   8,
+   16
+  ],
+  "animations": {
+   "default": {
+    "fps": 12,
+    "loop": false,
+    "frames": [
+     0,
+     1,
+     2,
+     3
+    ]
+   }
+  },
+  "ninepatch": null,
+  "params": {},
+  "palette": {
+   "a": "#be4a2f",
+   "b": "#d77643",
+   "c": "#ead4aa",
+   "d": "#e4a672",
+   "e": "#b86f50",
+   "f": "#733e39",
+   "g": "#3e2731",
+   "h": "#a22633",
+   "i": "#e43b44",
+   "j": "#f77622",
+   "k": "#feae34",
+   "l": "#fee761",
+   "m": "#63c74d",
+   "n": "#3e8948",
+   "o": "#265c42",
+   "p": "#193c3e",
+   "q": "#124e89",
+   "r": "#0099db",
+   "s": "#2ce8f5",
+   "t": "#ffffff",
+   "u": "#c0cbdc",
+   "v": "#8b9bb4",
+   "w": "#5a6988",
+   "x": "#3a4466",
+   "y": "#262b44",
+   "z": "#181425",
+   "A": "#ff0044",
+   "B": "#68386c",
+   "C": "#b55088",
+   "D": "#f6757a",
+   "E": "#e8b796",
+   "F": "#c28569"
+  },
+  "depends": [],
+  "resource": "res://generated/art/fx.monster_poof.tres"
+ },
  "art:fx.ripple": {
   "uid": "art:fx.ripple",
   "id": "fx.ripple",
@@ -2446,6 +3273,220 @@
   },
   "depends": [],
   "resource": "res://generated/art/item.bomb.tres"
+ },
+ "art:item.coin": {
+  "uid": "art:item.coin",
+  "id": "item.coin",
+  "kind": "sprite",
+  "version": 1,
+  "hash": "fd0ca3ecbf8bbb46f7fb7b189d0203f8d70b37634f63741b42e085c7b6849b15",
+  "approved": true,
+  "placeholder": false,
+  "texture": "res://generated/art/sheets/item.coin.png",
+  "texture_path": "res://generated/art/sheets/item.coin.png",
+  "png_sha256": "e050c58c6fbfe34a2ec6b570f229f19169dc0e8c590919a7a508b198d7153f08",
+  "size": [
+   16,
+   16
+  ],
+  "frame_count": 3,
+  "anchor": [
+   8,
+   16
+  ],
+  "animations": {
+   "default": {
+    "fps": 1,
+    "loop": false,
+    "frames": [
+     0
+    ]
+   },
+   "spin": {
+    "fps": 8,
+    "loop": true,
+    "frames": [
+     0,
+     1,
+     2,
+     1
+    ]
+   }
+  },
+  "ninepatch": null,
+  "params": {},
+  "palette": {
+   "a": "#be4a2f",
+   "b": "#d77643",
+   "c": "#ead4aa",
+   "d": "#e4a672",
+   "e": "#b86f50",
+   "f": "#733e39",
+   "g": "#3e2731",
+   "h": "#a22633",
+   "i": "#e43b44",
+   "j": "#f77622",
+   "k": "#feae34",
+   "l": "#fee761",
+   "m": "#63c74d",
+   "n": "#3e8948",
+   "o": "#265c42",
+   "p": "#193c3e",
+   "q": "#124e89",
+   "r": "#0099db",
+   "s": "#2ce8f5",
+   "t": "#ffffff",
+   "u": "#c0cbdc",
+   "v": "#8b9bb4",
+   "w": "#5a6988",
+   "x": "#3a4466",
+   "y": "#262b44",
+   "z": "#181425",
+   "A": "#ff0044",
+   "B": "#68386c",
+   "C": "#b55088",
+   "D": "#f6757a",
+   "E": "#e8b796",
+   "F": "#c28569"
+  },
+  "depends": [],
+  "resource": "res://generated/art/item.coin.tres"
+ },
+ "art:item.first_aid": {
+  "uid": "art:item.first_aid",
+  "id": "item.first_aid",
+  "kind": "sprite",
+  "version": 1,
+  "hash": "b12924b897291b98bd811835cd315f8ecbe7de4d466ae353648be839b2768d16",
+  "approved": true,
+  "placeholder": false,
+  "texture": "res://generated/art/sheets/item.first_aid.png",
+  "texture_path": "res://generated/art/sheets/item.first_aid.png",
+  "png_sha256": "25b2dfdded865d8f9a666525d87b2f1f983eddeefbb75541f84c5da973aa6091",
+  "size": [
+   16,
+   16
+  ],
+  "frame_count": 1,
+  "anchor": [
+   0,
+   0
+  ],
+  "animations": {
+   "default": {
+    "fps": 1,
+    "loop": false,
+    "frames": [
+     0
+    ]
+   }
+  },
+  "ninepatch": null,
+  "params": {},
+  "palette": {
+   "a": "#be4a2f",
+   "b": "#d77643",
+   "c": "#ead4aa",
+   "d": "#e4a672",
+   "e": "#b86f50",
+   "f": "#733e39",
+   "g": "#3e2731",
+   "h": "#a22633",
+   "i": "#e43b44",
+   "j": "#f77622",
+   "k": "#feae34",
+   "l": "#fee761",
+   "m": "#63c74d",
+   "n": "#3e8948",
+   "o": "#265c42",
+   "p": "#193c3e",
+   "q": "#124e89",
+   "r": "#0099db",
+   "s": "#2ce8f5",
+   "t": "#ffffff",
+   "u": "#c0cbdc",
+   "v": "#8b9bb4",
+   "w": "#5a6988",
+   "x": "#3a4466",
+   "y": "#262b44",
+   "z": "#181425",
+   "A": "#ff0044",
+   "B": "#68386c",
+   "C": "#b55088",
+   "D": "#f6757a",
+   "E": "#e8b796",
+   "F": "#c28569"
+  },
+  "depends": [],
+  "resource": "res://generated/art/item.first_aid.tres"
+ },
+ "art:item.rope_ladder": {
+  "uid": "art:item.rope_ladder",
+  "id": "item.rope_ladder",
+  "kind": "sprite",
+  "version": 1,
+  "hash": "4c236edf6c23baae3db3bdc8053becc19aa5f665b4b201825c60e87792a42309",
+  "approved": true,
+  "placeholder": false,
+  "texture": "res://generated/art/sheets/item.rope_ladder.png",
+  "texture_path": "res://generated/art/sheets/item.rope_ladder.png",
+  "png_sha256": "d1efe03b7464554adf058c7bf00bc3657f0d1a07f4dfe438f91b0117f12f987a",
+  "size": [
+   16,
+   16
+  ],
+  "frame_count": 1,
+  "anchor": [
+   0,
+   0
+  ],
+  "animations": {
+   "default": {
+    "fps": 1,
+    "loop": false,
+    "frames": [
+     0
+    ]
+   }
+  },
+  "ninepatch": null,
+  "params": {},
+  "palette": {
+   "a": "#be4a2f",
+   "b": "#d77643",
+   "c": "#ead4aa",
+   "d": "#e4a672",
+   "e": "#b86f50",
+   "f": "#733e39",
+   "g": "#3e2731",
+   "h": "#a22633",
+   "i": "#e43b44",
+   "j": "#f77622",
+   "k": "#feae34",
+   "l": "#fee761",
+   "m": "#63c74d",
+   "n": "#3e8948",
+   "o": "#265c42",
+   "p": "#193c3e",
+   "q": "#124e89",
+   "r": "#0099db",
+   "s": "#2ce8f5",
+   "t": "#ffffff",
+   "u": "#c0cbdc",
+   "v": "#8b9bb4",
+   "w": "#5a6988",
+   "x": "#3a4466",
+   "y": "#262b44",
+   "z": "#181425",
+   "A": "#ff0044",
+   "B": "#68386c",
+   "C": "#b55088",
+   "D": "#f6757a",
+   "E": "#e8b796",
+   "F": "#c28569"
+  },
+  "depends": [],
+  "resource": "res://generated/art/item.rope_ladder.tres"
  },
  "art:item.sandbag": {
   "uid": "art:item.sandbag",
@@ -3099,6 +4140,77 @@
   "depends": [],
   "resource": "res://generated/art/mech.exit_flag.tres"
  },
+ "art:mech.ferry_gate": {
+  "uid": "art:mech.ferry_gate",
+  "id": "mech.ferry_gate",
+  "kind": "sprite",
+  "version": 1,
+  "hash": "720202b73f57c2131b1a3758086b96322478feb5a90bdb6b9bc7333ef839402c",
+  "approved": true,
+  "placeholder": false,
+  "texture": "res://generated/art/sheets/mech.ferry_gate.png",
+  "texture_path": "res://generated/art/sheets/mech.ferry_gate.png",
+  "png_sha256": "afc0e272b27ed0a547262623fcd6d467d81a2fc16259c48fc32dad6af1ad7194",
+  "size": [
+   32,
+   32
+  ],
+  "frame_count": 4,
+  "anchor": [
+   16,
+   32
+  ],
+  "animations": {
+   "idle": {
+    "fps": 4,
+    "loop": true,
+    "frames": [
+     0,
+     1,
+     2,
+     3
+    ]
+   }
+  },
+  "ninepatch": null,
+  "params": {},
+  "palette": {
+   "a": "#be4a2f",
+   "b": "#d77643",
+   "c": "#ead4aa",
+   "d": "#e4a672",
+   "e": "#b86f50",
+   "f": "#733e39",
+   "g": "#3e2731",
+   "h": "#a22633",
+   "i": "#e43b44",
+   "j": "#f77622",
+   "k": "#feae34",
+   "l": "#fee761",
+   "m": "#63c74d",
+   "n": "#3e8948",
+   "o": "#265c42",
+   "p": "#193c3e",
+   "q": "#124e89",
+   "r": "#0099db",
+   "s": "#2ce8f5",
+   "t": "#ffffff",
+   "u": "#c0cbdc",
+   "v": "#8b9bb4",
+   "w": "#5a6988",
+   "x": "#3a4466",
+   "y": "#262b44",
+   "z": "#181425",
+   "A": "#ff0044",
+   "B": "#68386c",
+   "C": "#b55088",
+   "D": "#f6757a",
+   "E": "#e8b796",
+   "F": "#c28569"
+  },
+  "depends": [],
+  "resource": "res://generated/art/mech.ferry_gate.tres"
+ },
  "art:mech.frost_vent": {
   "uid": "art:mech.frost_vent",
   "id": "mech.frost_vent",
@@ -3705,6 +4817,74 @@
   "depends": [],
   "resource": "res://generated/art/mech.portal.tres"
  },
+ "art:mech.rope_ladder": {
+  "uid": "art:mech.rope_ladder",
+  "id": "mech.rope_ladder",
+  "kind": "sprite",
+  "version": 1,
+  "hash": "eca5efe295502dc73850ee0c41a84ee44e30225c2773e5cf27e6d6798d186440",
+  "approved": true,
+  "placeholder": false,
+  "texture": "res://generated/art/sheets/mech.rope_ladder.png",
+  "texture_path": "res://generated/art/sheets/mech.rope_ladder.png",
+  "png_sha256": "f336892c8f31c586ca3ea268a068af45a3e63b761b178641de485a2e3d3ac4b8",
+  "size": [
+   16,
+   16
+  ],
+  "frame_count": 1,
+  "anchor": [
+   8,
+   16
+  ],
+  "animations": {
+   "default": {
+    "fps": 1,
+    "loop": false,
+    "frames": [
+     0
+    ]
+   }
+  },
+  "ninepatch": null,
+  "params": {},
+  "palette": {
+   "a": "#be4a2f",
+   "b": "#d77643",
+   "c": "#ead4aa",
+   "d": "#e4a672",
+   "e": "#b86f50",
+   "f": "#733e39",
+   "g": "#3e2731",
+   "h": "#a22633",
+   "i": "#e43b44",
+   "j": "#f77622",
+   "k": "#feae34",
+   "l": "#fee761",
+   "m": "#63c74d",
+   "n": "#3e8948",
+   "o": "#265c42",
+   "p": "#193c3e",
+   "q": "#124e89",
+   "r": "#0099db",
+   "s": "#2ce8f5",
+   "t": "#ffffff",
+   "u": "#c0cbdc",
+   "v": "#8b9bb4",
+   "w": "#5a6988",
+   "x": "#3a4466",
+   "y": "#262b44",
+   "z": "#181425",
+   "A": "#ff0044",
+   "B": "#68386c",
+   "C": "#b55088",
+   "D": "#f6757a",
+   "E": "#e8b796",
+   "F": "#c28569"
+  },
+  "depends": [],
+  "resource": "res://generated/art/mech.rope_ladder.tres"
+ },
  "art:mech.socket": {
   "uid": "art:mech.socket",
   "id": "mech.socket",
@@ -4001,6 +5181,201 @@
   "depends": [],
   "resource": "res://generated/art/mech.vine.tres"
  },
+ "art:monster.rat_swarm": {
+  "uid": "art:monster.rat_swarm",
+  "id": "monster.rat_swarm",
+  "kind": "sprite",
+  "version": 1,
+  "hash": "1e741865f806cbbae9da2a28998cf7d31dab13e8a7827352cbeaee5b8f7e4ad0",
+  "approved": true,
+  "placeholder": false,
+  "texture": "res://generated/art/sheets/monster.rat_swarm.png",
+  "texture_path": "res://generated/art/sheets/monster.rat_swarm.png",
+  "png_sha256": "a31ca7b267edf16dfbe0fdbeb4723f0b95b57b19ffd4ff2481da2c5aae97a187",
+  "size": [
+   16,
+   16
+  ],
+  "frame_count": 10,
+  "anchor": [
+   8,
+   16
+  ],
+  "animations": {
+   "walk": {
+    "fps": 8,
+    "loop": true,
+    "frames": [
+     0,
+     1
+    ]
+   },
+   "chase": {
+    "fps": 12,
+    "loop": true,
+    "frames": [
+     2,
+     3
+    ]
+   },
+   "flee": {
+    "fps": 12,
+    "loop": true,
+    "frames": [
+     4,
+     5
+    ]
+   },
+   "stunned": {
+    "fps": 4,
+    "loop": true,
+    "frames": [
+     6,
+     7
+    ]
+   },
+   "trapped": {
+    "fps": 4,
+    "loop": true,
+    "frames": [
+     8,
+     9
+    ]
+   }
+  },
+  "ninepatch": null,
+  "params": {},
+  "palette": {
+   "a": "#be4a2f",
+   "b": "#d77643",
+   "c": "#ead4aa",
+   "d": "#e4a672",
+   "e": "#b86f50",
+   "f": "#733e39",
+   "g": "#3e2731",
+   "h": "#a22633",
+   "i": "#e43b44",
+   "j": "#f77622",
+   "k": "#feae34",
+   "l": "#fee761",
+   "m": "#63c74d",
+   "n": "#3e8948",
+   "o": "#265c42",
+   "p": "#193c3e",
+   "q": "#124e89",
+   "r": "#0099db",
+   "s": "#2ce8f5",
+   "t": "#ffffff",
+   "u": "#c0cbdc",
+   "v": "#8b9bb4",
+   "w": "#5a6988",
+   "x": "#3a4466",
+   "y": "#262b44",
+   "z": "#181425",
+   "A": "#ff0044",
+   "B": "#68386c",
+   "C": "#b55088",
+   "D": "#f6757a",
+   "E": "#e8b796",
+   "F": "#c28569"
+  },
+  "depends": [],
+  "resource": "res://generated/art/monster.rat_swarm.tres"
+ },
+ "art:monster.skeleton_guard": {
+  "uid": "art:monster.skeleton_guard",
+  "id": "monster.skeleton_guard",
+  "kind": "sprite",
+  "version": 1,
+  "hash": "7c5340f68c1fd3df4414a6516cb5baf45a446f260307ab676f94258d4c5f2ace",
+  "approved": true,
+  "placeholder": false,
+  "texture": "res://generated/art/sheets/monster.skeleton_guard.png",
+  "texture_path": "res://generated/art/sheets/monster.skeleton_guard.png",
+  "png_sha256": "35676571bcec2e716dec39bb9eaceefffd68ca03da071da154b1ddfdbeba0744",
+  "size": [
+   16,
+   16
+  ],
+  "frame_count": 7,
+  "anchor": [
+   8,
+   16
+  ],
+  "animations": {
+   "walk": {
+    "fps": 6,
+    "loop": true,
+    "frames": [
+     0,
+     1,
+     2,
+     1
+    ]
+   },
+   "trapped": {
+    "fps": 4,
+    "loop": true,
+    "frames": [
+     3,
+     4
+    ]
+   },
+   "attack": {
+    "fps": 8,
+    "loop": false,
+    "frames": [
+     5,
+     0
+    ]
+   },
+   "ko": {
+    "fps": 4,
+    "loop": false,
+    "frames": [
+     6
+    ]
+   }
+  },
+  "ninepatch": null,
+  "params": {},
+  "palette": {
+   "a": "#be4a2f",
+   "b": "#d77643",
+   "c": "#ead4aa",
+   "d": "#e4a672",
+   "e": "#b86f50",
+   "f": "#733e39",
+   "g": "#3e2731",
+   "h": "#a22633",
+   "i": "#e43b44",
+   "j": "#f77622",
+   "k": "#feae34",
+   "l": "#fee761",
+   "m": "#63c74d",
+   "n": "#3e8948",
+   "o": "#265c42",
+   "p": "#193c3e",
+   "q": "#124e89",
+   "r": "#0099db",
+   "s": "#2ce8f5",
+   "t": "#ffffff",
+   "u": "#c0cbdc",
+   "v": "#8b9bb4",
+   "w": "#5a6988",
+   "x": "#3a4466",
+   "y": "#262b44",
+   "z": "#181425",
+   "A": "#ff0044",
+   "B": "#68386c",
+   "C": "#b55088",
+   "D": "#f6757a",
+   "E": "#e8b796",
+   "F": "#c28569"
+  },
+  "depends": [],
+  "resource": "res://generated/art/monster.skeleton_guard.tres"
+ },
  "art:obj.crate_iron": {
   "uid": "art:obj.crate_iron",
   "id": "obj.crate_iron",
@@ -4136,6 +5511,77 @@
   },
   "depends": [],
   "resource": "res://generated/art/obj.crate_wood.tres"
+ },
+ "art:obj.goblin_forge": {
+  "uid": "art:obj.goblin_forge",
+  "id": "obj.goblin_forge",
+  "kind": "sprite",
+  "version": 1,
+  "hash": "998d67321e65cb3691a38501a378a86eb630347fd85395363d42795293d6930b",
+  "approved": true,
+  "placeholder": false,
+  "texture": "res://generated/art/sheets/obj.goblin_forge.png",
+  "texture_path": "res://generated/art/sheets/obj.goblin_forge.png",
+  "png_sha256": "6218386b2972841df51b610e25e23068e610b7b9348baf0fccd5f0d34a324e22",
+  "size": [
+   16,
+   16
+  ],
+  "frame_count": 3,
+  "anchor": [
+   8,
+   16
+  ],
+  "animations": {
+   "idle": {
+    "fps": 4,
+    "loop": true,
+    "frames": [
+     0,
+     1,
+     2,
+     1
+    ]
+   }
+  },
+  "ninepatch": null,
+  "params": {},
+  "palette": {
+   "a": "#be4a2f",
+   "b": "#d77643",
+   "c": "#ead4aa",
+   "d": "#e4a672",
+   "e": "#b86f50",
+   "f": "#733e39",
+   "g": "#3e2731",
+   "h": "#a22633",
+   "i": "#e43b44",
+   "j": "#f77622",
+   "k": "#feae34",
+   "l": "#fee761",
+   "m": "#63c74d",
+   "n": "#3e8948",
+   "o": "#265c42",
+   "p": "#193c3e",
+   "q": "#124e89",
+   "r": "#0099db",
+   "s": "#2ce8f5",
+   "t": "#ffffff",
+   "u": "#c0cbdc",
+   "v": "#8b9bb4",
+   "w": "#5a6988",
+   "x": "#3a4466",
+   "y": "#262b44",
+   "z": "#181425",
+   "A": "#ff0044",
+   "B": "#68386c",
+   "C": "#b55088",
+   "D": "#f6757a",
+   "E": "#e8b796",
+   "F": "#c28569"
+  },
+  "depends": [],
+  "resource": "res://generated/art/obj.goblin_forge.tres"
  },
  "art:theme.cave": {
   "uid": "art:theme.cave",
@@ -5164,11 +6610,11 @@
   "kind": "sprite",
   "version": 1,
   "hash": "2ae0ff3e9b905d64ec2e7f0923a20d46b3645614be59aa9bc9e448af26749130",
-  "approved": false,
-  "placeholder": true,
-  "texture": "",
-  "texture_path": "",
-  "png_sha256": "",
+  "approved": true,
+  "placeholder": false,
+  "texture": "res://generated/art/sheets/ui.bubble.png",
+  "texture_path": "res://generated/art/sheets/ui.bubble.png",
+  "png_sha256": "39fe4ac19d6469a54eecc539b44088a5cf826f95cb3be4dfe42c1c0d9e83fb02",
   "size": [
    12,
    12
@@ -5251,11 +6697,11 @@
   "kind": "sprite",
   "version": 1,
   "hash": "93a98ba7445f1e1f18e32d2e11f45a358c18b52cc1dae76ac883b83b088c727f",
-  "approved": false,
-  "placeholder": true,
-  "texture": "",
-  "texture_path": "",
-  "png_sha256": "",
+  "approved": true,
+  "placeholder": false,
+  "texture": "res://generated/art/sheets/ui.bubble_tail.png",
+  "texture_path": "res://generated/art/sheets/ui.bubble_tail.png",
+  "png_sha256": "4779f3942363cd7dae7cc42aede1d34ccae1a1748019627b1b6acaf1bb145ce5",
   "size": [
    7,
    6
@@ -5498,17 +6944,155 @@
   "depends": [],
   "resource": "res://generated/art/ui.cursor.tres"
  },
+ "art:ui.delivery_icons": {
+  "uid": "art:ui.delivery_icons",
+  "id": "ui.delivery_icons",
+  "kind": "sprite",
+  "version": 1,
+  "hash": "d565e6a8da680492da9427133d2803f4e10221b45fb56a082706be4aabd6282d",
+  "approved": true,
+  "placeholder": false,
+  "texture": "res://generated/art/sheets/ui.delivery_icons.png",
+  "texture_path": "res://generated/art/sheets/ui.delivery_icons.png",
+  "png_sha256": "b53006f0781b2249e0a6e6b2829b4cb3f273d9f45a37713ea96f8b749d3c847a",
+  "size": [
+   16,
+   16
+  ],
+  "frame_count": 11,
+  "anchor": [
+   0,
+   0
+  ],
+  "animations": {
+   "heart": {
+    "fps": 1,
+    "loop": false,
+    "frames": [
+     0
+    ]
+   },
+   "heart_empty": {
+    "fps": 1,
+    "loop": false,
+    "frames": [
+     1
+    ]
+   },
+   "clock": {
+    "fps": 1,
+    "loop": false,
+    "frames": [
+     2
+    ]
+   },
+   "fragile": {
+    "fps": 1,
+    "loop": false,
+    "frames": [
+     3
+    ]
+   },
+   "melt": {
+    "fps": 1,
+    "loop": false,
+    "frames": [
+     4
+    ]
+   },
+   "hot": {
+    "fps": 1,
+    "loop": false,
+    "frames": [
+     5
+    ]
+   },
+   "pip": {
+    "fps": 1,
+    "loop": false,
+    "frames": [
+     6
+    ]
+   },
+   "pip_empty": {
+    "fps": 1,
+    "loop": false,
+    "frames": [
+     7
+    ]
+   },
+   "slot": {
+    "fps": 1,
+    "loop": false,
+    "frames": [
+     8
+    ]
+   },
+   "arrow": {
+    "fps": 1,
+    "loop": false,
+    "frames": [
+     9
+    ]
+   },
+   "kill": {
+    "fps": 1,
+    "loop": false,
+    "frames": [
+     10
+    ]
+   }
+  },
+  "ninepatch": null,
+  "params": {},
+  "palette": {
+   "a": "#be4a2f",
+   "b": "#d77643",
+   "c": "#ead4aa",
+   "d": "#e4a672",
+   "e": "#b86f50",
+   "f": "#733e39",
+   "g": "#3e2731",
+   "h": "#a22633",
+   "i": "#e43b44",
+   "j": "#f77622",
+   "k": "#feae34",
+   "l": "#fee761",
+   "m": "#63c74d",
+   "n": "#3e8948",
+   "o": "#265c42",
+   "p": "#193c3e",
+   "q": "#124e89",
+   "r": "#0099db",
+   "s": "#2ce8f5",
+   "t": "#ffffff",
+   "u": "#c0cbdc",
+   "v": "#8b9bb4",
+   "w": "#5a6988",
+   "x": "#3a4466",
+   "y": "#262b44",
+   "z": "#181425",
+   "A": "#ff0044",
+   "B": "#68386c",
+   "C": "#b55088",
+   "D": "#f6757a",
+   "E": "#e8b796",
+   "F": "#c28569"
+  },
+  "depends": [],
+  "resource": "res://generated/art/ui.delivery_icons.tres"
+ },
  "art:ui.emote": {
   "uid": "art:ui.emote",
   "id": "ui.emote",
   "kind": "sprite",
   "version": 1,
   "hash": "d8d3b3ddd80f9d40b108ee0829f5a28ffdd6943fe04e1c3d2956130a5c234546",
-  "approved": false,
-  "placeholder": true,
-  "texture": "",
-  "texture_path": "",
-  "png_sha256": "",
+  "approved": true,
+  "placeholder": false,
+  "texture": "res://generated/art/sheets/ui.emote.png",
+  "texture_path": "res://generated/art/sheets/ui.emote.png",
+  "png_sha256": "7088ab708b7164b55697d6d91d56bcd301f47dea764a72a317cc5c1365a532b5",
   "size": [
    9,
    12
@@ -6200,8 +7784,8 @@
   "kind": "procedural",
   "version": 4,
   "hash": "616c8a1a09bf2ad32f24c8cf1e70d8059bdb14d9c394ebbe86eb4703feaeb781",
-  "approved": false,
-  "placeholder": true,
+  "approved": true,
+  "placeholder": false,
   "texture": "",
   "texture_path": "",
   "png_sha256": "",
@@ -6216,7 +7800,40 @@
   ],
   "animations": {},
   "ninepatch": null,
-  "params": {},
+  "params": {
+   "screen": "chapters",
+   "chapters": [
+    {
+     "theme": "theme.dungeon",
+     "done": 4,
+     "total": 7
+    },
+    {
+     "theme": "theme.ruins",
+     "done": 0,
+     "total": 7
+    },
+    {
+     "theme": "theme.cave",
+     "locked": true,
+     "need": 5
+    },
+    {
+     "theme": "theme.forest",
+     "locked": true,
+     "need": 4
+    },
+    {
+     "theme": "theme.sky",
+     "locked": true,
+     "need": 5
+    },
+    {
+     "theme": "theme.cosmos",
+     "locked": true
+    }
+   ]
+  },
   "palette": {
    "a": "#be4a2f",
    "b": "#d77643",
@@ -6273,8 +7890,8 @@
   "kind": "procedural",
   "version": 4,
   "hash": "fbb067b0492c0dd3cc479c65713e8cc6dabf0f93f55e2d6a628bfb458c14d9bf",
-  "approved": false,
-  "placeholder": true,
+  "approved": true,
+  "placeholder": false,
   "texture": "",
   "texture_path": "",
   "png_sha256": "",
@@ -6289,7 +7906,9 @@
   ],
   "animations": {},
   "ninepatch": null,
-  "params": {},
+  "params": {
+   "screen": "complete"
+  },
   "palette": {
    "a": "#be4a2f",
    "b": "#d77643",
@@ -6335,14 +7954,14 @@
   ],
   "resource": "res://generated/art/metadata/ui.screen.complete.tres"
  },
- "art:ui.screen.dialogue": {
-  "uid": "art:ui.screen.dialogue",
-  "id": "ui.screen.dialogue",
+ "art:ui.screen.delivery_hud": {
+  "uid": "art:ui.screen.delivery_hud",
+  "id": "ui.screen.delivery_hud",
   "kind": "procedural",
   "version": 1,
-  "hash": "ea330683e10b2adfdef4f733182869535eea2cb27b750adf982b3410e8de85e5",
-  "approved": false,
-  "placeholder": true,
+  "hash": "23c03f3921674452382a4ef6731bf5aacf26cca8e8a8f55c753d2a06289c361b",
+  "approved": true,
+  "placeholder": false,
   "texture": "",
   "texture_path": "",
   "png_sha256": "",
@@ -6357,7 +7976,268 @@
   ],
   "animations": {},
   "ninepatch": null,
-  "params": {},
+  "params": {
+   "screen": "delivery_hud",
+   "theme": "theme.dungeon",
+   "exclude": [
+    "fauna.dungeon_rat"
+   ],
+   "room": [
+    "####################",
+    "####............####",
+    "##................##",
+    "#...H..............#",
+    "#...H##########....#",
+    "#...H..............#",
+    "....H...............",
+    "..P.H..#.....#......",
+    "####################",
+    "####################"
+   ],
+   "facing": "right",
+   "entities": [
+    {
+     "sprite": "monster.rat_swarm",
+     "anim": "walk",
+     "x": 12,
+     "y": 3,
+     "flip": true
+    },
+    {
+     "sprite": "item.coin",
+     "anim": "spin",
+     "x": 7,
+     "y": 3
+    },
+    {
+     "sprite": "item.coin",
+     "anim": "spin",
+     "x": 10,
+     "y": 3
+    },
+    {
+     "sprite": "item.coin",
+     "anim": "spin",
+     "x": 16,
+     "y": 7
+    }
+   ],
+   "hud": {
+    "hearts": 2,
+    "maxHearts": 3,
+    "cargo": "vase",
+    "left": 2,
+    "max": 3,
+    "rule": "fragile",
+    "hot": false,
+    "coins": 35,
+    "sand": 2,
+    "items": [
+     "first_aid",
+     "rope_ladder"
+    ],
+    "slots": 3,
+    "secs": 83,
+    "minimap": {
+     "cols": 4,
+     "rows": 3,
+     "cur": 4,
+     "rooms": [
+      {
+       "index": 0,
+       "x": 3,
+       "y": 0,
+       "role": "gate",
+       "seen": true
+      },
+      {
+       "index": 1,
+       "x": 2,
+       "y": 0,
+       "role": "room",
+       "seen": true
+      },
+      {
+       "index": 2,
+       "x": 2,
+       "y": 1,
+       "role": "station",
+       "seen": true
+      },
+      {
+       "index": 3,
+       "x": 2,
+       "y": 2,
+       "role": "room",
+       "seen": true
+      },
+      {
+       "index": 4,
+       "x": 1,
+       "y": 2,
+       "role": "room",
+       "seen": true
+      },
+      {
+       "index": 5,
+       "x": 0,
+       "y": 2,
+       "role": "home",
+       "seen": false
+      }
+     ]
+    }
+   }
+  },
+  "palette": {
+   "a": "#be4a2f",
+   "b": "#d77643",
+   "c": "#ead4aa",
+   "d": "#e4a672",
+   "e": "#b86f50",
+   "f": "#733e39",
+   "g": "#3e2731",
+   "h": "#a22633",
+   "i": "#e43b44",
+   "j": "#f77622",
+   "k": "#feae34",
+   "l": "#fee761",
+   "m": "#63c74d",
+   "n": "#3e8948",
+   "o": "#265c42",
+   "p": "#193c3e",
+   "q": "#124e89",
+   "r": "#0099db",
+   "s": "#2ce8f5",
+   "t": "#ffffff",
+   "u": "#c0cbdc",
+   "v": "#8b9bb4",
+   "w": "#5a6988",
+   "x": "#3a4466",
+   "y": "#262b44",
+   "z": "#181425",
+   "A": "#ff0044",
+   "B": "#68386c",
+   "C": "#b55088",
+   "D": "#f6757a",
+   "E": "#e8b796",
+   "F": "#c28569"
+  },
+  "depends": [
+   "theme.dungeon",
+   "char.portitor",
+   "mech.ladder",
+   "monster.rat_swarm",
+   "item.coin",
+   "ui.delivery_icons",
+   "cargo.vase",
+   "item.sandbag",
+   "item.first_aid",
+   "item.rope_ladder"
+  ],
+  "resource": "res://generated/art/metadata/ui.screen.delivery_hud.tres"
+ },
+ "art:ui.screen.delivery_pause": {
+  "uid": "art:ui.screen.delivery_pause",
+  "id": "ui.screen.delivery_pause",
+  "kind": "procedural",
+  "version": 1,
+  "hash": "6f1e53c3dac19938cd506249fa827483ea8e31778fe6f1a6574ad4427b6099f1",
+  "approved": true,
+  "placeholder": false,
+  "texture": "",
+  "texture_path": "",
+  "png_sha256": "",
+  "size": [
+   0,
+   0
+  ],
+  "frame_count": 0,
+  "anchor": [
+   0,
+   0
+  ],
+  "animations": {},
+  "ninepatch": null,
+  "params": {
+   "screen": "pause",
+   "items": [
+    "pause.resume",
+    "dlv.pause.restart_room",
+    "dlv.pause.give_up",
+    "pause.settings",
+    "pause.menu"
+   ]
+  },
+  "palette": {
+   "a": "#be4a2f",
+   "b": "#d77643",
+   "c": "#ead4aa",
+   "d": "#e4a672",
+   "e": "#b86f50",
+   "f": "#733e39",
+   "g": "#3e2731",
+   "h": "#a22633",
+   "i": "#e43b44",
+   "j": "#f77622",
+   "k": "#feae34",
+   "l": "#fee761",
+   "m": "#63c74d",
+   "n": "#3e8948",
+   "o": "#265c42",
+   "p": "#193c3e",
+   "q": "#124e89",
+   "r": "#0099db",
+   "s": "#2ce8f5",
+   "t": "#ffffff",
+   "u": "#c0cbdc",
+   "v": "#8b9bb4",
+   "w": "#5a6988",
+   "x": "#3a4466",
+   "y": "#262b44",
+   "z": "#181425",
+   "A": "#ff0044",
+   "B": "#68386c",
+   "C": "#b55088",
+   "D": "#f6757a",
+   "E": "#e8b796",
+   "F": "#c28569"
+  },
+  "depends": [
+   "char.portitor",
+   "theme.dungeon",
+   "ui.icons",
+   "ui.keycap",
+   "ui.menu_icons",
+   "ui.panel"
+  ],
+  "resource": "res://generated/art/metadata/ui.screen.delivery_pause.tres"
+ },
+ "art:ui.screen.dialogue": {
+  "uid": "art:ui.screen.dialogue",
+  "id": "ui.screen.dialogue",
+  "kind": "procedural",
+  "version": 1,
+  "hash": "ea330683e10b2adfdef4f733182869535eea2cb27b750adf982b3410e8de85e5",
+  "approved": true,
+  "placeholder": false,
+  "texture": "",
+  "texture_path": "",
+  "png_sha256": "",
+  "size": [
+   0,
+   0
+  ],
+  "frame_count": 0,
+  "anchor": [
+   0,
+   0
+  ],
+  "animations": {},
+  "ninepatch": null,
+  "params": {
+   "screen": "dialogue"
+  },
   "palette": {
    "a": "#be4a2f",
    "b": "#d77643",
@@ -6412,8 +8292,8 @@
   "kind": "procedural",
   "version": 4,
   "hash": "89aa4fe24b01333d1c56f8e7144b9db5c38ef0777cc35a615c4e41b064b470d9",
-  "approved": false,
-  "placeholder": true,
+  "approved": true,
+  "placeholder": false,
   "texture": "",
   "texture_path": "",
   "png_sha256": "",
@@ -6428,7 +8308,9 @@
   ],
   "animations": {},
   "ninepatch": null,
-  "params": {},
+  "params": {
+   "screen": "hint"
+  },
   "palette": {
    "a": "#be4a2f",
    "b": "#d77643",
@@ -6481,8 +8363,8 @@
   "kind": "procedural",
   "version": 4,
   "hash": "3ce7d34a0b822daa3fb5d01c243a606e06de7c4ae367565e2c06dec2c5ca4b24",
-  "approved": false,
-  "placeholder": true,
+  "approved": true,
+  "placeholder": false,
   "texture": "",
   "texture_path": "",
   "png_sha256": "",
@@ -6497,7 +8379,42 @@
   ],
   "animations": {},
   "ninepatch": null,
-  "params": {},
+  "params": {
+   "screen": "levels",
+   "theme": "theme.dungeon",
+   "done": 4,
+   "levels": [
+    {
+     "id": "M01",
+     "state": "cleared"
+    },
+    {
+     "id": "M02",
+     "state": "cleared"
+    },
+    {
+     "id": "M03",
+     "state": "skipped"
+    },
+    {
+     "id": "M04",
+     "state": "cleared"
+    },
+    {
+     "id": "M05",
+     "state": "open",
+     "next": true
+    },
+    {
+     "id": "M06",
+     "state": "cleared"
+    },
+    {
+     "id": "M07",
+     "state": "open"
+    }
+   ]
+  },
   "palette": {
    "a": "#be4a2f",
    "b": "#d77643",
@@ -6547,8 +8464,8 @@
   "kind": "procedural",
   "version": 4,
   "hash": "e2ec45838d3dcccf1f97feee4dcfc767b831ab3945d6ac07366db546cec5282e",
-  "approved": false,
-  "placeholder": true,
+  "approved": true,
+  "placeholder": false,
   "texture": "",
   "texture_path": "",
   "png_sha256": "",
@@ -6563,7 +8480,29 @@
   ],
   "animations": {},
   "ninepatch": null,
-  "params": {},
+  "params": {
+   "screen": "lobby",
+   "theme": "theme.dungeon",
+   "items": [
+    {
+     "key": "menu.continue",
+     "icon": "continue",
+     "detail": "M05"
+    },
+    {
+     "key": "menu.chapters",
+     "icon": "chapters"
+    },
+    {
+     "key": "menu.settings",
+     "icon": "settings"
+    },
+    {
+     "key": "menu.quit",
+     "icon": "quit"
+    }
+   ]
+  },
   "palette": {
    "a": "#be4a2f",
    "b": "#d77643",
@@ -6616,8 +8555,8 @@
   "kind": "procedural",
   "version": 4,
   "hash": "8423060d12710e97b5e078ff4fd400b2a2b747c12af96e7ae95c1cf480e47ad3",
-  "approved": false,
-  "placeholder": true,
+  "approved": true,
+  "placeholder": false,
   "texture": "",
   "texture_path": "",
   "png_sha256": "",
@@ -6632,7 +8571,18 @@
   ],
   "animations": {},
   "ninepatch": null,
-  "params": {},
+  "params": {
+   "screen": "pause",
+   "items": [
+    "pause.resume",
+    "pause.hint",
+    "pause.restart",
+    "pause.skip",
+    "pause.levels",
+    "pause.settings",
+    "pause.menu"
+   ]
+  },
   "palette": {
    "a": "#be4a2f",
    "b": "#d77643",
@@ -6677,14 +8627,14 @@
   ],
   "resource": "res://generated/art/metadata/ui.screen.pause.tres"
  },
- "art:ui.screen.rulecard": {
-  "uid": "art:ui.screen.rulecard",
-  "id": "ui.screen.rulecard",
+ "art:ui.screen.reels": {
+  "uid": "art:ui.screen.reels",
+  "id": "ui.screen.reels",
   "kind": "procedural",
-  "version": 4,
-  "hash": "e14dc3f027abd88493efd7491799dce58263e3bb9fcf26911dedf8f08c1e59f5",
-  "approved": false,
-  "placeholder": true,
+  "version": 1,
+  "hash": "138cda5479dee0fd74e3ae7909f908ad3cacb0c2852f2592418e12d337190146",
+  "approved": true,
+  "placeholder": false,
   "texture": "",
   "texture_path": "",
   "png_sha256": "",
@@ -6699,7 +8649,102 @@
   ],
   "animations": {},
   "ninepatch": null,
-  "params": {},
+  "params": {
+   "screen": "reels",
+   "theme": "theme.dungeon",
+   "exclude": [
+    "fauna.dungeon_rat"
+   ],
+   "cargoList": [
+    "letter",
+    "vase",
+    "ice_cream"
+   ],
+   "recipientList": [
+    "old_miner",
+    "zombie",
+    "goblin_smith"
+   ],
+   "cargo": "letter",
+   "recipient": "old_miner",
+   "liked": true,
+   "rerolls": 1,
+   "cat": "idle"
+  },
+  "palette": {
+   "a": "#be4a2f",
+   "b": "#d77643",
+   "c": "#ead4aa",
+   "d": "#e4a672",
+   "e": "#b86f50",
+   "f": "#733e39",
+   "g": "#3e2731",
+   "h": "#a22633",
+   "i": "#e43b44",
+   "j": "#f77622",
+   "k": "#feae34",
+   "l": "#fee761",
+   "m": "#63c74d",
+   "n": "#3e8948",
+   "o": "#265c42",
+   "p": "#193c3e",
+   "q": "#124e89",
+   "r": "#0099db",
+   "s": "#2ce8f5",
+   "t": "#ffffff",
+   "u": "#c0cbdc",
+   "v": "#8b9bb4",
+   "w": "#5a6988",
+   "x": "#3a4466",
+   "y": "#262b44",
+   "z": "#181425",
+   "A": "#ff0044",
+   "B": "#68386c",
+   "C": "#b55088",
+   "D": "#f6757a",
+   "E": "#e8b796",
+   "F": "#c28569"
+  },
+  "depends": [
+   "theme.dungeon",
+   "ui.panel",
+   "ui.keycap",
+   "char.lucky_cat",
+   "cargo.letter",
+   "cargo.vase",
+   "cargo.ice_cream",
+   "avatar.old_miner",
+   "avatar.zombie",
+   "avatar.goblin_smith",
+   "ui.delivery_icons"
+  ],
+  "resource": "res://generated/art/metadata/ui.screen.reels.tres"
+ },
+ "art:ui.screen.rulecard": {
+  "uid": "art:ui.screen.rulecard",
+  "id": "ui.screen.rulecard",
+  "kind": "procedural",
+  "version": 4,
+  "hash": "e14dc3f027abd88493efd7491799dce58263e3bb9fcf26911dedf8f08c1e59f5",
+  "approved": true,
+  "placeholder": false,
+  "texture": "",
+  "texture_path": "",
+  "png_sha256": "",
+  "size": [
+   0,
+   0
+  ],
+  "frame_count": 0,
+  "anchor": [
+   0,
+   0
+  ],
+  "animations": {},
+  "ninepatch": null,
+  "params": {
+   "screen": "rulecard"
+  },
   "palette": {
    "a": "#be4a2f",
    "b": "#d77643",
@@ -6750,8 +8795,8 @@
   "kind": "procedural",
   "version": 4,
   "hash": "4c6df2e53a82b5b26efcfea702f0332847c7cb07b829d2352b04c3e21fa3df1a",
-  "approved": false,
-  "placeholder": true,
+  "approved": true,
+  "placeholder": false,
   "texture": "",
   "texture_path": "",
   "png_sha256": "",
@@ -6766,7 +8811,51 @@
   ],
   "animations": {},
   "ninepatch": null,
-  "params": {},
+  "params": {
+   "screen": "settings",
+   "items": [
+    {
+     "key": "settings.language",
+     "type": "value",
+     "valueKey": "@language"
+    },
+    {
+     "key": "settings.music",
+     "type": "slider",
+     "value": 8
+    },
+    {
+     "key": "settings.sfx",
+     "type": "slider",
+     "value": 8
+    },
+    {
+     "key": "settings.scale",
+     "type": "value",
+     "valueKey": "settings.scale.auto"
+    },
+    {
+     "key": "settings.env",
+     "type": "value",
+     "valueKey": "env.full"
+    },
+    {
+     "key": "settings.grid",
+     "type": "toggle",
+     "value": false
+    },
+    {
+     "key": "settings.unlock",
+     "type": "toggle",
+     "value": false
+    },
+    {
+     "key": "settings.tutorial",
+     "type": "value",
+     "valueKey": "settings.run"
+    }
+   ]
+  },
   "palette": {
    "a": "#be4a2f",
    "b": "#d77643",
@@ -6809,6 +8898,269 @@
    "ui.panel"
   ],
   "resource": "res://generated/art/metadata/ui.screen.settings.tres"
+ },
+ "art:ui.screen.settlement": {
+  "uid": "art:ui.screen.settlement",
+  "id": "ui.screen.settlement",
+  "kind": "procedural",
+  "version": 1,
+  "hash": "5e949d677dd27100d1860b728932206d1e9053f2ff1e8b5d28f71ca5b44ed929",
+  "approved": true,
+  "placeholder": false,
+  "texture": "",
+  "texture_path": "",
+  "png_sha256": "",
+  "size": [
+   0,
+   0
+  ],
+  "frame_count": 0,
+  "anchor": [
+   0,
+   0
+  ],
+  "animations": {},
+  "ninepatch": null,
+  "params": {
+   "screen": "settlement",
+   "theme": "theme.dungeon",
+   "exclude": [
+    "fauna.dungeon_rat"
+   ],
+   "recipient": "old_miner",
+   "cargo": "letter",
+   "integrity": 3,
+   "max": 3,
+   "secs": 41.2,
+   "par": 36,
+   "timePct": 136,
+   "likePct": 150,
+   "pay": 30,
+   "tip": 61,
+   "picked": 25,
+   "total": 86,
+   "rating": "A"
+  },
+  "palette": {
+   "a": "#be4a2f",
+   "b": "#d77643",
+   "c": "#ead4aa",
+   "d": "#e4a672",
+   "e": "#b86f50",
+   "f": "#733e39",
+   "g": "#3e2731",
+   "h": "#a22633",
+   "i": "#e43b44",
+   "j": "#f77622",
+   "k": "#feae34",
+   "l": "#fee761",
+   "m": "#63c74d",
+   "n": "#3e8948",
+   "o": "#265c42",
+   "p": "#193c3e",
+   "q": "#124e89",
+   "r": "#0099db",
+   "s": "#2ce8f5",
+   "t": "#ffffff",
+   "u": "#c0cbdc",
+   "v": "#8b9bb4",
+   "w": "#5a6988",
+   "x": "#3a4466",
+   "y": "#262b44",
+   "z": "#181425",
+   "A": "#ff0044",
+   "B": "#68386c",
+   "C": "#b55088",
+   "D": "#f6757a",
+   "E": "#e8b796",
+   "F": "#c28569"
+  },
+  "depends": [
+   "theme.dungeon",
+   "ui.panel",
+   "avatar.old_miner",
+   "item.coin",
+   "ui.delivery_icons"
+  ],
+  "resource": "res://generated/art/metadata/ui.screen.settlement.tres"
+ },
+ "art:ui.screen.settlement_fail": {
+  "uid": "art:ui.screen.settlement_fail",
+  "id": "ui.screen.settlement_fail",
+  "kind": "procedural",
+  "version": 1,
+  "hash": "e46ea2a5a1354fc34a6227afad82fc4785c81de39900d891fb46fca7106cfee5",
+  "approved": true,
+  "placeholder": false,
+  "texture": "",
+  "texture_path": "",
+  "png_sha256": "",
+  "size": [
+   0,
+   0
+  ],
+  "frame_count": 0,
+  "anchor": [
+   0,
+   0
+  ],
+  "animations": {},
+  "ninepatch": null,
+  "params": {
+   "screen": "settlement_fail",
+   "theme": "theme.dungeon",
+   "exclude": [
+    "fauna.dungeon_rat"
+   ],
+   "recipient": "zombie",
+   "cargo": "vase",
+   "reason": "hearts",
+   "picked": 30,
+   "kept": 15
+  },
+  "palette": {
+   "a": "#be4a2f",
+   "b": "#d77643",
+   "c": "#ead4aa",
+   "d": "#e4a672",
+   "e": "#b86f50",
+   "f": "#733e39",
+   "g": "#3e2731",
+   "h": "#a22633",
+   "i": "#e43b44",
+   "j": "#f77622",
+   "k": "#feae34",
+   "l": "#fee761",
+   "m": "#63c74d",
+   "n": "#3e8948",
+   "o": "#265c42",
+   "p": "#193c3e",
+   "q": "#124e89",
+   "r": "#0099db",
+   "s": "#2ce8f5",
+   "t": "#ffffff",
+   "u": "#c0cbdc",
+   "v": "#8b9bb4",
+   "w": "#5a6988",
+   "x": "#3a4466",
+   "y": "#262b44",
+   "z": "#181425",
+   "A": "#ff0044",
+   "B": "#68386c",
+   "C": "#b55088",
+   "D": "#f6757a",
+   "E": "#e8b796",
+   "F": "#c28569"
+  },
+  "depends": [
+   "theme.dungeon",
+   "ui.panel",
+   "avatar.zombie",
+   "cargo.vase"
+  ],
+  "resource": "res://generated/art/metadata/ui.screen.settlement_fail.tres"
+ },
+ "art:ui.screen.shop": {
+  "uid": "art:ui.screen.shop",
+  "id": "ui.screen.shop",
+  "kind": "procedural",
+  "version": 1,
+  "hash": "267d16250937ed3619c685b049c770d516487ec82e69364d75c7a3a4bf98c85a",
+  "approved": true,
+  "placeholder": false,
+  "texture": "",
+  "texture_path": "",
+  "png_sha256": "",
+  "size": [
+   0,
+   0
+  ],
+  "frame_count": 0,
+  "anchor": [
+   0,
+   0
+  ],
+  "animations": {},
+  "ninepatch": null,
+  "params": {
+   "screen": "shop",
+   "theme": "theme.dungeon",
+   "exclude": [
+    "fauna.dungeon_rat"
+   ],
+   "coins": 45,
+   "goods": [
+    {
+     "id": "sandbag",
+     "price": 10,
+     "stock": 5
+    },
+    {
+     "id": "first_aid",
+     "price": 50,
+     "stock": 1
+    },
+    {
+     "id": "rope_ladder",
+     "price": 25,
+     "stock": 0
+    }
+   ],
+   "focus": 0,
+   "bag": [
+    "first_aid"
+   ],
+   "slots": 3,
+   "sand": 2
+  },
+  "palette": {
+   "a": "#be4a2f",
+   "b": "#d77643",
+   "c": "#ead4aa",
+   "d": "#e4a672",
+   "e": "#b86f50",
+   "f": "#733e39",
+   "g": "#3e2731",
+   "h": "#a22633",
+   "i": "#e43b44",
+   "j": "#f77622",
+   "k": "#feae34",
+   "l": "#fee761",
+   "m": "#63c74d",
+   "n": "#3e8948",
+   "o": "#265c42",
+   "p": "#193c3e",
+   "q": "#124e89",
+   "r": "#0099db",
+   "s": "#2ce8f5",
+   "t": "#ffffff",
+   "u": "#c0cbdc",
+   "v": "#8b9bb4",
+   "w": "#5a6988",
+   "x": "#3a4466",
+   "y": "#262b44",
+   "z": "#181425",
+   "A": "#ff0044",
+   "B": "#68386c",
+   "C": "#b55088",
+   "D": "#f6757a",
+   "E": "#e8b796",
+   "F": "#c28569"
+  },
+  "depends": [
+   "theme.dungeon",
+   "ui.panel",
+   "ui.keycap",
+   "ui.bubble",
+   "ui.bubble_tail",
+   "char.turtle_keeper",
+   "item.coin",
+   "item.sandbag",
+   "item.first_aid",
+   "item.rope_ladder",
+   "ui.delivery_icons"
+  ],
+  "resource": "res://generated/art/metadata/ui.screen.shop.tres"
  },
  "art:ui.target": {
   "uid": "art:ui.target",

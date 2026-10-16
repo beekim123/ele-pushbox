@@ -4,9 +4,10 @@
 // it is not SDK verification. Usage: node tools/check-levels.mjs [--write] [ID...]
 import fs from "node:fs";
 import path from "node:path";
-import { ROOT, loadCore, listJson, readJson } from "./lib/load-core.mjs";
+import { ROOT, loadCore, loadMechanisms, listJson, readJson } from "./lib/load-core.mjs";
 
 const PB = loadCore(["tilemodel"]);
+loadMechanisms();
 const TM = PB.tilemodel;
 const args = process.argv.slice(2);
 const write = args.includes("--write");
@@ -42,9 +43,12 @@ for (const rel of listJson("content/levels")) {
     entry.shortest = best.solved ? best.solution.length : null;
     entry.shortest_solution = best.solved ? best.solution : null;
     entry.explored = best.explored;
+    entry.shortcut = !!(entry.author_ok && best.solved && entry.author_steps - entry.shortest >= 2);
     const dead = TM.deadEnds(spec, 80000);
     entry.reachable_states = dead.states;
     entry.dead_end_states = dead.complete ? dead.dead : null;
+    entry.search_capped = !best.solved && !best.exhausted || !dead.complete;
+    entry.unknown_mechanisms = TM.unknownMechanisms(spec);
     entry.warnings = sandWarnings(spec);
     if (!entry.author_ok || !best.solved) failed++;
   } catch (error) {
@@ -52,7 +56,7 @@ for (const rel of listJson("content/levels")) {
   }
   report.push(entry);
   const flag = entry.error ? "ERROR" : entry.author_ok && entry.shortest ? "ok" : "FAIL";
-  console.log(`${flag.padEnd(5)} ${entry.id.padEnd(4)} author=${entry.author_steps} shortest=${entry.shortest} states=${entry.reachable_states} dead=${entry.dead_end_states}${entry.warnings && entry.warnings.length ? " warn=" + entry.warnings.length : ""}${entry.author_error ? " " + entry.author_error : ""}${entry.error ? " " + entry.error : ""}`);
+  console.log(`${flag.padEnd(5)} ${entry.id.padEnd(4)} author=${entry.author_steps} shortest=${entry.shortest} states=${entry.reachable_states} dead=${entry.dead_end_states}${entry.shortcut ? " SHORTCUT" : ""}${entry.search_capped ? " CAPPED" : ""}${entry.unknown_mechanisms && entry.unknown_mechanisms.length ? " unknown=" + entry.unknown_mechanisms.join(",") : ""}${entry.warnings && entry.warnings.length ? " warn=" + entry.warnings.length : ""}${entry.author_error ? " " + entry.author_error : ""}${entry.error ? " " + entry.error : ""}`);
 }
 if (write) {
   const out = path.join(ROOT, "content/model-check.generated.json");

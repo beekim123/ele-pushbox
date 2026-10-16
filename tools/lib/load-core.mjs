@@ -11,6 +11,10 @@ export function loadCore(names) {
   for (const name of names) {
     const file = path.join(ROOT, "workbench/js/core", name + ".js");
     vm.runInThisContext(fs.readFileSync(file, "utf8"), { filename: file });
+    if (name === "tilemodel") {
+      const runtime = path.join(ROOT, "workbench/js/core/tilemodel-runtime.js");
+      vm.runInThisContext(fs.readFileSync(runtime, "utf8"), { filename: runtime });
+    }
   }
   return globalThis.PB;
 }
@@ -29,4 +33,14 @@ export function listJson(dir) {
     else if (entry.name.endsWith(".json")) out.push(rel);
   }
   return out;
+}
+
+// Loads every mechanism plugin (workbench/js/core/mech/*.js) into the tile model.
+// Call after loadCore(["tilemodel"]).
+export function loadMechanisms() {
+  const dir = path.join(ROOT, "workbench/js/core/mech");
+  if (!fs.existsSync(dir)) return [];
+  const names = fs.readdirSync(dir).filter((f) => f.endsWith(".js")).sort();
+  for (const f of names) vm.runInThisContext(fs.readFileSync(path.join(dir, f), "utf8"), { filename: path.join(dir, f) });
+  return names.map((f) => f.replace(/\.js$/, ""));
 }

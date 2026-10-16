@@ -1,13 +1,23 @@
 {
  "format": "portitor.import-inventory/1",
- "source_id_map_sha256": "cfcd4cd7dd065b27ff452015a7de36d5377073625e20ac0f52ba95d75f75fc47",
+ "source_id_map_sha256": "080094269ab841641a7397c187b5ea2a493936424e68be31ba799ac291420891",
  "files": [
   {
    "path": "generated/id-map.json",
    "owners": [
+    "art:avatar.goblin_smith",
+    "art:avatar.old_miner",
+    "art:avatar.zombie",
+    "art:cargo.ice_cream",
+    "art:cargo.letter",
+    "art:cargo.vase",
+    "art:char.goblin_smith",
+    "art:char.lucky_cat",
     "art:char.miner",
     "art:char.portitor",
     "art:char.portitor_alt",
+    "art:char.turtle_keeper",
+    "art:char.zombie",
     "art:deco.cave_crystal",
     "art:deco.cave_mushroom",
     "art:deco.cosmos_sprout",
@@ -34,10 +44,14 @@
     "art:fx.frost",
     "art:fx.goal_spark",
     "art:fx.land_dust",
+    "art:fx.monster_poof",
     "art:fx.ripple",
     "art:fx.rubble",
     "art:fx.splash",
     "art:item.bomb",
+    "art:item.coin",
+    "art:item.first_aid",
+    "art:item.rope_ladder",
     "art:item.sandbag",
     "art:material.chapter2_5",
     "art:mech.bin",
@@ -46,6 +60,7 @@
     "art:mech.button",
     "art:mech.door",
     "art:mech.exit_flag",
+    "art:mech.ferry_gate",
     "art:mech.frost_vent",
     "art:mech.heat_vent",
     "art:mech.ladder",
@@ -54,12 +69,16 @@
     "art:mech.link_symbol",
     "art:mech.plate",
     "art:mech.portal",
+    "art:mech.rope_ladder",
     "art:mech.socket",
     "art:mech.socket_lit",
     "art:mech.torch",
     "art:mech.vine",
+    "art:monster.rat_swarm",
+    "art:monster.skeleton_guard",
     "art:obj.crate_iron",
     "art:obj.crate_wood",
+    "art:obj.goblin_forge",
     "art:theme.cave",
     "art:theme.cosmos",
     "art:theme.dungeon",
@@ -70,6 +89,7 @@
     "art:ui.bubble_tail",
     "art:ui.class_icon",
     "art:ui.cursor",
+    "art:ui.delivery_icons",
     "art:ui.emote",
     "art:ui.goal_lamp",
     "art:ui.icons",
@@ -79,13 +99,19 @@
     "art:ui.rule_icon",
     "art:ui.screen.chapters",
     "art:ui.screen.complete",
+    "art:ui.screen.delivery_hud",
+    "art:ui.screen.delivery_pause",
     "art:ui.screen.dialogue",
     "art:ui.screen.hint",
     "art:ui.screen.levels",
     "art:ui.screen.lobby",
     "art:ui.screen.pause",
+    "art:ui.screen.reels",
     "art:ui.screen.rulecard",
     "art:ui.screen.settings",
+    "art:ui.screen.settlement",
+    "art:ui.screen.settlement_fail",
+    "art:ui.screen.shop",
     "art:ui.target",
     "art:ui.theme_emblem",
     "badge:bounty",
@@ -526,6 +552,23 @@
     "recipient:xolo",
     "recipient:yama",
     "recipient:zombie",
+    "room:dungeon_burrow",
+    "room:dungeon_corner",
+    "room:dungeon_gate",
+    "room:dungeon_guard",
+    "room:dungeon_hall",
+    "room:dungeon_home",
+    "room:dungeon_plate",
+    "room:dungeon_shaft",
+    "room:dungeon_station",
+    "room:dungeon_well",
+    "slice:dungeon_1",
+    "text:cargo.ice_cream.name",
+    "text:cargo.ice_cream.rule",
+    "text:cargo.letter.name",
+    "text:cargo.letter.rule",
+    "text:cargo.vase.name",
+    "text:cargo.vase.rule",
     "text:chapter.1.blurb",
     "text:chapter.2.blurb",
     "text:chapter.3.blurb",
@@ -549,6 +592,39 @@
     "text:dlg.sample.npc",
     "text:dlg.sample.npc.name",
     "text:dlg.sample.self",
+    "text:dlv.done.again",
+    "text:dlv.done.base",
+    "text:dlv.done.hub",
+    "text:dlv.done.integrity",
+    "text:dlv.done.like",
+    "text:dlv.done.picked",
+    "text:dlv.done.rating",
+    "text:dlv.done.time",
+    "text:dlv.done.time_value",
+    "text:dlv.done.tip",
+    "text:dlv.done.title",
+    "text:dlv.done.total",
+    "text:dlv.fail.cargo",
+    "text:dlv.fail.hearts",
+    "text:dlv.fail.keep",
+    "text:dlv.fail.title",
+    "text:dlv.keys.buy",
+    "text:dlv.keys.go",
+    "text:dlv.keys.leave",
+    "text:dlv.keys.reel",
+    "text:dlv.keys.reroll",
+    "text:dlv.pause.give_up",
+    "text:dlv.pause.restart_room",
+    "text:dlv.reels.cargo",
+    "text:dlv.reels.likes",
+    "text:dlv.reels.recipient",
+    "text:dlv.reels.reroll",
+    "text:dlv.reels.title",
+    "text:dlv.shop.bag",
+    "text:dlv.shop.greet",
+    "text:dlv.shop.left",
+    "text:dlv.shop.sold_out",
+    "text:dlv.shop.title",
     "text:env.full",
     "text:env.lite",
     "text:env.off",
@@ -572,6 +648,12 @@
     "text:hint.rewind",
     "text:hint.title",
     "text:hud.controls",
+    "text:item.first_aid.desc",
+    "text:item.first_aid.name",
+    "text:item.rope_ladder.desc",
+    "text:item.rope_ladder.name",
+    "text:item.sandbag.desc",
+    "text:item.sandbag.name",
     "text:keys.back",
     "text:keys.confirm",
     "text:keys.play",
@@ -819,6 +901,7 @@
     "text:menu.continue",
     "text:menu.quit",
     "text:menu.settings",
+    "text:npc.turtle_keeper.name",
     "text:off",
     "text:on",
     "text:pause.hint",
@@ -830,6 +913,15 @@
     "text:pause.skip",
     "text:pause.title",
     "text:progress",
+    "text:recipient.goblin_smith.name",
+    "text:recipient.goblin_smith.rule",
+    "text:recipient.goblin_smith.thanks",
+    "text:recipient.old_miner.name",
+    "text:recipient.old_miner.rule",
+    "text:recipient.old_miner.thanks",
+    "text:recipient.zombie.name",
+    "text:recipient.zombie.rule",
+    "text:recipient.zombie.thanks",
     "text:rule.close",
     "text:rule.earth.name",
     "text:rule.earth.text",
@@ -903,7 +995,7 @@
     "world:wonderland",
     "world:xianxia"
    ],
-   "sha256": "cfcd4cd7dd065b27ff452015a7de36d5377073625e20ac0f52ba95d75f75fc47"
+   "sha256": "080094269ab841641a7397c187b5ea2a493936424e68be31ba799ac291420891"
   },
   {
    "path": "generated/content-manifest.json",
@@ -1346,6 +1438,17 @@
     "recipient:xolo",
     "recipient:yama",
     "recipient:zombie",
+    "room:dungeon_burrow",
+    "room:dungeon_corner",
+    "room:dungeon_gate",
+    "room:dungeon_guard",
+    "room:dungeon_hall",
+    "room:dungeon_home",
+    "room:dungeon_plate",
+    "room:dungeon_shaft",
+    "room:dungeon_station",
+    "room:dungeon_well",
+    "slice:dungeon_1",
     "upgrade:bag",
     "upgrade:cargo_guard",
     "upgrade:discount",
@@ -1394,14 +1497,24 @@
     "world:wonderland",
     "world:xianxia"
    ],
-   "sha256": "950e8997043b7fd637215aaf689f0094244fd0d94e62b30ddd64fce9d99d23ff"
+   "sha256": "68d2b1d50c781d31c113af0a71059c07afc7bdea8f1911420edaad39b435b2ab"
   },
   {
    "path": "generated/ids.gd",
    "owners": [
+    "art:avatar.goblin_smith",
+    "art:avatar.old_miner",
+    "art:avatar.zombie",
+    "art:cargo.ice_cream",
+    "art:cargo.letter",
+    "art:cargo.vase",
+    "art:char.goblin_smith",
+    "art:char.lucky_cat",
     "art:char.miner",
     "art:char.portitor",
     "art:char.portitor_alt",
+    "art:char.turtle_keeper",
+    "art:char.zombie",
     "art:deco.cave_crystal",
     "art:deco.cave_mushroom",
     "art:deco.cosmos_sprout",
@@ -1428,10 +1541,14 @@
     "art:fx.frost",
     "art:fx.goal_spark",
     "art:fx.land_dust",
+    "art:fx.monster_poof",
     "art:fx.ripple",
     "art:fx.rubble",
     "art:fx.splash",
     "art:item.bomb",
+    "art:item.coin",
+    "art:item.first_aid",
+    "art:item.rope_ladder",
     "art:item.sandbag",
     "art:material.chapter2_5",
     "art:mech.bin",
@@ -1440,6 +1557,7 @@
     "art:mech.button",
     "art:mech.door",
     "art:mech.exit_flag",
+    "art:mech.ferry_gate",
     "art:mech.frost_vent",
     "art:mech.heat_vent",
     "art:mech.ladder",
@@ -1448,12 +1566,16 @@
     "art:mech.link_symbol",
     "art:mech.plate",
     "art:mech.portal",
+    "art:mech.rope_ladder",
     "art:mech.socket",
     "art:mech.socket_lit",
     "art:mech.torch",
     "art:mech.vine",
+    "art:monster.rat_swarm",
+    "art:monster.skeleton_guard",
     "art:obj.crate_iron",
     "art:obj.crate_wood",
+    "art:obj.goblin_forge",
     "art:theme.cave",
     "art:theme.cosmos",
     "art:theme.dungeon",
@@ -1464,6 +1586,7 @@
     "art:ui.bubble_tail",
     "art:ui.class_icon",
     "art:ui.cursor",
+    "art:ui.delivery_icons",
     "art:ui.emote",
     "art:ui.goal_lamp",
     "art:ui.icons",
@@ -1473,13 +1596,19 @@
     "art:ui.rule_icon",
     "art:ui.screen.chapters",
     "art:ui.screen.complete",
+    "art:ui.screen.delivery_hud",
+    "art:ui.screen.delivery_pause",
     "art:ui.screen.dialogue",
     "art:ui.screen.hint",
     "art:ui.screen.levels",
     "art:ui.screen.lobby",
     "art:ui.screen.pause",
+    "art:ui.screen.reels",
     "art:ui.screen.rulecard",
     "art:ui.screen.settings",
+    "art:ui.screen.settlement",
+    "art:ui.screen.settlement_fail",
+    "art:ui.screen.shop",
     "art:ui.target",
     "art:ui.theme_emblem",
     "badge:bounty",
@@ -1920,6 +2049,23 @@
     "recipient:xolo",
     "recipient:yama",
     "recipient:zombie",
+    "room:dungeon_burrow",
+    "room:dungeon_corner",
+    "room:dungeon_gate",
+    "room:dungeon_guard",
+    "room:dungeon_hall",
+    "room:dungeon_home",
+    "room:dungeon_plate",
+    "room:dungeon_shaft",
+    "room:dungeon_station",
+    "room:dungeon_well",
+    "slice:dungeon_1",
+    "text:cargo.ice_cream.name",
+    "text:cargo.ice_cream.rule",
+    "text:cargo.letter.name",
+    "text:cargo.letter.rule",
+    "text:cargo.vase.name",
+    "text:cargo.vase.rule",
     "text:chapter.1.blurb",
     "text:chapter.2.blurb",
     "text:chapter.3.blurb",
@@ -1943,6 +2089,39 @@
     "text:dlg.sample.npc",
     "text:dlg.sample.npc.name",
     "text:dlg.sample.self",
+    "text:dlv.done.again",
+    "text:dlv.done.base",
+    "text:dlv.done.hub",
+    "text:dlv.done.integrity",
+    "text:dlv.done.like",
+    "text:dlv.done.picked",
+    "text:dlv.done.rating",
+    "text:dlv.done.time",
+    "text:dlv.done.time_value",
+    "text:dlv.done.tip",
+    "text:dlv.done.title",
+    "text:dlv.done.total",
+    "text:dlv.fail.cargo",
+    "text:dlv.fail.hearts",
+    "text:dlv.fail.keep",
+    "text:dlv.fail.title",
+    "text:dlv.keys.buy",
+    "text:dlv.keys.go",
+    "text:dlv.keys.leave",
+    "text:dlv.keys.reel",
+    "text:dlv.keys.reroll",
+    "text:dlv.pause.give_up",
+    "text:dlv.pause.restart_room",
+    "text:dlv.reels.cargo",
+    "text:dlv.reels.likes",
+    "text:dlv.reels.recipient",
+    "text:dlv.reels.reroll",
+    "text:dlv.reels.title",
+    "text:dlv.shop.bag",
+    "text:dlv.shop.greet",
+    "text:dlv.shop.left",
+    "text:dlv.shop.sold_out",
+    "text:dlv.shop.title",
     "text:env.full",
     "text:env.lite",
     "text:env.off",
@@ -1966,6 +2145,12 @@
     "text:hint.rewind",
     "text:hint.title",
     "text:hud.controls",
+    "text:item.first_aid.desc",
+    "text:item.first_aid.name",
+    "text:item.rope_ladder.desc",
+    "text:item.rope_ladder.name",
+    "text:item.sandbag.desc",
+    "text:item.sandbag.name",
     "text:keys.back",
     "text:keys.confirm",
     "text:keys.play",
@@ -2213,6 +2398,7 @@
     "text:menu.continue",
     "text:menu.quit",
     "text:menu.settings",
+    "text:npc.turtle_keeper.name",
     "text:off",
     "text:on",
     "text:pause.hint",
@@ -2224,6 +2410,15 @@
     "text:pause.skip",
     "text:pause.title",
     "text:progress",
+    "text:recipient.goblin_smith.name",
+    "text:recipient.goblin_smith.rule",
+    "text:recipient.goblin_smith.thanks",
+    "text:recipient.old_miner.name",
+    "text:recipient.old_miner.rule",
+    "text:recipient.old_miner.thanks",
+    "text:recipient.zombie.name",
+    "text:recipient.zombie.rule",
+    "text:recipient.zombie.thanks",
     "text:rule.close",
     "text:rule.earth.name",
     "text:rule.earth.text",
@@ -2297,7 +2492,7 @@
     "world:wonderland",
     "world:xianxia"
    ],
-   "sha256": "479a3a25312534d9031773e8028757aa50f0269c597663bfedb0a1b294b6e039"
+   "sha256": "57bc32d683087d7fec6318684c659583c540cdf6f18ed2f330e5dcad333dab1c"
   },
   {
    "path": "generated/content/levels/lab/basics/M01.json",
@@ -2686,7 +2881,7 @@
     "world:wonderland",
     "world:xianxia"
    ],
-   "sha256": "33a74658418b29ce5aaff44d1e71bc7dc036f97b3a0e885fbd096c737e5b052f"
+   "sha256": "3a0b2e7a02f7a300a4f0815ab0ffc7d4b60f0751197a7833d06bcdba25e49766"
   },
   {
    "path": "generated/content/catalog/recipients.json",
@@ -2774,7 +2969,7 @@
     "recipient:yama",
     "recipient:zombie"
    ],
-   "sha256": "ee20b4653f0833561e3357c614138b25dcbcb941912a38a4d022cd1eba537a05"
+   "sha256": "ea0f2395cb1b33b4a35a253c8c845e44524ed4b8272d778aa24b17b1e2f10918"
   },
   {
    "path": "generated/content/catalog/cargo.json",
@@ -2828,7 +3023,7 @@
     "cargo:water_bucket",
     "cargo:watermelon"
    ],
-   "sha256": "0e5c48bbc2642898c4b870905d3f6306a681167465011cadd0d8cfe196a3f5c8"
+   "sha256": "03fc7b985ee4fa520e88a5fad428caad4eafc4496f5beac70d3aab139d72ba14"
   },
   {
    "path": "generated/content/catalog/combos.json",
@@ -2956,7 +3151,7 @@
     "monster:yeti",
     "monster:zombie_mob"
    ],
-   "sha256": "19f573d6204b1d3456ad91bd553a4abf4c31a7453c0cd71db64e9703b08d7c98"
+   "sha256": "d7c08cdb1271a21a43ac5c1f0f88b3a75e702837e37129e207d69f273c216347"
   },
   {
    "path": "generated/content/catalog/items.json",
@@ -2982,7 +3177,7 @@
     "item:water_jug",
     "item:whistle"
    ],
-   "sha256": "5736b4e575f024bc0747f3d00ca99bcb2f273137bac92df75115036be081c6dc"
+   "sha256": "fb63e83e34173b6ed85bbabc651a6b6a3c062d3e3b24103bd254c24c03bbacb9"
   },
   {
    "path": "generated/content/catalog/buffs.json",
@@ -3059,8 +3254,21 @@
    "sha256": "cbda19ea0158a8f18ee3975f4a52c7d97e3e0e15cc1495151b08f1b7e138c478"
   },
   {
+   "path": "generated/content/catalog/slices.json",
+   "owners": [
+    "slice:dungeon_1"
+   ],
+   "sha256": "919b8069ac89ecfcc09d489a551327693c197ccb60ac9a6dcf81ae6576f7d2df"
+  },
+  {
    "path": "generated/content/i18n/zh-Hans.json",
    "owners": [
+    "text:cargo.ice_cream.name",
+    "text:cargo.ice_cream.rule",
+    "text:cargo.letter.name",
+    "text:cargo.letter.rule",
+    "text:cargo.vase.name",
+    "text:cargo.vase.rule",
     "text:chapter.1.blurb",
     "text:chapter.2.blurb",
     "text:chapter.3.blurb",
@@ -3084,6 +3292,39 @@
     "text:dlg.sample.npc",
     "text:dlg.sample.npc.name",
     "text:dlg.sample.self",
+    "text:dlv.done.again",
+    "text:dlv.done.base",
+    "text:dlv.done.hub",
+    "text:dlv.done.integrity",
+    "text:dlv.done.like",
+    "text:dlv.done.picked",
+    "text:dlv.done.rating",
+    "text:dlv.done.time",
+    "text:dlv.done.time_value",
+    "text:dlv.done.tip",
+    "text:dlv.done.title",
+    "text:dlv.done.total",
+    "text:dlv.fail.cargo",
+    "text:dlv.fail.hearts",
+    "text:dlv.fail.keep",
+    "text:dlv.fail.title",
+    "text:dlv.keys.buy",
+    "text:dlv.keys.go",
+    "text:dlv.keys.leave",
+    "text:dlv.keys.reel",
+    "text:dlv.keys.reroll",
+    "text:dlv.pause.give_up",
+    "text:dlv.pause.restart_room",
+    "text:dlv.reels.cargo",
+    "text:dlv.reels.likes",
+    "text:dlv.reels.recipient",
+    "text:dlv.reels.reroll",
+    "text:dlv.reels.title",
+    "text:dlv.shop.bag",
+    "text:dlv.shop.greet",
+    "text:dlv.shop.left",
+    "text:dlv.shop.sold_out",
+    "text:dlv.shop.title",
     "text:env.full",
     "text:env.lite",
     "text:env.off",
@@ -3107,6 +3348,12 @@
     "text:hint.rewind",
     "text:hint.title",
     "text:hud.controls",
+    "text:item.first_aid.desc",
+    "text:item.first_aid.name",
+    "text:item.rope_ladder.desc",
+    "text:item.rope_ladder.name",
+    "text:item.sandbag.desc",
+    "text:item.sandbag.name",
     "text:keys.back",
     "text:keys.confirm",
     "text:keys.play",
@@ -3354,6 +3601,7 @@
     "text:menu.continue",
     "text:menu.quit",
     "text:menu.settings",
+    "text:npc.turtle_keeper.name",
     "text:off",
     "text:on",
     "text:pause.hint",
@@ -3365,6 +3613,15 @@
     "text:pause.skip",
     "text:pause.title",
     "text:progress",
+    "text:recipient.goblin_smith.name",
+    "text:recipient.goblin_smith.rule",
+    "text:recipient.goblin_smith.thanks",
+    "text:recipient.old_miner.name",
+    "text:recipient.old_miner.rule",
+    "text:recipient.old_miner.thanks",
+    "text:recipient.zombie.name",
+    "text:recipient.zombie.rule",
+    "text:recipient.zombie.thanks",
     "text:rule.close",
     "text:rule.earth.name",
     "text:rule.earth.text",
@@ -3391,11 +3648,17 @@
     "text:theme.ruins",
     "text:theme.sky"
    ],
-   "sha256": "013a379445e03d0f8ad118affece96e12288bc92202e6f6f904a1fe4729475b4"
+   "sha256": "ed8fac5c4b851fac38f83b6149539386c40712b00e97fd5ff19690069bb4c021"
   },
   {
    "path": "generated/content/i18n/en.json",
    "owners": [
+    "text:cargo.ice_cream.name",
+    "text:cargo.ice_cream.rule",
+    "text:cargo.letter.name",
+    "text:cargo.letter.rule",
+    "text:cargo.vase.name",
+    "text:cargo.vase.rule",
     "text:chapter.1.blurb",
     "text:chapter.2.blurb",
     "text:chapter.3.blurb",
@@ -3419,6 +3682,39 @@
     "text:dlg.sample.npc",
     "text:dlg.sample.npc.name",
     "text:dlg.sample.self",
+    "text:dlv.done.again",
+    "text:dlv.done.base",
+    "text:dlv.done.hub",
+    "text:dlv.done.integrity",
+    "text:dlv.done.like",
+    "text:dlv.done.picked",
+    "text:dlv.done.rating",
+    "text:dlv.done.time",
+    "text:dlv.done.time_value",
+    "text:dlv.done.tip",
+    "text:dlv.done.title",
+    "text:dlv.done.total",
+    "text:dlv.fail.cargo",
+    "text:dlv.fail.hearts",
+    "text:dlv.fail.keep",
+    "text:dlv.fail.title",
+    "text:dlv.keys.buy",
+    "text:dlv.keys.go",
+    "text:dlv.keys.leave",
+    "text:dlv.keys.reel",
+    "text:dlv.keys.reroll",
+    "text:dlv.pause.give_up",
+    "text:dlv.pause.restart_room",
+    "text:dlv.reels.cargo",
+    "text:dlv.reels.likes",
+    "text:dlv.reels.recipient",
+    "text:dlv.reels.reroll",
+    "text:dlv.reels.title",
+    "text:dlv.shop.bag",
+    "text:dlv.shop.greet",
+    "text:dlv.shop.left",
+    "text:dlv.shop.sold_out",
+    "text:dlv.shop.title",
     "text:env.full",
     "text:env.lite",
     "text:env.off",
@@ -3442,6 +3738,12 @@
     "text:hint.rewind",
     "text:hint.title",
     "text:hud.controls",
+    "text:item.first_aid.desc",
+    "text:item.first_aid.name",
+    "text:item.rope_ladder.desc",
+    "text:item.rope_ladder.name",
+    "text:item.sandbag.desc",
+    "text:item.sandbag.name",
     "text:keys.back",
     "text:keys.confirm",
     "text:keys.play",
@@ -3689,6 +3991,7 @@
     "text:menu.continue",
     "text:menu.quit",
     "text:menu.settings",
+    "text:npc.turtle_keeper.name",
     "text:off",
     "text:on",
     "text:pause.hint",
@@ -3700,6 +4003,15 @@
     "text:pause.skip",
     "text:pause.title",
     "text:progress",
+    "text:recipient.goblin_smith.name",
+    "text:recipient.goblin_smith.rule",
+    "text:recipient.goblin_smith.thanks",
+    "text:recipient.old_miner.name",
+    "text:recipient.old_miner.rule",
+    "text:recipient.old_miner.thanks",
+    "text:recipient.zombie.name",
+    "text:recipient.zombie.rule",
+    "text:recipient.zombie.thanks",
     "text:rule.close",
     "text:rule.earth.name",
     "text:rule.earth.text",
@@ -3726,7 +4038,119 @@
     "text:theme.ruins",
     "text:theme.sky"
    ],
-   "sha256": "5581e330bd8c3c7204dca4cf569cbb93c983e8f571ac8ec8fd82fc4cd0b4925a"
+   "sha256": "d1ceab76c307b458ca73037378fcc0ac84337d6c42a7cd571faa95cda0c53813"
+  },
+  {
+   "path": "generated/art/sheets/avatar.goblin_smith.png",
+   "owners": [
+    "art:avatar.goblin_smith"
+   ],
+   "sha256": "e4796a022839e4c5ef833ee60cb2ea9feba58c05ab2c9b4f0cacb8ff1b119ebf"
+  },
+  {
+   "path": "generated/art/avatar.goblin_smith.tres",
+   "owners": [
+    "art:avatar.goblin_smith"
+   ],
+   "sha256": "08c5c5deb6cd5e8aeae1a4a048e35cd844de7917f71ef2e02d0ad5e7f03e40f1"
+  },
+  {
+   "path": "generated/art/sheets/avatar.old_miner.png",
+   "owners": [
+    "art:avatar.old_miner"
+   ],
+   "sha256": "4dce7c7b60fc4b5597b546c12173e6204a29cc285e1d45b2d70d980fc3cf3981"
+  },
+  {
+   "path": "generated/art/avatar.old_miner.tres",
+   "owners": [
+    "art:avatar.old_miner"
+   ],
+   "sha256": "e95282d3b0c56b99a6a54b9c9f7e66d1a4332f00c5a71962942d2e777c57da71"
+  },
+  {
+   "path": "generated/art/sheets/avatar.zombie.png",
+   "owners": [
+    "art:avatar.zombie"
+   ],
+   "sha256": "770aeabf60988fb214be6a7648e0765715ddb20ea3e14e0904b3b4fb3c288cd6"
+  },
+  {
+   "path": "generated/art/avatar.zombie.tres",
+   "owners": [
+    "art:avatar.zombie"
+   ],
+   "sha256": "36284402010e611d2dba7ae03d72b7fa10332589891ec0197a6496ff8e0ff119"
+  },
+  {
+   "path": "generated/art/sheets/cargo.ice_cream.png",
+   "owners": [
+    "art:cargo.ice_cream"
+   ],
+   "sha256": "654824ef2892c06109bb6233ce9da651d3eecb105c1f7f7759550de18060505a"
+  },
+  {
+   "path": "generated/art/cargo.ice_cream.tres",
+   "owners": [
+    "art:cargo.ice_cream"
+   ],
+   "sha256": "a5027a153c014f1358547cb3210a091e5e9cbe3038856b1b83ebaca9901f86db"
+  },
+  {
+   "path": "generated/art/sheets/cargo.letter.png",
+   "owners": [
+    "art:cargo.letter"
+   ],
+   "sha256": "109024957813201bc8ecf5abb5cd7090cdbb572704a8353551be972fca6dafb1"
+  },
+  {
+   "path": "generated/art/cargo.letter.tres",
+   "owners": [
+    "art:cargo.letter"
+   ],
+   "sha256": "697b872a71ae13562958ffa162a30944a64b3a7c478aedb44f2b179089e8cdd0"
+  },
+  {
+   "path": "generated/art/sheets/cargo.vase.png",
+   "owners": [
+    "art:cargo.vase"
+   ],
+   "sha256": "bae4114d96e52ae037b2df0b03369b27c4a9439e7d6f1f27b5703b9293072495"
+  },
+  {
+   "path": "generated/art/cargo.vase.tres",
+   "owners": [
+    "art:cargo.vase"
+   ],
+   "sha256": "c3f3518886573d0ed805d404ea1c3d7e6ce56e79056eb01e869a7f3152e32907"
+  },
+  {
+   "path": "generated/art/sheets/char.goblin_smith.png",
+   "owners": [
+    "art:char.goblin_smith"
+   ],
+   "sha256": "204f08410a6082a5eaab5660c7ef853b4c9d1c1ec39a2a520df29323a6f063c6"
+  },
+  {
+   "path": "generated/art/char.goblin_smith.tres",
+   "owners": [
+    "art:char.goblin_smith"
+   ],
+   "sha256": "c1f862e9d665d1d28f1d51e9737f62618ab33503fc51ef2dc9e74fd777a0aecd"
+  },
+  {
+   "path": "generated/art/sheets/char.lucky_cat.png",
+   "owners": [
+    "art:char.lucky_cat"
+   ],
+   "sha256": "a3aa778b4f4f691e735c445f9bd6bb602079f7fe8aede9527952429704e6a89e"
+  },
+  {
+   "path": "generated/art/char.lucky_cat.tres",
+   "owners": [
+    "art:char.lucky_cat"
+   ],
+   "sha256": "dd0e6a4c511f0b095065b8c4a6878f576177693ccc8c491b144d389accf43c86"
   },
   {
    "path": "generated/art/sheets/char.miner.png",
@@ -3762,6 +4186,34 @@
     "art:char.portitor_alt"
    ],
    "sha256": "f0329896a7bf049e3c454ed01eedeed32b1a75d89ad50447eec35ff14d1f6189"
+  },
+  {
+   "path": "generated/art/sheets/char.turtle_keeper.png",
+   "owners": [
+    "art:char.turtle_keeper"
+   ],
+   "sha256": "932c5c4d160dc7311a61717e4a011c935be20460676c094726d17a08f72a83ab"
+  },
+  {
+   "path": "generated/art/char.turtle_keeper.tres",
+   "owners": [
+    "art:char.turtle_keeper"
+   ],
+   "sha256": "3b58f80b992776f2059917e5bfb8664243e42787622fec934c954143413d42e6"
+  },
+  {
+   "path": "generated/art/sheets/char.zombie.png",
+   "owners": [
+    "art:char.zombie"
+   ],
+   "sha256": "9e8e2a46985949fe9e076ca86ec37d069c63b63d6a44f2fe68155e06dcf54240"
+  },
+  {
+   "path": "generated/art/char.zombie.tres",
+   "owners": [
+    "art:char.zombie"
+   ],
+   "sha256": "38b5a70e943f3f9bb7e1a8ea7678e54c1d533fb477cd36eb1371b230902ad173"
   },
   {
    "path": "generated/art/sheets/deco.cave_crystal.png",
@@ -4128,6 +4580,20 @@
    "sha256": "54d0e8da0c4e532731b75dc709544e7640ab741cb77df498b81cdecf8e59c287"
   },
   {
+   "path": "generated/art/sheets/fx.monster_poof.png",
+   "owners": [
+    "art:fx.monster_poof"
+   ],
+   "sha256": "8f556aebbf1a88de5549d7f1bb608de9fee6ed22cb2169656a3bf046b6f2c273"
+  },
+  {
+   "path": "generated/art/fx.monster_poof.tres",
+   "owners": [
+    "art:fx.monster_poof"
+   ],
+   "sha256": "41b96b380d181e39adf505f50965c8d620a386e1b25d1e1f010846e10fa952cc"
+  },
+  {
    "path": "generated/art/sheets/fx.ripple.png",
    "owners": [
     "art:fx.ripple"
@@ -4182,6 +4648,48 @@
     "art:item.bomb"
    ],
    "sha256": "e5dbff576851cbff50cef7c7f40e97c485937930e7f34f379a0eafc16f37fc98"
+  },
+  {
+   "path": "generated/art/sheets/item.coin.png",
+   "owners": [
+    "art:item.coin"
+   ],
+   "sha256": "e050c58c6fbfe34a2ec6b570f229f19169dc0e8c590919a7a508b198d7153f08"
+  },
+  {
+   "path": "generated/art/item.coin.tres",
+   "owners": [
+    "art:item.coin"
+   ],
+   "sha256": "2bb5959698b2547be76c2e4644cd76bc9b5f12481caabeed11709f9ba1d68ceb"
+  },
+  {
+   "path": "generated/art/sheets/item.first_aid.png",
+   "owners": [
+    "art:item.first_aid"
+   ],
+   "sha256": "25b2dfdded865d8f9a666525d87b2f1f983eddeefbb75541f84c5da973aa6091"
+  },
+  {
+   "path": "generated/art/item.first_aid.tres",
+   "owners": [
+    "art:item.first_aid"
+   ],
+   "sha256": "b6d48bcba9a387a4aae0626f2c56d6ca23e1d19eec57a9abf26ad7bd9b972132"
+  },
+  {
+   "path": "generated/art/sheets/item.rope_ladder.png",
+   "owners": [
+    "art:item.rope_ladder"
+   ],
+   "sha256": "d1efe03b7464554adf058c7bf00bc3657f0d1a07f4dfe438f91b0117f12f987a"
+  },
+  {
+   "path": "generated/art/item.rope_ladder.tres",
+   "owners": [
+    "art:item.rope_ladder"
+   ],
+   "sha256": "d0dd5120905087c4c593a63cc696aebfa13d27b75575d6475a7a9e056b78fbe6"
   },
   {
    "path": "generated/art/sheets/item.sandbag.png",
@@ -4287,6 +4795,20 @@
     "art:mech.exit_flag"
    ],
    "sha256": "bea2568f593cb43e6a00113955a3ffb5d21fdca32d4df9252a4f2a6170e1e0d7"
+  },
+  {
+   "path": "generated/art/sheets/mech.ferry_gate.png",
+   "owners": [
+    "art:mech.ferry_gate"
+   ],
+   "sha256": "afc0e272b27ed0a547262623fcd6d467d81a2fc16259c48fc32dad6af1ad7194"
+  },
+  {
+   "path": "generated/art/mech.ferry_gate.tres",
+   "owners": [
+    "art:mech.ferry_gate"
+   ],
+   "sha256": "176acea0071ba8c65547101488ef083886f940155a1b43fe703bde60bbf97249"
   },
   {
    "path": "generated/art/sheets/mech.frost_vent.png",
@@ -4401,6 +4923,20 @@
    "sha256": "1eb8853777b56ec0f76445d9fd0639b8a4284c6b689c6af2562a5b0279de1745"
   },
   {
+   "path": "generated/art/sheets/mech.rope_ladder.png",
+   "owners": [
+    "art:mech.rope_ladder"
+   ],
+   "sha256": "f336892c8f31c586ca3ea268a068af45a3e63b761b178641de485a2e3d3ac4b8"
+  },
+  {
+   "path": "generated/art/mech.rope_ladder.tres",
+   "owners": [
+    "art:mech.rope_ladder"
+   ],
+   "sha256": "833a521cb0ad23594d86c79cd589231def8e50e2ed390016f30e3857b7f22d00"
+  },
+  {
    "path": "generated/art/sheets/mech.socket.png",
    "owners": [
     "art:mech.socket"
@@ -4457,6 +4993,34 @@
    "sha256": "b6aef14ad0091fd2fa1bc6206b94ccc50a980306ca6aa47a90891ea980c929a7"
   },
   {
+   "path": "generated/art/sheets/monster.rat_swarm.png",
+   "owners": [
+    "art:monster.rat_swarm"
+   ],
+   "sha256": "a31ca7b267edf16dfbe0fdbeb4723f0b95b57b19ffd4ff2481da2c5aae97a187"
+  },
+  {
+   "path": "generated/art/monster.rat_swarm.tres",
+   "owners": [
+    "art:monster.rat_swarm"
+   ],
+   "sha256": "9418c2944fb24c3003e76f319c962fbd32c7feb4678e4031027c76e5a2c339d5"
+  },
+  {
+   "path": "generated/art/sheets/monster.skeleton_guard.png",
+   "owners": [
+    "art:monster.skeleton_guard"
+   ],
+   "sha256": "35676571bcec2e716dec39bb9eaceefffd68ca03da071da154b1ddfdbeba0744"
+  },
+  {
+   "path": "generated/art/monster.skeleton_guard.tres",
+   "owners": [
+    "art:monster.skeleton_guard"
+   ],
+   "sha256": "def126c0ad95f46c182a2cc6cc22c8b517deac213cfe5a4f152bc2a59f796809"
+  },
+  {
    "path": "generated/art/sheets/obj.crate_iron.png",
    "owners": [
     "art:obj.crate_iron"
@@ -4483,6 +5047,20 @@
     "art:obj.crate_wood"
    ],
    "sha256": "cc76ca904ea968cae740ec7eda922c1aa772bb6d5d9961e28da52c45c7d48bb1"
+  },
+  {
+   "path": "generated/art/sheets/obj.goblin_forge.png",
+   "owners": [
+    "art:obj.goblin_forge"
+   ],
+   "sha256": "6218386b2972841df51b610e25e23068e610b7b9348baf0fccd5f0d34a324e22"
+  },
+  {
+   "path": "generated/art/obj.goblin_forge.tres",
+   "owners": [
+    "art:obj.goblin_forge"
+   ],
+   "sha256": "9a863e740a9a8184de835cc74555d2b3f2b799fd387f2653728e01a855d618bc"
   },
   {
    "path": "generated/themes/theme.cave.tres",
@@ -4527,18 +5105,32 @@
    "sha256": "b268faac04e2816cc0161cdcf9c3f7e0e0f4279cb9599bee028b2e46eebd7317"
   },
   {
+   "path": "generated/art/sheets/ui.bubble.png",
+   "owners": [
+    "art:ui.bubble"
+   ],
+   "sha256": "39fe4ac19d6469a54eecc539b44088a5cf826f95cb3be4dfe42c1c0d9e83fb02"
+  },
+  {
    "path": "generated/art/ui.bubble.tres",
    "owners": [
     "art:ui.bubble"
    ],
-   "sha256": "283b282d5fc8937db91af7d4adbf406dd9b4cff250426a91ada1b1ff5751371a"
+   "sha256": "dc538872516eb6ae33468547ef2c2a84922cafd91b573017365c18b646cf10bb"
+  },
+  {
+   "path": "generated/art/sheets/ui.bubble_tail.png",
+   "owners": [
+    "art:ui.bubble_tail"
+   ],
+   "sha256": "4779f3942363cd7dae7cc42aede1d34ccae1a1748019627b1b6acaf1bb145ce5"
   },
   {
    "path": "generated/art/ui.bubble_tail.tres",
    "owners": [
     "art:ui.bubble_tail"
    ],
-   "sha256": "cb2464a0dd2c49e0bda7872e2015527a713d010f7983855a77394b52d1c8e163"
+   "sha256": "cbb57c2793e1c7b26ba27e229e12ee1b877be0521c9e84d076808174a8d82a37"
   },
   {
    "path": "generated/art/sheets/ui.class_icon.png",
@@ -4569,11 +5161,32 @@
    "sha256": "3c048bd114092cbbb42e78fbf24d6a4f4ceecb82a65aac78834db0ed70bbbbec"
   },
   {
+   "path": "generated/art/sheets/ui.delivery_icons.png",
+   "owners": [
+    "art:ui.delivery_icons"
+   ],
+   "sha256": "b53006f0781b2249e0a6e6b2829b4cb3f273d9f45a37713ea96f8b749d3c847a"
+  },
+  {
+   "path": "generated/art/ui.delivery_icons.tres",
+   "owners": [
+    "art:ui.delivery_icons"
+   ],
+   "sha256": "2a0c3b0219988bda579b1d1084f06c5322b6db69a37cbbeaaa65c2021cb0519e"
+  },
+  {
+   "path": "generated/art/sheets/ui.emote.png",
+   "owners": [
+    "art:ui.emote"
+   ],
+   "sha256": "7088ab708b7164b55697d6d91d56bcd301f47dea764a72a317cc5c1365a532b5"
+  },
+  {
    "path": "generated/art/ui.emote.tres",
    "owners": [
     "art:ui.emote"
    ],
-   "sha256": "58434503de6fca229e15d989e54e37f9dafe6e65f5c9c035abacce1a2f7a8258"
+   "sha256": "1cdff3579e40f531ad14b9293b56493b6aacaf0a33433fcf85ddc053d39cb5c7"
   },
   {
    "path": "generated/art/sheets/ui.goal_lamp.png",
@@ -4664,63 +5277,105 @@
    "owners": [
     "art:ui.screen.chapters"
    ],
-   "sha256": "710ec518e5259f33cf77dbd359b4819b09b8c3d6b7118047dc0c15be4d8b3e21"
+   "sha256": "6fe0cc6be51a88a9bd102efc028cfc59266bd4c6de64abbb00859029ebcf0d18"
   },
   {
    "path": "generated/art/metadata/ui.screen.complete.tres",
    "owners": [
     "art:ui.screen.complete"
    ],
-   "sha256": "4255132df27b86260ffdc9fa129811b1dbf08a27b7960a5b3b94ef1a4c003203"
+   "sha256": "b363e4a9c3c2f11371dcbee854b870e689c8e01b012e39f00d7fe92df39545b0"
+  },
+  {
+   "path": "generated/art/metadata/ui.screen.delivery_hud.tres",
+   "owners": [
+    "art:ui.screen.delivery_hud"
+   ],
+   "sha256": "794952cfc2d74a53e25a3f227cacc49dec1661f3216d449dfa10c41f9654742d"
+  },
+  {
+   "path": "generated/art/metadata/ui.screen.delivery_pause.tres",
+   "owners": [
+    "art:ui.screen.delivery_pause"
+   ],
+   "sha256": "95af24761ed9ef82e2973ca1d1c4ae801f45c7ca4ee4879e1fe51ae6c0654e1c"
   },
   {
    "path": "generated/art/metadata/ui.screen.dialogue.tres",
    "owners": [
     "art:ui.screen.dialogue"
    ],
-   "sha256": "8c5a3b7e2de3a47f52c6ea56c22d10c200db85aa5a8b24c50738135127242a2f"
+   "sha256": "36e6d8f816ed753ca95dc170ef46d5a61bf3109c7bf8f143d0af292d6247efe0"
   },
   {
    "path": "generated/art/metadata/ui.screen.hint.tres",
    "owners": [
     "art:ui.screen.hint"
    ],
-   "sha256": "4c8b89dac1484983dfb3b19c6b3291af8303c761571881e41188cba6eda37ef5"
+   "sha256": "1355a843840adc534c704a272a2fb4f86b1be24d5cb87680033bbc485057ee68"
   },
   {
    "path": "generated/art/metadata/ui.screen.levels.tres",
    "owners": [
     "art:ui.screen.levels"
    ],
-   "sha256": "8ee0aa592bd1951c97bd6365af20f73faa27e85cc2ec01542fe5a7a0d302854d"
+   "sha256": "60c7e26544af4cd4429b1a0b66493aa3948ad11b5e7cf511d92d9217fb7f71a5"
   },
   {
    "path": "generated/art/metadata/ui.screen.lobby.tres",
    "owners": [
     "art:ui.screen.lobby"
    ],
-   "sha256": "e99484bce5662a55c019896f2fc9755c65e9da33f69f1908480e0dbd0e94108b"
+   "sha256": "4e1e3ddb939997dc5bb05de68bcb43554b06e3723cf489b9d40ba6f75387c0e0"
   },
   {
    "path": "generated/art/metadata/ui.screen.pause.tres",
    "owners": [
     "art:ui.screen.pause"
    ],
-   "sha256": "2d8b6b0aeb7f29023161a35e0722368811142b40159bfe20fb590876e403a425"
+   "sha256": "7e814777b2d546e75ac8c0d88965a24b5268fe8c0642bf4014845ade5e868456"
+  },
+  {
+   "path": "generated/art/metadata/ui.screen.reels.tres",
+   "owners": [
+    "art:ui.screen.reels"
+   ],
+   "sha256": "705520e143062eac9ee31476801eb44ab9c789e296e7890b6eda469caf14caa1"
   },
   {
    "path": "generated/art/metadata/ui.screen.rulecard.tres",
    "owners": [
     "art:ui.screen.rulecard"
    ],
-   "sha256": "f10991f101086ccab84e683e82c987d607dd9d177ef83d47c060dd9e02ca1041"
+   "sha256": "bfa6d57b3a6ec677122f06cae9cdb052e4086672dab171fd48e5e701212a6f4d"
   },
   {
    "path": "generated/art/metadata/ui.screen.settings.tres",
    "owners": [
     "art:ui.screen.settings"
    ],
-   "sha256": "88730cf7d751c446509eec8fa19f00c7405776d9d59d33125d13a393f749c8b3"
+   "sha256": "879b5971f78e062a410fe8e88753ae5c1f2e228e497a4f5f11fa5b7aeaf0bb74"
+  },
+  {
+   "path": "generated/art/metadata/ui.screen.settlement.tres",
+   "owners": [
+    "art:ui.screen.settlement"
+   ],
+   "sha256": "cad4d1af9643f2ebac75b717b1cbd91dca2adf057649d605c379c89dfdba463e"
+  },
+  {
+   "path": "generated/art/metadata/ui.screen.settlement_fail.tres",
+   "owners": [
+    "art:ui.screen.settlement_fail"
+   ],
+   "sha256": "152b57efaa5292af923b475c60f3a08f85b1607ce4d1ee4cdef3adc970b520d0"
+  },
+  {
+   "path": "generated/art/metadata/ui.screen.shop.tres",
+   "owners": [
+    "art:ui.screen.shop"
+   ],
+   "sha256": "ef25bb2d9cf648afd9f216160baa7fa05c316c4b9ba4824a34980d5daef3200e"
   },
   {
    "path": "generated/art/sheets/ui.target.png",
@@ -4753,9 +5408,19 @@
   {
    "path": "generated/art-index.json",
    "owners": [
+    "art:avatar.goblin_smith",
+    "art:avatar.old_miner",
+    "art:avatar.zombie",
+    "art:cargo.ice_cream",
+    "art:cargo.letter",
+    "art:cargo.vase",
+    "art:char.goblin_smith",
+    "art:char.lucky_cat",
     "art:char.miner",
     "art:char.portitor",
     "art:char.portitor_alt",
+    "art:char.turtle_keeper",
+    "art:char.zombie",
     "art:deco.cave_crystal",
     "art:deco.cave_mushroom",
     "art:deco.cosmos_sprout",
@@ -4782,10 +5447,14 @@
     "art:fx.frost",
     "art:fx.goal_spark",
     "art:fx.land_dust",
+    "art:fx.monster_poof",
     "art:fx.ripple",
     "art:fx.rubble",
     "art:fx.splash",
     "art:item.bomb",
+    "art:item.coin",
+    "art:item.first_aid",
+    "art:item.rope_ladder",
     "art:item.sandbag",
     "art:material.chapter2_5",
     "art:mech.bin",
@@ -4794,6 +5463,7 @@
     "art:mech.button",
     "art:mech.door",
     "art:mech.exit_flag",
+    "art:mech.ferry_gate",
     "art:mech.frost_vent",
     "art:mech.heat_vent",
     "art:mech.ladder",
@@ -4802,12 +5472,16 @@
     "art:mech.link_symbol",
     "art:mech.plate",
     "art:mech.portal",
+    "art:mech.rope_ladder",
     "art:mech.socket",
     "art:mech.socket_lit",
     "art:mech.torch",
     "art:mech.vine",
+    "art:monster.rat_swarm",
+    "art:monster.skeleton_guard",
     "art:obj.crate_iron",
     "art:obj.crate_wood",
+    "art:obj.goblin_forge",
     "art:theme.cave",
     "art:theme.cosmos",
     "art:theme.dungeon",
@@ -4818,6 +5492,7 @@
     "art:ui.bubble_tail",
     "art:ui.class_icon",
     "art:ui.cursor",
+    "art:ui.delivery_icons",
     "art:ui.emote",
     "art:ui.goal_lamp",
     "art:ui.icons",
@@ -4827,17 +5502,23 @@
     "art:ui.rule_icon",
     "art:ui.screen.chapters",
     "art:ui.screen.complete",
+    "art:ui.screen.delivery_hud",
+    "art:ui.screen.delivery_pause",
     "art:ui.screen.dialogue",
     "art:ui.screen.hint",
     "art:ui.screen.levels",
     "art:ui.screen.lobby",
     "art:ui.screen.pause",
+    "art:ui.screen.reels",
     "art:ui.screen.rulecard",
     "art:ui.screen.settings",
+    "art:ui.screen.settlement",
+    "art:ui.screen.settlement_fail",
+    "art:ui.screen.shop",
     "art:ui.target",
     "art:ui.theme_emblem"
    ],
-   "sha256": "08306ace3ff25b72a981455acc94bb05d0cef9b378d862904ae257467b0b50f7"
+   "sha256": "f90c089998324f6c8c897bab4084ba2dfb70a3094bb2e06d85c382de00749796"
   },
   {
    "path": "generated/content/routes/M01.json",
@@ -4884,9 +5565,19 @@
   {
    "path": "generated/import-inventory.json",
    "owners": [
+    "art:avatar.goblin_smith",
+    "art:avatar.old_miner",
+    "art:avatar.zombie",
+    "art:cargo.ice_cream",
+    "art:cargo.letter",
+    "art:cargo.vase",
+    "art:char.goblin_smith",
+    "art:char.lucky_cat",
     "art:char.miner",
     "art:char.portitor",
     "art:char.portitor_alt",
+    "art:char.turtle_keeper",
+    "art:char.zombie",
     "art:deco.cave_crystal",
     "art:deco.cave_mushroom",
     "art:deco.cosmos_sprout",
@@ -4913,10 +5604,14 @@
     "art:fx.frost",
     "art:fx.goal_spark",
     "art:fx.land_dust",
+    "art:fx.monster_poof",
     "art:fx.ripple",
     "art:fx.rubble",
     "art:fx.splash",
     "art:item.bomb",
+    "art:item.coin",
+    "art:item.first_aid",
+    "art:item.rope_ladder",
     "art:item.sandbag",
     "art:material.chapter2_5",
     "art:mech.bin",
@@ -4925,6 +5620,7 @@
     "art:mech.button",
     "art:mech.door",
     "art:mech.exit_flag",
+    "art:mech.ferry_gate",
     "art:mech.frost_vent",
     "art:mech.heat_vent",
     "art:mech.ladder",
@@ -4933,12 +5629,16 @@
     "art:mech.link_symbol",
     "art:mech.plate",
     "art:mech.portal",
+    "art:mech.rope_ladder",
     "art:mech.socket",
     "art:mech.socket_lit",
     "art:mech.torch",
     "art:mech.vine",
+    "art:monster.rat_swarm",
+    "art:monster.skeleton_guard",
     "art:obj.crate_iron",
     "art:obj.crate_wood",
+    "art:obj.goblin_forge",
     "art:theme.cave",
     "art:theme.cosmos",
     "art:theme.dungeon",
@@ -4949,6 +5649,7 @@
     "art:ui.bubble_tail",
     "art:ui.class_icon",
     "art:ui.cursor",
+    "art:ui.delivery_icons",
     "art:ui.emote",
     "art:ui.goal_lamp",
     "art:ui.icons",
@@ -4958,13 +5659,19 @@
     "art:ui.rule_icon",
     "art:ui.screen.chapters",
     "art:ui.screen.complete",
+    "art:ui.screen.delivery_hud",
+    "art:ui.screen.delivery_pause",
     "art:ui.screen.dialogue",
     "art:ui.screen.hint",
     "art:ui.screen.levels",
     "art:ui.screen.lobby",
     "art:ui.screen.pause",
+    "art:ui.screen.reels",
     "art:ui.screen.rulecard",
     "art:ui.screen.settings",
+    "art:ui.screen.settlement",
+    "art:ui.screen.settlement_fail",
+    "art:ui.screen.shop",
     "art:ui.target",
     "art:ui.theme_emblem",
     "level:M01",
@@ -5013,6 +5720,16 @@
     "level:E04",
     "level:E05",
     "level:E06",
+    "room:dungeon_burrow",
+    "room:dungeon_corner",
+    "room:dungeon_gate",
+    "room:dungeon_guard",
+    "room:dungeon_hall",
+    "room:dungeon_home",
+    "room:dungeon_plate",
+    "room:dungeon_shaft",
+    "room:dungeon_station",
+    "room:dungeon_well",
     "mode:lab",
     "mode:delivery",
     "mode:hell",
@@ -5452,6 +6169,7 @@
     "event:haunted_crate",
     "event:temple_fair",
     "event:cattle_crossing",
+    "slice:dungeon_1",
     "text:game.title",
     "text:game.tagline",
     "text:menu.continue",
@@ -5612,6 +6330,61 @@
     "text:dlg.sample.npc",
     "text:dlg.sample.self",
     "text:dlg.sample.note",
+    "text:dlv.reels.title",
+    "text:dlv.reels.cargo",
+    "text:dlv.reels.recipient",
+    "text:dlv.reels.reroll",
+    "text:dlv.reels.likes",
+    "text:dlv.keys.reel",
+    "text:dlv.keys.reroll",
+    "text:dlv.keys.go",
+    "text:dlv.keys.buy",
+    "text:dlv.keys.leave",
+    "text:cargo.letter.name",
+    "text:cargo.letter.rule",
+    "text:cargo.vase.name",
+    "text:cargo.vase.rule",
+    "text:cargo.ice_cream.name",
+    "text:cargo.ice_cream.rule",
+    "text:recipient.old_miner.name",
+    "text:recipient.old_miner.rule",
+    "text:recipient.old_miner.thanks",
+    "text:recipient.zombie.name",
+    "text:recipient.zombie.rule",
+    "text:recipient.zombie.thanks",
+    "text:recipient.goblin_smith.name",
+    "text:recipient.goblin_smith.rule",
+    "text:recipient.goblin_smith.thanks",
+    "text:item.sandbag.name",
+    "text:item.sandbag.desc",
+    "text:item.first_aid.name",
+    "text:item.first_aid.desc",
+    "text:item.rope_ladder.name",
+    "text:item.rope_ladder.desc",
+    "text:dlv.shop.title",
+    "text:dlv.shop.greet",
+    "text:dlv.shop.left",
+    "text:dlv.shop.sold_out",
+    "text:dlv.shop.bag",
+    "text:dlv.done.title",
+    "text:dlv.done.integrity",
+    "text:dlv.done.time",
+    "text:dlv.done.time_value",
+    "text:dlv.done.like",
+    "text:dlv.done.tip",
+    "text:dlv.done.picked",
+    "text:dlv.done.total",
+    "text:dlv.done.rating",
+    "text:dlv.done.again",
+    "text:dlv.done.hub",
+    "text:dlv.fail.title",
+    "text:dlv.fail.hearts",
+    "text:dlv.fail.cargo",
+    "text:dlv.fail.keep",
+    "text:dlv.pause.restart_room",
+    "text:dlv.pause.give_up",
+    "text:npc.turtle_keeper.name",
+    "text:dlv.done.base",
     "text:dev.placeholder",
     "text:dev.pending_art",
     "text:error.runtime",

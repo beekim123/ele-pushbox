@@ -49,7 +49,7 @@ test("statuses come from data: a passing verification report marks the level ver
   assert.equal(res.mechanisms.find((m) => m.id === "power").status, "proposed");
   fs.mkdirSync(path.join(root, "game/reports"), { recursive: true });
   const ok = { id: "M01", won: true, replays: 3, consistent: true, undo_ok: true, max_ticks: 300, tick_limit: 4000, checks: [{ text: "x", ok: true }] };
-  fs.writeFileSync(path.join(root, "game/reports/verification.json"), JSON.stringify({ format: "pushbox.verification/1", levels: [ok] }));
+  fs.writeFileSync(path.join(root, "game/reports/verification.json"), JSON.stringify({ format: "pushbox.verification/1", levels: res.levels.filter(l => l.mechanisms.includes("push")).map(l => ({ ...ok, id: l.id })) }));
   res = buildContent(root);
   assert.equal(res.levels.find((l) => l.id === "M01").verified.ok, true);
   assert.equal(res.mechanisms.find((m) => m.id === "push").status, "playable"); // its art is approved
