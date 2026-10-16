@@ -18,7 +18,7 @@
 - **配送模式改造**（用户已确认设计；未完成，制作方在补文档和工作台页面）：新房间格式 room/2（1×1 到 2×2 屏、浮空地块、撑篙、提示动物）、开局抽池（地图 → 收件人 → 货物）、23 间房（石牢 10、地府 13）、检查工具 `tools/check-rooms2.mjs`、24 个美术候选（**待确认，没有记录批准**）。机制目录新增 `float_block`、`pole`、`hint_animal`，它们引用的 `docs/design/delivery-puzzle-rules.md` 还没写。等制作方交完文档再做设计审核。
 - **合并冲突**：`tools/art.mjs`（两边的模块列表合并：保留 `font-extra`、加 `terrain-diyu`）、`content/catalog/mechanisms.json`（保留矿车契约，加三个新机制）；生成文件按规则重新生成。
 - **验证**（云端 Linux）：`art.mjs build` 133 项（109 + 24 候选）、0 bumped、6 条确认记录；`art.mjs verify` ok；`content.mjs check` 0 错误 0 警告；`check-levels.mjs` 46 关 ok；`check-rooms.mjs`、`check-rooms2.mjs`（300 个种子都能生成）通过；`node --test` 141/141；`workbench.e2e.cjs` 全部通过。
-- **工作台菜单改版**：用户要求改成左侧分类折叠菜单，拆成 [WB-01](packages/WB-01.md)，建议在 UI-05 和配送工作台页面之前做。
+- **工作台菜单改版**：[WB-01](packages/WB-01.md) 已完成（另一个 AI 做，打包交回，`8de48c4`）：左侧分类折叠菜单、左栏可收起、窄屏抽屉、原地址不变。审核：只改了 `workbench/index.html`、`css/workbench.css`、`js/app/main.js`、新文件 `js/app/nav.js` 与 e2e 测试（只增不删）；`art.mjs build` 0 bumped、`verify` ok、`content.mjs check` 0 错误、`node --test` 141/141、`workbench.e2e.cjs` 全部通过。接受。
 
 ## 第三轮审核：LV-11 与界面定稿（2026-10-16）
 
