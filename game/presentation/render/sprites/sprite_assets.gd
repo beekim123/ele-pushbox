@@ -82,7 +82,7 @@ static func _sparse_frame(uid: String, size: Vector2i, frame: int) -> Array[Vect
 		_sparse_sheets[uid] = frames
 	return _sparse_sheets[uid][frame]
 
-static func blit(raster: RefCounted, uid: String, animation: Variant, tick: int, anchor: Vector2i, flip: bool = false) -> void:
+static func blit(raster: RefCounted, uid: String, animation: Variant, tick: int, anchor: Vector2i, flip: bool = false, visible_rows: int = -1) -> void:
 	var asset: Dictionary = metadata(uid)
 	if asset.is_empty():
 		return
@@ -95,7 +95,13 @@ static func blit(raster: RefCounted, uid: String, animation: Variant, tick: int,
 	if frame < 0 or (frame + 1) * size.x > source.get_width():
 		push_error("Invalid animation frame for " + uid)
 		return
-	raster.blit_sparse(_sparse_frame(uid, size, frame), anchor - pivot, size.x, flip)
+	var points: Array[Vector3i] = _sparse_frame(uid, size, frame)
+	if visible_rows >= 0 and visible_rows < size.y:
+		var clipped: Array[Vector3i] = []
+		for point: Vector3i in points:
+			if point.y >= size.y - visible_rows: clipped.append(point)
+		points = clipped
+	raster.blit_sparse(points, anchor - pivot, size.x, flip)
 
 static func command_phase(commands: Array[Dictionary]) -> Array:
 	var phase: Array = []

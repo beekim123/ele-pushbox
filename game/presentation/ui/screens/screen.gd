@@ -41,7 +41,7 @@ func configure(controller: Node) -> void:
 		"complete": _complete()
 		"rulecard": _rulecard()
 		"dialogue": _dialogue()
-	if screen_name not in ["play", "hint"]:
+	if screen_name not in ["play", "hint"] and not bool(Registry.art("art:ui.screen." + screen_name).get("approved", false)):
 		var marker_at: Vector2 = Vector2(8, 145) if screen_name == "levels" else Vector2(252, 0) if screen_name in ["chapters", "settings"] else Vector2(252, 164)
 		var marker: Label = _flow_label(t("dev.placeholder"), marker_at, 64, true)
 		marker.add_theme_color_override("font_color", Color("feae34"))
@@ -375,7 +375,7 @@ func _lobby() -> void:
 	_keybar([{"keys": ["up", "down"], "label": "keys.select"}, {"keys": ["Enter"], "label": "keys.confirm"}])
 
 func _chapter_name(order: int) -> String:
-	return t("chapter.n", {"n": order}) if order <= 5 else t("chapter.extra")
+	return t("chapter.n", {"n": order}) if order <= 5 else t("extra.chapter.review") if order == 6 else t("chapter.extra")
 
 func _chapters() -> void:
 	_label(t("chapters.title"), Vector2(10, 4), 200, "l", "z")
@@ -390,7 +390,7 @@ func _chapters() -> void:
 	if not app.lab.stage_available(app.lab.group_index):
 		body = t("chapter.preview") if app.lab.open_all_levels else t("chapter.unavailable")
 	elif app.lab.available(app.lab.group_index):
-		body = t("chapter." + str(int(group.order)) + ".blurb")
+		body = t("extra.chapter.review_blurb") if int(group.order) == 6 else t("chapter." + str(int(group.order)) + ".blurb")
 	else:
 		body = t("chapters.unlock", {"chapter": _chapter_name(maxi(1, int(group.order) - 1)), "n": _unlock_need(app.lab.group_index)}) if int(group.order) <= 5 else t("chapters.later")
 	_paragraph(body, Vector2(12, 149), 296, 2, "u" if app.lab.available(app.lab.group_index) else "v")
@@ -849,7 +849,7 @@ func _hint() -> void:
 		_row_records.back()["never_highlight"] = true
 		_row_records.back().active.visible = false
 	else:
-		if app.lab.route_index(app.session.state()) < 0:
+		if app.session == null or app.lab.route_index(app.session.state()) < 0:
 			var only_rewind_width: int = mini(278, _measure(t("hint.rewind")) + 14)
 			_plain_button(t("hint.rewind"), Vector2(310 - only_rewind_width, 159), only_rewind_width, 0)
 			return

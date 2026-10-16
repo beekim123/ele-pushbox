@@ -1,0 +1,88 @@
+{
+ "format": "pushbox.room/1",
+ "id": "dungeon_corner",
+ "world": "dungeon",
+ "type": "room",
+ "name": "转角",
+ "idea": "从横走转成上下：小心别把箱子推进竖井；竖井边的小洞里有一枚金币。",
+ "weight": 10,
+ "mirror": true,
+ "exits": {
+  "left": [
+   "low"
+  ],
+  "top": [
+   "mid"
+  ],
+  "bottom": [
+   "mid"
+  ]
+ },
+ "caps": {
+  "top": [
+   [
+    9,
+    0,
+    2,
+    5,
+    "#"
+   ],
+   [
+    9,
+    5,
+    2,
+    3,
+    "."
+   ]
+  ],
+  "bottom": [
+   [
+    9,
+    8,
+    2,
+    2,
+    "#"
+   ]
+  ]
+ },
+ "mechanisms": [
+  "ladder",
+  "push"
+ ],
+ "map": [
+  "#########HH#########",
+  "#........HH#########",
+  "#........HH#########",
+  "#........HH.$.######",
+  "#........HH#########",
+  "#.....$..HH........#",
+  ".....###.HH........#",
+  "...B.....HH........#",
+  "#########HH#########",
+  "#########HH#########"
+ ],
+ "demos": [
+  {
+   "id": "turn",
+   "mechanisms": [
+    "push",
+    "ladder"
+   ],
+   "name": "从左边进来，箱子掉进竖井，踩着它爬下去",
+   "open": {
+    "left": "low",
+    "bottom": "mid"
+   },
+   "script": [
+    "R*9",
+    "R",
+    "D*3"
+   ],
+   "expect": {
+    "end": "exit:bottom",
+    "hearts": 3
+   },
+   "from": "left.low"
+  }
+ ]
+}

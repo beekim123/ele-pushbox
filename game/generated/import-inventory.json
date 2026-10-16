@@ -1,6 +1,6 @@
 {
  "format": "portitor.import-inventory/1",
- "source_id_map_sha256": "080094269ab841641a7397c187b5ea2a493936424e68be31ba799ac291420891",
+ "source_id_map_sha256": "1bb5e2619ccc5cb2392cf860128ae2a21863a17700239f0ccf293cb4511a50b0",
  "files": [
   {
    "path": "generated/id-map.json",
@@ -629,6 +629,8 @@
     "text:env.lite",
     "text:env.off",
     "text:error.runtime",
+    "text:extra.chapter.review",
+    "text:extra.chapter.review_blurb",
     "text:extra.controls.bomb",
     "text:extra.rule.fall.name",
     "text:extra.rule.fall.text",
@@ -995,7 +997,7 @@
     "world:wonderland",
     "world:xianxia"
    ],
-   "sha256": "080094269ab841641a7397c187b5ea2a493936424e68be31ba799ac291420891"
+   "sha256": "1bb5e2619ccc5cb2392cf860128ae2a21863a17700239f0ccf293cb4511a50b0"
   },
   {
    "path": "generated/content-manifest.json",
@@ -1497,7 +1499,7 @@
     "world:wonderland",
     "world:xianxia"
    ],
-   "sha256": "68d2b1d50c781d31c113af0a71059c07afc7bdea8f1911420edaad39b435b2ab"
+   "sha256": "8aef98f4c11d1a01bf35c7656608efdd7ae0158577237ab03bc6b47c0d5a63ee"
   },
   {
    "path": "generated/ids.gd",
@@ -2126,6 +2128,8 @@
     "text:env.lite",
     "text:env.off",
     "text:error.runtime",
+    "text:extra.chapter.review",
+    "text:extra.chapter.review_blurb",
     "text:extra.controls.bomb",
     "text:extra.rule.fall.name",
     "text:extra.rule.fall.text",
@@ -2492,7 +2496,7 @@
     "world:wonderland",
     "world:xianxia"
    ],
-   "sha256": "57bc32d683087d7fec6318684c659583c540cdf6f18ed2f330e5dcad333dab1c"
+   "sha256": "9b2d324379b52fce1e8660c7f01309d839a8eb24a0088f28599c4e301137b55a"
   },
   {
    "path": "generated/content/levels/lab/basics/M01.json",
@@ -2611,210 +2615,280 @@
    "owners": [
     "level:Q01"
    ],
-   "sha256": "62b016b6ef2a29db51865e551fdfec32af44e029a5787894a8d834f8edcb8e80"
+   "sha256": "c896c95b7970bcdbaa2d755bcfd1f308dea51b05f2fa7045e55cd0964a2362ae"
   },
   {
    "path": "generated/content/levels/lab/blast/Q02.json",
    "owners": [
     "level:Q02"
    ],
-   "sha256": "7d63abf6e61763c6d8b6737f5647122fd40e90ffb685b7dd06193db31816441f"
+   "sha256": "3a867dffb8291d0e43eaa7a9a56401693d0ee099b0c4ddd4497b2c81c596e3e9"
   },
   {
    "path": "generated/content/levels/lab/blast/Q03.json",
    "owners": [
     "level:Q03"
    ],
-   "sha256": "8ed9112e90f5e39c43ed9a4e2f8d6235ecc3e6cee74f335c91ed22b84dfd0a8e"
+   "sha256": "ae2cdd3d7ef4b9f57e74d494e901c3d55333e0679d6eeda57401c5e347ebb1b7"
   },
   {
    "path": "generated/content/levels/lab/blast/Q04.json",
    "owners": [
     "level:Q04"
    ],
-   "sha256": "47093eb667900a7a90e86624acc5799e24fb2bfb57f669b99facd1871beb8159"
+   "sha256": "f541a96b33f2594cd24420f6349ac2ea2ab36c643f0e53b587db67a56b818a73"
   },
   {
    "path": "generated/content/levels/lab/blast/Q07.json",
    "owners": [
     "level:Q07"
    ],
-   "sha256": "f27c065bd58ce1e50953f10a769d9e3f9e24dde85dd31a29ee1fcf1350b2e045"
+   "sha256": "570b6b629d4debbc8841fe0a552bec93e09131a452006986e5ad788de35a81ce"
   },
   {
    "path": "generated/content/levels/lab/blast/Q08.json",
    "owners": [
     "level:Q08"
    ],
-   "sha256": "21b57f28e82f58d66c86554565989ff93c23ceb0502b7db8dce5f1641557332d"
+   "sha256": "d67fff1c216b75fa4c79661dd67b45cecefa5ba35745f53df2e036ed54d0ac78"
   },
   {
    "path": "generated/content/levels/lab/blast/Q09.json",
    "owners": [
     "level:Q09"
    ],
-   "sha256": "c955b8a4c94f86bdef1a99211e7c2c76ead08533cfb91f6c16f37fccabec8fc2"
+   "sha256": "2c86776c334b72977c563b7534594d89e47779b12deac630c777084738945494"
   },
   {
    "path": "generated/content/levels/lab/blast/Q10.json",
    "owners": [
     "level:Q10"
    ],
-   "sha256": "0eea037854fc8750010f2fe9170868ce7d1517d93c43da2725da0a09b2793740"
+   "sha256": "a3cd2540c04d30e47197fcfc6cc10e5a62a42f8ce31e42fa168375522e951305"
   },
   {
    "path": "generated/content/levels/lab/react/G01.json",
    "owners": [
     "level:G01"
    ],
-   "sha256": "f6e34857c78a594ec5ac926e5fb75fbd29db911702ad198bad9cc0ed55439eba"
+   "sha256": "3997be008c9cb6351a62725ee52dc0cf19e4283c698fa058a9c642e8499872bf"
   },
   {
    "path": "generated/content/levels/lab/react/G02.json",
    "owners": [
     "level:G02"
    ],
-   "sha256": "5dbd7ca5fcf37c7ba0af65b0832669a91e4a0afdb238b0416c7708adb0f9c4fc"
+   "sha256": "a26663855ea6ddeb088dce9b3fe73de83c79d9cbca8be7db4e63b8972fa2aae3"
   },
   {
    "path": "generated/content/levels/lab/react/G03.json",
    "owners": [
     "level:G03"
    ],
-   "sha256": "ef594871174e60bdfc9069409c31baad324ef3f5767195ac7afc584910810a9e"
+   "sha256": "2f49a0911ba4f3ef0f44614e7822cbf84f9a852aad559a8b2ae03acd9602e997"
   },
   {
    "path": "generated/content/levels/lab/react/G04.json",
    "owners": [
     "level:G04"
    ],
-   "sha256": "6bec9479aa8b3de0892208d6583d6aea0b317f745d46516b442c1094b01cd300"
+   "sha256": "3e743914931cb45cf25a385f320ec05cdda9ed30685dd72616d6b2aad3df5f71"
   },
   {
    "path": "generated/content/levels/lab/react/G05.json",
    "owners": [
     "level:G05"
    ],
-   "sha256": "a7010a27e601afa9adef4e8d92c743f1e3c24ce3f5a2b5acb4cd36544ff9639a"
+   "sha256": "dbb0efbc542af2836889ff9b1496bf82518b87cfd78e77348b84536e97001c52"
   },
   {
    "path": "generated/content/levels/lab/react/G06.json",
    "owners": [
     "level:G06"
    ],
-   "sha256": "78ac8171b8713aa06032718f821bd31b6611167a024371c330722139ffa648d8"
+   "sha256": "975c89da2af54a873f1d05437f057b31412e5fb7c130ab1188c9029117e15c8f"
   },
   {
    "path": "generated/content/levels/lab/react/G08.json",
    "owners": [
     "level:G08"
    ],
-   "sha256": "84461ac3c9d6758e37e2e3b7be0ec66cbc4f17afb424b505c72690808e44255b"
+   "sha256": "2e4e1fe92cdc29959c46989ab2ceed851f512a07a300dc042e9156ab138b7210"
   },
   {
    "path": "generated/content/levels/lab/react/G09.json",
    "owners": [
     "level:G09"
    ],
-   "sha256": "5ac0461d36ddea2154908b97dfe476996329d81e41ae15102bd209cae7577897"
+   "sha256": "cb22c78e9acd7a16fd5d3c018fa49aad7f394eb131a9128e35ec06f7c9bbd481"
   },
   {
    "path": "generated/content/levels/lab/react/G10.json",
    "owners": [
     "level:G10"
    ],
-   "sha256": "b0e8447e69f4e1132dd11a5a857565d05d82c1864fd2991a8846a9400f156388"
+   "sha256": "b0c21afa6a1d7fed906ace8b06fe1eba5a69e93fc3bfa34b6c445525d21585a9"
   },
   {
    "path": "generated/content/levels/lab/thermal/F01.json",
    "owners": [
     "level:F01"
    ],
-   "sha256": "7f5ac5b052bfe6bf5fc19065040d1dce97bb413ef1e785685f944290fc921712"
+   "sha256": "30b92b24ef563d71a14861f14a6c49f54b0b1fee8205e97e418c84332c675dd0"
   },
   {
    "path": "generated/content/levels/lab/thermal/F02.json",
    "owners": [
     "level:F02"
    ],
-   "sha256": "758fa04813cecf993b4893c1e243dad96c0777c7010033b9a90a3a26f3a0ce31"
+   "sha256": "fdaead7b0c27e1e0c491fd643cb31b7551e79b95e9c87cbb6346c4d041bba217"
   },
   {
    "path": "generated/content/levels/lab/thermal/F03.json",
    "owners": [
     "level:F03"
    ],
-   "sha256": "80bbd7cf87695e66fec4d9af0d3c3069007c82e456857ec55e9946b3b0ee4fac"
+   "sha256": "17459734821f7293b832649044282496958e3dd09517fffaed376d806f7a0008"
   },
   {
    "path": "generated/content/levels/lab/thermal/F04.json",
    "owners": [
     "level:F04"
    ],
-   "sha256": "d1392139cd5c571c1b901c5fa89778d94b9df935b2b601e376c5b74f6df5f121"
+   "sha256": "578a9f0743cf95e4b39d9ffbc92254d7d7f8463e982b0244df5c3c13ad696c4c"
   },
   {
    "path": "generated/content/levels/lab/thermal/F07.json",
    "owners": [
     "level:F07"
    ],
-   "sha256": "fa9671687e01417536b4671ed24e42a178e1445fd31375b9cbe1995c0467e899"
+   "sha256": "b41977588e60cefb8c784faec44f35d43ebab64e3f1cf8613f17f39f01020212"
   },
   {
    "path": "generated/content/levels/lab/thermal/F08.json",
    "owners": [
     "level:F08"
    ],
-   "sha256": "b27144f5749d13afbaf547fcb81cc1418458e54d41b4e2c5c074008bf49b0083"
+   "sha256": "a4adf8a53597ff22d39bfb735758fc9bedb0679cce7f2747b85eed6b616efdc1"
   },
   {
    "path": "generated/content/levels/lab/thermal/F09.json",
    "owners": [
     "level:F09"
    ],
-   "sha256": "4796eaebfb68e0f8e517f7c0c74c1be721069f795acfb2ac8dba08781afd541c"
+   "sha256": "f99068ad7b98857169ba43614b0eb1c8a1330e025dfdf1b9548de01f8842f1fa"
   },
   {
    "path": "generated/content/levels/lab/experimental/E01.json",
    "owners": [
     "level:E01"
    ],
-   "sha256": "eb083f12bd688771f3b4bd629159092e3324b30ed0e13d83b13eb5e935c0d783"
+   "sha256": "b77c682bbefe1db9e2bdd826d88736d53a277778808fceb43c40f31c4caa6abb"
   },
   {
    "path": "generated/content/levels/lab/experimental/E02.json",
    "owners": [
     "level:E02"
    ],
-   "sha256": "82346c65163ac50edad6ab475899209d131e42cfd5961cad7cf4fdb88a5e632b"
+   "sha256": "922b9ac455e208debf62099a80db3eddb93c795af341ff2460301680e408d15b"
   },
   {
    "path": "generated/content/levels/lab/experimental/E03.json",
    "owners": [
     "level:E03"
    ],
-   "sha256": "f7b087b6489609be5cb403b60710c5693f4ab8b6b8934aefe3fcd827dabc824c"
+   "sha256": "02cf4cdff004ac22b25cf4f50c07e95f4b81d6d0d7d601d7ecd752324a58a1df"
   },
   {
    "path": "generated/content/levels/lab/experimental/E04.json",
    "owners": [
     "level:E04"
    ],
-   "sha256": "6f05aadac75f7cf56c3653023314188734b06db9cdf888936a32f4782acdba7e"
+   "sha256": "fab689349958ef8adf4e5f701f88975ad02840ad652096058f10acf5658d555e"
   },
   {
    "path": "generated/content/levels/lab/experimental/E05.json",
    "owners": [
     "level:E05"
    ],
-   "sha256": "c39249e7f4c9d08739e03b005c254deb00e8f3604260ccc8225e106c2486be57"
+   "sha256": "1d5dc89d477351958303eba7054d54dd9cb18dae12d2bffac38ef478812cf6b3"
   },
   {
    "path": "generated/content/levels/lab/experimental/E06.json",
    "owners": [
     "level:E06"
    ],
-   "sha256": "c2412b8427762c897f2d686469a0f2df03b17a3b2e4fd197596210aee597c3f4"
+   "sha256": "167c88d1e4ba0c579e14cb38f4dff9e89a8aca46e0bac370c33b17c2a12d01ba"
+  },
+  {
+   "path": "generated/content/rooms/dungeon/dungeon_burrow.json",
+   "owners": [
+    "room:dungeon_burrow"
+   ],
+   "sha256": "06f791d4b0781d7771dfb51381fc4540156b7ca410841ad8e1e0a250ebf0c382"
+  },
+  {
+   "path": "generated/content/rooms/dungeon/dungeon_corner.json",
+   "owners": [
+    "room:dungeon_corner"
+   ],
+   "sha256": "ddc3bf673f875efd8f7ca26c4ad302a3946de2ad59868e132d5eb76988e36ad2"
+  },
+  {
+   "path": "generated/content/rooms/dungeon/dungeon_gate.json",
+   "owners": [
+    "room:dungeon_gate"
+   ],
+   "sha256": "1b049eeb720c67415e2c79ad7d31765ab7179a55bdf969684adb1871dd731700"
+  },
+  {
+   "path": "generated/content/rooms/dungeon/dungeon_guard.json",
+   "owners": [
+    "room:dungeon_guard"
+   ],
+   "sha256": "f193c385e9c489a4a4193514a3a00bfe14239bb2cca574e735eecb662cd10e2b"
+  },
+  {
+   "path": "generated/content/rooms/dungeon/dungeon_hall.json",
+   "owners": [
+    "room:dungeon_hall"
+   ],
+   "sha256": "63d7044025c7b1fbce737b675b79fca2b7c3e579ee996cdf65ae45bb3604749c"
+  },
+  {
+   "path": "generated/content/rooms/dungeon/dungeon_home.json",
+   "owners": [
+    "room:dungeon_home"
+   ],
+   "sha256": "6a8dbddac437d3fa78bd8ead4434e2ed5ea03bff405893f3849362df31c481f2"
+  },
+  {
+   "path": "generated/content/rooms/dungeon/dungeon_plate.json",
+   "owners": [
+    "room:dungeon_plate"
+   ],
+   "sha256": "671e5e8787c3d2669db0e629367bad47c03727dbbd04103428001fe6c6187e2a"
+  },
+  {
+   "path": "generated/content/rooms/dungeon/dungeon_shaft.json",
+   "owners": [
+    "room:dungeon_shaft"
+   ],
+   "sha256": "09f9cd9cd3066c847a5e387cbca6300e7a70f979fa34eb997df93286efe1e421"
+  },
+  {
+   "path": "generated/content/rooms/dungeon/dungeon_station.json",
+   "owners": [
+    "room:dungeon_station"
+   ],
+   "sha256": "2943dd595148b339857da2693ae7f4ed87b74c14d3b91ae176794a02ae090a90"
+  },
+  {
+   "path": "generated/content/rooms/dungeon/dungeon_well.json",
+   "owners": [
+    "room:dungeon_well"
+   ],
+   "sha256": "7dfb90d1395d7554bd453fe0e7d24675eb219ad8126a217f4dd8d4060525494e"
   },
   {
    "path": "generated/content/catalog/modes.json",
@@ -2836,7 +2910,7 @@
     "group:thermal",
     "group:water"
    ],
-   "sha256": "1d70e69fc6aabac6e639bda85d9bbd0ce184fc585f1d4361b9d9497c01999108"
+   "sha256": "32c78662e9d913288e3a5294f6e67427d1a7f8bf0406bd0dd9c0fe2327325b9a"
   },
   {
    "path": "generated/content/catalog/worlds.json",
@@ -3329,6 +3403,8 @@
     "text:env.lite",
     "text:env.off",
     "text:error.runtime",
+    "text:extra.chapter.review",
+    "text:extra.chapter.review_blurb",
     "text:extra.controls.bomb",
     "text:extra.rule.fall.name",
     "text:extra.rule.fall.text",
@@ -3648,7 +3724,7 @@
     "text:theme.ruins",
     "text:theme.sky"
    ],
-   "sha256": "ed8fac5c4b851fac38f83b6149539386c40712b00e97fd5ff19690069bb4c021"
+   "sha256": "2ae720ea5499af48b62bdcaca83611b87473fae5fcb13efa4f03ac65200ad5c7"
   },
   {
    "path": "generated/content/i18n/en.json",
@@ -3719,6 +3795,8 @@
     "text:env.lite",
     "text:env.off",
     "text:error.runtime",
+    "text:extra.chapter.review",
+    "text:extra.chapter.review_blurb",
     "text:extra.controls.bomb",
     "text:extra.rule.fall.name",
     "text:extra.rule.fall.text",
@@ -4038,7 +4116,7 @@
     "text:theme.ruins",
     "text:theme.sky"
    ],
-   "sha256": "d1ceab76c307b458ca73037378fcc0ac84337d6c42a7cd571faa95cda0c53813"
+   "sha256": "d5988b05203d11f3f5abab863238263f9b73e49abbc58dd2ddf6da6f431f9f16"
   },
   {
    "path": "generated/art/sheets/avatar.goblin_smith.png",
@@ -6553,7 +6631,9 @@
     "text:level.E03.discovery",
     "text:level.E03.hint.1",
     "text:level.E03.hint.2",
-    "text:level.E03.hint.3"
+    "text:level.E03.hint.3",
+    "text:extra.chapter.review",
+    "text:extra.chapter.review_blurb"
    ],
    "sha256": null
   }

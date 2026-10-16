@@ -7,11 +7,11 @@ import { fileURLToPath } from "node:url";
 
 export const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
 
-export function loadCore(names) {
+export function loadCore(names, { authoringModel = true } = {}) {
   for (const name of names) {
     const file = path.join(ROOT, "workbench/js/core", name + ".js");
     vm.runInThisContext(fs.readFileSync(file, "utf8"), { filename: file });
-    if (name === "tilemodel") {
+    if (name === "tilemodel" && authoringModel) {
       const runtime = path.join(ROOT, "workbench/js/core/tilemodel-runtime.js");
       vm.runInThisContext(fs.readFileSync(runtime, "utf8"), { filename: runtime });
     }

@@ -1,6 +1,6 @@
 class_name PortitorBubble
 extends Control
-## Reusable text layout. Pending bubble art is a conspicuous flat placeholder.
+## Reusable text layout using the approved bubble and tail sheets.
 var issues: Array[String] = []
 var box: Rect2
 var below: bool = false
@@ -8,6 +8,7 @@ var tail_x: float = 0
 var _lines: PackedStringArray = []
 var _revealed: float = 0
 var _total: int = 0
+var _approved_art: bool = false
 
 func configure(text: String, speaker: Vector2, name_text: String, placeholder_text: String) -> void:
 	for child: Node in get_children():
@@ -29,7 +30,32 @@ func configure(text: String, speaker: Vector2, name_text: String, placeholder_te
 	below = speaker.y - 4 - height - 2 < 22
 	box = Rect2(clampf(roundf(speaker.x - width / 2), 3, 317 - width), minf(177 - height, speaker.y + 24) if below else speaker.y - height - 6, width, height)
 	tail_x = clampf(speaker.x, box.position.x + 5, box.end.x - 6)
-	var title: String = name_text + " · " + placeholder_text
+	var texture: AtlasTexture = PortitorUI.atlas("art:ui.bubble", "say")
+	var tail: AtlasTexture = PortitorUI.atlas("art:ui.bubble_tail", "say")
+	_approved_art = texture != null and tail != null
+	if _approved_art:
+		var panel := NinePatchRect.new()
+		panel.name = "ApprovedBubble"
+		panel.show_behind_parent = true
+		panel.texture = texture
+		panel.position = box.position
+		panel.size = box.size
+		var margins: Array = get_node("/root/Registry").art("art:ui.bubble").get("ninepatch", [4, 4, 4, 4])
+		panel.patch_margin_top = int(margins[0])
+		panel.patch_margin_right = int(margins[1])
+		panel.patch_margin_bottom = int(margins[2])
+		panel.patch_margin_left = int(margins[3])
+		panel.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		add_child(panel)
+		var tip := TextureRect.new()
+		tip.texture = tail
+		tip.show_behind_parent = true
+		tip.size = tail.get_size()
+		tip.position = Vector2(tail_x - 3, box.position.y - 6 if below else box.end.y)
+		tip.flip_v = below
+		tip.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		add_child(tip)
+	var title: String = name_text + (" · " + placeholder_text if not _approved_art and not placeholder_text.is_empty() else "")
 	var title_width: float = minf(310, PortitorUI.font().get_string_size(title, HORIZONTAL_ALIGNMENT_LEFT, -1, 12).x + 2)
 	var name_tag: Label = PortitorUI.label(title, title_width)
 	name_tag.position = Vector2(clampf(box.position.x + 4, 3, 317 - title_width), maxf(0, box.position.y - 14))
@@ -47,10 +73,10 @@ func reveal_all() -> void:
 	queue_redraw()
 
 func _draw() -> void:
-	draw_rect(box, Color("e4a672"))
-	var x: float = tail_x
-	var y: float = box.position.y if below else box.end.y
-	draw_rect(Rect2(x, y - 4 if below else y, 2, 4), Color("e4a672"))
+	if not _approved_art:
+		draw_rect(box, Color("e4a672"))
+		var y: float = box.position.y if below else box.end.y
+		draw_rect(Rect2(tail_x, y - 4 if below else y, 2, 4), Color("e4a672"))
 	var remaining: int = floori(_revealed)
 	for line_index: int in mini(4, _lines.size()):
 		var line: String = _lines[line_index]

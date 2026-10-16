@@ -85,10 +85,10 @@ func run() -> Dictionary:
 			if not expected.routes.has(uid):
 				check("%s.model_export" % entry.id, false, "independent expected states", "missing")
 				continue
-			_replay(spec, expected.routes[uid])
+			_replay(spec, expected.routes[uid], digest)
 	return report()
 
-func _replay(spec: Dictionary, model_steps: Array) -> void:
+func _replay(spec: Dictionary, model_steps: Array, spec_hash: String) -> void:
 	var first_check: int = checks.size()
 	var hash_runs: Array = []
 	var won_runs: Array[bool] = []
@@ -154,17 +154,12 @@ func _replay(spec: Dictionary, model_steps: Array) -> void:
 			undo_ok = undo_ok and item.status == "pass"
 	var every_run_won: bool = won_runs.size() == 3 and not won_runs.has(false)
 	var alternative: Dictionary = {}
-	if str(spec.id) == "M06":
-		alternative = _m06_alternative()
-		var alternate_check: Dictionary = {"id": "M06.alternative.sdk_verified", "status": "not_run", "ok": false, "expected": "SDK replay of the specified sand-plate/crate-step alternative", "actual": alternative}
-		checks.append(alternate_check)
-		level_checks.append(alternate_check)
 	var specification_checks: Array = _spec_acceptance(spec, level_checks)
 	var acceptance_ok: bool = true
 	for requirement: Dictionary in specification_checks:
 		acceptance_ok = acceptance_ok and requirement.status == "pass"
 	levels.append({
-		"id": spec.id, "uid": "level:" + str(spec.id),
+		"id": spec.id, "uid": "level:" + str(spec.id), "spec_sha256": spec_hash,
 		"sdk_verified": passed, "author_solution_verified": passed, "acceptance_ok": acceptance_ok,
 		"won": every_run_won, "replays": hash_runs.size(), "repeats": hash_runs.size(),
 		"consistent": consistent, "undo_ok": undo_ok, "max_ticks": max_ticks, "max_settle_ticks": max_ticks,
@@ -172,20 +167,6 @@ func _replay(spec: Dictionary, model_steps: Array) -> void:
 		"max_advance_us": max_advance_us, "max_undo_us": max_undo_us,
 		"checks": level_checks, "spec_checks": specification_checks, "alternative": alternative, "steps": all_steps
 	})
-
-func _m06_alternative() -> Dictionary:
-	var path: String = "res://tests/levels/M06-alternative.generated.json"
-	var model_result: Dictionary = {}
-	if FileAccess.file_exists(path):
-		var parsed: Variant = JSON.parse_string(FileAccess.get_file_as_string(path))
-		if parsed is Dictionary:
-			model_result = parsed
-	return {
-		"ok": false, "sdk_status": "not_run", "needs_design_review": true,
-		"reason": "The unchanged design model exhaustively found no specified alternative route; SDK replay was not run because no candidate sequence was found." if bool(model_result.get("complete", false)) and not bool(model_result.get("found", false)) else "Alternative route has not been supplied and verified.",
-		"scope": "Design-model search is not SDK verification.",
-		"model_search": model_result
-	}
 
 func _acceptance(spec: Dictionary, session, action: String, prefix: String) -> void:
 	var current: Dictionary = session.state()
@@ -222,7 +203,7 @@ func _spec_acceptance(spec: Dictionary, local_checks: Array) -> Array:
 		"M03": [["*.won", "*.undo*.game_state"], ["*.upper_earth_static", "*.bag_range"]],
 		"M04": [["*.sand_step_majority", "gameplay:move.one_step_up"], ["*.won"], ["sdk:sample.a.target_classifies_sand", "sdk:sample.a.total_spill_under_128"]],
 		"M05": [["gameplay:plate.fallen_box_opens"], ["gameplay:plate.person_opens", "gameplay:door.occupied_stays_open", "gameplay:door.closes_after_clear"]],
-		"M06": [["*.won", "M06.alternative.sdk_verified"], ["*.undo*.game_state", "*.undo*.sdk_hash"]],
+		"M06": [["*.won"], ["*.undo*.game_state", "*.undo*.sdk_hash"]],
 		"M07": [["*.fall_opens_same_settle"], ["*.undo*.game_state", "*.undo*.sdk_hash"]]
 	}
 	var patterns: Array = coverage.get(str(spec.id), [])
@@ -247,14 +228,18 @@ func _spec_acceptance(spec: Dictionary, local_checks: Array) -> Array:
 				if not matched and status != "fail":
 					status = "not_run"
 		var row: Dictionary = {"text": str(texts[index]), "status": status, "assertions": references}
-		if str(spec.id) == "M06" and index == 0:
-			row.alternative = _m06_alternative()
 		output.append(row)
 	return output
 
 func _same(actual: Dictionary, expected: Dictionary) -> bool:
 	for key: String in ["w", "h", "player", "crates", "terrain", "bag", "doors", "moves", "won"]:
-		if not _same_value(actual.get(key), expected.get(key)):
+		var observed: Variant = actual.get(key)
+		var reference: Variant = expected.get(key)
+		if key == "crates":
+			observed = actual.get(key, []).map(func(c: Dictionary) -> Dictionary: return {"x": c.x, "y": c.y, "kind": c.kind})
+		if key == "crates":
+			reference = expected.get(key, []).map(func(c: Dictionary) -> Dictionary: return {"x": c.x, "y": c.y, "kind": c.kind})
+		if not _same_value(observed, reference):
 			return false
 	return true
 

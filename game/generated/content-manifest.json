@@ -222,7 +222,7 @@
       "bomb"
      ],
      "spec": "content/levels/lab/blast/Q01.json",
-     "sha256": "62b016b6ef2a29db51865e551fdfec32af44e029a5787894a8d834f8edcb8e80"
+     "sha256": "c896c95b7970bcdbaa2d755bcfd1f308dea51b05f2fa7045e55cd0964a2362ae"
     },
     {
      "id": "Q02",
@@ -231,7 +231,7 @@
       "blast_through"
      ],
      "spec": "content/levels/lab/blast/Q02.json",
-     "sha256": "7d63abf6e61763c6d8b6737f5647122fd40e90ffb685b7dd06193db31816441f"
+     "sha256": "3a867dffb8291d0e43eaa7a9a56401693d0ee099b0c4ddd4497b2c81c596e3e9"
     },
     {
      "id": "Q03",
@@ -240,7 +240,7 @@
       "fuse"
      ],
      "spec": "content/levels/lab/blast/Q03.json",
-     "sha256": "8ed9112e90f5e39c43ed9a4e2f8d6235ecc3e6cee74f335c91ed22b84dfd0a8e"
+     "sha256": "ae2cdd3d7ef4b9f57e74d494e901c3d55333e0679d6eeda57401c5e347ebb1b7"
     },
     {
      "id": "Q04",
@@ -249,7 +249,7 @@
       "gravel"
      ],
      "spec": "content/levels/lab/blast/Q04.json",
-     "sha256": "47093eb667900a7a90e86624acc5799e24fb2bfb57f669b99facd1871beb8159"
+     "sha256": "f541a96b33f2594cd24420f6349ac2ea2ab36c643f0e53b587db67a56b818a73"
     },
     {
      "id": "Q07",
@@ -258,7 +258,7 @@
       "mine_cart"
      ],
      "spec": "content/levels/lab/blast/Q07.json",
-     "sha256": "f27c065bd58ce1e50953f10a769d9e3f9e24dde85dd31a29ee1fcf1350b2e045"
+     "sha256": "570b6b629d4debbc8841fe0a552bec93e09131a452006986e5ad788de35a81ce"
     },
     {
      "id": "Q08",
@@ -267,7 +267,7 @@
       "lantern_reveal"
      ],
      "spec": "content/levels/lab/blast/Q08.json",
-     "sha256": "21b57f28e82f58d66c86554565989ff93c23ceb0502b7db8dce5f1641557332d"
+     "sha256": "d67fff1c216b75fa4c79661dd67b45cecefa5ba35745f53df2e036ed54d0ac78"
     },
     {
      "id": "Q09",
@@ -276,7 +276,7 @@
       "nested_box"
      ],
      "spec": "content/levels/lab/blast/Q09.json",
-     "sha256": "c955b8a4c94f86bdef1a99211e7c2c76ead08533cfb91f6c16f37fccabec8fc2"
+     "sha256": "2c86776c334b72977c563b7534594d89e47779b12deac630c777084738945494"
     },
     {
      "id": "Q10",
@@ -286,7 +286,7 @@
       "mine_cart"
      ],
      "spec": "content/levels/lab/blast/Q10.json",
-     "sha256": "0eea037854fc8750010f2fe9170868ce7d1517d93c43da2725da0a09b2793740"
+     "sha256": "a3cd2540c04d30e47197fcfc6cc10e5a62a42f8ce31e42fa168375522e951305"
     }
    ]
   },
@@ -308,7 +308,7 @@
       "acid"
      ],
      "spec": "content/levels/lab/react/G01.json",
-     "sha256": "f6e34857c78a594ec5ac926e5fb75fbd29db911702ad198bad9cc0ed55439eba"
+     "sha256": "3997be008c9cb6351a62725ee52dc0cf19e4283c698fa058a9c642e8499872bf"
     },
     {
      "id": "G02",
@@ -317,7 +317,7 @@
       "etch_tag"
      ],
      "spec": "content/levels/lab/react/G02.json",
-     "sha256": "5dbd7ca5fcf37c7ba0af65b0832669a91e4a0afdb238b0416c7708adb0f9c4fc"
+     "sha256": "a26663855ea6ddeb088dce9b3fe73de83c79d9cbca8be7db4e63b8972fa2aae3"
     },
     {
      "id": "G03",
@@ -326,7 +326,7 @@
       "gas_rise"
      ],
      "spec": "content/levels/lab/react/G03.json",
-     "sha256": "ef594871174e60bdfc9069409c31baad324ef3f5767195ac7afc584910810a9e"
+     "sha256": "2f49a0911ba4f3ef0f44614e7822cbf84f9a852aad559a8b2ae03acd9602e997"
     },
     {
      "id": "G04",
@@ -335,7 +335,7 @@
       "gas_sink"
      ],
      "spec": "content/levels/lab/react/G04.json",
-     "sha256": "6bec9479aa8b3de0892208d6583d6aea0b317f745d46516b442c1094b01cd300"
+     "sha256": "3e743914931cb45cf25a385f320ec05cdda9ed30685dd72616d6b2aad3df5f71"
     },
     {
      "id": "G05",
@@ -344,7 +344,7 @@
       "lifetime"
      ],
      "spec": "content/levels/lab/react/G05.json",
-     "sha256": "a7010a27e601afa9adef4e8d92c743f1e3c24ce3f5a2b5acb4cd36544ff9639a"
+     "sha256": "dbb0efbc542af2836889ff9b1496bf82518b87cfd78e77348b84536e97001c52"
     },
     {
      "id": "G06",
@@ -353,7 +353,7 @@
       "vine"
      ],
      "spec": "content/levels/lab/react/G06.json",
-     "sha256": "78ac8171b8713aa06032718f821bd31b6611167a024371c330722139ffa648d8"
+     "sha256": "975c89da2af54a873f1d05437f057b31412e5fb7c130ab1188c9029117e15c8f"
     },
     {
      "id": "G08",
@@ -362,7 +362,7 @@
       "bounce"
      ],
      "spec": "content/levels/lab/react/G08.json",
-     "sha256": "84461ac3c9d6758e37e2e3b7be0ec66cbc4f17afb424b505c72690808e44255b"
+     "sha256": "2e4e1fe92cdc29959c46989ab2ceed851f512a07a300dc042e9156ab138b7210"
     },
     {
      "id": "G09",
@@ -371,7 +371,7 @@
       "seesaw"
      ],
      "spec": "content/levels/lab/react/G09.json",
-     "sha256": "5ac0461d36ddea2154908b97dfe476996329d81e41ae15102bd209cae7577897"
+     "sha256": "cb22c78e9acd7a16fd5d3c018fa49aad7f394eb131a9128e35ec06f7c9bbd481"
     },
     {
      "id": "G10",
@@ -381,7 +381,7 @@
       "seesaw"
      ],
      "spec": "content/levels/lab/react/G10.json",
-     "sha256": "b0e8447e69f4e1132dd11a5a857565d05d82c1864fd2991a8846a9400f156388"
+     "sha256": "b0c21afa6a1d7fed906ace8b06fe1eba5a69e93fc3bfa34b6c445525d21585a9"
     }
    ]
   },
@@ -406,7 +406,7 @@
       "burn"
      ],
      "spec": "content/levels/lab/thermal/F01.json",
-     "sha256": "7f5ac5b052bfe6bf5fc19065040d1dce97bb413ef1e785685f944290fc921712"
+     "sha256": "30b92b24ef563d71a14861f14a6c49f54b0b1fee8205e97e418c84332c675dd0"
     },
     {
      "id": "F02",
@@ -415,7 +415,7 @@
       "freeze"
      ],
      "spec": "content/levels/lab/thermal/F02.json",
-     "sha256": "758fa04813cecf993b4893c1e243dad96c0777c7010033b9a90a3a26f3a0ce31"
+     "sha256": "fdaead7b0c27e1e0c491fd643cb31b7551e79b95e9c87cbb6346c4d041bba217"
     },
     {
      "id": "F03",
@@ -424,7 +424,7 @@
       "melt"
      ],
      "spec": "content/levels/lab/thermal/F03.json",
-     "sha256": "80bbd7cf87695e66fec4d9af0d3c3069007c82e456857ec55e9946b3b0ee4fac"
+     "sha256": "17459734821f7293b832649044282496958e3dd09517fffaed376d806f7a0008"
     },
     {
      "id": "F04",
@@ -433,7 +433,7 @@
       "blast_ignite"
      ],
      "spec": "content/levels/lab/thermal/F04.json",
-     "sha256": "d1392139cd5c571c1b901c5fa89778d94b9df935b2b601e376c5b74f6df5f121"
+     "sha256": "578a9f0743cf95e4b39d9ffbc92254d7d7f8463e982b0244df5c3c13ad696c4c"
     },
     {
      "id": "F07",
@@ -442,7 +442,7 @@
       "ice_slide"
      ],
      "spec": "content/levels/lab/thermal/F07.json",
-     "sha256": "fa9671687e01417536b4671ed24e42a178e1445fd31375b9cbe1995c0467e899"
+     "sha256": "b41977588e60cefb8c784faec44f35d43ebab64e3f1cf8613f17f39f01020212"
     },
     {
      "id": "F08",
@@ -451,7 +451,7 @@
       "gust"
      ],
      "spec": "content/levels/lab/thermal/F08.json",
-     "sha256": "b27144f5749d13afbaf547fcb81cc1418458e54d41b4e2c5c074008bf49b0083"
+     "sha256": "a4adf8a53597ff22d39bfb735758fc9bedb0679cce7f2747b85eed6b616efdc1"
     },
     {
      "id": "F09",
@@ -461,7 +461,7 @@
       "ice_slide"
      ],
      "spec": "content/levels/lab/thermal/F09.json",
-     "sha256": "4796eaebfb68e0f8e517f7c0c74c1be721069f795acfb2ac8dba08781afd541c"
+     "sha256": "f99068ad7b98857169ba43614b0eb1c8a1330e025dfdf1b9548de01f8842f1fa"
     }
    ]
   },
@@ -469,7 +469,7 @@
    "id": "experimental",
    "mode": "lab",
    "order": 6,
-   "name": "实验",
+   "name": "跨章组合复习",
    "theme": "theme.cosmos",
    "sdk_profile": [
     "cells",
@@ -482,63 +482,63 @@
    "levels": [
     {
      "id": "E01",
-     "title": "沙替我守门",
+     "title": "蚀脚压门",
      "mechanisms": [
-      "pour",
+      "acid",
       "plate_door"
      ],
      "spec": "content/levels/lab/experimental/E01.json",
-     "sha256": "eb083f12bd688771f3b4bd629159092e3324b30ed0e13d83b13eb5e935c0d783"
+     "sha256": "b77c682bbefe1db9e2bdd826d88736d53a277778808fceb43c40f31c4caa6abb"
     },
     {
      "id": "E02",
-     "title": "箱子先过去",
+     "title": "离灯入阵",
      "mechanisms": [
-      "portal",
-      "push"
+      "lantern_reveal",
+      "portal"
      ],
      "spec": "content/levels/lab/experimental/E02.json",
-     "sha256": "82346c65163ac50edad6ab475899209d131e42cfd5961cad7cf4fdb88a5e632b"
+     "sha256": "922b9ac455e208debf62099a80db3eddb93c795af341ff2460301680e408d15b"
     },
     {
      "id": "E03",
-     "title": "装好再放水",
+     "title": "融水长藤",
      "mechanisms": [
-      "bin",
-      "lift"
+      "melt",
+      "vine"
      ],
      "spec": "content/levels/lab/experimental/E03.json",
-     "sha256": "f7b087b6489609be5cb403b60710c5693f4ab8b6b8934aefe3fcd827dabc824c"
+     "sha256": "02cf4cdff004ac22b25cf4f50c07e95f4b81d6d0d7d601d7ecd752324a58a1df"
     },
     {
      "id": "E04",
-     "title": "清轨再发车",
+     "title": "碎石压断桥",
      "mechanisms": [
-      "bomb",
-      "mine_cart"
+      "gravel",
+      "load_bridge"
      ],
      "spec": "content/levels/lab/experimental/E04.json",
-     "sha256": "6f05aadac75f7cf56c3653023314188734b06db9cdf888936a32f4782acdba7e"
+     "sha256": "fab689349958ef8adf4e5f701f88975ad02840ad652096058f10acf5658d555e"
     },
     {
      "id": "E05",
-     "title": "冻道送箱",
+     "title": "滑箱接上车",
      "mechanisms": [
-      "freeze",
-      "ice_slide"
+      "ice_slide",
+      "mine_cart"
      ],
      "spec": "content/levels/lab/experimental/E05.json",
-     "sha256": "c39249e7f4c9d08739e03b005c254deb00e8f3604260ccc8225e106c2486be57"
+     "sha256": "1d5dc89d477351958303eba7054d54dd9cb18dae12d2bffac38ef478812cf6b3"
     },
     {
      "id": "E06",
-     "title": "重箱开水门",
+     "title": "风落上高台",
      "mechanisms": [
-      "load_bridge",
-      "float_sink"
+      "gust",
+      "seesaw"
      ],
      "spec": "content/levels/lab/experimental/E06.json",
-     "sha256": "c2412b8427762c897f2d686469a0f2df03b17a3b2e4fd197596210aee597c3f4"
+     "sha256": "167c88d1e4ba0c579e14cb38f4dff9e89a8aca46e0bac370c33b17c2a12d01ba"
     }
    ]
   },
@@ -622,10 +622,9 @@
    "owner": "game",
    "sdk": [],
    "levels": [
-    "M01",
-    "E02"
+    "M01"
    ],
-   "status": "specified"
+   "status": "playable"
   },
   {
    "id": "ladder",
@@ -636,7 +635,7 @@
    "levels": [
     "M02"
    ],
-   "status": "specified"
+   "status": "playable"
   },
   {
    "id": "dig",
@@ -650,7 +649,7 @@
    "levels": [
     "M03"
    ],
-   "status": "specified"
+   "status": "playable"
   },
   {
    "id": "pour",
@@ -663,8 +662,7 @@
    "levels": [
     "M04",
     "M06",
-    "G10",
-    "E01"
+    "G10"
    ],
    "status": "specified"
   },
@@ -692,7 +690,7 @@
    "levels": [
     "M07"
    ],
-   "status": "specified"
+   "status": "playable"
   },
   {
    "id": "water_flow",
@@ -717,8 +715,7 @@
     "liquid"
    ],
    "levels": [
-    "W02",
-    "E06"
+    "W02"
    ],
    "status": "specified"
   },
@@ -768,8 +765,7 @@
    "sdk": [],
    "levels": [
     "W05",
-    "W10",
-    "E03"
+    "W10"
    ],
    "status": "specified"
   },
@@ -783,8 +779,7 @@
    ],
    "levels": [
     "W07",
-    "W10",
-    "E03"
+    "W10"
    ],
    "status": "specified"
   },
@@ -798,10 +793,9 @@
    ],
    "levels": [
     "Q01",
-    "Q10",
-    "E04"
+    "Q10"
    ],
-   "status": "specified"
+   "status": "playable"
   },
   {
    "id": "blast_through",
@@ -814,7 +808,7 @@
    "levels": [
     "Q02"
    ],
-   "status": "specified"
+   "status": "playable"
   },
   {
    "id": "fuse",
@@ -840,7 +834,8 @@
     "powder move_chance"
    ],
    "levels": [
-    "Q04"
+    "Q04",
+    "E04"
    ],
    "status": "specified"
   },
@@ -853,7 +848,8 @@
     "reactions"
    ],
    "levels": [
-    "G01"
+    "G01",
+    "E01"
    ],
    "status": "specified"
   },
@@ -918,7 +914,8 @@
     "count_materials"
    ],
    "levels": [
-    "G06"
+    "G06",
+    "E03"
    ],
    "status": "specified"
   },
@@ -934,7 +931,7 @@
    "levels": [
     "F01"
    ],
-   "status": "specified"
+   "status": "playable"
   },
   {
    "id": "freeze",
@@ -946,8 +943,7 @@
    ],
    "levels": [
     "F02",
-    "F09",
-    "E05"
+    "F09"
    ],
    "status": "specified"
   },
@@ -960,7 +956,8 @@
     "couplers layer_to_material"
    ],
    "levels": [
-    "F03"
+    "F03",
+    "E03"
    ],
    "status": "specified"
   },
@@ -976,7 +973,7 @@
    "levels": [
     "F04"
    ],
-   "status": "specified"
+   "status": "playable"
   },
   {
    "id": "power",
@@ -1270,7 +1267,7 @@
    "sdk": [],
    "levels": [
     "W08",
-    "E06"
+    "E04"
    ],
    "status": "specified"
   },
@@ -1292,7 +1289,8 @@
    "owner": "game",
    "sdk": [],
    "levels": [
-    "Q08"
+    "Q08",
+    "E02"
    ],
    "status": "specified"
   },
@@ -1333,7 +1331,8 @@
    "sdk": [],
    "levels": [
     "G09",
-    "G10"
+    "G10",
+    "E06"
    ],
    "status": "specified"
   },
@@ -1344,7 +1343,8 @@
    "owner": "game",
    "sdk": [],
    "levels": [
-    "F08"
+    "F08",
+    "E06"
    ],
    "status": "specified"
   },
@@ -1428,7 +1428,7 @@
    "levels": [
     "Q09"
    ],
-   "status": "specified"
+   "status": "playable"
   },
   {
    "id": "petal_trail",
@@ -1457,7 +1457,7 @@
    "levels": [
     "Q07",
     "Q10",
-    "E04"
+    "E05"
    ],
    "status": "specified"
   }

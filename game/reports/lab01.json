@@ -1,0 +1,415 @@
+{
+  "generated": "2026-10-16T08:12:52.942472+00:00",
+  "commit": "0f43ad112a009188df84b2de82262ac354f2f0bd",
+  "tested_source_sha256": "f4f4106569b55c1abb09ec19f4de61b425b1ca95807ef426aac3ece986e893b9",
+  "source_changed": false,
+  "sdk": "v1.2.0 dacb93e",
+  "godot": "4.7.2",
+  "run_incomplete": false,
+  "format": "portitor.package-evidence/1",
+  "package": "LAB-01",
+  "suites": [
+    {
+      "name": "importer",
+      "ok": true,
+      "completed": true,
+      "exit_code": 0,
+      "engine_errors": false,
+      "seconds": 0.245,
+      "command": [
+        "node",
+        "--test",
+        "--test-concurrency=1",
+        "game/tests/core/import_resources.test.mjs",
+        "game/tests/core/mechanic_stubs.test.mjs"
+      ],
+      "log": "game/tests/results/importer.log"
+    },
+    {
+      "name": "resources",
+      "ok": true,
+      "completed": true,
+      "exit_code": 0,
+      "engine_errors": false,
+      "seconds": 0.305,
+      "command": [
+        "node",
+        "game/tools/import_resources.mjs",
+        "import"
+      ],
+      "log": "game/tests/results/resources.log"
+    },
+    {
+      "name": "model-export",
+      "ok": true,
+      "completed": true,
+      "exit_code": 0,
+      "engine_errors": false,
+      "seconds": 0.041,
+      "command": [
+        "node",
+        "game/tools/export_model.mjs"
+      ],
+      "log": "game/tests/results/model-export.log"
+    },
+    {
+      "name": "ladder-reference-export",
+      "ok": true,
+      "completed": true,
+      "exit_code": 0,
+      "engine_errors": false,
+      "seconds": 0.193,
+      "command": [
+        "node",
+        "game/tests/refs/generate_ladder_refs.mjs"
+      ],
+      "log": "game/tests/results/ladder-reference-export.log"
+    },
+    {
+      "name": "reference-export",
+      "ok": true,
+      "completed": true,
+      "exit_code": 0,
+      "engine_errors": false,
+      "seconds": 0.619,
+      "command": [
+        "node",
+        "game/tests/refs/generate_workbench_refs.mjs"
+      ],
+      "log": "game/tests/results/reference-export.log"
+    },
+    {
+      "name": "godot-import",
+      "ok": true,
+      "completed": true,
+      "exit_code": 0,
+      "engine_errors": false,
+      "seconds": 4.187,
+      "command": [
+        "/Users/key_/Desktop/CURRGO/pushbox-demo/../ele-proj/zips/Godot.app/Contents/MacOS/Godot",
+        "--headless",
+        "--path",
+        "/Users/key_/Desktop/CURRGO/pushbox-demo/game",
+        "--import"
+      ],
+      "log": "game/tests/results/godot-import.log"
+    },
+    {
+      "name": "core",
+      "ok": true,
+      "completed": true,
+      "exit_code": 0,
+      "engine_errors": false,
+      "seconds": 0.248,
+      "command": [
+        "/Users/key_/Desktop/CURRGO/pushbox-demo/../ele-proj/zips/Godot.app/Contents/MacOS/Godot",
+        "--headless",
+        "--path",
+        "/Users/key_/Desktop/CURRGO/pushbox-demo/game",
+        "--script",
+        "res://tests/core/services_test.gd"
+      ],
+      "log": "game/tests/results/core.log"
+    },
+    {
+      "name": "sdk",
+      "ok": true,
+      "completed": true,
+      "exit_code": 0,
+      "engine_errors": false,
+      "seconds": 0.243,
+      "command": [
+        "/Users/key_/Desktop/CURRGO/pushbox-demo/../ele-proj/zips/Godot.app/Contents/MacOS/Godot",
+        "--headless",
+        "--path",
+        "/Users/key_/Desktop/CURRGO/pushbox-demo/game",
+        "--script",
+        "res://tests/sdk/run.gd"
+      ],
+      "log": "game/tests/results/sdk.log"
+    },
+    {
+      "name": "gameplay",
+      "ok": true,
+      "completed": true,
+      "exit_code": 0,
+      "engine_errors": false,
+      "seconds": 0.829,
+      "command": [
+        "/Users/key_/Desktop/CURRGO/pushbox-demo/../ele-proj/zips/Godot.app/Contents/MacOS/Godot",
+        "--headless",
+        "--path",
+        "/Users/key_/Desktop/CURRGO/pushbox-demo/game",
+        "--script",
+        "res://tests/gameplay/run.gd"
+      ],
+      "log": "game/tests/results/gameplay.log"
+    },
+    {
+      "name": "levels",
+      "ok": true,
+      "completed": true,
+      "exit_code": 0,
+      "engine_errors": false,
+      "seconds": 1.802,
+      "command": [
+        "/Users/key_/Desktop/CURRGO/pushbox-demo/../ele-proj/zips/Godot.app/Contents/MacOS/Godot",
+        "--headless",
+        "--path",
+        "/Users/key_/Desktop/CURRGO/pushbox-demo/game",
+        "--script",
+        "res://tests/levels/run.gd"
+      ],
+      "log": "game/tests/results/levels.log"
+    },
+    {
+      "name": "ids",
+      "ok": true,
+      "completed": true,
+      "exit_code": 0,
+      "engine_errors": false,
+      "seconds": 0.845,
+      "command": [
+        "/Users/key_/Desktop/CURRGO/pushbox-demo/../ele-proj/zips/Godot.app/Contents/MacOS/Godot",
+        "--headless",
+        "--path",
+        "/Users/key_/Desktop/CURRGO/pushbox-demo/game",
+        "--script",
+        "res://tools/check_ids.gd"
+      ],
+      "log": "game/tests/results/ids.log"
+    },
+    {
+      "name": "render",
+      "ok": true,
+      "completed": true,
+      "exit_code": 0,
+      "engine_errors": false,
+      "seconds": 3.559,
+      "command": [
+        "/Users/key_/Desktop/CURRGO/pushbox-demo/../ele-proj/zips/Godot.app/Contents/MacOS/Godot",
+        "--headless",
+        "--path",
+        "/Users/key_/Desktop/CURRGO/pushbox-demo/game",
+        "--script",
+        "res://tests/refs/test_render.gd"
+      ],
+      "log": "game/tests/results/render.log"
+    },
+    {
+      "name": "lab",
+      "ok": true,
+      "completed": true,
+      "exit_code": 0,
+      "engine_errors": false,
+      "seconds": 0.672,
+      "command": [
+        "/Users/key_/Desktop/CURRGO/pushbox-demo/../ele-proj/zips/Godot.app/Contents/MacOS/Godot",
+        "--headless",
+        "--path",
+        "/Users/key_/Desktop/CURRGO/pushbox-demo/game",
+        "--script",
+        "res://tests/modes/lab_test.gd"
+      ],
+      "log": "game/tests/results/lab.log"
+    },
+    {
+      "name": "ui",
+      "ok": true,
+      "completed": true,
+      "exit_code": 0,
+      "engine_errors": false,
+      "seconds": 5.506,
+      "command": [
+        "/Users/key_/Desktop/CURRGO/pushbox-demo/../ele-proj/zips/Godot.app/Contents/MacOS/Godot",
+        "--headless",
+        "--path",
+        "/Users/key_/Desktop/CURRGO/pushbox-demo/game",
+        "--script",
+        "res://tests/ui/run.gd"
+      ],
+      "log": "game/tests/results/ui.log"
+    },
+    {
+      "name": "ui-contracts",
+      "ok": true,
+      "completed": true,
+      "exit_code": 0,
+      "engine_errors": false,
+      "seconds": 2.57,
+      "command": [
+        "/Users/key_/Desktop/CURRGO/pushbox-demo/../ele-proj/zips/Godot.app/Contents/MacOS/Godot",
+        "--headless",
+        "--path",
+        "/Users/key_/Desktop/CURRGO/pushbox-demo/game",
+        "--script",
+        "res://tests/ui/contracts.gd"
+      ],
+      "log": "game/tests/results/ui-contracts.log"
+    },
+    {
+      "name": "ui-interactions",
+      "ok": true,
+      "completed": true,
+      "exit_code": 0,
+      "engine_errors": false,
+      "seconds": 10.15,
+      "command": [
+        "/Users/key_/Desktop/CURRGO/pushbox-demo/../ele-proj/zips/Godot.app/Contents/MacOS/Godot",
+        "--headless",
+        "--path",
+        "/Users/key_/Desktop/CURRGO/pushbox-demo/game",
+        "--script",
+        "res://tests/ui/interactions.gd"
+      ],
+      "log": "game/tests/results/ui-interactions.log"
+    },
+    {
+      "name": "ui-restart",
+      "ok": true,
+      "completed": true,
+      "exit_code": 0,
+      "engine_errors": false,
+      "seconds": 0.829,
+      "command": [
+        "/Users/key_/Desktop/CURRGO/pushbox-demo/../ele-proj/zips/Godot.app/Contents/MacOS/Godot",
+        "--headless",
+        "--path",
+        "/Users/key_/Desktop/CURRGO/pushbox-demo/game",
+        "--script",
+        "res://tests/ui/restart.gd"
+      ],
+      "log": "game/tests/results/ui-restart.log"
+    },
+    {
+      "name": "chapter-text",
+      "ok": true,
+      "completed": true,
+      "exit_code": 0,
+      "engine_errors": false,
+      "seconds": 0.448,
+      "command": [
+        "/Users/key_/Desktop/CURRGO/pushbox-demo/../ele-proj/zips/Godot.app/Contents/MacOS/Godot",
+        "--headless",
+        "--path",
+        "/Users/key_/Desktop/CURRGO/pushbox-demo/game",
+        "--script",
+        "res://tests/ui/chapter_text.gd"
+      ],
+      "log": "game/tests/results/chapter-text.log"
+    },
+    {
+      "name": "ladder-tops",
+      "ok": true,
+      "completed": true,
+      "exit_code": 0,
+      "engine_errors": false,
+      "seconds": 0.349,
+      "command": [
+        "/Users/key_/Desktop/CURRGO/pushbox-demo/../ele-proj/zips/Godot.app/Contents/MacOS/Godot",
+        "--headless",
+        "--path",
+        "/Users/key_/Desktop/CURRGO/pushbox-demo/game",
+        "--script",
+        "res://tests/refs/test_ladder_tops.gd"
+      ],
+      "log": "game/tests/results/ladder-tops.log"
+    },
+    {
+      "name": "thermal-hint-ui",
+      "ok": true,
+      "completed": true,
+      "exit_code": 0,
+      "engine_errors": false,
+      "seconds": 1.12,
+      "command": [
+        "/Users/key_/Desktop/CURRGO/pushbox-demo/../ele-proj/zips/Godot.app/Contents/MacOS/Godot",
+        "--headless",
+        "--path",
+        "/Users/key_/Desktop/CURRGO/pushbox-demo/game",
+        "--script",
+        "res://tests/chapters/thermal_hint_ui.gd"
+      ],
+      "log": "game/tests/results/thermal-hint-ui.log"
+    },
+    {
+      "name": "cart-json",
+      "ok": true,
+      "completed": true,
+      "exit_code": 0,
+      "engine_errors": false,
+      "seconds": 0.541,
+      "command": [
+        "/Users/key_/Desktop/CURRGO/pushbox-demo/../ele-proj/zips/Godot.app/Contents/MacOS/Godot",
+        "--headless",
+        "--path",
+        "/Users/key_/Desktop/CURRGO/pushbox-demo/game",
+        "--script",
+        "res://tests/chapters/cart_cases.gd"
+      ],
+      "log": "game/tests/results/cart-json.log"
+    },
+    {
+      "name": "gust-order",
+      "ok": true,
+      "completed": true,
+      "exit_code": 0,
+      "engine_errors": false,
+      "seconds": 0.641,
+      "command": [
+        "/Users/key_/Desktop/CURRGO/pushbox-demo/../ele-proj/zips/Godot.app/Contents/MacOS/Godot",
+        "--headless",
+        "--path",
+        "/Users/key_/Desktop/CURRGO/pushbox-demo/game",
+        "--script",
+        "res://tests/chapters/gust_order.gd"
+      ],
+      "log": "game/tests/results/gust-order.log"
+    },
+    {
+      "name": "bridge-gravel-contract",
+      "ok": true,
+      "completed": true,
+      "exit_code": 0,
+      "engine_errors": false,
+      "seconds": 0.449,
+      "command": [
+        "/Users/key_/Desktop/CURRGO/pushbox-demo/../ele-proj/zips/Godot.app/Contents/MacOS/Godot",
+        "--headless",
+        "--path",
+        "/Users/key_/Desktop/CURRGO/pushbox-demo/game",
+        "--script",
+        "res://tests/chapters/bridge_gravel_contract.gd"
+      ],
+      "log": "game/tests/results/bridge-gravel-contract.log"
+    }
+  ],
+  "all_baseline_suites_pass": true,
+  "node_tests": {
+    "count": 141,
+    "passed": 141,
+    "command": "node --test --test-concurrency=1 tests/*.test.mjs"
+  },
+  "runner_boundary_tests": {
+    "count": 13,
+    "passed": 13
+  },
+  "browser": {
+    "ok": true,
+    "command": "node tests/workbench.e2e.cjs",
+    "engine": "Chromium headless shell 1217 (local executable override)"
+  },
+  "full_run_exit_code": 1,
+  "full_run_failure_suites": [
+    "bridge-gravel",
+    "chapters"
+  ],
+  "issues": [
+    "Art export cannot equal origin/claude/inspiring-ride-zfnn4s: preexisting W01/W09 spec changes regenerate their reference pictures, and 30 chapter specs add reference renders; approved inputs and PNGs are unchanged."
+  ],
+  "resolved": [
+    "M06 alternative assertion removed to match the current merged specification, which explicitly withdrew that unsupported promise.",
+    "Approved-renderer model kept separate from mechanism authoring plugins; showcase parsing and goal lamps use frozen code."
+  ],
+  "run_id": "20261016T081145765109Z-9216"
+}

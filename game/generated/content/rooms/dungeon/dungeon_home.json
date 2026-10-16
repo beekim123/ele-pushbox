@@ -1,0 +1,123 @@
+{
+ "format": "pushbox.room/1",
+ "id": "dungeon_home",
+ "world": "dungeon",
+ "type": "home",
+ "name": "收件人之家",
+ "idea": "终点：收件人站在屋檐下的台阶上；僵尸会在屋里闲逛，地精铁匠的铁砧在这里。",
+ "weight": 10,
+ "mirror": true,
+ "exits": {
+  "left": [
+   "low"
+  ],
+  "right": [
+   "low"
+  ],
+  "top": [
+   "mid"
+  ],
+  "bottom": [
+   "mid"
+  ]
+ },
+ "legend": {
+  "1": {
+   "feature": "recipient"
+  }
+ },
+ "caps": {
+  "top": [
+   [
+    9,
+    0,
+    2,
+    6,
+    "#"
+   ],
+   [
+    9,
+    6,
+    2,
+    2,
+    "."
+   ]
+  ],
+  "bottom": [
+   [
+    9,
+    8,
+    2,
+    2,
+    "#"
+   ]
+  ]
+ },
+ "mechanisms": [
+  "ladder"
+ ],
+ "map": [
+  "#########HH#########",
+  "#........HH........#",
+  "#........HH........#",
+  "#........HH........#",
+  "#........HH........#",
+  "#........HH.....####",
+  ".........HH....1....",
+  "..$......HH...###...",
+  "#########HH#########",
+  "#########HH#########"
+ ],
+ "demos": [
+  {
+   "id": "miner",
+   "name": "交给老矿工",
+   "open": {
+    "left": "low"
+   },
+   "script": [
+    "R*15"
+   ],
+   "recipient": "old_miner",
+   "cargo": "letter",
+   "expect": {
+    "end": "deliver",
+    "cargo": 3
+   },
+   "from": "left.low"
+  },
+  {
+   "id": "zombie",
+   "name": "追上闲逛的僵尸",
+   "open": {
+    "left": "low"
+   },
+   "script": [
+    "R*15"
+   ],
+   "recipient": "zombie",
+   "expect": {
+    "end": "deliver"
+   },
+   "from": "left.low"
+  },
+  {
+   "id": "forge",
+   "name": "铁匠家很烫：冰淇淋化得快 3 倍",
+   "open": {
+    "left": "low"
+   },
+   "script": [
+    "wait 900",
+    "R*15"
+   ],
+   "recipient": "goblin_smith",
+   "cargo": "ice_cream",
+   "expect": {
+    "end": "deliver",
+    "cargo": 2
+   },
+   "from": "left.low"
+  }
+ ]
+}

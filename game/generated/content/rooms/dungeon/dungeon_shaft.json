@@ -1,0 +1,94 @@
+{
+ "format": "pushbox.room/1",
+ "id": "dungeon_shaft",
+ "world": "dungeon",
+ "type": "room",
+ "name": "竖井",
+ "idea": "上下相连的双梯子竖井，两侧小平台上有金币；左边平台上住着一群老鼠。",
+ "weight": 6,
+ "mirror": true,
+ "exits": {
+  "left": [
+   "low"
+  ],
+  "right": [
+   "low"
+  ],
+  "top": [
+   "mid"
+  ],
+  "bottom": [
+   "mid"
+  ]
+ },
+ "legend": {
+  "1": {
+   "monster": "rat_swarm",
+   "dir": "left"
+  }
+ },
+ "caps": {
+  "top": [
+   [
+    9,
+    0,
+    2,
+    6,
+    "#"
+   ],
+   [
+    9,
+    6,
+    2,
+    2,
+    "."
+   ]
+  ],
+  "bottom": [
+   [
+    9,
+    8,
+    2,
+    2,
+    "#"
+   ]
+  ]
+ },
+ "mechanisms": [
+  "ladder",
+  "push_monster"
+ ],
+ "map": [
+  "#########HH#########",
+  "#........HH........#",
+  "#........HH........#",
+  "#.$..1...HH........#",
+  "#########HH...$....#",
+  "#........HH#########",
+  ".........HH.........",
+  ".........HH.........",
+  "#########HH#########",
+  "#########HH#########"
+ ],
+ "demos": [
+  {
+   "id": "down",
+   "mechanisms": [
+    "ladder"
+   ],
+   "name": "顺着竖井爬下去",
+   "open": {
+    "top": "mid",
+    "bottom": "mid"
+   },
+   "script": [
+    "D*10"
+   ],
+   "expect": {
+    "end": "exit:bottom",
+    "hearts": 3
+   },
+   "from": "top.mid"
+  }
+ ]
+}

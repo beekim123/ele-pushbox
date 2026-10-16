@@ -116,6 +116,7 @@ export function importResources({ repoRoot = DEFAULT_REPO, gameRoot = path.join(
     if (!expected || expected.spec !== entry.source || expected.sha256 !== entry.sha256) throw new Error(`level missing from content manifest or hash mismatch: ${entry.uid}`);
     copy(entry.source, local(entry.game), [entry.uid], entry.sha256);
   }
+  for (const entry of map.entries.filter(e => e.domain === 'room')) copy(entry.source, local(entry.game), [entry.uid], entry.sha256);
   const catalogFiles = new Map();
   for (const e of map.entries) if (e.game.includes('/content/catalog/') && e.source) {
     const destination = local(e.game);
@@ -157,7 +158,11 @@ export function importResources({ repoRoot = DEFAULT_REPO, gameRoot = path.join(
       const name = e.id.slice('ui.screen.'.length);
       const implementation = `res://presentation/ui/screens/${name}.tscn`;
       const nodeName = name.split('_').map(s => s[0].toUpperCase() + s.slice(1)).join('');
-      put(local(e.game), `[gd_scene load_steps=2 format=3]\n\n[ext_resource type="PackedScene" path="${implementation}" id="1"]\n\n[node name="${nodeName}" instance=ExtResource("1")]\n`, [e.uid]);
+      const implemented = fs.existsSync(gamePath(gameRoot, implementation));
+      const scene = implemented
+        ? `[gd_scene load_steps=2 format=3]\n\n[ext_resource type="PackedScene" path="${implementation}" id="1"]\n\n[node name="${nodeName}" instance=ExtResource("1")]\n`
+        : `[gd_scene format=3]\n\n[node name="${nodeName}" type="Control"]\nmetadata/implementation_available = false\nmetadata/art_uid = ${JSON.stringify(e.uid)}\n`;
+      put(local(e.game), scene, [e.uid]);
     }
   }
   put('generated/art-index.json', artIndex, map.entries.filter(e => e.domain === 'art').map(e => e.uid));
@@ -203,7 +208,7 @@ export function checkIds({ repoRoot = DEFAULT_REPO, gameRoot = path.join(repoRoo
       const entries = Array.isArray(catalog) ? catalog : catalog.entries;
       if (!Array.isArray(entries) || !entries.some(e => e.id === entry.id)) add('a', entry.uid, target, 'missing catalog fragment');
     }
-    if (entry.domain === 'level' && sha(fs.readFileSync(target)) !== entry.sha256) add('a', entry.uid, target, 'level sha256 mismatch');
+    if (['level', 'room'].includes(entry.domain) && sha(fs.readFileSync(target)) !== entry.sha256) add('a', entry.uid, target, 'level sha256 mismatch');
     if (entry.domain === 'art') {
       const art = index[entry.uid];
       if (!art || art.hash !== entry.hash || art.version !== entry.version || art.approved !== entry.approved) add('a', entry.uid, target, 'art metadata version/hash mismatch');

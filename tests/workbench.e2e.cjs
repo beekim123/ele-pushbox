@@ -16,7 +16,7 @@ async function decode(file) {
 }
 
 (async () => {
-  const browser = await chromium.launch();
+  const browser = await chromium.launch({ executablePath: process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE || undefined, args: ["--num-raster-threads=1"] });
   const ctx = await browser.newContext({ viewport: { width: 1440, height: 900 }, acceptDownloads: true });
   await ctx.addInitScript(() => {
     window.__raf = 0; const raf = window.requestAnimationFrame.bind(window);
@@ -39,6 +39,7 @@ async function decode(file) {
     ["showcase", "art/export/reference/showcase.dungeon.png", "(() => { const r = new PB.Raster(320,180); PB.scene.renderLevel(r, PB.scene.SHOWCASE, null, {tick:0}); return Array.from(r.data); })()"],
     ["level M06", "art/export/reference/level.M06.png", "(() => { const r = new PB.Raster(320,180); PB.scene.renderLevel(r, PBStore.level('M06'), null, {tick:0, env:'off'}); return Array.from(r.data); })()"],
     ["level W08 (bridge)", "art/export/reference/level.W08.png", "(() => { const r = new PB.Raster(320,180); PB.scene.renderLevel(r, PBStore.level('W08'), null, {tick:0, env:'off'}); return Array.from(r.data); })()"],
+    ["F07 ladder caps", "game/reports/ladder-tops/F07-after.png", "(() => { const r = new PB.Raster(320,180); PB.scene.renderLevel(r, PBStore.level('F07'), null, {tick:0, hud:false, env:'off', ambient:false}); return Array.from(r.data); })()"],
     ["level W09 (portals)", "art/export/reference/level.W09.png", "(() => { const r = new PB.Raster(320,180); PB.scene.renderLevel(r, PBStore.level('W09'), null, {tick:0, env:'off'}); return Array.from(r.data); })()"],
     ["chapter 4 showcase", "art/export/reference/chapter.forest.png", "(() => { const r = new PB.Raster(320,180); PB.scene.renderLevel(r, PB.matter.SHOWCASES.forest, null, {tick:0}); return Array.from(r.data); })()"],
     ["chapter 2-5 materials", "art/export/preview/material.chapter2_5.png", "(() => { const r = new PB.Raster(320,180); PB.matter.swatches(r); return Array.from(r.data); })()"],
@@ -49,6 +50,38 @@ async function decode(file) {
     let diff = 0; for (let i = 0; i < want.data.length; i++) if (want.data[i] !== got[i]) diff++;
     check(got.length === want.data.length && diff === 0, `${name}: browser render matches ${file} (${diff} differing bytes)`);
   }
+
+  // The real live compositor reflects a grown vine and a restored pre-growth
+  // state without painting a full rung over the platform head.
+  const vines = await page.evaluate(() => ['G06','E03'].map(id => {
+    const spec = PBStore.level(id), R = PB.tilemodel.replay(spec,spec.solution);
+    const state = R.steps[R.steps.length-1].state, k = R.level.devices.findIndex(d=>d.type==='vine');
+    const d = R.level.devices[k], x=d.root[0], y=d.root[1]-d.height+1;
+    const off = PB.tilemodel.clone(state); off.dev[k]=0;
+    const paint = st => { const r = new PB.Raster(320,180); PB.scene.renderLevel(r,spec,{level:R.level,state:st},{tick:0,hud:false,env:'off',ambient:false}); return r; };
+    const a=paint(state), b=paint(off), c=paint(state);
+    const ox=(320-R.level.w*16)>>1, oy=20+((160-R.level.h*16)>>1);
+    let upper=0,lower=0;
+    for(let yy=0;yy<16;yy++) for(let xx=0;xx<16;xx++) if(a.get(ox+x*16+xx,oy+y*16+yy)!==b.get(ox+x*16+xx,oy+y*16+yy)) { if(yy<12) upper++; else lower++; }
+    return {id,grown:!!state.dev[k],upper,lower,restored:Array.from(a.data).every((v,i)=>v===c.data[i])};
+  }));
+  check(vines.every(v=>v.grown&&v.upper===0&&v.lower>0&&v.restored),'G06/E03 grown vine has a short cap and restores identical pixels ('+JSON.stringify(vines)+')');
+
+  const ropes = await page.evaluate(() => {
+    const sl=PBStore.catalog('slices')[0], cat={monsters:PBStore.catalog('monsters'),cargo:PBStore.catalog('cargo'),recipients:PBStore.catalog('recipients'),items:PBStore.catalog('items')};
+    const rows=Array.from({length:10},(_,y)=>Array.from({length:20},(_,x)=>y===0||y===9||x===0||x===19?'#':'.'));
+    for(let x=1;x<19;x++) rows[4][x]='#';
+    for(let y=0;y<9;y++) rows[y][3]=y>=5?'H':'.';
+    rows[7][1]='P';
+    const spec={id:'rope-render-test',chapter:'dungeon',map:rows.map(r=>r.join(''))};
+    const run=PB.rt.roomFromSpec(PB.rt.context(cat,sl),spec); run.room.player=null;
+    const paint=()=>{const r=new PB.Raster(320,180);PB.droom.renderLive(r,run,{tick:0,hud:false,env:'off'});return r;};
+    const off=paint(); run.room.climb=new Set([3*20+3,4*20+3]); const cap=paint();
+    const diff=(a,b,ty,start,end)=>{let n=0;for(let yy=start;yy<end;yy++)for(let xx=0;xx<16;xx++)if(a.get(3*16+xx,20+ty*16+yy)!==b.get(3*16+xx,20+ty*16+yy))n++;return n;};
+    for(let y=0;y<=4;y++)run.room.climb.add(y*20+3); const extended=paint();
+    return {upper:diff(cap,off,3,0,12),lower:diff(cap,off,3,12,16),interior:diff(extended,cap,3,0,12),seam:diff(extended,off,0,0,12)};
+  });
+  check(ropes.upper===0&&ropes.lower>0&&ropes.interior>0&&ropes.seam>0,'delivery rope caps merge with static ladders and keep room seams ('+JSON.stringify(ropes)+')');
 
   // 2b. Content views show derived statuses from data/content.js.
   await page.goto(URL + "#modes/basics"); await page.waitForTimeout(200);
@@ -130,9 +163,9 @@ async function decode(file) {
   await page.waitForFunction(() => PBMaps.placeholders().length > 0, null, { timeout: 5000 }).catch(() => {});
   const without = await page.evaluate(() => PBMaps.placeholders());
   await page.click('#maps-side button:has-text("美术候选")'); await page.waitForTimeout(200);
-  check(!withArt.includes("rat_swarm") && !withArt.includes("coin") && without.includes("rat_swarm") && without.includes("coin"),
-    `map preview draws the candidates only while the switch is on (on: ${JSON.stringify(withArt)}, off: ${JSON.stringify(without)})`);
-  check((await page.locator("#maps-work").textContent()).includes("美术候选（未确认"), "the preview says which drawn art is unconfirmed");
+  check(!withArt.includes("rat_swarm") && !withArt.includes("coin") && !without.includes("rat_swarm") && !without.includes("coin"),
+    `APR-0006 art stays visible with candidates off (on: ${JSON.stringify(withArt)}, off: ${JSON.stringify(without)})`);
+  check(!(await page.locator("#maps-work").textContent()).includes("美术候选（未确认"), "approved delivery art is not described as unconfirmed");
 
   // 3. Hidden stages stop animating; the visible one animates.
   await page.goto(URL + "#scenes/showcase.forest"); await page.waitForTimeout(300);

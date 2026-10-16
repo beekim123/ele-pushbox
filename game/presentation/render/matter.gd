@@ -3,6 +3,7 @@ extends RefCounted
 ## Approved matter.js device composition, driven by live game state.
 ## Magenta blocks with a question mark are explicitly unfinished device art.
 
+const LadderTops = preload("res://presentation/render/ladder_tops.gd")
 const Sprites = preload("res://presentation/render/sprites/sprite_assets.gd")
 const RULE_ICONS: Dictionary = {8: "slow", 9: "burn", 11: "etch", 12: "etch", 14: "rise", 15: "sink", 17: "burn", 18: "freeze"}
 const CLASS_ICONS: Dictionary = {7: "solid", 8: "sand", 9: "solid", 10: "water", 11: "solid", 12: "solid", 13: "solid", 16: "solid", 17: "solid", 18: "solid"}
@@ -16,7 +17,7 @@ static func floating(state: Dictionary, crate: Dictionary) -> bool:
 	var width: int = int(state.w)
 	return str(crate.kind) == "wood" and y + 1 < int(state.h) and int(state.terrain[y * width + x]) != 5 and int(state.terrain[(y + 1) * width + x]) == 5
 
-static func draw_devices(raster: RefCounted, state: Dictionary, origin: Vector2i, tick: int) -> void:
+static func draw_devices(raster: RefCounted, state: Dictionary, origin: Vector2i, tick: int, opening_spec: Dictionary = {}) -> void:
 	var devices: Array = state.get("devices", [])
 	for device: Dictionary in devices:
 		if str(device.get("type", "")) != "lift" or device.get("stops", []).size() != 2:
@@ -94,7 +95,12 @@ static func draw_devices(raster: RefCounted, state: Dictionary, origin: Vector2i
 				if bool(device.get("grown", false)):
 					var height: int = maxi(0, int(device.get("height", 1)))
 					for row: int in range(height):
-						asset(raster, "art:mech.vine", "top" if row == height - 1 else "stem", 0, anchor(origin, int(root[0]), int(root[1]) - row))
+						var x: int = int(root[0])
+						var y: int = int(root[1]) - row
+						# Actual grown cells, rather than a second wooden ladder layer.
+						if device.has("ladder_cells") and not LadderTops.vine_cells(state).has(y * int(state.w) + x): continue
+						var rows: int = LadderTops.KEEP_ROWS if LadderTops.is_top(opening_spec, state.get("markers", []), x, y) else -1
+						Sprites.blit(raster, "art:mech.vine", "top" if row == height - 1 else "stem", 0, anchor(origin, x, y), false, rows)
 				asset(raster, "art:mech.vine", "root", 0, anchor(origin, int(root[0]), int(root[1])))
 			"release", "nested_box":
 				pass # Release material is already visible; nested crates draw in entity order.

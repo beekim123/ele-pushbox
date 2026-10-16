@@ -8,6 +8,7 @@ const Ambient = preload("res://presentation/render/ambient/ambient.gd")
 const EnvEffects = preload("res://presentation/render/env/environment.gd")
 const Sprites = preload("res://presentation/render/sprites/sprite_assets.gd")
 const Terrain = preload("res://presentation/render/terrain/terrain_material.gd")
+const LadderTops = preload("res://presentation/render/ladder_tops.gd")
 const Matter = preload("res://presentation/render/matter.gd")
 const PALETTE_SHADER: Shader = preload("res://presentation/render/sprites/palette.gdshader")
 const VIEW_SIZE: Vector2i = Vector2i(320, 180)
@@ -412,6 +413,7 @@ func _draw_lobby_entities(raster: RefCounted, tick: int) -> void:
 func _draw_entities(raster: RefCounted, state: Dictionary, tick: int) -> void:
 	var w: int = int(state.w)
 	var markers: Array = state.get("markers", _opening.markers)
+	var vine_cells: Dictionary = LadderTops.vine_cells(state)
 	for i: int in range(markers.size()):
 		var marker: int = int(markers[i])
 		if marker == 0:
@@ -419,7 +421,10 @@ func _draw_entities(raster: RefCounted, state: Dictionary, tick: int) -> void:
 		var p: Vector2i = _anchor(i % w, i / w)
 		var crate: bool = _crate_at(state, i % w, i / w)
 		match marker:
-			1: Sprites.blit(raster, "art:mech.ladder", "default", 0, p)
+			1:
+				if not vine_cells.has(i):
+					var rows: int = LadderTops.KEEP_ROWS if LadderTops.is_top(_spec, markers, i % w, i / w) else -1
+					Sprites.blit(raster, "art:mech.ladder", "default", 0, p, false, rows)
 			2:
 				if not crate:
 					Sprites.blit(raster, "art:mech.socket", "idle", tick, p)
@@ -430,7 +435,7 @@ func _draw_entities(raster: RefCounted, state: Dictionary, tick: int) -> void:
 				Sprites.blit(raster, "art:mech.plate", "down" if pressed else "up", 0, p)
 				if not pressed:
 					Sprites.blit(raster, "art:mech.link_symbol", _symbol(i), 0, p - Vector2i(0, 7))
-	Matter.draw_devices(raster, state, _origin, tick)
+	Matter.draw_devices(raster, state, _origin, tick, _spec)
 	for group_index: int in range(_opening.groups.size()):
 		var group: Dictionary = _opening.groups[group_index]
 		var opened: bool = bool(state.doors[group_index]) if group_index < state.get("doors", []).size() else false

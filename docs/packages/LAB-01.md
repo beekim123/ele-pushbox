@@ -1,6 +1,6 @@
 # LAB-01 合并 Claude 分支并重新导入（交给 GPT）
 
-状态：关卡线第 1 步 · 待做（执行者：GPT）
+状态：部分完成（合并/导入/现行基线测试完成；生成参考图与Claude分支全同的预期不满足，差异待最终审核）
 设计依据：[status.md](../status.md)「审核：GPT 关卡模式阶段一」；AGENTS.md
 
 ## 目标
@@ -34,3 +34,23 @@
 - 推送到 `codex/portitor-stage1`，在本文件「交付」一节写明结果
 
 ## 交付（执行者填写）
+
+
+### 改动与验证
+- 合并提交：`8a6e126` 合并 `origin/claude/inspiring-ride-zfnn4s`；`0f43ad1` 合并 `origin/claude/lv-01-model`。未 rebase、未强推。
+- 冲突以 `loadTextTables` 为唯一文字表入口，Godot 导入器同样使用它；新增 room 资源按源 SHA 导入。未实现的配送界面只保存带 `implementation_available=false` 的资源，不接入玩法。
+- 还原冻结 `tilemodel.js`，把 LV-01 扩展模型移到独立 `tilemodel-runtime.js`，Node/浏览器共用；保留插件接口。原因见问题。为后续包增加 `act`、state-aware `ladder`、`afterAction` 挂钩与 `done/displace` 公共接口。
+- 使用独立 `font-extra.js` 补开发文字字形；不修改基础文字表和旧绘制文件。已确认气泡/尾巴用正式贴图，界面仅对未确认资产标占位；新 26 项只导入。
+- 停止跟踪 `game/tests/results/` 日志，保留 `.gdignore`；结论放 `game/reports/lab01.json`。
+- `node tools/art.mjs build`：109 assets / **0 bumped** / 6 approval records；`verify` 通过；内容检查 **0 error / 0 warning**。
+- Node 基线 **48/48**（最终全仓 **136/136**），导入器补充测试 **9/9**；Chromium 工作台验收全部通过（本机 Playwright 需指定已有 Chromium 1217）。新增各章代码最终再统一回归。
+- 最终完整 `tools/run-tests.sh`：基线导入、核心、SDK、gameplay、levels、991 UID、render、lab、UI及新增提示/矿车/风/隔离载重套件均通过；仅后续E04候选回归与chapters整体验收保留真实失败，命令退出1。M06当前源规格已撤回旧替代解要求，已移除过时测试误阻塞，未改该关规格。不能把全命令说成全绿。
+- `docs/status.md` 只在两次合并中保留双方记录（含问题栏），此后不填写制作进度。
+
+### 交付 · 问题
+1. **已解决的M06误阻塞**：合入后的当前规格明确“不再要求没有具体回放路线的替代解”；原测试仍硬编码旧承诺。最终核对后已对齐当前规格并复验通过。最初诊断只记录在历史日志，不再作为待设计决定的问题。
+2. **LV-01 与配送美术哈希耦合**：配送界面 renderer 列了 `tilemodel.js`，直接使用 LV-01 修改会自动升版 5 个已确认界面。已撤回自动升版，冻结原文件，另设扩展模型文件；冻结源/确认记录/历史/approved PNG 与 Claude 分支逐字节一致。
+3. **“art/ 全部与 Claude 分支无 diff”不适用于现有规格差异**：集成分支已有 W01/W09 的合法修正，且多 30 关。重新生成会改变这两张关卡参考图、增加后章参考图和 manifest 条目；已确认资产版本和 PNG 不变。未为消除 diff 覆盖真实规格或伪造生成结果。
+
+### 当前阶段与下一步
+基线可供后续插件/关卡制作，保留上述部分完成项。LV-02–09 均已执行并分别记录实际通过/失败/未执行；本轮统一推回集成分支，设计负责人最后审核生成参考图偏差与SDK实测分歧。当前无需用户操作。

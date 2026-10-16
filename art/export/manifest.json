@@ -7525,7 +7525,7 @@
   {
    "name": "level.Q01",
    "file": "art/export/reference/level.Q01.png",
-   "sha256": "087d52b2b3cddeaceab692fd2647d3414a5b4506a43c24d01f597ab445f89b95",
+   "sha256": "6c6b6a6bf13931f17488dba159505353c84de8795a037c93cf776e728ead9990",
    "uses": [
     "theme.cave",
     "deco.cave_crystal",
@@ -7553,7 +7553,7 @@
   {
    "name": "level.Q02",
    "file": "art/export/reference/level.Q02.png",
-   "sha256": "fc724d564f7643b9953087a481e8ea8bbd34d8009b603bc6054505a913ed41d0",
+   "sha256": "2469f695e29998077940e17e281a148a59930381c96786110497aff41fea93a5",
    "uses": [
     "theme.cave",
     "deco.cave_crystal",
@@ -7581,7 +7581,7 @@
   {
    "name": "level.Q03",
    "file": "art/export/reference/level.Q03.png",
-   "sha256": "5abade4a29a055abb0bd2e779d1642a9994379d058c502192d91c552c57340c6",
+   "sha256": "22e71a96a3c48b4e23423daa112c8ebdeeb02b04f7ef723b50f904a11d341470",
    "uses": [
     "theme.cave",
     "deco.cave_crystal",
@@ -7609,7 +7609,7 @@
   {
    "name": "level.Q04",
    "file": "art/export/reference/level.Q04.png",
-   "sha256": "5e1f7ef55ea51039e9cf4a3db53d4c03dd7399fe2dfafefcab849dc984f7660e",
+   "sha256": "cef328a0cded15cf3e22460dd36836eb6d1fdd9e641581818b32a744de436d09",
    "uses": [
     "theme.cave",
     "deco.cave_crystal",
@@ -7637,7 +7637,7 @@
   {
    "name": "level.Q07",
    "file": "art/export/reference/level.Q07.png",
-   "sha256": "767df3baa66981f564405bfc0e27e4ed292f5851017de0beeea8512f4d50032c",
+   "sha256": "c6d27ab2ae61cad28eae82f85164a282936d1f7f1fc05dd9dd8dff056a064830",
    "uses": [
     "theme.cave",
     "deco.cave_crystal",
@@ -7665,7 +7665,7 @@
   {
    "name": "level.Q08",
    "file": "art/export/reference/level.Q08.png",
-   "sha256": "508657e81d33355aeaeb5113433f8c23e28128543563542662c33a9a1a197e5e",
+   "sha256": "ce26aa0dcc420be991bd210e617ff807db072f4d36796f8419d0dd4ebdf530ce",
    "uses": [
     "theme.cave",
     "deco.cave_crystal",
@@ -7693,7 +7693,7 @@
   {
    "name": "level.Q09",
    "file": "art/export/reference/level.Q09.png",
-   "sha256": "fe34a4737951c42e0f91ede850b0d581de4fc120a70c0c1dbe15832c460b9f7a",
+   "sha256": "900dc40a5b20f9f5fd936214d52b9f73be2f8677c345902b608e1fe12eb28678",
    "uses": [
     "theme.cave",
     "deco.cave_crystal",
@@ -7721,7 +7721,7 @@
   {
    "name": "level.Q10",
    "file": "art/export/reference/level.Q10.png",
-   "sha256": "f28d276b6716770f86f85f941114a132079b5af8299264cfd00f3e839b146394",
+   "sha256": "d92f9ef1dac97ece8d94f861fab553e22c75d319b96d98eae069ff90ea6f9b9d",
    "uses": [
     "theme.cave",
     "deco.cave_crystal",
@@ -7749,7 +7749,7 @@
   {
    "name": "level.E01",
    "file": "art/export/reference/level.E01.png",
-   "sha256": "3d661e798eb98d3345b9551b1af409799e60c7971231eef8b3176036798d9187",
+   "sha256": "0cca9a040740bfd1208772250cd2f0372d92a72a99d67150d333d8c1d478f3a0",
    "uses": [
     "theme.cosmos",
     "deco.cosmos_sprout",
@@ -7776,7 +7776,7 @@
   {
    "name": "level.E02",
    "file": "art/export/reference/level.E02.png",
-   "sha256": "dc00fd26219f583cbd3227a82e1182cc8a434c50a5924e715212d86e777bea4d",
+   "sha256": "ac0135a39df4ce40596828535f77178ece0ef468cb2262f35e4f88518b4d83f2",
    "uses": [
     "theme.cosmos",
     "deco.cosmos_sprout",
@@ -7803,7 +7803,7 @@
   {
    "name": "level.E03",
    "file": "art/export/reference/level.E03.png",
-   "sha256": "a6aabb68ff2d4613c250273c8914b082880fdf6e3a9c521a9c609eb5d69aa7ee",
+   "sha256": "8c187ce59bd80569447acb6eec36a0af9e1a360ca9cfb77acabf7dcdf7cba2bf",
    "uses": [
     "theme.cosmos",
     "deco.cosmos_sprout",
@@ -7830,7 +7830,7 @@
   {
    "name": "level.E04",
    "file": "art/export/reference/level.E04.png",
-   "sha256": "7e389c133c6a883c13bbf0fb3faecad8a8385e0a0e83a379ea1bc1da6014ff8e",
+   "sha256": "3065cfcc44755161319d982be6e473b2a68458f3ff18b40ce4b1b8662dbfce55",
    "uses": [
     "theme.cosmos",
     "deco.cosmos_sprout",
@@ -7857,7 +7857,7 @@
   {
    "name": "level.E05",
    "file": "art/export/reference/level.E05.png",
-   "sha256": "066bd9f472ccce2f4231c30169c53294f9fefa95e8a98af975b8122c738c5173",
+   "sha256": "48013f993bf7c2faaf857a8e51cc550399f0f87e8f235f584c60b86ea1beaf86",
    "uses": [
     "theme.cosmos",
     "deco.cosmos_sprout",
@@ -7884,7 +7884,7 @@
   {
    "name": "level.E06",
    "file": "art/export/reference/level.E06.png",
-   "sha256": "b2ae93687b32fadb85296765e9a11ce355e668731d365a8068f2c4827cdc397c",
+   "sha256": "7ebe0b3bd88e19a58645941d59b1b0377281e3e9b15e1f11baa38f09451dadd8",
    "uses": [
     "theme.cosmos",
     "deco.cosmos_sprout",
@@ -7911,7 +7911,7 @@
   {
    "name": "level.G01",
    "file": "art/export/reference/level.G01.png",
-   "sha256": "75851bd49b8065fa4863a223cfafd31aa38eac9b044e7c60b4b60822f8d67beb",
+   "sha256": "8858adcaa97b479858c69b033cd9c6baacae093d0f1c3d34ba5d6c50fa17900e",
    "uses": [
     "theme.forest",
     "deco.forest_flower",
@@ -7940,7 +7940,7 @@
   {
    "name": "level.G02",
    "file": "art/export/reference/level.G02.png",
-   "sha256": "342502db03ae6b95467cb52b35e2ff6314e5c8685dcbb7eb5839f2a6f206c4b0",
+   "sha256": "332767bc1bc705d4456d85776156802b96f1c8426ca64e6af87a68b3d904c129",
    "uses": [
     "theme.forest",
     "deco.forest_flower",
@@ -7969,7 +7969,7 @@
   {
    "name": "level.G03",
    "file": "art/export/reference/level.G03.png",
-   "sha256": "e273e4c04f6e54851144e0f081e47bd06253df18758b74164249d7a45472ba2f",
+   "sha256": "56be70f6d3dc598102eb25842d348d4b32be9bdb8f2bdca053cc7ee5b54fe0bf",
    "uses": [
     "theme.forest",
     "deco.forest_flower",
@@ -7998,7 +7998,7 @@
   {
    "name": "level.G04",
    "file": "art/export/reference/level.G04.png",
-   "sha256": "befd78c8be9af3388b818c53f425d754d22430c7d9b14058a81714d2aaa1d431",
+   "sha256": "14d14cd8a125ff9101b648a47348a14490f7696e25629aa3eb3f302c7f714b57",
    "uses": [
     "theme.forest",
     "deco.forest_flower",
@@ -8027,7 +8027,7 @@
   {
    "name": "level.G05",
    "file": "art/export/reference/level.G05.png",
-   "sha256": "6c715d5eeba48c75f45bc2ea45e6d73c21be75bba1602526f3702ebdb515d262",
+   "sha256": "e733f256c4077886b7b43c9303aec539118a9a150c28c4b2535daed205c784cf",
    "uses": [
     "theme.forest",
     "deco.forest_flower",
@@ -8056,7 +8056,7 @@
   {
    "name": "level.G06",
    "file": "art/export/reference/level.G06.png",
-   "sha256": "7f68643e2901beb0b633985d469d6ba52ba437ed14d0c36965b54ed301a3b41f",
+   "sha256": "99860fd4cfce96c51868da9d9ecf2b5e5761dcd70effadc2061ee49ff34ded59",
    "uses": [
     "theme.forest",
     "deco.forest_flower",
@@ -8085,7 +8085,7 @@
   {
    "name": "level.G08",
    "file": "art/export/reference/level.G08.png",
-   "sha256": "2e4f372af23e2cbcb93f781d9184fdb7e134cad6d1e2bb922cf98a4d0b54f02f",
+   "sha256": "334c2e608f5eeec83078bbadab8b382b0479312aaf5b2588bb4b7475c5c24498",
    "uses": [
     "theme.forest",
     "deco.forest_flower",
@@ -8114,7 +8114,7 @@
   {
    "name": "level.G09",
    "file": "art/export/reference/level.G09.png",
-   "sha256": "0a735555b440e46f5b118899802d1c8567bc55d41a5dbc554276b5d86a02b1fc",
+   "sha256": "97542da906a8d61c0718f0928ab267639bee217a7906c25b36729576b997b928",
    "uses": [
     "theme.forest",
     "deco.forest_flower",
@@ -8143,7 +8143,7 @@
   {
    "name": "level.G10",
    "file": "art/export/reference/level.G10.png",
-   "sha256": "3f89d52bcf891c949af3afcc253f5560264c31a3f281c53a4a14a89b0e27a4e1",
+   "sha256": "65863c5da8c99bbe4de7b0a360c48071642d8da40e305644f7da66a3f210e15b",
    "uses": [
     "theme.forest",
     "deco.forest_flower",
@@ -8172,7 +8172,7 @@
   {
    "name": "level.F01",
    "file": "art/export/reference/level.F01.png",
-   "sha256": "0867cd21bbf538a0e8d121385b1169aba2c86fffeed5adb85a3b850341f20b7b",
+   "sha256": "474f2a3b0f2e1b09b9a1cb3a420785d94fd61d270e215777c87f4918c96bac15",
    "uses": [
     "theme.sky",
     "deco.sky_flower",
@@ -8200,7 +8200,7 @@
   {
    "name": "level.F02",
    "file": "art/export/reference/level.F02.png",
-   "sha256": "13914e0f87c8d152d740bed559213f919427d19ac5e2c31922fedcae93919dc0",
+   "sha256": "3226b16ec5340a25e0ed058328303f8605c6a8dd94ae0d8a518f5a261293e0d3",
    "uses": [
     "theme.sky",
     "deco.sky_flower",
@@ -8228,7 +8228,7 @@
   {
    "name": "level.F03",
    "file": "art/export/reference/level.F03.png",
-   "sha256": "d32b318c80ac045b8bd833e42ec4e87905b5032291cb6aff225a2b7bb4cfaee7",
+   "sha256": "11a85ce84ca98714ab09c49cad93ace807d957c3aa60fcc68186f46d04e2c490",
    "uses": [
     "theme.sky",
     "deco.sky_flower",
@@ -8256,7 +8256,7 @@
   {
    "name": "level.F04",
    "file": "art/export/reference/level.F04.png",
-   "sha256": "61f0f99155a699cc9a8fb5380118e955b734a0acb1ee1c5db56788b3e8311be8",
+   "sha256": "2ec228b38b3ee577f02eddb4942f6ce2189eeeca024b7ae94b0cbef679a4daf7",
    "uses": [
     "theme.sky",
     "deco.sky_flower",
@@ -8284,7 +8284,7 @@
   {
    "name": "level.F07",
    "file": "art/export/reference/level.F07.png",
-   "sha256": "5b790dd3e30d51d368ad81a508a35169d4febc9f5c5971b018a8c4f9984535d6",
+   "sha256": "604d92442c9c8c6e15bb9e88ef4dd97c304cf31fc4d1ff851a2de031f75844d7",
    "uses": [
     "theme.sky",
     "deco.sky_flower",
@@ -8312,7 +8312,7 @@
   {
    "name": "level.F08",
    "file": "art/export/reference/level.F08.png",
-   "sha256": "4abcb9023f4b7d0762c0c1ee3b7772fc4fc67dd98635bbb26302d310eac1c233",
+   "sha256": "01644d2b87ae8a1e915bad4c4e4d556b717ddc59c7ae9328a73ee3333068b92f",
    "uses": [
     "theme.sky",
     "deco.sky_flower",
@@ -8340,7 +8340,7 @@
   {
    "name": "level.F09",
    "file": "art/export/reference/level.F09.png",
-   "sha256": "e08af5b0a94aa62028afdf42ec95c7215c9fedc6461ffc00b86183da13dc9547",
+   "sha256": "08f5e3b574e283c62fa03515ac938e62f1115b454dbc6772cb9dc69e752d98a1",
    "uses": [
     "theme.sky",
     "deco.sky_flower",

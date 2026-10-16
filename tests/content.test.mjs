@@ -101,3 +101,16 @@ test("every resource gets one global uid and a fixed game path", () => {
   edit(root, "content/catalog/cargo.json", (c) => { c.entries[0].id = "Bad Id"; });
   assert.ok(errors(buildContent(root)).some((e) => e.includes("编号格式不对")));
 });
+
+test('SDK evidence tied to a different specification hash cannot verify a revised level', (t) => {
+  const root = sandbox();
+  t.after(() => fs.rmSync(root,{recursive:true,force:true}));
+  const initial = buildContent(root).levels.find(l => l.id === 'Q02');
+  fs.mkdirSync(path.join(root, 'game/reports'), { recursive: true });
+  const report = { format:'pushbox.verification/1', levels:[{id:'Q02', spec_sha256:initial.sha256, won:true, replays:3, consistent:true, undo_ok:true, max_ticks:10, tick_limit:1200, checks:[{text:'controlled verified SDK assertion',ok:true}]}] };
+  fs.writeFileSync(path.join(root,'game/reports/verification.json'),JSON.stringify(report));
+  assert.equal(buildContent(root).levels.find(l => l.id === 'Q02').verified.ok,true);
+  edit(root,'content/levels/lab/blast/Q02.json',s => {s.discovery += ' revised';});
+  assert.equal(buildContent(root).levels.find(l => l.id === 'Q02').verified.ok,false);
+  fs.rmSync(root,{recursive:true,force:true});
+});

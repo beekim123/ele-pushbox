@@ -18,6 +18,7 @@
 (function (root) {
   "use strict";
   const PB = (root.PB = root.PB || {});
+  const drawingModel = PB.tilemodel; // Frozen renderer input, independent of gameplay plugins.
 
   // Terrain codes (static map layer). DOOR is never stored in the terrain: doors
   // are an overlay (L.doorAt) so water can flow through an open gate.
@@ -85,6 +86,7 @@
   }
 
   function parse(spec) {
+    if (spec.showcase && drawingModel) return drawingModel.parse(spec);
     const rows = spec.map;
     const h = rows.length, w = rows[0].length;
     const terrain = new Uint8Array(w * h), marker = new Uint8Array(w * h);
@@ -201,7 +203,7 @@
   }
   // Tile water may flow into: open air (the player does not block water: it is not in the SDK).
   function dry(L, s, x, y) { return terrainAt(L, s, x, y) === T.EMPTY && !crateAt(s, x, y) && !platform(L, s, x, y); }
-  function ladder(L, x, y) { return inside(L, x, y) && (L.marker[y * L.w + x] === M.LADDER || L.climb.has(y * L.w + x)); }
+  function ladder(L, x, y, s) { return inside(L, x, y) && (L.marker[y * L.w + x] === M.LADDER || L.climb.has(y * L.w + x) || !!s && hooks("ladder").some(pl => pl.ladder(L, s, x, y))); }
 
   function pressed(L, s, i) {
     const x = i % L.w, y = (i / L.w) | 0;
@@ -372,7 +374,7 @@
         } else if (free(L, s, c.x, c.y + 1)) { c.y += 1; moved = true; events.push("crate-fall"); }
       }
       const p = s.player;
-      if (!ladder(L, p.x, p.y) && !supports(L, s, p.x, p.y + 1) && free(L, s, p.x, p.y + 1)) {
+      if (!ladder(L, p.x, p.y, s) && !supports(L, s, p.x, p.y + 1) && free(L, s, p.x, p.y + 1)) {
         p.y += 1; moved = true;
       }
       if (!moved && !L.illustration && flowWater(L, s)) moved = true;
@@ -421,6 +423,10 @@
 
   // Returns {ok, reason, events}. Mutates state on success.
   function act(L, s, action) {
+    for (const pl of hooks("act")) {
+      const result = pl.act(L, s, action);
+      if (result != null) return result;
+    }
     const p = s.player;
     if (action === "L" || action === "R") {
       const dx = DIRS[action][0], nx = p.x + dx;
@@ -439,7 +445,7 @@
     }
     if (action === "U") {
       const lever = L.leverAt.get(p.y * L.w + p.x);
-      if (lever !== undefined && !ladder(L, p.x, p.y)) {
+      if (lever !== undefined && !ladder(L, p.x, p.y, s)) {
         const d = L.devices[lever];
         s.dev[lever] = s.dev[lever] ? 0 : 1;
         const ev = [];
@@ -447,11 +453,11 @@
         if (d.action && d.action.release !== undefined) trigger(L, s, d.action.release, ev);
         return done(L, s, "lever");
       }
-      if (ladder(L, p.x, p.y) && ladder(L, p.x, p.y - 1) && free(L, s, p.x, p.y - 1)) { p.y -= 1; return done(L, s, "climb"); }
+      if (ladder(L, p.x, p.y, s) && ladder(L, p.x, p.y - 1, s) && free(L, s, p.x, p.y - 1)) { p.y -= 1; return done(L, s, "climb"); }
       return { ok: false, reason: "no-ladder" };
     }
     if (action === "D") {
-      if ((ladder(L, p.x, p.y) || ladder(L, p.x, p.y + 1)) && free(L, s, p.x, p.y + 1)) { p.y += 1; return done(L, s, "climb"); }
+      if ((ladder(L, p.x, p.y, s) || ladder(L, p.x, p.y + 1, s)) && free(L, s, p.x, p.y + 1)) { p.y += 1; return done(L, s, "climb"); }
       return { ok: false, reason: "no-ladder" };
     }
     const m = /^(DIG|POUR|BOMB)_([LRD])$/.exec(action);
@@ -486,9 +492,17 @@
     const r = done(L, s, "bomb"); r.destroyed = destroyed; r.events = exEvents.concat(r.events); return r;
   }
 
-  function done(L, s, kind) { s.moves += 1; const events = settle(L, s); return { ok: true, kind, events }; }
+  function done(L, s, kind) {
+    s.moves += 1;
+    const events = settle(L, s);
+    let changed = false;
+    for (const pl of hooks("afterAction")) if (pl.afterAction(L, s, kind, events)) changed = true;
+    if (changed) events.push(...settle(L, s));
+    return { ok: true, kind, events };
+  }
 
   function goals(L, s) {
+    if (L.illustration && drawingModel) return drawingModel.goals(L, s);
     const list = [];
     for (let i = 0; i < L.w * L.h; i++) {
       const x = i % L.w, y = (i / L.w) | 0;
@@ -579,5 +593,5 @@
   }
 
   PB.tilemodel = { register, unknownMechanisms, plugins, inside, free, T, M, CHAR, ACTIONS, WEIGHT, parse, clone, act, settle, goals, won, solve, replay, deadEnds, crateAt, ladder,
-    doorClosed, liftDeck, bridgeAt, bridgeLoad, binCount, terrainAt };
+    done, displace, doorClosed, liftDeck, bridgeAt, bridgeLoad, binCount, terrainAt };
 })(typeof window !== "undefined" ? window : globalThis);

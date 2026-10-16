@@ -439,7 +439,7 @@
    "id": "experimental",
    "mode": "lab",
    "order": 6,
-   "name": "实验",
+   "name": "跨章组合复习",
    "theme": "theme.cosmos",
    "sdk_profile": [
     "cells",
@@ -452,63 +452,63 @@
    "levels": [
     {
      "id": "E01",
-     "title": "沙替我守门",
+     "title": "蚀脚压门",
      "mechanisms": [
-      "pour",
+      "acid",
       "plate_door"
      ],
-     "role": "短组合",
-     "discovery": "把沙留在压板坑里，自己穿门去出口"
+     "role": "跨章引入",
+     "discovery": "酸能蚀掉箱底软岩，让箱子落到低处压板；这份重量才会替你持续开门。"
     },
     {
      "id": "E02",
-     "title": "箱子先过去",
+     "title": "离灯入阵",
      "mechanisms": [
-      "portal",
-      "push"
+      "lantern_reveal",
+      "portal"
      ],
-     "role": "短组合",
-     "discovery": "用传送阵把箱子送到槽旁，再推入目标"
+     "role": "跨章引入",
+     "discovery": "退灯后箱子会落上井底传送阵，远处高槽因此不需要人推过去。"
     },
     {
      "id": "E03",
-     "title": "装好再放水",
+     "title": "融水长藤",
      "mechanisms": [
-      "bin",
-      "lift"
+      "melt",
+      "vine"
      ],
-     "role": "短组合",
-     "discovery": "箱子先装上台面，再放水使收集斗触发升降台"
+     "role": "跨章变化",
+     "discovery": "融冰的水能长出直达高台的藤梯，但融冰也会撤掉木箱脚下支撑。"
     },
     {
      "id": "E04",
-     "title": "清轨再发车",
+     "title": "碎石压断桥",
      "mechanisms": [
-      "bomb",
-      "mine_cart"
+      "gravel",
+      "load_bridge"
      ],
-     "role": "短组合",
-     "discovery": "炸开轨道前的裂岩，再推车运箱入槽"
+     "role": "跨章变化",
+     "discovery": "两格碎石本身正好压满桥；先装一只箱子，碎石再落下才会超重，把箱子送进深槽。"
     },
     {
      "id": "E05",
-     "title": "冻道送箱",
+     "title": "滑箱接上车",
      "mechanisms": [
-      "freeze",
-      "ice_slide"
+      "ice_slide",
+      "mine_cart"
      ],
-     "role": "短组合",
-     "discovery": "把一段水面冻成冰道，一次推箱滑到终点"
+     "role": "跨章变化",
+     "discovery": "冰道把箱子一推送出高台；先把矿车停在滑落点，箱子才会停在槽的高度。"
     },
     {
      "id": "E06",
-     "title": "重箱开水门",
+     "title": "风落上高台",
      "mechanisms": [
-      "load_bridge",
-      "float_sink"
+      "gust",
+      "seesaw"
      ],
-     "role": "短组合",
-     "discovery": "铁箱与人让桥超重，铁箱下沉压开水门"
+     "role": "章末跨章组合",
+     "discovery": "先站在对端再放风：木箱被吹进井里形成新落载，才会把你弹上高台。"
     }
    ]
   },

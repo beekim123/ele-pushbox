@@ -158,3 +158,20 @@ test('imports every named text table through the shared loader', async (t) => {
   assert.equal(read(f.gameRoot, 'generated/content/i18n/en.json')['delivery.test'], 'Delivery');
   assert.deepEqual(api.checkIds(f).errors, []);
 });
+
+
+test('imports room ids with their source hash and stores unavailable screens without missing scene references', async (t) => {
+  const api = await implementation(); const f = fixture(t);
+  const bytes = JSON.stringify({id:'test_room', map:['###']});
+  write(f.repoRoot, 'content/rooms/dungeon/test_room.json', bytes);
+  const map = read(f.repoRoot, 'content/export/id-map.json');
+  map.entries.push({uid:'room:test_room', domain:'room', id:'test_room', source:'content/rooms/dungeon/test_room.json', game:'res://generated/content/rooms/dungeon/test_room.json', sha256:hash(bytes)});
+  write(f.repoRoot, 'content/export/id-map.json', map);
+  fs.rmSync(path.join(f.gameRoot, 'presentation/ui/screens/hint.tscn'));
+  api.importResources(f);
+  assert.deepEqual(read(f.gameRoot, 'generated/content/rooms/dungeon/test_room.json'), {id:'test_room', map:['###']});
+  const scene = fs.readFileSync(path.join(f.gameRoot, 'ui/screens/hint.tscn'), 'utf8');
+  assert.match(scene, /metadata\/implementation_available = false/);
+  assert.ok(!scene.includes('ext_resource'));
+  assert.deepEqual(api.checkIds(f).errors, []);
+});

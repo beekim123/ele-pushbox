@@ -71,7 +71,7 @@ func _bridge_load(device: Dictionary) -> int:
 				weight = 2 if str(grid.crates[crate].kind) == "iron" else 1
 			elif grid.is_player(x, y):
 				weight = 1
-			elif int(grid.terrain[grid.tile_index(x, y)]) == Grid.Terrain.SAND:
+			elif int(grid.terrain[grid.tile_index(x, y)]) in [Grid.Terrain.SAND, Grid.Terrain.GRAVEL]:
 				weight = 1
 			if weight == 0:
 				break

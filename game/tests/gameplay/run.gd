@@ -50,7 +50,7 @@ func run() -> Dictionary:
 	_restart_and_undo()
 	_async_matches_perform()
 	_physics_classification_frame_boundary()
-	_deferred_safety_matches_default(["#######", "#.....#", "#PB.o.#", "#######"], "R", "push")
+	_deferred_safety_matches_default(["#######", "#.....#", "#PB.o.#", "#######"], "R", "push", 8)
 	_deferred_safety_matches_default(["#######", "#.e...#", "#Pe...#", "#######"], "DIG_R", "dig")
 	_deferred_safety_matches_default(["########", "#......#", "#P.B.o.#", "########"], "R", "walk", 0)
 	_deferred_snapshot_lifecycle()

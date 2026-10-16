@@ -93,7 +93,7 @@ func setup(level_spec: Dictionary) -> bool:
 		if _mechanics.has("mechanic:" + id):
 			_action_mechanics.append(_mechanics["mechanic:" + id])
 	settle_mechanics.clear()
-	for id: String in ["lantern_reveal", "fall", "float_sink", "nested_box", "vine", "bounce", "seesaw", "ice_slide", "gust", "lift", "bin", "load_bridge", "plate_door", "portal"]:
+	for id: String in ["lantern_reveal", "fall", "float_sink", "nested_box", "vine", "bounce", "seesaw", "ice_slide", "lift", "bin", "load_bridge", "plate_door", "portal", "gust"]:
 		if _mechanics.has("mechanic:" + id):
 			settle_mechanics.append(_mechanics["mechanic:" + id])
 	world.tick_observer = on_physics_tick

@@ -23,12 +23,13 @@ function walk(dir) {
 }
 
 // A level counts as verified only when every condition in workbench.md §4 holds.
-function verdict(r) {
+function verdict(r, specSha) {
   if (!r) return null;
   const checks = r.checks || [];
-  const ok = r.won === true && r.consistent === true && r.undo_ok === true && (r.replays | 0) >= 3 &&
+  const stale = r.spec_sha256 !== undefined && r.spec_sha256 !== specSha;
+  const ok = !stale && r.won === true && r.consistent === true && r.undo_ok === true && (r.replays | 0) >= 3 &&
     typeof r.max_ticks === "number" && typeof r.tick_limit === "number" && r.max_ticks < r.tick_limit && checks.every((c) => c.ok === true);
-  return { ok, replays: r.replays | 0, max_ticks: r.max_ticks, tick_limit: r.tick_limit, failed: checks.filter((c) => c.ok !== true).map((c) => c.text) };
+  return { ok, replays: r.replays | 0, max_ticks: r.max_ticks, tick_limit: r.tick_limit, failed: [...checks.filter((c) => c.ok !== true).map((c) => c.text), ...(stale ? ["SDK 报告与当前规格 SHA 不一致，需要重测"] : [])] };
 }
 
 export function buildContent(root, opts = {}) {
@@ -212,7 +213,7 @@ export function buildContent(root, opts = {}) {
         id: l.id, mode: g.mode, group: g.id, order: i + 1, title: l.title, role: l.role, discovery: l.discovery, mechanisms: l.mechanisms,
         spec: sp ? sp.file : null, sha256: sp ? sp.sha256 : null, has_spec: hasSpec,
         model: mc ? { ok: !!mc.author_ok && mc.author_steps === mc.shortest, author_steps: mc.author_steps, shortest: mc.shortest } : null,
-        verified: verdict(results.get(l.id)),
+        verified: verdict(results.get(l.id), sp ? sp.sha256 : null),
         art: { assets, missing: assets.filter((a) => !approved(a)) },
       });
     }

@@ -92,7 +92,7 @@ func get_state() -> Dictionary:
 	for index: int in range(session().grid.devices.size()):
 		var device: Dictionary = session().grid.devices[index]
 		if str(device.get("type", "")) == "mine_cart":
-			carts[str(index)] = {"at": device.get("at", []).duplicate(), "last_roll": device.get("last_roll", {}).duplicate(true)}
+			carts[str(index)] = {"at": device.get("at", []).duplicate(), "last_roll": device.get("last_roll", {}).duplicate(true), "has_last_roll": device.has("last_roll")}
 	return {"carts": carts, "last_roll": _last_roll.duplicate(true)}
 
 func set_state(state: Dictionary) -> void:
@@ -103,7 +103,10 @@ func set_state(state: Dictionary) -> void:
 			continue
 		var saved: Dictionary = state.carts[key]
 		session().grid.devices[index].at = saved.at.duplicate()
-		session().grid.devices[index].last_roll = saved.get("last_roll", {}).duplicate(true)
+		if bool(saved.get("has_last_roll", true)):
+			session().grid.devices[index].last_roll = saved.get("last_roll", {}).duplicate(true)
+		else:
+			session().grid.devices[index].erase("last_roll")
 
 func observe() -> Array[Dictionary]:
 	var result: Array[Dictionary] = []
@@ -138,7 +141,7 @@ func _can_translate(device_index: int, direction: int, riders: Dictionary) -> bo
 	var width: int = maxi(1, int(device.get("width", 1)))
 	var track: Array = device.get("track", [])
 	for x: int in range(destination.x, destination.x + width):
-		if not track.has([x, destination.y]) or not grid.inside(x, destination.y):
+		if not _track_contains(track, x, destination.y) or not grid.inside(x, destination.y):
 			return false
 		var old_deck: bool = destination.y == at.y and x >= at.x and x < at.x + width
 		if (not old_deck and grid.terrain_at(x, destination.y) not in [Grid.Terrain.EMPTY, Grid.Terrain.SMOKE, Grid.Terrain.FOG]) or grid.crate_index(x, destination.y) >= 0 or grid.is_player(x, destination.y):
@@ -178,3 +181,10 @@ func _rider_destination_clear(tile: Vector2i, riders: Dictionary) -> bool:
 
 func _point(value: Array) -> Vector2i:
 	return Vector2i(int(value[0]), int(value[1]))
+
+func _track_contains(track: Array, x: int, y: int) -> bool:
+	# JSON stores numbers as floats; nested Array.has uses strict container equality.
+	for point: Variant in track:
+		if point is Array and point.size() == 2 and typeof(point[0]) in [TYPE_INT, TYPE_FLOAT] and typeof(point[1]) in [TYPE_INT, TYPE_FLOAT] and float(point[0]) == float(x) and float(point[1]) == float(y):
+			return true
+	return false

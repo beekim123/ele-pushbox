@@ -141,9 +141,9 @@ func _run() -> void:
 	var text: String = ""
 	for label: Label in labels: text += label.text + "\n"
 	check("water.no_false_clear_to_unlock_promise", not text.contains("通关"), text)
-	check("water.explicitly_unavailable", text.contains("尚未开放"), text)
+	check("water.available_after_basics", app.lab.available(1), text)
 	await key(KEY_ENTER)
-	check("water.does_not_enter_unimplemented_SDK", app.current_screen == "chapters" and app.session == null)
+	check("water.enters_implemented_levels", app.current_screen == "levels", app.current_screen)
 	var store = load("res://core/save/save_store.gd").new(save.get("_store").location)
 	check("completed_progress.reads_from_disk", store.load_progress() == OK)
 	for index: int in 7:

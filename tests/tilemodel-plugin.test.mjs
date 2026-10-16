@@ -16,8 +16,8 @@ const Q09 = (accept) => ({ id: "T", mechanisms: ["nested_box"], bag: { bomb: 1 }
   goals: [{ type: "socket", at: [8, 3], accept }] });
 
 test("plugin files are discovered and registered", () => {
-  assert.deepEqual(loaded.sort(), ["lantern_reveal", "nested_box"]);
-  assert.deepEqual(TM.plugins.map((p) => p.id).sort(), ["lantern_reveal", "nested_box"]);
+  assert.ok(loaded.includes("lantern_reveal") && loaded.includes("nested_box"));
+  assert.deepEqual(TM.plugins.map((p) => p.id).sort(), loaded.slice().sort());
 });
 
 test("register rejects a plugin without id and a taken char; loading twice is harmless", () => {
@@ -38,7 +38,7 @@ test("a registered plugin adds chars, device init, settle, solid, key", () => {
 });
 
 test("unknownMechanisms lists mechanisms and device types nothing models", () => {
-  assert.deepEqual(TM.unknownMechanisms({ mechanisms: ["push", "lever", "fuse"], devices: [{ type: "lever" }, { type: "torch" }] }), ["fuse", "torch"]);
+  assert.deepEqual(TM.unknownMechanisms({ mechanisms: ["push", "lever", "test_missing_mechanism"], devices: [{ type: "lever" }, { type: "test_missing_device" }] }), ["test_missing_mechanism", "test_missing_device"]);
   assert.deepEqual(TM.unknownMechanisms({ mechanisms: ["lantern_reveal", "nested_box"], devices: [{ type: "nested_box" }] }), []);
 });
 
@@ -99,4 +99,14 @@ test("chapter 1 and 2 models are untouched by plugins (author solutions still wi
     assert.ok(TM.replay(spec, spec.solution).won, spec.id); n++;
   }
   assert.equal(n, 16);
+});
+
+test('mechanism plugins leave approved showcase illustration parsing unchanged', async () => {
+  const fs = await import('node:fs'); const vm = await import('node:vm');
+  const context = vm.createContext({});
+  vm.runInContext(fs.readFileSync(new URL('../workbench/js/core/tilemodel.js', import.meta.url),'utf8'),context);
+  const spec = {id:'showcase.test',showcase:true,map:['#######','#Ppb..#','#######'],devices:[{type:'release',cells:[[2,1]],to:'plug_decay'}]};
+  const original = context.PB.tilemodel.parse(spec), current = TM.parse(spec);
+  assert.equal(JSON.stringify(current.state),JSON.stringify(original.state));
+  assert.equal(JSON.stringify(TM.goals(current.level,current.state)),JSON.stringify(context.PB.tilemodel.goals(original.level,original.state)));
 });

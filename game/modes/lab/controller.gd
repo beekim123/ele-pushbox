@@ -13,8 +13,10 @@ var open_all_levels: bool = false:
 		_refresh_groups()
 var _solution: Array = []
 var _legacy_route: bool = false
+var _level_data: Callable = Callable()
 
-func configure(manifest: Dictionary) -> void:
+func configure(manifest: Dictionary, level_data: Callable = Callable()) -> void:
+	_level_data = level_data
 	_all_groups = manifest.get("groups", []).filter(func(group: Dictionary) -> bool: return group.get("mode") == "lab")
 	_refresh_groups()
 
@@ -46,7 +48,7 @@ func available(index: int) -> bool:
 		return true
 	var cleared: int = 0
 	for level: Dictionary in groups[index - 1].get("levels", []):
-		if bool(Save.level_data("level:" + str(level.id)).get("cleared", false)):
+		if _level_data.is_valid() and bool(_level_data.call("level:" + str(level.id)).get("cleared", false)):
 			cleared += 1
 	return cleared >= unlock_need(index)
 

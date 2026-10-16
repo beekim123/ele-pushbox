@@ -6,10 +6,11 @@ func _initialize() -> void:
 
 func _run() -> void:
 	var controller: RefCounted = load("res://modes/lab/controller.gd").new()
-	controller.route = root.get_node("Registry").author_route("level:M01")
+	controller.configure(JSON.parse_string(FileAccess.get_file_as_string("res://generated/content-manifest.json")))
 	var session: RefCounted = load("res://gameplay/session/level_session.gd").new()
 	session.render_enabled = false
 	session.setup(root.get_node("Registry").level_spec("level:M01"))
+	controller.begin_route(session.state(), root.get_node("Registry").author_route("level:M01"), root.get_node("Registry").level_spec("level:M01").solution)
 	if controller.route_index(session.state()) != 0: failures.append("initial integer SDK state matches JSON author route step zero")
 	session.perform("R")
 	if controller.route_index(session.state()) != 1: failures.append("moved integer SDK state matches JSON author route step one")

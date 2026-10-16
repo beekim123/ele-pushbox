@@ -1,7 +1,7 @@
 class_name PortitorApp
 extends Node
 ## Routes screens and owns the one active SDK session.
-const UI_IS_CANDIDATE: bool = true
+const UI_IS_CANDIDATE: bool = false
 # Small scheduling headroom targets at least 60 delivered frames per second.
 # All artwork animation still advances on the renderer's 60 Hz integer clock.
 const FRAME_CAP: int = 64
@@ -41,7 +41,7 @@ func _ready() -> void:
 	Engine.max_fps = FRAME_CAP
 	_apply_window_scale()
 	get_window().title = Locale.text("text:game.title")
-	lab.configure(JSON.parse_string(FileAccess.get_file_as_string("res://generated/content-manifest.json")))
+	lab.configure(JSON.parse_string(FileAccess.get_file_as_string("res://generated/content-manifest.json")), Save.level_data)
 	lab.open_all_levels = bool(Settings.values.get("open_all_levels", false))
 	_restore_saved_level_selection()
 	var renderer: Script = load("res://presentation/render/world_view.gd")
