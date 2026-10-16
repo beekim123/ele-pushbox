@@ -68,6 +68,7 @@ export function checkRooms(root, opts = {}) {
   const byId = new Map(rooms.map((x) => [x.room.id, x.room]));
   const golden = [];
   for (const sl of slices) {
+    if (sl.format === 2 || sl.pool) continue; // v2 maps and run pools: tools/check-rooms2.mjs
     const list = (sl.rooms || []).map((id) => byId.get(id)).filter(Boolean).sort((a, b) => a.id.localeCompare(b.id));
     const out = { id: sl.id, seeds, ok: true, failures: [], path_lengths: {}, directions: {}, template_use: {}, par_secs: null };
     if (!list.length) { out.ok = false; out.failures.push("切片没有房间模板"); report.slices.push(out); failed++; continue; }

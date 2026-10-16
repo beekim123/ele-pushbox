@@ -1,0 +1,50 @@
+{
+ "format": "pushbox.room/2",
+ "world": "diyu",
+ "weight": 10,
+ "mirror": true,
+ "id": "diyu_teahouse",
+ "type": "station",
+ "role": "station",
+ "name": "驿站 · 桥头茶摊",
+ "idea": "龟掌柜在奈何桥头支了个茶摊：站在他旁边按 ↑ 打开货架；零食（桂花糕）在这里买。",
+ "mechanisms": [
+  "ladder"
+ ],
+ "exits": [
+  "left.0.low",
+  "left.0.high",
+  "right.0.low",
+  "right.0.high",
+  "top.0.mid",
+  "bottom.0.mid"
+ ],
+ "routes": [
+  "left.0.low>right.0.low",
+  "left.0.low>right.0.high",
+  "left.0.high>right.0.low",
+  "left.0.high>right.0.high",
+  "left.0.low>bottom.0.mid",
+  "left.0.high>bottom.0.mid",
+  "top.0.mid>right.0.low",
+  "top.0.mid>right.0.high",
+  "top.0.mid>bottom.0.mid"
+ ],
+ "legend": {
+  "1": {
+   "feature": "keeper"
+  }
+ },
+ "map": [
+  "#########HH#########",
+  "#........HH........#",
+  ".........HH.........",
+  "....H....HH....H....",
+  "####H....HH....H####",
+  "####H....HH....H####",
+  "....H....HH....H....",
+  "....H.1..HH..$.H....",
+  "#########HH#########",
+  "#########HH#########"
+ ]
+}

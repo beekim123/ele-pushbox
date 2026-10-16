@@ -1,0 +1,136 @@
+{
+ "format": "pushbox.art/1",
+ "id": "theme.diyu",
+ "name": "主题 · 地府·酆都",
+ "category": "theme",
+ "kind": "procedural",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  320,
+  180
+ ],
+ "anchor": null,
+ "layer": "terrain",
+ "palette": "endesga32",
+ "renderer": [
+  "workbench/js/core/terrain.js",
+  "workbench/js/core/terrain-diyu.js",
+  "workbench/js/core/ambient.js",
+  "workbench/js/core/env.js"
+ ],
+ "depends": [
+  "deco.diyu_lantern",
+  "deco.diyu_lily",
+  "fauna.diyu_butterfly"
+ ],
+ "params": {
+  "title": "地府·酆都",
+  "rock": {
+   "pattern": "block",
+   "base": [
+    "x",
+    "p"
+   ],
+   "seam": "z",
+   "speck": "o",
+   "light": "w",
+   "light2": "x",
+   "dark": "z",
+   "edge": "z",
+   "top": "v"
+  },
+  "earth": {
+   "base": [
+    "e",
+    "F"
+   ],
+   "clump": "f",
+   "pebble": "v",
+   "pebbleShade": "g",
+   "crust": "d",
+   "crust2": "F",
+   "dark": "f",
+   "frame": "g",
+   "bevel": "d"
+  },
+  "cracked": {
+   "base": [
+    "F",
+    "d"
+   ],
+   "crack": "g",
+   "crackLight": "c",
+   "light": "c",
+   "dark": "f",
+   "frame": "f",
+   "bevel": "c"
+  },
+  "sand": {
+   "base": [
+    "c",
+    "d",
+    "c"
+   ],
+   "grain": "k",
+   "top": "l"
+  },
+  "water": {
+   "body": "q",
+   "upper": "r",
+   "surface": "s",
+   "glint": "t"
+  },
+  "background": {
+   "style": "diyu",
+   "base": [
+    "z",
+    "y"
+   ],
+   "speck": "h",
+   "accent": "p",
+   "detail": "z"
+  },
+  "ambient": [
+   {
+    "type": "wall",
+    "id": "deco.diyu_lantern",
+    "anim": "flicker",
+    "spacing": 96,
+    "y": 4
+   },
+   {
+    "type": "floor",
+    "id": "deco.diyu_lily",
+    "anim": "sway",
+    "every": 4,
+    "max": 3
+   },
+   {
+    "type": "flyer",
+    "id": "fauna.diyu_butterfly",
+    "count": 1,
+    "chance": 0.35
+   }
+  ],
+  "env": {
+   "lights": {
+    "sources": {
+     "deco.diyu_lantern": {
+      "radius": 24,
+      "dy": 7
+     }
+    }
+   },
+   "vignette": 12,
+   "weathers": [
+    "fireflies",
+    "embers"
+   ],
+   "weather": "none"
+  }
+ },
+ "usage": "配送模式第二张地图「地府·酆都」的地形、背景与生态（只用于配送模式）。地形按 terrain.js 的 block 图案着色（青黑石块）；背景是 terrain-diyu.js 画的酆都城剪影：夜空到地平线泛起青绿的光，城墙、城楼、宝塔压在前面，窗里有暗红的灯。生态：墙上挂红灯笼，地上长彼岸花，偶尔飞过彼岸蝶。天气可选「萤火虫」（当鬼火用）和「余烬」（像烧纸的火星）。",
+ "notes": "中国风的阴间，取材四川丰都「鬼城」和民间的奈何桥、孟婆汤、望乡台、黄泉路。不画恐怖血腥，偏「热闹的夜市」感：灯笼暖、石头冷。规则材料（土、裂石、沙、水）和其他主题完全相同。 配送重做（claude/delivery-redesign）的美术候选，等用户在工作台确认；确认前不得进游戏。",
+ "content_hash": "3d89a9882337e64af3ab4dfd9e9c211c2ee34d7c4c0eaad5af3d7a6e1e2fe515"
+}

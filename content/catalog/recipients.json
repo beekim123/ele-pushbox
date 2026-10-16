@@ -769,7 +769,10 @@
     "carrot"
    ],
    "layer": 2,
-   "status": "concept"
+   "status": "concept",
+   "params": {
+    "move": "stay"
+   }
   },
   {
    "id": "judge",
@@ -785,7 +788,11 @@
     "letter"
    ],
    "layer": 2,
-   "status": "concept"
+   "status": "concept",
+   "params": {
+    "move": "stay",
+    "damaged_tip_mult": 0.5
+   }
   },
   {
    "id": "wuchang",
@@ -801,7 +808,10 @@
     "paper_house"
    ],
    "layer": 2,
-   "status": "concept"
+   "status": "concept",
+   "params": {
+    "move": "stay"
+   }
   },
   {
    "id": "yama",
@@ -817,7 +827,11 @@
     "tea_set"
    ],
    "layer": 2,
-   "status": "concept"
+   "status": "concept",
+   "params": {
+    "move": "stay",
+    "home_melt_mult": 3
+   }
   },
   {
    "id": "ancestor",
@@ -835,7 +849,10 @@
     "paper_house"
    ],
    "layer": 2,
-   "status": "concept"
+   "status": "concept",
+   "params": {
+    "move": "stay"
+   }
   },
   {
    "id": "fox_bride",

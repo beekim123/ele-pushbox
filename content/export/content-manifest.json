@@ -864,7 +864,7 @@
    "levels": [
     "G02"
    ],
-   "status": "specified"
+   "status": "playable"
   },
   {
    "id": "gas_rise",
@@ -1460,6 +1460,33 @@
     "E05"
    ],
    "status": "playable"
+  },
+  {
+   "id": "float_block",
+   "name": "浮空地块",
+   "group": "experimental",
+   "owner": "game",
+   "sdk": [],
+   "levels": [],
+   "status": "specified"
+  },
+  {
+   "id": "pole",
+   "name": "撑篙",
+   "group": "experimental",
+   "owner": "game",
+   "sdk": [],
+   "levels": [],
+   "status": "specified"
+  },
+  {
+   "id": "hint_animal",
+   "name": "提示动物",
+   "group": "experimental",
+   "owner": "game",
+   "sdk": [],
+   "levels": [],
+   "status": "specified"
   }
  ],
  "worlds": [
@@ -1474,14 +1501,36 @@
     "ladder",
     "dig",
     "pour",
-    "plate_door"
+    "plate_door",
+    "float_block",
+    "pole"
    ],
    "theme": "theme.dungeon",
    "ambient_exclude": [
-    "fauna.dungeon_rat"
+    "fauna.dungeon_rat",
+    "fauna.dungeon_bat"
    ],
    "layer": 1,
-   "status": "active"
+   "status": "active",
+   "hint_fauna": [
+    {
+     "id": "dungeon_cat",
+     "name": "牢猫",
+     "asset": "fauna.dungeon_cat",
+     "snack": "小鱼饼干",
+     "look": "蹲在下一步要用的东西旁边，尾巴指着它",
+     "near": "走近时它跳到那个东西上，回头看你",
+     "fed": "喵一声，头顶冒出一句提示"
+    },
+    {
+     "id": "dungeon_bat",
+     "name": "蝙蝠",
+     "asset": "fauna.dungeon_bat",
+     "look": "倒挂在下一步要去的地方的天花板上",
+     "near": "走近时飞过去，在目标上方绕一圈再挂好",
+     "fed": "只帮牢猫传话：喂零食要找猫"
+    }
+   ]
   },
   {
    "id": "ruins",
@@ -1497,7 +1546,15 @@
    ],
    "theme": "theme.ruins",
    "layer": 1,
-   "status": "active"
+   "status": "active",
+   "hint_fauna": [
+    {
+     "id": "ruins_scarab",
+     "name": "圣甲虫",
+     "asset": "fauna.ruins_scarab",
+     "look": "推着粪球朝下一个要推的箱子滚过去"
+    }
+   ]
   },
   {
    "id": "cave",
@@ -1512,7 +1569,15 @@
    ],
    "theme": "theme.cave",
    "layer": 1,
-   "status": "active"
+   "status": "active",
+   "hint_fauna": [
+    {
+     "id": "cave_moth",
+     "name": "飞蛾",
+     "asset": "fauna.cave_moth",
+     "look": "绕着下一步要用的东西飞，像绕着灯"
+    }
+   ]
   },
   {
    "id": "forest",
@@ -1528,7 +1593,15 @@
    ],
    "theme": "theme.forest",
    "layer": 1,
-   "status": "active"
+   "status": "active",
+   "hint_fauna": [
+    {
+     "id": "forest_bird",
+     "name": "小鸟",
+     "asset": "fauna.forest_bird",
+     "look": "停在下一步要去的树枝或箱子上，啄两下"
+    }
+   ]
   },
   {
    "id": "sky",
@@ -1543,7 +1616,15 @@
    ],
    "theme": "theme.sky",
    "layer": 1,
-   "status": "active"
+   "status": "active",
+   "hint_fauna": [
+    {
+     "id": "sky_dove",
+     "name": "鸽子",
+     "asset": "fauna.sky_dove",
+     "look": "落在下一步要踩的云块上，咕咕叫"
+    }
+   ]
   },
   {
    "id": "cosmos",
@@ -1556,7 +1637,15 @@
    ],
    "theme": "theme.cosmos",
    "layer": 1,
-   "status": "active"
+   "status": "active",
+   "hint_fauna": [
+    {
+     "id": "cosmos_drone",
+     "name": "小无人机",
+     "asset": "fauna.cosmos_drone",
+     "look": "飞到下一步要用的东西上方，打一圈光"
+    }
+   ]
   },
   {
    "id": "countryside",
@@ -1813,14 +1902,39 @@
    "style": "青黑城墙、幽蓝鬼火、红灯笼、彼岸花、纸扎铺",
    "mechanisms": [
     "load_bridge",
+    "float_block",
+    "float_sink",
+    "lift",
     "drift",
     "lantern_reveal",
     "hold_breath",
     "paper"
    ],
-   "theme": null,
+   "theme": "theme.diyu",
    "layer": 2,
-   "status": "concept"
+   "status": "design",
+   "hint_fauna": [
+    {
+     "id": "diyu_dog",
+     "name": "小白狗",
+     "asset": "fauna.diyu_dog",
+     "snack": "桂花糕",
+     "look": "趴在下一步要用的东西旁边",
+     "near": "走近时它跑过去，冲着那个东西摇尾巴",
+     "fed": "汪一声，头顶冒出一句提示"
+    },
+    {
+     "id": "diyu_butterfly",
+     "name": "彼岸蝶",
+     "asset": "fauna.diyu_butterfly",
+     "look": "停在下一步要去的地方",
+     "near": "走近时飞过去，在目标上方绕圈",
+     "fed": "只帮小白狗带路：喂零食要找狗"
+    }
+   ],
+   "ambient_exclude": [
+    "fauna.diyu_butterfly"
+   ]
   },
   {
    "id": "inari",
@@ -2805,7 +2919,10 @@
     "carrot"
    ],
    "layer": 2,
-   "status": "concept"
+   "status": "concept",
+   "params": {
+    "move": "stay"
+   }
   },
   {
    "id": "judge",
@@ -2821,7 +2938,11 @@
     "letter"
    ],
    "layer": 2,
-   "status": "concept"
+   "status": "concept",
+   "params": {
+    "move": "stay",
+    "damaged_tip_mult": 0.5
+   }
   },
   {
    "id": "wuchang",
@@ -2837,7 +2958,10 @@
     "paper_house"
    ],
    "layer": 2,
-   "status": "concept"
+   "status": "concept",
+   "params": {
+    "move": "stay"
+   }
   },
   {
    "id": "yama",
@@ -2853,7 +2977,11 @@
     "tea_set"
    ],
    "layer": 2,
-   "status": "concept"
+   "status": "concept",
+   "params": {
+    "move": "stay",
+    "home_melt_mult": 3
+   }
   },
   {
    "id": "ancestor",
@@ -2871,7 +2999,10 @@
     "paper_house"
    ],
    "layer": 2,
-   "status": "concept"
+   "status": "concept",
+   "params": {
+    "move": "stay"
+   }
   },
   {
    "id": "fox_bride",
@@ -3861,7 +3992,11 @@
    "rarity": "common",
    "carry": "small",
    "layer": 2,
-   "status": "concept"
+   "status": "concept",
+   "params": {
+    "pay": 35,
+    "stale_secs_per_point": 60
+   }
   },
   {
    "id": "paper_house",
@@ -3877,7 +4012,12 @@
    "rarity": "rare",
    "carry": "medium",
    "layer": 2,
-   "status": "concept"
+   "status": "concept",
+   "params": {
+    "pay": 60,
+    "water_damage": 1,
+    "burn": true
+   }
   },
   {
    "id": "ink_brush",
@@ -4904,7 +5044,22 @@
    "pushable": true,
    "mode": "delivery",
    "layer": 2,
-   "status": "concept"
+   "status": "concept",
+   "params": {
+    "move": "chase",
+    "step_secs": 0.35,
+    "chase_step_secs": 0.3,
+    "sight_tiles": 5,
+    "cliff_rows": 2,
+    "contact": "steal",
+    "steal_sand": 1,
+    "steal_coins": 5,
+    "flee_secs": 3,
+    "flee_step_secs": 0.25,
+    "push_stun_secs": 0.5,
+    "trap_secs": 3,
+    "coins": 5
+   }
   },
   {
    "id": "wandering_soul",
@@ -4915,7 +5070,14 @@
    "pushable": false,
    "mode": "delivery",
    "layer": 2,
-   "status": "concept"
+   "status": "concept",
+   "params": {
+    "move": "float",
+    "step_secs": 0.6,
+    "through_walls": true,
+    "contact": "hurt",
+    "coins": 0
+   }
   },
   {
    "id": "jiangshi",
@@ -4926,7 +5088,17 @@
    "pushable": false,
    "mode": "delivery",
    "layer": 2,
-   "status": "concept"
+   "status": "concept",
+   "params": {
+    "move": "hop",
+    "step_secs": 0.8,
+    "sight_tiles": 6,
+    "still_secs": 0.5,
+    "cliff_rows": 2,
+    "contact": "hurt",
+    "trap_secs": 5,
+    "coins": 10
+   }
   },
   {
    "id": "kappa",
@@ -5432,6 +5604,21 @@
    "status": "concept",
    "layer": 1,
    "price": 20
+  },
+  {
+   "id": "snack",
+   "name": "零食",
+   "mode": "delivery",
+   "summary": "喂给提示动物，换一句明确的提示（这个房间的下一步）。石牢卖小鱼饼干，地府卖桂花糕：同一个道具换包装",
+   "status": "concept",
+   "layer": 1,
+   "price": 10,
+   "assets": [
+    "item.snack"
+   ],
+   "params": {
+    "hints": 1
+   }
   }
  ],
  "buffs": [
@@ -6025,6 +6212,330 @@
     "B": 0.6
    },
    "fail_keep": 0.5
+  },
+  {
+   "id": "dungeon_2",
+   "format": 2,
+   "name": "配送地图 · 废弃的符文监狱（石牢重做）",
+   "mode": "delivery",
+   "status": "design",
+   "doc": "docs/design/delivery-dungeon.md",
+   "world": "dungeon",
+   "cargo": [
+    "letter",
+    "vase",
+    "ice_cream"
+   ],
+   "recipients": [
+    "old_miner",
+    "zombie",
+    "goblin_smith"
+   ],
+   "monsters": [
+    "rat_swarm",
+    "skeleton_guard"
+   ],
+   "rooms2": [
+    "dungeon2_bridge",
+    "dungeon2_corridor",
+    "dungeon2_ferry",
+    "dungeon2_gate",
+    "dungeon2_home",
+    "dungeon2_pole",
+    "dungeon2_sandpour",
+    "dungeon2_station",
+    "dungeon2_well",
+    "dungeon2_yard"
+   ],
+   "mechanisms": [
+    "push",
+    "ladder",
+    "dig",
+    "pour",
+    "plate_door",
+    "fall",
+    "lever",
+    "float_block",
+    "pole",
+    "hint_animal",
+    "push_monster",
+    "crush_monster",
+    "trap_monster"
+   ],
+   "layout": {
+    "cols": 12,
+    "rows": 3,
+    "direction": "down",
+    "sequence": [
+     {
+      "role": "gate"
+     },
+     {
+      "role": "teach"
+     },
+     {
+      "role": "teach"
+     },
+     {
+      "role": "breather",
+      "chance": 50
+     },
+     {
+      "role": "develop"
+     },
+     {
+      "role": "station"
+     },
+     {
+      "role": "twist"
+     },
+     {
+      "role": "develop",
+      "chance": 60
+     },
+     {
+      "role": "home"
+     }
+    ]
+   },
+   "station": {
+    "items": [
+     "sandbag",
+     "first_aid",
+     "rope_ladder",
+     "snack"
+    ],
+    "stock": {
+     "sandbag": 5,
+     "first_aid": 1,
+     "rope_ladder": 2,
+     "snack": 3
+    },
+    "heal": 1
+   },
+   "time": {
+    "tick_hz": 60,
+    "transition_secs": 0.3
+   },
+   "intervals": {
+    "walk": 0.22,
+    "climb": 0.22,
+    "push": 0.3,
+    "dig": 0.35,
+    "pour": 0.35,
+    "interact": 0.4,
+    "move_anim": 0.1
+   },
+   "gravity": {
+    "tiles_per_sec": 12
+   },
+   "player": {
+    "hearts": 3,
+    "iframe_secs": 1.5,
+    "fall_hurt_rows": 3,
+    "sand_max": 9,
+    "item_slots": 3
+   },
+   "monster_fall_ko_rows": 3,
+   "cargo_integrity": 3,
+   "coins": {
+    "pickup": 5
+   },
+   "tip": {
+    "time_fast": 1.5,
+    "time_floor": 0.5,
+    "like": 1.5
+   },
+   "rating": {
+    "S": 1.4,
+    "A": 1,
+    "B": 0.6
+   },
+   "fail_keep": 0.5
+  },
+  {
+   "id": "diyu_1",
+   "format": 2,
+   "name": "配送地图 · 地府·酆都",
+   "mode": "delivery",
+   "status": "design",
+   "doc": "docs/design/delivery-diyu.md",
+   "world": "diyu",
+   "cargo": [
+    "letter",
+    "qingtuan",
+    "paper_house",
+    "ice_cream"
+   ],
+   "cargo_only": {
+    "paper_house": [
+     "ancestor",
+     "wuchang"
+    ]
+   },
+   "recipients": [
+    "ancestor",
+    "meng_po",
+    "judge",
+    "wuchang",
+    "yama"
+   ],
+   "monsters": [
+    "imp",
+    "wandering_soul",
+    "jiangshi"
+   ],
+   "rooms2": [
+    "diyu_fengdu",
+    "diyu_gate",
+    "diyu_ghostfire",
+    "diyu_home_hall",
+    "diyu_home_yard",
+    "diyu_huangquan",
+    "diyu_lantern",
+    "diyu_naihe",
+    "diyu_paper_bridge",
+    "diyu_sand_bridge",
+    "diyu_teahouse",
+    "diyu_wangchuan",
+    "diyu_wangxiang"
+   ],
+   "mechanisms": [
+    "push",
+    "ladder",
+    "dig",
+    "pour",
+    "plate_door",
+    "fall",
+    "lever",
+    "lift",
+    "float_sink",
+    "load_bridge",
+    "float_block",
+    "hint_animal",
+    "hold_breath",
+    "push_monster",
+    "trap_monster"
+   ],
+   "layout": {
+    "cols": 13,
+    "rows": 3,
+    "direction": "right",
+    "sequence": [
+     {
+      "role": "gate"
+     },
+     {
+      "role": "teach"
+     },
+     {
+      "role": "teach"
+     },
+     {
+      "role": "breather",
+      "chance": 50
+     },
+     {
+      "role": "develop"
+     },
+     {
+      "role": "station"
+     },
+     {
+      "role": "twist"
+     },
+     {
+      "role": "develop",
+      "chance": 60
+     },
+     {
+      "role": "breather",
+      "chance": 40
+     },
+     {
+      "role": "home"
+     }
+    ]
+   },
+   "station": {
+    "items": [
+     "sandbag",
+     "first_aid",
+     "rope_ladder",
+     "snack"
+    ],
+    "stock": {
+     "sandbag": 5,
+     "first_aid": 1,
+     "rope_ladder": 2,
+     "snack": 3
+    },
+    "heal": 1
+   },
+   "time": {
+    "tick_hz": 60,
+    "transition_secs": 0.3
+   },
+   "intervals": {
+    "walk": 0.22,
+    "climb": 0.22,
+    "push": 0.3,
+    "dig": 0.35,
+    "pour": 0.35,
+    "interact": 0.4,
+    "move_anim": 0.1
+   },
+   "gravity": {
+    "tiles_per_sec": 12
+   },
+   "player": {
+    "hearts": 3,
+    "iframe_secs": 1.5,
+    "fall_hurt_rows": 3,
+    "sand_max": 9,
+    "item_slots": 3
+   },
+   "monster_fall_ko_rows": 3,
+   "cargo_integrity": 3,
+   "coins": {
+    "pickup": 5
+   },
+   "tip": {
+    "time_fast": 1.5,
+    "time_floor": 0.5,
+    "like": 1.5
+   },
+   "rating": {
+    "S": 1.4,
+    "A": 1,
+    "B": 0.6
+   },
+   "fail_keep": 0.5
+  },
+  {
+   "id": "delivery_pool",
+   "name": "开局池 · 配送模式",
+   "mode": "delivery",
+   "status": "design",
+   "doc": "docs/design/delivery-puzzle-rules.md",
+   "pool": {
+    "maps": [
+     {
+      "slice": "dungeon_2",
+      "weight": 1
+     },
+     {
+      "slice": "diyu_1",
+      "weight": 1
+     }
+    ],
+    "weights": {
+     "common": 4,
+     "rare": 2,
+     "legendary": 1
+    },
+    "rerolls": 1
+   }
   }
  ],
  "rooms": [
@@ -6097,6 +6608,284 @@
    "type": "room",
    "spec": "content/rooms/dungeon/dungeon_well.json",
    "sha256": "7dfb90d1395d7554bd453fe0e7d24675eb219ad8126a217f4dd8d4060525494e"
+  }
+ ],
+ "rooms2": [
+  {
+   "id": "diyu_fengdu",
+   "world": "diyu",
+   "type": "room",
+   "role": "develop",
+   "size": [
+    2,
+    2
+   ],
+   "spec": "content/rooms/diyu/diyu_fengdu.json",
+   "sha256": "131b51faf553a5a87c65df2193181be97b52427bf00744bb4751b94c9fad2a3e"
+  },
+  {
+   "id": "diyu_gate",
+   "world": "diyu",
+   "type": "gate",
+   "role": "gate",
+   "size": [
+    1,
+    1
+   ],
+   "spec": "content/rooms/diyu/diyu_gate.json",
+   "sha256": "f7d8a89604c056a81b0b48725d954981d2c9a5d3f3519c4256383a07a57b05f4"
+  },
+  {
+   "id": "diyu_ghostfire",
+   "world": "diyu",
+   "type": "room",
+   "role": "breather",
+   "size": [
+    1,
+    1
+   ],
+   "spec": "content/rooms/diyu/diyu_ghostfire.json",
+   "sha256": "7ad204f806e41a95ccfdeb32714a9433f067d8d1acc1152710cfdb59cf5fea49"
+  },
+  {
+   "id": "diyu_home_hall",
+   "world": "diyu",
+   "type": "home",
+   "role": "home",
+   "size": [
+    1,
+    1
+   ],
+   "spec": "content/rooms/diyu/diyu_home_hall.json",
+   "sha256": "08a29119d3b4704cd1764c2b9a40cefe1f011678d4a0eb101d7ab62866177814"
+  },
+  {
+   "id": "diyu_home_yard",
+   "world": "diyu",
+   "type": "home",
+   "role": "home",
+   "size": [
+    1,
+    1
+   ],
+   "spec": "content/rooms/diyu/diyu_home_yard.json",
+   "sha256": "30357d9d2367da86632d6df683f044bfdc05ac4b8542b756812e37d900220ca2"
+  },
+  {
+   "id": "diyu_huangquan",
+   "world": "diyu",
+   "type": "room",
+   "role": "breather",
+   "size": [
+    2,
+    1
+   ],
+   "spec": "content/rooms/diyu/diyu_huangquan.json",
+   "sha256": "f0eff08aaef6b8db669515e80abdf6e7d2a573b8328110559bf3a40348dbc0fa"
+  },
+  {
+   "id": "diyu_lantern",
+   "world": "diyu",
+   "type": "room",
+   "role": "teach",
+   "size": [
+    1,
+    1
+   ],
+   "spec": "content/rooms/diyu/diyu_lantern.json",
+   "sha256": "e206b910476686b813019449054696c639a00a905248bb4399ea6cff5af68c27"
+  },
+  {
+   "id": "diyu_naihe",
+   "world": "diyu",
+   "type": "room",
+   "role": "teach",
+   "size": [
+    1,
+    1
+   ],
+   "spec": "content/rooms/diyu/diyu_naihe.json",
+   "sha256": "4288a295f6206c7de5170d1c8d8d38ad142dbfbf53e0e00d58ed300f5eaa17a1"
+  },
+  {
+   "id": "diyu_paper_bridge",
+   "world": "diyu",
+   "type": "room",
+   "role": "twist",
+   "size": [
+    1,
+    1
+   ],
+   "spec": "content/rooms/diyu/diyu_paper_bridge.json",
+   "sha256": "811d32ffb14d51f307d91ed98b5f88f56e6a1c8c288c9e202bee72578373bb4c"
+  },
+  {
+   "id": "diyu_sand_bridge",
+   "world": "diyu",
+   "type": "room",
+   "role": "twist",
+   "size": [
+    1,
+    1
+   ],
+   "spec": "content/rooms/diyu/diyu_sand_bridge.json",
+   "sha256": "2bac57e9c0fafc6dc79cd77dcf6f64d60ca97327cf7a4a65fda97d8483e456a4"
+  },
+  {
+   "id": "diyu_teahouse",
+   "world": "diyu",
+   "type": "station",
+   "role": "station",
+   "size": [
+    1,
+    1
+   ],
+   "spec": "content/rooms/diyu/diyu_teahouse.json",
+   "sha256": "2cc232e95951180f60a91403130f551bd58b56c5a9ffe808a4ad3c6c1a16e705"
+  },
+  {
+   "id": "diyu_wangchuan",
+   "world": "diyu",
+   "type": "room",
+   "role": "develop",
+   "size": [
+    2,
+    1
+   ],
+   "spec": "content/rooms/diyu/diyu_wangchuan.json",
+   "sha256": "bcd53a48faae5b9d17a231ecbb344e55b3460eab5e2f800f13a38572e2a2509d"
+  },
+  {
+   "id": "diyu_wangxiang",
+   "world": "diyu",
+   "type": "room",
+   "role": "develop",
+   "size": [
+    1,
+    2
+   ],
+   "spec": "content/rooms/diyu/diyu_wangxiang.json",
+   "sha256": "0a2ed07cf7a712a7a7f09d33918f44d5405951de911dad7c06f318097a50df47"
+  },
+  {
+   "id": "dungeon2_bridge",
+   "world": "dungeon",
+   "type": "room",
+   "role": "teach",
+   "size": [
+    1,
+    1
+   ],
+   "spec": "content/rooms/dungeon/dungeon2_bridge.json",
+   "sha256": "9b32f77f5feff4367ffabc640b5d54c023773af934a4260a7513c94f8c554cff"
+  },
+  {
+   "id": "dungeon2_corridor",
+   "world": "dungeon",
+   "type": "room",
+   "role": "breather",
+   "size": [
+    2,
+    1
+   ],
+   "spec": "content/rooms/dungeon/dungeon2_corridor.json",
+   "sha256": "a5c772b8848dd64e517a687358e6334ae5840af135dc81b0737bf12fc166fd61"
+  },
+  {
+   "id": "dungeon2_ferry",
+   "world": "dungeon",
+   "type": "room",
+   "role": "develop",
+   "size": [
+    2,
+    1
+   ],
+   "spec": "content/rooms/dungeon/dungeon2_ferry.json",
+   "sha256": "7075c0be92d7deebe9bf38824140e450ce1256e89b16985ae2b15f6264415ed4"
+  },
+  {
+   "id": "dungeon2_gate",
+   "world": "dungeon",
+   "type": "gate",
+   "role": "gate",
+   "size": [
+    1,
+    1
+   ],
+   "spec": "content/rooms/dungeon/dungeon2_gate.json",
+   "sha256": "62903f2e12f4c24783fb512a34785328e458b8ec0b5ad6fd43e0af38f41c772c"
+  },
+  {
+   "id": "dungeon2_home",
+   "world": "dungeon",
+   "type": "home",
+   "role": "home",
+   "size": [
+    1,
+    1
+   ],
+   "spec": "content/rooms/dungeon/dungeon2_home.json",
+   "sha256": "e7c0da65cc0d3cbba600e8c6981b3d6830b72c616791a2eb5cd45b82b127c3d5"
+  },
+  {
+   "id": "dungeon2_pole",
+   "world": "dungeon",
+   "type": "room",
+   "role": "teach",
+   "size": [
+    1,
+    1
+   ],
+   "spec": "content/rooms/dungeon/dungeon2_pole.json",
+   "sha256": "8d04237ba2546af5faa723643bd1eb78a89d569a359471d31ac0920a268784b9"
+  },
+  {
+   "id": "dungeon2_sandpour",
+   "world": "dungeon",
+   "type": "room",
+   "role": "twist",
+   "size": [
+    1,
+    1
+   ],
+   "spec": "content/rooms/dungeon/dungeon2_sandpour.json",
+   "sha256": "26609990a6a10c2a34ce9a230c9f0f728cc5ca4cdc08a7d86549c8ae2f1d3617"
+  },
+  {
+   "id": "dungeon2_station",
+   "world": "dungeon",
+   "type": "station",
+   "role": "station",
+   "size": [
+    1,
+    1
+   ],
+   "spec": "content/rooms/dungeon/dungeon2_station.json",
+   "sha256": "2b60123d6ee2edd091ab048305efa381bb0cf5546d4d8c53bcc6c77e03664a5c"
+  },
+  {
+   "id": "dungeon2_well",
+   "world": "dungeon",
+   "type": "room",
+   "role": "develop",
+   "size": [
+    1,
+    2
+   ],
+   "spec": "content/rooms/dungeon/dungeon2_well.json",
+   "sha256": "af2ec175eeaf7701227916d332451f0eb53e11235b319f62cea2e7661b70bd64"
+  },
+  {
+   "id": "dungeon2_yard",
+   "world": "dungeon",
+   "type": "room",
+   "role": "develop",
+   "size": [
+    2,
+    2
+   ],
+   "spec": "content/rooms/dungeon/dungeon2_yard.json",
+   "sha256": "5db11c0be6caf73722e3c39f89962081e4dc6a5337c4ab812db9e132a2821902"
   }
  ],
  "delivery_golden": "content/export/delivery-golden.json"

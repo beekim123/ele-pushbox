@@ -5,7 +5,7 @@
   "art": {
    "name": "美术资产",
    "source": "art/source/<分类>/<id>.json",
-   "count": 109
+   "count": 133
   },
   "level": {
    "name": "关卡",
@@ -15,7 +15,7 @@
   "room": {
    "name": "配送房间模板",
    "source": "content/rooms/<地区>/<id>.json",
-   "count": 10
+   "count": 33
   },
   "mode": {
    "name": "模式",
@@ -30,7 +30,7 @@
   "mechanic": {
    "name": "机制",
    "source": "content/catalog/mechanisms.json",
-   "count": 74
+   "count": 77
   },
   "world": {
    "name": "地区",
@@ -60,7 +60,7 @@
   "item": {
    "name": "道具",
    "source": "content/catalog/items.json",
-   "count": 20
+   "count": 21
   },
   "buff": {
    "name": "增益",
@@ -85,7 +85,7 @@
   "slice": {
    "name": "可玩切片（配送局配置）",
    "source": "content/catalog/slices.json",
-   "count": 1
+   "count": 4
   },
   "text": {
    "name": "界面与台词文字",
@@ -94,6 +94,18 @@
   }
  },
  "entries": [
+  {
+   "uid": "art:avatar.ancestor",
+   "domain": "art",
+   "id": "avatar.ancestor",
+   "name": "滚轮头像 · 太爷爷",
+   "source": "art/source/avatar/avatar.ancestor.json",
+   "game": "res://generated/art/avatar.ancestor.tres",
+   "category": "avatar",
+   "version": 1,
+   "hash": "68adb0805a85208b14a364da1f7c2a63b803ae4575b179ffa3a753c283df76ca",
+   "approved": false
+  },
   {
    "uid": "art:avatar.goblin_smith",
    "domain": "art",
@@ -107,6 +119,30 @@
    "approved": true
   },
   {
+   "uid": "art:avatar.judge",
+   "domain": "art",
+   "id": "avatar.judge",
+   "name": "滚轮头像 · 判官",
+   "source": "art/source/avatar/avatar.judge.json",
+   "game": "res://generated/art/avatar.judge.tres",
+   "category": "avatar",
+   "version": 1,
+   "hash": "61ed92ffabe4822309497cd0f31004dd3f06fad79bb70c412ae7de9231ee49d0",
+   "approved": false
+  },
+  {
+   "uid": "art:avatar.meng_po",
+   "domain": "art",
+   "id": "avatar.meng_po",
+   "name": "滚轮头像 · 孟婆",
+   "source": "art/source/avatar/avatar.meng_po.json",
+   "game": "res://generated/art/avatar.meng_po.tres",
+   "category": "avatar",
+   "version": 1,
+   "hash": "fd39720c72eadf7f6a54e425146fdfd04fb01ed11fef04c3851de7407789dcba",
+   "approved": false
+  },
+  {
    "uid": "art:avatar.old_miner",
    "domain": "art",
    "id": "avatar.old_miner",
@@ -117,6 +153,30 @@
    "version": 1,
    "hash": "c607836c63d2102ccb6d1bc7e4a74a4869cc6badd4b48c385dbc18e961a51aee",
    "approved": true
+  },
+  {
+   "uid": "art:avatar.wuchang",
+   "domain": "art",
+   "id": "avatar.wuchang",
+   "name": "滚轮头像 · 黑白无常",
+   "source": "art/source/avatar/avatar.wuchang.json",
+   "game": "res://generated/art/avatar.wuchang.tres",
+   "category": "avatar",
+   "version": 1,
+   "hash": "be1bcc58ff471af314f83e89c08abf47a21c466fb8116020c6a4ad08ae8fb483",
+   "approved": false
+  },
+  {
+   "uid": "art:avatar.yama",
+   "domain": "art",
+   "id": "avatar.yama",
+   "name": "滚轮头像 · 阎王",
+   "source": "art/source/avatar/avatar.yama.json",
+   "game": "res://generated/art/avatar.yama.tres",
+   "category": "avatar",
+   "version": 1,
+   "hash": "b6c465355350c795739a6a2c8e838e43efc529abbf55e7cfea795f7d1a83acef",
+   "approved": false
   },
   {
    "uid": "art:avatar.zombie",
@@ -155,6 +215,30 @@
    "approved": true
   },
   {
+   "uid": "art:cargo.paper_house",
+   "domain": "art",
+   "id": "cargo.paper_house",
+   "name": "货物 · 纸扎房子",
+   "source": "art/source/cargo/cargo.paper_house.json",
+   "game": "res://generated/art/cargo.paper_house.tres",
+   "category": "cargo",
+   "version": 1,
+   "hash": "b037d3e05af811178d78919e9c1eb52fd9d049da3431a63367b4bf915990205d",
+   "approved": false
+  },
+  {
+   "uid": "art:cargo.qingtuan",
+   "domain": "art",
+   "id": "cargo.qingtuan",
+   "name": "货物 · 青团",
+   "source": "art/source/cargo/cargo.qingtuan.json",
+   "game": "res://generated/art/cargo.qingtuan.tres",
+   "category": "cargo",
+   "version": 1,
+   "hash": "0d6039abcdc5d4d0d1bb8167de63d1f5fd5b9ea6edfde92628110899ddd4754c",
+   "approved": false
+  },
+  {
    "uid": "art:cargo.vase",
    "domain": "art",
    "id": "cargo.vase",
@@ -165,6 +249,18 @@
    "version": 1,
    "hash": "0eeb7e49c72daafc67a145c3641528958e97b447d184c3bc777a8cd2d7947944",
    "approved": true
+  },
+  {
+   "uid": "art:char.ancestor",
+   "domain": "art",
+   "id": "char.ancestor",
+   "name": "太爷爷（收件人）",
+   "source": "art/source/character/char.ancestor.json",
+   "game": "res://generated/art/char.ancestor.tres",
+   "category": "character",
+   "version": 1,
+   "hash": "fdd09be4ec7f7ae10ce5e7f1a7bec75808f19db4d2d97206982b7ee794ffcde0",
+   "approved": false
   },
   {
    "uid": "art:char.goblin_smith",
@@ -179,6 +275,18 @@
    "approved": true
   },
   {
+   "uid": "art:char.judge",
+   "domain": "art",
+   "id": "char.judge",
+   "name": "判官（收件人）",
+   "source": "art/source/character/char.judge.json",
+   "game": "res://generated/art/char.judge.tres",
+   "category": "character",
+   "version": 1,
+   "hash": "5e438a02e9fbe068f601a6d9b8293f30563cd8f6bf0feb511618bdb5f1318528",
+   "approved": false
+  },
+  {
    "uid": "art:char.lucky_cat",
    "domain": "art",
    "id": "char.lucky_cat",
@@ -189,6 +297,18 @@
    "version": 1,
    "hash": "d9cee704ae0f93f988d6a502847e83b696af6e68c5a1d4dda5ebeb18bcb5901a",
    "approved": true
+  },
+  {
+   "uid": "art:char.meng_po",
+   "domain": "art",
+   "id": "char.meng_po",
+   "name": "孟婆（收件人）",
+   "source": "art/source/character/char.meng_po.json",
+   "game": "res://generated/art/char.meng_po.tres",
+   "category": "character",
+   "version": 1,
+   "hash": "f72e44b429e5d1e69e661ae25d1c2958ff05af0ffb5f71aae992dccb907761fe",
+   "approved": false
   },
   {
    "uid": "art:char.miner",
@@ -239,6 +359,30 @@
    "approved": true
   },
   {
+   "uid": "art:char.wuchang",
+   "domain": "art",
+   "id": "char.wuchang",
+   "name": "黑白无常（收件人）",
+   "source": "art/source/character/char.wuchang.json",
+   "game": "res://generated/art/char.wuchang.tres",
+   "category": "character",
+   "version": 1,
+   "hash": "51aac273292137af5b1ecd2c6a505d15928f5ab1863350ecd4f1164cb0b6ec08",
+   "approved": false
+  },
+  {
+   "uid": "art:char.yama",
+   "domain": "art",
+   "id": "char.yama",
+   "name": "阎王（收件人）",
+   "source": "art/source/character/char.yama.json",
+   "game": "res://generated/art/char.yama.tres",
+   "category": "character",
+   "version": 1,
+   "hash": "aec4f07219fdf1c031f102a65886bebcc9c2ff265f0bd17f6e6f8972bb7d7ef2",
+   "approved": false
+  },
+  {
    "uid": "art:char.zombie",
    "domain": "art",
    "id": "char.zombie",
@@ -285,6 +429,30 @@
    "version": 1,
    "hash": "4f02f4e5c234d60544b0bbd09e1c292d1b0d54fdbcd5b6d56525aead60dee0f6",
    "approved": true
+  },
+  {
+   "uid": "art:deco.diyu_lantern",
+   "domain": "art",
+   "id": "deco.diyu_lantern",
+   "name": "地府 · 红灯笼",
+   "source": "art/source/deco/deco.diyu_lantern.json",
+   "game": "res://generated/art/deco.diyu_lantern.tres",
+   "category": "deco",
+   "version": 1,
+   "hash": "451435f0230ee530b3b2828e7e66f3e3ebb5f60278908f35d140e8aa30001df0",
+   "approved": false
+  },
+  {
+   "uid": "art:deco.diyu_lily",
+   "domain": "art",
+   "id": "deco.diyu_lily",
+   "name": "地府 · 彼岸花",
+   "source": "art/source/deco/deco.diyu_lily.json",
+   "game": "res://generated/art/deco.diyu_lily.tres",
+   "category": "deco",
+   "version": 1,
+   "hash": "e763612acf57e29178163ed55cc4c62138569f228dcccbc4c15b6f6b0a905c6f",
+   "approved": false
   },
   {
    "uid": "art:deco.dungeon_moss",
@@ -395,6 +563,30 @@
    "approved": true
   },
   {
+   "uid": "art:fauna.diyu_butterfly",
+   "domain": "art",
+   "id": "fauna.diyu_butterfly",
+   "name": "地府 · 彼岸蝶（提示动物）",
+   "source": "art/source/fauna/fauna.diyu_butterfly.json",
+   "game": "res://generated/art/fauna.diyu_butterfly.tres",
+   "category": "fauna",
+   "version": 1,
+   "hash": "478bb61357dc52969557ae39e7cf534f43c781db0bab1133819e7b48b243443d",
+   "approved": false
+  },
+  {
+   "uid": "art:fauna.diyu_dog",
+   "domain": "art",
+   "id": "fauna.diyu_dog",
+   "name": "地府 · 小白狗（提示动物）",
+   "source": "art/source/fauna/fauna.diyu_dog.json",
+   "game": "res://generated/art/fauna.diyu_dog.tres",
+   "category": "fauna",
+   "version": 1,
+   "hash": "563f63333c1e2fdcd0176336a61b05aa2ff752122be5063b4582264059a3831a",
+   "approved": false
+  },
+  {
    "uid": "art:fauna.dungeon_bat",
    "domain": "art",
    "id": "fauna.dungeon_bat",
@@ -405,6 +597,18 @@
    "version": 1,
    "hash": "d2eb3b1ef3417414ac847e2cdfb1ab11c45a46128ef00eac1563ebc6b1514bdc",
    "approved": true
+  },
+  {
+   "uid": "art:fauna.dungeon_cat",
+   "domain": "art",
+   "id": "fauna.dungeon_cat",
+   "name": "石牢 · 牢猫（提示动物）",
+   "source": "art/source/fauna/fauna.dungeon_cat.json",
+   "game": "res://generated/art/fauna.dungeon_cat.tres",
+   "category": "fauna",
+   "version": 1,
+   "hash": "0bc7f82924612e6c810a4f517e514a941d982761d55f79a7e23f715a812171af",
+   "approved": false
   },
   {
    "uid": "art:fauna.dungeon_rat",
@@ -671,6 +875,18 @@
    "approved": true
   },
   {
+   "uid": "art:item.snack",
+   "domain": "art",
+   "id": "item.snack",
+   "name": "零食（小鱼饼干 / 桂花糕）",
+   "source": "art/source/item/item.snack.json",
+   "game": "res://generated/art/item.snack.tres",
+   "category": "item",
+   "version": 1,
+   "hash": "4f1533198afeedaa44b9fcb95fd94844d16513ac8b2f1842c68a71e0b17bfdf9",
+   "approved": false
+  },
+  {
    "uid": "art:material.chapter2_5",
    "domain": "art",
    "id": "material.chapter2_5",
@@ -803,6 +1019,18 @@
    "approved": true
   },
   {
+   "uid": "art:mech.lantern_float",
+   "domain": "art",
+   "id": "mech.lantern_float",
+   "name": "浮空地块 · 灯笼浮台（地府）",
+   "source": "art/source/mechanism/mech.lantern_float.json",
+   "game": "res://generated/art/mech.lantern_float.tres",
+   "category": "mechanism",
+   "version": 1,
+   "hash": "db943286974489b17c81326ca23cdbb6b76b5e6264a77df0ecbabf5b5f293406",
+   "approved": false
+  },
+  {
    "uid": "art:mech.lever",
    "domain": "art",
    "id": "mech.lever",
@@ -875,6 +1103,18 @@
    "approved": true
   },
   {
+   "uid": "art:mech.rune_float",
+   "domain": "art",
+   "id": "mech.rune_float",
+   "name": "浮空地块 · 符文浮石（石牢）",
+   "source": "art/source/mechanism/mech.rune_float.json",
+   "game": "res://generated/art/mech.rune_float.tres",
+   "category": "mechanism",
+   "version": 1,
+   "hash": "ac7cc14d46bb2076f9a126be2a141fa0ce512f9736e34b9e48637603779e6971",
+   "approved": false
+  },
+  {
    "uid": "art:mech.socket",
    "domain": "art",
    "id": "mech.socket",
@@ -923,6 +1163,30 @@
    "approved": true
   },
   {
+   "uid": "art:monster.imp",
+   "domain": "art",
+   "id": "monster.imp",
+   "name": "小鬼",
+   "source": "art/source/monster/monster.imp.json",
+   "game": "res://generated/art/monster.imp.tres",
+   "category": "monster",
+   "version": 1,
+   "hash": "48e833c982b68afd61b85be358f61dfbd89e2badb19638c257a43e1f16430d09",
+   "approved": false
+  },
+  {
+   "uid": "art:monster.jiangshi",
+   "domain": "art",
+   "id": "monster.jiangshi",
+   "name": "僵尸",
+   "source": "art/source/monster/monster.jiangshi.json",
+   "game": "res://generated/art/monster.jiangshi.tres",
+   "category": "monster",
+   "version": 1,
+   "hash": "4aa76da86b739569c6a098b102816ceb4aa1aa29f7aa9b0b01a1a1e0959c1b6f",
+   "approved": false
+  },
+  {
    "uid": "art:monster.rat_swarm",
    "domain": "art",
    "id": "monster.rat_swarm",
@@ -945,6 +1209,18 @@
    "version": 1,
    "hash": "7c5340f68c1fd3df4414a6516cb5baf45a446f260307ab676f94258d4c5f2ace",
    "approved": true
+  },
+  {
+   "uid": "art:monster.wandering_soul",
+   "domain": "art",
+   "id": "monster.wandering_soul",
+   "name": "游魂",
+   "source": "art/source/monster/monster.wandering_soul.json",
+   "game": "res://generated/art/monster.wandering_soul.tres",
+   "category": "monster",
+   "version": 1,
+   "hash": "be9e34d8aedf84ab89c98ba206e23e23329354f0baca338515a6cb904548df0a",
+   "approved": false
   },
   {
    "uid": "art:obj.crate_iron",
@@ -1005,6 +1281,18 @@
    "version": 2,
    "hash": "a9fdc7fe0b8172325c60dc6c122134e382e4c132d6dff5ae496a2fc3b0d626f3",
    "approved": true
+  },
+  {
+   "uid": "art:theme.diyu",
+   "domain": "art",
+   "id": "theme.diyu",
+   "name": "主题 · 地府·酆都",
+   "source": "art/source/theme/theme.diyu.json",
+   "game": "res://generated/themes/theme.diyu.tres",
+   "category": "theme",
+   "version": 1,
+   "hash": "3d89a9882337e64af3ab4dfd9e9c211c2ee34d7c4c0eaad5af3d7a6e1e2fe515",
+   "approved": false
   },
   {
    "uid": "art:theme.dungeon",
@@ -1907,6 +2195,213 @@
    "sha256": "7dfb90d1395d7554bd453fe0e7d24675eb219ad8126a217f4dd8d4060525494e"
   },
   {
+   "uid": "room:diyu_fengdu",
+   "domain": "room",
+   "id": "diyu_fengdu",
+   "name": "酆都城 · 钟楼的锣",
+   "source": "content/rooms/diyu/diyu_fengdu.json",
+   "game": "res://generated/content/rooms/diyu/diyu_fengdu.json",
+   "sha256": "131b51faf553a5a87c65df2193181be97b52427bf00744bb4751b94c9fad2a3e"
+  },
+  {
+   "uid": "room:diyu_gate",
+   "domain": "room",
+   "id": "diyu_gate",
+   "name": "鬼门关",
+   "source": "content/rooms/diyu/diyu_gate.json",
+   "game": "res://generated/content/rooms/diyu/diyu_gate.json",
+   "sha256": "f7d8a89604c056a81b0b48725d954981d2c9a5d3f3519c4256383a07a57b05f4"
+  },
+  {
+   "uid": "room:diyu_ghostfire",
+   "domain": "room",
+   "id": "diyu_ghostfire",
+   "name": "鬼火回廊",
+   "source": "content/rooms/diyu/diyu_ghostfire.json",
+   "game": "res://generated/content/rooms/diyu/diyu_ghostfire.json",
+   "sha256": "7ad204f806e41a95ccfdeb32714a9433f067d8d1acc1152710cfdb59cf5fea49"
+  },
+  {
+   "uid": "room:diyu_home_hall",
+   "domain": "room",
+   "id": "diyu_home_hall",
+   "name": "收件人之家 · 判官殿",
+   "source": "content/rooms/diyu/diyu_home_hall.json",
+   "game": "res://generated/content/rooms/diyu/diyu_home_hall.json",
+   "sha256": "08a29119d3b4704cd1764c2b9a40cefe1f011678d4a0eb101d7ab62866177814"
+  },
+  {
+   "uid": "room:diyu_home_yard",
+   "domain": "room",
+   "id": "diyu_home_yard",
+   "name": "收件人之家 · 先人小院",
+   "source": "content/rooms/diyu/diyu_home_yard.json",
+   "game": "res://generated/content/rooms/diyu/diyu_home_yard.json",
+   "sha256": "30357d9d2367da86632d6df683f044bfdc05ac4b8542b756812e37d900220ca2"
+  },
+  {
+   "uid": "room:diyu_huangquan",
+   "domain": "room",
+   "id": "diyu_huangquan",
+   "name": "黄泉路 · 喘口气",
+   "source": "content/rooms/diyu/diyu_huangquan.json",
+   "game": "res://generated/content/rooms/diyu/diyu_huangquan.json",
+   "sha256": "f0eff08aaef6b8db669515e80abdf6e7d2a573b8328110559bf3a40348dbc0fa"
+  },
+  {
+   "uid": "room:diyu_lantern",
+   "domain": "room",
+   "id": "diyu_lantern",
+   "name": "孔明灯台 · 从槽里推出来",
+   "source": "content/rooms/diyu/diyu_lantern.json",
+   "game": "res://generated/content/rooms/diyu/diyu_lantern.json",
+   "sha256": "e206b910476686b813019449054696c639a00a905248bb4399ea6cff5af68c27"
+  },
+  {
+   "uid": "room:diyu_naihe",
+   "domain": "room",
+   "id": "diyu_naihe",
+   "name": "奈何桥 · 一次只过一个",
+   "source": "content/rooms/diyu/diyu_naihe.json",
+   "game": "res://generated/content/rooms/diyu/diyu_naihe.json",
+   "sha256": "4288a295f6206c7de5170d1c8d8d38ad142dbfbf53e0e00d58ed300f5eaa17a1"
+  },
+  {
+   "uid": "room:diyu_paper_bridge",
+   "domain": "room",
+   "id": "diyu_paper_bridge",
+   "name": "纸台过桥 · 灯台不压桥",
+   "source": "content/rooms/diyu/diyu_paper_bridge.json",
+   "game": "res://generated/content/rooms/diyu/diyu_paper_bridge.json",
+   "sha256": "811d32ffb14d51f307d91ed98b5f88f56e6a1c8c288c9e202bee72578373bb4c"
+  },
+  {
+   "uid": "room:diyu_sand_bridge",
+   "domain": "room",
+   "id": "diyu_sand_bridge",
+   "name": "黄泉沙 · 沙也有分量",
+   "source": "content/rooms/diyu/diyu_sand_bridge.json",
+   "game": "res://generated/content/rooms/diyu/diyu_sand_bridge.json",
+   "sha256": "2bac57e9c0fafc6dc79cd77dcf6f64d60ca97327cf7a4a65fda97d8483e456a4"
+  },
+  {
+   "uid": "room:diyu_teahouse",
+   "domain": "room",
+   "id": "diyu_teahouse",
+   "name": "驿站 · 桥头茶摊",
+   "source": "content/rooms/diyu/diyu_teahouse.json",
+   "game": "res://generated/content/rooms/diyu/diyu_teahouse.json",
+   "sha256": "2cc232e95951180f60a91403130f551bd58b56c5a9ffe808a4ad3c6c1a16e705"
+  },
+  {
+   "uid": "room:diyu_wangchuan",
+   "domain": "room",
+   "id": "diyu_wangchuan",
+   "name": "忘川渡 · 木浮铁沉",
+   "source": "content/rooms/diyu/diyu_wangchuan.json",
+   "game": "res://generated/content/rooms/diyu/diyu_wangchuan.json",
+   "sha256": "bcd53a48faae5b9d17a231ecbb344e55b3460eab5e2f800f13a38572e2a2509d"
+  },
+  {
+   "uid": "room:diyu_wangxiang",
+   "domain": "room",
+   "id": "diyu_wangxiang",
+   "name": "望乡台 · 吊篮卡住了",
+   "source": "content/rooms/diyu/diyu_wangxiang.json",
+   "game": "res://generated/content/rooms/diyu/diyu_wangxiang.json",
+   "sha256": "0a2ed07cf7a712a7a7f09d33918f44d5405951de911dad7c06f318097a50df47"
+  },
+  {
+   "uid": "room:dungeon2_bridge",
+   "domain": "room",
+   "id": "dungeon2_bridge",
+   "name": "断桥 · 推浮石",
+   "source": "content/rooms/dungeon/dungeon2_bridge.json",
+   "game": "res://generated/content/rooms/dungeon/dungeon2_bridge.json",
+   "sha256": "9b32f77f5feff4367ffabc640b5d54c023773af934a4260a7513c94f8c554cff"
+  },
+  {
+   "uid": "room:dungeon2_corridor",
+   "domain": "room",
+   "id": "dungeon2_corridor",
+   "name": "鼠道 · 喘口气",
+   "source": "content/rooms/dungeon/dungeon2_corridor.json",
+   "game": "res://generated/content/rooms/dungeon/dungeon2_corridor.json",
+   "sha256": "a5c772b8848dd64e517a687358e6334ae5840af135dc81b0737bf12fc166fd61"
+  },
+  {
+   "uid": "room:dungeon2_ferry",
+   "domain": "room",
+   "id": "dungeon2_ferry",
+   "name": "渡箱 · 浮石载货",
+   "source": "content/rooms/dungeon/dungeon2_ferry.json",
+   "game": "res://generated/content/rooms/dungeon/dungeon2_ferry.json",
+   "sha256": "7075c0be92d7deebe9bf38824140e450ce1256e89b16985ae2b15f6264415ed4"
+  },
+  {
+   "uid": "room:dungeon2_gate",
+   "domain": "room",
+   "id": "dungeon2_gate",
+   "name": "渡门 · 符文监狱",
+   "source": "content/rooms/dungeon/dungeon2_gate.json",
+   "game": "res://generated/content/rooms/dungeon/dungeon2_gate.json",
+   "sha256": "62903f2e12f4c24783fb512a34785328e458b8ec0b5ad6fd43e0af38f41c772c"
+  },
+  {
+   "uid": "room:dungeon2_home",
+   "domain": "room",
+   "id": "dungeon2_home",
+   "name": "收件人之家 · 牢房小屋",
+   "source": "content/rooms/dungeon/dungeon2_home.json",
+   "game": "res://generated/content/rooms/dungeon/dungeon2_home.json",
+   "sha256": "e7c0da65cc0d3cbba600e8c6981b3d6830b72c616791a2eb5cd45b82b127c3d5"
+  },
+  {
+   "uid": "room:dungeon2_pole",
+   "domain": "room",
+   "id": "dungeon2_pole",
+   "name": "撑岸 · 站在浮石上用铲子",
+   "source": "content/rooms/dungeon/dungeon2_pole.json",
+   "game": "res://generated/content/rooms/dungeon/dungeon2_pole.json",
+   "sha256": "8d04237ba2546af5faa723643bd1eb78a89d569a359471d31ac0920a268784b9"
+  },
+  {
+   "uid": "room:dungeon2_sandpour",
+   "domain": "room",
+   "id": "dungeon2_sandpour",
+   "name": "沙井 · 站在浮石上倒沙",
+   "source": "content/rooms/dungeon/dungeon2_sandpour.json",
+   "game": "res://generated/content/rooms/dungeon/dungeon2_sandpour.json",
+   "sha256": "26609990a6a10c2a34ce9a230c9f0f728cc5ca4cdc08a7d86549c8ae2f1d3617"
+  },
+  {
+   "uid": "room:dungeon2_station",
+   "domain": "room",
+   "id": "dungeon2_station",
+   "name": "驿站 · 牢房分号",
+   "source": "content/rooms/dungeon/dungeon2_station.json",
+   "game": "res://generated/content/rooms/dungeon/dungeon2_station.json",
+   "sha256": "2b60123d6ee2edd091ab048305efa381bb0cf5546d4d8c53bcc6c77e03664a5c"
+  },
+  {
+   "uid": "room:dungeon2_well",
+   "domain": "room",
+   "id": "dungeon2_well",
+   "name": "落井 · 一路撑下去",
+   "source": "content/rooms/dungeon/dungeon2_well.json",
+   "game": "res://generated/content/rooms/dungeon/dungeon2_well.json",
+   "sha256": "af2ec175eeaf7701227916d332451f0eb53e11235b319f62cea2e7661b70bd64"
+  },
+  {
+   "uid": "room:dungeon2_yard",
+   "domain": "room",
+   "id": "dungeon2_yard",
+   "name": "放风场 · 高台上的拉杆",
+   "source": "content/rooms/dungeon/dungeon2_yard.json",
+   "game": "res://generated/content/rooms/dungeon/dungeon2_yard.json",
+   "sha256": "5db11c0be6caf73722e3c39f89962081e4dc6a5337c4ab812db9e132a2821902"
+  },
+  {
    "uid": "mode:lab",
    "domain": "mode",
    "id": "lab",
@@ -2577,6 +3072,30 @@
    "name": "矿车",
    "source": "content/catalog/mechanisms.json",
    "game": "res://gameplay/mechanics/mine_cart.gd"
+  },
+  {
+   "uid": "mechanic:float_block",
+   "domain": "mechanic",
+   "id": "float_block",
+   "name": "浮空地块",
+   "source": "content/catalog/mechanisms.json",
+   "game": "res://gameplay/mechanics/float_block.gd"
+  },
+  {
+   "uid": "mechanic:pole",
+   "domain": "mechanic",
+   "id": "pole",
+   "name": "撑篙",
+   "source": "content/catalog/mechanisms.json",
+   "game": "res://gameplay/mechanics/pole.gd"
+  },
+  {
+   "uid": "mechanic:hint_animal",
+   "domain": "mechanic",
+   "id": "hint_animal",
+   "name": "提示动物",
+   "source": "content/catalog/mechanisms.json",
+   "game": "res://gameplay/mechanics/hint_animal.gd"
   },
   {
    "uid": "world:dungeon",
@@ -5019,6 +5538,14 @@
    "game": "res://generated/content/catalog/items.json#whistle"
   },
   {
+   "uid": "item:snack",
+   "domain": "item",
+   "id": "snack",
+   "name": "零食",
+   "source": "content/catalog/items.json",
+   "game": "res://generated/content/catalog/items.json#snack"
+  },
+  {
    "uid": "buff:cart",
    "domain": "buff",
    "id": "cart",
@@ -5425,6 +5952,30 @@
    "name": "第一个可玩切片 · 幽暗石牢",
    "source": "content/catalog/slices.json",
    "game": "res://generated/content/catalog/slices.json#dungeon_1"
+  },
+  {
+   "uid": "slice:dungeon_2",
+   "domain": "slice",
+   "id": "dungeon_2",
+   "name": "配送地图 · 废弃的符文监狱（石牢重做）",
+   "source": "content/catalog/slices.json",
+   "game": "res://generated/content/catalog/slices.json#dungeon_2"
+  },
+  {
+   "uid": "slice:diyu_1",
+   "domain": "slice",
+   "id": "diyu_1",
+   "name": "配送地图 · 地府·酆都",
+   "source": "content/catalog/slices.json",
+   "game": "res://generated/content/catalog/slices.json#diyu_1"
+  },
+  {
+   "uid": "slice:delivery_pool",
+   "domain": "slice",
+   "id": "delivery_pool",
+   "name": "开局池 · 配送模式",
+   "source": "content/catalog/slices.json",
+   "game": "res://generated/content/catalog/slices.json#delivery_pool"
   },
   {
    "uid": "text:game.title",

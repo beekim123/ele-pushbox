@@ -518,7 +518,11 @@
    "rarity": "common",
    "carry": "small",
    "layer": 2,
-   "status": "concept"
+   "status": "concept",
+   "params": {
+    "pay": 35,
+    "stale_secs_per_point": 60
+   }
   },
   {
    "id": "paper_house",
@@ -534,7 +538,12 @@
    "rarity": "rare",
    "carry": "medium",
    "layer": 2,
-   "status": "concept"
+   "status": "concept",
+   "params": {
+    "pay": 60,
+    "water_damage": 1,
+    "burn": true
+   }
   },
   {
    "id": "ink_brush",
