@@ -119,22 +119,14 @@ game-design 第 8 节的大厅、设置两行同步了。
 3. **Claude**：LV-12、UI-05 交回后审核；LV-12 通过就按「分支整理计划」先把关卡线合进 `main`。
 4. **用户**：UI-05 做完后在工作台确认新界面美术；现在不需要操作。
 
-## 分支整理计划（用户 2026-10-16 决定）
+## 分支整理计划（用户 2026-10-16 决定；当日更新）
 
-现在分支有点乱。等关卡线（LV-10）和界面线都做完，先都合进 `main`，再清理旧分支，按新规则重开。
+**现状**：所有工作都已合进 `claude/inspiring-ride-zfnn4s`——关卡线（含 LV-12，SDK 30/30）、界面定稿（含第 4、6 章大厅皮肤 S5、S6）、配送模式改造（未完成）、UI-01 调研报告，以及 `main`、`claude/lv-01-model`、`codex/art-ui-polish`、`chore/push-access-test` 里的旧提交。GitHub 上其余 7 个分支相对它都是 **0 个未合并提交**，内容不会丢。`codex/art-ui-polish` 是 10-15 重新设计之前的旧分支，它改的 `project-goals.md` 早已删除，按 AGENTS.md 第 1 条不再采用，只记成已合并。
 
-1. **两条线各自做完**
-   - 关卡线：GPT 在 `codex/portitor-stage1` 上先 `git merge origin/claude/inspiring-ride-zfnn4s`（本次设计审核只在这个分支上），再做 [LV-10](packages/LV-10.md)，推回 `codex/portitor-stage1`；Claude 审核通过。
-   - 界面线：在 `ui/style-proposals` 上做完 UI-05，用户确认新界面美术。
-2. **依次合进 `main`，一次一条**
-   - 先合关卡线：`codex/portitor-stage1` → `main`（已包含 Claude 分支）。
-   - 再合界面线：界面分支先合进最新的 `main`，重新生成美术，确认 `node tools/art.mjs build` 为 0 bumped、测试通过，再合进 `main`；按 UI-06 更新 Godot 界面。
-   - 合完给 `main` 打标签（例如 `v0.3`），作为清理前的存档点。
-3. **清理旧分支**：删之前逐个确认已经合进 `main`（`git branch -r --merged origin/main`）。`codex/portitor-stage1`、`claude/inspiring-ride-zfnn4s`、`claude/lv-01-model`、`claude/ui-01-research`、界面分支合并后可删；`chore/push-access-test` 确认后删；**`codex/art-ui-polish` 内容不明，删前先看。**
-4. **重新拉分支**：`main` 只接受合并、不直接提交；每件事从 `main` 开短分支，做完合回并删除——设计 `design/<主题>`、关卡 `level/<包号>`、界面 `ui/<主题>`。仍然用合并、不强推，生成文件冲突就用工具重新生成。
-5. **同步改文档**：`AGENTS.md`、`docs/packages/README.md` 和各工作包里写死的旧分支名（`codex/portitor-stage1`、`ui/redo-html` 等）改成新规则，免得执行方推到已删除的分支。由 Claude 在清理那天一起做。
-
-执行人：第 1 步按线；第 2 步合并由用户发起（或交给 Claude / GPT 按上面顺序做）；第 3、5 步由 Claude 负责确认和改文档。
+1. **合进 `main`**：开一个 PR，`claude/inspiring-ride-zfnn4s` → `main`，合并后给 `main` 打标签（例如 `v0.3`）。配送的 24 个美术候选仍是待确认，进 `main` 也不会被游戏使用（AGENTS.md 第 2 条）。
+2. **删旧分支**：`codex/portitor-stage1`、`ui/style-proposals`、`claude/delivery-redesign`、`claude/lv-01-model`、`claude/ui-01-research`、`codex/art-ui-polish`、`chore/push-access-test`，以及合并后的 `claude/inspiring-ride-zfnn4s`。
+3. **以后**：每件事从 `main` 开短分支（设计 `design/<主题>`、关卡 `level/<包号>`、界面 `ui/<主题>`），做完开 PR 合回 `main` 再删。离线做事、推不上去的一方（美术、配送改造）继续打 bundle，由 Claude 导入、开分支、开 PR。
+4. **同步改文档**：AGENTS.md、`docs/packages/README.md` 和各工作包里写死的旧分支名，在第 2 步之后由 Claude 一起改。
 
 ## 给设计负责人的问题
 
