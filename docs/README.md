@@ -14,6 +14,8 @@
 | [design/delivery-slice.md](design/delivery-slice.md) | 配送模式的**第一个可玩切片**（幽暗石牢）：范围、规则、数值、交接前的步骤与验收 |
 | [design/delivery-maps.md](design/delivery-maps.md) | 配送模式的房间模板格式、按种子生成地图、可通性检查、工作台「地图预览」 |
 | [design/delivery-realtime.md](design/delivery-realtime.md) | 配送模式的**实时规则**（设计模型）：刻、移动间隔、下落、怪物、推 / 压 / 困、受伤、货物、驿站、换房间、结算、演示与回放记录 |
+| [design/level-quality.md](design/level-quality.md) | **关卡质量标准**：一关要满足的 7 条、一章的结构（第 3–6 章补强用） |
+| [packages/README.md](packages/README.md) | **工作包**：拆给制作方 AI 的任务、模板与当前状态 |
 | [design/progression.md](design/progression.md) | 局外养成（设计稿） |
 | [design/naming.md](design/naming.md) | 名称：《渡界人》· PORTITOR（已定） |
 | [design/architecture.md](design/architecture.md) | **工程结构与扩展机制**：分层、`game/` 目录、注册表、事件、存档、机制接口、怎么加新机制和新系统 |
