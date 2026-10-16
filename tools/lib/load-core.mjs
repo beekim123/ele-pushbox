@@ -30,3 +30,13 @@ export function listJson(dir) {
   }
   return out;
 }
+
+// Loads every mechanism plugin (workbench/js/core/mech/*.js) into the tile model.
+// Call after loadCore(["tilemodel"]).
+export function loadMechanisms() {
+  const dir = path.join(ROOT, "workbench/js/core/mech");
+  if (!fs.existsSync(dir)) return [];
+  const names = fs.readdirSync(dir).filter((f) => f.endsWith(".js")).sort();
+  for (const f of names) vm.runInThisContext(fs.readFileSync(path.join(dir, f), "utf8"), { filename: path.join(dir, f) });
+  return names.map((f) => f.replace(/\.js$/, ""));
+}

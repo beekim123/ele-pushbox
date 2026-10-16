@@ -108,6 +108,9 @@
         el("dt", { text: "作者解" }), el("dd", { text: `${mc.author_steps} 步 ${mc.author_ok ? "（模型中通关）" : "（模型中失败）"}` }),
         el("dt", { text: "模型最短解" }), el("dd", { text: mc.shortest + " 步" }),
         el("dt", { text: "死局状态" }), el("dd", { text: `${mc.dead_end_states} / ${mc.reachable_states}` }),
+        el("dt", { text: "捷径" }), el("dd", { text: mc.shortcut ? "有（最短解比作者解短 2 步以上）" : "无" }),
+        el("dt", { text: "搜索" }), el("dd", { text: mc.search_capped ? "触顶（结果不完整）" : "完整" }),
+        el("dt", { text: "模型不认识" }), el("dd", { text: (mc.unknown_mechanisms || []).join("、") || "无" }),
       ]));
       box.append(el("h3", { text: "三级提示" }));
       const ol = el("ol"); lv.hints.forEach((h) => ol.append(el("li", { text: h }))); box.append(ol);

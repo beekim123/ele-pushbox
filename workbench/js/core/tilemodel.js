@@ -42,6 +42,47 @@
 
   const DIRS = { L: [-1, 0], R: [1, 0], U: [0, -1], D: [0, 1] };
 
+  // ---------- mechanism plugins ----------
+  // One file per mechanism (workbench/js/core/mech/<id>.js) calls
+  // PB.tilemodel.register({...}). All fields are optional except `id`:
+  //   id        mechanism id of content/catalog/mechanisms.json
+  //   device    device `type` (string or list) in a spec's `devices` that this plugin owns
+  //   chars     { char: CHAR-entry } extra map characters (same shape as CHAR)
+  //   init(L, d, k)             initial value of state.dev[k] for a device it owns (default 0)
+  //   setup(L, s, d, k)         after the start state is built, before the first settle (bind crates etc.)
+  //   settle(L, s, events)      first thing in every settle round, before gravity; return true if it changed anything
+  //   solid(L, s, x, y)         true if the tile is a platform (holds things up and blocks bodies)
+  //   explode(L, s, cells, events)  after a BOMB cleared tiles; cells = in-map blast cells [[x, y], ...]
+  //   accepts(L, s, crate, x, y)    return false to keep a crate from lighting the socket at x,y
+  //   key(L, s)                 string appended to the search state key (anything not in dev/crates/terrain)
+  // State lives in s.dev[k] (a number, cloned and keyed for free) or in extra fields on crates
+  // (cloned by clone(); add them to key() too). Extra top-level state fields are NOT cloned.
+  const plugins = [];
+  const pluginChars = {};
+  function register(plugin) {
+    if (!plugin || !plugin.id) throw new Error("tilemodel plugin needs an id");
+    if (plugins.some((p) => p.id === plugin.id)) return; // idempotent: a page may load a plugin twice
+    plugins.push(plugin);
+    for (const [ch, def] of Object.entries(plugin.chars || {})) {
+      if (CHAR[ch]) throw new Error("plugin " + plugin.id + ": char '" + ch + "' is already taken");
+      CHAR[ch] = def; pluginChars[ch] = plugin.id;
+    }
+  }
+  const pluginFor = (type) => plugins.find((p) => [].concat(p.device || []).includes(type));
+  const hooks = (name) => plugins.filter((p) => typeof p[name] === "function");
+
+  // Mechanisms and device types the core model really simulates. Anything else a spec
+  // names (and no plugin covers) is reported as "not understood by the model".
+  const CORE_MECHANISMS = ["push", "ladder", "dig", "pour", "plate_door", "fall", "water_flow", "float_sink", "displace",
+    "communicating", "lever", "lift", "bin", "portal", "load_bridge", "bomb", "blast_through", "gravel"];
+  const CORE_DEVICES = ["lever", "lift", "bin", "portal", "bridge", "release"];
+  function unknownMechanisms(spec) {
+    const out = [];
+    for (const m of spec.mechanisms || []) if (!CORE_MECHANISMS.includes(m) && !plugins.some((p) => p.id === m)) out.push(m);
+    for (const d of spec.devices || []) if (!CORE_DEVICES.includes(d.type) && !pluginFor(d.type) && !out.includes(d.type)) out.push(d.type);
+    return out;
+  }
+
   function parse(spec) {
     const rows = spec.map;
     const h = rows.length, w = rows[0].length;
@@ -67,7 +108,7 @@
     // Showcases are illustrations (a painted waterfall must stay put): no water
     // flow or displacement, bins are not goals.
     const level = { id: spec.id, w, h, marker, plates: [], doors: doorCells, groups: [], doorAt: new Map(), illustration: !!spec.showcase,
-      devices: spec.devices || [], leverAt: new Map(), buttonAt: new Map(), padAt: new Map(), bridgeAt: new Map(), lifts: [], bins: [] };
+      devices: spec.devices || [], goalSpecs: spec.goals || [], leverAt: new Map(), buttonAt: new Map(), padAt: new Map(), bridgeAt: new Map(), lifts: [], bins: [] };
     const at = (x, y) => y * w + x;
     // A cell holds one character: plates under water are listed in links, and
     // `water` lists cells that hold water on top of their marker (ladder, socket, exit).
@@ -107,6 +148,8 @@
           level.bridgeAt.set(i, k);
         }
         dev.push(0);
+      } else if (pluginFor(d.type) && pluginFor(d.type).init) {
+        dev.push(pluginFor(d.type).init(level, d, k) | 0);
       } else {
         if (d.type === "vine" && pv.grown) for (let n = 0; n < d.height; n++) level.climb.add(at(d.root[0], d.root[1] - n));
         dev.push(pv.on ? 1 : 0);
@@ -117,12 +160,13 @@
     const state = { terrain, crates, player, bag, open: level.groups.map(() => 0), dev, held: [], warped: [], moves: 0 };
     // Whatever starts on a button does not press it; only arrivals do.
     for (const i of level.buttonAt.keys()) if ((player.x === i % w && player.y === ((i / w) | 0)) || crates.some((c) => c.y * w + c.x === i)) state.held.push(i);
+    level.devices.forEach((d, k) => { const pl = pluginFor(d.type); if (pl && pl.setup) pl.setup(level, state, d, k); });
     settle(level, state);
     return { level, state };
   }
 
   function clone(s) {
-    return { terrain: s.terrain.slice(), crates: s.crates.map((c) => ({ x: c.x, y: c.y, kind: c.kind })),
+    return { terrain: s.terrain.slice(), crates: s.crates.map((c) => Object.assign({}, c)),
       player: { x: s.player.x, y: s.player.y }, bag: { sand: s.bag.sand, bomb: s.bag.bomb },
       open: s.open.slice(), dev: s.dev.slice(), held: s.held.slice(), warped: s.warped.slice(), moves: s.moves };
   }
@@ -145,7 +189,7 @@
     return -1;
   }
   function bridgeAt(L, s, x, y) { if (!inside(L, x, y)) return -1; const k = L.bridgeAt.get(y * L.w + x); return k !== undefined && !s.dev[k] ? k : -1; }
-  function platform(L, s, x, y) { return liftDeck(L, s, x, y) >= 0 || bridgeAt(L, s, x, y) >= 0; }
+  function platform(L, s, x, y) { return liftDeck(L, s, x, y) >= 0 || bridgeAt(L, s, x, y) >= 0 || (plugins.length > 0 && hooks("solid").some((p) => p.solid(L, s, x, y))); }
   function isPlayer(s, x, y) { return s.player.x === x && s.player.y === y; }
   // Tile that holds something resting on it.
   function supports(L, s, x, y) { return solidTerrain(terrainAt(L, s, x, y)) || !!crateAt(s, x, y) || platform(L, s, x, y); }
@@ -303,6 +347,7 @@
     const events = [];
     for (let guard = 0; guard < 4096; guard++) {
       let moved = false;
+      for (const p of hooks("settle")) if (p.settle(L, s, events)) moved = true;
       for (let y = L.h - 2; y >= 0; y--) {
         for (let x = 0; x < L.w; x++) {
           const i = y * L.w + x;
@@ -434,7 +479,10 @@
       if (t === T.CRACKED || t === T.SAND || t === T.EARTH) { s.terrain[y * L.w + x] = T.EMPTY; destroyed++; }
     }
     s.bag.bomb -= 1;
-    const r = done(L, s, "bomb"); r.destroyed = destroyed; return r;
+    const cells = [[0, 0], [1, 0], [-1, 0], [0, 1], [0, -1]].map(([ox, oy]) => [tx + ox, ty + oy]).filter(([x, y]) => inside(L, x, y));
+    const exEvents = [];
+    for (const pl of hooks("explode")) pl.explode(L, s, cells, exEvents);
+    const r = done(L, s, "bomb"); r.destroyed = destroyed; r.events = exEvents.concat(r.events); return r;
   }
 
   function done(L, s, kind) { s.moves += 1; const events = settle(L, s); return { ok: true, kind, events }; }
@@ -443,7 +491,7 @@
     const list = [];
     for (let i = 0; i < L.w * L.h; i++) {
       const x = i % L.w, y = (i / L.w) | 0;
-      if (L.marker[i] === M.SOCKET) list.push({ kind: "socket", x, y, lit: !!crateAt(s, x, y) });
+      if (L.marker[i] === M.SOCKET) { const c = crateAt(s, x, y); list.push({ kind: "socket", x, y, lit: !!c && hooks("accepts").every((p) => p.accepts(L, s, c, x, y) !== false) }); }
       if (L.marker[i] === M.EXIT) list.push({ kind: "exit", x, y, lit: isPlayer(s, x, y) });
     }
     if (!L.illustration) for (const k of L.bins) { const d = L.devices[k]; if (d.latch) list.push({ kind: "bin", x: d.rect[0], y: d.rect[1], lit: !!s.dev[k] }); }
@@ -451,11 +499,12 @@
   }
   function won(L, s) { const g = goals(L, s); return g.length > 0 && g.every((x) => x.lit); }
 
-  function key(s) {
+  function key(s, L) {
     let k = s.player.x + "," + s.player.y + "|" + s.bag.sand + "," + s.bag.bomb + "|";
     k += s.crates.map((c) => c.kind[0] + c.x + "," + c.y).sort().join(";") + "|";
     k += s.open.join("") + "|" + s.dev.join("") + "|" + s.held.join(",") + "|" + s.warped.slice().sort((a, b) => a - b).join(",") + "|";
     let t = ""; for (let i = 0; i < s.terrain.length; i++) t += s.terrain[i];
+    for (const p of hooks("key")) k += "|" + p.key(L, s);
     return k + t;
   }
 
@@ -465,19 +514,19 @@
   function solve(spec, limit) {
     const { level: L, state } = parse(spec);
     const max = limit || 300000;
-    const seen = new Map([[key(state), null]]);
+    const seen = new Map([[key(state, L), null]]);
     let frontier = [state], depth = 0;
     const parents = new Map();
     while (frontier.length && seen.size < max) {
       const next = [];
       for (const s of frontier) {
-        if (won(L, s)) return { solved: true, solution: rebuild(parents, key(s)), explored: seen.size };
+        if (won(L, s)) return { solved: true, solution: rebuild(parents, key(s, L)), explored: seen.size };
         for (const a of ACTIONS) {
           const n = clone(s);
           if (!act(L, n, a).ok) continue;
-          const k = key(n);
+          const k = key(n, L);
           if (seen.has(k)) continue;
-          seen.set(k, true); parents.set(k, [key(s), a]); next.push(n);
+          seen.set(k, true); parents.set(k, [key(s, L), a]); next.push(n);
         }
       }
       frontier = next; depth++;
@@ -509,13 +558,13 @@
     const { level: L, state } = parse(spec);
     const max = limit || 60000;
     const keys = new Map(), edges = new Map(), wins = [];
-    const queue = [state]; keys.set(key(state), state);
+    const queue = [state]; keys.set(key(state, L), state);
     while (queue.length && keys.size < max) {
-      const s = queue.shift(); const k = key(s); const out = [];
+      const s = queue.shift(); const k = key(s, L); const out = [];
       if (won(L, s)) wins.push(k);
       for (const a of ACTIONS) {
         const n = clone(s); if (!act(L, n, a).ok) continue;
-        const nk = key(n); out.push(nk);
+        const nk = key(n, L); out.push(nk);
         if (!keys.has(nk)) { keys.set(nk, n); queue.push(n); }
       }
       edges.set(k, out);
@@ -528,6 +577,6 @@
     return { complete: true, states: keys.size, dead: keys.size - good.size };
   }
 
-  PB.tilemodel = { T, M, CHAR, ACTIONS, WEIGHT, parse, clone, act, settle, goals, won, solve, replay, deadEnds, crateAt, ladder,
+  PB.tilemodel = { register, unknownMechanisms, plugins, inside, free, T, M, CHAR, ACTIONS, WEIGHT, parse, clone, act, settle, goals, won, solve, replay, deadEnds, crateAt, ladder,
     doorClosed, liftDeck, bridgeAt, bridgeLoad, binCount, terrainAt };
 })(typeof window !== "undefined" ? window : globalThis);
