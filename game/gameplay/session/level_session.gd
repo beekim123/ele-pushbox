@@ -10,6 +10,7 @@ const Goals = preload("res://gameplay/session/goals.gd")
 const ResourceIndex = preload("res://core/ids/registry.gd")
 const Checkpoint = preload("res://gameplay/session/checkpoint.gd")
 const WaterRules = preload("res://gameplay/grid/rules/water.gd")
+const PowderRules = preload("res://gameplay/grid/rules/powder.gd")
 const TILE_SIZE: int = 16
 const UNDO_LIMIT: int = 200
 const SAFETY_CELLS_PER_ADVANCE: int = 64
@@ -342,13 +343,17 @@ func cell_rect(x: int, y: int) -> Rect2i:
 	return Rect2i(x * TILE_SIZE, y * TILE_SIZE, TILE_SIZE, TILE_SIZE)
 
 func water_can_accept(crate_index: int, destination: Vector2i, mode: String = "surface") -> bool:
-	return bool(WaterRules.displacement(self, crate_index, destination, mode).get("ok", false))
+	var powder: Dictionary = PowderRules.displacement(self, crate_index, destination)
+	return bool(powder.get("ok", false)) and bool(WaterRules.displacement(self, crate_index, destination, mode, powder.get("reserved", [])).get("ok", false))
 
 func move_crate(index: int, destination: Vector2i, water_mode: String = "surface") -> bool:
 	var crate: Dictionary = grid.crates[index]
 	var source: Rect2i = cell_rect(int(crate.x), int(crate.y))
 	var target: Rect2i = cell_rect(destination.x, destination.y)
-	var displacement: Dictionary = WaterRules.displacement(self, index, destination, water_mode)
+	var powder: Dictionary = PowderRules.displacement(self, index, destination)
+	if not bool(powder.get("ok", false)):
+		return false
+	var displacement: Dictionary = WaterRules.displacement(self, index, destination, water_mode, powder.get("reserved", []))
 	if not bool(displacement.get("ok", false)):
 		return false
 	if world.clear_rect(source.position.x, source.position.y, TILE_SIZE, TILE_SIZE) != 0:
@@ -364,6 +369,8 @@ func move_crate(index: int, destination: Vector2i, water_mode: String = "surface
 		last_error = str(world.last_error)
 		return false
 	_record_material_rect(target, "iron_crate" if str(crate.kind) == "iron" else "crate")
+	if not _apply_powder_displacement(powder):
+		return false
 	for pixel: int in displacement.get("to", []):
 		_queued_materials[pixel] = int(world.material_ids.water)
 		if world.set_cell(pixel % 320, int(pixel / 320), "water") != 0:
@@ -376,6 +383,15 @@ func move_crate(index: int, destination: Vector2i, water_mode: String = "surface
 	grid.terrain[grid.tile_index(destination.x, destination.y)] = Grid.Terrain.EMPTY
 	wake_water_near(Vector2i(source.position / TILE_SIZE))
 	wake_water_near(destination)
+	return true
+
+func _apply_powder_displacement(displacement: Dictionary) -> bool:
+	for cell: Dictionary in displacement.get("cells", []):
+		var pixel: int = int(cell.to)
+		_queued_materials[pixel] = int(world.material_ids[cell.material])
+		if world.set_cell(pixel % 320, int(pixel / 320), str(cell.material)) != 0:
+			last_error = str(world.last_error)
+			return false
 	return true
 
 func float_crate(index: int) -> bool:
@@ -868,6 +884,31 @@ func move_platform(index: int) -> bool:
 		if player_rides and not _platform_path_free(Vector2i(int(grid.player.x), int(grid.player.y)) + path, from, deck_width, riders, player_rides):
 			device.blocked = true
 			return false
+	var vacated: Array[Vector2i] = []
+	var occupied: Array[Vector2i] = []
+	for offset: int in range(deck_width):
+		vacated.append(from + Vector2i(offset,0))
+		occupied.append(to + Vector2i(offset,0))
+		# No displacement rule exists for the deck itself: do not overwrite dust.
+		for material: String in ["sand", "gravel"]:
+			if material_count(cell_rect(to.x+offset,to.y),material) > 0:
+				device.blocked = true
+				return false
+	for crate: int in riders:
+		var body: Dictionary = grid.crates[crate]
+		vacated.append(Vector2i(int(body.x),int(body.y)))
+		occupied.append(Vector2i(int(body.x),int(body.y))+delta)
+	if player_rides:
+		vacated.append(Vector2i(int(grid.player.x),int(grid.player.y)))
+		occupied.append(Vector2i(int(grid.player.x),int(grid.player.y))+delta)
+	var powder_moves: Array[Dictionary] = []
+	for crate: int in riders:
+		var body: Dictionary = grid.crates[crate]
+		var powder: Dictionary = PowderRules.displacement(self,crate,Vector2i(int(body.x),int(body.y))+delta,vacated,occupied)
+		if not bool(powder.get("ok",false)):
+			device.blocked = true
+			return false
+		powder_moves.append(powder)
 	# Clear all old footprints before writing any destination: stacked riders
 	# must never erase another rider or the destination deck while moving.
 	for offset: int in range(deck_width):
@@ -888,6 +929,9 @@ func move_platform(index: int) -> bool:
 		_record_material_rect(rectangle, "iron_crate" if body.kind == "iron" else "crate")
 		if world.paint_rect(rectangle.position.x, rectangle.position.y, 16, 16, "iron_crate" if body.kind == "iron" else "crate") != 0:
 			last_error = str(world.last_error)
+			return false
+	for powder: Dictionary in powder_moves:
+		if not _apply_powder_displacement(powder):
 			return false
 	if player_rides:
 		grid.player.x = int(grid.player.x) + delta.x

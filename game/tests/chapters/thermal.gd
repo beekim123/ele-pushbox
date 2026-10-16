@@ -157,7 +157,7 @@ func evaluate(spec: Dictionary, trace: Array, runs: Array, summary: Dictionary) 
 			var brake: Dictionary = H.sample(trace,4)
 			body = [
 				[_assert("author_13_brake_box_and_player",spec.solution.size() == 13 and bool(summary.won) and _box(final,7,3) and _player(final,5,3) and H.tile(final,8,3,"sand") >= 128,{"final":final.state,"brake_sand":H.tile(final,8,3,"sand")}),_case("unfrozen_iron",isolated),_case("no_brake",isolated)],
-				[_assert("freeze_768_and_lower_water",H.material(frozen,"ice") == 768 and H.material(frozen,"water") == 768 and _all_ice(trace,1,6,8,4,768),{"after_freeze":frozen.get("materials",{})}),_assert("wall_brake_sand_threshold_stable",H.tile(brake,8,3,"sand") >= 128 and H.tile(final,8,3,"sand") >= 128 and H.material(final,"sand") == 256,{"after_pour":H.tile(brake,8,3,"sand"),"final":H.tile(final,8,3,"sand"),"all_sand":H.material(final,"sand")}),_case("premature_sand",isolated)],
+				[_assert("freeze_768_and_lower_water",H.material(frozen,"ice") == 768 and H.material(frozen,"water") == 768 and _all_ice(trace,1,6,8,4,768),{"after_freeze":frozen.get("materials",{})}),_assert("wall_brake_sand_threshold_stable",H.tile(brake,8,3,"sand") >= 128 and H.tile(final,8,3,"sand") >= 128 and _cells_preserved(trace.slice(4),"sand",256),{"after_pour":H.tile(brake,8,3,"sand"),"final":H.tile(final,8,3,"sand"),"all_sand":H.material(final,"sand")}),_case("premature_sand",isolated)],
 				[_case("unfrozen_iron",isolated),_case("no_brake",isolated),_assert("ice_slide_and_sand_stop",_box(final,7,3) and H.tile(final,8,3,"sand") >= 128 and _cells_preserved(trace,"iron_crate",256),final.state)],
 				[common]
 			]

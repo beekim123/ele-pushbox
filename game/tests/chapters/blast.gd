@@ -36,7 +36,7 @@ func evaluate(spec: Dictionary, trace: Array, _runs: Array, summary: Dictionary)
 			for index: int in range(trace.size()):
 				if str(trace[index].action) == "BOMB_R": blast_index = index; break
 			var start_tick: int = int(H.sample(trace,blast_index-1).get("tick",-1)) if blast_index > 0 else -1
-			var phase: int = int(spec.get("phase_ticks",480))
+			var phase: int = int(spec.get("phase_ticks",0))
 			var boundary: Dictionary = {}
 			var first_clear_elapsed: int = -1
 			for tick: Dictionary in summary.physics:
@@ -52,10 +52,10 @@ func evaluate(spec: Dictionary, trace: Array, _runs: Array, summary: Dictionary)
 		"Q04":
 			var in_bin: int = H.tile(final,6,4,"gravel") + H.tile(final,6,5,"gravel")
 			rows.append(H.row(spec.checks[0], H.material(opening,"gravel") == 512 and H.material(final,"gravel") == 512 and in_bin == 512 and bool(H.device(final,"bin").get("latched",false)), {"bin_gravel":in_bin,"final":final}))
-			rows.append(H.row(spec.checks[1], bool(summary.won) and H.tile(bomb,6,4,"gravel") >= 128, {"support_after_blast":H.tile(bomb,6,4,"gravel"),"won":summary.won}, not bomb.is_empty()))
-			var lure: Dictionary = H.branch(spec,["R","R","R","BOMB_R","L","U","U","BOMB_R"])
+			rows.append(H.row(spec.checks[1], H.player(H.sample(trace,7),6,3) and H.player(final,9,3) and H.tile(bomb,6,4,"gravel") >= 128, {"support_after_blast":H.tile(bomb,6,4,"gravel"),"crossing":H.sample(trace,7),"exit":final}, trace.size()>7))
+			var lure: Dictionary = H.branch(spec,["R","R","D","R","BOMB_R","L","U","U","U","BOMB_R","R","R","R","R","R"])
 			var remaining: int = H.tile(lure.get("final",{}),6,4,"gravel") + H.tile(lure.get("final",{}),6,5,"gravel")
-			rows.append(H.row(spec.checks[2], lure.get("accepted_steps",0) == 8 and remaining < 512 and not bool(lure.get("won",false)), {"settled_bin_gravel":remaining,"branch":lure}))
+			rows.append(H.row(spec.checks[2], lure.get("accepted_steps",0) >= 10 and remaining < 512 and H.material(lure.get("final",{}),"gravel") == 512 and not H.player(lure.get("final",{}),9,3) and not bool(lure.get("won",false)), {"settled_bin_gravel":remaining,"branch":lure}))
 			rows.append(H.row(spec.checks[3], H.player(final,9,3) and common, summary))
 		"Q07":
 			var loaded: Dictionary = H.sample(trace,3)

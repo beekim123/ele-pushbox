@@ -68,6 +68,10 @@ func _record_tick(session, output: Array) -> void:
 			bins.append({"device":index,"material":device.get("material","water"),"count":session.material_count(Rect2i(int(rect[0])*16,int(rect[1])*16,int(rect[2])*16,int(rect[3])*16),str(device.get("material","water"))),"need":device.get("need",256),"latched":device.get("latched",false)})
 		var points: Array = []
 		if str(device.get("type", "")) == "vine": points.append(device.root)
+		if str(device.get("type", "")) == "bridge":
+			for cell: Array in device.get("cells",[]):
+				for offset: int in range(3):
+					if int(cell[1])-offset >= 0: points.append([int(cell[0]),int(cell[1])-offset])
 		if str(device.get("type", "")) == "seesaw":
 			for end: Array in device.ends:
 				points.append(end)

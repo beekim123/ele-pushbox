@@ -1,0 +1,27 @@
+{
+  "checked": 180,
+  "issues": [
+    {
+      "hint": 2,
+      "id": "Q04",
+      "issues": [
+        "bubble exceeds four lines"
+      ],
+      "locale": "en",
+      "text": "The bin floor is on the lower level, within reach from the foot of the ladder. Break it and the gravel sinks below the mark. Keep the floor and the gravel top meets both ledges."
+    },
+    {
+      "hint": 3,
+      "id": "E04",
+      "issues": [
+        "bubble exceeds four lines"
+      ],
+      "locale": "en",
+      "text": "Step right, push the crate onto the bridge, step back onto the ladder, go up once and blast right. Once the crate drops, climb to the top and walk left to the flag."
+    }
+  ],
+  "ok": false,
+  "suite": "chapter-text",
+  "run_id": "20261016T093252099294Z-81591",
+  "tested_source_sha256": "7ebc28e2b42891f6dbdcc0d249789bb926264011db14918e5eff1d5cae00392c"
+}

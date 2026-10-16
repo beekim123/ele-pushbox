@@ -21,7 +21,7 @@ static func definitions(spec: Dictionary = {}) -> Dictionary:
 	content.materials.append_array([
 		{"name": "water", "class": "liquid", "density": 30, "fall": 2, "disp": 5, "debris_chance": 0, "colors": ["#0099dbff"], "extinguishes": true, "tags": ["water"]},
 		{"name": "cracked_rock", "class": "static", "density": 200, "blast_resistance": 300, "debris_chance": 0, "colors": ["#c28569ff"], "tags": ["solid", "cracked"]},
-		{"name": "gravel", "class": "powder", "density": 70, "blast_resistance": 65535, "fall": 0, "move_chance": 64, "debris_chance": 0, "colors": ["#8b9bb4ff"], "tags": ["solid", "gravel"]},
+		{"name": "gravel", "class": "powder", "density": 70, "blast_resistance": 65535, "fall": 0, "move_chance": 128, "debris_chance": 0, "colors": ["#8b9bb4ff"], "tags": ["solid", "gravel"]},
 		{"name": "fuse", "class": "static", "density": 100, "blast_resistance": 65535, "debris_chance": 0, "colors": ["#d77643ff"], "burnable": _burnable(32), "explosive": {"radius": 20, "power": 8000}, "tags": ["solid"]},
 		{"name": "acid", "class": "liquid", "density": 35, "fall": 2, "disp": 5, "debris_chance": 0, "colors": ["#63c74dff"], "tags": ["acid"]},
 		{"name": "limestone_a", "class": "static", "density": 200, "blast_resistance": 2000, "debris_chance": 0, "colors": ["#ead4aaff"], "tags": ["solid", "etchable"]},

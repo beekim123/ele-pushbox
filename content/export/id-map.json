@@ -1625,7 +1625,7 @@
    "name": "一滴开路",
    "source": "content/levels/lab/react/G01.json",
    "game": "res://generated/content/levels/lab/react/G01.json",
-   "sha256": "1dcf015db584c00986affb8da7310b3fcce04941ad94e86bf983b5a38bc3ad6f"
+   "sha256": "e5f6d73086d3e503a0f7da6b00ee566d034b86088dbdb33e058e3a87912d08aa"
   },
   {
    "uid": "level:G02",
@@ -1634,7 +1634,7 @@
    "name": "同纹都能蚀",
    "source": "content/levels/lab/react/G02.json",
    "game": "res://generated/content/levels/lab/react/G02.json",
-   "sha256": "9ccacbf3eae75e59626b54a955f70d8d7399553b78d8a1b24e4e05c59beb823b"
+   "sha256": "0909bf156f740c1b4ab84b0411b0e615a209be34c169bad95741ead10e95ddc4"
   },
   {
    "uid": "level:G03",
@@ -1643,7 +1643,7 @@
    "name": "烟往高处走",
    "source": "content/levels/lab/react/G03.json",
    "game": "res://generated/content/levels/lab/react/G03.json",
-   "sha256": "2f49a0911ba4f3ef0f44614e7822cbf84f9a852aad559a8b2ae03acd9602e997"
+   "sha256": "761cc00d3e5eee589cd854be3d2d73b988c296b6237750451cf31124e4e94bb8"
   },
   {
    "uid": "level:G04",
@@ -1652,7 +1652,7 @@
    "name": "雾往低处沉",
    "source": "content/levels/lab/react/G04.json",
    "game": "res://generated/content/levels/lab/react/G04.json",
-   "sha256": "3e743914931cb45cf25a385f320ec05cdda9ed30685dd72616d6b2aad3df5f71"
+   "sha256": "8e96ad66b6c29ff8cc0e9c62dc8fae9838305c0ef71f63279183d8f872ab6030"
   },
   {
    "uid": "level:G05",
@@ -1661,7 +1661,7 @@
    "name": "会消失的塞子",
    "source": "content/levels/lab/react/G05.json",
    "game": "res://generated/content/levels/lab/react/G05.json",
-   "sha256": "5eee891d18065f2a44bf1db0904e065e2cdbc824ddcf4a2bf81c77c21f2f84b2"
+   "sha256": "db8eb702a64e5b046076cdc6747953fae2d798df85df1b4f2855198f643d3d52"
   },
   {
    "uid": "level:G06",
@@ -1670,7 +1670,7 @@
    "name": "浇水长藤",
    "source": "content/levels/lab/react/G06.json",
    "game": "res://generated/content/levels/lab/react/G06.json",
-   "sha256": "2e91896b9c5c80c206f6054fc1e6663129ea23d51e4c9285ef2cdb62bee87da3"
+   "sha256": "d371964679484ae655c5ce3b75deb158c5c51cb9f84419aeb395b52e379f56a8"
   },
   {
    "uid": "level:G08",
@@ -1679,7 +1679,7 @@
    "name": "弹跳蘑菇",
    "source": "content/levels/lab/react/G08.json",
    "game": "res://generated/content/levels/lab/react/G08.json",
-   "sha256": "2e4e1fe92cdc29959c46989ab2ceed851f512a07a300dc042e9156ab138b7210"
+   "sha256": "295ebfb609e1939c9987035b242f4aebc8a3a9cc385b6d85ba0119e3fc0e61ec"
   },
   {
    "uid": "level:G09",
@@ -1688,7 +1688,7 @@
    "name": "跷跷板",
    "source": "content/levels/lab/react/G09.json",
    "game": "res://generated/content/levels/lab/react/G09.json",
-   "sha256": "cb22c78e9acd7a16fd5d3c018fa49aad7f394eb131a9128e35ec06f7c9bbd481"
+   "sha256": "ee79dee8e53216e201eae95b6401dbd0b519e4296124e64be04a6db68921941f"
   },
   {
    "uid": "level:G10",
@@ -1697,7 +1697,7 @@
    "name": "沙压跷跷板",
    "source": "content/levels/lab/react/G10.json",
    "game": "res://generated/content/levels/lab/react/G10.json",
-   "sha256": "b0c21afa6a1d7fed906ace8b06fe1eba5a69e93fc3bfa34b6c445525d21585a9"
+   "sha256": "3aa5a0da7a0528cf3e51a8734602727706e8cba728a52ca0a4d17ac41f01ce1c"
   },
   {
    "uid": "level:F01",
@@ -1769,7 +1769,7 @@
    "name": "开门放酸",
    "source": "content/levels/lab/experimental/E01.json",
    "game": "res://generated/content/levels/lab/experimental/E01.json",
-   "sha256": "f08b39d171169e0a2e6b9ea04637453f8c7a2bb85e26d401dbdf59031be4a232"
+   "sha256": "949d5c3ead031c004473bfd22c9f56ca61c2a0d6b1a718b56bf2bd11cec1bdc1"
   },
   {
    "uid": "level:E02",
@@ -1778,7 +1778,7 @@
    "name": "离灯入阵",
    "source": "content/levels/lab/experimental/E02.json",
    "game": "res://generated/content/levels/lab/experimental/E02.json",
-   "sha256": "922b9ac455e208debf62099a80db3eddb93c795af341ff2460301680e408d15b"
+   "sha256": "474fe7aaaee09a1075241635d5fdfbeb7bf2e1a371ddb13ca18b9fd93b715dda"
   },
   {
    "uid": "level:E03",
@@ -1787,7 +1787,7 @@
    "name": "融水长藤",
    "source": "content/levels/lab/experimental/E03.json",
    "game": "res://generated/content/levels/lab/experimental/E03.json",
-   "sha256": "02cf4cdff004ac22b25cf4f50c07e95f4b81d6d0d7d601d7ecd752324a58a1df"
+   "sha256": "96e358e6015e8e0a06cb3df2ad99013ba0e468dd6396648bfbdae78558e6acda"
   },
   {
    "uid": "level:E04",
@@ -1796,7 +1796,7 @@
    "name": "碎石压断桥",
    "source": "content/levels/lab/experimental/E04.json",
    "game": "res://generated/content/levels/lab/experimental/E04.json",
-   "sha256": "fe2dfa9555e4812a92053c00b3f25afbd66a8777b8a257304709a7aaba590ef6"
+   "sha256": "3300226027e99825b057a73102ac11f18eb0a35d42a90a0c6d9aba99eb90321c"
   },
   {
    "uid": "level:E05",
@@ -1805,7 +1805,7 @@
    "name": "滑箱接上车",
    "source": "content/levels/lab/experimental/E05.json",
    "game": "res://generated/content/levels/lab/experimental/E05.json",
-   "sha256": "1d5dc89d477351958303eba7054d54dd9cb18dae12d2bffac38ef478812cf6b3"
+   "sha256": "30f75fe6b00d430301cf106d253fa7c2c9dddb1e32719e7f3f5370c836e999d3"
   },
   {
    "uid": "level:E06",
@@ -1814,7 +1814,7 @@
    "name": "风落上高台",
    "source": "content/levels/lab/experimental/E06.json",
    "game": "res://generated/content/levels/lab/experimental/E06.json",
-   "sha256": "167c88d1e4ba0c579e14cb38f4dff9e89a8aca46e0bac370c33b17c2a12d01ba"
+   "sha256": "3a18b89ec70ad22921592e025ab0539e85e8230ebd58deffe80f98d377023a18"
   },
   {
    "uid": "room:dungeon_burrow",

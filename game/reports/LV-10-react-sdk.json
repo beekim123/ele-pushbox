@@ -1,0 +1,1838 @@
+{
+  "format": "portitor.chapter-sdk-summary/1",
+  "group": "react",
+  "complete": true,
+  "ok": false,
+  "run_id": "20261016T093252099294Z-81591",
+  "tested_source_sha256": "7ebc28e2b42891f6dbdcc0d249789bb926264011db14918e5eff1d5cae00392c",
+  "evidence": "game/reports/chapter-sdk.json",
+  "evidence_sha256": "4a6948c5e404fce46f38b2e2d5e8b32810ead045e18da1366fdbb2059b4fe4ef",
+  "levels": [
+    {
+      "id": "G01",
+      "uid": "level:G01",
+      "group": "react",
+      "spec_sha256": "e5f6d73086d3e503a0f7da6b00ee566d034b86088dbdb33e058e3a87912d08aa",
+      "won": true,
+      "replays": 3,
+      "consistent": true,
+      "undo_ok": true,
+      "restart_ok": true,
+      "max_ticks": 57,
+      "max_rounds": 3,
+      "tick_limit": 1200,
+      "round_limit": 16,
+      "author_solution_verified": true,
+      "sdk_verified": true,
+      "runs": [
+        {
+          "accepted_steps": 9,
+          "restart_ok": true,
+          "sequence_sha256": "4ff35d7e05a024f5472fdc238c5d407b7499390b630f6256fd19b0daf29bab47",
+          "undo_ok": true,
+          "won": true
+        },
+        {
+          "accepted_steps": 9,
+          "restart_ok": true,
+          "sequence_sha256": "4ff35d7e05a024f5472fdc238c5d407b7499390b630f6256fd19b0daf29bab47",
+          "undo_ok": true,
+          "won": true
+        },
+        {
+          "accepted_steps": 9,
+          "restart_ok": true,
+          "sequence_sha256": "4ff35d7e05a024f5472fdc238c5d407b7499390b630f6256fd19b0daf29bab47",
+          "undo_ok": true,
+          "won": true
+        }
+      ],
+      "issues": [],
+      "checks": [
+        {
+          "text": "author solution wins on real SDK in three runs",
+          "ok": true,
+          "status": "pass"
+        },
+        {
+          "text": "three complete tick hash sequences agree",
+          "ok": true,
+          "status": "pass"
+        },
+        {
+          "text": "every accepted action restores game, SDK and observations on undo",
+          "ok": true,
+          "status": "pass"
+        },
+        {
+          "text": "restart and undo-restart preserve opening and final snapshots",
+          "ok": true,
+          "status": "pass"
+        },
+        {
+          "text": "settlement stays below 1200 ticks and 16 rounds",
+          "ok": true,
+          "status": "pass"
+        },
+        {
+          "text": "待SDK：挖塞后256 acid cell全部落进[4,3]，与L[4,4]的256cell一对一反应，最终两者都为0；[3,4]夯土、[3,3]硬岩、底部基岩不被蚀、不漏酸。若有残岩≥128或酸漏出井外，报告实际分布。",
+          "ok": true,
+          "status": "pass"
+        },
+        {
+          "text": "待SDK：人物向左进入[4,2]后落到[4,4]，挖开[3,4]夯土，向左两步到出口[2,4]。人物所在走廊[5..9,2]与井口同高、没有更低的去处，酸只能落进井里。",
+          "ok": true,
+          "status": "pass"
+        },
+        {
+          "text": "待LV-07真实SDK / 游戏联合验收：同一seed从开局连续回放3次，逐步结果一致；每步撤销与重开恢复材料、人物、背包、目标灯及机关状态。",
+          "ok": true,
+          "status": "pass"
+        },
+        {
+          "text": "待LV-07真实SDK / 游戏联合验收：记录逐步tick、结算轮数与材料计数，不得达到1200tick / 16轮上限；模型通过不代替SDK验证。",
+          "ok": true,
+          "status": "pass"
+        }
+      ],
+      "step_metrics": [
+        {
+          "step": 0,
+          "action": "opening"
+        },
+        {
+          "step": 1,
+          "action": "L",
+          "accepted": true,
+          "error": "",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "83b73252468ca9c1efa0f25de602ece111b347eabad523c657a0ca78e19dcc67",
+          "ticks": 4
+        },
+        {
+          "step": 2,
+          "action": "L",
+          "accepted": true,
+          "error": "",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "cfce3cfffe10f7ab6200b5ad2f927ee633779f74af478ee4651e7b2161e4d578",
+          "ticks": 4
+        },
+        {
+          "step": 3,
+          "action": "L",
+          "accepted": true,
+          "error": "",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "25ceddc38d5c5869798fb39ba7401fdaca0d87faa908e58961f1253fc5696401",
+          "ticks": 4
+        },
+        {
+          "step": 4,
+          "action": "L",
+          "accepted": true,
+          "error": "",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "d6518270d3bee309fa5caac6111eff3b12217f24a2b8f4da5ec0665f87241293",
+          "ticks": 4
+        },
+        {
+          "step": 5,
+          "action": "DIG_L",
+          "accepted": true,
+          "error": "",
+          "rounds": 1,
+          "tick_hash_count": 57,
+          "tick_sequence_sha256": "4c6906fb690349dad1bb2b191619893403d0cf5289eaf0807126d6c0f8f62ef3",
+          "ticks": 57
+        },
+        {
+          "step": 6,
+          "action": "L",
+          "accepted": true,
+          "error": "",
+          "rounds": 3,
+          "tick_hash_count": 12,
+          "tick_sequence_sha256": "45e7a2224e60f4d8ad110503c765a62305aa8cb078a3a410fc3d0813618f917c",
+          "ticks": 12
+        },
+        {
+          "step": 7,
+          "action": "DIG_L",
+          "accepted": true,
+          "error": "",
+          "rounds": 1,
+          "tick_hash_count": 5,
+          "tick_sequence_sha256": "faaa0d8fd7aee814d801d2da765a13042d4880dbde35d0bc49f7cc97092c936c",
+          "ticks": 5
+        },
+        {
+          "step": 8,
+          "action": "L",
+          "accepted": true,
+          "error": "",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "06813805bb57de4c027d404009ce84547ab1d50ffa6a628720e4ad40d8a86974",
+          "ticks": 4
+        },
+        {
+          "step": 9,
+          "action": "L",
+          "accepted": true,
+          "error": "",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "998c976f4e8c9bae9df7113e5a5e5333444c29b855e1ea354a142b66526bc64b",
+          "ticks": 4
+        }
+      ]
+    },
+    {
+      "id": "G02",
+      "uid": "level:G02",
+      "group": "react",
+      "spec_sha256": "0909bf156f740c1b4ab84b0411b0e615a209be34c169bad95741ead10e95ddc4",
+      "won": true,
+      "replays": 3,
+      "consistent": true,
+      "undo_ok": true,
+      "restart_ok": true,
+      "max_ticks": 485,
+      "max_rounds": 5,
+      "tick_limit": 1200,
+      "round_limit": 16,
+      "author_solution_verified": true,
+      "sdk_verified": false,
+      "runs": [
+        {
+          "accepted_steps": 10,
+          "restart_ok": true,
+          "sequence_sha256": "a872f71467cae9eedb366f1765966ca090b29477fb415af8f3a958c424a76fc8",
+          "undo_ok": true,
+          "won": true
+        },
+        {
+          "accepted_steps": 10,
+          "restart_ok": true,
+          "sequence_sha256": "a872f71467cae9eedb366f1765966ca090b29477fb415af8f3a958c424a76fc8",
+          "undo_ok": true,
+          "won": true
+        },
+        {
+          "accepted_steps": 10,
+          "restart_ok": true,
+          "sequence_sha256": "a872f71467cae9eedb366f1765966ca090b29477fb415af8f3a958c424a76fc8",
+          "undo_ok": true,
+          "won": true
+        }
+      ],
+      "issues": [],
+      "checks": [
+        {
+          "text": "author solution wins on real SDK in three runs",
+          "ok": true,
+          "status": "pass"
+        },
+        {
+          "text": "three complete tick hash sequences agree",
+          "ok": true,
+          "status": "pass"
+        },
+        {
+          "text": "every accepted action restores game, SDK and observations on undo",
+          "ok": true,
+          "status": "pass"
+        },
+        {
+          "text": "restart and undo-restart preserve opening and final snapshots",
+          "ok": true,
+          "status": "pass"
+        },
+        {
+          "text": "settlement stays below 1200 ticks and 16 rounds",
+          "ok": true,
+          "status": "pass"
+        },
+        {
+          "text": "待SDK：挖开左塞[4,2]后池中512 acid cell全部流入左井，依次与L[4,5]、M[4,6]一对一反应，最终酸、L、M都为0；[3,6]夯土与井壁不漏酸。若池底残留酸或有残岩≥128，报告实际分布。",
+          "ok": false,
+          "status": "fail"
+        },
+        {
+          "text": "待SDK诱饵：挖开右塞[7,2]（从[7,1]向下挖或在池里向右挖）后512酸全部进右井，L[7,5]耗尽、R[7,6]的256cell不变，剩256酸停在R上；左塞随后挖开也没有酸流进左井，左井L/M不变。",
+          "ok": true,
+          "status": "pass"
+        },
+        {
+          "text": "待LV-07真实SDK / 游戏联合验收：同一seed从开局连续回放3次，逐步结果一致；每步撤销与重开恢复材料、人物、背包、目标灯及机关状态。",
+          "ok": true,
+          "status": "pass"
+        },
+        {
+          "text": "待LV-07真实SDK / 游戏联合验收：记录逐步tick、结算轮数与材料计数，不得达到1200tick / 16轮上限；模型通过不代替SDK验证。",
+          "ok": true,
+          "status": "pass"
+        }
+      ],
+      "step_metrics": [
+        {
+          "step": 0,
+          "action": "opening"
+        },
+        {
+          "step": 1,
+          "action": "L",
+          "accepted": true,
+          "error": "",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "7c6954e4601152fb67255ac8b8342991c58b71492b703ce6076c666542948acc",
+          "ticks": 4
+        },
+        {
+          "step": 2,
+          "action": "L",
+          "accepted": true,
+          "error": "",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "c3bfc6eac444d5bca2b29e176362ab1cf7c6f0284f764b65bddfe4c48d78fc94",
+          "ticks": 4
+        },
+        {
+          "step": 3,
+          "action": "L",
+          "accepted": true,
+          "error": "",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "e3276e3713395b96d6df66893e50253215f300c4be8acd36a63a09d259f57fd6",
+          "ticks": 4
+        },
+        {
+          "step": 4,
+          "action": "L",
+          "accepted": true,
+          "error": "",
+          "rounds": 2,
+          "tick_hash_count": 8,
+          "tick_sequence_sha256": "fae260305f0fae73a0739ccb9201e8d29eeafde929028b304ad10df732c16101",
+          "ticks": 8
+        },
+        {
+          "step": 5,
+          "action": "L",
+          "accepted": true,
+          "error": "",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "9233051c7bfa0e119c9129645e7713de8d7ea64a27b9aeecdaf3fa94f4c24c82",
+          "ticks": 4
+        },
+        {
+          "step": 6,
+          "action": "DIG_L",
+          "accepted": true,
+          "error": "",
+          "rounds": 1,
+          "tick_hash_count": 485,
+          "tick_sequence_sha256": "53dfa987a7d7c3a48ca312f70f246877228cb4265b67b08ef0ce8a2482f942d2",
+          "ticks": 485
+        },
+        {
+          "step": 7,
+          "action": "L",
+          "accepted": true,
+          "error": "",
+          "rounds": 5,
+          "tick_hash_count": 20,
+          "tick_sequence_sha256": "be2dd6168786c1c56f284279627a4684233c6b5355255f9b58902ebb2f6544fa",
+          "ticks": 20
+        },
+        {
+          "step": 8,
+          "action": "DIG_L",
+          "accepted": true,
+          "error": "",
+          "rounds": 1,
+          "tick_hash_count": 151,
+          "tick_sequence_sha256": "330f40d5204a6fc9a734a6de103fbc7e174d126b08fbffe63eca4702c24f7d59",
+          "ticks": 151
+        },
+        {
+          "step": 9,
+          "action": "L",
+          "accepted": true,
+          "error": "",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "2b0aadb244205494e1f54da6e88e0e39084351bb9cb5c7401848d5945b13a0b1",
+          "ticks": 4
+        },
+        {
+          "step": 10,
+          "action": "L",
+          "accepted": true,
+          "error": "",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "4322a47a2064eb56ff507738b65cd1ddae5bdc4ea41903c02ba04578413e8854",
+          "ticks": 4
+        }
+      ]
+    },
+    {
+      "id": "G03",
+      "uid": "level:G03",
+      "group": "react",
+      "spec_sha256": "761cc00d3e5eee589cd854be3d2d73b988c296b6237750451cf31124e4e94bb8",
+      "won": true,
+      "replays": 3,
+      "consistent": true,
+      "undo_ok": true,
+      "restart_ok": true,
+      "max_ticks": 340,
+      "max_rounds": 2,
+      "tick_limit": 1200,
+      "round_limit": 16,
+      "author_solution_verified": true,
+      "sdk_verified": true,
+      "runs": [
+        {
+          "accepted_steps": 12,
+          "restart_ok": true,
+          "sequence_sha256": "7005cf32e7bdfe8c2e3a53cf901844e141c2aedcc3ba1a6f0be29a2d20f49587",
+          "undo_ok": true,
+          "won": true
+        },
+        {
+          "accepted_steps": 12,
+          "restart_ok": true,
+          "sequence_sha256": "7005cf32e7bdfe8c2e3a53cf901844e141c2aedcc3ba1a6f0be29a2d20f49587",
+          "undo_ok": true,
+          "won": true
+        },
+        {
+          "accepted_steps": 12,
+          "restart_ok": true,
+          "sequence_sha256": "7005cf32e7bdfe8c2e3a53cf901844e141c2aedcc3ba1a6f0be29a2d20f49587",
+          "undo_ok": true,
+          "won": true
+        }
+      ],
+      "issues": [],
+      "checks": [
+        {
+          "text": "author solution wins on real SDK in three runs",
+          "ok": true,
+          "status": "pass"
+        },
+        {
+          "text": "three complete tick hash sequences agree",
+          "ok": true,
+          "status": "pass"
+        },
+        {
+          "text": "every accepted action restores game, SDK and observations on undo",
+          "ok": true,
+          "status": "pass"
+        },
+        {
+          "text": "restart and undo-restart preserve opening and final snapshots",
+          "ok": true,
+          "status": "pass"
+        },
+        {
+          "text": "settlement stays below 1200 ticks and 16 rounds",
+          "ok": true,
+          "status": "pass"
+        },
+        {
+          "text": "待模型及游戏反例：开顶口得到的唯一沙袋不足以从三格深烟室造阶回到外廊；下井后尝试倒沙补阶仍不能到独立人物出口。",
+          "ok": true,
+          "status": "pass"
+        },
+        {
+          "text": "待SDK：源室初始4格1024cell；逐tick实数收集斗对应气体，峰值达到512cell才锁存，不补气、不传送气体、不按动作直接点灯。",
+          "ok": true,
+          "status": "pass"
+        },
+        {
+          "text": "待游戏：确认进入气井或诱饵水坑后不能回到人物出口；气斗与人物出口必须同时亮。",
+          "ok": true,
+          "status": "pass"
+        },
+        {
+          "text": "待LV-07真实SDK / 游戏联合验收：同一seed从开局连续回放3次，逐步结果一致；每步撤销与重开恢复材料、人物、背包、目标灯及机关状态。",
+          "ok": true,
+          "status": "pass"
+        },
+        {
+          "text": "待LV-07真实SDK / 游戏联合验收：记录逐步tick、结算轮数与材料计数，不得达到1200tick / 16轮上限；模型通过不代替SDK验证。",
+          "ok": true,
+          "status": "pass"
+        }
+      ],
+      "step_metrics": [
+        {
+          "step": 0,
+          "action": "opening"
+        },
+        {
+          "step": 1,
+          "action": "L",
+          "accepted": true,
+          "error": "",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "f5dfe7c939f39a8370a5e4be8223414002ec6e8199ff482fd9379953a6d6fbf0",
+          "ticks": 4
+        },
+        {
+          "step": 2,
+          "action": "L",
+          "accepted": true,
+          "error": "",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "388a35b2cf1747560046e530c5884eed2829bb53bc3c5ebd8b0447c8b5cc8f88",
+          "ticks": 4
+        },
+        {
+          "step": 3,
+          "action": "L",
+          "accepted": true,
+          "error": "",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "ffccc82e2ee46aaf2cbf28ea86836d175889666a214b46ea1a31c65c46847f9b",
+          "ticks": 4
+        },
+        {
+          "step": 4,
+          "action": "L",
+          "accepted": true,
+          "error": "",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "898e019e2d79e1bf687e59980a743f62e0419b111e9994aa71d29fa0e47a0f96",
+          "ticks": 4
+        },
+        {
+          "step": 5,
+          "action": "DIG_L",
+          "accepted": true,
+          "error": "",
+          "rounds": 2,
+          "tick_hash_count": 340,
+          "tick_sequence_sha256": "48cdf9284a694776fcc3d167e3ea72aca4cb11c2f52a59e51b33049bb97515e1",
+          "ticks": 340
+        },
+        {
+          "step": 6,
+          "action": "R",
+          "accepted": true,
+          "error": "",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "9bd8f1da75064f363773bc1b7a707812e9f9c9383dcd3bee8d16b8c928fa82b2",
+          "ticks": 4
+        },
+        {
+          "step": 7,
+          "action": "R",
+          "accepted": true,
+          "error": "",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "62fb3a4dc53e55335b0764cad86c772ff78c789b2a41221921f30cb6b94aac39",
+          "ticks": 4
+        },
+        {
+          "step": 8,
+          "action": "R",
+          "accepted": true,
+          "error": "",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "1ed3fec1f08aaae3e83ed985ce6e9c8edce1676a2f00ed8d1f28be0d47a1668d",
+          "ticks": 4
+        },
+        {
+          "step": 9,
+          "action": "U",
+          "accepted": true,
+          "error": "",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "13761c6aababdb67a8f39cccd11ffcc39a9b18ff62c68aa4de7432a3f81f9e15",
+          "ticks": 4
+        },
+        {
+          "step": 10,
+          "action": "U",
+          "accepted": true,
+          "error": "",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "d18f9911aa391f6c93774be82039459dc92ca80f165edbdcc64790b302885cb4",
+          "ticks": 4
+        },
+        {
+          "step": 11,
+          "action": "U",
+          "accepted": true,
+          "error": "",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "fb4169af6444e5e7bd8eacaf8d90b5803b56860a25e29edf4e941efbf0879e80",
+          "ticks": 4
+        },
+        {
+          "step": 12,
+          "action": "L",
+          "accepted": true,
+          "error": "",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "2c6a43b801d8c357694e3095d36804fb5d63f7a2f5575d832fd42171ae71d6cf",
+          "ticks": 4
+        }
+      ]
+    },
+    {
+      "id": "G04",
+      "uid": "level:G04",
+      "group": "react",
+      "spec_sha256": "8e96ad66b6c29ff8cc0e9c62dc8fae9838305c0ef71f63279183d8f872ab6030",
+      "won": true,
+      "replays": 3,
+      "consistent": true,
+      "undo_ok": true,
+      "restart_ok": true,
+      "max_ticks": 676,
+      "max_rounds": 2,
+      "tick_limit": 1200,
+      "round_limit": 16,
+      "author_solution_verified": true,
+      "sdk_verified": true,
+      "runs": [
+        {
+          "accepted_steps": 11,
+          "restart_ok": true,
+          "sequence_sha256": "f02055b0e05c0867154e7ad4b2afe9db499c0dca98664f4ca2b459d03a75a195",
+          "undo_ok": true,
+          "won": true
+        },
+        {
+          "accepted_steps": 11,
+          "restart_ok": true,
+          "sequence_sha256": "f02055b0e05c0867154e7ad4b2afe9db499c0dca98664f4ca2b459d03a75a195",
+          "undo_ok": true,
+          "won": true
+        },
+        {
+          "accepted_steps": 11,
+          "restart_ok": true,
+          "sequence_sha256": "f02055b0e05c0867154e7ad4b2afe9db499c0dca98664f4ca2b459d03a75a195",
+          "undo_ok": true,
+          "won": true
+        }
+      ],
+      "issues": [],
+      "checks": [
+        {
+          "text": "author solution wins on real SDK in three runs",
+          "ok": true,
+          "status": "pass"
+        },
+        {
+          "text": "three complete tick hash sequences agree",
+          "ok": true,
+          "status": "pass"
+        },
+        {
+          "text": "every accepted action restores game, SDK and observations on undo",
+          "ok": true,
+          "status": "pass"
+        },
+        {
+          "text": "restart and undo-restart preserve opening and final snapshots",
+          "ok": true,
+          "status": "pass"
+        },
+        {
+          "text": "settlement stays below 1200 ticks and 16 rounds",
+          "ok": true,
+          "status": "pass"
+        },
+        {
+          "text": "待SDK：源室初始4格1024cell；逐tick实数收集斗对应气体，峰值达到512cell才锁存，不补气、不传送气体、不按动作直接点灯。",
+          "ok": true,
+          "status": "pass"
+        },
+        {
+          "text": "待游戏：确认进入气井或诱饵水坑后不能回到人物出口；气斗与人物出口必须同时亮。",
+          "ok": true,
+          "status": "pass"
+        },
+        {
+          "text": "待LV-07真实SDK / 游戏联合验收：同一seed从开局连续回放3次，逐步结果一致；每步撤销与重开恢复材料、人物、背包、目标灯及机关状态。",
+          "ok": true,
+          "status": "pass"
+        },
+        {
+          "text": "待LV-07真实SDK / 游戏联合验收：记录逐步tick、结算轮数与材料计数，不得达到1200tick / 16轮上限；模型通过不代替SDK验证。",
+          "ok": true,
+          "status": "pass"
+        }
+      ],
+      "step_metrics": [
+        {
+          "step": 0,
+          "action": "opening"
+        },
+        {
+          "step": 1,
+          "action": "L",
+          "accepted": true,
+          "error": "",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "68db30a60dba8030887ee14e519f6c7994dc315e360e0ee43b0398fab74dc3e7",
+          "ticks": 4
+        },
+        {
+          "step": 2,
+          "action": "L",
+          "accepted": true,
+          "error": "",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "adceaa3a8cc4e26ac8490a7cb6ee597d5b11cb810cc360e560bfdfed6418617a",
+          "ticks": 4
+        },
+        {
+          "step": 3,
+          "action": "L",
+          "accepted": true,
+          "error": "",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "fb66264f1d14941ab8ac1052a9b952d554fa907e57b338a1f89d2d65b295e184",
+          "ticks": 4
+        },
+        {
+          "step": 4,
+          "action": "DIG_L",
+          "accepted": true,
+          "error": "",
+          "rounds": 2,
+          "tick_hash_count": 676,
+          "tick_sequence_sha256": "ea34524d70e7e52455ac43332dc9ac3bd0d025bce4b55433682232e610788bac",
+          "ticks": 676
+        },
+        {
+          "step": 5,
+          "action": "R",
+          "accepted": true,
+          "error": "",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "c3e8157227051a993bc5638de143f5b9ac668839e8e46ee50a0686655b1dc917",
+          "ticks": 4
+        },
+        {
+          "step": 6,
+          "action": "R",
+          "accepted": true,
+          "error": "",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "1fab6ee23a01462d9dd867cd614518dd95a3934af5c9f99d88226479d62f49d7",
+          "ticks": 4
+        },
+        {
+          "step": 7,
+          "action": "R",
+          "accepted": true,
+          "error": "",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "ea83e00f18330df2dc631b8b25d324a2a0b381c56a2f79be863de408bd135f9f",
+          "ticks": 4
+        },
+        {
+          "step": 8,
+          "action": "D",
+          "accepted": true,
+          "error": "",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "a0cd2648cb003d27e0487fe9761cb5bd6de05fdb0fe55762863fb51275f68ff8",
+          "ticks": 4
+        },
+        {
+          "step": 9,
+          "action": "D",
+          "accepted": true,
+          "error": "",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "8d8baf924360fc47308238a86798658da6c2c5b6dc9397e5dbb8bf6eab75b085",
+          "ticks": 4
+        },
+        {
+          "step": 10,
+          "action": "D",
+          "accepted": true,
+          "error": "",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "cef5c11e2d9cbbc719c8f4cba430a25c64a4145c7afdaf593383509d684eef36",
+          "ticks": 4
+        },
+        {
+          "step": 11,
+          "action": "L",
+          "accepted": true,
+          "error": "",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "488bb9af467b9053e1889665d0109f3aa53027f3531a5119390b4db202f901e0",
+          "ticks": 4
+        }
+      ]
+    },
+    {
+      "id": "G05",
+      "uid": "level:G05",
+      "group": "react",
+      "spec_sha256": "db8eb702a64e5b046076cdc6747953fae2d798df85df1b4f2855198f643d3d52",
+      "won": true,
+      "replays": 3,
+      "consistent": true,
+      "undo_ok": true,
+      "restart_ok": true,
+      "max_ticks": 213,
+      "max_rounds": 2,
+      "tick_limit": 1200,
+      "round_limit": 16,
+      "author_solution_verified": true,
+      "sdk_verified": true,
+      "runs": [
+        {
+          "accepted_steps": 9,
+          "restart_ok": true,
+          "sequence_sha256": "7723e0c6be183f4f2bcca3bb3454bd88183750584da9c0a8389e5385a3154364",
+          "undo_ok": true,
+          "won": true
+        },
+        {
+          "accepted_steps": 9,
+          "restart_ok": true,
+          "sequence_sha256": "7723e0c6be183f4f2bcca3bb3454bd88183750584da9c0a8389e5385a3154364",
+          "undo_ok": true,
+          "won": true
+        },
+        {
+          "accepted_steps": 9,
+          "restart_ok": true,
+          "sequence_sha256": "7723e0c6be183f4f2bcca3bb3454bd88183750584da9c0a8389e5385a3154364",
+          "undo_ok": true,
+          "won": true
+        }
+      ],
+      "issues": [],
+      "checks": [
+        {
+          "text": "author solution wins on real SDK in three runs",
+          "ok": true,
+          "status": "pass"
+        },
+        {
+          "text": "three complete tick hash sequences agree",
+          "ok": true,
+          "status": "pass"
+        },
+        {
+          "text": "every accepted action restores game, SDK and observations on undo",
+          "ok": true,
+          "status": "pass"
+        },
+        {
+          "text": "restart and undo-restart preserve opening and final snapshots",
+          "ok": true,
+          "status": "pass"
+        },
+        {
+          "text": "settlement stays below 1200 ticks and 16 rounds",
+          "ok": true,
+          "status": "pass"
+        },
+        {
+          "text": "待SDK：静止p普通动作后不衰减；开关只写一次plug_decay，SDK lifetime=120到期转empty，禁用寿命后沙斗不得满。",
+          "ok": true,
+          "status": "pass"
+        },
+        {
+          "text": "待SDK / 游戏：斗[8,5..6]两侧与斗底都是封闭固体，512cell沙真实全部落进斗、触发升降台一次；先开关再装箱必须失败，反复拨动不能刷新寿命或再触发空台。",
+          "ok": true,
+          "status": "pass"
+        },
+        {
+          "text": "待LV-07真实SDK / 游戏联合验收：同一seed从开局连续回放3次，逐步结果一致；每步撤销与重开恢复材料、人物、背包、目标灯及机关状态。",
+          "ok": true,
+          "status": "pass"
+        },
+        {
+          "text": "待LV-07真实SDK / 游戏联合验收：记录逐步tick、结算轮数与材料计数，不得达到1200tick / 16轮上限；模型通过不代替SDK验证。",
+          "ok": true,
+          "status": "pass"
+        }
+      ],
+      "step_metrics": [
+        {
+          "step": 0,
+          "action": "opening"
+        },
+        {
+          "step": 1,
+          "action": "L",
+          "accepted": true,
+          "error": "",
+          "rounds": 1,
+          "tick_hash_count": 5,
+          "tick_sequence_sha256": "6e6894f35f086748f7d2661bd9679e5c010986e57c4488eb633e78bab79e2e15",
+          "ticks": 5
+        },
+        {
+          "step": 2,
+          "action": "L",
+          "accepted": true,
+          "error": "",
+          "rounds": 1,
+          "tick_hash_count": 5,
+          "tick_sequence_sha256": "59f130eea466927824949b30dcbf01f942d08fbf560e9fec0e9b26b47a6a4fa8",
+          "ticks": 5
+        },
+        {
+          "step": 3,
+          "action": "L",
+          "accepted": true,
+          "error": "",
+          "rounds": 1,
+          "tick_hash_count": 5,
+          "tick_sequence_sha256": "57869269340905ae803977244b2845df6bb2100727dd89c5b94924d27041f98e",
+          "ticks": 5
+        },
+        {
+          "step": 4,
+          "action": "L",
+          "accepted": true,
+          "error": "",
+          "rounds": 1,
+          "tick_hash_count": 5,
+          "tick_sequence_sha256": "99cef06e9b071932ecf1e630f2513736e8cc29ad4c3109e466aede007c0d7877",
+          "ticks": 5
+        },
+        {
+          "step": 5,
+          "action": "R",
+          "accepted": true,
+          "error": "",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "bccae82daf72d0a6876e37b9ed8bf0411fff21ee4f35deb09b043e463757f76b",
+          "ticks": 4
+        },
+        {
+          "step": 6,
+          "action": "R",
+          "accepted": true,
+          "error": "",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "8a0b560cf7490e6ff90fd2bb52b562724d9a5aa699bcf2dcfc33a778768b6b85",
+          "ticks": 4
+        },
+        {
+          "step": 7,
+          "action": "R",
+          "accepted": true,
+          "error": "",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "3024187871e9b4d14d31275977343d854bfb2524c3a479edebe9a65da02d0d8d",
+          "ticks": 4
+        },
+        {
+          "step": 8,
+          "action": "R",
+          "accepted": true,
+          "error": "",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "02fa6b869f6b41c69c000ab314a958fde25e49ef64b598c5bea71afa21b44a72",
+          "ticks": 4
+        },
+        {
+          "step": 9,
+          "action": "U",
+          "accepted": true,
+          "error": "",
+          "rounds": 2,
+          "tick_hash_count": 213,
+          "tick_sequence_sha256": "f8ea5accae137747f8110b2e56962923a4dfdf505d0c114290abae4afbbbdeba",
+          "ticks": 213
+        }
+      ]
+    },
+    {
+      "id": "G06",
+      "uid": "level:G06",
+      "group": "react",
+      "spec_sha256": "d371964679484ae655c5ce3b75deb158c5c51cb9f84419aeb395b52e379f56a8",
+      "won": true,
+      "replays": 3,
+      "consistent": true,
+      "undo_ok": true,
+      "restart_ok": true,
+      "max_ticks": 432,
+      "max_rounds": 2,
+      "tick_limit": 1200,
+      "round_limit": 16,
+      "author_solution_verified": true,
+      "sdk_verified": true,
+      "runs": [
+        {
+          "accepted_steps": 9,
+          "restart_ok": true,
+          "sequence_sha256": "714b7402f5b60fe1254a12e3ca1e57822a88080274136bcc625893207103ffe1",
+          "undo_ok": true,
+          "won": true
+        },
+        {
+          "accepted_steps": 9,
+          "restart_ok": true,
+          "sequence_sha256": "714b7402f5b60fe1254a12e3ca1e57822a88080274136bcc625893207103ffe1",
+          "undo_ok": true,
+          "won": true
+        },
+        {
+          "accepted_steps": 9,
+          "restart_ok": true,
+          "sequence_sha256": "714b7402f5b60fe1254a12e3ca1e57822a88080274136bcc625893207103ffe1",
+          "undo_ok": true,
+          "won": true
+        }
+      ],
+      "issues": [],
+      "checks": [
+        {
+          "text": "author solution wins on real SDK in three runs",
+          "ok": true,
+          "status": "pass"
+        },
+        {
+          "text": "three complete tick hash sequences agree",
+          "ok": true,
+          "status": "pass"
+        },
+        {
+          "text": "every accepted action restores game, SDK and observations on undo",
+          "ok": true,
+          "status": "pass"
+        },
+        {
+          "text": "restart and undo-restart preserve opening and final snapshots",
+          "ok": true,
+          "status": "pass"
+        },
+        {
+          "text": "settlement stays below 1200 ticks and 16 rounds",
+          "ok": true,
+          "status": "pass"
+        },
+        {
+          "text": "待模型及SDK反例：挖左塞[4,4]后水分流——LV-07实测256进左井[4,7]，另256摊在右岸[7..10,4]各64；右根之后拿不到256，藤不长。判据是“右根water<256且藤不长”，不要求512全部进左井；两格夯土给的两袋沙也抬不回右根（实测224<256）。",
+          "ok": true,
+          "status": "pass"
+        },
+        {
+          "text": "待SDK：512cell水从右塞流入右根[6,7]，实际根部water达到256才长藤；左塞分流反例须保留真实材料。",
+          "ok": true,
+          "status": "pass"
+        },
+        {
+          "text": "待游戏：height=7包含root，生成[6,1]至[6,7]背景梯子；成长锁存且不删水，撤销恢复该分支未长状态。",
+          "ok": true,
+          "status": "pass"
+        },
+        {
+          "text": "待LV-07真实SDK / 游戏联合验收：同一seed从开局连续回放3次，逐步结果一致；每步撤销与重开恢复材料、人物、背包、目标灯及机关状态。",
+          "ok": true,
+          "status": "pass"
+        },
+        {
+          "text": "待LV-07真实SDK / 游戏联合验收：记录逐步tick、结算轮数与材料计数，不得达到1200tick / 16轮上限；模型通过不代替SDK验证。",
+          "ok": true,
+          "status": "pass"
+        }
+      ],
+      "step_metrics": [
+        {
+          "step": 0,
+          "action": "opening"
+        },
+        {
+          "step": 1,
+          "action": "L",
+          "accepted": true,
+          "error": "",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "bf63e8d3b7859f3a756d07da4840450d657bd2ceec94c82cd40d29643a97be53",
+          "ticks": 4
+        },
+        {
+          "step": 2,
+          "action": "L",
+          "accepted": true,
+          "error": "",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "3a1aa314e2d140f5c9ce0e90ce1af311189834cc30af12daf35fc3b636f68783",
+          "ticks": 4
+        },
+        {
+          "step": 3,
+          "action": "L",
+          "accepted": true,
+          "error": "",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "256d062a808dedb585739bdf35f4a29794f2b1e83d0ec648edf18e4a5f745057",
+          "ticks": 4
+        },
+        {
+          "step": 4,
+          "action": "DIG_L",
+          "accepted": true,
+          "error": "",
+          "rounds": 2,
+          "tick_hash_count": 432,
+          "tick_sequence_sha256": "46e3e80c64dc2cc545b5e74e56d18d9857b4a2862b395bad089e1118bf1e42b7",
+          "ticks": 432
+        },
+        {
+          "step": 5,
+          "action": "L",
+          "accepted": true,
+          "error": "",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "407e330e4fab051319bac0f6a45a4a3c61b0d8096bf5915eb99c3723752055f2",
+          "ticks": 4
+        },
+        {
+          "step": 6,
+          "action": "U",
+          "accepted": true,
+          "error": "",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "a588ff83c2f70d7893f199b4fd9a7f84b079d32fe8fcd7736d56bccbc0113cec",
+          "ticks": 4
+        },
+        {
+          "step": 7,
+          "action": "U",
+          "accepted": true,
+          "error": "",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "80bd5b6144dcf0b5e9569213a633cae441cac67764ab1e29671c96ca05fee39f",
+          "ticks": 4
+        },
+        {
+          "step": 8,
+          "action": "U",
+          "accepted": true,
+          "error": "",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "18377e31b1f89370a299f5619135c43f5ae0deb2651eac35a182a20bf3f2e385",
+          "ticks": 4
+        },
+        {
+          "step": 9,
+          "action": "L",
+          "accepted": true,
+          "error": "",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "5944a330d373795d32e224828a35510d54036dbe11fd2be06005e227774055bb",
+          "ticks": 4
+        }
+      ]
+    },
+    {
+      "id": "G08",
+      "uid": "level:G08",
+      "group": "react",
+      "spec_sha256": "295ebfb609e1939c9987035b242f4aebc8a3a9cc385b6d85ba0119e3fc0e61ec",
+      "won": true,
+      "replays": 3,
+      "consistent": true,
+      "undo_ok": true,
+      "restart_ok": true,
+      "max_ticks": 8,
+      "max_rounds": 2,
+      "tick_limit": 1200,
+      "round_limit": 16,
+      "author_solution_verified": true,
+      "sdk_verified": true,
+      "runs": [
+        {
+          "accepted_steps": 8,
+          "restart_ok": true,
+          "sequence_sha256": "3a9f76b050e24c0c55e61bf2d911cb27b180dc289569b21f92724d212b23608c",
+          "undo_ok": true,
+          "won": true
+        },
+        {
+          "accepted_steps": 8,
+          "restart_ok": true,
+          "sequence_sha256": "3a9f76b050e24c0c55e61bf2d911cb27b180dc289569b21f92724d212b23608c",
+          "undo_ok": true,
+          "won": true
+        },
+        {
+          "accepted_steps": 8,
+          "restart_ok": true,
+          "sequence_sha256": "3a9f76b050e24c0c55e61bf2d911cb27b180dc289569b21f92724d212b23608c",
+          "undo_ok": true,
+          "won": true
+        }
+      ],
+      "issues": [],
+      "checks": [
+        {
+          "text": "author solution wins on real SDK in three runs",
+          "ok": true,
+          "status": "pass"
+        },
+        {
+          "text": "three complete tick hash sequences agree",
+          "ok": true,
+          "status": "pass"
+        },
+        {
+          "text": "every accepted action restores game, SDK and observations on undo",
+          "ok": true,
+          "status": "pass"
+        },
+        {
+          "text": "restart and undo-restart preserve opening and final snapshots",
+          "ok": true,
+          "status": "pass"
+        },
+        {
+          "text": "settlement stays below 1200 ticks and 16 rounds",
+          "ok": true,
+          "status": "pass"
+        },
+        {
+          "text": "待游戏：人物从[5,5]横移到[4,5]后真实下落至[4,6]，才弹到[4,4]梯子；水平走上台面不触发，竖直扫掠被挡时拒绝。",
+          "ok": true,
+          "status": "pass"
+        },
+        {
+          "text": "待游戏隔离样板：箱子落台、人物落台、上升受阻与重复结算均不穿墙、不丢实体、不无限弹射；箱子不因梯子而悬空。",
+          "ok": true,
+          "status": "pass"
+        },
+        {
+          "text": "待LV-07真实SDK / 游戏联合验收：同一seed从开局连续回放3次，逐步结果一致；每步撤销与重开恢复材料、人物、背包、目标灯及机关状态。",
+          "ok": true,
+          "status": "pass"
+        },
+        {
+          "text": "待LV-07真实SDK / 游戏联合验收：记录逐步tick、结算轮数与材料计数，不得达到1200tick / 16轮上限；模型通过不代替SDK验证。",
+          "ok": true,
+          "status": "pass"
+        }
+      ],
+      "step_metrics": [
+        {
+          "step": 0,
+          "action": "opening"
+        },
+        {
+          "step": 1,
+          "action": "L",
+          "accepted": true,
+          "error": "",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "21aaa0fb908a0df36862d23b13b15b16a2c90c740ae88f3c832da94d8e8d0357",
+          "ticks": 4
+        },
+        {
+          "step": 2,
+          "action": "L",
+          "accepted": true,
+          "error": "",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "f67bda7dce9b1511297f5c6d368e18b5695a7cad17b332b1038ffe4d17de3dab",
+          "ticks": 4
+        },
+        {
+          "step": 3,
+          "action": "L",
+          "accepted": true,
+          "error": "",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "8894c3225e25a65aa8d5a9036f053430cbdc76bd3a6354a2a1281af15216ef7e",
+          "ticks": 4
+        },
+        {
+          "step": 4,
+          "action": "L",
+          "accepted": true,
+          "error": "",
+          "rounds": 2,
+          "tick_hash_count": 8,
+          "tick_sequence_sha256": "86c2d2ed99d73c68f1fc5bd84561a02ba3a3257d2ab6d9bf2887c1621ab90afe",
+          "ticks": 8
+        },
+        {
+          "step": 5,
+          "action": "L",
+          "accepted": true,
+          "error": "",
+          "rounds": 2,
+          "tick_hash_count": 8,
+          "tick_sequence_sha256": "0e7c5c61e11a1aea59085d5ac0affacd44a040188e0493b35be1023e50340fe6",
+          "ticks": 8
+        },
+        {
+          "step": 6,
+          "action": "U",
+          "accepted": true,
+          "error": "",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "8f51cc40a33c7da1e7b497ae03c99855c204826712a3bedc47f6caa0a5f512c3",
+          "ticks": 4
+        },
+        {
+          "step": 7,
+          "action": "U",
+          "accepted": true,
+          "error": "",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "a95a5565aff71cbfdeca6dc355f916ec504fd3ebae67056a32e11602699b1637",
+          "ticks": 4
+        },
+        {
+          "step": 8,
+          "action": "L",
+          "accepted": true,
+          "error": "",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "085464a0243abbad0ffd511f833011bb730f95a71691b435f0d61f3b2c62c2e2",
+          "ticks": 4
+        }
+      ]
+    },
+    {
+      "id": "G09",
+      "uid": "level:G09",
+      "group": "react",
+      "spec_sha256": "ee79dee8e53216e201eae95b6401dbd0b519e4296124e64be04a6db68921941f",
+      "won": true,
+      "replays": 3,
+      "consistent": true,
+      "undo_ok": true,
+      "restart_ok": true,
+      "max_ticks": 15,
+      "max_rounds": 3,
+      "tick_limit": 1200,
+      "round_limit": 16,
+      "author_solution_verified": true,
+      "sdk_verified": true,
+      "runs": [
+        {
+          "accepted_steps": 13,
+          "restart_ok": true,
+          "sequence_sha256": "80e42b27b07e37d2cafc46f213612f3bd89c87d246a0dc261a803e6e57a125d8",
+          "undo_ok": true,
+          "won": true
+        },
+        {
+          "accepted_steps": 13,
+          "restart_ok": true,
+          "sequence_sha256": "80e42b27b07e37d2cafc46f213612f3bd89c87d246a0dc261a803e6e57a125d8",
+          "undo_ok": true,
+          "won": true
+        },
+        {
+          "accepted_steps": 13,
+          "restart_ok": true,
+          "sequence_sha256": "80e42b27b07e37d2cafc46f213612f3bd89c87d246a0dc261a803e6e57a125d8",
+          "undo_ok": true,
+          "won": true
+        }
+      ],
+      "issues": [],
+      "checks": [
+        {
+          "text": "author solution wins on real SDK in three runs",
+          "ok": true,
+          "status": "pass"
+        },
+        {
+          "text": "three complete tick hash sequences agree",
+          "ok": true,
+          "status": "pass"
+        },
+        {
+          "text": "every accepted action restores game, SDK and observations on undo",
+          "ok": true,
+          "status": "pass"
+        },
+        {
+          "text": "restart and undo-restart preserve opening and final snapshots",
+          "ok": true,
+          "status": "pass"
+        },
+        {
+          "text": "settlement stays below 1200 ticks and 16 rounds",
+          "ok": true,
+          "status": "pass"
+        },
+        {
+          "text": "待游戏：开局载重仅作基线；净空门关闭时新落载受阻，之后只开门不能让同一静置铁箱重试。完整作者路线先开门再落载成功。",
+          "ok": true,
+          "status": "pass"
+        },
+        {
+          "text": "待游戏：左端载物从[4,6]升至[4,4]后横移一格至[3,4]槽；右端对称落点[7,4]；高度固定2，不由重量放大。",
+          "ok": true,
+          "status": "pass"
+        },
+        {
+          "text": "待游戏：人物跳右井只能亮箱槽，不能到[9,4]出口；两盏灯必须同时亮。",
+          "ok": true,
+          "status": "pass"
+        },
+        {
+          "text": "待LV-07真实SDK / 游戏联合验收：同一seed从开局连续回放3次，逐步结果一致；每步撤销与重开恢复材料、人物、背包、目标灯及机关状态。",
+          "ok": true,
+          "status": "pass"
+        },
+        {
+          "text": "待LV-07真实SDK / 游戏联合验收：记录逐步tick、结算轮数与材料计数，不得达到1200tick / 16轮上限；模型通过不代替SDK验证。",
+          "ok": true,
+          "status": "pass"
+        }
+      ],
+      "step_metrics": [
+        {
+          "step": 0,
+          "action": "opening"
+        },
+        {
+          "step": 1,
+          "action": "U",
+          "accepted": true,
+          "error": "",
+          "rounds": 2,
+          "tick_hash_count": 9,
+          "tick_sequence_sha256": "02e232f1a08c1ca2247e361be6b0a251eccde644dae2369bde2e39de899b6b9b",
+          "ticks": 9
+        },
+        {
+          "step": 2,
+          "action": "R",
+          "accepted": true,
+          "error": "",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "70f9899465eb940f0687de4b539c17b3a967855aa604d98df7805a05aaef0f36",
+          "ticks": 4
+        },
+        {
+          "step": 3,
+          "action": "U",
+          "accepted": true,
+          "error": "",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "c00f40785d13d62de3f741e4c90f426b37be6f1038ac3c935cf0dba0b790787a",
+          "ticks": 4
+        },
+        {
+          "step": 4,
+          "action": "U",
+          "accepted": true,
+          "error": "",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "79c0c9c7c79549a661a798ef3a3978e0f8f2853df7ddd1d42601acd99c0b1a4a",
+          "ticks": 4
+        },
+        {
+          "step": 5,
+          "action": "R",
+          "accepted": true,
+          "error": "",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "fa6e14bf0bcb49e91db8e35cfa4ec412cee4cfb91008648de1b7c2ab481df691",
+          "ticks": 4
+        },
+        {
+          "step": 6,
+          "action": "R",
+          "accepted": true,
+          "error": "",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "7210e31a465a23a13098d330bf31bcc17f314e8020158a6f4ec99b2dc36c6c8b",
+          "ticks": 4
+        },
+        {
+          "step": 7,
+          "action": "R",
+          "accepted": true,
+          "error": "",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "3090b5d8ce3d086ca0a67f08c38da867b355d3c1ecb8ac80f25c92cc349b4077",
+          "ticks": 4
+        },
+        {
+          "step": 8,
+          "action": "D",
+          "accepted": true,
+          "error": "",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "796e8549f009d9a21805f83e80a3437262bb2637974d33d3be3aeb150c4a0252",
+          "ticks": 4
+        },
+        {
+          "step": 9,
+          "action": "D",
+          "accepted": true,
+          "error": "",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "d971c90eef0ef4971890be2d9a666b881437ea398e612c9019d7ebb44fad258a",
+          "ticks": 4
+        },
+        {
+          "step": 10,
+          "action": "L",
+          "accepted": true,
+          "error": "",
+          "rounds": 1,
+          "tick_hash_count": 5,
+          "tick_sequence_sha256": "7c5119d01aa4370decdb9e2b567944b4d3c8fd943ff6e41740c0e1b8993f1faa",
+          "ticks": 5
+        },
+        {
+          "step": 11,
+          "action": "L",
+          "accepted": true,
+          "error": "",
+          "rounds": 3,
+          "tick_hash_count": 15,
+          "tick_sequence_sha256": "512512c497f65c35a778356d6de53ee04787180365e0bec46f20b22504a1d52f",
+          "ticks": 15
+        },
+        {
+          "step": 12,
+          "action": "R",
+          "accepted": true,
+          "error": "",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "d4df200f9003511dbde1f71c9ae9dd5a8205acbfcc507452807c1998421db3c1",
+          "ticks": 4
+        },
+        {
+          "step": 13,
+          "action": "R",
+          "accepted": true,
+          "error": "",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "b1ab8eef3794d9d11712da3a8d80aacb533360b3995bb2e7bf9d225d7a9ac735",
+          "ticks": 4
+        }
+      ]
+    },
+    {
+      "id": "G10",
+      "uid": "level:G10",
+      "group": "react",
+      "spec_sha256": "3aa5a0da7a0528cf3e51a8734602727706e8cba728a52ca0a4d17ac41f01ce1c",
+      "won": true,
+      "replays": 3,
+      "consistent": true,
+      "undo_ok": true,
+      "restart_ok": true,
+      "max_ticks": 21,
+      "max_rounds": 2,
+      "tick_limit": 1200,
+      "round_limit": 16,
+      "author_solution_verified": true,
+      "sdk_verified": true,
+      "runs": [
+        {
+          "accepted_steps": 14,
+          "restart_ok": true,
+          "sequence_sha256": "84060d54fc148ee8b0b2ba8ffe348e6f52e979150718afdc97d91b3d46e123b3",
+          "undo_ok": true,
+          "won": true
+        },
+        {
+          "accepted_steps": 14,
+          "restart_ok": true,
+          "sequence_sha256": "84060d54fc148ee8b0b2ba8ffe348e6f52e979150718afdc97d91b3d46e123b3",
+          "undo_ok": true,
+          "won": true
+        },
+        {
+          "accepted_steps": 14,
+          "restart_ok": true,
+          "sequence_sha256": "84060d54fc148ee8b0b2ba8ffe348e6f52e979150718afdc97d91b3d46e123b3",
+          "undo_ok": true,
+          "won": true
+        }
+      ],
+      "issues": [],
+      "checks": [
+        {
+          "text": "author solution wins on real SDK in three runs",
+          "ok": true,
+          "status": "pass"
+        },
+        {
+          "text": "three complete tick hash sequences agree",
+          "ok": true,
+          "status": "pass"
+        },
+        {
+          "text": "every accepted action restores game, SDK and observations on undo",
+          "ok": true,
+          "status": "pass"
+        },
+        {
+          "text": "restart and undo-restart preserve opening and final snapshots",
+          "ok": true,
+          "status": "pass"
+        },
+        {
+          "text": "settlement stays below 1200 ticks and 16 rounds",
+          "ok": true,
+          "status": "pass"
+        },
+        {
+          "text": "待游戏：开局[6,4]门闭，起点POUR_R拒绝；只有人物站[7,4]压板才开口。倒沙落稳后离开压板关门，不删除下方沙，不重复触发。",
+          "ok": true,
+          "status": "pass"
+        },
+        {
+          "text": "待游戏：建立初始端点载重基线，不开局弹射；只有新落载触发对端一次，竖直段、横移段和明确落点分别扫掠，受阻拒绝且不因持续载重重试。",
+          "ok": true,
+          "status": "pass"
+        },
+        {
+          "text": "待游戏：左端载物从[4,6]升至[4,4]后横移一格至[3,4]槽；右端对称落点[7,4]；高度固定2，不由重量放大。",
+          "ok": true,
+          "status": "pass"
+        },
+        {
+          "text": "待游戏：人物跳右井只能亮箱槽，不能到[9,4]出口；两盏灯必须同时亮。",
+          "ok": true,
+          "status": "pass"
+        },
+        {
+          "text": "待SDK：唯一沙袋来自挖[4,4]；256sand cell从[6,4]自然落到[6,6]封闭窄井，分类达到128/256后才计重量1并触发；持续留沙不重复发射、不删除沙。",
+          "ok": true,
+          "status": "pass"
+        },
+        {
+          "text": "待LV-07真实SDK / 游戏联合验收：同一seed从开局连续回放3次，逐步结果一致；每步撤销与重开恢复材料、人物、背包、目标灯及机关状态。",
+          "ok": true,
+          "status": "pass"
+        },
+        {
+          "text": "待LV-07真实SDK / 游戏联合验收：记录逐步tick、结算轮数与材料计数，不得达到1200tick / 16轮上限；模型通过不代替SDK验证。",
+          "ok": true,
+          "status": "pass"
+        }
+      ],
+      "step_metrics": [
+        {
+          "step": 0,
+          "action": "opening"
+        },
+        {
+          "step": 1,
+          "action": "DIG_L",
+          "accepted": true,
+          "error": "",
+          "rounds": 1,
+          "tick_hash_count": 5,
+          "tick_sequence_sha256": "da2e582a34470107bf1c8bfaf46f4e81bd88ef4fa095036fb54b6f1f38022882",
+          "ticks": 5
+        },
+        {
+          "step": 2,
+          "action": "U",
+          "accepted": true,
+          "error": "",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "85bb0775817e8ed5f437fc8dbc94413b3fd0f2769bd396ab5798f7becc2f9c53",
+          "ticks": 4
+        },
+        {
+          "step": 3,
+          "action": "U",
+          "accepted": true,
+          "error": "",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "edc37931ab3d7a3c86100e789a384aa28bbac8eae10dedf42da780152566e15f",
+          "ticks": 4
+        },
+        {
+          "step": 4,
+          "action": "R",
+          "accepted": true,
+          "error": "",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "7ed75035be089952174436daa3b6bc9670072df89c5362a72ce60cd388512888",
+          "ticks": 4
+        },
+        {
+          "step": 5,
+          "action": "R",
+          "accepted": true,
+          "error": "",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "791c0db8dca9e4266506119cee67522e57cefacd8b7ca7352e0e43a65a25df80",
+          "ticks": 4
+        },
+        {
+          "step": 6,
+          "action": "R",
+          "accepted": true,
+          "error": "",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "5a0f2285b6d49260b4c358b51aec9dfd1c06335e75b3d5afb7fc276a6124b766",
+          "ticks": 4
+        },
+        {
+          "step": 7,
+          "action": "R",
+          "accepted": true,
+          "error": "",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "b55e05e33b47d4764c75872d32d8095edca5a1a3914fd65e88d2f3653f253e0c",
+          "ticks": 4
+        },
+        {
+          "step": 8,
+          "action": "D",
+          "accepted": true,
+          "error": "",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "3354949404358368580f7eee09644f0dbd8718c24797c9411ec59b574cd859d4",
+          "ticks": 4
+        },
+        {
+          "step": 9,
+          "action": "D",
+          "accepted": true,
+          "error": "",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "b7800cb75717e7956aac0c6b184834bd9e8e5a66cb7a8c17590e1a19a4835cc4",
+          "ticks": 4
+        },
+        {
+          "step": 10,
+          "action": "L",
+          "accepted": true,
+          "error": "",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "4fd6a43e5f994c47ff58b6b5e52dc6a43c18b970c3eb1328597e8fb3b7e535da",
+          "ticks": 4
+        },
+        {
+          "step": 11,
+          "action": "L",
+          "accepted": true,
+          "error": "",
+          "rounds": 2,
+          "tick_hash_count": 9,
+          "tick_sequence_sha256": "4e5d5fb6c9b7ffe1be89983ccc7f0c9a28ec8ad2897b40b5623e6a17d205208b",
+          "ticks": 9
+        },
+        {
+          "step": 12,
+          "action": "POUR_L",
+          "accepted": true,
+          "error": "",
+          "rounds": 2,
+          "tick_hash_count": 21,
+          "tick_sequence_sha256": "98d1ce3831bca54a52f4d7588c41f526e110b53a11c61490f5bd9588b29aba9c",
+          "ticks": 21
+        },
+        {
+          "step": 13,
+          "action": "R",
+          "accepted": true,
+          "error": "",
+          "rounds": 2,
+          "tick_hash_count": 9,
+          "tick_sequence_sha256": "a35c72154e88e5c0e7028646db5ad07443d98b20ee82808821bac77d7652470f",
+          "ticks": 9
+        },
+        {
+          "step": 14,
+          "action": "R",
+          "accepted": true,
+          "error": "",
+          "rounds": 1,
+          "tick_hash_count": 4,
+          "tick_sequence_sha256": "9d1c93dd921d155307e2a958d7f0afe069b6d1c03e5edacf21db774ec0f91668",
+          "ticks": 4
+        }
+      ]
+    }
+  ]
+}
