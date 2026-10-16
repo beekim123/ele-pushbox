@@ -541,7 +541,22 @@
    "pushable": true,
    "mode": "delivery",
    "layer": 2,
-   "status": "concept"
+   "status": "concept",
+   "params": {
+    "move": "chase",
+    "step_secs": 0.35,
+    "chase_step_secs": 0.3,
+    "sight_tiles": 5,
+    "cliff_rows": 2,
+    "contact": "steal",
+    "steal_sand": 1,
+    "steal_coins": 5,
+    "flee_secs": 3,
+    "flee_step_secs": 0.25,
+    "push_stun_secs": 0.5,
+    "trap_secs": 3,
+    "coins": 5
+   }
   },
   {
    "id": "wandering_soul",
@@ -552,7 +567,14 @@
    "pushable": false,
    "mode": "delivery",
    "layer": 2,
-   "status": "concept"
+   "status": "concept",
+   "params": {
+    "move": "float",
+    "step_secs": 0.6,
+    "through_walls": true,
+    "contact": "hurt",
+    "coins": 0
+   }
   },
   {
    "id": "jiangshi",
@@ -563,7 +585,17 @@
    "pushable": false,
    "mode": "delivery",
    "layer": 2,
-   "status": "concept"
+   "status": "concept",
+   "params": {
+    "move": "hop",
+    "step_secs": 0.8,
+    "sight_tiles": 6,
+    "still_secs": 0.5,
+    "cliff_rows": 2,
+    "contact": "hurt",
+    "trap_secs": 5,
+    "coins": 10
+   }
   },
   {
    "id": "kappa",

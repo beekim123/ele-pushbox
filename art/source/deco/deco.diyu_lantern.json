@@ -1,0 +1,78 @@
+{
+ "format": "pushbox.art/1",
+ "id": "deco.diyu_lantern",
+ "name": "地府 · 红灯笼",
+ "category": "deco",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  7,
+  12
+ ],
+ "anchor": [
+  3,
+  0
+ ],
+ "layer": "background",
+ "palette": "endesga32",
+ "animations": {
+  "flicker": {
+   "fps": 6,
+   "loop": true,
+   "frames": [
+    0,
+    1,
+    0,
+    2
+   ]
+  }
+ },
+ "frames": [
+  [
+   "...g...",
+   "...g...",
+   "..zfz..",
+   ".zhihz.",
+   "zhikihz",
+   "zhilihz",
+   "zhilihz",
+   "zhikihz",
+   ".zhihz.",
+   "..zfz..",
+   "...k...",
+   "..kjk.."
+  ],
+  [
+   "...g...",
+   "...g...",
+   "..zfz..",
+   ".zhihz.",
+   "zhilihz",
+   "zhilihz",
+   "zhilihz",
+   "zhikihz",
+   ".zhihz.",
+   "..zfz..",
+   "...k...",
+   "..kjk.."
+  ],
+  [
+   "...g...",
+   "...g...",
+   "..zfz..",
+   ".zhihz.",
+   "zhikihz",
+   "zhikihz",
+   "zhikihz",
+   "zhikihz",
+   ".zhihz.",
+   "..zfz..",
+   "....k..",
+   "...kjk."
+  ]
+ ],
+ "usage": "挂在背景墙上的红灯笼（锚点在挂绳顶端），烛光微微闪；生态规则按间距排在墙上，并在周围点一圈暖光。只是装饰，不能互动。",
+ "notes": "配送重做（claude/delivery-redesign）的美术候选，等用户在工作台确认；确认前不得进游戏。",
+ "content_hash": "451435f0230ee530b3b2828e7e66f3e3ebb5f60278908f35d140e8aa30001df0"
+}

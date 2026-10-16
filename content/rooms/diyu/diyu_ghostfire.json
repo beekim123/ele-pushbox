@@ -1,0 +1,55 @@
+{
+ "format": "pushbox.room/2",
+ "world": "diyu",
+ "weight": 10,
+ "mirror": true,
+ "id": "diyu_ghostfire",
+ "type": "room",
+ "role": "breather",
+ "name": "鬼火回廊",
+ "idea": "过道：没有谜题。游魂在半空飘，四面都能进出。",
+ "mechanisms": [
+  "ladder"
+ ],
+ "exits": [
+  "left.0.low",
+  "left.0.high",
+  "right.0.low",
+  "right.0.high",
+  "top.0.mid",
+  "bottom.0.mid"
+ ],
+ "routes": [
+  "left.0.low>right.0.low",
+  "left.0.low>right.0.high",
+  "left.0.high>right.0.low",
+  "left.0.high>right.0.high",
+  "left.0.low>bottom.0.mid",
+  "left.0.high>bottom.0.mid",
+  "top.0.mid>right.0.low",
+  "top.0.mid>right.0.high",
+  "top.0.mid>bottom.0.mid"
+ ],
+ "legend": {
+  "2": {
+   "monster": "wandering_soul",
+   "dir": "left",
+   "zone": [
+    6,
+    13
+   ]
+  }
+ },
+ "map": [
+  "#########HH#########",
+  "#........HH........#",
+  ".........HH.........",
+  "....H....HH..2.H....",
+  "####H....HH....H####",
+  "####H....HH....H####",
+  "....H....HH....H....",
+  "....H..$.HH.$..H....",
+  "#########HH#########",
+  "#########HH#########"
+ ]
+}

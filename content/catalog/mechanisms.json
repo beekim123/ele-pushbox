@@ -1246,6 +1246,54 @@
    "risk": "",
    "layer": 0,
    "origin": "frontier"
+  },
+  {
+   "id": "float_block",
+   "name": "浮空地块",
+   "group": "experimental",
+   "owner": "game",
+   "summary": "悬在空中的一段地块（2–4 格宽），永远不掉；从侧面走进它的一端就整块推动一格，站在上面的人、箱子、沙跟着走；前方被挡住就推不动。石牢是符文浮石，地府是会发光的灯笼浮台",
+   "sdk": [],
+   "assets": [
+    "mech.rune_float",
+    "mech.lantern_float"
+   ],
+   "chars": [
+    "F",
+    "G"
+   ],
+   "doc": "docs/design/delivery-puzzle-rules.md 3",
+   "risk": "游戏层的会移动的静态块：每移动一格要重建这几格的碰撞，并把上面的箱子、沙和人一起平移；SDK 不需要新机制",
+   "layer": 1,
+   "origin": "delivery"
+  },
+  {
+   "id": "pole",
+   "name": "撑篙",
+   "group": "experimental",
+   "owner": "game",
+   "summary": "站在浮空地块上，对着挖不动的墙、石柱或门用铲子：挖不动就撑，浮块带着你往反方向挪一格；那边被挡住就撑不动",
+   "sdk": [],
+   "assets": [],
+   "chars": [],
+   "doc": "docs/design/delivery-puzzle-rules.md 3",
+   "risk": "",
+   "layer": 1,
+   "origin": "delivery"
+  },
+  {
+   "id": "hint_animal",
+   "name": "提示动物",
+   "group": "experimental",
+   "owner": "game",
+   "summary": "每个地区有自己的提示动物：它待的位置就是线索；走近时它看向或走向下一步要用的东西；喂一块零食换一句明确提示。按房间写好的解谜步骤提示，同样的局面总给同样的提示；不挡路、不受伤",
+   "sdk": [],
+   "assets": [],
+   "chars": [],
+   "doc": "docs/design/delivery-puzzle-rules.md 5",
+   "risk": "",
+   "layer": 1,
+   "origin": "delivery"
   }
  ]
 }

@@ -10,6 +10,7 @@ import path from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { buildIdMap } from "./lib/ids.mjs";
 import { loadRooms } from "./check-rooms.mjs";
+import { loadRooms2, poolInput } from "./check-rooms2.mjs";
 import { loadTextTables } from "./lib/i18n.mjs";
 
 const REPO = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -140,6 +141,7 @@ export function buildContent(root, opts = {}) {
   const monsters = byId(cat.monsters), items = byId(cat.items);
   for (const sl of cat.slices) {
     const at = `slices/${sl.id}`;
+    if (sl.pool) continue; // run pools: checked with the v2 maps below
     if (!modes.has(sl.mode)) add("error", at, `模式 ${sl.mode} 不存在`);
     if (!worlds.has(sl.world)) add("error", at, `地区 ${sl.world} 不在 worlds.json 中`);
     for (const c of sl.cargo || []) {
@@ -165,6 +167,10 @@ export function buildContent(root, opts = {}) {
     for (const it of Object.keys(st.stock || {})) if (!(st.items || []).includes(it)) add("error", at, `库存 ${it} 不是驿站商品`);
     if (!sl.cargo || !sl.cargo.length || !sl.recipients || !sl.recipients.length) add("error", at, "两个滚轮都至少要有一个符号");
     if (!sl.time || !(sl.time.tick_hz > 0)) add("error", at, "time.tick_hz 必须大于 0");
+    for (const [c, rs] of Object.entries(sl.cargo_only || {})) {
+      if (!(sl.cargo || []).includes(c)) add("error", at, `cargo_only 的 ${c} 不是这张地图的货物`);
+      for (const r of rs) if (!(sl.recipients || []).includes(r)) add("error", at, `cargo_only 的 ${c} 写了不在这张地图的收件人 ${r}`);
+    }
   }
 
   // ---- delivery room templates (docs/design/delivery-maps.md) ----
@@ -201,6 +207,67 @@ export function buildContent(root, opts = {}) {
     if (sl.rooms && sl.rooms.length && (!cs || !cs.ok)) add("error", at, cs ? "按种子生成的地图没有全部通过检查：" + (cs.failures[0] || "") : "还没有地图检查结果：运行 node tools/check-rooms.mjs --write");
   }
 
+  // ---- delivery rooms v2, maps v2 and run pools (docs/design/delivery-puzzle-rules.md) ----
+  const rooms2 = loadRooms2(root), room2ById = new Map();
+  const ROLES2 = ["gate", "teach", "develop", "twist", "breather", "station", "home"];
+  for (const { file, room: t } of rooms2) {
+    const at = file;
+    if (roomById.has(t.id) || room2ById.has(t.id)) add("error", at, `房间编号 ${t.id} 重复（另见 ${(roomById.get(t.id) || room2ById.get(t.id)).file}）`);
+    room2ById.set(t.id, { file, room: t });
+    if (!worlds.has(t.world)) add("error", at, `地区 ${t.world} 不在 worlds.json 中`);
+    else if (file !== `content/rooms/${t.world}/${t.id}.json`) add("error", at, `房间模板应放在 content/rooms/${t.world}/${t.id}.json`);
+    for (const k of ["mechanisms", "requires", "teaches", "needs"]) for (const m of t[k] || []) if (!mechs.has(m)) add("error", at, `${k} 的机制 ${m} 不在机制目录中`);
+    for (const [k, e] of Object.entries(t.legend || {})) if (e.monster && !monsters.has(e.monster)) add("error", at, `legend ${k} 的怪物 ${e.monster} 不在 monsters.json 中`);
+    for (const r of (t.only || {}).recipients || []) if (!recipients.has(r)) add("error", at, `only 的收件人 ${r} 不在 recipients.json 中`);
+    for (const c of (t.only || {}).cargo || []) if (!cargo.has(c)) add("error", at, `only 的货物 ${c} 不在 cargo.json 中`);
+  }
+  let room2Check = null;
+  const r2p = rel("content/rooms2-check.generated.json");
+  if (fs.existsSync(r2p)) { try { room2Check = readJson(r2p); } catch (e) { add("error", "content/rooms2-check.generated.json", "不是合法 JSON"); } }
+  const checked2 = new Map(((room2Check && room2Check.templates) || []).map((t) => [t.id, t]));
+  const room2Ok = new Map();
+  for (const { file, sha256, room: t } of rooms2) {
+    const c = checked2.get(t.id);
+    if (!c || c.sha256 !== sha256) { add("error", file, "解谜检查结果缺失或已过期：运行 node tools/check-rooms2.mjs --write"); room2Ok.set(t.id, false); continue; }
+    for (const e of c.errors) add("error", file, e);
+    room2Ok.set(t.id, !c.errors.length);
+  }
+  const maps2 = new Map(cat.slices.filter((s) => s.format === 2).map((s) => [s.id, s]));
+  for (const sl of maps2.values()) {
+    const at = `slices/${sl.id}`;
+    if (sl.rooms) add("error", at, "format 2 的地图用 rooms2 列房间（rooms 是第一版的房间）");
+    const list = [];
+    for (const id of sl.rooms2 || []) {
+      const r = room2ById.get(id);
+      if (!r) add("error", at, `房间 ${id} 不存在（content/rooms/ 下 format pushbox.room/2）`);
+      else if (r.room.world !== sl.world) add("error", at, `房间 ${id} 属于 ${r.room.world}，不是 ${sl.world}`);
+      else list.push(r.room);
+    }
+    const L = sl.layout || {};
+    if (!(L.cols > 0) || !(L.rows > 0)) add("error", at, "layout.cols / rows 必须大于 0");
+    if (!["down", "up", "right", "left"].includes(L.direction || "down")) add("error", at, "layout.direction 只能是 down、up、right、left");
+    const seq = L.sequence || [];
+    if (!seq.length || seq[0].role !== "gate" || seq[seq.length - 1].role !== "home") add("error", at, "layout.sequence 要以 gate 开始、以 home 结束");
+    for (const st of seq) {
+      if (!ROLES2.includes(st.role)) add("error", at, `layout.sequence 的 role ${st.role} 不对`);
+      else if (!list.some((t) => t.role === st.role)) add("error", at, `没有 role 为 ${st.role} 的房间`);
+    }
+    for (const r of sl.recipients || []) if (!list.some((t) => t.role === "home" && (!t.only || !t.only.recipients || t.only.recipients.includes(r)))) add("error", at, `收件人 ${r} 没有可用的收件人之家`);
+  }
+  const pools = cat.slices.filter((s) => s.pool);
+  for (const sl of pools) {
+    const at = `slices/${sl.id}`;
+    if (!modes.has(sl.mode)) add("error", at, `模式 ${sl.mode} 不存在`);
+    const P = sl.pool || {};
+    if (!(P.maps || []).length) add("error", at, "pool.maps 至少要有一张地图");
+    for (const m of P.maps || []) if (!maps2.has(m.slice)) add("error", at, `地图 ${m.slice} 不是 format 2 的地图（slices.json）`);
+    const res = ((room2Check && room2Check.pools) || []).find((x) => x.id === sl.id);
+    if (!res) add("error", at, "还没有开局池检查结果：运行 node tools/check-rooms2.mjs --write");
+    else if (res.input_sha256 !== poolInput(sl, maps2)) add("error", at, "开局池或它的地图改过了，检查结果已过期：运行 node tools/check-rooms2.mjs --write");
+    else if (!res.ok) add("error", at, "按种子生成的局没有全部通过检查：" + (res.failures[0] || ""));
+  }
+  for (const w of cat.worlds) for (const f of w.hint_fauna || []) if (f.asset && !art.has(f.asset)) add("error", `worlds/${w.id}`, `提示动物 ${f.id} 的美术资产 ${f.asset} 不存在`);
+
   // ---- derived statuses ----
   const levelAssets = (l, g) => [...new Set([g.theme, ...(l.mechanisms || []).flatMap((m) => (mechs.get(m) || {}).assets || [])])];
   const levels = [];
@@ -229,12 +296,14 @@ export function buildContent(root, opts = {}) {
   const mechanisms = cat.mechanisms.map((m) => {
     if (m.origin === "delivery") {
       const ds = roomDemos.filter((d) => d.mechanisms.includes(m.id)), missingArt = (m.assets || []).filter((a) => !approved(a));
+      // v2 rooms (turn-based puzzle check, no Godot run yet): at most "specified".
+      const rs = rooms2.filter(({ room: t }) => (t.mechanisms || []).includes(m.id)).map(({ room: t }) => t.id);
       let status = "proposed";
-      if (ds.length) status = "designed";
-      if (ds.length && ds.every((d) => d.model_ok)) status = "specified";
-      if (status === "specified" && ds.every((d) => d.verified)) status = "verified";
+      if (ds.length || rs.length) status = "designed";
+      if ((ds.length || rs.length) && ds.every((d) => d.model_ok) && rs.every((id) => room2Ok.get(id))) status = "specified";
+      if (status === "specified" && ds.length && !rs.length && ds.every((d) => d.verified)) status = "verified";
       if (status === "verified" && !missingArt.length) status = "playable";
-      return Object.assign({}, m, { status, levels: [], demos: ds.map((d) => d.template + "/" + d.id), missing_art: missingArt });
+      return Object.assign({}, m, { status, levels: [], demos: ds.map((d) => d.template + "/" + d.id), rooms2: rs, missing_art: missingArt });
     }
     const ls = levels.filter((l) => l.mode === "lab" && l.mechanisms.includes(m.id));
     const missingArt = (m.assets || []).filter((a) => !approved(a));
@@ -258,7 +327,7 @@ export function buildContent(root, opts = {}) {
   const ids = buildIdMap({
     art: [...art.values()].map((a) => Object.assign({}, a, { file: artFile.get(a.id), approved: approved(a.id) })).sort((a, b) => a.id.localeCompare(b.id)),
     levels: levels.map((l) => ({ id: l.id, title: l.title, spec: l.has_spec ? l.spec : null, sha256: l.sha256 })),
-    rooms: rooms.map(({ file, sha256, room }) => ({ id: room.id, name: room.name, source: file, sha256 })),
+    rooms: rooms.concat(rooms2).map(({ file, sha256, room }) => ({ id: room.id, name: room.name, source: file, sha256 })),
     catalogs: cat, texts, textSource,
   });
   issues.push(...ids.issues);
@@ -268,7 +337,9 @@ export function buildContent(root, opts = {}) {
     report: report ? { generated: report.generated || null, commit: report.commit || null, sdk: report.sdk || null, levels: (report.levels || []).length, samples: report.samples || [], references: report.references || [] } : null,
   };
   const roomData = rooms.map(({ file, sha256, room }) => Object.assign({}, room, { file, sha256, check: checked.get(room.id) || null }));
-  const result = { catalogs: cat, notes, levels, mechanisms, issues, summary, ids: ids.map, rooms: roomData, roomSlices: (roomCheck && roomCheck.slices) || [] };
+  const room2Data = rooms2.map(({ file, sha256, room }) => Object.assign({}, room, { file, sha256, check: checked2.get(room.id) || null }));
+  const result = { catalogs: cat, notes, levels, mechanisms, issues, summary, ids: ids.map, rooms: roomData, roomSlices: (roomCheck && roomCheck.slices) || [],
+    rooms2: room2Data, pools2: (room2Check && room2Check.pools) || [] };
 
   if (opts.write) {
     // Godot reads only this manifest for modes, groups, level order and spec hashes.
@@ -283,6 +354,7 @@ export function buildContent(root, opts = {}) {
         worlds: cat.worlds, recipients: cat.recipients, cargo: cat.cargo, combos: cat.combos, monsters: cat.monsters,
         items: cat.items, buffs: cat.buffs, upgrades: cat.upgrades, badges: cat.badges, events: cat.events, slices: cat.slices,
         rooms: rooms.map(({ file, sha256, room }) => ({ id: room.id, world: room.world, type: room.type, spec: file, sha256 })),
+        rooms2: rooms2.map(({ file, sha256, room }) => ({ id: room.id, world: room.world, type: room.type, role: room.role, size: room.size || [1, 1], spec: file, sha256 })),
         delivery_golden: fs.existsSync(rel("content/export/delivery-golden.json")) ? "content/export/delivery-golden.json" : null,
       };
       fs.mkdirSync(rel("content/export"), { recursive: true });

@@ -37,6 +37,42 @@
  },
  "assets": [
   {
+   "id": "avatar.ancestor",
+   "name": "滚轮头像 · 太爷爷",
+   "category": "avatar",
+   "kind": "sprite",
+   "layer": "ui",
+   "current": {
+    "version": 1,
+    "hash": "68adb0805a85208b14a364da1f7c2a63b803ae4575b179ffa3a753c283df76ca",
+    "status": "review",
+    "preview": "art/export/preview/avatar.ancestor.png",
+    "preview_sha256": "b0126bca3a1098b6705d7252aed4d51c354b78788a593cc5f07508c223da055d"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    24,
+    24
+   ],
+   "frame_count": 1,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    0,
+    0
+   ],
+   "animations": {
+    "default": {
+     "fps": 1,
+     "loop": false,
+     "frames": [
+      0
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
    "id": "avatar.goblin_smith",
    "name": "滚轮头像 · 地精铁匠",
    "category": "avatar",
@@ -80,6 +116,78 @@
    "ninepatch": null
   },
   {
+   "id": "avatar.judge",
+   "name": "滚轮头像 · 判官",
+   "category": "avatar",
+   "kind": "sprite",
+   "layer": "ui",
+   "current": {
+    "version": 1,
+    "hash": "61ed92ffabe4822309497cd0f31004dd3f06fad79bb70c412ae7de9231ee49d0",
+    "status": "review",
+    "preview": "art/export/preview/avatar.judge.png",
+    "preview_sha256": "5b52b4a7b59a14455e8a5acd62a415da70457274d8ae6e315359b4aa91b286e2"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    24,
+    24
+   ],
+   "frame_count": 1,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    0,
+    0
+   ],
+   "animations": {
+    "default": {
+     "fps": 1,
+     "loop": false,
+     "frames": [
+      0
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
+   "id": "avatar.meng_po",
+   "name": "滚轮头像 · 孟婆",
+   "category": "avatar",
+   "kind": "sprite",
+   "layer": "ui",
+   "current": {
+    "version": 1,
+    "hash": "fd39720c72eadf7f6a54e425146fdfd04fb01ed11fef04c3851de7407789dcba",
+    "status": "review",
+    "preview": "art/export/preview/avatar.meng_po.png",
+    "preview_sha256": "cb4c8359658a44f6025c02f561989711377b5d8bd75eac89fd7787bbec519523"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    24,
+    24
+   ],
+   "frame_count": 1,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    0,
+    0
+   ],
+   "animations": {
+    "default": {
+     "fps": 1,
+     "loop": false,
+     "frames": [
+      0
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
    "id": "avatar.old_miner",
    "name": "滚轮头像 · 老矿工",
    "category": "avatar",
@@ -101,6 +209,78 @@
     "date": "2026-10-16T03:45:02.583Z"
    },
    "current_is_approved": true,
+   "frame_size": [
+    24,
+    24
+   ],
+   "frame_count": 1,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    0,
+    0
+   ],
+   "animations": {
+    "default": {
+     "fps": 1,
+     "loop": false,
+     "frames": [
+      0
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
+   "id": "avatar.wuchang",
+   "name": "滚轮头像 · 黑白无常",
+   "category": "avatar",
+   "kind": "sprite",
+   "layer": "ui",
+   "current": {
+    "version": 1,
+    "hash": "be1bcc58ff471af314f83e89c08abf47a21c466fb8116020c6a4ad08ae8fb483",
+    "status": "review",
+    "preview": "art/export/preview/avatar.wuchang.png",
+    "preview_sha256": "68d04632240f797d7ac621d1e430350c07c5ba89211cc77b33e435bf580970e7"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    24,
+    24
+   ],
+   "frame_count": 1,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    0,
+    0
+   ],
+   "animations": {
+    "default": {
+     "fps": 1,
+     "loop": false,
+     "frames": [
+      0
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
+   "id": "avatar.yama",
+   "name": "滚轮头像 · 阎王",
+   "category": "avatar",
+   "kind": "sprite",
+   "layer": "ui",
+   "current": {
+    "version": 1,
+    "hash": "b6c465355350c795739a6a2c8e838e43efc529abbf55e7cfea795f7d1a83acef",
+    "status": "review",
+    "preview": "art/export/preview/avatar.yama.png",
+    "preview_sha256": "59117d0fe277e3de6c48260db800a2178a15b8d08cdf689307a1d6879fcad060"
+   },
+   "approved": null,
+   "current_is_approved": false,
    "frame_size": [
     24,
     24
@@ -260,6 +440,92 @@
    "ninepatch": null
   },
   {
+   "id": "cargo.paper_house",
+   "name": "货物 · 纸扎房子",
+   "category": "cargo",
+   "kind": "sprite",
+   "layer": "ui",
+   "current": {
+    "version": 1,
+    "hash": "b037d3e05af811178d78919e9c1eb52fd9d049da3431a63367b4bf915990205d",
+    "status": "review",
+    "preview": "art/export/preview/cargo.paper_house.png",
+    "preview_sha256": "5f30be6564451e001e8c9a9b4c6aaa163c020f284dcad85ec91328431afb262b"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    16,
+    16
+   ],
+   "frame_count": 2,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    0,
+    0
+   ],
+   "animations": {
+    "default": {
+     "fps": 1,
+     "loop": false,
+     "frames": [
+      0
+     ]
+    },
+    "damaged": {
+     "fps": 1,
+     "loop": false,
+     "frames": [
+      1
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
+   "id": "cargo.qingtuan",
+   "name": "货物 · 青团",
+   "category": "cargo",
+   "kind": "sprite",
+   "layer": "ui",
+   "current": {
+    "version": 1,
+    "hash": "0d6039abcdc5d4d0d1bb8167de63d1f5fd5b9ea6edfde92628110899ddd4754c",
+    "status": "review",
+    "preview": "art/export/preview/cargo.qingtuan.png",
+    "preview_sha256": "f198df7cdbe92aa7ae734ba81c39746fb2e3b40845aafc0645e6421fe28d9229"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    16,
+    16
+   ],
+   "frame_count": 2,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    0,
+    0
+   ],
+   "animations": {
+    "default": {
+     "fps": 1,
+     "loop": false,
+     "frames": [
+      0
+     ]
+    },
+    "stale": {
+     "fps": 1,
+     "loop": false,
+     "frames": [
+      1
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
    "id": "cargo.vase",
    "name": "货物 · 花瓶",
    "category": "cargo",
@@ -304,6 +570,53 @@
      "loop": false,
      "frames": [
       1
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
+   "id": "char.ancestor",
+   "name": "太爷爷（收件人）",
+   "category": "character",
+   "kind": "sprite",
+   "layer": "entity",
+   "current": {
+    "version": 1,
+    "hash": "fdd09be4ec7f7ae10ce5e7f1a7bec75808f19db4d2d97206982b7ee794ffcde0",
+    "status": "review",
+    "preview": "art/export/preview/char.ancestor.png",
+    "preview_sha256": "dcbc3038afbb28b29b799fdf65e3588128dd0217cc23667551100dbecb3b34bc"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    16,
+    16
+   ],
+   "frame_count": 4,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    8,
+    16
+   ],
+   "animations": {
+    "idle": {
+     "fps": 2,
+     "loop": true,
+     "frames": [
+      0,
+      0,
+      0,
+      1
+     ]
+    },
+    "win": {
+     "fps": 4,
+     "loop": true,
+     "frames": [
+      2,
+      3
      ]
     }
    },
@@ -366,6 +679,53 @@
    "ninepatch": null
   },
   {
+   "id": "char.judge",
+   "name": "判官（收件人）",
+   "category": "character",
+   "kind": "sprite",
+   "layer": "entity",
+   "current": {
+    "version": 1,
+    "hash": "5e438a02e9fbe068f601a6d9b8293f30563cd8f6bf0feb511618bdb5f1318528",
+    "status": "review",
+    "preview": "art/export/preview/char.judge.png",
+    "preview_sha256": "7852545adce91cc6c3feb77f524d9b50cbbcda4130246ff7067dcd2e2fe8344a"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    16,
+    16
+   ],
+   "frame_count": 4,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    8,
+    16
+   ],
+   "animations": {
+    "idle": {
+     "fps": 2,
+     "loop": true,
+     "frames": [
+      0,
+      0,
+      0,
+      1
+     ]
+    },
+    "win": {
+     "fps": 4,
+     "loop": true,
+     "frames": [
+      2,
+      3
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
    "id": "char.lucky_cat",
    "name": "招财猫",
    "category": "character",
@@ -422,6 +782,51 @@
      "frames": [
       3,
       0
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
+   "id": "char.meng_po",
+   "name": "孟婆（收件人）",
+   "category": "character",
+   "kind": "sprite",
+   "layer": "entity",
+   "current": {
+    "version": 1,
+    "hash": "f72e44b429e5d1e69e661ae25d1c2958ff05af0ffb5f71aae992dccb907761fe",
+    "status": "review",
+    "preview": "art/export/preview/char.meng_po.png",
+    "preview_sha256": "c38e0409ff92c6d18826be2f38fbee94d1cb96855fb6e02ef6f3a3ae8b9f501a"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    16,
+    16
+   ],
+   "frame_count": 4,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    8,
+    16
+   ],
+   "animations": {
+    "idle": {
+     "fps": 3,
+     "loop": true,
+     "frames": [
+      0,
+      1
+     ]
+    },
+    "win": {
+     "fps": 4,
+     "loop": true,
+     "frames": [
+      2,
+      3
      ]
     }
    },
@@ -738,6 +1143,96 @@
    "ninepatch": null
   },
   {
+   "id": "char.wuchang",
+   "name": "黑白无常（收件人）",
+   "category": "character",
+   "kind": "sprite",
+   "layer": "entity",
+   "current": {
+    "version": 1,
+    "hash": "51aac273292137af5b1ecd2c6a505d15928f5ab1863350ecd4f1164cb0b6ec08",
+    "status": "review",
+    "preview": "art/export/preview/char.wuchang.png",
+    "preview_sha256": "0261232ecdad71adfcec959af777460029756a2b3eafeefdce917c2286f6a8ce"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    24,
+    16
+   ],
+   "frame_count": 4,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    12,
+    16
+   ],
+   "animations": {
+    "idle": {
+     "fps": 2,
+     "loop": true,
+     "frames": [
+      0,
+      1
+     ]
+    },
+    "win": {
+     "fps": 4,
+     "loop": true,
+     "frames": [
+      2,
+      3
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
+   "id": "char.yama",
+   "name": "阎王（收件人）",
+   "category": "character",
+   "kind": "sprite",
+   "layer": "entity",
+   "current": {
+    "version": 1,
+    "hash": "aec4f07219fdf1c031f102a65886bebcc9c2ff265f0bd17f6e6f8972bb7d7ef2",
+    "status": "review",
+    "preview": "art/export/preview/char.yama.png",
+    "preview_sha256": "2fc6308b63312d93396f25d7166035339800d0ed1ae8f6219e25af759d70ade6"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    16,
+    16
+   ],
+   "frame_count": 4,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    8,
+    16
+   ],
+   "animations": {
+    "idle": {
+     "fps": 2,
+     "loop": true,
+     "frames": [
+      0,
+      1
+     ]
+    },
+    "win": {
+     "fps": 4,
+     "loop": true,
+     "frames": [
+      2,
+      3
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
    "id": "char.zombie",
    "name": "僵尸（收件人）",
    "category": "character",
@@ -922,6 +1417,82 @@
    ],
    "animations": {
     "glow": {
+     "fps": 2,
+     "loop": true,
+     "frames": [
+      0,
+      1
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
+   "id": "deco.diyu_lantern",
+   "name": "地府 · 红灯笼",
+   "category": "deco",
+   "kind": "sprite",
+   "layer": "background",
+   "current": {
+    "version": 1,
+    "hash": "451435f0230ee530b3b2828e7e66f3e3ebb5f60278908f35d140e8aa30001df0",
+    "status": "review",
+    "preview": "art/export/preview/deco.diyu_lantern.png",
+    "preview_sha256": "23c738047e01a9f1bba3528e4f0682c80bdd4cb15612c6a3aadd814995047120"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    7,
+    12
+   ],
+   "frame_count": 3,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    3,
+    0
+   ],
+   "animations": {
+    "flicker": {
+     "fps": 6,
+     "loop": true,
+     "frames": [
+      0,
+      1,
+      0,
+      2
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
+   "id": "deco.diyu_lily",
+   "name": "地府 · 彼岸花",
+   "category": "deco",
+   "kind": "sprite",
+   "layer": "ambient",
+   "current": {
+    "version": 1,
+    "hash": "e763612acf57e29178163ed55cc4c62138569f228dcccbc4c15b6f6b0a905c6f",
+    "status": "review",
+    "preview": "art/export/preview/deco.diyu_lily.png",
+    "preview_sha256": "2282f4b753d6d9538247a0f31c5c9b87fac80010c3566e44541271482b2b5c2c"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    9,
+    9
+   ],
+   "frame_count": 2,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    4,
+    9
+   ],
+   "animations": {
+    "sway": {
      "fps": 2,
      "loop": true,
      "frames": [
@@ -1329,6 +1900,111 @@
    "ninepatch": null
   },
   {
+   "id": "fauna.diyu_butterfly",
+   "name": "地府 · 彼岸蝶（提示动物）",
+   "category": "fauna",
+   "kind": "sprite",
+   "layer": "background",
+   "current": {
+    "version": 1,
+    "hash": "478bb61357dc52969557ae39e7cf534f43c781db0bab1133819e7b48b243443d",
+    "status": "review",
+    "preview": "art/export/preview/fauna.diyu_butterfly.png",
+    "preview_sha256": "0601d085e27c4cd619aef74a0eb6d9edf45009ebdde18f640a839daa5c6c122c"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    7,
+    5
+   ],
+   "frame_count": 2,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    3,
+    2
+   ],
+   "animations": {
+    "fly": {
+     "fps": 8,
+     "loop": true,
+     "frames": [
+      0,
+      1
+     ]
+    },
+    "rest": {
+     "fps": 1,
+     "loop": true,
+     "frames": [
+      1
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
+   "id": "fauna.diyu_dog",
+   "name": "地府 · 小白狗（提示动物）",
+   "category": "fauna",
+   "kind": "sprite",
+   "layer": "ambient",
+   "current": {
+    "version": 1,
+    "hash": "563f63333c1e2fdcd0176336a61b05aa2ff752122be5063b4582264059a3831a",
+    "status": "review",
+    "preview": "art/export/preview/fauna.diyu_dog.png",
+    "preview_sha256": "88f78c4b2bbba3927b64ffa6a7c578833896e8eb0697d53d86fa7497ecfcd075"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    13,
+    10
+   ],
+   "frame_count": 5,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    6,
+    10
+   ],
+   "animations": {
+    "sit": {
+     "fps": 2,
+     "loop": true,
+     "frames": [
+      0
+     ]
+    },
+    "wag": {
+     "fps": 6,
+     "loop": true,
+     "frames": [
+      0,
+      1
+     ]
+    },
+    "walk": {
+     "fps": 8,
+     "loop": true,
+     "frames": [
+      2,
+      3
+     ]
+    },
+    "bark": {
+     "fps": 4,
+     "loop": false,
+     "frames": [
+      4,
+      4,
+      0
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
    "id": "fauna.dungeon_bat",
    "name": "石牢 · 蝙蝠",
    "category": "fauna",
@@ -1379,6 +2055,64 @@
      "frames": [
       2,
       3
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
+   "id": "fauna.dungeon_cat",
+   "name": "石牢 · 牢猫（提示动物）",
+   "category": "fauna",
+   "kind": "sprite",
+   "layer": "ambient",
+   "current": {
+    "version": 1,
+    "hash": "0bc7f82924612e6c810a4f517e514a941d982761d55f79a7e23f715a812171af",
+    "status": "review",
+    "preview": "art/export/preview/fauna.dungeon_cat.png",
+    "preview_sha256": "08656d2261b44df9e598e4a7963d6e8017a5830d3b22ece896fc1f017dc65d98"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    12,
+    10
+   ],
+   "frame_count": 5,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    6,
+    10
+   ],
+   "animations": {
+    "sit": {
+     "fps": 2,
+     "loop": true,
+     "frames": [
+      0,
+      0,
+      0,
+      0,
+      1,
+      0
+     ]
+    },
+    "walk": {
+     "fps": 8,
+     "loop": true,
+     "frames": [
+      2,
+      3
+     ]
+    },
+    "meow": {
+     "fps": 4,
+     "loop": false,
+     "frames": [
+      4,
+      4,
+      0
      ]
     }
    },
@@ -2394,6 +3128,56 @@
    "ninepatch": null
   },
   {
+   "id": "item.snack",
+   "name": "零食（小鱼饼干 / 桂花糕）",
+   "category": "item",
+   "kind": "sprite",
+   "layer": "ui",
+   "current": {
+    "version": 1,
+    "hash": "4f1533198afeedaa44b9fcb95fd94844d16513ac8b2f1842c68a71e0b17bfdf9",
+    "status": "review",
+    "preview": "art/export/preview/item.snack.png",
+    "preview_sha256": "1a59d100a0901ae0c33469ecc0fc913240c14feb1157695bdf8fdf70b1caaff9"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    16,
+    16
+   ],
+   "frame_count": 2,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    0,
+    0
+   ],
+   "animations": {
+    "default": {
+     "fps": 1,
+     "loop": false,
+     "frames": [
+      0
+     ]
+    },
+    "dungeon": {
+     "fps": 1,
+     "loop": false,
+     "frames": [
+      0
+     ]
+    },
+    "diyu": {
+     "fps": 1,
+     "loop": false,
+     "frames": [
+      1
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
    "id": "material.chapter2_5",
    "name": "第 2–5 章材料",
    "category": "material",
@@ -2980,6 +3764,77 @@
    "ninepatch": null
   },
   {
+   "id": "mech.lantern_float",
+   "name": "浮空地块 · 灯笼浮台（地府）",
+   "category": "mechanism",
+   "kind": "sprite",
+   "layer": "entity",
+   "current": {
+    "version": 1,
+    "hash": "db943286974489b17c81326ca23cdbb6b76b5e6264a77df0ecbabf5b5f293406",
+    "status": "review",
+    "preview": "art/export/preview/mech.lantern_float.png",
+    "preview_sha256": "f8d9dbcee14d657c25966ba3eed0e7445a81478a7796e0c35a1647dabbca3d23"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    16,
+    16
+   ],
+   "frame_count": 6,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    8,
+    16
+   ],
+   "animations": {
+    "left": {
+     "fps": 0,
+     "loop": false,
+     "frames": [
+      0
+     ]
+    },
+    "mid": {
+     "fps": 0,
+     "loop": false,
+     "frames": [
+      1
+     ]
+    },
+    "right": {
+     "fps": 0,
+     "loop": false,
+     "frames": [
+      2
+     ]
+    },
+    "left_move": {
+     "fps": 0,
+     "loop": false,
+     "frames": [
+      3
+     ]
+    },
+    "mid_move": {
+     "fps": 0,
+     "loop": false,
+     "frames": [
+      4
+     ]
+    },
+    "right_move": {
+     "fps": 0,
+     "loop": false,
+     "frames": [
+      5
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
    "id": "mech.lever",
    "name": "开关",
    "category": "mechanism",
@@ -3284,6 +4139,77 @@
    "ninepatch": null
   },
   {
+   "id": "mech.rune_float",
+   "name": "浮空地块 · 符文浮石（石牢）",
+   "category": "mechanism",
+   "kind": "sprite",
+   "layer": "entity",
+   "current": {
+    "version": 1,
+    "hash": "ac7cc14d46bb2076f9a126be2a141fa0ce512f9736e34b9e48637603779e6971",
+    "status": "review",
+    "preview": "art/export/preview/mech.rune_float.png",
+    "preview_sha256": "9389245545c565a9c7f2586e66f67e703c4b02f13fcb493484eaadd26e06d4c6"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    16,
+    16
+   ],
+   "frame_count": 6,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    8,
+    16
+   ],
+   "animations": {
+    "left": {
+     "fps": 0,
+     "loop": false,
+     "frames": [
+      0
+     ]
+    },
+    "mid": {
+     "fps": 0,
+     "loop": false,
+     "frames": [
+      1
+     ]
+    },
+    "right": {
+     "fps": 0,
+     "loop": false,
+     "frames": [
+      2
+     ]
+    },
+    "left_move": {
+     "fps": 0,
+     "loop": false,
+     "frames": [
+      3
+     ]
+    },
+    "mid_move": {
+     "fps": 0,
+     "loop": false,
+     "frames": [
+      4
+     ]
+    },
+    "right_move": {
+     "fps": 0,
+     "loop": false,
+     "frames": [
+      5
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
    "id": "mech.socket",
    "name": "目标槽",
    "category": "mechanism",
@@ -3480,6 +4406,136 @@
    "ninepatch": null
   },
   {
+   "id": "monster.imp",
+   "name": "小鬼",
+   "category": "monster",
+   "kind": "sprite",
+   "layer": "entity",
+   "current": {
+    "version": 1,
+    "hash": "48e833c982b68afd61b85be358f61dfbd89e2badb19638c257a43e1f16430d09",
+    "status": "review",
+    "preview": "art/export/preview/monster.imp.png",
+    "preview_sha256": "37093c7e2eb1846ba46415c981393acf967fb0749584aaa33580cba2ca385c71"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    16,
+    16
+   ],
+   "frame_count": 10,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    8,
+    16
+   ],
+   "animations": {
+    "walk": {
+     "fps": 8,
+     "loop": true,
+     "frames": [
+      0,
+      1
+     ]
+    },
+    "chase": {
+     "fps": 12,
+     "loop": true,
+     "frames": [
+      2,
+      3
+     ]
+    },
+    "flee": {
+     "fps": 12,
+     "loop": true,
+     "frames": [
+      4,
+      5
+     ]
+    },
+    "stunned": {
+     "fps": 4,
+     "loop": true,
+     "frames": [
+      6,
+      7
+     ]
+    },
+    "trapped": {
+     "fps": 4,
+     "loop": true,
+     "frames": [
+      8,
+      9
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
+   "id": "monster.jiangshi",
+   "name": "僵尸",
+   "category": "monster",
+   "kind": "sprite",
+   "layer": "entity",
+   "current": {
+    "version": 1,
+    "hash": "4aa76da86b739569c6a098b102816ceb4aa1aa29f7aa9b0b01a1a1e0959c1b6f",
+    "status": "review",
+    "preview": "art/export/preview/monster.jiangshi.png",
+    "preview_sha256": "595e9d3cbe4aa91f60246b7cbc27f824fe42a14eb81ad09b0120d6417c0e3899"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    16,
+    16
+   ],
+   "frame_count": 6,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    8,
+    16
+   ],
+   "animations": {
+    "idle": {
+     "fps": 1,
+     "loop": true,
+     "frames": [
+      0
+     ]
+    },
+    "hop": {
+     "fps": 8,
+     "loop": true,
+     "frames": [
+      1,
+      2,
+      2,
+      1
+     ]
+    },
+    "trapped": {
+     "fps": 4,
+     "loop": true,
+     "frames": [
+      3,
+      4
+     ]
+    },
+    "ko": {
+     "fps": 4,
+     "loop": false,
+     "frames": [
+      5
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
    "id": "monster.rat_swarm",
    "name": "鼠群",
    "category": "monster",
@@ -3619,6 +4675,53 @@
      "loop": false,
      "frames": [
       6
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
+   "id": "monster.wandering_soul",
+   "name": "游魂",
+   "category": "monster",
+   "kind": "sprite",
+   "layer": "entity",
+   "current": {
+    "version": 1,
+    "hash": "be9e34d8aedf84ab89c98ba206e23e23329354f0baca338515a6cb904548df0a",
+    "status": "review",
+    "preview": "art/export/preview/monster.wandering_soul.png",
+    "preview_sha256": "56f3ec1d6a86fe51704b73ed1c7e6ee530d2468ca1bccfccb0c812fe35f068f2"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    16,
+    16
+   ],
+   "frame_count": 5,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    8,
+    16
+   ],
+   "animations": {
+    "float": {
+     "fps": 4,
+     "loop": true,
+     "frames": [
+      0,
+      1,
+      2,
+      1
+     ]
+    },
+    "fade": {
+     "fps": 6,
+     "loop": true,
+     "frames": [
+      3,
+      4
      ]
     }
    },
@@ -4025,6 +5128,139 @@
    "depends": [
     "deco.cosmos_sprout",
     "fauna.cosmos_drone"
+   ]
+  },
+  {
+   "id": "theme.diyu",
+   "name": "主题 · 地府·酆都",
+   "category": "theme",
+   "kind": "procedural",
+   "layer": "terrain",
+   "current": {
+    "version": 1,
+    "hash": "3d89a9882337e64af3ab4dfd9e9c211c2ee34d7c4c0eaad5af3d7a6e1e2fe515",
+    "status": "review",
+    "preview": "art/export/preview/theme.diyu.png",
+    "preview_sha256": "981f915d4507bf89bf0c0e1ec45a7605d75a1feee2cef681fa634984ab201a46"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "renderer": [
+    "workbench/js/core/terrain.js",
+    "workbench/js/core/terrain-diyu.js",
+    "workbench/js/core/ambient.js",
+    "workbench/js/core/env.js"
+   ],
+   "params": {
+    "title": "地府·酆都",
+    "rock": {
+     "pattern": "block",
+     "base": [
+      "x",
+      "p"
+     ],
+     "seam": "z",
+     "speck": "o",
+     "light": "w",
+     "light2": "x",
+     "dark": "z",
+     "edge": "z",
+     "top": "v"
+    },
+    "earth": {
+     "base": [
+      "e",
+      "F"
+     ],
+     "clump": "f",
+     "pebble": "v",
+     "pebbleShade": "g",
+     "crust": "d",
+     "crust2": "F",
+     "dark": "f",
+     "frame": "g",
+     "bevel": "d"
+    },
+    "cracked": {
+     "base": [
+      "F",
+      "d"
+     ],
+     "crack": "g",
+     "crackLight": "c",
+     "light": "c",
+     "dark": "f",
+     "frame": "f",
+     "bevel": "c"
+    },
+    "sand": {
+     "base": [
+      "c",
+      "d",
+      "c"
+     ],
+     "grain": "k",
+     "top": "l"
+    },
+    "water": {
+     "body": "q",
+     "upper": "r",
+     "surface": "s",
+     "glint": "t"
+    },
+    "background": {
+     "style": "diyu",
+     "base": [
+      "z",
+      "y"
+     ],
+     "speck": "h",
+     "accent": "p",
+     "detail": "z"
+    },
+    "ambient": [
+     {
+      "type": "wall",
+      "id": "deco.diyu_lantern",
+      "anim": "flicker",
+      "spacing": 96,
+      "y": 4
+     },
+     {
+      "type": "floor",
+      "id": "deco.diyu_lily",
+      "anim": "sway",
+      "every": 4,
+      "max": 3
+     },
+     {
+      "type": "flyer",
+      "id": "fauna.diyu_butterfly",
+      "count": 1,
+      "chance": 0.35
+     }
+    ],
+    "env": {
+     "lights": {
+      "sources": {
+       "deco.diyu_lantern": {
+        "radius": 24,
+        "dy": 7
+       }
+      }
+     },
+     "vignette": 12,
+     "weathers": [
+      "fireflies",
+      "embers"
+     ],
+     "weather": "none"
+    }
+   },
+   "depends": [
+    "deco.diyu_lantern",
+    "deco.diyu_lily",
+    "fauna.diyu_butterfly"
    ]
   },
   {
