@@ -1,5 +1,5 @@
 extends SceneTree
-## Isolated bridge-weight contract; E04's separate settlement budget still fails.
+## Isolated bridge-weight contract, separate from the current E04 replay.
 const SESSION = preload("res://gameplay/session/level_session.gd")
 var failures: Array[String] = []
 func _initialize() -> void: call_deferred("_run")

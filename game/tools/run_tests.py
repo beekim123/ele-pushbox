@@ -74,7 +74,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("godot")
     parser.add_argument("--gpu", action="store_true", help="also run actual macOS renderer comparisons")
-    parser.add_argument("--suites", default="core,sdk,gameplay,levels,ids,render,lab,ui,ui-contracts,ui-interactions,ui-restart,chapter-text,ladder-tops,thermal-hint-ui,cart-json,gust-order,bridge-gravel,bridge-gravel-contract,chapters")
+    parser.add_argument("--suites", default="core,sdk,gameplay,levels,ids,render,lab,ui,ui-contracts,ui-interactions,ui-restart,chapter-text,ladder-tops,thermal-hint-ui,cart-json,gust-order,bridge-gravel,bridge-gravel-contract,powder-occupancy,chapters")
     args = parser.parse_args()
     RESULTS.mkdir(parents=True, exist_ok=True)
     REPORTS.mkdir(parents=True, exist_ok=True)
@@ -131,6 +131,7 @@ def main():
             print(name + ": BLOCKED (global compute budget)", flush=True)
             return False
         evidence_files = {
+            "powder-occupancy": RESULTS / "powder-occupancy.json",
             "thermal-hint-ui": RESULTS / "thermal-hint-ui.json", "chapter-text": RESULTS / "chapter-text.json", "chapters": RESULTS / "chapters.json", "sdk": RESULTS / "sdk.json", "gameplay": RESULTS / "gameplay.json", "levels": RESULTS / "levels.json",
             "ui-interactions": RESULTS / "ui-interactions.json", "ui-interactions-gpu": RESULTS / "ui-interactions-gpu.json", "ui-restart": RESULTS / "ui-restart.json",
             "ids": REPORTS / "id-checks.json", "world-gpu": REPORTS / "world-reference-report.json",
@@ -153,7 +154,7 @@ def main():
             code = 124
         (RESULTS / (name + ".log")).write_text(output)
         errors = bool(re.search(r"^(?:SCRIPT ERROR:|ERROR:)", output, re.MULTILINE))
-        completion_patterns = {"ladder-tops":'"suite":"ladder-tops"',"core":"core services: 0 failure(s)", "sdk":"PORTITOR_TEST_RESULT=", "gameplay":"PORTITOR_TEST_RESULT=", "levels":"PORTITOR_TEST_RESULT=", "chapters":"PORTITOR_TEST_RESULT=", "chapter-text":'"suite":"chapter-text"', "thermal-hint-ui":"PORTITOR_THERMAL_HINT_UI=", "cart-json":'"suite":"cart-json"', "gust-order":'"suite":"gust-order"', "bridge-gravel":'"suite":"bridge-gravel"', "bridge-gravel-contract":'"suite":"bridge-gravel-contract"', "ids":"id checks:", "render":"render reference failures:", "lab":'"suite":"lab"', "ui":'"suite":"ui"', "ui-contracts":'"suite":"ui-contracts"', "ui-interactions":'"suite":"ui-interactions"', "ui-interactions-gpu":'"suite":"ui-interactions-gpu"', "ui-restart":'"suite":"ui-restart"', "terrain-gpu":"terrain GPU reference failures:", "world-gpu":"World reference report:", "showcase-gpu":"showcase differences=", "dynamic-gpu":'"format":"portitor.dynamic-render/1"', "sdk-seam-gpu":"SDK seam", "performance":"PORTITOR_PERFORMANCE_COMPLETE", "performance-capacity":"PORTITOR_PERFORMANCE_COMPLETE", "ui-gpu":'"suite":"ui-gpu"'}
+        completion_patterns = {"powder-occupancy":'"suite":"powder-occupancy"',"ladder-tops":'"suite":"ladder-tops"',"core":"core services: 0 failure(s)", "sdk":"PORTITOR_TEST_RESULT=", "gameplay":"PORTITOR_TEST_RESULT=", "levels":"PORTITOR_TEST_RESULT=", "chapters":"PORTITOR_TEST_RESULT=", "chapter-text":'"suite":"chapter-text"', "thermal-hint-ui":"PORTITOR_THERMAL_HINT_UI=", "cart-json":'"suite":"cart-json"', "gust-order":'"suite":"gust-order"', "bridge-gravel":'"suite":"bridge-gravel"', "bridge-gravel-contract":'"suite":"bridge-gravel-contract"', "ids":"id checks:", "render":"render reference failures:", "lab":'"suite":"lab"', "ui":'"suite":"ui"', "ui-contracts":'"suite":"ui-contracts"', "ui-interactions":'"suite":"ui-interactions"', "ui-interactions-gpu":'"suite":"ui-interactions-gpu"', "ui-restart":'"suite":"ui-restart"', "terrain-gpu":"terrain GPU reference failures:", "world-gpu":"World reference report:", "showcase-gpu":"showcase differences=", "dynamic-gpu":'"format":"portitor.dynamic-render/1"', "sdk-seam-gpu":"SDK seam", "performance":"PORTITOR_PERFORMANCE_COMPLETE", "performance-capacity":"PORTITOR_PERFORMANCE_COMPLETE", "ui-gpu":'"suite":"ui-gpu"'}
         complete = completion_patterns.get(name, "") in output and (evidence is None or evidence.is_file())
         item = {"name": name, "ok": code == 0 and not errors and complete, "completed": complete, "exit_code": code, "engine_errors": errors, "seconds": round(time.monotonic() - started, 3), "command": command, "log": "game/tests/results/" + name + ".log"}
         stages.append(item)
@@ -171,6 +172,7 @@ def main():
     # Import must follow generated-tree rebuilding so PNG .import sidecars exist.
     prepared = run("godot-import", [args.godot, "--headless", "--path", str(GAME), "--import"]) and prepared
     names = {"ladder-tops": "tests/refs/test_ladder_tops.gd",
+        "powder-occupancy": "tests/chapters/powder_occupancy.gd",
         "bridge-gravel-contract": "tests/chapters/bridge_gravel_contract.gd", "bridge-gravel": "tests/chapters/bridge_gravel.gd", "thermal-hint-ui": "tests/chapters/thermal_hint_ui.gd", "chapter-text": "tests/ui/chapter_text.gd", "gust-order": "tests/chapters/gust_order.gd", "cart-json": "tests/chapters/cart_cases.gd", "chapters": "tests/chapters/run.gd", "core": "tests/core/services_test.gd", "sdk": "tests/sdk/run.gd",
         "gameplay": "tests/gameplay/run.gd", "levels": "tests/levels/run.gd",
         "ids": "tools/check_ids.gd", "render": "tests/refs/test_render.gd",

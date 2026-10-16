@@ -1,0 +1,425 @@
+{
+  "cases": [
+    {
+      "accepted": true,
+      "after": 32,
+      "before": 32,
+      "blocker": "",
+      "material": "sand",
+      "ok": true,
+      "unchanged_on_rejection": false
+    },
+    {
+      "accepted": false,
+      "after": 32,
+      "before": 32,
+      "blocker": "solid",
+      "material": "sand",
+      "ok": true,
+      "unchanged_on_rejection": true
+    },
+    {
+      "accepted": false,
+      "after": 32,
+      "before": 32,
+      "blocker": "player",
+      "material": "sand",
+      "ok": true,
+      "unchanged_on_rejection": true
+    },
+    {
+      "accepted": false,
+      "after": 32,
+      "before": 32,
+      "blocker": "crate",
+      "material": "sand",
+      "ok": true,
+      "unchanged_on_rejection": true
+    },
+    {
+      "accepted": false,
+      "after": 32,
+      "before": 32,
+      "blocker": "thin-solid",
+      "material": "sand",
+      "ok": true,
+      "unchanged_on_rejection": true
+    },
+    {
+      "after": 32,
+      "before": 32,
+      "blocked": false,
+      "crate": {
+        "id": "crate-0",
+        "kind": "wood",
+        "x": 7,
+        "y": 2
+      },
+      "local_offsets_preserved": null,
+      "material": "sand",
+      "mode": "ice_slide",
+      "ok": true,
+      "result": {
+        "accepted": true,
+        "error": ""
+      }
+    },
+    {
+      "after": 32,
+      "before": 32,
+      "blocked": true,
+      "crate": {
+        "id": "crate-0",
+        "kind": "wood",
+        "x": 3,
+        "y": 2
+      },
+      "local_offsets_preserved": null,
+      "material": "sand",
+      "mode": "ice_slide",
+      "ok": true,
+      "result": {
+        "accepted": true,
+        "error": ""
+      }
+    },
+    {
+      "after": 32,
+      "before": 32,
+      "blocked": false,
+      "crate": {
+        "id": "crate-0",
+        "kind": "wood",
+        "x": 6,
+        "y": 2
+      },
+      "local_offsets_preserved": null,
+      "material": "sand",
+      "mode": "mine_cart",
+      "ok": true,
+      "result": {
+        "accepted": true,
+        "error": ""
+      }
+    },
+    {
+      "after": 32,
+      "before": 32,
+      "blocked": true,
+      "crate": {
+        "id": "crate-0",
+        "kind": "wood",
+        "x": 3,
+        "y": 2
+      },
+      "local_offsets_preserved": null,
+      "material": "sand",
+      "mode": "mine_cart",
+      "ok": true,
+      "result": {
+        "accepted": false,
+        "error": ""
+      }
+    },
+    {
+      "after": 32,
+      "before": 32,
+      "blocked": false,
+      "crate": {
+        "id": "crate-0",
+        "kind": "wood",
+        "x": 6,
+        "y": 2
+      },
+      "local_offsets_preserved": null,
+      "material": "sand",
+      "mode": "portal",
+      "ok": true,
+      "result": {
+        "accepted": true,
+        "error": ""
+      }
+    },
+    {
+      "after": 32,
+      "before": 32,
+      "blocked": true,
+      "crate": {
+        "id": "crate-0",
+        "kind": "wood",
+        "x": 2,
+        "y": 2
+      },
+      "local_offsets_preserved": null,
+      "material": "sand",
+      "mode": "portal",
+      "ok": true,
+      "result": {
+        "accepted": false,
+        "error": ""
+      }
+    },
+    {
+      "after": 32,
+      "before": 32,
+      "blocked": false,
+      "crate": {
+        "id": "crate-0",
+        "kind": "wood",
+        "x": 3,
+        "y": 2
+      },
+      "local_offsets_preserved": true,
+      "material": "sand",
+      "mode": "fall",
+      "ok": true,
+      "result": {
+        "accepted": true,
+        "error": ""
+      }
+    },
+    {
+      "after": 32,
+      "before": 32,
+      "before_hash": "a119d2f7befb7ccc",
+      "blocker": "",
+      "material": "sand",
+      "mode": "lift",
+      "moved": true,
+      "ok": true
+    },
+    {
+      "after": 32,
+      "before": 32,
+      "before_hash": "bf1d94e6c48c4961",
+      "blocker": "headroom",
+      "material": "sand",
+      "mode": "lift",
+      "moved": false,
+      "ok": true
+    },
+    {
+      "after": 32,
+      "before": 32,
+      "before_hash": "74832f76cf9d6535",
+      "blocker": "deck",
+      "material": "sand",
+      "mode": "lift",
+      "moved": false,
+      "ok": true
+    },
+    {
+      "accepted": true,
+      "after": 32,
+      "before": 32,
+      "blocker": "",
+      "material": "gravel",
+      "ok": true,
+      "unchanged_on_rejection": false
+    },
+    {
+      "accepted": false,
+      "after": 32,
+      "before": 32,
+      "blocker": "solid",
+      "material": "gravel",
+      "ok": true,
+      "unchanged_on_rejection": true
+    },
+    {
+      "accepted": false,
+      "after": 32,
+      "before": 32,
+      "blocker": "player",
+      "material": "gravel",
+      "ok": true,
+      "unchanged_on_rejection": true
+    },
+    {
+      "accepted": false,
+      "after": 32,
+      "before": 32,
+      "blocker": "crate",
+      "material": "gravel",
+      "ok": true,
+      "unchanged_on_rejection": true
+    },
+    {
+      "accepted": false,
+      "after": 32,
+      "before": 32,
+      "blocker": "thin-solid",
+      "material": "gravel",
+      "ok": true,
+      "unchanged_on_rejection": true
+    },
+    {
+      "after": 32,
+      "before": 32,
+      "blocked": false,
+      "crate": {
+        "id": "crate-0",
+        "kind": "wood",
+        "x": 7,
+        "y": 2
+      },
+      "local_offsets_preserved": null,
+      "material": "gravel",
+      "mode": "ice_slide",
+      "ok": true,
+      "result": {
+        "accepted": true,
+        "error": ""
+      }
+    },
+    {
+      "after": 32,
+      "before": 32,
+      "blocked": true,
+      "crate": {
+        "id": "crate-0",
+        "kind": "wood",
+        "x": 3,
+        "y": 2
+      },
+      "local_offsets_preserved": null,
+      "material": "gravel",
+      "mode": "ice_slide",
+      "ok": true,
+      "result": {
+        "accepted": true,
+        "error": ""
+      }
+    },
+    {
+      "after": 32,
+      "before": 32,
+      "blocked": false,
+      "crate": {
+        "id": "crate-0",
+        "kind": "wood",
+        "x": 6,
+        "y": 2
+      },
+      "local_offsets_preserved": null,
+      "material": "gravel",
+      "mode": "mine_cart",
+      "ok": true,
+      "result": {
+        "accepted": true,
+        "error": ""
+      }
+    },
+    {
+      "after": 32,
+      "before": 32,
+      "blocked": true,
+      "crate": {
+        "id": "crate-0",
+        "kind": "wood",
+        "x": 3,
+        "y": 2
+      },
+      "local_offsets_preserved": null,
+      "material": "gravel",
+      "mode": "mine_cart",
+      "ok": true,
+      "result": {
+        "accepted": false,
+        "error": ""
+      }
+    },
+    {
+      "after": 32,
+      "before": 32,
+      "blocked": false,
+      "crate": {
+        "id": "crate-0",
+        "kind": "wood",
+        "x": 6,
+        "y": 2
+      },
+      "local_offsets_preserved": null,
+      "material": "gravel",
+      "mode": "portal",
+      "ok": true,
+      "result": {
+        "accepted": true,
+        "error": ""
+      }
+    },
+    {
+      "after": 32,
+      "before": 32,
+      "blocked": true,
+      "crate": {
+        "id": "crate-0",
+        "kind": "wood",
+        "x": 2,
+        "y": 2
+      },
+      "local_offsets_preserved": null,
+      "material": "gravel",
+      "mode": "portal",
+      "ok": true,
+      "result": {
+        "accepted": false,
+        "error": ""
+      }
+    },
+    {
+      "after": 32,
+      "before": 32,
+      "blocked": false,
+      "crate": {
+        "id": "crate-0",
+        "kind": "wood",
+        "x": 3,
+        "y": 2
+      },
+      "local_offsets_preserved": true,
+      "material": "gravel",
+      "mode": "fall",
+      "ok": true,
+      "result": {
+        "accepted": true,
+        "error": ""
+      }
+    },
+    {
+      "after": 32,
+      "before": 32,
+      "before_hash": "da158502a9b6e986",
+      "blocker": "",
+      "material": "gravel",
+      "mode": "lift",
+      "moved": true,
+      "ok": true
+    },
+    {
+      "after": 32,
+      "before": 32,
+      "before_hash": "663a8314be98ba15",
+      "blocker": "headroom",
+      "material": "gravel",
+      "mode": "lift",
+      "moved": false,
+      "ok": true
+    },
+    {
+      "after": 32,
+      "before": 32,
+      "before_hash": "e18fbeeda6ff9e67",
+      "blocker": "deck",
+      "material": "gravel",
+      "mode": "lift",
+      "moved": false,
+      "ok": true
+    }
+  ],
+  "failures": [],
+  "ok": true,
+  "suite": "powder-occupancy",
+  "run_id": "20261016T093252099294Z-81591",
+  "tested_source_sha256": "7ebc28e2b42891f6dbdcc0d249789bb926264011db14918e5eff1d5cae00392c"
+}

@@ -1,0 +1,109 @@
+{
+  "cases": [
+    {
+      "accepted": true,
+      "after": 1,
+      "before": 32,
+      "blocker": "",
+      "material": "sand",
+      "ok": false,
+      "unchanged_on_rejection": false
+    },
+    {
+      "accepted": true,
+      "after": 1,
+      "before": 32,
+      "blocker": "solid",
+      "material": "sand",
+      "ok": false,
+      "unchanged_on_rejection": false
+    },
+    {
+      "accepted": true,
+      "after": 1,
+      "before": 32,
+      "blocker": "player",
+      "material": "sand",
+      "ok": false,
+      "unchanged_on_rejection": false
+    },
+    {
+      "accepted": true,
+      "after": 1,
+      "before": 32,
+      "blocker": "crate",
+      "material": "sand",
+      "ok": false,
+      "unchanged_on_rejection": false
+    },
+    {
+      "accepted": true,
+      "after": 1,
+      "before": 32,
+      "blocker": "thin-solid",
+      "material": "sand",
+      "ok": false,
+      "unchanged_on_rejection": false
+    },
+    {
+      "accepted": true,
+      "after": 1,
+      "before": 32,
+      "blocker": "",
+      "material": "gravel",
+      "ok": false,
+      "unchanged_on_rejection": false
+    },
+    {
+      "accepted": true,
+      "after": 1,
+      "before": 32,
+      "blocker": "solid",
+      "material": "gravel",
+      "ok": false,
+      "unchanged_on_rejection": false
+    },
+    {
+      "accepted": true,
+      "after": 1,
+      "before": 32,
+      "blocker": "player",
+      "material": "gravel",
+      "ok": false,
+      "unchanged_on_rejection": false
+    },
+    {
+      "accepted": true,
+      "after": 1,
+      "before": 32,
+      "blocker": "crate",
+      "material": "gravel",
+      "ok": false,
+      "unchanged_on_rejection": false
+    },
+    {
+      "accepted": true,
+      "after": 1,
+      "before": 32,
+      "blocker": "thin-solid",
+      "material": "gravel",
+      "ok": false,
+      "unchanged_on_rejection": false
+    }
+  ],
+  "failures": [
+    "sand/",
+    "sand/solid",
+    "sand/player",
+    "sand/crate",
+    "sand/thin-solid",
+    "gravel/",
+    "gravel/solid",
+    "gravel/player",
+    "gravel/crate",
+    "gravel/thin-solid"
+  ],
+  "ok": false,
+  "suite": "powder-occupancy",
+  "scope": "Historical RED regression evidence before the corresponding fix; not current acceptance."
+}

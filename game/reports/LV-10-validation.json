@@ -1,0 +1,79 @@
+{
+  "format": "portitor.lv10-validation/1",
+  "run_id": "20261016T093252099294Z-81591",
+  "tested_source_sha256": "7ebc28e2b42891f6dbdcc0d249789bb926264011db14918e5eff1d5cae00392c",
+  "sdk_command": "env OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1 nice -n 10 tools/run-tests.sh",
+  "sdk_exit_code": 1,
+  "sdk_stages": 26,
+  "sdk_stages_passed": 23,
+  "sdk_failed_stages": [
+    {
+      "name": "chapter-text",
+      "ok": false,
+      "completed": true,
+      "exit_code": 1,
+      "engine_errors": false,
+      "seconds": 0.59,
+      "command": [
+        "/Users/key_/Desktop/CURRGO/pushbox-demo/../ele-proj/zips/Godot.app/Contents/MacOS/Godot",
+        "--headless",
+        "--path",
+        "/Users/key_/Desktop/CURRGO/pushbox-demo/game",
+        "--script",
+        "res://tests/ui/chapter_text.gd"
+      ],
+      "log": "game/tests/results/chapter-text.log"
+    },
+    {
+      "name": "bridge-gravel",
+      "ok": false,
+      "completed": true,
+      "exit_code": 1,
+      "engine_errors": false,
+      "seconds": 0.737,
+      "command": [
+        "/Users/key_/Desktop/CURRGO/pushbox-demo/../ele-proj/zips/Godot.app/Contents/MacOS/Godot",
+        "--headless",
+        "--path",
+        "/Users/key_/Desktop/CURRGO/pushbox-demo/game",
+        "--script",
+        "res://tests/chapters/bridge_gravel.gd"
+      ],
+      "log": "game/tests/results/bridge-gravel.log"
+    },
+    {
+      "name": "chapters",
+      "ok": false,
+      "completed": true,
+      "exit_code": 1,
+      "engine_errors": false,
+      "seconds": 26.488,
+      "command": [
+        "/Users/key_/Desktop/CURRGO/pushbox-demo/../ele-proj/zips/Godot.app/Contents/MacOS/Godot",
+        "--headless",
+        "--path",
+        "/Users/key_/Desktop/CURRGO/pushbox-demo/game",
+        "--script",
+        "res://tests/chapters/run.gd"
+      ],
+      "log": "game/tests/results/chapters.log"
+    }
+  ],
+  "chapters": 30,
+  "author_solution_verified": 28,
+  "sdk_verified": 27,
+  "spec_checks_not_run": 0,
+  "spec_checks_pass": 117,
+  "spec_checks_fail": 7,
+  "node_command": "env OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1 nice -n 10 node --test --test-concurrency=1 tests/*.test.mjs",
+  "node_exit_code": 0,
+  "node_tests": 141,
+  "node_passed": 141,
+  "node_failed": 0,
+  "content_command": "node tools/content.mjs check",
+  "content_exit_code": 0,
+  "content_summary": "content: 0 error(s), 0 warning(s); 52 planned levels, 46 with specs; mechanisms playable 25, specified 14, proposed 35; verification report present",
+  "candidate_only": true,
+  "formal_design_review": "pending batch review by Claude",
+  "user_art_approval": "not performed"
+}

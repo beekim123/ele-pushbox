@@ -37,14 +37,14 @@ static func component(ids: PackedInt32Array, water: int, seeds: Array[int], widt
 				result.append(other)
 	return result
 
-static func displacement(context, crate_index: int, destination: Vector2i, mode: String) -> Dictionary:
+static func displacement(context, crate_index: int, destination: Vector2i, mode: String, reserved: Array = []) -> Dictionary:
 	var crate: Dictionary = context.grid.crates[crate_index]
-	return _displacement(context, destination, mode, Vector2i(int(crate.x), int(crate.y)))
+	return _displacement(context, destination, mode, Vector2i(int(crate.x), int(crate.y)), reserved)
 
 static func pour_displacement(context, destination: Vector2i) -> Dictionary:
 	return _displacement(context, destination, "surface", Vector2i(-1, -1))
 
-static func _displacement(context, destination: Vector2i, mode: String, source: Vector2i) -> Dictionary:
+static func _displacement(context, destination: Vector2i, mode: String, source: Vector2i, reserved: Array = []) -> Dictionary:
 	var world = context.world
 	if not world.material_ids.has("water"):
 		return {"ok": true, "from": [], "to": []}
@@ -76,6 +76,8 @@ static func _displacement(context, destination: Vector2i, mode: String, source: 
 	# water through a partly eroded solid wall into disconnected air pockets.
 	var queue: Array[int] = body.duplicate()
 	var seen: Dictionary = {}
+	for pixel: int in reserved:
+		seen[pixel] = true
 	for pixel: int in queue:
 		seen[pixel] = true
 	var cursor: int = 0

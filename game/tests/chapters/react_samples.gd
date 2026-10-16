@@ -16,7 +16,7 @@ static func run(spec: Dictionary) -> Dictionary:
 		"G01":
 			result.merge(_acid_contact_samples())
 		"G02":
-			result.decoy = H.branch(spec, ["L","L","L","L","L","DIG_L"])
+			result.decoy = H.branch(spec, ["L","L","L","L","DIG_R","L","DIG_L"])
 			result.merge(_acid_contact_samples())
 		"G03":
 			# One sand bag is the complete resource available after opening the vent.
@@ -24,9 +24,9 @@ static func run(spec: Dictionary) -> Dictionary:
 		"G04":
 			result.trap = H.branch(spec, ["L","L","DIG_D"])
 		"G05":
-			result.early = H.branch(spec, ["R","U","L","L","L","L"])
+			result.early = H.branch(spec, ["U","L","L","L","L"])
 			var repeat_spec: Dictionary = spec.duplicate(true)
-			_tile(repeat_spec,9,5,"X")
+			_tile(repeat_spec,3,2,"X")
 			result.repeat = H.branch(repeat_spec, spec.solution + ["U","U"])
 			result.repeat_scope = "isolated copy adds an unlit exit solely to allow input after the original goals would win"
 			var control: Dictionary = spec.duplicate(true)

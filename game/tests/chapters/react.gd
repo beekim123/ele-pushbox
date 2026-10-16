@@ -63,7 +63,7 @@ func _acid(spec: Dictionary, trace: Array, summary: Dictionary, extra: Dictionar
 	var final: Dictionary = H.sample(trace)
 	var initial_acid: int = H.material(opening,"acid")
 	var initial_rock: int = H.material(opening,"limestone_a")+H.material(opening,"limestone_b")
-	var conserved: bool = initial_acid==512 and initial_rock>0
+	var conserved: bool = initial_acid==(256 if str(spec.id)=="G01" else 512) and initial_rock>0
 	var ledger: Array[Dictionary] = []
 	for item: Dictionary in trace:
 		var actual: Dictionary = item.actual
@@ -89,17 +89,19 @@ func _acid(spec: Dictionary, trace: Array, summary: Dictionary, extra: Dictionar
 		else:
 			var name: String = "limestone_a" if symbol=="L" else "limestone_b"
 			contacts_ok = contacts_ok and H.material(contact_value,name)<256 and H.material(contact_value,"acid")==H.material(contact_value,name)
-	out["记录初始酸512cell"] = _claim(conserved and tagged_rule and contacts_ok,{"scope":"author-sdk-cell-ledger-and-isolated-tag-contact-controls","ledger":ledger,"reaction_table":rule,"isolated_contacts":contacts},not opening.is_empty() and contacts_available)
-	var clear: bool = H.tile(final,4,4,"limestone_a")<128
-	if str(spec.id)=="G02": clear = clear and H.tile(final,4,5,"limestone_b")<128
-	var contact: bool = clear and _light(final,"exit")
-	var detail: Dictionary = {"scope":"author-geometry","main_a_residue":H.tile(final,4,4,"limestone_a"),"main_b_residue":H.tile(final,4,5,"limestone_b"),"exit":_light(final,"exit")}
-	if str(spec.id)=="G02":
+	var main_clear: bool = H.tile(final,4,4,"limestone_a")==0 if str(spec.id)=="G01" else H.tile(final,4,5,"limestone_a")==0 and H.tile(final,4,6,"limestone_b")==0
+	var acid_clear: bool = H.material(final,"acid")==0
+	var walls_intact: bool = H.material(final,"bedrock")==H.material(opening,"bedrock") and H.material(final,"hard_rock")==H.material(opening,"hard_rock")
+	var after_release: Dictionary = H.action(trace,"DIG_L")
+	var earth_intact: bool = H.material(after_release,"packed_earth")==H.material(opening,"packed_earth")-256
+	out["挖塞后256 acid cell" if str(spec.id)=="G01" else "挖开左塞[4,2]"] = _claim(conserved and tagged_rule and contacts_ok and main_clear and acid_clear and walls_intact and earth_intact,{"scope":"author-sdk-cell-ledger-and-isolated-tag-contact-controls","ledger":ledger,"reaction_table":rule,"isolated_contacts":contacts,"target_rock_clear":main_clear,"acid_clear":acid_clear,"walls_intact":walls_intact,"after_release":after_release},not opening.is_empty() and contacts_available)
+	if str(spec.id)=="G01":
+		out["人物向左进入[4,2]"] = _claim(H.player(H.sample(trace,6),4,4) and H.player(final,2,4) and _light(final,"exit"),{"entry":H.sample(trace,6),"final":final},trace.size()>6)
+	else:
 		var branch: Dictionary = extra.get("decoy",{})
 		var measured: Dictionary = branch.get("final",{})
-		contact = contact and _complete(branch) and H.tile(measured,3,4,"limestone_a")<128 and H.tile(measured,4,5,"limestone_b")>=128 and not bool(branch.get("won",false))
-		detail["decoy_branch"] = branch
-	out["验证右塞释放后"] = _claim(contact,detail,not final.is_empty())
+		var decoy_ok: bool = _complete(branch) and H.tile(measured,7,5,"limestone_a")==0 and H.tile(measured,7,6,"hard_rock")==256 and H.material(measured,"acid")==256 and H.tile(measured,4,5,"limestone_a")==256 and H.tile(measured,4,6,"limestone_b")==256 and not bool(branch.get("won",false))
+		out["挖开右塞[7,2]"] = _claim(decoy_ok,{"decoy_branch":branch},_ready(branch))
 
 func _gas(spec: Dictionary, trace: Array, summary: Dictionary, extra: Dictionary, out: Dictionary) -> void:
 	var opening: Dictionary = H.sample(trace,0)
@@ -154,9 +156,9 @@ func _lifetime(trace: Array, summary: Dictionary, extra: Dictionary, out: Dictio
 	var repeat_branch: Dictionary = extra.get("repeat",{})
 	var final: Dictionary = H.sample(trace)
 	var repeat_value: Dictionary = repeat_branch.get("final",{})
-	var delivered: bool = H.box(final,2,2) and H.material(final,"sand")==512 and bool(H.device(final,"bin").get("latched",false))
-	var no_refresh: bool = _complete(repeat_branch) and H.box(repeat_value,2,2) and H.material(repeat_value,"plug_decay")==0 and H.material(repeat_value,"sand")==512 and int(H.device(repeat_value,"lift").get("stop",-1))==1
-	out["512cell沙真实落斗后触发升降台一次"] = _claim(delivered and _complete(early) and not bool(early.get("won",false)) and no_refresh,{"scope":"author-delivery-and-isolated-early/repeated-release","early":early,"repeat":repeat_branch,"repeat_scope":extra.get("repeat_scope","")},not final.is_empty() and _ready(early) and _ready(repeat_branch))
+	var delivered: bool = H.box(final,1,2) and H.material(final,"sand")==512 and bool(H.device(final,"bin").get("latched",false))
+	var no_refresh: bool = _complete(repeat_branch) and H.box(repeat_value,1,2) and H.material(repeat_value,"plug_decay")==0 and H.material(repeat_value,"sand")==512 and int(H.device(repeat_value,"lift").get("stop",-1))==1
+	out["斗[8,5..6]"] = _claim(delivered and _complete(early) and not bool(early.get("won",false)) and no_refresh,{"scope":"author-delivery-and-isolated-early/repeated-release","early":early,"repeat":repeat_branch,"repeat_scope":extra.get("repeat_scope","")},not final.is_empty() and _ready(early) and _ready(repeat_branch))
 
 func _vine(trace: Array, summary: Dictionary, extra: Dictionary, out: Dictionary) -> void:
 	var opening: Dictionary = H.sample(trace,0)
@@ -165,12 +167,12 @@ func _vine(trace: Array, summary: Dictionary, extra: Dictionary, out: Dictionary
 	var grown: Dictionary = H.device(after,"vine")
 	var left: Dictionary = extra.get("left",{})
 	var left_value: Dictionary = left.get("final",{})
-	var left_water: int = H.tile(left_value,4,5,"water")+H.tile(left_value,4,6,"water")+H.tile(left_value,4,7,"water")
 	var two: Dictionary = extra.get("left_two_bags",{})
-	var no_right_growth: bool = _complete(left) and left_water==512 and H.tile(left_value,5,3,"water")==0 and H.tile(left_value,5,4,"water")==0 and not bool(H.device(left_value,"vine").get("grown",false))
-	out["水源为[5,3]、[5,4]同列两格"] = _claim(no_right_growth and _complete(two) and not bool(H.device(two.get("final",{}),"vine").get("grown",false)),{"scope":"isolated-left-drain-and-two-bag-attempt","left":left,"two_bags":two},_ready(left) and _ready(two))
+	var two_value: Dictionary = two.get("final",{})
+	var no_right_growth: bool = _complete(left) and H.material(left_value,"water")==512 and H.tile(left_value,6,7,"water")<256 and not bool(H.device(left_value,"vine").get("grown",false))
+	out["挖左塞[4,4]后水分流"] = _claim(no_right_growth and _complete(two) and H.material(two_value,"water")==512 and H.tile(two_value,6,7,"water")<256 and not bool(H.device(two_value,"vine").get("grown",false)),{"scope":"isolated-left-drain-and-two-bag-attempt","left":left,"two_bags":two},_ready(left) and _ready(two))
 	var proper: bool = H.material(opening,"water")==512 and H.material(final,"water")==512 and bool(grown.get("grown",false)) and int(grown.get("water_count",0))>=256 and not bool(H.device(opening,"vine").get("grown",false))
-	var negative_materials_preserved: bool = _complete(left) and H.material(left_value,"water")==512 and H.tile(left_value,6,7,"water")==0 and not bool(H.device(left_value,"vine").get("grown",false))
+	var negative_materials_preserved: bool = no_right_growth
 	out["512cell水从右塞流入右根"] = _claim(proper and negative_materials_preserved,{"scope":"author-sdk-root-count-and-left-control","root_count_after_dig":H.tile(after,6,7,"water"),"vine":grown,"water_total":H.material(final,"water"),"left":left},not after.is_empty() and _ready(left))
 	var latch: Dictionary = extra.get("latch",{})
 	var cells: Array = grown.get("ladder_cells",[])
