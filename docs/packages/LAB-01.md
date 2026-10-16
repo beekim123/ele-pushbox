@@ -1,6 +1,6 @@
 # LAB-01 合并 Claude 分支并重新导入（交给 GPT）
 
-状态：第 1 批 · 待做（执行者：GPT）
+状态：关卡线第 1 步 · 待做（执行者：GPT）
 设计依据：[status.md](../status.md)「审核：GPT 关卡模式阶段一」；AGENTS.md
 
 ## 目标
@@ -12,7 +12,7 @@
 - `docs/design/art-pipeline.md` 第 2 节（新界面不碰已确认文件的规则）
 
 ## 要做的事
-1. 在 `codex/portitor-stage1` 上 `git merge origin/claude/inspiring-ride-zfnn4s`（合并提交；不要 rebase、不要强推）。预计 5 个冲突：
+1. 在 `codex/portitor-stage1` 上先 `git merge origin/claude/inspiring-ride-zfnn4s`，再 `git merge origin/claude/lv-01-model`（LV-01：设计模型插件接口，基于本分支开出）。合并提交；不要 rebase、不要强推。第一次合并预计 5 个冲突：
    - `tools/content.mjs`、`tools/lib/ids.mjs`：保留 Claude 分支的文字表读取（`loadTextTables`），删掉你那套重复的 `extraTexts` 读取；其余你加的逻辑保留。
    - `docs/status.md`：两边的内容都保留（Claude 的配送切片、审核、分工；你的阶段一记录），按时间整理，补回「给设计负责人的问题」一节。
    - `content/export/id-map.json`、`workbench/data/content.js`：不要手工合并，取任意一边后用工具重新生成。
