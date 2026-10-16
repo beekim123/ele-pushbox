@@ -1,8 +1,14 @@
-/* Entry: hash routing (#view/id), navigation state, badges, toast and downloads. */
+/* Entry: hash routing (#view/id), navigation state, badges, toast and downloads.
+ * The pages and their menu come from PBNav.MENU (js/app/nav.js). */
 (function (root) {
   "use strict";
   const store = root.PBStore;
-  const VIEWS = { overview: root.PBOverview, modes: root.PBModes, mechanisms: root.PBMechanisms, catalog: root.PBCatalog, maps: root.PBMaps, ids: root.PBIds, scenes: root.PBScenes, assets: root.PBAssets, edit: root.PBEditor, review: root.PBReview, export: root.PBExport };
+  const nav = root.PBNav;
+  const VIEWS = {};
+  for (const p of nav.pages()) {
+    if (root[p.module] && document.getElementById("view-" + p.view)) VIEWS[p.view] = root[p.module];
+    else console.warn(`menu page "${p.view}" has no ${p.module} script or #view-${p.view} section`);
+  }
   let active = null;
 
   function toast(msg) {
@@ -20,8 +26,8 @@
   function updateBadges() {
     const n = store.draftCount(), flag = document.getElementById("drafts-flag");
     flag.hidden = !n; flag.textContent = `本地未导出修改 ${n} 项`;
-    const r = Object.keys(store.review().selected).length, rc = document.getElementById("review-count");
-    rc.hidden = !r; rc.textContent = String(r);
+    nav.setBadge("drafts-count", n, `本地未导出修改 ${n} 项`);
+    nav.setBadge("review-count", Object.keys(store.review().selected).length);
   }
 
   function route() {
@@ -34,15 +40,14 @@
       if (!on && !sec.hidden && VIEWS[v].hide) VIEWS[v].hide();
       sec.hidden = !on;
     }
-    for (const a of document.querySelectorAll(".tabs a")) {
-      if (a.dataset.view === name) a.setAttribute("aria-current", "page"); else a.removeAttribute("aria-current");
-    }
+    nav.setCurrent(name);
     active = name;
     VIEWS[name].show(id);
     updateBadges();
   }
 
   function init() {
+    nav.init();
     if (!root.PB_BUNDLE) {
       document.querySelector("main").innerHTML = '<div class="page"><h2>缺少数据</h2><p>没有找到 data/bundle.js。请在仓库根目录运行 <code>node tools/art.mjs build</code>。</p></div>';
       return;
@@ -53,7 +58,7 @@
     sel.addEventListener("change", () => root.PBAppearance.set(sel.value));
     store.on(updateBadges);
     window.addEventListener("hashchange", route);
-    document.addEventListener("keydown", (e) => { if (active === "edit") root.PBEditor.onKey(e); });
+    document.addEventListener("keydown", (e) => { if (active === "edit" && !nav.drawerOpen()) root.PBEditor.onKey(e); });
     window.addEventListener("beforeunload", (e) => {
       if (!store.storageOk() && store.draftCount()) { e.preventDefault(); e.returnValue = ""; }
     });

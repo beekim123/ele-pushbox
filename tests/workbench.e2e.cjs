@@ -183,6 +183,8 @@ async function decode(file) {
   await page.mouse.click(box.x + box.width * 0.5, box.y + box.height * 0.5);
   await page.waitForTimeout(200);
   check(await page.locator("#drafts-flag").isVisible(), "drawing creates a local draft and shows the unsaved flag");
+  const exportBadge = page.locator('#nav a[data-view="export"] #drafts-count');
+  check((await exportBadge.isVisible()) && (await exportBadge.textContent()) === "1", "the 导出 menu item keeps the draft hint (1)");
   await page.reload(); await page.waitForTimeout(300);
   check((await page.locator("#drafts-flag").textContent()).includes("1"), "draft survives a page reload");
   await page.goto(URL + "#export"); await page.waitForTimeout(200);
@@ -192,6 +194,7 @@ async function decode(file) {
   page.once("dialog", (d) => d.accept());
   await page.click("#export-root button.danger"); await page.waitForTimeout(200);
   check(!(await page.locator("#drafts-flag").isVisible()), "discarding the draft clears the flag");
+  check(!(await page.locator("#drafts-count").isVisible()), "discarding the draft clears the 导出 menu hint");
 
   // 5. Review page: approved assets cannot be re-selected; requests carry exact versions.
   await page.goto(URL + "#review"); await page.waitForTimeout(200);
@@ -223,6 +226,116 @@ async function decode(file) {
   });
   check(textIssues.length === 0, "all screens fit in zh-Hans and en" + (textIssues.length ? ": " + textIssues.slice(0, 3).join(", ") : ""));
 
+  // 6b. Left category menu (WB-01): drawn from the one PBNav.MENU array, folds by category and
+  // remembers it, keeps hash links and browser history; the whole left column can collapse.
+  const menuErrors = errors.length;
+  await page.goto(URL + "#overview"); await page.waitForTimeout(200);
+  const menu = await page.evaluate(() => Array.from(document.querySelectorAll("#nav > a, #nav > .nav-group")).map((n) => n.matches("a")
+    ? [n.firstChild.textContent] : [n.querySelector(".nav-head-label").textContent, ...Array.from(n.querySelectorAll(".nav-list a")).map((a) => a.firstChild.textContent)]));
+  const wantMenu = [["总览"], ["关卡与玩法", "模式与关卡", "机制", "设计数据"], ["配送", "地图预览"], ["美术", "场景", "资产与动画", "编辑与对比", "确认", "导出"], ["工具", "编号映射"]];
+  check(JSON.stringify(menu) === JSON.stringify(wantMenu), "left menu shows the categories and pages of WB-01 in order (" + JSON.stringify(menu) + ")");
+  const reg = await page.evaluate(() => ({
+    menu: PBNav.MENU.flatMap((m) => (m.items ? m.items.map((i) => i.view) : [m.view])),
+    links: Array.from(document.querySelectorAll("#nav a[data-view]")).map((a) => a.dataset.view),
+    sections: Array.from(document.querySelectorAll("main > section.view")).map((x) => x.id.replace(/^view-/, "")),
+    modules: PBNav.pages().every((x) => window[x.module] && typeof window[x.module].show === "function"),
+  }));
+  check(JSON.stringify(reg.links) === JSON.stringify(reg.menu) && reg.modules && reg.sections.length === reg.menu.length && reg.sections.every((x) => reg.menu.includes(x)),
+    `menu links and the router both come from the one PBNav.MENU array and cover every page (${reg.links.length} links, ${reg.sections.length} pages)`);
+  const wrongClicks = [];
+  for (const v of reg.menu) {
+    await page.click(`#nav a[data-view="${v}"]`); await page.waitForTimeout(200);
+    const st = await page.evaluate((v) => ({ hash: location.hash, shown: !document.getElementById("view-" + v).hidden, current: Array.from(document.querySelectorAll('#nav a[aria-current="page"]')).map((a) => a.dataset.view).join() }), v);
+    if (st.hash !== "#" + v || !st.shown || st.current !== v) wrongClicks.push(v + " " + JSON.stringify(st));
+  }
+  check(wrongClicks.length === 0, "clicking each menu item opens its page and highlights only that item" + (wrongClicks.length ? ": " + wrongClicks[0] : ""));
+  const where = () => page.evaluate(() => ({
+    hash: location.hash,
+    view: Array.from(document.querySelectorAll("main > section.view")).filter((x) => !x.hidden).map((x) => x.id).join(),
+    current: Array.from(document.querySelectorAll('#nav a[aria-current="page"]')).map((a) => a.dataset.view).join(),
+    heads: Array.from(document.querySelectorAll("#nav .nav-head.has-current")).map((x) => x.dataset.group + ":" + x.getAttribute("aria-expanded")).join(),
+    crumb: document.getElementById("nav-crumb").textContent,
+  }));
+  await page.goto(URL + "#maps/5/1"); await page.waitForTimeout(300);
+  const deepMap = await where(), mapText = await page.locator("#maps-work").textContent();
+  check(deepMap.view === "view-maps" && deepMap.current === "maps" && deepMap.heads === "delivery:true" && deepMap.crumb === "配送 › 地图预览" && mapText.includes("种子 5") && mapText.includes("第 2 间"),
+    "#maps/5/1 still opens seed 5, room 2, with 地图预览 highlighted under an open 配送 (" + JSON.stringify(deepMap) + ")");
+  await page.goto(URL + "#assets/char.miner"); await page.waitForTimeout(300);
+  const deepAsset = await where();
+  check(deepAsset.view === "view-assets" && deepAsset.current === "assets" && deepAsset.heads === "art:true" && (await page.locator("#asset-inspector").textContent()).includes("char.miner"),
+    "#assets/char.miner still opens that asset, with 资产与动画 highlighted under an open 美术");
+  await page.goto(URL + "#maps/5/1"); await page.waitForTimeout(250);
+  await page.click('#nav a[data-view="assets"]'); await page.waitForTimeout(250);
+  const picked = await where();
+  await page.goBack(); await page.waitForTimeout(300);
+  const back = await where();
+  await page.goForward(); await page.waitForTimeout(300);
+  const fwd = await where();
+  check(picked.hash === "#assets" && back.hash === "#maps/5/1" && back.view === "view-maps" && back.current === "maps" && fwd.hash === "#assets" && fwd.view === "view-assets" && fwd.current === "assets",
+    "browser back / forward move between pages opened from the menu and keep the highlight in step");
+
+  const fold = (g) => page.evaluate((g) => ({ expanded: document.querySelector(`#nav .nav-head[data-group="${g}"]`).getAttribute("aria-expanded"), hidden: document.getElementById("nav-list-" + g).hidden }), g);
+  await page.goto(URL + "#overview"); await page.waitForTimeout(200);
+  await page.click('#nav .nav-head[data-group="play"]'); await page.waitForTimeout(100);
+  const folded = await fold("play");
+  await page.reload(); await page.waitForTimeout(400);
+  const foldKept = await fold("play");
+  check(folded.expanded === "false" && folded.hidden && foldKept.expanded === "false" && foldKept.hidden, "clicking a category title folds it, and the folding survives a reload");
+  await page.goto(URL + "#mechanisms/acid"); await page.waitForTimeout(250);
+  const unfolded = await where();
+  check(unfolded.current === "mechanisms" && unfolded.heads === "play:true" && !(await fold("play")).hidden, "opening a page inside a folded category unfolds it and highlights the page");
+  await page.click('#nav .nav-head[data-group="play"]'); await page.waitForTimeout(100);
+  await page.goto(URL + "#mechanisms/plate_door"); await page.waitForTimeout(250);
+  const stillFolded = await where();
+  await page.click('#nav .nav-head[data-group="play"]'); await page.waitForTimeout(100);
+  check(stillFolded.heads === "play:false" && (await fold("play")).expanded === "true", "the current category can be folded (its title stays highlighted) and moving inside the page keeps it folded");
+  const pick = await page.evaluate(() => PBStore.assets().find((a) => a.status === "review" && !PBStore.review().selected[a.id]).id);
+  await page.evaluate((id) => PBStore.toggleSelected(id, true), pick); await page.waitForTimeout(100);
+  const reviewBadge = page.locator('#nav a[data-view="review"] #review-count');
+  const badgeShown = (await reviewBadge.isVisible()) && Number(await reviewBadge.textContent()) === (await page.evaluate(() => Object.keys(PBStore.review().selected).length));
+  await page.click('#nav .nav-head[data-group="art"]'); await page.waitForTimeout(100);
+  const dotShown = await page.locator('#nav .nav-head[data-group="art"] .nav-dot').isVisible();
+  await page.click('#nav .nav-head[data-group="art"]');
+  await page.evaluate((id) => PBStore.toggleSelected(id, false), pick); await page.waitForTimeout(100);
+  check(badgeShown && dotShown, "the 确认 menu item keeps its count, and a folded 美术 still shows a mark for it");
+
+  await page.goto(URL + "#scenes/showcase.forest"); await page.waitForTimeout(300);
+  const layoutBox = () => page.evaluate(() => ({
+    nav: getComputedStyle(document.getElementById("nav")).display === "none" ? 0 : document.getElementById("nav").getBoundingClientRect().width,
+    main: document.querySelector("main").getBoundingClientRect().width,
+    work: document.querySelector("#view-scenes .work").getBoundingClientRect().width,
+    expanded: document.getElementById("nav-toggle").getAttribute("aria-expanded"),
+  }));
+  const wide = await layoutBox();
+  await page.click("#nav-toggle"); await page.waitForTimeout(250);
+  const roomy = await layoutBox();
+  await page.reload(); await page.waitForTimeout(400);
+  const roomyKept = await layoutBox();
+  await page.click("#nav-toggle"); await page.waitForTimeout(250);
+  const restored = await layoutBox();
+  check(wide.nav > 150 && wide.expanded === "true" && roomy.nav === 0 && roomy.expanded === "false" && roomy.main >= 1439 && roomy.work >= wide.work + wide.nav - 1 && roomyKept.nav === 0 && restored.nav === wide.nav && restored.expanded === "true",
+    `the whole left column collapses for big pictures, stays collapsed after a reload and opens again (work area ${Math.round(wide.work)} → ${Math.round(roomy.work)}px)`);
+  check(errors.length === menuErrors, "menu actions cause no console errors" + (errors.length > menuErrors ? ": " + errors[menuErrors] : ""));
+
+  // Storage that throws (blocked or private mode) must not break the menu.
+  const blocked = await browser.newContext({ viewport: { width: 1440, height: 900 } });
+  await blocked.addInitScript(() => { Object.defineProperty(window, "localStorage", { configurable: true, get() { throw new DOMException("storage is disabled", "SecurityError"); } }); });
+  const bp = await blocked.newPage(), blockedErrors = [];
+  bp.on("pageerror", (e) => blockedErrors.push(e.message));
+  bp.on("console", (m) => { if (m.type() === "error") blockedErrors.push(m.text()); });
+  await bp.goto(URL + "#overview"); await bp.waitForTimeout(400);
+  const denied = await bp.evaluate(() => { try { localStorage.getItem("pb.wb.nav.v1"); return false; } catch (e) { return true; } });
+  await bp.click('#nav .nav-head[data-group="art"]'); await bp.waitForTimeout(100);
+  const blockedFold = await bp.getAttribute('#nav .nav-head[data-group="art"]', "aria-expanded");
+  await bp.click('#nav .nav-head[data-group="art"]'); await bp.waitForTimeout(100);
+  await bp.click('#nav a[data-view="scenes"]'); await bp.waitForTimeout(300);
+  const blockedHash = await bp.evaluate(() => location.hash);
+  await bp.click("#nav-toggle"); await bp.waitForTimeout(150);
+  const blockedCollapse = await bp.evaluate(() => getComputedStyle(document.getElementById("nav")).display === "none");
+  await blocked.close();
+  check(denied && blockedFold === "false" && blockedHash === "#scenes" && blockedCollapse && blockedErrors.length === 0,
+    "with localStorage blocked the menu still folds, navigates and collapses without errors" + (blockedErrors.length ? ": " + blockedErrors[0] : ""));
+
   // 7. Narrow window: no horizontal page scroll, navigation still reachable.
   await page.setViewportSize({ width: 390, height: 800 });
   for (const h of ["#overview", "#modes/water", "#mechanisms/acid", "#catalog/cargo", "#catalog/slices", "#maps/5/1", "#maps/t/dungeon_well", "#scenes", "#assets/char.miner", "#review"]) {
@@ -230,6 +343,25 @@ async function decode(file) {
     const overflow = await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
     check(overflow <= 0, `${h} at 390px has no horizontal page scroll (${overflow}px)`);
   }
+  // 7b. At phone width the menu is one button in the top-left corner that opens a drawer.
+  await page.goto(URL + "#maps/5/1"); await page.waitForTimeout(250);
+  const menuBtn = await page.locator("#nav-toggle").boundingBox();
+  check(!!menuBtn && menuBtn.x < 40 && menuBtn.y < 40 && (await page.locator("#nav-toggle").isVisible()) && !(await page.locator("#nav").isVisible()),
+    "at 390px the menu folds into a button in the top-left corner and the drawer starts closed");
+  await page.click("#nav-toggle"); await page.waitForTimeout(350);
+  const drawer = await page.evaluate(() => { const r = document.getElementById("nav").getBoundingClientRect(); return { left: r.left, right: r.right, expanded: document.getElementById("nav-toggle").getAttribute("aria-expanded"), scrim: !document.getElementById("nav-scrim").hidden, inert: document.querySelector("main").inert, overflow: document.documentElement.scrollWidth - window.innerWidth }; });
+  check(drawer.left === 0 && drawer.right <= 390 && drawer.expanded === "true" && drawer.scrim && drawer.inert && drawer.overflow <= 0 && (await page.locator('#nav a[data-view="maps"][aria-current="page"]').isVisible()),
+    `the button opens the menu as a drawer over the page, without horizontal scroll (${drawer.overflow}px)`);
+  await page.click('#nav a[data-view="scenes"]'); await page.waitForTimeout(350);
+  check((await page.evaluate(() => location.hash)) === "#scenes" && !(await page.locator("#nav").isVisible()) && (await page.getAttribute("#nav-toggle", "aria-expanded")) === "false" && !(await page.evaluate(() => document.querySelector("main").inert)),
+    "picking a page in the drawer opens it and closes the drawer");
+  await page.click("#nav-toggle"); await page.waitForTimeout(350);
+  await page.keyboard.press("Escape"); await page.waitForTimeout(350);
+  const escClosed = !(await page.locator("#nav").isVisible());
+  await page.click("#nav-toggle"); await page.waitForTimeout(350);
+  await page.mouse.click(375, 500); await page.waitForTimeout(350);
+  const outsideClosed = !(await page.locator("#nav").isVisible());
+  check(escClosed && outsideClosed, "Esc and tapping outside the drawer close it");
   await browser.close();
   console.log(failures.length ? `\n${failures.length} check(s) failed` : "\nall workbench checks passed");
   process.exit(failures.length ? 1 : 0);

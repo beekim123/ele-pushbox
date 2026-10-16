@@ -6,33 +6,24 @@
 <title>渡界人 PORTITOR · 工作台</title>
 <link rel="stylesheet" href="css/workbench.css">
 <script src="js/app/appearance.js"></script>
+<script src="js/app/nav.js"></script>
 </head>
 <body>
 <header class="topbar">
+  <button class="nav-toggle" id="nav-toggle" type="button" aria-controls="nav" aria-expanded="true" aria-label="菜单"><span class="bars" aria-hidden="true"></span></button>
   <div class="brand"><strong>渡界人</strong><span>PORTITOR · 内容与美术工作台</span></div>
-  <nav class="tabs" aria-label="工作台页面">
-    <a href="#overview" data-view="overview">总览</a>
-    <a href="#modes" data-view="modes">模式与关卡</a>
-    <a href="#mechanisms" data-view="mechanisms">机制</a>
-    <a href="#maps" data-view="maps">地图预览</a>
-    <a href="#catalog" data-view="catalog">设计数据</a>
-    <a href="#ids" data-view="ids">编号映射</a>
-    <span class="tab-sep" aria-hidden="true"></span>
-    <a href="#scenes" data-view="scenes">场景</a>
-    <a href="#assets" data-view="assets">资产与动画</a>
-    <a href="#edit" data-view="edit">编辑与对比</a>
-    <a href="#review" data-view="review">确认<span class="count" id="review-count" hidden></span></a>
-    <a href="#export" data-view="export">导出</a>
-  </nav>
+  <div class="crumb" id="nav-crumb"></div>
   <div class="top-right">
     <a class="drafts-flag" id="drafts-flag" href="#export" hidden></a>
-    <label class="appearance">网页外观
+    <label class="appearance"><span class="appearance-label">网页外观</span>
       <select id="appearance">
         <option value="system">跟随系统</option><option value="light">浅色</option><option value="dark">深色</option>
       </select>
     </label>
   </div>
 </header>
+<nav class="nav" id="nav" aria-label="工作台页面"></nav>
+<div class="nav-scrim" id="nav-scrim" hidden></div>
 
 <main>
   <section class="view single" id="view-overview" hidden>
