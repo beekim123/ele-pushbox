@@ -239,3 +239,18 @@ canvas.map-overview { image-rendering: pixelated; display: block; cursor: pointe
 .play-bar { flex-wrap: wrap; align-items: center; }
 ol.live-log { padding-left: 18px; margin: 4px 0; }
 .live { font-size: 13px; line-height: 1.6; padding: 6px 8px; background: var(--panel); border-radius: 4px; }
+
+/* v2 rooms (#rooms2) */
+#view-rooms2 .btn[aria-pressed="true"]{background:var(--text);color:var(--bg);border-color:var(--text)}
+table.r2 tr[aria-current="true"] td{background:var(--panel-2)}
+.r2-reels{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:8px}
+.r2-reel{border:1px solid var(--line);border-radius:var(--radius);padding:8px 10px;background:var(--panel);display:flex;flex-direction:column;gap:4px}
+.r2-reel .big{font-size:16px;font-weight:600}
+.r2-reel-main{display:flex;align-items:center;gap:8px;min-height:48px}
+canvas.r2-pic{image-rendering:pixelated;display:block;flex:none}
+.r2-status{font-size:13px;margin:0}
+ol.r2-hints{margin:4px 0;padding-left:22px;font-size:13px}
+ol.r2-hints li[aria-current="true"]{font-weight:600}
+ol.r2-hints li.done{color:var(--muted)}
+ul.keys{padding-left:18px;margin:4px 0;font-size:12px;line-height:1.7}
+kbd{font:11px ui-monospace,monospace;border:1px solid var(--line);border-bottom-width:2px;border-radius:3px;padding:0 4px;background:var(--panel-2)}

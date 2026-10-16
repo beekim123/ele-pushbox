@@ -17,6 +17,7 @@
     ] },
     { group: "delivery", label: "配送", items: [
       { view: "maps", label: "地图预览", module: "PBMaps" },
+      { view: "rooms2", label: "配送 v2", module: "PBRooms2" },
     ] },
     { group: "art", label: "美术", items: [
       { view: "scenes", label: "场景", module: "PBScenes" },

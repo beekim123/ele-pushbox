@@ -64,6 +64,7 @@
 | `node tools/content.mjs build` | 检查后写出 `content/export/content-manifest.json`（给 Godot：模式、组、按顺序的关卡和规格文件的哈希、机制）和 `workbench/data/content.js`（给工作台） |
 | `node tools/art.mjs verify` | 美术校验，同时要求内容检查没有错误 |
 | `node tools/check-rooms.mjs --write` | 配送房间模板的静态检查与可通性检查，按切片生成 300 个种子的地图逐间核对，再用实时规则回放每个模板的演示（含翻转）；写出 `content/rooms-check.generated.json` 与 `content/export/delivery-golden.json`（地图对照表 + 回放记录）。模板改了没重跑、演示没达到预期，内容检查都会报错 |
+| `node tools/check-rooms2.mjs --write` | 配送 v2 房间（`pushbox.room/2`）的检查：每种翻转 × 每条路线的最短解、作者解、必需机制、提示顺序、怪物巡逻范围，再按开局池生成 300 个种子的地图核对接口；写出 `content/rooms2-check.generated.json`。房间改了没重跑，内容检查报"过期"（[delivery-puzzle-rules.md](delivery-puzzle-rules.md) 第 7 节） |
 
 ## 6 页面
 
@@ -73,6 +74,7 @@
 | 模式与关卡 | 模式 → 组 → 关卡；每关显示规格、设计模型、SDK 验证、美术四项状态，有地图的关可以直接打开预览 |
 | 机制 | 机制目录：归属（SDK / 游戏层）、需要的 SDK 能力、状态、对应关卡、用到的美术及确认情况 |
 | 地图预览 | 配送模式：按种子生成整张地图（和游戏同一套代码）、每一间的模板与检查过的路线、全部房间模板的检查结果（[delivery-maps.md](delivery-maps.md)）；用实时规则播放每个模板的演示、用键盘试玩一间或整张图，右栏显示时间、心、金币、货物和结算（[delivery-realtime.md](delivery-realtime.md) 第 15 节） |
+| 配送 v2 | 开局池（三滚轮、重转、种子地图总览）和 v2 房间（画面、翻转、路线、解法播放、提示动物、镜头视图、回合制试玩），功能见 [delivery-puzzle-rules.md](delivery-puzzle-rules.md) 第 7 节；参考实现在提交 `676e89e`、`34dc229`，工作台界面改版后按 [UI-08](../packages/UI-08.md) 接入 |
 | 设计数据 | 可玩切片、地区、收件人、货物、怪物、道具、增益等目录（配送模式的设计数据） |
 | 场景 | 代表场景、关卡、界面画面的预览（原有） |
 | 资产与动画、编辑与对比、确认、导出 | 原有的美术流程 |

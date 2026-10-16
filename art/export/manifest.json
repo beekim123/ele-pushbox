@@ -1429,28 +1429,28 @@
   },
   {
    "id": "deco.diyu_lantern",
-   "name": "地府 · 红灯笼",
+   "name": "地府 · 引魂灯",
    "category": "deco",
    "kind": "sprite",
-   "layer": "background",
+   "layer": "ambient",
    "current": {
     "version": 1,
-    "hash": "451435f0230ee530b3b2828e7e66f3e3ebb5f60278908f35d140e8aa30001df0",
+    "hash": "3df6d3cb39ed5ef60828ddaa100bd958dd54bcedcacd1366f6f9c0d6c4d92183",
     "status": "review",
     "preview": "art/export/preview/deco.diyu_lantern.png",
-    "preview_sha256": "23c738047e01a9f1bba3528e4f0682c80bdd4cb15612c6a3aadd814995047120"
+    "preview_sha256": "b61040fbf86597a8d3ea40dcbdc59cf73a565d244d4ab51e7c97c0cc40370215"
    },
    "approved": null,
    "current_is_approved": false,
    "frame_size": [
-    7,
-    12
+    10,
+    16
    ],
    "frame_count": 3,
    "sheet": "horizontal strip, frame i at x = i * frame_width",
    "anchor": [
-    3,
-    0
+    6,
+    16
    ],
    "animations": {
     "flicker": {
@@ -5132,16 +5132,16 @@
   },
   {
    "id": "theme.diyu",
-   "name": "主题 · 地府·酆都",
+   "name": "主题 · 地府（荒郊野岭）",
    "category": "theme",
    "kind": "procedural",
    "layer": "terrain",
    "current": {
     "version": 1,
-    "hash": "3d89a9882337e64af3ab4dfd9e9c211c2ee34d7c4c0eaad5af3d7a6e1e2fe515",
+    "hash": "e7d67e5a07bb6afb1d6146e07ad45860e373e18b92c3a90537f709c89deba834",
     "status": "review",
     "preview": "art/export/preview/theme.diyu.png",
-    "preview_sha256": "981f915d4507bf89bf0c0e1ec45a7605d75a1feee2cef681fa634984ab201a46"
+    "preview_sha256": "dbbbdda31c40ca1bb6c562ae5f4154a5d4a4b8c211d695af4a46823942bca016"
    },
    "approved": null,
    "current_is_approved": false,
@@ -5152,20 +5152,32 @@
     "workbench/js/core/env.js"
    ],
    "params": {
-    "title": "地府·酆都",
+    "title": "地府",
     "rock": {
-     "pattern": "block",
+     "pattern": "wild",
      "base": [
       "x",
-      "p"
+      "y"
      ],
+     "soil": "g",
+     "stone": [
+      "w",
+      "v",
+      "y"
+     ],
+     "grass": [
+      "F",
+      "e",
+      "f"
+     ],
+     "root": "f",
      "seam": "z",
-     "speck": "o",
+     "speck": "y",
      "light": "w",
      "light2": "x",
      "dark": "z",
-     "edge": "z",
-     "top": "v"
+     "edge": "y",
+     "top": "F"
     },
     "earth": {
      "base": [
@@ -5214,17 +5226,30 @@
       "z",
       "y"
      ],
-     "speck": "h",
+     "speck": "x",
      "accent": "p",
-     "detail": "z"
+     "detail": "z",
+     "far": "p",
+     "mid": "y",
+     "mist": "p",
+     "moon": [
+      "x",
+      "w"
+     ],
+     "wisp": [
+      "o",
+      "p"
+     ],
+     "banner": "x"
     },
     "ambient": [
      {
-      "type": "wall",
+      "type": "floor",
       "id": "deco.diyu_lantern",
       "anim": "flicker",
-      "spacing": 96,
-      "y": 4
+      "every": 10,
+      "max": 1,
+      "salt": 3
      },
      {
       "type": "floor",
@@ -5245,7 +5270,7 @@
       "sources": {
        "deco.diyu_lantern": {
         "radius": 24,
-        "dy": 7
+        "dy": -10
        }
       }
      },

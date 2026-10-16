@@ -28,7 +28,7 @@ async function decode(file) {
   page.on("console", (m) => { if (m.type() === "error") errors.push(m.text()); });
 
   // 1. Every view opens without errors.
-  for (const h of ["#overview", "#modes", "#modes/water", "#modes/basics/M03", "#modes/hell-pool", "#modes/water/W08", "#mechanisms", "#mechanisms/float_sink", "#mechanisms/portal", "#scenes/level.W09", "#assets/mech.bridge", "#catalog/cargo", "#catalog/items", "#catalog/slices", "#maps", "#maps/7/2", "#maps/t/dungeon_guard", "#maps/t/dungeon_plate", "#scenes", "#scenes/level.M04", "#scenes/ui.screen.chapters", "#scenes/lobby.forest", "#scenes/showcase.cosmos", "#scenes/chapter.ruins", "#scenes/chapter.sky", "#assets", "#assets/material.chapter2_5", "#assets/char.portitor", "#catalog/worlds", "#catalog/recipients", "#catalog/combos", "#catalog/upgrades", "#ids", "#ids/level", "#scenes/ui.screen.dialogue", "#scenes/ui.screen.hint", "#assets/mech.door", "#edit/obj.crate_wood", "#review", "#export"]) {
+  for (const h of ["#overview", "#modes", "#modes/water", "#modes/basics/M03", "#modes/hell-pool", "#modes/water/W08", "#mechanisms", "#mechanisms/float_sink", "#mechanisms/portal", "#scenes/level.W09", "#assets/mech.bridge", "#catalog/cargo", "#catalog/items", "#catalog/slices", "#maps", "#maps/7/2", "#maps/t/dungeon_guard", "#maps/t/dungeon_plate", "#rooms2", "#rooms2/pool/5", "#rooms2/diyu_lantern", "#rooms2/dungeon2_yard", "#scenes", "#scenes/level.M04", "#scenes/ui.screen.chapters", "#scenes/lobby.forest", "#scenes/showcase.cosmos", "#scenes/chapter.ruins", "#scenes/chapter.sky", "#assets", "#assets/material.chapter2_5", "#assets/char.portitor", "#catalog/worlds", "#catalog/recipients", "#catalog/combos", "#catalog/upgrades", "#ids", "#ids/level", "#scenes/ui.screen.dialogue", "#scenes/ui.screen.hint", "#assets/mech.door", "#edit/obj.crate_wood", "#review", "#export"]) {
     await page.goto(URL + h); await page.waitForTimeout(250);
   }
   check(errors.length === 0, "all views load without console errors" + (errors.length ? ": " + errors[0] : ""));
@@ -155,17 +155,77 @@ async function decode(file) {
   await page.keyboard.press("r"); await page.waitForTimeout(150);
   check(await page.evaluate(() => { const r = PBPlay.active().run; return r.events.some((e) => e.type === "reset") && r.room.player.y === 0; }), "R restarts the room at the door it was entered by");
 
-  // 2e. Step-4 art candidates: drawn in the map preview while "美术候选" is on, placeholders when off.
+  // 2e. Step-4 art is approved (APR-0006): the map preview draws it with "美术候选" on or off and lists no
+  // candidates. The switch itself is checked on the v2 rooms (2f), which still have candidates.
   await page.goto(URL + "#maps/7/4"); await page.waitForTimeout(300);
   await page.click('.play-bar button:has-text("静态")'); await page.waitForTimeout(400);
   const withArt = await page.evaluate(() => PBMaps.placeholders());
-  await page.click('#maps-side button:has-text("美术候选")');
-  await page.waitForFunction(() => PBMaps.placeholders().length > 0, null, { timeout: 5000 }).catch(() => {});
+  await page.click('#maps-side button:has-text("美术候选")'); await page.waitForTimeout(400);
   const without = await page.evaluate(() => PBMaps.placeholders());
+  const mapNote = await page.locator("#maps-work").textContent();
   await page.click('#maps-side button:has-text("美术候选")'); await page.waitForTimeout(200);
   check(!withArt.includes("rat_swarm") && !withArt.includes("coin") && !without.includes("rat_swarm") && !without.includes("coin"),
     `APR-0006 art stays visible with candidates off (on: ${JSON.stringify(withArt)}, off: ${JSON.stringify(without)})`);
   check(!(await page.locator("#maps-work").textContent()).includes("美术候选（未确认"), "approved delivery art is not described as unconfirmed");
+
+  // 2f. v2 rooms: the browser draws the same run pool as tools/check-rooms2.mjs; a run lists and links its
+  // rooms; a room replays its solution step by step and plays with the keyboard; candidates switch off.
+  await page.goto(URL + "#rooms2/pool/5"); await page.waitForTimeout(300);
+  const poolDiff = await page.evaluate(() => {
+    const want = PBStore.content().pools2[0], keys = ["maps", "recipients", "cargo", "template_use", "rooms_per_run", "screens_per_run"], got = {};
+    for (const k of keys) got[k] = {};
+    const add = (k, v) => { got[k][v] = (got[k][v] || 0) + 1; };
+    for (let s = 1; s <= want.seeds; s++) {
+      const m = PBRooms2.generate(s);
+      if (m.error) return ["seed " + s + ": " + m.error];
+      add("maps", m.slice); add("recipients", m.recipient); add("cargo", m.cargo); add("rooms_per_run", m.rooms.length);
+      add("screens_per_run", m.rooms.reduce((n, r) => n + r.cols * r.rows, 0));
+      for (const r of m.rooms) add("template_use", r.template);
+    }
+    const norm = (o) => JSON.stringify(Object.keys(o || {}).sort().map((k) => [k, o[k]]));
+    return keys.filter((k) => norm(got[k]) !== norm(want[k]));
+  });
+  check(poolDiff.length === 0, "browser run generator matches the exported run-pool statistics" + (poolDiff.length ? ": " + poolDiff.join(", ") : ""));
+  const run5 = await page.evaluate(() => PBRooms2.state().run);
+  check(!!run5 && (await page.locator("#rooms2-work table.r2 tbody tr").count()) === run5.length, `the run of seed 5 lists its ${run5 && run5.length} rooms`);
+  const homeAt = await page.evaluate(() => {
+    const m = PBRooms2.generate(5), r = m.rooms[m.rooms.length - 1], cv = document.querySelector("#rooms2-work canvas.map-overview");
+    return { x: 6 + r.gx * 64 + 30, y: 6 + r.gy * 34 + 15, w: cv.width, h: cv.height, href: document.querySelector("#rooms2-work table.r2 tbody tr:last-child a").getAttribute("href") };
+  });
+  const ov2 = await page.locator("#rooms2-work canvas.map-overview").boundingBox();
+  await page.mouse.click(ov2.x + (homeAt.x / homeAt.w) * ov2.width, ov2.y + (homeAt.y / homeAt.h) * ov2.height);
+  await page.waitForTimeout(300);
+  check((await page.evaluate(() => location.hash)) === homeAt.href && (await page.evaluate(() => PBRooms2.state().page)) === "room", "clicking a room on the run overview opens that room on its route");
+  await page.goto(URL + "#rooms2/dungeon2_bridge"); await page.waitForTimeout(300);
+  await page.click('#rooms2-work button:has-text("解法回放")'); await page.waitForTimeout(200);
+  await page.keyboard.press("End"); await page.waitForTimeout(150);
+  const atEnd = await page.evaluate(() => PBRooms2.state());
+  await page.keyboard.press("ArrowLeft"); await page.waitForTimeout(150);
+  const oneBack = await page.evaluate(() => PBRooms2.state());
+  check(atEnd.mode === "replay" && atEnd.author === true && atEnd.steps > 0 && atEnd.step === atEnd.steps && atEnd.done === true && oneBack.step === atEnd.steps - 1 && oneBack.done === false,
+    `the bridge replays its author solution to the end and steps back (${atEnd.step}/${atEnd.steps} done ${atEnd.done}, then ${oneBack.step} done ${oneBack.done})`);
+  await page.click('#rooms2-work button:has-text("试玩")'); await page.waitForTimeout(200);
+  await page.keyboard.press("ArrowRight"); await page.waitForTimeout(300);
+  const walked = await page.evaluate(() => PBRooms2.state().moves);
+  await page.keyboard.press("z"); await page.waitForTimeout(150);
+  const undone = await page.evaluate(() => PBRooms2.state().moves);
+  check(walked === 1 && undone === 0, `keyboard play: → walks one step and Z takes it back (${walked} → ${undone})`);
+  await page.goto(URL + "#rooms2/dungeon2_yard"); await page.waitForTimeout(300);
+  const stageSize = () => page.evaluate(() => { const c = document.querySelector("#rooms2-work .stage-frame canvas"); return c.width + "×" + c.height; });
+  const fullSize = await stageSize();
+  await page.keyboard.press("v"); await page.waitForTimeout(150);
+  const camSize = await stageSize();
+  await page.keyboard.press("v"); await page.waitForTimeout(150);
+  check(fullSize === "640×340" && camSize === "320×180", `a 2×2 room is drawn whole (${fullSize}) or through the game camera (${camSize})`);
+  await page.goto(URL + "#rooms2/diyu_ghostfire"); await page.waitForTimeout(400);
+  const r2With = await page.evaluate(() => PBRooms2.state().placeholders);
+  await page.click('#rooms2-side button:has-text("美术候选")');
+  await page.waitForFunction(() => PBRooms2.state().placeholders.length > 0, null, { timeout: 5000 }).catch(() => {});
+  const r2Without = await page.evaluate(() => PBRooms2.state().placeholders);
+  await page.click('#rooms2-side button:has-text("美术候选")'); await page.waitForTimeout(200);
+  check(r2With.length === 0 && r2Without.includes("wandering_soul") && !r2Without.includes("coin"),
+    `v2 rooms draw the candidates only while the switch is on, approved coins always (on: ${JSON.stringify(r2With)}, off: ${JSON.stringify(r2Without)})`);
+  check((await page.locator("#rooms2-work").textContent()).includes("美术候选（未确认"), "the v2 room page says which drawn art is unconfirmed");
 
   // 3. Hidden stages stop animating; the visible one animates.
   await page.goto(URL + "#scenes/showcase.forest"); await page.waitForTimeout(300);
@@ -232,7 +292,7 @@ async function decode(file) {
   await page.goto(URL + "#overview"); await page.waitForTimeout(200);
   const menu = await page.evaluate(() => Array.from(document.querySelectorAll("#nav > a, #nav > .nav-group")).map((n) => n.matches("a")
     ? [n.firstChild.textContent] : [n.querySelector(".nav-head-label").textContent, ...Array.from(n.querySelectorAll(".nav-list a")).map((a) => a.firstChild.textContent)]));
-  const wantMenu = [["总览"], ["关卡与玩法", "模式与关卡", "机制", "设计数据"], ["配送", "地图预览"], ["美术", "场景", "资产与动画", "编辑与对比", "确认", "导出"], ["工具", "编号映射"]];
+  const wantMenu = [["总览"], ["关卡与玩法", "模式与关卡", "机制", "设计数据"], ["配送", "地图预览", "配送 v2"], ["美术", "场景", "资产与动画", "编辑与对比", "确认", "导出"], ["工具", "编号映射"]];
   check(JSON.stringify(menu) === JSON.stringify(wantMenu), "left menu shows the categories and pages of WB-01 in order (" + JSON.stringify(menu) + ")");
   const reg = await page.evaluate(() => ({
     menu: PBNav.MENU.flatMap((m) => (m.items ? m.items.map((i) => i.view) : [m.view])),
@@ -338,7 +398,7 @@ async function decode(file) {
 
   // 7. Narrow window: no horizontal page scroll, navigation still reachable.
   await page.setViewportSize({ width: 390, height: 800 });
-  for (const h of ["#overview", "#modes/water", "#mechanisms/acid", "#catalog/cargo", "#catalog/slices", "#maps/5/1", "#maps/t/dungeon_well", "#scenes", "#assets/char.miner", "#review"]) {
+  for (const h of ["#overview", "#modes/water", "#mechanisms/acid", "#catalog/cargo", "#catalog/slices", "#maps/5/1", "#maps/t/dungeon_well", "#rooms2/pool/3", "#rooms2/diyu_fengdu", "#scenes", "#assets/char.miner", "#review"]) {
     await page.goto(URL + h); await page.waitForTimeout(250);
     const overflow = await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
     check(overflow <= 0, `${h} at 390px has no horizontal page scroll (${overflow}px)`);

@@ -10,6 +10,32 @@
 
 - 机制范围（用户 2026-10-16 决定）：关卡模式暂时只用现有的 33 个机制；SDK 已有但没进关卡的 `power`、`particles`、`rigid`、`pressure` 和各地区新机制，等现有关卡跑通后再开新章节（[关卡质量标准](design/level-quality.md) 第 4 节）。
 
+## 配送 v2 剩余内容合进来（2026-10-16，用户要求）
+
+用户交来 bundle `claude/delivery-redesign-next` @ `0a7d0ac`（GitHub 上的 `claude/delivery-redesign` 还停在已合并的 `986cce0`），说明"里面改动大的是用户新做的规则"。已合进本分支，**没有合进 `main`**。内容：
+- v2 画法 `delivery-scene2.js`
+- 地府改成荒郊野岭的画风（`terrain-diyu.js`、`theme.diyu`、`deco.diyu_lantern` 新候选版本）
+- 工作台「配送 v2」页
+- 设计文档：[谜题规则](design/delivery-puzzle-rules.md)、[石牢](design/delivery-dungeon.md)、[地府](design/delivery-diyu.md)
+- 工作包 DLV-01/02、UI-08/09
+- 测试 `rooms2.test.mjs`
+
+- **合并处理**：
+  - **编号撞车**：两边都新建了 `UI-07`。界面线的（另外三套固定界面 + 界面风格）保留 `UI-07`；配送 v2 的界面候选改名 [UI-09](packages/UI-09.md)，引用它的文档一起改了。
+  - **工作台**：「配送 v2」页接进 WB-01 的左侧菜单（配送 › 配送 v2），各页的脚本和字体文件（`font-ui`、`font-rooms2`、`font-extra`）都加载。[UI-08](packages/UI-08.md) 的接入因此已完成，样式沿用工作台通用样式。
+  - **工具与测试**：`tools/art.mjs`、`tests/i18n.test.mjs` 的模块列表两边合并；e2e 保留两边的检查，菜单顺序检查加了「配送 v2」。
+  - **生成文件**：生成文件重新生成。
+- **验证**（云端 Linux）：
+  - `content.mjs build` / `check`：0 错误
+  - `check-rooms2.mjs`：23 间房、300 个种子全部通过
+  - `art.mjs build`：134 项、0 项换版本、6 条确认记录；`art.mjs verify` ok
+  - `node --test`：151/151
+  - `workbench.e2e.cjs`：全部通过（含配送 v2 的 2f 节）
+- **待用户**：
+  - 在「确认」页确认配送 v2 的 24 项美术候选（工作台里标着"美术候选（未确认）"）
+  - 定地府名称（[地府](design/delivery-diyu.md) 第 7 节）
+- **设计负责人**：新规则以用户为准，没有改动；尚未逐条做设计审核。
+
 ## 三条线合到一个分支（2026-10-16，用户要求）
 
 `claude/inspiring-ride-zfnn4s` 现在同时包含：关卡线（`codex/portitor-stage1` @ `31e29e0`，含 LV-12）、界面定稿（`ui/style-proposals` @ `47f3bbe`）、配送模式改造（`claude/delivery-redesign` @ `986cce0`）。**没有合进 `main`。**
@@ -142,6 +168,7 @@ game-design 第 8 节的大厅、设置两行同步了。
 
 1. **R2 关卡模式（GPT，进行中）**：用户已确认全部美术（`APR-0001`–`APR-0005`），交接提示词已交给 GPT。GPT 先做阶段一（工程骨架 + 第 1 组 + 全套菜单），再做阶段二（第 2 组）。这一条线的规格和美术本次**没有改动**。
 2. **R3 配送模式第一个可玩切片（Claude，设计中）**：用户安排四步——① 定范围 → ② 房间模板、地图生成器、可通性检查、工作台「地图预览」→ ③ 实时规则写进设计模型、工作台能播放 → ④ 画切片要用的美术候选，等用户确认。**四步都已完成；第 4 步的 26 项美术已由用户确认（`APR-0006`）。** 下一步按新分工把切片实现拆成工作包，用户安排后再做。
+3. **配送模式重做（Claude，设计完成，等用户确认美术）**：第 1–3 步在分支 `claude/delivery-redesign`（交接提交 `3f59913`），第 4–7 步在分支 `claude/delivery-redesign-next` 完成。房间格式 `room/2`（可变大小 + 镜头、浮空地块与撑篙、提示动物）、开局三滚轮、石牢 10 间 + 地府 13 间（画风改为荒郊野岭）、v2 画法、检查工具、工作台「配送 v2」页、设计文档、工作包、测试都已完成；24 项美术候选等用户确认。详见下一节；交接记录见 [handoff/delivery-redesign-handover.md](handoff/delivery-redesign-handover.md)。
 
 **分工调整（2026-10-16 用户决定，已写进 AGENTS.md 第 0 条）**：Claude 以后只做设计、把功能拆成小工作包（`docs/packages/`，模板见其中的 README）、制作方交回后简单审核；画美术、写代码、生成数据、跑大量验证都交给其他 AI，以节省额度。
 
@@ -176,12 +203,45 @@ game-design 第 8 节的大厅、设置两行同步了。
 
 | 项 | 状态 |
 |---|---|
-| 设计 | GD-4.1 + [对话](design/dialogue.md)、[工程结构](design/architecture.md)、[编号](design/ids.md)、[配送切片](design/delivery-slice.md)（四步完成）、[配送地图](design/delivery-maps.md)、[配送实时规则](design/delivery-realtime.md) |
+| 设计 | GD-4.1 + [对话](design/dialogue.md)、[工程结构](design/architecture.md)、[编号](design/ids.md)、[配送切片](design/delivery-slice.md)（四步完成）、[配送地图](design/delivery-maps.md)、[配送实时规则](design/delivery-realtime.md)；配送 v2：[谜题规则](design/delivery-puzzle-rules.md)、[石牢](design/delivery-dungeon.md)、[地府](design/delivery-diyu.md) |
 | 关卡 | 16 关有完整规格（M01–M07、W01–W05、W07–W10），全部通过设计模型（本次未改） |
-| 编号 | 790 个资源（新增 26 项美术候选与 55 个配送文字键）、18 个编号空间，全部唯一 |
-| 美术 | 已确认记录 `APR-0001`–`APR-0006`：109 项中 108 项当前版本已确认（`char.portitor_alt` 是概念草图，不进游戏） |
+| 编号 | 921 个资源（配送 v2 新增 24 项美术候选与 77 个文字键）、18 个编号空间，全部唯一 |
+| 美术 | 已确认记录 `APR-0001`–`APR-0006`：133 项中 108 项当前版本已确认；24 项是配送 v2 的候选（待确认），`char.portitor_alt` 是概念草图，不进游戏 |
 | 机制 | 推怪、压怪、困怪由房间演示算出状态：有规格（`specified`） |
-| 交接 | 关卡模式：[gpt-refactor-prompt.md](handoff/gpt-refactor-prompt.md)，已交给 GPT。配送切片：四步完成、美术确认后再写交接提示词 |
+| 交接 | 关卡模式：[gpt-refactor-prompt.md](handoff/gpt-refactor-prompt.md)，已交给 GPT。配送切片：四步完成、美术确认后再写交接提示词。配送 v2：工作包 [DLV-01](packages/DLV-01.md)、[DLV-02](packages/DLV-02.md)、[UI-09](packages/UI-09.md)、[UI-08](packages/UI-08.md) |
+
+## 本轮：配送模式重做第 4–7 步（分支 `claude/delivery-redesign-next`，2026-10-16）
+
+基线 `3f59913`（`claude/delivery-redesign` 的交接提交）。只在本地提交，没有推送；交给用户的是 git bundle。
+
+| 提交 | 内容 |
+|---|---|
+| `a2cc38f` | v2 画法 `delivery-scene2.js`（`PB.droom2`：整间 / 镜头视图、浮块、提示动物、回合制试玩）；v2 文字表 `content/i18n-rooms2/`（中英各 77 键）；缺的字形写进新文件 `font-rooms2.js`；`art.mjs` 的 `loadCore` 供工具和测试共用 |
+| `988c9ba` | 地府画风改为荒郊野岭：`terrain-diyu.js` 画野石、草尖、根须，背景是远山、枯树、雾和磷火；规则材料（沙、水、梯子等）的像素与 `terrain.js` 一致 |
+| `676e89e` | 工作台「配送 v2」页（开局池、房间试玩、解法回放）+ e2e 2f 节（**页面**） |
+| `34dc229` | 工作台可选改动：滚轮画面、各模式按键说明、导航名称（**页面**） |
+| `71b856b` | 设计文档：[谜题规则](design/delivery-puzzle-rules.md)、[石牢](design/delivery-dungeon.md)、[地府](design/delivery-diyu.md)、[调研](research/2026-10-16-delivery-redesign.md)；工作包 DLV-01/02、UI-09（原名 UI-07，合并时改名）/08；mode-delivery、worlds、art-direction 等同步 |
+| `bc5118a` | 测试 `tests/rooms2.test.mjs`（10 个）；本节与 `modes.json` 配送简介（双滚轮 → 三滚轮）在其后的提交 |
+
+工作台页面（`index.html`、CSS、`js/app/**`）只在 `676e89e`、`34dc229` 两个提交里，其他提交不依赖它们；工作台改版后按 [UI-08](packages/UI-08.md) 接入。
+
+已实际验证（云端 Linux）：
+
+- `content.mjs build` / `check` 0 错误 0 警告；`check-levels.mjs` 16 关 ok；`check-rooms.mjs` 10 个模板、演示和 300 个种子全部通过（v1 没改）。
+- `check-rooms2.mjs`：23 间房的每条路线都走得通，开局池 300 个种子（石牢 151 / 地府 149，每局 7–10 间房）全部通过；`content/rooms2-check.generated.json` 除用时外与重跑结果一致。
+- `art.mjs build`：133 项、0 项换版本；`art.mjs verify` 通过。冻结的核心绘制文件、`content/i18n`、`content/i18n-delivery`、`art/approvals.json` 与基线相同。
+- `node --test tests/*.test.mjs` 48/48 通过（原 38 + 新 10）；`node tests/workbench.e2e.cjs`（Chromium）54 项全部通过。
+
+等用户确认的 24 项美术（工作台「确认」页）：石牢 `mech.rune_float`、`fauna.dungeon_cat`、`item.snack`；地府 `theme.diyu`、`deco.diyu_lantern`、`deco.diyu_lily`、`fauna.diyu_dog`、`fauna.diyu_butterfly`、`mech.lantern_float`、`monster.imp`、`monster.wandering_soul`、`monster.jiangshi`、角色 `char.meng_po` / `judge` / `wuchang` / `yama` / `ancestor` 和同名 5 个头像、`cargo.qingtuan`、`cargo.paper_house`。
+
+等用户决定：地府改成荒郊野岭以后，世界名「地府·酆都」和房名「酆都城 · 钟楼的锣」是否保留（可改为「荒村 · 更楼的锣」，[地府](design/delivery-diyu.md) 第 7 节）。
+
+已知不足 / 没做：
+
+- 石牢教和转折的房间太少（每局开头都是 `bridge → pole`，转折只有 `sandpour`），各要再做 1–2 间；地府 `diyu_paper_bridge`、`diyu_wangchuan` 要加一步非做不可的操作。
+- v2 只有回合制规则；实时规则（浮块推 / 撑篙的时序、游魂、跳跳僵尸、小鬼、提示动物走位）见 DLV-01，Godot 实现见 DLV-02（暂不安排）。
+- 暂缓：黑白无常分两份交货、纸扎小楼被风吹坏、提示动物直线走位、多屏房间背景视差；地府的 `drift`、`lantern_reveal`、`paper`、`hold_breath` 还没进 v2 房间；岩浆按用户决定暂不做；其他 5 个地区的提示动物只是设想。
+- 工作台：「美术候选」关掉时 `theme.diyu` 仍照画（主题没有占位画法）；重转用固定随机数；全图 / 镜头切换用 V 键而不是 Tab。
 
 ### 审核：GPT 关卡模式阶段一（分支 `codex/portitor-stage1`，2026-10-16，简单审核）
 
@@ -218,6 +278,7 @@ game-design 第 8 节的大厅、设置两行同步了。
 
 - **关卡线**（GPT，分支 `codex/portitor-stage1`）：LAB-01 合并 → LV-02 / 03 / 04 第 3 / 4 / 5 章补强 → LV-05 第 6 章改为跨章组合 → LV-06–09 各章 SDK 验证。
 - **界面线**（只改 HTML 工作台，分支 `ui/redo-html`）：UI-02 比较台 + 方向 A → UI-03 / 04 方向 B / C →【用户】选方向（UI-CHOICE）→ UI-05 重做全部界面 →【用户】确认 → UI-06 同步到项目。
+- **配送 v2 线**（由用户安排）：【用户】确认 24 项美术候选、定地府名称 → DLV-01 v2 实时规则；界面线 UI-05 之后做 UI-09（v2 界面候选）、UI-08（「配送 v2」页接入新样式）→ DLV-02 Godot 实现（暂不安排）。
 - 已完成：UI-01 调研（三个方向：A 木牌、B 清爽像素、C 灯笼符箓）、LV-01 设计模型插件接口。配送切片的实现这次不在计划里（用户说暂时不做）。
 - **机制范围（用户 2026-10-16 决定）**：关卡模式暂时只用现有的 33 个机制；SDK 已有但没进关卡的 `power`、`particles`、`rigid`、`pressure` 和各地区新机制，等现有关卡跑通后再开新章节（[关卡质量标准](design/level-quality.md) 第 4 节）。
 
