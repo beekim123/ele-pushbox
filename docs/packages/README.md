@@ -4,6 +4,8 @@
 
 每个包一个文件 `docs/packages/<编号>.md`，一次会话能做完。用户按批次把包派给制作方（GPT / Codex / 另开的 Claude 会话等），**全部批次做完后，Claude 一次性汇总审核**（不是做一个审一个）。
 
+> **分支整理计划（2026-10-16）**：两条线都做完后先合进 `main`，再清理分支、按新规则重开，见 [status.md](../status.md)「分支整理计划」。在那之前下面的分支规则照旧；LV-10 开工前先把 `origin/claude/inspiring-ride-zfnn4s` 合进 `codex/portitor-stage1`。
+
 ## 共同规则（所有包）
 
 1. **两条线、两个分支**：

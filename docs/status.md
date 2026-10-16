@@ -58,9 +58,28 @@
 
 ## 下一步与执行人
 
-1. **制作方（关卡线）**：做 [LV-10](packages/LV-10.md)。SDK 结果和规格还对不上时，照旧写进包里，不改规格。
+（分支怎么合、怎么清理见下一节「分支整理计划」。）
+
+1. **制作方（关卡线）**：先在 `codex/portitor-stage1` 上合进 `origin/claude/inspiring-ride-zfnn4s`，再做 [LV-10](packages/LV-10.md)。SDK 结果和规格还对不上时，照旧写进包里，不改规格。
 2. **Claude**：LV-10 交回后审核；如果酸或碎石仍有残留 / 超时，再按实测修几何。
 3. **用户**：现在不需要操作。想先看新关卡，可以打开工作台的关卡页（Q04、G01、G02、G05、E01、E04 的地图已经换成新版）。
+
+## 分支整理计划（用户 2026-10-16 决定）
+
+现在分支有点乱。等关卡线（LV-10）和界面线都做完，先都合进 `main`，再清理旧分支，按新规则重开。
+
+1. **两条线各自做完**
+   - 关卡线：GPT 在 `codex/portitor-stage1` 上先 `git merge origin/claude/inspiring-ride-zfnn4s`（本次设计审核只在这个分支上），再做 [LV-10](packages/LV-10.md)，推回 `codex/portitor-stage1`；Claude 审核通过。
+   - 界面线：在用户新开的界面分支上做完，用户确认新界面美术。
+2. **依次合进 `main`，一次一条**
+   - 先合关卡线：`codex/portitor-stage1` → `main`（已包含 Claude 分支）。
+   - 再合界面线：界面分支先合进最新的 `main`，重新生成美术，确认 `node tools/art.mjs build` 为 0 bumped、测试通过，再合进 `main`；按 UI-06 更新 Godot 界面。
+   - 合完给 `main` 打标签（例如 `v0.3`），作为清理前的存档点。
+3. **清理旧分支**：删之前逐个确认已经合进 `main`（`git branch -r --merged origin/main`）。`codex/portitor-stage1`、`claude/inspiring-ride-zfnn4s`、`claude/lv-01-model`、`claude/ui-01-research`、界面分支合并后可删；`chore/push-access-test` 确认后删；**`codex/art-ui-polish` 内容不明，删前先看。**
+4. **重新拉分支**：`main` 只接受合并、不直接提交；每件事从 `main` 开短分支，做完合回并删除——设计 `design/<主题>`、关卡 `level/<包号>`、界面 `ui/<主题>`。仍然用合并、不强推，生成文件冲突就用工具重新生成。
+5. **同步改文档**：`AGENTS.md`、`docs/packages/README.md` 和各工作包里写死的旧分支名（`codex/portitor-stage1`、`ui/redo-html` 等）改成新规则，免得执行方推到已删除的分支。由 Claude 在清理那天一起做。
+
+执行人：第 1 步按线；第 2 步合并由用户发起（或交给 Claude / GPT 按上面顺序做）；第 3、5 步由 Claude 负责确认和改文档。
 
 ## 给设计负责人的问题
 
