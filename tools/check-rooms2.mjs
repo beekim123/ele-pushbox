@@ -70,7 +70,7 @@ function checkRoute(PB, room, mirror, route, limit) {
 }
 
 export function checkRooms2(root, opts = {}) {
-  const PB = loadCore(["tilemodel", "rooms2", "mapgen", "mapgen2"]);
+  const PB = loadCore(["tilemodel", "mech/seesaw", "mech/gust", "rooms2", "mapgen", "mapgen2"]);
   const R = PB.rooms2, limit = opts.limit || 250000, seeds = opts.seeds || 300;
   const catalog = (n) => readJson(path.join(root, "content/catalog", n + ".json")).entries;
   const rooms = loadRooms2(root).filter((x) => !opts.only || x.room.id === opts.only);
