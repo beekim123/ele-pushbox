@@ -435,6 +435,8 @@ W06 的编号留给地狱模式候选"放水当电梯"。W05 的死局多半来�
  "settings":{"open_all_levels":false,"ambience":"full","language":"zh-Hans","show_grid":false,"music":0.8,"sfx":0.8,"window_scale":"auto"}}
 ```
 
+新手引导另有一段 `onboarding`（学会的动作及日期、上次游玩日期、说过的心里话、见过的机关、按法），字段见 [onboarding.md](onboarding.md) 附 3（2026-10-17 DSN-03）。
+
 写入采用"先写临时文件，再改名"。读取失败时备份损坏文件并重建。
 
 ### 7.6 引导

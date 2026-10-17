@@ -327,6 +327,8 @@
 
 ## 附 3 关卡数据和存档
 
+> **放在哪**（2026-10-17 Claude 合并时定）：下面关卡的 `onboarding` 不写进关卡文件 `M01.json`–`M07.json`（改了会让 SDK 通过记录作废），而是放在单独的 `content/onboarding/basics.json`：`{"format": "pushbox.onboarding/1", "levels": {"M01": { …下面 onboarding 里的内容… }}}`。本文说的"关卡数据 `onboarding.xxx`"都指这个文件里对应关卡的那一段。
+
 **关卡规格新加 `onboarding`**（都可以不写；不写的关和现在一样）。以 M04 为例，坐标只是示意：
 
 ```json

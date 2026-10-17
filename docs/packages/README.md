@@ -23,13 +23,13 @@
 | [WB-04](WB-04.md) | 合成器升级：拨弦、调频（钟铃木鱼）、锯齿波、颤音、气声、回声混响，音色预设库和试听样本 | `claude/inspiring-ride-zfnn4s` → `wb/WB-04` | `tools/lib/audio.mjs`、`tools/audio.mjs`、生成文件；现有 36 个声音源各升一版 | **已合并**（2026-10-17），试听样本待用户听 |
 | [AUD-00](AUD-00.md) | 主题小调第二版：4 个抓耳方案 × 4 首独立曲子（主题曲 + 石牢 / 地府 / 海女村变奏） | `claude/inspiring-ride-zfnn4s` → `aud/AUD-00-v2` | `audio.json`（主题曲组）、`tools/content.mjs`（一处）、生成文件 | 搁置：背景音乐先不做（用户 2026-10-17） |
 | [AUD-02](AUD-02.md) | 石牢、地府、海女村音乐各 3 首候选；依赖 WB-02 合并，与 AUD-01 互不依赖 | `claude/inspiring-ride-zfnn4s` → `aud/AUD-02` | 仅音乐生成结果；与 AUD-01 的汇总生成文件合并后重建 | 搁置：背景音乐先不做（用户 2026-10-17） |
-| [DSN-03](DSN-03.md) | 新手引导改造设计（用户：UX-01 报告 8 个问题全按建议） | `claude/inspiring-ride-zfnn4s` → `dsn/DSN-03` | `game-design.md`（只改引导相关）、本表（只改下面三行） | 待派 |
-| [UX-02](UX-02.md) | 引导的文字和关卡数据：新表 `content/i18n-onboarding/`、字形、第 1 组 7 关加 `onboarding`（DSN-03 拆出） | `claude/inspiring-ride-zfnn4s` → `ux/UX-02` | `content/levels/lab/basics/M01–M07.json`、`tools/content.mjs`（需要时只加检查）、字形生成文件 | 待派 |
+| [DSN-03](DSN-03.md) | 新手引导改造设计（用户：UX-01 报告 8 个问题全按建议） | `claude/inspiring-ride-zfnn4s` → `dsn/DSN-03` | `game-design.md`（只改引导相关）、本表（只改下面三行） | **已合并**（2026-10-17） |
+| [UX-02](UX-02.md) | 引导的文字和关卡数据：新表 `content/i18n-onboarding/`、字形、第 1 组 7 关加 `onboarding`（DSN-03 拆出） | `claude/inspiring-ride-zfnn4s` → `ux/UX-02` | 新文件 `content/onboarding/basics.json`、`tools/content.mjs`（只加检查）、字形生成文件 | 待派（现在可派） |
 | [UX-03](UX-03.md) | 工作台关卡页预览引导；关卡里的 5（+1）项新资产 | `claude/inspiring-ride-zfnn4s`（UX-02 合并后）→ `ux/UX-03` | `play.js`（加开关）、`index.html`、`tools/art.mjs`（追加）、e2e（追加）、生成文件 | 等 UX-02 合并 |
-| [UX-04](UX-04.md) | 引导进游戏 ①：备选键、Mac ⌘、鼠标悬停、按设备显示、"开始游戏"、"操作说明" | `main`（BR-01、UI-06 合并后）→ `ux/UX-04` | Godot 输入、大厅、暂停、设置（和 UI-06 同一批界面文件） | 等 UX-02、UX-03、UX-05、UI-06 合并 |
+| [UX-04](UX-04.md) | 引导进游戏 ①：备选键、Mac ⌘、鼠标悬停、按设备显示、"开始游戏"、"操作说明" | `claude/inspiring-ride-zfnn4s` → `ux/UX-04` | Godot 输入、大厅、暂停、设置（和 UI-06 同一批界面文件） | 等 UX-02、UX-03、UX-05、UI-06b、UI-06c 合并 |
 | [UX-05](UX-05.md) | 引导的 7 个新界面：HUD 标 Z/R/H、规则卡按法、过关"发现"、开始游戏、操作说明、暂停、设置 | `claude/inspiring-ride-zfnn4s`（UX-02 合并后）→ `ux/UX-05` | `index.html`、`tools/art.mjs`（追加）、e2e（追加）；生成文件与 UX-03 合并后重建 | 等 UX-02 合并（可和 UX-03 同时做） |
-| [UX-06](UX-06.md) | 引导进游戏 ②：按键提示层、开局心里话、目标发光、因果光、第 1 组房间放大 | `main`（UX-04 合并后）→ `ux/UX-06` | Godot 关卡场景、存档 | 等 UX-04 合并 |
-| [UX-07](UX-07.md) | 引导进游戏 ③：卡住与死局提醒、第三层提示、规则卡时机、选关目标、过关"发现" | `main`（UX-06 合并后）→ `ux/UX-07` | Godot 关卡场景、提示面板、规则卡、选关、过关 | 等 UX-06 合并 |
+| [UX-06](UX-06.md) | 引导进游戏 ②：按键提示层、开局心里话、目标发光、因果光、第 1 组房间放大 | `claude/inspiring-ride-zfnn4s` → `ux/UX-06` | Godot 关卡场景、存档 | 等 UX-04 合并 |
+| [UX-07](UX-07.md) | 引导进游戏 ③：卡住与死局提醒、第三层提示、规则卡时机、选关目标、过关"发现" | `claude/inspiring-ride-zfnn4s` → `ux/UX-07` | Godot 关卡场景、提示面板、规则卡、选关、过关 | 等 UX-06 合并 |
 | [WB-03](WB-03.md) | 配送菜单改短名（开局抽签 / 石牢 / 地府 / 海女村），退役 v1 旧版 | `claude/inspiring-ride-zfnn4s` → `wb/WB-03` | `slices.json`、`nav.js`、`index.html`、e2e | 已结束：菜单已改；v1 代码被已确认界面引用，不删；v1 数据等 DLV-01 后再删 |
 | [UI-09](UI-09.md) | 通用界面风格提案：3–4 个风格画在同一组样板界面上，用户选（2026-10-17） | `claude/inspiring-ride-zfnn4s` → `ui/UI-09` | `index.html`（追加）、`nav.js`（「美术」末尾加一项） | **已合并**（2026-10-17），用户选定 G2 深蓝圆角 |
 | [UI-10](UI-10.md) | 按选定风格做整套游戏界面 + 配送 v2 界面 + 通用大厅 | `claude/inspiring-ride-zfnn4s` → `ui/UI-10` | `index.html`、`tools/art.mjs`（追加）；15 个界面换版本 | 已拆成 10a / 10b / 10c |
@@ -55,7 +55,7 @@
 - `WB-01`
 - `DLV-01`–`DLV-05`
 - `UX-01`、`DSN-01`、`DSN-02`、`DSN-03`、`BR-01`
-- `UX-02`–`UX-04`（预留）
+- `UX-02`–`UX-07`（DSN-03 拆出）
 - `WB-03`、`UI-10`、`UI-10a`–`UI-10c`、`AUD-00`、`WB-04`、`DLV-04a`、`DLV-04b`
 - `WB-02`、`AUD-01`、`AUD-02`（预留）
 
