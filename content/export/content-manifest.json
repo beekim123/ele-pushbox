@@ -9325,6 +9325,7 @@
   },
   {
    "id": "dungeon_2",
+   "short_name": "石牢",
    "format": 2,
    "name": "配送地图 · 废弃的符文监狱（石牢重做）",
    "mode": "delivery",
@@ -9465,6 +9466,7 @@
   },
   {
    "id": "diyu_1",
+   "short_name": "地府",
    "format": 2,
    "name": "配送地图 · 地府·酆都",
    "mode": "delivery",

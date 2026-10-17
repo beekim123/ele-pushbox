@@ -32,6 +32,8 @@
 
   function route() {
     const [view, ...rest] = (location.hash.slice(1) || "overview").split("/");
+    // The v1 slice page is retired (workbench.md 6.1): its old addresses open the draw page.
+    if (view === "maps") { location.replace("#rooms2/pool"); return; }
     const name = VIEWS[view] ? view : "overview";
     const id = rest.join("/") || null;
     for (const v of Object.keys(VIEWS)) {

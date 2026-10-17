@@ -52,6 +52,7 @@
   const nameOf = (kind, id) => { const e = entry(kind, id); return e ? e.name : id; };
   const rarityOf = (kind, id) => { const e = entry(kind, id); return (e && e.rarity) || "common"; };
   const mapName = (id) => { const m = maps2().find((x) => x.id === id); return m ? m.name.replace(/^配送地图 · /, "") : id; };
+  const mapShort = (id) => { const m = maps2().find((x) => x.id === id); return (m && m.short_name) || mapName(id); };
   const shortName = (t) => String(t.name || t.id).split(" · ")[0];
   const statusOf = (id) => { try { return store.status(id); } catch (e) { return null; } };
   function text(key, vars, fallback) {
@@ -729,10 +730,10 @@
   // the pool, a map, or a room under the map it belongs to. Keys are the menu's hrefs (nav.js).
   function where(id) {
     const parts = (id || "").split("/");
-    if (!parts[0] || parts[0] === "pool") return { key: "rooms2/pool", trail: ["开局池"] };
-    if (parts[0] === "map") { const m = parts[1] || firstMap(); return { key: "rooms2/map/" + m, trail: [mapName(m)] }; }
+    if (!parts[0] || parts[0] === "pool") return { key: "rooms2/pool", trail: ["开局抽签"] };
+    if (parts[0] === "map") { const m = parts[1] || firstMap(); return { key: "rooms2/map/" + m, trail: [mapShort(m)] }; }
     const t = roomById(parts[0]), m = sliceOf(parts[0]), name = t ? shortName(t) : parts[0];
-    return m ? { key: "rooms2/map/" + m.id, trail: [mapName(m.id), name] } : { key: "rooms2/pool", trail: [name] };
+    return m ? { key: "rooms2/map/" + m.id, trail: [mapShort(m.id), name] } : { key: "rooms2/pool", trail: [name] };
   }
   function show(id) {
     const parts = (id || "").split("/");

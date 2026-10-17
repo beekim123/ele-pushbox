@@ -12,7 +12,7 @@
   // badge: id of a count shown after the label (filled by main.js).
   // href: where the item goes inside its page (default "#" + view).
   // { maps2: view }: one item per format-2 map of slices.json, in its order and
-  // named without "配送地图 · ", opening #<view>/map/<map id>.
+  // named by its short_name (workbench.md 6.1), opening #<view>/map/<map id>.
   const MENU = [
     { view: "overview", label: "总览", module: "PBOverview" },
     { group: "play", label: "关卡与玩法", items: [
@@ -21,9 +21,8 @@
       { view: "catalog", label: "设计数据", module: "PBCatalog" },
     ] },
     { group: "delivery", label: "配送", items: [
-      { view: "rooms2", label: "开局池", module: "PBRooms2", href: "#rooms2/pool" },
+      { view: "rooms2", label: "开局抽签", module: "PBRooms2", href: "#rooms2/pool" },
       { maps2: "rooms2" },
-      { view: "maps", label: "幽暗石牢（v1 切片）", module: "PBMaps" },
     ] },
     { group: "art", label: "美术", items: [
       { view: "scenes", label: "场景", module: "PBScenes" },
@@ -71,7 +70,7 @@
       if (it.maps2) {
         const slices = (root.PBStore && root.PBStore.catalog("slices")) || [];
         for (const s of slices.filter((x) => x.format === 2))
-          out.push({ view: it.maps2, key: it.maps2 + "/map/" + s.id, href: "#" + it.maps2 + "/map/" + s.id, label: String(s.name || s.id).replace(/^配送地图 · /, ""), group: m.group || null, groupLabel: m.items ? m.label : null });
+          out.push({ view: it.maps2, key: it.maps2 + "/map/" + s.id, href: "#" + it.maps2 + "/map/" + s.id, label: s.short_name || String(s.name || s.id).replace(/^配送地图 · /, ""), group: m.group || null, groupLabel: m.items ? m.label : null });
       } else out.push(Object.assign({ group: m.items ? m.group : null, groupLabel: m.items ? m.label : null }, it, { key: it.href ? it.href.slice(1) : it.view, href: it.href || "#" + it.view }));
     }
     return out;

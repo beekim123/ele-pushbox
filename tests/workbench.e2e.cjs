@@ -34,7 +34,7 @@ let runningBrowser = null;
   page.on("console", (m) => { if (m.type() === "error") errors.push(m.text()); });
 
   // 1. Every view opens without errors.
-  for (const h of ["#overview", "#modes", "#modes/water", "#modes/basics/M03", "#modes/hell-pool", "#modes/water/W08", "#mechanisms", "#mechanisms/float_sink", "#mechanisms/portal", "#scenes/level.W09", "#assets/mech.bridge", "#catalog/cargo", "#catalog/items", "#catalog/slices", "#maps", "#maps/7/2", "#maps/t/dungeon_guard", "#maps/t/dungeon_plate", "#rooms2", "#rooms2/pool/5", "#rooms2/diyu_lantern", "#rooms2/dungeon2_yard", "#rooms2/map/diyu_1", "#rooms2/map/dungeon_2", "#scenes", "#scenes/level.M04", "#scenes/ui.screen.chapters", "#scenes/lobby.forest", "#scenes/showcase.cosmos", "#scenes/chapter.ruins", "#scenes/chapter.sky", "#assets", "#assets/material.chapter2_5", "#assets/char.portitor", "#catalog/worlds", "#catalog/recipients", "#catalog/combos", "#catalog/upgrades", "#ids", "#ids/level", "#scenes/ui.screen.dialogue", "#scenes/ui.screen.hint", "#assets/mech.door", "#edit/obj.crate_wood", "#review", "#export"]) {
+  for (const h of ["#overview", "#modes", "#modes/water", "#modes/basics/M03", "#modes/hell-pool", "#modes/water/W08", "#mechanisms", "#mechanisms/float_sink", "#mechanisms/portal", "#scenes/level.W09", "#assets/mech.bridge", "#catalog/cargo", "#catalog/items", "#catalog/slices", "#maps", "#rooms2", "#rooms2/pool/5", "#rooms2/diyu_lantern", "#rooms2/dungeon2_yard", "#rooms2/map/diyu_1", "#rooms2/map/dungeon_2", "#scenes", "#scenes/level.M04", "#scenes/ui.screen.chapters", "#scenes/lobby.forest", "#scenes/showcase.cosmos", "#scenes/chapter.ruins", "#scenes/chapter.sky", "#assets", "#assets/material.chapter2_5", "#assets/char.portitor", "#catalog/worlds", "#catalog/recipients", "#catalog/combos", "#catalog/upgrades", "#ids", "#ids/level", "#scenes/ui.screen.dialogue", "#scenes/ui.screen.hint", "#assets/mech.door", "#edit/obj.crate_wood", "#review", "#export"]) {
     await page.goto(URL + h); await page.waitForTimeout(250);
   }
   check(errors.length === 0, "all views load without console errors" + (errors.length ? ": " + errors[0] : ""));
@@ -115,67 +115,22 @@ let runningBrowser = null;
   const rows = await page.locator("#catalog-work table.grid tbody tr").count();
   check(rows === eastAsia && (await page.locator("#catalog-work").textContent()).includes("地府·酆都"), `region catalog filters by culture sphere (${rows}/${eastAsia} 东亚 rows, 地府 listed)`);
 
-  // 2c. Map preview: the browser generator reproduces the golden maps; rooms are clickable.
+  // 2c. v1 generator (its page is retired, the code stays for v2 and DLV-01): the browser reproduces the golden maps.
   const golden = JSON.parse(fs.readFileSync(path.join(REPO, "content/export/delivery-golden.json"), "utf8")).maps.slice(0, 8);
-  await page.goto(URL + "#maps/3"); await page.waitForTimeout(300);
+  await page.goto(URL + "#overview"); await page.waitForTimeout(300);
   const same = await page.evaluate((g) => {
     const sl = PBStore.catalog("slices")[0], list = sl.rooms.map((id) => PBStore.content().rooms.find((r) => r.id === id)).sort((a, b) => a.id.localeCompare(b.id));
     return g.map((m) => JSON.stringify(PB.mapgen.generate(m.seed, sl, list).rooms) === JSON.stringify(m.rooms));
   }, golden);
   check(same.every(Boolean), `browser map generator matches the golden table (${same.filter(Boolean).length}/${same.length} seeds)`);
-  const box3 = await page.locator("canvas.map-overview").boundingBox();
-  const target = await page.evaluate(() => { const sl = PBStore.catalog("slices")[0], list = sl.rooms.map((id) => PBStore.content().rooms.find((r) => r.id === id)).sort((a, b) => a.id.localeCompare(b.id)); const m = PB.mapgen.generate(3, sl, list), r = m.rooms[m.rooms.length - 1]; return { x: r.x, y: r.y, i: r.index, cols: m.cols, rows: m.rows }; });
-  const cw = await page.evaluate(() => document.querySelector("canvas.map-overview").width), ch = await page.evaluate(() => document.querySelector("canvas.map-overview").height);
-  await page.mouse.click(box3.x + ((8 + target.x * 88 + 40) / cw) * box3.width, box3.y + ((8 + target.y * 48 + 20) / ch) * box3.height);
-  await page.waitForTimeout(250);
-  check((await page.evaluate(() => location.hash)) === `#maps/3/${target.i}`, "clicking a room on the overview selects it");
-  check((await page.locator("#maps-work h3").textContent()).includes("收件人之家"), "the last room of the path is the recipient's home");
-  await page.goto(URL + "#maps/t/dungeon_station"); await page.waitForTimeout(250);
-  check((await page.locator("#maps-work table.routes tbody tr").count()) === 48, "station template lists its 48 checked routes");
-  check((await page.locator("#maps-work table.demos tbody tr").count()) === 2, "station template lists its demo and the demo's mirror image");
 
-  // 2d. Real-time model: the browser replays the golden demos frame for frame; a demo plays in the
-  // map preview; a whole map can be played with the keyboard.
+  // 2d. Real-time model: the browser replays the golden demos frame for frame.
   const replays = JSON.parse(fs.readFileSync(path.join(REPO, "content/export/delivery-golden.json"), "utf8")).replays;
   const replayed = await page.evaluate((list) => {
     const sl = PBStore.catalog("slices")[0], cat = { monsters: PBStore.catalog("monsters"), cargo: PBStore.catalog("cargo"), recipients: PBStore.catalog("recipients"), items: PBStore.catalog("items") };
     return list.map((g) => { const t = PBStore.content().rooms.find((r) => r.id === g.template), r = PB.rt.runDemo(cat, sl, t, t.demos.find((d) => d.id === g.demo), g.mirror); return r.ok && r.end === g.end && JSON.stringify(r.frames) === JSON.stringify(g.frames); });
   }, replays.map((g) => ({ template: g.template, demo: g.demo, mirror: g.mirror, end: g.end, frames: g.frames })));
   check(replayed.length >= 20 && replayed.every(Boolean), `browser real-time model reproduces the golden replays (${replayed.filter(Boolean).length}/${replayed.length})`);
-  await page.goto(URL + "#maps/t/dungeon_guard"); await page.waitForTimeout(250);
-  await page.selectOption('select[aria-label="演示"]', "crush"); await page.waitForTimeout(150);
-  await page.selectOption('select[aria-label="播放速度"]', "4");
-  const demoDone = await page.waitForFunction(() => { const s = PBPlay.active(); return s && s.run.leaving ? { edge: s.run.leaving.edge, kos: s.run.kos, hearts: s.run.hearts } : null; }, null, { timeout: 30000 }).then((h) => h.jsonValue()).catch(() => null);
-  await page.waitForTimeout(200);
-  check(!!demoDone && demoDone.edge === "right" && demoDone.kos === 1 && demoDone.hearts === 3 && (await page.locator("#maps-info").textContent()).includes("放倒怪物（压倒）"),
-    "the crush demo plays in the map preview: the skeleton is crushed, the player leaves right unhurt");
-  await page.goto(URL + "#maps/11"); await page.waitForTimeout(300);
-  await page.click('.play-bar button:has-text("试玩整张图")'); await page.waitForTimeout(200);
-  const gateExit = await page.evaluate(() => { const r = PBPlay.active().run; return r.map.rooms[0].open.bottom || null; });
-  await page.keyboard.down("ArrowRight");
-  await page.waitForFunction(() => PBPlay.active().run.room.player.x >= 9, null, { timeout: 10000 }).catch(() => {});
-  await page.keyboard.up("ArrowRight");
-  await page.keyboard.down("ArrowDown");
-  await page.waitForFunction(() => PBPlay.active().run.roomIndex === 1, null, { timeout: 10000 }).catch(() => {});
-  await page.keyboard.up("ArrowDown");
-  const moved = await page.evaluate(() => { const r = PBPlay.active().run; return { room: r.roomIndex, entered: r.events.filter((e) => e.type === "room").length, y: r.room.player.y }; });
-  check(gateExit === "mid" && moved.room === 1 && moved.entered === 1, `keyboard play: from the gate down the shaft into the second room of seed 11 (${JSON.stringify(moved)})`);
-  await page.keyboard.press("r"); await page.waitForTimeout(150);
-  check(await page.evaluate(() => { const r = PBPlay.active().run; return r.events.some((e) => e.type === "reset") && r.room.player.y === 0; }), "R restarts the room at the door it was entered by");
-
-  // 2e. Step-4 art is approved (APR-0006): the map preview draws it with "美术候选" on or off and lists no
-  // candidates. The switch itself is checked on the v2 rooms (2f), which still have candidates.
-  await page.goto(URL + "#maps/7/4"); await page.waitForTimeout(300);
-  await page.click('.play-bar button:has-text("静态")'); await page.waitForTimeout(400);
-  const withArt = await page.evaluate(() => PBMaps.placeholders());
-  await page.click('#maps-side button:has-text("美术候选")'); await page.waitForTimeout(400);
-  const without = await page.evaluate(() => PBMaps.placeholders());
-  const mapNote = await page.locator("#maps-work").textContent();
-  await page.click('#maps-side button:has-text("美术候选")'); await page.waitForTimeout(200);
-  check(!withArt.includes("rat_swarm") && !withArt.includes("coin") && !without.includes("rat_swarm") && !without.includes("coin"),
-    `APR-0006 art stays visible with candidates off (on: ${JSON.stringify(withArt)}, off: ${JSON.stringify(without)})`);
-  check(!(await page.locator("#maps-work").textContent()).includes("美术候选（未确认"), "approved delivery art is not described as unconfirmed");
-
   // 2f. v2 rooms: the browser draws the same run pool as tools/check-rooms2.mjs; a run lists and links its
   // rooms; a room replays its solution step by step and plays with the keyboard; candidates switch off.
   await page.goto(URL + "#rooms2/pool/5"); await page.waitForTimeout(300);
@@ -333,7 +288,7 @@ let runningBrowser = null;
   await page.goto(URL + "#overview"); await page.waitForTimeout(200);
   const menu = await page.evaluate(() => Array.from(document.querySelectorAll("#nav > a, #nav > .nav-group")).map((n) => n.matches("a")
     ? [n.firstChild.textContent] : [n.querySelector(".nav-head-label").textContent, ...Array.from(n.querySelectorAll(".nav-list a")).map((a) => a.firstChild.textContent)]));
-  const wantMenu = [["总览"], ["关卡与玩法", "模式与关卡", "机制", "设计数据"], ["配送", "开局池", "废弃的符文监狱（石牢重做）", "地府·酆都", "幽暗石牢（v1 切片）"], ["美术", "场景", "资产与动画", "编辑与对比", "确认", "导出"], ["工具", "编号映射"], ["声音", "音效", "音乐", "按地图"]];
+  const wantMenu = [["总览"], ["关卡与玩法", "模式与关卡", "机制", "设计数据"], ["配送", "开局抽签", "石牢", "地府"], ["美术", "场景", "资产与动画", "编辑与对比", "确认", "导出"], ["工具", "编号映射"], ["声音", "音效", "音乐", "按地图"]];
   check(JSON.stringify(menu) === JSON.stringify(wantMenu), "left menu shows the categories and pages of WB-01 in order, 配送 by map as in workbench.md 6.1 (" + JSON.stringify(menu) + ")");
   const reg = await page.evaluate(() => ({
     pages: [...new Set(PBNav.pages().map((p) => p.view))],
@@ -361,10 +316,10 @@ let runningBrowser = null;
     heads: Array.from(document.querySelectorAll("#nav .nav-head.has-current")).map((x) => x.dataset.group + ":" + x.getAttribute("aria-expanded")).join(),
     crumb: document.getElementById("nav-crumb").textContent,
   }));
-  await page.goto(URL + "#maps/5/1"); await page.waitForTimeout(300);
-  const deepMap = await where(), mapText = await page.locator("#maps-work").textContent();
-  check(deepMap.view === "view-maps" && deepMap.current === "maps" && deepMap.heads === "delivery:true" && deepMap.crumb === "配送 › 幽暗石牢（v1 切片）" && mapText.includes("种子 5") && mapText.includes("第 2 间"),
-    "#maps/5/1 still opens seed 5, room 2, with 幽暗石牢（v1 切片） highlighted under an open 配送 (" + JSON.stringify(deepMap) + ")");
+  await page.goto(URL + "#maps/5/1"); await page.waitForTimeout(400);
+  const retired = await where();
+  check(retired.hash === "#rooms2/pool" && retired.view === "view-rooms2" && retired.current === "rooms2/pool" && retired.crumb === "配送 › 开局抽签",
+    "the retired v1 page's old address #maps/5/1 opens 开局抽签 (" + JSON.stringify(retired) + ")");
   await page.goto(URL + "#assets/char.miner"); await page.waitForTimeout(300);
   const deepAsset = await where();
   check(deepAsset.view === "view-assets" && deepAsset.current === "assets" && deepAsset.heads === "art:true" && (await page.locator("#asset-inspector").textContent()).includes("char.miner"),
@@ -372,29 +327,27 @@ let runningBrowser = null;
   // Old addresses of the delivery pages still open; the menu marks the map a room belongs to (workbench.md 6.1).
   const oldUrls = [];
   for (const [h, page2, key, crumb] of [
-    ["#rooms2", "pool", "rooms2/pool", "配送 › 开局池"],
-    ["#rooms2/pool/5", "pool", "rooms2/pool", "配送 › 开局池"],
-    ["#rooms2/map/dungeon_2", "map", "rooms2/map/dungeon_2", "配送 › 废弃的符文监狱（石牢重做）"],
-    ["#rooms2/map/diyu_1", "map", "rooms2/map/diyu_1", "配送 › 地府·酆都"],
-    ["#rooms2/diyu_naihe", "room", "rooms2/map/diyu_1", "配送 › 地府·酆都 › 奈何桥"],
-    ["#rooms2/dungeon2_yard", "room", "rooms2/map/dungeon_2", "配送 › 废弃的符文监狱（石牢重做） › 放风场"],
-    ["#maps", null, "maps", "配送 › 幽暗石牢（v1 切片）"],
-    ["#maps/t/dungeon_guard", null, "maps", "配送 › 幽暗石牢（v1 切片）"],
+    ["#rooms2", "pool", "rooms2/pool", "配送 › 开局抽签"],
+    ["#rooms2/pool/5", "pool", "rooms2/pool", "配送 › 开局抽签"],
+    ["#rooms2/map/dungeon_2", "map", "rooms2/map/dungeon_2", "配送 › 石牢"],
+    ["#rooms2/map/diyu_1", "map", "rooms2/map/diyu_1", "配送 › 地府"],
+    ["#rooms2/diyu_naihe", "room", "rooms2/map/diyu_1", "配送 › 地府 › 奈何桥"],
+    ["#rooms2/dungeon2_yard", "room", "rooms2/map/dungeon_2", "配送 › 石牢 › 放风场"],
   ]) {
     await page.goto(URL + h); await page.waitForTimeout(300);
     const st = Object.assign(await where(), { page: await page.evaluate(() => PBRooms2.state().page), seed: await page.evaluate(() => PBRooms2.state().seed) });
-    const ok = st.hash === h && st.view === (page2 ? "view-rooms2" : "view-maps") && (!page2 || st.page === page2) && st.current === key && st.heads === "delivery:true" && st.crumb === crumb && (h !== "#rooms2/pool/5" || st.seed === 5);
+    const ok = st.hash === h && st.view === "view-rooms2" && st.page === page2 && st.current === key && st.heads === "delivery:true" && st.crumb === crumb && (h !== "#rooms2/pool/5" || st.seed === 5);
     if (!ok) oldUrls.push(h + " " + JSON.stringify(st));
   }
-  check(oldUrls.length === 0, "old delivery addresses still open; the menu highlights the pool, the map (also for its rooms) or the v1 slice, and the breadcrumb names it" + (oldUrls.length ? ": " + oldUrls[0] : ""));
-  await page.goto(URL + "#maps/5/1"); await page.waitForTimeout(250);
+  check(oldUrls.length === 0, "old delivery addresses still open; the menu highlights the draw page or the map (also for its rooms), and the breadcrumb uses the short name" + (oldUrls.length ? ": " + oldUrls[0] : ""));
+  await page.goto(URL + "#rooms2/map/diyu_1"); await page.waitForTimeout(250);
   await page.click('#nav a[data-view="assets"]'); await page.waitForTimeout(250);
   const picked = await where();
   await page.goBack(); await page.waitForTimeout(300);
   const back = await where();
   await page.goForward(); await page.waitForTimeout(300);
   const fwd = await where();
-  check(picked.hash === "#assets" && back.hash === "#maps/5/1" && back.view === "view-maps" && back.current === "maps" && fwd.hash === "#assets" && fwd.view === "view-assets" && fwd.current === "assets",
+  check(picked.hash === "#assets" && back.hash === "#rooms2/map/diyu_1" && back.view === "view-rooms2" && back.current === "rooms2/map/diyu_1" && fwd.hash === "#assets" && fwd.view === "view-assets" && fwd.current === "assets",
     "browser back / forward move between pages opened from the menu and keep the highlight in step");
 
   const fold = (g) => page.evaluate((g) => ({ expanded: document.querySelector(`#nav .nav-head[data-group="${g}"]`).getAttribute("aria-expanded"), hidden: document.getElementById("nav-list-" + g).hidden }), g);
@@ -461,19 +414,19 @@ let runningBrowser = null;
 
   // 7. Narrow window: no horizontal page scroll, navigation still reachable.
   await page.setViewportSize({ width: 390, height: 800 });
-  for (const h of ["#overview", "#modes/water", "#mechanisms/acid", "#catalog/cargo", "#catalog/slices", "#maps/5/1", "#maps/t/dungeon_well", "#rooms2/pool/3", "#rooms2/map/diyu_1", "#rooms2/diyu_fengdu", "#scenes", "#assets/char.miner", "#review"]) {
+  for (const h of ["#overview", "#modes/water", "#mechanisms/acid", "#catalog/cargo", "#catalog/slices", "#rooms2/pool/3", "#rooms2/map/diyu_1", "#rooms2/diyu_fengdu", "#scenes", "#assets/char.miner", "#review"]) {
     await page.goto(URL + h); await page.waitForTimeout(250);
     const overflow = await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
     check(overflow <= 0, `${h} at 390px has no horizontal page scroll (${overflow}px)`);
   }
   // 7b. At phone width the menu is one button in the top-left corner that opens a drawer.
-  await page.goto(URL + "#maps/5/1"); await page.waitForTimeout(250);
+  await page.goto(URL + "#rooms2/map/diyu_1"); await page.waitForTimeout(250);
   const menuBtn = await page.locator("#nav-toggle").boundingBox();
   check(!!menuBtn && menuBtn.x < 40 && menuBtn.y < 40 && (await page.locator("#nav-toggle").isVisible()) && !(await page.locator("#nav").isVisible()),
     "at 390px the menu folds into a button in the top-left corner and the drawer starts closed");
   await page.click("#nav-toggle"); await page.waitForTimeout(350);
   const drawer = await page.evaluate(() => { const r = document.getElementById("nav").getBoundingClientRect(); return { left: r.left, right: r.right, expanded: document.getElementById("nav-toggle").getAttribute("aria-expanded"), scrim: !document.getElementById("nav-scrim").hidden, inert: document.querySelector("main").inert, overflow: document.documentElement.scrollWidth - window.innerWidth }; });
-  check(drawer.left === 0 && drawer.right <= 390 && drawer.expanded === "true" && drawer.scrim && drawer.inert && drawer.overflow <= 0 && (await page.locator('#nav a[data-view="maps"][aria-current="page"]').isVisible()),
+  check(drawer.left === 0 && drawer.right <= 390 && drawer.expanded === "true" && drawer.scrim && drawer.inert && drawer.overflow <= 0 && (await page.locator('#nav a[data-key="rooms2/map/diyu_1"][aria-current="page"]').isVisible()),
     `the button opens the menu as a drawer over the page, without horizontal scroll (${drawer.overflow}px)`);
   await page.click('#nav a[data-view="scenes"]'); await page.waitForTimeout(350);
   check((await page.evaluate(() => location.hash)) === "#scenes" && !(await page.locator("#nav").isVisible()) && (await page.getAttribute("#nav-toggle", "aria-expanded")) === "false" && !(await page.evaluate(() => document.querySelector("main").inert)),

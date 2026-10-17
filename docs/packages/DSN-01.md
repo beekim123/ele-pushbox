@@ -1,6 +1,6 @@
 # DSN-01 第三张配送地图「济州海女村」：设计 + 美术候选
 
-状态：已交回（2026-10-17，Git bundle `DSN-01.bundle`；22 项美术候选等用户确认）
+状态：**已合并**（2026-10-17，Claude 核对：范围在包内；22 项美术候选第 1 版待用户确认；`art.mjs build` 156 项、0 bumped）
 基线：`claude/inspiring-ride-zfnn4s` → 分支：`dsn/DSN-01`（**不要**从 `main` 开：`main` 现在还是旧内容）
 
 **开工**（照抄）：
