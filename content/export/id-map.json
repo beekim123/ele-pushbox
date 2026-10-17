@@ -5,7 +5,7 @@
   "art": {
    "name": "美术资产",
    "source": "art/source/<分类>/<id>.json",
-   "count": 156
+   "count": 158
   },
   "level": {
    "name": "关卡",
@@ -100,7 +100,7 @@
   "text": {
    "name": "界面与台词文字",
    "source": "content/i18n/zh-Hans.json 与 content/i18n-<名>/zh-Hans.json",
-   "count": 500
+   "count": 528
   }
  },
  "entries": [
@@ -1792,8 +1792,8 @@
    "source": "art/source/screen/ui.screen.confirm.json",
    "game": "res://ui/screens/confirm.tscn",
    "category": "screen",
-   "version": 1,
-   "hash": "777956c08c1bf55c6c1f50a78c4781535239a511f7a7b4483839c97c8cad34a5",
+   "version": 2,
+   "hash": "312087ae242d0c79e5615c009eac05c161e1a69376cf221167efd1aff9f7f8c4",
    "approved": false
   },
   {
@@ -1804,8 +1804,8 @@
    "source": "art/source/screen/ui.screen.delivery_hud.json",
    "game": "res://ui/screens/delivery_hud.tscn",
    "category": "screen",
-   "version": 2,
-   "hash": "f76b62b58c9f8a802eb28cb56cfe2983038dcd829b015f9838cbd4c9fe81a0c0",
+   "version": 3,
+   "hash": "63b46cc9eb2dec0811388d60f6b500e23c4952550c32ea939d7ab30ea74782b5",
    "approved": false
   },
   {
@@ -1816,8 +1816,8 @@
    "source": "art/source/screen/ui.screen.delivery_pause.json",
    "game": "res://ui/screens/delivery_pause.tscn",
    "category": "screen",
-   "version": 2,
-   "hash": "b7a69ebf520049bc6c4eb3225847e4bb0158c6160db5c6b4a152205514f18dda",
+   "version": 3,
+   "hash": "59aea63939340159d14dd494c6995fc36260e066048af95a03502e3df11d74ad",
    "approved": false
   },
   {
@@ -1845,6 +1845,18 @@
    "approved": false
   },
   {
+   "uid": "art:ui.screen.hint_animal",
+   "domain": "art",
+   "id": "ui.screen.hint_animal",
+   "name": "提示动物气泡（配送）",
+   "source": "art/source/screen/ui.screen.hint_animal.json",
+   "game": "res://ui/screens/hint_animal.tscn",
+   "category": "screen",
+   "version": 1,
+   "hash": "712ab03b13b0f32879b784ba16d1b62ca58a97f9b0b33594ed157bb9c3efe074",
+   "approved": false
+  },
+  {
    "uid": "art:ui.screen.levels",
    "domain": "art",
    "id": "ui.screen.levels",
@@ -1869,6 +1881,18 @@
    "approved": false
   },
   {
+   "uid": "art:ui.screen.observe",
+   "domain": "art",
+   "id": "ui.screen.observe",
+   "name": "看全图（配送）",
+   "source": "art/source/screen/ui.screen.observe.json",
+   "game": "res://ui/screens/observe.tscn",
+   "category": "screen",
+   "version": 1,
+   "hash": "773612a72d128b4742e2043d1bdf733f1af8854ea21d292f09c2f58ec60e29e0",
+   "approved": false
+  },
+  {
    "uid": "art:ui.screen.pause",
    "domain": "art",
    "id": "ui.screen.pause",
@@ -1888,8 +1912,8 @@
    "source": "art/source/screen/ui.screen.reels.json",
    "game": "res://ui/screens/reels.tscn",
    "category": "screen",
-   "version": 2,
-   "hash": "4e9f8918cc8c80a4c6b1a056b9d1b2378cca5bbe2eba74b3173cb00403d6ae8a",
+   "version": 3,
+   "hash": "1febeb784a0483c562ae56c2e8fc28e35be9c994d112ac0ee911d1994ec9e0c4",
    "approved": false
   },
   {
@@ -1948,8 +1972,8 @@
    "source": "art/source/screen/ui.screen.shop.json",
    "game": "res://ui/screens/shop.tscn",
    "category": "screen",
-   "version": 2,
-   "hash": "56cb41aba4ff725b2caa5aae42ef7f9212c48e469946439873f1cd0c93639b4b",
+   "version": 3,
+   "hash": "6cfbd485aa578250578060970c27852eac432d147dc877f5fa0e9d64f0867733",
    "approved": false
   },
   {
@@ -9928,6 +9952,230 @@
    "name": "基础 {n}",
    "source": "content/i18n-delivery/zh-Hans.json",
    "game": "tr:dlv.done.base"
+  },
+  {
+   "uid": "text:d2.map",
+   "domain": "text",
+   "id": "d2.map",
+   "name": "地图",
+   "source": "content/i18n-delivery2/zh-Hans.json",
+   "game": "tr:d2.map"
+  },
+  {
+   "uid": "text:d2.reroll",
+   "domain": "text",
+   "id": "d2.reroll",
+   "name": "重转 剩{n}次",
+   "source": "content/i18n-delivery2/zh-Hans.json",
+   "game": "tr:d2.reroll"
+  },
+  {
+   "uid": "text:d2.go",
+   "domain": "text",
+   "id": "d2.go",
+   "name": "出发",
+   "source": "content/i18n-delivery2/zh-Hans.json",
+   "game": "tr:d2.go"
+  },
+  {
+   "uid": "text:d2.select",
+   "domain": "text",
+   "id": "d2.select",
+   "name": "选择",
+   "source": "content/i18n-delivery2/zh-Hans.json",
+   "game": "tr:d2.select"
+  },
+  {
+   "uid": "text:d2.buy",
+   "domain": "text",
+   "id": "d2.buy",
+   "name": "购买",
+   "source": "content/i18n-delivery2/zh-Hans.json",
+   "game": "tr:d2.buy"
+  },
+  {
+   "uid": "text:d2.leave",
+   "domain": "text",
+   "id": "d2.leave",
+   "name": "离开",
+   "source": "content/i18n-delivery2/zh-Hans.json",
+   "game": "tr:d2.leave"
+  },
+  {
+   "uid": "text:d2.back",
+   "domain": "text",
+   "id": "d2.back",
+   "name": "返回",
+   "source": "content/i18n-delivery2/zh-Hans.json",
+   "game": "tr:d2.back"
+  },
+  {
+   "uid": "text:d2.observe",
+   "domain": "text",
+   "id": "d2.observe",
+   "name": "看全图",
+   "source": "content/i18n-delivery2/zh-Hans.json",
+   "game": "tr:d2.observe"
+  },
+  {
+   "uid": "text:d2.player",
+   "domain": "text",
+   "id": "d2.player",
+   "name": "人",
+   "source": "content/i18n-delivery2/zh-Hans.json",
+   "game": "tr:d2.player"
+  },
+  {
+   "uid": "text:d2.exit",
+   "domain": "text",
+   "id": "d2.exit",
+   "name": "出口",
+   "source": "content/i18n-delivery2/zh-Hans.json",
+   "game": "tr:d2.exit"
+  },
+  {
+   "uid": "text:d2.monster",
+   "domain": "text",
+   "id": "d2.monster",
+   "name": "怪物",
+   "source": "content/i18n-delivery2/zh-Hans.json",
+   "game": "tr:d2.monster"
+  },
+  {
+   "uid": "text:d2.animal",
+   "domain": "text",
+   "id": "d2.animal",
+   "name": "动物",
+   "source": "content/i18n-delivery2/zh-Hans.json",
+   "game": "tr:d2.animal"
+  },
+  {
+   "uid": "text:d2.snack.dungeon",
+   "domain": "text",
+   "id": "d2.snack.dungeon",
+   "name": "小鱼饼干",
+   "source": "content/i18n-delivery2/zh-Hans.json",
+   "game": "tr:d2.snack.dungeon"
+  },
+  {
+   "uid": "text:d2.snack.diyu",
+   "domain": "text",
+   "id": "d2.snack.diyu",
+   "name": "桂花糕",
+   "source": "content/i18n-delivery2/zh-Hans.json",
+   "game": "tr:d2.snack.diyu"
+  },
+  {
+   "uid": "text:d2.snack.jeju",
+   "domain": "text",
+   "id": "d2.snack.jeju",
+   "name": "小米糕",
+   "source": "content/i18n-delivery2/zh-Hans.json",
+   "game": "tr:d2.snack.jeju"
+  },
+  {
+   "uid": "text:d2.snack.desc",
+   "domain": "text",
+   "id": "d2.snack.desc",
+   "name": "一块零食换一句提示",
+   "source": "content/i18n-delivery2/zh-Hans.json",
+   "game": "tr:d2.snack.desc"
+  },
+  {
+   "uid": "text:d2.snack.stock",
+   "domain": "text",
+   "id": "d2.snack.stock",
+   "name": "每站 3 块 · 10 金币",
+   "source": "content/i18n-delivery2/zh-Hans.json",
+   "game": "tr:d2.snack.stock"
+  },
+  {
+   "uid": "text:d2.feed",
+   "domain": "text",
+   "id": "d2.feed",
+   "name": "喂零食要找猫 / 狗 / 小马",
+   "source": "content/i18n-delivery2/zh-Hans.json",
+   "game": "tr:d2.feed"
+  },
+  {
+   "uid": "text:d2.hint",
+   "domain": "text",
+   "id": "d2.hint",
+   "name": "先挖一袋沙。",
+   "source": "content/i18n-delivery2/zh-Hans.json",
+   "game": "tr:d2.hint"
+  },
+  {
+   "uid": "text:d2.hint.near",
+   "domain": "text",
+   "id": "d2.hint.near",
+   "name": "走近看箭头 · 喂零食听提示",
+   "source": "content/i18n-delivery2/zh-Hans.json",
+   "game": "tr:d2.hint.near"
+  },
+  {
+   "uid": "text:d2.tip",
+   "domain": "text",
+   "id": "d2.tip",
+   "name": "小费 ×1.5",
+   "source": "content/i18n-delivery2/zh-Hans.json",
+   "game": "tr:d2.tip"
+  },
+  {
+   "uid": "text:d2.reel.order",
+   "domain": "text",
+   "id": "d2.reel.order",
+   "name": "地图 → 收件人 → 货物",
+   "source": "content/i18n-delivery2/zh-Hans.json",
+   "game": "tr:d2.reel.order"
+  },
+  {
+   "uid": "text:d2.integrity",
+   "domain": "text",
+   "id": "d2.integrity",
+   "name": "完好度",
+   "source": "content/i18n-delivery2/zh-Hans.json",
+   "game": "tr:d2.integrity"
+  },
+  {
+   "uid": "text:d2.pause",
+   "domain": "text",
+   "id": "d2.pause",
+   "name": "配送暂停",
+   "source": "content/i18n-delivery2/zh-Hans.json",
+   "game": "tr:d2.pause"
+  },
+  {
+   "uid": "text:d2.map.dungeon",
+   "domain": "text",
+   "id": "d2.map.dungeon",
+   "name": "石牢",
+   "source": "content/i18n-delivery2/zh-Hans.json",
+   "game": "tr:d2.map.dungeon"
+  },
+  {
+   "uid": "text:d2.map.diyu",
+   "domain": "text",
+   "id": "d2.map.diyu",
+   "name": "地府",
+   "source": "content/i18n-delivery2/zh-Hans.json",
+   "game": "tr:d2.map.diyu"
+  },
+  {
+   "uid": "text:d2.price",
+   "domain": "text",
+   "id": "d2.price",
+   "name": "价格",
+   "source": "content/i18n-delivery2/zh-Hans.json",
+   "game": "tr:d2.price"
+  },
+  {
+   "uid": "text:d2.stock",
+   "domain": "text",
+   "id": "d2.stock",
+   "name": "库存",
+   "source": "content/i18n-delivery2/zh-Hans.json",
+   "game": "tr:d2.stock"
   },
   {
    "uid": "text:dev.placeholder",

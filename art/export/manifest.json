@@ -8066,11 +8066,11 @@
    "kind": "procedural",
    "layer": "ui",
    "current": {
-    "version": 1,
-    "hash": "777956c08c1bf55c6c1f50a78c4781535239a511f7a7b4483839c97c8cad34a5",
+    "version": 2,
+    "hash": "312087ae242d0c79e5615c009eac05c161e1a69376cf221167efd1aff9f7f8c4",
     "status": "review",
     "preview": "art/export/preview/ui.screen.confirm.png",
-    "preview_sha256": "19e42ce7b87d0f88db06124222d7e5ec50f5694748cc3a5abc3b3be03e0b815d"
+    "preview_sha256": "457e1a45840fe53ebc6abfc28e2c23de687d3cf86cc037e6b18deb9ec63f9d8e"
    },
    "approved": null,
    "current_is_approved": false,
@@ -8093,7 +8093,17 @@
     "content/i18n-ui/en.json",
     "workbench/js/core/ui-delivery.js",
     "workbench/js/core/tilemodel.js",
-    "workbench/js/core/matter.js"
+    "workbench/js/core/matter.js",
+    "workbench/js/core/ui-common.js",
+    "workbench/js/core/rooms.js",
+    "workbench/js/core/mapgen.js",
+    "workbench/js/core/rooms2.js",
+    "workbench/js/core/delivery-scene.js",
+    "workbench/js/core/delivery-scene2.js",
+    "workbench/js/core/ui-screens-delivery.js",
+    "workbench/js/core/font-delivery2.js",
+    "content/i18n-delivery2/zh-Hans.json",
+    "content/i18n-delivery2/en.json"
    ],
    "params": {
     "screen": "confirm",
@@ -8102,48 +8112,6 @@
      "fauna.dungeon_rat"
     ],
     "focus": 1,
-    "room": {
-     "map": [
-      "####################",
-      "####............####",
-      "##................##",
-      "#...H..............#",
-      "#...H##########....#",
-      "#...H..............#",
-      "....H...............",
-      "..P.H..#.....#......",
-      "####################",
-      "####################"
-     ],
-     "entities": [
-      {
-       "sprite": "monster.rat_swarm",
-       "anim": "walk",
-       "x": 12,
-       "y": 3,
-       "flip": true
-      },
-      {
-       "sprite": "item.coin",
-       "anim": "spin",
-       "x": 7,
-       "y": 3
-      },
-      {
-       "sprite": "item.coin",
-       "anim": "spin",
-       "x": 10,
-       "y": 3
-      },
-      {
-       "sprite": "item.coin",
-       "anim": "spin",
-       "x": 16,
-       "y": 7
-      }
-     ],
-     "facing": "right"
-    },
     "hud": {
      "hearts": 2,
      "maxHearts": 3,
@@ -8161,62 +8129,277 @@
      "slots": 3,
      "secs": 83,
      "minimap": {
-      "cols": 4,
-      "rows": 3,
+      "cols": 8,
+      "rows": 4,
       "cur": 4,
       "rooms": [
        {
         "index": 0,
-        "x": 3,
-        "y": 0,
+        "x": 0,
+        "y": 2,
+        "cols": 1,
+        "rows": 1,
         "role": "gate",
         "seen": true
        },
        {
         "index": 1,
-        "x": 2,
-        "y": 0,
+        "x": 1,
+        "y": 2,
+        "cols": 2,
+        "rows": 1,
         "role": "room",
         "seen": true
        },
        {
         "index": 2,
-        "x": 2,
-        "y": 1,
+        "x": 3,
+        "y": 2,
+        "cols": 1,
+        "rows": 1,
         "role": "station",
         "seen": true
        },
        {
         "index": 3,
-        "x": 2,
-        "y": 2,
+        "x": 4,
+        "y": 1,
+        "cols": 1,
+        "rows": 2,
         "role": "room",
         "seen": true
        },
        {
         "index": 4,
-        "x": 1,
-        "y": 2,
+        "x": 5,
+        "y": 0,
+        "cols": 2,
+        "rows": 2,
         "role": "room",
         "seen": true
        },
        {
         "index": 5,
-        "x": 0,
-        "y": 2,
+        "x": 7,
+        "y": 0,
+        "cols": 1,
+        "rows": 1,
         "role": "home",
         "seen": false
        }
       ]
-     }
-    }
+     },
+     "snacks": 3
+    },
+    "room2": {
+     "format": "pushbox.room/2",
+     "world": "dungeon",
+     "weight": 10,
+     "mirror": true,
+     "id": "dungeon2_yard",
+     "type": "room",
+     "role": "develop",
+     "size": [
+      2,
+      2
+     ],
+     "name": "放风场 · 高台上的拉杆",
+     "idea": "关键想法：浮石把箱子运过坑，箱子再当台阶。变化：拉杆在上层高台，它开的是下层出口的门——镜头要跟着走一大圈；骷髅守卫只在下层走廊巡逻，不进解谜区。",
+     "needs": [
+      "float_block"
+     ],
+     "requires": [
+      "float_block",
+      "push",
+      "lever"
+     ],
+     "mechanisms": [
+      "float_block",
+      "push",
+      "lever",
+      "ladder",
+      "hint_animal"
+     ],
+     "exits": [
+      "left.0.low",
+      "right.1.low"
+     ],
+     "routes": [
+      "left.0.low>right.1.low"
+     ],
+     "puzzle_area": [
+      [
+       1,
+       1,
+       27,
+       9
+      ]
+     ],
+     "legend": {
+      "2": {
+       "monster": "skeleton_guard",
+       "dir": "left",
+       "zone": [
+        28,
+        32
+       ]
+      }
+     },
+     "devices": [
+      {
+       "type": "lever",
+       "at": [
+        24,
+        4
+       ],
+       "action": {
+        "link": 0
+       }
+      }
+     ],
+     "links": [
+      {
+       "plates": [],
+       "doors": [
+        [
+         33,
+         16
+        ],
+        [
+         33,
+         17
+        ]
+       ]
+      }
+     ],
+     "hints": [
+      {
+       "text": "推浮石把箱子运过坑。",
+       "target": [
+        12,
+        7
+       ],
+       "show": {
+        "action": "push",
+        "dir": "R",
+        "at": [
+         4,
+         7
+        ]
+       },
+       "done": {
+        "covers": [
+         12,
+         7
+        ]
+       }
+      },
+      {
+       "text": "把箱子推到高台下面当台阶。",
+       "target": [
+        21,
+        6
+       ],
+       "show": {
+        "action": "push",
+        "dir": "R",
+        "at": [
+         12,
+         6
+        ]
+       },
+       "done": {
+        "crate": [
+         21,
+         6
+        ]
+       }
+      },
+      {
+       "text": "上高台拉下拉杆：下层的门开了。",
+       "target": [
+        24,
+        4
+       ],
+       "show": {
+        "action": "lever",
+        "dir": "U",
+        "at": [
+         24,
+         4
+        ]
+       },
+       "done": {
+        "lever": 0
+       }
+      },
+      {
+       "text": "从梯子下去，穿过下层的门。",
+       "target": [
+        27,
+        10
+       ],
+       "show": {
+        "action": "climb",
+        "dir": "D",
+        "at": [
+         27,
+         5
+        ]
+       },
+       "done": {
+        "player": [
+         28,
+         10,
+         39,
+         19
+        ]
+       }
+      }
+     ],
+     "map": [
+      "########################################",
+      "#...........................############",
+      "#...........................############",
+      "#...........................############",
+      "#..........................H############",
+      "#.....................#####H############",
+      ".......B..............#####H############",
+      ".....FFF.....##############H############",
+      "##########...##############H############",
+      "##########...##############H############",
+      "##########...##############H...........#",
+      "##########...##############H...........#",
+      "##########...##############H...........#",
+      "###########################H...........#",
+      "#############..............H...........#",
+      "#############..............H...........#",
+      "#############..............H.....|......",
+      "#############.......$......H..2..|..$...",
+      "########################################",
+      "########################################"
+     ]
+    },
+    "world": "dungeon"
    },
    "depends": [
     "cargo.vase",
     "char.portitor",
+    "fauna.diyu_butterfly",
+    "fauna.diyu_dog",
+    "fauna.dungeon_bat",
+    "fauna.dungeon_cat",
+    "fauna.jeju_pony",
     "item.first_aid",
     "item.rope_ladder",
     "item.sandbag",
+    "item.snack",
+    "item.snack_jeju",
+    "mech.lantern_float",
+    "mech.rune_float",
+    "monster.skeleton_guard",
+    "obj.crate_wood",
+    "theme.diyu",
     "theme.dungeon",
     "ui.delivery_icons",
     "ui.icons",
@@ -8232,11 +8415,11 @@
    "kind": "procedural",
    "layer": "ui",
    "current": {
-    "version": 2,
-    "hash": "f76b62b58c9f8a802eb28cb56cfe2983038dcd829b015f9838cbd4c9fe81a0c0",
+    "version": 3,
+    "hash": "63b46cc9eb2dec0811388d60f6b500e23c4952550c32ea939d7ab30ea74782b5",
     "status": "review",
     "preview": "art/export/preview/ui.screen.delivery_hud.png",
-    "preview_sha256": "357edfd2dc3eef34c65c9ae868574e3c9f20b87d8e06a855e45d4388da3942f6"
+    "preview_sha256": "7576fe1591a8aaf3189791cccfc1ba0a84925ed35bf21979b391d10f89af65c5"
    },
    "approved": {
     "version": 1,
@@ -8264,53 +8447,23 @@
     "workbench/js/core/ui-style.js",
     "workbench/js/core/font-ui.js",
     "content/i18n-ui/zh-Hans.json",
-    "content/i18n-ui/en.json"
+    "content/i18n-ui/en.json",
+    "workbench/js/core/ui-common.js",
+    "workbench/js/core/rooms.js",
+    "workbench/js/core/mapgen.js",
+    "workbench/js/core/rooms2.js",
+    "workbench/js/core/delivery-scene.js",
+    "workbench/js/core/delivery-scene2.js",
+    "workbench/js/core/ui-screens-delivery.js",
+    "workbench/js/core/font-delivery2.js",
+    "content/i18n-delivery2/zh-Hans.json",
+    "content/i18n-delivery2/en.json"
    ],
    "params": {
     "screen": "delivery_hud",
     "theme": "theme.dungeon",
     "exclude": [
      "fauna.dungeon_rat"
-    ],
-    "room": [
-     "####################",
-     "####............####",
-     "##................##",
-     "#...H..............#",
-     "#...H##########....#",
-     "#...H..............#",
-     "....H...............",
-     "..P.H..#.....#......",
-     "####################",
-     "####################"
-    ],
-    "facing": "right",
-    "entities": [
-     {
-      "sprite": "monster.rat_swarm",
-      "anim": "walk",
-      "x": 12,
-      "y": 3,
-      "flip": true
-     },
-     {
-      "sprite": "item.coin",
-      "anim": "spin",
-      "x": 7,
-      "y": 3
-     },
-     {
-      "sprite": "item.coin",
-      "anim": "spin",
-      "x": 10,
-      "y": 3
-     },
-     {
-      "sprite": "item.coin",
-      "anim": "spin",
-      "x": 16,
-      "y": 7
-     }
     ],
     "hud": {
      "hearts": 2,
@@ -8329,65 +8482,280 @@
      "slots": 3,
      "secs": 83,
      "minimap": {
-      "cols": 4,
-      "rows": 3,
+      "cols": 8,
+      "rows": 4,
       "cur": 4,
       "rooms": [
        {
         "index": 0,
-        "x": 3,
-        "y": 0,
+        "x": 0,
+        "y": 2,
+        "cols": 1,
+        "rows": 1,
         "role": "gate",
         "seen": true
        },
        {
         "index": 1,
-        "x": 2,
-        "y": 0,
+        "x": 1,
+        "y": 2,
+        "cols": 2,
+        "rows": 1,
         "role": "room",
         "seen": true
        },
        {
         "index": 2,
-        "x": 2,
-        "y": 1,
+        "x": 3,
+        "y": 2,
+        "cols": 1,
+        "rows": 1,
         "role": "station",
         "seen": true
        },
        {
         "index": 3,
-        "x": 2,
-        "y": 2,
+        "x": 4,
+        "y": 1,
+        "cols": 1,
+        "rows": 2,
         "role": "room",
         "seen": true
        },
        {
         "index": 4,
-        "x": 1,
-        "y": 2,
+        "x": 5,
+        "y": 0,
+        "cols": 2,
+        "rows": 2,
         "role": "room",
         "seen": true
        },
        {
         "index": 5,
-        "x": 0,
-        "y": 2,
+        "x": 7,
+        "y": 0,
+        "cols": 1,
+        "rows": 1,
         "role": "home",
         "seen": false
        }
       ]
-     }
-    }
+     },
+     "snacks": 3
+    },
+    "room2": {
+     "format": "pushbox.room/2",
+     "world": "dungeon",
+     "weight": 10,
+     "mirror": true,
+     "id": "dungeon2_yard",
+     "type": "room",
+     "role": "develop",
+     "size": [
+      2,
+      2
+     ],
+     "name": "放风场 · 高台上的拉杆",
+     "idea": "关键想法：浮石把箱子运过坑，箱子再当台阶。变化：拉杆在上层高台，它开的是下层出口的门——镜头要跟着走一大圈；骷髅守卫只在下层走廊巡逻，不进解谜区。",
+     "needs": [
+      "float_block"
+     ],
+     "requires": [
+      "float_block",
+      "push",
+      "lever"
+     ],
+     "mechanisms": [
+      "float_block",
+      "push",
+      "lever",
+      "ladder",
+      "hint_animal"
+     ],
+     "exits": [
+      "left.0.low",
+      "right.1.low"
+     ],
+     "routes": [
+      "left.0.low>right.1.low"
+     ],
+     "puzzle_area": [
+      [
+       1,
+       1,
+       27,
+       9
+      ]
+     ],
+     "legend": {
+      "2": {
+       "monster": "skeleton_guard",
+       "dir": "left",
+       "zone": [
+        28,
+        32
+       ]
+      }
+     },
+     "devices": [
+      {
+       "type": "lever",
+       "at": [
+        24,
+        4
+       ],
+       "action": {
+        "link": 0
+       }
+      }
+     ],
+     "links": [
+      {
+       "plates": [],
+       "doors": [
+        [
+         33,
+         16
+        ],
+        [
+         33,
+         17
+        ]
+       ]
+      }
+     ],
+     "hints": [
+      {
+       "text": "推浮石把箱子运过坑。",
+       "target": [
+        12,
+        7
+       ],
+       "show": {
+        "action": "push",
+        "dir": "R",
+        "at": [
+         4,
+         7
+        ]
+       },
+       "done": {
+        "covers": [
+         12,
+         7
+        ]
+       }
+      },
+      {
+       "text": "把箱子推到高台下面当台阶。",
+       "target": [
+        21,
+        6
+       ],
+       "show": {
+        "action": "push",
+        "dir": "R",
+        "at": [
+         12,
+         6
+        ]
+       },
+       "done": {
+        "crate": [
+         21,
+         6
+        ]
+       }
+      },
+      {
+       "text": "上高台拉下拉杆：下层的门开了。",
+       "target": [
+        24,
+        4
+       ],
+       "show": {
+        "action": "lever",
+        "dir": "U",
+        "at": [
+         24,
+         4
+        ]
+       },
+       "done": {
+        "lever": 0
+       }
+      },
+      {
+       "text": "从梯子下去，穿过下层的门。",
+       "target": [
+        27,
+        10
+       ],
+       "show": {
+        "action": "climb",
+        "dir": "D",
+        "at": [
+         27,
+         5
+        ]
+       },
+       "done": {
+        "player": [
+         28,
+         10,
+         39,
+         19
+        ]
+       }
+      }
+     ],
+     "map": [
+      "########################################",
+      "#...........................############",
+      "#...........................############",
+      "#...........................############",
+      "#..........................H############",
+      "#.....................#####H############",
+      ".......B..............#####H############",
+      ".....FFF.....##############H############",
+      "##########...##############H############",
+      "##########...##############H############",
+      "##########...##############H...........#",
+      "##########...##############H...........#",
+      "##########...##############H...........#",
+      "###########################H...........#",
+      "#############..............H...........#",
+      "#############..............H...........#",
+      "#############..............H.....|......",
+      "#############.......$......H..2..|..$...",
+      "########################################",
+      "########################################"
+     ]
+    },
+    "world": "dungeon"
    },
    "depends": [
     "cargo.vase",
     "char.portitor",
+    "fauna.diyu_butterfly",
+    "fauna.diyu_dog",
+    "fauna.dungeon_bat",
+    "fauna.dungeon_cat",
+    "fauna.jeju_pony",
     "item.coin",
     "item.first_aid",
     "item.rope_ladder",
     "item.sandbag",
+    "item.snack",
+    "item.snack_jeju",
     "mech.ladder",
+    "mech.lantern_float",
+    "mech.rune_float",
     "monster.rat_swarm",
+    "monster.skeleton_guard",
+    "obj.crate_wood",
+    "theme.diyu",
     "theme.dungeon",
     "ui.delivery_icons"
    ]
@@ -8399,11 +8767,11 @@
    "kind": "procedural",
    "layer": "ui",
    "current": {
-    "version": 2,
-    "hash": "b7a69ebf520049bc6c4eb3225847e4bb0158c6160db5c6b4a152205514f18dda",
+    "version": 3,
+    "hash": "59aea63939340159d14dd494c6995fc36260e066048af95a03502e3df11d74ad",
     "status": "review",
     "preview": "art/export/preview/ui.screen.delivery_pause.png",
-    "preview_sha256": "5a856e33fefb5e668c79aad10dc232623373a486ef12e9dc51593a902a3ae5e6"
+    "preview_sha256": "ea1278b66c3462b41e59b43f8baaed305fb1e63f5c24c2782911d418f4804c32"
    },
    "approved": {
     "version": 1,
@@ -8433,10 +8801,20 @@
     "content/i18n-ui/en.json",
     "workbench/js/core/ui-delivery.js",
     "workbench/js/core/tilemodel.js",
-    "workbench/js/core/matter.js"
+    "workbench/js/core/matter.js",
+    "workbench/js/core/ui-common.js",
+    "workbench/js/core/rooms.js",
+    "workbench/js/core/mapgen.js",
+    "workbench/js/core/rooms2.js",
+    "workbench/js/core/delivery-scene.js",
+    "workbench/js/core/delivery-scene2.js",
+    "workbench/js/core/ui-screens-delivery.js",
+    "workbench/js/core/font-delivery2.js",
+    "content/i18n-delivery2/zh-Hans.json",
+    "content/i18n-delivery2/en.json"
    ],
    "params": {
-    "screen": "pause",
+    "screen": "delivery_pause",
     "items": [
      "pause.resume",
      "dlv.pause.restart_room",
@@ -8444,48 +8822,6 @@
      "pause.settings",
      "pause.menu"
     ],
-    "room": {
-     "map": [
-      "####################",
-      "####............####",
-      "##................##",
-      "#...H..............#",
-      "#...H##########....#",
-      "#...H..............#",
-      "....H...............",
-      "..P.H..#.....#......",
-      "####################",
-      "####################"
-     ],
-     "entities": [
-      {
-       "sprite": "monster.rat_swarm",
-       "anim": "walk",
-       "x": 12,
-       "y": 3,
-       "flip": true
-      },
-      {
-       "sprite": "item.coin",
-       "anim": "spin",
-       "x": 7,
-       "y": 3
-      },
-      {
-       "sprite": "item.coin",
-       "anim": "spin",
-       "x": 10,
-       "y": 3
-      },
-      {
-       "sprite": "item.coin",
-       "anim": "spin",
-       "x": 16,
-       "y": 7
-      }
-     ],
-     "facing": "right"
-    },
     "hud": {
      "hearts": 2,
      "maxHearts": 3,
@@ -8503,62 +8839,278 @@
      "slots": 3,
      "secs": 83,
      "minimap": {
-      "cols": 4,
-      "rows": 3,
+      "cols": 8,
+      "rows": 4,
       "cur": 4,
       "rooms": [
        {
         "index": 0,
-        "x": 3,
-        "y": 0,
+        "x": 0,
+        "y": 2,
+        "cols": 1,
+        "rows": 1,
         "role": "gate",
         "seen": true
        },
        {
         "index": 1,
-        "x": 2,
-        "y": 0,
+        "x": 1,
+        "y": 2,
+        "cols": 2,
+        "rows": 1,
         "role": "room",
         "seen": true
        },
        {
         "index": 2,
-        "x": 2,
-        "y": 1,
+        "x": 3,
+        "y": 2,
+        "cols": 1,
+        "rows": 1,
         "role": "station",
         "seen": true
        },
        {
         "index": 3,
-        "x": 2,
-        "y": 2,
+        "x": 4,
+        "y": 1,
+        "cols": 1,
+        "rows": 2,
         "role": "room",
         "seen": true
        },
        {
         "index": 4,
-        "x": 1,
-        "y": 2,
+        "x": 5,
+        "y": 0,
+        "cols": 2,
+        "rows": 2,
         "role": "room",
         "seen": true
        },
        {
         "index": 5,
-        "x": 0,
-        "y": 2,
+        "x": 7,
+        "y": 0,
+        "cols": 1,
+        "rows": 1,
         "role": "home",
         "seen": false
        }
       ]
-     }
-    }
+     },
+     "snacks": 3
+    },
+    "room2": {
+     "format": "pushbox.room/2",
+     "world": "dungeon",
+     "weight": 10,
+     "mirror": true,
+     "id": "dungeon2_yard",
+     "type": "room",
+     "role": "develop",
+     "size": [
+      2,
+      2
+     ],
+     "name": "放风场 · 高台上的拉杆",
+     "idea": "关键想法：浮石把箱子运过坑，箱子再当台阶。变化：拉杆在上层高台，它开的是下层出口的门——镜头要跟着走一大圈；骷髅守卫只在下层走廊巡逻，不进解谜区。",
+     "needs": [
+      "float_block"
+     ],
+     "requires": [
+      "float_block",
+      "push",
+      "lever"
+     ],
+     "mechanisms": [
+      "float_block",
+      "push",
+      "lever",
+      "ladder",
+      "hint_animal"
+     ],
+     "exits": [
+      "left.0.low",
+      "right.1.low"
+     ],
+     "routes": [
+      "left.0.low>right.1.low"
+     ],
+     "puzzle_area": [
+      [
+       1,
+       1,
+       27,
+       9
+      ]
+     ],
+     "legend": {
+      "2": {
+       "monster": "skeleton_guard",
+       "dir": "left",
+       "zone": [
+        28,
+        32
+       ]
+      }
+     },
+     "devices": [
+      {
+       "type": "lever",
+       "at": [
+        24,
+        4
+       ],
+       "action": {
+        "link": 0
+       }
+      }
+     ],
+     "links": [
+      {
+       "plates": [],
+       "doors": [
+        [
+         33,
+         16
+        ],
+        [
+         33,
+         17
+        ]
+       ]
+      }
+     ],
+     "hints": [
+      {
+       "text": "推浮石把箱子运过坑。",
+       "target": [
+        12,
+        7
+       ],
+       "show": {
+        "action": "push",
+        "dir": "R",
+        "at": [
+         4,
+         7
+        ]
+       },
+       "done": {
+        "covers": [
+         12,
+         7
+        ]
+       }
+      },
+      {
+       "text": "把箱子推到高台下面当台阶。",
+       "target": [
+        21,
+        6
+       ],
+       "show": {
+        "action": "push",
+        "dir": "R",
+        "at": [
+         12,
+         6
+        ]
+       },
+       "done": {
+        "crate": [
+         21,
+         6
+        ]
+       }
+      },
+      {
+       "text": "上高台拉下拉杆：下层的门开了。",
+       "target": [
+        24,
+        4
+       ],
+       "show": {
+        "action": "lever",
+        "dir": "U",
+        "at": [
+         24,
+         4
+        ]
+       },
+       "done": {
+        "lever": 0
+       }
+      },
+      {
+       "text": "从梯子下去，穿过下层的门。",
+       "target": [
+        27,
+        10
+       ],
+       "show": {
+        "action": "climb",
+        "dir": "D",
+        "at": [
+         27,
+         5
+        ]
+       },
+       "done": {
+        "player": [
+         28,
+         10,
+         39,
+         19
+        ]
+       }
+      }
+     ],
+     "map": [
+      "########################################",
+      "#...........................############",
+      "#...........................############",
+      "#...........................############",
+      "#..........................H############",
+      "#.....................#####H############",
+      ".......B..............#####H############",
+      ".....FFF.....##############H############",
+      "##########...##############H############",
+      "##########...##############H############",
+      "##########...##############H...........#",
+      "##########...##############H...........#",
+      "##########...##############H...........#",
+      "###########################H...........#",
+      "#############..............H...........#",
+      "#############..............H...........#",
+      "#############..............H.....|......",
+      "#############.......$......H..2..|..$...",
+      "########################################",
+      "########################################"
+     ]
+    },
+    "world": "dungeon",
+    "theme": "theme.dungeon"
    },
    "depends": [
     "cargo.vase",
     "char.portitor",
+    "fauna.diyu_butterfly",
+    "fauna.diyu_dog",
+    "fauna.dungeon_bat",
+    "fauna.dungeon_cat",
+    "fauna.jeju_pony",
     "item.first_aid",
     "item.rope_ladder",
     "item.sandbag",
+    "item.snack",
+    "item.snack_jeju",
+    "mech.lantern_float",
+    "mech.rune_float",
+    "monster.skeleton_guard",
+    "obj.crate_wood",
+    "theme.diyu",
     "theme.dungeon",
     "ui.delivery_icons",
     "ui.icons",
@@ -8688,6 +9240,309 @@
     "ui.keycap",
     "ui.menu_icons",
     "ui.panel"
+   ]
+  },
+  {
+   "id": "ui.screen.hint_animal",
+   "name": "提示动物气泡（配送）",
+   "category": "screen",
+   "kind": "procedural",
+   "layer": "ui",
+   "current": {
+    "version": 1,
+    "hash": "712ab03b13b0f32879b784ba16d1b62ca58a97f9b0b33594ed157bb9c3efe074",
+    "status": "review",
+    "preview": "art/export/preview/ui.screen.hint_animal.png",
+    "preview_sha256": "a1604411948c3f29143768baed8c516f2e5dc251f43eb50ec6fa0bfec9d34072"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "renderer": [
+    "workbench/js/core/ui-delivery.js",
+    "workbench/js/core/ui.js",
+    "workbench/js/core/scene.js",
+    "workbench/js/core/tilemodel.js",
+    "workbench/js/core/matter.js",
+    "workbench/js/core/terrain.js",
+    "workbench/js/core/ambient.js",
+    "workbench/js/core/env.js",
+    "workbench/js/core/i18n.js",
+    "workbench/js/core/font-delivery.js",
+    "content/i18n-delivery/zh-Hans.json",
+    "content/i18n-delivery/en.json",
+    "workbench/js/core/ui-kit.js",
+    "workbench/js/core/ui-style.js",
+    "workbench/js/core/font-ui.js",
+    "content/i18n-ui/zh-Hans.json",
+    "content/i18n-ui/en.json",
+    "workbench/js/core/ui-common.js",
+    "workbench/js/core/rooms.js",
+    "workbench/js/core/mapgen.js",
+    "workbench/js/core/rooms2.js",
+    "workbench/js/core/delivery-scene.js",
+    "workbench/js/core/delivery-scene2.js",
+    "workbench/js/core/ui-screens-delivery.js",
+    "workbench/js/core/font-delivery2.js",
+    "content/i18n-delivery2/zh-Hans.json",
+    "content/i18n-delivery2/en.json"
+   ],
+   "params": {
+    "screen": "hint_animal",
+    "theme": "theme.dungeon",
+    "exclude": [
+     "fauna.dungeon_rat"
+    ],
+    "hud": {
+     "hearts": 2,
+     "maxHearts": 3,
+     "cargo": "vase",
+     "left": 2,
+     "max": 3,
+     "rule": "fragile",
+     "hot": false,
+     "coins": 35,
+     "sand": 2,
+     "items": [
+      "first_aid",
+      "rope_ladder"
+     ],
+     "slots": 3,
+     "secs": 83,
+     "minimap": {
+      "cols": 8,
+      "rows": 4,
+      "cur": 4,
+      "rooms": [
+       {
+        "index": 0,
+        "x": 0,
+        "y": 2,
+        "cols": 1,
+        "rows": 1,
+        "role": "gate",
+        "seen": true
+       },
+       {
+        "index": 1,
+        "x": 1,
+        "y": 2,
+        "cols": 2,
+        "rows": 1,
+        "role": "room",
+        "seen": true
+       },
+       {
+        "index": 2,
+        "x": 3,
+        "y": 2,
+        "cols": 1,
+        "rows": 1,
+        "role": "station",
+        "seen": true
+       },
+       {
+        "index": 3,
+        "x": 4,
+        "y": 1,
+        "cols": 1,
+        "rows": 2,
+        "role": "room",
+        "seen": true
+       },
+       {
+        "index": 4,
+        "x": 5,
+        "y": 0,
+        "cols": 2,
+        "rows": 2,
+        "role": "room",
+        "seen": true
+       },
+       {
+        "index": 5,
+        "x": 7,
+        "y": 0,
+        "cols": 1,
+        "rows": 1,
+        "role": "home",
+        "seen": false
+       }
+      ]
+     },
+     "snacks": 3
+    },
+    "room2": {
+     "format": "pushbox.room/2",
+     "world": "dungeon",
+     "weight": 10,
+     "mirror": true,
+     "id": "dungeon2_sandpour",
+     "type": "room",
+     "role": "twist",
+     "name": "沙井 · 站在浮石上倒沙",
+     "idea": "关键想法：浮石不只用来过坑——它是你在坑上唯一能站的地方。变化：先站在浮石上把沙倒进坑底压住压板开门，再撑过去；先撑就倒不进去了（可以撑回来）。",
+     "needs": [
+      "pole"
+     ],
+     "requires": [
+      "float_block",
+      "pour"
+     ],
+     "mechanisms": [
+      "float_block",
+      "pole",
+      "dig",
+      "pour",
+      "plate_door",
+      "ladder",
+      "hint_animal"
+     ],
+     "exits": [
+      "left.0.high",
+      "right.0.high",
+      "right.0.low"
+     ],
+     "routes": [
+      "left.0.high>right.0.high",
+      "left.0.high>right.0.low"
+     ],
+     "puzzle_area": [
+      [
+       1,
+       2,
+       12,
+       8
+      ]
+     ],
+     "links": [
+      {
+       "plates": [
+        [
+         7,
+         8
+        ]
+       ],
+       "doors": [
+        [
+         12,
+         2
+        ],
+        [
+         12,
+         3
+        ]
+       ]
+      }
+     ],
+     "hints": [
+      {
+       "text": "先挖一袋沙。",
+       "target": [
+        2,
+        3
+       ],
+       "show": {
+        "action": "dig",
+        "dir": "DIG_R",
+        "at": [
+         1,
+         3
+        ]
+       },
+       "done": {
+        "any": [
+         {
+          "bag_sand": 1
+         },
+         {
+          "door": 0
+         }
+        ]
+       }
+      },
+      {
+       "text": "站到浮石右端，把沙倒进坑里：沙落到底，压住压板。",
+       "target": [
+        7,
+        4
+       ],
+       "show": {
+        "action": "pour",
+        "dir": "POUR_R",
+        "at": [
+         6,
+         4
+        ]
+       },
+       "done": {
+        "door": 0
+       }
+      },
+      {
+       "text": "门开了：对着岸撑一下，上对岸。",
+       "target": [
+        4,
+        4
+       ],
+       "show": {
+        "action": "pole",
+        "dir": "DIG_L",
+        "at": [
+         5,
+         4
+        ]
+       },
+       "done": {
+        "player": [
+         8,
+         0,
+         19,
+         9
+        ]
+       }
+      }
+     ],
+     "map": [
+      "####################",
+      "####################",
+      "............|.......",
+      "..ss........|...H...",
+      "#####...########H###",
+      "#####FF.########H###",
+      "#####...########H...",
+      "#####...########H...",
+      "#####.._############",
+      "####################"
+     ]
+    },
+    "world": "dungeon",
+    "nearHint": true,
+    "hintKey": "d2.hint",
+    "fedFlyer": true
+   },
+   "depends": [
+    "cargo.vase",
+    "char.portitor",
+    "fauna.diyu_butterfly",
+    "fauna.diyu_dog",
+    "fauna.dungeon_bat",
+    "fauna.dungeon_cat",
+    "fauna.jeju_pony",
+    "item.coin",
+    "item.first_aid",
+    "item.rope_ladder",
+    "item.sandbag",
+    "item.snack",
+    "item.snack_jeju",
+    "mech.ladder",
+    "mech.lantern_float",
+    "mech.rune_float",
+    "monster.rat_swarm",
+    "monster.skeleton_guard",
+    "obj.crate_wood",
+    "theme.diyu",
+    "theme.dungeon",
+    "ui.delivery_icons"
    ]
   },
   {
@@ -8852,6 +9707,351 @@
    ]
   },
   {
+   "id": "ui.screen.observe",
+   "name": "看全图（配送）",
+   "category": "screen",
+   "kind": "procedural",
+   "layer": "ui",
+   "current": {
+    "version": 1,
+    "hash": "773612a72d128b4742e2043d1bdf733f1af8854ea21d292f09c2f58ec60e29e0",
+    "status": "review",
+    "preview": "art/export/preview/ui.screen.observe.png",
+    "preview_sha256": "067f8da23a8c40a8b7501197935816b349db84ba7e25fa29c8290142fef9099e"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "renderer": [
+    "workbench/js/core/ui-delivery.js",
+    "workbench/js/core/ui.js",
+    "workbench/js/core/scene.js",
+    "workbench/js/core/tilemodel.js",
+    "workbench/js/core/matter.js",
+    "workbench/js/core/terrain.js",
+    "workbench/js/core/ambient.js",
+    "workbench/js/core/env.js",
+    "workbench/js/core/i18n.js",
+    "workbench/js/core/font-delivery.js",
+    "content/i18n-delivery/zh-Hans.json",
+    "content/i18n-delivery/en.json",
+    "workbench/js/core/ui-kit.js",
+    "workbench/js/core/ui-style.js",
+    "workbench/js/core/font-ui.js",
+    "content/i18n-ui/zh-Hans.json",
+    "content/i18n-ui/en.json",
+    "workbench/js/core/ui-common.js",
+    "workbench/js/core/rooms.js",
+    "workbench/js/core/mapgen.js",
+    "workbench/js/core/rooms2.js",
+    "workbench/js/core/delivery-scene.js",
+    "workbench/js/core/delivery-scene2.js",
+    "workbench/js/core/ui-screens-delivery.js",
+    "workbench/js/core/font-delivery2.js",
+    "content/i18n-delivery2/zh-Hans.json",
+    "content/i18n-delivery2/en.json"
+   ],
+   "params": {
+    "screen": "observe",
+    "theme": "theme.dungeon",
+    "exclude": [
+     "fauna.dungeon_rat"
+    ],
+    "hud": {
+     "hearts": 2,
+     "maxHearts": 3,
+     "cargo": "vase",
+     "left": 2,
+     "max": 3,
+     "rule": "fragile",
+     "hot": false,
+     "coins": 35,
+     "sand": 2,
+     "items": [
+      "first_aid",
+      "rope_ladder"
+     ],
+     "slots": 3,
+     "secs": 83,
+     "minimap": {
+      "cols": 8,
+      "rows": 4,
+      "cur": 4,
+      "rooms": [
+       {
+        "index": 0,
+        "x": 0,
+        "y": 2,
+        "cols": 1,
+        "rows": 1,
+        "role": "gate",
+        "seen": true
+       },
+       {
+        "index": 1,
+        "x": 1,
+        "y": 2,
+        "cols": 2,
+        "rows": 1,
+        "role": "room",
+        "seen": true
+       },
+       {
+        "index": 2,
+        "x": 3,
+        "y": 2,
+        "cols": 1,
+        "rows": 1,
+        "role": "station",
+        "seen": true
+       },
+       {
+        "index": 3,
+        "x": 4,
+        "y": 1,
+        "cols": 1,
+        "rows": 2,
+        "role": "room",
+        "seen": true
+       },
+       {
+        "index": 4,
+        "x": 5,
+        "y": 0,
+        "cols": 2,
+        "rows": 2,
+        "role": "room",
+        "seen": true
+       },
+       {
+        "index": 5,
+        "x": 7,
+        "y": 0,
+        "cols": 1,
+        "rows": 1,
+        "role": "home",
+        "seen": false
+       }
+      ]
+     },
+     "snacks": 3
+    },
+    "room2": {
+     "format": "pushbox.room/2",
+     "world": "dungeon",
+     "weight": 10,
+     "mirror": true,
+     "id": "dungeon2_yard",
+     "type": "room",
+     "role": "develop",
+     "size": [
+      2,
+      2
+     ],
+     "name": "放风场 · 高台上的拉杆",
+     "idea": "关键想法：浮石把箱子运过坑，箱子再当台阶。变化：拉杆在上层高台，它开的是下层出口的门——镜头要跟着走一大圈；骷髅守卫只在下层走廊巡逻，不进解谜区。",
+     "needs": [
+      "float_block"
+     ],
+     "requires": [
+      "float_block",
+      "push",
+      "lever"
+     ],
+     "mechanisms": [
+      "float_block",
+      "push",
+      "lever",
+      "ladder",
+      "hint_animal"
+     ],
+     "exits": [
+      "left.0.low",
+      "right.1.low"
+     ],
+     "routes": [
+      "left.0.low>right.1.low"
+     ],
+     "puzzle_area": [
+      [
+       1,
+       1,
+       27,
+       9
+      ]
+     ],
+     "legend": {
+      "2": {
+       "monster": "skeleton_guard",
+       "dir": "left",
+       "zone": [
+        28,
+        32
+       ]
+      }
+     },
+     "devices": [
+      {
+       "type": "lever",
+       "at": [
+        24,
+        4
+       ],
+       "action": {
+        "link": 0
+       }
+      }
+     ],
+     "links": [
+      {
+       "plates": [],
+       "doors": [
+        [
+         33,
+         16
+        ],
+        [
+         33,
+         17
+        ]
+       ]
+      }
+     ],
+     "hints": [
+      {
+       "text": "推浮石把箱子运过坑。",
+       "target": [
+        12,
+        7
+       ],
+       "show": {
+        "action": "push",
+        "dir": "R",
+        "at": [
+         4,
+         7
+        ]
+       },
+       "done": {
+        "covers": [
+         12,
+         7
+        ]
+       }
+      },
+      {
+       "text": "把箱子推到高台下面当台阶。",
+       "target": [
+        21,
+        6
+       ],
+       "show": {
+        "action": "push",
+        "dir": "R",
+        "at": [
+         12,
+         6
+        ]
+       },
+       "done": {
+        "crate": [
+         21,
+         6
+        ]
+       }
+      },
+      {
+       "text": "上高台拉下拉杆：下层的门开了。",
+       "target": [
+        24,
+        4
+       ],
+       "show": {
+        "action": "lever",
+        "dir": "U",
+        "at": [
+         24,
+         4
+        ]
+       },
+       "done": {
+        "lever": 0
+       }
+      },
+      {
+       "text": "从梯子下去，穿过下层的门。",
+       "target": [
+        27,
+        10
+       ],
+       "show": {
+        "action": "climb",
+        "dir": "D",
+        "at": [
+         27,
+         5
+        ]
+       },
+       "done": {
+        "player": [
+         28,
+         10,
+         39,
+         19
+        ]
+       }
+      }
+     ],
+     "map": [
+      "########################################",
+      "#...........................############",
+      "#...........................############",
+      "#...........................############",
+      "#..........................H############",
+      "#.....................#####H############",
+      ".......B..............#####H############",
+      ".....FFF.....##############H############",
+      "##########...##############H############",
+      "##########...##############H############",
+      "##########...##############H...........#",
+      "##########...##############H...........#",
+      "##########...##############H...........#",
+      "###########################H...........#",
+      "#############..............H...........#",
+      "#############..............H...........#",
+      "#############..............H.....|......",
+      "#############.......$......H..2..|..$...",
+      "########################################",
+      "########################################"
+     ]
+    },
+    "world": "dungeon"
+   },
+   "depends": [
+    "cargo.vase",
+    "char.portitor",
+    "fauna.diyu_butterfly",
+    "fauna.diyu_dog",
+    "fauna.dungeon_bat",
+    "fauna.dungeon_cat",
+    "fauna.jeju_pony",
+    "item.coin",
+    "item.first_aid",
+    "item.rope_ladder",
+    "item.sandbag",
+    "item.snack",
+    "item.snack_jeju",
+    "mech.ladder",
+    "mech.lantern_float",
+    "mech.rune_float",
+    "monster.rat_swarm",
+    "monster.skeleton_guard",
+    "obj.crate_wood",
+    "theme.diyu",
+    "theme.dungeon",
+    "ui.delivery_icons"
+   ]
+  },
+  {
    "id": "ui.screen.pause",
    "name": "暂停菜单",
    "category": "screen",
@@ -8923,11 +10123,11 @@
    "kind": "procedural",
    "layer": "ui",
    "current": {
-    "version": 2,
-    "hash": "4e9f8918cc8c80a4c6b1a056b9d1b2378cca5bbe2eba74b3173cb00403d6ae8a",
+    "version": 3,
+    "hash": "1febeb784a0483c562ae56c2e8fc28e35be9c994d112ac0ee911d1994ec9e0c4",
     "status": "review",
     "preview": "art/export/preview/ui.screen.reels.png",
-    "preview_sha256": "6e282bb84e8821e153b79e678ece5549cf87428a88ab9b438264cf931a1a79e7"
+    "preview_sha256": "7f7b48b691988e0f156aa1b507615c5b8281d434115c0c4b7bd264bf66957124"
    },
    "approved": {
     "version": 1,
@@ -8955,7 +10155,17 @@
     "workbench/js/core/ui-style.js",
     "workbench/js/core/font-ui.js",
     "content/i18n-ui/zh-Hans.json",
-    "content/i18n-ui/en.json"
+    "content/i18n-ui/en.json",
+    "workbench/js/core/ui-common.js",
+    "workbench/js/core/rooms.js",
+    "workbench/js/core/mapgen.js",
+    "workbench/js/core/rooms2.js",
+    "workbench/js/core/delivery-scene.js",
+    "workbench/js/core/delivery-scene2.js",
+    "workbench/js/core/ui-screens-delivery.js",
+    "workbench/js/core/font-delivery2.js",
+    "content/i18n-delivery2/zh-Hans.json",
+    "content/i18n-delivery2/en.json"
    ],
    "params": {
     "screen": "reels",
@@ -8977,7 +10187,591 @@
     "recipient": "old_miner",
     "liked": true,
     "rerolls": 1,
-    "cat": "idle"
+    "cat": "idle",
+    "room2": {
+     "format": "pushbox.room/2",
+     "world": "dungeon",
+     "weight": 10,
+     "mirror": true,
+     "id": "dungeon2_yard",
+     "type": "room",
+     "role": "develop",
+     "size": [
+      2,
+      2
+     ],
+     "name": "放风场 · 高台上的拉杆",
+     "idea": "关键想法：浮石把箱子运过坑，箱子再当台阶。变化：拉杆在上层高台，它开的是下层出口的门——镜头要跟着走一大圈；骷髅守卫只在下层走廊巡逻，不进解谜区。",
+     "needs": [
+      "float_block"
+     ],
+     "requires": [
+      "float_block",
+      "push",
+      "lever"
+     ],
+     "mechanisms": [
+      "float_block",
+      "push",
+      "lever",
+      "ladder",
+      "hint_animal"
+     ],
+     "exits": [
+      "left.0.low",
+      "right.1.low"
+     ],
+     "routes": [
+      "left.0.low>right.1.low"
+     ],
+     "puzzle_area": [
+      [
+       1,
+       1,
+       27,
+       9
+      ]
+     ],
+     "legend": {
+      "2": {
+       "monster": "skeleton_guard",
+       "dir": "left",
+       "zone": [
+        28,
+        32
+       ]
+      }
+     },
+     "devices": [
+      {
+       "type": "lever",
+       "at": [
+        24,
+        4
+       ],
+       "action": {
+        "link": 0
+       }
+      }
+     ],
+     "links": [
+      {
+       "plates": [],
+       "doors": [
+        [
+         33,
+         16
+        ],
+        [
+         33,
+         17
+        ]
+       ]
+      }
+     ],
+     "hints": [
+      {
+       "text": "推浮石把箱子运过坑。",
+       "target": [
+        12,
+        7
+       ],
+       "show": {
+        "action": "push",
+        "dir": "R",
+        "at": [
+         4,
+         7
+        ]
+       },
+       "done": {
+        "covers": [
+         12,
+         7
+        ]
+       }
+      },
+      {
+       "text": "把箱子推到高台下面当台阶。",
+       "target": [
+        21,
+        6
+       ],
+       "show": {
+        "action": "push",
+        "dir": "R",
+        "at": [
+         12,
+         6
+        ]
+       },
+       "done": {
+        "crate": [
+         21,
+         6
+        ]
+       }
+      },
+      {
+       "text": "上高台拉下拉杆：下层的门开了。",
+       "target": [
+        24,
+        4
+       ],
+       "show": {
+        "action": "lever",
+        "dir": "U",
+        "at": [
+         24,
+         4
+        ]
+       },
+       "done": {
+        "lever": 0
+       }
+      },
+      {
+       "text": "从梯子下去，穿过下层的门。",
+       "target": [
+        27,
+        10
+       ],
+       "show": {
+        "action": "climb",
+        "dir": "D",
+        "at": [
+         27,
+         5
+        ]
+       },
+       "done": {
+        "player": [
+         28,
+         10,
+         39,
+         19
+        ]
+       }
+      }
+     ],
+     "map": [
+      "########################################",
+      "#...........................############",
+      "#...........................############",
+      "#...........................############",
+      "#..........................H############",
+      "#.....................#####H############",
+      ".......B..............#####H############",
+      ".....FFF.....##############H############",
+      "##########...##############H############",
+      "##########...##############H############",
+      "##########...##############H...........#",
+      "##########...##############H...........#",
+      "##########...##############H...........#",
+      "###########################H...........#",
+      "#############..............H...........#",
+      "#############..............H...........#",
+      "#############..............H.....|......",
+      "#############.......$......H..2..|..$...",
+      "########################################",
+      "########################################"
+     ]
+    },
+    "world": "dungeon",
+    "map": "dungeon_2",
+    "mapList": [
+     "dungeon_2",
+     "diyu_1"
+    ],
+    "mapRooms": {
+     "dungeon_2": {
+      "format": "pushbox.room/2",
+      "world": "dungeon",
+      "weight": 10,
+      "mirror": true,
+      "id": "dungeon2_yard",
+      "type": "room",
+      "role": "develop",
+      "size": [
+       2,
+       2
+      ],
+      "name": "放风场 · 高台上的拉杆",
+      "idea": "关键想法：浮石把箱子运过坑，箱子再当台阶。变化：拉杆在上层高台，它开的是下层出口的门——镜头要跟着走一大圈；骷髅守卫只在下层走廊巡逻，不进解谜区。",
+      "needs": [
+       "float_block"
+      ],
+      "requires": [
+       "float_block",
+       "push",
+       "lever"
+      ],
+      "mechanisms": [
+       "float_block",
+       "push",
+       "lever",
+       "ladder",
+       "hint_animal"
+      ],
+      "exits": [
+       "left.0.low",
+       "right.1.low"
+      ],
+      "routes": [
+       "left.0.low>right.1.low"
+      ],
+      "puzzle_area": [
+       [
+        1,
+        1,
+        27,
+        9
+       ]
+      ],
+      "legend": {
+       "2": {
+        "monster": "skeleton_guard",
+        "dir": "left",
+        "zone": [
+         28,
+         32
+        ]
+       }
+      },
+      "devices": [
+       {
+        "type": "lever",
+        "at": [
+         24,
+         4
+        ],
+        "action": {
+         "link": 0
+        }
+       }
+      ],
+      "links": [
+       {
+        "plates": [],
+        "doors": [
+         [
+          33,
+          16
+         ],
+         [
+          33,
+          17
+         ]
+        ]
+       }
+      ],
+      "hints": [
+       {
+        "text": "推浮石把箱子运过坑。",
+        "target": [
+         12,
+         7
+        ],
+        "show": {
+         "action": "push",
+         "dir": "R",
+         "at": [
+          4,
+          7
+         ]
+        },
+        "done": {
+         "covers": [
+          12,
+          7
+         ]
+        }
+       },
+       {
+        "text": "把箱子推到高台下面当台阶。",
+        "target": [
+         21,
+         6
+        ],
+        "show": {
+         "action": "push",
+         "dir": "R",
+         "at": [
+          12,
+          6
+         ]
+        },
+        "done": {
+         "crate": [
+          21,
+          6
+         ]
+        }
+       },
+       {
+        "text": "上高台拉下拉杆：下层的门开了。",
+        "target": [
+         24,
+         4
+        ],
+        "show": {
+         "action": "lever",
+         "dir": "U",
+         "at": [
+          24,
+          4
+         ]
+        },
+        "done": {
+         "lever": 0
+        }
+       },
+       {
+        "text": "从梯子下去，穿过下层的门。",
+        "target": [
+         27,
+         10
+        ],
+        "show": {
+         "action": "climb",
+         "dir": "D",
+         "at": [
+          27,
+          5
+         ]
+        },
+        "done": {
+         "player": [
+          28,
+          10,
+          39,
+          19
+         ]
+        }
+       }
+      ],
+      "map": [
+       "########################################",
+       "#...........................############",
+       "#...........................############",
+       "#...........................############",
+       "#..........................H############",
+       "#.....................#####H############",
+       ".......B..............#####H############",
+       ".....FFF.....##############H############",
+       "##########...##############H############",
+       "##########...##############H############",
+       "##########...##############H...........#",
+       "##########...##############H...........#",
+       "##########...##############H...........#",
+       "###########################H...........#",
+       "#############..............H...........#",
+       "#############..............H...........#",
+       "#############..............H.....|......",
+       "#############.......$......H..2..|..$...",
+       "########################################",
+       "########################################"
+      ]
+     },
+     "diyu_1": {
+      "format": "pushbox.room/2",
+      "world": "diyu",
+      "weight": 10,
+      "mirror": true,
+      "id": "diyu_fengdu",
+      "type": "room",
+      "role": "develop",
+      "size": [
+       2,
+       2
+      ],
+      "name": "酆都城 · 钟楼的锣",
+      "idea": "关键想法：纸台把箱子运过坑，箱子再当台阶。变化：锣在钟楼上，敲响开的是下层的城门；城门外有跳跳僵尸巡街，不进解谜区。",
+      "needs": [
+       "float_block"
+      ],
+      "requires": [
+       "float_block",
+       "push",
+       "lever"
+      ],
+      "mechanisms": [
+       "float_block",
+       "push",
+       "lever",
+       "ladder",
+       "hint_animal"
+      ],
+      "exits": [
+       "left.0.low",
+       "right.1.low"
+      ],
+      "routes": [
+       "left.0.low>right.1.low"
+      ],
+      "puzzle_area": [
+       [
+        1,
+        1,
+        27,
+        12
+       ]
+      ],
+      "legend": {
+       "2": {
+        "monster": "jiangshi",
+        "dir": "left",
+        "zone": [
+         28,
+         32
+        ]
+       },
+       "3": {
+        "monster": "wandering_soul",
+        "dir": "left",
+        "zone": [
+         34,
+         38
+        ]
+       }
+      },
+      "devices": [
+       {
+        "type": "lever",
+        "at": [
+         23,
+         4
+        ],
+        "action": {
+         "link": 0
+        }
+       }
+      ],
+      "links": [
+       {
+        "plates": [],
+        "doors": [
+         [
+          33,
+          16
+         ],
+         [
+          33,
+          17
+         ]
+        ]
+       }
+      ],
+      "hints": [
+       {
+        "text": "推纸台过坑：箱子坐在上面一起走。",
+        "target": [
+         12,
+         7
+        ],
+        "show": {
+         "action": "push",
+         "dir": "R",
+         "at": [
+          4,
+          7
+         ]
+        },
+        "done": {
+         "covers": [
+          12,
+          7
+         ]
+        }
+       },
+       {
+        "text": "踩上纸台，把箱子推到钟楼下面当台阶。",
+        "target": [
+         21,
+         6
+        ],
+        "show": {
+         "action": "push",
+         "dir": "R",
+         "at": [
+          11,
+          6
+         ]
+        },
+        "done": {
+         "crate": [
+          21,
+          6
+         ]
+        }
+       },
+       {
+        "text": "踩着箱子上钟楼，敲锣：城门开了。",
+        "target": [
+         23,
+         4
+        ],
+        "show": {
+         "action": "lever",
+         "dir": "U",
+         "at": [
+          23,
+          4
+         ]
+        },
+        "done": {
+         "lever": 0
+        }
+       },
+       {
+        "text": "从梯子下去，穿过城门。",
+        "target": [
+         27,
+         10
+        ],
+        "show": {
+         "action": "climb",
+         "dir": "D",
+         "at": [
+          27,
+          6
+         ]
+        },
+        "done": {
+         "player": [
+          34,
+          10,
+          39,
+          19
+         ]
+        }
+       }
+      ],
+      "map": [
+       "########################################",
+       "#...........................############",
+       "#...........................############",
+       "#...........................############",
+       "#...........................############",
+       "#.....................###...############",
+       ".......B........$..$..###..H############",
+       ".....FFF.....##############H############",
+       "##########...##############H############",
+       "##########...##############H############",
+       "##########...##############H############",
+       "##########...##############H############",
+       "##########...##############H############",
+       "###########################H############",
+       "###########################H############",
+       "###########################H############",
+       "##########################.......|......",
+       "##########################....2..|..3.$.",
+       "########################################",
+       "########################################"
+      ]
+     }
+    },
+    "focus": 1
    },
    "depends": [
     "avatar.goblin_smith",
@@ -8987,6 +10781,18 @@
     "cargo.letter",
     "cargo.vase",
     "char.lucky_cat",
+    "fauna.diyu_butterfly",
+    "fauna.diyu_dog",
+    "fauna.dungeon_bat",
+    "fauna.dungeon_cat",
+    "fauna.jeju_pony",
+    "item.snack",
+    "item.snack_jeju",
+    "mech.lantern_float",
+    "mech.rune_float",
+    "monster.skeleton_guard",
+    "obj.crate_wood",
+    "theme.diyu",
     "theme.dungeon",
     "ui.delivery_icons",
     "ui.keycap",
@@ -9372,11 +11178,11 @@
    "kind": "procedural",
    "layer": "ui",
    "current": {
-    "version": 2,
-    "hash": "56cb41aba4ff725b2caa5aae42ef7f9212c48e469946439873f1cd0c93639b4b",
+    "version": 3,
+    "hash": "6cfbd485aa578250578060970c27852eac432d147dc877f5fa0e9d64f0867733",
     "status": "review",
     "preview": "art/export/preview/ui.screen.shop.png",
-    "preview_sha256": "fe75475bcae4e6a5e01656d8f5a35a399b577631482798b5dcc49ccee44e9fab"
+    "preview_sha256": "9491a33ec95bd23f1b72e9970c5d897ea8e29306772a43ec392d5bca67880e36"
    },
    "approved": {
     "version": 1,
@@ -9408,7 +11214,17 @@
     "workbench/js/core/ui-style.js",
     "workbench/js/core/font-ui.js",
     "content/i18n-ui/zh-Hans.json",
-    "content/i18n-ui/en.json"
+    "content/i18n-ui/en.json",
+    "workbench/js/core/ui-common.js",
+    "workbench/js/core/rooms.js",
+    "workbench/js/core/mapgen.js",
+    "workbench/js/core/rooms2.js",
+    "workbench/js/core/delivery-scene.js",
+    "workbench/js/core/delivery-scene2.js",
+    "workbench/js/core/ui-screens-delivery.js",
+    "workbench/js/core/font-delivery2.js",
+    "content/i18n-delivery2/zh-Hans.json",
+    "content/i18n-delivery2/en.json"
    ],
    "params": {
     "screen": "shop",
@@ -9418,6 +11234,11 @@
     ],
     "coins": 45,
     "goods": [
+     {
+      "id": "snack",
+      "price": 10,
+      "stock": 3
+     },
      {
       "id": "sandbag",
       "price": 10,
@@ -9440,55 +11261,76 @@
     ],
     "slots": 3,
     "sand": 2,
-    "room": {
-     "map": [
-      "####################",
-      "####............####",
-      "##................##",
-      "#...H..............#",
-      "#...H##########....#",
-      "#...H..............#",
-      "....H...............",
-      "..P.H..#.....#......",
-      "####################",
-      "####################"
+    "room2": {
+     "format": "pushbox.room/2",
+     "world": "dungeon",
+     "weight": 10,
+     "mirror": true,
+     "id": "dungeon2_station",
+     "type": "station",
+     "role": "station",
+     "name": "驿站 · 牢房分号",
+     "idea": "龟掌柜在废弃的牢房里开了分号：站在他旁边按 ↑ 打开货架；零食（小鱼饼干）在这里买。",
+     "mechanisms": [
+      "ladder"
      ],
-     "entities": [
-      {
-       "sprite": "monster.rat_swarm",
-       "anim": "walk",
-       "x": 12,
-       "y": 3,
-       "flip": true
-      },
-      {
-       "sprite": "item.coin",
-       "anim": "spin",
-       "x": 7,
-       "y": 3
-      },
-      {
-       "sprite": "item.coin",
-       "anim": "spin",
-       "x": 10,
-       "y": 3
-      },
-      {
-       "sprite": "item.coin",
-       "anim": "spin",
-       "x": 16,
-       "y": 7
+     "exits": [
+      "left.0.low",
+      "left.0.high",
+      "right.0.low",
+      "right.0.high",
+      "top.0.mid",
+      "bottom.0.mid"
+     ],
+     "routes": [
+      "left.0.low>right.0.low",
+      "left.0.low>right.0.high",
+      "left.0.high>right.0.low",
+      "left.0.high>right.0.high",
+      "left.0.low>bottom.0.mid",
+      "left.0.high>bottom.0.mid",
+      "top.0.mid>right.0.low",
+      "top.0.mid>right.0.high",
+      "top.0.mid>bottom.0.mid"
+     ],
+     "legend": {
+      "1": {
+       "feature": "keeper"
       }
-     ],
-     "facing": "right"
-    }
+     },
+     "map": [
+      "#########HH#########",
+      "#........HH........#",
+      ".........HH.........",
+      "....H....HH....H....",
+      "####H....HH....H####",
+      "####H....HH....H####",
+      "....H....HH....H....",
+      "....H.1..HH..$.H....",
+      "#########HH#########",
+      "#########HH#########"
+     ]
+    },
+    "world": "dungeon"
    },
    "depends": [
     "char.turtle_keeper",
+    "fauna.diyu_butterfly",
+    "fauna.diyu_dog",
+    "fauna.dungeon_bat",
+    "fauna.dungeon_cat",
+    "fauna.jeju_pony",
     "item.coin",
     "item.first_aid",
     "item.rope_ladder",
     "item.sandbag",
+    "item.snack",
+    "item.snack_jeju",
+    "mech.lantern_float",
+    "mech.rune_float",
+    "monster.skeleton_guard",
+    "obj.crate_wood",
+    "theme.diyu",
     "theme.dungeon",
     "ui.bubble",
     "ui.bubble_tail",
@@ -9640,7 +11482,38 @@
    "ninepatch": null
   }
  ],
- "text_issues": [],
+ "text_issues": [
+  {
+   "screen": "ui.screen.confirm",
+   "locale": "qps",
+   "kind": "ellipsis",
+   "key": "room2.dungeon2_yard.name"
+  },
+  {
+   "screen": "ui.screen.delivery_hud",
+   "locale": "qps",
+   "kind": "ellipsis",
+   "key": "room2.dungeon2_yard.name"
+  },
+  {
+   "screen": "ui.screen.delivery_pause",
+   "locale": "qps",
+   "kind": "ellipsis",
+   "key": "room2.dungeon2_yard.name"
+  },
+  {
+   "screen": "ui.screen.hint_animal",
+   "locale": "qps",
+   "kind": "ellipsis",
+   "key": "room2.dungeon2_sandpour.name"
+  },
+  {
+   "screen": "ui.screen.reels",
+   "locale": "qps",
+   "kind": "ellipsis",
+   "key": "room2.dungeon2_yard.name"
+  }
+ ],
  "references": [
   {
    "name": "showcase.dungeon",
@@ -11533,14 +13406,26 @@
   {
    "name": "confirm.zh-Hans",
    "file": "art/export/reference/confirm.zh-Hans.png",
-   "sha256": "19e42ce7b87d0f88db06124222d7e5ec50f5694748cc3a5abc3b3be03e0b815d",
+   "sha256": "457e1a45840fe53ebc6abfc28e2c23de687d3cf86cc037e6b18deb9ec63f9d8e",
    "uses": [
     "ui.screen.confirm",
     "cargo.vase",
     "char.portitor",
+    "fauna.diyu_butterfly",
+    "fauna.diyu_dog",
+    "fauna.dungeon_bat",
+    "fauna.dungeon_cat",
+    "fauna.jeju_pony",
     "item.first_aid",
     "item.rope_ladder",
     "item.sandbag",
+    "item.snack",
+    "item.snack_jeju",
+    "mech.lantern_float",
+    "mech.rune_float",
+    "monster.skeleton_guard",
+    "obj.crate_wood",
+    "theme.diyu",
     "theme.dungeon",
     "ui.delivery_icons",
     "ui.icons",
@@ -11550,20 +13435,41 @@
    ],
    "all_approved": false,
    "unapproved": [
-    "ui.screen.confirm"
+    "ui.screen.confirm",
+    "fauna.diyu_butterfly",
+    "fauna.diyu_dog",
+    "fauna.dungeon_cat",
+    "fauna.jeju_pony",
+    "item.snack",
+    "item.snack_jeju",
+    "mech.lantern_float",
+    "mech.rune_float",
+    "theme.diyu"
    ]
   },
   {
    "name": "confirm.en",
    "file": "art/export/reference/confirm.en.png",
-   "sha256": "03dd181bfc3784c93654cd1305867e7ac2d456b9e79516d2a49f8a60fcdf1b9d",
+   "sha256": "f6cc6934a3bfa82fb907a62845f6a07b6d7776c4311d77b312ab0a6bb4e35b96",
    "uses": [
     "ui.screen.confirm",
     "cargo.vase",
     "char.portitor",
+    "fauna.diyu_butterfly",
+    "fauna.diyu_dog",
+    "fauna.dungeon_bat",
+    "fauna.dungeon_cat",
+    "fauna.jeju_pony",
     "item.first_aid",
     "item.rope_ladder",
     "item.sandbag",
+    "item.snack",
+    "item.snack_jeju",
+    "mech.lantern_float",
+    "mech.rune_float",
+    "monster.skeleton_guard",
+    "obj.crate_wood",
+    "theme.diyu",
     "theme.dungeon",
     "ui.delivery_icons",
     "ui.icons",
@@ -11573,64 +13479,127 @@
    ],
    "all_approved": false,
    "unapproved": [
-    "ui.screen.confirm"
+    "ui.screen.confirm",
+    "fauna.diyu_butterfly",
+    "fauna.diyu_dog",
+    "fauna.dungeon_cat",
+    "fauna.jeju_pony",
+    "item.snack",
+    "item.snack_jeju",
+    "mech.lantern_float",
+    "mech.rune_float",
+    "theme.diyu"
    ]
   },
   {
    "name": "delivery_hud.zh-Hans",
    "file": "art/export/reference/delivery_hud.zh-Hans.png",
-   "sha256": "357edfd2dc3eef34c65c9ae868574e3c9f20b87d8e06a855e45d4388da3942f6",
+   "sha256": "7576fe1591a8aaf3189791cccfc1ba0a84925ed35bf21979b391d10f89af65c5",
    "uses": [
     "ui.screen.delivery_hud",
     "cargo.vase",
     "char.portitor",
+    "fauna.diyu_butterfly",
+    "fauna.diyu_dog",
+    "fauna.dungeon_bat",
+    "fauna.dungeon_cat",
+    "fauna.jeju_pony",
     "item.coin",
     "item.first_aid",
     "item.rope_ladder",
     "item.sandbag",
+    "item.snack",
+    "item.snack_jeju",
     "mech.ladder",
+    "mech.lantern_float",
+    "mech.rune_float",
     "monster.rat_swarm",
+    "monster.skeleton_guard",
+    "obj.crate_wood",
+    "theme.diyu",
     "theme.dungeon",
     "ui.delivery_icons"
    ],
    "all_approved": false,
    "unapproved": [
-    "ui.screen.delivery_hud"
+    "ui.screen.delivery_hud",
+    "fauna.diyu_butterfly",
+    "fauna.diyu_dog",
+    "fauna.dungeon_cat",
+    "fauna.jeju_pony",
+    "item.snack",
+    "item.snack_jeju",
+    "mech.lantern_float",
+    "mech.rune_float",
+    "theme.diyu"
    ]
   },
   {
    "name": "delivery_hud.en",
    "file": "art/export/reference/delivery_hud.en.png",
-   "sha256": "357edfd2dc3eef34c65c9ae868574e3c9f20b87d8e06a855e45d4388da3942f6",
+   "sha256": "7576fe1591a8aaf3189791cccfc1ba0a84925ed35bf21979b391d10f89af65c5",
    "uses": [
     "ui.screen.delivery_hud",
     "cargo.vase",
     "char.portitor",
+    "fauna.diyu_butterfly",
+    "fauna.diyu_dog",
+    "fauna.dungeon_bat",
+    "fauna.dungeon_cat",
+    "fauna.jeju_pony",
     "item.coin",
     "item.first_aid",
     "item.rope_ladder",
     "item.sandbag",
+    "item.snack",
+    "item.snack_jeju",
     "mech.ladder",
+    "mech.lantern_float",
+    "mech.rune_float",
     "monster.rat_swarm",
+    "monster.skeleton_guard",
+    "obj.crate_wood",
+    "theme.diyu",
     "theme.dungeon",
     "ui.delivery_icons"
    ],
    "all_approved": false,
    "unapproved": [
-    "ui.screen.delivery_hud"
+    "ui.screen.delivery_hud",
+    "fauna.diyu_butterfly",
+    "fauna.diyu_dog",
+    "fauna.dungeon_cat",
+    "fauna.jeju_pony",
+    "item.snack",
+    "item.snack_jeju",
+    "mech.lantern_float",
+    "mech.rune_float",
+    "theme.diyu"
    ]
   },
   {
    "name": "delivery_pause.zh-Hans",
    "file": "art/export/reference/delivery_pause.zh-Hans.png",
-   "sha256": "5a856e33fefb5e668c79aad10dc232623373a486ef12e9dc51593a902a3ae5e6",
+   "sha256": "ea1278b66c3462b41e59b43f8baaed305fb1e63f5c24c2782911d418f4804c32",
    "uses": [
     "ui.screen.delivery_pause",
     "cargo.vase",
     "char.portitor",
+    "fauna.diyu_butterfly",
+    "fauna.diyu_dog",
+    "fauna.dungeon_bat",
+    "fauna.dungeon_cat",
+    "fauna.jeju_pony",
     "item.first_aid",
     "item.rope_ladder",
     "item.sandbag",
+    "item.snack",
+    "item.snack_jeju",
+    "mech.lantern_float",
+    "mech.rune_float",
+    "monster.skeleton_guard",
+    "obj.crate_wood",
+    "theme.diyu",
     "theme.dungeon",
     "ui.delivery_icons",
     "ui.icons",
@@ -11640,20 +13609,41 @@
    ],
    "all_approved": false,
    "unapproved": [
-    "ui.screen.delivery_pause"
+    "ui.screen.delivery_pause",
+    "fauna.diyu_butterfly",
+    "fauna.diyu_dog",
+    "fauna.dungeon_cat",
+    "fauna.jeju_pony",
+    "item.snack",
+    "item.snack_jeju",
+    "mech.lantern_float",
+    "mech.rune_float",
+    "theme.diyu"
    ]
   },
   {
    "name": "delivery_pause.en",
    "file": "art/export/reference/delivery_pause.en.png",
-   "sha256": "03e91e1f1441fc5914309b2ba53a6884c6bd05d56c22243f5328954a190a2a19",
+   "sha256": "da239d9514b00b2a96bf8edd2e61f801ef4febf6fcc3d31495b1279aca92c925",
    "uses": [
     "ui.screen.delivery_pause",
     "cargo.vase",
     "char.portitor",
+    "fauna.diyu_butterfly",
+    "fauna.diyu_dog",
+    "fauna.dungeon_bat",
+    "fauna.dungeon_cat",
+    "fauna.jeju_pony",
     "item.first_aid",
     "item.rope_ladder",
     "item.sandbag",
+    "item.snack",
+    "item.snack_jeju",
+    "mech.lantern_float",
+    "mech.rune_float",
+    "monster.skeleton_guard",
+    "obj.crate_wood",
+    "theme.diyu",
     "theme.dungeon",
     "ui.delivery_icons",
     "ui.icons",
@@ -11663,7 +13653,16 @@
    ],
    "all_approved": false,
    "unapproved": [
-    "ui.screen.delivery_pause"
+    "ui.screen.delivery_pause",
+    "fauna.diyu_butterfly",
+    "fauna.diyu_dog",
+    "fauna.dungeon_cat",
+    "fauna.jeju_pony",
+    "item.snack",
+    "item.snack_jeju",
+    "mech.lantern_float",
+    "mech.rune_float",
+    "theme.diyu"
    ]
   },
   {
@@ -11714,6 +13713,92 @@
    "all_approved": false,
    "unapproved": [
     "ui.screen.dialogue"
+   ]
+  },
+  {
+   "name": "hint_animal.zh-Hans",
+   "file": "art/export/reference/hint_animal.zh-Hans.png",
+   "sha256": "a1604411948c3f29143768baed8c516f2e5dc251f43eb50ec6fa0bfec9d34072",
+   "uses": [
+    "ui.screen.hint_animal",
+    "cargo.vase",
+    "char.portitor",
+    "fauna.diyu_butterfly",
+    "fauna.diyu_dog",
+    "fauna.dungeon_bat",
+    "fauna.dungeon_cat",
+    "fauna.jeju_pony",
+    "item.coin",
+    "item.first_aid",
+    "item.rope_ladder",
+    "item.sandbag",
+    "item.snack",
+    "item.snack_jeju",
+    "mech.ladder",
+    "mech.lantern_float",
+    "mech.rune_float",
+    "monster.rat_swarm",
+    "monster.skeleton_guard",
+    "obj.crate_wood",
+    "theme.diyu",
+    "theme.dungeon",
+    "ui.delivery_icons"
+   ],
+   "all_approved": false,
+   "unapproved": [
+    "ui.screen.hint_animal",
+    "fauna.diyu_butterfly",
+    "fauna.diyu_dog",
+    "fauna.dungeon_cat",
+    "fauna.jeju_pony",
+    "item.snack",
+    "item.snack_jeju",
+    "mech.lantern_float",
+    "mech.rune_float",
+    "theme.diyu"
+   ]
+  },
+  {
+   "name": "hint_animal.en",
+   "file": "art/export/reference/hint_animal.en.png",
+   "sha256": "27cb0f9f096dce7efeaab36bbc85b88f8d649455be7aec115cdbbeed0d1d081c",
+   "uses": [
+    "ui.screen.hint_animal",
+    "cargo.vase",
+    "char.portitor",
+    "fauna.diyu_butterfly",
+    "fauna.diyu_dog",
+    "fauna.dungeon_bat",
+    "fauna.dungeon_cat",
+    "fauna.jeju_pony",
+    "item.coin",
+    "item.first_aid",
+    "item.rope_ladder",
+    "item.sandbag",
+    "item.snack",
+    "item.snack_jeju",
+    "mech.ladder",
+    "mech.lantern_float",
+    "mech.rune_float",
+    "monster.rat_swarm",
+    "monster.skeleton_guard",
+    "obj.crate_wood",
+    "theme.diyu",
+    "theme.dungeon",
+    "ui.delivery_icons"
+   ],
+   "all_approved": false,
+   "unapproved": [
+    "ui.screen.hint_animal",
+    "fauna.diyu_butterfly",
+    "fauna.diyu_dog",
+    "fauna.dungeon_cat",
+    "fauna.jeju_pony",
+    "item.snack",
+    "item.snack_jeju",
+    "mech.lantern_float",
+    "mech.rune_float",
+    "theme.diyu"
    ]
   },
   {
@@ -11841,6 +13926,92 @@
    ]
   },
   {
+   "name": "observe.zh-Hans",
+   "file": "art/export/reference/observe.zh-Hans.png",
+   "sha256": "067f8da23a8c40a8b7501197935816b349db84ba7e25fa29c8290142fef9099e",
+   "uses": [
+    "ui.screen.observe",
+    "cargo.vase",
+    "char.portitor",
+    "fauna.diyu_butterfly",
+    "fauna.diyu_dog",
+    "fauna.dungeon_bat",
+    "fauna.dungeon_cat",
+    "fauna.jeju_pony",
+    "item.coin",
+    "item.first_aid",
+    "item.rope_ladder",
+    "item.sandbag",
+    "item.snack",
+    "item.snack_jeju",
+    "mech.ladder",
+    "mech.lantern_float",
+    "mech.rune_float",
+    "monster.rat_swarm",
+    "monster.skeleton_guard",
+    "obj.crate_wood",
+    "theme.diyu",
+    "theme.dungeon",
+    "ui.delivery_icons"
+   ],
+   "all_approved": false,
+   "unapproved": [
+    "ui.screen.observe",
+    "fauna.diyu_butterfly",
+    "fauna.diyu_dog",
+    "fauna.dungeon_cat",
+    "fauna.jeju_pony",
+    "item.snack",
+    "item.snack_jeju",
+    "mech.lantern_float",
+    "mech.rune_float",
+    "theme.diyu"
+   ]
+  },
+  {
+   "name": "observe.en",
+   "file": "art/export/reference/observe.en.png",
+   "sha256": "6cef2558a08baddaf0636116c6d897705aa257db3a589b33501f71d7d2240d5b",
+   "uses": [
+    "ui.screen.observe",
+    "cargo.vase",
+    "char.portitor",
+    "fauna.diyu_butterfly",
+    "fauna.diyu_dog",
+    "fauna.dungeon_bat",
+    "fauna.dungeon_cat",
+    "fauna.jeju_pony",
+    "item.coin",
+    "item.first_aid",
+    "item.rope_ladder",
+    "item.sandbag",
+    "item.snack",
+    "item.snack_jeju",
+    "mech.ladder",
+    "mech.lantern_float",
+    "mech.rune_float",
+    "monster.rat_swarm",
+    "monster.skeleton_guard",
+    "obj.crate_wood",
+    "theme.diyu",
+    "theme.dungeon",
+    "ui.delivery_icons"
+   ],
+   "all_approved": false,
+   "unapproved": [
+    "ui.screen.observe",
+    "fauna.diyu_butterfly",
+    "fauna.diyu_dog",
+    "fauna.dungeon_cat",
+    "fauna.jeju_pony",
+    "item.snack",
+    "item.snack_jeju",
+    "mech.lantern_float",
+    "mech.rune_float",
+    "theme.diyu"
+   ]
+  },
+  {
    "name": "pause.zh-Hans",
    "file": "art/export/reference/pause.zh-Hans.png",
    "sha256": "fbfb4413035688d0fa30c9cf6756566b9460ceaadfd72173a66a7abff3447665",
@@ -11885,7 +14056,7 @@
   {
    "name": "reels.zh-Hans",
    "file": "art/export/reference/reels.zh-Hans.png",
-   "sha256": "6e282bb84e8821e153b79e678ece5549cf87428a88ab9b438264cf931a1a79e7",
+   "sha256": "7f7b48b691988e0f156aa1b507615c5b8281d434115c0c4b7bd264bf66957124",
    "uses": [
     "ui.screen.reels",
     "avatar.goblin_smith",
@@ -11895,6 +14066,18 @@
     "cargo.letter",
     "cargo.vase",
     "char.lucky_cat",
+    "fauna.diyu_butterfly",
+    "fauna.diyu_dog",
+    "fauna.dungeon_bat",
+    "fauna.dungeon_cat",
+    "fauna.jeju_pony",
+    "item.snack",
+    "item.snack_jeju",
+    "mech.lantern_float",
+    "mech.rune_float",
+    "monster.skeleton_guard",
+    "obj.crate_wood",
+    "theme.diyu",
     "theme.dungeon",
     "ui.delivery_icons",
     "ui.keycap",
@@ -11902,13 +14085,22 @@
    ],
    "all_approved": false,
    "unapproved": [
-    "ui.screen.reels"
+    "ui.screen.reels",
+    "fauna.diyu_butterfly",
+    "fauna.diyu_dog",
+    "fauna.dungeon_cat",
+    "fauna.jeju_pony",
+    "item.snack",
+    "item.snack_jeju",
+    "mech.lantern_float",
+    "mech.rune_float",
+    "theme.diyu"
    ]
   },
   {
    "name": "reels.en",
    "file": "art/export/reference/reels.en.png",
-   "sha256": "75153bc66085c3e7d782c4ea22af74a75844ca9d26510726c5683ef06da7796c",
+   "sha256": "d366d342bfdc40c2995600d14861abba9d076c47600da0f57d653ef91b8bdd37",
    "uses": [
     "ui.screen.reels",
     "avatar.goblin_smith",
@@ -11918,6 +14110,18 @@
     "cargo.letter",
     "cargo.vase",
     "char.lucky_cat",
+    "fauna.diyu_butterfly",
+    "fauna.diyu_dog",
+    "fauna.dungeon_bat",
+    "fauna.dungeon_cat",
+    "fauna.jeju_pony",
+    "item.snack",
+    "item.snack_jeju",
+    "mech.lantern_float",
+    "mech.rune_float",
+    "monster.skeleton_guard",
+    "obj.crate_wood",
+    "theme.diyu",
     "theme.dungeon",
     "ui.delivery_icons",
     "ui.keycap",
@@ -11925,7 +14129,16 @@
    ],
    "all_approved": false,
    "unapproved": [
-    "ui.screen.reels"
+    "ui.screen.reels",
+    "fauna.diyu_butterfly",
+    "fauna.diyu_dog",
+    "fauna.dungeon_cat",
+    "fauna.jeju_pony",
+    "item.snack",
+    "item.snack_jeju",
+    "mech.lantern_float",
+    "mech.rune_float",
+    "theme.diyu"
    ]
   },
   {
@@ -12087,14 +14300,26 @@
   {
    "name": "shop.zh-Hans",
    "file": "art/export/reference/shop.zh-Hans.png",
-   "sha256": "fe75475bcae4e6a5e01656d8f5a35a399b577631482798b5dcc49ccee44e9fab",
+   "sha256": "9491a33ec95bd23f1b72e9970c5d897ea8e29306772a43ec392d5bca67880e36",
    "uses": [
     "ui.screen.shop",
     "char.turtle_keeper",
+    "fauna.diyu_butterfly",
+    "fauna.diyu_dog",
+    "fauna.dungeon_bat",
+    "fauna.dungeon_cat",
+    "fauna.jeju_pony",
     "item.coin",
     "item.first_aid",
     "item.rope_ladder",
     "item.sandbag",
+    "item.snack",
+    "item.snack_jeju",
+    "mech.lantern_float",
+    "mech.rune_float",
+    "monster.skeleton_guard",
+    "obj.crate_wood",
+    "theme.diyu",
     "theme.dungeon",
     "ui.bubble",
     "ui.bubble_tail",
@@ -12104,20 +14329,41 @@
    ],
    "all_approved": false,
    "unapproved": [
-    "ui.screen.shop"
+    "ui.screen.shop",
+    "fauna.diyu_butterfly",
+    "fauna.diyu_dog",
+    "fauna.dungeon_cat",
+    "fauna.jeju_pony",
+    "item.snack",
+    "item.snack_jeju",
+    "mech.lantern_float",
+    "mech.rune_float",
+    "theme.diyu"
    ]
   },
   {
    "name": "shop.en",
    "file": "art/export/reference/shop.en.png",
-   "sha256": "a7b9aaf969198962cbbe9f248cf81e16018ff31d182c90bae3c9a2a1350a7fd3",
+   "sha256": "39c5dd6d044077c6ca2f3f6b7f35bf7380edf757a680f86b025d799f2aa0cdda",
    "uses": [
     "ui.screen.shop",
     "char.turtle_keeper",
+    "fauna.diyu_butterfly",
+    "fauna.diyu_dog",
+    "fauna.dungeon_bat",
+    "fauna.dungeon_cat",
+    "fauna.jeju_pony",
     "item.coin",
     "item.first_aid",
     "item.rope_ladder",
     "item.sandbag",
+    "item.snack",
+    "item.snack_jeju",
+    "mech.lantern_float",
+    "mech.rune_float",
+    "monster.skeleton_guard",
+    "obj.crate_wood",
+    "theme.diyu",
     "theme.dungeon",
     "ui.bubble",
     "ui.bubble_tail",
@@ -12127,7 +14373,16 @@
    ],
    "all_approved": false,
    "unapproved": [
-    "ui.screen.shop"
+    "ui.screen.shop",
+    "fauna.diyu_butterfly",
+    "fauna.diyu_dog",
+    "fauna.dungeon_cat",
+    "fauna.jeju_pony",
+    "item.snack",
+    "item.snack_jeju",
+    "mech.lantern_float",
+    "mech.rune_float",
+    "theme.diyu"
    ]
   }
  ]

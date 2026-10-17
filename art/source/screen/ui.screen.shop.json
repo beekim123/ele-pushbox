@@ -25,14 +25,36 @@
   "workbench/js/core/ui-style.js",
   "workbench/js/core/font-ui.js",
   "content/i18n-ui/zh-Hans.json",
-  "content/i18n-ui/en.json"
+  "content/i18n-ui/en.json",
+  "workbench/js/core/ui-common.js",
+  "workbench/js/core/rooms.js",
+  "workbench/js/core/mapgen.js",
+  "workbench/js/core/rooms2.js",
+  "workbench/js/core/delivery-scene.js",
+  "workbench/js/core/delivery-scene2.js",
+  "workbench/js/core/ui-screens-delivery.js",
+  "workbench/js/core/font-delivery2.js",
+  "content/i18n-delivery2/zh-Hans.json",
+  "content/i18n-delivery2/en.json"
  ],
  "depends": [
   "char.turtle_keeper",
+  "fauna.diyu_butterfly",
+  "fauna.diyu_dog",
+  "fauna.dungeon_bat",
+  "fauna.dungeon_cat",
+  "fauna.jeju_pony",
   "item.coin",
   "item.first_aid",
   "item.rope_ladder",
   "item.sandbag",
+  "item.snack",
+  "item.snack_jeju",
+  "mech.lantern_float",
+  "mech.rune_float",
+  "monster.skeleton_guard",
+  "obj.crate_wood",
+  "theme.diyu",
   "theme.dungeon",
   "ui.bubble",
   "ui.bubble_tail",
@@ -40,7 +62,7 @@
   "ui.keycap",
   "ui.panel"
  ],
- "version": 2,
+ "version": 3,
  "stage": "review",
  "size": [
   320,
@@ -56,6 +78,11 @@
   ],
   "coins": 45,
   "goods": [
+   {
+    "id": "snack",
+    "price": 10,
+    "stock": 3
+   },
    {
     "id": "sandbag",
     "price": 10,
@@ -78,50 +105,59 @@
   ],
   "slots": 3,
   "sand": 2,
-  "room": {
-   "map": [
-    "####################",
-    "####............####",
-    "##................##",
-    "#...H..............#",
-    "#...H##########....#",
-    "#...H..............#",
-    "....H...............",
-    "..P.H..#.....#......",
-    "####################",
-    "####################"
+  "room2": {
+   "format": "pushbox.room/2",
+   "world": "dungeon",
+   "weight": 10,
+   "mirror": true,
+   "id": "dungeon2_station",
+   "type": "station",
+   "role": "station",
+   "name": "驿站 · 牢房分号",
+   "idea": "龟掌柜在废弃的牢房里开了分号：站在他旁边按 ↑ 打开货架；零食（小鱼饼干）在这里买。",
+   "mechanisms": [
+    "ladder"
    ],
-   "entities": [
-    {
-     "sprite": "monster.rat_swarm",
-     "anim": "walk",
-     "x": 12,
-     "y": 3,
-     "flip": true
-    },
-    {
-     "sprite": "item.coin",
-     "anim": "spin",
-     "x": 7,
-     "y": 3
-    },
-    {
-     "sprite": "item.coin",
-     "anim": "spin",
-     "x": 10,
-     "y": 3
-    },
-    {
-     "sprite": "item.coin",
-     "anim": "spin",
-     "x": 16,
-     "y": 7
+   "exits": [
+    "left.0.low",
+    "left.0.high",
+    "right.0.low",
+    "right.0.high",
+    "top.0.mid",
+    "bottom.0.mid"
+   ],
+   "routes": [
+    "left.0.low>right.0.low",
+    "left.0.low>right.0.high",
+    "left.0.high>right.0.low",
+    "left.0.high>right.0.high",
+    "left.0.low>bottom.0.mid",
+    "left.0.high>bottom.0.mid",
+    "top.0.mid>right.0.low",
+    "top.0.mid>right.0.high",
+    "top.0.mid>bottom.0.mid"
+   ],
+   "legend": {
+    "1": {
+     "feature": "keeper"
     }
-   ],
-   "facing": "right"
-  }
+   },
+   "map": [
+    "#########HH#########",
+    "#........HH........#",
+    ".........HH.........",
+    "....H....HH....H....",
+    "####H....HH....H####",
+    "####H....HH....H####",
+    "....H....HH....H....",
+    "....H.1..HH..$.H....",
+    "#########HH#########",
+    "#########HH#########"
+   ]
+  },
+  "world": "dungeon"
  },
- "usage": "在驿站和龟掌柜说话时打开（世界暂停）：每站回 1 颗心一次；货架上每样东西有价格和库存，卖完的变暗；下面是背包格和沙袋数。",
- "notes": "布局参考：文字来自 content/i18n-delivery（与已确认界面的文字表分开），缺的字形在 font-delivery.js；画法在 ui-delivery.js，没有改 ui.js。Godot 用 Control 容器实现。第 4 步美术候选（配送切片），等用户在工作台确认；确认前不得进游戏。 2026-10-16 界面定稿：画法见 workbench/js/core/ui-style.js（移植 tools/ui-proposals 的已确认效果图）。",
- "content_hash": "56cb41aba4ff725b2caa5aae42ef7f9212c48e469946439873f1cd0c93639b4b"
+ "usage": "G2 驿站货架：零食 10 金币，库存 3；按地区替换包装。",
+ "notes": "UI-10b 美术候选；复用 ui-common.js 的 G2 组件。新文字与字形仅放 i18n-delivery2 / font-delivery2.js。须由用户确认后才可用于正式游戏。",
+ "content_hash": "6cfbd485aa578250578060970c27852eac432d147dc877f5fa0e9d64f0867733"
 }

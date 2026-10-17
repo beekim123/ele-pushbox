@@ -319,6 +319,32 @@ let runningBrowser = null;
   check(commonUI.settings && commonUI.noStyle, "UI-10a: settings retains its controls and removes the style row and preview");
   check(commonUI.sliderValues, "UI-10a: volume sliders preserve the existing 0–10 setting values");
 
+  // UI-10b: the confirmation page exposes all seven independent delivery candidates.
+  await page.goto(URL + "#review"); await page.waitForTimeout(200);
+  const deliveryUI = await page.evaluate(() => {
+    const ids = ["reels", "shop", "delivery_hud", "delivery_pause", "confirm", "hint_animal", "observe"];
+    const problems = [], labels = {}, assets = ids.map((id) => PBStore.asset("ui.screen." + id));
+    const oldText = PB.uk.C.prototype.text;
+    for (const a of assets) for (const locale of ["zh-Hans", "en"]) {
+      const key = a.id + "/" + locale; labels[key] = [];
+      PB.uk.C.prototype.text = function (x, y, s, ...rest) { labels[key].push(s); return oldText.call(this, x, y, s, ...rest); };
+      PB.uiCommon.takeIssues();
+      try {
+        problems.push(...PB.ui.render(new PB.Raster(320, 180), a, 0, { locale, focus: 0 }));
+        problems.push(...PB.uiCommon.takeIssues());
+      } finally { PB.uk.C.prototype.text = oldText; }
+    }
+    return {
+      problems, present: assets.every((a) => a.params.room2.format === "pushbox.room/2" && document.body.innerText.includes(a.name)),
+      reels: ["Map", "Recipient", "Cargo", "Reroll 1 left"].every((s) => labels["ui.screen.reels/en"].includes(s)),
+      snack: ["Fish crackers", "×3", "10"].every((s) => labels["ui.screen.shop/en"].includes(s)),
+      observe: ["Tab", "Back", "You", "Exit", "Foe", "Hint"].every((s) => labels["ui.screen.observe/en"].includes(s)),
+    };
+  });
+  check(deliveryUI.present, "UI-10b: confirmation page contains all seven v2 delivery candidates");
+  check(deliveryUI.problems.length === 0, "UI-10b: seven G2 delivery screens fit both shipped locales (" + JSON.stringify(deliveryUI.problems) + ")");
+  check(deliveryUI.reels && deliveryUI.snack && deliveryUI.observe, "UI-10b: three reels, snack price/stock and full-map markers keep their labels");
+
   // 6b. Left category menu (WB-01): drawn from the one PBNav.MENU array, folds by category and
   // remembers it, keeps hash links and browser history; the whole left column can collapse.
   const menuErrors = errors.length;
