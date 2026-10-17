@@ -6,7 +6,7 @@
    - **用户**：把工作包派给制作方；确认美术（只有用户能确认）；在包里列出的问题上拍板。
    - **制作方**（任何 AI，包括另开的 Claude 窗口）：一次只做一个包，按 `docs/process.md` 开分支、跑全套检查、填包的「交付」、推送或打 bundle 交回。不改 `docs/status.md`，不合并进 `main`，不删分支，不自己取新包编号。
    - **设计也外包**：接设计包（`DSN-*`）的制作方写设计文档和 `content/catalog/**`，并把功能拆成新的工作包（编号用包里预留的）。
-   - **Claude（整理合并）**：导入交回的分支或 bundle，按 `docs/process.md` 第 7 节核对范围、编号、冻结区和美术确认，合进 `main`，重新生成，更新 `docs/status.md`，排下一批，做分支清理。Claude 不重做制作方的工作，也不写游戏 / 工作台 / 工具代码（一两行的明显修正和合并冲突除外）；不通过就写明原因，列进下一批。
+   - **Claude（整理合并）**：新窗口接手先读 `docs/handoff-claude.md`。导入交回的分支或 bundle，按 `docs/process.md` 第 7 节核对范围、编号、冻结区和美术确认，合进 `main`，重新生成，更新 `docs/status.md`，排下一批，做分支清理。Claude 不重做制作方的工作，也不写游戏 / 工作台 / 工具代码（一两行的明显修正和合并冲突除外）；不通过就写明原因，列进下一批。
    - **工作包**放在 `docs/packages/<编号>.md`，格式和编号登记见 `docs/packages/README.md`。一个包一次会话能做完；同一批的包不改同一个非追加的共享文件。
    - 美术同样外包：制作方画候选，**只有用户能确认**；Claude 只按用户在对话里的原话，用 `node tools/art.mjs approve` 记录。
 1. **唯一设计来源**：总纲见 `docs/design/vision.md`；玩法规则与关卡模式以 `docs/design/game-design.md` 为准，其他模式以各自的 `docs/design/mode-*.md` 为准；各种清单（模式、机制组与关卡计划、机制、物品、货物等）以 `content/catalog/` 为准；美术以 `docs/design/art-direction.md`、`docs/design/art-pipeline.md` 为准。不要依据快照 `0fae58c` 中的旧文档、旧测试或旧报告来做决定。
