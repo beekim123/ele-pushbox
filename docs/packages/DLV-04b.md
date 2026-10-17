@@ -1,6 +1,6 @@
 # DLV-04b 济州海女村：6 间机关房，济州进开局抽签
 
-状态：**等 DLV-04a 合并后再派**（DLV-04 按 process.md 2.1 拆出的后一半；两包都改文字表，不能同时做）
+状态：**待派**（DLV-04a 已合并，7 间普通房已在基线上）。
 基线：`claude/inspiring-ride-zfnn4s`（已包含 DLV-04a）→ 分支：`dlv/DLV-04b`（**不要**从 `main` 开）
 预计：3–4 小时；超过 5 小时还没做完就停下，把进度写进「交付」交回。
 
@@ -39,6 +39,10 @@ git checkout -b dlv/DLV-04b origin/claude/inspiring-ride-zfnn4s
 - `content/i18n-rooms2/zh-Hans.json`、`en.json`：只加这 6 间的键
 - `content/catalog/slices.json`：只动 `jeju_1`、`planned`、`delivery_pool`
 - `docs/design/delivery-puzzle-rules.md`（只改第 6 节地图表和统计）、`docs/design/delivery-jeju.md`（状态、第 4 节"和设计不同的地方"）
+- 测试里写死"只有两张地图"的两处预期，加上济州（交付里写明）：
+  - `tests/rooms2.test.mjs` 约第 185 行 `["diyu_1", "dungeon_2"]` → 加 `"jeju_1"`；
+  - `tests/workbench.e2e.cjs` 的 `wantMenu`：「配送」组 `"石牢","地府"` 后面加 `"海女村"`。
+  其他测试不改。
 - 生成文件：用工具生成后提交，不手改
 
 验收和这个清单冲突时，以清单为准，把做不到的写进交付，不要想办法绕过。

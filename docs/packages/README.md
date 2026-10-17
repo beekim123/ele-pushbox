@@ -14,8 +14,8 @@
 | [UX-01](UX-01.md) | 新手引导调研报告 | `claude/inspiring-ride-zfnn4s` → `ux/UX-01` | 无 | **已合并**（2026-10-17） |
 | [DSN-01](DSN-01.md) | 第三张配送地图「济州海女村」设计 | `claude/inspiring-ride-zfnn4s` → `dsn/DSN-01` | `content/catalog/*.json`、本表（只加预留行） | **已合并**（2026-10-17），22 项美术候选待用户确认 |
 | [DLV-04](DLV-04.md) | 济州海女村的 13 间房（配送 v2 房间数据），做完进开局池 | `claude/inspiring-ride-zfnn4s`（DSN-01、DLV-05 合并后）→ `dlv/DLV-04` | `content/catalog/slices.json`（`jeju_1`、开局池）、`worlds.json`（红蜻蜓的 `fed`）、`content/i18n-rooms2/*.json`、生成文件 | 已拆成 04a / 04b |
-| [DLV-04a](DLV-04a.md) | 济州 7 间普通房（起点、过道、驿站、收件人之家） | `claude/inspiring-ride-zfnn4s` → `dlv/DLV-04a` | `i18n-rooms2`、`worlds.json`（红蜻蜓 `fed`） | 待派（现在可派） |
-| [DLV-04b](DLV-04b.md) | 济州 6 间机关房，济州进开局抽签 | `claude/inspiring-ride-zfnn4s` → `dlv/DLV-04b` | `i18n-rooms2`、`slices.json` | 等 DLV-04a 合并 |
+| [DLV-04a](DLV-04a.md) | 济州 7 间普通房（起点、过道、驿站、收件人之家） | `claude/inspiring-ride-zfnn4s` → `dlv/DLV-04a` | `i18n-rooms2`、`worlds.json`（红蜻蜓 `fed`） | 已合并（2026-10-17） |
+| [DLV-04b](DLV-04b.md) | 济州 6 间机关房，济州进开局抽签 | `claude/inspiring-ride-zfnn4s` → `dlv/DLV-04b` | `i18n-rooms2`、`slices.json` | 待派（现在可派） |
 | [DLV-05](DLV-05.md) | v2 回合规则支持跷跷板 / 阵风（济州的 6 间机制房要用） | `claude/inspiring-ride-zfnn4s`（DSN-01 合并后）→ `dlv/DLV-05` | `rooms2.js`、`delivery-scene2.js`、`tools/check-rooms2.mjs`、`tests/rooms2.test.mjs`（只加测试） | **已合并**（2026-10-17） |
 | [DSN-02](DSN-02.md) | 声音设计：一套音效 + 每张地图的背景音乐（只写设计和包） | `claude/inspiring-ride-zfnn4s` → `dsn/DSN-02` | 本表（只改下面三行） | **已合并**（2026-10-17） |
 | [WB-02](WB-02.md) | 声音流程工具与工作台「声音」菜单；DSN-02 已合并，不用等 DSN-01，可以现在派 | `claude/inspiring-ride-zfnn4s`（DSN-02 合并后，派前核对） → `wb/WB-02` | `tools/content.mjs`、`tools/lib/ids.mjs`、菜单/脚本追加、e2e 追加、生成文件 | **已合并**（2026-10-17） |
