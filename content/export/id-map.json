@@ -100,7 +100,7 @@
   "text": {
    "name": "界面与台词文字",
    "source": "content/i18n/zh-Hans.json 与 content/i18n-<名>/zh-Hans.json",
-   "count": 543
+   "count": 580
   }
  },
  "entries": [
@@ -11618,6 +11618,302 @@
    "name": "跨章组合复习：让前一章的机关改变后一章的用法。",
    "source": "content/i18n-extra/zh-Hans.json",
    "game": "tr:extra.chapter.review_blurb"
+  },
+  {
+   "uid": "text:onb.say.m01_goal",
+   "domain": "text",
+   "id": "onb.say.m01_goal",
+   "name": "把箱子推进发光的槽里，点亮右上角的灯。",
+   "source": "content/i18n-onboarding/zh-Hans.json",
+   "game": "tr:onb.say.m01_goal"
+  },
+  {
+   "uid": "text:onb.say.m04_flag",
+   "domain": "text",
+   "id": "onb.say.m04_flag",
+   "name": "走到旗那里就能过关。",
+   "source": "content/i18n-onboarding/zh-Hans.json",
+   "game": "tr:onb.say.m04_flag"
+  },
+  {
+   "uid": "text:onb.say.m05_cause",
+   "domain": "text",
+   "id": "onb.say.m05_cause",
+   "name": "箱子压住了压板，门就开了。",
+   "source": "content/i18n-onboarding/zh-Hans.json",
+   "game": "tr:onb.say.m05_cause"
+  },
+  {
+   "uid": "text:onb.say.dead_crate",
+   "domain": "text",
+   "id": "onb.say.dead_crate",
+   "name": "箱子卡住了……按 {key_undo} 退一步，或按 {key_restart}",
+   "source": "content/i18n-onboarding/zh-Hans.json",
+   "game": "tr:onb.say.dead_crate"
+  },
+  {
+   "uid": "text:onb.say.sand_wrong",
+   "domain": "text",
+   "id": "onb.say.sand_wrong",
+   "name": "沙倒错地方了……按 {key_undo} 退一步，或者把沙挖回来。",
+   "source": "content/i18n-onboarding/zh-Hans.json",
+   "game": "tr:onb.say.sand_wrong"
+  },
+  {
+   "uid": "text:onb.say.undo_hold",
+   "domain": "text",
+   "id": "onb.say.undo_hold",
+   "name": "按住 {key_undo} 可以一直往回退。",
+   "source": "content/i18n-onboarding/zh-Hans.json",
+   "game": "tr:onb.say.undo_hold"
+  },
+  {
+   "uid": "text:onb.say.stuck_hint",
+   "domain": "text",
+   "id": "onb.say.stuck_hint",
+   "name": "想不出来？按 {key_hint}，我来想想办法。",
+   "source": "content/i18n-onboarding/zh-Hans.json",
+   "game": "tr:onb.say.stuck_hint"
+  },
+  {
+   "uid": "text:onb.level.M02.hint.3",
+   "domain": "text",
+   "id": "onb.level.M02.hint.3",
+   "name": "先往左站进梯子，按 {key_up} 爬到顶部通道，一直向右走到竖井落下，再向左",
+   "source": "content/i18n-onboarding/zh-Hans.json",
+   "game": "tr:onb.level.M02.hint.3"
+  },
+  {
+   "uid": "text:onb.level.M03.hint.3",
+   "domain": "text",
+   "id": "onb.level.M03.hint.3",
+   "name": "用 {act_dig_right} 挖开右边的土，然后去推箱子。",
+   "source": "content/i18n-onboarding/zh-Hans.json",
+   "game": "tr:onb.level.M03.hint.3"
+  },
+  {
+   "uid": "text:onb.level.M04.hint.3",
+   "domain": "text",
+   "id": "onb.level.M04.hint.3",
+   "name": "站在离岩台还隔一格的地方，用 {act_pour_right} 让沙落在紧挨岩台",
+   "source": "content/i18n-onboarding/zh-Hans.json",
+   "game": "tr:onb.level.M04.hint.3"
+  },
+  {
+   "uid": "text:onb.level.M06.hint.3",
+   "domain": "text",
+   "id": "onb.level.M06.hint.3",
+   "name": "先用 {act_dig_left} 挖左边的土，再把箱子推进坑，最后在岩台前用 ",
+   "source": "content/i18n-onboarding/zh-Hans.json",
+   "game": "tr:onb.level.M06.hint.3"
+  },
+  {
+   "uid": "text:onb.level.M07.hint.3",
+   "domain": "text",
+   "id": "onb.level.M07.hint.3",
+   "name": "用 {act_dig_right} 挖掉箱子下面的土。",
+   "source": "content/i18n-onboarding/zh-Hans.json",
+   "game": "tr:onb.level.M07.hint.3"
+  },
+  {
+   "uid": "text:onb.level.M01.goal",
+   "domain": "text",
+   "id": "onb.level.M01.goal",
+   "name": "把箱子推进发光的槽。",
+   "source": "content/i18n-onboarding/zh-Hans.json",
+   "game": "tr:onb.level.M01.goal"
+  },
+  {
+   "uid": "text:onb.level.M02.goal",
+   "domain": "text",
+   "id": "onb.level.M02.goal",
+   "name": "把箱子送进左边的槽。",
+   "source": "content/i18n-onboarding/zh-Hans.json",
+   "game": "tr:onb.level.M02.goal"
+  },
+  {
+   "uid": "text:onb.level.M03.goal",
+   "domain": "text",
+   "id": "onb.level.M03.goal",
+   "name": "把箱子推进槽。",
+   "source": "content/i18n-onboarding/zh-Hans.json",
+   "game": "tr:onb.level.M03.goal"
+  },
+  {
+   "uid": "text:onb.level.M04.goal",
+   "domain": "text",
+   "id": "onb.level.M04.goal",
+   "name": "走到旗那里。",
+   "source": "content/i18n-onboarding/zh-Hans.json",
+   "game": "tr:onb.level.M04.goal"
+  },
+  {
+   "uid": "text:onb.level.M05.goal",
+   "domain": "text",
+   "id": "onb.level.M05.goal",
+   "name": "把门打开，走到旗那里。",
+   "source": "content/i18n-onboarding/zh-Hans.json",
+   "game": "tr:onb.level.M05.goal"
+  },
+  {
+   "uid": "text:onb.level.M06.goal",
+   "domain": "text",
+   "id": "onb.level.M06.goal",
+   "name": "穿过门，走到旗那里。",
+   "source": "content/i18n-onboarding/zh-Hans.json",
+   "game": "tr:onb.level.M06.goal"
+  },
+  {
+   "uid": "text:onb.level.M07.goal",
+   "domain": "text",
+   "id": "onb.level.M07.goal",
+   "name": "想办法让门打开。",
+   "source": "content/i18n-onboarding/zh-Hans.json",
+   "game": "tr:onb.level.M07.goal"
+  },
+  {
+   "uid": "text:onb.card.dig.how",
+   "domain": "text",
+   "id": "onb.card.dig.how",
+   "name": "{act_dig} 或 {alt_dig} 挖；也可以左键点相邻的土。",
+   "source": "content/i18n-onboarding/zh-Hans.json",
+   "game": "tr:onb.card.dig.how"
+  },
+  {
+   "uid": "text:onb.card.pour.how",
+   "domain": "text",
+   "id": "onb.card.pour.how",
+   "name": "{act_pour} 或 {alt_pour} 倒沙；也可以右键点相邻的空格。",
+   "source": "content/i18n-onboarding/zh-Hans.json",
+   "game": "tr:onb.card.pour.how"
+  },
+  {
+   "uid": "text:onb.clear.found",
+   "domain": "text",
+   "id": "onb.clear.found",
+   "name": "你发现了",
+   "source": "content/i18n-onboarding/zh-Hans.json",
+   "game": "tr:onb.clear.found"
+  },
+  {
+   "uid": "text:onb.hub.start",
+   "domain": "text",
+   "id": "onb.hub.start",
+   "name": "开始游戏",
+   "source": "content/i18n-onboarding/zh-Hans.json",
+   "game": "tr:onb.hub.start"
+  },
+  {
+   "uid": "text:onb.menu.controls",
+   "domain": "text",
+   "id": "onb.menu.controls",
+   "name": "操作说明",
+   "source": "content/i18n-onboarding/zh-Hans.json",
+   "game": "tr:onb.menu.controls"
+  },
+  {
+   "uid": "text:onb.ctl.move",
+   "domain": "text",
+   "id": "onb.ctl.move",
+   "name": "走 / 推 / 登阶",
+   "source": "content/i18n-onboarding/zh-Hans.json",
+   "game": "tr:onb.ctl.move"
+  },
+  {
+   "uid": "text:onb.ctl.climb",
+   "domain": "text",
+   "id": "onb.ctl.climb",
+   "name": "爬梯",
+   "source": "content/i18n-onboarding/zh-Hans.json",
+   "game": "tr:onb.ctl.climb"
+  },
+  {
+   "uid": "text:onb.ctl.dig",
+   "domain": "text",
+   "id": "onb.ctl.dig",
+   "name": "挖",
+   "source": "content/i18n-onboarding/zh-Hans.json",
+   "game": "tr:onb.ctl.dig"
+  },
+  {
+   "uid": "text:onb.ctl.pour",
+   "domain": "text",
+   "id": "onb.ctl.pour",
+   "name": "倒沙",
+   "source": "content/i18n-onboarding/zh-Hans.json",
+   "game": "tr:onb.ctl.pour"
+  },
+  {
+   "uid": "text:onb.ctl.bomb",
+   "domain": "text",
+   "id": "onb.ctl.bomb",
+   "name": "放炸药",
+   "source": "content/i18n-onboarding/zh-Hans.json",
+   "game": "tr:onb.ctl.bomb"
+  },
+  {
+   "uid": "text:onb.ctl.undo",
+   "domain": "text",
+   "id": "onb.ctl.undo",
+   "name": "撤销（按住连撤）",
+   "source": "content/i18n-onboarding/zh-Hans.json",
+   "game": "tr:onb.ctl.undo"
+  },
+  {
+   "uid": "text:onb.ctl.restart",
+   "domain": "text",
+   "id": "onb.ctl.restart",
+   "name": "重开",
+   "source": "content/i18n-onboarding/zh-Hans.json",
+   "game": "tr:onb.ctl.restart"
+  },
+  {
+   "uid": "text:onb.ctl.observe",
+   "domain": "text",
+   "id": "onb.ctl.observe",
+   "name": "观察（按住）",
+   "source": "content/i18n-onboarding/zh-Hans.json",
+   "game": "tr:onb.ctl.observe"
+  },
+  {
+   "uid": "text:onb.ctl.hint",
+   "domain": "text",
+   "id": "onb.ctl.hint",
+   "name": "提示",
+   "source": "content/i18n-onboarding/zh-Hans.json",
+   "game": "tr:onb.ctl.hint"
+  },
+  {
+   "uid": "text:onb.ctl.pause",
+   "domain": "text",
+   "id": "onb.ctl.pause",
+   "name": "暂停",
+   "source": "content/i18n-onboarding/zh-Hans.json",
+   "game": "tr:onb.ctl.pause"
+  },
+  {
+   "uid": "text:onb.ctl.alt",
+   "domain": "text",
+   "id": "onb.ctl.alt",
+   "name": "不想按住：先按字母，再按方向",
+   "source": "content/i18n-onboarding/zh-Hans.json",
+   "game": "tr:onb.ctl.alt"
+  },
+  {
+   "uid": "text:onb.ctl.mouse",
+   "domain": "text",
+   "id": "onb.ctl.mouse",
+   "name": "鼠标：左键挖，右键倒沙",
+   "source": "content/i18n-onboarding/zh-Hans.json",
+   "game": "tr:onb.ctl.mouse"
+  },
+  {
+   "uid": "text:onb.ctl.trackpad",
+   "domain": "text",
+   "id": "onb.ctl.trackpad",
+   "name": "Mac 触控板：双指点按 = 右键",
+   "source": "content/i18n-onboarding/zh-Hans.json",
+   "game": "tr:onb.ctl.trackpad"
   },
   {
    "uid": "text:result.lobby.level",

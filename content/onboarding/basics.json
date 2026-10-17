@@ -1,0 +1,39 @@
+{
+ "format": "pushbox.onboarding/1",
+ "levels": {
+  "M01": {
+   "goal": "onb.level.M01.goal",
+   "say_start": "onb.say.m01_goal",
+   "keyhints": [{"act": "move", "dir": "lr", "show": "start", "at": "player", "done": "push"}]
+  },
+  "M02": {
+   "goal": "onb.level.M02.goal",
+   "hint3": "onb.level.M02.hint.3",
+   "keyhints": [{"act": "climb", "dir": "u", "show": "near:ladder", "at": "ladder"}],
+   "traps": [{"id": "crate_under_shaft", "kind": "dead", "when": {"crate_at": [[7, 4]]}, "say": "onb.say.dead_crate"}]
+  },
+  "M03": {
+   "goal": "onb.level.M03.goal",
+   "hint3": "onb.level.M03.hint.3",
+   "keyhints": [{"act": "dig", "dir": "r", "show": "blocked:dirt", "at": "dirt"}]
+  },
+  "M04": {
+   "goal": "onb.level.M04.goal",
+   "hint3": "onb.level.M04.hint.3",
+   "say_start": "onb.say.m04_flag",
+   "keyhints": [{"act": "pour", "dir": "lr", "show": "start", "at": "bag"}],
+   "traps": [{"id": "sand_wrong_cell", "kind": "wrong", "when": {"bag": 0, "no_sand_at": [[5, 4]]}, "say": "onb.say.sand_wrong"}]
+  },
+  "M05": {
+   "goal": "onb.level.M05.goal"
+  },
+  "M06": {
+   "goal": "onb.level.M06.goal",
+   "hint3": "onb.level.M06.hint.3"
+  },
+  "M07": {
+   "goal": "onb.level.M07.goal",
+   "hint3": "onb.level.M07.hint.3"
+  }
+ }
+}
