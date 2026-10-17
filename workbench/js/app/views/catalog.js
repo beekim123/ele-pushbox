@@ -4,7 +4,7 @@
 (function (root) {
   "use strict";
   const store = root.PBStore, el = root.PBStage.el, UI = root.PBContentUI;
-  const KINDS = [["slices", "可玩切片"], ["worlds", "地区"], ["recipients", "收件人"], ["cargo", "货物"], ["combos", "缘分组合"], ["monsters", "怪物"], ["items", "道具"], ["buffs", "增益"], ["upgrades", "属性升级"], ["badges", "徽章"], ["events", "随机事件"], ["modes", "模式"]];
+  const KINDS = [["slices", "可玩切片"], ["worlds", "地区"], ["recipients", "收件人"], ["cargo", "货物"], ["combos", "缘分组合"], ["monsters", "怪物"], ["items", "道具"], ["buffs", "增益"], ["upgrades", "属性升级"], ["badges", "徽章"], ["events", "随机事件"], ["modes", "模式"], ["audio", "声音"]];
   const LABEL = { name: "名称", summary: "说明", rule: "规则", counter: "怎么应对", behavior: "行为", effect: "效果", mechanisms: "机制", assets: "美术", difficulty: "难度", mode: "模式", status: "状态", doc: "文档", order: "顺序",
     style: "风格", theme: "主题资产", layer: "层", worlds: "地区", world: "地区", rarity: "稀有度", temper: "脾气", likes: "喜欢", carry: "拿法", cargo: "货物", recipient: "收件人", reward: "奖励",
     pushable: "能推", price: "价格", base: "初始", step: "每级", max_level: "级数", max: "最高", price_growth: "涨价", gate: "前置", cost: "点数", source: "来源", setup: "场景", choices: "选择",
@@ -44,6 +44,15 @@
     side.append(el("div", { class: "group-title", text: "目录" }));
     for (const [k, name] of KINDS) side.append(el("button", { class: "list-btn", type: "button", "aria-current": String(k === kind), onclick: () => { location.hash = "#catalog/" + k; } }, [el("span", { text: name }), el("span", { class: "small muted", text: String(store.catalog(k).length) })]));
     side.append(el("p", { class: "small muted", text: "机制和关卡计划见「机制」「模式与关卡」页。" }));
+    if (kind === "audio") {
+      work.append(el("h2", { text: "声音" }), el("p", {}, [el("a", { href: "#audio/sfx", text: "音效" }), " · ", el("a", { href: "#audio/music", text: "音乐" }), " · ", el("a", { href: "#audio/maps", text: "按地图" })]));
+      const table = el("table", { class: "grid" });
+      table.append(el("thead", {}, [el("tr", {}, ["编号", "名称", "来源", "状态"].map(text => el("th", { text })))]));
+      const body = el("tbody");
+      const audioText = root.PBWBAudio.text;
+      for (const e of store.audio().entries || []) body.append(el("tr", {}, [el("td", {}, [el("a", { href: "#audio/" + e.kind + "/" + e.uid, text: e.uid })]), el("td", { text: e.name }), el("td", { class: "mono small", text: e.source }), el("td", { text: !e.current ? audioText("missing") : (e.approved || []).some(a => a.version === e.current.version && a.hash === e.current.hash && a.sha256 === e.current.sha256) ? audioText("approved") : audioText("review") })]));
+      table.append(body); work.append(table); return;
+    }
     const all = store.catalog(kind), name = KINDS.find(([k]) => k === kind)[1];
     work.append(el("h2", { text: name }), el("p", { class: "small muted", text: store.catalogNote(kind) }), el("p", { class: "mono small muted", text: `content/catalog/${kind}.json` }));
     // Regions carry a culture sphere (worlds.md 3.1): filter by it.

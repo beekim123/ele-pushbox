@@ -39,8 +39,24 @@
   const C = root.PB_CONTENT || { catalogs: {}, notes: {}, levels: [], mechanisms: [], issues: [], summary: { errors: 0, warnings: 0, report: null } };
   const MECH_STATUS = { proposed: "提议", designed: "已设计", specified: "有规格", verified: "已验证", playable: "可玩" };
 
+  // The monitor preferences and wishes are browser drafts, never approval facts.
+  const A = root.PB_AUDIO || { entries: [], bindings: {}, catalog: { entries: [], music_sets: [], routes: {}, policy: {} } };
+  const AUDIO_KEY = "pb.wb.audio.v1";
+  const rawAudio = load(AUDIO_KEY, {});
+  const audioPrefs = rawAudio && typeof rawAudio === "object" ? rawAudio : {};
+  if (!audioPrefs.drafts || typeof audioPrefs.drafts !== "object") audioPrefs.drafts = {};
+  if (!audioPrefs.requested || typeof audioPrefs.requested !== "object") audioPrefs.requested = {};
+  const saveAudio = () => save(AUDIO_KEY, audioPrefs);
+
   const store = {
     bundle: B,
+    audio: () => A,
+    audioPrefs: () => audioPrefs,
+    setAudioPref(key, value) { audioPrefs[key] = value; saveAudio(); },
+    audioDrafts: () => audioPrefs.drafts,
+    setAudioDraft(setUid, candidate) { audioPrefs.drafts[setUid] = candidate; saveAudio(); },
+    audioRequested: () => audioPrefs.requested,
+    setAudioRequested(uid, value) { if (value) audioPrefs.requested[uid] = value; else delete audioPrefs.requested[uid]; saveAudio(); },
     content: () => C,
     hasContent: () => !!root.PB_CONTENT,
     catalog: (kind) => C.catalogs[kind] || [],

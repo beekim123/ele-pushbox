@@ -29,6 +29,11 @@
     { group: "tools", label: "工具", items: [
       { view: "ids", label: "编号映射", module: "PBIds" },
     ] },
+    { group: "audio", label: "声音", items: [
+      { view: "audio", route: "audio/sfx", label: "音效", module: "PBWBAudio" },
+      { view: "audio", route: "audio/music", label: "音乐", module: "PBWBAudio" },
+      { view: "audio", route: "audio/maps", label: "按地图", module: "PBWBAudio" },
+    ] },
   ];
 
   const KEY = "pb.wb.nav.v1";
@@ -74,9 +79,9 @@
   const drawerOpen = () => doc.getAttribute("data-drawer") === "open";
 
   function link(p) {
-    const a = h("a", { href: "#" + p.view, "data-view": p.view, class: p.group ? null : "nav-link" }, [h("span", { text: p.label })]);
+    const a = h("a", { href: "#" + (p.route || p.view), "data-view": p.route || p.view, class: p.group ? null : "nav-link" }, [h("span", { text: p.label })]);
     if (p.badge) a.append(h("span", { class: "count" + (p.tone ? " " + p.tone : ""), id: p.badge, hidden: true }));
-    links.set(p.view, a);
+    links.set(p.route || p.view, a);
     return a;
   }
 
@@ -151,7 +156,7 @@
   function setCurrent(view) {
     const changed = view !== current;
     current = view;
-    const p = PAGES.find((x) => x.view === view) || null;
+    const p = PAGES.find((x) => (x.route || x.view) === view) || null;
     for (const [v, a] of links) { if (v === view) a.setAttribute("aria-current", "page"); else a.removeAttribute("aria-current"); }
     for (const [g, x] of heads) x.head.classList.toggle("has-current", !!p && p.group === g);
     // Entering a page opens its category; moving inside the same page keeps the user's folding.

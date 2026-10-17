@@ -15,8 +15,14 @@ async function decode(file) {
   return decodePng(fs.readFileSync(path.join(REPO, file)));
 }
 
+let runningBrowser = null;
 (async () => {
-  const browser = await chromium.launch({ executablePath: process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE || undefined, args: ["--num-raster-threads=1"] });
+  const browser = runningBrowser = await chromium.launch({ executablePath: process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE || undefined, args: ["--num-raster-threads=1"] });
+  if (process.env.WB_AUDIO_ONLY === "1") {
+    await audioChecks(browser); await browser.close();
+    console.log(failures.length ? `${failures.length} audio check(s) failed` : "all audio workbench checks passed");
+    process.exit(failures.length ? 1 : 0);
+  }
   const ctx = await browser.newContext({ viewport: { width: 1440, height: 900 }, acceptDownloads: true });
   await ctx.addInitScript(() => {
     window.__raf = 0; const raf = window.requestAnimationFrame.bind(window);
@@ -292,20 +298,21 @@ async function decode(file) {
   await page.goto(URL + "#overview"); await page.waitForTimeout(200);
   const menu = await page.evaluate(() => Array.from(document.querySelectorAll("#nav > a, #nav > .nav-group")).map((n) => n.matches("a")
     ? [n.firstChild.textContent] : [n.querySelector(".nav-head-label").textContent, ...Array.from(n.querySelectorAll(".nav-list a")).map((a) => a.firstChild.textContent)]));
-  const wantMenu = [["总览"], ["关卡与玩法", "模式与关卡", "机制", "设计数据"], ["配送", "地图预览", "配送 v2"], ["美术", "场景", "资产与动画", "编辑与对比", "确认", "导出"], ["工具", "编号映射"]];
+  const wantMenu = [["总览"], ["关卡与玩法", "模式与关卡", "机制", "设计数据"], ["配送", "地图预览", "配送 v2"], ["美术", "场景", "资产与动画", "编辑与对比", "确认", "导出"], ["工具", "编号映射"], ["声音", "音效", "音乐", "按地图"]];
   check(JSON.stringify(menu) === JSON.stringify(wantMenu), "left menu shows the categories and pages of WB-01 in order (" + JSON.stringify(menu) + ")");
   const reg = await page.evaluate(() => ({
-    menu: PBNav.MENU.flatMap((m) => (m.items ? m.items.map((i) => i.view) : [m.view])),
+    menu: PBNav.MENU.flatMap((m) => (m.items ? m.items.map((i) => i.route || i.view) : [m.route || m.view])),
     links: Array.from(document.querySelectorAll("#nav a[data-view]")).map((a) => a.dataset.view),
+    views: [...new Set(PBNav.pages().map(p => p.view))],
     sections: Array.from(document.querySelectorAll("main > section.view")).map((x) => x.id.replace(/^view-/, "")),
     modules: PBNav.pages().every((x) => window[x.module] && typeof window[x.module].show === "function"),
   }));
-  check(JSON.stringify(reg.links) === JSON.stringify(reg.menu) && reg.modules && reg.sections.length === reg.menu.length && reg.sections.every((x) => reg.menu.includes(x)),
+  check(JSON.stringify(reg.links) === JSON.stringify(reg.menu) && reg.modules && reg.sections.length === reg.views.length && reg.sections.every((x) => reg.views.includes(x)),
     `menu links and the router both come from the one PBNav.MENU array and cover every page (${reg.links.length} links, ${reg.sections.length} pages)`);
   const wrongClicks = [];
   for (const v of reg.menu) {
     await page.click(`#nav a[data-view="${v}"]`); await page.waitForTimeout(200);
-    const st = await page.evaluate((v) => ({ hash: location.hash, shown: !document.getElementById("view-" + v).hidden, current: Array.from(document.querySelectorAll('#nav a[aria-current="page"]')).map((a) => a.dataset.view).join() }), v);
+    const st = await page.evaluate((v) => ({ hash: location.hash, shown: !document.getElementById("view-" + v.split("/")[0]).hidden, current: Array.from(document.querySelectorAll('#nav a[aria-current="page"]')).map((a) => a.dataset.view).join() }), v);
     if (st.hash !== "#" + v || !st.shown || st.current !== v) wrongClicks.push(v + " " + JSON.stringify(st));
   }
   check(wrongClicks.length === 0, "clicking each menu item opens its page and highlights only that item" + (wrongClicks.length ? ": " + wrongClicks[0] : ""));
@@ -422,7 +429,204 @@ async function decode(file) {
   await page.mouse.click(375, 500); await page.waitForTimeout(350);
   const outsideClosed = !(await page.locator("#nav").isVisible());
   check(escClosed && outsideClosed, "Esc and tapping outside the drawer close it");
+  await audioChecks(browser);
   await browser.close();
   console.log(failures.length ? `\n${failures.length} check(s) failed` : "\nall workbench checks passed");
   process.exit(failures.length ? 1 : 0);
-})().catch((e) => { console.error(e); process.exit(1); });
+})().catch(async (e) => { console.error(e); if (runningBrowser) await runningBrowser.close().catch(() => {}); process.exit(1); });
+
+
+// WB-02: media and approval-looking data exist only in a disposable workbench.
+async function audioChecks(browser) {
+  const os = require("os");
+  const tmp = fs.mkdtempSync(path.join(os.tmpdir(), "portitor-audio-ui-"));
+  const context = await browser.newContext({ viewport: { width: 1440, height: 900 }, acceptDownloads: true });
+  try {
+    fs.cpSync(path.join(REPO, "workbench"), path.join(tmp, "workbench"), { recursive: true });
+    const target = path.join(tmp, "workbench/data/audio.js");
+    const catalog = JSON.parse(fs.readFileSync(path.join(REPO, "content/catalog/audio.json")));
+    const i18n = Object.fromEntries(["zh-Hans", "en"].map(l => [l, JSON.parse(fs.readFileSync(path.join(REPO, `content/i18n-audio/${l}.json`)))]));
+    const fixture = { format: "pushbox.audio-manifest/1", catalog, entries: catalog.entries.map(e => ({ ...e, current: null, approved: [] })), bindings: {}, slices: JSON.parse(fs.readFileSync(path.join(REPO, "content/catalog/slices.json"))).entries, i18n };
+    fs.writeFileSync(target, "window.PB_AUDIO=" + JSON.stringify(fixture) + ";");
+    const p = await context.newPage(), errors = [];
+    p.on("pageerror", e => errors.push(e.message));
+    p.on("console", m => { if (m.type() === "error") errors.push(m.text()); });
+    await p.goto("file://" + path.join(tmp, "workbench/index.html#audio/sfx"));
+    check(await p.locator(".audio-card[data-kind=sfx]").count() === 32, "audio/sfx: all 32 missing sources remain visible");
+    check(await p.locator(".audio-card[data-kind=sfx] button[data-action=play]:disabled").count() === 32, "missing audio has no enabled fake player");
+    for (const mode of ["music", "maps", "sfx"]) {
+      await p.evaluate(mode => { location.hash = "#audio/" + mode; }, mode);
+      await p.waitForTimeout(80);
+      check(await p.locator("#view-audio").isVisible() && await p.locator(`#nav a[href='#audio/${mode}'][aria-current=page]`).count() === 1, `audio/${mode}: deep link and menu selection agree`);
+    }
+    await p.evaluate(() => { location.hash = "#audio/music"; }); await p.waitForTimeout(80);
+    check(await p.locator(".audio-candidates").count() === 3 && await p.locator(".audio-card[data-kind=music]").count() === 9, "music candidates appear as three sets of three");
+    check((await p.locator("#audio-root").textContent()).includes("0/3"), "missing-source music count is 0/3");
+    await p.evaluate(() => { location.hash = "#audio/maps"; }); await p.waitForTimeout(80);
+    check((await p.locator("#audio-root").textContent()).includes("地图待 DSN-01") && (await p.locator("#audio-root").textContent()).includes("实际静音"), "maps reports the pending map and unapproved default silence");
+
+    // Real file:// media must advance and produce PCM before any mocks are used.
+    const n=44100, wav=Buffer.alloc(44+n*2);
+    wav.write('RIFF');wav.writeUInt32LE(wav.length-8,4);wav.write('WAVEfmt ',8);wav.writeUInt32LE(16,16);wav.writeUInt16LE(1,20);wav.writeUInt16LE(1,22);wav.writeUInt32LE(44100,24);wav.writeUInt32LE(88200,28);wav.writeUInt16LE(2,32);wav.writeUInt16LE(16,34);wav.write('data',36);wav.writeUInt32LE(n*2,40);
+    for(let i=0;i<n;i++)wav.writeInt16LE(Math.round(Math.sin(i*2*Math.PI*220/44100)*2400),44+i*2);
+    const mediaFile=path.join(tmp,'audio/export/preview/sfx/push.wav');fs.mkdirSync(path.dirname(mediaFile),{recursive:true});fs.writeFileSync(mediaFile,wav);
+    fixture.entries.find(e=>e.uid==='sfx:push').current={version:1,hash:'a'.repeat(64),wav:'audio/export/preview/sfx/push.wav',sha256:'b'.repeat(64),metrics:{duration_ms:1000,rms_dbfs:-25,peak_dbfs:-22}};
+    fs.writeFileSync(target, 'window.PB_AUDIO='+JSON.stringify(fixture)+';');
+    await p.goto('file://'+path.join(tmp,'workbench/index.html#audio/sfx'));await p.reload();
+    await p.locator('[data-uid="sfx:push"] [data-action=play]').click();
+    const real=await p.evaluate(async()=>{
+      const v=PBWBAudio.player.snapshot().sfx[0];if(!v)return {started:false};
+      let peak=null;
+      if(v.node){const a=v.node.context.createAnalyser();v.node.connect(a);a.fftSize=256;await new Promise(r=>setTimeout(r,150));const pcm=new Float32Array(a.fftSize);a.getFloatTimeDomainData(pcm);peak=Math.max(...pcm.map(Math.abs));v.node.disconnect(a);}
+      else { await v.media.play(); await new Promise(r=>setTimeout(r,400)); }
+      return {started:!v.media.paused,time:v.media.currentTime,native:!v.node,peak,volume:v.media.volume,ready:v.media.readyState,error:v.media.error?.message,hidden:document.hidden};
+    });
+    check(real.started && real.time>0 && (real.native ? real.volume>0 : real.peak>0), 'real file:// WAV advances with nonzero monitor output ('+JSON.stringify(real)+')');
+    await p.evaluate(()=>PBWBAudio.player.stopAll());
+
+    // Deterministic media instrumentation measures gain and resource lifecycle;
+    // no real approval or production candidate is written by these browser tests.
+    await context.addInitScript(() => {
+      window.__audioLog = { created: 0, released: 0, plays: 0, maxLive: 0, live: 0, gains: [] };
+      class Param { constructor(){this.value=1;} cancelScheduledValues(){} setValueAtTime(v){this.value=v;window.__audioLog.gains.push(v);} linearRampToValueAtTime(v){this.value=v;window.__audioLog.gains.push(v);} }
+      class Node { connect(){} disconnect(){} }
+      window.AudioContext = class { constructor(){this.currentTime=0;this.state='running';this.destination=new Node();} createGain(){const n=new Node();n.gain=new Param();return n;} createMediaElementSource(){return new Node();} resume(){return Promise.resolve();} close(){this.state='closed';return Promise.resolve();} };
+      window.Audio = class {
+        constructor(src){this.src=src;this.currentTime=0;this.duration=90;this.paused=true;this.listeners={};this.volume=1;window.__audioLog.created++;window.__audioLog.live++;window.__audioLog.maxLive=Math.max(window.__audioLog.maxLive,window.__audioLog.live);}
+        play(){this.paused=false;window.__audioLog.plays++;return Promise.resolve();} pause(){this.paused=true;} load(){} addEventListener(k,f){this.listeners[k]=f;} removeAttribute(k){if(k==='src'&&this.src){this.src='';window.__audioLog.released++;window.__audioLog.live--;}} }
+    });
+    for (const e of fixture.entries) e.current = { version: 1, hash: "a".repeat(64), wav: `audio/export/preview/${e.kind}/${e.id}.wav`, sha256: "b".repeat(64), metrics: { duration_ms: e.kind === "music" ? 90000 : e.duration_ms, rms_dbfs: -24, peak_dbfs: -12 } };
+    fixture.entries.find(e=>e.uid==='music:dungeon_a').approved = [{ uid:'music:dungeon_a', version:1, hash:'c'.repeat(64), wav:'audio/export/approved/music/dungeon_a@v1.wav', sha256:'d'.repeat(64) }];
+    fixture.bindings['music:dungeon'] = fixture.entries.find(e=>e.uid==='music:dungeon_a').approved[0];
+    fs.writeFileSync(target, "window.PB_AUDIO=" + JSON.stringify(fixture) + ";");
+    await p.goto("file://" + path.join(tmp, "workbench/index.html#audio/music"));await p.reload();
+    check(await p.evaluate(() => __audioLog.plays) === 0, "audio never starts on page load");
+    const card = p.locator('[data-uid="music:dungeon_a"]');
+    await card.locator('[data-action=play]').click();
+    check(await p.evaluate(() => PBWBAudio.player.snapshot().music.length) === 1, "explicit Play starts a single music audition");
+    await p.evaluate(() => { PBWBAudio.player.snapshot().music[0].media.currentTime = 12; });
+    await card.locator('[data-action=pause]').click();
+    check(await p.evaluate(() => PBWBAudio.player.snapshot().music[0].media.currentTime) === 12, "Pause preserves the audition position");
+    await card.locator('[data-action=restart]').click();
+    check(await p.evaluate(() => PBWBAudio.player.snapshot().music[0].media.currentTime) === 0, "Restart returns to the beginning");
+    await card.locator('[data-action=loop]').uncheck();
+    check(await p.evaluate(() => PBWBAudio.player.snapshot().music[0].media.loop) === false, "loop switch controls the active audition");
+    await p.locator('[data-uid="music:dungeon_b"] [data-action=play]').click();
+    await p.waitForTimeout(130);
+    check(await p.evaluate(() => PBWBAudio.player.snapshot().music.length === 1 && __audioLog.maxLive === 1), "A/B switching releases the old audition before creating the next");
+    await p.locator('[data-uid="music:dungeon_b"] [data-action=wish]').click();
+    check(await p.evaluate(() => PBStore.audioDrafts()['music:dungeon'].uid === 'music:dungeon_b' && PBStore.audio().bindings['music:dungeon'].uid === 'music:dungeon_a'), "browser wish does not alter actual approval selection");
+    await p.reload();
+    check((await p.locator('#audio-root').textContent()).includes('music:dungeon_b@v1'), "wish survives reload with its precise version");
+    const download = p.waitForEvent('download');
+    await p.locator('[data-action=request-download]').click();
+    const got = await download;
+    const request = JSON.parse(fs.readFileSync(await got.path()));
+    check(request.format === 'pushbox.audio-approval-request/1' && request.selections[0].uid === 'music:dungeon_b' && request.items[0].wav_sha256 === 'b'.repeat(64), "download preserves exact draft selection, hash, version and WAV checksum");
+    await p.evaluate(() => PBWBAudio.player.setVolumes({master:0,music:0,sfx:0}));
+    const zeroStart = await p.evaluate(() => __audioLog.plays);
+    await p.locator('[data-uid="music:dungeon_b"] [data-action=play]').click();
+    check(await p.evaluate(n => __audioLog.plays === n, zeroStart), "zero music/master volume remains silent on explicit audition");
+    await p.evaluate(() => PBWBAudio.player.setVolumes({master:.8,music:.8,sfx:.8}));
+    await p.locator('[data-uid="music:dungeon_a"] [data-action=seam]').click();
+    const seam = await p.evaluate(() => PBWBAudio.player.snapshot().music[0]);
+    check(seam && seam.seam && seam.media.currentTime === 88, "seam audition starts at final two seconds and uses the existing media");
+    const seamCompleted = await p.evaluate(() => {
+      const P=PBWBAudio.player,v=P.snapshot().music[0];
+      for(let i=0;i<3;i++) {
+        v.media.currentTime=90;v.media.paused=true;v.media.ended=true;v.media.listeners.ended();
+        if(v.media.currentTime!==0||v.media.paused)return false;
+        v.media.ended=false;v.media.currentTime=2;P.step();
+      }
+      return P.snapshot().music.length===0;
+    });
+    check(seamCompleted,'seam audition survives a paused ended event and releases after three full tail/head pairs');
+    await p.evaluate(() => { location.hash='#overview'; }); await p.waitForTimeout(30);
+    check(await p.evaluate(() => PBWBAudio.player.snapshot().music.length === 0 && __audioLog.live === 0), "leaving audio releases every audio node and media source");
+
+    await p.goto('file://' + path.join(tmp,'workbench/index.html#audio/sfx'));
+    const rapid = await p.evaluate(async () => {
+      const P=PBWBAudio.player;await P.playPreview('music:dungeon_a');const before=__audioLog.plays;
+      const events=[P.playSfx('sfx:ui_move'),P.playSfx('sfx:ui_move'),P.playSfx('sfx:ui_move')];
+      const outcomes=await Promise.all(events);await new Promise(r=>setTimeout(r,160));
+      const plays=__audioLog.plays-before;await P.stopAll();return {outcomes,plays};
+    });
+    check(rapid.outcomes.filter(Boolean).length===1&&rapid.plays===1,'rapid repeated sfx during 100ms music fade are dropped at trigger time, never replayed from a queue');
+    const cancelledPending=await p.evaluate(async()=>{
+      const P=PBWBAudio.player;await P.playPreview('music:dungeon_a');const before=__audioLog.plays;
+      const pending=P.playSfx('sfx:door_close');await new Promise(r=>setTimeout(r,10));
+      await P.stopUid('sfx:door_close');const admitted=await pending;await new Promise(r=>setTimeout(r,30));
+      const plays=__audioLog.plays-before,live=P.snapshot().sfx.length;await P.stopAll();return {admitted,plays,live};
+    });
+    check(!cancelledPending.admitted&&cancelledPending.plays===0&&cancelledPending.live===0,'stopping sfx during a music fade cancels the not-yet-created instance ('+JSON.stringify(cancelledPending)+')');
+    const scheduling = await p.evaluate(async () => {
+      const P=PBWBAudio.player; const a=await P.playSfx('sfx:push'); const b=await P.playSfx('sfx:push');
+      await P.stopAll(); await new Promise(r=>setTimeout(r,190));
+      await P.playSfx('sfx:volume_preview');await P.playSfx('sfx:restart');await P.playSfx('sfx:delivery_arrive');
+      const rejected=await P.playSfx('sfx:reel_spin');
+      const replacement=P.playSfx('sfx:hurt');await new Promise(r=>setTimeout(r,1));
+      const during=P.snapshot().sfx.length; const releasedDuring=P.snapshot().sfx.some(v=>v.releasing);
+      await replacement; const after=P.snapshot().sfx.map(v=>v.uid);
+      await P.stopAll();await new Promise(r=>setTimeout(r,410)); const reelStarted=await P.playSfx('sfx:reel_spin'); await new Promise(r=>setTimeout(r,2120));
+      const reelEnded=P.snapshot().sfx.length===0;
+      await P.setVolumes({sfx:0}); const silent=await P.playSfx('sfx:push');
+      return {a,b,rejected,during,releasedDuring,after,reelStarted,reelEnded,silent,live:window.__audioLog.live};
+    });
+    check(scheduling.a && !scheduling.b && !scheduling.rejected && scheduling.during===3 && scheduling.releasedDuring && scheduling.after.includes('sfx:hurt') && !scheduling.after.includes('sfx:volume_preview'), 'sfx enforces interval, global 3, priority and release occupancy ('+JSON.stringify(scheduling)+')');
+    check(scheduling.reelStarted && scheduling.reelEnded && !scheduling.silent && scheduling.live===0, 'reel expires within two seconds plus fade; sfx volume zero remains silent');
+    const model=await p.evaluate(async()=>{
+      const A=PBWBAudio, P=A.player;P.setVolumes({sfx:.8});
+      const diyu=A.resolve({slice:'diyu_1'}), hell=A.resolve({group:'hell-pool'}), unknown=A.resolve({slice:'unknown'});
+      await P.requestMusic(PBStore.audio().bindings['music:dungeon']);
+      const plays=__audioLog.plays;await P.requestMusic(PBStore.audio().bindings['music:dungeon']);
+      const same=plays===__audioLog.plays;
+      const d=PBStore.audio().entries.find(e=>e.uid==='music:diyu_a');
+      const j=PBStore.audio().entries.find(e=>e.uid==='music:jeju_a');
+      const one=P.requestMusic({uid:d.uid,...d.current});await new Promise(r=>setTimeout(r,500));
+      const midpoint=P.snapshot().music.map(v=>v.media.volume);const max=P.snapshot().music.length;
+      const two=P.requestMusic({uid:j.uid,...j.current});await one;await two;
+      const end=P.snapshot().music.map(v=>v.uid);
+      P.setOverlay('pause',true);P.setOverlay('settings',true);await new Promise(r=>setTimeout(r,240));
+      const lowered=P.snapshot().music[0].media.volume;P.setOverlay('pause',false);await new Promise(r=>setTimeout(r,240));
+      const still=P.snapshot().music[0].media.volume;P.setOverlay('settings',false);await new Promise(r=>setTimeout(r,240));
+      const restored=P.snapshot().music[0].media.volume;await P.stopAll();
+      return {diyu,hell,unknown,same,max,end,midpoint,lowered,still,restored};
+    });
+    check(model.diyu.resource.uid==='music:dungeon_a' && model.hell.requested==='music:dungeon' && model.unknown.resource.uid==='music:dungeon_a', 'map routing falls back to approved dungeon and hell uses chapter mapping');
+    check(model.same && model.max<=2 && model.end.length===1 && model.end[0]==='music:jeju_a' && model.midpoint.length===2 && Math.abs(model.midpoint[0]-.32)<.08 && Math.abs(model.midpoint[1]-.32)<.08 && model.midpoint[0]+model.midpoint[1]<=.641 && Math.abs(model.lowered-.64*Math.pow(10,-9/20))<.01 && Math.abs(model.still-model.lowered)<.01 && Math.abs(model.restored-.64)<.01, 'music keeps identical versions, linearly crossfades with at most two streams, and applies -9dB once across stacked overlays');
+    const stoppedTransition=await p.evaluate(async()=>{
+      const P=PBWBAudio.player,r=PBStore.audio().bindings['music:dungeon'];
+      const stale=P.requestMusic(r);await new Promise(resolve=>setTimeout(resolve,10));await P.stopAll();
+      const fresh=P.requestMusic(r);await fresh;await stale;
+      const valid=P.snapshot().music.length===1&&P.snapshot().music[0].uid===r.uid;
+      const before=__audioLog.plays;await P.requestMusic(r);const continuous=__audioLog.plays===before;
+      await P.stopAll();return valid&&continuous;
+    });
+    check(stoppedTransition,'a stopped fade cannot overwrite a fresh same-track request or suppress its playback');
+    const stopReel=await p.evaluate(async()=>{
+      const P=PBWBAudio.player;await P.playSfx('sfx:reel_spin');const wait=P.stopAll();
+      const during=P.snapshot().sfx.length===1&&P.snapshot().sfx[0].releasing;
+      const blocked=await P.playSfx('sfx:push');await wait;
+      const stopped=P.snapshot().sfx.length===0;await new Promise(r=>setTimeout(r,410));
+      await P.playSfx('sfx:reel_spin');location.hash='#overview';await new Promise(r=>setTimeout(r,5));
+      const leaving=P.snapshot().sfx.length===1&&P.snapshot().sfx[0].releasing;
+      await new Promise(r=>setTimeout(r,90));return {during,blocked,stopped,leaving,ended:P.snapshot().sfx.length===0};
+    });
+    check(stopReel.during&&!stopReel.blocked&&stopReel.stopped&&stopReel.leaving&&stopReel.ended,'stop-all and leaving keep reel release occupied for 80ms and reject new playback');
+    const reelToMusic=await p.evaluate(async()=>{
+      const P=PBWBAudio.player;await new Promise(r=>setTimeout(r,410));const reel=await P.playSfx('sfx:reel_spin');
+      const began=performance.now(),pending=P.playPreview('music:dungeon_a');await new Promise(r=>setTimeout(r,5));
+      const fading=P.snapshot().sfx.length===1&&P.snapshot().sfx[0].releasing&&P.snapshot().music.length===0;
+      const music=await pending,elapsed=performance.now()-began;
+      const ended=P.snapshot().sfx.length===0&&P.snapshot().music.length===1;await P.stopAll();
+      return {reel,fading,music,elapsed,ended};
+    });
+    check(reelToMusic.reel&&reelToMusic.fading&&reelToMusic.music&&reelToMusic.elapsed>=75&&reelToMusic.ended,'switching reel audition to music awaits its 80ms fade before creating music ('+JSON.stringify(reelToMusic)+')');
+    await p.evaluate(()=>{location.hash='#ids/music';});await p.waitForTimeout(60);
+    const idLinks=await p.evaluate(()=>({candidate:document.querySelector('#ids-work a[href="#audio/music/music:dungeon_a"]')?.textContent,alias:document.querySelector('#ids-work a[href="#audio/maps/music:dungeon"]')?.textContent}));
+    check(idLinks.candidate==='music:dungeon_a'&&idLinks.alias==='music:dungeon','audio id mapping links candidates to music and stable aliases to maps');
+    await p.setViewportSize({width:390,height:800});await p.evaluate(()=>{location.hash='#audio/music';});await p.waitForTimeout(80);
+    check(await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth), 'music candidates scroll inside their row at narrow widths');
+    check(errors.length===0,'audio browser cases cause no page errors'+(errors.length?': '+errors[0]:''));
+  } finally { await context.close(); fs.rmSync(tmp,{recursive:true,force:true}); }
+}

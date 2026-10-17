@@ -8,6 +8,8 @@
   let domain = "", query = "";
 
   function linkFor(e) {
+    if (e.domain === "sfx") return "#audio/sfx/" + e.uid;
+    if (e.domain === "music") return "#audio/" + (e.audio_kind === "music_set" || e.kind === "music_set" || e.resource_kind === "music_set" ? "maps" : "music") + "/" + e.uid;
     if (e.domain === "art") return "#assets/" + e.id;
     if (e.domain === "mechanic") return "#mechanisms/" + e.id;
     if (e.domain === "level") { const p = store.planned(e.id); return p ? `#modes/${p.group}/${e.id}` : null; }
@@ -40,7 +42,7 @@
       const tb = el("tbody");
       for (const e of rows.slice(0, 400)) {
         const href = linkFor(e);
-        const status = e.domain === "art" ? `v${e.version} · ${e.approved ? "已确认" : "待确认"}` : e.sha256 ? "规格 " + e.sha256.slice(0, 8) : "";
+        const status = ["sfx", "music"].includes(e.domain) ? root.PBWBAudio.text(({ planned: "planned", missing: "missing", review: "review", approved: "approved" })[e.availability] || "missing") : e.domain === "art" ? `v${e.version} · ${e.approved ? "已确认" : "待确认"}` : e.sha256 ? "规格 " + e.sha256.slice(0, 8) : "";
         tb.append(el("tr", {}, [
           el("td", { class: "mono" }, [href ? el("a", { href, text: e.uid }) : e.uid, " ", el("button", { class: "mini", type: "button", title: "复制编号", onclick: () => copy(e.uid), text: "⧉" })]),
           el("td", { text: e.name }), el("td", { class: "mono small", text: e.source }), el("td", { class: "mono small", text: e.game }), el("td", { class: "small", text: status })]));

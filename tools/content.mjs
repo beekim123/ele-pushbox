@@ -12,9 +12,10 @@ import { buildIdMap } from "./lib/ids.mjs";
 import { loadRooms } from "./check-rooms.mjs";
 import { loadRooms2, poolInput } from "./check-rooms2.mjs";
 import { loadTextTables } from "./lib/i18n.mjs";
+import { sourceHash } from "./lib/audio.mjs";
 
 const REPO = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-export const CATALOGS = ["modes", "groups", "mechanisms", "worlds", "recipients", "cargo", "combos", "monsters", "items", "buffs", "upgrades", "badges", "events", "slices"];
+export const CATALOGS = ["modes", "groups", "mechanisms", "worlds", "recipients", "cargo", "combos", "monsters", "items", "buffs", "upgrades", "badges", "events", "slices", "audio"];
 const sha = (buf) => crypto.createHash("sha256").update(buf).digest("hex");
 const readJson = (p) => JSON.parse(fs.readFileSync(p, "utf8"));
 function walk(dir) {
@@ -33,6 +34,234 @@ function verdict(r, specSha) {
   return { ok, replays: r.replays | 0, max_ticks: r.max_ticks, tick_limit: r.tick_limit, failed: [...checks.filter((c) => c.ok !== true).map((c) => c.text), ...(stale ? ["SDK 报告与当前规格 SHA 不一致，需要重测"] : [])] };
 }
 
+// Audio uses the ordinary catalog envelope but also owns sets, policy and routing.
+// Keep all checks here: a successful generic catalog pass must not imply that
+// the audio references and safety policy have been checked.
+function checkAudioCatalog(doc, catalogs, specs, add) {
+  const at = "audio", localId = /^[a-z0-9_-]+$/;
+  const object = (v) => v !== null && typeof v === "object" && !Array.isArray(v);
+  const fail = (where, msg) => add("error", where, msg);
+  const list = (v, p) => { if (!Array.isArray(v)) { fail(p, "必须是数组"); return []; } return v; };
+  const record = (v, p) => { if (!object(v)) { fail(p, "必须是对象"); return {}; } return v; };
+  const text = (v, p) => { if (typeof v !== "string" || !v.trim()) fail(p, "必须是非空字符串"); };
+  const number = (v, p, min, max, integer = false) => { if (!Number.isFinite(v) || v < min || v > max || (integer && !Number.isInteger(v))) fail(p, `必须是 ${min}–${max} 的${integer ? "整数" : "有限数值"}`); };
+  const canonical = (v) => Array.isArray(v) ? v.map(canonical) : object(v) ? Object.fromEntries(Object.keys(v).sort().map(k => [k, canonical(v[k])])) : v;
+  const exact = (v, expected, p) => { if (JSON.stringify(canonical(v)) !== JSON.stringify(canonical(expected))) fail(p, `必须为 ${JSON.stringify(expected)}`); };
+  const known = (v, keys, p) => { for (const k of Object.keys(v)) if (!keys.includes(k)) fail(`${p}.${k}`, "未知字段"); };
+  doc = record(doc, at);
+  exact(doc.format, "pushbox.catalog/1", `${at}.format`); exact(doc.kind, "audio", `${at}.kind`);
+  known(doc, ["format", "kind", "note", "policy", "routes", "pending_references", "music_sets", "entries"], at);
+  const entries = list(doc.entries, `${at}.entries`), sets = list(doc.music_sets, `${at}.music_sets`);
+  const policy = record(doc.policy, `${at}.policy`), routes = record(doc.routes, `${at}.routes`);
+  const pending = list(doc.pending_references, `${at}.pending_references`);
+  const byUid = new Map(), setByUid = new Map(), seen = new Set();
+  const identity = (e, kind, p) => {
+    if (typeof e.id !== "string" || !localId.test(e.id)) fail(`${p}.id`, `编号不合法：${JSON.stringify(e.id)}`);
+    if (e.uid !== `${kind}:${e.id}`) fail(`${p}.uid`, `uid 应为 ${kind}:${e.id}`);
+    if (seen.has(`${kind}:${e.id}`)) fail(p, `编号重复：${kind}:${e.id}`);
+    seen.add(`${kind}:${e.id}`); text(e.name, `${p}.name`);
+  };
+  const base = ["id", "uid", "kind", "name", "source"];
+  for (const [i, value] of entries.entries()) {
+    const p = `${at}.entries[${i}]`, e = record(value, p);
+    if (!["sfx", "music"].includes(e.kind)) { fail(`${p}.kind`, "只能是 sfx 或 music"); continue; }
+    identity(e, e.kind, p); byUid.set(e.uid, e);
+    exact(e.source, `audio/source/${e.kind}/${e.id}.json`, `${p}.source`);
+    if (e.kind === "sfx") {
+      known(e, [...base, "trigger", "sound", "duration_ms", "max_instances", "min_interval_ms", "voice_group", "priority", "loop", "max_play_ms", "stop_fade_ms"], p);
+      for (const k of ["trigger", "sound", "voice_group"]) text(e[k], `${p}.${k}`);
+      number(e.duration_ms, `${p}.duration_ms`, 1, Math.min(1600, policy.sfx_duration_max_ms || 1600));
+      number(e.max_instances, `${p}.max_instances`, 1, e.id === "crate_land" ? 2 : 1, true);
+      number(e.min_interval_ms, `${p}.min_interval_ms`, 1, 60000, true);
+      number(e.priority, `${p}.priority`, 0, 3, true);
+      if (e.loop !== undefined) {
+        exact(e.loop, true, `${p}.loop`);
+        if (e.id !== "reel_spin") fail(`${p}.loop`, "只有 reel_spin 支持音效循环");
+        number(e.max_play_ms, `${p}.max_play_ms`, e.duration_ms, 2000, true);
+        exact(e.stop_fade_ms, 80, `${p}.stop_fade_ms`);
+      } else if (e.max_play_ms !== undefined || e.stop_fade_ms !== undefined) fail(p, "max_play_ms / stop_fade_ms 只用于 loop 音效");
+    } else {
+      known(e, [...base, "set", "theme", "instruments", "bpm", "meter", "bars", "mode", "mood", "difference"], p);
+      for (const k of ["set", "theme", "mode", "difference"]) text(e[k], `${p}.${k}`);
+      for (const k of ["instruments", "mood"]) {
+        const values = list(e[k], `${p}.${k}`); if (!values.length) fail(`${p}.${k}`, "不能为空");
+        for (const [j, v] of values.entries()) text(v, `${p}.${k}[${j}]`);
+      }
+      number(e.bpm, `${p}.bpm`, 64, 108); exact(e.meter, [4, 4], `${p}.meter`); exact(e.bars, 32, `${p}.bars`);
+    }
+  }
+  for (const [i, value] of sets.entries()) {
+    const p = `${at}.music_sets[${i}]`, s = record(value, p);
+    identity(s, "music", p); exact(s.kind, "music_set", `${p}.kind`);
+    known(s, ["id", "uid", "kind", "name", "world", "slices", "candidates"], p);
+    setByUid.set(s.uid, s);
+  }
+  const refs = {
+    world: new Map((catalogs.worlds || []).map(e => [e.id, e])),
+    slice: new Map((catalogs.slices || []).map(e => [e.id, e])),
+    group: new Map((catalogs.groups || []).map(e => [e.id, e])), chapter: new Map(),
+  };
+  for (const g of catalogs.groups || []) if (typeof g.theme === "string" && g.theme.startsWith("theme.")) refs.chapter.set(g.theme.slice(6), g);
+  for (const s of specs.values()) if (typeof s.spec.chapter === "string" && s.spec.chapter) refs.chapter.set(s.spec.chapter, s.spec);
+  const pendingByUid = new Map(), warned = new Set();
+  for (const [i, value] of pending.entries()) {
+    const p = `${at}.pending_references[${i}]`, r = record(value, p);
+    known(r, ["domain", "id", "owner", "reason"], p);
+    if (!["slice", "world", "group", "chapter"].includes(r.domain)) fail(`${p}.domain`, "只能是 slice、world、group、chapter");
+    if (typeof r.id !== "string" || !localId.test(r.id)) fail(`${p}.id`, "编号不合法");
+    for (const k of ["owner", "reason"]) text(r[k], `${p}.${k}`);
+    const uid = `${r.domain}:${r.id}`;
+    if (pendingByUid.has(uid)) fail(p, `引用登记重复：${uid}`);
+    pendingByUid.set(uid, r);
+  }
+  const ref = (domain, id, p) => {
+    if (typeof id !== "string" || !localId.test(id)) { fail(p, `${domain} 引用编号不合法：${JSON.stringify(id)}`); return null; }
+    const target = refs[domain].get(id), uid = `${domain}:${id}`;
+    if (target) return target;
+    if (pendingByUid.has(uid)) {
+      if (!warned.has(uid)) { const r = pendingByUid.get(uid); add("warn", `audio/pending_references/${uid}`, `${uid} 尚未合入（${r.owner}）：${r.reason}`); warned.add(uid); }
+    } else fail(p, `引用 ${uid} 不存在，且未在 pending_references 登记`);
+    return null;
+  };
+  const setRef = (uid, p) => { if (!setByUid.has(uid)) { fail(p, `曲组 ${uid} 不存在（music_sets）`); return null; } return setByUid.get(uid); };
+  const membership = new Map();
+  for (const [i, s] of sets.entries()) {
+    if (!object(s)) continue;
+    const p = `${at}.music_sets[${i}]`;
+    ref("world", s.world, `${p}.world`);
+    const slices = list(s.slices, `${p}.slices`), candidates = list(s.candidates, `${p}.candidates`);
+    if (new Set(slices).size !== slices.length) fail(`${p}.slices`, "引用重复");
+    for (const id of slices) { const sl = ref("slice", id, `${p}.slices`); if (sl && sl.world !== s.world) fail(`${p}.slices`, `${id}.world 为 ${sl.world}，与曲组 world ${s.world} 不一致`); }
+    if (new Set(candidates).size < 3) fail(`${p}.candidates`, "每组至少需要 3 个不同候选");
+    if (new Set(candidates).size !== candidates.length) fail(`${p}.candidates`, "候选重复");
+    for (const uid of candidates) {
+      const e = byUid.get(uid);
+      if (!e || e.kind !== "music") fail(`${p}.candidates`, `候选 ${uid} 不是已有 music 条目`);
+      else if (e.set !== s.id) fail(`${p}.candidates`, `候选 ${uid} 归属 set ${e.set}，不能归到 ${s.id}`);
+      membership.set(uid, (membership.get(uid) || 0) + 1);
+    }
+  }
+  for (const e of entries) if (object(e) && e.kind === "music") {
+    if (!setByUid.has(`music:${e.set}`)) fail(`audio/${e.uid}.set`, `曲组 music:${e.set} 不存在`);
+    if (membership.get(e.uid) !== 1) fail(`audio/${e.uid}`, `候选必须恰好归属一个曲组，实际 ${membership.get(e.uid) || 0} 个`);
+  }
+
+  const p = "audio.policy";
+  const constants = {
+    unapproved_in_game: false, walking_sfx: "silent", sfx_voice_limit: 3, sfx_bus_gain_db: -6,
+    crossfade_ms: 1000, crossfade_curve: "linear_unity_sum", pause_music_gain_db: -9, pause_ramp_ms: 200,
+    master_control: "workbench_monitor_only", existing_game_settings: { music: 0.8, sfx: 0.8 },
+    preview_defaults: { master: 0.8, music: 0.8, sfx: 0.8 }, sfx_duration_max_ms: 1600,
+    music_bpm_range: [64, 108], music_meter: [4, 4], music_bars: 32, music_track_limit: 6, music_pitched_voice_limit: 4, note_midi_range: [36, 81],
+  };
+  known(policy, ["default_music_uid", "fallback_order", "export", "metrics", ...Object.keys(constants)], p);
+  setRef(policy.default_music_uid, `${p}.default_music_uid`);
+  exact(policy.fallback_order, ["requested_set_approved_selection", `${policy.default_music_uid}_approved_selection`, "silence"], `${p}.fallback_order`);
+  for (const [k, v] of Object.entries(constants)) exact(policy[k], v, `${p}.${k}`);
+  const exp = record(policy.export, `${p}.export`), metrics = record(policy.metrics, `${p}.metrics`);
+  const exportSpec = { sample_rate: 44100, channels: 1, encoding: "pcm_s16le", container: "wav" };
+  known(exp, Object.keys(exportSpec), `${p}.export`); for (const [k, v] of Object.entries(exportSpec)) exact(exp[k], v, `${p}.export.${k}`);
+  const metricSpec = { sfx_rms_dbfs: { target: -24, tolerance: 2 }, music_rms_dbfs: { target: -26, tolerance: 2 }, sample_peak_max_dbfs: -9,
+    dc_abs_max: 0.001, music_seam_value_delta_max: 0.002, music_seam_slope_delta_max: 0.002, fundamental_hz: [65, 1760], lowpass_hz_max: 4000,
+    noise_energy_ratio_max: 0.08, music_window_seconds: 3, music_window_step_seconds: 1, music_window_rms_range_max_db: 6,
+    music_window_ignore_below_dbfs: -50, music_full_silence_max_ms: 1000, sfx_endpoint_abs_max: 0.001 };
+  known(metrics, Object.keys(metricSpec), `${p}.metrics`); for (const [k, v] of Object.entries(metricSpec)) exact(metrics[k], v, `${p}.metrics.${k}`);
+
+  const r = "audio.routes";
+  known(routes, ["delivery", "world_to_music", "chapter_to_music", "group_to_chapter", "lobby", "result", "hell"], r);
+  const delivery = record(routes.delivery, `${r}.delivery`);
+  known(delivery, ["slice_to_music", "otherwise"], `${r}.delivery`);
+  const sliceRoutes = record(delivery.slice_to_music, `${r}.delivery.slice_to_music`);
+  const worldRoutes = record(routes.world_to_music, `${r}.world_to_music`);
+  const chapterRoutes = record(routes.chapter_to_music, `${r}.chapter_to_music`);
+  const groupRoutes = record(routes.group_to_chapter, `${r}.group_to_chapter`);
+  for (const [id, uid] of Object.entries(sliceRoutes)) {
+    const p = `${r}.delivery.slice_to_music.${id}`, sl = ref("slice", id, p), s = setRef(uid, p);
+    if (sl && s && sl.world !== s.world) fail(p, `slice:${id}.world ${sl.world} 与曲组 world ${s.world} 不一致`);
+  }
+  for (const [id, uid] of Object.entries(worldRoutes)) {
+    const p = `${r}.world_to_music.${id}`, w = ref("world", id, p), s = setRef(uid, p);
+    if (w && s && s.world !== id) fail(p, `world:${id} 与曲组 world ${s.world} 不一致`);
+  }
+  for (const [id, uid] of Object.entries(chapterRoutes)) { ref("chapter", id, `${r}.chapter_to_music.${id}`); setRef(uid, `${r}.chapter_to_music.${id}`); }
+  for (const [id, chapter] of Object.entries(groupRoutes)) {
+    const p = `${r}.group_to_chapter.${id}`, g = ref("group", id, p);
+    ref("chapter", chapter, p);
+    if (g && g.theme !== `theme.${chapter}`) fail(p, `group:${id} 的 chapter 应为 groups.theme 去掉 theme. 前缀（${g.theme}），实际 ${chapter}`);
+    if (!Object.hasOwn(chapterRoutes, chapter)) fail(p, `chapter:${chapter} 没有 chapter_to_music 路由`);
+  }
+  for (const s of sets) if (object(s)) for (const id of Array.isArray(s.slices) ? s.slices : []) if (sliceRoutes[id] !== s.uid) fail(`${r}.delivery.slice_to_music.${id}`, `曲组 ${s.uid} 声明的 slice:${id} 缺少一致路由`);
+  exact(delivery.otherwise, "slice.world_to_music_then_default", `${r}.delivery.otherwise`);
+  exact(routes.lobby, "visible_map_context_then_default", `${r}.lobby`);
+  exact(routes.result, "continue_current_no_restart", `${r}.result`);
+  exact(routes.hell, "chapter_to_music_no_diyu_name_inference", `${r}.hell`);
+  return doc;
+}
+
+function audioIdInputs(root, catalog, add) {
+  const file = path.join(root, "audio/export/manifest.json"), sources = {}, media = {}, histories = {};
+  let approvals = { format: "pushbox.audio-approvals/1", records: [] };
+  const approvalFile = path.join(root, "audio/approvals.json");
+  if (fs.existsSync(approvalFile)) {
+    try {
+      const value = readJson(approvalFile);
+      if (!value || value.format !== "pushbox.audio-approvals/1" || !Array.isArray(value.records)) add("error", "audio/approvals.json", "format / records 不合法");
+      else approvals = value;
+    } catch (e) { add("error", "audio/approvals.json", "不是合法 JSON：" + e.message); }
+  }
+  let manifest = null;
+  if (fs.existsSync(file)) {
+    try { manifest = readJson(file); if (!manifest || manifest.format !== "pushbox.audio-manifest/1" || !Array.isArray(manifest.entries) || !manifest.bindings || typeof manifest.bindings !== "object" || Array.isArray(manifest.bindings)) { add("error", "audio/export/manifest.json", "音频 manifest 的 format / entries / bindings 不合法"); manifest = null; } }
+    catch (e) { add("error", "audio/export/manifest.json", "不是合法 JSON：" + e.message); }
+  }
+  for (const e of Array.isArray(catalog.entries) ? catalog.entries : []) if (e && typeof e.source === "string" && e.source === `audio/source/${e.kind}/${e.id}.json`) sources[e.uid] = fs.existsSync(path.join(root, e.source)) && fs.statSync(path.join(root, e.source)).isFile();
+  for (const e of (manifest && manifest.entries) || []) {
+    const versions = [e && e.current, ...(Array.isArray(e && e.approved) ? e.approved : [])];
+    for (const v of versions) if (v && typeof v.wav === "string" && /^audio\/export\/(preview|approved)\/(sfx|music)\/[a-z0-9_@.-]+\.wav$/.test(v.wav)) {
+      const p = path.join(root, v.wav); if (fs.existsSync(p) && fs.statSync(p).isFile()) media[v.wav] = sha(fs.readFileSync(p));
+    }
+  }
+  const declarations = new Map((Array.isArray(catalog.entries) ? catalog.entries : []).filter(e => e && typeof e === "object").map(e => [e.uid, e]));
+  const recordIds = new Set(), validRecords = [];
+  const recordedDate = (date) => {
+    if (typeof date !== "string" || !/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d{1,3})?(?:Z|[+-]\d{2}:\d{2})$/.test(date) || !Number.isFinite(Date.parse(date))) return false;
+    const day = date.slice(0, 10), midnight = Date.parse(`${day}T00:00:00.000Z`);
+    return Number.isFinite(midnight) && new Date(midnight).toISOString().slice(0, 10) === day;
+  };
+  for (const [index, r] of approvals.records.entries()) {
+    const at = `audio/approvals.records[${index}]`;
+    if (!r || typeof r !== "object" || Array.isArray(r)) { add("error", at, "确认记录必须是对象"); continue; }
+    let invalid = false;
+    const bad = (field, msg) => { add("error", `${at}.${field}`, msg); invalid = true; };
+    if (typeof r.id !== "string" || !/^AAP-\d{4,}$/.test(r.id) || recordIds.has(r.id)) bad("id", "确认记录 id 不合法或重复");
+    if (!recordedDate(r.date)) bad("date", "必须记录有效的 ISO 日期与时间");
+    for (const field of ["by", "via", "note"]) if (typeof r[field] !== "string" || !r[field].trim()) bad(field, field === "note" ? "必须记录非空的用户确认原话" : "必须是非空字符串");
+    if (!Array.isArray(r.items)) bad("items", "必须是数组");
+    if (!Array.isArray(r.selections || [])) bad("selections", "必须是数组");
+    if (invalid) continue;
+    recordIds.add(r.id); validRecords.push(r);
+    for (const item of r.items) {
+      const e = item && declarations.get(item.uid);
+      if (!e || !Number.isInteger(item.version) || item.version < 1) { add("error", "audio/approvals.json", "确认记录引用未知 uid 或非法版本"); continue; }
+      const expected = `audio/history/${e.kind}/${e.id}@v${item.version}.json`, wav = `audio/export/approved/${e.kind}/${e.id}@v${item.version}.wav`;
+      if (item.history !== expected || item.wav !== wav) { add("error", `audio/${item.uid}`, "确认记录 history / wav 路径不规范"); continue; }
+      let valid = false;
+      try {
+        const snap = readJson(path.join(root, expected));
+        valid = snap && snap.format === "pushbox.audio-history/1" && snap.uid === item.uid && snap.version === item.version && snap.hash === item.hash &&
+          typeof snap.renderer_fingerprint === "string" && snap.source && snap.source.uid === item.uid && snap.source.version === item.version && snap.source.content_hash === item.hash && sourceHash(snap.source, snap.renderer_fingerprint) === item.hash;
+        if (!Object.hasOwn(media, wav)) {
+          const bytes = fs.readFileSync(path.join(root, wav));
+          if (bytes.length >= 44 && bytes.toString("ascii", 0, 4) === "RIFF" && bytes.toString("ascii", 8, 12) === "WAVE" && bytes.readUInt32LE(24) === 44100 && bytes.readUInt16LE(22) === 1 && bytes.readUInt16LE(34) === 16) media[wav] = sha(bytes);
+        }
+      } catch (e) { /* Missing/damaged historical data must never be importable. */ }
+      histories[expected] = !!valid;
+      if (!valid || media[wav] !== item.wav_sha256) add("warn", `audio/${item.uid}`, `已确认 v${item.version} 的历史源或媒体缺失/损坏，不可导入游戏`);
+    }
+  }
+  return { catalog, manifest, sources, media, histories, approvals: { ...approvals, records: validRecords } };
+}
+
 export function buildContent(root, opts = {}) {
   const rel = (...p) => path.join(root, ...p);
   const issues = [];
@@ -40,13 +269,16 @@ export function buildContent(root, opts = {}) {
 
   // ---- catalogs ----
   const cat = {}, notes = {};
+  let audioCatalog = {};
   for (const name of CATALOGS) {
     const p = rel("content/catalog", name + ".json");
     cat[name] = [];
     if (!fs.existsSync(p)) { add("error", `content/catalog/${name}.json`, "目录文件缺失"); continue; }
     let doc;
     try { doc = readJson(p); } catch (e) { add("error", `content/catalog/${name}.json`, "不是合法 JSON：" + e.message); continue; }
+    if (!doc || typeof doc !== "object" || Array.isArray(doc)) { add("error", `content/catalog/${name}.json`, "目录必须是对象"); continue; }
     if (doc.format !== "pushbox.catalog/1" || doc.kind !== name) add("error", `content/catalog/${name}.json`, "format 应为 pushbox.catalog/1，kind 应为 " + name);
+    if (name === "audio") { audioCatalog = doc; cat[name] = Array.isArray(doc.entries) ? doc.entries.filter(e => e && typeof e === "object") : []; notes[name] = doc.note || ""; continue; }
     const seen = new Set();
     for (const e of doc.entries || []) {
       if (!e.id || !/^[a-z0-9_-]+$/.test(e.id)) add("error", `${name}`, `编号不合法：${JSON.stringify(e.id)}`);
@@ -75,6 +307,8 @@ export function buildContent(root, opts = {}) {
     if (specs.has(s.id)) add("error", file, `关卡编号 ${s.id} 重复（另见 ${specs.get(s.id).file}）`);
     specs.set(s.id, { spec: s, file, sha256: sha(fs.readFileSync(f)) });
   }
+  checkAudioCatalog(audioCatalog, cat, specs, add);
+  const audio = audioIdInputs(root, audioCatalog, add);
   const model = new Map();
   if (fs.existsSync(rel("content/model-check.generated.json"))) for (const l of readJson(rel("content/model-check.generated.json")).levels || []) model.set(l.id, l);
   let report = null;
@@ -329,7 +563,7 @@ export function buildContent(root, opts = {}) {
     art: [...art.values()].map((a) => Object.assign({}, a, { file: artFile.get(a.id), approved: approved(a.id) })).sort((a, b) => a.id.localeCompare(b.id)),
     levels: levels.map((l) => ({ id: l.id, title: l.title, spec: l.has_spec ? l.spec : null, sha256: l.sha256 })),
     rooms: rooms.concat(rooms2).map(({ file, sha256, room }) => ({ id: room.id, name: room.name, source: file, sha256 })),
-    catalogs: cat, texts, textSource,
+    catalogs: cat, texts, textSource, audio,
   });
   issues.push(...ids.issues);
 
@@ -339,7 +573,7 @@ export function buildContent(root, opts = {}) {
   };
   const roomData = rooms.map(({ file, sha256, room }) => Object.assign({}, room, { file, sha256, check: checked.get(room.id) || null }));
   const room2Data = rooms2.map(({ file, sha256, room }) => Object.assign({}, room, { file, sha256, check: checked2.get(room.id) || null }));
-  const result = { catalogs: cat, notes, levels, mechanisms, issues, summary, ids: ids.map, rooms: roomData, roomSlices: (roomCheck && roomCheck.slices) || [],
+  const result = { catalogs: cat, notes, audio: { catalog: audio.catalog, manifest: audio.manifest }, levels, mechanisms, issues, summary, ids: ids.map, rooms: roomData, roomSlices: (roomCheck && roomCheck.slices) || [],
     rooms2: room2Data, pools2: (room2Check && room2Check.pools) || [] };
 
   if (opts.write) {
@@ -352,6 +586,7 @@ export function buildContent(root, opts = {}) {
         groups: cat.groups.map((g) => ({ id: g.id, mode: g.mode, order: g.order, name: g.name, theme: g.theme, sdk_profile: g.sdk_profile, hidden: !!g.hidden,
           levels: levels.filter((l) => l.group === g.id).map((l) => ({ id: l.id, title: l.title, mechanisms: l.mechanisms, spec: l.has_spec ? l.spec : null, sha256: l.has_spec ? l.sha256 : null })) })),
         mechanisms: mechanisms.map((m) => ({ id: m.id, name: m.name, group: m.group, owner: m.owner, sdk: m.sdk, levels: m.levels, status: m.status })),
+        audio: { catalog: audio.catalog, manifest: audio.manifest },
         worlds: cat.worlds, recipients: cat.recipients, cargo: cat.cargo, combos: cat.combos, monsters: cat.monsters,
         items: cat.items, buffs: cat.buffs, upgrades: cat.upgrades, badges: cat.badges, events: cat.events, slices: cat.slices,
         rooms: rooms.map(({ file, sha256, room }) => ({ id: room.id, world: room.world, type: room.type, spec: file, sha256 })),

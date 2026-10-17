@@ -40,7 +40,7 @@
       if (!on && !sec.hidden && VIEWS[v].hide) VIEWS[v].hide();
       sec.hidden = !on;
     }
-    nav.setCurrent(name);
+    nav.setCurrent(name === "audio" ? "audio/" + (id || "sfx").split("/")[0] : name);
     active = name;
     VIEWS[name].show(id);
     updateBadges();

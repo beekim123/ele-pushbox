@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>渡界人 PORTITOR · 工作台</title>
 <link rel="stylesheet" href="css/workbench.css">
+<link rel="stylesheet" href="audio.css">
 <script src="js/app/appearance.js"></script>
 <script src="js/app/nav.js"></script>
 </head>
@@ -96,11 +97,15 @@
   <section class="view single" id="view-export" hidden>
     <div class="page" id="export-root"></div>
   </section>
+  <section class="view single" id="view-audio" hidden>
+    <div class="page audio-page" id="audio-root"></div>
+  </section>
 </main>
 <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
 
 <script src="data/bundle.js"></script>
 <script src="data/content.js"></script>
+<script src="data/audio.js"></script>
 <script src="js/core/raster.js"></script>
 <script src="js/core/font-data.js"></script>
 <script src="js/core/font-small.js"></script>
@@ -166,6 +171,7 @@
 <script src="js/app/views/editor.js"></script>
 <script src="js/app/views/review.js"></script>
 <script src="js/app/views/export.js"></script>
+<script src="js/app/views/audio.js"></script>
 <script src="js/app/main.js"></script>
 </body>
 </html>
