@@ -717,6 +717,61 @@
    "carry": "small",
    "layer": 2,
    "status": "concept"
+  },
+  {
+   "id": "soup_flask",
+   "name": "热汤罐",
+   "mode": "delivery",
+   "rule": "怕冷：冷气口喷气的那一步，人站在它的冷气范围里，汤凉一点，完好度 −1",
+   "counter": "等冷气喷完再过，或者绕开冷气口",
+   "mechanisms": [
+    "freeze"
+   ],
+   "rarity": "common",
+   "carry": "medium",
+   "layer": 2,
+   "status": "concept",
+   "params": {
+    "pay": 40,
+    "frost_damage": 1
+   }
+  },
+  {
+   "id": "mittens",
+   "name": "毛线手套",
+   "mode": "delivery",
+   "rule": "怕湿：落进水里，或者人站在化冰流出来的水里，湿透冻硬，完好度 −1",
+   "counter": "冰化开以后等水流走再过，别走水里",
+   "mechanisms": [
+    "melt"
+   ],
+   "rarity": "common",
+   "carry": "small",
+   "layer": 2,
+   "status": "concept",
+   "params": {
+    "pay": 30,
+    "wet_damage": 1
+   }
+  },
+  {
+   "id": "ice_lantern",
+   "name": "冰灯",
+   "mode": "delivery",
+   "rule": "冰做的灯罩，里面点着小蜡烛：落下 2 格或以上就裂一块；落在沙上没事",
+   "counter": "走梯子；要跳先在落点倒一袋沙",
+   "mechanisms": [
+    "fall"
+   ],
+   "rarity": "rare",
+   "carry": "medium",
+   "layer": 2,
+   "status": "concept",
+   "params": {
+    "pay": 55,
+    "fragile_fall_rows": 2,
+    "sand_cushion": true
+   }
   }
  ]
 }

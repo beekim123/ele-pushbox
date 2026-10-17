@@ -609,5 +609,166 @@
     "rerolls": 1
    }
   }
+ ],
+ "planned": [
+  {
+   "id": "polar_1",
+   "short_name": "雪村",
+   "format": 2,
+   "name": "配送地图 · 极地雪村",
+   "mode": "delivery",
+   "status": "design",
+   "doc": "docs/design/delivery-polar.md",
+   "world": "polar",
+   "top_edge": "sky",
+   "cargo": [
+    "soup_flask",
+    "mittens",
+    "ice_lantern"
+   ],
+   "cargo_only": {
+    "soup_flask": [
+     "fisher",
+     "reindeer_herder"
+    ],
+    "mittens": [
+     "snowman",
+     "fisher"
+    ]
+   },
+   "recipients": [
+    "snowman",
+    "fisher",
+    "reindeer_herder",
+    "narwhal"
+   ],
+   "monsters": [
+    "penguin",
+    "yeti"
+   ],
+   "rooms2": [
+    "polar_cabin",
+    "polar_crevasse",
+    "polar_fishing",
+    "polar_gate",
+    "polar_home_bay",
+    "polar_home_yard",
+    "polar_hotspring",
+    "polar_icedam",
+    "polar_icefall",
+    "polar_icepath",
+    "polar_lake",
+    "polar_snowfield",
+    "polar_spruce"
+   ],
+   "mechanisms": [
+    "push",
+    "ladder",
+    "dig",
+    "pour",
+    "plate_door",
+    "fall",
+    "ice_slide",
+    "freeze",
+    "melt",
+    "hint_animal",
+    "push_monster",
+    "crush_monster",
+    "trap_monster"
+   ],
+   "layout": {
+    "cols": 16,
+    "rows": 2,
+    "direction": "right",
+    "sequence": [
+     {
+      "role": "gate"
+     },
+     {
+      "role": "teach"
+     },
+     {
+      "role": "teach"
+     },
+     {
+      "role": "breather",
+      "chance": 50
+     },
+     {
+      "role": "develop"
+     },
+     {
+      "role": "station"
+     },
+     {
+      "role": "twist"
+     },
+     {
+      "role": "develop",
+      "chance": 60
+     },
+     {
+      "role": "breather",
+      "chance": 40
+     },
+     {
+      "role": "home"
+     }
+    ]
+   },
+   "station": {
+    "items": [
+     "sandbag",
+     "first_aid",
+     "snack"
+    ],
+    "stock": {
+     "sandbag": 5,
+     "first_aid": 1,
+     "snack": 3
+    },
+    "heal": 1
+   },
+   "time": {
+    "tick_hz": 60,
+    "transition_secs": 0.3
+   },
+   "intervals": {
+    "walk": 0.22,
+    "climb": 0.22,
+    "push": 0.3,
+    "dig": 0.35,
+    "pour": 0.35,
+    "interact": 0.4,
+    "move_anim": 0.1
+   },
+   "gravity": {
+    "tiles_per_sec": 12
+   },
+   "player": {
+    "hearts": 3,
+    "iframe_secs": 1.5,
+    "fall_hurt_rows": 3,
+    "sand_max": 9,
+    "item_slots": 3
+   },
+   "monster_fall_ko_rows": 3,
+   "cargo_integrity": 3,
+   "coins": {
+    "pickup": 5
+   },
+   "tip": {
+    "time_fast": 1.5,
+    "time_floor": 0.5,
+    "like": 1.5
+   },
+   "rating": {
+    "S": 1.4,
+    "A": 1,
+    "B": 0.6
+   },
+   "fail_keep": 0.5,
+   "todo": "房间还没做（DLV-07a 普通房、DLV-07b 机关房）：13 间房全部通过 check-rooms2 以后，DLV-07b 把这一项移进 entries（删掉 todo），并在 delivery_pool 的 pool.maps 加 {\"slice\": \"polar_1\", \"weight\": 1}"
+  }
  ]
 }

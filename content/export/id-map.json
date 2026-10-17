@@ -40,12 +40,12 @@
   "recipient": {
    "name": "收件人",
    "source": "content/catalog/recipients.json",
-   "count": 84
+   "count": 86
   },
   "cargo": {
    "name": "货物",
    "source": "content/catalog/cargo.json",
-   "count": 50
+   "count": 53
   },
   "combo": {
    "name": "缘分组合",
@@ -4521,6 +4521,22 @@
    "game": "res://generated/content/catalog/recipients.json#prospector"
   },
   {
+   "uid": "recipient:reindeer_herder",
+   "domain": "recipient",
+   "id": "reindeer_herder",
+   "name": "驯鹿牧人",
+   "source": "content/catalog/recipients.json",
+   "game": "res://generated/content/catalog/recipients.json#reindeer_herder"
+  },
+  {
+   "uid": "recipient:narwhal",
+   "domain": "recipient",
+   "id": "narwhal",
+   "name": "独角鲸",
+   "source": "content/catalog/recipients.json",
+   "game": "res://generated/content/catalog/recipients.json#narwhal"
+  },
+  {
    "uid": "cargo:letter",
    "domain": "cargo",
    "id": "letter",
@@ -4919,6 +4935,30 @@
    "name": "可可豆",
    "source": "content/catalog/cargo.json",
    "game": "res://generated/content/catalog/cargo.json#cacao_beans"
+  },
+  {
+   "uid": "cargo:soup_flask",
+   "domain": "cargo",
+   "id": "soup_flask",
+   "name": "热汤罐",
+   "source": "content/catalog/cargo.json",
+   "game": "res://generated/content/catalog/cargo.json#soup_flask"
+  },
+  {
+   "uid": "cargo:mittens",
+   "domain": "cargo",
+   "id": "mittens",
+   "name": "毛线手套",
+   "source": "content/catalog/cargo.json",
+   "game": "res://generated/content/catalog/cargo.json#mittens"
+  },
+  {
+   "uid": "cargo:ice_lantern",
+   "domain": "cargo",
+   "id": "ice_lantern",
+   "name": "冰灯",
+   "source": "content/catalog/cargo.json",
+   "game": "res://generated/content/catalog/cargo.json#ice_lantern"
   },
   {
    "uid": "combo:snow_cone",
