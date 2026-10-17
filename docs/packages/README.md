@@ -1,22 +1,37 @@
 # 工作包
 
-2026-10-16 起的分工（[AGENTS.md](../../AGENTS.md) 第 0 条）：Claude 做设计、把功能拆成小工作包、汇总后简单审核；制作（美术、游戏 / 工作台 / 工具代码、数据、验证）交给其他 AI 按包完成。
+**流程以 [docs/process.md](../process.md) 为准**（2026-10-17 起：一切外包，Claude 只做整理合并）。派包时给制作方的提示词用 process.md 第 8 节的标准提示词，只换包号。
 
-每个包一个文件 `docs/packages/<编号>.md`，一次会话能做完。用户按批次把包派给制作方（GPT / Codex / 另开的 Claude 会话等），**全部批次做完后，Claude 一次性汇总审核**（不是做一个审一个）。
+每个包一个文件 `docs/packages/<编号>.md`，一次会话能做完，格式见文末模板。
 
-> **分支整理计划（2026-10-16）**：两条线都做完后先合进 `main`，再清理分支、按新规则重开，见 [status.md](../status.md)「分支整理计划」。在那之前下面的分支规则照旧；LV-10 开工前先把 `origin/claude/inspiring-ride-zfnn4s` 合进 `codex/portitor-stage1`。
+## 编号登记（要派、在做、等合并的包）
 
-## 共同规则（所有包）
+新包先在这里登记再写文件；设计包拆出的新包用这里预留的编号（process.md 第 3 节）。
 
-1. **两条线、两个分支**：
-   - **关卡线**在集成分支 `codex/portitor-stage1` 上做（LAB-01 先把 Claude 分支和 LV-01 合并进来）。
-   - **界面线只改 HTML 工作台**（`workbench/`、`art/`、`tools/`、`docs/`），在自己的分支 `ui/style-proposals` 上做（2026-10-16 起；UI-02–04 已取消），不碰 `game/`；做完、用户确认后由 UI-06 单独同步到项目（合并进集成分支，再更新 Godot）。
-   - 开工前 `git pull`，做完推回自己那条线的分支；用合并，不要 rebase 别人的提交、不要强推。
-2. **生成文件不手工合并**：`art/export/**`、`workbench/data/*.js`、`content/export/*.json`、`content/*.generated.json`、`game/generated/**` 冲突时任取一边，然后用工具重新生成（`node tools/art.mjs build`、`node tools/check-levels.mjs --write`、`node tools/check-rooms.mjs --write`、Godot 导入）。
-3. **不等审核**：下一个包直接用上一个包写在「交付」里的结果开工，不需要等 Claude 审核。遇到拿不准的事，写进自己包的「交付 · 问题」，先做能做的部分，不要自作主张改设计（设计文件、`content/catalog/**` 只在包里写明允许时才改）。
-4. **进度写在包里**：完成后填「交付」一节、把状态改成「已完成」或「部分完成」。**不改 `docs/status.md`**，Claude 最后审核时统一汇总。
-5. **用户关口**：标【用户】的步骤只有用户能做（选方向、确认美术）。美术确认可以在对话里告诉 Claude 记录，也可以用户自己运行包里写的 `node tools/art.mjs approve ...` 命令。
-6. 规则以 AGENTS.md 为准，尤其是冻结区（2a）和美术确认（2）。
+| 编号 | 内容 | 基线 → 分支 | 会碰的共享文件 | 状态 |
+|---|---|---|---|---|
+| [DLV-03](DLV-03.md) | 地府顶边、v2 梯顶、配送菜单 | `claude/inspiring-ride-zfnn4s` → `dlv/DLV-03` | `index.html`、`nav.js`、`tools/art.mjs`（追加）、e2e 菜单检查 | 待派（第 1 批） |
+| [UX-01](UX-01.md) | 新手引导调研报告 | `claude/inspiring-ride-zfnn4s` → `ux/UX-01` | 无 | 待派（第 1 批） |
+| [DSN-01](DSN-01.md) | 第三张配送地图「济州海女村」设计 | `claude/inspiring-ride-zfnn4s` → `dsn/DSN-01` | `content/catalog/*.json`、本表（只加预留行） | 待派（第 1 批） |
+| DLV-04 | 预留给 DSN-01：济州房间数据 | — | — | 预留 |
+| DLV-05 | 预留给 DSN-01：v2 规则支持跷跷板 / 阵风（需要时） | — | — | 预留 |
+| ART-01 | 预留给 DSN-01：济州美术候选 | — | — | 预留 |
+| [BR-01](BR-01.md) | 分支整理：合进 `main`、打 `v0.3`、删旧分支 | Claude 做 | — | 等第 1 批合并后 |
+| [UI-06](UI-06.md)、[DLV-01](DLV-01.md)、[UI-09](UI-09.md) | 新界面进游戏；配送实时规则；配送界面 | BR-01 之后从 `main` 开 | 派之前由 Claude 补齐包头 | 第 2 批 |
+
+第 1 批三个包互不冲突：DLV-03 只改工作台代码；UX-01 只写一份报告；DSN-01 只改设计文档和设计目录。可以同时派。
+
+已用编号（不要重复）：
+- `LAB-01`、`LAD-01`
+- `LV-01`–`LV-12`
+- `UI-01`–`UI-09`、`UI-CHOICE`
+- `WB-01`
+- `DLV-01`–`DLV-05`
+- `UX-01`、`DSN-01`、`BR-01`、`ART-01`
+
+## 以前的分支规则（2026-10-16，BR-01 之后作废）
+
+以前关卡线在 `codex/portitor-stage1`，界面线在 `ui/style-proposals`，配送在 `claude/delivery-redesign*`。这些分支都已合进 `claude/inspiring-ride-zfnn4s`，BR-01 之后只剩 `main`。下面「顺序」一节是历史记录。
 
 ## 顺序
 
@@ -65,27 +80,37 @@
 ```markdown
 # <编号> <一句话标题>
 
-状态：第 N 批 · 待做 / 进行中 / 已完成 / 部分完成（原因）
+状态：待做 / 进行中 / 已交回 / 已合并 / 退回（原因）
+基线：`<分支，默认 main>` → 分支：`<前缀小写>/<编号>`
 设计依据：<设计文档与章节>
+会碰的共享文件：<process.md 第 5 节里的哪些；没有写"无">
+允许换版本的美术：<资产编号；没有写"无（art.mjs build 必须 0 bumped）">
+预留编号：<只有设计包写：可以用来拆新包的编号>
 
 ## 目标
 做完以后能看到、能验证的结果，一两句话。
 
 ## 要读的文件
+- AGENTS.md、docs/process.md
 - ...
 
-## 要产出或修改的文件
-- ...
+## 可改的文件
+- ...（清单之外一律不改）
 
 ## 不能碰的文件
 - AGENTS.md 2a 的冻结区（除非这里明确写了允许改哪个文件）
+- `docs/status.md`
 - ...
 
 ## 验收标准
-- 命令：`...` → 预期：...
+- process.md 第 6 节的全套检查
+- 本包专门的命令：`...` → 预期：...
 - 画面 / 行为：...
 
 ## 交付（制作方填写）
-- 改了哪些文件、跑了哪些命令和结果、没做完的地方。
-- 问题：拿不准、需要设计负责人或用户决定的事。
+- 分支名、最后提交号、交回方式（推送 / bundle 文件名）
+- 验收命令的实际结果
+- `git diff --stat origin/<基线>..<分支>`
+- 改了哪条测试的预期、为什么
+- 问题：拿不准、需要用户决定的事
 ```

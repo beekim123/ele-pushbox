@@ -1,6 +1,9 @@
 # DLV-03 配送 v2 外观修正：地府顶边、梯顶、配送菜单（工作台）
 
 状态：待做（用户 2026-10-17 决定；只改 HTML 工作台，不碰 `game/`）
+基线：`claude/inspiring-ride-zfnn4s` → 分支：`dlv/DLV-03`（流程见 [process.md](../process.md)）
+会碰的共享文件：`workbench/index.html`、`tools/art.mjs`（只追加）、`workbench/js/app/nav.js`、`tests/workbench.e2e.cjs` 的菜单检查
+允许换版本的美术：无（`art.mjs build` 必须 0 bumped）
 设计依据：
 - [delivery-puzzle-rules.md](../design/delivery-puzzle-rules.md) 第 8 节（顶边、梯顶）
 - [art-direction.md](../design/art-direction.md) 第 6 节「顶边画成天空」
