@@ -15,8 +15,10 @@
 | `mechanic` | 机制 | `content/catalog/mechanisms.json` | 规则代码 `res://gameplay/mechanics/<编号>.gd` |
 | `world` `recipient` `cargo` `combo` `monster` `item` `buff` `upgrade` `badge` `event` `slice` | 设计目录里的条目（`slice` 是可玩切片，即一局配送的配置） | `content/catalog/<目录>.json` | `res://generated/content/catalog/<目录>.json#<编号>` |
 | `text` | 界面与台词文字的键 | `content/i18n/zh-Hans.json` 与 `content/i18n-<名>/zh-Hans.json`（英文在同目录 `en.json`；一个键只在一张表里） | `tr:<键>`（TranslationServer） |
+| `sfx` | 全游戏音效（规划；WB-02 实现） | `content/catalog/audio.json` 的音效清单；`audio/source/sfx/<id>.json` 的合成源 | 仅已确认版本：`res://generated/audio/sfx/<id>.wav`；uid 如 `sfx:push`，见 [audio.md](audio.md) 第 4 节 |
+| `music` | 地图曲组选择别名与候选（规划；WB-02 实现） | 别名来自 `content/catalog/audio.json` 的 `music_sets`，候选源 `audio/source/music/<id>.json`；采用记录在 `audio/approvals.json` | 仅已确认版本：`res://generated/audio/music/<id>.wav`；如 `music:dungeon_a`；`music:dungeon` 别名解析到确认采用版本，未选定无游戏资源（[audio.md](audio.md) 第 3、4 节） |
 
-以后新增的空间（`dialogue` 对话、`quest` 委托、`npc` 居民、`sfx` 音效、`music` 音乐、`shop` 商店货架……）照同样的方式加进 `tools/lib/ids.mjs` 的 `DOMAINS`，写清来源和游戏路径。
+以后新增的空间（`dialogue` 对话、`quest` 委托、`npc` 居民、`shop` 商店货架……）照同样的方式加进 `tools/lib/ids.mjs` 的 `DOMAINS`，写清来源和游戏路径。
 
 编号格式：美术 `分类.名字`（小写，如 `mech.lift`）；关卡 `字母 + 两位数字`（`W08`）；文字键 `点分小写`（`level.W08.title`）；其他 `小写字母、数字、下划线、连字符`。格式不对或重复都是内容检查的错误。
 

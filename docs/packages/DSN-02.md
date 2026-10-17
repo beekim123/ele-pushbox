@@ -1,6 +1,6 @@
 # DSN-02 声音设计：一套音效 + 每张地图的背景音乐（只写设计和工作包）
 
-状态：待做（用户 2026-10-17 决定）
+状态：已交回（2026-10-17，制作方 Codex；设计候选，待 Claude 范围审核与合并，未做声音制作）
 基线：`claude/inspiring-ride-zfnn4s` → 分支：`dsn/DSN-02`（**不要**从 `main` 开：`main` 现在还是旧内容）
 
 **开工**（照抄）：
@@ -143,3 +143,62 @@ git checkout -b dsn/DSN-02 origin/claude/inspiring-ride-zfnn4s
 - `git diff --stat` 里的文件都在「可改的文件」清单里。
 
 ## 交付（制作方填写）
+
+### 结果与范围
+
+- 完成 `docs/design/audio.md` 五部分：量化风格与测量方法、32 项全游戏音效、三图各 3 首音乐方向、播放/回退/确认流程、工作台三个页面与网址。
+- 新增 `content/catalog/audio.json`：32 音效 + 9 候选 + 3 曲组，共 44 个唯一 uid；默认 `music:dungeon`，未确认石牢也没有时静音。列出既有章节/组、配送切片与世界引用；`jeju_1` 的跨包依赖显式记录。
+- 拆好 WB-02（工具和菜单）、AUD-01（音效）、AUD-02（音乐），只更新 README 预留的三行。WB-02 先做；两个 AUD 包依赖它合并，基线名称按本包授权由 Claude 派前填写。
+- 仅修改本包允许的 10 个设计/目录/工作包文件；不写代码，不生成声音，不创建 audio/，不改 worlds/slices，不批准任何资产。ids、workbench、game-design 只改获准说明/链接。
+- 设计引用与包头做过只读交叉审核，已明确 UID 格式、发布基线版本收敛、新质量确认与历史采用分离、草选不等于确认。
+
+### 分支与交回
+
+- 分支：`dsn/DSN-02`。
+- 开工基线：`origin/claude/inspiring-ride-zfnn4s`，提交 `87038d701528ad309fb2815b9e7d9f5ec4c28073`；没有从 main 开分支，也未合并其他分支。
+- 交回方式：推送 `git push -u origin dsn/DSN-02`；推送结果由最后交回消息核对。
+
+### 实际验证（2026-10-17）
+
+顺序执行，单 worker；数值库线程均设 1。Node `v24.18.0`。沙箱中的 nice 提示 `setpriority: Operation not permitted`，命令仍正常执行；最终浏览器 e2e 在获准的沙箱外使用 nice 运行。完整日志保留在本机 `/tmp/dsn02-checks/`。
+
+| 命令 | 实际结果（均为最终运行退出码 0） |
+|---|---|
+| `node tools/content.mjs check` | `content: 0 error(s), 0 warning(s); 52 planned levels, 46 with specs; mechanisms playable 27, specified 15, proposed 35; verification report present`；设计定稿后重跑结果相同 |
+| `node tools/check-levels.mjs` | 46 条关卡均 `ok`，无失败；结果行如 `ok W10 author=6 shortest=6 states=39 dead=20` |
+| `node tools/check-rooms.mjs` | 10 个模板通过；`ok slice dungeon_1: 300 seeds`，v1 演示/翻转通过 |
+| `node tools/check-rooms2.mjs` | 23 个模板通过；`✓ 开局池 delivery_pool：300 个种子 地图 {"dungeon_2":151,"diyu_1":149} 房间数 {"7":35,"8":138,"9":105,"10":22}` |
+| `node tools/art.mjs build` | `build ok: 134 assets, 0 bumped, 94 reference renders, 6 approval records`；`text layout: 0 issue(s) in shipped locales` |
+| `node tools/art.mjs verify` | `verify ok: 134 assets, 6 approval records` |
+| `node --test --test-concurrency=1 tests/*.test.mjs` | `tests 151`、`pass 151`、`fail 0`、`cancelled 0`、`skipped 0`、`todo 0`；覆盖全套测试，只限制并发 |
+| `node tests/workbench.e2e.cjs`（环境见下） | 76 个 `ok`，最终 `all workbench checks passed` |
+
+e2e 首次原样命令因 `Cannot find module 'playwright'` 未启动测试；随后发现捆绑依赖的默认浏览器版本不在缓存。使用测试原本支持的两个环境变量定位本机现成依赖/浏览器后，完整执行通过，没有安装依赖或改测试：
+
+```bash
+PLAYWRIGHT_MODULE=/Users/key_/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright \
+PLAYWRIGHT_CHROMIUM_EXECUTABLE=/Users/key_/Library/Caches/ms-playwright/chromium_headless_shell-1217/chrome-headless-shell-mac-arm64/chrome-headless-shell \
+OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1 \
+nice -n 10 node tests/workbench.e2e.cjs
+```
+
+附加的本包结构自查：32 sfx / 9 music / 3 曲组、44 uid 唯一；候选归组、源路径、世界与组/主题引用匹配；唯一缺失引用是已登记的 `slice:jeju_1`；新文档本地链接存在，`git diff --check` 无问题。此检查不冒称 WB-02 的完整 audio 校验器。
+
+冻结区 445 个文件和开工前已存在的 60 项工作区改动逐项 SHA-256 与开工快照一致；既有 `docs/v2/status.md` 和 game/generated 等改动保留且不纳入提交。art build 仅造成 `workbench/data/bundle.js` 构建时间变化，已恢复构建前内容，未提交包外生成文件。测试未改任何预期。本次启动的验证进程与浏览器均已退出。
+
+### 交付 · 问题
+
+1. **现有内容检查不读取 audio.json**：`tools/content.mjs` 的 CATALOGS 固定、ids 也未注册音频空间，因此当前 content 0 错误不证明声音目录被工具认可。WB-02 已明确增加 schema/引用/编号与负例测试；本包没有改工具。
+2. **`jeju_1` 仍未进入本基线 slices.json**：`world:jeju` 已存在，切片依赖 DSN-01。没有自行补 slices/worlds 或虚构 theme.jeju。Claude 派 WB-02 前先核对并合入 DSN-01；新检查器不能永久忽略 pending_references。
+3. **游戏总音量待用户决定**：现存 game-design 7.5 只有 music/sfx。本文把三个滑块中的总音量限定为工作台监听，音乐/音效沿用既有设置语义；未新增游戏持久化字段。是否为游戏加总音量、如何迁移存档需用户另行拍板，不能视为本设计已获得该项授权。
+4. **游戏播放接入尚未制作/验收**：三个后续包覆盖工具、工作台和声音候选；Godot 导入、事件映射、实际播放需要 Claude 后续另行拆包。大厅播放消费已有“实际显示地图”的上下文，不替大厅决定地府/济州皮肤。当前没有可试听的声音，也没有用户对音频的确认或地图采用记录。
+
+### 当前阶段与下一步
+
+本包为**设计候选已交回**：现有自动检查通过；尚未 Claude 范围审核/合并，尚未声音制作或用户听感验收。按 process.md 制作方不改 docs/status.md；现有 docs/v2/status.md 也不属于本包可改范围，后续由 Claude 合并时同步进度。
+
+最近可执行一步由用户在 **Claude 整理合并聊天**发送：
+
+> 导入并按 docs/process.md 第7节审核 dsn/DSN-02；只核对范围、编号、冻结区和交付结果。合并后更新进度，先核对 DSN-01 的 jeju_1，再派 WB-02；WB-02 合并后填写 AUD-01/AUD-02 的实际基线并派出。游戏总音量与游戏音频接入另列待决定项。
+
+随后由 Claude 完成审核/合并和派包；WB-02 制作方做工具，AUD-01/AUD-02 制作方做待确认候选，用户最后试听选曲。当前本设计包的制作已结束，不自动开始后续包。
