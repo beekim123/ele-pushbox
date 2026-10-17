@@ -5,7 +5,7 @@
   "art": {
    "name": "美术资产",
    "source": "art/source/<分类>/<id>.json",
-   "count": 159
+   "count": 165
   },
   "level": {
    "name": "关卡",
@@ -1617,6 +1617,18 @@
    "approved": true
   },
   {
+   "uid": "art:ui.action_icon",
+   "domain": "art",
+   "id": "ui.action_icon",
+   "name": "动作图标",
+   "source": "art/source/ui/ui.action_icon.json",
+   "game": "res://generated/materials/ui.action_icon.tres",
+   "category": "ui",
+   "version": 1,
+   "hash": "fa55c20c9102b47d1f8995a79d29730f205273a08599667dce111453efe13f2b",
+   "approved": false
+  },
+  {
    "uid": "art:ui.bubble",
    "domain": "art",
    "id": "ui.bubble",
@@ -1639,6 +1651,18 @@
    "version": 1,
    "hash": "93a98ba7445f1e1f18e32d2e11f45a358c18b52cc1dae76ac883b83b088c727f",
    "approved": true
+  },
+  {
+   "uid": "art:ui.cause_link",
+   "domain": "art",
+   "id": "ui.cause_link",
+   "name": "一起闪与因果光",
+   "source": "art/source/ui/ui.cause_link.json",
+   "game": "res://generated/materials/ui.cause_link.tres",
+   "category": "ui",
+   "version": 1,
+   "hash": "bae84458b31f51dac9bb2b96ad07fcbf980069386d21402a27749ea660783532",
+   "approved": false
   },
   {
    "uid": "art:ui.class_icon",
@@ -1689,6 +1713,18 @@
    "approved": true
   },
   {
+   "uid": "art:ui.goal_glow",
+   "domain": "art",
+   "id": "ui.goal_glow",
+   "name": "目标发光与光点",
+   "source": "art/source/ui/ui.goal_glow.json",
+   "game": "res://generated/materials/ui.goal_glow.tres",
+   "category": "ui",
+   "version": 1,
+   "hash": "9af08db24c1a3823004b38b6218dd724a3be69e2afcd4175f7a73dac47895bb7",
+   "approved": false
+  },
+  {
    "uid": "art:ui.goal_lamp",
    "domain": "art",
    "id": "ui.goal_lamp",
@@ -1699,6 +1735,18 @@
    "version": 1,
    "hash": "4dba01bdb0c6e4cd64e63f85ca53024bb7bf2cdbe6eaa1a7aa03b8e7490486fe",
    "approved": true
+  },
+  {
+   "uid": "art:ui.hud_glow",
+   "domain": "art",
+   "id": "ui.hud_glow",
+   "name": "撤销 / 提示图标发亮",
+   "source": "art/source/ui/ui.hud_glow.json",
+   "game": "res://generated/materials/ui.hud_glow.tres",
+   "category": "ui",
+   "version": 1,
+   "hash": "8e65f624fcbc86bca40338f2246df95db1267662da6f48d896339fcd7c9e6c10",
+   "approved": false
   },
   {
    "uid": "art:ui.icons",
@@ -1713,6 +1761,18 @@
    "approved": true
   },
   {
+   "uid": "art:ui.key_cmd",
+   "domain": "art",
+   "id": "ui.key_cmd",
+   "name": "⌘ 键帽",
+   "source": "art/source/ui/ui.key_cmd.json",
+   "game": "res://generated/materials/ui.key_cmd.tres",
+   "category": "ui",
+   "version": 1,
+   "hash": "57d85c662b78829d365814d892c8b06505cc0cd9818d42c9013e6138dadc190f",
+   "approved": false
+  },
+  {
    "uid": "art:ui.keycap",
    "domain": "art",
    "id": "ui.keycap",
@@ -1723,6 +1783,18 @@
    "version": 1,
    "hash": "63774b82a1496982bed95c0a1804e46cf323c4bfd1a7dbef06d5aa6ce5e3706f",
    "approved": true
+  },
+  {
+   "uid": "art:ui.keyhint",
+   "domain": "art",
+   "id": "ui.keyhint",
+   "name": "按键提示条",
+   "source": "art/source/ui/ui.keyhint.json",
+   "game": "res://generated/materials/ui.keyhint.tres",
+   "category": "ui",
+   "version": 1,
+   "hash": "9bc18ef40ae220fdffe512f4ea7da1e632d7f006f505f963987f4832b4936c98",
+   "approved": false
   },
   {
    "uid": "art:ui.menu_icons",

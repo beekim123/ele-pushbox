@@ -7036,6 +7036,34 @@
    ]
   },
   {
+   "id": "ui.action_icon",
+   "name": "动作图标",
+   "category": "ui",
+   "kind": "procedural",
+   "layer": "ui",
+   "current": {
+    "version": 1,
+    "hash": "fa55c20c9102b47d1f8995a79d29730f205273a08599667dce111453efe13f2b",
+    "status": "review",
+    "preview": "art/export/preview/ui.action_icon.png",
+    "preview_sha256": "5a89cc8623c439b27b657da76743ef1fba28e9e475cf511b04c2b18bd9f99d2c"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "renderer": [
+    "workbench/js/core/onboarding-fx.js",
+    "workbench/js/core/ui-common.js",
+    "workbench/js/core/ui-kit.js",
+    "workbench/js/core/font-small.js"
+   ],
+   "params": {
+    "screen": "onb_action_icon"
+   },
+   "depends": [
+    "char.portitor"
+   ]
+  },
+  {
    "id": "ui.bubble",
    "name": "对话气泡",
    "category": "ui",
@@ -7146,6 +7174,39 @@
     }
    },
    "ninepatch": null
+  },
+  {
+   "id": "ui.cause_link",
+   "name": "一起闪与因果光",
+   "category": "ui",
+   "kind": "procedural",
+   "layer": "ui",
+   "current": {
+    "version": 1,
+    "hash": "bae84458b31f51dac9bb2b96ad07fcbf980069386d21402a27749ea660783532",
+    "status": "review",
+    "preview": "art/export/preview/ui.cause_link.png",
+    "preview_sha256": "b84b92c3f7d2c68a4db11fe84e04aaa8da531ef84bc4b555d3e727f7de4ee05b"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "renderer": [
+    "workbench/js/core/onboarding-fx.js",
+    "workbench/js/core/ui-common.js",
+    "workbench/js/core/ui-kit.js",
+    "workbench/js/core/font-small.js"
+   ],
+   "params": {
+    "screen": "onb_cause_link"
+   },
+   "depends": [
+    "mech.socket",
+    "ui.goal_lamp",
+    "ui.icons",
+    "mech.plate",
+    "mech.door",
+    "mech.link_symbol"
+   ]
   },
   {
    "id": "ui.class_icon",
@@ -7465,6 +7526,37 @@
    "ninepatch": null
   },
   {
+   "id": "ui.goal_glow",
+   "name": "目标发光与光点",
+   "category": "ui",
+   "kind": "procedural",
+   "layer": "ui",
+   "current": {
+    "version": 1,
+    "hash": "9af08db24c1a3823004b38b6218dd724a3be69e2afcd4175f7a73dac47895bb7",
+    "status": "review",
+    "preview": "art/export/preview/ui.goal_glow.png",
+    "preview_sha256": "687fed3bd262c7a2d9331df809e1f1a96845973314df441030eeb5a6ed13d3a4"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "renderer": [
+    "workbench/js/core/onboarding-fx.js",
+    "workbench/js/core/ui-common.js",
+    "workbench/js/core/ui-kit.js",
+    "workbench/js/core/font-small.js"
+   ],
+   "params": {
+    "screen": "onb_goal_glow"
+   },
+   "depends": [
+    "mech.socket",
+    "mech.socket_lit",
+    "ui.goal_lamp",
+    "ui.icons"
+   ]
+  },
+  {
    "id": "ui.goal_lamp",
    "name": "目标灯",
    "category": "ui",
@@ -7513,6 +7605,35 @@
     }
    },
    "ninepatch": null
+  },
+  {
+   "id": "ui.hud_glow",
+   "name": "撤销 / 提示图标发亮",
+   "category": "ui",
+   "kind": "procedural",
+   "layer": "ui",
+   "current": {
+    "version": 1,
+    "hash": "8e65f624fcbc86bca40338f2246df95db1267662da6f48d896339fcd7c9e6c10",
+    "status": "review",
+    "preview": "art/export/preview/ui.hud_glow.png",
+    "preview_sha256": "6972166216f6e96ab9b20ac739095cd823b447ea981f7c103bfd4db723350ebd"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "renderer": [
+    "workbench/js/core/onboarding-fx.js",
+    "workbench/js/core/ui-common.js",
+    "workbench/js/core/ui-kit.js",
+    "workbench/js/core/font-small.js"
+   ],
+   "params": {
+    "screen": "onb_hud_glow"
+   },
+   "depends": [
+    "ui.icons",
+    "ui.goal_lamp"
+   ]
   },
   {
    "id": "ui.icons",
@@ -7607,6 +7728,32 @@
    "ninepatch": null
   },
   {
+   "id": "ui.key_cmd",
+   "name": "⌘ 键帽",
+   "category": "ui",
+   "kind": "procedural",
+   "layer": "ui",
+   "current": {
+    "version": 1,
+    "hash": "57d85c662b78829d365814d892c8b06505cc0cd9818d42c9013e6138dadc190f",
+    "status": "review",
+    "preview": "art/export/preview/ui.key_cmd.png",
+    "preview_sha256": "c386b922723622302cf1ca8b466045b4886883a8fc993d1e89a8f7cece0089b5"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "renderer": [
+    "workbench/js/core/onboarding-fx.js",
+    "workbench/js/core/ui-common.js",
+    "workbench/js/core/ui-kit.js",
+    "workbench/js/core/font-small.js"
+   ],
+   "params": {
+    "screen": "onb_key_cmd"
+   },
+   "depends": []
+  },
+  {
    "id": "ui.keycap",
    "name": "按键图标",
    "category": "ui",
@@ -7697,6 +7844,32 @@
     }
    },
    "ninepatch": null
+  },
+  {
+   "id": "ui.keyhint",
+   "name": "按键提示条",
+   "category": "ui",
+   "kind": "procedural",
+   "layer": "ui",
+   "current": {
+    "version": 1,
+    "hash": "9bc18ef40ae220fdffe512f4ea7da1e632d7f006f505f963987f4832b4936c98",
+    "status": "review",
+    "preview": "art/export/preview/ui.keyhint.png",
+    "preview_sha256": "0bf365073e3c78a10cd8b066e4652888b3e4fa342f2307a6c52eabd8dbb6cfc8"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "renderer": [
+    "workbench/js/core/onboarding-fx.js",
+    "workbench/js/core/ui-common.js",
+    "workbench/js/core/ui-kit.js",
+    "workbench/js/core/font-small.js"
+   ],
+   "params": {
+    "screen": "onb_keyhint"
+   },
+   "depends": []
   },
   {
    "id": "ui.menu_icons",

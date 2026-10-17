@@ -88,6 +88,7 @@
     PB.i18n.takeIssues();
     if (s.kind === "showcase") { PB.scene.renderLevel(r, PB.scene.SHOWCASE, null, Object.assign({ tick, theme: s.theme, grid, observe, pose: "idle" }, envOpts())); outline(r, PB.i18n.takeIssues()); }
     else if (s.kind === "chapter") { PB.scene.renderLevel(r, s.spec, null, Object.assign({ tick, grid, observe, pose: "idle" }, envOpts())); outline(r, PB.i18n.takeIssues()); }
+    else if (s.kind === "level" && root.PBOnboarding && root.PBOnboarding.on()) { root.PBOnboarding.draw(r, tick, Object.assign({ grid, observe }, envOpts())); outline(r, PB.i18n.takeIssues()); }   // UX-03 引导 (onboarding-layer.js)
     else if (s.kind === "level") {
       const st = replayState(s.level, step), p = poseFor(st.action, st.result);
       const won = step === s.level.solution.length && PB.tilemodel.won(st.parsed.level, st.parsed.state);
@@ -192,9 +193,10 @@
     const issueBtn = el("button", { class: "btn", type: "button", "aria-pressed": String(showIssues), text: "标出溢出", title: "用红框标出放不下而被省略的文字", onclick: () => { showIssues = !showIssues; issueBtn.setAttribute("aria-pressed", String(showIssues)); stage.refresh(); } });
     stage = root.PBStage.create(host, {
       width: 320, height: 180, animated: true, autoplay: true, draw, label: current.name,
-      extras: (current.kind === "screen" ? [] : [gridBtn, obsBtn]).concat([el("label", { class: "small muted" }, ["环境 ", envSel]), el("label", { class: "small muted" }, ["语言 ", locSel]), issueBtn]),
+      extras: (current.kind === "screen" ? [] : [gridBtn, obsBtn]).concat([el("label", { class: "small muted" }, ["环境 ", envSel]), el("label", { class: "small muted" }, ["语言 ", locSel]), issueBtn]).concat(root.PBOnboarding && current.kind === "level" ? root.PBOnboarding.controls(current.level) : []),
       disclaimer: current.kind === "screen" ? "界面为布局与外观参考；交互在游戏中实现。" : "视觉示意，不代表 SDK 物理结果。",
     });
+    if (root.PBOnboarding) root.PBOnboarding.attach(current.kind === "level" ? current.level : null, stage);   // UX-03 引导
     info(current); steps(current);
   }
 

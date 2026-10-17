@@ -1,6 +1,6 @@
 {
  "format": "portitor.import-inventory/1",
- "source_id_map_sha256": "bce20cbe65894c32ec9f9dd4ecb8498877c46a5a76c40674328c366bd80759c9",
+ "source_id_map_sha256": "a75acfc31a6442d52fc086c89751cc845455293f96045018e5650aea3b366cc4",
  "files": [
   {
    "path": "generated/id-map.json",
@@ -131,15 +131,21 @@
     "art:theme.jeju",
     "art:theme.ruins",
     "art:theme.sky",
+    "art:ui.action_icon",
     "art:ui.bubble",
     "art:ui.bubble_tail",
+    "art:ui.cause_link",
     "art:ui.class_icon",
     "art:ui.cursor",
     "art:ui.delivery_icons",
     "art:ui.emote",
+    "art:ui.goal_glow",
     "art:ui.goal_lamp",
+    "art:ui.hud_glow",
     "art:ui.icons",
+    "art:ui.key_cmd",
     "art:ui.keycap",
+    "art:ui.keyhint",
     "art:ui.menu_icons",
     "art:ui.panel",
     "art:ui.rule_icon",
@@ -1288,7 +1294,7 @@
     "world:wonderland",
     "world:xianxia"
    ],
-   "sha256": "7916057d586f6dd18b5899cf950645f2720cf06da15f43f843203c1712e50ea1"
+   "sha256": "acda78ff2d0831847ba4093f69d824b534b8e1fd683ad1f80ce00849e2d98c62"
   },
   {
    "path": "generated/content-manifest.json",
@@ -1969,15 +1975,21 @@
     "art:theme.jeju",
     "art:theme.ruins",
     "art:theme.sky",
+    "art:ui.action_icon",
     "art:ui.bubble",
     "art:ui.bubble_tail",
+    "art:ui.cause_link",
     "art:ui.class_icon",
     "art:ui.cursor",
     "art:ui.delivery_icons",
     "art:ui.emote",
+    "art:ui.goal_glow",
     "art:ui.goal_lamp",
+    "art:ui.hud_glow",
     "art:ui.icons",
+    "art:ui.key_cmd",
     "art:ui.keycap",
+    "art:ui.keyhint",
     "art:ui.menu_icons",
     "art:ui.panel",
     "art:ui.rule_icon",
@@ -3126,7 +3138,7 @@
     "world:wonderland",
     "world:xianxia"
    ],
-   "sha256": "d876998f841ed4a83b41e29807f1f110cfc30dbee0d1e711babe9af899d00d52"
+   "sha256": "181b61c73e2adb27c172f51c170be5fb6956a6b7352379d20e8ce642e466cd03"
   },
   {
    "path": "generated/content/levels/lab/basics/M01.json",
@@ -6782,6 +6794,13 @@
    "sha256": "b268faac04e2816cc0161cdcf9c3f7e0e0f4279cb9599bee028b2e46eebd7317"
   },
   {
+   "path": "generated/materials/ui.action_icon.tres",
+   "owners": [
+    "art:ui.action_icon"
+   ],
+   "sha256": "c6fb5d2771b67d06b16a9423073a3604ddd535cd6b848f63314c6190c4bb6257"
+  },
+  {
    "path": "generated/art/sheets/ui.bubble.png",
    "owners": [
     "art:ui.bubble"
@@ -6808,6 +6827,13 @@
     "art:ui.bubble_tail"
    ],
    "sha256": "cbb57c2793e1c7b26ba27e229e12ee1b877be0521c9e84d076808174a8d82a37"
+  },
+  {
+   "path": "generated/materials/ui.cause_link.tres",
+   "owners": [
+    "art:ui.cause_link"
+   ],
+   "sha256": "e08dc04efebd3a0dbed4740045e260929655918aa0bca8ae99475ac626a16dff"
   },
   {
    "path": "generated/art/sheets/ui.class_icon.png",
@@ -6866,6 +6892,13 @@
    "sha256": "1cdff3579e40f531ad14b9293b56493b6aacaf0a33433fcf85ddc053d39cb5c7"
   },
   {
+   "path": "generated/materials/ui.goal_glow.tres",
+   "owners": [
+    "art:ui.goal_glow"
+   ],
+   "sha256": "5ebd2ac7c37ed98f1ee9833112a73b9e2d12b376214e1c7fdfca9e1e8dd92c6e"
+  },
+  {
    "path": "generated/art/sheets/ui.goal_lamp.png",
    "owners": [
     "art:ui.goal_lamp"
@@ -6878,6 +6911,13 @@
     "art:ui.goal_lamp"
    ],
    "sha256": "ee946772da56365a2f3ef9047bad2c76fab7c21fe4801403c1d56f4baa5e76fb"
+  },
+  {
+   "path": "generated/materials/ui.hud_glow.tres",
+   "owners": [
+    "art:ui.hud_glow"
+   ],
+   "sha256": "9afee427b412f0c412bb1035d842268633546f7f7b5354b69159182442fad765"
   },
   {
    "path": "generated/art/sheets/ui.icons.png",
@@ -6894,6 +6934,13 @@
    "sha256": "ee741ec015f7ae834ddbe6a478b63d1bb36aafba2d102233f08c7ff4073f671d"
   },
   {
+   "path": "generated/materials/ui.key_cmd.tres",
+   "owners": [
+    "art:ui.key_cmd"
+   ],
+   "sha256": "f5b99cc116a419d2d2a574751ae3077ab7e4f6c0c201e6bf8912313be8bdf256"
+  },
+  {
    "path": "generated/art/sheets/ui.keycap.png",
    "owners": [
     "art:ui.keycap"
@@ -6906,6 +6953,13 @@
     "art:ui.keycap"
    ],
    "sha256": "f63a98b0665dcc1724dc4064ac7b173cb93fd73f2090b69f0eaa37d710335dee"
+  },
+  {
+   "path": "generated/materials/ui.keyhint.tres",
+   "owners": [
+    "art:ui.keyhint"
+   ],
+   "sha256": "d86d8ae8411db7c360d7c5f0b94fbdf6b0ff3252b0c8fb913897e240b8634ffe"
   },
   {
    "path": "generated/art/sheets/ui.menu_icons.png",
@@ -7239,15 +7293,21 @@
     "art:theme.jeju",
     "art:theme.ruins",
     "art:theme.sky",
+    "art:ui.action_icon",
     "art:ui.bubble",
     "art:ui.bubble_tail",
+    "art:ui.cause_link",
     "art:ui.class_icon",
     "art:ui.cursor",
     "art:ui.delivery_icons",
     "art:ui.emote",
+    "art:ui.goal_glow",
     "art:ui.goal_lamp",
+    "art:ui.hud_glow",
     "art:ui.icons",
+    "art:ui.key_cmd",
     "art:ui.keycap",
+    "art:ui.keyhint",
     "art:ui.menu_icons",
     "art:ui.panel",
     "art:ui.rule_icon",
@@ -7273,7 +7333,7 @@
     "art:ui.target",
     "art:ui.theme_emblem"
    ],
-   "sha256": "f3c3e564a6193267a83edd4f49787dd9521a968aff8cbff737772d2a3231b92a"
+   "sha256": "25a5a101a7100e10211d681496b28cddd1c1fbb58a9ef618d11bf5604e9b2dcf"
   },
   {
    "path": "generated/content/routes/M01.json",
@@ -7446,15 +7506,21 @@
     "art:theme.jeju",
     "art:theme.ruins",
     "art:theme.sky",
+    "art:ui.action_icon",
     "art:ui.bubble",
     "art:ui.bubble_tail",
+    "art:ui.cause_link",
     "art:ui.class_icon",
     "art:ui.cursor",
     "art:ui.delivery_icons",
     "art:ui.emote",
+    "art:ui.goal_glow",
     "art:ui.goal_lamp",
+    "art:ui.hud_glow",
     "art:ui.icons",
+    "art:ui.key_cmd",
     "art:ui.keycap",
+    "art:ui.keyhint",
     "art:ui.menu_icons",
     "art:ui.panel",
     "art:ui.rule_icon",

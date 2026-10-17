@@ -562,6 +562,19 @@ let runningBrowser = null;
   await page.mouse.click(375, 500); await page.waitForTimeout(350);
   const outsideClosed = !(await page.locator("#nav").isVisible());
   check(escClosed && outsideClosed, "Esc and tapping outside the drawer close it");
+  // UX-03: 打开引导能看到按键提示 — with 引导 on, walking into the dirt in M03 shows the dig hint (Shift + →) by the hero.
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto(URL + "#scenes/level.M03"); await page.waitForTimeout(300);
+  await page.click("#onb-reset"); await page.waitForTimeout(1300);
+  await page.keyboard.press("ArrowRight"); await page.waitForTimeout(300);
+  const onb = await page.evaluate(() => {
+    const s = PBOnboarding.snapshot(), h = (s.hints || []).find((x) => x.act === "dig"), cv = document.querySelector("#scene-stage canvas");
+    let mint = 0;
+    if (h && h.rect) { const d = cv.getContext("2d").getImageData(h.rect.x, h.rect.y, h.rect.w, h.rect.h).data; for (let i = 0; i < d.length; i += 4) if (d[i] === 0x63 && d[i + 1] === 0xc7 && d[i + 2] === 0x4d) mint++; }
+    return { on: s.on, pressed: document.getElementById("onb-toggle").getAttribute("aria-pressed"), keys: h && h.keys, rect: h && h.rect, mint };
+  });
+  check(onb.on && onb.pressed === "true" && onb.keys === "Shift + right" && onb.mint > 0,
+    "打开引导能看到按键提示: in M03 → into the dirt shows the Shift + → dig hint by the hero (" + JSON.stringify(onb) + ")");
   await audioChecks(browser);
   await browser.close();
   console.log(failures.length ? `\n${failures.length} check(s) failed` : "\nall workbench checks passed");
