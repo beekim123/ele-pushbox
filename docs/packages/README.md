@@ -30,9 +30,9 @@
 | [WB-03](WB-03.md) | 配送菜单改短名（开局抽签 / 石牢 / 地府 / 海女村），退役 v1 旧版 | `claude/inspiring-ride-zfnn4s` → `wb/WB-03` | `slices.json`、`nav.js`、`index.html`、e2e | 部分完成：菜单已改；删 v1 代码等 UI-10 之后 |
 | [UI-09](UI-09.md) | 通用界面风格提案：3–4 个风格画在同一组样板界面上，用户选（2026-10-17） | `claude/inspiring-ride-zfnn4s` → `ui/UI-09` | `index.html`（追加）、`nav.js`（「美术」末尾加一项） | **已合并**（2026-10-17），用户选定 G2 深蓝圆角 |
 | [UI-10](UI-10.md) | 按选定风格做整套游戏界面 + 配送 v2 界面 + 通用大厅 | `claude/inspiring-ride-zfnn4s` → `ui/UI-10` | `index.html`、`tools/art.mjs`（追加）；15 个界面换版本 | 已拆成 10a / 10b / 10c |
-| [UI-10a](UI-10a.md) | G2 公共组件 + 8 个关卡类界面 | `claude/inspiring-ride-zfnn4s` → `ui/UI-10a` | `index.html`、`tools/art.mjs`（追加） | 待派（现在可派） |
-| [UI-10b](UI-10b.md) | G2 配送界面：三滚轮、零食、小地图、提示气泡、看全图 | `claude/inspiring-ride-zfnn4s` → `ui/UI-10b` | `index.html`、`tools/art.mjs`（追加） | 等 UI-10a 合并 |
-| [UI-10c](UI-10c.md) | G2 结算、失败 + 通用大厅 | `claude/inspiring-ride-zfnn4s` → `ui/UI-10c` | `index.html`、`tools/art.mjs`（追加） | 等 UI-10a 合并 |
+| [UI-10a](UI-10a.md) | G2 公共组件 + 8 个关卡类界面 | `claude/inspiring-ride-zfnn4s` → `ui/UI-10a` | `index.html`、`tools/art.mjs`（追加） | 已合并（2026-10-17，8 屏待用户确认） |
+| [UI-10b](UI-10b.md) | G2 配送界面：三滚轮、零食、小地图、提示气泡、看全图 | `claude/inspiring-ride-zfnn4s` → `ui/UI-10b` | `index.html`、`tools/art.mjs`（追加） | 待派（现在可派，和 10b/10c 同时） |
+| [UI-10c](UI-10c.md) | G2 结算、失败 + 通用大厅 | `claude/inspiring-ride-zfnn4s` → `ui/UI-10c` | `index.html`、`tools/art.mjs`（追加） | 待派（现在可派，和 10b/10c 同时） |
 | [BR-01](BR-01.md) | 分支整理：合进 `main`、打 `v0.3`、删旧分支 | Claude 做 | — | 等第 1 批合并后 |
 | [UI-06](UI-06.md)、[DLV-01](DLV-01.md) | 新界面进游戏；配送实时规则 | BR-01 之后从 `main` 开 | 派之前由 Claude 补齐包头 | 第 2 批 |
 
