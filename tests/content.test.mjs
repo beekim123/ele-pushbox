@@ -114,3 +114,12 @@ test('SDK evidence tied to a different specification hash cannot verify a revise
   assert.equal(buildContent(root).levels.find(l => l.id === 'Q02').verified.ok,false);
   fs.rmSync(root,{recursive:true,force:true});
 });
+
+test("onboarding data: a trap cell outside the level's map is an error", (t) => {
+  const root = sandbox();
+  t.after(() => fs.rmSync(root, { recursive: true, force: true }));
+  const onboarding = (res) => errors(res).filter((e) => e.startsWith("content/onboarding/"));
+  assert.deepEqual(onboarding(buildContent(root)), []);
+  edit(root, "content/onboarding/basics.json", (d) => { d.levels.M02.traps[0].when.crate_at = [[9, 4]]; }); // M02 is 9 cells wide
+  assert.ok(onboarding(buildContent(root)).some((e) => e.includes("M02.traps[0].when.crate_at[0]") && e.includes("[9,4]") && e.includes("地图")));
+});

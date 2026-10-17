@@ -270,6 +270,42 @@ function audioIdInputs(root, catalog, add) {
   return { catalog, manifest, sources, media, histories, approvals: { ...approvals, records: validRecords } };
 }
 
+// Onboarding data (docs/design/onboarding.md 附 3) lives in content/onboarding/*.json,
+// keyed by level id, so the level specs (and their SDK records) stay untouched.
+// Checked: the level exists, every text key is in content/i18n-onboarding, every
+// [x, y] cell lies inside that level's map, and a trap's kind is dead or wrong.
+function checkOnboarding(root, specs, textSource, add) {
+  const dir = path.join(root, "content/onboarding");
+  if (!fs.existsSync(dir)) return;
+  const table = "content/i18n-onboarding/zh-Hans.json";
+  const list = (v) => (Array.isArray(v) ? v : []);
+  for (const name of fs.readdirSync(dir).filter((n) => n.endsWith(".json")).sort()) {
+    const file = `content/onboarding/${name}`;
+    let doc; try { doc = readJson(path.join(dir, name)); } catch (e) { add("error", file, "不是合法 JSON：" + e.message); continue; }
+    if (!doc || doc.format !== "pushbox.onboarding/1" || !doc.levels || typeof doc.levels !== "object") { add("error", file, "format 应为 pushbox.onboarding/1，levels 应为对象"); continue; }
+    for (const [id, o] of Object.entries(doc.levels)) {
+      const at = `${file} ${id}`, sp = specs.get(id);
+      if (!sp) { add("error", at, `关卡 ${id} 不存在`); continue; }
+      if (!o || typeof o !== "object") { add("error", at, "必须是对象"); continue; }
+      const map = list(sp.spec.map);
+      const key = (k, p) => { if (textSource[k] !== table) add("error", `${at}.${p}`, `文字键 ${JSON.stringify(k)} 不在 content/i18n-onboarding 里`); };
+      const cell = (c, p) => {
+        const ok = Array.isArray(c) && c.length === 2 && Number.isInteger(c[0]) && Number.isInteger(c[1]) && c[1] >= 0 && c[1] < map.length && c[0] >= 0 && c[0] < String(map[c[1]]).length;
+        if (!ok) add("error", `${at}.${p}`, `坐标 ${JSON.stringify(c)} 不在 ${id} 的地图内`);
+      };
+      for (const p of ["goal", "hint3", "say_start"]) if (o[p] !== undefined) key(o[p], p);
+      for (const [i, h] of list(o.keyhints).entries()) if (h && Array.isArray(h.at)) cell(h.at, `keyhints[${i}].at`);
+      for (const [i, t] of list(o.traps).entries()) {
+        const p = `traps[${i}]`;
+        if (!t || (t.kind !== "dead" && t.kind !== "wrong")) add("error", `${at}.${p}.kind`, `只能是 dead 或 wrong：${JSON.stringify(t && t.kind)}`);
+        if (!t) continue;
+        if (t.say !== undefined) key(t.say, `${p}.say`);
+        for (const w of ["crate_at", "sand_at", "no_sand_at"]) for (const [j, c] of list((t.when || {})[w]).entries()) cell(c, `${p}.when.${w}[${j}]`);
+      }
+    }
+  }
+}
+
 export function buildContent(root, opts = {}) {
   const rel = (...p) => path.join(root, ...p);
   const issues = [];
@@ -567,6 +603,7 @@ export function buildContent(root, opts = {}) {
     try { const t = loadTextTables(root); texts = t.tables["zh-Hans"]; textSource = t.source; for (const q of t.problems) add("error", q.where, q.msg); }
     catch (e) { add("error", "content/i18n", e.message); }
   }
+  checkOnboarding(root, specs, textSource, add);
   const ids = buildIdMap({
     art: [...art.values()].map((a) => Object.assign({}, a, { file: artFile.get(a.id), approved: approved(a.id) })).sort((a, b) => a.id.localeCompare(b.id)),
     levels: levels.map((l) => ({ id: l.id, title: l.title, spec: l.has_spec ? l.spec : null, sha256: l.sha256 })),
