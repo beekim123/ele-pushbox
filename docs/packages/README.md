@@ -24,8 +24,9 @@
 | UX-03 | 预留给 DSN-03：工作台预览引导效果 | — | — | 预留 |
 | UX-04 | 预留给 DSN-03：引导做进游戏（排在 UI-06 之后） | — | — | 预留 |
 | [WB-03](WB-03.md) | 配送菜单改短名（开局抽签 / 石牢 / 地府 / 海女村），退役 v1 旧版 | `claude/inspiring-ride-zfnn4s` → `wb/WB-03` | `slices.json`、`nav.js`、`index.html`、e2e | 等 DSN-01 合并后派 |
+| [UI-09](UI-09.md) | 配送 v2 游戏界面：三滚轮、零食、提示气泡、看全图、多屏小地图（2026-10-17 重写） | `claude/inspiring-ride-zfnn4s` → `ui/UI-09` | `index.html`、`tools/art.mjs`（只追加）；只换 reels、shop、delivery_hud 三个界面的版本 | 待派（现在可派） |
 | [BR-01](BR-01.md) | 分支整理：合进 `main`、打 `v0.3`、删旧分支 | Claude 做 | — | 等第 1 批合并后 |
-| [UI-06](UI-06.md)、[DLV-01](DLV-01.md)、[UI-09](UI-09.md) | 新界面进游戏；配送实时规则；配送界面 | BR-01 之后从 `main` 开 | 派之前由 Claude 补齐包头 | 第 2 批 |
+| [UI-06](UI-06.md)、[DLV-01](DLV-01.md) | 新界面进游戏；配送实时规则 | BR-01 之后从 `main` 开 | 派之前由 Claude 补齐包头 | 第 2 批 |
 
 第 1 批四个包互不冲突，可以同时派：
 - DLV-03 只改工作台代码；
