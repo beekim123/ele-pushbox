@@ -400,3 +400,251 @@ test("v2 ladder heads with a landing beside them keep only their lowest 4 px, by
   }
   assert.ok(caps > 0 && ends > 0, `${caps} ladder heads, ${ends} rooms played to the end`);
 });
+
+// DLV-05: the four lab puzzles, embedded in v2 rooms without adding entry
+// corridor steps. A test-only gate spawn keeps the lab's exact starting cell;
+// completion predicates retain the lab sockets as well as the route goal.
+loadCore(["mech/seesaw", "mech/gust"]);
+const MECH_CASES = [
+  { id: "G09", map: ["###########", "###########", "######H..H#", "######H##H#", "###o|PH.IX#", "####.#.####", "####B#.####", "####.#.####", "###########"],
+    devices: [{ type: "seesaw", ends: [[4, 7], [6, 7]], height: 2, threshold: 1, landings: [[3, 4], [7, 4]] }, { type: "lever", at: [5, 4], action: { link: 0 } }],
+    links: [{ plates: [], doors: [[4, 4]], symbol: "circle" }],
+    solution: ["U", "R", "U", "U", "R", "R", "R", "D", "D", "L", "L", "R", "R"], required: ["seesaw"] },
+  { id: "G10", map: ["###########", "###########", "#####H...H#", "#####H###H#", "###oeh|_.X#", "####.#.####", "####B#.####", "####.#.####", "###########"],
+    devices: [{ type: "seesaw", ends: [[4, 7], [6, 7]], height: 2, threshold: 1, landings: [[3, 4], [7, 4]] }],
+    links: [{ plates: [[7, 4]], doors: [[6, 4]], symbol: "triangle" }],
+    solution: ["DIG_L", "U", "U", "R", "R", "R", "R", "D", "D", "L", "L", "POUR_L", "R", "R"], required: ["seesaw"] },
+  { id: "F08", map: ["############", "#.X....H..H#", "#######H##H#", "#######H.Ih#", "#..B...oo###", "############"],
+    devices: [{ type: "gust", area: [3, 4, 6, 1], direction: "R", period: 1, phase: 0, light_kinds: ["wood"] }],
+    solution: ["L", "L", "L", "U", "U", "L", "L", "L", "L", "L"], required: ["gust"] },
+  { id: "E06", map: ["############", "############", "#..#########", "#hB|########", "#H#......X##", "#H#....#####", "#H........##", "###.##.#####", "############"],
+    devices: [{ type: "gust", area: [2, 3, 1, 1], direction: "R", period: 1, phase: 0, light_kinds: ["wood"] },
+      { type: "seesaw", ends: [[3, 7], [6, 7]], height: 2, threshold: 1, landings: [[2, 4], [7, 4]] },
+      { type: "lever", at: [2, 2], action: { link: 0 } }, { type: "lever", at: [6, 6], action: { link: 0 } }],
+    links: [{ plates: [], doors: [[3, 3]], symbol: "square", latch: false }],
+    solution: ["D", "D", "D", "R", "R", "R", "R", "R", "U", "R", "R"], required: ["seesaw", "gust"] },
+];
+function mechanismRoom(c) {
+  const map = Array.from({ length: 10 }, () => Array(20).fill("#"));
+  let entry, goal; const sockets = [];
+  c.map.forEach((row, y) => [...row].forEach((ch, x) => {
+    if (ch === "P" || ch === "h") entry = [x, y];
+    if (ch === "X") goal = [x, y];
+    if (ch === "o") sockets.push([x, y]);
+    map[y][x] = ch === "P" ? "." : ch === "h" ? "H" : ch === "o" ? "." : ch === "X" ? "1" : ch;
+  }));
+  for (const y of [6, 7]) { map[y][0] = "."; map[y][1] = "."; }
+  map[5][0] = map[8][0] = "#";
+  const links = JSON.parse(JSON.stringify(c.links || []));
+  const room = { format: "pushbox.room/2", id: "test_" + c.id, world: "jeju", type: "home", role: "develop", size: [1, 1],
+    map: map.map(row => row.join("")), legend: { 1: { feature: "recipient" } }, exits: ["left.0.low"], routes: ["left.0.low>recipient"],
+    devices: c.devices, links, requires: c.required,
+    hints: [{ target: goal, done: { all: [{ player: [...goal, ...goal] }, ...sockets.map(crate => ({ crate }))] }, show: { at: goal, dir: "R" }, text: c.id }] };
+  assert.deepEqual(R.validate(room), []);
+  return { room, entry };
+}
+function mechanismVariant(c, mirror = false) {
+  const { room, entry } = mechanismRoom(c), v = R.variant(room, mirror, null);
+  v.spawns.push({ feature: "gate", x: mirror ? v.W - 1 - entry[0] : entry[0], y: entry[1] });
+  return v;
+}
+// The G09/G10 lab goals include sockets, whereas a delivery route ends at a
+// recipient. Search the fixture's completion predicate as well, without adding
+// a door that would obstruct the author's earlier pass through that cell.
+function mechanismSolve(v, frozen = []) {
+  const M = R.start(v, "gate", "recipient", undefined, new Set(frozen)), queue = [[M.s, []]], seen = new Set([R.key(M, M.s)]);
+  for (let i = 0; i < queue.length; i++) {
+    const [s, actions] = queue[i];
+    if (R.atGoal(M, s) && R.holds(M, s, v.hints[0].done)) return { solved: true, solution: actions };
+    for (const a of R.ACTIONS) {
+      const n = R.clone(s), result = R.act(M, n, a, new Set(frozen));
+      if (!result.ok || R.hurts(M, n, result)) continue;
+      const key = R.key(M, n); if (seen.has(key)) continue;
+      seen.add(key); queue.push([n, [...actions, a]]);
+    }
+    assert.ok(seen.size < 10000, "fixture search must exhaust, not silently stop at a budget");
+  }
+  return { solved: false, exhausted: true };
+}
+
+for (const c of MECH_CASES) test(`DLV-05 ${c.id}: author, shortest, mirror, required mechanics and target hints`, () => {
+  const model = loadCore(["tilemodel", "mech/seesaw", "mech/gust"]);
+  const goalSpecs = [];
+  c.map.forEach((row, y) => [...row].forEach((ch, x) => { if (ch === "o" || ch === "X") goalSpecs.push({ type: ch === "o" ? "socket" : "exit", at: [x, y] }); }));
+  const lab = { ...c, goals: goalSpecs, bag: { sand: 0, bomb: 0 } };
+  const shortest = model.tilemodel.solve(lab);
+  assert.ok(shortest.solved, c.id + " lab");
+  assert.ok(model.tilemodel.replay(lab, c.solution).won, "the original author solution still wins");
+  for (const mirror of [false, true]) {
+    const v = mechanismVariant(c, mirror), actions = mirror ? R.mirrorActions(shortest.solution) : shortest.solution;
+    const rep = R.replay(v, "gate", "recipient", actions, { stopAtGoal: false });
+    assert.ok(rep.reached, `${c.id} mirror=${mirror}: ${rep.reason || "unreached"}`);
+    assert.equal(rep.steps.length - 1, shortest.solution.length);
+    const solved = mechanismSolve(v);
+    assert.ok(solved.solved);
+    assert.equal(solved.solution.length, shortest.solution.length);
+    const author = R.replay(v, "gate", "recipient", mirror ? R.mirrorActions(c.solution) : c.solution, { stopAtGoal: false });
+    assert.ok(author.reached && R.holds(author.M, author.steps.at(-1).state, v.hints[0].done), "original author replay and socket goals");
+    assert.ok(R.hintTrace(rep).ok);
+    assert.deepEqual(v.hints[0].target, [rep.steps.at(-1).state.player.x, rep.steps.at(-1).state.player.y]);
+    for (const frozen of c.required) {
+      assert.ok(R.FREEZABLE.includes(frozen));
+      const blocked = mechanismSolve(v, [frozen]);
+      assert.equal(blocked.solved, false, c.id + " " + frozen);
+      assert.equal(blocked.exhausted, true, "prove no solution rather than hit the search limit");
+      if (c.id === "E06") assert.equal(R.solve(v, "gate", "recipient", { frozen: [frozen] }).solved, false, "production route search");
+    }
+  }
+});
+
+test("DLV-05: validate rejects malformed seesaw landing geometry before replay", () => {
+  const { room } = mechanismRoom(MECH_CASES[0]);
+  for (const landing of [[4, 4], [2, 4], [3, 5], [3, 3], null]) {
+    const bad = JSON.parse(JSON.stringify(room)); bad.devices[0].landings[0] = landing;
+    assert.ok(R.validate(bad).some(e => /landings/.test(e)), JSON.stringify(landing));
+  }
+});
+
+test("DLV-05: custom float actions blow once; invalid actions and setup do not blow", () => {
+  const room = testRoom([[4, 7, "FFF"], [10, 7, "B"]]);
+  room.devices = [{ type: "gust", area: [10, 7, 7, 1], direction: "R", period: 1, phase: 0 }];
+  const M = play(room, "left.0.low"), s = M.s;
+  assert.ok(TM.crateAt(s, 10, 7), "no setup gust");
+  assert.equal(R.act(M, s, "DIG_L").ok, false);
+  assert.ok(TM.crateAt(s, 10, 7), "no gust on a rejected action");
+  s.player.x = 3;
+  assert.equal(R.act(M, s, "R").kind, "float-push");
+  assert.ok(TM.crateAt(s, 11, 7), "one gust after a float push");
+  s.terrain[6 * M.v.W + 8] = TM.T.ROCK; s.player.x = 7; s.player.y = 6;
+  const result = R.act(M, s, "DIG_R");
+  assert.equal(result.kind, "pole");
+  assert.ok(TM.crateAt(s, 12, 7), "one gust after a pole action");
+  assert.deepEqual(result.deviceEvents, [{ type: "gust", device: 0 }]);
+  s.player.x = 3; s.player.y = 7;
+  assert.equal(R.act(M, s, "R", new Set(["gust"])).kind, "float-push");
+  assert.ok(TM.crateAt(s, 12, 7), "freezing gust also covers custom actions");
+});
+
+test("DLV-05: seesaw endpoints block float blocks, their riders and poured sand, including when frozen", () => {
+  const saw = (ends) => ({ type: "seesaw", ends, height: 2, landings: ends.map(([x, y]) => [x + 1, y - 3]) });
+  for (const frozen of [new Set(), new Set(["seesaw"])]) {
+    const room = testRoom([[4, 7, "FFF"]]); room.devices = [saw([[7, 7], [12, 7]])];
+    const M = play(room, "left.0.low"), s = M.s; s.player.x = 3;
+    assert.equal(M.deviceCells.has(7 * M.v.W + 7), true);
+    assert.equal(R.act(M, s, "R", frozen).kind, "step");
+    assert.equal(s.floats[0].x, 4, "the float must not overwrite an endpoint");
+    const riderRoom = testRoom([[4, 7, "FFF"], [5, 6, "B"]]); riderRoom.devices = [saw([[6, 6], [12, 7]])];
+    const N = play(riderRoom, "left.0.low"); N.s.player.x = 3;
+    assert.equal(R.act(N, N.s, "R", frozen).kind, "step");
+    assert.equal(N.s.floats[0].x, 4, "the rider must not enter an endpoint");
+    const pourRoom = testRoom([]); pourRoom.devices = [saw([[5, 7], [12, 7]])];
+    const P = play(pourRoom, "left.0.low"); P.s.player.x = 4; P.s.bag.sand = 1;
+    assert.equal(R.act(P, P.s, "POUR_R", frozen).ok, false);
+  }
+});
+
+test("DLV-05: resting seesaw loads stay a baseline and clone-based undo reproduces each mechanism step", () => {
+  for (const c of MECH_CASES) {
+    const v = mechanismVariant(c), M = R.start(v, "gate", "recipient"), initial = R.clone(M.s);
+    const original = R.key(M, initial);
+    TM.settle(M.L, M.s); TM.settle(M.L, M.s);
+    assert.equal(R.key(M, M.s), original, c.id + " repeated settle");
+    for (const action of c.solution) {
+      const before = R.clone(M.s), first = R.act(M, M.s, action), restored = R.clone(before);
+      assert.ok(first.ok);
+      const second = R.act(M, restored, action);
+      assert.deepEqual(second, first);
+      assert.deepEqual(restored, M.s, c.id + " " + action);
+    }
+    assert.equal(R.key(M, initial), original, "the saved opening is unchanged");
+  }
+});
+
+test("DLV-05: mechanism fixtures draw idle, action feedback, mirror, filtered art and Jeju snack bubbles", () => {
+  const world = worlds.get("jeju"); assert.ok(world);
+  const originalDraw = PB.sprites.draw, calls = [];
+  PB.sprites.draw = function (...args) { calls.push(args); return originalDraw.apply(this, args); };
+  const count = (id, anim) => calls.filter(c => c[1] === id && (anim === undefined || c[2] === anim));
+  const draw = (sc, P, tick) => {
+    calls.length = 0;
+    const [w, h] = D.size(sc, "full"), r = new PB.Raster(w, h);
+    D.draw(r, sc, P, { tick, view: "full" });
+    assert.ok(r.data.some((v, i) => i % 4 !== 3 && v > 0), "real raster output");
+    return r;
+  };
+  try {
+    for (const c of MECH_CASES) for (const mirror of [false, true]) {
+      const v = mechanismVariant(c, mirror), M = R.start(v, "gate", "recipient"), sc = D.scene(M, world, { top_edge: "sky" }), P = D.run(M, {});
+      draw(sc, P, 0);
+      if (c.required.includes("seesaw")) {
+        assert.equal(count("mech.jeju_seesaw", "end").length, 2);
+        assert.ok(count("mech.jeju_seesaw", "pivot").length > 0);
+        for (const call of count("mech.jeju_seesaw")) {
+          const asset = PB.sprites.get(call[1]);
+          assert.equal(asset.width || asset.w || asset.size[0], 16);
+          assert.equal(asset.height || asset.h || asset.size[1], 20);
+          assert.equal(call[4] % 16, 8, "bottom-centre x");
+          assert.equal((call[5] - D.HUD_H) % 16, 0, "bottom-centre y");
+        }
+      }
+      if (c.required.includes("gust")) {
+        assert.ok(count("fx.jeju_gust", "drift").length > 0);
+        assert.ok(count("fx.jeju_gust").every(call => !!call[6] === mirror), "gust mirrors with the room");
+      }
+      let tick = 0, saw = false, gust = false;
+      for (const action of mirror ? R.mirrorActions(c.solution) : c.solution) {
+        const result = D.act(P, action, tick); assert.ok(result.ok, c.id + " " + action);
+        draw(sc, P, tick + 1);
+        if ((result.deviceEvents || []).some(e => e.type === "seesaw")) {
+          saw = true; assert.equal(count("mech.jeju_seesaw", "down").length, 1); assert.equal(count("mech.jeju_seesaw", "launch").length, 1);
+        }
+        if ((result.deviceEvents || []).some(e => e.type === "gust")) { gust = true; assert.ok(count("fx.jeju_gust", "blow").length > 0); }
+        tick += 80; D.update(P, tick);
+      }
+      assert.equal(saw, c.required.includes("seesaw")); assert.equal(gust, c.required.includes("gust"));
+      draw(sc, P, tick);
+      assert.equal(count("mech.jeju_seesaw", "down").length + count("fx.jeju_gust", "blow").length, 0, "feedback ends with the action");
+      D.setArtFilter(() => false); draw(sc, P, tick);
+      assert.equal(count("mech.jeju_seesaw").length + count("fx.jeju_gust").length, 0, "candidate art is filtered");
+      D.setArtFilter(null);
+    }
+    const v = mechanismVariant(MECH_CASES[3]), M = R.start(v, "gate", "recipient"), sc = D.scene(M, world), P = D.run(M, {});
+    D.update(P, 0);
+    P.mem.main = { x: P.s.player.x * 16 + 8, y: P.s.player.y * 16 + 16, face: 1 };
+    P.mem.fly = null;
+    assert.equal(D.feed(P, 0, world), "hint");
+    draw(sc, P, 1);
+    assert.equal(count("item.snack_jeju", "default").length, 2, "HUD and fed hint bubble use the Jeju snack");
+    assert.equal(count("item.snack").length, 0);
+  } finally { PB.sprites.draw = originalDraw; D.setArtFilter(null); }
+});
+
+test("DLV-05: freezing seesaw applies before setup gravity and new sand above resting sand still animates", () => {
+  const room = testRoom([[4, 6, "B"], [6, 4, "I"]]);
+  room.devices = [{ type: "seesaw", ends: [[4, 7], [6, 7]], height: 2, landings: [[3, 4], [7, 4]] }];
+  const v = R.variant(room, false, null);
+  assert.ok(TM.crateAt(R.start(v, "left.0.low", null).s, 3, 7), "the opening falling load normally launches the wood crate");
+  const frozen = R.replay(v, "left.0.low", null, [], { frozen: ["seesaw"] });
+  assert.ok(TM.crateAt(frozen.M.s, 4, 6), "a frozen replay must keep the wood crate on its original pad");
+  const stack = testRoom([[4, 6, "B"], [6, 6, "s"]]); stack.devices = room.devices;
+  const M = play(stack, "left.0.low"); M.s.player.x = 7; M.s.player.y = 7; M.s.bag.sand = 1;
+  // Pour from the ledge above the resting sand; a new layer increases the load
+  // while the bottom sand tile itself keeps exactly the same material.
+  M.s.player.y = 5; M.s.terrain[6 * M.v.W + 7] = TM.T.ROCK;
+  const result = R.act(M, M.s, "POUR_L");
+  assert.ok(result.ok);
+  assert.ok(result.events.includes("seesaw"));
+  assert.ok((result.deviceEvents || []).some(e => e.type === "seesaw" && e.side === 1));
+});
+
+test("DLV-05: gust cannot erase feedback from a seesaw that fired earlier in the same action", () => {
+  const room = testRoom([[4, 4, "B"], [3, 5, ".e"], [8, 6, "I"]]);
+  room.devices = [{ type: "seesaw", ends: [[4, 7], [8, 7]], height: 2, landings: [[3, 4], [9, 4]] },
+    { type: "gust", area: [4, 6, 1, 1], direction: "R", period: 1, phase: 0 }];
+  const M = play(room, "left.0.low"); M.s.player.x = 3; M.s.player.y = 5;
+  const result = R.act(M, M.s, "DIG_R");
+  assert.ok(result.ok && result.events.includes("seesaw") && result.events.includes("gust"));
+  assert.ok(TM.crateAt(M.s, 9, 7), "the iron crate was launched");
+  assert.ok(TM.crateAt(M.s, 5, 7), "the gust then cleared the triggering pad");
+  assert.ok((result.deviceEvents || []).some(e => e.type === "seesaw" && e.device === 0 && e.side === 0), "keep feedback even after the pad is empty");
+});

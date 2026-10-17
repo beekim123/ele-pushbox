@@ -31,7 +31,7 @@
     return s;
   };
   // The workbench can restrict drawing to approved art (like PB.droom.setArtFilter):
-  // float blocks, hint animals and the snack icon then fall back to placeholders.
+  // puzzle devices, float blocks, hint animals and snacks then use placeholders.
   let artFilter = () => true;
   function setArtFilter(fn) { artFilter = fn || (() => true); }
   const art = (id) => !!id && S().has(id) && artFilter(id);
@@ -49,6 +49,11 @@
     return t === T.ROCK ? M.ROCK : t === T.CRACKED ? M.CRACKED : t === T.EARTH ? M.EARTH : t === T.SAND ? M.SAND : t === T.WATER ? M.WATER : M.EMPTY;
   }
   const lerp = (a, b, k) => Math.round(a + (b - a) * Math.max(0, Math.min(1, k)));
+  function seesawCells(d) {
+    const [a, b] = d.ends, span = Math.max(Math.abs(b[0] - a[0]), Math.abs(b[1] - a[1]));
+    if (!span) return [a];
+    return Array.from({ length: span + 1 }, (_, n) => [lerp(a[0], b[0], n / span), lerp(a[1], b[1], n / span)]);
+  }
 
   // ---------- top edge (delivery-puzzle-rules.md 8.1) ----------
   // Only in a map with "top_edge": "sky". Each column's run of solid cells from
@@ -86,6 +91,8 @@
     for (const d of v.devices || []) {
       for (const c of [d.at, d.button].concat(d.pads || [], d.cells || [])) if (c) { add(c[0], c[1]); add(c[0], c[1] - 1); }
       if (d.stops) { const top = Math.min(...d.stops.map((s) => s[1])), bot = Math.max(...d.stops.map((s) => s[1])); for (let y = top - 1; y <= bot; y++) for (let k = 0; k < (d.width || 1); k++) add(d.stops[0][0] + k, y); }
+      if (d.type === "seesaw") for (const [x, y] of seesawCells(d)) { add(x, y); add(x, y - 1); }
+      if (d.type === "gust") { const [x, y, w, h] = d.area; for (let dy = 0; dy < h; dy++) for (let dx = 0; dx < w; dx++) add(x + dx, y + dy); }
     }
     for (const c of M.s.crates) add(c.x, c.y);
     for (const sp of v.spawns) { const [z0, z1] = sp.zone || [sp.x, sp.x]; for (let x = Math.min(z0, sp.x) - 1; x <= Math.max(z1, sp.x) + 1; x++) add(x, sp.y); }
@@ -111,9 +118,9 @@
   }
   function size(sc, view) { return view === "camera" ? [VW, VH] : [sc.pw, sc.ph + HUD_H]; }
 
-  // Background: styles drawn against a horizon (diyu, sky) repeat per row of
+  // Background: styles drawn against a horizon (diyu, sky, jeju) repeat per row of
   // screens, as each screen would show it; the others tile seamlessly.
-  const BANDED = new Set(["diyu", "sky"]);
+  const BANDED = new Set(["diyu", "sky", "jeju"]);
   function background(sc, tick) {
     const style = (sc.theme.background || {}).style, banded = BANDED.has(style), key = banded ? tick >> 5 : 0;
     if (sc.bg && sc.bgKey === key) return sc.bg;
@@ -194,7 +201,8 @@
     if (lift) seg1 = Math.max(seg1, 6 * Math.abs(n.player.y - o.player.y));
     let fall = drop;
     if (n.crates.length === o.crates.length) n.crates.forEach((c, i) => { fall = Math.max(fall, c.y - from.crates[i][1]); });
-    P.anim = { t: tick, kind: r.kind, from, drop, seg1, end: tick + seg1 + fall * 4, lift };
+    P.anim = { t: tick, kind: r.kind, from, drop, seg1, end: tick + seg1 + fall * 4, lift,
+      deviceEvents: (r.deviceEvents || []).map((e) => Object.assign({}, e)) };
     P.s = n;
     for (let y = n.player.y - drop; y <= n.player.y; y++) collect(P, n.player.x, y);
     const atExit = M.exitSet.has(n.player.y * M.v.W + n.player.x), goal = R2().atGoal(M, n);
@@ -246,11 +254,16 @@
     const list = (world && world.hint_fauna) || [];
     return { main: list.find((f) => f.snack) || null, flyer: list.find((f) => !f.snack) || null };
   }
+  function snackOf(world) {
+    return world && world.id === "jeju" ? { asset: "item.snack_jeju", anim: "default" }
+      : { asset: "item.snack", anim: world && world.id === "diyu" ? "diyu" : "dungeon" };
+  }
   const FLYER_ACTIONS = new Set(["walk", "climb"]);
   const isFlyerHint = (h) => !!h && !!h.show && FLYER_ACTIONS.has(h.show.action);
   function solidAt(P, x, y) {
     const M = P.M, s = P.s, T = TM().T, t = TM().terrainAt(M.L, s, x, y);
-    return (t !== T.EMPTY && t !== T.WATER) || !!TM().crateAt(s, x, y) || !!R2().floatAt(s, x, y) || TM().liftDeck(M.L, s, x, y) >= 0 || TM().bridgeAt(M.L, s, x, y) >= 0;
+    return (t !== T.EMPTY && t !== T.WATER) || !!TM().crateAt(s, x, y) || !!R2().floatAt(s, x, y) || TM().liftDeck(M.L, s, x, y) >= 0 || TM().bridgeAt(M.L, s, x, y) >= 0
+      || M.L.devices.some((d) => d.type === "seesaw" && d.ends.some(([ex, ey]) => ex === x && ey === y));
   }
   function standable(P, x, y) {
     const M = P.M, v = M.v, i = y * v.W + x;
@@ -346,6 +359,7 @@
     P.hist.push(snapshot(P));
     P.snacks -= 1; P.fed += 1;
     say(P, "main", hintText(v, plan.i), tick);
+    P.bubble.snack = true;
     return "hint";
   }
 
@@ -384,9 +398,43 @@
   }
   function frameRect(r, x, y, w, h, c) { r.hline(x, y, w, c); r.hline(x, y + h - 1, w, c); r.vline(x, y, h, c); r.vline(x + w - 1, y, h, c); }
 
+  // The 16x20 seesaw frames anchor at the bottom centre of a cell. Their top
+  // four rows may rise above the cell; the remaining 16 rows align to terrain.
+  // Device feedback belongs to the accepted action, never to elapsed time.
+  function drawPuzzleDevices(r, sc, P, ox, oy, tick, used) {
+    const a = P.anim, events = a && tick >= a.t && tick < a.end ? a.deviceEvents || [] : [];
+    (sc.v.devices || []).forEach((d, k) => {
+      if (d.type === "seesaw") {
+        const asset = "mech.jeju_seesaw", cells = seesawCells(d), last = cells.length - 1;
+        const e = events.find((q) => q.type === "seesaw" && q.device === k);
+        const approved = art(asset);
+        if (!approved) used.push(asset);
+        cells.forEach(([x, y], n) => {
+          const side = n === 0 ? 0 : n === last ? 1 : -1;
+          const anim = side >= 0 ? e ? side === e.side ? "down" : "launch" : "end"
+            : n === Math.floor(last / 2) ? "pivot" : "mid";
+          const flip = side >= 0 && d.ends[side][0] > d.ends[1 - side][0];
+          const px = ox + x * 16 + 8, py = oy + y * 16 + 16;
+          if (approved) S().draw(r, asset, anim, 0, px, py, flip);
+          else placeholder(r, px, py, 16, 20, "y", "S");
+        });
+      } else if (d.type === "gust") {
+        const asset = "fx.jeju_gust", [x, y, w, h] = d.area;
+        const blow = events.some((q) => q.type === "gust" && q.device === k), approved = art(asset);
+        if (!approved) used.push(asset);
+        for (let dy = 0; dy < h; dy++) for (let dx = 0; dx < w; dx++) {
+          const px = ox + (x + dx) * 16 + 8, py = oy + (y + dy) * 16 + 16;
+          if (approved) S().draw(r, asset, blow ? "blow" : "drift", tick, px, py, d.direction === "L");
+          else placeholder(r, px, py, 16, 16, "b", "G");
+        }
+      }
+    });
+  }
+
   // Everything that sits on the terrain, at room offset (ox, oy).
   function drawFigures(r, sc, P, ox, oy, tick, o, plan) {
     const M = sc.M, v = sc.v, L = sc.L, s = P.s, TMM = TM().M, W = sc.W;
+    const used = [];
     const sym = (i) => (L.symbol && L.symbol[i]) || 0;
     for (let i = 0; i < W * sc.H; i++) {
       const tx = i % W, ty = (i / W) | 0, px = ox + tx * 16 + 8, py = oy + ty * 16 + 16, crate = TM().crateAt(s, tx, ty);
@@ -399,6 +447,7 @@
       }
     }
     if (PB.matter) PB.matter.drawDevices(r, M.spec, L, s, ox, oy, tick);
+    drawPuzzleDevices(r, sc, P, ox, oy, tick, used);
     for (const i of L.doors) {
       const px = ox + (i % W) * 16 + 8, py = oy + ((i / W) | 0) * 16 + 16;
       S().draw(r, "mech.door", TM().doorClosed(L, s, i) ? "closed" : "open", 0, px, py);
@@ -420,7 +469,6 @@
       S().draw(r, c.kind === "iron" ? "obj.crate_iron" : "obj.crate_wood", "default", 0, px, py + (float ? 3 : 0));
       if (float) S().draw(r, "fx.ripple", "float", tick, px, py + 2);
     });
-    const used = [];
     const figure = (sp) => {
       const kind = sp.monster ? "monster" : sp.feature, id = sp.monster || sp.feature;
       let dx = 0, flip = sp.dir === "left", anim;
@@ -514,9 +562,25 @@
     if (plan.n) put(tr("r2.hud.hint", { i: Math.min(plan.i + 1, plan.n), n: plan.n }, "提示 {i}/{n}"), plan.i >= plan.n ? "m" : "u");
     put(o.stepText || tr("r2.hud.moves", { n: P.s.moves }, "{n} 步"), "u");
     if (sc.v.coins.length) { put(String(P.coins.size) + "/" + sc.v.coins.length, "l"); rx -= 2; r.rect(rx + 1, 6, 7, 7, "z"); r.rect(rx + 2, 7, 5, 5, "k"); rx -= 6; }
-    if (faunaOf(sc.world).main) { put(tr("r2.hud.snack", { n: P.snacks }, "×{n}"), "c"); rx += 6; rx -= 17; if (art("item.snack")) S().draw(r, "item.snack", sc.world && sc.world.id === "diyu" ? "diyu" : "dungeon", 0, rx, 2); else r.rect(rx + 2, 6, 10, 8, "c"); rx -= 6; }
+    if (faunaOf(sc.world).main) {
+      const snack = snackOf(sc.world);
+      put(tr("r2.hud.snack", { n: P.snacks }, "×{n}"), "c"); rx += 6; rx -= 17;
+      if (art(snack.asset)) S().draw(r, snack.asset, snack.anim, 0, rx, 2); else r.rect(rx + 2, 6, 10, 8, "c");
+      rx -= 6;
+    }
     const name = roomName(sc.v).split(" · ")[0];
     PB.ui.label(r, name, 4, 3, Math.max(24, rx - 8), "u", "y", "room2." + sc.v.id + ".name");
+  }
+  // A snack has its own small bubble beside the speaker, below the text bubble.
+  // Clamp it to the same window so a hint by a room edge keeps its icon visible.
+  function drawSnackBubble(r, world, ax, ay, top) {
+    const right = ax < r.w - 32, x = Math.max(2, Math.min(r.w - 22, right ? ax + 10 : ax - 30));
+    const y = Math.max(top, Math.min(r.h - 22, ay + 3)), snack = snackOf(world);
+    r.rect(x, y, 20, 20, "z"); r.rect(x + 1, y + 1, 18, 18, "y");
+    const tail = right ? x - 2 : x + 20;
+    r.rect(tail, y + 3, 2, 4, "z"); r.set(right ? x - 1 : x + 20, y + 4, "y");
+    if (art(snack.asset)) S().draw(r, snack.asset, snack.anim, 0, x + 2, y + 2);
+    else placeholder(r, x + 10, y + 18, 16, 16, "c", "S");
   }
   // Speech bubble of the player, an animal or the recipient, inside a 320x180 window around the speaker.
   function drawBubble(r, sc, P, ox, oy, tick) {
@@ -527,10 +591,14 @@
     else if (b.who === "flyer" && P.mem.fly) at = [P.mem.fly.x, P.mem.fly.y - 4];
     else { const [px, py] = playerPx(P, tick); at = [px + 8, py + 2]; }
     const ax = ox + at[0], ay = oy + at[1];
-    if (r.w === VW && r.h === VH) { PB.dialogue.bubble(r, { text: b.text, at: [ax, ay], style: "say", maxW: 180, maxLines: 4, top: HUD_H + 2 }); return; }
+    const bubble = (target, x, y, top) => {
+      PB.dialogue.bubble(target, { text: b.text, at: [x, y], style: "say", maxW: 180, maxLines: 4, top });
+      if (b.snack) drawSnackBubble(target, sc.world, x, y, top);
+    };
+    if (r.w === VW && r.h === VH) { bubble(r, ax, ay, HUD_H + 2); return; }
     const bx = Math.max(0, Math.min(r.w - VW, ax - (VW >> 1))), by = Math.max(0, Math.min(r.h - VH, ay - (VH >> 1)));
     const tmp = new PB.Raster(VW, VH);
-    PB.dialogue.bubble(tmp, { text: b.text, at: [ax - bx, ay - by], style: "say", maxW: 180, maxLines: 4, top: by === 0 ? HUD_H + 2 : 2 });
+    bubble(tmp, ax - bx, ay - by, by === 0 ? HUD_H + 2 : 2);
     r.blit(tmp, bx, by);
   }
 

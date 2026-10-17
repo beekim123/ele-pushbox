@@ -39,7 +39,7 @@
   const FLOAT_CHARS = "FG";                      // float blocks (two letters so that two blocks may touch)
   const COIN = "$";
   const ACTIONS = ["L", "R", "U", "D", "DIG_L", "DIG_R", "DIG_D", "POUR_L", "POUR_R"];
-  const FREEZABLE = ["float_block", "pole", "push", "dig", "pour", "lever"];
+  const FREEZABLE = ["float_block", "pole", "push", "dig", "pour", "lever", "seesaw", "gust"];
 
   // ---------- exits ----------
   // Exit id: "<edge>.<segment>.<slot>", segment = screen row (left/right) or screen column (top/bottom).
@@ -136,6 +136,16 @@
     }
     if (!(room.routes || []).length) add("至少要写一条 routes（检查过的走法）");
     for (const [k, L] of Object.entries(legend)) if (L.monster && L.zone && !(L.zone.length === 2)) add(`legend ${k}：zone 应为 [x0, x1]`);
+    for (const [k, d] of (room.devices || []).entries()) if (d.type === "seesaw") {
+      const cell = (p) => Array.isArray(p) && p.length === 2 && p.every(Number.isInteger) && p[0] >= 0 && p[0] < W && p[1] >= 0 && p[1] < H;
+      if (!Array.isArray(d.ends) || d.ends.length !== 2 || !d.ends.every(cell) || !Number.isInteger(d.height) || d.height < 1) {
+        add(`devices[${k}] seesaw：ends 必须是两个房间内的格子，height 必须是正整数`);
+        continue;
+      }
+      if (!Array.isArray(d.landings) || d.landings.length !== 2 || d.landings.some((p, side) => !cell(p) || Math.abs(p[0] - d.ends[side][0]) !== 1 || p[1] !== d.ends[side][1] - 1 - d.height)) {
+        add(`devices[${k}] seesaw：landings 必须从端点上那格竖升 height 格后横移一格`);
+      }
+    }
     return out;
   }
 
@@ -208,6 +218,11 @@
       const o = JSON.parse(JSON.stringify(d));
       if (o.at) o.at = mp(o.at); if (o.button) o.button = mp(o.button); if (o.pads) o.pads = o.pads.map(mp);
       if (o.cells) o.cells = o.cells.map(mp); if (o.stops) o.stops = o.stops.map((s) => (flip ? [W - s[0] - (o.width || 1), s[1]] : s.slice()));
+      if (o.ends) o.ends = o.ends.map(mp); if (o.landings) o.landings = o.landings.map(mp);
+      if (flip && o.type === "gust") {
+        o.area[0] = W - o.area[0] - o.area[2];
+        o.direction = MIRROR_ACT[o.direction] || o.direction;
+      }
       return o;
     });
     const links = room.links ? room.links.map((g) => Object.assign({}, g, { plates: (g.plates || []).map(mp), doors: (g.doors || []).map(mp) })) : undefined;
@@ -218,13 +233,20 @@
 
   // ---------- puzzle model (tile model + float blocks) ----------
   // from: exit id (player enters there) or "gate"; to: exit id, "recipient", or null (free play).
-  function start(v, from, to, bag) {
+  function frozenDevices(devices, frozen) {
+    if (!frozen || !(frozen.has("seesaw") || frozen.has("gust"))) return devices;
+    return devices.map((d) => d.type === "seesaw" && frozen.has("seesaw") ? Object.assign({}, d, { threshold: Infinity })
+      : d.type === "gust" && frozen.has("gust") ? Object.assign({}, d, { light_kinds: [] }) : d);
+  }
+  function start(v, from, to, bag, frozen) {
     const rows = v.map.map((r) => [...r].map((ch) => (/\d/.test(ch) || ch === COIN ? "." : FLOAT_CHARS.includes(ch) ? "#" : ch)));
     let px, py;
     if (from === "gate") { const g = v.spawns.find((s) => s.feature === "gate"); px = g.x; py = g.y; }
     else [px, py] = entryCell(v.W, v.H, from);
     rows[py][px] = rows[py][px] === "H" ? "h" : "P";
-    const spec = { id: v.id, map: rows.map((r) => r.join("")), bag: Object.assign({ sand: 0, bomb: 0 }, bag || {}), links: v.links, devices: v.devices };
+    const spec = { id: v.id, map: rows.map((r) => r.join("")), bag: Object.assign({ sand: 0, bomb: 0 }, bag || {}), links: v.links, devices: frozenDevices(v.devices, frozen) };
+    // The runtime parser runs device setup before its initial settle. Do not
+    // reset that baseline afterwards: a resting load must never launch twice.
     const parsed = TM().parse(spec);
     const L = parsed.level, s = parsed.state;
     s.floats = v.floats.map((f) => ({ n: f.n, x: f.x, y: f.y, w: f.w }));
@@ -234,13 +256,16 @@
     if (to === "recipient") { const r = v.spawns.find((q) => q.feature === "recipient"); goal = new Set([r.y * v.W + r.x]); }
     else if (to) goal = new Set(exitCells(v.W, v.H, to).map(([x, y]) => y * v.W + x));
     const deviceCells = new Set();
-    for (const d of v.devices || []) for (const c of [d.at, d.button, ...(d.pads || [])].filter(Boolean)) deviceCells.add(c[1] * v.W + c[0]);
+    for (const d of v.devices || []) for (const c of [d.at, d.button, ...(d.pads || []), ...(d.ends || [])].filter(Boolean)) deviceCells.add(c[1] * v.W + c[0]);
     return { v, L, s, spec, t0: s.terrain.slice(), exitSet, goal, deviceCells, from, to };
   }
   function clone(s) { const n = TM().clone(s); n.floats = s.floats.map((f) => ({ n: f.n, x: f.x, y: f.y, w: f.w })); return n; }
   const OPENT = (t) => { const T = TM().T; return t === T.EMPTY || t === T.WATER || t === T.ACID || t === T.SMOKE || t === T.FOG; };
   const isPlayer = (s, x, y) => s.player.x === x && s.player.y === y;
-  function platformAt(M, s, x, y) { return TM().liftDeck(M.L, s, x, y) >= 0 || TM().bridgeAt(M.L, s, x, y) >= 0; }
+  function platformAt(M, s, x, y) {
+    return TM().liftDeck(M.L, s, x, y) >= 0 || TM().bridgeAt(M.L, s, x, y) >= 0
+      || (TM().plugins || []).some((p) => typeof p.solid === "function" && p.solid(M.L, s, x, y));
+  }
   function free(M, s, x, y) { return OPENT(TM().terrainAt(M.L, s, x, y)) && !TM().crateAt(s, x, y) && !isPlayer(s, x, y) && !platformAt(M, s, x, y); }
   function supports(M, s, x, y) { const t = TM().terrainAt(M.L, s, x, y); return (t !== TM().T.EMPTY && !OPENT(t)) || !!TM().crateAt(s, x, y) || platformAt(M, s, x, y); }
   function floatAt(s, x, y) { for (const f of s.floats) if (y === f.y && x >= f.x && x < f.x + f.w) return f; return null; }
@@ -284,13 +309,58 @@
   }
   // Falls of FALL_HURT rows or more hurt in delivery mode unless they land on sand: routes may not use them.
   const FALL_HURT = 3;
-  function finish(M, s, kind) {
-    s.moves += 1; const y0 = s.player.y, events = TM().settle(M.L, s);
-    return { ok: true, kind, events, drop: s.player.y - y0 };
+  function finish(M, s, kind, frozen) {
+    return withDeviceFeedback(M, s, frozen, () => {
+      s.moves += 1; const y0 = s.player.y, events = TM().settle(M.L, s);
+      let changed = false;
+      for (const p of TM().plugins || []) if (typeof p.afterAction === "function" && p.afterAction(M.L, s, kind, events)) changed = true;
+      if (changed) events.push(...TM().settle(M.L, s));
+      return { ok: true, kind, events, drop: s.player.y - y0 };
+    });
   }
   function hurts(M, s, r) { return r.drop >= FALL_HURT && TM().terrainAt(M.L, s, s.player.x, s.player.y + 1) !== TM().T.SAND; }
+  // Observe each plugin's state write, including intermediate settle rounds.
+  // A later gust can empty a pad that already fired during this same action.
+  // The temporary view is always removed, including when a plugin throws.
+  function withDeviceFeedback(M, s, frozen, run) {
+    if (!M.L.devices.some((d) => (d.type === "seesaw" || d.type === "gust") && !frozen.has(d.type))) return run();
+    const dev = s.dev, deviceEvents = [];
+    const note = (type, device, side) => {
+      if (!deviceEvents.some((e) => e.type === type && e.device === device && e.side === side)) deviceEvents.push(side === undefined ? { type, device } : { type, device, side });
+    };
+    s.dev = new Proxy(dev, { set(target, prop, value) {
+      const k = typeof prop === "string" && /^\d+$/.test(prop) ? Number(prop) : -1, d = M.L.devices[k], old = target[prop] || 0;
+      if (d && !frozen.has(d.type)) {
+        if (d.type === "gust" && (value + (d.phase | 0)) % Math.max(1, d.period | 0) === 0) note("gust", k);
+        if (d.type === "seesaw") d.ends.forEach(([x, y], side) => {
+          const load = (value >> (side * 4)) & 15, before = (old >> (side * 4)) & 15;
+          if (load <= before || load < (d.threshold || 1)) return;
+          const source = isPlayer(s, x, y - 1) ? s.player : TM().crateAt(s, x, y - 1), playerAt = (old / 256 | 0) - 1;
+          const t = TM().terrainAt(M.L, s, x, y - 1);
+          const fell = source === s.player ? playerAt % M.L.w === x && (playerAt / M.L.w | 0) < source.y
+            : source ? source.seesawX === x && source.seesawY < source.y : t === TM().T.SAND || t === TM().T.GRAVEL;
+          if (fell) note("seesaw", k, side);
+        });
+      }
+      return Reflect.set(target, prop, value);
+    } });
+    try {
+      const r = run();
+      if (r.ok && deviceEvents.length) r.deviceEvents = deviceEvents;
+      return r;
+    } finally { s.dev = dev; }
+  }
   // frozen: Set of mechanics that are switched off (for "required" checks).
   function act(M, s, a, frozen) {
+    const fz = frozen || new Set();
+    // Keep the same solid endpoints and setup history while disabling their
+    // impulse. The per-action level view never mutates the room or plugins.
+    if (fz.has("seesaw") || fz.has("gust")) M = Object.assign({}, M, { L: Object.assign({}, M.L, {
+      devices: frozenDevices(M.L.devices, fz),
+    }) });
+    return actStep(M, s, a, fz);
+  }
+  function actStep(M, s, a, frozen) {
     const T = TM().T, p = s.player, fz = frozen || new Set();
     if (a.startsWith("BOMB")) return { ok: false, reason: "no-bomb" };
     if (a === "L" || a === "R") {
@@ -298,13 +368,13 @@
       const f = floatAt(s, nx, p.y);
       if (f && !fz.has("float_block")) {
         const n = clone(s);
-        if (moveFloat(M, n, floatAt(n, nx, p.y), dx, true)) { Object.assign(s, n); return finish(M, s, "float-push"); }
+        if (moveFloat(M, n, floatAt(n, nx, p.y), dx, true)) { Object.assign(s, n); return finish(M, s, "float-push", fz); }
       }
       const c = TM().crateAt(s, nx, p.y);
       const blockedCrate = c && (fz.has("push") || (free(M, s, nx + dx, p.y) && M.exitSet.has(p.y * M.v.W + nx + dx)));
       if (blockedCrate || f) {
         // Behaves like a wall: only a step up is possible.
-        if (supports(M, s, nx, p.y) && free(M, s, p.x, p.y - 1) && free(M, s, nx, p.y - 1)) { p.x = nx; p.y -= 1; return finish(M, s, "step"); }
+        if (supports(M, s, nx, p.y) && free(M, s, p.x, p.y - 1) && free(M, s, nx, p.y - 1)) { p.x = nx; p.y -= 1; return finish(M, s, "step", fz); }
         return { ok: false, reason: "blocked" };
       }
     }
@@ -315,7 +385,7 @@
       const anchor = (t === T.ROCK || t === T.CRACKED || t === T.HARD || t === T.DOOR) && !floatAt(s, tx, p.y);
       if (under && anchor && !TM().ladder(M.L, p.x, p.y)) {
         if (fz.has("float_block") || fz.has("pole")) return { ok: false, reason: "frozen" };
-        return moveFloat(M, s, under, -dx, false) ? finish(M, s, "pole") : { ok: false, reason: "pole-blocked" };
+        return moveFloat(M, s, under, -dx, false) ? finish(M, s, "pole", fz) : { ok: false, reason: "pole-blocked" };
       }
     }
     if (a.startsWith("DIG") && fz.has("dig")) return { ok: false, reason: "frozen" };
@@ -324,7 +394,7 @@
       const dx = a === "POUR_L" ? -1 : 1;
       if (M.exitSet.has(p.y * M.v.W + p.x + dx)) return { ok: false, reason: "cannot-pour" };
     }
-    const y0 = s.player.y, r = TM().act(M.L, s, a);
+    const y0 = s.player.y, r = withDeviceFeedback(M, s, fz, () => TM().act(M.L, s, a));
     if (r.ok) { const own = r.kind === "climb" ? (a === "D" ? 1 : -1) : r.kind === "step" ? -1 : 0; r.drop = s.player.y - y0 - own; }
     // Riding a lift down is not a fall.
     if (r.ok && (r.events || []).includes("lift") && TM().liftDeck(M.L, s, s.player.x, s.player.y + 1) >= 0) r.drop = 0;
@@ -340,7 +410,7 @@
   }
   // Breadth-first search for the shortest way from `from` to `to`.
   function solve(v, from, to, opts) {
-    const o = opts || {}, M = start(v, from, to, o.bag), frozen = new Set(o.frozen || []);
+    const o = opts || {}, frozen = new Set(o.frozen || []), M = start(v, from, to, o.bag, frozen);
     const max = o.limit || 200000, acts = o.actions || ACTIONS;
     const k0 = key(M, M.s), parents = new Map([[k0, null]]);
     let frontier = [M.s];
@@ -366,11 +436,11 @@
   function rebuild(parents, k) { const out = []; let e; while ((e = parents.get(k))) { out.push(e[1]); k = e[0]; } return out.reverse(); }
   // Replays actions; returns per-step states (for previews, hint traces and checks).
   function replay(v, from, to, actions, opts) {
-    const o = opts || {}, M = start(v, from, to, o.bag);
+    const o = opts || {}, frozen = new Set(o.frozen || []), M = start(v, from, to, o.bag, frozen);
     const steps = [{ action: null, state: clone(M.s), result: null }];
     let s = M.s;
     for (const a of actions) {
-      const n = clone(s), r = act(M, n, a, new Set(o.frozen || []));
+      const n = clone(s), r = act(M, n, a, frozen);
       if (!r.ok) return { M, steps, failedAt: steps.length - 1, reason: r.reason, action: a, reached: false };
       if (hurts(M, n, r)) return { M, steps, failedAt: steps.length - 1, reason: "摔伤（落下 " + r.drop + " 格）", action: a, reached: false };
       steps.push({ action: a, state: clone(n), result: r }); s = n;
