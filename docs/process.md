@@ -57,6 +57,8 @@
 ## 4 分支与交回
 
 - **开分支**：从包里写的基线开，分支名 `<前缀小写>/<编号>`，例如 `dlv/DLV-03`、`dsn/DSN-01`。
+  - **基线以包头写的为准**。BR-01 做完之前，`main` 还是旧内容，基线一律是 `claude/inspiring-ride-zfnn4s`；之后改为 `main`。
+  - 每个包的包头都写好了开工和交回的命令，照抄即可。
   ```bash
   git fetch origin
   git checkout -b <分支> origin/<基线>

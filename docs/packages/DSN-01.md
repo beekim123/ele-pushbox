@@ -1,7 +1,19 @@
 # DSN-01 第三张配送地图「济州海女村」：设计 + 美术候选
 
 状态：待做
-基线：`claude/inspiring-ride-zfnn4s`（BR-01 做完后改为 `main`）→ 分支：`dsn/DSN-01`
+基线：`claude/inspiring-ride-zfnn4s` → 分支：`dsn/DSN-01`（**不要**从 `main` 开：`main` 现在还是旧内容）
+
+**开工**（照抄）：
+```bash
+git fetch origin
+git checkout -b dsn/DSN-01 origin/claude/inspiring-ride-zfnn4s
+```
+**交回**（二选一）：
+- 能推送：`git push -u origin dsn/DSN-01`
+- 不能推送：`git bundle create DSN-01.bundle origin/claude/inspiring-ride-zfnn4s..dsn/DSN-01`，把 `DSN-01.bundle` 交给用户
+
+只往 `dsn/DSN-01` 提交；不往 `claude/inspiring-ride-zfnn4s`、`main` 或别的分支推送，也不合并别的分支。
+
 设计依据：
 - [delivery-puzzle-rules.md](../design/delivery-puzzle-rules.md)：全文，尤其第 8 节
 - [delivery-diyu.md](../design/delivery-diyu.md)、[delivery-dungeon.md](../design/delivery-dungeon.md)：已做完的两张地图，照它们的格式

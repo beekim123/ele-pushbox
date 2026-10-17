@@ -1,7 +1,19 @@
 # DLV-03 配送 v2 外观修正：地府顶边、梯顶、配送菜单（工作台）
 
 状态：待做（用户 2026-10-17 决定；只改 HTML 工作台，不碰 `game/`）
-基线：`claude/inspiring-ride-zfnn4s` → 分支：`dlv/DLV-03`（流程见 [process.md](../process.md)）
+基线：`claude/inspiring-ride-zfnn4s` → 分支：`dlv/DLV-03`（**不要**从 `main` 开：`main` 现在还是旧内容）
+
+**开工**（照抄）：
+```bash
+git fetch origin
+git checkout -b dlv/DLV-03 origin/claude/inspiring-ride-zfnn4s
+```
+**交回**（二选一）：
+- 能推送：`git push -u origin dlv/DLV-03`
+- 不能推送：`git bundle create DLV-03.bundle origin/claude/inspiring-ride-zfnn4s..dlv/DLV-03`，把 `DLV-03.bundle` 交给用户
+
+只往 `dlv/DLV-03` 提交；不往 `claude/inspiring-ride-zfnn4s`、`main` 或别的分支推送，也不合并别的分支。
+
 会碰的共享文件：`workbench/index.html`、`tools/art.mjs`（只追加）、`workbench/js/app/nav.js`、`tests/workbench.e2e.cjs` 的菜单检查
 允许换版本的美术：无（`art.mjs build` 必须 0 bumped）
 设计依据：
