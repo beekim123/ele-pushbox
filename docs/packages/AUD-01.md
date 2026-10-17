@@ -1,19 +1,17 @@
 # AUD-01 全游戏通用一套音效候选
 
-状态：待派（必须先完成并合并 WB-02）
-基线：**WB-02 合并之后的分支**，具体远端分支名由 Claude 派包前填写；当前还不能开工 → 分支：`aud/AUD-01`。
+状态：待派（WB-02 已于 2026-10-17 合并进 `claude/inspiring-ride-zfnn4s` @ `72d0605`，可以派）
+基线：`claude/inspiring-ride-zfnn4s`（已包含 DSN-02、WB-02）→ 分支：`aud/AUD-01`（**不要**从 `main` 开：`main` 现在还是旧内容）。
 依赖：WB-02 已合并且全套检查通过；与 AUD-02 互不依赖，可以在全机资源预算内同时制作。不能把未合并的 wb/WB-02 制作分支直接当作基线。
 
-**派前由 Claude 完成**：把下方所有 `<WB-02合并后的实际基线>` 替换成已包含 DSN-02/WB-02 的实际远端分支名，同时更新本包此行和 README 本包行。不能保留占位符派出，不能自行猜成 main 或 claude/inspiring-ride-zfnn4s。这是 DSN-02 明确要求的未来依赖，当前文档不虚构尚未产生的分支。
-
-**开工**（Claude 填好实际基线后可复制）：
+**开工**（照抄）：
 ```bash
 git fetch origin
-git checkout -b aud/AUD-01 origin/<WB-02合并后的实际基线>
+git checkout -b aud/AUD-01 origin/claude/inspiring-ride-zfnn4s
 ```
-**交回**（二选一，Claude 填同一实际基线）：
+**交回**（二选一）：
 - 能推送：`git push -u origin aud/AUD-01`
-- 不能推送：`git bundle create AUD-01.bundle origin/<WB-02合并后的实际基线>..aud/AUD-01`，把 `AUD-01.bundle` 交给用户。
+- 不能推送：`git bundle create AUD-01.bundle origin/claude/inspiring-ride-zfnn4s..aud/AUD-01`，把 `AUD-01.bundle` 交给用户。
 
 只往 `aud/AUD-01` 提交；不往 `main`、`claude/inspiring-ride-zfnn4s`、`wb/WB-02`、上面填入的基线或别的分支推送，不合并别的分支、不 rebase/amend/强推、不删分支。
 
@@ -59,9 +57,9 @@ git checkout -b aud/AUD-01 origin/<WB-02合并后的实际基线>
 ### 声音专门验收
 
 ```bash
-node tools/audio.mjs build --kind sfx --baseline-ref origin/<WB-02合并后的实际基线>
+node tools/audio.mjs build --kind sfx --baseline-ref origin/claude/inspiring-ride-zfnn4s
 node tools/audio.mjs verify --kind sfx --require-sources
-node tools/audio.mjs build --kind sfx --baseline-ref origin/<WB-02合并后的实际基线>
+node tools/audio.mjs build --kind sfx --baseline-ref origin/claude/inspiring-ride-zfnn4s
 ```
 
 预期：本类32 个音效全部有源与 WAV，verify 0 问题；第二次 build **0 bumped**，同一源的 WAV SHA-256 不变。每次构建锁定同一发布基线（派前填写命令中的实际分支）：工具从该 Git 引用读基线源版本，新源全部恒为 v1，已有且改动的源恒为基线+1；迭代不能累加版本，不手改版本或伪造 hash。若工具不遵守该契约，作为 WB-02 缺陷报告，不能放宽验收。仓库真实 audio/approvals.json 字节及记录数与基线完全一致，所有候选当前确认状态为否。
@@ -90,6 +88,6 @@ node tests/workbench.e2e.cjs
 - 分支名、最后提交号、实际基线名/提交号、交回方式（推送 / AUD-01.bundle）。
 - build/verify 和全套回归的实际结果行；32 个音效 uid@vN/hash/时长/RMS/峰值清单（可从 manifest 摘要生成，不手填通过）。
 - 逐项限频/试听记录；reel_spin 的接缝结果。必须区分工具数值通过、制作方实际试听、用户确认三个状态。
-- `git diff --stat origin/<WB-02合并后的实际基线>..aud/AUD-01`；派前由 Claude 填成实际命令。
+- `git diff --stat origin/claude/inspiring-ride-zfnn4s..aud/AUD-01`；派前由 Claude 填成实际命令。
 - 没改测试预期；若基线失败或工具缺能力，贴命令/错误，不能自行越界修复。
 - 问题：没做完、拿不准、需要用户决定的事。下一步由 Claude 核对与合并候选，再让用户在声音页试听；只有用户明确确认后 Claude 才能用 audio approve 记录。
