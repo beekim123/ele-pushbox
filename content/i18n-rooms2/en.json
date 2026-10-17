@@ -87,5 +87,17 @@
  "room2.jeju_home_shore.name": "Recipient's Home · Breakwater",
  "room2.jeju_home_orchard.name": "Recipient's Home · Tangerine Orchard",
  "room2.jeju_home_cave.name": "Recipient's Home · Lava Cave",
- "dlg.fauna.jeju_dragonfly.fed": "I only show the pony's way: feed the pony."
+ "dlg.fauna.jeju_dragonfly.fed": "I only show the pony's way: feed the pony.",
+ "room2.jeju_neolttwigi.name": "Neolttwigi · One End Falls, One End Flies",
+ "room2.jeju_neolttwigi.hint.0": "Open the door above the wood crate, go around to the right of the iron crate and push it down the shaft. The launched wood crate holds the exit plate.",
+ "room2.jeju_baramgil.name": "Baramgil · Let the Wind Push",
+ "room2.jeju_baramgil.hint.0": "The wall blocks access behind the wood crate. Walk a few steps so the wind blows it into the deep pit, then use it as a step across.",
+ "room2.jeju_pier.name": "Pier · Iron Still Counts Underwater",
+ "room2.jeju_pier.hint.0": "Go under the pier to the right of the iron crate and push it into the water shaft. Return underneath, then climb the launched wood crate onto the pier.",
+ "room2.jeju_terrace.name": "Orchard Terrace · A Bag of Soil Has Weight",
+ "room2.jeju_terrace.hint.0": "Dig the soil above the wood crate, carry it over the upper path and stand on the right plate. Pour left to launch the crate, then climb to the terrace.",
+ "room2.jeju_doldam.name": "Doldam · An Iron Brake",
+ "room2.jeju_doldam.hint.0": "Take the lower passage to the right ladder and step onto the entry plate to release the wind. Immediately push the iron crate left into the right pit so the wood crate stops on the left plate.",
+ "room2.jeju_dodaebul.name": "Dodaebul · Let the Wind Drop the Weight",
+ "room2.jeju_dodaebul.hint.0": "Climb down to the base of the beacon and stand on the right end of the seesaw. Press Up to open the door: the wind drops the wood crate into the left shaft and launches you onto the ledge."
 }
