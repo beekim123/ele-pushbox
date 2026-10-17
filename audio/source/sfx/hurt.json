@@ -1,0 +1,38 @@
+{
+ "format": "pushbox.audio/1",
+ "kind": "sfx",
+ "id": "hurt",
+ "uid": "sfx:hurt",
+ "name": "受伤",
+ "description": "A3 轻弯向 E3 的单个中低音，长软尾，无尖叫。",
+ "seed": 170116,
+ "engine": "portitor-chip/1",
+ "sample_rate": 44100,
+ "channels": 1,
+ "version": 1,
+ "content_hash": "a502a454c11bc85930331affa3d4536fd71142d721c529fe8232b544dbaec207",
+ "gain_db": -16.4024,
+ "instruments": [
+  {
+   "id": "bend",
+   "wave": "sine",
+   "gain_db": 0,
+   "lowpass_hz": 1100,
+   "attack_ms": 22,
+   "decay_ms": 60,
+   "sustain": 0.62,
+   "release_ms": 100
+  }
+ ],
+ "duration_ms": 350,
+ "events": [
+  {
+   "instrument": "bend",
+   "start_ms": 0,
+   "duration_ms": 250,
+   "note": 57,
+   "slide_to_note": 52,
+   "gain_db": 0
+  }
+ ]
+}
