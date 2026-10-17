@@ -9,8 +9,8 @@
  "engine": "portitor-chip/1",
  "sample_rate": 44100,
  "channels": 1,
- "version": 1,
- "content_hash": "4d1aa530a235fd664b4f3a6a0f6a19e31cff26d6ce05803d80d0a39ac9e634ff",
+ "version": 2,
+ "content_hash": "efbc79274845128c41ece8f684f11aabe832f6bec434edb56705b26d35347cb6",
  "gain_db": -12.6929,
  "instruments": [
   {
