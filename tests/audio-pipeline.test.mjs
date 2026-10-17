@@ -443,3 +443,182 @@ test('historical approval metadata is mandatory for verify and future builds', t
   write(r, 'audio/approvals.json', bad);
   run(r, ['verify'], false);
 });
+
+// WB-04: frozen pre-upgrade PCM, not renderer/source fingerprints. These fixtures
+// deliberately isolate waveform bytes; production loudness tests above stay strict.
+const waveformPolicy = { ...rendererPolicy, metrics: { ...rendererPolicy.metrics,
+  sfx_rms_dbfs: { target: -24, tolerance: 60 }, noise_energy_ratio_max: 1, dc_abs_max: 1 } };
+// Frozen voice routine from WB-04's baseline (36e1344), intentionally independent
+// of the production renderer. Compare the complete PCM payload, not metadata.
+function preWB04Pcm(source) {
+  const RATE = 44100, mix = new Float64Array(Math.round(source.duration_ms * RATE / 1000));
+  const level = (age, i) => {
+    const a = i.attack_ms * RATE / 1000, d = i.decay_ms * RATE / 1000;
+    if (age < a) return age / a;
+    if (d > 0 && age < a + d) return 1 - (1 - i.sustain) * (age - a) / d;
+    return i.sustain;
+  };
+  for (const [index, e] of source.events.entries()) {
+    const i = source.instruments.find(i => i.id === e.instrument);
+    const start = Math.round(e.start_ms * RATE / 1000);
+    const gate = Math.round((e.start_ms + e.duration_ms) * RATE / 1000) - start;
+    const release = i.release_ms * RATE / 1000;
+    const alpha = 1 - Math.exp(-2 * Math.PI * i.lowpass_hz / RATE);
+    const volume = 10 ** ((i.gain_db + e.gain_db) / 20);
+    const noteHz = i.wave === 'noise' ? 0 : 440 * 2 ** ((e.note - 69) / 12);
+    const slideHz = e.slide_to_note === undefined ? noteHz : 440 * 2 ** ((e.slide_to_note - 69) / 12);
+    let phase = 0, filtered = 0, random = (((source.seed || 1) ^ Math.imul(index, 0x9e3779b9)) >>> 0) || 1;
+    for (let age = 0; age < Math.min(gate + Math.ceil(release), mix.length - start); age++) {
+      let raw;
+      if (i.wave === 'noise') { random ^= random << 13; random ^= random >>> 17; random ^= random << 5; raw = (random >>> 0) / 2147483648 - 1; }
+      else if (i.wave === 'sine') raw = Math.sin(2 * Math.PI * phase);
+      else if (i.wave === 'triangle') raw = 1 - 4 * Math.abs(phase - 0.5);
+      else raw = phase < i.pulse_width ? 1 : -i.pulse_width / (1 - i.pulse_width);
+      filtered += alpha * (raw - filtered);
+      const env = age < gate ? level(age, i) : level(gate, i) * Math.max(0, 1 - (age - gate) / release);
+      mix[start + age] += filtered * env * volume;
+      const frequency = noteHz + (slideHz - noteHz) * Math.min(1, age / Math.max(1, gate));
+      phase += frequency / RATE; phase -= Math.floor(phase);
+    }
+  }
+  const pcm = Buffer.alloc(mix.length * 2), volume = 10 ** (source.gain_db / 20);
+  mix.forEach((value, n) => pcm.writeInt16LE(Math.round(value * volume * 32768), n * 2));
+  return pcm;
+}
+test('WB-04 retains pre-upgrade bytes for sine, triangle, pulse and seeded noise', () => {
+  for (const wave of ['sine', 'triangle', 'pulse', 'noise']) {
+    const s = rendererSfxSource();
+    Object.assign(s.instruments[0], { wave, gain_db: -23 });
+    if (wave === 'pulse') s.instruments[0].pulse_width = 0.25;
+    if (wave === 'noise') delete s.events[0].note;
+    else s.events[0].slide_to_note = 60;
+    assert.deepEqual(renderAudio(s, rendererSfxEntry, waveformPolicy).wav.subarray(44), preWB04Pcm(s), wave);
+  }
+});
+
+test('WB-04 pluck, FM and saw are deterministic and produce different PCM', () => {
+  const hashes = [];
+  for (const wave of ['pluck', 'fm', 'saw']) {
+    const s = rendererSfxSource();
+    s.instruments[0].wave = wave;
+    const a = renderAudio(s, rendererSfxEntry, waveformPolicy);
+    assert.deepEqual(renderAudio(s, rendererSfxEntry, waveformPolicy).wav, a.wav);
+    hashes.push(rendererSha(a.wav));
+  }
+  assert.equal(new Set(hashes).size, 3);
+});
+
+test('WB-04 rejects missing presets and invalid synthesis/effect parameters with field paths', () => {
+  const changes = [
+    [i => { i.preset = 'missing'; }, 'preset'],
+    [i => { i.wave = 'pluck'; i.pluck_brightness = 1.01; }, 'pluck_brightness'],
+    [i => { i.wave = 'pluck'; i.pluck_decay_ms = 0; }, 'pluck_decay_ms'],
+    [i => { i.wave = 'fm'; i.fm_ratio = 0; }, 'fm_ratio'],
+    [i => { i.wave = 'fm'; i.fm_depth = 13; }, 'fm_depth'],
+    [i => { i.wave = 'fm'; i.fm_decay_ms = -1; }, 'fm_decay_ms'],
+    [i => { i.vibrato_hz = 13; }, 'vibrato_hz'],
+    [i => { i.vibrato_cents = 101; }, 'vibrato_cents'],
+    [i => { i.vibrato_delay_ms = -1; }, 'vibrato_delay_ms'],
+    [i => { i.breath = 0.51; }, 'breath'],
+    [i => { i.wave = 'saw'; i.breath = 0.1; }, 'breath'],
+    [i => { i.echo = { delay_ms: 0, feedback: 0.2, mix: 0.2 }; }, 'echo.delay_ms'],
+    [i => { i.echo = { delay_ms: 100, feedback: 1, mix: 0.2 }; }, 'echo.feedback'],
+    [i => { i.echo = { delay_ms: 100, feedback: 0.2, mix: NaN }; }, 'echo.mix'],
+    [i => { i.echo = { delay_ms: 100, feedback: 0.2, mix: 0.2, file: 'x' }; }, 'echo.file']
+  ];
+  for (const [change, field] of changes) {
+    const s = rendererSfxSource(); change(s.instruments[0]);
+    assert.throws(() => validateSource(s, rendererSfxEntry, rendererPolicy),
+      e => e.message.includes('sfx:push instruments[0].' + field), field);
+  }
+  for (const reverb of [{ size: 2, mix: 0.1 }, { size: 0.5, mix: -1 }, { size: 0.5, mix: 0.1, file: 'x' }]) {
+    const s = rendererMusicSource(); s.reverb = reverb;
+    assert.throws(() => validateSource(s, rendererMusicEntry, rendererPolicy), /music:jeju_b reverb\./);
+  }
+});
+
+test('WB-04 presets expand with field overrides and affect sound identity', async () => {
+  const { audioPresets } = await import('../tools/lib/audio.mjs');
+  const presets = audioPresets();
+  const required = ['guzheng', 'pipa', 'dizi', 'xiao', 'erhu', 'muyu', 'bangzi', 'bianzhong',
+    'gayageum', 'harp', 'marimba', 'waves', 'glockenspiel', 'epiano', 'pad_strings', 'pluck_bass', 'brush', 'soft_kick'];
+  for (const name of required) assert.ok(presets[name], name);
+  const s = rendererSfxSource();
+  const echo = { delay_ms: 115, feedback: 0.18, mix: 0 };
+  s.instruments = [{ id: 'soft', preset: 'guzheng', gain_db: -20, lowpass_hz: 1700, release_ms: 25, echo }];
+  const explicit = rendererCopy(s);
+  explicit.instruments = [{ id: 'soft', ...presets.guzheng, gain_db: -20, lowpass_hz: 1700, release_ms: 25, echo }];
+  assert.deepEqual(renderAudio(s, rendererSfxEntry, waveformPolicy).wav,
+    renderAudio(explicit, rendererSfxEntry, waveformPolicy).wav);
+  s.instruments[0].pluck_brightness = 0.15;
+  assert.notEqual(sourceHash(s), sourceHash(explicit));
+  assert.notDeepEqual(renderAudio(s, rendererSfxEntry, waveformPolicy).wav,
+    renderAudio(explicit, rendererSfxEntry, waveformPolicy).wav);
+});
+
+test('WB-04 delayed vibrato leaves the opening unchanged and breath contributes measured noise', () => {
+  for (const wave of ['sine', 'triangle', 'pulse', 'pluck', 'fm', 'saw']) {
+    const s = rendererSfxSource(); s.instruments[0].wave = wave;
+    if (wave === 'pulse') s.instruments[0].pulse_width = 0.5;
+    const dry = renderAudio(s, rendererSfxEntry, waveformPolicy).wav;
+    Object.assign(s.instruments[0], { vibrato_hz: 5, vibrato_cents: 30, vibrato_delay_ms: 50 });
+    const wet = renderAudio(s, rendererSfxEntry, waveformPolicy).wav;
+    assert.deepEqual(wet.subarray(44, 44 + 2400 * 2), dry.subarray(44, 44 + 2400 * 2));
+    assert.notDeepEqual(wet, dry, wave);
+  }
+  const s = rendererSfxSource(); s.instruments[0].breath = 0.12;
+  const a = renderAudio(s, rendererSfxEntry, waveformPolicy);
+  assert.ok(a.metrics.noise_energy_ratio > 0);
+  assert.deepEqual(renderAudio(s, rendererSfxEntry, waveformPolicy).wav, a.wav);
+  s.seed++;
+  assert.notDeepEqual(renderAudio(s, rendererSfxEntry, waveformPolicy).wav, a.wav);
+});
+
+test('WB-04 echo and reverb preserve audible previous-cycle tails and PCM seam limits', () => {
+  const s = rendererMusicSource();
+  s.instruments[0].gain_db = -21;
+  s.instruments[0].echo = { delay_ms: 390, feedback: 0.45, mix: 0.15 };
+  s.reverb = { size: 0.75, mix: 0.1 };
+  const a = renderAudio(s, rendererMusicEntry, rendererPolicy);
+  assert.ok(a.metrics.seam_value_delta <= 0.002);
+  assert.ok(a.metrics.seam_slope_delta <= 0.002);
+  assert.deepEqual(renderAudio(s, rendererMusicEntry, rendererPolicy).wav, a.wav);
+  delete s.reverb; delete s.instruments[0].echo;
+  assert.notDeepEqual(a.wav, renderAudio(s, rendererMusicEntry, rendererPolicy).wav);
+});
+
+test('WB-04 an echo longer than a short loop has an audible tail at the first sample', () => {
+  const s = rendererSfxSource();
+  Object.assign(s, { id: 'reel_spin', uid: 'sfx:reel_spin', duration_ms: 400, loop: true });
+  Object.assign(s.instruments[0], { release_ms: 100, gain_db: -23 });
+  Object.assign(s.events[0], { start_ms: 240, duration_ms: 50 });
+  const entry = rendererCatalog.entries.find(e => e.uid === 'sfx:reel_spin');
+  const dry = renderAudio(s, entry, waveformPolicy);
+  assert.equal(dry.wav.readInt16LE(44), 0);
+  s.instruments[0].echo = { delay_ms: 650, feedback: 0.7, mix: 0.3 };
+  const wet = renderAudio(s, entry, waveformPolicy);
+  assert.ok(Math.abs(wet.wav.readInt16LE(44)) > 10, 'previous cycles must reach sample zero');
+  assert.ok(wet.metrics.seam_value_delta <= 0.002);
+  assert.ok(wet.metrics.seam_slope_delta <= 0.002);
+  assert.deepEqual(renderAudio(s, entry, waveformPolicy).wav, wet.wav);
+});
+
+test('WB-04 preset CLI creates deterministic short WAVs and concatenates exact half-second gaps', t => {
+  const r = fs.mkdtempSync(path.join(os.tmpdir(), 'wb04-presets-'));
+  t.after(() => fs.rmSync(r, { recursive: true, force: true }));
+  const first = run(r, ['presets', '--out', 'samples']);
+  assert.match(first.stdout, /18/);
+  const dir = path.join(r, 'samples'), names = fs.readdirSync(dir).filter(n => n.endsWith('.wav') && n !== 'all.wav');
+  assert.equal(names.length, 18);
+  const before = new Map(fs.readdirSync(dir).map(n => [n, fs.readFileSync(path.join(dir, n))]));
+  run(r, ['presets', '--out', 'samples']);
+  for (const [name, wav] of before) {
+    assert.deepEqual(fs.readFileSync(path.join(dir, name)), wav);
+    if (name !== 'all.wav') assert.ok(wav.readUInt32LE(40) / 88200 <= 5, name);
+  }
+  const all = before.get('all.wav');
+  assert.equal(all.readUInt32LE(40), 18 * (before.get('guzheng.wav').length - 44) + 17 * 44100);
+  const offset = 44 + before.get('guzheng.wav').length - 44;
+  assert.ok(all.subarray(offset, offset + 44100).every(x => x === 0));
+  assert.deepEqual(all.subarray(44, offset), before.get('guzheng.wav').subarray(44));
+});

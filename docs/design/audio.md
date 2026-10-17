@@ -170,7 +170,28 @@
 | `res://generated/audio/sfx/<id>.wav` | 未来 Godot 导入器只复制该 uid 选中的已确认版本 |
 | `res://generated/audio/music/<id>.wav` | 未来导入器的已确认候选；另为曲组生成 dungeon/diyu/jeju 同名 WAV 别名，字节与采用版本相同 |
 
-源文件公共字段：`format: pushbox.audio/1`、`kind: sfx或music`、`id`（本地号）、`uid`、`name`、可选 `description`（说明字符串）、`seed`（uint32）、`engine: portitor-chip/1`、`sample_rate:44100`、`channels:1`、`version`、`content_hash`、`gain_db`、`instruments`。version/content_hash 只由 build 管理，新源可写 version:0、content_hash:null，首次构建成为 v1。每个 instrument：`id`、`wave:sine|triangle|pulse|noise`、`pulse_width`（仅 pulse）、`gain_db`、`lowpass_hz`、`attack_ms`、`decay_ms`、`sustain`（0–1）、`release_ms`。未用到的可选字段省略，工具拒绝未知字段。音量参数限 −60–0 dB；滤波截止 200–4000 Hz；decay 0–500 ms；attack 8–200 ms；release 25–1500 ms。白噪声用 seed 驱动的固定 xorshift32，seed=0 映射为 1，不用 Math.random、日期或外部文件。
+源文件公共字段：`format: pushbox.audio/1`、`kind: sfx或music`、`id`（本地号）、`uid`、`name`、可选 `description`（说明字符串）、`seed`（uint32）、`engine: portitor-chip/1`、`sample_rate:44100`、`channels:1`、`version`、`content_hash`、`gain_db`、`instruments`。version/content_hash 只由 build 管理，新源可写 version:0、content_hash:null，首次构建成为 v1。每个 instrument：`id`、`wave:sine|triangle|pulse|noise|pluck|fm|saw`、`pulse_width`（仅 pulse）、`gain_db`、`lowpass_hz`、`attack_ms`、`decay_ms`、`sustain`（0–1）、`release_ms`。未用到的可选字段省略，工具拒绝未知字段。音量参数限 −60–0 dB；滤波截止 200–4000 Hz；decay 0–500 ms；attack 8–200 ms；release 25–1500 ms。白噪声用 seed 驱动的固定 xorshift32，seed=0 映射为 1，不用 Math.random、日期或外部文件。
+
+WB-04 可选音色字段（所有数值必须有限，未填时采用表中默认值）：
+
+| 字段 | 范围 / 默认值 | 适用和含义 |
+|---|---|---|
+| `pluck_brightness` | 0–1 / 0.6 | 仅 pluck；弦环滤波的亮度，越大高频衰减越慢 |
+| `pluck_decay_ms` | 50–8000 ms / 1800 | 仅 pluck；弦振幅自然衰减到约 −60 dB 的时间，仍受门限和 release 包络约束 |
+| `fm_ratio` | 0.25–16 / 2 | 仅 fm；调制振荡器频率 / 载波频率 |
+| `fm_depth` | 0–12 / 2 | 仅 fm；初始调制指数（弧度） |
+| `fm_decay_ms` | 1–5000 ms / 300 | 仅 fm；调制指数指数衰减的时间常数 |
+| `vibrato_hz` | 0–12 Hz / 0 | 所有有音高波形；颤音频率，0 关闭 |
+| `vibrato_cents` | 0–100 音分 / 0 | 所有有音高波形；颤音峰值幅度，校验上下极值仍在基频范围内 |
+| `vibrato_delay_ms` | 0–5000 ms / 0 | 所有有音高波形；延迟后以 100 ms 渐入颤音 |
+| `breath` | 0–0.5 / 0 | 仅 sine / triangle；混入低通气声的振幅比例；单独累计滤波后气声平方和计入噪声指标 |
+| `echo` | 省略为关闭 | 每件乐器的 `{delay_ms:1–1500, feedback:0–0.85, mix:0–0.5}`，三个字段都必须填写；mix 是干湿比例 |
+
+整首音乐可选 `reverb:{size:0–1,mix:0–0.5}`，两个字段都必须填写；省略为关闭。size 控制四个并联梳状反馈延迟的长度和衰减，mix 是干湿比例。回声先于混响；循环按周期输入预滚至少一整圈，并按反馈衰减长度增加预滚，保留上一圈的效果尾巴；非循环试听只输出文件时长内的自然尾巴，不自动延长游戏音效。效果与乐器增益都参与最终峰值、响度和接缝检查。拨弦使用固定种子的噪声激励形成有音高的弦共振，按有音高声部计数；独立 noise 波形与 breath 气声计入噪声能量。
+
+`audio/presets.json` 是 `pushbox.audio-presets/1` 格式，`presets` 按试听顺序存放具名乐器参数。引用例如 `{"id":"lead","preset":"guzheng","lowpass_hz":1800}`：先展开预设，再按源 instrument 的同名字段覆盖；echo 对象也整体覆盖。预设不包含 id，不支持预设套预设。展开后仍做全部字段、波形适用范围和数值校验；不存在的名字报 instrument.preset 错误。预设库内容参与渲染器指纹，因此更新预设会使当前候选重新升版，历史确认仍按保存的指纹核验。
+
+`node tools/audio.mjs presets --out docs/packages/WB-04/presets` 输出 18 个最长 4.8 秒的独立试听 WAV 和按预设表顺序串联的 `all.wav`，段间严格留 0.5 秒。旋律类共用同一短句，打击类共用一组节奏；低音预设降八度，底鼓以同组节奏做下滑音。试听是演示文件，不写声音清单、源文件或游戏；命令打印每个样本的实际增益和指标问题，指标未通过的样本明确标记为未验证，不能作为合格候选。
 
 音效另有 `duration_ms`、`events`（`instrument`、`start_ms`、`duration_ms`、`note` MIDI 整数或 noise 时省略、可选 `slide_to_note`、`gain_db`）；event.duration_ms 是发声门限，尾音 release 也必须计入文件总时长。reel_spin 另有 `loop:true`。音乐另有 `set`（dungeon/diyu/jeju）、`bpm`、`meter:[4,4]`、`bars:32`、`mode`（说明文字）、`tracks`（每轨 `instrument`、`notes:[{beat,length,note,gain_db}]`，beat/length 为四分音符拍数，最多 1/16 拍精度）。beat 范围 [0,128)，length>0，跨圈音符尾音按周期合成。音高 MIDI 36–81，并检查滑音全程在基频范围内；noise 不填 note。首批不做随机演奏变体、导入外链乐谱或人工音频后期处理。每首的旋律/节奏要在本仓库原创写入 notes。
 
