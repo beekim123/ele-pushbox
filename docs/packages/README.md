@@ -23,7 +23,7 @@
 | UX-02 | 预留给 DSN-03：引导文字（新表 `content/i18n-onboarding/`）和关卡数据 | — | — | 预留 |
 | UX-03 | 预留给 DSN-03：工作台预览引导效果 | — | — | 预留 |
 | UX-04 | 预留给 DSN-03：引导做进游戏（排在 UI-06 之后） | — | — | 预留 |
-| [WB-03](WB-03.md) | 配送菜单改短名（开局抽签 / 石牢 / 地府 / 海女村），退役 v1 旧版 | `claude/inspiring-ride-zfnn4s` → `wb/WB-03` | `slices.json`、`nav.js`、`index.html`、e2e | 待派（现在可派） |
+| [WB-03](WB-03.md) | 配送菜单改短名（开局抽签 / 石牢 / 地府 / 海女村），退役 v1 旧版 | `claude/inspiring-ride-zfnn4s` → `wb/WB-03` | `slices.json`、`nav.js`、`index.html`、e2e | 不派：Claude 合并 DSN-01 时一起做 |
 | [UI-09](UI-09.md) | 通用界面风格提案：3–4 个风格画在同一组样板界面上，用户选（2026-10-17） | `claude/inspiring-ride-zfnn4s` → `ui/UI-09` | `index.html`（追加）、`nav.js`（「美术」末尾加一项） | 待派（现在可派） |
 | [UI-10](UI-10.md) | 按选定风格做整套游戏界面 + 配送 v2 界面 + 通用大厅 | `claude/inspiring-ride-zfnn4s` → `ui/UI-10` | `index.html`、`tools/art.mjs`（追加）；15 个界面换版本 | 等 UI-09 合并、用户选定后派 |
 | [BR-01](BR-01.md) | 分支整理：合进 `main`、打 `v0.3`、删旧分支 | Claude 做 | — | 等第 1 批合并后 |
