@@ -1,6 +1,6 @@
 # UI-06c Godot 大厅：6 套章节皮肤
 
-状态：**等 UI-06b 合并后再派**（都改 `screen.gd` 和 `capture.gd`）
+状态：待派（UI-06b 已合并，2026-10-17）
 基线：`claude/inspiring-ride-zfnn4s`（已包含 UI-06b）→ 分支：`ui/UI-06c`（**不要**从 `main` 开）
 预计：3–4 小时；超过 5 小时还没做完就停下，把进度写进「交付」交回。
 **必须在用户的 Mac 上做**（Godot / SDK 只有 macOS arm64 版）。
@@ -60,6 +60,7 @@ tools/run-tests.sh            # 默认全套，全部通过
 sh -c '. tools/godot-bin.sh && find_portitor_godot && "$PORTITOR_GODOT" --path game --display-driver macos --audio-driver Dummy --script res://tests/ui/capture.gd'
 node tools/content.mjs check  # 0 错误，并且仍是 "mechanisms playable 27"
 node tools/art.mjs build      # 0 bumped，确认记录 8 条
+# 默认全套里 ids 应该通过（2026-10-17 已修）；不通过就把 game/reports/id-checks.json 的 errors 贴进交付
 ```
 不要跑 `--gpu` 全套。不要做的：逐个算文件哈希、复制仓库做试验、逐帧比对、为写交付补跑命令（process.md 第 10 节）。
 

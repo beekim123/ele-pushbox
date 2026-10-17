@@ -10,6 +10,18 @@
 
 - 机制范围（用户 2026-10-16 决定）：关卡模式暂时只用现有的 33 个机制；SDK 已有但没进关卡的 `power`、`particles`、`rigid`、`pressure` 和各地区新机制，等现有关卡跑通后再开新章节（[关卡质量标准](design/level-quality.md) 第 4 节）。
 
+## 合并：UI-06b；修 Godot 编号检查 ids（2026-10-17）
+
+- **UI-06b**（`ui/UI-06b` @ `87c4d70`）：补完 UI-06a（选章 1643/1601、设置 409/401 像素差），提示、规则卡、对话、过关换 G2。16 张截图全部 ≤1700（最大 1660）。默认全套 25/26，只有 `ids` 失败；`verification.json` 是完整运行（`run_incomplete: false`），采用，`content check` 仍是 playable 27。
+- **ids 失败的原因**（基线上就有，不是 UI-06b 造成的；Claude 在 Node 里照 `game/tools/check_ids.gd` 复现：基线和分支都是 54 个失败）：
+  1. 49 个声音编号（`sfx:` 32、`music:` 17，AUD-00 / WB-02 加的）指向游戏里不存在的 `res://generated/audio/...`：声音还没确认，游戏不导入。**修**：导入工具不把 `sfx` / `music` 放进游戏的编号表，等声音确认、做"声音进游戏"包时再放。
+  2. `text:audio.dom`：工作台专用的嵌套文字组，上次修导入时删了文字没删编号。**修**：一起删。
+  3. 配送 v2 的 3 个机制（`float_block`、`pole`、`hint_animal`）在 Godot 里没有占位脚本。**修**：跑 `node game/tools/import_mechanic_stubs.mjs` 生成（不可玩的占位，`implementation_available` 为 false，是这个工具本来的用法）。
+  - 修后 Node 复现 0 失败；导入测试、node --test 232/232、工作台浏览器测试全过。Godot 里的 ids 要在 Mac 上下一次跑全套时确认（UI-06c 会跑）。
+- **对话接入**：UI-06b 的对话页在游戏里只能用测试夹具显示——启动路由 `boot.gd` 一打开 `dialogue` 就释放关卡。排进 **UX-06 第 5 步**（开局心里话正好要在关卡里出气泡），截图改走真实路由。完整的对话系统（NPC、触发、委托）预留 **DLG-01**，排在新手引导之后。
+- 现在可派：**UI-06c**（大厅 6 套皮肤，Mac）、**UX-02**（引导文字和数据，如果还没派）。
+- 可删除的包分支：`ui/UI-06b`、`ui/UI-06a`、`ui/UI-10b`、`ui/UI-10c`、`ui/DLV-04b`。
+
 ## 合并：DSN-03 新手引导设计（2026-10-17）
 
 - bundle `4d3d59f`，只改文档，范围合规；交付 ≤40 行。
