@@ -1,6 +1,19 @@
 # 配送模式：房间模板、地图生成与可通性检查
 
-状态：**有效，v1（第一个可玩切片的第 2 步，2026-10-15）**。配送 v2（2026-10-16）的房间格式 `pushbox.room/2`、三滚轮开局池和按角色顺序的地图布局见 [delivery-puzzle-rules.md](delivery-puzzle-rules.md)；本文的 v1 格式、生成器、检查工具和 `dungeon_1` 对照表保留不变。上位设计见 [mode-delivery.md](mode-delivery.md) 第 6 节，切片范围见 [delivery-slice.md](delivery-slice.md)。
+状态：**已退役（2026-10-17 用户决定："旧版不要了，只保留新版"）**。v1 曾是第一个可玩切片的第 2 步（2026-10-15）。
+
+**退役怎么做**（工作包 [WB-03](../packages/WB-03.md)）：
+- v1 只给玩家和用户看的部分**删除**：工作台「地图预览」页、`dungeon_1` 切片、v1 房间模板和只为 v1 存在的检查与报告。
+- v2 或已确认的界面还在用的代码和数据**保留**，并在代码里注明"v2 在用"。例如：
+  - 随机数 `PB.mapgen.makeRng`（v2 开局池用它）；
+  - 实时规则 `realtime.js`（DLV-01 要在它上面做 v2 实时规则）；
+  - 已确认、待确认界面截图里画到的房间；
+  - 配送切片已确认的 26 项美术（`APR-0006`）。
+- 判断标准：删完以后 `node tools/art.mjs build` 必须 **0 bumped**，所有界面参考图不变；v2 的检查、测试全部通过。
+
+以下是 v1 当时的设计，留作历史。
+
+原状态：**有效，v1（第一个可玩切片的第 2 步，2026-10-15）**。配送 v2（2026-10-16）的房间格式 `pushbox.room/2`、三滚轮开局池和按角色顺序的地图布局见 [delivery-puzzle-rules.md](delivery-puzzle-rules.md)；本文的 v1 格式、生成器、检查工具和 `dungeon_1` 对照表保留不变。上位设计见 [mode-delivery.md](mode-delivery.md) 第 6 节，切片范围见 [delivery-slice.md](delivery-slice.md)。
 
 本文件规定三件事：房间模板怎么写（第 1–2 节）、地图怎么按种子生成（第 3 节）、怎么证明生成的地图走得通（第 4 节）。规格以代码为准，代码就是游戏移植时的规格：
 

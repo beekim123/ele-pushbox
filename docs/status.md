@@ -10,6 +10,16 @@
 
 - 机制范围（用户 2026-10-16 决定）：关卡模式暂时只用现有的 33 个机制；SDK 已有但没进关卡的 `power`、`particles`、`rigid`、`pressure` 和各地区新机制，等现有关卡跑通后再开新章节（[关卡质量标准](design/level-quality.md) 第 4 节）。
 
+## 用户决定：配送菜单改短名，v1 旧版不要了（2026-10-17）
+
+- 用户看了新菜单说"写这么多子菜单干嘛，没看懂"，并决定"旧版不要了，只保留新版"。
+- **菜单**改成「开局抽签 / 石牢 / 地府 / 海女村」，名字来自 `slices.json` 的 `short_name`（[workbench.md](design/workbench.md) 6.1）。
+- **v1 退役**（[delivery-maps.md](design/delivery-maps.md) 开头）：
+  - 删 v1 专用的页面、切片、模板、检查；
+  - v2 和界面截图还在用的代码与美术保留；
+  - 判断标准是 `art.mjs build` 0 bumped。
+- **执行**：[WB-03](packages/WB-03.md)，要改 `slices.json`，等 DSN-01 合并后再派。
+
 ## 合并：DLV-03 地府天空、v2 梯顶、配送菜单（2026-10-17）
 
 - **来源**：用户交来的 bundle（`d3ac8cd`，基线 `07f07f0`），普通合并。`DLV-03.md` 包头和 Claude 后来补的分支说明冲突，保留包头、状态改为已合并。
