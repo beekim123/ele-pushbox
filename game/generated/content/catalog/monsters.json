@@ -415,23 +415,43 @@
    "id": "yeti",
    "name": "雪怪",
    "world": "polar",
-   "behavior": "力气大，会把箱子推回来",
-   "counter": "用大雪球压",
+   "behavior": "在雪松林的小路上慢慢来回走，碰到你就给你一个大大的熊抱，冻得你原地发抖 1 秒",
+   "counter": "推不动。从高处把箱子推下去砸在它头上，它晕倒、留下金币；引它掉进两格深的雪坑，它爬不出来",
    "pushable": false,
    "mode": "delivery",
    "layer": 2,
-   "status": "concept"
+   "status": "concept",
+   "params": {
+    "move": "patrol",
+    "step_secs": 0.8,
+    "cliff_rows": 2,
+    "contact": "hug",
+    "stun_secs": 1,
+    "trap_secs": 4,
+    "coins": 15
+   }
   },
   {
    "id": "penguin",
    "name": "企鹅",
    "world": "polar",
-   "behavior": "在冰上滑来滑去撞人",
-   "counter": "站在不滑的地方",
+   "behavior": "在雪坡上趴下肚皮滑行：看见你就滑过来，一直滑到撞上东西才停；撞到你就把你推回一格",
+   "counter": "推它一下，它也一路滑走，滑进两格深的坑就爬不出来；箱子落在头上它晕倒；站到台阶上或梯子上，它滑过去撞不到你",
    "pushable": true,
    "mode": "delivery",
    "layer": 2,
-   "status": "concept"
+   "status": "concept",
+   "params": {
+    "move": "slide",
+    "step_secs": 0.5,
+    "walk_secs": 1,
+    "sight_tiles": 6,
+    "contact": "shove",
+    "shove_tiles": 1,
+    "push_stun_secs": 0.5,
+    "trap_secs": 4,
+    "coins": 5
+   }
   },
   {
    "id": "raptor",

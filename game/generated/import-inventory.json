@@ -1,6 +1,6 @@
 {
  "format": "portitor.import-inventory/1",
- "source_id_map_sha256": "a75acfc31a6442d52fc086c89751cc845455293f96045018e5650aea3b366cc4",
+ "source_id_map_sha256": "7f6f81a23a6a0411a6d1a0464ffc8b65c6babf3c102259001c313a10e902509f",
  "files": [
   {
    "path": "generated/id-map.json",
@@ -218,6 +218,7 @@
     "cargo:honey",
     "cargo:hot_soup",
     "cargo:ice_cream",
+    "cargo:ice_lantern",
     "cargo:ink_brush",
     "cargo:kite",
     "cargo:kitten",
@@ -227,6 +228,7 @@
     "cargo:magnet",
     "cargo:matryoshka",
     "cargo:meat",
+    "cargo:mittens",
     "cargo:mooncake",
     "cargo:paper_house",
     "cargo:peach",
@@ -239,6 +241,7 @@
     "cargo:safe",
     "cargo:seeds",
     "cargo:snow_globe",
+    "cargo:soup_flask",
     "cargo:spice_box",
     "cargo:story_box",
     "cargo:sword",
@@ -587,6 +590,7 @@
     "recipient:mermaid",
     "recipient:miller",
     "recipient:moth_king",
+    "recipient:narwhal",
     "recipient:old_miner",
     "recipient:olive_grower",
     "recipient:onsen_host",
@@ -596,6 +600,7 @@
     "recipient:prospector",
     "recipient:puppeteer",
     "recipient:red_hood",
+    "recipient:reindeer_herder",
     "recipient:robot_butler",
     "recipient:robot_chef",
     "recipient:scholar",
@@ -1294,7 +1299,7 @@
     "world:wonderland",
     "world:xianxia"
    ],
-   "sha256": "acda78ff2d0831847ba4093f69d824b534b8e1fd683ad1f80ce00849e2d98c62"
+   "sha256": "c95f4de464aaee7203899c3f3e975d825be919306c7db6237d7edb2dae289b40"
   },
   {
    "path": "generated/content-manifest.json",
@@ -1347,6 +1352,7 @@
     "cargo:honey",
     "cargo:hot_soup",
     "cargo:ice_cream",
+    "cargo:ice_lantern",
     "cargo:ink_brush",
     "cargo:kite",
     "cargo:kitten",
@@ -1356,6 +1362,7 @@
     "cargo:magnet",
     "cargo:matryoshka",
     "cargo:meat",
+    "cargo:mittens",
     "cargo:mooncake",
     "cargo:paper_house",
     "cargo:peach",
@@ -1368,6 +1375,7 @@
     "cargo:safe",
     "cargo:seeds",
     "cargo:snow_globe",
+    "cargo:soup_flask",
     "cargo:spice_box",
     "cargo:story_box",
     "cargo:sword",
@@ -1716,6 +1724,7 @@
     "recipient:mermaid",
     "recipient:miller",
     "recipient:moth_king",
+    "recipient:narwhal",
     "recipient:old_miner",
     "recipient:olive_grower",
     "recipient:onsen_host",
@@ -1725,6 +1734,7 @@
     "recipient:prospector",
     "recipient:puppeteer",
     "recipient:red_hood",
+    "recipient:reindeer_herder",
     "recipient:robot_butler",
     "recipient:robot_chef",
     "recipient:scholar",
@@ -1844,7 +1854,7 @@
     "world:wonderland",
     "world:xianxia"
    ],
-   "sha256": "96e7c4d2eb6c7b94787c2883e68497714be94abb58897d2a2b490120d5bdcff7"
+   "sha256": "936567c529bb30a15cf1cd5193810c1717915f1d6de4c7845015ec64aa610cd2"
   },
   {
    "path": "generated/ids.gd",
@@ -2062,6 +2072,7 @@
     "cargo:honey",
     "cargo:hot_soup",
     "cargo:ice_cream",
+    "cargo:ice_lantern",
     "cargo:ink_brush",
     "cargo:kite",
     "cargo:kitten",
@@ -2071,6 +2082,7 @@
     "cargo:magnet",
     "cargo:matryoshka",
     "cargo:meat",
+    "cargo:mittens",
     "cargo:mooncake",
     "cargo:paper_house",
     "cargo:peach",
@@ -2083,6 +2095,7 @@
     "cargo:safe",
     "cargo:seeds",
     "cargo:snow_globe",
+    "cargo:soup_flask",
     "cargo:spice_box",
     "cargo:story_box",
     "cargo:sword",
@@ -2431,6 +2444,7 @@
     "recipient:mermaid",
     "recipient:miller",
     "recipient:moth_king",
+    "recipient:narwhal",
     "recipient:old_miner",
     "recipient:olive_grower",
     "recipient:onsen_host",
@@ -2440,6 +2454,7 @@
     "recipient:prospector",
     "recipient:puppeteer",
     "recipient:red_hood",
+    "recipient:reindeer_herder",
     "recipient:robot_butler",
     "recipient:robot_chef",
     "recipient:scholar",
@@ -3138,7 +3153,7 @@
     "world:wonderland",
     "world:xianxia"
    ],
-   "sha256": "181b61c73e2adb27c172f51c170be5fb6956a6b7352379d20e8ce642e466cd03"
+   "sha256": "fc4d88ca5a5375ce9049c20feb8576595671136c9c5a660479d50849a4e1281a"
   },
   {
    "path": "generated/content/levels/lab/basics/M01.json",
@@ -3849,7 +3864,7 @@
     "world:wonderland",
     "world:xianxia"
    ],
-   "sha256": "a86b716643f2d90280be0382b5be978d28db2074b854d2eaffc64b826d957e07"
+   "sha256": "2dbd10ba3d32e1be0f0b03908f08550cc67b02f6bab5ab8f6406cde5fb6dfe92"
   },
   {
    "path": "generated/content/catalog/recipients.json",
@@ -3909,6 +3924,7 @@
     "recipient:mermaid",
     "recipient:miller",
     "recipient:moth_king",
+    "recipient:narwhal",
     "recipient:old_miner",
     "recipient:olive_grower",
     "recipient:onsen_host",
@@ -3918,6 +3934,7 @@
     "recipient:prospector",
     "recipient:puppeteer",
     "recipient:red_hood",
+    "recipient:reindeer_herder",
     "recipient:robot_butler",
     "recipient:robot_chef",
     "recipient:scholar",
@@ -3939,7 +3956,7 @@
     "recipient:yama",
     "recipient:zombie"
    ],
-   "sha256": "b8b3aeaf1ca47b1701b4cd4cfe4a2db5df1d3f5c1d7746a98665b384b3a95ad7"
+   "sha256": "77a9389705b62d61f5f57a7f2f135f9a95cc61154b3185f51c24215a1d949598"
   },
   {
    "path": "generated/content/catalog/cargo.json",
@@ -3964,6 +3981,7 @@
     "cargo:honey",
     "cargo:hot_soup",
     "cargo:ice_cream",
+    "cargo:ice_lantern",
     "cargo:ink_brush",
     "cargo:kite",
     "cargo:kitten",
@@ -3973,6 +3991,7 @@
     "cargo:magnet",
     "cargo:matryoshka",
     "cargo:meat",
+    "cargo:mittens",
     "cargo:mooncake",
     "cargo:paper_house",
     "cargo:peach",
@@ -3985,6 +4004,7 @@
     "cargo:safe",
     "cargo:seeds",
     "cargo:snow_globe",
+    "cargo:soup_flask",
     "cargo:spice_box",
     "cargo:story_box",
     "cargo:sword",
@@ -3995,7 +4015,7 @@
     "cargo:water_bucket",
     "cargo:watermelon"
    ],
-   "sha256": "8acea3a02e4b210143fbdb1ab90799a4037f720fd62e9b1276cd4bd8d14008e8"
+   "sha256": "120ac2c2a4050cbb8692b1a48a2cf5ae7054c3b59adab31d8abff86a929db853"
   },
   {
    "path": "generated/content/catalog/combos.json",
@@ -4123,7 +4143,7 @@
     "monster:yeti",
     "monster:zombie_mob"
    ],
-   "sha256": "df2d41b88e309e2caa5991cc515fdc09edc45f1e162a2afecfea2dc3387421b0"
+   "sha256": "52d109f902a607c52d1014fd7418caeb1469ee1ce34d06412ba512db14c52faa"
   },
   {
    "path": "generated/content/catalog/items.json",
@@ -4235,7 +4255,7 @@
     "slice:dungeon_2",
     "slice:jeju_1"
    ],
-   "sha256": "904e7d5e85b89ed25b1fa9aa06b7e197de9a2be484d54446b77e22318298e06a"
+   "sha256": "0c7739020017312644f3c8bec4f3dfb78291db3b75e1a61eb291c00954e129ef"
   },
   {
    "path": "generated/content/i18n/zh-Hans.json",
@@ -7847,6 +7867,8 @@
     "recipient:llama",
     "recipient:sheriff",
     "recipient:prospector",
+    "recipient:reindeer_herder",
+    "recipient:narwhal",
     "cargo:letter",
     "cargo:ice_cream",
     "cargo:piano",
@@ -7897,6 +7919,9 @@
     "cargo:matryoshka",
     "cargo:golden_apple",
     "cargo:cacao_beans",
+    "cargo:soup_flask",
+    "cargo:mittens",
+    "cargo:ice_lantern",
     "combo:snow_cone",
     "combo:too_hot",
     "combo:brain_food",

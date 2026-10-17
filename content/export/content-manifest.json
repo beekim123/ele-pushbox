@@ -4777,16 +4777,17 @@
    "id": "polar",
    "name": "极地雪村",
    "culture": "极地",
-   "inspiration": "北极冰原",
-   "style": "冰屋、极光",
+   "inspiration": "北极圈的冬天：北欧和北极小镇涂成红色、灰蓝色的木屋，雪块垒的雪屋，雪松林（针叶林），冰封的海湾和冰湖上凿洞冰钓，冰川边的冷泉和地热温泉，驯鹿和铃铛，雪鹀，冰下的独角鲸；童话里的雪人和雪怪；冬天傍晚的极光",
+   "care": "这是童话式的北方雪村，不专指某个民族：人物穿普通冬衣，不画萨米人、因纽特人等的民族服饰和纹样；不用萨米鼓、因纽特石堆人（inuksuk）、面纹、图腾柱等有文化或宗教意义的东西，不用「爱斯基摩人」这类称呼和「蹭鼻子」之类的套路；雪屋只当雪块垒的房子；极光只当天上的光，不画成神灵或鬼魂；驯鹿、独角鲸不画成被捕猎的对象，渔夫只钓鱼；雪怪要憨、可爱，不画獠牙和利爪，不说它来自哪个民族的传说；企鹅和北极动物放在一起是童话的说法",
+   "style": "冬天的白天：晴天浅蓝的天，远处连绵的雪山和冰川；近处是盖着厚雪的深蓝灰花岗岩、冰湖、两边密密的雪松，红色木屋和雪屋；傍晚可选极光",
    "mechanisms": [
     "ice_slide",
-    "snowball",
-    "warmth"
+    "freeze",
+    "melt"
    ],
    "theme": null,
    "layer": 2,
-   "status": "concept"
+   "status": "design"
   },
   {
    "id": "dino",
@@ -5549,13 +5550,17 @@
    ],
    "rarity": "common",
    "temper": "怕热",
-   "rule": "热的货物会让他化掉一点",
+   "rule": "怕热：热汤罐会把他化掉一点，所以不收；喜欢毛线手套，戴在树枝手上",
    "likes": [
+    "mittens",
     "carrot",
     "ice_cream"
    ],
    "layer": 2,
-   "status": "concept"
+   "status": "concept",
+   "params": {
+    "move": "stay"
+   }
   },
   {
    "id": "fisher",
@@ -5565,12 +5570,18 @@
    ],
    "rarity": "common",
    "temper": "耐心",
-   "rule": "守在冰窟窿边",
+   "rule": "守在冰窟窿边冰钓：鱼上钩的那几秒顾不上收货，要等他把鱼拉上来",
    "likes": [
+    "soup_flask",
     "hot_soup"
    ],
    "layer": 2,
-   "status": "concept"
+   "status": "concept",
+   "params": {
+    "move": "stay",
+    "reel_every_secs": 10,
+    "reel_secs": 3
+   }
   },
   {
    "id": "genie",
@@ -6522,6 +6533,46 @@
    ],
    "layer": 2,
    "status": "concept"
+  },
+  {
+   "id": "reindeer_herder",
+   "name": "驯鹿牧人",
+   "worlds": [
+    "polar"
+   ],
+   "rarity": "rare",
+   "temper": "手巧",
+   "rule": "毛线手套是他自己织的，不收；小驯鹿是他家的，这一局喂过它燕麦饼，他多给一点小费",
+   "likes": [
+    "soup_flask",
+    "ice_lantern"
+   ],
+   "layer": 2,
+   "status": "concept",
+   "params": {
+    "move": "stay",
+    "fed_tip": 1.2
+   }
+  },
+  {
+   "id": "narwhal",
+   "name": "独角鲸",
+   "worlds": [
+    "polar"
+   ],
+   "rarity": "legendary",
+   "temper": "害羞",
+   "rule": "住在冰下的海里，只在冰窟窿口换气：每隔一会儿探出长牙，这时才能交货；没有手，只收冰灯",
+   "likes": [
+    "ice_lantern"
+   ],
+   "layer": 2,
+   "status": "concept",
+   "params": {
+    "move": "stay",
+    "dive_secs": 10,
+    "surface_secs": 4
+   }
   }
  ],
  "cargo": [
@@ -7239,6 +7290,61 @@
    "carry": "small",
    "layer": 2,
    "status": "concept"
+  },
+  {
+   "id": "soup_flask",
+   "name": "热汤罐",
+   "mode": "delivery",
+   "rule": "怕冷：冷气口喷气的那一步，人站在它的冷气范围里，汤凉一点，完好度 −1",
+   "counter": "等冷气喷完再过，或者绕开冷气口",
+   "mechanisms": [
+    "freeze"
+   ],
+   "rarity": "common",
+   "carry": "medium",
+   "layer": 2,
+   "status": "concept",
+   "params": {
+    "pay": 40,
+    "frost_damage": 1
+   }
+  },
+  {
+   "id": "mittens",
+   "name": "毛线手套",
+   "mode": "delivery",
+   "rule": "怕湿：落进水里，或者人站在化冰流出来的水里，湿透冻硬，完好度 −1",
+   "counter": "冰化开以后等水流走再过，别走水里",
+   "mechanisms": [
+    "melt"
+   ],
+   "rarity": "common",
+   "carry": "small",
+   "layer": 2,
+   "status": "concept",
+   "params": {
+    "pay": 30,
+    "wet_damage": 1
+   }
+  },
+  {
+   "id": "ice_lantern",
+   "name": "冰灯",
+   "mode": "delivery",
+   "rule": "冰做的灯罩，里面点着小蜡烛：落下 2 格或以上就裂一块；落在沙上没事",
+   "counter": "走梯子；要跳先在落点倒一袋沙",
+   "mechanisms": [
+    "fall"
+   ],
+   "rarity": "rare",
+   "carry": "medium",
+   "layer": 2,
+   "status": "concept",
+   "params": {
+    "pay": 55,
+    "fragile_fall_rows": 2,
+    "sand_cushion": true
+   }
   }
  ],
  "combos": [
@@ -8007,23 +8113,43 @@
    "id": "yeti",
    "name": "雪怪",
    "world": "polar",
-   "behavior": "力气大，会把箱子推回来",
-   "counter": "用大雪球压",
+   "behavior": "在雪松林的小路上慢慢来回走，碰到你就给你一个大大的熊抱，冻得你原地发抖 1 秒",
+   "counter": "推不动。从高处把箱子推下去砸在它头上，它晕倒、留下金币；引它掉进两格深的雪坑，它爬不出来",
    "pushable": false,
    "mode": "delivery",
    "layer": 2,
-   "status": "concept"
+   "status": "concept",
+   "params": {
+    "move": "patrol",
+    "step_secs": 0.8,
+    "cliff_rows": 2,
+    "contact": "hug",
+    "stun_secs": 1,
+    "trap_secs": 4,
+    "coins": 15
+   }
   },
   {
    "id": "penguin",
    "name": "企鹅",
    "world": "polar",
-   "behavior": "在冰上滑来滑去撞人",
-   "counter": "站在不滑的地方",
+   "behavior": "在雪坡上趴下肚皮滑行：看见你就滑过来，一直滑到撞上东西才停；撞到你就把你推回一格",
+   "counter": "推它一下，它也一路滑走，滑进两格深的坑就爬不出来；箱子落在头上它晕倒；站到台阶上或梯子上，它滑过去撞不到你",
    "pushable": true,
    "mode": "delivery",
    "layer": 2,
-   "status": "concept"
+   "status": "concept",
+   "params": {
+    "move": "slide",
+    "step_secs": 0.5,
+    "walk_secs": 1,
+    "sight_tiles": 6,
+    "contact": "shove",
+    "shove_tiles": 1,
+    "push_stun_secs": 0.5,
+    "trap_secs": 4,
+    "coins": 5
+   }
   },
   {
    "id": "raptor",

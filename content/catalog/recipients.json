@@ -401,13 +401,17 @@
    ],
    "rarity": "common",
    "temper": "怕热",
-   "rule": "热的货物会让他化掉一点",
+   "rule": "怕热：热汤罐会把他化掉一点，所以不收；喜欢毛线手套，戴在树枝手上",
    "likes": [
+    "mittens",
     "carrot",
     "ice_cream"
    ],
    "layer": 2,
-   "status": "concept"
+   "status": "concept",
+   "params": {
+    "move": "stay"
+   }
   },
   {
    "id": "fisher",
@@ -417,12 +421,18 @@
    ],
    "rarity": "common",
    "temper": "耐心",
-   "rule": "守在冰窟窿边",
+   "rule": "守在冰窟窿边冰钓：鱼上钩的那几秒顾不上收货，要等他把鱼拉上来",
    "likes": [
+    "soup_flask",
     "hot_soup"
    ],
    "layer": 2,
-   "status": "concept"
+   "status": "concept",
+   "params": {
+    "move": "stay",
+    "reel_every_secs": 10,
+    "reel_secs": 3
+   }
   },
   {
    "id": "genie",
@@ -1374,6 +1384,46 @@
    ],
    "layer": 2,
    "status": "concept"
+  },
+  {
+   "id": "reindeer_herder",
+   "name": "驯鹿牧人",
+   "worlds": [
+    "polar"
+   ],
+   "rarity": "rare",
+   "temper": "手巧",
+   "rule": "毛线手套是他自己织的，不收；小驯鹿是他家的，这一局喂过它燕麦饼，他多给一点小费",
+   "likes": [
+    "soup_flask",
+    "ice_lantern"
+   ],
+   "layer": 2,
+   "status": "concept",
+   "params": {
+    "move": "stay",
+    "fed_tip": 1.2
+   }
+  },
+  {
+   "id": "narwhal",
+   "name": "独角鲸",
+   "worlds": [
+    "polar"
+   ],
+   "rarity": "legendary",
+   "temper": "害羞",
+   "rule": "住在冰下的海里，只在冰窟窿口换气：每隔一会儿探出长牙，这时才能交货；没有手，只收冰灯",
+   "likes": [
+    "ice_lantern"
+   ],
+   "layer": 2,
+   "status": "concept",
+   "params": {
+    "move": "stay",
+    "dive_secs": 10,
+    "surface_secs": 4
+   }
   }
  ]
 }
