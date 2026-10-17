@@ -1,6 +1,7 @@
 # DLV-01 配送 v2 的实时规则（设计模型）
 
 状态：配送 v2 线 · 待做（用户安排后开工；不需要等美术确认）
+> 派包前 Claude 按新模板重写（拆小、两档检查、交付 ≤40 行）。做完后要能删 v1 数据：`realtime.js` 的测试和回放改用 v2 房间（见 WB-03 状态）。
 设计依据：[delivery-puzzle-rules.md](../design/delivery-puzzle-rules.md) 第 3–5 节；[delivery-realtime.md](../design/delivery-realtime.md)；[delivery-dungeon.md](../design/delivery-dungeon.md)、[delivery-diyu.md](../design/delivery-diyu.md) 第 3 节
 
 ## 目标
