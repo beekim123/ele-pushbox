@@ -31,6 +31,10 @@
 | [UX-06](UX-06.md) | 引导进游戏 ②：按键提示层、开局心里话、目标发光、因果光、第 1 组房间放大 | `claude/inspiring-ride-zfnn4s` → `ux/UX-06` | Godot 关卡场景、存档 | 等 UX-04 合并 |
 | [UX-07](UX-07.md) | 引导进游戏 ③：卡住与死局提醒、第三层提示、规则卡时机、选关目标、过关"发现" | `claude/inspiring-ride-zfnn4s` → `ux/UX-07` | Godot 关卡场景、提示面板、规则卡、选关、过关 | 等 UX-06 合并 |
 | DLG-01 | 预留：对话系统第 2 步（dialogue.md 第 3、4 节：对话数据 `content/dialogue/`、`talk` / `near` / `level_idle` 触发、头顶标记、工作台「对话」页）。先由设计包定内容再拆 | — | — | 预留（新手引导 UX 系列之后） |
+| [UI-11a](UI-11a.md) | 设置里选大厅皮肤（工作台；设置页升 v7） | `claude/inspiring-ride-zfnn4s` → `ui/UI-11a` | `index.html`、`tools/art.mjs`（追加）、`ui-style.md` 第 2 节 | 待派（现在可派） |
+| [UI-11b](UI-11b.md) | 设置里选大厅皮肤（Godot，Mac 上做） | `claude/inspiring-ride-zfnn4s` → `ui/UI-11b` | `screen.gd`、`settings.gd`、`capture.gd` | 等 UI-11a 合并、用户确认设置页 v7 |
+| [ART-03](ART-03.md) | 关卡模式 6 种机关的美术（矿车、灯照显形、套娃箱、弹跳蘑菇、跷跷板、阵风） | `claude/inspiring-ride-zfnn4s` → `art/ART-03` | `mechanisms.json`（只改这 6 个的 `assets`） | 待派（现在可派） |
+| [LV-13](LV-13.md) | Godot 关卡里换掉这 6 种机关的占位方块（Mac 上做） | `claude/inspiring-ride-zfnn4s` → `lv/LV-13` | `matter.gd`、`world_view.gd` | 等 ART-03 合并、用户确认美术 |
 | [DSN-04](DSN-04.md) | 第四张配送地图「极地雪村」设计（只写设计和后续包） | `claude/inspiring-ride-zfnn4s` → `dsn/DSN-04` | 设计目录 5 个文件（只动 `polar`）、本表（只改预留行） | **已合并**（2026-10-17） |
 | [ART-01a](ART-01a.md) | 雪村美术①：主题 `theme.polar`（新 `terrain-polar.js`）、4 种装饰、小驯鹿和雪鹀（7 项） | `claude/inspiring-ride-zfnn4s`（DSN-04 合并后）→ `art/ART-01a` | 新 `terrain-polar.js`；`index.html`、`tools/art.mjs`（只追加）；美术生成文件 | 待派（DSN-04 合并后；和 ART-01b、ART-01c、DLV-06 可同时） |
 | [ART-01b](ART-01b.md) | 雪村美术②：4 位收件人的角色和滚轮头像（8 项） | `claude/inspiring-ride-zfnn4s`（DSN-04 合并后）→ `art/ART-01b` | 只新建美术源文件；美术生成文件 | 待派（DSN-04 合并后；可同时） |
@@ -73,6 +77,7 @@
 - `UX-01`、`DSN-01`、`DSN-02`、`DSN-03`、`BR-01`
 - `UX-02`–`UX-07`（DSN-03 拆出）
 - `DLG-01`（预留：对话系统第 2 步）
+- `UI-11a`、`UI-11b`、`ART-03`、`LV-13`
 - `DSN-04`、`DSN-05`；预留 `ART-01a`–`ART-01d`、`ART-02a`–`ART-02d`、`DLV-06`–`DLV-09b`
 - `WB-03`、`UI-10`、`UI-10a`–`UI-10c`、`AUD-00`、`WB-04`、`DLV-04a`、`DLV-04b`
 - `WB-02`、`AUD-01`、`AUD-02`（预留）
