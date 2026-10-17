@@ -10,6 +10,16 @@
 
 - 机制范围（用户 2026-10-16 决定）：关卡模式暂时只用现有的 33 个机制；SDK 已有但没进关卡的 `power`、`particles`、`rigid`、`pressure` 和各地区新机制，等现有关卡跑通后再开新章节（[关卡质量标准](design/level-quality.md) 第 4 节）。
 
+## 合并：UX-02 引导文字和数据（2026-10-17）
+
+- bundle `70ceea7`，范围合规，关卡文件没动；交付 ≤40 行。
+- 新文字 37 条（`content/i18n-onboarding/`），补字 8 个（`font-onboarding.js`）；`content/onboarding/basics.json` 写了第 1 组 7 关的目标、第三层提示、开局心里话、按键提示、死局标记，`content.mjs` 加了对应检查和一条测试。
+- 死局格子用设计模型穷举确认：M02 箱子落到竖井下方 (7,4) 的 15 个局面全过不了（`dead`）；M04 倒错格子的 20 个局面都能补救（`wrong`）。
+- 制作方报告的 3 个测试失败：字体清单（`tools/art.mjs`、`tests/i18n.test.mjs`）没有新字体文件，包不让改。**Claude 已补**，并把字体加进 `index.html`。process.md 第 10 节加一条：新字体文件要同时进这三处清单。
+- 旧规则卡正文写着按键（"按 Ctrl 和左右方向倒一袋沙"），和新的按法一行重复：交 **UX-05 第 5 步**加两条不提按键的新正文，旧的不动（改了会让已确认的规则卡失效）。
+- 合并后核对：content 0 错误 0 警告、playable 27；check-levels 46 关 ok；art build 0 bumped、8 条确认、缺字提示消失；编号检查（Node 复现）0 失败；node --test 233/233；工作台浏览器测试全过。
+- 现在可派：**UX-03**（工作台关卡页预览 + 新美术）、**UX-05**（7 个新界面），两包可同时做，都不用 Mac。
+
 ## 合并：UI-06b；修 Godot 编号检查 ids（2026-10-17）
 
 - **UI-06b**（`ui/UI-06b` @ `87c4d70`）：补完 UI-06a（选章 1643/1601、设置 409/401 像素差），提示、规则卡、对话、过关换 G2。16 张截图全部 ≤1700（最大 1660）。默认全套 25/26，只有 `ids` 失败；`verification.json` 是完整运行（`run_incomplete: false`），采用，`content check` 仍是 playable 27。

@@ -24,10 +24,10 @@
 | [AUD-00](AUD-00.md) | 主题小调第二版：4 个抓耳方案 × 4 首独立曲子（主题曲 + 石牢 / 地府 / 海女村变奏） | `claude/inspiring-ride-zfnn4s` → `aud/AUD-00-v2` | `audio.json`（主题曲组）、`tools/content.mjs`（一处）、生成文件 | 搁置：背景音乐先不做（用户 2026-10-17） |
 | [AUD-02](AUD-02.md) | 石牢、地府、海女村音乐各 3 首候选；依赖 WB-02 合并，与 AUD-01 互不依赖 | `claude/inspiring-ride-zfnn4s` → `aud/AUD-02` | 仅音乐生成结果；与 AUD-01 的汇总生成文件合并后重建 | 搁置：背景音乐先不做（用户 2026-10-17） |
 | [DSN-03](DSN-03.md) | 新手引导改造设计（用户：UX-01 报告 8 个问题全按建议） | `claude/inspiring-ride-zfnn4s` → `dsn/DSN-03` | `game-design.md`（只改引导相关）、本表（只改下面三行） | **已合并**（2026-10-17） |
-| [UX-02](UX-02.md) | 引导的文字和关卡数据：新表 `content/i18n-onboarding/`、字形、第 1 组 7 关加 `onboarding`（DSN-03 拆出） | `claude/inspiring-ride-zfnn4s` → `ux/UX-02` | 新文件 `content/onboarding/basics.json`、`tools/content.mjs`（只加检查）、字形生成文件 | 待派（现在可派） |
-| [UX-03](UX-03.md) | 工作台关卡页预览引导；关卡里的 5（+1）项新资产 | `claude/inspiring-ride-zfnn4s`（UX-02 合并后）→ `ux/UX-03` | `play.js`（加开关）、`index.html`、`tools/art.mjs`（追加）、e2e（追加）、生成文件 | 等 UX-02 合并 |
+| [UX-02](UX-02.md) | 引导的文字和关卡数据：新表 `content/i18n-onboarding/`、字形、第 1 组 7 关加 `onboarding`（DSN-03 拆出） | `claude/inspiring-ride-zfnn4s` → `ux/UX-02` | 新文件 `content/onboarding/basics.json`、`tools/content.mjs`（只加检查）、字形生成文件 | 已合并（2026-10-17） |
+| [UX-03](UX-03.md) | 工作台关卡页预览引导；关卡里的 5（+1）项新资产 | `claude/inspiring-ride-zfnn4s`（UX-02 合并后）→ `ux/UX-03` | `play.js`（加开关）、`index.html`、`tools/art.mjs`（追加）、e2e（追加）、生成文件 | 待派（现在可派，和 UX-05 同时） |
 | [UX-04](UX-04.md) | 引导进游戏 ①：备选键、Mac ⌘、鼠标悬停、按设备显示、"开始游戏"、"操作说明" | `claude/inspiring-ride-zfnn4s` → `ux/UX-04` | Godot 输入、大厅、暂停、设置（和 UI-06 同一批界面文件） | 等 UX-02、UX-03、UX-05、UI-06b、UI-06c 合并 |
-| [UX-05](UX-05.md) | 引导的 7 个新界面：HUD 标 Z/R/H、规则卡按法、过关"发现"、开始游戏、操作说明、暂停、设置 | `claude/inspiring-ride-zfnn4s`（UX-02 合并后）→ `ux/UX-05` | `index.html`、`tools/art.mjs`（追加）、e2e（追加）；生成文件与 UX-03 合并后重建 | 等 UX-02 合并（可和 UX-03 同时做） |
+| [UX-05](UX-05.md) | 引导的 7 个新界面：HUD 标 Z/R/H、规则卡按法、过关"发现"、开始游戏、操作说明、暂停、设置 | `claude/inspiring-ride-zfnn4s`（UX-02 合并后）→ `ux/UX-05` | `index.html`、`tools/art.mjs`（追加）、e2e（追加）；生成文件与 UX-03 合并后重建 | 待派（现在可派，和 UX-03 同时） |
 | [UX-06](UX-06.md) | 引导进游戏 ②：按键提示层、开局心里话、目标发光、因果光、第 1 组房间放大 | `claude/inspiring-ride-zfnn4s` → `ux/UX-06` | Godot 关卡场景、存档 | 等 UX-04 合并 |
 | [UX-07](UX-07.md) | 引导进游戏 ③：卡住与死局提醒、第三层提示、规则卡时机、选关目标、过关"发现" | `claude/inspiring-ride-zfnn4s` → `ux/UX-07` | Godot 关卡场景、提示面板、规则卡、选关、过关 | 等 UX-06 合并 |
 | DLG-01 | 预留：对话系统第 2 步（dialogue.md 第 3、4 节：对话数据 `content/dialogue/`、`talk` / `near` / `level_idle` 触发、头顶标记、工作台「对话」页）。先由设计包定内容再拆 | — | — | 预留（新手引导 UX 系列之后） |
