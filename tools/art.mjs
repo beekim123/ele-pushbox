@@ -17,7 +17,7 @@ const ROOT = path.resolve(opt("root", REPO));
 const rel = (...p) => path.join(ROOT, ...p);
 // font-delivery / font-rooms2 / font-extra / font-ui add glyphs only; ui-delivery and ui-style register screens next to ui.js
 // (neither changes what ui.js draws); ui-style (2026-10-16 interface style) replaces the older screen entries.
-const PB = loadCore(["raster", "font-data", "font-small", "font-delivery", "font-extra", "font-ui", "font-rooms2", "sprites", "i18n", "tilemodel", "terrain", "terrain-diyu", "terrain-jeju", "ambient", "env", "matter", "scene", "dialogue", "ui", "ui-delivery", "ui-kit", "ui-skins", "ui-style", "ui-common", "ui-screens-level", "rooms", "mapgen", "rooms2", "mapgen2", "delivery-scene", "delivery-scene2", "ui-screens-result", "font-delivery2", "ui-screens-delivery", "font-onboarding"], { authoringModel: false });
+const PB = loadCore(["raster", "font-data", "font-small", "font-delivery", "font-extra", "font-ui", "font-rooms2", "sprites", "i18n", "tilemodel", "terrain", "terrain-diyu", "terrain-jeju", "ambient", "env", "matter", "scene", "dialogue", "ui", "ui-delivery", "ui-kit", "ui-skins", "ui-style", "ui-common", "ui-screens-level", "rooms", "mapgen", "rooms2", "mapgen2", "delivery-scene", "delivery-scene2", "ui-screens-result", "font-delivery2", "ui-screens-delivery", "font-onboarding", "onboarding-fx"], { authoringModel: false });
 const LOCALES = ["zh-Hans", "en"];
 // content/i18n (frozen) plus the content/i18n-<name> tables (tools/lib/i18n.mjs).
 function loadI18n() {
@@ -320,3 +320,11 @@ else if (cmd === "approve") approve();
 else if (cmd === "import") importEdits();
 else if (cmd === "verify") verify();
 else { console.log("usage: node tools/art.mjs build|approve|import|verify [--root dir]"); process.exit(2); }
+
+// UX-03: the workbench onboarding layer reads the onboarding data (content/onboarding/*.json,
+// onboarding.md 附 3); file:// cannot fetch it, so build appends it to the bundle.
+if (cmd === "build" || cmd === "import") {
+  const dir = rel("content/onboarding"), onboarding = {};
+  if (fs.existsSync(dir)) for (const f of fs.readdirSync(dir).filter((n) => n.endsWith(".json")).sort()) Object.assign(onboarding, readJson(path.join(dir, f)).levels || {});
+  fs.appendFileSync(rel("workbench/data/bundle.js"), "window.PB_BUNDLE.onboarding = " + JSON.stringify(onboarding) + ";\n");
+}
