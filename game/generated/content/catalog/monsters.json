@@ -371,23 +371,49 @@
    "id": "ant_army",
    "name": "蚂蚁大军",
    "world": "candy",
-   "behavior": "跟着甜的货物走",
-   "counter": "用糖块引开",
+   "behavior": "一队小蚂蚁在过道上来回走，碰到你就从货物里搬走一块糖（完好度 −1），带的是信件就搬走一块零食；你带着甜的货物时，它们闻着味跟过来",
+   "counter": "推不动（一整队）。站到梯子上或一格高的台子上，等它们走过去；把箱子推下去压在队伍上，它们四散跑开，过一会儿再排好队；也能用两格深的坑困住",
    "pushable": false,
    "mode": "delivery",
    "layer": 2,
-   "status": "concept"
+   "status": "concept",
+   "params": {
+    "move": "patrol",
+    "step_secs": 0.5,
+    "cliff_rows": 2,
+    "contact": "steal",
+    "steal_cargo": 1,
+    "steal_snack": 1,
+    "smell_tiles": 5,
+    "flee_secs": 4,
+    "trap_secs": 4,
+    "coins": 0
+   }
   },
   {
    "id": "gingerbread",
    "name": "姜饼人",
    "world": "candy",
-   "behavior": "被你看见就逃跑，偷走的东西也一起带走",
-   "counter": "堵住退路",
+   "behavior": "在过道里飞快地跑来跑去，边跑边喊「你追不上我」；碰到你就撞你一下，把你推回一格，顺手拿走 5 个金币跑开",
+   "counter": "从侧面把它推进糖水里，它泡软了坐着走不动，金币还你；也能用箱子压晕、用两格深的坑困住，或者两边都用箱子堵住",
    "pushable": true,
    "mode": "delivery",
    "layer": 2,
-   "status": "concept"
+   "status": "concept",
+   "params": {
+    "move": "patrol",
+    "step_secs": 0.3,
+    "cliff_rows": 2,
+    "contact": "steal",
+    "shove_tiles": 1,
+    "steal_coins": 5,
+    "flee_secs": 3,
+    "flee_step_secs": 0.2,
+    "push_stun_secs": 0.5,
+    "soggy_secs": 6,
+    "trap_secs": 4,
+    "coins": 10
+   }
   },
   {
    "id": "scorpion",

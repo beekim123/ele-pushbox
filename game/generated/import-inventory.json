@@ -1,6 +1,6 @@
 {
  "format": "portitor.import-inventory/1",
- "source_id_map_sha256": "7f6f81a23a6a0411a6d1a0464ffc8b65c6babf3c102259001c313a10e902509f",
+ "source_id_map_sha256": "32596dbcdd59c3891d2b0f110a9b6e2bf7939486123760fc556c8e76c35e5c13",
  "files": [
   {
    "path": "generated/id-map.json",
@@ -206,6 +206,7 @@
     "cargo:cake",
     "cargo:carrot",
     "cargo:chip",
+    "cargo:chocolate",
     "cargo:cucumber",
     "cargo:durian",
     "cargo:egg",
@@ -236,6 +237,7 @@
     "cargo:pearl",
     "cargo:piano",
     "cargo:plant",
+    "cargo:pudding",
     "cargo:puppy",
     "cargo:qingtuan",
     "cargo:safe",
@@ -543,6 +545,7 @@
     "recipient:astronaut",
     "recipient:baba_yaga",
     "recipient:baby_dino",
+    "recipient:baker",
     "recipient:boat_vendor",
     "recipient:boatwright",
     "recipient:cacao_trader",
@@ -574,6 +577,7 @@
     "recipient:granny",
     "recipient:great_grandma",
     "recipient:haenyeo",
+    "recipient:ice_cream_vendor",
     "recipient:immortal",
     "recipient:indigo_dyer",
     "recipient:inventor",
@@ -1299,7 +1303,7 @@
     "world:wonderland",
     "world:xianxia"
    ],
-   "sha256": "c95f4de464aaee7203899c3f3e975d825be919306c7db6237d7edb2dae289b40"
+   "sha256": "d933bcc2a6173304f6b78b6236a5206cefd6a6c56a281280778c0c73992c51f6"
   },
   {
    "path": "generated/content-manifest.json",
@@ -1340,6 +1344,7 @@
     "cargo:cake",
     "cargo:carrot",
     "cargo:chip",
+    "cargo:chocolate",
     "cargo:cucumber",
     "cargo:durian",
     "cargo:egg",
@@ -1370,6 +1375,7 @@
     "cargo:pearl",
     "cargo:piano",
     "cargo:plant",
+    "cargo:pudding",
     "cargo:puppy",
     "cargo:qingtuan",
     "cargo:safe",
@@ -1677,6 +1683,7 @@
     "recipient:astronaut",
     "recipient:baba_yaga",
     "recipient:baby_dino",
+    "recipient:baker",
     "recipient:boat_vendor",
     "recipient:boatwright",
     "recipient:cacao_trader",
@@ -1708,6 +1715,7 @@
     "recipient:granny",
     "recipient:great_grandma",
     "recipient:haenyeo",
+    "recipient:ice_cream_vendor",
     "recipient:immortal",
     "recipient:indigo_dyer",
     "recipient:inventor",
@@ -1854,7 +1862,7 @@
     "world:wonderland",
     "world:xianxia"
    ],
-   "sha256": "936567c529bb30a15cf1cd5193810c1717915f1d6de4c7845015ec64aa610cd2"
+   "sha256": "3163e9f2ad7b0d631f7ff5da4c0d3a62cd291e4f3d41053e082383ae805d248c"
   },
   {
    "path": "generated/ids.gd",
@@ -2060,6 +2068,7 @@
     "cargo:cake",
     "cargo:carrot",
     "cargo:chip",
+    "cargo:chocolate",
     "cargo:cucumber",
     "cargo:durian",
     "cargo:egg",
@@ -2090,6 +2099,7 @@
     "cargo:pearl",
     "cargo:piano",
     "cargo:plant",
+    "cargo:pudding",
     "cargo:puppy",
     "cargo:qingtuan",
     "cargo:safe",
@@ -2397,6 +2407,7 @@
     "recipient:astronaut",
     "recipient:baba_yaga",
     "recipient:baby_dino",
+    "recipient:baker",
     "recipient:boat_vendor",
     "recipient:boatwright",
     "recipient:cacao_trader",
@@ -2428,6 +2439,7 @@
     "recipient:granny",
     "recipient:great_grandma",
     "recipient:haenyeo",
+    "recipient:ice_cream_vendor",
     "recipient:immortal",
     "recipient:indigo_dyer",
     "recipient:inventor",
@@ -3153,7 +3165,7 @@
     "world:wonderland",
     "world:xianxia"
    ],
-   "sha256": "fc4d88ca5a5375ce9049c20feb8576595671136c9c5a660479d50849a4e1281a"
+   "sha256": "0077bdfcca829da9c71c3ef8ae48d440d2b5b716a550d12373557b7f2e610f06"
   },
   {
    "path": "generated/content/levels/lab/basics/M01.json",
@@ -3864,7 +3876,7 @@
     "world:wonderland",
     "world:xianxia"
    ],
-   "sha256": "2dbd10ba3d32e1be0f0b03908f08550cc67b02f6bab5ab8f6406cde5fb6dfe92"
+   "sha256": "12891838e6a3355a428115f3846743bfd4a5be583adb62f9f5b258f0518c1361"
   },
   {
    "path": "generated/content/catalog/recipients.json",
@@ -3877,6 +3889,7 @@
     "recipient:astronaut",
     "recipient:baba_yaga",
     "recipient:baby_dino",
+    "recipient:baker",
     "recipient:boat_vendor",
     "recipient:boatwright",
     "recipient:cacao_trader",
@@ -3908,6 +3921,7 @@
     "recipient:granny",
     "recipient:great_grandma",
     "recipient:haenyeo",
+    "recipient:ice_cream_vendor",
     "recipient:immortal",
     "recipient:indigo_dyer",
     "recipient:inventor",
@@ -3956,7 +3970,7 @@
     "recipient:yama",
     "recipient:zombie"
    ],
-   "sha256": "77a9389705b62d61f5f57a7f2f135f9a95cc61154b3185f51c24215a1d949598"
+   "sha256": "fe65d0e1b5c14d4bc9e1f4792d3bf4cfea45a9c15031f84b837e3cc5e93bcc28"
   },
   {
    "path": "generated/content/catalog/cargo.json",
@@ -3969,6 +3983,7 @@
     "cargo:cake",
     "cargo:carrot",
     "cargo:chip",
+    "cargo:chocolate",
     "cargo:cucumber",
     "cargo:durian",
     "cargo:egg",
@@ -3999,6 +4014,7 @@
     "cargo:pearl",
     "cargo:piano",
     "cargo:plant",
+    "cargo:pudding",
     "cargo:puppy",
     "cargo:qingtuan",
     "cargo:safe",
@@ -4015,7 +4031,7 @@
     "cargo:water_bucket",
     "cargo:watermelon"
    ],
-   "sha256": "120ac2c2a4050cbb8692b1a48a2cf5ae7054c3b59adab31d8abff86a929db853"
+   "sha256": "343219ebd76a1c55321b9329b6357fbc54cfbd1773cc66f0004a05579a4dd9c4"
   },
   {
    "path": "generated/content/catalog/combos.json",
@@ -4143,7 +4159,7 @@
     "monster:yeti",
     "monster:zombie_mob"
    ],
-   "sha256": "52d109f902a607c52d1014fd7418caeb1469ee1ce34d06412ba512db14c52faa"
+   "sha256": "5c173187cdeba07c9cbb51f47e43355fe1f9f0f23f817328d6f378c80256ca20"
   },
   {
    "path": "generated/content/catalog/items.json",
@@ -4255,7 +4271,7 @@
     "slice:dungeon_2",
     "slice:jeju_1"
    ],
-   "sha256": "0c7739020017312644f3c8bec4f3dfb78291db3b75e1a61eb291c00954e129ef"
+   "sha256": "f4421e6c50cb4b0b94222bacc350981b806d2b00189bd5f8725b8f99db7dcbcd"
   },
   {
    "path": "generated/content/i18n/zh-Hans.json",
@@ -7869,6 +7885,8 @@
     "recipient:prospector",
     "recipient:reindeer_herder",
     "recipient:narwhal",
+    "recipient:baker",
+    "recipient:ice_cream_vendor",
     "cargo:letter",
     "cargo:ice_cream",
     "cargo:piano",
@@ -7922,6 +7940,8 @@
     "cargo:soup_flask",
     "cargo:mittens",
     "cargo:ice_lantern",
+    "cargo:chocolate",
+    "cargo:pudding",
     "combo:snow_cone",
     "combo:too_hot",
     "combo:brain_food",

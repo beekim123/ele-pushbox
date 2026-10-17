@@ -40,12 +40,12 @@
   "recipient": {
    "name": "收件人",
    "source": "content/catalog/recipients.json",
-   "count": 86
+   "count": 88
   },
   "cargo": {
    "name": "货物",
    "source": "content/catalog/cargo.json",
-   "count": 53
+   "count": 55
   },
   "combo": {
    "name": "缘分组合",
@@ -4609,6 +4609,22 @@
    "game": "res://generated/content/catalog/recipients.json#narwhal"
   },
   {
+   "uid": "recipient:baker",
+   "domain": "recipient",
+   "id": "baker",
+   "name": "面包师",
+   "source": "content/catalog/recipients.json",
+   "game": "res://generated/content/catalog/recipients.json#baker"
+  },
+  {
+   "uid": "recipient:ice_cream_vendor",
+   "domain": "recipient",
+   "id": "ice_cream_vendor",
+   "name": "冰淇淋车老板",
+   "source": "content/catalog/recipients.json",
+   "game": "res://generated/content/catalog/recipients.json#ice_cream_vendor"
+  },
+  {
    "uid": "cargo:letter",
    "domain": "cargo",
    "id": "letter",
@@ -5031,6 +5047,22 @@
    "name": "冰灯",
    "source": "content/catalog/cargo.json",
    "game": "res://generated/content/catalog/cargo.json#ice_lantern"
+  },
+  {
+   "uid": "cargo:chocolate",
+   "domain": "cargo",
+   "id": "chocolate",
+   "name": "巧克力",
+   "source": "content/catalog/cargo.json",
+   "game": "res://generated/content/catalog/cargo.json#chocolate"
+  },
+  {
+   "uid": "cargo:pudding",
+   "domain": "cargo",
+   "id": "pudding",
+   "name": "布丁",
+   "source": "content/catalog/cargo.json",
+   "game": "res://generated/content/catalog/cargo.json#pudding"
   },
   {
    "uid": "combo:snow_cone",
