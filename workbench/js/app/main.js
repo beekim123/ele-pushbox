@@ -40,7 +40,8 @@
       if (!on && !sec.hidden && VIEWS[v].hide) VIEWS[v].hide();
       sec.hidden = !on;
     }
-    nav.setCurrent(name);
+    // A page with places of its own in the menu (配送: maps, rooms) says which item and breadcrumb fit.
+    nav.setCurrent(name, VIEWS[name].where ? VIEWS[name].where(id) : null);
     active = name;
     VIEWS[name].show(id);
     updateBadges();

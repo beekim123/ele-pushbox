@@ -28,7 +28,7 @@ async function decode(file) {
   page.on("console", (m) => { if (m.type() === "error") errors.push(m.text()); });
 
   // 1. Every view opens without errors.
-  for (const h of ["#overview", "#modes", "#modes/water", "#modes/basics/M03", "#modes/hell-pool", "#modes/water/W08", "#mechanisms", "#mechanisms/float_sink", "#mechanisms/portal", "#scenes/level.W09", "#assets/mech.bridge", "#catalog/cargo", "#catalog/items", "#catalog/slices", "#maps", "#maps/7/2", "#maps/t/dungeon_guard", "#maps/t/dungeon_plate", "#rooms2", "#rooms2/pool/5", "#rooms2/diyu_lantern", "#rooms2/dungeon2_yard", "#scenes", "#scenes/level.M04", "#scenes/ui.screen.chapters", "#scenes/lobby.forest", "#scenes/showcase.cosmos", "#scenes/chapter.ruins", "#scenes/chapter.sky", "#assets", "#assets/material.chapter2_5", "#assets/char.portitor", "#catalog/worlds", "#catalog/recipients", "#catalog/combos", "#catalog/upgrades", "#ids", "#ids/level", "#scenes/ui.screen.dialogue", "#scenes/ui.screen.hint", "#assets/mech.door", "#edit/obj.crate_wood", "#review", "#export"]) {
+  for (const h of ["#overview", "#modes", "#modes/water", "#modes/basics/M03", "#modes/hell-pool", "#modes/water/W08", "#mechanisms", "#mechanisms/float_sink", "#mechanisms/portal", "#scenes/level.W09", "#assets/mech.bridge", "#catalog/cargo", "#catalog/items", "#catalog/slices", "#maps", "#maps/7/2", "#maps/t/dungeon_guard", "#maps/t/dungeon_plate", "#rooms2", "#rooms2/pool/5", "#rooms2/diyu_lantern", "#rooms2/dungeon2_yard", "#rooms2/map/diyu_1", "#rooms2/map/dungeon_2", "#scenes", "#scenes/level.M04", "#scenes/ui.screen.chapters", "#scenes/lobby.forest", "#scenes/showcase.cosmos", "#scenes/chapter.ruins", "#scenes/chapter.sky", "#assets", "#assets/material.chapter2_5", "#assets/char.portitor", "#catalog/worlds", "#catalog/recipients", "#catalog/combos", "#catalog/upgrades", "#ids", "#ids/level", "#scenes/ui.screen.dialogue", "#scenes/ui.screen.hint", "#assets/mech.door", "#edit/obj.crate_wood", "#review", "#export"]) {
     await page.goto(URL + h); await page.waitForTimeout(250);
   }
   check(errors.length === 0, "all views load without console errors" + (errors.length ? ": " + errors[0] : ""));
@@ -227,6 +227,39 @@ async function decode(file) {
     `v2 rooms draw the candidates only while the switch is on, approved coins always (on: ${JSON.stringify(r2With)}, off: ${JSON.stringify(r2Without)})`);
   check((await page.locator("#rooms2-work").textContent()).includes("美术候选（未确认"), "the v2 room page says which drawn art is unconfirmed");
 
+  // 2g. v2 map pages (DLV-03, workbench.md 6.1): one per format-2 map of slices.json. The left column lists only
+  // that map's rooms, in the role groups; the middle sums the map up; 试一局 opens a run of that map in the pool.
+  const ROLE_ORDER = ["起点", "教", "喘口气", "发展", "驿站", "转折", "收件人之家"];
+  const mapPages = [];
+  for (const id of await page.evaluate(() => PBStore.catalog("slices").filter((s) => s.format === 2).map((s) => s.id))) {
+    await page.goto(URL + "#rooms2/map/" + id); await page.waitForTimeout(300);
+    mapPages.push(await page.evaluate((id) => {
+      const m = PBStore.catalog("slices").find((s) => s.id === id);
+      return { id, want: m.rooms2.slice().sort(), name: m.name.replace(/^配送地图 · /, ""), page: PBRooms2.state().page, mapId: PBRooms2.state().mapId,
+        rooms: Array.from(document.querySelectorAll("#rooms2-side [data-room]")).map((b) => b.dataset.room).sort(),
+        groups: Array.from(document.querySelectorAll("#rooms2-side .group-title")).map((x) => x.textContent),
+        title: document.querySelector("#rooms2-work h2").textContent,
+        meta: Array.from(document.querySelectorAll("#rooms2-work dl.r2-map > dt")).map((x) => x.textContent + "=" + x.nextElementSibling.textContent) };
+    }, id));
+  }
+  const badMap = mapPages.filter((x) => x.page !== "map" || x.mapId !== x.id || x.title !== x.name || JSON.stringify(x.rooms) !== JSON.stringify(x.want)
+    || x.groups.some((g, i) => !ROLE_ORDER.includes(g) || (i && ROLE_ORDER.indexOf(g) <= ROLE_ORDER.indexOf(x.groups[i - 1]))));
+  check(mapPages.length === 2 && badMap.length === 0, "each v2 map page lists only its own rooms, grouped by role in the order of workbench.md 6.1" + (badMap.length ? ": " + JSON.stringify(badMap[0]) : ""));
+  const diyuPage = mapPages.find((x) => x.id === "diyu_1") || { groups: [], meta: [] }, metaOf = (k) => (diyuPage.meta.find((x) => x.startsWith(k + "=")) || "").slice(k.length + 1);
+  check(JSON.stringify(diyuPage.groups) === JSON.stringify(ROLE_ORDER) && diyuPage.meta.map((x) => x.split("=")[0]).join() === "地区,网格,方向,房间顺序,收件人,货物,怪物,提示动物,顶边,房间"
+    && metaOf("网格").startsWith("13×3") && metaOf("方向") === "由左往右" && metaOf("顶边").startsWith("天空") && metaOf("房间").startsWith("13 间"),
+    "the 地府·酆都 page sums up grid, direction, room order, recipients, cargo, monsters, hint animals and its sky top edge (" + JSON.stringify(diyuPage.meta.slice(1, 3)) + ")");
+  await page.goto(URL + "#rooms2/map/diyu_1"); await page.waitForTimeout(300);
+  await page.click('#rooms2-work button[data-try="diyu_1"]'); await page.waitForTimeout(400);
+  const tried = await page.evaluate(() => ({ hash: location.hash, page: PBRooms2.state().page, seed: PBRooms2.state().seed, slice: PBRooms2.state().run && PBRooms2.state().run.slice }));
+  check(tried.page === "pool" && tried.slice === "diyu_1" && tried.hash === "#rooms2/pool/" + tried.seed, "试一局 on a map page opens a run of that map in the run pool (" + JSON.stringify(tried) + ")");
+  await page.goto(URL + "#rooms2/map/diyu_1"); await page.waitForTimeout(300);
+  await page.click('#rooms2-side [data-room="diyu_naihe"]'); await page.waitForTimeout(400);
+  const fromMap = await page.evaluate(() => ({ hash: location.hash, page: PBRooms2.state().page, picked: Array.from(document.querySelectorAll('#rooms2-side [data-room][aria-current="true"]')).map((b) => b.dataset.room).join(),
+    back: (document.querySelector('#rooms2-side a[href="#rooms2/map/diyu_1"]') || {}).textContent || "" }));
+  check(fromMap.hash === "#rooms2/diyu_naihe" && fromMap.page === "room" && fromMap.picked === "diyu_naihe" && fromMap.back.includes("地府·酆都"),
+    "a room picked on its map page opens the room page, which keeps the map's rooms and a link back to the map (" + JSON.stringify(fromMap) + ")");
+
   // 3. Hidden stages stop animating; the visible one animates.
   await page.goto(URL + "#scenes/showcase.forest"); await page.waitForTimeout(300);
   let before = await page.evaluate(() => window.__raf); await page.waitForTimeout(1000);
@@ -292,38 +325,60 @@ async function decode(file) {
   await page.goto(URL + "#overview"); await page.waitForTimeout(200);
   const menu = await page.evaluate(() => Array.from(document.querySelectorAll("#nav > a, #nav > .nav-group")).map((n) => n.matches("a")
     ? [n.firstChild.textContent] : [n.querySelector(".nav-head-label").textContent, ...Array.from(n.querySelectorAll(".nav-list a")).map((a) => a.firstChild.textContent)]));
-  const wantMenu = [["总览"], ["关卡与玩法", "模式与关卡", "机制", "设计数据"], ["配送", "地图预览", "配送 v2"], ["美术", "场景", "资产与动画", "编辑与对比", "确认", "导出"], ["工具", "编号映射"]];
-  check(JSON.stringify(menu) === JSON.stringify(wantMenu), "left menu shows the categories and pages of WB-01 in order (" + JSON.stringify(menu) + ")");
+  const wantMenu = [["总览"], ["关卡与玩法", "模式与关卡", "机制", "设计数据"], ["配送", "开局池", "废弃的符文监狱（石牢重做）", "地府·酆都", "幽暗石牢（v1 切片）"], ["美术", "场景", "资产与动画", "编辑与对比", "确认", "导出"], ["工具", "编号映射"]];
+  check(JSON.stringify(menu) === JSON.stringify(wantMenu), "left menu shows the categories and pages of WB-01 in order, 配送 by map as in workbench.md 6.1 (" + JSON.stringify(menu) + ")");
   const reg = await page.evaluate(() => ({
-    menu: PBNav.MENU.flatMap((m) => (m.items ? m.items.map((i) => i.view) : [m.view])),
-    links: Array.from(document.querySelectorAll("#nav a[data-view]")).map((a) => a.dataset.view),
+    pages: PBNav.pages().map((p) => p.view),
+    items: PBNav.links().map(({ key, view, href }) => ({ key, view, href })),
+    links: Array.from(document.querySelectorAll("#nav a")).map((a) => ({ key: a.dataset.key, view: a.dataset.view, href: a.getAttribute("href") })),
+    maps2: PBStore.catalog("slices").filter((s) => s.format === 2).map((s) => "rooms2/map/" + s.id),
     sections: Array.from(document.querySelectorAll("main > section.view")).map((x) => x.id.replace(/^view-/, "")),
     modules: PBNav.pages().every((x) => window[x.module] && typeof window[x.module].show === "function"),
   }));
-  check(JSON.stringify(reg.links) === JSON.stringify(reg.menu) && reg.modules && reg.sections.length === reg.menu.length && reg.sections.every((x) => reg.menu.includes(x)),
-    `menu links and the router both come from the one PBNav.MENU array and cover every page (${reg.links.length} links, ${reg.sections.length} pages)`);
+  const mapKeys = reg.links.map((l) => l.key).filter((k) => k.startsWith("rooms2/map/"));
+  check(JSON.stringify(reg.links) === JSON.stringify(reg.items) && JSON.stringify(mapKeys) === JSON.stringify(reg.maps2) && reg.links.every((l) => reg.pages.includes(l.view) && l.href === "#" + l.key)
+    && reg.pages.every((v) => reg.links.some((l) => l.view === v)) && reg.modules && reg.sections.length === reg.pages.length && reg.sections.every((x) => reg.pages.includes(x)),
+    `menu links and the router both come from the one PBNav.MENU array (the v2 maps from slices.json) and cover every page (${reg.links.length} links, ${reg.sections.length} pages)`);
   const wrongClicks = [];
-  for (const v of reg.menu) {
-    await page.click(`#nav a[data-view="${v}"]`); await page.waitForTimeout(200);
-    const st = await page.evaluate((v) => ({ hash: location.hash, shown: !document.getElementById("view-" + v).hidden, current: Array.from(document.querySelectorAll('#nav a[aria-current="page"]')).map((a) => a.dataset.view).join() }), v);
-    if (st.hash !== "#" + v || !st.shown || st.current !== v) wrongClicks.push(v + " " + JSON.stringify(st));
+  for (const l of reg.links) {
+    await page.click(`#nav a[data-key="${l.key}"]`); await page.waitForTimeout(200);
+    const st = await page.evaluate((v) => ({ hash: location.hash, shown: !document.getElementById("view-" + v).hidden, current: Array.from(document.querySelectorAll('#nav a[aria-current="page"]')).map((a) => a.dataset.key).join() }), l.view);
+    if (st.hash !== l.href || !st.shown || st.current !== l.key) wrongClicks.push(l.key + " " + JSON.stringify(st));
   }
   check(wrongClicks.length === 0, "clicking each menu item opens its page and highlights only that item" + (wrongClicks.length ? ": " + wrongClicks[0] : ""));
   const where = () => page.evaluate(() => ({
     hash: location.hash,
     view: Array.from(document.querySelectorAll("main > section.view")).filter((x) => !x.hidden).map((x) => x.id).join(),
-    current: Array.from(document.querySelectorAll('#nav a[aria-current="page"]')).map((a) => a.dataset.view).join(),
+    current: Array.from(document.querySelectorAll('#nav a[aria-current="page"]')).map((a) => a.dataset.key).join(),
     heads: Array.from(document.querySelectorAll("#nav .nav-head.has-current")).map((x) => x.dataset.group + ":" + x.getAttribute("aria-expanded")).join(),
     crumb: document.getElementById("nav-crumb").textContent,
   }));
   await page.goto(URL + "#maps/5/1"); await page.waitForTimeout(300);
   const deepMap = await where(), mapText = await page.locator("#maps-work").textContent();
-  check(deepMap.view === "view-maps" && deepMap.current === "maps" && deepMap.heads === "delivery:true" && deepMap.crumb === "配送 › 地图预览" && mapText.includes("种子 5") && mapText.includes("第 2 间"),
-    "#maps/5/1 still opens seed 5, room 2, with 地图预览 highlighted under an open 配送 (" + JSON.stringify(deepMap) + ")");
+  check(deepMap.view === "view-maps" && deepMap.current === "maps" && deepMap.heads === "delivery:true" && deepMap.crumb === "配送 › 幽暗石牢（v1 切片）" && mapText.includes("种子 5") && mapText.includes("第 2 间"),
+    "#maps/5/1 still opens seed 5, room 2, with 幽暗石牢（v1 切片） highlighted under an open 配送 (" + JSON.stringify(deepMap) + ")");
   await page.goto(URL + "#assets/char.miner"); await page.waitForTimeout(300);
   const deepAsset = await where();
   check(deepAsset.view === "view-assets" && deepAsset.current === "assets" && deepAsset.heads === "art:true" && (await page.locator("#asset-inspector").textContent()).includes("char.miner"),
     "#assets/char.miner still opens that asset, with 资产与动画 highlighted under an open 美术");
+  // Old addresses of the delivery pages still open; the menu marks the map a room belongs to (workbench.md 6.1).
+  const oldUrls = [];
+  for (const [h, page2, key, crumb] of [
+    ["#rooms2", "pool", "rooms2/pool", "配送 › 开局池"],
+    ["#rooms2/pool/5", "pool", "rooms2/pool", "配送 › 开局池"],
+    ["#rooms2/map/dungeon_2", "map", "rooms2/map/dungeon_2", "配送 › 废弃的符文监狱（石牢重做）"],
+    ["#rooms2/map/diyu_1", "map", "rooms2/map/diyu_1", "配送 › 地府·酆都"],
+    ["#rooms2/diyu_naihe", "room", "rooms2/map/diyu_1", "配送 › 地府·酆都 › 奈何桥"],
+    ["#rooms2/dungeon2_yard", "room", "rooms2/map/dungeon_2", "配送 › 废弃的符文监狱（石牢重做） › 放风场"],
+    ["#maps", null, "maps", "配送 › 幽暗石牢（v1 切片）"],
+    ["#maps/t/dungeon_guard", null, "maps", "配送 › 幽暗石牢（v1 切片）"],
+  ]) {
+    await page.goto(URL + h); await page.waitForTimeout(300);
+    const st = Object.assign(await where(), { page: await page.evaluate(() => PBRooms2.state().page), seed: await page.evaluate(() => PBRooms2.state().seed) });
+    const ok = st.hash === h && st.view === (page2 ? "view-rooms2" : "view-maps") && (!page2 || st.page === page2) && st.current === key && st.heads === "delivery:true" && st.crumb === crumb && (h !== "#rooms2/pool/5" || st.seed === 5);
+    if (!ok) oldUrls.push(h + " " + JSON.stringify(st));
+  }
+  check(oldUrls.length === 0, "old delivery addresses still open; the menu highlights the pool, the map (also for its rooms) or the v1 slice, and the breadcrumb names it" + (oldUrls.length ? ": " + oldUrls[0] : ""));
   await page.goto(URL + "#maps/5/1"); await page.waitForTimeout(250);
   await page.click('#nav a[data-view="assets"]'); await page.waitForTimeout(250);
   const picked = await where();
@@ -398,7 +453,7 @@ async function decode(file) {
 
   // 7. Narrow window: no horizontal page scroll, navigation still reachable.
   await page.setViewportSize({ width: 390, height: 800 });
-  for (const h of ["#overview", "#modes/water", "#mechanisms/acid", "#catalog/cargo", "#catalog/slices", "#maps/5/1", "#maps/t/dungeon_well", "#rooms2/pool/3", "#rooms2/diyu_fengdu", "#scenes", "#assets/char.miner", "#review"]) {
+  for (const h of ["#overview", "#modes/water", "#mechanisms/acid", "#catalog/cargo", "#catalog/slices", "#maps/5/1", "#maps/t/dungeon_well", "#rooms2/pool/3", "#rooms2/map/diyu_1", "#rooms2/diyu_fengdu", "#scenes", "#assets/char.miner", "#review"]) {
     await page.goto(URL + h); await page.waitForTimeout(250);
     const overflow = await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
     check(overflow <= 0, `${h} at 390px has no horizontal page scroll (${overflow}px)`);

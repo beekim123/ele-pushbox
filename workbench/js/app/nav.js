@@ -2,12 +2,17 @@
  * narrow-screen drawer. MENU is the only list of pages: the menu is drawn from
  * it and main.js builds its router from it. To add a page, add one entry to a
  * category here (plus the page's own <section id="view-…"> and view script).
+ * A page may have more than one menu item (href: a place inside the page); the
+ * delivery v2 maps are items generated from slices.json (workbench.md 6.1).
  * Loaded in <head> so a collapsed left column never flashes open. */
 (function (root) {
   "use strict";
 
   // { view, label, module } is a page; { group, label, items } is a category.
   // badge: id of a count shown after the label (filled by main.js).
+  // href: where the item goes inside its page (default "#" + view).
+  // { maps2: view }: one item per format-2 map of slices.json, in its order and
+  // named without "配送地图 · ", opening #<view>/map/<map id>.
   const MENU = [
     { view: "overview", label: "总览", module: "PBOverview" },
     { group: "play", label: "关卡与玩法", items: [
@@ -16,8 +21,9 @@
       { view: "catalog", label: "设计数据", module: "PBCatalog" },
     ] },
     { group: "delivery", label: "配送", items: [
-      { view: "maps", label: "地图预览", module: "PBMaps" },
-      { view: "rooms2", label: "配送 v2", module: "PBRooms2" },
+      { view: "rooms2", label: "开局池", module: "PBRooms2", href: "#rooms2/pool" },
+      { maps2: "rooms2" },
+      { view: "maps", label: "幽暗石牢（v1 切片）", module: "PBMaps" },
     ] },
     { group: "art", label: "美术", items: [
       { view: "scenes", label: "场景", module: "PBScenes" },
@@ -49,12 +55,25 @@
 
   const PAGES = [];
   for (const m of MENU) {
-    if (m.items) for (const it of m.items) PAGES.push(Object.assign({ group: m.group, groupLabel: m.label }, it));
+    if (m.items) { for (const it of m.items) if (it.view) PAGES.push(Object.assign({ group: m.group, groupLabel: m.label }, it)); }
     else PAGES.push(Object.assign({ group: null, groupLabel: null }, m));
   }
 
-  let nav = null, toggle = null, scrim = null, crumb = null, media = null, current = null;
-  const links = new Map(), heads = new Map();
+  // Menu items of one category; the generated ones need the content data, so this runs at init.
+  function itemsOf(m) {
+    const out = [];
+    for (const it of m.items || [m]) {
+      if (it.maps2) {
+        const slices = (root.PBStore && root.PBStore.catalog("slices")) || [];
+        for (const s of slices.filter((x) => x.format === 2))
+          out.push({ view: it.maps2, key: it.maps2 + "/map/" + s.id, href: "#" + it.maps2 + "/map/" + s.id, label: String(s.name || s.id).replace(/^配送地图 · /, ""), group: m.group || null, groupLabel: m.items ? m.label : null });
+      } else out.push(Object.assign({ group: m.items ? m.group : null, groupLabel: m.items ? m.label : null }, it, { key: it.href ? it.href.slice(1) : it.view, href: it.href || "#" + it.view }));
+    }
+    return out;
+  }
+
+  let nav = null, toggle = null, scrim = null, crumb = null, media = null, current = null, currentKey = null;
+  const links = new Map(), heads = new Map(), items = [];
 
   function h(tag, attrs, kids) {
     const e = document.createElement(tag);
@@ -74,9 +93,9 @@
   const drawerOpen = () => doc.getAttribute("data-drawer") === "open";
 
   function link(p) {
-    const a = h("a", { href: "#" + p.view, "data-view": p.view, class: p.group ? null : "nav-link" }, [h("span", { text: p.label })]);
+    const a = h("a", { href: p.href, "data-view": p.view, "data-key": p.key, class: p.group ? null : "nav-link" }, [h("span", { text: p.label })]);
     if (p.badge) a.append(h("span", { class: "count" + (p.tone ? " " + p.tone : ""), id: p.badge, hidden: true }));
-    links.set(p.view, a);
+    links.set(p.key, a);
     return a;
   }
 
@@ -86,13 +105,16 @@
       h("strong", { text: "渡界人" }),
       h("button", { class: "btn small nav-close", type: "button", text: "关闭", onclick: () => setDrawer(false, true) }),
     ]));
+    links.clear(); heads.clear(); items.length = 0;
     for (const m of MENU) {
-      if (!m.items) { nav.append(link(PAGES.find((p) => p.view === m.view))); continue; }
+      const own = itemsOf(m);
+      items.push(...own);
+      if (!m.items) { nav.append(link(own[0])); continue; }
       const listId = "nav-list-" + m.group;
       const dot = h("span", { class: "nav-dot", hidden: true });
       const head = h("button", { class: "nav-head", type: "button", "data-group": m.group, "aria-controls": listId, onclick: () => setGroup(m.group, !isOpen(m.group)) },
         [h("span", { class: "nav-head-label", text: m.label }), dot, h("span", { class: "chev", "aria-hidden": "true" })]);
-      const list = h("ul", { class: "nav-list", id: listId, role: "list" }, PAGES.filter((p) => p.group === m.group).map((p) => h("li", {}, [link(p)])));
+      const list = h("ul", { class: "nav-list", id: listId, role: "list" }, own.map((p) => h("li", {}, [link(p)])));
       nav.append(h("div", { class: "nav-group", "data-group": m.group }, [head, list]));
       heads.set(m.group, { head, list, dot, pages: PAGES.filter((p) => p.group === m.group) });
       applyGroup(m.group);
@@ -143,20 +165,26 @@
     for (const el of document.querySelectorAll("body > .topbar, body > main")) el.inert = open;
     syncToggle();
     if (open && !was) {
-      const a = links.get(current);
+      const a = links.get(currentKey);
       (a && a.offsetParent ? a : nav.querySelector(".nav-close")).focus();
     } else if (!open && was && focusBack) toggle.focus();
   }
 
-  function setCurrent(view) {
+  // at (from the page's where(id), optional): { key: the menu item to highlight,
+  // trail: breadcrumb after the category, e.g. ["地府·酆都", "奈何桥"] }.
+  function setCurrent(view, at) {
     const changed = view !== current;
     current = view;
     const p = PAGES.find((x) => x.view === view) || null;
-    for (const [v, a] of links) { if (v === view) a.setAttribute("aria-current", "page"); else a.removeAttribute("aria-current"); }
+    const own = items.filter((x) => x.view === view), it = (at && own.find((x) => x.key === at.key)) || own[0] || null;
+    currentKey = it ? it.key : null;
+    for (const [k, a] of links) { if (k === currentKey) a.setAttribute("aria-current", "page"); else a.removeAttribute("aria-current"); }
     for (const [g, x] of heads) x.head.classList.toggle("has-current", !!p && p.group === g);
     // Entering a page opens its category; moving inside the same page keeps the user's folding.
     if (changed && p && p.group && !isOpen(p.group)) setGroup(p.group, true);
-    if (crumb) crumb.replaceChildren(...(p ? (p.groupLabel ? [h("span", { text: p.groupLabel + " › " }), h("b", { text: p.label })] : [h("b", { text: p.label })]) : []));
+    const trail = (at && at.trail && at.trail.length ? at.trail : [it ? it.label : p ? p.label : ""]).filter(Boolean);
+    const parts = (p && p.groupLabel ? [p.groupLabel] : []).concat(trail);
+    if (crumb) crumb.replaceChildren(...(p ? parts.map((t, i) => (i < parts.length - 1 ? h("span", { text: t + " › " }) : h("b", { text: t }))) : []));
     if (changed && drawerOpen()) setDrawer(false, false);
   }
 
@@ -181,6 +209,7 @@
   root.PBNav = {
     MENU, init, setCurrent, setBadge,
     pages: () => PAGES.slice(),
+    links: () => items.map(({ key, href, view, label }) => ({ key, href, view, label })),
     drawerOpen,
     collapsed: () => state.collapsed,
   };

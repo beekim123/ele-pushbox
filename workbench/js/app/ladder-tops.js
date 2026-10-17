@@ -1,7 +1,8 @@
 /* Live presentation override. Frozen sprite sources and art-export renderers stay
  * unchanged. H/h remains a complete logical cell; only a platform head's upper
  * twelve pixels are omitted. Opening geometry keeps the cap stable while boxes
- * move and terrain is dug. A room-edge connection has no cap. */
+ * move and terrain is dug. A room-edge connection has no cap. Level mode and v1
+ * delivery rooms are wrapped here; delivery v2 rooms call scope(). */
 (function (root) {
  'use strict';
  const PB = root.PB = root.PB || {}, KEEP_ROWS = 4;
@@ -27,6 +28,12 @@
   return {spec,climb,vine,ox:(320-L.w*16)>>1,oy:20+((160-L.h*16)>>1)};
  }
  function scoped(ctx,fn) { const previous=active; active=ctx; try { return fn(); } finally { active=previous; } }
+ // For renderers that place a room themselves, such as delivery v2 (PB.droom2,
+ // delivery-puzzle-rules.md 8.2): fn's ladder sprites get the same caps. spec is
+ // the room's opening map in level letters (rooms2.start: M.spec, float blocks
+ // there are ground), L and s its parsed level and live state, and the room's
+ // top-left cell is drawn at (ox, oy).
+ function scope(spec,L,s,ox,oy,fn) { const ctx=context(spec,L,s); ctx.ox=ox; ctx.oy=oy; return scoped(ctx,fn); }
  function install() {
   if(PB.scene && !PB.scene.renderLevel.ladderTops) {
    const render=PB.scene.renderLevel;
@@ -69,5 +76,5 @@
    wrapped.ladderTops=true; PB.sprites.draw=wrapped;
   }
  }
- PB.ladderTops={KEEP_ROWS,cells,isTop,install}; install();
+ PB.ladderTops={KEEP_ROWS,cells,isTop,scope,install}; install();
 })(typeof window!=='undefined'?window:globalThis);

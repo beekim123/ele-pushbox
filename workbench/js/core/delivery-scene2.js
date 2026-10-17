@@ -6,8 +6,13 @@
  * and wall lights are placed screen by screen, so every screen of a large
  * room looks like a level-mode room. Figures without approved art go through
  * delivery-scene.js (art candidates or letter placeholders).
+ * Looks only (delivery-puzzle-rules.md 8): in a map with "top_edge": "sky" the
+ * thin rock at the top of a room is drawn as sky (skyCells), and ladder heads
+ * are capped like in level mode (workbench/js/app/ladder-tops.js, when loaded).
  *
- * scene(M, world)          cached pictures of one room (M = rooms2.start(...))
+ * scene(M, world, map)     cached pictures of one room (M = rooms2.start(...),
+ *                          map = its slices.json entry, for top_edge)
+ * skyCells(v, map)         cells drawn as sky (a Set of y * W + x)
  * run(M, o)                a play state: actions, undo, coins, snacks, camera
  * act / undo / feed / update(P, tick)
  * draw(r, sc, P, o)        o: {tick, view: "full"|"camera", overlays, recipient, stepText}
@@ -45,17 +50,35 @@
   }
   const lerp = (a, b, k) => Math.round(a + (b - a) * Math.max(0, Math.min(1, k)));
 
+  // ---------- top edge (delivery-puzzle-rules.md 8.1) ----------
+  // Only in a map with "top_edge": "sky". Each column's run of solid cells from
+  // row 0 down (rock, cracked, hard rock; ladders, crates, float blocks and doors
+  // are not solid): 1-2 cells are sky, 3 or more stay, a cliff cut off by the
+  // picture's top. Only the room's top counts (rows 10-11 of a two-screen room
+  // stay). Read from the opening map; the cells stay bedrock in the puzzle.
+  const SKY_SOLID = "#%R";
+  function skyCells(v, map) {
+    const out = new Set();
+    if (!map || map.top_edge !== "sky") return out;
+    for (let x = 0; x < v.W; x++) {
+      let n = 0;
+      while (n < 3 && n < v.H && SKY_SOLID.includes(v.map[n][x])) n++;
+      if (n < 3) for (let y = 0; y < n; y++) out.add(y * v.W + x);
+    }
+    return out;
+  }
+
   // ---------- scene cache ----------
-  function scene(M, world) {
+  function scene(M, world, map) {
     const v = M.v, L = M.L, W = v.W, H = v.H, pw = W * 16, ph = H * 16, EMPTY = TR().MAT.EMPTY;
     const themeId = D1().themeId(world), theme = S().get(themeId).params;
-    const floatCells = new Set();
+    const floatCells = new Set(), sky = skyCells(v, map);
     for (const f of v.floats) for (let x = f.x; x < f.x + f.w; x++) floatCells.add(f.y * W + x);
-    // Opening terrain without the float blocks (they are figures, drawn on top).
-    const mat0 = (x, y) => (x < 0 || y < 0 || x >= W || y >= H || floatCells.has(y * W + x) ? EMPTY : toMat(M.t0[y * W + x]));
+    // Opening terrain without the float blocks (they are figures, drawn on top) and the sky cells.
+    const mat0 = (x, y) => (x < 0 || y < 0 || x >= W || y >= H || floatCells.has(y * W + x) || sky.has(y * W + x) ? EMPTY : toMat(M.t0[y * W + x]));
     // Cells kept free of plants and critters: markers, doors, devices, exits,
-    // crates, figures and their patrols, coins, the rows float blocks travel in.
-    const occ = new Set(), add = (x, y) => { if (x >= 0 && y >= 0 && x < W && y < H) occ.add(y * W + x); };
+    // crates, figures and their patrols, coins, the rows float blocks travel in, the sky.
+    const occ = new Set(sky), add = (x, y) => { if (x >= 0 && y >= 0 && x < W && y < H) occ.add(y * W + x); };
     for (let i = 0; i < W * H; i++) if (L.marker[i] !== TM().M.NONE) occ.add(i);
     for (const i of L.doors) occ.add(i);
     for (const i of M.deviceCells) occ.add(i);
@@ -84,7 +107,7 @@
         sub: { w: R2().SW, h: R2().SH, at: (x, y) => mat0(bx + x, by + y) }, occ: (x, y) => occ.has((by + y) * W + bx + x),
         seed: PB.ambient.seedOf(id + ":" + sx + "," + sy) });
     }
-    return { M, v, L, world, themeId, theme, W, H, pw, ph, fr: new PB.Raster(pw, ph + HUD_H), bg: null, bgKey: null, ter: null, terKey: null, mat0, occ, screens };
+    return { M, v, L, world, themeId, theme, W, H, pw, ph, fr: new PB.Raster(pw, ph + HUD_H), bg: null, bgKey: null, ter: null, terKey: null, mat0, occ, sky, screens };
   }
   function size(sc, view) { return view === "camera" ? [VW, VH] : [sc.pw, sc.ph + HUD_H]; }
 
@@ -104,11 +127,12 @@
     sc.bg = bg; sc.bgKey = key;
     return bg;
   }
-  // Current terrain (float blocks removed) as a cell array.
+  // Current terrain as drawn (float blocks and sky cells removed) as a cell array.
   function cellsOf(sc, s) {
     const W = sc.W, n = W * sc.H, out = new Array(n);
     for (let i = 0; i < n; i++) out[i] = toMat(s.terrain[i]);
     for (const f of s.floats) for (let x = f.x; x < f.x + f.w; x++) out[f.y * W + x] = TR().MAT.EMPTY;
+    for (const i of sc.sky) out[i] = TR().MAT.EMPTY;
     return out;
   }
   function terrainLayer(sc, cells, tick) {
@@ -271,10 +295,10 @@
     const near = !!(h && h.show && h.show.at && Math.max(Math.abs(p.x - h.show.at[0]), Math.abs(p.y - h.show.at[1])) <= 3);
     return { i, n: H.length, h, flyer: !!(h && isFlyerHint(h)), mainCell, flyCell, near, mainActive: !!(h && !isFlyerHint(h)) };
   }
-  function flyerPerch(P, cell, kind) {
+  function flyerPerch(P, cell, kind, sky) {
     const [tx, ty] = cell, cx = tx * 16 + 8;
     if (kind === "bat") {
-      for (let y = ty - 1; y >= Math.max(0, ty - 5); y--) if (solidAt(P, tx, y)) return { x: cx, y: (y + 1) * 16, anim: "hang" };
+      for (let y = ty - 1; y >= Math.max(0, ty - 5); y--) if (solidAt(P, tx, y) && !(sky && sky.has(y * P.M.v.W + tx))) return { x: cx, y: (y + 1) * 16, anim: "hang" };
       return { x: cx, y: ty * 16 - 6, anim: "fly" };
     }
     return solidAt(P, tx, ty + 1) ? { x: cx, y: ty * 16 + 13, anim: "rest" } : { x: cx, y: ty * 16 + 8, anim: "fly" };
@@ -417,7 +441,7 @@
     const fa = faunaOf(sc.world), p = P.s.player;
     if (fa.flyer && plan.flyCell && S().has(fa.flyer.asset)) {
       const ok = art(fa.flyer.asset);
-      const bat = fa.flyer.asset.endsWith("_bat"), perch = flyerPerch(P, plan.flyCell, bat ? "bat" : "butterfly");
+      const bat = fa.flyer.asset.endsWith("_bat"), perch = flyerPerch(P, plan.flyCell, bat ? "bat" : "butterfly", sc.sky);
       const m = P.mem.fly;
       const key = plan.flyCell.join(",");
       if (m && m.cell !== key) { m.cell = key; m.since = tick; }
@@ -526,7 +550,10 @@
       ox = -cam.x; oy = HUD_H - cam.y;
     }
     if (PB.env) PB.env.draw(r, sc.theme, "light", { tick, area: { x: ox, y: oy, w: sc.pw, h: sc.ph }, lights: [], level: "full" });
-    const placeholders = drawFigures(r, sc, P, ox, oy, tick, o, plan);
+    // Ladder heads with a landing beside them keep only their lowest 4 px, as in
+    // level mode (delivery-puzzle-rules.md 8.2): the same rule, judged on the opening map.
+    const figures = () => drawFigures(r, sc, P, ox, oy, tick, o, plan), LT = PB.ladderTops;
+    const placeholders = LT && LT.scope ? LT.scope(sc.M.spec, sc.L, P.s, ox, oy, figures) : figures();
     if (PB.env) PB.env.draw(r, sc.theme, "front", { tick, area: full ? { x: 0, y: HUD_H, w: sc.pw, h: sc.ph } : { x: 0, y: HUD_H, w: VW, h: VH - HUD_H }, lights: [], weather: undefined, level: "full" });
     drawHintMarks(r, P, ox, oy, tick, plan, !!ov.hints);
     drawOverlays(r, sc, P, ox, oy, tick, ov, full);
@@ -536,5 +563,5 @@
     return { placeholders, plan };
   }
 
-  PB.droom2 = { setArtFilter, scene, size, run, act, undo, setState, busy, update, feed, draw, hintPlan, faunaOf, roomName, hintText, playerPx, poseOf, monsterPx, HUD_H, VW, VH };
+  PB.droom2 = { setArtFilter, scene, skyCells, size, run, act, undo, setState, busy, update, feed, draw, hintPlan, faunaOf, roomName, hintText, playerPx, poseOf, monsterPx, HUD_H, VW, VH };
 })(typeof window !== "undefined" ? window : globalThis);
