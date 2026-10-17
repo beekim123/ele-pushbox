@@ -10,6 +10,15 @@
 
 - 机制范围（用户 2026-10-16 决定）：关卡模式暂时只用现有的 33 个机制；SDK 已有但没进关卡的 `power`、`particles`、`rigid`、`pressure` 和各地区新机制，等现有关卡跑通后再开新章节（[关卡质量标准](design/level-quality.md) 第 4 节）。
 
+## 用户决定（2026-10-17）：地府顶边、梯顶、配送菜单
+
+- **地府顶边**：野外地图房间顶上 1–2 格厚的石头画成天空，露出背景。地图在 `slices.json` 写 `"top_edge": "sky"`（已给 `diyu_1` 加上）；石牢不改。只改画法，房间和规则不变。规则见 [delivery-puzzle-rules.md](design/delivery-puzzle-rules.md) 第 8.1 节。
+- **v2 梯顶**：和关卡模式一样只画收口（第 8.2 节）。v1 配送房间早已修过（LAD-01），v2 的画法漏了。
+- **配送菜单**：每张地图用自己的名字列出，按 `slices.json` 生成（[workbench.md](design/workbench.md) 第 6.1 节）。
+- **执行**：用户让其他 AI 做 [DLV-03](packages/DLV-03.md)，做完接着做 [BR-01](packages/BR-01.md)：分支整理，合进 `main`、打 `v0.3`、删旧分支。
+- **整理前的分支状态**：所有远端分支相对 `claude/inspiring-ride-zfnn4s` 都是 0 个未合并提交，`main` 能快进。
+- **验证**：加了 `top_edge` 以后，`check-rooms2.mjs --write` 重跑，结果不变、全部通过；`content.mjs check` 0 错误。
+
 ## 配送 v2 剩余内容合进来（2026-10-16，用户要求）
 
 用户交来 bundle `claude/delivery-redesign-next` @ `0a7d0ac`（GitHub 上的 `claude/delivery-redesign` 还停在已合并的 `986cce0`），说明"里面改动大的是用户新做的规则"。已合进本分支，**没有合进 `main`**。内容：

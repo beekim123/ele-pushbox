@@ -268,6 +268,7 @@
    "status": "design",
    "doc": "docs/design/delivery-diyu.md",
    "world": "diyu",
+   "top_edge": "sky",
    "cargo": [
     "letter",
     "qingtuan",
