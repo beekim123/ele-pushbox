@@ -1,7 +1,8 @@
 # DLV-05 配送 v2 回合规则支持跷跷板和阵风
 
-状态：待派（DSN-01 拆出；[DLV-04](DLV-04.md) 的 6 间机制房要等它）
-基线：`claude/inspiring-ride-zfnn4s`（DSN-01 合并以后）→ 分支：`dlv/DLV-05`（**不要**从 `main` 开；派之前 Claude 确认 DSN-01 已合并，基线换了就照新基线改下面两段命令）
+状态：待派（DSN-01 拆出；[DLV-04](DLV-04.md) 的 6 间机制房要等它）。2026-10-17 按 process.md 7a 自检改过：去掉做不到的工作台验收、去掉可选项、检查分两档、交付限 40 行。
+基线：`claude/inspiring-ride-zfnn4s`（已包含 DSN-01）→ 分支：`dlv/DLV-05`（**不要**从 `main` 开）
+预计：3–4 小时；超过 6 小时还没做完就停下，把进度写进「交付」交回。
 
 **开工**（照抄）：
 ```bash
@@ -48,38 +49,55 @@ v2 房间的 `devices` 能写跷跷板 `seesaw` 和阵风 `gust`（写法和关�
    - `BANDED` 加 `jeju`（多屏房间背景按屏行重复，art-direction 第 6 节）。
    - HUD 和气泡里的零食图标：现在按地区选 `item.snack` 的 `diyu` / `dungeon` 动作（第 493 行附近）。`item.snack` 已确认，不能加动作，所以济州画 `item.snack_jeju` 的 `default`。
    - 实时的阵风（按时间刮）留给 DLV-01；这里只按回合画。
-5. 建议顺便：`workbench/js/app/views/scenes.js` 把六个主题以外的 `theme.*` 资产（`theme.diyu`、`theme.jeju`）也列进「场景」页（DSN-01 待定问题 5）。要做就在交付里写明。
 
-## 要读的文件
-- AGENTS.md、docs/process.md
-- `workbench/js/core/rooms2.js`、`tilemodel-runtime.js`、`mech/seesaw.js`、`mech/gust.js`、`delivery-scene2.js`
-- `tools/check-rooms2.mjs`、`tests/rooms2.test.mjs`、`tests/tilemodel-plugin.test.mjs`
+## 要读的（只读这些）
+- `workbench/js/core/rooms2.js`、`tilemodel-runtime.js`、`mech/seesaw.js`、`mech/gust.js`、`delivery-scene2.js`（只看画装置和零食图标的部分）
+- `tools/check-rooms2.mjs`、`tests/rooms2.test.mjs`
+- 关卡 G09、G10、F08、E06 的规格（改写测试房间用）
 
 ## 可改的文件
 - `workbench/js/core/rooms2.js`、`workbench/js/core/delivery-scene2.js`
 - `tools/check-rooms2.mjs`
 - `tests/rooms2.test.mjs`（只加测试，不改已有的预期）
 - `docs/design/delivery-puzzle-rules.md` 第 1 节"能冻结的机制"那一句
-- `workbench/js/app/views/scenes.js`（第 5 条，可选）
 - 生成文件：用工具重新生成后提交，不手改
+
+验收和这个清单冲突时，以清单为准，把做不到的写进交付，不要想办法绕过。
 
 ## 不能碰的文件
 - AGENTS.md 2a 的冻结区：`tilemodel.js`、`tilemodel-runtime.js`、`mech/*.js`、已有的美术源文件和确认记录
-- `content/rooms/**`（DLV-04 做）、`content/catalog/**`
+- `content/rooms/**`（DLV-04 做）、`content/catalog/**`、`workbench/js/app/**`
 - `docs/status.md`、`game/**`
 
-## 验收标准
-- process.md 第 6 节的全套检查；`node tools/check-levels.mjs` 结果不变；`check-rooms2` 里已有 23 间房的结果不变。
+## 检查
+边做边跑（只跑这些）：
+```bash
+node --test tests/rooms2.test.mjs
+node tools/check-rooms2.mjs
+```
+最后跑一次：
+```bash
+node tools/content.mjs check          # 0 错误；jeju_1 的警告可以有
+node tools/check-rooms2.mjs           # 已有 23 间房的结果和改前一样
+node tools/check-levels.mjs           # 结果不变
+node tools/art.mjs build              # 0 bumped
+node --test tests/*.test.mjs
+node tests/workbench.e2e.cjs
+```
+不要做的：逐个算文件哈希、复制仓库做试验、逐帧比对（process.md 第 10 节）。
+
+## 验收
 - 新测试（放进 `tests/rooms2.test.mjs`）：把 G09、G10、F08、E06 改写成 4 间 v2 测试房间（直接写在测试里，不放进 `content/rooms/`）：
   - 作者解能通关，步数和关卡模式的最短解一致；
   - 左右翻转后作者解（`L` ↔ `R`）仍能通关；
   - 冻结 `seesaw` 或 `gust` 后无解；
-  - `landings` 写错时 `validate` 报错。
-- 工作台：配送 v2 里打开这 4 间测试房间（或 DLV-04 做好的机制房），跷跷板、阵风格画得出来，按 `H` 喂零食时气泡里是小米糕。
+  - `landings` 写错时 `validate` 报错；
+  - 用 `delivery-scene2.js` 画这 4 间房不报错，跷跷板和阵风格的位置画出了 `mech.jeju_seesaw` / `fx.jeju_gust`（检查画法调用，不用截图比对）。
+- 工作台里的实际画面，等 DLV-04 做好济州房间后再看，不在本包验收。
 
-## 交付（制作方填写）
-- 分支名、最后提交号、交回方式（推送 / bundle 文件名）
-- 验收命令的实际结果
-- `git diff --stat origin/claude/inspiring-ride-zfnn4s..dlv/DLV-05`
-- 改了哪条测试的预期、为什么
-- 问题：拿不准、需要用户决定的事
+## 交付（制作方填写，不超过 40 行）
+- 做了什么（每项一句）
+- 上面「最后跑一次」各一行结果
+- 改了哪条测试的预期、为什么（没有写"无"）
+- 遗留问题（没有写"无"）
+（分支名、提交号、`git diff --stat` 贴在给用户的回复里，不写进这个文件）
