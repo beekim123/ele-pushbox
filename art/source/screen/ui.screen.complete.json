@@ -17,7 +17,11 @@
   "workbench/js/core/ui-style.js",
   "workbench/js/core/font-ui.js",
   "content/i18n-ui/zh-Hans.json",
-  "content/i18n-ui/en.json"
+  "content/i18n-ui/en.json",
+  "workbench/js/core/ui-common.js",
+  "workbench/js/core/ui-screens-level.js",
+  "content/i18n-common/zh-Hans.json",
+  "content/i18n-common/en.json"
  ],
  "depends": [
   "char.portitor",
@@ -31,7 +35,7 @@
   "ui.menu_icons",
   "ui.panel"
  ],
- "version": 5,
+ "version": 6,
  "stage": "review",
  "size": [
   320,
@@ -44,5 +48,5 @@
  },
  "usage": "所有目标灯点亮后显示；人物播放胜利动作。",
  "notes": "布局参考：文字来自 content/i18n，容器按文字宽度伸缩；Godot 用 Control 容器实现，不按像素硬编码文字位置。 2026-10-16 界面定稿：画法见 workbench/js/core/ui-style.js（移植 tools/ui-proposals 的已确认效果图）。",
- "content_hash": "167131851bdaa444b9f5b349191fed04d05322f2f0776f4aedb853224f8140ab"
+ "content_hash": "a7e9e0b4971d3c55228bf7dd7ee0db5cbb8a450dbdedca7aaccaf8723d0c3eb8"
 }

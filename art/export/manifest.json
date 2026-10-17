@@ -7916,11 +7916,11 @@
    "kind": "procedural",
    "layer": "ui",
    "current": {
-    "version": 5,
-    "hash": "1608a3a4e43c613b73b2eb46f5187008d23506d11352b7e9c16fd219d0c8a1b0",
+    "version": 6,
+    "hash": "444fab65592fd9d0f846dd891ae2e2f6b63b727d556b852221bb69260799557c",
     "status": "review",
     "preview": "art/export/preview/ui.screen.chapters.png",
-    "preview_sha256": "3312c4cc691c0b093ad587c2aa415b2e9253d0983e1fbbcb9f37394c26e4147c"
+    "preview_sha256": "6b875c2cc97a51806e4d6fbf523906df5b298eb7998dc129c2910793e7fb8425"
    },
    "approved": {
     "version": 4,
@@ -7944,7 +7944,11 @@
     "workbench/js/core/ui-style.js",
     "workbench/js/core/font-ui.js",
     "content/i18n-ui/zh-Hans.json",
-    "content/i18n-ui/en.json"
+    "content/i18n-ui/en.json",
+    "workbench/js/core/ui-common.js",
+    "workbench/js/core/ui-screens-level.js",
+    "content/i18n-common/zh-Hans.json",
+    "content/i18n-common/en.json"
    ],
    "params": {
     "screen": "chapters",
@@ -8005,11 +8009,11 @@
    "kind": "procedural",
    "layer": "ui",
    "current": {
-    "version": 5,
-    "hash": "167131851bdaa444b9f5b349191fed04d05322f2f0776f4aedb853224f8140ab",
+    "version": 6,
+    "hash": "a7e9e0b4971d3c55228bf7dd7ee0db5cbb8a450dbdedca7aaccaf8723d0c3eb8",
     "status": "review",
     "preview": "art/export/preview/ui.screen.complete.png",
-    "preview_sha256": "406e0da2e582399e4661ae9b05e1d059f5cf69cd03229dec5e87852c511cc064"
+    "preview_sha256": "2769a55908ba7fae07e7aad42378288448ab411a57a16c5022052f1c7c1dddcf"
    },
    "approved": {
     "version": 4,
@@ -8033,7 +8037,11 @@
     "workbench/js/core/ui-style.js",
     "workbench/js/core/font-ui.js",
     "content/i18n-ui/zh-Hans.json",
-    "content/i18n-ui/en.json"
+    "content/i18n-ui/en.json",
+    "workbench/js/core/ui-common.js",
+    "workbench/js/core/ui-screens-level.js",
+    "content/i18n-common/zh-Hans.json",
+    "content/i18n-common/en.json"
    ],
    "params": {
     "screen": "complete"
@@ -8566,11 +8574,11 @@
    "kind": "procedural",
    "layer": "ui",
    "current": {
-    "version": 2,
-    "hash": "f05e9a2b368fe45071f5613b2eb08714ef96cfcae3511a5499321884cb72d504",
+    "version": 3,
+    "hash": "b2d0012a3f36c3efcb1a97f1c71af571ef4f92a8632a39cf661fdf7635b77bfc",
     "status": "review",
     "preview": "art/export/preview/ui.screen.dialogue.png",
-    "preview_sha256": "7fabe84bdbdd2887dd79bb246f7b79d602257015ab0a2760ebc7e7bd0e01b6d4"
+    "preview_sha256": "690091a40e6333e1811429d5528c3fa67eb39ba5425084331a45154b9cd7b9d6"
    },
    "approved": {
     "version": 1,
@@ -8596,7 +8604,11 @@
     "workbench/js/core/ui-style.js",
     "workbench/js/core/font-ui.js",
     "content/i18n-ui/zh-Hans.json",
-    "content/i18n-ui/en.json"
+    "content/i18n-ui/en.json",
+    "workbench/js/core/ui-common.js",
+    "workbench/js/core/ui-screens-level.js",
+    "content/i18n-common/zh-Hans.json",
+    "content/i18n-common/en.json"
    ],
    "params": {
     "screen": "dialogue"
@@ -8624,11 +8636,11 @@
    "kind": "procedural",
    "layer": "ui",
    "current": {
-    "version": 5,
-    "hash": "3704ee50ef7f890fd0589b54719af9c33d18507c6d0ba9f29590c64ce7f38d2c",
+    "version": 6,
+    "hash": "fe54342c105c701351792f67ec4f51ef5a0f292fc749376d0779021b9643f019",
     "status": "review",
     "preview": "art/export/preview/ui.screen.hint.png",
-    "preview_sha256": "b04ee687ee4d93119ab6d7d83b7cf532e33fb21bfefab3b58fdae99480f898c8"
+    "preview_sha256": "2d553588e23fd0783e793bcd99a63c9e0d80a9b4da7adb3fb47bc27e7c9ebb13"
    },
    "approved": {
     "version": 4,
@@ -8654,7 +8666,11 @@
     "workbench/js/core/ui-style.js",
     "workbench/js/core/font-ui.js",
     "content/i18n-ui/zh-Hans.json",
-    "content/i18n-ui/en.json"
+    "content/i18n-ui/en.json",
+    "workbench/js/core/ui-common.js",
+    "workbench/js/core/ui-screens-level.js",
+    "content/i18n-common/zh-Hans.json",
+    "content/i18n-common/en.json"
    ],
    "params": {
     "screen": "hint",
@@ -8681,11 +8697,11 @@
    "kind": "procedural",
    "layer": "ui",
    "current": {
-    "version": 5,
-    "hash": "4affa813901206fe5845bdb809fa0f1ee81bbc4234d13d12618191959eec393a",
+    "version": 6,
+    "hash": "20c8fee27de3b5b0af0a60819c5d946e4f7fa4f45ed0b63e18bc6f041bf3bd34",
     "status": "review",
     "preview": "art/export/preview/ui.screen.levels.png",
-    "preview_sha256": "1c5b2c995e60acc3025cabb500c8641806cd114b04639caa82b0ba4f38a4a5f8"
+    "preview_sha256": "1a2f825f30850ad5805d11b88cfd2911230ac888b55cbcdba0d7bd751c65a446"
    },
    "approved": {
     "version": 4,
@@ -8709,7 +8725,11 @@
     "workbench/js/core/ui-style.js",
     "workbench/js/core/font-ui.js",
     "content/i18n-ui/zh-Hans.json",
-    "content/i18n-ui/en.json"
+    "content/i18n-ui/en.json",
+    "workbench/js/core/ui-common.js",
+    "workbench/js/core/ui-screens-level.js",
+    "content/i18n-common/zh-Hans.json",
+    "content/i18n-common/en.json"
    ],
    "params": {
     "screen": "levels",
@@ -8838,11 +8858,11 @@
    "kind": "procedural",
    "layer": "ui",
    "current": {
-    "version": 5,
-    "hash": "5f6d6a3caa551f3a0faeaef77c71ef22624a5c5827a625667666227c3f212b33",
+    "version": 6,
+    "hash": "1548d52f6bd91b5cc8e8c76ec070f9282078094e583f64cf75312a989f82cc74",
     "status": "review",
     "preview": "art/export/preview/ui.screen.pause.png",
-    "preview_sha256": "d9af7bc09049017173d9a84f21f013b93d2a54a1a6a7ae4a4f4d5d67512b922e"
+    "preview_sha256": "fbfb4413035688d0fa30c9cf6756566b9460ceaadfd72173a66a7abff3447665"
    },
    "approved": {
     "version": 4,
@@ -8866,7 +8886,11 @@
     "workbench/js/core/ui-style.js",
     "workbench/js/core/font-ui.js",
     "content/i18n-ui/zh-Hans.json",
-    "content/i18n-ui/en.json"
+    "content/i18n-ui/en.json",
+    "workbench/js/core/ui-common.js",
+    "workbench/js/core/ui-screens-level.js",
+    "content/i18n-common/zh-Hans.json",
+    "content/i18n-common/en.json"
    ],
    "params": {
     "screen": "pause",
@@ -8976,11 +9000,11 @@
    "kind": "procedural",
    "layer": "ui",
    "current": {
-    "version": 5,
-    "hash": "e85147b2439950cac3a0b99fa298ab7572faa8eead65174cf0ba8fe45c8bc760",
+    "version": 6,
+    "hash": "0f4ae758b37423615c8c7eb48e0d98c51ce98f9ed70768c828ded394102e4d24",
     "status": "review",
     "preview": "art/export/preview/ui.screen.rulecard.png",
-    "preview_sha256": "8a7c4fb05277396122e09a4511c82667840bbe314ec8ec147b4497d87e47683b"
+    "preview_sha256": "c35555a5016ec66310ebc95196804b550bdc122da6aa9163c354a11745d0ba03"
    },
    "approved": {
     "version": 4,
@@ -9004,7 +9028,11 @@
     "workbench/js/core/ui-style.js",
     "workbench/js/core/font-ui.js",
     "content/i18n-ui/zh-Hans.json",
-    "content/i18n-ui/en.json"
+    "content/i18n-ui/en.json",
+    "workbench/js/core/ui-common.js",
+    "workbench/js/core/ui-screens-level.js",
+    "content/i18n-common/zh-Hans.json",
+    "content/i18n-common/en.json"
    ],
    "params": {
     "screen": "rulecard"
@@ -9028,11 +9056,11 @@
    "kind": "procedural",
    "layer": "ui",
    "current": {
-    "version": 5,
-    "hash": "632383cf270671f15ef30e4969628acce9b984f7887868b58f7b05e2d6e1cfb2",
+    "version": 6,
+    "hash": "cde3e49fc687ee33c811a219e066c8b7829f5c4c79eac022b449f040f1ba4f56",
     "status": "review",
     "preview": "art/export/preview/ui.screen.settings.png",
-    "preview_sha256": "da3519e19ad9e2820f180dc7cb02e66f1b0e98e5ee7bfcf4755f7c7f37864f50"
+    "preview_sha256": "974169854f9f9dbbeefd4230632fd2851d6c015391269f79be345ffb9407636d"
    },
    "approved": {
     "version": 4,
@@ -9057,7 +9085,11 @@
     "workbench/js/core/font-ui.js",
     "content/i18n-ui/zh-Hans.json",
     "content/i18n-ui/en.json",
-    "workbench/js/core/ui-skins.js"
+    "workbench/js/core/ui-skins.js",
+    "workbench/js/core/ui-common.js",
+    "workbench/js/core/ui-screens-level.js",
+    "content/i18n-common/zh-Hans.json",
+    "content/i18n-common/en.json"
    ],
    "params": {
     "screen": "settings",
@@ -11405,7 +11437,7 @@
   {
    "name": "chapters.zh-Hans",
    "file": "art/export/reference/chapters.zh-Hans.png",
-   "sha256": "3312c4cc691c0b093ad587c2aa415b2e9253d0983e1fbbcb9f37394c26e4147c",
+   "sha256": "6b875c2cc97a51806e4d6fbf523906df5b298eb7998dc129c2910793e7fb8425",
    "uses": [
     "ui.screen.chapters",
     "char.portitor",
@@ -11431,7 +11463,7 @@
   {
    "name": "chapters.en",
    "file": "art/export/reference/chapters.en.png",
-   "sha256": "a17cd7d3ac321c8af61312ef97627d84c77bc7d831adccd6e2a739df3d1ffc69",
+   "sha256": "c5b7558a3f5e025dcfcc5f8afbdf0727f2c8bc3df7b50a9bc781cbf2e57e7c78",
    "uses": [
     "ui.screen.chapters",
     "char.portitor",
@@ -11457,7 +11489,7 @@
   {
    "name": "complete.zh-Hans",
    "file": "art/export/reference/complete.zh-Hans.png",
-   "sha256": "406e0da2e582399e4661ae9b05e1d059f5cf69cd03229dec5e87852c511cc064",
+   "sha256": "2769a55908ba7fae07e7aad42378288448ab411a57a16c5022052f1c7c1dddcf",
    "uses": [
     "ui.screen.complete",
     "char.portitor",
@@ -11479,7 +11511,7 @@
   {
    "name": "complete.en",
    "file": "art/export/reference/complete.en.png",
-   "sha256": "e16eed87754f6f27f9c4ad32a9bd9ac26cc8c503580bd833193972c549d6ccba",
+   "sha256": "96433f4161bb3334d6c004fec507471a391911782fd2f17aa7cb6c91f7f4eeba",
    "uses": [
     "ui.screen.complete",
     "char.portitor",
@@ -11637,7 +11669,7 @@
   {
    "name": "dialogue.zh-Hans",
    "file": "art/export/reference/dialogue.zh-Hans.png",
-   "sha256": "7fabe84bdbdd2887dd79bb246f7b79d602257015ab0a2760ebc7e7bd0e01b6d4",
+   "sha256": "690091a40e6333e1811429d5528c3fa67eb39ba5425084331a45154b9cd7b9d6",
    "uses": [
     "ui.screen.dialogue",
     "char.miner",
@@ -11662,7 +11694,7 @@
   {
    "name": "dialogue.en",
    "file": "art/export/reference/dialogue.en.png",
-   "sha256": "655b8a0c1d8ce6a9d572f950c1d20316097129a01ea6f4cf987fd290a7c673b1",
+   "sha256": "2cadd37566cfeeb739b0ffb1ec06231b026c03ca4b4195a482fd53febe8d0300",
    "uses": [
     "ui.screen.dialogue",
     "char.miner",
@@ -11687,7 +11719,7 @@
   {
    "name": "hint.zh-Hans",
    "file": "art/export/reference/hint.zh-Hans.png",
-   "sha256": "b04ee687ee4d93119ab6d7d83b7cf532e33fb21bfefab3b58fdae99480f898c8",
+   "sha256": "2d553588e23fd0783e793bcd99a63c9e0d80a9b4da7adb3fb47bc27e7c9ebb13",
    "uses": [
     "ui.screen.hint",
     "char.portitor",
@@ -11710,7 +11742,7 @@
   {
    "name": "hint.en",
    "file": "art/export/reference/hint.en.png",
-   "sha256": "1b7151c4f001f0a5c108e9f42309e44c02623b7ecb14b935eb544b57b7d1a290",
+   "sha256": "a769201058a73df2b54f9d72a0dcd3a3a13bdcc6c743689b06ee486c8e6f04d7",
    "uses": [
     "ui.screen.hint",
     "char.portitor",
@@ -11733,7 +11765,7 @@
   {
    "name": "levels.zh-Hans",
    "file": "art/export/reference/levels.zh-Hans.png",
-   "sha256": "1c5b2c995e60acc3025cabb500c8641806cd114b04639caa82b0ba4f38a4a5f8",
+   "sha256": "1a2f825f30850ad5805d11b88cfd2911230ac888b55cbcdba0d7bd751c65a446",
    "uses": [
     "ui.screen.levels",
     "theme.dungeon",
@@ -11751,7 +11783,7 @@
   {
    "name": "levels.en",
    "file": "art/export/reference/levels.en.png",
-   "sha256": "64a34e00ddeda8e5e77bc19b3d1177cef2feee1a23a1c714127fc7091ba5f880",
+   "sha256": "db2b81f22c3ac8f8ed5dbeb385c78a4eb2750d3a798666fbfa4d29763944fb90",
    "uses": [
     "ui.screen.levels",
     "theme.dungeon",
@@ -11811,7 +11843,7 @@
   {
    "name": "pause.zh-Hans",
    "file": "art/export/reference/pause.zh-Hans.png",
-   "sha256": "d9af7bc09049017173d9a84f21f013b93d2a54a1a6a7ae4a4f4d5d67512b922e",
+   "sha256": "fbfb4413035688d0fa30c9cf6756566b9460ceaadfd72173a66a7abff3447665",
    "uses": [
     "ui.screen.pause",
     "char.portitor",
@@ -11832,7 +11864,7 @@
   {
    "name": "pause.en",
    "file": "art/export/reference/pause.en.png",
-   "sha256": "8070e97aa0bac63d51cc10bf9a5dca5350e7ff376aa96cd4da85d92d8bde05f4",
+   "sha256": "dee8ddbbe8f134a461184f84b62f0c3d8fabaf99545583f3e23394e5f912e5db",
    "uses": [
     "ui.screen.pause",
     "char.portitor",
@@ -11899,7 +11931,7 @@
   {
    "name": "rulecard.zh-Hans",
    "file": "art/export/reference/rulecard.zh-Hans.png",
-   "sha256": "8a7c4fb05277396122e09a4511c82667840bbe314ec8ec147b4497d87e47683b",
+   "sha256": "c35555a5016ec66310ebc95196804b550bdc122da6aa9163c354a11745d0ba03",
    "uses": [
     "ui.screen.rulecard",
     "char.portitor",
@@ -11920,7 +11952,7 @@
   {
    "name": "rulecard.en",
    "file": "art/export/reference/rulecard.en.png",
-   "sha256": "4ebf6ca96f39c185a119ee9b3566d153549d7a4cc0e093873a16125ba1aec13e",
+   "sha256": "ccc855ecc2e6e983e36b4cb12cfce43db4b73fe0baf91110d92bf7e575c19453",
    "uses": [
     "ui.screen.rulecard",
     "char.portitor",
@@ -11941,7 +11973,7 @@
   {
    "name": "settings.zh-Hans",
    "file": "art/export/reference/settings.zh-Hans.png",
-   "sha256": "da3519e19ad9e2820f180dc7cb02e66f1b0e98e5ee7bfcf4755f7c7f37864f50",
+   "sha256": "974169854f9f9dbbeefd4230632fd2851d6c015391269f79be345ffb9407636d",
    "uses": [
     "ui.screen.settings",
     "char.portitor",
@@ -11964,7 +11996,7 @@
   {
    "name": "settings.en",
    "file": "art/export/reference/settings.en.png",
-   "sha256": "a135bb56ebd3124ce6b5725a337be4316a52d8680bd43b047e0d297963891e09",
+   "sha256": "1ce7eb6b85692cb704dffe5bbb2cde59da2aa4ed735669f1857f46ba318a6f98",
    "uses": [
     "ui.screen.settings",
     "char.portitor",

@@ -100,7 +100,7 @@
   "text": {
    "name": "界面与台词文字",
    "source": "content/i18n/zh-Hans.json 与 content/i18n-<名>/zh-Hans.json",
-   "count": 482
+   "count": 492
   }
  },
  "entries": [
@@ -1768,8 +1768,8 @@
    "source": "art/source/screen/ui.screen.chapters.json",
    "game": "res://ui/screens/chapters.tscn",
    "category": "screen",
-   "version": 5,
-   "hash": "1608a3a4e43c613b73b2eb46f5187008d23506d11352b7e9c16fd219d0c8a1b0",
+   "version": 6,
+   "hash": "444fab65592fd9d0f846dd891ae2e2f6b63b727d556b852221bb69260799557c",
    "approved": false
   },
   {
@@ -1780,8 +1780,8 @@
    "source": "art/source/screen/ui.screen.complete.json",
    "game": "res://ui/screens/complete.tscn",
    "category": "screen",
-   "version": 5,
-   "hash": "167131851bdaa444b9f5b349191fed04d05322f2f0776f4aedb853224f8140ab",
+   "version": 6,
+   "hash": "a7e9e0b4971d3c55228bf7dd7ee0db5cbb8a450dbdedca7aaccaf8723d0c3eb8",
    "approved": false
   },
   {
@@ -1828,8 +1828,8 @@
    "source": "art/source/screen/ui.screen.dialogue.json",
    "game": "res://ui/screens/dialogue.tscn",
    "category": "screen",
-   "version": 2,
-   "hash": "f05e9a2b368fe45071f5613b2eb08714ef96cfcae3511a5499321884cb72d504",
+   "version": 3,
+   "hash": "b2d0012a3f36c3efcb1a97f1c71af571ef4f92a8632a39cf661fdf7635b77bfc",
    "approved": false
   },
   {
@@ -1840,8 +1840,8 @@
    "source": "art/source/screen/ui.screen.hint.json",
    "game": "res://ui/screens/hint.tscn",
    "category": "screen",
-   "version": 5,
-   "hash": "3704ee50ef7f890fd0589b54719af9c33d18507c6d0ba9f29590c64ce7f38d2c",
+   "version": 6,
+   "hash": "fe54342c105c701351792f67ec4f51ef5a0f292fc749376d0779021b9643f019",
    "approved": false
   },
   {
@@ -1852,8 +1852,8 @@
    "source": "art/source/screen/ui.screen.levels.json",
    "game": "res://ui/screens/levels.tscn",
    "category": "screen",
-   "version": 5,
-   "hash": "4affa813901206fe5845bdb809fa0f1ee81bbc4234d13d12618191959eec393a",
+   "version": 6,
+   "hash": "20c8fee27de3b5b0af0a60819c5d946e4f7fa4f45ed0b63e18bc6f041bf3bd34",
    "approved": false
   },
   {
@@ -1876,8 +1876,8 @@
    "source": "art/source/screen/ui.screen.pause.json",
    "game": "res://ui/screens/pause.tscn",
    "category": "screen",
-   "version": 5,
-   "hash": "5f6d6a3caa551f3a0faeaef77c71ef22624a5c5827a625667666227c3f212b33",
+   "version": 6,
+   "hash": "1548d52f6bd91b5cc8e8c76ec070f9282078094e583f64cf75312a989f82cc74",
    "approved": false
   },
   {
@@ -1900,8 +1900,8 @@
    "source": "art/source/screen/ui.screen.rulecard.json",
    "game": "res://ui/screens/rulecard.tscn",
    "category": "screen",
-   "version": 5,
-   "hash": "e85147b2439950cac3a0b99fa298ab7572faa8eead65174cf0ba8fe45c8bc760",
+   "version": 6,
+   "hash": "0f4ae758b37423615c8c7eb48e0d98c51ce98f9ed70768c828ded394102e4d24",
    "approved": false
   },
   {
@@ -1912,8 +1912,8 @@
    "source": "art/source/screen/ui.screen.settings.json",
    "game": "res://ui/screens/settings.tscn",
    "category": "screen",
-   "version": 5,
-   "hash": "632383cf270671f15ef30e4969628acce9b984f7887868b58f7b05e2d6e1cfb2",
+   "version": 6,
+   "hash": "cde3e49fc687ee33c811a219e066c8b7829f5c4c79eac022b449f040f1ba4f56",
    "approved": false
   },
   {
@@ -9345,6 +9345,86 @@
    "name": "",
    "source": "content/i18n-audio/zh-Hans.json",
    "game": "tr:audio.dom"
+  },
+  {
+   "uid": "text:g.lobby.level",
+   "domain": "text",
+   "id": "g.lobby.level",
+   "name": "关卡模式",
+   "source": "content/i18n-common/zh-Hans.json",
+   "game": "tr:g.lobby.level"
+  },
+  {
+   "uid": "text:g.lobby.delivery",
+   "domain": "text",
+   "id": "g.lobby.delivery",
+   "name": "配送",
+   "source": "content/i18n-common/zh-Hans.json",
+   "game": "tr:g.lobby.delivery"
+  },
+  {
+   "uid": "text:g.reels.map",
+   "domain": "text",
+   "id": "g.reels.map",
+   "name": "地图",
+   "source": "content/i18n-common/zh-Hans.json",
+   "game": "tr:g.reels.map"
+  },
+  {
+   "uid": "text:g.reels.tip",
+   "domain": "text",
+   "id": "g.reels.tip",
+   "name": "小费 ×1.5",
+   "source": "content/i18n-common/zh-Hans.json",
+   "game": "tr:g.reels.tip"
+  },
+  {
+   "uid": "text:g.keys.move",
+   "domain": "text",
+   "id": "g.keys.move",
+   "name": "移动",
+   "source": "content/i18n-common/zh-Hans.json",
+   "game": "tr:g.keys.move"
+  },
+  {
+   "uid": "text:g.keys.undo",
+   "domain": "text",
+   "id": "g.keys.undo",
+   "name": "撤销",
+   "source": "content/i18n-common/zh-Hans.json",
+   "game": "tr:g.keys.undo"
+  },
+  {
+   "uid": "text:g.keys.pause",
+   "domain": "text",
+   "id": "g.keys.pause",
+   "name": "暂停",
+   "source": "content/i18n-common/zh-Hans.json",
+   "game": "tr:g.keys.pause"
+  },
+  {
+   "uid": "text:g.say",
+   "domain": "text",
+   "id": "g.say",
+   "name": "木箱会浮起来！",
+   "source": "content/i18n-common/zh-Hans.json",
+   "game": "tr:g.say"
+  },
+  {
+   "uid": "text:g.think",
+   "domain": "text",
+   "id": "g.think",
+   "name": "这条路对不对……",
+   "source": "content/i18n-common/zh-Hans.json",
+   "game": "tr:g.think"
+  },
+  {
+   "uid": "text:g.hello",
+   "domain": "text",
+   "id": "g.hello",
+   "name": "你好！",
+   "source": "content/i18n-common/zh-Hans.json",
+   "game": "tr:g.hello"
   },
   {
    "uid": "text:dlv.reels.title",
