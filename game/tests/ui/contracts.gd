@@ -63,6 +63,18 @@ func _run() -> void:
 			_check(bool(boot.world_view.observe), "holding observe HUD control enables observation")
 			observe.button_up.emit()
 			_check(not bool(boot.world_view.observe), "releasing observe HUD control disables observation")
+	boot.hint_level = 1
+	boot.show_screen("hint")
+	var first_anchor: float = 0
+	for child: Node in boot.screen.get_children():
+		if child is PortitorBubble: first_anchor = child.tail_x
+	boot.session.perform("L")
+	boot.show_screen("hint")
+	var moved_anchor: float = 0
+	for child: Node in boot.screen.get_children():
+		if child is PortitorBubble: moved_anchor = child.tail_x
+	_check(is_equal_approx(moved_anchor, first_anchor - 16), "hint tail follows the player after a legal SDK move")
+	boot.start_level()
 	var bubble := PortitorBubble.new()
 	root.add_child(bubble)
 	var speaker := Vector2(8, 100)
@@ -70,8 +82,21 @@ func _run() -> void:
 	var expected_tail: float = clampf(speaker.x, bubble.box.position.x + 5, bubble.box.end.x - 6)
 	_check(is_equal_approx(bubble.tail_x, expected_tail), "bubble tail follows the clamped speaker anchor")
 	_check(not is_equal_approx(bubble.tail_x, bubble.box.get_center().x), "edge bubble fixture distinguishes speaker anchor from box center")
-	_check(bubble.find_child("ApprovedBubble", true, false) != null, "confirmed bubble sheet replaces the flat placeholder")
+	_check(bubble.find_child("ApprovedBubble", true, false) != null, "G2 bubble panel replaces the flat placeholder")
 	bubble.free()
+	# G2 dialogue can reveal more than the legacy four-line bubble limit.
+	var prior_typewriter: bool = bool(root.get_node("Settings").values.get("typewriter", true))
+	root.get_node("Settings").values["typewriter"] = true
+	var multiline := PortitorBubble.new()
+	root.add_child(multiline)
+	multiline.configure("one\ntwo\nthree\nfour\nfive", Vector2(160, 150), "", "")
+	var body_labels: Array[Node] = multiline.get_children().filter(func(node: Node) -> bool: return node is Label)
+	_check(body_labels.size() == 5 and multiline.issues.is_empty(), "G2 bubble keeps all five explicit lines without clipping")
+	_check(body_labels.all(func(node: Label) -> bool: return node.visible_characters == 0), "G2 bubble starts unrevealed when typewriter is enabled")
+	multiline.reveal_all()
+	_check(body_labels.all(func(node: Label) -> bool: return node.visible_characters >= node.text.length()), "reveal_all shows every G2 bubble line")
+	multiline.free()
+	root.get_node("Settings").values["typewriter"] = prior_typewriter
 	var settings: Node = root.get_node("Settings")
 	var old_scale: Variant = settings.values.window_scale
 	var old_window_size: Vector2i = root.size

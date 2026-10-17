@@ -514,7 +514,7 @@ func _draw_cards(focus: float) -> void:
 			G2.icon(card, "art:ui.theme_emblem", str(group.theme).trim_prefix("theme."), Vector2(5, 4))
 			if not locked:
 				for pip: int in group.get("levels", []).size():
-					G2.rect(card, Rect2(10 + pip * 4, 66, 2, 4), "m" if pip < done else "x")
+					G2.pip(card, Vector2(12 + pip * 7, 68), "m" if pip < done else "x", 2, pip < done)
 				var label: Label = G2.text(card, Vector2(dimensions.x - 9, 75), progress, "u", true, "r", int(dimensions.x) - 18)
 				label.name = "ChapterProgress%d" % index
 		else:
@@ -865,35 +865,57 @@ func refresh_volume(key: String) -> void:
 	_g2_refresh_decorations()
 
 func _hint() -> void:
-	_hud()
+	const G2 = preload("res://presentation/ui/widgets/g2.gd")
+	_g2_overlay_header()
 	var spec: Dictionary = app.session.spec if app.session != null else Registry.level_spec("level:M01")
-	var player: Dictionary = app.session.state().player if app.session != null else {"x":2,"y":3}
-	var width: int = spec.map[0].length()
-	var height: int = spec.map.size()
-	var speaker := Vector2((320 - width * 16) / 2 + player.x * 16 + 8, 20 + (160 - height * 16) / 2 + player.y * 16 + 2)
+	var labels: Array[String] = []
+	if app.hint_level < 3: labels.append(t("hint.more"))
+	else: labels.append_array([t("hint.demo"), t("hint.rewind")])
+	if app.hint_level == 3 and (app.session == null or app.lab.route_index(app.session.state()) < 0): labels = [t("hint.rewind")]
+	var back_width: int = G2.key_width("Esc") + 3 + G2.measure(t("keys.back"), true) + 12
+	var right: int = 309 - back_width - 5
+	var widths: Array[int] = []
+	var total: int = 0
+	for label: String in labels:
+		var width: int = G2.measure(label) + 14 + (G2.key_width("H") + 4 if app.hint_level < 3 else 0)
+		widths.append(width)
+		total += width
+	total += (labels.size() - 1) * 5
+	var expanded: bool = total > right - 58
+	var stacked: bool = expanded and total > 304
+	var heights: Array[int] = []
+	for label: String in labels:
+		var lines: PackedStringArray = PortitorBubble._wrap(label, G2.font(), 292 - (G2.key_width("H") + 4 if app.hint_level < 3 else 0), 12) if stacked else PackedStringArray([label])
+		heights.append(maxi(17, lines.size() * 12 + 4))
+	var footer_height: int = 18 if not expanded else 34
+	if stacked:
+		footer_height = 20 + (labels.size() - 1) * 3
+		for height: int in heights: footer_height += height
+	var footer_y: int = 178 - footer_height
+	var controls_y: int = footer_y + 4 if expanded else 164
+	var origin := Vector2((320 - str(spec.map[0]).length() * 16) / 2, (180 - spec.map.size() * 16) / 2 + 10)
+	var player: Dictionary = app.session.state().player if app.session != null else {"x":2, "y":3}
+	var speaker: Vector2 = origin + Vector2(int(player.x) * 16 + 8, int(player.y) * 16 - 3)
+	var body: String = _level_text(spec, "hint." + str(app.hint_level))
+	var shape: Dictionary = PortitorBubble.layout(body, 100, 224, 6)
 	var bubble := PortitorBubble.new()
 	add_child(bubble)
-	bubble.configure(_level_text(spec, "hint." + str(app.hint_level)), speaker, t("hint.title", {"n":app.hint_level}), t("dev.placeholder"))
+	var at := Vector2(clampf(speaker.x - 50, 4, 316 - int(shape.w)), clampf(speaker.y - int(shape.h) - 9, 34, maxi(34, footer_y - 11 - int(shape.h))))
+	bubble.configure_layout(body, Rect2(at, Vector2(shape.w, shape.h)), speaker.x, t("hint.title", {"n":app.hint_level}))
 	_issues.append_array(bubble.issues)
-	_panel(Rect2(6, 156, 308, 21))
-	_sprite("art:ui.icons", "hint", Vector2(12, 160))
-	if app.hint_level < 3:
-		_sprite("art:ui.keycap", "H", Vector2(28, 159))
-		_label(t("hint.more"), Vector2(44, 159), 258, "v")
-		_row(Rect2(26, 158, 280, 17), 0)
-		_row_records.back()["never_highlight"] = true
-		_row_records.back().active.visible = false
-	else:
-		if app.session == null or app.lab.route_index(app.session.state()) < 0:
-			var only_rewind_width: int = mini(278, _measure(t("hint.rewind")) + 14)
-			_plain_button(t("hint.rewind"), Vector2(310 - only_rewind_width, 159), only_rewind_width, 0)
-			return
-		var demo_width: int = mini(139, _measure(t("hint.demo")) + 14)
-		var rewind_width: int = mini(278 - demo_width - 4, _measure(t("hint.rewind")) + 14)
-		var rewind_x: int = 310 - rewind_width
-		var demo_x: int = 306 - rewind_width - demo_width
-		_plain_button(t("hint.demo"), Vector2(demo_x, 159), demo_width, 0)
-		_plain_button(t("hint.rewind"), Vector2(rewind_x, 159), rewind_width, 1)
+	G2.plate(self, Rect2(4, footer_y, 312, footer_height))
+	G2.icon(self, "art:ui.icons", "hint", Vector2(9, controls_y - 1))
+	for pip: int in 3:
+		G2.pip(self, Vector2(26 + pip * 7, controls_y + 5), "s" if pip < app.hint_level else "x", 2, pip < app.hint_level)
+	G2.keybar(self, [{"keys":["Esc"], "label":t("keys.back")}], Vector2(309 - back_width / 2, controls_y))
+	var x: int = 160 - total / 2 if expanded else right - total
+	var y: int = footer_y + 18 if expanded else 162
+	for index: int in labels.size():
+		var key: String = "H" if app.hint_level < 3 else ""
+		_g2_overlay_action(Rect2(8 if stacked else x, y, 304 if stacked else widths[index], heights[index] if stacked else 14), labels[index], index, key, false)
+		if stacked: y += heights[index] + 3
+		else: x += widths[index] + 5
+
 
 func _plain_button(text: String, position: Vector2, width: int, index: int) -> Button:
 	var button: Button = _row(Rect2(position, Vector2(width, 15)), index, Rect2(), true)
@@ -901,49 +923,63 @@ func _plain_button(text: String, position: Vector2, width: int, index: int) -> B
 	return button
 
 func _complete() -> void:
-	_hud()
+	const G2 = preload("res://presentation/ui/widgets/g2.gd")
+	if app.world_view != null: app.world_view.background_dim_steps = 1
+	_g2_overlay_header()
 	var title: String = t("complete.title")
-	var moves: String = t("complete.moves", {"n": int(app.session.state().moves) if app.session != null else 4})
-	var width: int = maxi(140, mini(240, _measure(moves) + 24))
-	var x: int = (320 - width) / 2
-	_panel(Rect2(x, 34, width, 54), 2)
-	if _measure(title) * 2 <= width - 16:
-		_text2x(title, Vector2(x + (width - _measure(title) * 2) / 2, 38), "l", "g")
-	else:
-		_centered(title, 160, 44, width - 16, "l", "g")
-	_centered(moves, 160, 70, width - 16, "c")
-	var first_width: int = mini(140, _measure(t("complete.next")) + 14)
-	var second_width: int = mini(140, _measure(t("complete.levels")) + 14)
-	var left: int = (320 - first_width - 6 - second_width) / 2
-	_plain_button(t("complete.next"), Vector2(left, 92), first_width, 0)
-	_plain_button(t("complete.levels"), Vector2(left + first_width + 6, 92), second_width, 1)
+	var moves: String = t("complete.moves", {"n":int(app.session.state().moves) if app.session != null else 4})
+	var labels: Array[String] = [t("complete.next"), t("complete.levels")]
+	var need: int = maxi(52, maxi(G2.measure(labels[0]), G2.measure(labels[1])) + 14)
+	var width: int = mini(304, maxi(160, maxi(need * 2 + 32, maxi(G2.measure(title) + 40, G2.measure(moves) + 24))))
+	var x: int = 160 - width / 2
+	var button_width: int = (width - 32) / 2
+	G2.panel(self, Rect2(x, 26, width, 76))
+	G2.title(self, Rect2(x, 26, width, 76), title)
+	G2.text(self, Vector2(160, 62), moves, "u", false, "c", width - 20)
+	for index: int in 2:
+		_g2_overlay_action(Rect2(x + 12 if index == 0 else x + width - 12 - button_width, 79, button_width, 17), labels[index], index)
+	_g2_keybar([{"keys":["left", "right"], "label":"keys.select"}, {"keys":["Enter"], "label":"keys.confirm"}])
+
 
 func _rulecard() -> void:
-	_dimmed_hud()
-	var info: Dictionary = app.rule_card_text() if app.has_method("rule_card_text") else {"name": "rule.earth.name", "text": "rule.earth.text", "icon": "art:ui.class_icon", "animation": "earth"}
-	_panel(Rect2(42, 36, 236, 104))
-	_label(t("rule.title", {"name": t(str(info.name))}), Vector2(50, 39), 220, "l")
-	_paragraph(t(str(info.text)), Vector2(114, 58), 156, 5)
-	var width: int = mini(120, _measure(t("rule.close")) + 14)
-	_plain_button(t("rule.close"), Vector2(270 - width, 121), width, 0)
-	_wide_key("Esc", Vector2(264 - width - _measure("Esc") - 8, 122))
+	const G2 = preload("res://presentation/ui/widgets/g2.gd")
+	app.world_view.background_dim_steps = 1
+	_g2_overlay_header(1)
+	var info: Dictionary = app.rule_card_text() if app.has_method("rule_card_text") else {"name":"rule.earth.name", "text":"rule.earth.text", "icon":"art:ui.class_icon", "animation":"earth"}
+	var title: String = t("rule.title", {"name":t(str(info.name))})
+	var body: String = t(str(info.text))
+	var width: int = mini(280, maxi(192, G2.measure(title) + 40))
+	var lines: Array[String] = _g2_lines(body, width - 92)
+	while lines.size() > 4 and width < 280:
+		width = mini(280, width + 12)
+		lines = _g2_lines(body, width - 92)
+	lines = _g2_lines(body, width - 92, 5)
+	var height: int = maxi(116, 30 + lines.size() * 12 + 36)
+	var x: int = 160 - width / 2
+	var y: int = mini(34, 158 - height)
+	G2.panel(self, Rect2(x, y, width, height))
+	G2.title(self, Rect2(x, y, width, height), title)
+	G2.icon(self, str(info.icon), str(info.animation), Vector2(x + 9, y + 7))
+	for index: int in lines.size(): G2.text(self, Vector2(x + 80, y + 31 + index * 12), lines[index], "u", true)
 	if str(info.name) == "rule.earth.name":
-		_rule_preview = ILLUSTRATION.new()
+		_rule_preview = G2.RulePicture.new()
 		add_child(_rule_preview)
-		var theme_uid: String = "art:" + str(app.lab.current_group().get("theme", "theme.dungeon"))
-		_rule_preview.configure_rulecard(theme_uid, _visual_tick())
-		_rule_preview.position = Vector2(50, 58)
-		_rule_bag = _sprite("art:item.sandbag", "full", Vector2(70, 94))
-		_rule_bag.visible = bool(_rule_preview.dug)
+		_rule_preview.position = Vector2(x + 12, y + 30)
+		_rule_preview.configure_rule(app.session.spec if app.session != null else Registry.level_spec("level:M03"), "art:" + str(app.lab.current_group().get("theme", "theme.dungeon")), _visual_tick())
+		G2.well(self, Rect2(x + 11, y + 29, 58, 46))
+		move_child(_rule_preview, get_child_count() - 1)
 	else:
+		G2.well(self, Rect2(x + 11, y + 29, 58, 46))
 		_rule_icon_uid = str(info.icon)
 		_rule_icon_animation = str(info.animation)
 		var icon: Dictionary = Registry.art(_rule_icon_uid)
 		var dimensions: Array = icon.get("size", [16, 16])
 		var anchor: Array = icon.get("anchor", [0, 0])
-		_rule_icon = _sprite(_rule_icon_uid, _rule_icon_animation, Vector2(50 + (56 - int(dimensions[0])) / 2 + int(anchor[0]), 58 + (32 - int(dimensions[1])) / 2 + int(anchor[1])))
-	_rectangle(Rect2(49, 57, 58, 1), "z")
-	_rectangle(Rect2(49, 90, 58, 1), "z")
+		_rule_icon = _sprite(_rule_icon_uid, _rule_icon_animation, Vector2(x + 12 + (56 - int(dimensions[0])) / 2 + int(anchor[0]), y + 30 + (44 - int(dimensions[1])) / 2 + int(anchor[1])))
+	var label: String = t("rule.close")
+	var button_width: int = mini(width - 24, G2.measure(label) + G2.key_width("Esc") + 24)
+	_g2_overlay_action(Rect2(x + (width - button_width) / 2, y + height - 25, button_width, 17), label, 0, "Esc")
+
 
 func _dimmed_hud() -> void:
 	var before: Array[Node] = get_children()
@@ -953,7 +989,44 @@ func _dimmed_hud() -> void:
 			_dim_item(child, 2)
 
 func _dialogue() -> void:
-	_text("status.later", Vector2(110, 80), 100)
+	const G2 = preload("res://presentation/ui/widgets/g2.gd")
+	_g2_overlay_header()
+	var spec: Dictionary = app.session.spec if app.session != null else Registry.level_spec("level:M05")
+	var offset := Vector2((320 - str(spec.map[0]).length() * 16) / 2 - 64, (180 - spec.map.size() * 16) / 2 - 42)
+	var actor: TextureRect = G2.icon(self, "art:char.portitor", "idle", Vector2(146, 100) + offset)
+	if actor != null: actor.flip_h = true
+	G2.icon(self, "art:ui.emote", "default", Vector2(150, 87) + offset)
+	var npc_text: String = t("dlg.sample.npc")
+	var npc_shape: Dictionary = PortitorBubble.layout(npc_text, 152, 180, 7)
+	var npc_at := Vector2(clampf(128 + offset.x, 124, 316 - int(npc_shape.w)), clampf(40 + offset.y, 34, 140 - int(npc_shape.h)))
+	var npc := PortitorBubble.new()
+	add_child(npc)
+	npc.configure_layout(npc_text, Rect2(npc_at, Vector2(npc_shape.w, npc_shape.h)), 156 + offset.x, t("dlg.sample.npc.name"))
+	G2.arrow(self, npc_at + Vector2(int(npc_shape.w) - 9, int(npc_shape.h) - 5), "down")
+	var self_text: String = t("dlg.sample.self")
+	var self_shape: Dictionary = PortitorBubble.layout(self_text, 102, 114, 7)
+	var self_at := Vector2(clampf(10 + offset.x, 4, 120 - int(self_shape.w)), clampf(52 + offset.y, 34, 140 - int(self_shape.h)))
+	var thought := PortitorBubble.new()
+	add_child(thought)
+	thought.configure_layout(self_text, Rect2(self_at, Vector2(self_shape.w, self_shape.h)), 92 + offset.x, "", true)
+	_issues.append_array(npc.issues)
+	_issues.append_array(thought.issues)
+	var rows: Array[String] = _g2_lines(t("dlg.sample.note"), 280, 2)
+	var width: int = 80
+	for line: String in rows: width = maxi(width, G2.measure(line, true) + 28)
+	var x: int = 160 - width / 2
+	var height: int = rows.size() * 10 + 8
+	G2.plate(self, Rect2(x, 150, width, height))
+	G2.icon(self, "art:ui.emote", "default", Vector2(x + 4, 150 + (height - 12) / 2))
+	var expression := RegEx.new()
+	expression.compile("^(.*?[：:]\\s?)(.*)$")
+	for index: int in rows.size():
+		var parts: RegExMatch = expression.search(rows[index]) if index == 0 else null
+		if parts != null:
+			G2.text(self, Vector2(x + 20, 154 + index * 10), parts.get_string(1), "m", true)
+			G2.text(self, Vector2(x + 20 + G2.measure(parts.get_string(1), true), 154 + index * 10), parts.get_string(2), "t", true)
+		else: G2.text(self, Vector2(x + 20, 154 + index * 10), rows[index], "t", true)
+
 
 func move_focus(amount: int) -> void:
 	if not is_inside_tree() or buttons.is_empty():
@@ -1247,3 +1320,87 @@ func _g2_wall(theme_uid: String = "art:theme.dungeon") -> void:
 	add_child(shown)
 	_dim_item(shown, 2)
 
+
+func _g2_overlay_action(area: Rect2, value: String, index: int, key: String = "", pointer: bool = true) -> Button:
+	const G2 = preload("res://presentation/ui/widgets/g2.gd")
+	var node := Button.new()
+	node.position = area.position
+	node.size = area.size
+	for state: String in ["normal", "hover", "pressed", "focus", "disabled"]: node.add_theme_stylebox_override(state, StyleBoxEmpty.new())
+	add_child(node)
+	G2.box(self, area, G2.BUTTONS.n)
+	var active: TextureRect = G2.box(self, area, G2.BUTTONS.sel)
+	active.visible = index == focus_index
+	var record: Dictionary = {"index":index, "active":active, "labels":[]}
+	if pointer:
+		record["pointer"] = G2.cursor(self, area.position + Vector2(-3, 8))
+		record.pointer.visible = index == focus_index
+	_row_records.append(record)
+	var key_width: int = G2.key_width(key) + 4 if not key.is_empty() else 0
+	var lines: PackedStringArray = PortitorBubble._wrap(value, G2.font(), area.size.x - 12 - key_width, 12)
+	var y: int = int(area.position.y) + (int(area.size.y) - lines.size() * 12 - 1) / 2
+	for line: String in lines:
+		var x: int = int(area.position.x) + (int(area.size.x) - G2.measure(line) - key_width) / 2
+		var label: Label = G2.text(self, Vector2(x, y), line, "y" if index == focus_index else "t")
+		record.labels.append({"node":label, "normal":"t", "selected":"y"})
+		if not key.is_empty(): G2.keycap(self, Vector2(x + G2.measure(line) + 8, y), key)
+		y += 12
+	node.focus_entered.connect(func() -> void: focus_index = index; _sync_rows())
+	node.pressed.connect(func() -> void: app.activate_menu(index))
+	buttons.append(node)
+	return node
+
+
+func _g2_overlay_header(dim: int = 0) -> void:
+	# Overlay-only G2 capsules; the playable level HUD stays unchanged.
+	const G2 = preload("res://presentation/ui/widgets/g2.gd")
+	if app.session == null: return
+	var header := Control.new()
+	header.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	add_child(header)
+	G2.rect(header, Rect2(0, 0, 320, 20), "z")
+	var spec: Dictionary = app.session.spec
+	var state: Dictionary = app.session.state()
+	var title: String = _level_text(spec, "title")
+	var id_width: int = G2.measure(str(spec.id), true)
+	var class_info: Dictionary = app.rule_card_text() if screen_name == "rulecard" and app.has_method("rule_card_text") else {}
+	var class_width: int = 15 if not class_info.is_empty() else 0
+	var title_width: int = mini(190, id_width + 4 + G2.measure(title) + 10 + class_width)
+	G2.overlay_capsule(header, Rect2(3, 2, title_width, 16))
+	G2.text(header, Vector2(8, 6), str(spec.id), "l", true)
+	G2.text(header, Vector2(13 + id_width, 4), title, "t", false, "l", title_width - id_width - 14 - class_width)
+	if not class_info.is_empty(): G2.overlay_icon(header, str(class_info.icon), str(class_info.animation), Vector2(3 + title_width - 14, 7), dim > 0)
+	var goals: Array = app.session.goal_lights()
+	var bag_available: bool = int(state.bag.sand) > 0 or int(spec.get("bag", {}).get("sand", 0)) > 0
+	for row: String in spec.map: bag_available = bag_available or row.contains("e") or row.contains("s")
+	var bomb_available: bool = int(state.bag.get("bomb", 0)) > 0 or int(spec.get("bag", {}).get("bomb", 0)) > 0
+	var width: int = 5 + goals.size() * 12 + 4 + 3 * 15 + 13 + 4 + (30 if bag_available else 0) + (35 if bomb_available else 0)
+	var x: int = 317 - width
+	G2.overlay_capsule(header, Rect2(x, 2, width, 16))
+	var at: int = x + 5
+	if bomb_available:
+		G2.icon(header, "art:item.bomb", "default", Vector2(at, 2))
+		G2.text(header, Vector2(at + 17, 5), "×" + str(int(state.bag.get("bomb", 0))), "w", true)
+		at += 35
+	if bag_available:
+		G2.overlay_icon(header, "art:item.sandbag", "full", Vector2(at, 2), dim > 0)
+		G2.text(header, Vector2(at + 12, 6), "×" + str(int(state.bag.sand)), "w", true)
+		at += 30
+	for goal: Dictionary in goals:
+		G2.overlay_icon(header, "art:ui.goal_lamp", "on" if goal.get("lit", false) else "off", Vector2(at - 1, 6), dim > 0)
+		at += 12
+	at += 4
+	for action: String in ["undo", "restart", "hint", "pause"]:
+		G2.overlay_icon(header, "art:ui.icons", action, Vector2(at, 4), dim > 0)
+		var hit := Button.new()
+		hit.position = Vector2(at, 3)
+		hit.size = Vector2(13, 13)
+		hit.focus_mode = Control.FOCUS_NONE
+		for token: String in ["normal", "hover", "pressed", "focus", "disabled"]: hit.add_theme_stylebox_override(token, StyleBoxEmpty.new())
+		hit.pressed.connect(_hud_action.bind(action))
+		header.add_child(hit)
+		at += 15
+	if dim > 0:
+		_dim_item(header, dim)
+		for child: Node in header.get_children():
+			if child is CanvasItem and child.has_meta("g2_overlay_dimmed"): child.material = null
