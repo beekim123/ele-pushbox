@@ -30,6 +30,7 @@
       { view: "edit", label: "编辑与对比", module: "PBEditor" },
       { view: "review", label: "确认", module: "PBReview", badge: "review-count" },
       { view: "export", label: "导出", module: "PBExport", badge: "drafts-count", tone: "warn" },
+      { view: "ui-proposals", label: "界面风格提案", module: "PBUiProposals" },
     ] },
     { group: "tools", label: "工具", items: [
       { view: "ids", label: "编号映射", module: "PBIds" },

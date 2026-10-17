@@ -34,7 +34,7 @@ let runningBrowser = null;
   page.on("console", (m) => { if (m.type() === "error") errors.push(m.text()); });
 
   // 1. Every view opens without errors.
-  for (const h of ["#overview", "#modes", "#modes/water", "#modes/basics/M03", "#modes/hell-pool", "#modes/water/W08", "#mechanisms", "#mechanisms/float_sink", "#mechanisms/portal", "#scenes/level.W09", "#assets/mech.bridge", "#catalog/cargo", "#catalog/items", "#catalog/slices", "#maps", "#rooms2", "#rooms2/pool/5", "#rooms2/diyu_lantern", "#rooms2/dungeon2_yard", "#rooms2/map/diyu_1", "#rooms2/map/dungeon_2", "#scenes", "#scenes/level.M04", "#scenes/ui.screen.chapters", "#scenes/lobby.forest", "#scenes/showcase.cosmos", "#scenes/chapter.ruins", "#scenes/chapter.sky", "#assets", "#assets/material.chapter2_5", "#assets/char.portitor", "#catalog/worlds", "#catalog/recipients", "#catalog/combos", "#catalog/upgrades", "#ids", "#ids/level", "#scenes/ui.screen.dialogue", "#scenes/ui.screen.hint", "#assets/mech.door", "#edit/obj.crate_wood", "#review", "#export"]) {
+  for (const h of ["#overview", "#modes", "#modes/water", "#modes/basics/M03", "#modes/hell-pool", "#modes/water/W08", "#mechanisms", "#mechanisms/float_sink", "#mechanisms/portal", "#scenes/level.W09", "#assets/mech.bridge", "#catalog/cargo", "#catalog/items", "#catalog/slices", "#maps", "#ui-proposals", "#ui-proposals/pause", "#rooms2", "#rooms2/pool/5", "#rooms2/diyu_lantern", "#rooms2/dungeon2_yard", "#rooms2/map/diyu_1", "#rooms2/map/dungeon_2", "#scenes", "#scenes/level.M04", "#scenes/ui.screen.chapters", "#scenes/lobby.forest", "#scenes/showcase.cosmos", "#scenes/chapter.ruins", "#scenes/chapter.sky", "#assets", "#assets/material.chapter2_5", "#assets/char.portitor", "#catalog/worlds", "#catalog/recipients", "#catalog/combos", "#catalog/upgrades", "#ids", "#ids/level", "#scenes/ui.screen.dialogue", "#scenes/ui.screen.hint", "#assets/mech.door", "#edit/obj.crate_wood", "#review", "#export"]) {
     await page.goto(URL + h); await page.waitForTimeout(250);
   }
   check(errors.length === 0, "all views load without console errors" + (errors.length ? ": " + errors[0] : ""));
@@ -288,7 +288,7 @@ let runningBrowser = null;
   await page.goto(URL + "#overview"); await page.waitForTimeout(200);
   const menu = await page.evaluate(() => Array.from(document.querySelectorAll("#nav > a, #nav > .nav-group")).map((n) => n.matches("a")
     ? [n.firstChild.textContent] : [n.querySelector(".nav-head-label").textContent, ...Array.from(n.querySelectorAll(".nav-list a")).map((a) => a.firstChild.textContent)]));
-  const wantMenu = [["总览"], ["关卡与玩法", "模式与关卡", "机制", "设计数据"], ["配送", "开局抽签", "石牢", "地府"], ["美术", "场景", "资产与动画", "编辑与对比", "确认", "导出"], ["工具", "编号映射"], ["声音", "音效"]];
+  const wantMenu = [["总览"], ["关卡与玩法", "模式与关卡", "机制", "设计数据"], ["配送", "开局抽签", "石牢", "地府"], ["美术", "场景", "资产与动画", "编辑与对比", "确认", "导出", "界面风格提案"], ["工具", "编号映射"], ["声音", "音效"]];
   check(JSON.stringify(menu) === JSON.stringify(wantMenu), "left menu shows the categories and pages of WB-01 in order, 配送 by map as in workbench.md 6.1 (" + JSON.stringify(menu) + ")");
   const reg = await page.evaluate(() => ({
     pages: [...new Set(PBNav.pages().map((p) => p.view))],
@@ -412,9 +412,49 @@ let runningBrowser = null;
   check(denied && blockedFold === "false" && blockedHash === "#scenes" && blockedCollapse && blockedErrors.length === 0,
     "with localStorage blocked the menu still folds, navigates and collapses without errors" + (blockedErrors.length ? ": " + blockedErrors[0] : ""));
 
+  // 6c. UI-09 界面风格提案: the chosen style (G2) draws the sample screens the package asks for
+  // (lobby, pause on a dark map, clear on a light map, HUD, reels) plus the English pause, and
+  // its component sheet on a dark and a light map, with no cut or missing text; the overview
+  // image in docs/packages/UI-09 is what the page's download button draws.
+  const fnv = (d) => { let h = 0x811c9dc5; for (let i = 0; i < d.length; i++) { h ^= d[i]; h = Math.imul(h, 16777619) >>> 0; } return h; };
+  await page.goto(URL + "#ui-proposals"); await page.waitForTimeout(400);
+  const gen = await page.evaluate((fnvSrc) => {
+    const fnv = eval(fnvSrc), G = PB.uiGeneric, o = { level: (id) => PBStore.level(id) }, issues = [];
+    // Drawn: every pixel painted and more than the backdrop's few colours.
+    const drawn = (cv) => { const d = cv.getContext("2d").getImageData(0, 0, cv.width, cv.height).data, cols = new Set(); let n = 0; for (let i = 0; i < d.length; i += 4) { if (d[i + 3] === 255) n++; cols.add(d[i] * 65536 + d[i + 1] * 256 + d[i + 2]); } return n === cv.width * cv.height && cols.size >= 4; };
+    const shots = Array.from(document.querySelectorAll("#ui-proposals-shots figure")).map((f) => { const cv = f.querySelector("canvas"); return { id: f.dataset.screen, size: cv.width + "x" + cv.height, drawn: drawn(cv) }; });
+    const comps = Array.from(document.querySelectorAll("#ui-proposals-components tbody tr")).map((tr) => ({ id: tr.dataset.component, drawn: Array.from(tr.querySelectorAll("canvas")).map(drawn) }));
+    for (const s of G.SCREENS) for (const i of G.render(new PB.Raster(320, 180), s.id, o)) issues.push(s.id + "/" + i.kind + "/" + i.key);
+    for (const c of G.COMPONENTS) for (const tone of ["dark", "light"]) for (const i of G.component(new PB.Raster(G.CW, c.h), c.id, tone, o)) issues.push(c.id + "/" + tone + "/" + i.kind + "/" + i.key);
+    const ov = G.overview(o), big = G.scale(ov.r, 2);
+    for (const i of ov.issues) issues.push("overview/" + i.kind + "/" + i.key);
+    return { style: G.STYLE.id, shots, comps, issues, ov: { w: big.w, h: big.h, hash: fnv(big.data) }, check: document.getElementById("ui-proposals-check").textContent };
+  }, fnv.toString());
+  check(gen.style === "G2" && JSON.stringify(gen.shots.map((x) => x.id)) === JSON.stringify(["lobby", "pause", "complete", "hud", "reels", "pause_en"]) && gen.shots.every((x) => x.size === "320x180" && x.drawn),
+    "UI-09: #ui-proposals shows the chosen style G2 on the generic lobby, the dark-map pause, the light-map clear, the HUD, the reels and the English pause (" + JSON.stringify(gen.shots) + ")");
+  check(gen.comps.length === 14 && gen.comps.every((x) => x.drawn.length === 2 && x.drawn.every(Boolean)), "UI-09: the component sheet draws all 14 parts on a dark and a light map (" + gen.comps.map((x) => x.id).join() + ")");
+  check(gen.issues.length === 0 && gen.check.includes("0 个问题"), "UI-09: sample screens, components and overview have no cut, off-screen or missing-glyph text" + (gen.issues.length ? ": " + gen.issues.slice(0, 3).join(", ") : ""));
+  const ovWant = await decode("docs/packages/UI-09/G2_深蓝圆角.png");
+  check(ovWant.w === gen.ov.w && ovWant.h === gen.ov.h && fnv(ovWant.data) === gen.ov.hash, `UI-09: docs/packages/UI-09/G2_深蓝圆角.png is the page's overview at 2x (${gen.ov.w}x${gen.ov.h})`);
+  const [ovDl] = await Promise.all([page.waitForEvent("download"), page.click("text=下载总览图（PNG · 2 倍）")]);
+  const { decodePng } = await import(path.join(REPO, "tools/lib/png.mjs"));
+  const ovGot = decodePng(fs.readFileSync(await ovDl.path()));
+  check(ovGot.w === ovWant.w && ovGot.h === ovWant.h && fnv(ovGot.data) === fnv(ovWant.data), "UI-09: the page's download button saves that same overview image");
+  await page.goto(URL + "#ui-proposals/pause"); await page.waitForTimeout(300);
+  const viewer = async () => page.evaluate(() => { const d = document.querySelector("#ui-proposals-root dialog"), cv = d && d.querySelector("canvas"); return { open: !!(d && d.open), size: cv ? cv.width + "x" + cv.height : null, css: cv ? cv.style.width : null }; });
+  const v2 = await viewer();
+  await page.click('#ui-proposals-root dialog button:has-text("3×")'); await page.waitForTimeout(100);
+  const v3 = await viewer();
+  await page.click('#ui-proposals-root dialog button:has-text("原尺寸")'); await page.waitForTimeout(100);
+  const v1 = await viewer();
+  await page.keyboard.press("Escape"); await page.waitForTimeout(200);
+  const closed = await page.evaluate(() => ({ hash: location.hash, open: !!document.querySelector("#ui-proposals-root dialog[open]") }));
+  check(v2.open && v2.size === "320x180" && v2.css === "640px" && v3.css === "960px" && v1.css === "320px" && closed.hash === "#ui-proposals" && !closed.open,
+    "UI-09: #ui-proposals/pause opens the screen at its original size, zooms 1x / 2x / 3x and Esc goes back to #ui-proposals (" + JSON.stringify([v1, v2, v3, closed]) + ")");
+
   // 7. Narrow window: no horizontal page scroll, navigation still reachable.
   await page.setViewportSize({ width: 390, height: 800 });
-  for (const h of ["#overview", "#modes/water", "#mechanisms/acid", "#catalog/cargo", "#catalog/slices", "#rooms2/pool/3", "#rooms2/map/diyu_1", "#rooms2/diyu_fengdu", "#scenes", "#assets/char.miner", "#review"]) {
+  for (const h of ["#overview", "#modes/water", "#mechanisms/acid", "#catalog/cargo", "#catalog/slices", "#rooms2/pool/3", "#rooms2/map/diyu_1", "#rooms2/diyu_fengdu", "#scenes", "#assets/char.miner", "#review", "#ui-proposals"]) {
     await page.goto(URL + h); await page.waitForTimeout(250);
     const overflow = await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
     check(overflow <= 0, `${h} at 390px has no horizontal page scroll (${overflow}px)`);

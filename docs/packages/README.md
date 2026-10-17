@@ -13,8 +13,8 @@
 | [DLV-03](DLV-03.md) | 地府顶边、v2 梯顶、配送菜单 | `claude/inspiring-ride-zfnn4s` → `dlv/DLV-03` | `index.html`、`nav.js`、`tools/art.mjs`（追加）、e2e 菜单检查 | **已合并**（2026-10-17） |
 | [UX-01](UX-01.md) | 新手引导调研报告 | `claude/inspiring-ride-zfnn4s` → `ux/UX-01` | 无 | **已合并**（2026-10-17） |
 | [DSN-01](DSN-01.md) | 第三张配送地图「济州海女村」设计 | `claude/inspiring-ride-zfnn4s` → `dsn/DSN-01` | `content/catalog/*.json`、本表（只加预留行） | **已合并**（2026-10-17），22 项美术候选待用户确认 |
-| [DLV-04](DLV-04.md) | 济州海女村的 13 间房（配送 v2 房间数据），做完进开局池 | `claude/inspiring-ride-zfnn4s`（DSN-01、DLV-05 合并后）→ `dlv/DLV-04` | `content/catalog/slices.json`（`jeju_1`、开局池）、`worlds.json`（红蜻蜓的 `fed`）、`content/i18n-rooms2/*.json`、生成文件 | 待派（DLV-05 之后） |
-| [DLV-05](DLV-05.md) | v2 回合规则支持跷跷板 / 阵风（济州的 6 间机制房要用） | `claude/inspiring-ride-zfnn4s`（DSN-01 合并后）→ `dlv/DLV-05` | `rooms2.js`、`delivery-scene2.js`、`tools/check-rooms2.mjs`、`tests/rooms2.test.mjs`（只加测试） | **进行中**（2026-10-17 已派，用旧版包 + 补充提示） |
+| [DLV-04](DLV-04.md) | 济州海女村的 13 间房（配送 v2 房间数据），做完进开局池 | `claude/inspiring-ride-zfnn4s`（DSN-01、DLV-05 合并后）→ `dlv/DLV-04` | `content/catalog/slices.json`（`jeju_1`、开局池）、`worlds.json`（红蜻蜓的 `fed`）、`content/i18n-rooms2/*.json`、生成文件 | 可以派（派前拆成两包） |
+| [DLV-05](DLV-05.md) | v2 回合规则支持跷跷板 / 阵风（济州的 6 间机制房要用） | `claude/inspiring-ride-zfnn4s`（DSN-01 合并后）→ `dlv/DLV-05` | `rooms2.js`、`delivery-scene2.js`、`tools/check-rooms2.mjs`、`tests/rooms2.test.mjs`（只加测试） | **已合并**（2026-10-17） |
 | [DSN-02](DSN-02.md) | 声音设计：一套音效 + 每张地图的背景音乐（只写设计和包） | `claude/inspiring-ride-zfnn4s` → `dsn/DSN-02` | 本表（只改下面三行） | **已合并**（2026-10-17） |
 | [WB-02](WB-02.md) | 声音流程工具与工作台「声音」菜单；DSN-02 已合并，不用等 DSN-01，可以现在派 | `claude/inspiring-ride-zfnn4s`（DSN-02 合并后，派前核对） → `wb/WB-02` | `tools/content.mjs`、`tools/lib/ids.mjs`、菜单/脚本追加、e2e 追加、生成文件 | **已合并**（2026-10-17） |
 | [AUD-01](AUD-01.md) | 全游戏通用 32 项音效候选；依赖 WB-02 合并 | `claude/inspiring-ride-zfnn4s` → `aud/AUD-01` | 仅音效生成结果；与 AUD-02 的汇总生成文件合并后重建 | **已合并**（2026-10-17），待用户试听 |
@@ -26,8 +26,8 @@
 | UX-03 | 预留给 DSN-03：工作台预览引导效果 | — | — | 预留 |
 | UX-04 | 预留给 DSN-03：引导做进游戏（排在 UI-06 之后） | — | — | 预留 |
 | [WB-03](WB-03.md) | 配送菜单改短名（开局抽签 / 石牢 / 地府 / 海女村），退役 v1 旧版 | `claude/inspiring-ride-zfnn4s` → `wb/WB-03` | `slices.json`、`nav.js`、`index.html`、e2e | 部分完成：菜单已改；删 v1 代码等 UI-10 之后 |
-| [UI-09](UI-09.md) | 通用界面风格提案：3–4 个风格画在同一组样板界面上，用户选（2026-10-17） | `claude/inspiring-ride-zfnn4s` → `ui/UI-09` | `index.html`（追加）、`nav.js`（「美术」末尾加一项） | 待派（现在可派） |
-| [UI-10](UI-10.md) | 按选定风格做整套游戏界面 + 配送 v2 界面 + 通用大厅 | `claude/inspiring-ride-zfnn4s` → `ui/UI-10` | `index.html`、`tools/art.mjs`（追加）；15 个界面换版本 | 等 UI-09 合并、用户选定后派 |
+| [UI-09](UI-09.md) | 通用界面风格提案：3–4 个风格画在同一组样板界面上，用户选（2026-10-17） | `claude/inspiring-ride-zfnn4s` → `ui/UI-09` | `index.html`（追加）、`nav.js`（「美术」末尾加一项） | **已合并**（2026-10-17），用户选定 G2 深蓝圆角 |
+| [UI-10](UI-10.md) | 按选定风格做整套游戏界面 + 配送 v2 界面 + 通用大厅 | `claude/inspiring-ride-zfnn4s` → `ui/UI-10` | `index.html`、`tools/art.mjs`（追加）；15 个界面换版本 | 可以派（派前拆成小包） |
 | [BR-01](BR-01.md) | 分支整理：合进 `main`、打 `v0.3`、删旧分支 | Claude 做 | — | 等第 1 批合并后 |
 | [UI-06](UI-06.md)、[DLV-01](DLV-01.md) | 新界面进游戏；配送实时规则 | BR-01 之后从 `main` 开 | 派之前由 Claude 补齐包头 | 第 2 批 |
 
