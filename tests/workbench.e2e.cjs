@@ -288,7 +288,7 @@ let runningBrowser = null;
   await page.goto(URL + "#overview"); await page.waitForTimeout(200);
   const menu = await page.evaluate(() => Array.from(document.querySelectorAll("#nav > a, #nav > .nav-group")).map((n) => n.matches("a")
     ? [n.firstChild.textContent] : [n.querySelector(".nav-head-label").textContent, ...Array.from(n.querySelectorAll(".nav-list a")).map((a) => a.firstChild.textContent)]));
-  const wantMenu = [["总览"], ["关卡与玩法", "模式与关卡", "机制", "设计数据"], ["配送", "开局抽签", "石牢", "地府"], ["美术", "场景", "资产与动画", "编辑与对比", "确认", "导出"], ["工具", "编号映射"], ["声音", "音效", "音乐", "按地图"]];
+  const wantMenu = [["总览"], ["关卡与玩法", "模式与关卡", "机制", "设计数据"], ["配送", "开局抽签", "石牢", "地府"], ["美术", "场景", "资产与动画", "编辑与对比", "确认", "导出"], ["工具", "编号映射"], ["声音", "音效"]];
   check(JSON.stringify(menu) === JSON.stringify(wantMenu), "left menu shows the categories and pages of WB-01 in order, 配送 by map as in workbench.md 6.1 (" + JSON.stringify(menu) + ")");
   const reg = await page.evaluate(() => ({
     pages: [...new Set(PBNav.pages().map((p) => p.view))],
@@ -466,7 +466,9 @@ async function audioChecks(browser) {
     for (const mode of ["music", "maps", "sfx"]) {
       await p.evaluate(mode => { location.hash = "#audio/" + mode; }, mode);
       await p.waitForTimeout(80);
-      check(await p.locator("#view-audio").isVisible() && await p.locator(`#nav a[href='#audio/${mode}'][aria-current=page]`).count() === 1, `audio/${mode}: deep link and menu selection agree`);
+      // 音乐 / 按地图 are not in the menu while music is shelved; their addresses still open the sound page.
+      const inMenu = mode === "sfx";
+      check(await p.locator("#view-audio").isVisible() && await p.locator(`#nav a[href='#audio/${mode}'][aria-current=page]`).count() === (inMenu ? 1 : 0), `audio/${mode}: deep link opens the sound page${inMenu ? " and the menu marks it" : " (hidden from the menu)"}`);
     }
     await p.evaluate(() => { location.hash = "#audio/music"; }); await p.waitForTimeout(80);
     const audioCat = await p.evaluate(() => PBStore.content().audio.catalog);

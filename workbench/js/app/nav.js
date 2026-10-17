@@ -36,8 +36,7 @@
     ] },
     { group: "audio", label: "声音", items: [
       { view: "audio", href: "#audio/sfx", label: "音效", module: "PBWBAudio" },
-      { view: "audio", href: "#audio/music", label: "音乐", module: "PBWBAudio" },
-      { view: "audio", href: "#audio/maps", label: "按地图", module: "PBWBAudio" },
+      // 音乐、按地图 are hidden while background music is shelved (user 2026-10-17); #audio/music and #audio/maps still open.
     ] },
   ];
 
