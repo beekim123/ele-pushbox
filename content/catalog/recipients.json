@@ -539,15 +539,19 @@
    "worlds": [
     "candy"
    ],
-   "rarity": "rare",
+   "rarity": "legendary",
    "temper": "挑剔",
-   "rule": "不收融化的东西",
+   "rule": "货物化过一点（完好度不满）就一分小费都不给；化完的本来就交不了",
    "likes": [
-    "cake",
-    "ice_cream"
+    "ice_cream",
+    "chocolate"
    ],
    "layer": 2,
-   "status": "concept"
+   "status": "concept",
+   "params": {
+    "move": "stay",
+    "damaged_tip_mult": 0
+   }
   },
   {
    "id": "archaeologist",
@@ -1374,6 +1378,46 @@
    ],
    "layer": 2,
    "status": "concept"
+  },
+  {
+   "id": "baker",
+   "name": "面包师",
+   "worlds": [
+    "candy"
+   ],
+   "rarity": "common",
+   "temper": "憨厚",
+   "rule": "布丁是他自己做的，不收布丁；交完货请你吃一块饼干，回一颗心",
+   "likes": [
+    "chocolate",
+    "letter"
+   ],
+   "layer": 2,
+   "status": "concept",
+   "params": {
+    "move": "stay",
+    "heal_on_delivery": 1
+   }
+  },
+  {
+   "id": "ice_cream_vendor",
+   "name": "冰淇淋车老板",
+   "worlds": [
+    "candy"
+   ],
+   "rarity": "rare",
+   "temper": "爱吆喝",
+   "rule": "冰淇淋车在广场上来回开，追上车才能交货；他自己卖冰淇淋，不收冰淇淋",
+   "likes": [
+    "pudding",
+    "chocolate"
+   ],
+   "layer": 2,
+   "status": "concept",
+   "params": {
+    "move": "wander",
+    "step_secs": 1.5
+   }
   }
  ]
 }

@@ -36,9 +36,12 @@
 | DLV-06 | 预留给 DSN-04：v2 规则支持冰面滑行等 | — | — | 预留 |
 | DLV-07a / DLV-07b | 预留给 DSN-04：雪村普通房；机关房 + 进开局抽签 | — | — | 预留 |
 | [DSN-05](DSN-05.md) | 第五张配送地图「糖果王国」设计（只写设计和后续包） | `claude/inspiring-ride-zfnn4s` → `dsn/DSN-05` | 设计目录 5 个文件（只动 `candy`）、本表（只改预留行） | 待派（现在可派，可和 DSN-04 同时） |
-| ART-02a / ART-02b / ART-02c | 预留给 DSN-05：糖果美术三批 | — | — | 预留 |
-| DLV-08 | 预留给 DSN-05：v2 规则支持软糖弹跳等 | — | — | 预留 |
-| DLV-09a / DLV-09b | 预留给 DSN-05：糖果普通房；机关房 + 进开局抽签 | — | — | 预留 |
+| [ART-02a](ART-02a.md) | 糖果美术①：主题 `theme.candy`（新建 `terrain-candy.js`，地形、背景、生态）、3 项装饰、两只提示动物（6 项）；填 `worlds.json` 的 `theme`、`hint_fauna`、`ambient_exclude` | `claude/inspiring-ride-zfnn4s`（DSN-05 合并后）→ `art/ART-02a` | `index.html`、`tools/art.mjs`（追加）、`worlds.json`（只动 `candy`）、生成文件 | 待派（DSN-05 合并后；和 ART-02b、ART-02c、DLV-08 同时） |
+| [ART-02b](ART-02b.md) | 糖果美术②：4 位收件人的角色和滚轮头像（8 项；小孩已有就沿用） | `claude/inspiring-ride-zfnn4s`（DSN-05 合并后）→ `art/ART-02b` | `index.html`、`tools/art.mjs`（追加，需要时）、生成文件 | 待派（DSN-05 合并后） |
+| [ART-02c](ART-02c.md) | 糖果美术③：2 种怪物、零食、2 种货物（含损坏）、软糖 / 烤炉口 / 热气的外观（8 项） | `claude/inspiring-ride-zfnn4s`（DSN-05 合并后）→ `art/ART-02c` | `index.html`、`tools/art.mjs`（追加，需要时）、生成文件 | 待派（DSN-05 合并后） |
+| [DLV-08](DLV-08.md) | v2 回合规则支持软糖弹跳 `bounce`、烤炉化冰 `melt`（糖果的 6 间机关房要用）；不依赖美术，先查关卡模式的验证关 | `claude/inspiring-ride-zfnn4s`（DSN-05 合并后）→ `dlv/DLV-08` | `rooms2.js`、`delivery-scene2.js`、`tools/check-rooms2.mjs`、`tests/rooms2.test.mjs`（只加测试）；和 DLV-06 同一批文件，不要同时派 | 待派（DSN-05 合并后） |
+| [DLV-09a](DLV-09a.md) | 糖果 7 间普通房（起点、过道、驿站、收件人之家） | `claude/inspiring-ride-zfnn4s`（ART-02a 合并后）→ `dlv/DLV-09a` | `i18n-rooms2`、字形生成文件、`worlds.json`（小蜂鸟 `fed`）；和 DLV-07a 后合并的那包重建字形 | 等 ART-02a 合并 |
+| [DLV-09b](DLV-09b.md) | 糖果 6 间机关房，糖果进开局抽签 | `claude/inspiring-ride-zfnn4s`（DLV-08、DLV-09a 合并后）→ `dlv/DLV-09b` | `i18n-rooms2`、字形生成文件、`slices.json`（`candy_1`、开局池）、两个测试文件的地图数预期；和 DLV-07b 同一批 | 等 DLV-08、DLV-09a 合并 |
 | [WB-03](WB-03.md) | 配送菜单改短名（开局抽签 / 石牢 / 地府 / 海女村），退役 v1 旧版 | `claude/inspiring-ride-zfnn4s` → `wb/WB-03` | `slices.json`、`nav.js`、`index.html`、e2e | 已结束：菜单已改；v1 代码被已确认界面引用，不删；v1 数据等 DLV-01 后再删 |
 | [UI-09](UI-09.md) | 通用界面风格提案：3–4 个风格画在同一组样板界面上，用户选（2026-10-17） | `claude/inspiring-ride-zfnn4s` → `ui/UI-09` | `index.html`（追加）、`nav.js`（「美术」末尾加一项） | **已合并**（2026-10-17），用户选定 G2 深蓝圆角 |
 | [UI-10](UI-10.md) | 按选定风格做整套游戏界面 + 配送 v2 界面 + 通用大厅 | `claude/inspiring-ride-zfnn4s` → `ui/UI-10` | `index.html`、`tools/art.mjs`（追加）；15 个界面换版本 | 已拆成 10a / 10b / 10c |

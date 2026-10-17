@@ -717,6 +717,42 @@
    "carry": "small",
    "layer": 2,
    "status": "concept"
+  },
+  {
+   "id": "chocolate",
+   "name": "巧克力",
+   "mode": "delivery",
+   "rule": "怕热：人站在点着的烤炉热气里，每一步化一块，完好度 −1",
+   "counter": "化完冰糖先把烤炉关掉再过去，或者绕开热气",
+   "mechanisms": [
+    "melt"
+   ],
+   "rarity": "rare",
+   "carry": "small",
+   "layer": 2,
+   "status": "concept",
+   "params": {
+    "pay": 55,
+    "heat_damage": 1
+   }
+  },
+  {
+   "id": "pudding",
+   "name": "布丁",
+   "mode": "delivery",
+   "rule": "软软的一碗布丁：人被软糖弹起来、没抓住梯子又落回软糖上，晃塌一块，完好度 −1",
+   "counter": "弹之前看好头顶有没有梯子接；别在软糖上来回蹦",
+   "mechanisms": [
+    "bounce"
+   ],
+   "rarity": "common",
+   "carry": "medium",
+   "layer": 2,
+   "status": "concept",
+   "params": {
+    "pay": 35,
+    "rebound_damage": 1
+   }
   }
  ]
 }

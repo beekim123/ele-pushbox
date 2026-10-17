@@ -609,5 +609,169 @@
     "rerolls": 1
    }
   }
+ ],
+ "planned": [
+  {
+   "id": "candy_1",
+   "short_name": "糖果王国",
+   "format": 2,
+   "name": "配送地图 · 糖果王国",
+   "mode": "delivery",
+   "status": "design",
+   "doc": "docs/design/delivery-candy.md",
+   "todo": "房间还没做（DLV-09a 普通房、DLV-09b 机关房；机关房依赖 DLV-08）：13 间房全部通过 check-rooms2 以后，把这一项移进 entries（删掉 todo），并在 delivery_pool 的 pool.maps 加 {\"slice\": \"candy_1\", \"weight\": 1}",
+   "world": "candy",
+   "top_edge": "sky",
+   "cargo": [
+    "ice_cream",
+    "pudding",
+    "letter",
+    "chocolate"
+   ],
+   "cargo_only": {
+    "ice_cream": [
+     "kid",
+     "baker",
+     "candy_princess"
+    ],
+    "pudding": [
+     "kid",
+     "ice_cream_vendor",
+     "candy_princess"
+    ]
+   },
+   "recipients": [
+    "kid",
+    "baker",
+    "ice_cream_vendor",
+    "candy_princess"
+   ],
+   "monsters": [
+    "ant_army",
+    "gingerbread"
+   ],
+   "rooms2": [
+    "candy_gate",
+    "candy_home_bakery",
+    "candy_home_castle",
+    "candy_home_square",
+    "candy_jelly",
+    "candy_jelly_step",
+    "candy_jelly_tower",
+    "candy_lollipop_lane",
+    "candy_oven",
+    "candy_oven_lever",
+    "candy_river_bank",
+    "candy_sweet_shop",
+    "candy_syrup_pool"
+   ],
+   "mechanisms": [
+    "push",
+    "ladder",
+    "dig",
+    "pour",
+    "plate_door",
+    "fall",
+    "float_sink",
+    "bounce",
+    "melt",
+    "hint_animal",
+    "push_monster",
+    "crush_monster",
+    "trap_monster"
+   ],
+   "layout": {
+    "cols": 16,
+    "rows": 2,
+    "direction": "right",
+    "sequence": [
+     {
+      "role": "gate"
+     },
+     {
+      "role": "teach"
+     },
+     {
+      "role": "teach"
+     },
+     {
+      "role": "breather",
+      "chance": 50
+     },
+     {
+      "role": "develop"
+     },
+     {
+      "role": "station"
+     },
+     {
+      "role": "twist"
+     },
+     {
+      "role": "develop",
+      "chance": 60
+     },
+     {
+      "role": "breather",
+      "chance": 40
+     },
+     {
+      "role": "home"
+     }
+    ]
+   },
+   "station": {
+    "items": [
+     "sandbag",
+     "first_aid",
+     "snack"
+    ],
+    "stock": {
+     "sandbag": 5,
+     "first_aid": 1,
+     "snack": 3
+    },
+    "heal": 1
+   },
+   "time": {
+    "tick_hz": 60,
+    "transition_secs": 0.3
+   },
+   "intervals": {
+    "walk": 0.22,
+    "climb": 0.22,
+    "push": 0.3,
+    "dig": 0.35,
+    "pour": 0.35,
+    "interact": 0.4,
+    "move_anim": 0.1
+   },
+   "gravity": {
+    "tiles_per_sec": 12
+   },
+   "player": {
+    "hearts": 3,
+    "iframe_secs": 1.5,
+    "fall_hurt_rows": 3,
+    "sand_max": 9,
+    "item_slots": 3
+   },
+   "monster_fall_ko_rows": 3,
+   "cargo_integrity": 3,
+   "coins": {
+    "pickup": 5
+   },
+   "tip": {
+    "time_fast": 1.5,
+    "time_floor": 0.5,
+    "like": 1.5
+   },
+   "rating": {
+    "S": 1.4,
+    "A": 1,
+    "B": 0.6
+   },
+   "fail_keep": 0.5
+  }
  ]
 }

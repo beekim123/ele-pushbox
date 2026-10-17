@@ -4750,15 +4750,17 @@
    "id": "candy",
    "name": "糖果王国",
    "culture": "幻想",
-   "inspiration": "糖果童话",
-   "style": "糖果色、巧克力河",
+   "inspiration": "糖果童话：饼干铺的地、奶油做的云、棒棒糖长成的树、远处的蛋糕城堡和城外的巧克力河；民间童话《姜饼人》里边跑边喊「你追不上我」的姜饼人；野餐时排着队来搬糖的蚂蚁；面包坊、冰淇淋车、街角的糖果铺和奶糖",
+   "care": "不照现有作品画：不像《探险活宝》的糖果王国和泡泡糖公主、《无敌破坏王》的甜蜜冲刺、《糖果传奇》、桌游《糖果乐园》、《查理和巧克力工厂》，不出现真实的糖果品牌和包装；姜饼人要可爱，被压、被困、泡软只是坐下嘟嘴，不画碎掉、被咬、被吃；不用《糖果屋》的女巫和烤炉情节，烤炉只是面包坊的烤炉；糖果公主是普通肤色、棕色双丸子头、粉色裙子、一顶小王冠，不画粉皮肤粉头发，也不照迪士尼公主画；蚂蚁画成圆滚滚的小黑点排成一队，不画写实的虫子特写",
+   "style": "晴天的午后：粉、薄荷绿、奶油黄的糖果色（只取调色板里不刺眼的几格，不大面积用高饱和色）；苏打饼干的地、夹心饼干墙、巧克力块、粉色和薄荷糖霜顶；奶油云，远处蛋糕城堡、棒棒糖林和巧克力河",
    "mechanisms": [
     "bounce",
-    "melt"
+    "melt",
+    "float_sink"
    ],
    "theme": null,
    "layer": 2,
-   "status": "concept"
+   "status": "design"
   },
   {
    "id": "desert",
@@ -5687,15 +5689,19 @@
    "worlds": [
     "candy"
    ],
-   "rarity": "rare",
+   "rarity": "legendary",
    "temper": "挑剔",
-   "rule": "不收融化的东西",
+   "rule": "货物化过一点（完好度不满）就一分小费都不给；化完的本来就交不了",
    "likes": [
-    "cake",
-    "ice_cream"
+    "ice_cream",
+    "chocolate"
    ],
    "layer": 2,
-   "status": "concept"
+   "status": "concept",
+   "params": {
+    "move": "stay",
+    "damaged_tip_mult": 0
+   }
   },
   {
    "id": "archaeologist",
@@ -6522,6 +6528,46 @@
    ],
    "layer": 2,
    "status": "concept"
+  },
+  {
+   "id": "baker",
+   "name": "面包师",
+   "worlds": [
+    "candy"
+   ],
+   "rarity": "common",
+   "temper": "憨厚",
+   "rule": "布丁是他自己做的，不收布丁；交完货请你吃一块饼干，回一颗心",
+   "likes": [
+    "chocolate",
+    "letter"
+   ],
+   "layer": 2,
+   "status": "concept",
+   "params": {
+    "move": "stay",
+    "heal_on_delivery": 1
+   }
+  },
+  {
+   "id": "ice_cream_vendor",
+   "name": "冰淇淋车老板",
+   "worlds": [
+    "candy"
+   ],
+   "rarity": "rare",
+   "temper": "爱吆喝",
+   "rule": "冰淇淋车在广场上来回开，追上车才能交货；他自己卖冰淇淋，不收冰淇淋",
+   "likes": [
+    "pudding",
+    "chocolate"
+   ],
+   "layer": 2,
+   "status": "concept",
+   "params": {
+    "move": "wander",
+    "step_secs": 1.5
+   }
   }
  ],
  "cargo": [
@@ -7239,6 +7285,42 @@
    "carry": "small",
    "layer": 2,
    "status": "concept"
+  },
+  {
+   "id": "chocolate",
+   "name": "巧克力",
+   "mode": "delivery",
+   "rule": "怕热：人站在点着的烤炉热气里，每一步化一块，完好度 −1",
+   "counter": "化完冰糖先把烤炉关掉再过去，或者绕开热气",
+   "mechanisms": [
+    "melt"
+   ],
+   "rarity": "rare",
+   "carry": "small",
+   "layer": 2,
+   "status": "concept",
+   "params": {
+    "pay": 55,
+    "heat_damage": 1
+   }
+  },
+  {
+   "id": "pudding",
+   "name": "布丁",
+   "mode": "delivery",
+   "rule": "软软的一碗布丁：人被软糖弹起来、没抓住梯子又落回软糖上，晃塌一块，完好度 −1",
+   "counter": "弹之前看好头顶有没有梯子接；别在软糖上来回蹦",
+   "mechanisms": [
+    "bounce"
+   ],
+   "rarity": "common",
+   "carry": "medium",
+   "layer": 2,
+   "status": "concept",
+   "params": {
+    "pay": 35,
+    "rebound_damage": 1
+   }
   }
  ],
  "combos": [
@@ -7963,23 +8045,49 @@
    "id": "ant_army",
    "name": "蚂蚁大军",
    "world": "candy",
-   "behavior": "跟着甜的货物走",
-   "counter": "用糖块引开",
+   "behavior": "一队小蚂蚁在过道上来回走，碰到你就从货物里搬走一块糖（完好度 −1），带的是信件就搬走一块零食；你带着甜的货物时，它们闻着味跟过来",
+   "counter": "推不动（一整队）。站到梯子上或一格高的台子上，等它们走过去；把箱子推下去压在队伍上，它们四散跑开，过一会儿再排好队；也能用两格深的坑困住",
    "pushable": false,
    "mode": "delivery",
    "layer": 2,
-   "status": "concept"
+   "status": "concept",
+   "params": {
+    "move": "patrol",
+    "step_secs": 0.5,
+    "cliff_rows": 2,
+    "contact": "steal",
+    "steal_cargo": 1,
+    "steal_snack": 1,
+    "smell_tiles": 5,
+    "flee_secs": 4,
+    "trap_secs": 4,
+    "coins": 0
+   }
   },
   {
    "id": "gingerbread",
    "name": "姜饼人",
    "world": "candy",
-   "behavior": "被你看见就逃跑，偷走的东西也一起带走",
-   "counter": "堵住退路",
+   "behavior": "在过道里飞快地跑来跑去，边跑边喊「你追不上我」；碰到你就撞你一下，把你推回一格，顺手拿走 5 个金币跑开",
+   "counter": "从侧面把它推进糖水里，它泡软了坐着走不动，金币还你；也能用箱子压晕、用两格深的坑困住，或者两边都用箱子堵住",
    "pushable": true,
    "mode": "delivery",
    "layer": 2,
-   "status": "concept"
+   "status": "concept",
+   "params": {
+    "move": "patrol",
+    "step_secs": 0.3,
+    "cliff_rows": 2,
+    "contact": "steal",
+    "shove_tiles": 1,
+    "steal_coins": 5,
+    "flee_secs": 3,
+    "flee_step_secs": 0.2,
+    "push_stun_secs": 0.5,
+    "soggy_secs": 6,
+    "trap_secs": 4,
+    "coins": 10
+   }
   },
   {
    "id": "scorpion",
