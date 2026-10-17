@@ -202,3 +202,22 @@ nice -n 10 node tests/workbench.e2e.cjs
 > 导入并按 docs/process.md 第7节审核 dsn/DSN-02；只核对范围、编号、冻结区和交付结果。合并后更新进度，先核对 DSN-01 的 jeju_1，再派 WB-02；WB-02 合并后填写 AUD-01/AUD-02 的实际基线并派出。游戏总音量与游戏音频接入另列待决定项。
 
 随后由 Claude 完成审核/合并和派包；WB-02 制作方做工具，AUD-01/AUD-02 制作方做待确认候选，用户最后试听选曲。当前本设计包的制作已结束，不自动开始后续包。
+
+### 提交与差异统计
+
+- 最后制作提交：`38e701c26f4381416eb8e37dd1a3b1924a78d478`。本交付登记再追加一笔普通提交，不 amend；最终交回提交号在交回消息中给出，并可用 `git rev-parse dsn/DSN-02` 查询。
+- 以下是该制作提交执行 `git diff --stat origin/claude/inspiring-ride-zfnn4s..dsn/DSN-02` 的实际输出；随后仅追加本节交付元数据，最终仍为相同 10 个允许文件：
+
+```text
+ content/catalog/audio.json | 867 +++++++++++++++++++++++++++++++++++++++++++++
+ docs/design/audio.md       | 187 ++++++++++
+ docs/design/game-design.md |   2 +-
+ docs/design/ids.md         |   4 +-
+ docs/design/workbench.md   |   1 +
+ docs/packages/AUD-01.md    |  95 +++++
+ docs/packages/AUD-02.md    |  95 +++++
+ docs/packages/DSN-02.md    |  61 +++-
+ docs/packages/README.md    |   6 +-
+ docs/packages/WB-02.md     | 111 ++++++
+ 10 files changed, 1423 insertions(+), 6 deletions(-)
+```
