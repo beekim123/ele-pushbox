@@ -11,7 +11,7 @@
 | 编号 | 内容 | 基线 → 分支 | 会碰的共享文件 | 状态 |
 |---|---|---|---|---|
 | [DLV-03](DLV-03.md) | 地府顶边、v2 梯顶、配送菜单 | `claude/inspiring-ride-zfnn4s` → `dlv/DLV-03` | `index.html`、`nav.js`、`tools/art.mjs`（追加）、e2e 菜单检查 | 待派（第 1 批） |
-| [UX-01](UX-01.md) | 新手引导调研报告 | `claude/inspiring-ride-zfnn4s` → `ux/UX-01` | 无 | 待派（第 1 批） |
+| [UX-01](UX-01.md) | 新手引导调研报告 | `claude/inspiring-ride-zfnn4s` → `ux/UX-01` | 无 | **已合并**（2026-10-17） |
 | [DSN-01](DSN-01.md) | 第三张配送地图「济州海女村」设计 | `claude/inspiring-ride-zfnn4s` → `dsn/DSN-01` | `content/catalog/*.json`、本表（只加预留行） | 待派（第 1 批） |
 | DLV-04 | 预留给 DSN-01：济州房间数据 | — | — | 预留 |
 | DLV-05 | 预留给 DSN-01：v2 规则支持跷跷板 / 阵风（需要时） | — | — | 预留 |
