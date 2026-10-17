@@ -21,7 +21,17 @@
   "workbench/js/core/ui-style.js",
   "workbench/js/core/font-ui.js",
   "content/i18n-ui/zh-Hans.json",
-  "content/i18n-ui/en.json"
+  "content/i18n-ui/en.json",
+  "workbench/js/core/ui-common.js",
+  "workbench/js/core/rooms.js",
+  "workbench/js/core/mapgen.js",
+  "workbench/js/core/rooms2.js",
+  "workbench/js/core/mapgen2.js",
+  "workbench/js/core/delivery-scene.js",
+  "workbench/js/core/delivery-scene2.js",
+  "workbench/js/core/ui-screens-result.js",
+  "content/i18n-result/zh-Hans.json",
+  "content/i18n-result/en.json"
  ],
  "depends": [
   "avatar.zombie",
@@ -30,7 +40,7 @@
   "ui.delivery_icons",
   "ui.panel"
  ],
- "version": 2,
+ "version": 3,
  "stage": "review",
  "size": [
   320,
@@ -50,49 +60,38 @@
   "picked": 30,
   "kept": 15,
   "room": {
+   "format": "pushbox.room/2",
+   "world": "dungeon",
+   "id": "ui_result_preview",
+   "type": "room",
+   "role": "develop",
+   "size": [
+    1,
+    1
+   ],
+   "name": "UI result preview",
+   "exits": [
+    "left.0.low",
+    "right.0.low"
+   ],
+   "routes": [
+    "left.0.low>right.0.low"
+   ],
    "map": [
     "####################",
-    "####............####",
-    "##................##",
-    "#...H..............#",
-    "#...H##########....#",
-    "#...H..............#",
-    "....H...............",
-    "..P.H..#.....#......",
+    "#..................#",
+    "#..................#",
+    "#..................#",
+    "#..................#",
+    "#..................#",
+    ".......B............",
+    "......FFF...........",
     "####################",
     "####################"
-   ],
-   "entities": [
-    {
-     "sprite": "monster.rat_swarm",
-     "anim": "walk",
-     "x": 12,
-     "y": 3,
-     "flip": true
-    },
-    {
-     "sprite": "item.coin",
-     "anim": "spin",
-     "x": 7,
-     "y": 3
-    },
-    {
-     "sprite": "item.coin",
-     "anim": "spin",
-     "x": 10,
-     "y": 3
-    },
-    {
-     "sprite": "item.coin",
-     "anim": "spin",
-     "x": 16,
-     "y": 7
-    }
-   ],
-   "facing": "right"
+   ]
   }
  },
  "usage": "这一单没送成（心掉光或货物坏了）：没有小费，路上拾到的金币带回一半。",
  "notes": "布局参考：文字来自 content/i18n-delivery（与已确认界面的文字表分开），缺的字形在 font-delivery.js；画法在 ui-delivery.js，没有改 ui.js。Godot 用 Control 容器实现。第 4 步美术候选（配送切片），等用户在工作台确认；确认前不得进游戏。 2026-10-16 界面定稿：画法见 workbench/js/core/ui-style.js（移植 tools/ui-proposals 的已确认效果图）。",
- "content_hash": "384c4e69dda55c998906adf11dcbd7b1429908262a554ace36e79fc4a57231a8"
+ "content_hash": "5d50d41bc6d54c7c48b227ff84488e43922eeeff0f2dcfda60a8fb8680f4e0f2"
 }

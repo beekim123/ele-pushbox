@@ -5,7 +5,7 @@
   "art": {
    "name": "美术资产",
    "source": "art/source/<分类>/<id>.json",
-   "count": 156
+   "count": 157
   },
   "level": {
    "name": "关卡",
@@ -100,7 +100,7 @@
   "text": {
    "name": "界面与台词文字",
    "source": "content/i18n/zh-Hans.json 与 content/i18n-<名>/zh-Hans.json",
-   "count": 500
+   "count": 503
   }
  },
  "entries": [
@@ -1869,6 +1869,18 @@
    "approved": false
   },
   {
+   "uid": "art:ui.screen.lobby_generic",
+   "domain": "art",
+   "id": "ui.screen.lobby_generic",
+   "name": "通用大厅",
+   "source": "art/source/screen/ui.screen.lobby_generic.json",
+   "game": "res://ui/screens/lobby_generic.tscn",
+   "category": "screen",
+   "version": 1,
+   "hash": "2edd46733942372b145565ca581d30a3abaeeac5b107a02f76287e84a98482be",
+   "approved": false
+  },
+  {
    "uid": "art:ui.screen.pause",
    "domain": "art",
    "id": "ui.screen.pause",
@@ -1924,8 +1936,8 @@
    "source": "art/source/screen/ui.screen.settlement.json",
    "game": "res://ui/screens/settlement.tscn",
    "category": "screen",
-   "version": 2,
-   "hash": "198a6c09f26fccf18b5438ab08f364ec8caea76b6e71f43b82262259d740cef8",
+   "version": 3,
+   "hash": "eb200c1c77c54dbb7e345ed3a2cb1474a74b03b8e230879cd0cee84edfc46bbf",
    "approved": false
   },
   {
@@ -1936,8 +1948,8 @@
    "source": "art/source/screen/ui.screen.settlement_fail.json",
    "game": "res://ui/screens/settlement_fail.tscn",
    "category": "screen",
-   "version": 2,
-   "hash": "384c4e69dda55c998906adf11dcbd7b1429908262a554ace36e79fc4a57231a8",
+   "version": 3,
+   "hash": "5d50d41bc6d54c7c48b227ff84488e43922eeeff0f2dcfda60a8fb8680f4e0f2",
    "approved": false
   },
   {
@@ -11296,6 +11308,30 @@
    "name": "跨章组合复习：让前一章的机关改变后一章的用法。",
    "source": "content/i18n-extra/zh-Hans.json",
    "game": "tr:extra.chapter.review_blurb"
+  },
+  {
+   "uid": "text:result.lobby.level",
+   "domain": "text",
+   "id": "result.lobby.level",
+   "name": "关卡模式",
+   "source": "content/i18n-result/zh-Hans.json",
+   "game": "tr:result.lobby.level"
+  },
+  {
+   "uid": "text:result.lobby.delivery",
+   "domain": "text",
+   "id": "result.lobby.delivery",
+   "name": "配送",
+   "source": "content/i18n-result/zh-Hans.json",
+   "game": "tr:result.lobby.delivery"
+  },
+  {
+   "uid": "text:result.par",
+   "domain": "text",
+   "id": "result.par",
+   "name": "参考用时 {n} 秒",
+   "source": "content/i18n-result/zh-Hans.json",
+   "game": "tr:result.par"
   },
   {
    "uid": "text:room2.diyu_fengdu.name",

@@ -271,6 +271,26 @@ let runningBrowser = null;
     await page.click("text=清空勾选与意见");
   }
 
+  // UI-10c: all three candidates are visible and selectable on the confirmation page.
+  for (const id of ["settlement", "settlement_fail", "lobby_generic"]) {
+    const a = await page.evaluate((id) => {
+      const a = PBStore.asset("ui.screen." + id);
+      return { name: a.name, status: a.status, version: a.version };
+    }, id);
+    const choice = page.locator(`input[aria-label="通过 ${a.name}"]`);
+    check(a.status === "review" && a.version === (id === "lobby_generic" ? 1 : 3) && await choice.isVisible() && await choice.isEnabled(), `UI-10c: ${id}@v${a.version} is available for user confirmation`);
+  }
+  for (const id of ["settlement", "settlement_fail", "lobby_generic"]) for (const locale of ["zh-Hans", "en"]) {
+    const got = await page.evaluate(({ id, locale }) => {
+      PB.uiCommon.takeIssues();
+      const r = new PB.Raster(320, 180);
+      PB.ui.render(r, PBStore.asset("ui.screen." + id), 0, { locale, focus: 0 });
+      return { pixels: Array.from(r.data), issues: PB.uiCommon.takeIssues() };
+    }, { id, locale });
+    const want = await decode(`art/export/reference/${id}.${locale}.png`);
+    check(got.issues.length === 0 && got.pixels.length === want.data.length && got.pixels.every((v, i) => v === want.data[i]), `UI-10c: ${id}/${locale} fits G2 and matches its exported preview`);
+  }
+
   // 6. Every UI screen lays out in Chinese and English without cut text.
   const textIssues = await page.evaluate(() => {
     const out = [];
