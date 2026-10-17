@@ -9627,6 +9627,164 @@
    "fail_keep": 0.5
   },
   {
+   "id": "jeju_1",
+   "short_name": "海女村",
+   "format": 2,
+   "name": "配送地图 · 济州海女村",
+   "mode": "delivery",
+   "status": "design",
+   "doc": "docs/design/delivery-jeju.md",
+   "world": "jeju",
+   "top_edge": "sky",
+   "cargo": [
+    "tangerine",
+    "buckwheat_jelly",
+    "letter",
+    "kite"
+   ],
+   "cargo_only": {
+    "tangerine": [
+     "haenyeo",
+     "lighthouse_keeper",
+     "goblin_chief"
+    ]
+   },
+   "recipients": [
+    "haenyeo",
+    "tangerine_farmer",
+    "lighthouse_keeper",
+    "goblin_chief"
+   ],
+   "monsters": [
+    "dokkaebi",
+    "seagull"
+   ],
+   "rooms2": [
+    "jeju_baramgil",
+    "jeju_canola",
+    "jeju_dodaebul",
+    "jeju_doldam",
+    "jeju_gate",
+    "jeju_haenyeo_house",
+    "jeju_home_cave",
+    "jeju_home_orchard",
+    "jeju_home_shore",
+    "jeju_neolttwigi",
+    "jeju_olle",
+    "jeju_pier",
+    "jeju_terrace"
+   ],
+   "mechanisms": [
+    "push",
+    "ladder",
+    "dig",
+    "pour",
+    "plate_door",
+    "fall",
+    "float_sink",
+    "seesaw",
+    "gust",
+    "hint_animal",
+    "push_monster",
+    "crush_monster",
+    "trap_monster"
+   ],
+   "layout": {
+    "cols": 16,
+    "rows": 2,
+    "direction": "right",
+    "sequence": [
+     {
+      "role": "gate"
+     },
+     {
+      "role": "teach"
+     },
+     {
+      "role": "teach"
+     },
+     {
+      "role": "breather",
+      "chance": 50
+     },
+     {
+      "role": "develop"
+     },
+     {
+      "role": "station"
+     },
+     {
+      "role": "twist"
+     },
+     {
+      "role": "develop",
+      "chance": 60
+     },
+     {
+      "role": "breather",
+      "chance": 40
+     },
+     {
+      "role": "home"
+     }
+    ]
+   },
+   "station": {
+    "items": [
+     "sandbag",
+     "first_aid",
+     "umbrella",
+     "snack"
+    ],
+    "stock": {
+     "sandbag": 5,
+     "first_aid": 1,
+     "umbrella": 1,
+     "snack": 3
+    },
+    "heal": 1
+   },
+   "time": {
+    "tick_hz": 60,
+    "transition_secs": 0.3
+   },
+   "intervals": {
+    "walk": 0.22,
+    "climb": 0.22,
+    "push": 0.3,
+    "dig": 0.35,
+    "pour": 0.35,
+    "interact": 0.4,
+    "move_anim": 0.1
+   },
+   "gravity": {
+    "tiles_per_sec": 12
+   },
+   "player": {
+    "hearts": 3,
+    "iframe_secs": 1.5,
+    "fall_hurt_rows": 3,
+    "sand_max": 9,
+    "item_slots": 3
+   },
+   "monster_fall_ko_rows": 3,
+   "cargo_integrity": 3,
+   "coins": {
+    "pickup": 5
+   },
+   "tip": {
+    "time_fast": 1.5,
+    "time_floor": 0.5,
+    "like": 1.5
+   },
+   "rating": {
+    "S": 1.4,
+    "A": 1,
+    "B": 0.6
+   },
+   "fail_keep": 0.5
+  },
+  {
    "id": "delivery_pool",
    "name": "开局池 · 配送模式",
    "mode": "delivery",
@@ -9640,6 +9798,10 @@
      },
      {
       "slice": "diyu_1",
+      "weight": 1
+     },
+     {
+      "slice": "jeju_1",
       "weight": 1
      }
     ],
@@ -10002,6 +10164,18 @@
    "sha256": "5db11c0be6caf73722e3c39f89962081e4dc6a5337c4ab812db9e132a2821902"
   },
   {
+   "id": "jeju_baramgil",
+   "world": "jeju",
+   "type": "room",
+   "role": "teach",
+   "size": [
+    1,
+    1
+   ],
+   "spec": "content/rooms/jeju/jeju_baramgil.json",
+   "sha256": "fe03042d4a9e6bfe4ebf32ec1b432f6cba4816131211a558dd63ca96297901d9"
+  },
+  {
    "id": "jeju_canola",
    "world": "jeju",
    "type": "room",
@@ -10012,6 +10186,30 @@
    ],
    "spec": "content/rooms/jeju/jeju_canola.json",
    "sha256": "d0d66c406a4926dbf03d8838f590eab673c8bf32c3562cee55d96a87a9529089"
+  },
+  {
+   "id": "jeju_dodaebul",
+   "world": "jeju",
+   "type": "room",
+   "role": "twist",
+   "size": [
+    2,
+    1
+   ],
+   "spec": "content/rooms/jeju/jeju_dodaebul.json",
+   "sha256": "03347c43357dc012de9af68d34b615240404f99bd9166b1e24d449e6c0cc1ba1"
+  },
+  {
+   "id": "jeju_doldam",
+   "world": "jeju",
+   "type": "room",
+   "role": "develop",
+   "size": [
+    2,
+    1
+   ],
+   "spec": "content/rooms/jeju/jeju_doldam.json",
+   "sha256": "ca926994eb5ef357ab18912c5c584518e821005289ed66d23db37cd2e790b402"
   },
   {
    "id": "jeju_gate",
@@ -10074,6 +10272,18 @@
    "sha256": "fad142f902d4ed7d20f3d9c48176881b9a8bb0bb092c6ee584afc23228a9d3d9"
   },
   {
+   "id": "jeju_neolttwigi",
+   "world": "jeju",
+   "type": "room",
+   "role": "teach",
+   "size": [
+    2,
+    1
+   ],
+   "spec": "content/rooms/jeju/jeju_neolttwigi.json",
+   "sha256": "b078e323eb19c2370a40b0ec7d50ad8a8ffad2ca9fd72743d1e727c42e5dcc71"
+  },
+  {
    "id": "jeju_olle",
    "world": "jeju",
    "type": "room",
@@ -10084,6 +10294,30 @@
    ],
    "spec": "content/rooms/jeju/jeju_olle.json",
    "sha256": "90b2c897ae809ba22e1bb2a8edfb65c81c9338ca0e57fbf87160f8074dd28c58"
+  },
+  {
+   "id": "jeju_pier",
+   "world": "jeju",
+   "type": "room",
+   "role": "develop",
+   "size": [
+    2,
+    1
+   ],
+   "spec": "content/rooms/jeju/jeju_pier.json",
+   "sha256": "21abd9abdb572c823aa63ef9d6c0a9b563ab999b83f2d24527bbf52b3f0a9d0c"
+  },
+  {
+   "id": "jeju_terrace",
+   "world": "jeju",
+   "type": "room",
+   "role": "develop",
+   "size": [
+    1,
+    2
+   ],
+   "spec": "content/rooms/jeju/jeju_terrace.json",
+   "sha256": "e4720e4ae03bc5701a8c0776c2ecd458d1877c117630004dec75b64615000d3c"
   }
  ],
  "delivery_golden": "content/export/delivery-golden.json"

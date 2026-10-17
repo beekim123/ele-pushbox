@@ -23,7 +23,7 @@
      "errors": [],
      "warnings": [],
      "explored": 274,
-     "ms": 28,
+     "ms": 62,
      "shortest": 50,
      "hints": {
       "first": [
@@ -44,7 +44,7 @@
      "errors": [],
      "warnings": [],
      "explored": 274,
-     "ms": 10,
+     "ms": 34,
      "shortest": 50,
      "hints": {
       "first": [
@@ -80,7 +80,7 @@
      "errors": [],
      "warnings": [],
      "explored": 30,
-     "ms": 2,
+     "ms": 5,
      "shortest": 15
     },
     {
@@ -92,7 +92,7 @@
      "errors": [],
      "warnings": [],
      "explored": 32,
-     "ms": 1,
+     "ms": 5,
      "shortest": 18
     },
     {
@@ -116,7 +116,7 @@
      "errors": [],
      "warnings": [],
      "explored": 30,
-     "ms": 1,
+     "ms": 3,
      "shortest": 15
     },
     {
@@ -128,7 +128,7 @@
      "errors": [],
      "warnings": [],
      "explored": 32,
-     "ms": 1,
+     "ms": 3,
      "shortest": 18
     },
     {
@@ -140,7 +140,7 @@
      "errors": [],
      "warnings": [],
      "explored": 17,
-     "ms": 0,
+     "ms": 1,
      "shortest": 7
     }
    ],
@@ -167,7 +167,7 @@
      "errors": [],
      "warnings": [],
      "explored": 46,
-     "ms": 2,
+     "ms": 5,
      "shortest": 19
     },
     {
@@ -179,7 +179,7 @@
      "errors": [],
      "warnings": [],
      "explored": 48,
-     "ms": 1,
+     "ms": 7,
      "shortest": 22
     },
     {
@@ -191,7 +191,7 @@
      "errors": [],
      "warnings": [],
      "explored": 46,
-     "ms": 0,
+     "ms": 5,
      "shortest": 21
     },
     {
@@ -203,7 +203,7 @@
      "errors": [],
      "warnings": [],
      "explored": 48,
-     "ms": 1,
+     "ms": 4,
      "shortest": 24
     },
     {
@@ -215,7 +215,7 @@
      "errors": [],
      "warnings": [],
      "explored": 29,
-     "ms": 1,
+     "ms": 2,
      "shortest": 11
     },
     {
@@ -227,7 +227,7 @@
      "errors": [],
      "warnings": [],
      "explored": 29,
-     "ms": 0,
+     "ms": 1,
      "shortest": 13
     },
     {
@@ -239,7 +239,7 @@
      "errors": [],
      "warnings": [],
      "explored": 46,
-     "ms": 1,
+     "ms": 2,
      "shortest": 15
     },
     {
@@ -251,7 +251,7 @@
      "errors": [],
      "warnings": [],
      "explored": 49,
-     "ms": 1,
+     "ms": 3,
      "shortest": 18
     },
     {
@@ -263,7 +263,7 @@
      "errors": [],
      "warnings": [],
      "explored": 29,
-     "ms": 0,
+     "ms": 1,
      "shortest": 9
     },
     {
@@ -275,7 +275,7 @@
      "errors": [],
      "warnings": [],
      "explored": 46,
-     "ms": 1,
+     "ms": 3,
      "shortest": 19
     },
     {
@@ -287,7 +287,7 @@
      "errors": [],
      "warnings": [],
      "explored": 48,
-     "ms": 1,
+     "ms": 2,
      "shortest": 22
     },
     {
@@ -299,7 +299,7 @@
      "errors": [],
      "warnings": [],
      "explored": 46,
-     "ms": 0,
+     "ms": 2,
      "shortest": 21
     },
     {
@@ -311,7 +311,7 @@
      "errors": [],
      "warnings": [],
      "explored": 48,
-     "ms": 1,
+     "ms": 2,
      "shortest": 24
     },
     {
@@ -323,7 +323,7 @@
      "errors": [],
      "warnings": [],
      "explored": 29,
-     "ms": 1,
+     "ms": 2,
      "shortest": 11
     },
     {
@@ -335,7 +335,7 @@
      "errors": [],
      "warnings": [],
      "explored": 29,
-     "ms": 0,
+     "ms": 1,
      "shortest": 13
     },
     {
@@ -347,7 +347,7 @@
      "errors": [],
      "warnings": [],
      "explored": 45,
-     "ms": 1,
+     "ms": 2,
      "shortest": 14
     },
     {
@@ -359,7 +359,7 @@
      "errors": [],
      "warnings": [],
      "explored": 49,
-     "ms": 0,
+     "ms": 2,
      "shortest": 17
     },
     {
@@ -398,7 +398,7 @@
      "errors": [],
      "warnings": [],
      "explored": 36,
-     "ms": 1,
+     "ms": 2,
      "shortest": 16
     },
     {
@@ -410,7 +410,7 @@
      "errors": [],
      "warnings": [],
      "explored": 36,
-     "ms": 0,
+     "ms": 1,
      "shortest": 18
     },
     {
@@ -434,7 +434,7 @@
      "errors": [],
      "warnings": [],
      "explored": 36,
-     "ms": 0,
+     "ms": 1,
      "shortest": 16
     },
     {
@@ -446,7 +446,7 @@
      "errors": [],
      "warnings": [],
      "explored": 36,
-     "ms": 1,
+     "ms": 3,
      "shortest": 18
     },
     {
@@ -485,7 +485,7 @@
      "errors": [],
      "warnings": [],
      "explored": 36,
-     "ms": 0,
+     "ms": 1,
      "shortest": 16
     },
     {
@@ -509,7 +509,7 @@
      "errors": [],
      "warnings": [],
      "explored": 31,
-     "ms": 0,
+     "ms": 1,
      "shortest": 12
     },
     {
@@ -521,7 +521,7 @@
      "errors": [],
      "warnings": [],
      "explored": 36,
-     "ms": 1,
+     "ms": 4,
      "shortest": 16
     },
     {
@@ -533,7 +533,7 @@
      "errors": [],
      "warnings": [],
      "explored": 36,
-     "ms": 0,
+     "ms": 2,
      "shortest": 18
     },
     {
@@ -572,7 +572,7 @@
      "errors": [],
      "warnings": [],
      "explored": 49,
-     "ms": 1,
+     "ms": 2,
      "shortest": 39
     },
     {
@@ -584,7 +584,7 @@
      "errors": [],
      "warnings": [],
      "explored": 52,
-     "ms": 3,
+     "ms": 2,
      "shortest": 42
     },
     {
@@ -596,7 +596,7 @@
      "errors": [],
      "warnings": [],
      "explored": 49,
-     "ms": 1,
+     "ms": 2,
      "shortest": 41
     },
     {
@@ -608,7 +608,7 @@
      "errors": [],
      "warnings": [],
      "explored": 52,
-     "ms": 1,
+     "ms": 2,
      "shortest": 44
     },
     {
@@ -632,7 +632,7 @@
      "errors": [],
      "warnings": [],
      "explored": 52,
-     "ms": 1,
+     "ms": 3,
      "shortest": 42
     },
     {
@@ -644,7 +644,7 @@
      "errors": [],
      "warnings": [],
      "explored": 49,
-     "ms": 1,
+     "ms": 2,
      "shortest": 41
     },
     {
@@ -656,7 +656,7 @@
      "errors": [],
      "warnings": [],
      "explored": 52,
-     "ms": 1,
+     "ms": 2,
      "shortest": 44
     }
    ],
@@ -683,7 +683,7 @@
      "errors": [],
      "warnings": [],
      "explored": 70,
-     "ms": 1,
+     "ms": 2,
      "shortest": 19,
      "author": 19,
      "hints": {
@@ -703,7 +703,7 @@
      "errors": [],
      "warnings": [],
      "explored": 73,
-     "ms": 1,
+     "ms": 2,
      "shortest": 22
     },
     {
@@ -715,7 +715,7 @@
      "errors": [],
      "warnings": [],
      "explored": 70,
-     "ms": 0,
+     "ms": 1,
      "shortest": 22
     },
     {
@@ -727,7 +727,7 @@
      "errors": [],
      "warnings": [],
      "explored": 73,
-     "ms": 1,
+     "ms": 3,
      "shortest": 25
     },
     {
@@ -739,7 +739,7 @@
      "errors": [],
      "warnings": [],
      "explored": 70,
-     "ms": 1,
+     "ms": 3,
      "shortest": 19,
      "author": 19,
      "hints": {
@@ -759,7 +759,7 @@
      "errors": [],
      "warnings": [],
      "explored": 73,
-     "ms": 1,
+     "ms": 3,
      "shortest": 22
     },
     {
@@ -771,7 +771,7 @@
      "errors": [],
      "warnings": [],
      "explored": 70,
-     "ms": 1,
+     "ms": 2,
      "shortest": 22
     },
     {
@@ -783,7 +783,7 @@
      "errors": [],
      "warnings": [],
      "explored": 73,
-     "ms": 1,
+     "ms": 4,
      "shortest": 25
     }
    ],
@@ -810,7 +810,7 @@
      "errors": [],
      "warnings": [],
      "explored": 38,
-     "ms": 1,
+     "ms": 3,
      "shortest": 19,
      "hints": {
       "first": [
@@ -830,7 +830,7 @@
      "errors": [],
      "warnings": [],
      "explored": 41,
-     "ms": 2,
+     "ms": 5,
      "shortest": 22
     },
     {
@@ -842,7 +842,7 @@
      "errors": [],
      "warnings": [],
      "explored": 38,
-     "ms": 1,
+     "ms": 4,
      "shortest": 22
     },
     {
@@ -854,7 +854,7 @@
      "errors": [],
      "warnings": [],
      "explored": 41,
-     "ms": 1,
+     "ms": 3,
      "shortest": 25
     },
     {
@@ -866,7 +866,7 @@
      "errors": [],
      "warnings": [],
      "explored": 38,
-     "ms": 1,
+     "ms": 5,
      "shortest": 19,
      "hints": {
       "first": [
@@ -886,7 +886,7 @@
      "errors": [],
      "warnings": [],
      "explored": 41,
-     "ms": 1,
+     "ms": 4,
      "shortest": 22
     },
     {
@@ -898,7 +898,7 @@
      "errors": [],
      "warnings": [],
      "explored": 38,
-     "ms": 1,
+     "ms": 2,
      "shortest": 22
     },
     {
@@ -910,7 +910,7 @@
      "errors": [],
      "warnings": [],
      "explored": 41,
-     "ms": 1,
+     "ms": 4,
      "shortest": 25
     }
    ],
@@ -937,7 +937,7 @@
      "errors": [],
      "warnings": [],
      "explored": 79,
-     "ms": 1,
+     "ms": 3,
      "shortest": 19,
      "hints": {
       "first": [
@@ -957,7 +957,7 @@
      "errors": [],
      "warnings": [],
      "explored": 82,
-     "ms": 2,
+     "ms": 3,
      "shortest": 22
     },
     {
@@ -969,7 +969,7 @@
      "errors": [],
      "warnings": [],
      "explored": 78,
-     "ms": 1,
+     "ms": 3,
      "shortest": 23
     },
     {
@@ -981,7 +981,7 @@
      "errors": [],
      "warnings": [],
      "explored": 82,
-     "ms": 1,
+     "ms": 2,
      "shortest": 26
     },
     {
@@ -993,7 +993,7 @@
      "errors": [],
      "warnings": [],
      "explored": 77,
-     "ms": 1,
+     "ms": 2,
      "shortest": 19,
      "hints": {
       "first": [
@@ -1025,7 +1025,7 @@
      "errors": [],
      "warnings": [],
      "explored": 76,
-     "ms": 1,
+     "ms": 4,
      "shortest": 23
     },
     {
@@ -1037,7 +1037,7 @@
      "errors": [],
      "warnings": [],
      "explored": 82,
-     "ms": 1,
+     "ms": 8,
      "shortest": 26
     }
    ],
@@ -1064,7 +1064,7 @@
      "errors": [],
      "warnings": [],
      "explored": 1222,
-     "ms": 26,
+     "ms": 89,
      "shortest": 21,
      "hints": {
       "first": [
@@ -1085,7 +1085,7 @@
      "errors": [],
      "warnings": [],
      "explored": 1361,
-     "ms": 18,
+     "ms": 58,
      "shortest": 24
     },
     {
@@ -1097,7 +1097,7 @@
      "errors": [],
      "warnings": [],
      "explored": 1219,
-     "ms": 13,
+     "ms": 57,
      "shortest": 24
     },
     {
@@ -1109,7 +1109,7 @@
      "errors": [],
      "warnings": [],
      "explored": 1358,
-     "ms": 14,
+     "ms": 59,
      "shortest": 27
     },
     {
@@ -1121,7 +1121,7 @@
      "errors": [],
      "warnings": [],
      "explored": 1216,
-     "ms": 12,
+     "ms": 57,
      "shortest": 21,
      "hints": {
       "first": [
@@ -1142,7 +1142,7 @@
      "errors": [],
      "warnings": [],
      "explored": 1359,
-     "ms": 14,
+     "ms": 61,
      "shortest": 24
     },
     {
@@ -1154,7 +1154,7 @@
      "errors": [],
      "warnings": [],
      "explored": 1213,
-     "ms": 12,
+     "ms": 50,
      "shortest": 24
     },
     {
@@ -1166,7 +1166,7 @@
      "errors": [],
      "warnings": [],
      "explored": 1356,
-     "ms": 16,
+     "ms": 63,
      "shortest": 27
     }
    ],
@@ -1193,7 +1193,7 @@
      "errors": [],
      "warnings": [],
      "explored": 46,
-     "ms": 1,
+     "ms": 6,
      "shortest": 19
     },
     {
@@ -1205,7 +1205,7 @@
      "errors": [],
      "warnings": [],
      "explored": 48,
-     "ms": 0,
+     "ms": 4,
      "shortest": 22
     },
     {
@@ -1217,7 +1217,7 @@
      "errors": [],
      "warnings": [],
      "explored": 46,
-     "ms": 1,
+     "ms": 2,
      "shortest": 21
     },
     {
@@ -1229,7 +1229,7 @@
      "errors": [],
      "warnings": [],
      "explored": 48,
-     "ms": 0,
+     "ms": 2,
      "shortest": 24
     },
     {
@@ -1253,7 +1253,7 @@
      "errors": [],
      "warnings": [],
      "explored": 29,
-     "ms": 0,
+     "ms": 1,
      "shortest": 13
     },
     {
@@ -1265,7 +1265,7 @@
      "errors": [],
      "warnings": [],
      "explored": 46,
-     "ms": 0,
+     "ms": 2,
      "shortest": 15
     },
     {
@@ -1277,7 +1277,7 @@
      "errors": [],
      "warnings": [],
      "explored": 49,
-     "ms": 1,
+     "ms": 2,
      "shortest": 18
     },
     {
@@ -1289,7 +1289,7 @@
      "errors": [],
      "warnings": [],
      "explored": 29,
-     "ms": 0,
+     "ms": 1,
      "shortest": 9
     },
     {
@@ -1301,7 +1301,7 @@
      "errors": [],
      "warnings": [],
      "explored": 46,
-     "ms": 1,
+     "ms": 2,
      "shortest": 19
     },
     {
@@ -1313,7 +1313,7 @@
      "errors": [],
      "warnings": [],
      "explored": 48,
-     "ms": 0,
+     "ms": 2,
      "shortest": 22
     },
     {
@@ -1325,7 +1325,7 @@
      "errors": [],
      "warnings": [],
      "explored": 46,
-     "ms": 1,
+     "ms": 2,
      "shortest": 21
     },
     {
@@ -1337,7 +1337,7 @@
      "errors": [],
      "warnings": [],
      "explored": 48,
-     "ms": 0,
+     "ms": 2,
      "shortest": 24
     },
     {
@@ -1349,7 +1349,7 @@
      "errors": [],
      "warnings": [],
      "explored": 29,
-     "ms": 0,
+     "ms": 1,
      "shortest": 11
     },
     {
@@ -1373,7 +1373,7 @@
      "errors": [],
      "warnings": [],
      "explored": 45,
-     "ms": 0,
+     "ms": 2,
      "shortest": 14
     },
     {
@@ -1385,7 +1385,7 @@
      "errors": [],
      "warnings": [],
      "explored": 49,
-     "ms": 1,
+     "ms": 3,
      "shortest": 17
     },
     {
@@ -1397,7 +1397,7 @@
      "errors": [],
      "warnings": [],
      "explored": 29,
-     "ms": 0,
+     "ms": 2,
      "shortest": 9
     }
    ],
@@ -1424,7 +1424,7 @@
      "errors": [],
      "warnings": [],
      "explored": 236,
-     "ms": 14,
+     "ms": 51,
      "shortest": 39,
      "hints": {
       "first": [
@@ -1445,7 +1445,7 @@
      "errors": [],
      "warnings": [],
      "explored": 250,
-     "ms": 7,
+     "ms": 31,
      "shortest": 42
     },
     {
@@ -1457,7 +1457,7 @@
      "errors": [],
      "warnings": [],
      "explored": 236,
-     "ms": 5,
+     "ms": 20,
      "shortest": 42
     },
     {
@@ -1469,7 +1469,7 @@
      "errors": [],
      "warnings": [],
      "explored": 250,
-     "ms": 6,
+     "ms": 17,
      "shortest": 45
     },
     {
@@ -1481,7 +1481,7 @@
      "errors": [],
      "warnings": [],
      "explored": 232,
-     "ms": 5,
+     "ms": 17,
      "shortest": 39,
      "hints": {
       "first": [
@@ -1502,7 +1502,7 @@
      "errors": [],
      "warnings": [],
      "explored": 246,
-     "ms": 5,
+     "ms": 16,
      "shortest": 42
     },
     {
@@ -1514,7 +1514,7 @@
      "errors": [],
      "warnings": [],
      "explored": 232,
-     "ms": 5,
+     "ms": 15,
      "shortest": 42
     },
     {
@@ -1526,7 +1526,7 @@
      "errors": [],
      "warnings": [],
      "explored": 246,
-     "ms": 5,
+     "ms": 17,
      "shortest": 45
     }
    ],
@@ -1553,7 +1553,7 @@
      "errors": [],
      "warnings": [],
      "explored": 47,
-     "ms": 3,
+     "ms": 9,
      "shortest": 29,
      "hints": {
       "first": [
@@ -1573,7 +1573,7 @@
      "errors": [],
      "warnings": [],
      "explored": 42,
-     "ms": 2,
+     "ms": 6,
      "shortest": 21
     },
     {
@@ -1585,7 +1585,7 @@
      "errors": [],
      "warnings": [],
      "explored": 47,
-     "ms": 2,
+     "ms": 6,
      "shortest": 29,
      "hints": {
       "first": [
@@ -1605,7 +1605,7 @@
      "errors": [],
      "warnings": [],
      "explored": 42,
-     "ms": 2,
+     "ms": 5,
      "shortest": 21
     }
    ],
@@ -1632,7 +1632,7 @@
      "errors": [],
      "warnings": [],
      "explored": 78,
-     "ms": 1,
+     "ms": 4,
      "shortest": 19,
      "author": 19,
      "hints": {
@@ -1652,7 +1652,7 @@
      "errors": [],
      "warnings": [],
      "explored": 78,
-     "ms": 1,
+     "ms": 13,
      "shortest": 23
     },
     {
@@ -1664,7 +1664,7 @@
      "errors": [],
      "warnings": [],
      "explored": 81,
-     "ms": 1,
+     "ms": 8,
      "shortest": 22
     },
     {
@@ -1676,7 +1676,7 @@
      "errors": [],
      "warnings": [],
      "explored": 81,
-     "ms": 1,
+     "ms": 2,
      "shortest": 26
     },
     {
@@ -1688,7 +1688,7 @@
      "errors": [],
      "warnings": [],
      "explored": 78,
-     "ms": 1,
+     "ms": 2,
      "shortest": 19,
      "author": 19,
      "hints": {
@@ -1708,7 +1708,7 @@
      "errors": [],
      "warnings": [],
      "explored": 78,
-     "ms": 1,
+     "ms": 3,
      "shortest": 23
     },
     {
@@ -1720,7 +1720,7 @@
      "errors": [],
      "warnings": [],
      "explored": 81,
-     "ms": 2,
+     "ms": 3,
      "shortest": 22
     },
     {
@@ -1732,7 +1732,7 @@
      "errors": [],
      "warnings": [],
      "explored": 81,
-     "ms": 1,
+     "ms": 2,
      "shortest": 26
     }
    ],
@@ -1759,7 +1759,7 @@
      "errors": [],
      "warnings": [],
      "explored": 52,
-     "ms": 1,
+     "ms": 2,
      "shortest": 39
     },
     {
@@ -1771,7 +1771,7 @@
      "errors": [],
      "warnings": [],
      "explored": 52,
-     "ms": 1,
+     "ms": 2,
      "shortest": 41
     },
     {
@@ -1783,7 +1783,7 @@
      "errors": [],
      "warnings": [],
      "explored": 54,
-     "ms": 1,
+     "ms": 2,
      "shortest": 42
     },
     {
@@ -1795,7 +1795,7 @@
      "errors": [],
      "warnings": [],
      "explored": 54,
-     "ms": 0,
+     "ms": 3,
      "shortest": 44
     },
     {
@@ -1807,7 +1807,7 @@
      "errors": [],
      "warnings": [],
      "explored": 52,
-     "ms": 0,
+     "ms": 4,
      "shortest": 39
     },
     {
@@ -1819,7 +1819,7 @@
      "errors": [],
      "warnings": [],
      "explored": 52,
-     "ms": 1,
+     "ms": 7,
      "shortest": 41
     },
     {
@@ -1831,7 +1831,7 @@
      "errors": [],
      "warnings": [],
      "explored": 54,
-     "ms": 1,
+     "ms": 5,
      "shortest": 42
     },
     {
@@ -1843,7 +1843,7 @@
      "errors": [],
      "warnings": [],
      "explored": 54,
-     "ms": 1,
+     "ms": 5,
      "shortest": 44
     }
    ],
@@ -1870,7 +1870,7 @@
      "errors": [],
      "warnings": [],
      "explored": 326,
-     "ms": 5,
+     "ms": 32,
      "shortest": 39,
      "hints": {
       "first": [
@@ -1890,7 +1890,7 @@
      "errors": [],
      "warnings": [],
      "explored": 324,
-     "ms": 4,
+     "ms": 29,
      "shortest": 42
     },
     {
@@ -1902,7 +1902,7 @@
      "errors": [],
      "warnings": [],
      "explored": 343,
-     "ms": 4,
+     "ms": 20,
      "shortest": 42
     },
     {
@@ -1914,7 +1914,7 @@
      "errors": [],
      "warnings": [],
      "explored": 342,
-     "ms": 5,
+     "ms": 13,
      "shortest": 45
     },
     {
@@ -1926,7 +1926,7 @@
      "errors": [],
      "warnings": [],
      "explored": 319,
-     "ms": 4,
+     "ms": 11,
      "shortest": 39,
      "hints": {
       "first": [
@@ -1946,7 +1946,7 @@
      "errors": [],
      "warnings": [],
      "explored": 318,
-     "ms": 4,
+     "ms": 14,
      "shortest": 42
     },
     {
@@ -1958,7 +1958,7 @@
      "errors": [],
      "warnings": [],
      "explored": 339,
-     "ms": 4,
+     "ms": 13,
      "shortest": 42
     },
     {
@@ -1970,7 +1970,7 @@
      "errors": [],
      "warnings": [],
      "explored": 337,
-     "ms": 4,
+     "ms": 12,
      "shortest": 45
     }
    ],
@@ -1997,7 +1997,7 @@
      "errors": [],
      "warnings": [],
      "explored": 27,
-     "ms": 0,
+     "ms": 1,
      "shortest": 16
     },
     {
@@ -2009,7 +2009,7 @@
      "errors": [],
      "warnings": [],
      "explored": 29,
-     "ms": 0,
+     "ms": 1,
      "shortest": 19
     },
     {
@@ -2033,7 +2033,7 @@
      "errors": [],
      "warnings": [],
      "explored": 27,
-     "ms": 0,
+     "ms": 2,
      "shortest": 16
     },
     {
@@ -2045,7 +2045,7 @@
      "errors": [],
      "warnings": [],
      "explored": 29,
-     "ms": 0,
+     "ms": 1,
      "shortest": 19
     },
     {
@@ -2057,7 +2057,7 @@
      "errors": [],
      "warnings": [],
      "explored": 16,
-     "ms": 0,
+     "ms": 1,
      "shortest": 8
     }
    ],
@@ -2084,7 +2084,7 @@
      "errors": [],
      "warnings": [],
      "explored": 37,
-     "ms": 1,
+     "ms": 3,
      "shortest": 16
     },
     {
@@ -2096,7 +2096,7 @@
      "errors": [],
      "warnings": [],
      "explored": 37,
-     "ms": 0,
+     "ms": 2,
      "shortest": 18
     },
     {
@@ -2108,7 +2108,7 @@
      "errors": [],
      "warnings": [],
      "explored": 32,
-     "ms": 0,
+     "ms": 1,
      "shortest": 12
     },
     {
@@ -2132,7 +2132,7 @@
      "errors": [],
      "warnings": [],
      "explored": 37,
-     "ms": 0,
+     "ms": 1,
      "shortest": 18
     },
     {
@@ -2171,7 +2171,7 @@
      "errors": [],
      "warnings": [],
      "explored": 29,
-     "ms": 0,
+     "ms": 1,
      "shortest": 19,
      "author": 19,
      "hints": {
@@ -2204,7 +2204,7 @@
      "errors": [],
      "warnings": [],
      "explored": 32,
-     "ms": 0,
+     "ms": 1,
      "shortest": 22
     },
     {
@@ -2216,7 +2216,7 @@
      "errors": [],
      "warnings": [],
      "explored": 32,
-     "ms": 0,
+     "ms": 1,
      "shortest": 25
     },
     {
@@ -2249,7 +2249,7 @@
      "errors": [],
      "warnings": [],
      "explored": 29,
-     "ms": 0,
+     "ms": 1,
      "shortest": 22
     },
     {
@@ -2300,7 +2300,7 @@
      "errors": [],
      "warnings": [],
      "explored": 1503,
-     "ms": 16,
+     "ms": 61,
      "shortest": 23,
      "hints": {
       "first": [
@@ -2320,7 +2320,7 @@
      "errors": [],
      "warnings": [],
      "explored": 1643,
-     "ms": 17,
+     "ms": 68,
      "shortest": 26
     },
     {
@@ -2332,7 +2332,7 @@
      "errors": [],
      "warnings": [],
      "explored": 1503,
-     "ms": 15,
+     "ms": 75,
      "shortest": 23,
      "hints": {
       "first": [
@@ -2352,7 +2352,7 @@
      "errors": [],
      "warnings": [],
      "explored": 1643,
-     "ms": 17,
+     "ms": 95,
      "shortest": 26
     }
    ],
@@ -2379,7 +2379,7 @@
      "errors": [],
      "warnings": [],
      "explored": 46,
-     "ms": 0,
+     "ms": 2,
      "shortest": 19
     },
     {
@@ -2391,7 +2391,7 @@
      "errors": [],
      "warnings": [],
      "explored": 48,
-     "ms": 0,
+     "ms": 3,
      "shortest": 22
     },
     {
@@ -2403,7 +2403,7 @@
      "errors": [],
      "warnings": [],
      "explored": 46,
-     "ms": 0,
+     "ms": 1,
      "shortest": 21
     },
     {
@@ -2439,7 +2439,7 @@
      "errors": [],
      "warnings": [],
      "explored": 29,
-     "ms": 0,
+     "ms": 1,
      "shortest": 13
     },
     {
@@ -2463,7 +2463,7 @@
      "errors": [],
      "warnings": [],
      "explored": 49,
-     "ms": 0,
+     "ms": 2,
      "shortest": 18
     },
     {
@@ -2475,7 +2475,7 @@
      "errors": [],
      "warnings": [],
      "explored": 29,
-     "ms": 0,
+     "ms": 1,
      "shortest": 9
     },
     {
@@ -2511,7 +2511,7 @@
      "errors": [],
      "warnings": [],
      "explored": 46,
-     "ms": 0,
+     "ms": 1,
      "shortest": 21
     },
     {
@@ -2523,7 +2523,7 @@
      "errors": [],
      "warnings": [],
      "explored": 48,
-     "ms": 0,
+     "ms": 2,
      "shortest": 24
     },
     {
@@ -2535,7 +2535,7 @@
      "errors": [],
      "warnings": [],
      "explored": 29,
-     "ms": 1,
+     "ms": 0,
      "shortest": 11
     },
     {
@@ -2547,7 +2547,7 @@
      "errors": [],
      "warnings": [],
      "explored": 29,
-     "ms": 0,
+     "ms": 3,
      "shortest": 13
     },
     {
@@ -2559,7 +2559,7 @@
      "errors": [],
      "warnings": [],
      "explored": 45,
-     "ms": 0,
+     "ms": 2,
      "shortest": 14
     },
     {
@@ -2571,7 +2571,7 @@
      "errors": [],
      "warnings": [],
      "explored": 49,
-     "ms": 1,
+     "ms": 3,
      "shortest": 17
     },
     {
@@ -2583,7 +2583,7 @@
      "errors": [],
      "warnings": [],
      "explored": 29,
-     "ms": 0,
+     "ms": 1,
      "shortest": 9
     }
    ],
@@ -2610,7 +2610,7 @@
      "errors": [],
      "warnings": [],
      "explored": 29,
-     "ms": 1,
+     "ms": 2,
      "shortest": 27,
      "hints": {
       "first": [
@@ -2631,7 +2631,7 @@
      "errors": [],
      "warnings": [],
      "explored": 29,
-     "ms": 0,
+     "ms": 2,
      "shortest": 27,
      "hints": {
       "first": [
@@ -2667,7 +2667,7 @@
      "errors": [],
      "warnings": [],
      "explored": 305,
-     "ms": 6,
+     "ms": 49,
      "shortest": 51,
      "hints": {
       "first": [
@@ -2688,7 +2688,7 @@
      "errors": [],
      "warnings": [],
      "explored": 304,
-     "ms": 6,
+     "ms": 44,
      "shortest": 51,
      "hints": {
       "first": [
@@ -2724,7 +2724,7 @@
      "errors": [],
      "warnings": [],
      "explored": 42,
-     "ms": 2,
+     "ms": 5,
      "shortest": 22,
      "author": 23,
      "hints": {
@@ -2743,7 +2743,7 @@
      "errors": [],
      "warnings": [],
      "explored": 42,
-     "ms": 2,
+     "ms": 5,
      "shortest": 21,
      "author": 23
     },
@@ -2756,7 +2756,7 @@
      "errors": [],
      "warnings": [],
      "explored": 42,
-     "ms": 1,
+     "ms": 5,
      "shortest": 21,
      "author": 23
     },
@@ -2769,7 +2769,7 @@
      "errors": [],
      "warnings": [],
      "explored": 42,
-     "ms": 1,
+     "ms": 4,
      "shortest": 20,
      "author": 23
     },
@@ -2782,7 +2782,7 @@
      "errors": [],
      "warnings": [],
      "explored": 42,
-     "ms": 1,
+     "ms": 4,
      "shortest": 22,
      "author": 23,
      "hints": {
@@ -2801,7 +2801,7 @@
      "errors": [],
      "warnings": [],
      "explored": 42,
-     "ms": 0,
+     "ms": 3,
      "shortest": 21,
      "author": 23
     },
@@ -2814,7 +2814,7 @@
      "errors": [],
      "warnings": [],
      "explored": 42,
-     "ms": 1,
+     "ms": 2,
      "shortest": 21,
      "author": 23
     },
@@ -2827,7 +2827,7 @@
      "errors": [],
      "warnings": [],
      "explored": 42,
-     "ms": 1,
+     "ms": 4,
      "shortest": 20,
      "author": 23
     }
@@ -2855,7 +2855,7 @@
      "errors": [],
      "warnings": [],
      "explored": 52,
-     "ms": 1,
+     "ms": 5,
      "shortest": 39
     },
     {
@@ -2867,7 +2867,7 @@
      "errors": [],
      "warnings": [],
      "explored": 54,
-     "ms": 1,
+     "ms": 6,
      "shortest": 42
     },
     {
@@ -2879,7 +2879,7 @@
      "errors": [],
      "warnings": [],
      "explored": 52,
-     "ms": 1,
+     "ms": 5,
      "shortest": 41
     },
     {
@@ -2891,7 +2891,7 @@
      "errors": [],
      "warnings": [],
      "explored": 54,
-     "ms": 1,
+     "ms": 6,
      "shortest": 44
     },
     {
@@ -2903,7 +2903,7 @@
      "errors": [],
      "warnings": [],
      "explored": 52,
-     "ms": 1,
+     "ms": 6,
      "shortest": 39
     },
     {
@@ -2915,7 +2915,7 @@
      "errors": [],
      "warnings": [],
      "explored": 54,
-     "ms": 1,
+     "ms": 7,
      "shortest": 42
     },
     {
@@ -2927,7 +2927,7 @@
      "errors": [],
      "warnings": [],
      "explored": 52,
-     "ms": 1,
+     "ms": 5,
      "shortest": 41
     },
     {
@@ -2939,7 +2939,7 @@
      "errors": [],
      "warnings": [],
      "explored": 54,
-     "ms": 1,
+     "ms": 5,
      "shortest": 44
     }
    ],
@@ -2966,7 +2966,7 @@
      "errors": [],
      "warnings": [],
      "explored": 396,
-     "ms": 13,
+     "ms": 76,
      "shortest": 45,
      "author": 47,
      "hints": {
@@ -2985,7 +2985,7 @@
      "errors": [],
      "warnings": [],
      "explored": 400,
-     "ms": 16,
+     "ms": 31,
      "shortest": 42,
      "author": 43
     },
@@ -2998,7 +2998,7 @@
      "errors": [],
      "warnings": [],
      "explored": 396,
-     "ms": 9,
+     "ms": 23,
      "shortest": 45,
      "author": 47,
      "hints": {
@@ -3017,7 +3017,7 @@
      "errors": [],
      "warnings": [],
      "explored": 400,
-     "ms": 9,
+     "ms": 27,
      "shortest": 42,
      "author": 43
     }
@@ -3045,7 +3045,7 @@
      "errors": [],
      "warnings": [],
      "explored": 168,
-     "ms": 3,
+     "ms": 7,
      "shortest": 53,
      "author": 55,
      "hints": {
@@ -3064,7 +3064,7 @@
      "errors": [],
      "warnings": [],
      "explored": 146,
-     "ms": 3,
+     "ms": 6,
      "shortest": 49,
      "author": 51
     },
@@ -3077,7 +3077,7 @@
      "errors": [],
      "warnings": [],
      "explored": 168,
-     "ms": 2,
+     "ms": 7,
      "shortest": 57,
      "author": 59
     },
@@ -3090,7 +3090,7 @@
      "errors": [],
      "warnings": [],
      "explored": 146,
-     "ms": 2,
+     "ms": 8,
      "shortest": 53,
      "author": 55
     },
@@ -3103,7 +3103,7 @@
      "errors": [],
      "warnings": [],
      "explored": 176,
-     "ms": 2,
+     "ms": 10,
      "shortest": 53,
      "author": 55,
      "hints": {
@@ -3122,7 +3122,7 @@
      "errors": [],
      "warnings": [],
      "explored": 150,
-     "ms": 2,
+     "ms": 6,
      "shortest": 49,
      "author": 51
     },
@@ -3135,7 +3135,7 @@
      "errors": [],
      "warnings": [],
      "explored": 175,
-     "ms": 3,
+     "ms": 15,
      "shortest": 57,
      "author": 59
     },
@@ -3148,7 +3148,7 @@
      "errors": [],
      "warnings": [],
      "explored": 150,
-     "ms": 2,
+     "ms": 17,
      "shortest": 53,
      "author": 55
     }
@@ -3200,7 +3200,7 @@
      "errors": [],
      "warnings": [],
      "explored": 24,
-     "ms": 0,
+     "ms": 2,
      "shortest": 15
     },
     {
@@ -3212,7 +3212,7 @@
      "errors": [],
      "warnings": [],
      "explored": 26,
-     "ms": 0,
+     "ms": 2,
      "shortest": 18
     }
    ],
@@ -3239,7 +3239,7 @@
      "errors": [],
      "warnings": [],
      "explored": 32,
-     "ms": 1,
+     "ms": 2,
      "shortest": 19
     },
     {
@@ -3251,7 +3251,7 @@
      "errors": [],
      "warnings": [],
      "explored": 34,
-     "ms": 0,
+     "ms": 2,
      "shortest": 22
     },
     {
@@ -3275,7 +3275,7 @@
      "errors": [],
      "warnings": [],
      "explored": 34,
-     "ms": 0,
+     "ms": 1,
      "shortest": 24
     },
     {
@@ -3299,7 +3299,7 @@
      "errors": [],
      "warnings": [],
      "explored": 34,
-     "ms": 0,
+     "ms": 1,
      "shortest": 22
     },
     {
@@ -3323,7 +3323,7 @@
      "errors": [],
      "warnings": [],
      "explored": 34,
-     "ms": 0,
+     "ms": 1,
      "shortest": 24
     }
    ],
@@ -3362,7 +3362,7 @@
      "errors": [],
      "warnings": [],
      "explored": 124,
-     "ms": 1,
+     "ms": 2,
      "shortest": 17
     },
     {
@@ -3374,7 +3374,7 @@
      "errors": [],
      "warnings": [],
      "explored": 124,
-     "ms": 1,
+     "ms": 2,
      "shortest": 15
     },
     {
@@ -3386,7 +3386,7 @@
      "errors": [],
      "warnings": [],
      "explored": 124,
-     "ms": 1,
+     "ms": 3,
      "shortest": 17
     }
    ],
@@ -3413,7 +3413,7 @@
      "errors": [],
      "warnings": [],
      "explored": 23,
-     "ms": 0,
+     "ms": 1,
      "shortest": 15
     },
     {
@@ -3449,7 +3449,7 @@
      "errors": [],
      "warnings": [],
      "explored": 23,
-     "ms": 0,
+     "ms": 2,
      "shortest": 17
     }
    ],
@@ -3476,7 +3476,7 @@
      "errors": [],
      "warnings": [],
      "explored": 22,
-     "ms": 1,
+     "ms": 3,
      "shortest": 14
     },
     {
@@ -3488,7 +3488,7 @@
      "errors": [],
      "warnings": [],
      "explored": 22,
-     "ms": 1,
+     "ms": 2,
      "shortest": 16
     },
     {
@@ -3500,7 +3500,7 @@
      "errors": [],
      "warnings": [],
      "explored": 22,
-     "ms": 1,
+     "ms": 3,
      "shortest": 14
     },
     {
@@ -3512,7 +3512,7 @@
      "errors": [],
      "warnings": [],
      "explored": 22,
-     "ms": 0,
+     "ms": 3,
      "shortest": 16
     }
    ],
@@ -3539,7 +3539,7 @@
      "errors": [],
      "warnings": [],
      "explored": 1150,
-     "ms": 32,
+     "ms": 116,
      "shortest": 49,
      "author": 51,
      "hints": {
@@ -3558,7 +3558,7 @@
      "errors": [],
      "warnings": [],
      "explored": 1177,
-     "ms": 26,
+     "ms": 94,
      "shortest": 52,
      "author": 55
     },
@@ -3571,7 +3571,7 @@
      "errors": [],
      "warnings": [],
      "explored": 1153,
-     "ms": 27,
+     "ms": 97,
      "shortest": 47,
      "author": 48
     },
@@ -3584,7 +3584,7 @@
      "errors": [],
      "warnings": [],
      "explored": 1180,
-     "ms": 27,
+     "ms": 129,
      "shortest": 50,
      "author": 52
     },
@@ -3597,7 +3597,7 @@
      "errors": [],
      "warnings": [],
      "explored": 1148,
-     "ms": 28,
+     "ms": 147,
      "shortest": 49,
      "author": 51,
      "hints": {
@@ -3616,7 +3616,7 @@
      "errors": [],
      "warnings": [],
      "explored": 1174,
-     "ms": 29,
+     "ms": 134,
      "shortest": 52,
      "author": 55
     },
@@ -3629,7 +3629,7 @@
      "errors": [],
      "warnings": [],
      "explored": 1151,
-     "ms": 27,
+     "ms": 123,
      "shortest": 47,
      "author": 48
     },
@@ -3642,7 +3642,7 @@
      "errors": [],
      "warnings": [],
      "explored": 1177,
-     "ms": 28,
+     "ms": 104,
      "shortest": 50,
      "author": 52
     }
@@ -3670,7 +3670,7 @@
      "errors": [],
      "warnings": [],
      "explored": 60,
-     "ms": 1,
+     "ms": 2,
      "shortest": 39
     },
     {
@@ -3682,7 +3682,7 @@
      "errors": [],
      "warnings": [],
      "explored": 62,
-     "ms": 0,
+     "ms": 3,
      "shortest": 42
     },
     {
@@ -3694,7 +3694,7 @@
      "errors": [],
      "warnings": [],
      "explored": 60,
-     "ms": 1,
+     "ms": 2,
      "shortest": 42
     },
     {
@@ -3706,7 +3706,7 @@
      "errors": [],
      "warnings": [],
      "explored": 62,
-     "ms": 1,
+     "ms": 2,
      "shortest": 45
     },
     {
@@ -3718,7 +3718,7 @@
      "errors": [],
      "warnings": [],
      "explored": 60,
-     "ms": 1,
+     "ms": 2,
      "shortest": 39
     },
     {
@@ -3730,7 +3730,7 @@
      "errors": [],
      "warnings": [],
      "explored": 62,
-     "ms": 0,
+     "ms": 2,
      "shortest": 42
     },
     {
@@ -3742,7 +3742,7 @@
      "errors": [],
      "warnings": [],
      "explored": 60,
-     "ms": 1,
+     "ms": 2,
      "shortest": 42
     },
     {
@@ -3754,7 +3754,7 @@
      "errors": [],
      "warnings": [],
      "explored": 62,
-     "ms": 1,
+     "ms": 11,
      "shortest": 45
     }
    ],
@@ -3781,7 +3781,7 @@
      "errors": [],
      "warnings": [],
      "explored": 201,
-     "ms": 4,
+     "ms": 14,
      "shortest": 81,
      "author": 82,
      "hints": {
@@ -3800,7 +3800,7 @@
      "errors": [],
      "warnings": [],
      "explored": 201,
-     "ms": 4,
+     "ms": 16,
      "shortest": 85,
      "author": 86
     },
@@ -3813,7 +3813,7 @@
      "errors": [],
      "warnings": [],
      "explored": 201,
-     "ms": 5,
+     "ms": 12,
      "shortest": 81,
      "author": 82,
      "hints": {
@@ -3832,7 +3832,7 @@
      "errors": [],
      "warnings": [],
      "explored": 201,
-     "ms": 5,
+     "ms": 15,
      "shortest": 85,
      "author": 86
     }
@@ -3860,7 +3860,7 @@
      "errors": [],
      "warnings": [],
      "explored": 700,
-     "ms": 16,
+     "ms": 64,
      "shortest": 43,
      "author": 47,
      "hints": {
@@ -3879,7 +3879,7 @@
      "errors": [],
      "warnings": [],
      "explored": 658,
-     "ms": 15,
+     "ms": 73,
      "shortest": 39,
      "author": 43
     },
@@ -3892,7 +3892,7 @@
      "errors": [],
      "warnings": [],
      "explored": 703,
-     "ms": 16,
+     "ms": 46,
      "shortest": 39,
      "author": 43
     },
@@ -3905,7 +3905,7 @@
      "errors": [],
      "warnings": [],
      "explored": 659,
-     "ms": 15,
+     "ms": 44,
      "shortest": 35,
      "author": 39
     },
@@ -3918,7 +3918,7 @@
      "errors": [],
      "warnings": [],
      "explored": 696,
-     "ms": 15,
+     "ms": 72,
      "shortest": 43,
      "author": 47,
      "hints": {
@@ -3937,7 +3937,7 @@
      "errors": [],
      "warnings": [],
      "explored": 653,
-     "ms": 14,
+     "ms": 47,
      "shortest": 39,
      "author": 43
     },
@@ -3950,7 +3950,7 @@
      "errors": [],
      "warnings": [],
      "explored": 699,
-     "ms": 15,
+     "ms": 58,
      "shortest": 39,
      "author": 43
     },
@@ -3963,7 +3963,7 @@
      "errors": [],
      "warnings": [],
      "explored": 654,
-     "ms": 15,
+     "ms": 44,
      "shortest": 35,
      "author": 39
     }

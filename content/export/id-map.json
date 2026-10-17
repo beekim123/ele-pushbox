@@ -5,7 +5,7 @@
   "art": {
    "name": "美术资产",
    "source": "art/source/<分类>/<id>.json",
-   "count": 157
+   "count": 159
   },
   "level": {
    "name": "关卡",
@@ -15,7 +15,7 @@
   "room": {
    "name": "配送房间模板",
    "source": "content/rooms/<地区>/<id>.json",
-   "count": 40
+   "count": 46
   },
   "mode": {
    "name": "模式",
@@ -85,7 +85,7 @@
   "slice": {
    "name": "可玩切片（配送局配置）",
    "source": "content/catalog/slices.json",
-   "count": 4
+   "count": 5
   },
   "sfx": {
    "name": "音效",
@@ -100,7 +100,7 @@
   "text": {
    "name": "界面与台词文字",
    "source": "content/i18n/zh-Hans.json 与 content/i18n-<名>/zh-Hans.json",
-   "count": 503
+   "count": 543
   }
  },
  "entries": [
@@ -1792,8 +1792,8 @@
    "source": "art/source/screen/ui.screen.confirm.json",
    "game": "res://ui/screens/confirm.tscn",
    "category": "screen",
-   "version": 1,
-   "hash": "777956c08c1bf55c6c1f50a78c4781535239a511f7a7b4483839c97c8cad34a5",
+   "version": 2,
+   "hash": "312087ae242d0c79e5615c009eac05c161e1a69376cf221167efd1aff9f7f8c4",
    "approved": false
   },
   {
@@ -1804,8 +1804,8 @@
    "source": "art/source/screen/ui.screen.delivery_hud.json",
    "game": "res://ui/screens/delivery_hud.tscn",
    "category": "screen",
-   "version": 2,
-   "hash": "f76b62b58c9f8a802eb28cb56cfe2983038dcd829b015f9838cbd4c9fe81a0c0",
+   "version": 3,
+   "hash": "63b46cc9eb2dec0811388d60f6b500e23c4952550c32ea939d7ab30ea74782b5",
    "approved": false
   },
   {
@@ -1816,8 +1816,8 @@
    "source": "art/source/screen/ui.screen.delivery_pause.json",
    "game": "res://ui/screens/delivery_pause.tscn",
    "category": "screen",
-   "version": 2,
-   "hash": "b7a69ebf520049bc6c4eb3225847e4bb0158c6160db5c6b4a152205514f18dda",
+   "version": 3,
+   "hash": "59aea63939340159d14dd494c6995fc36260e066048af95a03502e3df11d74ad",
    "approved": false
   },
   {
@@ -1842,6 +1842,18 @@
    "category": "screen",
    "version": 6,
    "hash": "fe54342c105c701351792f67ec4f51ef5a0f292fc749376d0779021b9643f019",
+   "approved": false
+  },
+  {
+   "uid": "art:ui.screen.hint_animal",
+   "domain": "art",
+   "id": "ui.screen.hint_animal",
+   "name": "提示动物气泡（配送）",
+   "source": "art/source/screen/ui.screen.hint_animal.json",
+   "game": "res://ui/screens/hint_animal.tscn",
+   "category": "screen",
+   "version": 1,
+   "hash": "712ab03b13b0f32879b784ba16d1b62ca58a97f9b0b33594ed157bb9c3efe074",
    "approved": false
   },
   {
@@ -1881,6 +1893,18 @@
    "approved": false
   },
   {
+   "uid": "art:ui.screen.observe",
+   "domain": "art",
+   "id": "ui.screen.observe",
+   "name": "看全图（配送）",
+   "source": "art/source/screen/ui.screen.observe.json",
+   "game": "res://ui/screens/observe.tscn",
+   "category": "screen",
+   "version": 1,
+   "hash": "773612a72d128b4742e2043d1bdf733f1af8854ea21d292f09c2f58ec60e29e0",
+   "approved": false
+  },
+  {
    "uid": "art:ui.screen.pause",
    "domain": "art",
    "id": "ui.screen.pause",
@@ -1900,8 +1924,8 @@
    "source": "art/source/screen/ui.screen.reels.json",
    "game": "res://ui/screens/reels.tscn",
    "category": "screen",
-   "version": 2,
-   "hash": "4e9f8918cc8c80a4c6b1a056b9d1b2378cca5bbe2eba74b3173cb00403d6ae8a",
+   "version": 3,
+   "hash": "1febeb784a0483c562ae56c2e8fc28e35be9c994d112ac0ee911d1994ec9e0c4",
    "approved": false
   },
   {
@@ -1960,8 +1984,8 @@
    "source": "art/source/screen/ui.screen.shop.json",
    "game": "res://ui/screens/shop.tscn",
    "category": "screen",
-   "version": 2,
-   "hash": "56cb41aba4ff725b2caa5aae42ef7f9212c48e469946439873f1cd0c93639b4b",
+   "version": 3,
+   "hash": "6cfbd485aa578250578060970c27852eac432d147dc877f5fa0e9d64f0867733",
    "approved": false
   },
   {
@@ -2700,6 +2724,15 @@
    "sha256": "5db11c0be6caf73722e3c39f89962081e4dc6a5337c4ab812db9e132a2821902"
   },
   {
+   "uid": "room:jeju_baramgil",
+   "domain": "room",
+   "id": "jeju_baramgil",
+   "name": "风口 · 风替你推",
+   "source": "content/rooms/jeju/jeju_baramgil.json",
+   "game": "res://generated/content/rooms/jeju/jeju_baramgil.json",
+   "sha256": "fe03042d4a9e6bfe4ebf32ec1b432f6cba4816131211a558dd63ca96297901d9"
+  },
+  {
    "uid": "room:jeju_canola",
    "domain": "room",
    "id": "jeju_canola",
@@ -2707,6 +2740,24 @@
    "source": "content/rooms/jeju/jeju_canola.json",
    "game": "res://generated/content/rooms/jeju/jeju_canola.json",
    "sha256": "d0d66c406a4926dbf03d8838f590eab673c8bf32c3562cee55d96a87a9529089"
+  },
+  {
+   "uid": "room:jeju_dodaebul",
+   "domain": "room",
+   "id": "jeju_dodaebul",
+   "name": "石灯台 · 风替你砸跳板",
+   "source": "content/rooms/jeju/jeju_dodaebul.json",
+   "game": "res://generated/content/rooms/jeju/jeju_dodaebul.json",
+   "sha256": "03347c43357dc012de9af68d34b615240404f99bd9166b1e24d449e6c0cc1ba1"
+  },
+  {
+   "uid": "room:jeju_doldam",
+   "domain": "room",
+   "id": "jeju_doldam",
+   "name": "石墙风口 · 铁箱当刹车",
+   "source": "content/rooms/jeju/jeju_doldam.json",
+   "game": "res://generated/content/rooms/jeju/jeju_doldam.json",
+   "sha256": "ca926994eb5ef357ab18912c5c584518e821005289ed66d23db37cd2e790b402"
   },
   {
    "uid": "room:jeju_gate",
@@ -2754,6 +2805,15 @@
    "sha256": "fad142f902d4ed7d20f3d9c48176881b9a8bb0bb092c6ee584afc23228a9d3d9"
   },
   {
+   "uid": "room:jeju_neolttwigi",
+   "domain": "room",
+   "id": "jeju_neolttwigi",
+   "name": "跳板场 · 一头落下一头飞",
+   "source": "content/rooms/jeju/jeju_neolttwigi.json",
+   "game": "res://generated/content/rooms/jeju/jeju_neolttwigi.json",
+   "sha256": "b078e323eb19c2370a40b0ec7d50ad8a8ffad2ca9fd72743d1e727c42e5dcc71"
+  },
+  {
    "uid": "room:jeju_olle",
    "domain": "room",
    "id": "jeju_olle",
@@ -2761,6 +2821,24 @@
    "source": "content/rooms/jeju/jeju_olle.json",
    "game": "res://generated/content/rooms/jeju/jeju_olle.json",
    "sha256": "90b2c897ae809ba22e1bb2a8edfb65c81c9338ca0e57fbf87160f8074dd28c58"
+  },
+  {
+   "uid": "room:jeju_pier",
+   "domain": "room",
+   "id": "jeju_pier",
+   "name": "码头 · 铁箱沉下去也算",
+   "source": "content/rooms/jeju/jeju_pier.json",
+   "game": "res://generated/content/rooms/jeju/jeju_pier.json",
+   "sha256": "21abd9abdb572c823aa63ef9d6c0a9b563ab999b83f2d24527bbf52b3f0a9d0c"
+  },
+  {
+   "uid": "room:jeju_terrace",
+   "domain": "room",
+   "id": "jeju_terrace",
+   "name": "橘园台地 · 一袋土也算重",
+   "source": "content/rooms/jeju/jeju_terrace.json",
+   "game": "res://generated/content/rooms/jeju/jeju_terrace.json",
+   "sha256": "e4720e4ae03bc5701a8c0776c2ecd458d1877c117630004dec75b64615000d3c"
   },
   {
    "uid": "mode:lab",
@@ -6363,6 +6441,14 @@
    "game": "res://generated/content/catalog/slices.json#diyu_1"
   },
   {
+   "uid": "slice:jeju_1",
+   "domain": "slice",
+   "id": "jeju_1",
+   "name": "配送地图 · 济州海女村",
+   "source": "content/catalog/slices.json",
+   "game": "res://generated/content/catalog/slices.json#jeju_1"
+  },
+  {
    "uid": "slice:delivery_pool",
    "domain": "slice",
    "id": "delivery_pool",
@@ -9942,6 +10028,230 @@
    "game": "tr:dlv.done.base"
   },
   {
+   "uid": "text:d2.map",
+   "domain": "text",
+   "id": "d2.map",
+   "name": "地图",
+   "source": "content/i18n-delivery2/zh-Hans.json",
+   "game": "tr:d2.map"
+  },
+  {
+   "uid": "text:d2.reroll",
+   "domain": "text",
+   "id": "d2.reroll",
+   "name": "重转 剩{n}次",
+   "source": "content/i18n-delivery2/zh-Hans.json",
+   "game": "tr:d2.reroll"
+  },
+  {
+   "uid": "text:d2.go",
+   "domain": "text",
+   "id": "d2.go",
+   "name": "出发",
+   "source": "content/i18n-delivery2/zh-Hans.json",
+   "game": "tr:d2.go"
+  },
+  {
+   "uid": "text:d2.select",
+   "domain": "text",
+   "id": "d2.select",
+   "name": "选择",
+   "source": "content/i18n-delivery2/zh-Hans.json",
+   "game": "tr:d2.select"
+  },
+  {
+   "uid": "text:d2.buy",
+   "domain": "text",
+   "id": "d2.buy",
+   "name": "购买",
+   "source": "content/i18n-delivery2/zh-Hans.json",
+   "game": "tr:d2.buy"
+  },
+  {
+   "uid": "text:d2.leave",
+   "domain": "text",
+   "id": "d2.leave",
+   "name": "离开",
+   "source": "content/i18n-delivery2/zh-Hans.json",
+   "game": "tr:d2.leave"
+  },
+  {
+   "uid": "text:d2.back",
+   "domain": "text",
+   "id": "d2.back",
+   "name": "返回",
+   "source": "content/i18n-delivery2/zh-Hans.json",
+   "game": "tr:d2.back"
+  },
+  {
+   "uid": "text:d2.observe",
+   "domain": "text",
+   "id": "d2.observe",
+   "name": "看全图",
+   "source": "content/i18n-delivery2/zh-Hans.json",
+   "game": "tr:d2.observe"
+  },
+  {
+   "uid": "text:d2.player",
+   "domain": "text",
+   "id": "d2.player",
+   "name": "人",
+   "source": "content/i18n-delivery2/zh-Hans.json",
+   "game": "tr:d2.player"
+  },
+  {
+   "uid": "text:d2.exit",
+   "domain": "text",
+   "id": "d2.exit",
+   "name": "出口",
+   "source": "content/i18n-delivery2/zh-Hans.json",
+   "game": "tr:d2.exit"
+  },
+  {
+   "uid": "text:d2.monster",
+   "domain": "text",
+   "id": "d2.monster",
+   "name": "怪物",
+   "source": "content/i18n-delivery2/zh-Hans.json",
+   "game": "tr:d2.monster"
+  },
+  {
+   "uid": "text:d2.animal",
+   "domain": "text",
+   "id": "d2.animal",
+   "name": "动物",
+   "source": "content/i18n-delivery2/zh-Hans.json",
+   "game": "tr:d2.animal"
+  },
+  {
+   "uid": "text:d2.snack.dungeon",
+   "domain": "text",
+   "id": "d2.snack.dungeon",
+   "name": "小鱼饼干",
+   "source": "content/i18n-delivery2/zh-Hans.json",
+   "game": "tr:d2.snack.dungeon"
+  },
+  {
+   "uid": "text:d2.snack.diyu",
+   "domain": "text",
+   "id": "d2.snack.diyu",
+   "name": "桂花糕",
+   "source": "content/i18n-delivery2/zh-Hans.json",
+   "game": "tr:d2.snack.diyu"
+  },
+  {
+   "uid": "text:d2.snack.jeju",
+   "domain": "text",
+   "id": "d2.snack.jeju",
+   "name": "小米糕",
+   "source": "content/i18n-delivery2/zh-Hans.json",
+   "game": "tr:d2.snack.jeju"
+  },
+  {
+   "uid": "text:d2.snack.desc",
+   "domain": "text",
+   "id": "d2.snack.desc",
+   "name": "一块零食换一句提示",
+   "source": "content/i18n-delivery2/zh-Hans.json",
+   "game": "tr:d2.snack.desc"
+  },
+  {
+   "uid": "text:d2.snack.stock",
+   "domain": "text",
+   "id": "d2.snack.stock",
+   "name": "每站 3 块 · 10 金币",
+   "source": "content/i18n-delivery2/zh-Hans.json",
+   "game": "tr:d2.snack.stock"
+  },
+  {
+   "uid": "text:d2.feed",
+   "domain": "text",
+   "id": "d2.feed",
+   "name": "喂零食要找猫 / 狗 / 小马",
+   "source": "content/i18n-delivery2/zh-Hans.json",
+   "game": "tr:d2.feed"
+  },
+  {
+   "uid": "text:d2.hint",
+   "domain": "text",
+   "id": "d2.hint",
+   "name": "先挖一袋沙。",
+   "source": "content/i18n-delivery2/zh-Hans.json",
+   "game": "tr:d2.hint"
+  },
+  {
+   "uid": "text:d2.hint.near",
+   "domain": "text",
+   "id": "d2.hint.near",
+   "name": "走近看箭头 · 喂零食听提示",
+   "source": "content/i18n-delivery2/zh-Hans.json",
+   "game": "tr:d2.hint.near"
+  },
+  {
+   "uid": "text:d2.tip",
+   "domain": "text",
+   "id": "d2.tip",
+   "name": "小费 ×1.5",
+   "source": "content/i18n-delivery2/zh-Hans.json",
+   "game": "tr:d2.tip"
+  },
+  {
+   "uid": "text:d2.reel.order",
+   "domain": "text",
+   "id": "d2.reel.order",
+   "name": "地图 → 收件人 → 货物",
+   "source": "content/i18n-delivery2/zh-Hans.json",
+   "game": "tr:d2.reel.order"
+  },
+  {
+   "uid": "text:d2.integrity",
+   "domain": "text",
+   "id": "d2.integrity",
+   "name": "完好度",
+   "source": "content/i18n-delivery2/zh-Hans.json",
+   "game": "tr:d2.integrity"
+  },
+  {
+   "uid": "text:d2.pause",
+   "domain": "text",
+   "id": "d2.pause",
+   "name": "配送暂停",
+   "source": "content/i18n-delivery2/zh-Hans.json",
+   "game": "tr:d2.pause"
+  },
+  {
+   "uid": "text:d2.map.dungeon",
+   "domain": "text",
+   "id": "d2.map.dungeon",
+   "name": "石牢",
+   "source": "content/i18n-delivery2/zh-Hans.json",
+   "game": "tr:d2.map.dungeon"
+  },
+  {
+   "uid": "text:d2.map.diyu",
+   "domain": "text",
+   "id": "d2.map.diyu",
+   "name": "地府",
+   "source": "content/i18n-delivery2/zh-Hans.json",
+   "game": "tr:d2.map.diyu"
+  },
+  {
+   "uid": "text:d2.price",
+   "domain": "text",
+   "id": "d2.price",
+   "name": "价格",
+   "source": "content/i18n-delivery2/zh-Hans.json",
+   "game": "tr:d2.price"
+  },
+  {
+   "uid": "text:d2.stock",
+   "domain": "text",
+   "id": "d2.stock",
+   "name": "库存",
+   "source": "content/i18n-delivery2/zh-Hans.json",
+   "game": "tr:d2.stock"
+  },
+  {
    "uid": "text:dev.placeholder",
    "domain": "text",
    "id": "dev.placeholder",
@@ -12012,6 +12322,102 @@
    "name": "只帮小马带路：喂零食要找小马",
    "source": "content/i18n-rooms2/zh-Hans.json",
    "game": "tr:dlg.fauna.jeju_dragonfly.fed"
+  },
+  {
+   "uid": "text:room2.jeju_neolttwigi.name",
+   "domain": "text",
+   "id": "room2.jeju_neolttwigi.name",
+   "name": "跳板场 · 一头落下一头飞",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.jeju_neolttwigi.name"
+  },
+  {
+   "uid": "text:room2.jeju_neolttwigi.hint.0",
+   "domain": "text",
+   "id": "room2.jeju_neolttwigi.hint.0",
+   "name": "先打开木箱上方的门，再绕到铁箱右边，把铁箱推下井；弹起的木箱会压住出路的压板。",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.jeju_neolttwigi.hint.0"
+  },
+  {
+   "uid": "text:room2.jeju_baramgil.name",
+   "domain": "text",
+   "id": "room2.jeju_baramgil.name",
+   "name": "风口 · 风替你推",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.jeju_baramgil.name"
+  },
+  {
+   "uid": "text:room2.jeju_baramgil.hint.0",
+   "domain": "text",
+   "id": "room2.jeju_baramgil.hint.0",
+   "name": "木箱后面是石墙，人推不了；走几步让风把木箱吹进深坑，再踩着木箱过坑。",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.jeju_baramgil.hint.0"
+  },
+  {
+   "uid": "text:room2.jeju_pier.name",
+   "domain": "text",
+   "id": "room2.jeju_pier.name",
+   "name": "码头 · 铁箱沉下去也算",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.jeju_pier.name"
+  },
+  {
+   "uid": "text:room2.jeju_pier.hint.0",
+   "domain": "text",
+   "id": "room2.jeju_pier.hint.0",
+   "name": "从码头下面绕到铁箱右边，把铁箱推进水井；木箱弹上岸后，踩着它登上栈道。",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.jeju_pier.hint.0"
+  },
+  {
+   "uid": "text:room2.jeju_terrace.name",
+   "domain": "text",
+   "id": "room2.jeju_terrace.name",
+   "name": "橘园台地 · 一袋土也算重",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.jeju_terrace.name"
+  },
+  {
+   "uid": "text:room2.jeju_terrace.hint.0",
+   "domain": "text",
+   "id": "room2.jeju_terrace.hint.0",
+   "name": "先挖开木箱上方的土，带着这袋土从上面绕到右岸；站在压板上向左倒沙，弹起木箱后再爬",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.jeju_terrace.hint.0"
+  },
+  {
+   "uid": "text:room2.jeju_doldam.name",
+   "domain": "text",
+   "id": "room2.jeju_doldam.name",
+   "name": "石墙风口 · 铁箱当刹车",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.jeju_doldam.name"
+  },
+  {
+   "uid": "text:room2.jeju_doldam.hint.0",
+   "domain": "text",
+   "id": "room2.jeju_doldam.hint.0",
+   "name": "先沿下方走到右侧梯子，踩上入口压板放风；马上向左推铁箱落进右坑，木箱才会停在左边",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.jeju_doldam.hint.0"
+  },
+  {
+   "uid": "text:room2.jeju_dodaebul.name",
+   "domain": "text",
+   "id": "room2.jeju_dodaebul.name",
+   "name": "石灯台 · 风替你砸跳板",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.jeju_dodaebul.name"
+  },
+  {
+   "uid": "text:room2.jeju_dodaebul.hint.0",
+   "domain": "text",
+   "id": "room2.jeju_dodaebul.hint.0",
+   "name": "下到石灯台底部，站到跳板右端再按上开门；风会把木箱送进左井，把你弹上高台。",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.jeju_dodaebul.hint.0"
   },
   {
    "uid": "text:ui.title_alt",

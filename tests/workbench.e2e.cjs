@@ -207,7 +207,7 @@ let runningBrowser = null;
   }
   const badMap = mapPages.filter((x) => x.page !== "map" || x.mapId !== x.id || x.title !== x.name || JSON.stringify(x.rooms) !== JSON.stringify(x.want)
     || x.groups.some((g, i) => !ROLE_ORDER.includes(g) || (i && ROLE_ORDER.indexOf(g) <= ROLE_ORDER.indexOf(x.groups[i - 1]))));
-  check(mapPages.length === 2 && badMap.length === 0, "each v2 map page lists only its own rooms, grouped by role in the order of workbench.md 6.1" + (badMap.length ? ": " + JSON.stringify(badMap[0]) : ""));
+  check(mapPages.length === 3 && badMap.length === 0, "each v2 map page lists only its own rooms, grouped by role in the order of workbench.md 6.1" + (badMap.length ? ": " + JSON.stringify(badMap[0]) : ""));
   const diyuPage = mapPages.find((x) => x.id === "diyu_1") || { groups: [], meta: [] }, metaOf = (k) => (diyuPage.meta.find((x) => x.startsWith(k + "=")) || "").slice(k.length + 1);
   check(JSON.stringify(diyuPage.groups) === JSON.stringify(ROLE_ORDER) && diyuPage.meta.map((x) => x.split("=")[0]).join() === "地区,网格,方向,房间顺序,收件人,货物,怪物,提示动物,顶边,房间"
     && metaOf("网格").startsWith("13×3") && metaOf("方向") === "由左往右" && metaOf("顶边").startsWith("天空") && metaOf("房间").startsWith("13 间"),
@@ -338,6 +338,32 @@ let runningBrowser = null;
   check(commonUI.problems && commonUI.problems.length === 0, "UI-10a: eight G2 screens fit both shipped locales (" + JSON.stringify(commonUI.problems) + ")");
   check(commonUI.settings && commonUI.noStyle, "UI-10a: settings retains its controls and removes the style row and preview");
   check(commonUI.sliderValues, "UI-10a: volume sliders preserve the existing 0–10 setting values");
+
+  // UI-10b: the confirmation page exposes all seven independent delivery candidates.
+  await page.goto(URL + "#review"); await page.waitForTimeout(200);
+  const deliveryUI = await page.evaluate(() => {
+    const ids = ["reels", "shop", "delivery_hud", "delivery_pause", "confirm", "hint_animal", "observe"];
+    const problems = [], labels = {}, assets = ids.map((id) => PBStore.asset("ui.screen." + id));
+    const oldText = PB.uk.C.prototype.text;
+    for (const a of assets) for (const locale of ["zh-Hans", "en"]) {
+      const key = a.id + "/" + locale; labels[key] = [];
+      PB.uk.C.prototype.text = function (x, y, s, ...rest) { labels[key].push(s); return oldText.call(this, x, y, s, ...rest); };
+      PB.uiCommon.takeIssues();
+      try {
+        problems.push(...PB.ui.render(new PB.Raster(320, 180), a, 0, { locale, focus: 0 }));
+        problems.push(...PB.uiCommon.takeIssues());
+      } finally { PB.uk.C.prototype.text = oldText; }
+    }
+    return {
+      problems, present: assets.every((a) => a.params.room2.format === "pushbox.room/2" && document.body.innerText.includes(a.name)),
+      reels: ["Map", "Recipient", "Cargo", "Reroll 1 left"].every((s) => labels["ui.screen.reels/en"].includes(s)),
+      snack: ["Fish crackers", "×3", "10"].every((s) => labels["ui.screen.shop/en"].includes(s)),
+      observe: ["Tab", "Back", "You", "Exit", "Foe", "Hint"].every((s) => labels["ui.screen.observe/en"].includes(s)),
+    };
+  });
+  check(deliveryUI.present, "UI-10b: confirmation page contains all seven v2 delivery candidates");
+  check(deliveryUI.problems.length === 0, "UI-10b: seven G2 delivery screens fit both shipped locales (" + JSON.stringify(deliveryUI.problems) + ")");
+  check(deliveryUI.reels && deliveryUI.snack && deliveryUI.observe, "UI-10b: three reels, snack price/stock and full-map markers keep their labels");
 
   // 6b. Left category menu (WB-01): drawn from the one PBNav.MENU array, folds by category and
   // remembers it, keeps hash links and browser history; the whole left column can collapse.
@@ -573,7 +599,7 @@ async function audioChecks(browser) {
     check(await p.locator(".audio-candidates").count() === nSets && await p.locator(".audio-card[data-kind=music]").count() === nSongs, `music candidates appear set by set (${nSets} sets, ${nSongs} songs)`);
     check((await p.locator("#audio-root").textContent()).includes("0/3"), "missing-source music count is 0/3");
     await p.evaluate(() => { location.hash = "#audio/maps"; }); await p.waitForTimeout(80);
-    check((await p.locator("#audio-root").textContent()).includes("地图待 DSN-01") && (await p.locator("#audio-root").textContent()).includes("实际静音"), "maps reports the pending map and unapproved default silence");
+    check(!(await p.locator("#audio-root").textContent()).includes("地图待 DSN-01") && (await p.locator("#audio-root").textContent()).includes("实际静音"), "maps lists every map (Jeju no longer pending) and unapproved default silence");
 
     // Real file:// media must advance and produce PCM before any mocks are used.
     const n=44100, wav=Buffer.alloc(44+n*2);
