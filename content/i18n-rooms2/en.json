@@ -79,5 +79,13 @@
  "r2.hud.hint": "Hint {i}/{n}",
  "r2.hud.step": "Step {i}/{n}",
  "r2.hud.cleared": "Cleared",
- "r2.hud.snack": "×{n}"
+ "r2.hud.snack": "×{n}",
+ "room2.jeju_gate.name": "Harbor · Arrival at the Gate",
+ "room2.jeju_olle.name": "Olle · Stone-wall Lane",
+ "room2.jeju_canola.name": "Canola Fields",
+ "room2.jeju_haenyeo_house.name": "Post Station · Haenyeo House",
+ "room2.jeju_home_shore.name": "Recipient's Home · Breakwater",
+ "room2.jeju_home_orchard.name": "Recipient's Home · Tangerine Orchard",
+ "room2.jeju_home_cave.name": "Recipient's Home · Lava Cave",
+ "dlg.fauna.jeju_dragonfly.fed": "I only show the pony's way: feed the pony."
 }
