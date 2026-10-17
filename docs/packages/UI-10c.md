@@ -65,8 +65,16 @@ node tests/workbench.e2e.cjs
 - `art/export/reference/lobby.*.png`（6 套大厅皮肤）不在 `git diff --stat` 里。
 
 ## 交付（制作方填写，不超过 40 行）
-- 3 个界面各一句
-- 上面「最后跑一次」各一行结果
-- 改了哪条测试的预期、为什么（没有写"无"）
-- 遗留问题（没有写"无"）
-（分支名、提交号、`git diff --stat` 贴在给用户的回复里，不写进这个文件）
+- 结算：G2 深蓝圆角，保留完好度、时间、喜好、小费、拾币、合计和评级；背景使用 v2 房间。
+- 失败：G2 深蓝圆角，显示两种失败原因、拾币与保留金额；背景使用 v2 房间，两个操作支持选中切换。
+- 通用大厅：独立 `ui.screen.lobby_generic@v1`，固定地府背景，关卡模式／配送／设置／退出和金币；六套原大厅皮肤不变。
+- `node tools/art.mjs build`：`build ok: 157 assets, 2 bumped, 96 reference renders, 6 approval records`；仅结算、失败升至 v3；排版 0 问题。
+- `node tools/art.mjs verify`：`verify ok: 157 assets, 6 approval records`。
+- `node tools/content.mjs check`：`content: 0 error(s), 1 warning(s)`（基线已有 `slice:jeju_1` 音频待引用警告）。
+- `node --test --test-concurrency=1 tests/*.test.mjs`：217 tests，217 pass，0 fail，0 skipped。
+- `node tests/workbench.e2e.cjs`：`all workbench checks passed`；三项候选可在确认页看到并选择，双语画面与导出一致。
+- 现有测试预期改动：无；新增 `ui-screens-result.test.mjs` 四项测试，并在 `workbench.e2e.cjs` 追加确认页、双语 G2 和导出一致性检查。
+- 新文字在 `content/i18n-result/`；已有字形覆盖，无需新增字形文件。v2 房间为界面参数内的独立预览样例，未改房间目录。
+- 执行记录：共享目录被另一会话切到 `ui/DLV-04b`，首次构建因其未生成 `font-delivery2.js` 中止；已隔离到本包工作目录后仅重跑该失败命令，保留另一包改动。
+- 遗留问题：上述基线警告；三个界面仍是待用户美术确认的候选，不代表已正式批准。
+- 当前阶段：实现及包内技术检查完成，待整理合并方审核；下一步由用户把 `ui/UI-10c` 交给 Claude 按流程审核合并，再由用户在工作台确认候选。
