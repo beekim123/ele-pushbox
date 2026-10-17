@@ -27,7 +27,7 @@
   - **背景 `jeju`**：
     - 上半是晴天：顶上是 `r` 蓝，往下抖动过渡到地平线附近的淡色；几朵慢慢飘的白云，底边不平，不会被当成落脚点（art-direction 第 8 节）。
     - 地平线上是淡灰蓝的汉拿山（宽而缓，顶上平）和两三座小오름。
-    - 地平线以下是海：深蓝 `q` 加横向的 `r` 波纹，闪光用 `u`，不画规则水那道 `s` 色的亮水面线，免得和水格混淆（第 7 节第 2 条）。
+    - 地平线以下是海：地平线处是蓝 `q`，往下 16 px 内抖动过渡到更暗的墨绿 `p`；横向波纹远处用 `r`、近处用 `q`，闪光用 `u`。近处的海比规则水的水体暗（art-direction 第 2 节「水体比静止背景亮」），也不画规则水那道 `s` 色的亮水面线，免得和水格混淆（第 7 节第 2 条）。
     - 最下面是近岸的深色礁石剪影。
     - 任意宽度都能画，位置按 `x − x0` 连续。
   - **生态**：橘子树 `deco.jeju_tangerine_tree`、油菜花 `deco.jeju_canola`、石头爷爷 `deco.jeju_harubang`（每屏最多 1 尊），飞虫红蜻蜓 `fauna.jeju_dragonfly`（配送模式里由 `ambient_exclude` 关掉，只当提示动物）。不放会走动的随机小动物，免得和小马、海鸥、小鬼怪混。
@@ -111,7 +111,7 @@
 
 ## 6 美术候选（22 项，status `review`）
 
-全部第 1 版，调色板 ENDESGA 32，`z` 描边，面朝右画（朝左时水平镜像）。人物动作 8 fps 以内，环境 4 fps 以内。
+全部第 1 版，调色板 ENDESGA 32，`z` 描边，面朝右画（朝左时水平镜像）。人物、动物、怪物动作 8 fps 以内，装饰 4 fps 以内（特效除外）。
 
 | 编号 | 尺寸 | 动作 | 说明 |
 |---|---|---|---|
@@ -121,7 +121,7 @@
 | `deco.jeju_canola` | 9 × 8 | `sway` | 一丛油菜花 |
 | `fauna.jeju_pony` | 16 × 13 | `sit`、`wag`、`walk`、`neigh` | 主提示动物（第 5 节） |
 | `fauna.jeju_dragonfly` | 9 × 5 | `fly`、`rest` | 飞的提示动物 |
-| `monster.dokkaebi` | 16 × 16 | `idle`、`walk`、`wrestle`、`pushed`、`ko` | 小鬼怪：粉红皮肤、一只圆头小角、乱毛、蓝坎肩、拿방망이 |
+| `monster.dokkaebi` | 16 × 16 | `idle`、`walk`、`wrestle`、`pushed`、`ko`、`trapped` | 小鬼怪：粉红皮肤、一只圆头小角、乱毛、蓝坎肩、拿방망이；`trapped` 是被困住时轮流举手挥 |
 | `monster.seagull` | 16 × 12 | `fly`、`swoop`、`grab`、`flee` | 海鸥：白身灰翅、黑翅尖、黄嘴红点 |
 | `char.haenyeo` | 16 × 16 | `idle`、`win`、`dive`、`surface` | 海女奶奶：黑潜水服、额上潜水镜、橘色浮球；`dive` 是潜在水下、只露浮球，`surface` 是冒出水面吹口哨 |
 | `char.tangerine_farmer` | 16 × 16 | `idle`、`win` | 橘园阿姨：宽檐草帽、花布宽裤、抱一筐橘子 |
@@ -132,10 +132,10 @@
 | `cargo.buckwheat_jelly` | 16 × 16 | `default`、`chipped` | 盘子上切好的荞麦凉粉；损坏是碎了一角 |
 | `cargo.kite` | 16 × 16 | `default`、`torn` | 방패연：中间有圆孔的长方形风筝、红色圆纹、竹骨；损坏是撕破、骨架歪了 |
 | `item.snack_jeju` | 16 × 16 | `default` | 小米糕（第 5 节） |
-| `mech.jeju_seesaw` | 16 × 16 | `end`、`down`、`launch`、`mid`、`pivot` | 跳板：每格一帧，端点、压下、弹起、中段、草垛支点；板面顶边就是格子顶边。关卡模式现在没有跷跷板的美术 |
+| `mech.jeju_seesaw` | 16 × 20（下面 16 行是格子，上面 4 行留给翘起的端头） | `end`、`down`、`launch`、`mid`、`pivot` | 跳板：每格一帧，端点、压下、弹起、中段、草垛支点；橙色漆板、红漆端头；板面顶边就是格子顶边。关卡模式现在没有跷跷板的美术 |
 | `fx.jeju_gust` | 16 × 16 | `drift`、`blow` | 阵风：平时几道淡风线慢慢往前飘，刮风那一步换成粗风线和一片橘子叶；方向向左时镜像 |
 
-对照图在 [docs/packages/DSN-01/](../packages/DSN-01/)：全部候选总览、主题地形和背景、模拟房间（`jeju_neolttwigi` 的草图）。
+对照图在 [docs/packages/DSN-01/](../packages/DSN-01/)：全部候选总览 [candidates.png](../packages/DSN-01/candidates.png)、主题地形和背景 [theme-jeju.png](../packages/DSN-01/theme-jeju.png)、模拟房间 [room-neolttwigi.png](../packages/DSN-01/room-neolttwigi.png)（`jeju_neolttwigi` 的草图，没有验证过）。
 
 ## 7 待定问题
 
@@ -145,7 +145,7 @@
    - C 天空亮，靠近地形的海和近岸压暗。
    - **这次按 C**。
 2. **背景的海和规则的水**：
-   - A 背景海用深蓝加稀疏闪光，不画规则水的亮水面线（现在的做法）。
+   - A 背景海远蓝近深（近处是比规则水暗的墨绿 `p`），加稀疏闪光，不画规则水的亮水面线（现在的做法）。
    - B 背景不画海：最不会混，但不像海边。
    - C 和规则水画得一样：会误认。
    - **这次按 A**；用户在模拟房间里还分不清就改 B。

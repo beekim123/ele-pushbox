@@ -588,15 +588,56 @@
    "id": "buckwheat_jelly",
    "name": "荞麦凉粉",
    "mode": "delivery",
-   "rule": "软软的，落下超过 1 格就会碎一块",
-   "counter": "慢慢走，带护垫",
+   "rule": "软软的：落下 2 格或以上就碎一块；落在沙上没事",
+   "counter": "走梯子；要跳先在落点倒一袋沙",
    "mechanisms": [
     "fall"
    ],
    "rarity": "common",
    "carry": "medium",
    "layer": 2,
-   "status": "concept"
+   "status": "concept",
+   "params": {
+    "pay": 40,
+    "fragile_fall_rows": 2,
+    "sand_cushion": true
+   }
+  },
+  {
+   "id": "tangerine",
+   "name": "橘子筐",
+   "mode": "delivery",
+   "rule": "满满一筐橘子：人被跷跷板弹起来时颠出一个，完好度 −1",
+   "counter": "让箱子去坐跷跷板，自己走梯子",
+   "mechanisms": [
+    "seesaw"
+   ],
+   "rarity": "common",
+   "carry": "medium",
+   "layer": 2,
+   "status": "concept",
+   "params": {
+    "pay": 35,
+    "bounce_damage": 1
+   }
+  },
+  {
+   "id": "kite",
+   "name": "风筝",
+   "mode": "delivery",
+   "rule": "방패연风筝很轻：人站在阵风里被吹到一次，完好度 −1；躲在石墙后面没事",
+   "counter": "绕开风口，贴着石墙后面走",
+   "mechanisms": [
+    "gust"
+   ],
+   "rarity": "rare",
+   "carry": "medium",
+   "layer": 2,
+   "status": "concept",
+   "params": {
+    "pay": 55,
+    "gust_damage": 1
+   }
   },
   {
    "id": "spice_box",

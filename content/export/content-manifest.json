@@ -1955,16 +1955,38 @@
    "id": "jeju",
    "name": "济州海女村",
    "culture": "东亚",
-   "inspiration": "韩国济州岛：黑色火山石墙、石头爷爷、橘子园、海女（联合国非物质文化遗产）、风多；韩国节日的跳板游戏；民间鬼怪도깨비",
-   "care": "石头爷爷是守护石像，只作地标，不能推倒",
-   "style": "黑色玄武岩石墙、橘子树、海边码头",
+   "inspiration": "韩国济州岛。济州自称「三多岛」：风多、石头多、女人多（海女）。黑色玄武岩石墙（돌담）和石头爷爷（돌하르방）、橘园（감귤밭）、春天的油菜花、石灯台（도대불）、石墙小巷（올레）、海女（联合国非物质文化遗产，2016）和她们烤火的石圈（불턱）；韩国节日里女孩站着玩的跳板（널뛰기）；民间鬼怪도깨비（爱摔跤씨름、爱吃荞麦凉粉）；济州小马（조랑말）、小米糕（오메기떡）、방패연风筝",
+   "care": "石头爷爷是守护石像，只作地标：不能推、不能推倒，也不当箱子、怪物或收件人；小鬼怪（도깨비）要可爱、不吓人，不照日本鬼（오니）画：不穿虎皮裙、不画獠牙、不画两只尖角；海女是真实的职业，画成能干爽朗的老奶奶，不拿她当笑料；不用国旗和太极图案；不画祭神的神堂（신당）和祭祀（굿），不涉及济州四三等历史伤痛",
+   "style": "白天的海边：晴天蓝海、白云，远处汉拿山和小火山丘（오름）；近处黑色多孔的玄武岩、圆石垒的石墙、礁石、码头栈道、橘园台地和油菜花",
    "mechanisms": [
     "seesaw",
-    "gust"
+    "gust",
+    "float_sink"
    ],
-   "theme": null,
+   "theme": "theme.jeju",
    "layer": 2,
-   "status": "concept"
+   "status": "design",
+   "hint_fauna": [
+    {
+     "id": "jeju_pony",
+     "name": "济州小马",
+     "asset": "fauna.jeju_pony",
+     "snack": "小米糕",
+     "look": "站在下一步要用的东西旁边低头吃草",
+     "near": "走近时它小跑过去，冲着那个东西甩尾巴、点头",
+     "fed": "打个响鼻，头顶冒出一句提示"
+    },
+    {
+     "id": "jeju_dragonfly",
+     "name": "红蜻蜓",
+     "asset": "fauna.jeju_dragonfly",
+     "look": "停在下一步要去的地方",
+     "near": "走近时飞过去，在目标上方绕圈"
+    }
+   ],
+   "ambient_exclude": [
+    "fauna.jeju_dragonfly"
+   ]
   },
   {
    "id": "stepwell",
@@ -3056,15 +3078,21 @@
    "worlds": [
     "jeju"
    ],
-   "rarity": "rare",
+   "rarity": "common",
    "temper": "爽朗",
-   "rule": "在海里潜水：要到码头等她上岸",
+   "rule": "在海里潜水：要到防波堤边等她上岸。每隔一会儿冒出水面吹一声口哨（숨비소리），这时才能交货",
    "likes": [
     "hot_soup",
-    "fish"
+    "fish",
+    "letter"
    ],
    "layer": 2,
-   "status": "concept"
+   "status": "concept",
+   "params": {
+    "move": "stay",
+    "dive_secs": 8,
+    "surface_secs": 4
+   }
   },
   {
    "id": "goblin_chief",
@@ -3072,14 +3100,58 @@
    "worlds": [
     "jeju"
    ],
-   "rarity": "rare",
+   "rarity": "legendary",
    "temper": "爱摔跤",
-   "rule": "先陪它摔一跤（把它推出两格）才肯收货",
+   "rule": "先陪他摔一跤（把他推出两格）才肯收货",
    "likes": [
     "buckwheat_jelly"
    ],
    "layer": 2,
-   "status": "concept"
+   "status": "concept",
+   "params": {
+    "move": "stay",
+    "wrestle_tiles": 2
+   }
+  },
+  {
+   "id": "tangerine_farmer",
+   "name": "橘园阿姨",
+   "worlds": [
+    "jeju"
+   ],
+   "rarity": "common",
+   "temper": "勤快",
+   "rule": "完好度满分时小费多一半；她自己种橘子，不收橘子筐",
+   "likes": [
+    "letter",
+    "kite"
+   ],
+   "layer": 2,
+   "status": "concept",
+   "params": {
+    "move": "stay",
+    "perfect_tip_mult": 1.5
+   }
+  },
+  {
+   "id": "lighthouse_keeper",
+   "name": "灯塔大叔",
+   "worlds": [
+    "jeju"
+   ],
+   "rarity": "rare",
+   "temper": "话少",
+   "rule": "石灯台（도대불）在防波堤尽头，门前一直刮风：风筝在他门口也会被吹",
+   "likes": [
+    "tangerine",
+    "hot_soup"
+   ],
+   "layer": 2,
+   "status": "concept",
+   "params": {
+    "move": "stay",
+    "home_gust": true
+   }
   },
   {
    "id": "spice_merchant",
@@ -4062,15 +4134,56 @@
    "id": "buckwheat_jelly",
    "name": "荞麦凉粉",
    "mode": "delivery",
-   "rule": "软软的，落下超过 1 格就会碎一块",
-   "counter": "慢慢走，带护垫",
+   "rule": "软软的：落下 2 格或以上就碎一块；落在沙上没事",
+   "counter": "走梯子；要跳先在落点倒一袋沙",
    "mechanisms": [
     "fall"
    ],
    "rarity": "common",
    "carry": "medium",
    "layer": 2,
-   "status": "concept"
+   "status": "concept",
+   "params": {
+    "pay": 40,
+    "fragile_fall_rows": 2,
+    "sand_cushion": true
+   }
+  },
+  {
+   "id": "tangerine",
+   "name": "橘子筐",
+   "mode": "delivery",
+   "rule": "满满一筐橘子：人被跷跷板弹起来时颠出一个，完好度 −1",
+   "counter": "让箱子去坐跷跷板，自己走梯子",
+   "mechanisms": [
+    "seesaw"
+   ],
+   "rarity": "common",
+   "carry": "medium",
+   "layer": 2,
+   "status": "concept",
+   "params": {
+    "pay": 35,
+    "bounce_damage": 1
+   }
+  },
+  {
+   "id": "kite",
+   "name": "风筝",
+   "mode": "delivery",
+   "rule": "방패연风筝很轻：人站在阵风里被吹到一次，完好度 −1；躲在石墙后面没事",
+   "counter": "绕开风口，贴着石墙后面走",
+   "mechanisms": [
+    "gust"
+   ],
+   "rarity": "rare",
+   "carry": "medium",
+   "layer": 2,
+   "status": "concept",
+   "params": {
+    "pay": 55,
+    "gust_damage": 1
+   }
   },
   {
    "id": "spice_box",
@@ -5137,23 +5250,45 @@
    "id": "dokkaebi",
    "name": "小鬼怪",
    "world": "jeju",
-   "behavior": "拦路和你摔跤（把你推回去），还会用魔法棒敲出一个箱子挡路",
-   "counter": "把它推出两格就算你赢；送它荞麦凉粉",
+   "behavior": "在过道里来回走，碰到你就要摔跤（씨름），把你推回一格；你带着荞麦凉粉时，它闻着味跟过来",
+   "counter": "从侧面把它推出两格就算你赢，它认输坐下，让开路、留下金币；也能用箱子压、挖坑困住",
    "pushable": true,
    "mode": "delivery",
    "layer": 2,
-   "status": "concept"
+   "status": "concept",
+   "params": {
+    "move": "patrol",
+    "step_secs": 0.6,
+    "cliff_rows": 2,
+    "contact": "wrestle",
+    "shove_tiles": 1,
+    "wrestle_win_tiles": 2,
+    "smell_tiles": 5,
+    "push_stun_secs": 0.5,
+    "trap_secs": 4,
+    "coins": 10
+   }
   },
   {
    "id": "seagull",
    "name": "海鸥",
    "world": "jeju",
-   "behavior": "从天上俯冲，叼走小件",
-   "counter": "打伞",
+   "behavior": "在过道上空盘旋，看见你就俯冲下来，叼走一块零食或 5 个金币",
+   "counter": "推不动。躲到石墙檐下等头顶有遮挡的格子（它俯冲不进来），或者打伞",
    "pushable": false,
    "mode": "delivery",
    "layer": 2,
-   "status": "concept"
+   "status": "concept",
+   "params": {
+    "move": "swoop",
+    "step_secs": 0.4,
+    "sight_tiles": 6,
+    "contact": "steal",
+    "steal_snack": 1,
+    "steal_coins": 5,
+    "flee_secs": 3,
+    "coins": 0
+   }
   },
   {
    "id": "peacock",

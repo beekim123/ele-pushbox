@@ -26,7 +26,7 @@ git checkout -b dlv/DLV-05 origin/claude/inspiring-ride-zfnn4s
 v2 房间的 `devices` 能写跷跷板 `seesaw` 和阵风 `gust`（写法和关卡模式一样），`check-rooms2` 的作者解、提示、翻转、"必需"检查都认它们；工作台配送 v2 画面能画出来。做完 DLV-04 就能做济州的 6 间机制房。
 
 ## 现状（DSN-01 查过）
-- 工作台里 `tilemodel-runtime.js` 和全部 `mech/*.js` 插件在 `tilemodel.js` 之后加载，会替换 `PB.tilemodel`；但 `tools/check-rooms2.mjs` 只加载 `["tilemodel", "rooms2", "mapgen", "mapgen2"]`，没有插件。两边要一致。
+- 工作台里 `tilemodel-runtime.js` 和全部 `mech/*.js` 插件在 `tilemodel.js` 之后加载，会替换 `PB.tilemodel`。`tools/check-rooms2.mjs` 用 `loadCore(["tilemodel", "rooms2", "mapgen", "mapgen2"])`：`tools/lib/load-core.mjs` 默认会带上 `tilemodel-runtime.js`，但不加载任何 `mech/*.js` 插件。两边要一致。
 - `rooms2.act`（`rooms2.js` 第 293 行附近）自己处理每个动作，`finish` 只调 `TM.settle`：
   - 跷跷板的 `settle` 钩子会跟着跑；但开局载重基线要在 `setup` 钩子里记（`tilemodel-runtime.js` 第 166 行的做法），现在 v2 没调。
   - 阵风在 `afterAction` 钩子里（每个动作之后刮一次），v2 没调。
@@ -35,7 +35,7 @@ v2 房间的 `devices` 能写跷跷板 `seesaw` 和阵风 `gust`（写法和关�
 - `FREEZABLE`（第 42 行）只有 `float_block`、`pole`、`push`、`dig`、`pour`、`lever`，"必需"检查冻结不了跷跷板和阵风。
 
 ## 要做
-1. `check-rooms2.mjs` 加载 `tilemodel-runtime` 和 `mech/seesaw`、`mech/gust`（要么全部插件，和工作台一样）。先确认已有 23 间房的结果（`content/rooms2-check.generated.json`）一字不变。
+1. `check-rooms2.mjs` 加载 `mech/seesaw`、`mech/gust` 插件（或者和工作台一样加载全部插件）。先确认已有 23 间房的结果（`content/rooms2-check.generated.json`）一字不变。
 2. `rooms2.js`：
    - 开局调插件的 `setup`；每个动作的 `finish` 里、`settle` 之前或之后（照 `tilemodel-runtime.js` 的顺序）调 `afterAction`；
    - 落脚、占位判断认插件的 `solid`；
@@ -44,7 +44,7 @@ v2 房间的 `devices` 能写跷跷板 `seesaw` 和阵风 `gust`（写法和关�
    - `validate` 检查跷跷板的 `landings` 必须是 `[端点上那格的 x ± 1, 端点上那格的 y − height]`（插件运行时才报错，太晚）。
 3. 提示：小马、蜻蜓的提示步骤照常写目标格，不需要新的动作名。
 4. 画法（`delivery-scene2.js`）：
-   - 跷跷板画 `mech.jeju_seesaw`（`end` / `down` / `launch` / `mid` / `pivot`，板面顶边就是格子顶边），阵风格画 `fx.jeju_gust`（平时 `drift`，刮风那一步 `blow`；向左时镜像）。别的地区以后有自己的图再按地区选。
+   - 跷跷板画 `mech.jeju_seesaw`（每格一帧：两端 `end`，一端落下新载重时这一端 `down`、另一端 `launch`，两端之间 `mid`，正中 `pivot`；16 × 20，锚点在格子底边中点，下面 16 行是格子、板面顶边就是格子顶边，上面 4 行留给翘起的端头；用法见资产的 `usage`），阵风格画 `fx.jeju_gust`（平时 `drift`，刮风那一步 `blow`；向左时镜像）。别的地区以后有自己的图再按地区选。
    - `BANDED` 加 `jeju`（多屏房间背景按屏行重复，art-direction 第 6 节）。
    - HUD 和气泡里的零食图标：现在按地区选 `item.snack` 的 `diyu` / `dungeon` 动作（第 493 行附近）。`item.snack` 已确认，不能加动作，所以济州画 `item.snack_jeju` 的 `default`。
    - 实时的阵风（按时间刮）留给 DLV-01；这里只按回合画。

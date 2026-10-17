@@ -20,7 +20,7 @@ git checkout -b dlv/DLV-04 origin/claude/inspiring-ride-zfnn4s
 - 已做完的两张：`content/rooms/diyu/`、`content/rooms/dungeon/` 和 [delivery-diyu.md](../design/delivery-diyu.md)
 - 装置照验证关写：G09、G10（`content/levels/lab/react/`）、F08（`thermal/`）、E06（`experimental/`）
 
-会碰的共享文件：`content/catalog/slices.json`（只动 `jeju_1` 和 `delivery_pool`）、`content/i18n-rooms2/*.json`（只加 jeju 房间的键）、生成文件
+会碰的共享文件：`content/catalog/slices.json`（只动 `jeju_1` 和 `delivery_pool`）、`content/catalog/worlds.json`（只给 `jeju_dragonfly` 加 `fed`）、`content/i18n-rooms2/*.json`（只加 jeju 的键）、生成文件
 允许换版本的美术：无（`art.mjs build` 必须 0 bumped）
 
 ## 目标
@@ -32,7 +32,7 @@ git checkout -b dlv/DLV-04 origin/claude/inspiring-ride-zfnn4s
 3. 机制房的装置照验证关：
    - 跷跷板 `{"type": "seesaw", "ends": [[x1, y], [x2, y]], "height": 2, "threshold": 1, "landings": [...]}`：`landings` 是端点上那格的 `x ± 1`、`y − height`，照 G09 / G10。
    - 阵风只用验证过的一种配置：`{"type": "gust", "area": [x, y, w, 1], "direction": "R", "period": 1, "phase": 0, "light_kinds": ["wood"]}`（F08；翻转后 `L` 由工具处理）。F08 的余量很小，作者解要多试几种走法确认没有捷径。
-4. 提示照规则第 5 节写：主提示动物是济州小马（`fauna.jeju_pony`，收零食），会飞的是红蜻蜓（`fauna.jeju_dragonfly`，只带路）。`worlds.json` 的 `hint_fauna` 已经写好。
+4. 提示照规则第 5 节写：主提示动物是济州小马（`fauna.jeju_pony`，收零食），会飞的是红蜻蜓（`fauna.jeju_dragonfly`，只带路）。`worlds.json` 的 `hint_fauna` 已经写好，只差红蜻蜓的喂食台词：`tests/rooms2.test.mjs`（第 199 行）要求会飞的提示动物的 `fed` 和文字表 `content/i18n-rooms2` 的 `dlg.fauna.<id>.fed` 一字不差，DSN-01 不能改文字表，所以没写。做第 5 条时一起加：`worlds.json` 的 `jeju_dragonfly` 加 `"fed": "只帮小马带路：喂零食要找小马"`，两张文字表加 `dlg.fauna.jeju_dragonfly.fed`（英文照 `dlg.fauna.diyu_butterfly.fed` 的句式，例如 "I only show the pony's way: feed the pony."）。
 5. 房名、提示文字放进 `content/i18n-rooms2/zh-Hans.json` 和 `en.json`（键 `room2.<id>.name`、`room2.<id>.hint.<n>`，照 diyu），然后 `python3 tools/build-font.py --ext rooms2` 补字形。
 6. 全部通过以后：
    - 把 `slices.json` 里的 `jeju_1` 从顶层 `planned` 移进 `entries`（放在 `diyu_1` 后面），删掉它的 `todo` 字段；`planned` 空了就整个删掉；
@@ -73,6 +73,7 @@ git checkout -b dlv/DLV-04 origin/claude/inspiring-ride-zfnn4s
 - 新建：`content/rooms/jeju/*.json`
 - `content/i18n-rooms2/en.json`、`zh-Hans.json`（只加 jeju 的键）
 - `content/catalog/slices.json`（只动 `jeju_1`、`planned` 和 `delivery_pool`）
+- `content/catalog/worlds.json`（只给 `jeju_dragonfly` 加 `fed`，见第 4 条）
 - `docs/design/delivery-jeju.md`（状态、第 4 节"和设计不同的地方"）、`docs/design/delivery-puzzle-rules.md`（只改第 6 节地图表和统计）
 - 生成文件：`content/rooms2-check.generated.json`、`workbench/js/core/font-rooms2.js`、`content/export/*`。用工具重新生成后提交，不手改
 

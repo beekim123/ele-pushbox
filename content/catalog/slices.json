@@ -445,5 +445,165 @@
     "rerolls": 1
    }
   }
+ ],
+ "planned": [
+  {
+   "id": "jeju_1",
+   "format": 2,
+   "name": "配送地图 · 济州海女村",
+   "mode": "delivery",
+   "status": "design",
+   "doc": "docs/design/delivery-jeju.md",
+   "world": "jeju",
+   "top_edge": "sky",
+   "cargo": [
+    "tangerine",
+    "buckwheat_jelly",
+    "letter",
+    "kite"
+   ],
+   "cargo_only": {
+    "tangerine": [
+     "haenyeo",
+     "lighthouse_keeper",
+     "goblin_chief"
+    ]
+   },
+   "recipients": [
+    "haenyeo",
+    "tangerine_farmer",
+    "lighthouse_keeper",
+    "goblin_chief"
+   ],
+   "monsters": [
+    "dokkaebi",
+    "seagull"
+   ],
+   "rooms2": [
+    "jeju_baramgil",
+    "jeju_canola",
+    "jeju_dodaebul",
+    "jeju_doldam",
+    "jeju_gate",
+    "jeju_haenyeo_house",
+    "jeju_home_cave",
+    "jeju_home_orchard",
+    "jeju_home_shore",
+    "jeju_neolttwigi",
+    "jeju_olle",
+    "jeju_pier",
+    "jeju_terrace"
+   ],
+   "mechanisms": [
+    "push",
+    "ladder",
+    "dig",
+    "pour",
+    "plate_door",
+    "fall",
+    "float_sink",
+    "seesaw",
+    "gust",
+    "hint_animal",
+    "push_monster",
+    "crush_monster",
+    "trap_monster"
+   ],
+   "layout": {
+    "cols": 16,
+    "rows": 2,
+    "direction": "right",
+    "sequence": [
+     {
+      "role": "gate"
+     },
+     {
+      "role": "teach"
+     },
+     {
+      "role": "teach"
+     },
+     {
+      "role": "breather",
+      "chance": 50
+     },
+     {
+      "role": "develop"
+     },
+     {
+      "role": "station"
+     },
+     {
+      "role": "twist"
+     },
+     {
+      "role": "develop",
+      "chance": 60
+     },
+     {
+      "role": "breather",
+      "chance": 40
+     },
+     {
+      "role": "home"
+     }
+    ]
+   },
+   "station": {
+    "items": [
+     "sandbag",
+     "first_aid",
+     "umbrella",
+     "snack"
+    ],
+    "stock": {
+     "sandbag": 5,
+     "first_aid": 1,
+     "umbrella": 1,
+     "snack": 3
+    },
+    "heal": 1
+   },
+   "time": {
+    "tick_hz": 60,
+    "transition_secs": 0.3
+   },
+   "intervals": {
+    "walk": 0.22,
+    "climb": 0.22,
+    "push": 0.3,
+    "dig": 0.35,
+    "pour": 0.35,
+    "interact": 0.4,
+    "move_anim": 0.1
+   },
+   "gravity": {
+    "tiles_per_sec": 12
+   },
+   "player": {
+    "hearts": 3,
+    "iframe_secs": 1.5,
+    "fall_hurt_rows": 3,
+    "sand_max": 9,
+    "item_slots": 3
+   },
+   "monster_fall_ko_rows": 3,
+   "cargo_integrity": 3,
+   "coins": {
+    "pickup": 5
+   },
+   "tip": {
+    "time_fast": 1.5,
+    "time_floor": 0.5,
+    "like": 1.5
+   },
+   "rating": {
+    "S": 1.4,
+    "A": 1,
+    "B": 0.6
+   },
+   "fail_keep": 0.5,
+   "todo": "房间还没做（DLV-04）：13 间房全部通过 check-rooms2 以后，把这一项移进 entries（删掉 todo），并在 delivery_pool 的 pool.maps 加 {\"slice\": \"jeju_1\", \"weight\": 1}"
+  }
  ]
 }

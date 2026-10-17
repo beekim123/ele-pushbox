@@ -634,23 +634,45 @@
    "id": "dokkaebi",
    "name": "小鬼怪",
    "world": "jeju",
-   "behavior": "拦路和你摔跤（把你推回去），还会用魔法棒敲出一个箱子挡路",
-   "counter": "把它推出两格就算你赢；送它荞麦凉粉",
+   "behavior": "在过道里来回走，碰到你就要摔跤（씨름），把你推回一格；你带着荞麦凉粉时，它闻着味跟过来",
+   "counter": "从侧面把它推出两格就算你赢，它认输坐下，让开路、留下金币；也能用箱子压、挖坑困住",
    "pushable": true,
    "mode": "delivery",
    "layer": 2,
-   "status": "concept"
+   "status": "concept",
+   "params": {
+    "move": "patrol",
+    "step_secs": 0.6,
+    "cliff_rows": 2,
+    "contact": "wrestle",
+    "shove_tiles": 1,
+    "wrestle_win_tiles": 2,
+    "smell_tiles": 5,
+    "push_stun_secs": 0.5,
+    "trap_secs": 4,
+    "coins": 10
+   }
   },
   {
    "id": "seagull",
    "name": "海鸥",
    "world": "jeju",
-   "behavior": "从天上俯冲，叼走小件",
-   "counter": "打伞",
+   "behavior": "在过道上空盘旋，看见你就俯冲下来，叼走一块零食或 5 个金币",
+   "counter": "推不动。躲到石墙檐下等头顶有遮挡的格子（它俯冲不进来），或者打伞",
    "pushable": false,
    "mode": "delivery",
    "layer": 2,
-   "status": "concept"
+   "status": "concept",
+   "params": {
+    "move": "swoop",
+    "step_secs": 0.4,
+    "sight_tiles": 6,
+    "contact": "steal",
+    "steal_snack": 1,
+    "steal_coins": 5,
+    "flee_secs": 3,
+    "coins": 0
+   }
   },
   {
    "id": "peacock",
