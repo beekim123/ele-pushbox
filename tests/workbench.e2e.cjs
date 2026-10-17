@@ -278,7 +278,8 @@ let runningBrowser = null;
       return { name: a.name, status: a.status, version: a.version };
     }, id);
     const choice = page.locator(`input[aria-label="通过 ${a.name}"]`);
-    check(a.status === "review" && a.version === (id === "lobby_generic" ? 1 : 3) && await choice.isVisible() && await choice.isEnabled(), `UI-10c: ${id}@v${a.version} is available for user confirmation`);
+    // APR-0007 (2026-10-17): the user approved these; once approved the row stays listed but its checkbox is disabled.
+    check(a.version === (id === "lobby_generic" ? 1 : 3) && await choice.isVisible() && (a.status === "approved" || (a.status === "review" && await choice.isEnabled())), `UI-10c: ${id}@v${a.version} is listed on the review page (${a.status})`);
   }
   for (const id of ["settlement", "settlement_fail", "lobby_generic"]) for (const locale of ["zh-Hans", "en"]) {
     const got = await page.evaluate(({ id, locale }) => {

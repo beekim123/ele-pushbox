@@ -7918,19 +7918,19 @@
    "current": {
     "version": 6,
     "hash": "444fab65592fd9d0f846dd891ae2e2f6b63b727d556b852221bb69260799557c",
-    "status": "review",
+    "status": "approved",
     "preview": "art/export/preview/ui.screen.chapters.png",
     "preview_sha256": "6b875c2cc97a51806e4d6fbf523906df5b298eb7998dc129c2910793e7fb8425"
    },
    "approved": {
-    "version": 4,
-    "hash": "616c8a1a09bf2ad32f24c8cf1e70d8059bdb14d9c394ebbe86eb4703feaeb781",
-    "png": "art/export/approved/ui.screen.chapters@v4.png",
-    "png_sha256": "fc3569ec75857ca8d8851f4680b17eb500bd5cc7e3a03a7af693cc90a1d4a3f6",
-    "approval": "APR-0005",
-    "date": "2026-10-15T10:55:30.036Z"
+    "version": 6,
+    "hash": "444fab65592fd9d0f846dd891ae2e2f6b63b727d556b852221bb69260799557c",
+    "png": "art/export/approved/ui.screen.chapters@v6.png",
+    "png_sha256": "6b875c2cc97a51806e4d6fbf523906df5b298eb7998dc129c2910793e7fb8425",
+    "approval": "APR-0007",
+    "date": "2026-10-17T09:12:53.776Z"
    },
-   "current_is_approved": false,
+   "current_is_approved": true,
    "renderer": [
     "workbench/js/core/ui.js",
     "workbench/js/core/scene.js",
@@ -8011,19 +8011,19 @@
    "current": {
     "version": 6,
     "hash": "a7e9e0b4971d3c55228bf7dd7ee0db5cbb8a450dbdedca7aaccaf8723d0c3eb8",
-    "status": "review",
+    "status": "approved",
     "preview": "art/export/preview/ui.screen.complete.png",
     "preview_sha256": "2769a55908ba7fae07e7aad42378288448ab411a57a16c5022052f1c7c1dddcf"
    },
    "approved": {
-    "version": 4,
-    "hash": "fbb067b0492c0dd3cc479c65713e8cc6dabf0f93f55e2d6a628bfb458c14d9bf",
-    "png": "art/export/approved/ui.screen.complete@v4.png",
-    "png_sha256": "f36e91ecb4b76df9e973798a2fdd3aa9d355d1b8466a6bba4f226f4c1e6e6e31",
-    "approval": "APR-0005",
-    "date": "2026-10-15T10:55:30.036Z"
+    "version": 6,
+    "hash": "a7e9e0b4971d3c55228bf7dd7ee0db5cbb8a450dbdedca7aaccaf8723d0c3eb8",
+    "png": "art/export/approved/ui.screen.complete@v6.png",
+    "png_sha256": "2769a55908ba7fae07e7aad42378288448ab411a57a16c5022052f1c7c1dddcf",
+    "approval": "APR-0007",
+    "date": "2026-10-17T09:12:53.776Z"
    },
-   "current_is_approved": false,
+   "current_is_approved": true,
    "renderer": [
     "workbench/js/core/ui.js",
     "workbench/js/core/scene.js",
@@ -8068,12 +8068,19 @@
    "current": {
     "version": 2,
     "hash": "312087ae242d0c79e5615c009eac05c161e1a69376cf221167efd1aff9f7f8c4",
-    "status": "review",
+    "status": "approved",
     "preview": "art/export/preview/ui.screen.confirm.png",
     "preview_sha256": "457e1a45840fe53ebc6abfc28e2c23de687d3cf86cc037e6b18deb9ec63f9d8e"
    },
-   "approved": null,
-   "current_is_approved": false,
+   "approved": {
+    "version": 2,
+    "hash": "312087ae242d0c79e5615c009eac05c161e1a69376cf221167efd1aff9f7f8c4",
+    "png": "art/export/approved/ui.screen.confirm@v2.png",
+    "png_sha256": "457e1a45840fe53ebc6abfc28e2c23de687d3cf86cc037e6b18deb9ec63f9d8e",
+    "approval": "APR-0007",
+    "date": "2026-10-17T09:12:53.776Z"
+   },
+   "current_is_approved": true,
    "renderer": [
     "workbench/js/core/ui.js",
     "workbench/js/core/scene.js",
@@ -8417,19 +8424,19 @@
    "current": {
     "version": 3,
     "hash": "63b46cc9eb2dec0811388d60f6b500e23c4952550c32ea939d7ab30ea74782b5",
-    "status": "review",
+    "status": "approved",
     "preview": "art/export/preview/ui.screen.delivery_hud.png",
     "preview_sha256": "7576fe1591a8aaf3189791cccfc1ba0a84925ed35bf21979b391d10f89af65c5"
    },
    "approved": {
-    "version": 1,
-    "hash": "23c03f3921674452382a4ef6731bf5aacf26cca8e8a8f55c753d2a06289c361b",
-    "png": "art/export/approved/ui.screen.delivery_hud@v1.png",
-    "png_sha256": "2da6481b4516ccea14010f5cea87d5e24c1b2dcc4b277bb3870d17393dafbf2a",
-    "approval": "APR-0006",
-    "date": "2026-10-16T03:45:02.583Z"
+    "version": 3,
+    "hash": "63b46cc9eb2dec0811388d60f6b500e23c4952550c32ea939d7ab30ea74782b5",
+    "png": "art/export/approved/ui.screen.delivery_hud@v3.png",
+    "png_sha256": "7576fe1591a8aaf3189791cccfc1ba0a84925ed35bf21979b391d10f89af65c5",
+    "approval": "APR-0007",
+    "date": "2026-10-17T09:12:53.776Z"
    },
-   "current_is_approved": false,
+   "current_is_approved": true,
    "renderer": [
     "workbench/js/core/ui-delivery.js",
     "workbench/js/core/ui.js",
@@ -8769,19 +8776,19 @@
    "current": {
     "version": 3,
     "hash": "59aea63939340159d14dd494c6995fc36260e066048af95a03502e3df11d74ad",
-    "status": "review",
+    "status": "approved",
     "preview": "art/export/preview/ui.screen.delivery_pause.png",
     "preview_sha256": "ea1278b66c3462b41e59b43f8baaed305fb1e63f5c24c2782911d418f4804c32"
    },
    "approved": {
-    "version": 1,
-    "hash": "6f1e53c3dac19938cd506249fa827483ea8e31778fe6f1a6574ad4427b6099f1",
-    "png": "art/export/approved/ui.screen.delivery_pause@v1.png",
-    "png_sha256": "73e5d4dfa94a5c104b58edfe24319dbbf74cc6ab6f653ea8f91644fa97a16835",
-    "approval": "APR-0006",
-    "date": "2026-10-16T03:45:02.583Z"
+    "version": 3,
+    "hash": "59aea63939340159d14dd494c6995fc36260e066048af95a03502e3df11d74ad",
+    "png": "art/export/approved/ui.screen.delivery_pause@v3.png",
+    "png_sha256": "ea1278b66c3462b41e59b43f8baaed305fb1e63f5c24c2782911d418f4804c32",
+    "approval": "APR-0007",
+    "date": "2026-10-17T09:12:53.776Z"
    },
-   "current_is_approved": false,
+   "current_is_approved": true,
    "renderer": [
     "workbench/js/core/ui.js",
     "workbench/js/core/scene.js",
@@ -9128,19 +9135,19 @@
    "current": {
     "version": 3,
     "hash": "b2d0012a3f36c3efcb1a97f1c71af571ef4f92a8632a39cf661fdf7635b77bfc",
-    "status": "review",
+    "status": "approved",
     "preview": "art/export/preview/ui.screen.dialogue.png",
     "preview_sha256": "690091a40e6333e1811429d5528c3fa67eb39ba5425084331a45154b9cd7b9d6"
    },
    "approved": {
-    "version": 1,
-    "hash": "ea330683e10b2adfdef4f733182869535eea2cb27b750adf982b3410e8de85e5",
-    "png": "art/export/approved/ui.screen.dialogue@v1.png",
-    "png_sha256": "2da5cbf5dd3e6251790133aa70959b5825fdbd34a28b36dc5cd36e727b3322d2",
-    "approval": "APR-0005",
-    "date": "2026-10-15T10:55:30.036Z"
+    "version": 3,
+    "hash": "b2d0012a3f36c3efcb1a97f1c71af571ef4f92a8632a39cf661fdf7635b77bfc",
+    "png": "art/export/approved/ui.screen.dialogue@v3.png",
+    "png_sha256": "690091a40e6333e1811429d5528c3fa67eb39ba5425084331a45154b9cd7b9d6",
+    "approval": "APR-0007",
+    "date": "2026-10-17T09:12:53.776Z"
    },
-   "current_is_approved": false,
+   "current_is_approved": true,
    "renderer": [
     "workbench/js/core/ui.js",
     "workbench/js/core/scene.js",
@@ -9190,19 +9197,19 @@
    "current": {
     "version": 6,
     "hash": "fe54342c105c701351792f67ec4f51ef5a0f292fc749376d0779021b9643f019",
-    "status": "review",
+    "status": "approved",
     "preview": "art/export/preview/ui.screen.hint.png",
     "preview_sha256": "2d553588e23fd0783e793bcd99a63c9e0d80a9b4da7adb3fb47bc27e7c9ebb13"
    },
    "approved": {
-    "version": 4,
-    "hash": "89aa4fe24b01333d1c56f8e7144b9db5c38ef0777cc35a615c4e41b064b470d9",
-    "png": "art/export/approved/ui.screen.hint@v4.png",
-    "png_sha256": "1025ad73199499b956d99392f4f95366707134fb78172b3caee881b7ede5dec3",
-    "approval": "APR-0005",
-    "date": "2026-10-15T10:55:30.036Z"
+    "version": 6,
+    "hash": "fe54342c105c701351792f67ec4f51ef5a0f292fc749376d0779021b9643f019",
+    "png": "art/export/approved/ui.screen.hint@v6.png",
+    "png_sha256": "2d553588e23fd0783e793bcd99a63c9e0d80a9b4da7adb3fb47bc27e7c9ebb13",
+    "approval": "APR-0007",
+    "date": "2026-10-17T09:12:53.776Z"
    },
-   "current_is_approved": false,
+   "current_is_approved": true,
    "renderer": [
     "workbench/js/core/ui.js",
     "workbench/js/core/scene.js",
@@ -9251,12 +9258,19 @@
    "current": {
     "version": 1,
     "hash": "712ab03b13b0f32879b784ba16d1b62ca58a97f9b0b33594ed157bb9c3efe074",
-    "status": "review",
+    "status": "approved",
     "preview": "art/export/preview/ui.screen.hint_animal.png",
     "preview_sha256": "a1604411948c3f29143768baed8c516f2e5dc251f43eb50ec6fa0bfec9d34072"
    },
-   "approved": null,
-   "current_is_approved": false,
+   "approved": {
+    "version": 1,
+    "hash": "712ab03b13b0f32879b784ba16d1b62ca58a97f9b0b33594ed157bb9c3efe074",
+    "png": "art/export/approved/ui.screen.hint_animal@v1.png",
+    "png_sha256": "a1604411948c3f29143768baed8c516f2e5dc251f43eb50ec6fa0bfec9d34072",
+    "approval": "APR-0007",
+    "date": "2026-10-17T09:12:53.776Z"
+   },
+   "current_is_approved": true,
    "renderer": [
     "workbench/js/core/ui-delivery.js",
     "workbench/js/core/ui.js",
@@ -9554,19 +9568,19 @@
    "current": {
     "version": 6,
     "hash": "20c8fee27de3b5b0af0a60819c5d946e4f7fa4f45ed0b63e18bc6f041bf3bd34",
-    "status": "review",
+    "status": "approved",
     "preview": "art/export/preview/ui.screen.levels.png",
     "preview_sha256": "1a2f825f30850ad5805d11b88cfd2911230ac888b55cbcdba0d7bd751c65a446"
    },
    "approved": {
-    "version": 4,
-    "hash": "3ce7d34a0b822daa3fb5d01c243a606e06de7c4ae367565e2c06dec2c5ca4b24",
-    "png": "art/export/approved/ui.screen.levels@v4.png",
-    "png_sha256": "a68b73f6186398c469cf18415a71b2b50ac10d14edc9c4c05be2e03982528d63",
-    "approval": "APR-0005",
-    "date": "2026-10-15T10:55:30.036Z"
+    "version": 6,
+    "hash": "20c8fee27de3b5b0af0a60819c5d946e4f7fa4f45ed0b63e18bc6f041bf3bd34",
+    "png": "art/export/approved/ui.screen.levels@v6.png",
+    "png_sha256": "1a2f825f30850ad5805d11b88cfd2911230ac888b55cbcdba0d7bd751c65a446",
+    "approval": "APR-0007",
+    "date": "2026-10-17T09:12:53.776Z"
    },
-   "current_is_approved": false,
+   "current_is_approved": true,
    "renderer": [
     "workbench/js/core/ui.js",
     "workbench/js/core/scene.js",
@@ -9715,12 +9729,19 @@
    "current": {
     "version": 1,
     "hash": "2edd46733942372b145565ca581d30a3abaeeac5b107a02f76287e84a98482be",
-    "status": "review",
+    "status": "approved",
     "preview": "art/export/preview/ui.screen.lobby_generic.png",
     "preview_sha256": "69d7d9b81d9c2bb513dd11c58ffd5aa3d405de906ee3cf02f3878d6b3c57d77e"
    },
-   "approved": null,
-   "current_is_approved": false,
+   "approved": {
+    "version": 1,
+    "hash": "2edd46733942372b145565ca581d30a3abaeeac5b107a02f76287e84a98482be",
+    "png": "art/export/approved/ui.screen.lobby_generic@v1.png",
+    "png_sha256": "69d7d9b81d9c2bb513dd11c58ffd5aa3d405de906ee3cf02f3878d6b3c57d77e",
+    "approval": "APR-0007",
+    "date": "2026-10-17T09:12:53.776Z"
+   },
+   "current_is_approved": true,
    "renderer": [
     "workbench/js/core/ui.js",
     "workbench/js/core/scene.js",
@@ -9780,12 +9801,19 @@
    "current": {
     "version": 1,
     "hash": "773612a72d128b4742e2043d1bdf733f1af8854ea21d292f09c2f58ec60e29e0",
-    "status": "review",
+    "status": "approved",
     "preview": "art/export/preview/ui.screen.observe.png",
     "preview_sha256": "067f8da23a8c40a8b7501197935816b349db84ba7e25fa29c8290142fef9099e"
    },
-   "approved": null,
-   "current_is_approved": false,
+   "approved": {
+    "version": 1,
+    "hash": "773612a72d128b4742e2043d1bdf733f1af8854ea21d292f09c2f58ec60e29e0",
+    "png": "art/export/approved/ui.screen.observe@v1.png",
+    "png_sha256": "067f8da23a8c40a8b7501197935816b349db84ba7e25fa29c8290142fef9099e",
+    "approval": "APR-0007",
+    "date": "2026-10-17T09:12:53.776Z"
+   },
+   "current_is_approved": true,
    "renderer": [
     "workbench/js/core/ui-delivery.js",
     "workbench/js/core/ui.js",
@@ -10125,19 +10153,19 @@
    "current": {
     "version": 6,
     "hash": "1548d52f6bd91b5cc8e8c76ec070f9282078094e583f64cf75312a989f82cc74",
-    "status": "review",
+    "status": "approved",
     "preview": "art/export/preview/ui.screen.pause.png",
     "preview_sha256": "fbfb4413035688d0fa30c9cf6756566b9460ceaadfd72173a66a7abff3447665"
    },
    "approved": {
-    "version": 4,
-    "hash": "8423060d12710e97b5e078ff4fd400b2a2b747c12af96e7ae95c1cf480e47ad3",
-    "png": "art/export/approved/ui.screen.pause@v4.png",
-    "png_sha256": "32fcbca857c11ffeeaaea1a248b3ae7d48b55019fd86114a8f3af41e760a12cf",
-    "approval": "APR-0005",
-    "date": "2026-10-15T10:55:30.036Z"
+    "version": 6,
+    "hash": "1548d52f6bd91b5cc8e8c76ec070f9282078094e583f64cf75312a989f82cc74",
+    "png": "art/export/approved/ui.screen.pause@v6.png",
+    "png_sha256": "fbfb4413035688d0fa30c9cf6756566b9460ceaadfd72173a66a7abff3447665",
+    "approval": "APR-0007",
+    "date": "2026-10-17T09:12:53.776Z"
    },
-   "current_is_approved": false,
+   "current_is_approved": true,
    "renderer": [
     "workbench/js/core/ui.js",
     "workbench/js/core/scene.js",
@@ -10190,19 +10218,19 @@
    "current": {
     "version": 3,
     "hash": "1febeb784a0483c562ae56c2e8fc28e35be9c994d112ac0ee911d1994ec9e0c4",
-    "status": "review",
+    "status": "approved",
     "preview": "art/export/preview/ui.screen.reels.png",
     "preview_sha256": "7f7b48b691988e0f156aa1b507615c5b8281d434115c0c4b7bd264bf66957124"
    },
    "approved": {
-    "version": 1,
-    "hash": "138cda5479dee0fd74e3ae7909f908ad3cacb0c2852f2592418e12d337190146",
-    "png": "art/export/approved/ui.screen.reels@v1.png",
-    "png_sha256": "00804379afa9a8688b32f3af8913239d00ce5f8e2bf5a88ac057feec67648418",
-    "approval": "APR-0006",
-    "date": "2026-10-16T03:45:02.583Z"
+    "version": 3,
+    "hash": "1febeb784a0483c562ae56c2e8fc28e35be9c994d112ac0ee911d1994ec9e0c4",
+    "png": "art/export/approved/ui.screen.reels@v3.png",
+    "png_sha256": "7f7b48b691988e0f156aa1b507615c5b8281d434115c0c4b7bd264bf66957124",
+    "approval": "APR-0007",
+    "date": "2026-10-17T09:12:53.776Z"
    },
-   "current_is_approved": false,
+   "current_is_approved": true,
    "renderer": [
     "workbench/js/core/ui-delivery.js",
     "workbench/js/core/ui.js",
@@ -10873,19 +10901,19 @@
    "current": {
     "version": 6,
     "hash": "0f4ae758b37423615c8c7eb48e0d98c51ce98f9ed70768c828ded394102e4d24",
-    "status": "review",
+    "status": "approved",
     "preview": "art/export/preview/ui.screen.rulecard.png",
     "preview_sha256": "c35555a5016ec66310ebc95196804b550bdc122da6aa9163c354a11745d0ba03"
    },
    "approved": {
-    "version": 4,
-    "hash": "e14dc3f027abd88493efd7491799dce58263e3bb9fcf26911dedf8f08c1e59f5",
-    "png": "art/export/approved/ui.screen.rulecard@v4.png",
-    "png_sha256": "4ca35c9e81bca9825738f2eb591c159202eb156841a5cfea7b1573a249436be3",
-    "approval": "APR-0005",
-    "date": "2026-10-15T10:55:30.036Z"
+    "version": 6,
+    "hash": "0f4ae758b37423615c8c7eb48e0d98c51ce98f9ed70768c828ded394102e4d24",
+    "png": "art/export/approved/ui.screen.rulecard@v6.png",
+    "png_sha256": "c35555a5016ec66310ebc95196804b550bdc122da6aa9163c354a11745d0ba03",
+    "approval": "APR-0007",
+    "date": "2026-10-17T09:12:53.776Z"
    },
-   "current_is_approved": false,
+   "current_is_approved": true,
    "renderer": [
     "workbench/js/core/ui.js",
     "workbench/js/core/scene.js",
@@ -10929,19 +10957,19 @@
    "current": {
     "version": 6,
     "hash": "cde3e49fc687ee33c811a219e066c8b7829f5c4c79eac022b449f040f1ba4f56",
-    "status": "review",
+    "status": "approved",
     "preview": "art/export/preview/ui.screen.settings.png",
     "preview_sha256": "974169854f9f9dbbeefd4230632fd2851d6c015391269f79be345ffb9407636d"
    },
    "approved": {
-    "version": 4,
-    "hash": "4c6df2e53a82b5b26efcfea702f0332847c7cb07b829d2352b04c3e21fa3df1a",
-    "png": "art/export/approved/ui.screen.settings@v4.png",
-    "png_sha256": "a6dd69fa825db739e3b58a41a56d296a4f5eed531b400f0b6dfecc308c688f29",
-    "approval": "APR-0005",
-    "date": "2026-10-15T10:55:30.036Z"
+    "version": 6,
+    "hash": "cde3e49fc687ee33c811a219e066c8b7829f5c4c79eac022b449f040f1ba4f56",
+    "png": "art/export/approved/ui.screen.settings@v6.png",
+    "png_sha256": "974169854f9f9dbbeefd4230632fd2851d6c015391269f79be345ffb9407636d",
+    "approval": "APR-0007",
+    "date": "2026-10-17T09:12:53.776Z"
    },
-   "current_is_approved": false,
+   "current_is_approved": true,
    "renderer": [
     "workbench/js/core/ui.js",
     "workbench/js/core/scene.js",
@@ -11031,19 +11059,19 @@
    "current": {
     "version": 3,
     "hash": "eb200c1c77c54dbb7e345ed3a2cb1474a74b03b8e230879cd0cee84edfc46bbf",
-    "status": "review",
+    "status": "approved",
     "preview": "art/export/preview/ui.screen.settlement.png",
     "preview_sha256": "cdd6031b0fbb86520b0f6006f8e62994d49c89c5c50939192b07637051886fc4"
    },
    "approved": {
-    "version": 1,
-    "hash": "5e949d677dd27100d1860b728932206d1e9053f2ff1e8b5d28f71ca5b44ed929",
-    "png": "art/export/approved/ui.screen.settlement@v1.png",
-    "png_sha256": "b114d60aff616f4aba48462e19d97e6808bdfe9364e59e69ad53e78f9c58a9c3",
-    "approval": "APR-0006",
-    "date": "2026-10-16T03:45:02.583Z"
+    "version": 3,
+    "hash": "eb200c1c77c54dbb7e345ed3a2cb1474a74b03b8e230879cd0cee84edfc46bbf",
+    "png": "art/export/approved/ui.screen.settlement@v3.png",
+    "png_sha256": "cdd6031b0fbb86520b0f6006f8e62994d49c89c5c50939192b07637051886fc4",
+    "approval": "APR-0007",
+    "date": "2026-10-17T09:12:53.776Z"
    },
-   "current_is_approved": false,
+   "current_is_approved": true,
    "renderer": [
     "workbench/js/core/ui-delivery.js",
     "workbench/js/core/ui.js",
@@ -11141,19 +11169,19 @@
    "current": {
     "version": 3,
     "hash": "5d50d41bc6d54c7c48b227ff84488e43922eeeff0f2dcfda60a8fb8680f4e0f2",
-    "status": "review",
+    "status": "approved",
     "preview": "art/export/preview/ui.screen.settlement_fail.png",
     "preview_sha256": "f695725d0055ffc3af54303bac889e6d9cffe4c1ee7d4bb24270ff8302df0ebe"
    },
    "approved": {
-    "version": 1,
-    "hash": "e46ea2a5a1354fc34a6227afad82fc4785c81de39900d891fb46fca7106cfee5",
-    "png": "art/export/approved/ui.screen.settlement_fail@v1.png",
-    "png_sha256": "eeb785399ebcef22a61140ed10e60772b7a9b70e30b9920617a8f63a9078084d",
-    "approval": "APR-0006",
-    "date": "2026-10-16T03:45:02.583Z"
+    "version": 3,
+    "hash": "5d50d41bc6d54c7c48b227ff84488e43922eeeff0f2dcfda60a8fb8680f4e0f2",
+    "png": "art/export/approved/ui.screen.settlement_fail@v3.png",
+    "png_sha256": "f695725d0055ffc3af54303bac889e6d9cffe4c1ee7d4bb24270ff8302df0ebe",
+    "approval": "APR-0007",
+    "date": "2026-10-17T09:12:53.776Z"
    },
-   "current_is_approved": false,
+   "current_is_approved": true,
    "renderer": [
     "workbench/js/core/ui-delivery.js",
     "workbench/js/core/ui.js",
@@ -11243,19 +11271,19 @@
    "current": {
     "version": 3,
     "hash": "6cfbd485aa578250578060970c27852eac432d147dc877f5fa0e9d64f0867733",
-    "status": "review",
+    "status": "approved",
     "preview": "art/export/preview/ui.screen.shop.png",
     "preview_sha256": "9491a33ec95bd23f1b72e9970c5d897ea8e29306772a43ec392d5bca67880e36"
    },
    "approved": {
-    "version": 1,
-    "hash": "267d16250937ed3619c685b049c770d516487ec82e69364d75c7a3a4bf98c85a",
-    "png": "art/export/approved/ui.screen.shop@v1.png",
-    "png_sha256": "3a877284256a00ba2293e19af9ed628d069cb4151cd61d99041450da9618de7b",
-    "approval": "APR-0006",
-    "date": "2026-10-16T03:45:02.583Z"
+    "version": 3,
+    "hash": "6cfbd485aa578250578060970c27852eac432d147dc877f5fa0e9d64f0867733",
+    "png": "art/export/approved/ui.screen.shop@v3.png",
+    "png_sha256": "9491a33ec95bd23f1b72e9970c5d897ea8e29306772a43ec392d5bca67880e36",
+    "approval": "APR-0007",
+    "date": "2026-10-17T09:12:53.776Z"
    },
-   "current_is_approved": false,
+   "current_is_approved": true,
    "renderer": [
     "workbench/js/core/ui-delivery.js",
     "workbench/js/core/ui.js",
@@ -13391,10 +13419,8 @@
     "ui.panel",
     "ui.theme_emblem"
    ],
-   "all_approved": false,
-   "unapproved": [
-    "ui.screen.chapters"
-   ]
+   "all_approved": true,
+   "unapproved": []
   },
   {
    "name": "chapters.en",
@@ -13417,10 +13443,8 @@
     "ui.panel",
     "ui.theme_emblem"
    ],
-   "all_approved": false,
-   "unapproved": [
-    "ui.screen.chapters"
-   ]
+   "all_approved": true,
+   "unapproved": []
   },
   {
    "name": "complete.zh-Hans",
@@ -13439,10 +13463,8 @@
     "ui.menu_icons",
     "ui.panel"
    ],
-   "all_approved": false,
-   "unapproved": [
-    "ui.screen.complete"
-   ]
+   "all_approved": true,
+   "unapproved": []
   },
   {
    "name": "complete.en",
@@ -13461,10 +13483,8 @@
     "ui.menu_icons",
     "ui.panel"
    ],
-   "all_approved": false,
-   "unapproved": [
-    "ui.screen.complete"
-   ]
+   "all_approved": true,
+   "unapproved": []
   },
   {
    "name": "confirm.zh-Hans",
@@ -13498,7 +13518,6 @@
    ],
    "all_approved": false,
    "unapproved": [
-    "ui.screen.confirm",
     "fauna.diyu_butterfly",
     "fauna.diyu_dog",
     "fauna.dungeon_cat",
@@ -13542,7 +13561,6 @@
    ],
    "all_approved": false,
    "unapproved": [
-    "ui.screen.confirm",
     "fauna.diyu_butterfly",
     "fauna.diyu_dog",
     "fauna.dungeon_cat",
@@ -13585,7 +13603,6 @@
    ],
    "all_approved": false,
    "unapproved": [
-    "ui.screen.delivery_hud",
     "fauna.diyu_butterfly",
     "fauna.diyu_dog",
     "fauna.dungeon_cat",
@@ -13628,7 +13645,6 @@
    ],
    "all_approved": false,
    "unapproved": [
-    "ui.screen.delivery_hud",
     "fauna.diyu_butterfly",
     "fauna.diyu_dog",
     "fauna.dungeon_cat",
@@ -13672,7 +13688,6 @@
    ],
    "all_approved": false,
    "unapproved": [
-    "ui.screen.delivery_pause",
     "fauna.diyu_butterfly",
     "fauna.diyu_dog",
     "fauna.dungeon_cat",
@@ -13716,7 +13731,6 @@
    ],
    "all_approved": false,
    "unapproved": [
-    "ui.screen.delivery_pause",
     "fauna.diyu_butterfly",
     "fauna.diyu_dog",
     "fauna.dungeon_cat",
@@ -13748,10 +13762,8 @@
     "ui.menu_icons",
     "ui.panel"
    ],
-   "all_approved": false,
-   "unapproved": [
-    "ui.screen.dialogue"
-   ]
+   "all_approved": true,
+   "unapproved": []
   },
   {
    "name": "dialogue.en",
@@ -13773,10 +13785,8 @@
     "ui.menu_icons",
     "ui.panel"
    ],
-   "all_approved": false,
-   "unapproved": [
-    "ui.screen.dialogue"
-   ]
+   "all_approved": true,
+   "unapproved": []
   },
   {
    "name": "hint_animal.zh-Hans",
@@ -13809,7 +13819,6 @@
    ],
    "all_approved": false,
    "unapproved": [
-    "ui.screen.hint_animal",
     "fauna.diyu_butterfly",
     "fauna.diyu_dog",
     "fauna.dungeon_cat",
@@ -13852,7 +13861,6 @@
    ],
    "all_approved": false,
    "unapproved": [
-    "ui.screen.hint_animal",
     "fauna.diyu_butterfly",
     "fauna.diyu_dog",
     "fauna.dungeon_cat",
@@ -13882,10 +13890,8 @@
     "ui.menu_icons",
     "ui.panel"
    ],
-   "all_approved": false,
-   "unapproved": [
-    "ui.screen.hint"
-   ]
+   "all_approved": true,
+   "unapproved": []
   },
   {
    "name": "hint.en",
@@ -13905,10 +13911,8 @@
     "ui.menu_icons",
     "ui.panel"
    ],
-   "all_approved": false,
-   "unapproved": [
-    "ui.screen.hint"
-   ]
+   "all_approved": true,
+   "unapproved": []
   },
   {
    "name": "levels.zh-Hans",
@@ -13923,10 +13927,8 @@
     "ui.panel",
     "ui.theme_emblem"
    ],
-   "all_approved": false,
-   "unapproved": [
-    "ui.screen.levels"
-   ]
+   "all_approved": true,
+   "unapproved": []
   },
   {
    "name": "levels.en",
@@ -13941,10 +13943,8 @@
     "ui.panel",
     "ui.theme_emblem"
    ],
-   "all_approved": false,
-   "unapproved": [
-    "ui.screen.levels"
-   ]
+   "all_approved": true,
+   "unapproved": []
   },
   {
    "name": "lobby_generic.zh-Hans",
@@ -13964,7 +13964,6 @@
    ],
    "all_approved": false,
    "unapproved": [
-    "ui.screen.lobby_generic",
     "theme.diyu"
    ]
   },
@@ -13986,7 +13985,6 @@
    ],
    "all_approved": false,
    "unapproved": [
-    "ui.screen.lobby_generic",
     "theme.diyu"
    ]
   },
@@ -14063,7 +14061,6 @@
    ],
    "all_approved": false,
    "unapproved": [
-    "ui.screen.observe",
     "fauna.diyu_butterfly",
     "fauna.diyu_dog",
     "fauna.dungeon_cat",
@@ -14106,7 +14103,6 @@
    ],
    "all_approved": false,
    "unapproved": [
-    "ui.screen.observe",
     "fauna.diyu_butterfly",
     "fauna.diyu_dog",
     "fauna.dungeon_cat",
@@ -14134,10 +14130,8 @@
     "ui.menu_icons",
     "ui.panel"
    ],
-   "all_approved": false,
-   "unapproved": [
-    "ui.screen.pause"
-   ]
+   "all_approved": true,
+   "unapproved": []
   },
   {
    "name": "pause.en",
@@ -14155,10 +14149,8 @@
     "ui.menu_icons",
     "ui.panel"
    ],
-   "all_approved": false,
-   "unapproved": [
-    "ui.screen.pause"
-   ]
+   "all_approved": true,
+   "unapproved": []
   },
   {
    "name": "reels.zh-Hans",
@@ -14192,7 +14184,6 @@
    ],
    "all_approved": false,
    "unapproved": [
-    "ui.screen.reels",
     "fauna.diyu_butterfly",
     "fauna.diyu_dog",
     "fauna.dungeon_cat",
@@ -14236,7 +14227,6 @@
    ],
    "all_approved": false,
    "unapproved": [
-    "ui.screen.reels",
     "fauna.diyu_butterfly",
     "fauna.diyu_dog",
     "fauna.dungeon_cat",
@@ -14264,10 +14254,8 @@
     "ui.menu_icons",
     "ui.panel"
    ],
-   "all_approved": false,
-   "unapproved": [
-    "ui.screen.rulecard"
-   ]
+   "all_approved": true,
+   "unapproved": []
   },
   {
    "name": "rulecard.en",
@@ -14285,10 +14273,8 @@
     "ui.menu_icons",
     "ui.panel"
    ],
-   "all_approved": false,
-   "unapproved": [
-    "ui.screen.rulecard"
-   ]
+   "all_approved": true,
+   "unapproved": []
   },
   {
    "name": "settings.zh-Hans",
@@ -14308,10 +14294,8 @@
     "ui.menu_icons",
     "ui.panel"
    ],
-   "all_approved": false,
-   "unapproved": [
-    "ui.screen.settings"
-   ]
+   "all_approved": true,
+   "unapproved": []
   },
   {
    "name": "settings.en",
@@ -14331,10 +14315,8 @@
     "ui.menu_icons",
     "ui.panel"
    ],
-   "all_approved": false,
-   "unapproved": [
-    "ui.screen.settings"
-   ]
+   "all_approved": true,
+   "unapproved": []
   },
   {
    "name": "settlement_fail.zh-Hans",
@@ -14348,10 +14330,8 @@
     "ui.delivery_icons",
     "ui.panel"
    ],
-   "all_approved": false,
-   "unapproved": [
-    "ui.screen.settlement_fail"
-   ]
+   "all_approved": true,
+   "unapproved": []
   },
   {
    "name": "settlement_fail.en",
@@ -14365,10 +14345,8 @@
     "ui.delivery_icons",
     "ui.panel"
    ],
-   "all_approved": false,
-   "unapproved": [
-    "ui.screen.settlement_fail"
-   ]
+   "all_approved": true,
+   "unapproved": []
   },
   {
    "name": "settlement.zh-Hans",
@@ -14382,10 +14360,8 @@
     "ui.delivery_icons",
     "ui.panel"
    ],
-   "all_approved": false,
-   "unapproved": [
-    "ui.screen.settlement"
-   ]
+   "all_approved": true,
+   "unapproved": []
   },
   {
    "name": "settlement.en",
@@ -14399,10 +14375,8 @@
     "ui.delivery_icons",
     "ui.panel"
    ],
-   "all_approved": false,
-   "unapproved": [
-    "ui.screen.settlement"
-   ]
+   "all_approved": true,
+   "unapproved": []
   },
   {
    "name": "shop.zh-Hans",
@@ -14436,7 +14410,6 @@
    ],
    "all_approved": false,
    "unapproved": [
-    "ui.screen.shop",
     "fauna.diyu_butterfly",
     "fauna.diyu_dog",
     "fauna.dungeon_cat",
@@ -14480,7 +14453,6 @@
    ],
    "all_approved": false,
    "unapproved": [
-    "ui.screen.shop",
     "fauna.diyu_butterfly",
     "fauna.diyu_dog",
     "fauna.dungeon_cat",

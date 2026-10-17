@@ -1770,7 +1770,7 @@
    "category": "screen",
    "version": 6,
    "hash": "444fab65592fd9d0f846dd891ae2e2f6b63b727d556b852221bb69260799557c",
-   "approved": false
+   "approved": true
   },
   {
    "uid": "art:ui.screen.complete",
@@ -1782,7 +1782,7 @@
    "category": "screen",
    "version": 6,
    "hash": "a7e9e0b4971d3c55228bf7dd7ee0db5cbb8a450dbdedca7aaccaf8723d0c3eb8",
-   "approved": false
+   "approved": true
   },
   {
    "uid": "art:ui.screen.confirm",
@@ -1794,7 +1794,7 @@
    "category": "screen",
    "version": 2,
    "hash": "312087ae242d0c79e5615c009eac05c161e1a69376cf221167efd1aff9f7f8c4",
-   "approved": false
+   "approved": true
   },
   {
    "uid": "art:ui.screen.delivery_hud",
@@ -1806,7 +1806,7 @@
    "category": "screen",
    "version": 3,
    "hash": "63b46cc9eb2dec0811388d60f6b500e23c4952550c32ea939d7ab30ea74782b5",
-   "approved": false
+   "approved": true
   },
   {
    "uid": "art:ui.screen.delivery_pause",
@@ -1818,7 +1818,7 @@
    "category": "screen",
    "version": 3,
    "hash": "59aea63939340159d14dd494c6995fc36260e066048af95a03502e3df11d74ad",
-   "approved": false
+   "approved": true
   },
   {
    "uid": "art:ui.screen.dialogue",
@@ -1830,7 +1830,7 @@
    "category": "screen",
    "version": 3,
    "hash": "b2d0012a3f36c3efcb1a97f1c71af571ef4f92a8632a39cf661fdf7635b77bfc",
-   "approved": false
+   "approved": true
   },
   {
    "uid": "art:ui.screen.hint",
@@ -1842,7 +1842,7 @@
    "category": "screen",
    "version": 6,
    "hash": "fe54342c105c701351792f67ec4f51ef5a0f292fc749376d0779021b9643f019",
-   "approved": false
+   "approved": true
   },
   {
    "uid": "art:ui.screen.hint_animal",
@@ -1854,7 +1854,7 @@
    "category": "screen",
    "version": 1,
    "hash": "712ab03b13b0f32879b784ba16d1b62ca58a97f9b0b33594ed157bb9c3efe074",
-   "approved": false
+   "approved": true
   },
   {
    "uid": "art:ui.screen.levels",
@@ -1866,7 +1866,7 @@
    "category": "screen",
    "version": 6,
    "hash": "20c8fee27de3b5b0af0a60819c5d946e4f7fa4f45ed0b63e18bc6f041bf3bd34",
-   "approved": false
+   "approved": true
   },
   {
    "uid": "art:ui.screen.lobby",
@@ -1890,7 +1890,7 @@
    "category": "screen",
    "version": 1,
    "hash": "2edd46733942372b145565ca581d30a3abaeeac5b107a02f76287e84a98482be",
-   "approved": false
+   "approved": true
   },
   {
    "uid": "art:ui.screen.observe",
@@ -1902,7 +1902,7 @@
    "category": "screen",
    "version": 1,
    "hash": "773612a72d128b4742e2043d1bdf733f1af8854ea21d292f09c2f58ec60e29e0",
-   "approved": false
+   "approved": true
   },
   {
    "uid": "art:ui.screen.pause",
@@ -1914,7 +1914,7 @@
    "category": "screen",
    "version": 6,
    "hash": "1548d52f6bd91b5cc8e8c76ec070f9282078094e583f64cf75312a989f82cc74",
-   "approved": false
+   "approved": true
   },
   {
    "uid": "art:ui.screen.reels",
@@ -1926,7 +1926,7 @@
    "category": "screen",
    "version": 3,
    "hash": "1febeb784a0483c562ae56c2e8fc28e35be9c994d112ac0ee911d1994ec9e0c4",
-   "approved": false
+   "approved": true
   },
   {
    "uid": "art:ui.screen.rulecard",
@@ -1938,7 +1938,7 @@
    "category": "screen",
    "version": 6,
    "hash": "0f4ae758b37423615c8c7eb48e0d98c51ce98f9ed70768c828ded394102e4d24",
-   "approved": false
+   "approved": true
   },
   {
    "uid": "art:ui.screen.settings",
@@ -1950,7 +1950,7 @@
    "category": "screen",
    "version": 6,
    "hash": "cde3e49fc687ee33c811a219e066c8b7829f5c4c79eac022b449f040f1ba4f56",
-   "approved": false
+   "approved": true
   },
   {
    "uid": "art:ui.screen.settlement",
@@ -1962,7 +1962,7 @@
    "category": "screen",
    "version": 3,
    "hash": "eb200c1c77c54dbb7e345ed3a2cb1474a74b03b8e230879cd0cee84edfc46bbf",
-   "approved": false
+   "approved": true
   },
   {
    "uid": "art:ui.screen.settlement_fail",
@@ -1974,7 +1974,7 @@
    "category": "screen",
    "version": 3,
    "hash": "5d50d41bc6d54c7c48b227ff84488e43922eeeff0f2dcfda60a8fb8680f4e0f2",
-   "approved": false
+   "approved": true
   },
   {
    "uid": "art:ui.screen.shop",
@@ -1986,7 +1986,7 @@
    "category": "screen",
    "version": 3,
    "hash": "6cfbd485aa578250578060970c27852eac432d147dc877f5fa0e9d64f0867733",
-   "approved": false
+   "approved": true
   },
   {
    "uid": "art:ui.target",
