@@ -516,7 +516,9 @@ async function audioChecks(browser) {
       check(await p.locator("#view-audio").isVisible() && await p.locator(`#nav a[href='#audio/${mode}'][aria-current=page]`).count() === 1, `audio/${mode}: deep link and menu selection agree`);
     }
     await p.evaluate(() => { location.hash = "#audio/music"; }); await p.waitForTimeout(80);
-    check(await p.locator(".audio-candidates").count() === 3 && await p.locator(".audio-card[data-kind=music]").count() === 9, "music candidates appear as three sets of three");
+    const audioCat = await p.evaluate(() => PBStore.content().audio.catalog);
+    const nSets = audioCat.music_sets.length, nSongs = audioCat.music_sets.reduce((n, s) => n + s.candidates.length, 0);
+    check(await p.locator(".audio-candidates").count() === nSets && await p.locator(".audio-card[data-kind=music]").count() === nSongs, `music candidates appear set by set (${nSets} sets, ${nSongs} songs)`);
     check((await p.locator("#audio-root").textContent()).includes("0/3"), "missing-source music count is 0/3");
     await p.evaluate(() => { location.hash = "#audio/maps"; }); await p.waitForTimeout(80);
     check((await p.locator("#audio-root").textContent()).includes("地图待 DSN-01") && (await p.locator("#audio-root").textContent()).includes("实际静音"), "maps reports the pending map and unapproved default silence");

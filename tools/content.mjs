@@ -128,7 +128,10 @@ function checkAudioCatalog(doc, catalogs, specs, add) {
   for (const [i, s] of sets.entries()) {
     if (!object(s)) continue;
     const p = `${at}.music_sets[${i}]`;
-    ref("world", s.world, `${p}.world`);
+    if (s.id === "theme") {
+      exact(s.world, null, `${p}.world`);
+      exact(s.slices, [], `${p}.slices`);
+    } else ref("world", s.world, `${p}.world`);
     const slices = list(s.slices, `${p}.slices`), candidates = list(s.candidates, `${p}.candidates`);
     if (new Set(slices).size !== slices.length) fail(`${p}.slices`, "引用重复");
     for (const id of slices) { const sl = ref("slice", id, `${p}.slices`); if (sl && sl.world !== s.world) fail(`${p}.slices`, `${id}.world 为 ${sl.world}，与曲组 world ${s.world} 不一致`); }
@@ -168,6 +171,11 @@ function checkAudioCatalog(doc, catalogs, specs, add) {
   known(metrics, Object.keys(metricSpec), `${p}.metrics`); for (const [k, v] of Object.entries(metricSpec)) exact(metrics[k], v, `${p}.metrics.${k}`);
 
   const r = "audio.routes";
+  const rejectThemeRoute = (value, p) => {
+    if (value === "music:theme") fail(p, "主题曲组 music:theme 仅用于试听，不能被 routes 引用");
+    else if (value !== null && typeof value === "object") for (const [key, child] of Object.entries(value)) rejectThemeRoute(child, `${p}.${key}`);
+  };
+  rejectThemeRoute(routes, r);
   known(routes, ["delivery", "world_to_music", "chapter_to_music", "group_to_chapter", "lobby", "result", "hell"], r);
   const delivery = record(routes.delivery, `${r}.delivery`);
   known(delivery, ["slice_to_music", "otherwise"], `${r}.delivery`);

@@ -257,7 +257,8 @@ function approve(root, items, selections = []) {
 test('CLI empty build is honest, deterministic and initializes an append-only empty approval table', t => {
   const r = sandbox(t);
   const a = run(r, ['build']);
-  assert.match(a.stdout, /32.*9/);
+  const cat = read(r, 'content/catalog/audio.json');
+  assert.match(a.stdout, new RegExp(`${cat.entries.filter(e => e.kind === 'sfx').length}.*${cat.entries.filter(e => e.kind === 'music').length}`));
   const before = fs.readFileSync(path.join(r, 'audio/approvals.json'));
   run(r, ['build']);
   assert.deepEqual(fs.readFileSync(path.join(r, 'audio/approvals.json')), before);
