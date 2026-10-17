@@ -1,6 +1,6 @@
 class_name PortitorBubble
 extends Control
-## Reusable text layout using the approved bubble and tail sheets.
+## Live G2 speech/thought text with speaker anchors and typewriter support.
 var issues: Array[String] = []
 var box: Rect2
 var below: bool = false
@@ -8,93 +8,107 @@ var tail_x: float = 0
 var _lines: PackedStringArray = []
 var _revealed: float = 0
 var _total: int = 0
-var _approved_art: bool = false
+var _thought: bool = false
+var _labels: Array[Label] = []
 
-func configure(text: String, speaker: Vector2, name_text: String, placeholder_text: String) -> void:
+static func layout(value: String, minimum: int = 100, maximum: int = 224, limit: int = 6) -> Dictionary:
+	var G2: GDScript = load("res://presentation/ui/widgets/g2.gd")
+	var width: int = minimum
+	var lines: PackedStringArray = _wrap(value, G2.font(true), width - 12)
+	while lines.size() > limit and width < maximum:
+		width = mini(maximum, width + 12)
+		lines = _wrap(value, G2.font(true), width - 12)
+	return {"w": width, "h": lines.size() * 12 + 10, "lines": lines}
+
+func configure(value: String, speaker: Vector2, name_text: String, _placeholder_text: String) -> void:
+	var G2: GDScript = load("res://presentation/ui/widgets/g2.gd")
+	var shape: Dictionary = layout(value, 100, 224, 6)
+	below = speaker.y - float(shape.h) - 9 < 22
+	var at := Vector2(clampf(roundf(speaker.x - float(shape.w) / 2), 4, 316 - float(shape.w)), minf(177 - float(shape.h), speaker.y + 24) if below else maxf(22, speaker.y - float(shape.h) - 9))
+	configure_layout(value, Rect2(at, Vector2(shape.w, shape.h)), speaker.x, name_text, false, below)
+
+func configure_layout(value: String, area: Rect2, speaker_x: float, name_text: String = "", thought: bool = false, tail_above: bool = false) -> void:
+	var G2: GDScript = load("res://presentation/ui/widgets/g2.gd")
 	for child: Node in get_children():
+		remove_child(child)
 		child.queue_free()
-	var face: Font = PortitorUI.font(true)
-	var lines: PackedStringArray = _wrap(text, face, 158)
-	_lines = lines
-	_total = text.length()
+	_labels.clear()
+	issues.clear()
+	box = area
+	below = tail_above
+	_thought = thought
+	tail_x = clampf(speaker_x, box.position.x + 5, box.end.x - 6)
+	_lines = _wrap(value, G2.font(true), box.size.x - 12)
+	_total = 0
+	for line: String in _lines: _total += line.length()
 	var settings: Node = get_node_or_null("/root/Settings")
 	_revealed = 0 if settings == null or bool(settings.values.get("typewriter", true)) else _total
-	issues.clear()
-	if lines.size() > 4:
-		issues.append("bubble exceeds four lines")
-	var width: float = 16
-	for line: String in lines:
-		width = maxf(width, face.get_string_size(line, HORIZONTAL_ALIGNMENT_LEFT, -1, 10).x)
-	width = minf(168, width + 10)
-	var height: float = min(4, lines.size()) * 12 + 7
-	below = speaker.y - 4 - height - 2 < 22
-	box = Rect2(clampf(roundf(speaker.x - width / 2), 3, 317 - width), minf(177 - height, speaker.y + 24) if below else speaker.y - height - 6, width, height)
-	tail_x = clampf(speaker.x, box.position.x + 5, box.end.x - 6)
-	var texture: AtlasTexture = PortitorUI.atlas("art:ui.bubble", "say")
-	var tail: AtlasTexture = PortitorUI.atlas("art:ui.bubble_tail", "say")
-	_approved_art = texture != null and tail != null
-	if _approved_art:
-		var panel := NinePatchRect.new()
-		panel.name = "ApprovedBubble"
-		panel.show_behind_parent = true
-		panel.texture = texture
-		panel.position = box.position
-		panel.size = box.size
-		var margins: Array = get_node("/root/Registry").art("art:ui.bubble").get("ninepatch", [4, 4, 4, 4])
-		panel.patch_margin_top = int(margins[0])
-		panel.patch_margin_right = int(margins[1])
-		panel.patch_margin_bottom = int(margins[2])
-		panel.patch_margin_left = int(margins[3])
-		panel.mouse_filter = Control.MOUSE_FILTER_IGNORE
-		add_child(panel)
-		var tip := TextureRect.new()
-		tip.texture = tail
-		tip.show_behind_parent = true
-		tip.size = tail.get_size()
-		tip.position = Vector2(tail_x - 3, box.position.y - 6 if below else box.end.y)
-		tip.flip_v = below
-		tip.mouse_filter = Control.MOUSE_FILTER_IGNORE
-		add_child(tip)
-	var title: String = name_text + (" · " + placeholder_text if not _approved_art and not placeholder_text.is_empty() else "")
-	var title_width: float = minf(310, PortitorUI.font().get_string_size(title, HORIZONTAL_ALIGNMENT_LEFT, -1, 12).x + 2)
-	var name_tag: Label = PortitorUI.label(title, title_width)
-	name_tag.position = Vector2(clampf(box.position.x + 4, 3, 317 - title_width), maxf(0, box.position.y - 14))
-	name_tag.add_theme_color_override("font_color", PortitorUI.GOLD)
-	add_child(name_tag)
+	if _lines.size() * 12 + 10 > box.size.y: issues.append("bubble text exceeds available height")
+	var panel: TextureRect = G2.box(self, box, {"r":4, "rings":["z", "u"], "fill":"y"})
+	panel.name = "ApprovedBubble"
+	panel.show_behind_parent = true
+	for index: int in _lines.size():
+		_labels.append(G2.text(self, box.position + Vector2(6, 6 + index * 12), _lines[index], "u" if thought else "t", true))
+	if not name_text.is_empty():
+		var name_width: int = G2.measure(name_text, true) + 8
+		var name_at := Vector2(clampf(box.position.x + 5, 4, 316 - name_width), maxf(21, box.position.y - 9))
+		G2.tag(self, name_at, name_text)
+	_update_reveal()
 	queue_redraw()
 
 func _process(delta: float) -> void:
 	if _revealed < _total:
 		_revealed = minf(_total, _revealed + delta * 30)
-		queue_redraw()
+		_update_reveal()
 
 func reveal_all() -> void:
 	_revealed = _total
-	queue_redraw()
+	_update_reveal()
+
+func _update_reveal() -> void:
+	var remaining: int = floori(_revealed)
+	for label: Label in _labels:
+		label.visible_characters = maxi(0, remaining)
+		remaining -= label.text.length()
 
 func _draw() -> void:
-	if not _approved_art:
-		draw_rect(box, Color("e4a672"))
-		var y: float = box.position.y if below else box.end.y
-		draw_rect(Rect2(tail_x, y - 4 if below else y, 2, 4), Color("e4a672"))
-	var remaining: int = floori(_revealed)
-	for line_index: int in mini(4, _lines.size()):
-		var line: String = _lines[line_index]
-		draw_string(PortitorUI.font(true), box.position + Vector2(5, 13 + line_index * 12), line.left(maxi(0, remaining)), HORIZONTAL_ALIGNMENT_LEFT, -1, 10, Color("3e2731"))
-		remaining -= line.length()
+	var G2: GDScript = load("res://presentation/ui/widgets/g2.gd")
+	var y: int = int(box.position.y if below else box.end.y) - (2 if not below else 0)
+	var direction: int = -1 if below else 1
+	if _thought:
+		for step: int in 3:
+			var radius: int = 2 if step == 0 else 1
+			var center := Vector2(tail_x + step * 3, y + direction * (3 + step * 4))
+			draw_circle(center, radius + 1, G2.RASTER.color_of("z"))
+			draw_circle(center, radius, G2.RASTER.color_of("u"))
+			if step == 0: draw_circle(center, 1, G2.RASTER.color_of("y"))
+	else:
+		for step: int in 6:
+			var span: int = 6 - step
+			draw_rect(Rect2(tail_x - 3, y + direction * step, span, 1), G2.RASTER.color_of("z"))
+			if span > 2: draw_rect(Rect2(tail_x - 2, y + direction * step, span - 2, 1), G2.RASTER.color_of("u"))
+			if span > 4: draw_rect(Rect2(tail_x - 1, y + direction * step, span - 4, 1), G2.RASTER.color_of("y"))
 
-static func _wrap(text: String, face: Font, width: float) -> PackedStringArray:
+static func _wrap(value: String, face: Font, width: float, font_size: int = 10) -> PackedStringArray:
+	var expression := RegEx.new()
+	expression.compile("[　-鿿가-힯＀-￯]|[^\\s　-鿿가-힯＀-￯]+|\\s+")
 	var lines := PackedStringArray()
-	var current: String = ""
-	var tokens: PackedStringArray = text.split(" ") if text.contains(" ") else text.split("")
-	var separator: String = " " if text.contains(" ") else ""
-	for token: String in tokens:
-		var candidate: String = current + (separator if not current.is_empty() else "") + token
-		if face.get_string_size(candidate, HORIZONTAL_ALIGNMENT_LEFT, -1, 10).x > width and not current.is_empty() and not "，。！？；：、,.!?;:".contains(token):
-			lines.append(current)
-			current = token
+	var line: String = ""
+	for match_result: RegExMatch in expression.search_all(value):
+		var token: String = match_result.get_string()
+		if token.contains("\n"):
+			lines.append(line.rstrip(" \t"))
+			line = ""
+		elif token.strip_edges().is_empty():
+			if not line.is_empty(): line += " "
+		elif line.is_empty() or face.get_string_size(line + token, HORIZONTAL_ALIGNMENT_LEFT, -1, font_size).x <= width:
+			line += token
 		else:
-			current = candidate
-	if not current.is_empty():
-		lines.append(current)
+			if "，。：；、！？）」』”…,.:;!?)".contains(token.left(1)) and line.length() > 1:
+				lines.append(line.left(-1).rstrip(" \t"))
+				line = line.right(1) + token
+			else:
+				lines.append(line.rstrip(" \t"))
+				line = token
+	if not line.is_empty(): lines.append(line.rstrip(" \t"))
 	return lines

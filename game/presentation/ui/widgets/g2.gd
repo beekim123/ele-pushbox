@@ -396,3 +396,62 @@ class ChapterPicture extends LevelPicture:
 		if viewport != null and is_inside_tree():
 			await get_tree().process_frame
 			await RenderingServer.frame_post_draw
+
+class RulePicture extends LevelPicture:
+	## Presentation-only cross section from the G2 rule illustration:
+	## a two-cell earth pillar next to the miner, with intact floor below.
+	func configure_rule(_spec: Dictionary, theme_uid: String, tick: int) -> void:
+		var sample: Dictionary = {"map":["############", "############", "#### #######", "### %#######", "#  P%      #", "############", "############"]}
+		configure(sample, theme_uid, tick)
+		if viewport != null:
+			for child: Node in viewport.get_children():
+				if child is ColorRect and child.material is ShaderMaterial:
+					child.position.y -= 1
+				elif child is Sprite2D and child != viewport.get_child(0):
+					child.position.y -= 1
+		if viewport != null:
+			var adornments = PIXELS.new(320, 180)
+			for decoration: Array in [["art:deco.dungeon_moss", "default", Vector2i(136, 91)], ["art:deco.dungeon_torch", "flicker", Vector2i(148, 96)]]:
+				if Registry.art(decoration[0]).get("approved", false): ILLUSTRATION.SPRITES.blit(adornments, decoration[0], decoration[1], tick, decoration[2])
+			_layer(adornments.image())
+		expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+		size = Vector2(56, 44)
+		if texture is AtlasTexture: (texture as AtlasTexture).region = Rect2(106, 84, 56, 44)
+
+	func set_tick(_tick: int) -> void:
+		pass
+
+static func overlay_capsule(parent: Node, area: Rect2) -> void:
+	box(parent, area, {"r":4, "rings":["r"], "fill":"y"})
+	rect(parent, Rect2(area.position + Vector2(2, 0), Vector2(area.size.x - 4, 1)), "s")
+	rect(parent, Rect2(area.position + Vector2(2, area.size.y - 1), Vector2(area.size.x - 4, 1)), "q")
+
+static func pip(parent: Node, center: Vector2, code: String, radius: int = 2, filled: bool = true) -> void:
+	var points: Dictionary = {}
+	for y: int in range(-radius, radius + 1):
+		for x: int in range(-radius, radius + 1):
+			if absi(x) + absi(y) <= radius: points[Vector2i(x, y)] = true
+	for point: Vector2i in points:
+		for neighbor: Vector2i in NEIGHBORS:
+			if not points.has(point + neighbor): rect(parent, Rect2(center + Vector2(point + neighbor), Vector2.ONE), "z")
+	for point: Vector2i in points: rect(parent, Rect2(center + Vector2(point), Vector2.ONE), code if filled or absi(point.x) + absi(point.y) == radius else "y")
+	if filled: rect(parent, Rect2(center + Vector2(0, -1), Vector2.ONE), "t")
+
+static func overlay_icon(parent: Node, uid: String, animation: String, at: Vector2, dim: bool) -> TextureRect:
+	var node: TextureRect = icon(parent, uid, animation, at)
+	if node == null or not dim: return node
+	var shades: Dictionary = {"t":"u", "u":"v", "v":"w", "w":"x", "x":"y", "y":"z", "l":"k", "k":"j", "j":"b", "b":"e", "e":"f", "f":"g", "d":"e", "c":"d", "s":"r", "r":"q", "q":"p", "m":"n", "n":"o", "o":"p"}
+	var replacements: Dictionary = {}
+	for code: String in shades: replacements[RASTER.color_of(code).to_rgba32()] = RASTER.color_of(shades[code])
+	var pixels: Image = node.texture.get_image()
+	for y: int in pixels.get_height():
+		for x: int in pixels.get_width():
+			var color: Color = pixels.get_pixel(x, y)
+			var opaque: Color = Color(color.r, color.g, color.b, 1)
+			if color.a > 0 and replacements.has(opaque.to_rgba32()):
+				var shade: Color = replacements[opaque.to_rgba32()]
+				shade.a = color.a
+				pixels.set_pixel(x, y, shade)
+	node.texture = ImageTexture.create_from_image(pixels)
+	node.set_meta("g2_overlay_dimmed", true)
+	return node

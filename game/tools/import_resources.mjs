@@ -28,13 +28,17 @@ function inputs(repoRoot) {
   if (map.format !== 'pushbox.idmap/1' || content.format !== 'pushbox.content-manifest/1' || art.format !== 'pushbox.art-manifest/1') throw new Error('unsupported input manifest format');
   const { tables: texts, source: textSource, problems } = loadTextTables(repoRoot);
   if (problems.length) throw new Error('translation tables: ' + problems.map(p => `${p.where}: ${p.msg}`).join('; '));
+  const workbenchOnly = new Set();
   for (const [locale, table] of Object.entries(texts)) {
     for (const [key, value] of Object.entries(table)) {
       // Workbench-only groups (e.g. content/i18n-audio "audio.dom") are nested objects; the game never reads them.
-      if (key !== '_meta' && value && typeof value === 'object' && !Array.isArray(value)) { delete table[key]; continue; }
+      if (key !== '_meta' && value && typeof value === 'object' && !Array.isArray(value)) { delete table[key]; workbenchOnly.add(key); continue; }
       if (key !== '_meta' && typeof value !== 'string') throw new Error(`translation must be a string: ${locale}/${key}`);
     }
   }
+  // Sound is not imported into the game until it is approved (audio/approvals.json), so its ids are not game routes yet.
+  map.entries = map.entries.filter(e => !(e.domain === 'text' && workbenchOnly.has(e.id)) && e.domain !== 'sfx' && e.domain !== 'music');
+  for (const d of ['sfx', 'music']) if (map.domains?.[d]) map.domains[d].count = 0;
   const baseText = new Set(map.entries.filter(e => e.domain === 'text').map(e => e.id));
   for (const key of Object.keys(texts['zh-Hans']).filter(k => k !== '_meta' && !baseText.has(k))) {
     map.entries.push({ uid: `text:${key}`, domain: 'text', id: key, name: texts['zh-Hans'][key], source: textSource[key], game: `tr:${key}` });
