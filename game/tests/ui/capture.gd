@@ -43,6 +43,8 @@ func _run() -> void:
 	settings.values["sfx"] = 0.8
 	settings.values["ambience"] = "full"
 	settings.values["typewriter"] = false
+	save.data["last_level_uid"] = "level:M05"
+	save.data["coins"] = 1280
 	var frame_peak: float = 0
 	for language: String in ["zh-Hans", "en"]:
 		print("capture language: " + language)
@@ -51,7 +53,7 @@ func _run() -> void:
 		app.start_level()
 		print("capture level ready: " + language)
 		app.world_view.fixed_tick = 0
-		for name: String in ["chapters", "levels", "pause", "settings", "hint", "complete", "rulecard", "dialogue"]:
+		for name: String in ["lobby", "chapters", "levels", "pause", "settings", "hint", "complete", "rulecard", "dialogue"]:
 			print("capture: " + name + "." + language)
 			var runtime_lab: RefCounted = app.lab
 			if name == "chapters":
@@ -103,44 +105,43 @@ func _run() -> void:
 								if image.get_pixel(x, y).to_rgba32() == Color("ffffff").to_rgba32(): ink_pixels += 1
 				behaviors.append({"id":"ui.hint_body_visible." + language,"ok":ink_pixels > 0,"actual_ink_pixels":ink_pixels})
 				if ink_pixels == 0: issues.append("hint text must render in front of placeholder background: " + language)
-			var output: String = "res://reports/shots/" + name + "." + language + ".png"
-			image.save_png(output)
-			var expected_path: String = ProjectSettings.globalize_path("res://../art/export/reference/" + name + "." + language + ".png")
-			var expected: Image = Image.load_from_file(expected_path)
-			var different: int = 0
-			var color_differences: Dictionary = {}
-			var region_differences: Dictionary = {"hud":0,"body":0,"footer":0}
-			if expected == null or expected.get_size() != image.get_size():
-				different = 320 * 180
-			else:
-				for y: int in range(180):
-					for x: int in range(320):
-						if image.get_pixel(x, y).to_rgba32() != expected.get_pixel(x, y).to_rgba32():
-							different += 1
-							var pair: String = expected.get_pixel(x, y).to_html() + " -> " + image.get_pixel(x, y).to_html()
-							color_differences[pair] = int(color_differences.get(pair, 0)) + 1
-							var region: String = "hud" if y < 24 else "footer" if y >= 161 else "body"
-							region_differences[region] += 1
-			if name in ["chapters", "levels", "settings", "pause", "hint", "rulecard", "dialogue", "complete"] and different > 1700:
-				reference_issues.append("G2 reference differs by more than 1700 pixels: %s.%s = %d" % [name, language, different])
-			issues.append_array(app.layout_issues())
-			var reference: Dictionary = {"name":name + "." + language,"diff_pixels":different,"pixels":57600,"screenshot":"game/reports/shots/" + name + "." + language + ".png","approved":false,"note":"Development Control layout; pending UI/bubble approvals. Geometry and glyph differences are unresolved, not waived."}
-			if name in ["chapters", "levels", "settings", "pause", "hint", "rulecard", "dialogue", "complete"]:
-				reference["diff_by_region"] = region_differences
-				var pairs: Array = color_differences.keys()
-				pairs.sort_custom(func(a: String, b: String) -> bool: return int(color_differences[a]) > int(color_differences[b]))
-				reference["largest_color_differences"] = pairs.slice(0, 8).map(func(pair: String) -> Dictionary: return {"colors":pair,"pixels":color_differences[pair]})
-				reference["note"] = "G2 artwork APR-0007; live localized Controls, 1700-pixel acceptance threshold. Runtime UI approval is not inferred from artwork approval."
-			if name == "chapters":
-				var counts: Dictionary = {}
-				for group: Dictionary in app.lab.groups:
-					counts[str(group.id)] = group.get("levels", []).size()
-				reference["ui_fixture"] = {"kind":"presentation_only_availability", "available_group_indices":[0,1], "sample_level_counts":counts, "sdk_unlocked":false}
-				reference["note"] += " Chapter availability is a UI-only reference fixture; the second chapter uses the reference sample of seven levels; no SDK unlock is claimed."
-				app.lab = runtime_lab
-			if name == "dialogue": reference["ui_fixture"] = {"kind":"dialogue_component_over_live_M05", "boot_router_integration":false}
-			references.append(reference)
+			_record_capture(app, image, name + "." + language, name, language)
+			if name == "chapters": app.lab = runtime_lab
 			frame_peak = maxf(frame_peak, Performance.get_monitor(Performance.TIME_PROCESS) * 1000)
+	# Six chapter appearances, using only an in-memory presentation fixture.
+	# No select_group/save call and no mutation of the catalog or SDK state.
+	var lobby_lab: RefCounted = app.lab
+	var lobby_save: Dictionary = save.data.duplicate(true)
+	var skin_fixture := ChapterAvailabilityFixture.new()
+	var themes: Array[String] = ["dungeon", "ruins", "cave", "forest", "sky", "cosmos"]
+	for index: int in themes.size():
+		var group: Dictionary = lobby_lab.groups[0].duplicate(true)
+		group["theme"] = "theme." + themes[index]
+		group["order"] = index + 1
+		skin_fixture.groups.append(group)
+	app.lab = skin_fixture
+	locale.set_language("zh-Hans")
+	for index: int in themes.size():
+		skin_fixture.group_index = index
+		app.show_screen("lobby")
+		for frame: int in 3: await process_frame
+		RenderingServer.force_draw(false)
+		var image: Image = root.get_texture().get_image()
+		_record_capture(app, image, "lobby." + themes[index], "lobby", themes[index])
+		var selected_theme: String = str(app.screen.get_meta("lobby_theme", ""))
+		var expected_skin: String = ["S2","S3","S1","S5","S4","S6"][index]
+		var selected_skin: String = str(app.screen.get_meta("lobby_skin", ""))
+		behaviors.append({"id":"ui.lobby_chapter_skin." + themes[index], "ok":selected_theme == themes[index] and selected_skin == expected_skin, "actual_theme":selected_theme, "actual_skin":selected_skin})
+		if selected_theme != themes[index] or selected_skin != expected_skin: issues.append("lobby must follow current chapter: " + themes[index])
+		app.screen.move_focus(1)
+		for frame: int in 2: await process_frame
+		var menu_focus_ok: bool = app.screen.focus_index == 1 and app.screen.buttons[1].has_focus()
+		behaviors.append({"id":"ui.lobby_keyboard_focus." + themes[index], "ok":menu_focus_ok})
+		if not menu_focus_ok: issues.append("lobby keyboard focus failed: " + themes[index])
+	app.lab = lobby_lab
+	var save_unchanged: bool = save.data == lobby_save
+	behaviors.append({"id":"ui.lobby_fixture_preserves_save", "ok":save_unchanged})
+	if not save_unchanged: issues.append("lobby captures changed save data")
 	app.lab.level_index = 0
 	app.start_level()
 	app.world_view.fixed_tick = 0
@@ -177,3 +178,46 @@ func _run() -> void:
 	print(JSON.stringify({"suite":"ui-gpu","captures":references.size(),"layout_issues":issues.size(),"reference_issues":reference_issues.size(),"different_reference_count":references.filter(func(item: Dictionary) -> bool: return item.diff_pixels > 0).size(),"performance":metrics}))
 	app.dispose()
 	quit(0 if issues.is_empty() and reference_issues.is_empty() else 1)
+
+func _record_capture(app: Node, image: Image, capture_name: String, name: String, language: String) -> void:
+	var output: String = "res://reports/shots/" + capture_name + ".png"
+	image.save_png(output)
+	var expected_path: String = ProjectSettings.globalize_path("res://../art/export/reference/" + capture_name + ".png")
+	var expected: Image = Image.load_from_file(expected_path)
+	var different: int = 0
+	var color_differences: Dictionary = {}
+	var region_differences: Dictionary = {"hud":0,"body":0,"footer":0}
+	var lobby_regions: Dictionary = {"title":0,"chapter":0,"menu":0,"backdrop":0,"keys":0,"floor":0}
+	if expected == null or expected.get_size() != image.get_size():
+		different = 320 * 180
+	else:
+		for y: int in range(180):
+			for x: int in range(320):
+				if image.get_pixel(x, y).to_rgba32() != expected.get_pixel(x, y).to_rgba32():
+					different += 1
+					var pair: String = expected.get_pixel(x, y).to_html() + " -> " + image.get_pixel(x, y).to_html()
+					color_differences[pair] = int(color_differences.get(pair, 0)) + 1
+					var region: String = "hud" if y < 24 else "footer" if y >= 161 else "body"
+					region_differences[region] += 1
+					if name == "lobby":
+						var part: String = "floor" if y>=156 and x>=160 else "keys" if y>=160 else "backdrop" if x>=190 else "title" if y<59 else "chapter" if y<84 else "menu"
+						lobby_regions[part] += 1
+	if name in ["chapters", "levels", "settings", "pause", "hint", "rulecard", "dialogue", "complete", "lobby"] and different > 1700:
+		reference_issues.append("UI reference differs by more than 1700 pixels: %s.%s = %d" % [name, language, different])
+	issues.append_array(app.layout_issues())
+	var reference: Dictionary = {"name":capture_name,"diff_pixels":different,"pixels":57600,"screenshot":"game/reports/shots/" + capture_name + ".png","approved":false,"note":"Development Control layout; pending UI/bubble approvals. Geometry and glyph differences are unresolved, not waived."}
+	if name in ["chapters", "levels", "settings", "pause", "hint", "rulecard", "dialogue", "complete", "lobby"]:
+		reference["diff_by_region"] = region_differences
+		var pairs: Array = color_differences.keys()
+		pairs.sort_custom(func(a: String, b: String) -> bool: return int(color_differences[a]) > int(color_differences[b]))
+		reference["largest_color_differences"] = pairs.slice(0, 8).map(func(pair: String) -> Dictionary: return {"colors":pair,"pixels":color_differences[pair]})
+		reference["note"] = "Lobby artwork APR-0008; live chapter skin, 1700-pixel acceptance threshold. Runtime UI approval is not inferred from artwork approval." if name == "lobby" else "G2 artwork APR-0007; live localized Controls, 1700-pixel acceptance threshold. Runtime UI approval is not inferred from artwork approval."
+	if name == "chapters":
+		var counts: Dictionary = {}
+		for group: Dictionary in app.lab.groups:
+			counts[str(group.id)] = group.get("levels", []).size()
+		reference["ui_fixture"] = {"kind":"presentation_only_availability", "available_group_indices":[0,1], "sample_level_counts":counts, "sdk_unlocked":false}
+		reference["note"] += " Chapter availability is a UI-only reference fixture; the second chapter uses the reference sample of seven levels; no SDK unlock is claimed."
+	if name == "lobby": reference["diff_by_lobby_region"] = lobby_regions
+	if name == "dialogue": reference["ui_fixture"] = {"kind":"dialogue_component_over_live_M05", "boot_router_integration":false}
+	references.append(reference)

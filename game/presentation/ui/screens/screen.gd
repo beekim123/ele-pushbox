@@ -347,32 +347,50 @@ func _keybar(groups: Array[Dictionary]) -> void:
 		x += 10
 
 func _lobby() -> void:
-	_sprite("art:obj.crate_wood", "default", Vector2(24, 30))
-	var title: String = t("game.title")
-	if _measure(title) * 2 <= 200:
-		_text2x(title, Vector2(38, 6), "l", "z")
-	else:
-		_label(title, Vector2(38, 12), 200, "l", "z")
-	_paragraph(t("game.tagline"), Vector2(16, 36), 200, 2, "c")
 	var chapter: Dictionary = app.lab.current_group()
-	_label(t("lobby.current", {"chapter": _chapter_name(int(chapter.get("order", 1))), "theme": t(str(chapter.get("theme", "theme.dungeon")))}), Vector2(16, 64), 200, "k", "z")
+	var theme: String = str(chapter.get("theme", "theme.dungeon")).trim_prefix("art:").trim_prefix("theme.")
+	if app.world_view != null: app.world_view.set_backdrop("art:theme." + theme, true)
+	var chapter_name: String = t("chapter.n", {"n":int(chapter.get("order", 1))})
+	var current: String = t("lobby.current", {"chapter": chapter_name, "theme": t("theme." + theme)})
+	var chapter_at: int = current.find(chapter_name)
+	var current_tag: String = current.left(chapter_at).strip_edges().trim_suffix("：").trim_suffix(":") if chapter_at >= 0 else ""
+	var current_chapter: String = current.substr(chapter_at) if chapter_at >= 0 else current
 	var keys: Array[String] = ["menu.continue", "menu.chapters", "menu.settings", "menu.quit"]
-	var icon_names: Array[String] = ["continue", "chapters", "settings", "quit"]
-	var detail: String = str(Save.data.get("last_level_uid", app.lab.level_uid())).trim_prefix("level:")
-	var width: int = 96
+	var icons: Array[String] = ["continue", "chapters", "settings", "quit"]
+	var items: Array[Dictionary] = []
 	for index: int in keys.size():
-		width = maxi(width, _measure(t(keys[index]) + ("  " + detail if index == 0 and not detail.is_empty() else "")) + 34)
-	width = mini(180, width)
-	_panel(Rect2(14, 82, width, 8 + keys.size() * 16))
-	for index: int in keys.size():
-		var y: int = 86 + index * 16
-		_row(Rect2(17, y - 1, width - 6, 16), index)
-		_sprite("art:ui.menu_icons", icon_names[index], Vector2(21, y + 1))
-		var detail_width: int = _measure(detail) + 6 if index == 0 and not detail.is_empty() else 0
-		_row_label(index, t(keys[index]), Vector2(36, y), width - 30 - detail_width)
-		if index == 0 and not detail.is_empty():
-			_label(detail, Vector2(14 + width - 8 - _measure(detail), y), _measure(detail), "v")
-	_keybar([{"keys": ["up", "down"], "label": "keys.select"}, {"keys": ["Enter"], "label": "keys.confirm"}])
+		var item: Dictionary = {"label":t(keys[index]), "icon":icons[index]}
+		if index == 0: item["detail"] = str(Save.data.get("last_level_uid", app.lab.level_uid())).trim_prefix("level:")
+		items.append(item)
+	var coins: String = str(int(Save.data.get("coins", 0)))
+	var comma: int = coins.length() - 3
+	while comma > 0:
+		coins = coins.insert(comma, ",")
+		comma -= 3
+	var skin: Control = load("res://presentation/ui/widgets/lobby_skins.gd").new()
+	add_child(skin)
+	var title: String = t("game.title")
+	skin.configure(theme, {"title":title, "titleEn":"渡界人" if title == "PORTITOR" else "PORTITOR", "tag":t("game.tagline"), "curTag":current_tag, "cur":current_chapter, "items":items, "coins":coins, "keySelect":t("keys.select"), "keyConfirm":t("keys.confirm")})
+	set_meta("lobby_theme", theme)
+	set_meta("lobby_skin", skin.BY_THEME.get(theme, "S2"))
+	var rows: Array[Rect2] = skin.menu_rows().duplicate()
+	for index: int in rows.size():
+		_lobby_button(skin, rows[index], items[index].label, index)
+
+func _lobby_button(skin: Control, area: Rect2, caption: String, index: int) -> void:
+	var node := Button.new()
+	node.name = "LobbyMenu" + str(index)
+	node.position = area.position
+	node.size = area.size
+	node.tooltip_text = caption
+	for state: String in ["normal", "hover", "pressed", "focus", "disabled"]:
+		node.add_theme_stylebox_override(state, StyleBoxEmpty.new())
+	node.focus_entered.connect(func() -> void:
+		focus_index = index
+		skin.redraw(index))
+	node.pressed.connect(func() -> void: app.activate_menu(index))
+	add_child(node)
+	buttons.append(node)
 
 func _chapter_name(order: int) -> String:
 	return t("chapter.n", {"n": order}) if order <= 5 else t("extra.chapter.review") if order == 6 else t("chapter.extra")
