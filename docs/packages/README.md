@@ -6,6 +6,8 @@
 
 ## 编号登记（要派、在做、等合并的包）
 
+**一页纸的进度看板见 [../board.md](../board.md)**（在做 / 可以派 / 在等 / 搁置）。
+
 新包先在这里登记再写文件；设计包拆出的新包用这里预留的编号（process.md 第 3 节）。
 
 | 编号 | 内容 | 基线 → 分支 | 会碰的共享文件 | 状态 |
@@ -36,16 +38,16 @@
 | [ART-03](ART-03.md) | 关卡模式 6 种机关的美术（矿车、灯照显形、套娃箱、弹跳蘑菇、跷跷板、阵风） | `claude/inspiring-ride-zfnn4s` → `art/ART-03` | `mechanisms.json`（只改这 6 个的 `assets`） | 待派（现在可派） |
 | [LV-13](LV-13.md) | Godot 关卡里换掉这 6 种机关的占位方块（Mac 上做） | `claude/inspiring-ride-zfnn4s` → `lv/LV-13` | `matter.gd`、`world_view.gd` | 等 ART-03 合并、用户确认美术 |
 | [DSN-04](DSN-04.md) | 第四张配送地图「极地雪村」设计（只写设计和后续包） | `claude/inspiring-ride-zfnn4s` → `dsn/DSN-04` | 设计目录 5 个文件（只动 `polar`）、本表（只改预留行） | **已合并**（2026-10-17） |
-| [ART-01a](ART-01a.md) | 雪村美术①：主题 `theme.polar`（新 `terrain-polar.js`）、4 种装饰、小驯鹿和雪鹀（7 项） | `claude/inspiring-ride-zfnn4s`（DSN-04 合并后）→ `art/ART-01a` | 新 `terrain-polar.js`；`index.html`、`tools/art.mjs`（只追加）；美术生成文件 | 待派（DSN-04 合并后；和 ART-01b、ART-01c、DLV-06 可同时） |
-| [ART-01b](ART-01b.md) | 雪村美术②：4 位收件人的角色和滚轮头像（8 项） | `claude/inspiring-ride-zfnn4s`（DSN-04 合并后）→ `art/ART-01b` | 只新建美术源文件；美术生成文件 | 待派（DSN-04 合并后；可同时） |
-| [ART-01c](ART-01c.md) | 雪村美术③：企鹅、雪怪、3 种货物（含损坏状态）、燕麦饼（6 项）；冷热气口用已确认的美术，不开 ART-01d | `claude/inspiring-ride-zfnn4s`（DSN-04 合并后）→ `art/ART-01c` | 只新建美术源文件；美术生成文件 | 待派（DSN-04 合并后；可同时） |
-| [DLV-06](DLV-06.md) | v2 回合规则支持冰面滑行、冷凝、化冰（照 DLV-05，5 间测试房） | `claude/inspiring-ride-zfnn4s`（DSN-04 合并后）→ `dlv/DLV-06` | `rooms2.js`、`delivery-scene2.js`、`tools/check-rooms2.mjs`、`tests/rooms2.test.mjs`（只加） | 待派（DSN-04 合并后；不依赖美术；和 DLV-08 改同一批文件，不同批派） |
+| [ART-01a](ART-01a.md) | 雪村美术①：主题 `theme.polar`（新 `terrain-polar.js`）、4 种装饰、小驯鹿和雪鹀（7 项） | `claude/inspiring-ride-zfnn4s`（DSN-04 合并后）→ `art/ART-01a` | 新 `terrain-polar.js`；`index.html`、`tools/art.mjs`（只追加）；美术生成文件 | 在做（2026-10-17 派到雪村窗口，按顺序做） |
+| [ART-01b](ART-01b.md) | 雪村美术②：4 位收件人的角色和滚轮头像（8 项） | `claude/inspiring-ride-zfnn4s`（DSN-04 合并后）→ `art/ART-01b` | 只新建美术源文件；美术生成文件 | 在做（2026-10-17 派到雪村窗口，按顺序做） |
+| [ART-01c](ART-01c.md) | 雪村美术③：企鹅、雪怪、3 种货物（含损坏状态）、燕麦饼（6 项）；冷热气口用已确认的美术，不开 ART-01d | `claude/inspiring-ride-zfnn4s`（DSN-04 合并后）→ `art/ART-01c` | 只新建美术源文件；美术生成文件 | 在做（2026-10-17 派到雪村窗口，按顺序做） |
+| [DLV-06](DLV-06.md) | v2 回合规则支持冰面滑行、冷凝、化冰（照 DLV-05，5 间测试房） | `claude/inspiring-ride-zfnn4s`（DSN-04 合并后）→ `dlv/DLV-06` | `rooms2.js`、`delivery-scene2.js`、`tools/check-rooms2.mjs`、`tests/rooms2.test.mjs`（只加） | 在做（2026-10-17 派到雪村窗口，按顺序做） |
 | [DLV-07a](DLV-07a.md) | 雪村 6 间普通房（起点、喘口气、驿站、收件人之家）；`worlds.json` 补主题和提示动物 | `claude/inspiring-ride-zfnn4s`（ART-01a 合并后）→ `dlv/DLV-07a` | `content/rooms/polar/`、`i18n-rooms2` 两张表、`worlds.json`（只动 `polar`）、字形和检查生成文件 | 等 ART-01a 合并 |
 | [DLV-07b](DLV-07b.md) | 雪村 7 间机关房；`polar_1` 进正式地图和开局抽签 | `claude/inspiring-ride-zfnn4s`（DLV-06、DLV-07a 合并后）→ `dlv/DLV-07b` | `slices.json`（`polar_1`、`planned`、`delivery_pool`）、`i18n-rooms2`、规则第 6 节、两处写死地图列表的测试 | 等 DLV-06、DLV-07a 合并（和 DLV-09b 改同一批文件，不同批派） |
 | [DSN-05](DSN-05.md) | 第五张配送地图「糖果王国」设计（只写设计和后续包） | `claude/inspiring-ride-zfnn4s` → `dsn/DSN-05` | 设计目录 5 个文件（只动 `candy`）、本表（只改预留行） | **已合并**（2026-10-17） |
-| [ART-02a](ART-02a.md) | 糖果美术①：主题 `theme.candy`（新建 `terrain-candy.js`，地形、背景、生态）、3 项装饰、两只提示动物（6 项）；填 `worlds.json` 的 `theme`、`hint_fauna`、`ambient_exclude` | `claude/inspiring-ride-zfnn4s`（DSN-05 合并后）→ `art/ART-02a` | `index.html`、`tools/art.mjs`（追加）、`worlds.json`（只动 `candy`）、生成文件 | 待派（DSN-05 合并后；和 ART-02b、ART-02c、DLV-08 同时） |
-| [ART-02b](ART-02b.md) | 糖果美术②：4 位收件人的角色和滚轮头像（8 项；小孩已有就沿用） | `claude/inspiring-ride-zfnn4s`（DSN-05 合并后）→ `art/ART-02b` | `index.html`、`tools/art.mjs`（追加，需要时）、生成文件 | 待派（DSN-05 合并后） |
-| [ART-02c](ART-02c.md) | 糖果美术③：2 种怪物、零食、2 种货物（含损坏）、软糖 / 烤炉口 / 热气的外观（8 项） | `claude/inspiring-ride-zfnn4s`（DSN-05 合并后）→ `art/ART-02c` | `index.html`、`tools/art.mjs`（追加，需要时）、生成文件 | 待派（DSN-05 合并后） |
+| [ART-02a](ART-02a.md) | 糖果美术①：主题 `theme.candy`（新建 `terrain-candy.js`，地形、背景、生态）、3 项装饰、两只提示动物（6 项）；填 `worlds.json` 的 `theme`、`hint_fauna`、`ambient_exclude` | `claude/inspiring-ride-zfnn4s`（DSN-05 合并后）→ `art/ART-02a` | `index.html`、`tools/art.mjs`（追加）、`worlds.json`（只动 `candy`）、生成文件 | 在做（2026-10-17 派到糖果窗口，按顺序做） |
+| [ART-02b](ART-02b.md) | 糖果美术②：4 位收件人的角色和滚轮头像（8 项；小孩已有就沿用） | `claude/inspiring-ride-zfnn4s`（DSN-05 合并后）→ `art/ART-02b` | `index.html`、`tools/art.mjs`（追加，需要时）、生成文件 | 在做（2026-10-17 派到糖果窗口，按顺序做） |
+| [ART-02c](ART-02c.md) | 糖果美术③：2 种怪物、零食、2 种货物（含损坏）、软糖 / 烤炉口 / 热气的外观（8 项） | `claude/inspiring-ride-zfnn4s`（DSN-05 合并后）→ `art/ART-02c` | `index.html`、`tools/art.mjs`（追加，需要时）、生成文件 | 在做（2026-10-17 派到糖果窗口，按顺序做） |
 | [DLV-08](DLV-08.md) | v2 回合规则支持软糖弹跳 `bounce`、烤炉化冰 `melt`（糖果的 6 间机关房要用）；不依赖美术，先查关卡模式的验证关 | `claude/inspiring-ride-zfnn4s`（DSN-05 合并后）→ `dlv/DLV-08` | `rooms2.js`、`delivery-scene2.js`、`tools/check-rooms2.mjs`、`tests/rooms2.test.mjs`（只加测试）；和 DLV-06 同一批文件，不要同时派 | 待派（DSN-05 合并后） |
 | [DLV-09a](DLV-09a.md) | 糖果 7 间普通房（起点、过道、驿站、收件人之家） | `claude/inspiring-ride-zfnn4s`（ART-02a 合并后）→ `dlv/DLV-09a` | `i18n-rooms2`、字形生成文件、`worlds.json`（小蜂鸟 `fed`）；和 DLV-07a 后合并的那包重建字形 | 等 ART-02a 合并 |
 | [DLV-09b](DLV-09b.md) | 糖果 6 间机关房，糖果进开局抽签 | `claude/inspiring-ride-zfnn4s`（DLV-08、DLV-09a 合并后）→ `dlv/DLV-09b` | `i18n-rooms2`、字形生成文件、`slices.json`（`candy_1`、开局池）、两个测试文件的地图数预期；和 DLV-07b 同一批 | 等 DLV-08、DLV-09a 合并 |
