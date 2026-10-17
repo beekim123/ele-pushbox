@@ -1170,6 +1170,23 @@
      "png_sha256": "69d7d9b81d9c2bb513dd11c58ffd5aa3d405de906ee3cf02f3878d6b3c57d77e"
     }
    ]
+  },
+  {
+   "id": "APR-0008",
+   "date": "2026-10-17T10:51:29.165Z",
+   "by": "用户",
+   "via": "chat",
+   "scope": "6 套章节大厅皮肤",
+   "note": "大厅皮肤我确认了，都通过",
+   "items": [
+    {
+     "asset": "ui.screen.lobby",
+     "version": 5,
+     "hash": "d26fbdaec9c31d7b585cba36ba266d536351205d8512ebfdd6a35b06b3addbc7",
+     "png": "art/export/approved/ui.screen.lobby@v5.png",
+     "png_sha256": "4d76a4de23e2118590b5a3ef942d37eec214f11290988261f92504b0a9d11633"
+    }
+   ]
   }
  ]
 }

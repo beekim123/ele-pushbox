@@ -9655,19 +9655,19 @@
    "current": {
     "version": 5,
     "hash": "d26fbdaec9c31d7b585cba36ba266d536351205d8512ebfdd6a35b06b3addbc7",
-    "status": "review",
+    "status": "approved",
     "preview": "art/export/preview/ui.screen.lobby.png",
     "preview_sha256": "4d76a4de23e2118590b5a3ef942d37eec214f11290988261f92504b0a9d11633"
    },
    "approved": {
-    "version": 4,
-    "hash": "e2ec45838d3dcccf1f97feee4dcfc767b831ab3945d6ac07366db546cec5282e",
-    "png": "art/export/approved/ui.screen.lobby@v4.png",
-    "png_sha256": "a4648cd5bc92eee42fc7cae190d4e5794d007dcd223b2187f54a7a7f9fe1e084",
-    "approval": "APR-0005",
-    "date": "2026-10-15T10:55:30.036Z"
+    "version": 5,
+    "hash": "d26fbdaec9c31d7b585cba36ba266d536351205d8512ebfdd6a35b06b3addbc7",
+    "png": "art/export/approved/ui.screen.lobby@v5.png",
+    "png_sha256": "4d76a4de23e2118590b5a3ef942d37eec214f11290988261f92504b0a9d11633",
+    "approval": "APR-0008",
+    "date": "2026-10-17T10:51:29.165Z"
    },
-   "current_is_approved": false,
+   "current_is_approved": true,
    "renderer": [
     "workbench/js/core/ui.js",
     "workbench/js/core/scene.js",
@@ -11662,10 +11662,8 @@
     "item.sandbag",
     "item.bomb"
    ],
-   "all_approved": false,
-   "unapproved": [
-    "ui.screen.lobby"
-   ]
+   "all_approved": true,
+   "unapproved": []
   },
   {
    "name": "showcase.ruins",
@@ -11721,10 +11719,8 @@
     "item.sandbag",
     "item.bomb"
    ],
-   "all_approved": false,
-   "unapproved": [
-    "ui.screen.lobby"
-   ]
+   "all_approved": true,
+   "unapproved": []
   },
   {
    "name": "showcase.cave",
@@ -11780,10 +11776,8 @@
     "item.sandbag",
     "item.bomb"
    ],
-   "all_approved": false,
-   "unapproved": [
-    "ui.screen.lobby"
-   ]
+   "all_approved": true,
+   "unapproved": []
   },
   {
    "name": "showcase.forest",
@@ -11841,10 +11835,8 @@
     "item.sandbag",
     "item.bomb"
    ],
-   "all_approved": false,
-   "unapproved": [
-    "ui.screen.lobby"
-   ]
+   "all_approved": true,
+   "unapproved": []
   },
   {
    "name": "showcase.sky",
@@ -11900,10 +11892,8 @@
     "item.sandbag",
     "item.bomb"
    ],
-   "all_approved": false,
-   "unapproved": [
-    "ui.screen.lobby"
-   ]
+   "all_approved": true,
+   "unapproved": []
   },
   {
    "name": "showcase.cosmos",
@@ -11957,10 +11947,8 @@
     "item.sandbag",
     "item.bomb"
    ],
-   "all_approved": false,
-   "unapproved": [
-    "ui.screen.lobby"
-   ]
+   "all_approved": true,
+   "unapproved": []
   },
   {
    "name": "chapter.ruins",
@@ -14004,10 +13992,8 @@
     "ui.panel",
     "ui.theme_emblem"
    ],
-   "all_approved": false,
-   "unapproved": [
-    "ui.screen.lobby"
-   ]
+   "all_approved": true,
+   "unapproved": []
   },
   {
    "name": "lobby.en",
@@ -14025,10 +14011,8 @@
     "ui.panel",
     "ui.theme_emblem"
    ],
-   "all_approved": false,
-   "unapproved": [
-    "ui.screen.lobby"
-   ]
+   "all_approved": true,
+   "unapproved": []
   },
   {
    "name": "observe.zh-Hans",

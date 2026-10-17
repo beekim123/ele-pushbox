@@ -1878,7 +1878,7 @@
    "category": "screen",
    "version": 5,
    "hash": "d26fbdaec9c31d7b585cba36ba266d536351205d8512ebfdd6a35b06b3addbc7",
-   "approved": false
+   "approved": true
   },
   {
    "uid": "art:ui.screen.lobby_generic",
