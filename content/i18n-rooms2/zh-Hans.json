@@ -79,5 +79,13 @@
  "r2.hud.hint": "提示 {i}/{n}",
  "r2.hud.step": "第 {i}/{n} 步",
  "r2.hud.cleared": "通过",
- "r2.hud.snack": "×{n}"
+ "r2.hud.snack": "×{n}",
+ "room2.jeju_gate.name": "浦口 · 渡门下船",
+ "room2.jeju_olle.name": "石墙小巷",
+ "room2.jeju_canola.name": "油菜花田",
+ "room2.jeju_haenyeo_house.name": "驿站 · 海女之家",
+ "room2.jeju_home_shore.name": "收件人之家 · 防波堤",
+ "room2.jeju_home_orchard.name": "收件人之家 · 橘园",
+ "room2.jeju_home_cave.name": "收件人之家 · 熔岩洞口",
+ "dlg.fauna.jeju_dragonfly.fed": "只帮小马带路：喂零食要找小马"
 }

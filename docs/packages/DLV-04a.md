@@ -69,8 +69,21 @@ node tools/art.mjs build                # 0 bumped
 - 打开 `workbench/index.html#rooms2/jeju_gate` 等 7 间，能看到房间画面：顶上是天空。
 
 ## 交付（制作方填写，不超过 40 行）
-- 每间房一句：怎么走、有什么特点
-- 上面「最后跑一次」各一行结果
-- 改了哪条测试的预期、为什么（没有写"无"）
-- 遗留问题（没有写"无"）
-（分支名、提交号、`git diff --stat` 贴在给用户的回复里，不写进这个文件）
+- 阶段：本包制作及指定验收完成，待整理合并方技术核对；未合并、未新增美术确认。
+- jeju_gate：渡门出生后沿防波堤到右低口，或爬右侧石墙梯子到高口，4/4 条路线。
+- jeju_olle：两屏石墙小巷，低路可进入左侧遮檐下躲海鸥，小鬼怪在巷中巡逻，8/8 条路线。
+- jeju_canola：两屏花田坡地与金币，小鬼怪在右屏巡逻，左右高低口相通，8/8 条路线。
+- jeju_haenyeo_house：低路经过龟掌柜货摊，两侧梯子接高口，8/8 条路线。
+- jeju_home_shore：从低口沿石岸到收件人，高口可沿梯子下行；右侧浅海，仅给海女奶奶、灯塔大叔，4/4 条路线。
+- jeju_home_orchard：从高低入口进入平坦橘园院落，仅给橘园阿姨，4/4 条路线。
+- jeju_home_cave：穿过洞口到沙圈旁，沙圈用规则沙；仅给鬼怪大王，4/4 条路线。
+- node tools/check-rooms2.mjs --write：退出 0；新增 7 间共 40/40 条含镜像路线通过；地府、石牢原 23 间结果相同（仅运行耗时 ms 改变）。
+- node tools/content.mjs check：content: 0 error(s), 1 warning(s)；为包内预期的 audio/pending_references/slice:jeju_1 规划警告。
+- node --test tests/rooms2.test.mjs：tests 24，pass 24，fail 0；未修改测试预期。
+- node tools/art.mjs build：build ok: 156 assets, 0 bumped, 94 reference renders, 6 approval records。
+- 字形：生成 58 个 12px + 56 个 10px 字形，仅改 font-rooms2.js；本机 Pillow 不支持直接读 WOFF2，使用 /tmp 中 fontTools+Brotli 在内存解压原字库后运行原生成器，未改工具或冻结字库。
+- 画面：七间房均直接打开工作台查看，顶上为天空；通用地区装饰由现有绘制器生成；仍按工作台显示候选/占位，不代表用户美术确认。
+- 普通房沿用样板，不设谜题提示步骤；新增七间中英房名及红蜻蜓喂食台词，未新增机制。
+- 遗留：本包内无未完成项；jeju_1 仍为 planned、未入开局池；另外六间机关房及入池属于 DLV-04b。
+- 流程备注：按用户指示使用 ui/DLV-04a；开工时基线为 4a44501，远端随后前进，未合并或变基。
+- 下一步及执行人：用户把本分支交给整理合并方；整理合并方按流程核对后合入。制作方本项结束，不改状态总表。

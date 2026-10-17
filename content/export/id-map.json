@@ -15,7 +15,7 @@
   "room": {
    "name": "配送房间模板",
    "source": "content/rooms/<地区>/<id>.json",
-   "count": 33
+   "count": 40
   },
   "mode": {
    "name": "模式",
@@ -100,7 +100,7 @@
   "text": {
    "name": "界面与台词文字",
    "source": "content/i18n/zh-Hans.json 与 content/i18n-<名>/zh-Hans.json",
-   "count": 482
+   "count": 490
   }
  },
  "entries": [
@@ -2686,6 +2686,69 @@
    "source": "content/rooms/dungeon/dungeon2_yard.json",
    "game": "res://generated/content/rooms/dungeon/dungeon2_yard.json",
    "sha256": "5db11c0be6caf73722e3c39f89962081e4dc6a5337c4ab812db9e132a2821902"
+  },
+  {
+   "uid": "room:jeju_canola",
+   "domain": "room",
+   "id": "jeju_canola",
+   "name": "油菜花田",
+   "source": "content/rooms/jeju/jeju_canola.json",
+   "game": "res://generated/content/rooms/jeju/jeju_canola.json",
+   "sha256": "d0d66c406a4926dbf03d8838f590eab673c8bf32c3562cee55d96a87a9529089"
+  },
+  {
+   "uid": "room:jeju_gate",
+   "domain": "room",
+   "id": "jeju_gate",
+   "name": "浦口 · 渡门下船",
+   "source": "content/rooms/jeju/jeju_gate.json",
+   "game": "res://generated/content/rooms/jeju/jeju_gate.json",
+   "sha256": "0bc2f893eb54c88eca6012fcd395f480430e1ecd653102288d4e7465ddd0360c"
+  },
+  {
+   "uid": "room:jeju_haenyeo_house",
+   "domain": "room",
+   "id": "jeju_haenyeo_house",
+   "name": "驿站 · 海女之家",
+   "source": "content/rooms/jeju/jeju_haenyeo_house.json",
+   "game": "res://generated/content/rooms/jeju/jeju_haenyeo_house.json",
+   "sha256": "c16f2ed6a778783d83435f8cb9c29dba8592b475beb4e76b1c163640a23c5fd6"
+  },
+  {
+   "uid": "room:jeju_home_cave",
+   "domain": "room",
+   "id": "jeju_home_cave",
+   "name": "收件人之家 · 熔岩洞口",
+   "source": "content/rooms/jeju/jeju_home_cave.json",
+   "game": "res://generated/content/rooms/jeju/jeju_home_cave.json",
+   "sha256": "78fe556b44dcdfe4fd812ef3d640acec8f8a7d05bee75aa8ca6a9e6fa46e73fd"
+  },
+  {
+   "uid": "room:jeju_home_orchard",
+   "domain": "room",
+   "id": "jeju_home_orchard",
+   "name": "收件人之家 · 橘园",
+   "source": "content/rooms/jeju/jeju_home_orchard.json",
+   "game": "res://generated/content/rooms/jeju/jeju_home_orchard.json",
+   "sha256": "b3b2599003678116618862983eec638cc686a0d882d80821c4caabff22d790c8"
+  },
+  {
+   "uid": "room:jeju_home_shore",
+   "domain": "room",
+   "id": "jeju_home_shore",
+   "name": "收件人之家 · 防波堤",
+   "source": "content/rooms/jeju/jeju_home_shore.json",
+   "game": "res://generated/content/rooms/jeju/jeju_home_shore.json",
+   "sha256": "fad142f902d4ed7d20f3d9c48176881b9a8bb0bb092c6ee584afc23228a9d3d9"
+  },
+  {
+   "uid": "room:jeju_olle",
+   "domain": "room",
+   "id": "jeju_olle",
+   "name": "石墙小巷",
+   "source": "content/rooms/jeju/jeju_olle.json",
+   "game": "res://generated/content/rooms/jeju/jeju_olle.json",
+   "sha256": "90b2c897ae809ba22e1bb2a8edfb65c81c9338ca0e57fbf87160f8074dd28c58"
   },
   {
    "uid": "mode:lab",
@@ -11769,6 +11832,70 @@
    "name": "×{n}",
    "source": "content/i18n-rooms2/zh-Hans.json",
    "game": "tr:r2.hud.snack"
+  },
+  {
+   "uid": "text:room2.jeju_gate.name",
+   "domain": "text",
+   "id": "room2.jeju_gate.name",
+   "name": "浦口 · 渡门下船",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.jeju_gate.name"
+  },
+  {
+   "uid": "text:room2.jeju_olle.name",
+   "domain": "text",
+   "id": "room2.jeju_olle.name",
+   "name": "石墙小巷",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.jeju_olle.name"
+  },
+  {
+   "uid": "text:room2.jeju_canola.name",
+   "domain": "text",
+   "id": "room2.jeju_canola.name",
+   "name": "油菜花田",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.jeju_canola.name"
+  },
+  {
+   "uid": "text:room2.jeju_haenyeo_house.name",
+   "domain": "text",
+   "id": "room2.jeju_haenyeo_house.name",
+   "name": "驿站 · 海女之家",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.jeju_haenyeo_house.name"
+  },
+  {
+   "uid": "text:room2.jeju_home_shore.name",
+   "domain": "text",
+   "id": "room2.jeju_home_shore.name",
+   "name": "收件人之家 · 防波堤",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.jeju_home_shore.name"
+  },
+  {
+   "uid": "text:room2.jeju_home_orchard.name",
+   "domain": "text",
+   "id": "room2.jeju_home_orchard.name",
+   "name": "收件人之家 · 橘园",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.jeju_home_orchard.name"
+  },
+  {
+   "uid": "text:room2.jeju_home_cave.name",
+   "domain": "text",
+   "id": "room2.jeju_home_cave.name",
+   "name": "收件人之家 · 熔岩洞口",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.jeju_home_cave.name"
+  },
+  {
+   "uid": "text:dlg.fauna.jeju_dragonfly.fed",
+   "domain": "text",
+   "id": "dlg.fauna.jeju_dragonfly.fed",
+   "name": "只帮小马带路：喂零食要找小马",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:dlg.fauna.jeju_dragonfly.fed"
   },
   {
    "uid": "text:ui.title_alt",

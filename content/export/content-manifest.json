@@ -4956,7 +4956,8 @@
      "name": "红蜻蜓",
      "asset": "fauna.jeju_dragonfly",
      "look": "停在下一步要去的地方",
-     "near": "走近时飞过去，在目标上方绕圈"
+     "near": "走近时飞过去，在目标上方绕圈",
+     "fed": "只帮小马带路：喂零食要找小马"
     }
    ],
    "ambient_exclude": [
@@ -9999,6 +10000,90 @@
    ],
    "spec": "content/rooms/dungeon/dungeon2_yard.json",
    "sha256": "5db11c0be6caf73722e3c39f89962081e4dc6a5337c4ab812db9e132a2821902"
+  },
+  {
+   "id": "jeju_canola",
+   "world": "jeju",
+   "type": "room",
+   "role": "breather",
+   "size": [
+    2,
+    1
+   ],
+   "spec": "content/rooms/jeju/jeju_canola.json",
+   "sha256": "d0d66c406a4926dbf03d8838f590eab673c8bf32c3562cee55d96a87a9529089"
+  },
+  {
+   "id": "jeju_gate",
+   "world": "jeju",
+   "type": "gate",
+   "role": "gate",
+   "size": [
+    1,
+    1
+   ],
+   "spec": "content/rooms/jeju/jeju_gate.json",
+   "sha256": "0bc2f893eb54c88eca6012fcd395f480430e1ecd653102288d4e7465ddd0360c"
+  },
+  {
+   "id": "jeju_haenyeo_house",
+   "world": "jeju",
+   "type": "station",
+   "role": "station",
+   "size": [
+    1,
+    1
+   ],
+   "spec": "content/rooms/jeju/jeju_haenyeo_house.json",
+   "sha256": "c16f2ed6a778783d83435f8cb9c29dba8592b475beb4e76b1c163640a23c5fd6"
+  },
+  {
+   "id": "jeju_home_cave",
+   "world": "jeju",
+   "type": "home",
+   "role": "home",
+   "size": [
+    1,
+    1
+   ],
+   "spec": "content/rooms/jeju/jeju_home_cave.json",
+   "sha256": "78fe556b44dcdfe4fd812ef3d640acec8f8a7d05bee75aa8ca6a9e6fa46e73fd"
+  },
+  {
+   "id": "jeju_home_orchard",
+   "world": "jeju",
+   "type": "home",
+   "role": "home",
+   "size": [
+    1,
+    1
+   ],
+   "spec": "content/rooms/jeju/jeju_home_orchard.json",
+   "sha256": "b3b2599003678116618862983eec638cc686a0d882d80821c4caabff22d790c8"
+  },
+  {
+   "id": "jeju_home_shore",
+   "world": "jeju",
+   "type": "home",
+   "role": "home",
+   "size": [
+    1,
+    1
+   ],
+   "spec": "content/rooms/jeju/jeju_home_shore.json",
+   "sha256": "fad142f902d4ed7d20f3d9c48176881b9a8bb0bb092c6ee584afc23228a9d3d9"
+  },
+  {
+   "id": "jeju_olle",
+   "world": "jeju",
+   "type": "room",
+   "role": "breather",
+   "size": [
+    2,
+    1
+   ],
+   "spec": "content/rooms/jeju/jeju_olle.json",
+   "sha256": "90b2c897ae809ba22e1bb2a8edfb65c81c9338ca0e57fbf87160f8074dd28c58"
   }
  ],
  "delivery_golden": "content/export/delivery-golden.json"

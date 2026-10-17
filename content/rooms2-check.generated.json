@@ -23,7 +23,7 @@
      "errors": [],
      "warnings": [],
      "explored": 274,
-     "ms": 53,
+     "ms": 16,
      "shortest": 50,
      "hints": {
       "first": [
@@ -44,7 +44,7 @@
      "errors": [],
      "warnings": [],
      "explored": 274,
-     "ms": 27,
+     "ms": 7,
      "shortest": 50,
      "hints": {
       "first": [
@@ -80,7 +80,7 @@
      "errors": [],
      "warnings": [],
      "explored": 30,
-     "ms": 4,
+     "ms": 2,
      "shortest": 15
     },
     {
@@ -92,7 +92,7 @@
      "errors": [],
      "warnings": [],
      "explored": 32,
-     "ms": 4,
+     "ms": 1,
      "shortest": 18
     },
     {
@@ -116,7 +116,7 @@
      "errors": [],
      "warnings": [],
      "explored": 30,
-     "ms": 2,
+     "ms": 0,
      "shortest": 15
     },
     {
@@ -128,7 +128,7 @@
      "errors": [],
      "warnings": [],
      "explored": 32,
-     "ms": 2,
+     "ms": 1,
      "shortest": 18
     },
     {
@@ -140,7 +140,7 @@
      "errors": [],
      "warnings": [],
      "explored": 17,
-     "ms": 2,
+     "ms": 1,
      "shortest": 7
     }
    ],
@@ -167,7 +167,7 @@
      "errors": [],
      "warnings": [],
      "explored": 46,
-     "ms": 4,
+     "ms": 0,
      "shortest": 19
     },
     {
@@ -179,7 +179,7 @@
      "errors": [],
      "warnings": [],
      "explored": 48,
-     "ms": 5,
+     "ms": 1,
      "shortest": 22
     },
     {
@@ -191,7 +191,7 @@
      "errors": [],
      "warnings": [],
      "explored": 46,
-     "ms": 3,
+     "ms": 1,
      "shortest": 21
     },
     {
@@ -203,7 +203,7 @@
      "errors": [],
      "warnings": [],
      "explored": 48,
-     "ms": 5,
+     "ms": 1,
      "shortest": 24
     },
     {
@@ -215,7 +215,7 @@
      "errors": [],
      "warnings": [],
      "explored": 29,
-     "ms": 1,
+     "ms": 0,
      "shortest": 11
     },
     {
@@ -239,7 +239,7 @@
      "errors": [],
      "warnings": [],
      "explored": 46,
-     "ms": 3,
+     "ms": 1,
      "shortest": 15
     },
     {
@@ -251,7 +251,7 @@
      "errors": [],
      "warnings": [],
      "explored": 49,
-     "ms": 2,
+     "ms": 1,
      "shortest": 18
     },
     {
@@ -263,7 +263,7 @@
      "errors": [],
      "warnings": [],
      "explored": 29,
-     "ms": 1,
+     "ms": 0,
      "shortest": 9
     },
     {
@@ -275,7 +275,7 @@
      "errors": [],
      "warnings": [],
      "explored": 46,
-     "ms": 2,
+     "ms": 1,
      "shortest": 19
     },
     {
@@ -299,7 +299,7 @@
      "errors": [],
      "warnings": [],
      "explored": 46,
-     "ms": 2,
+     "ms": 0,
      "shortest": 21
     },
     {
@@ -311,7 +311,7 @@
      "errors": [],
      "warnings": [],
      "explored": 48,
-     "ms": 3,
+     "ms": 1,
      "shortest": 24
     },
     {
@@ -335,7 +335,7 @@
      "errors": [],
      "warnings": [],
      "explored": 29,
-     "ms": 1,
+     "ms": 0,
      "shortest": 13
     },
     {
@@ -347,7 +347,7 @@
      "errors": [],
      "warnings": [],
      "explored": 45,
-     "ms": 2,
+     "ms": 1,
      "shortest": 14
     },
     {
@@ -359,7 +359,7 @@
      "errors": [],
      "warnings": [],
      "explored": 49,
-     "ms": 1,
+     "ms": 0,
      "shortest": 17
     },
     {
@@ -371,7 +371,7 @@
      "errors": [],
      "warnings": [],
      "explored": 29,
-     "ms": 1,
+     "ms": 0,
      "shortest": 9
     }
    ],
@@ -398,7 +398,7 @@
      "errors": [],
      "warnings": [],
      "explored": 36,
-     "ms": 2,
+     "ms": 1,
      "shortest": 16
     },
     {
@@ -410,7 +410,7 @@
      "errors": [],
      "warnings": [],
      "explored": 36,
-     "ms": 1,
+     "ms": 0,
      "shortest": 18
     },
     {
@@ -434,7 +434,7 @@
      "errors": [],
      "warnings": [],
      "explored": 36,
-     "ms": 2,
+     "ms": 0,
      "shortest": 16
     },
     {
@@ -485,7 +485,7 @@
      "errors": [],
      "warnings": [],
      "explored": 36,
-     "ms": 2,
+     "ms": 0,
      "shortest": 16
     },
     {
@@ -509,7 +509,7 @@
      "errors": [],
      "warnings": [],
      "explored": 31,
-     "ms": 1,
+     "ms": 0,
      "shortest": 12
     },
     {
@@ -521,7 +521,7 @@
      "errors": [],
      "warnings": [],
      "explored": 36,
-     "ms": 2,
+     "ms": 1,
      "shortest": 16
     },
     {
@@ -533,7 +533,7 @@
      "errors": [],
      "warnings": [],
      "explored": 36,
-     "ms": 1,
+     "ms": 0,
      "shortest": 18
     },
     {
@@ -545,7 +545,7 @@
      "errors": [],
      "warnings": [],
      "explored": 29,
-     "ms": 1,
+     "ms": 0,
      "shortest": 11
     }
    ],
@@ -572,7 +572,7 @@
      "errors": [],
      "warnings": [],
      "explored": 49,
-     "ms": 2,
+     "ms": 1,
      "shortest": 39
     },
     {
@@ -584,7 +584,7 @@
      "errors": [],
      "warnings": [],
      "explored": 52,
-     "ms": 2,
+     "ms": 1,
      "shortest": 42
     },
     {
@@ -608,7 +608,7 @@
      "errors": [],
      "warnings": [],
      "explored": 52,
-     "ms": 4,
+     "ms": 2,
      "shortest": 44
     },
     {
@@ -620,7 +620,7 @@
      "errors": [],
      "warnings": [],
      "explored": 49,
-     "ms": 2,
+     "ms": 1,
      "shortest": 39
     },
     {
@@ -644,7 +644,7 @@
      "errors": [],
      "warnings": [],
      "explored": 49,
-     "ms": 2,
+     "ms": 1,
      "shortest": 41
     },
     {
@@ -656,7 +656,7 @@
      "errors": [],
      "warnings": [],
      "explored": 52,
-     "ms": 4,
+     "ms": 2,
      "shortest": 44
     }
    ],
@@ -683,7 +683,7 @@
      "errors": [],
      "warnings": [],
      "explored": 70,
-     "ms": 2,
+     "ms": 1,
      "shortest": 19,
      "author": 19,
      "hints": {
@@ -703,7 +703,7 @@
      "errors": [],
      "warnings": [],
      "explored": 73,
-     "ms": 2,
+     "ms": 1,
      "shortest": 22
     },
     {
@@ -715,7 +715,7 @@
      "errors": [],
      "warnings": [],
      "explored": 70,
-     "ms": 3,
+     "ms": 0,
      "shortest": 22
     },
     {
@@ -739,7 +739,7 @@
      "errors": [],
      "warnings": [],
      "explored": 70,
-     "ms": 3,
+     "ms": 1,
      "shortest": 19,
      "author": 19,
      "hints": {
@@ -759,7 +759,7 @@
      "errors": [],
      "warnings": [],
      "explored": 73,
-     "ms": 2,
+     "ms": 1,
      "shortest": 22
     },
     {
@@ -783,7 +783,7 @@
      "errors": [],
      "warnings": [],
      "explored": 73,
-     "ms": 3,
+     "ms": 1,
      "shortest": 25
     }
    ],
@@ -810,7 +810,7 @@
      "errors": [],
      "warnings": [],
      "explored": 38,
-     "ms": 3,
+     "ms": 2,
      "shortest": 19,
      "hints": {
       "first": [
@@ -830,7 +830,7 @@
      "errors": [],
      "warnings": [],
      "explored": 41,
-     "ms": 2,
+     "ms": 1,
      "shortest": 22
     },
     {
@@ -842,7 +842,7 @@
      "errors": [],
      "warnings": [],
      "explored": 38,
-     "ms": 2,
+     "ms": 1,
      "shortest": 22
     },
     {
@@ -854,7 +854,7 @@
      "errors": [],
      "warnings": [],
      "explored": 41,
-     "ms": 2,
+     "ms": 1,
      "shortest": 25
     },
     {
@@ -866,7 +866,7 @@
      "errors": [],
      "warnings": [],
      "explored": 38,
-     "ms": 3,
+     "ms": 1,
      "shortest": 19,
      "hints": {
       "first": [
@@ -886,7 +886,7 @@
      "errors": [],
      "warnings": [],
      "explored": 41,
-     "ms": 3,
+     "ms": 1,
      "shortest": 22
     },
     {
@@ -898,7 +898,7 @@
      "errors": [],
      "warnings": [],
      "explored": 38,
-     "ms": 2,
+     "ms": 1,
      "shortest": 22
     },
     {
@@ -910,7 +910,7 @@
      "errors": [],
      "warnings": [],
      "explored": 41,
-     "ms": 3,
+     "ms": 0,
      "shortest": 25
     }
    ],
@@ -937,7 +937,7 @@
      "errors": [],
      "warnings": [],
      "explored": 79,
-     "ms": 6,
+     "ms": 1,
      "shortest": 19,
      "hints": {
       "first": [
@@ -957,7 +957,7 @@
      "errors": [],
      "warnings": [],
      "explored": 82,
-     "ms": 3,
+     "ms": 1,
      "shortest": 22
     },
     {
@@ -969,7 +969,7 @@
      "errors": [],
      "warnings": [],
      "explored": 78,
-     "ms": 3,
+     "ms": 1,
      "shortest": 23
     },
     {
@@ -981,7 +981,7 @@
      "errors": [],
      "warnings": [],
      "explored": 82,
-     "ms": 4,
+     "ms": 1,
      "shortest": 26
     },
     {
@@ -1013,7 +1013,7 @@
      "errors": [],
      "warnings": [],
      "explored": 82,
-     "ms": 3,
+     "ms": 1,
      "shortest": 22
     },
     {
@@ -1025,7 +1025,7 @@
      "errors": [],
      "warnings": [],
      "explored": 76,
-     "ms": 5,
+     "ms": 1,
      "shortest": 23
     },
     {
@@ -1037,7 +1037,7 @@
      "errors": [],
      "warnings": [],
      "explored": 82,
-     "ms": 4,
+     "ms": 1,
      "shortest": 26
     }
    ],
@@ -1064,7 +1064,7 @@
      "errors": [],
      "warnings": [],
      "explored": 1222,
-     "ms": 77,
+     "ms": 21,
      "shortest": 21,
      "hints": {
       "first": [
@@ -1085,7 +1085,7 @@
      "errors": [],
      "warnings": [],
      "explored": 1361,
-     "ms": 48,
+     "ms": 18,
      "shortest": 24
     },
     {
@@ -1097,7 +1097,7 @@
      "errors": [],
      "warnings": [],
      "explored": 1219,
-     "ms": 48,
+     "ms": 14,
      "shortest": 24
     },
     {
@@ -1109,7 +1109,7 @@
      "errors": [],
      "warnings": [],
      "explored": 1358,
-     "ms": 44,
+     "ms": 15,
      "shortest": 27
     },
     {
@@ -1121,7 +1121,7 @@
      "errors": [],
      "warnings": [],
      "explored": 1216,
-     "ms": 39,
+     "ms": 13,
      "shortest": 21,
      "hints": {
       "first": [
@@ -1142,7 +1142,7 @@
      "errors": [],
      "warnings": [],
      "explored": 1359,
-     "ms": 44,
+     "ms": 13,
      "shortest": 24
     },
     {
@@ -1154,7 +1154,7 @@
      "errors": [],
      "warnings": [],
      "explored": 1213,
-     "ms": 42,
+     "ms": 12,
      "shortest": 24
     },
     {
@@ -1166,7 +1166,7 @@
      "errors": [],
      "warnings": [],
      "explored": 1356,
-     "ms": 48,
+     "ms": 16,
      "shortest": 27
     }
    ],
@@ -1193,7 +1193,7 @@
      "errors": [],
      "warnings": [],
      "explored": 46,
-     "ms": 3,
+     "ms": 0,
      "shortest": 19
     },
     {
@@ -1205,7 +1205,7 @@
      "errors": [],
      "warnings": [],
      "explored": 48,
-     "ms": 2,
+     "ms": 1,
      "shortest": 22
     },
     {
@@ -1217,7 +1217,7 @@
      "errors": [],
      "warnings": [],
      "explored": 46,
-     "ms": 2,
+     "ms": 0,
      "shortest": 21
     },
     {
@@ -1241,7 +1241,7 @@
      "errors": [],
      "warnings": [],
      "explored": 29,
-     "ms": 1,
+     "ms": 0,
      "shortest": 11
     },
     {
@@ -1265,7 +1265,7 @@
      "errors": [],
      "warnings": [],
      "explored": 46,
-     "ms": 2,
+     "ms": 1,
      "shortest": 15
     },
     {
@@ -1277,7 +1277,7 @@
      "errors": [],
      "warnings": [],
      "explored": 49,
-     "ms": 1,
+     "ms": 0,
      "shortest": 18
     },
     {
@@ -1301,7 +1301,7 @@
      "errors": [],
      "warnings": [],
      "explored": 46,
-     "ms": 1,
+     "ms": 0,
      "shortest": 19
     },
     {
@@ -1313,7 +1313,7 @@
      "errors": [],
      "warnings": [],
      "explored": 48,
-     "ms": 3,
+     "ms": 1,
      "shortest": 22
     },
     {
@@ -1325,7 +1325,7 @@
      "errors": [],
      "warnings": [],
      "explored": 46,
-     "ms": 2,
+     "ms": 0,
      "shortest": 21
     },
     {
@@ -1337,7 +1337,7 @@
      "errors": [],
      "warnings": [],
      "explored": 48,
-     "ms": 3,
+     "ms": 1,
      "shortest": 24
     },
     {
@@ -1349,7 +1349,7 @@
      "errors": [],
      "warnings": [],
      "explored": 29,
-     "ms": 1,
+     "ms": 0,
      "shortest": 11
     },
     {
@@ -1361,7 +1361,7 @@
      "errors": [],
      "warnings": [],
      "explored": 29,
-     "ms": 0,
+     "ms": 1,
      "shortest": 13
     },
     {
@@ -1373,7 +1373,7 @@
      "errors": [],
      "warnings": [],
      "explored": 45,
-     "ms": 1,
+     "ms": 0,
      "shortest": 14
     },
     {
@@ -1385,7 +1385,7 @@
      "errors": [],
      "warnings": [],
      "explored": 49,
-     "ms": 2,
+     "ms": 1,
      "shortest": 17
     },
     {
@@ -1397,7 +1397,7 @@
      "errors": [],
      "warnings": [],
      "explored": 29,
-     "ms": 1,
+     "ms": 0,
      "shortest": 9
     }
    ],
@@ -1424,7 +1424,7 @@
      "errors": [],
      "warnings": [],
      "explored": 236,
-     "ms": 39,
+     "ms": 13,
      "shortest": 39,
      "hints": {
       "first": [
@@ -1445,7 +1445,7 @@
      "errors": [],
      "warnings": [],
      "explored": 250,
-     "ms": 27,
+     "ms": 7,
      "shortest": 42
     },
     {
@@ -1457,7 +1457,7 @@
      "errors": [],
      "warnings": [],
      "explored": 236,
-     "ms": 19,
+     "ms": 5,
      "shortest": 42
     },
     {
@@ -1469,7 +1469,7 @@
      "errors": [],
      "warnings": [],
      "explored": 250,
-     "ms": 16,
+     "ms": 6,
      "shortest": 45
     },
     {
@@ -1481,7 +1481,7 @@
      "errors": [],
      "warnings": [],
      "explored": 232,
-     "ms": 12,
+     "ms": 5,
      "shortest": 39,
      "hints": {
       "first": [
@@ -1502,7 +1502,7 @@
      "errors": [],
      "warnings": [],
      "explored": 246,
-     "ms": 12,
+     "ms": 6,
      "shortest": 42
     },
     {
@@ -1514,7 +1514,7 @@
      "errors": [],
      "warnings": [],
      "explored": 232,
-     "ms": 12,
+     "ms": 6,
      "shortest": 42
     },
     {
@@ -1526,7 +1526,7 @@
      "errors": [],
      "warnings": [],
      "explored": 246,
-     "ms": 13,
+     "ms": 6,
      "shortest": 45
     }
    ],
@@ -1553,7 +1553,7 @@
      "errors": [],
      "warnings": [],
      "explored": 47,
-     "ms": 6,
+     "ms": 3,
      "shortest": 29,
      "hints": {
       "first": [
@@ -1573,7 +1573,7 @@
      "errors": [],
      "warnings": [],
      "explored": 42,
-     "ms": 6,
+     "ms": 2,
      "shortest": 21
     },
     {
@@ -1585,7 +1585,7 @@
      "errors": [],
      "warnings": [],
      "explored": 47,
-     "ms": 6,
+     "ms": 2,
      "shortest": 29,
      "hints": {
       "first": [
@@ -1605,7 +1605,7 @@
      "errors": [],
      "warnings": [],
      "explored": 42,
-     "ms": 5,
+     "ms": 2,
      "shortest": 21
     }
    ],
@@ -1632,7 +1632,7 @@
      "errors": [],
      "warnings": [],
      "explored": 78,
-     "ms": 3,
+     "ms": 1,
      "shortest": 19,
      "author": 19,
      "hints": {
@@ -1652,7 +1652,7 @@
      "errors": [],
      "warnings": [],
      "explored": 78,
-     "ms": 4,
+     "ms": 1,
      "shortest": 23
     },
     {
@@ -1664,7 +1664,7 @@
      "errors": [],
      "warnings": [],
      "explored": 81,
-     "ms": 4,
+     "ms": 1,
      "shortest": 22
     },
     {
@@ -1676,7 +1676,7 @@
      "errors": [],
      "warnings": [],
      "explored": 81,
-     "ms": 4,
+     "ms": 1,
      "shortest": 26
     },
     {
@@ -1688,7 +1688,7 @@
      "errors": [],
      "warnings": [],
      "explored": 78,
-     "ms": 2,
+     "ms": 1,
      "shortest": 19,
      "author": 19,
      "hints": {
@@ -1708,7 +1708,7 @@
      "errors": [],
      "warnings": [],
      "explored": 78,
-     "ms": 3,
+     "ms": 1,
      "shortest": 23
     },
     {
@@ -1720,7 +1720,7 @@
      "errors": [],
      "warnings": [],
      "explored": 81,
-     "ms": 2,
+     "ms": 1,
      "shortest": 22
     },
     {
@@ -1732,7 +1732,7 @@
      "errors": [],
      "warnings": [],
      "explored": 81,
-     "ms": 2,
+     "ms": 1,
      "shortest": 26
     }
    ],
@@ -1759,7 +1759,7 @@
      "errors": [],
      "warnings": [],
      "explored": 52,
-     "ms": 2,
+     "ms": 1,
      "shortest": 39
     },
     {
@@ -1771,7 +1771,7 @@
      "errors": [],
      "warnings": [],
      "explored": 52,
-     "ms": 2,
+     "ms": 1,
      "shortest": 41
     },
     {
@@ -1783,7 +1783,7 @@
      "errors": [],
      "warnings": [],
      "explored": 54,
-     "ms": 2,
+     "ms": 1,
      "shortest": 42
     },
     {
@@ -1831,7 +1831,7 @@
      "errors": [],
      "warnings": [],
      "explored": 54,
-     "ms": 1,
+     "ms": 0,
      "shortest": 42
     },
     {
@@ -1843,7 +1843,7 @@
      "errors": [],
      "warnings": [],
      "explored": 54,
-     "ms": 2,
+     "ms": 1,
      "shortest": 44
     }
    ],
@@ -1870,7 +1870,7 @@
      "errors": [],
      "warnings": [],
      "explored": 326,
-     "ms": 17,
+     "ms": 5,
      "shortest": 39,
      "hints": {
       "first": [
@@ -1890,7 +1890,7 @@
      "errors": [],
      "warnings": [],
      "explored": 324,
-     "ms": 29,
+     "ms": 5,
      "shortest": 42
     },
     {
@@ -1902,7 +1902,7 @@
      "errors": [],
      "warnings": [],
      "explored": 343,
-     "ms": 28,
+     "ms": 5,
      "shortest": 42
     },
     {
@@ -1914,7 +1914,7 @@
      "errors": [],
      "warnings": [],
      "explored": 342,
-     "ms": 18,
+     "ms": 5,
      "shortest": 45
     },
     {
@@ -1926,7 +1926,7 @@
      "errors": [],
      "warnings": [],
      "explored": 319,
-     "ms": 11,
+     "ms": 4,
      "shortest": 39,
      "hints": {
       "first": [
@@ -1946,7 +1946,7 @@
      "errors": [],
      "warnings": [],
      "explored": 318,
-     "ms": 12,
+     "ms": 4,
      "shortest": 42
     },
     {
@@ -1958,7 +1958,7 @@
      "errors": [],
      "warnings": [],
      "explored": 339,
-     "ms": 11,
+     "ms": 4,
      "shortest": 42
     },
     {
@@ -1970,7 +1970,7 @@
      "errors": [],
      "warnings": [],
      "explored": 337,
-     "ms": 14,
+     "ms": 4,
      "shortest": 45
     }
    ],
@@ -1997,7 +1997,7 @@
      "errors": [],
      "warnings": [],
      "explored": 27,
-     "ms": 1,
+     "ms": 0,
      "shortest": 16
     },
     {
@@ -2033,7 +2033,7 @@
      "errors": [],
      "warnings": [],
      "explored": 27,
-     "ms": 1,
+     "ms": 0,
      "shortest": 16
     },
     {
@@ -2045,7 +2045,7 @@
      "errors": [],
      "warnings": [],
      "explored": 29,
-     "ms": 1,
+     "ms": 0,
      "shortest": 19
     },
     {
@@ -2096,7 +2096,7 @@
      "errors": [],
      "warnings": [],
      "explored": 37,
-     "ms": 1,
+     "ms": 0,
      "shortest": 18
     },
     {
@@ -2120,7 +2120,7 @@
      "errors": [],
      "warnings": [],
      "explored": 37,
-     "ms": 2,
+     "ms": 0,
      "shortest": 16
     },
     {
@@ -2132,7 +2132,7 @@
      "errors": [],
      "warnings": [],
      "explored": 37,
-     "ms": 1,
+     "ms": 0,
      "shortest": 18
     },
     {
@@ -2144,7 +2144,7 @@
      "errors": [],
      "warnings": [],
      "explored": 30,
-     "ms": 1,
+     "ms": 0,
      "shortest": 11
     }
    ],
@@ -2171,7 +2171,7 @@
      "errors": [],
      "warnings": [],
      "explored": 29,
-     "ms": 1,
+     "ms": 0,
      "shortest": 19,
      "author": 19,
      "hints": {
@@ -2192,7 +2192,7 @@
      "errors": [],
      "warnings": [],
      "explored": 29,
-     "ms": 0,
+     "ms": 1,
      "shortest": 22
     },
     {
@@ -2204,7 +2204,7 @@
      "errors": [],
      "warnings": [],
      "explored": 32,
-     "ms": 1,
+     "ms": 0,
      "shortest": 22
     },
     {
@@ -2228,7 +2228,7 @@
      "errors": [],
      "warnings": [],
      "explored": 29,
-     "ms": 1,
+     "ms": 0,
      "shortest": 19,
      "author": 19,
      "hints": {
@@ -2249,7 +2249,7 @@
      "errors": [],
      "warnings": [],
      "explored": 29,
-     "ms": 0,
+     "ms": 1,
      "shortest": 22
     },
     {
@@ -2261,7 +2261,7 @@
      "errors": [],
      "warnings": [],
      "explored": 32,
-     "ms": 2,
+     "ms": 0,
      "shortest": 22
     },
     {
@@ -2273,7 +2273,7 @@
      "errors": [],
      "warnings": [],
      "explored": 32,
-     "ms": 2,
+     "ms": 1,
      "shortest": 25
     }
    ],
@@ -2300,7 +2300,7 @@
      "errors": [],
      "warnings": [],
      "explored": 1503,
-     "ms": 76,
+     "ms": 17,
      "shortest": 23,
      "hints": {
       "first": [
@@ -2320,7 +2320,7 @@
      "errors": [],
      "warnings": [],
      "explored": 1643,
-     "ms": 61,
+     "ms": 18,
      "shortest": 26
     },
     {
@@ -2332,7 +2332,7 @@
      "errors": [],
      "warnings": [],
      "explored": 1503,
-     "ms": 59,
+     "ms": 17,
      "shortest": 23,
      "hints": {
       "first": [
@@ -2352,7 +2352,7 @@
      "errors": [],
      "warnings": [],
      "explored": 1643,
-     "ms": 66,
+     "ms": 18,
      "shortest": 26
     }
    ],
@@ -2391,7 +2391,7 @@
      "errors": [],
      "warnings": [],
      "explored": 48,
-     "ms": 2,
+     "ms": 0,
      "shortest": 22
     },
     {
@@ -2415,7 +2415,7 @@
      "errors": [],
      "warnings": [],
      "explored": 48,
-     "ms": 1,
+     "ms": 0,
      "shortest": 24
     },
     {
@@ -2427,7 +2427,7 @@
      "errors": [],
      "warnings": [],
      "explored": 29,
-     "ms": 1,
+     "ms": 0,
      "shortest": 11
     },
     {
@@ -2451,7 +2451,7 @@
      "errors": [],
      "warnings": [],
      "explored": 46,
-     "ms": 1,
+     "ms": 0,
      "shortest": 15
     },
     {
@@ -2463,7 +2463,7 @@
      "errors": [],
      "warnings": [],
      "explored": 49,
-     "ms": 4,
+     "ms": 1,
      "shortest": 18
     },
     {
@@ -2475,7 +2475,7 @@
      "errors": [],
      "warnings": [],
      "explored": 29,
-     "ms": 1,
+     "ms": 0,
      "shortest": 9
     },
     {
@@ -2487,7 +2487,7 @@
      "errors": [],
      "warnings": [],
      "explored": 46,
-     "ms": 2,
+     "ms": 1,
      "shortest": 19
     },
     {
@@ -2499,7 +2499,7 @@
      "errors": [],
      "warnings": [],
      "explored": 48,
-     "ms": 1,
+     "ms": 0,
      "shortest": 22
     },
     {
@@ -2511,7 +2511,7 @@
      "errors": [],
      "warnings": [],
      "explored": 46,
-     "ms": 2,
+     "ms": 1,
      "shortest": 21
     },
     {
@@ -2523,7 +2523,7 @@
      "errors": [],
      "warnings": [],
      "explored": 48,
-     "ms": 2,
+     "ms": 0,
      "shortest": 24
     },
     {
@@ -2535,7 +2535,7 @@
      "errors": [],
      "warnings": [],
      "explored": 29,
-     "ms": 2,
+     "ms": 0,
      "shortest": 11
     },
     {
@@ -2547,7 +2547,7 @@
      "errors": [],
      "warnings": [],
      "explored": 29,
-     "ms": 1,
+     "ms": 0,
      "shortest": 13
     },
     {
@@ -2559,7 +2559,7 @@
      "errors": [],
      "warnings": [],
      "explored": 45,
-     "ms": 1,
+     "ms": 0,
      "shortest": 14
     },
     {
@@ -2571,7 +2571,7 @@
      "errors": [],
      "warnings": [],
      "explored": 49,
-     "ms": 3,
+     "ms": 0,
      "shortest": 17
     },
     {
@@ -2610,7 +2610,7 @@
      "errors": [],
      "warnings": [],
      "explored": 29,
-     "ms": 1,
+     "ms": 0,
      "shortest": 27,
      "hints": {
       "first": [
@@ -2631,7 +2631,7 @@
      "errors": [],
      "warnings": [],
      "explored": 29,
-     "ms": 1,
+     "ms": 0,
      "shortest": 27,
      "hints": {
       "first": [
@@ -2667,7 +2667,7 @@
      "errors": [],
      "warnings": [],
      "explored": 305,
-     "ms": 52,
+     "ms": 7,
      "shortest": 51,
      "hints": {
       "first": [
@@ -2688,7 +2688,7 @@
      "errors": [],
      "warnings": [],
      "explored": 304,
-     "ms": 44,
+     "ms": 6,
      "shortest": 51,
      "hints": {
       "first": [
@@ -2699,6 +2699,591 @@
       ],
       "ok": true
      }
+    }
+   ],
+   "warnings": []
+  },
+  {
+   "id": "jeju_canola",
+   "file": "content/rooms/jeju/jeju_canola.json",
+   "sha256": "d0d66c406a4926dbf03d8838f590eab673c8bf32c3562cee55d96a87a9529089",
+   "world": "jeju",
+   "role": "breather",
+   "size": [
+    2,
+    1
+   ],
+   "errors": [],
+   "routes": [
+    {
+     "route": "left.0.low>right.0.low",
+     "mirror": false,
+     "from": "left.0.low",
+     "to": "right.0.low",
+     "ok": true,
+     "errors": [],
+     "warnings": [],
+     "explored": 52,
+     "ms": 0,
+     "shortest": 39
+    },
+    {
+     "route": "left.0.low>right.0.high",
+     "mirror": false,
+     "from": "left.0.low",
+     "to": "right.0.high",
+     "ok": true,
+     "errors": [],
+     "warnings": [],
+     "explored": 54,
+     "ms": 0,
+     "shortest": 42
+    },
+    {
+     "route": "left.0.high>right.0.low",
+     "mirror": false,
+     "from": "left.0.high",
+     "to": "right.0.low",
+     "ok": true,
+     "errors": [],
+     "warnings": [],
+     "explored": 52,
+     "ms": 1,
+     "shortest": 41
+    },
+    {
+     "route": "left.0.high>right.0.high",
+     "mirror": false,
+     "from": "left.0.high",
+     "to": "right.0.high",
+     "ok": true,
+     "errors": [],
+     "warnings": [],
+     "explored": 54,
+     "ms": 1,
+     "shortest": 44
+    },
+    {
+     "route": "left.0.low>right.0.low",
+     "mirror": true,
+     "from": "right.0.low",
+     "to": "left.0.low",
+     "ok": true,
+     "errors": [],
+     "warnings": [],
+     "explored": 52,
+     "ms": 0,
+     "shortest": 39
+    },
+    {
+     "route": "left.0.low>right.0.high",
+     "mirror": true,
+     "from": "right.0.low",
+     "to": "left.0.high",
+     "ok": true,
+     "errors": [],
+     "warnings": [],
+     "explored": 54,
+     "ms": 1,
+     "shortest": 42
+    },
+    {
+     "route": "left.0.high>right.0.low",
+     "mirror": true,
+     "from": "right.0.high",
+     "to": "left.0.low",
+     "ok": true,
+     "errors": [],
+     "warnings": [],
+     "explored": 52,
+     "ms": 0,
+     "shortest": 41
+    },
+    {
+     "route": "left.0.high>right.0.high",
+     "mirror": true,
+     "from": "right.0.high",
+     "to": "left.0.high",
+     "ok": true,
+     "errors": [],
+     "warnings": [],
+     "explored": 54,
+     "ms": 1,
+     "shortest": 44
+    }
+   ],
+   "warnings": []
+  },
+  {
+   "id": "jeju_gate",
+   "file": "content/rooms/jeju/jeju_gate.json",
+   "sha256": "0bc2f893eb54c88eca6012fcd395f480430e1ecd653102288d4e7465ddd0360c",
+   "world": "jeju",
+   "role": "gate",
+   "size": [
+    1,
+    1
+   ],
+   "errors": [],
+   "routes": [
+    {
+     "route": "gate>right.0.low",
+     "mirror": false,
+     "from": "gate",
+     "to": "right.0.low",
+     "ok": true,
+     "errors": [],
+     "warnings": [],
+     "explored": 24,
+     "ms": 0,
+     "shortest": 15
+    },
+    {
+     "route": "gate>right.0.high",
+     "mirror": false,
+     "from": "gate",
+     "to": "right.0.high",
+     "ok": true,
+     "errors": [],
+     "warnings": [],
+     "explored": 26,
+     "ms": 1,
+     "shortest": 18
+    },
+    {
+     "route": "gate>right.0.low",
+     "mirror": true,
+     "from": "gate",
+     "to": "left.0.low",
+     "ok": true,
+     "errors": [],
+     "warnings": [],
+     "explored": 24,
+     "ms": 0,
+     "shortest": 15
+    },
+    {
+     "route": "gate>right.0.high",
+     "mirror": true,
+     "from": "gate",
+     "to": "left.0.high",
+     "ok": true,
+     "errors": [],
+     "warnings": [],
+     "explored": 26,
+     "ms": 0,
+     "shortest": 18
+    }
+   ],
+   "warnings": []
+  },
+  {
+   "id": "jeju_haenyeo_house",
+   "file": "content/rooms/jeju/jeju_haenyeo_house.json",
+   "sha256": "c16f2ed6a778783d83435f8cb9c29dba8592b475beb4e76b1c163640a23c5fd6",
+   "world": "jeju",
+   "role": "station",
+   "size": [
+    1,
+    1
+   ],
+   "errors": [],
+   "routes": [
+    {
+     "route": "left.0.low>right.0.low",
+     "mirror": false,
+     "from": "left.0.low",
+     "to": "right.0.low",
+     "ok": true,
+     "errors": [],
+     "warnings": [],
+     "explored": 32,
+     "ms": 0,
+     "shortest": 19
+    },
+    {
+     "route": "left.0.low>right.0.high",
+     "mirror": false,
+     "from": "left.0.low",
+     "to": "right.0.high",
+     "ok": true,
+     "errors": [],
+     "warnings": [],
+     "explored": 34,
+     "ms": 1,
+     "shortest": 22
+    },
+    {
+     "route": "left.0.high>right.0.low",
+     "mirror": false,
+     "from": "left.0.high",
+     "to": "right.0.low",
+     "ok": true,
+     "errors": [],
+     "warnings": [],
+     "explored": 32,
+     "ms": 0,
+     "shortest": 21
+    },
+    {
+     "route": "left.0.high>right.0.high",
+     "mirror": false,
+     "from": "left.0.high",
+     "to": "right.0.high",
+     "ok": true,
+     "errors": [],
+     "warnings": [],
+     "explored": 34,
+     "ms": 0,
+     "shortest": 24
+    },
+    {
+     "route": "left.0.low>right.0.low",
+     "mirror": true,
+     "from": "right.0.low",
+     "to": "left.0.low",
+     "ok": true,
+     "errors": [],
+     "warnings": [],
+     "explored": 32,
+     "ms": 0,
+     "shortest": 19
+    },
+    {
+     "route": "left.0.low>right.0.high",
+     "mirror": true,
+     "from": "right.0.low",
+     "to": "left.0.high",
+     "ok": true,
+     "errors": [],
+     "warnings": [],
+     "explored": 34,
+     "ms": 1,
+     "shortest": 22
+    },
+    {
+     "route": "left.0.high>right.0.low",
+     "mirror": true,
+     "from": "right.0.high",
+     "to": "left.0.low",
+     "ok": true,
+     "errors": [],
+     "warnings": [],
+     "explored": 32,
+     "ms": 0,
+     "shortest": 21
+    },
+    {
+     "route": "left.0.high>right.0.high",
+     "mirror": true,
+     "from": "right.0.high",
+     "to": "left.0.high",
+     "ok": true,
+     "errors": [],
+     "warnings": [],
+     "explored": 34,
+     "ms": 0,
+     "shortest": 24
+    }
+   ],
+   "warnings": []
+  },
+  {
+   "id": "jeju_home_cave",
+   "file": "content/rooms/jeju/jeju_home_cave.json",
+   "sha256": "78fe556b44dcdfe4fd812ef3d640acec8f8a7d05bee75aa8ca6a9e6fa46e73fd",
+   "world": "jeju",
+   "role": "home",
+   "size": [
+    1,
+    1
+   ],
+   "errors": [],
+   "routes": [
+    {
+     "route": "left.0.low>recipient",
+     "mirror": false,
+     "from": "left.0.low",
+     "to": "recipient",
+     "ok": true,
+     "errors": [],
+     "warnings": [],
+     "explored": 124,
+     "ms": 1,
+     "shortest": 15
+    },
+    {
+     "route": "left.0.high>recipient",
+     "mirror": false,
+     "from": "left.0.high",
+     "to": "recipient",
+     "ok": true,
+     "errors": [],
+     "warnings": [],
+     "explored": 124,
+     "ms": 1,
+     "shortest": 17
+    },
+    {
+     "route": "left.0.low>recipient",
+     "mirror": true,
+     "from": "right.0.low",
+     "to": "recipient",
+     "ok": true,
+     "errors": [],
+     "warnings": [],
+     "explored": 124,
+     "ms": 1,
+     "shortest": 15
+    },
+    {
+     "route": "left.0.high>recipient",
+     "mirror": true,
+     "from": "right.0.high",
+     "to": "recipient",
+     "ok": true,
+     "errors": [],
+     "warnings": [],
+     "explored": 124,
+     "ms": 1,
+     "shortest": 17
+    }
+   ],
+   "warnings": []
+  },
+  {
+   "id": "jeju_home_orchard",
+   "file": "content/rooms/jeju/jeju_home_orchard.json",
+   "sha256": "b3b2599003678116618862983eec638cc686a0d882d80821c4caabff22d790c8",
+   "world": "jeju",
+   "role": "home",
+   "size": [
+    1,
+    1
+   ],
+   "errors": [],
+   "routes": [
+    {
+     "route": "left.0.low>recipient",
+     "mirror": false,
+     "from": "left.0.low",
+     "to": "recipient",
+     "ok": true,
+     "errors": [],
+     "warnings": [],
+     "explored": 23,
+     "ms": 0,
+     "shortest": 15
+    },
+    {
+     "route": "left.0.high>recipient",
+     "mirror": false,
+     "from": "left.0.high",
+     "to": "recipient",
+     "ok": true,
+     "errors": [],
+     "warnings": [],
+     "explored": 23,
+     "ms": 0,
+     "shortest": 17
+    },
+    {
+     "route": "left.0.low>recipient",
+     "mirror": true,
+     "from": "right.0.low",
+     "to": "recipient",
+     "ok": true,
+     "errors": [],
+     "warnings": [],
+     "explored": 23,
+     "ms": 0,
+     "shortest": 15
+    },
+    {
+     "route": "left.0.high>recipient",
+     "mirror": true,
+     "from": "right.0.high",
+     "to": "recipient",
+     "ok": true,
+     "errors": [],
+     "warnings": [],
+     "explored": 23,
+     "ms": 1,
+     "shortest": 17
+    }
+   ],
+   "warnings": []
+  },
+  {
+   "id": "jeju_home_shore",
+   "file": "content/rooms/jeju/jeju_home_shore.json",
+   "sha256": "fad142f902d4ed7d20f3d9c48176881b9a8bb0bb092c6ee584afc23228a9d3d9",
+   "world": "jeju",
+   "role": "home",
+   "size": [
+    1,
+    1
+   ],
+   "errors": [],
+   "routes": [
+    {
+     "route": "left.0.low>recipient",
+     "mirror": false,
+     "from": "left.0.low",
+     "to": "recipient",
+     "ok": true,
+     "errors": [],
+     "warnings": [],
+     "explored": 22,
+     "ms": 1,
+     "shortest": 14
+    },
+    {
+     "route": "left.0.high>recipient",
+     "mirror": false,
+     "from": "left.0.high",
+     "to": "recipient",
+     "ok": true,
+     "errors": [],
+     "warnings": [],
+     "explored": 22,
+     "ms": 0,
+     "shortest": 16
+    },
+    {
+     "route": "left.0.low>recipient",
+     "mirror": true,
+     "from": "right.0.low",
+     "to": "recipient",
+     "ok": true,
+     "errors": [],
+     "warnings": [],
+     "explored": 22,
+     "ms": 1,
+     "shortest": 14
+    },
+    {
+     "route": "left.0.high>recipient",
+     "mirror": true,
+     "from": "right.0.high",
+     "to": "recipient",
+     "ok": true,
+     "errors": [],
+     "warnings": [],
+     "explored": 22,
+     "ms": 0,
+     "shortest": 16
+    }
+   ],
+   "warnings": []
+  },
+  {
+   "id": "jeju_olle",
+   "file": "content/rooms/jeju/jeju_olle.json",
+   "sha256": "90b2c897ae809ba22e1bb2a8edfb65c81c9338ca0e57fbf87160f8074dd28c58",
+   "world": "jeju",
+   "role": "breather",
+   "size": [
+    2,
+    1
+   ],
+   "errors": [],
+   "routes": [
+    {
+     "route": "left.0.low>right.0.low",
+     "mirror": false,
+     "from": "left.0.low",
+     "to": "right.0.low",
+     "ok": true,
+     "errors": [],
+     "warnings": [],
+     "explored": 60,
+     "ms": 1,
+     "shortest": 39
+    },
+    {
+     "route": "left.0.low>right.0.high",
+     "mirror": false,
+     "from": "left.0.low",
+     "to": "right.0.high",
+     "ok": true,
+     "errors": [],
+     "warnings": [],
+     "explored": 62,
+     "ms": 0,
+     "shortest": 42
+    },
+    {
+     "route": "left.0.high>right.0.low",
+     "mirror": false,
+     "from": "left.0.high",
+     "to": "right.0.low",
+     "ok": true,
+     "errors": [],
+     "warnings": [],
+     "explored": 60,
+     "ms": 1,
+     "shortest": 42
+    },
+    {
+     "route": "left.0.high>right.0.high",
+     "mirror": false,
+     "from": "left.0.high",
+     "to": "right.0.high",
+     "ok": true,
+     "errors": [],
+     "warnings": [],
+     "explored": 62,
+     "ms": 1,
+     "shortest": 45
+    },
+    {
+     "route": "left.0.low>right.0.low",
+     "mirror": true,
+     "from": "right.0.low",
+     "to": "left.0.low",
+     "ok": true,
+     "errors": [],
+     "warnings": [],
+     "explored": 60,
+     "ms": 1,
+     "shortest": 39
+    },
+    {
+     "route": "left.0.low>right.0.high",
+     "mirror": true,
+     "from": "right.0.low",
+     "to": "left.0.high",
+     "ok": true,
+     "errors": [],
+     "warnings": [],
+     "explored": 62,
+     "ms": 1,
+     "shortest": 42
+    },
+    {
+     "route": "left.0.high>right.0.low",
+     "mirror": true,
+     "from": "right.0.high",
+     "to": "left.0.low",
+     "ok": true,
+     "errors": [],
+     "warnings": [],
+     "explored": 60,
+     "ms": 0,
+     "shortest": 42
+    },
+    {
+     "route": "left.0.high>right.0.high",
+     "mirror": true,
+     "from": "right.0.high",
+     "to": "left.0.high",
+     "ok": true,
+     "errors": [],
+     "warnings": [],
+     "explored": 62,
+     "ms": 1,
+     "shortest": 45
     }
    ],
    "warnings": []

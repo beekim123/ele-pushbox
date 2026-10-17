@@ -1,0 +1,45 @@
+{
+ "format": "pushbox.room/2",
+ "world": "jeju",
+ "weight": 10,
+ "mirror": true,
+ "id": "jeju_home_shore",
+ "type": "home",
+ "role": "home",
+ "name": "收件人之家 · 防波堤",
+ "idea": "终点：海女奶奶在海女烤火的石圈边，或灯塔大叔在石灯台下等你；石岸旁是一小片海水。",
+ "only": {
+  "recipients": [
+   "haenyeo",
+   "lighthouse_keeper"
+  ]
+ },
+ "mechanisms": [
+  "ladder"
+ ],
+ "exits": [
+  "left.0.low",
+  "left.0.high"
+ ],
+ "routes": [
+  "left.0.low>recipient",
+  "left.0.high>recipient"
+ ],
+ "legend": {
+  "1": {
+   "feature": "recipient"
+  }
+ },
+ "map": [
+  "####################",
+  "#..................#",
+  "...................#",
+  "....H..............#",
+  "####H..............#",
+  "####H..............#",
+  "....H..............#",
+  "....H.........1..~~#",
+  "################~~~#",
+  "####################"
+ ]
+}

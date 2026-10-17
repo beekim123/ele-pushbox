@@ -494,7 +494,8 @@
      "name": "红蜻蜓",
      "asset": "fauna.jeju_dragonfly",
      "look": "停在下一步要去的地方",
-     "near": "走近时飞过去，在目标上方绕圈"
+     "near": "走近时飞过去，在目标上方绕圈",
+     "fed": "只帮小马带路：喂零食要找小马"
     }
    ],
    "ambient_exclude": [
