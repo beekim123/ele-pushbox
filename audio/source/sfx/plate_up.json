@@ -1,0 +1,37 @@
+{
+ "format": "pushbox.audio/1",
+ "kind": "sfx",
+ "id": "plate_up",
+ "uid": "sfx:plate_up",
+ "name": "压板松开",
+ "description": "B2 较低单嗒，圆滑释放，区别于压板按下。",
+ "seed": 170106,
+ "engine": "portitor-chip/1",
+ "sample_rate": 44100,
+ "channels": 1,
+ "version": 1,
+ "content_hash": "f0beb65c02b9f5ba89f65074d2c75652e683b2397931a9a458a494fd1b5328a9",
+ "gain_db": -14.0001,
+ "instruments": [
+  {
+   "id": "plate",
+   "wave": "triangle",
+   "gain_db": 0,
+   "lowpass_hz": 900,
+   "attack_ms": 8,
+   "decay_ms": 18,
+   "sustain": 0.55,
+   "release_ms": 30
+  }
+ ],
+ "duration_ms": 100,
+ "events": [
+  {
+   "instrument": "plate",
+   "start_ms": 0,
+   "duration_ms": 70,
+   "note": 47,
+   "gain_db": 0
+  }
+ ]
+}
