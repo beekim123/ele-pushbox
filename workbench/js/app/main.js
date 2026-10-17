@@ -40,8 +40,9 @@
       if (!on && !sec.hidden && VIEWS[v].hide) VIEWS[v].hide();
       sec.hidden = !on;
     }
-    // A page with places of its own in the menu (配送: maps, rooms) says which item and breadcrumb fit.
-    nav.setCurrent(name, VIEWS[name].where ? VIEWS[name].where(id) : null);
+    // A page with places of its own in the menu (配送: maps, rooms; 声音: sfx, music, maps) says which item and breadcrumb fit.
+    const at = VIEWS[name].where ? VIEWS[name].where(id) : name === "audio" ? { key: "audio/" + (id || "sfx").split("/")[0] } : null;
+    nav.setCurrent(name, at);
     active = name;
     VIEWS[name].show(id);
     updateBadges();

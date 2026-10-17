@@ -35,6 +35,11 @@
     { group: "tools", label: "工具", items: [
       { view: "ids", label: "编号映射", module: "PBIds" },
     ] },
+    { group: "audio", label: "声音", items: [
+      { view: "audio", href: "#audio/sfx", label: "音效", module: "PBWBAudio" },
+      { view: "audio", href: "#audio/music", label: "音乐", module: "PBWBAudio" },
+      { view: "audio", href: "#audio/maps", label: "按地图", module: "PBWBAudio" },
+    ] },
   ];
 
   const KEY = "pb.wb.nav.v1";
