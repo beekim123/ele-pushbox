@@ -313,3 +313,79 @@ test("adoption records missing user statement cannot select a music alias", t =>
   assert.equal(id(res, "music:dungeon").importable, false, "adoption also requires a recorded explicit user statement");
   assert.ok(errors(res).some(x => x.includes("records[1].note")));
 });
+
+// AUD-00 fixtures replace any real theme candidates so catalog additions do not
+// duplicate IDs or make these isolated checks depend on the sample compositions.
+function addThemeSet(root) {
+  editAudio(root, d => {
+    d.music_sets = d.music_sets.filter(s => s.id !== "theme");
+    d.entries = d.entries.filter(e => e.set !== "theme");
+    const prototype = d.entries.find(e => e.uid === "music:dungeon_a");
+    const candidates = ["a", "b", "c", "d"].map(letter => {
+      const id = `theme_${letter}`, uid = `music:${id}`;
+      d.entries.push({ ...prototype, id, uid, name: `主题 ${letter}`, set: "theme", bpm: 84, source: `audio/source/music/${id}.json` });
+      return uid;
+    });
+    d.music_sets.push({ id: "theme", uid: "music:theme", kind: "music_set", name: "主题小调", world: null, slices: [], candidates });
+  });
+}
+
+test("AUD-00 theme set without a world or slices validates as planned audition candidates", t => {
+  const root = sandbox(t);
+  addThemeSet(root);
+  const res = buildContent(root);
+  assert.deepEqual(errors(res), []);
+  assert.equal(id(res, "music:theme").availability, "planned");
+  assert.equal(id(res, "music:theme").importable, false);
+  for (const uid of ["music:theme_a", "music:theme_b", "music:theme_c", "music:theme_d"]) {
+    assert.equal(id(res, uid).availability, "planned");
+    assert.equal(id(res, uid).importable, false);
+  }
+});
+
+test("AUD-00 theme references are rejected in every music route and nested route value", t => {
+  const cases = [
+    ["delivery.slice_to_music.dungeon_1", d => { d.routes.delivery.slice_to_music.dungeon_1 = "music:theme"; }],
+    ["world_to_music.dungeon", d => { d.routes.world_to_music.dungeon = "music:theme"; }],
+    ["chapter_to_music.dungeon", d => { d.routes.chapter_to_music.dungeon = "music:theme"; }],
+    ["group_to_chapter.basics", d => { d.routes.group_to_chapter.basics = "music:theme"; }],
+    ["delivery.otherwise", d => { d.routes.delivery.otherwise = "music:theme"; }],
+    ["lobby", d => { d.routes.lobby = "music:theme"; }],
+    ["result", d => { d.routes.result = "music:theme"; }],
+    ["hell", d => { d.routes.hell = "music:theme"; }],
+    ["chapter_to_music.dungeon.nested.music", d => { d.routes.chapter_to_music.dungeon = { nested: { music: "music:theme" } }; }],
+    ["chapter_to_music.dungeon.0", d => { d.routes.chapter_to_music.dungeon = ["music:theme"]; }],
+  ];
+  for (const [field, change] of cases) {
+    const root = sandbox(t);
+    addThemeSet(root);
+    editAudio(root, change);
+    assert.ok(audioIssues(buildContent(root)).some(i => i.level === "error" && i.where === `audio.routes.${field}` && i.msg.includes("music:theme")), field);
+  }
+});
+
+test("AUD-00 theme requires explicit null world and empty slices", t => {
+  for (const [field, value] of [["world", "dungeon"], ["world", undefined], ["slices", ["dungeon_1"]], ["slices", undefined]]) {
+    const root = sandbox(t);
+    addThemeSet(root);
+    editAudio(root, d => {
+      const theme = d.music_sets.find(s => s.id === "theme");
+      if (value === undefined) delete theme[field]; else theme[field] = value;
+    });
+    const themeIndex = json(path.join(root, "content/catalog/audio.json")).music_sets.findIndex(s => s.id === "theme");
+    assert.ok(audioIssues(buildContent(root)).some(i => i.level === "error" && i.where === `audio.music_sets[${themeIndex}].${field}`), `${field}: ${JSON.stringify(value)}`);
+  }
+});
+
+test("AUD-00 theme exception preserves ordinary music world and slice validation", t => {
+  for (const world of [null, undefined, "missing_world"]) {
+    const root = sandbox(t);
+    addThemeSet(root);
+    editAudio(root, d => { if (world === undefined) delete d.music_sets[0].world; else d.music_sets[0].world = world; });
+    assert.ok(audioIssues(buildContent(root)).some(i => i.level === "error" && i.where === "audio.music_sets[0].world"), `ordinary world: ${JSON.stringify(world)}`);
+  }
+  const root = sandbox(t);
+  addThemeSet(root);
+  editAudio(root, d => { d.music_sets[0].slices.push("diyu_1"); });
+  assert.ok(errors(buildContent(root)).some(e => e.includes("music_sets[0].slices") && e.includes("diyu_1.world")));
+});

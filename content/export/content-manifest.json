@@ -1658,6 +1658,20 @@
       "music:jeju_b",
       "music:jeju_c"
      ]
+    },
+    {
+     "id": "theme",
+     "uid": "music:theme",
+     "kind": "music_set",
+     "name": "主题小调",
+     "world": null,
+     "slices": [],
+     "candidates": [
+      "music:theme_a",
+      "music:theme_b",
+      "music:theme_c",
+      "music:theme_d"
+     ]
     }
    ],
    "entries": [
@@ -2354,6 +2368,122 @@
      ],
      "difference": "使用明亮上行和较长旋律弧；不引用真实民歌或模仿他人旋律",
      "source": "audio/source/music/jeju_c.json"
+    },
+    {
+     "id": "theme_a",
+     "uid": "music:theme_a",
+     "kind": "music",
+     "set": "theme",
+     "name": "渡口灯",
+     "theme": "温柔、上扬后落回，像提着灯出门；同一八小节动机依次展示原型、石牢、地府、海女村",
+     "instruments": [
+      "三角波主题",
+      "正弦低音",
+      "低八度三角波与正弦弱回声",
+      "正弦圆笛、短倚音、低通木点",
+      "三角波摇摆分解和弦、极轻低通浪声"
+     ],
+     "bpm": 84,
+     "meter": [
+      4,
+      4
+     ],
+     "bars": 32,
+     "mode": "C 五声（展示曲含四种色彩）",
+     "mood": [
+      "温柔",
+      "提灯出门",
+      "安稳"
+     ],
+     "difference": "温柔、上扬后落回，像提着灯出门；1–8小节三角波与正弦低音，9–16小节低八度/A羽和声与弱回声，17–24小节五声圆笛/短倚音/木点，25–32小节大调摇摆主旋律、分解伴奏与轻浪声；全部音名及顺序保留",
+     "source": "audio/source/music/theme_a.json"
+    },
+    {
+     "id": "theme_b",
+     "uid": "music:theme_b",
+     "kind": "music",
+     "set": "theme",
+     "name": "小信差",
+     "theme": "轻快、带附点，像小跑着送信；同一八小节动机依次展示原型、石牢、地府、海女村",
+     "instruments": [
+      "三角波主题",
+      "正弦低音",
+      "低八度三角波与正弦弱回声",
+      "正弦圆笛、短倚音、低通木点",
+      "三角波摇摆分解和弦、极轻低通浪声"
+     ],
+     "bpm": 84,
+     "meter": [
+      4,
+      4
+     ],
+     "bars": 32,
+     "mode": "C 五声（展示曲含四种色彩）",
+     "mood": [
+      "轻快",
+      "送信",
+      "俏皮"
+     ],
+     "difference": "轻快、带附点，像小跑着送信；1–8小节三角波与正弦低音，9–16小节低八度/A羽和声与弱回声，17–24小节五声圆笛/短倚音/木点，25–32小节大调摇摆主旋律、分解伴奏与轻浪声；全部音名及顺序保留",
+     "source": "audio/source/music/theme_b.json"
+    },
+    {
+     "id": "theme_c",
+     "uid": "music:theme_c",
+     "kind": "music",
+     "set": "theme",
+     "name": "回家的路",
+     "theme": "慢、音程宽，像摇篮曲；同一八小节动机依次展示原型、石牢、地府、海女村",
+     "instruments": [
+      "三角波主题",
+      "正弦低音",
+      "低八度三角波与正弦弱回声",
+      "正弦圆笛、短倚音、低通木点",
+      "三角波摇摆分解和弦、极轻低通浪声"
+     ],
+     "bpm": 84,
+     "meter": [
+      4,
+      4
+     ],
+     "bars": 32,
+     "mode": "C 五声（展示曲含四种色彩）",
+     "mood": [
+      "舒缓",
+      "归家",
+      "摇篮曲"
+     ],
+     "difference": "慢、音程宽，像摇篮曲；1–8小节三角波与正弦低音，9–16小节低八度/A羽和声与弱回声，17–24小节五声圆笛/短倚音/木点，25–32小节大调摇摆主旋律、分解伴奏与轻浪声；全部音名及顺序保留",
+     "source": "audio/source/music/theme_c.json"
+    },
+    {
+     "id": "theme_d",
+     "uid": "music:theme_d",
+     "kind": "music",
+     "set": "theme",
+     "name": "钟与浪",
+     "theme": "先下行再上扬，结束在 A，带一点淡淡的思念；同一八小节动机依次展示原型、石牢、地府、海女村",
+     "instruments": [
+      "三角波主题",
+      "正弦低音",
+      "低八度三角波与正弦弱回声",
+      "正弦圆笛、短倚音、低通木点",
+      "三角波摇摆分解和弦、极轻低通浪声"
+     ],
+     "bpm": 84,
+     "meter": [
+      4,
+      4
+     ],
+     "bars": 32,
+     "mode": "C 五声（展示曲含四种色彩）",
+     "mood": [
+      "思念",
+      "钟声",
+      "潮水"
+     ],
+     "difference": "先下行再上扬，结束在 A，带一点淡淡的思念；1–8小节三角波与正弦低音，9–16小节低八度/A羽和声与弱回声，17–24小节五声圆笛/短倚音/木点，25–32小节大调摇摆主旋律、分解伴奏与轻浪声；全部音名及顺序保留",
+     "source": "audio/source/music/theme_d.json"
     }
    ]
   },
@@ -2646,6 +2776,270 @@
      "approved": [],
      "current_is_approved": false,
      "availability": "planned",
+     "importable": false
+    },
+    {
+     "id": "theme_a",
+     "uid": "music:theme_a",
+     "kind": "music",
+     "set": "theme",
+     "name": "渡口灯",
+     "theme": "温柔、上扬后落回，像提着灯出门；同一八小节动机依次展示原型、石牢、地府、海女村",
+     "instruments": [
+      "三角波主题",
+      "正弦低音",
+      "低八度三角波与正弦弱回声",
+      "正弦圆笛、短倚音、低通木点",
+      "三角波摇摆分解和弦、极轻低通浪声"
+     ],
+     "bpm": 84,
+     "meter": [
+      4,
+      4
+     ],
+     "bars": 32,
+     "mode": "C 五声（展示曲含四种色彩）",
+     "mood": [
+      "温柔",
+      "提灯出门",
+      "安稳"
+     ],
+     "difference": "温柔、上扬后落回，像提着灯出门；1–8小节三角波与正弦低音，9–16小节低八度/A羽和声与弱回声，17–24小节五声圆笛/短倚音/木点，25–32小节大调摇摆主旋律、分解伴奏与轻浪声；全部音名及顺序保留",
+     "source": "audio/source/music/theme_a.json",
+     "current": {
+      "version": 1,
+      "hash": "44df696b90d14604033d717f8bbe7cbe8ac9d1d55d5a8cf27999fdde2721a575",
+      "wav": "audio/export/preview/music/theme_a.wav",
+      "sha256": "b5f55db93ba1dc3603847968383039a1f5446165fa7e43f8d6bfbebacd1aabd5",
+      "metrics": {
+       "verified": true,
+       "sample_rate": 44100,
+       "channels": 1,
+       "bit_depth": 16,
+       "sample_count": 4032000,
+       "duration_ms": 91428.57142857143,
+       "active_sample_count": 4032000,
+       "rms_dbfs": -26.24266942706155,
+       "full_rms_dbfs": -26.24266942706155,
+       "peak_dbfs": -15.476513549118117,
+       "dc_abs": 0.000005587903280106802,
+       "noise_energy_ratio": 0.0016552038035622073,
+       "endpoint_start_abs": 0.069854736328125,
+       "endpoint_end_abs": 0.068359375,
+       "longest_silence_ms": 0.045351473922902494,
+       "track_count": 6,
+       "voice_max": 5,
+       "pitched_voice_max": 4,
+       "seam_value_delta": 0.001495361328125,
+       "seam_slope_delta": 0.0013427734375,
+       "window_count": 89,
+       "window_non_silent_count": 89,
+       "window_rms_min_dbfs": -26.959860168689428,
+       "window_rms_max_dbfs": -25.470083600542726,
+       "window_rms_range_db": 1.4897765681467021
+      }
+     },
+     "approved": [],
+     "current_is_approved": false,
+     "availability": "review",
+     "importable": false
+    },
+    {
+     "id": "theme_b",
+     "uid": "music:theme_b",
+     "kind": "music",
+     "set": "theme",
+     "name": "小信差",
+     "theme": "轻快、带附点，像小跑着送信；同一八小节动机依次展示原型、石牢、地府、海女村",
+     "instruments": [
+      "三角波主题",
+      "正弦低音",
+      "低八度三角波与正弦弱回声",
+      "正弦圆笛、短倚音、低通木点",
+      "三角波摇摆分解和弦、极轻低通浪声"
+     ],
+     "bpm": 84,
+     "meter": [
+      4,
+      4
+     ],
+     "bars": 32,
+     "mode": "C 五声（展示曲含四种色彩）",
+     "mood": [
+      "轻快",
+      "送信",
+      "俏皮"
+     ],
+     "difference": "轻快、带附点，像小跑着送信；1–8小节三角波与正弦低音，9–16小节低八度/A羽和声与弱回声，17–24小节五声圆笛/短倚音/木点，25–32小节大调摇摆主旋律、分解伴奏与轻浪声；全部音名及顺序保留",
+     "source": "audio/source/music/theme_b.json",
+     "current": {
+      "version": 1,
+      "hash": "400d3f17440bde659531c41a1633fad12944d344a34418b93eb0e5e56578a6cf",
+      "wav": "audio/export/preview/music/theme_b.wav",
+      "sha256": "2f6e182aa4fded431fde06cf346aa811132e74eb80c217852acde84afe0a3d4f",
+      "metrics": {
+       "verified": true,
+       "sample_rate": 44100,
+       "channels": 1,
+       "bit_depth": 16,
+       "sample_count": 4032000,
+       "duration_ms": 91428.57142857143,
+       "active_sample_count": 4032000,
+       "rms_dbfs": -26.182569867593692,
+       "full_rms_dbfs": -26.182569867593692,
+       "peak_dbfs": -15.476513549118117,
+       "dc_abs": 0.000005325991009909009,
+       "noise_energy_ratio": 0.0015993449366450813,
+       "endpoint_start_abs": 0.069580078125,
+       "endpoint_end_abs": 0.067962646484375,
+       "longest_silence_ms": 0.022675736961451247,
+       "track_count": 6,
+       "voice_max": 5,
+       "pitched_voice_max": 4,
+       "seam_value_delta": 0.001617431640625,
+       "seam_slope_delta": 0.001129150390625,
+       "window_count": 89,
+       "window_non_silent_count": 89,
+       "window_rms_min_dbfs": -26.905290284857468,
+       "window_rms_max_dbfs": -25.36314952179021,
+       "window_rms_range_db": 1.542140763067259
+      }
+     },
+     "approved": [],
+     "current_is_approved": false,
+     "availability": "review",
+     "importable": false
+    },
+    {
+     "id": "theme_c",
+     "uid": "music:theme_c",
+     "kind": "music",
+     "set": "theme",
+     "name": "回家的路",
+     "theme": "慢、音程宽，像摇篮曲；同一八小节动机依次展示原型、石牢、地府、海女村",
+     "instruments": [
+      "三角波主题",
+      "正弦低音",
+      "低八度三角波与正弦弱回声",
+      "正弦圆笛、短倚音、低通木点",
+      "三角波摇摆分解和弦、极轻低通浪声"
+     ],
+     "bpm": 84,
+     "meter": [
+      4,
+      4
+     ],
+     "bars": 32,
+     "mode": "C 五声（展示曲含四种色彩）",
+     "mood": [
+      "舒缓",
+      "归家",
+      "摇篮曲"
+     ],
+     "difference": "慢、音程宽，像摇篮曲；1–8小节三角波与正弦低音，9–16小节低八度/A羽和声与弱回声，17–24小节五声圆笛/短倚音/木点，25–32小节大调摇摆主旋律、分解伴奏与轻浪声；全部音名及顺序保留",
+     "source": "audio/source/music/theme_c.json",
+     "current": {
+      "version": 1,
+      "hash": "fea4c9b6d35e7d7364a09e4b1df56ba5c64f828ea966fc9ed37a4144b1a3b36d",
+      "wav": "audio/export/preview/music/theme_c.wav",
+      "sha256": "74499f15a01f532fa5e1d2e0ffdfd8aa1b6c0a82cf9103f10fd6f480e5330edb",
+      "metrics": {
+       "verified": true,
+       "sample_rate": 44100,
+       "channels": 1,
+       "bit_depth": 16,
+       "sample_count": 4032000,
+       "duration_ms": 91428.57142857143,
+       "active_sample_count": 4032000,
+       "rms_dbfs": -26.26133818394692,
+       "full_rms_dbfs": -26.26133818394692,
+       "peak_dbfs": -15.611402643341808,
+       "dc_abs": 0.0000023104274083697606,
+       "noise_energy_ratio": 0.001630612791234449,
+       "endpoint_start_abs": 0.070709228515625,
+       "endpoint_end_abs": 0.0689697265625,
+       "longest_silence_ms": 0.022675736961451247,
+       "track_count": 6,
+       "voice_max": 5,
+       "pitched_voice_max": 4,
+       "seam_value_delta": 0.001739501953125,
+       "seam_slope_delta": 0.00128173828125,
+       "window_count": 89,
+       "window_non_silent_count": 89,
+       "window_rms_min_dbfs": -26.93831606010919,
+       "window_rms_max_dbfs": -25.44258644503701,
+       "window_rms_range_db": 1.4957296150721824
+      }
+     },
+     "approved": [],
+     "current_is_approved": false,
+     "availability": "review",
+     "importable": false
+    },
+    {
+     "id": "theme_d",
+     "uid": "music:theme_d",
+     "kind": "music",
+     "set": "theme",
+     "name": "钟与浪",
+     "theme": "先下行再上扬，结束在 A，带一点淡淡的思念；同一八小节动机依次展示原型、石牢、地府、海女村",
+     "instruments": [
+      "三角波主题",
+      "正弦低音",
+      "低八度三角波与正弦弱回声",
+      "正弦圆笛、短倚音、低通木点",
+      "三角波摇摆分解和弦、极轻低通浪声"
+     ],
+     "bpm": 84,
+     "meter": [
+      4,
+      4
+     ],
+     "bars": 32,
+     "mode": "C 五声（展示曲含四种色彩）",
+     "mood": [
+      "思念",
+      "钟声",
+      "潮水"
+     ],
+     "difference": "先下行再上扬，结束在 A，带一点淡淡的思念；1–8小节三角波与正弦低音，9–16小节低八度/A羽和声与弱回声，17–24小节五声圆笛/短倚音/木点，25–32小节大调摇摆主旋律、分解伴奏与轻浪声；全部音名及顺序保留",
+     "source": "audio/source/music/theme_d.json",
+     "current": {
+      "version": 1,
+      "hash": "ba3e06496b2ed36ba83f5f2a202f6e2ce606603d25b384f2e6a653445445f539",
+      "wav": "audio/export/preview/music/theme_d.wav",
+      "sha256": "adff7e5fe46cee289b1a2600459d21e16d3f37e48aada7372d88b390591ebd5b",
+      "metrics": {
+       "verified": true,
+       "sample_rate": 44100,
+       "channels": 1,
+       "bit_depth": 16,
+       "sample_count": 4032000,
+       "duration_ms": 91428.57142857143,
+       "active_sample_count": 4032000,
+       "rms_dbfs": -26.351800102309607,
+       "full_rms_dbfs": -26.351800102309607,
+       "peak_dbfs": -16.159298459844887,
+       "dc_abs": 0.0000014827213590107267,
+       "noise_energy_ratio": 0.0016590554216065123,
+       "endpoint_start_abs": 0.02703857421875,
+       "endpoint_end_abs": 0.0289306640625,
+       "longest_silence_ms": 0.045351473922902494,
+       "track_count": 6,
+       "voice_max": 5,
+       "pitched_voice_max": 4,
+       "seam_value_delta": 0.00189208984375,
+       "seam_slope_delta": 0.00042724609375,
+       "window_count": 89,
+       "window_non_silent_count": 89,
+       "window_rms_min_dbfs": -29.15807964463598,
+       "window_rms_max_dbfs": -25.451982251643006,
+       "window_rms_range_db": 3.706097392992973
+      }
+     },
+     "approved": [],
+     "current_is_approved": false,
+     "availability": "review",
      "importable": false
     },
     {
@@ -3263,7 +3657,8 @@
    "bindings": {
     "music:dungeon": null,
     "music:diyu": null,
-    "music:jeju": null
+    "music:jeju": null,
+    "music:theme": null
    }
   }
  },
