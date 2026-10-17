@@ -73,6 +73,42 @@
    "ninepatch": null
   },
   {
+   "id": "avatar.goblin_chief",
+   "name": "滚轮头像 · 鬼怪大王",
+   "category": "avatar",
+   "kind": "sprite",
+   "layer": "ui",
+   "current": {
+    "version": 1,
+    "hash": "1e2ca8bb169a5996e06fc04295dc0ab6c7914410bf2f3f7733500e5463f2a1e4",
+    "status": "review",
+    "preview": "art/export/preview/avatar.goblin_chief.png",
+    "preview_sha256": "ac93811e1a3a7207273c80d11a34ae1a2e841b9799ff67aaccd53d622b1a82ff"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    24,
+    24
+   ],
+   "frame_count": 1,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    0,
+    0
+   ],
+   "animations": {
+    "default": {
+     "fps": 1,
+     "loop": false,
+     "frames": [
+      0
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
    "id": "avatar.goblin_smith",
    "name": "滚轮头像 · 地精铁匠",
    "category": "avatar",
@@ -116,6 +152,42 @@
    "ninepatch": null
   },
   {
+   "id": "avatar.haenyeo",
+   "name": "滚轮头像 · 海女奶奶",
+   "category": "avatar",
+   "kind": "sprite",
+   "layer": "ui",
+   "current": {
+    "version": 1,
+    "hash": "e3f832812840a67fc3fd03a0d3213cdcbaf76d36390afa04284fbed91a9897a6",
+    "status": "review",
+    "preview": "art/export/preview/avatar.haenyeo.png",
+    "preview_sha256": "8a12bfd109b4866b8186fa50df21ecc6f51e078f9aac32416966182957d25332"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    24,
+    24
+   ],
+   "frame_count": 1,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    0,
+    0
+   ],
+   "animations": {
+    "default": {
+     "fps": 1,
+     "loop": false,
+     "frames": [
+      0
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
    "id": "avatar.judge",
    "name": "滚轮头像 · 判官",
    "category": "avatar",
@@ -127,6 +199,42 @@
     "status": "review",
     "preview": "art/export/preview/avatar.judge.png",
     "preview_sha256": "5b52b4a7b59a14455e8a5acd62a415da70457274d8ae6e315359b4aa91b286e2"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    24,
+    24
+   ],
+   "frame_count": 1,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    0,
+    0
+   ],
+   "animations": {
+    "default": {
+     "fps": 1,
+     "loop": false,
+     "frames": [
+      0
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
+   "id": "avatar.lighthouse_keeper",
+   "name": "滚轮头像 · 灯塔大叔",
+   "category": "avatar",
+   "kind": "sprite",
+   "layer": "ui",
+   "current": {
+    "version": 1,
+    "hash": "c44749d263664e8dc76a2c48a765f53e5ba1208105d1a1aa4dc07929bcb7f2cb",
+    "status": "review",
+    "preview": "art/export/preview/avatar.lighthouse_keeper.png",
+    "preview_sha256": "22d2d4e4b163d06aa3d49f851ccecf55167a325b77da8ab95ef62c8129bb92e0"
    },
    "approved": null,
    "current_is_approved": false,
@@ -209,6 +317,42 @@
     "date": "2026-10-16T03:45:02.583Z"
    },
    "current_is_approved": true,
+   "frame_size": [
+    24,
+    24
+   ],
+   "frame_count": 1,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    0,
+    0
+   ],
+   "animations": {
+    "default": {
+     "fps": 1,
+     "loop": false,
+     "frames": [
+      0
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
+   "id": "avatar.tangerine_farmer",
+   "name": "滚轮头像 · 橘园阿姨",
+   "category": "avatar",
+   "kind": "sprite",
+   "layer": "ui",
+   "current": {
+    "version": 1,
+    "hash": "d210783dde6a1786882696e5530e77121149d1115c357dddb2d9a3cdc4523fbf",
+    "status": "review",
+    "preview": "art/export/preview/avatar.tangerine_farmer.png",
+    "preview_sha256": "d34c2afee0f4e6a115b11a55153b3d0c9e99c63d0065d85fb08723ab7fccd463"
+   },
+   "approved": null,
+   "current_is_approved": false,
    "frame_size": [
     24,
     24
@@ -346,6 +490,49 @@
    "ninepatch": null
   },
   {
+   "id": "cargo.buckwheat_jelly",
+   "name": "货物 · 荞麦凉粉",
+   "category": "cargo",
+   "kind": "sprite",
+   "layer": "ui",
+   "current": {
+    "version": 1,
+    "hash": "7bfdadaf4da1bc086033aced9a129cbc81863fd9ac40a13b8af25c2bb190bb65",
+    "status": "review",
+    "preview": "art/export/preview/cargo.buckwheat_jelly.png",
+    "preview_sha256": "cd4784e8436a4e0a501b98c077edc7125d185094cc09f804bf502db4cef8bad7"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    16,
+    16
+   ],
+   "frame_count": 2,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    0,
+    0
+   ],
+   "animations": {
+    "default": {
+     "fps": 1,
+     "loop": false,
+     "frames": [
+      0
+     ]
+    },
+    "chipped": {
+     "fps": 1,
+     "loop": false,
+     "frames": [
+      1
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
    "id": "cargo.ice_cream",
    "name": "货物 · 冰淇淋",
    "category": "cargo",
@@ -391,6 +578,49 @@
      "frames": [
       1,
       0
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
+   "id": "cargo.kite",
+   "name": "货物 · 风筝",
+   "category": "cargo",
+   "kind": "sprite",
+   "layer": "ui",
+   "current": {
+    "version": 1,
+    "hash": "3ff8c842f9fb48a08eda72f15bfca379473d2dbfdfb3d47d2012027fe1c2384d",
+    "status": "review",
+    "preview": "art/export/preview/cargo.kite.png",
+    "preview_sha256": "8880e042703f1420758d35d7c756a0e5eec7f9f684852a14fbfdfbfc0b12e3da"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    16,
+    16
+   ],
+   "frame_count": 2,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    0,
+    0
+   ],
+   "animations": {
+    "default": {
+     "fps": 1,
+     "loop": false,
+     "frames": [
+      0
+     ]
+    },
+    "torn": {
+     "fps": 1,
+     "loop": false,
+     "frames": [
+      1
      ]
     }
    },
@@ -526,6 +756,49 @@
    "ninepatch": null
   },
   {
+   "id": "cargo.tangerine",
+   "name": "货物 · 橘子筐",
+   "category": "cargo",
+   "kind": "sprite",
+   "layer": "ui",
+   "current": {
+    "version": 1,
+    "hash": "97cb9d54f748ed95555162179f17ff504894ea4e1c4f09143402f7e41b0f6581",
+    "status": "review",
+    "preview": "art/export/preview/cargo.tangerine.png",
+    "preview_sha256": "ff2812c75a18e10a4d67416b2dbc571aed4586b5209be340dcf4ad9252d3d48a"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    16,
+    16
+   ],
+   "frame_count": 2,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    0,
+    0
+   ],
+   "animations": {
+    "default": {
+     "fps": 1,
+     "loop": false,
+     "frames": [
+      0
+     ]
+    },
+    "damaged": {
+     "fps": 1,
+     "loop": false,
+     "frames": [
+      1
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
    "id": "cargo.vase",
    "name": "货物 · 花瓶",
    "category": "cargo",
@@ -623,6 +896,53 @@
    "ninepatch": null
   },
   {
+   "id": "char.goblin_chief",
+   "name": "鬼怪大王（收件人）",
+   "category": "character",
+   "kind": "sprite",
+   "layer": "entity",
+   "current": {
+    "version": 1,
+    "hash": "f1a6bee81d9e8a638567ae5ec6a53332cbc6bae404b02ba21dfa09c709e7d970",
+    "status": "review",
+    "preview": "art/export/preview/char.goblin_chief.png",
+    "preview_sha256": "3f5b9b646b4d45f8f21d087fd983e6be5182627467d896004347deda39671d05"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    20,
+    18
+   ],
+   "frame_count": 4,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    10,
+    18
+   ],
+   "animations": {
+    "idle": {
+     "fps": 3,
+     "loop": true,
+     "frames": [
+      0,
+      0,
+      0,
+      1
+     ]
+    },
+    "win": {
+     "fps": 4,
+     "loop": true,
+     "frames": [
+      2,
+      3
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
    "id": "char.goblin_smith",
    "name": "地精铁匠（收件人）",
    "category": "character",
@@ -679,6 +999,69 @@
    "ninepatch": null
   },
   {
+   "id": "char.haenyeo",
+   "name": "海女奶奶（收件人）",
+   "category": "character",
+   "kind": "sprite",
+   "layer": "entity",
+   "current": {
+    "version": 1,
+    "hash": "b12df444fc6db2660d55c1b035331620a3b60af8028a2f308356263db48d9d4e",
+    "status": "review",
+    "preview": "art/export/preview/char.haenyeo.png",
+    "preview_sha256": "45332a34b249c5afb24dca16ebc8db6ee4728c5a517dbacf0bfacdf19e091e28"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    16,
+    16
+   ],
+   "frame_count": 8,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    8,
+    16
+   ],
+   "animations": {
+    "idle": {
+     "fps": 3,
+     "loop": true,
+     "frames": [
+      0,
+      0,
+      0,
+      1
+     ]
+    },
+    "win": {
+     "fps": 4,
+     "loop": true,
+     "frames": [
+      2,
+      3
+     ]
+    },
+    "dive": {
+     "fps": 2,
+     "loop": true,
+     "frames": [
+      4,
+      5
+     ]
+    },
+    "surface": {
+     "fps": 3,
+     "loop": true,
+     "frames": [
+      6,
+      7
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
    "id": "char.judge",
    "name": "判官（收件人）",
    "category": "character",
@@ -710,6 +1093,51 @@
      "frames": [
       0,
       0,
+      0,
+      1
+     ]
+    },
+    "win": {
+     "fps": 4,
+     "loop": true,
+     "frames": [
+      2,
+      3
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
+   "id": "char.lighthouse_keeper",
+   "name": "灯塔大叔（收件人）",
+   "category": "character",
+   "kind": "sprite",
+   "layer": "entity",
+   "current": {
+    "version": 1,
+    "hash": "3d0531df178d789cc2df72cfc741d8ef7116f6aa2d19a777783b5b80e4f9d162",
+    "status": "review",
+    "preview": "art/export/preview/char.lighthouse_keeper.png",
+    "preview_sha256": "23c2d38d80ffa64bf1c449ecac4a42e1b62c9e150ab0dc08008ecd8901cf1beb"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    16,
+    16
+   ],
+   "frame_count": 4,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    8,
+    16
+   ],
+   "animations": {
+    "idle": {
+     "fps": 3,
+     "loop": true,
+     "frames": [
       0,
       1
      ]
@@ -1084,6 +1512,53 @@
      "loop": false,
      "frames": [
       1
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
+   "id": "char.tangerine_farmer",
+   "name": "橘园阿姨（收件人）",
+   "category": "character",
+   "kind": "sprite",
+   "layer": "entity",
+   "current": {
+    "version": 1,
+    "hash": "70e559f5acb1a4addfd2306ba553a2e6dd1c286b0301d12b305129e55c31563f",
+    "status": "review",
+    "preview": "art/export/preview/char.tangerine_farmer.png",
+    "preview_sha256": "863dc6021bf0a2fbbdc75032d8f3f2bd907e7a3cee0f81abe04c1d6be42fb190"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    16,
+    16
+   ],
+   "frame_count": 4,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    8,
+    16
+   ],
+   "animations": {
+    "idle": {
+     "fps": 3,
+     "loop": true,
+     "frames": [
+      0,
+      0,
+      0,
+      1
+     ]
+    },
+    "win": {
+     "fps": 4,
+     "loop": true,
+     "frames": [
+      2,
+      3
      ]
     }
    },
@@ -1667,6 +2142,116 @@
    "anchor": [
     4,
     4
+   ],
+   "animations": {
+    "sway": {
+     "fps": 2,
+     "loop": true,
+     "frames": [
+      0,
+      1
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
+   "id": "deco.jeju_canola",
+   "name": "济州 · 油菜花",
+   "category": "deco",
+   "kind": "sprite",
+   "layer": "ambient",
+   "current": {
+    "version": 1,
+    "hash": "c8ddae0d3aab851d8351729b50084754862e5e8db2aa933917a0f06cf4436b5d",
+    "status": "review",
+    "preview": "art/export/preview/deco.jeju_canola.png",
+    "preview_sha256": "c7ec1816162b894fc00a48e8a2662413e0eb8780ea392c296faed6428c17fab1"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    9,
+    8
+   ],
+   "frame_count": 2,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    4,
+    8
+   ],
+   "animations": {
+    "sway": {
+     "fps": 2,
+     "loop": true,
+     "frames": [
+      0,
+      1
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
+   "id": "deco.jeju_harubang",
+   "name": "济州 · 石头爷爷",
+   "category": "deco",
+   "kind": "sprite",
+   "layer": "ambient",
+   "current": {
+    "version": 1,
+    "hash": "ac7da0d9e13534304c228df0bdf8bf9b5833a3a17be4c15bba17a183303a2f5d",
+    "status": "review",
+    "preview": "art/export/preview/deco.jeju_harubang.png",
+    "preview_sha256": "97a233f5faf0470cdcf35116291494f62cb7f4b32931759559aa922e7117b537"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    10,
+    16
+   ],
+   "frame_count": 1,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    5,
+    16
+   ],
+   "animations": {
+    "default": {
+     "fps": 1,
+     "loop": false,
+     "frames": [
+      0
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
+   "id": "deco.jeju_tangerine_tree",
+   "name": "济州 · 橘子树",
+   "category": "deco",
+   "kind": "sprite",
+   "layer": "ambient",
+   "current": {
+    "version": 1,
+    "hash": "ca05de66bc4d923a3959382b0f40e61a9f15c3114b4582133d5c1a798445b3d7",
+    "status": "review",
+    "preview": "art/export/preview/deco.jeju_tangerine_tree.png",
+    "preview_sha256": "da0387a17c9bd1221d0ef5a4fe25ef8edc26cf17804cce86445c08163f3c3432"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    16,
+    16
+   ],
+   "frame_count": 2,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    8,
+    16
    ],
    "animations": {
     "sway": {
@@ -2267,6 +2852,114 @@
    "ninepatch": null
   },
   {
+   "id": "fauna.jeju_dragonfly",
+   "name": "济州 · 红蜻蜓（提示动物）",
+   "category": "fauna",
+   "kind": "sprite",
+   "layer": "background",
+   "current": {
+    "version": 1,
+    "hash": "b40bc937f37b37c26f84abc2037451dd6a072891a8c5db8a0126f582f09ff82a",
+    "status": "review",
+    "preview": "art/export/preview/fauna.jeju_dragonfly.png",
+    "preview_sha256": "809557fddc9e33ef1be026aea2473a5d5eedf7346dd5ae419b62940b18c7a512"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    9,
+    5
+   ],
+   "frame_count": 3,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    4,
+    2
+   ],
+   "animations": {
+    "fly": {
+     "fps": 8,
+     "loop": true,
+     "frames": [
+      0,
+      1
+     ]
+    },
+    "rest": {
+     "fps": 1,
+     "loop": true,
+     "frames": [
+      2
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
+   "id": "fauna.jeju_pony",
+   "name": "济州 · 济州小马（提示动物）",
+   "category": "fauna",
+   "kind": "sprite",
+   "layer": "ambient",
+   "current": {
+    "version": 1,
+    "hash": "9e7a20b742bb22a611b904418d63b3d511f231d1ffd726ad7c72cb25bde47b59",
+    "status": "review",
+    "preview": "art/export/preview/fauna.jeju_pony.png",
+    "preview_sha256": "d268d77379e93df8a45c32d1f925b4178a7ec5e908db1ab44c4245cccba94c2e"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    16,
+    13
+   ],
+   "frame_count": 7,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    8,
+    13
+   ],
+   "animations": {
+    "sit": {
+     "fps": 2,
+     "loop": true,
+     "frames": [
+      0,
+      0,
+      1,
+      0
+     ]
+    },
+    "wag": {
+     "fps": 4,
+     "loop": true,
+     "frames": [
+      2,
+      3
+     ]
+    },
+    "walk": {
+     "fps": 8,
+     "loop": true,
+     "frames": [
+      4,
+      5
+     ]
+    },
+    "neigh": {
+     "fps": 4,
+     "loop": false,
+     "frames": [
+      6,
+      6,
+      2
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
    "id": "fauna.ruins_scarab",
    "name": "神庙 · 金甲虫",
    "category": "fauna",
@@ -2665,6 +3358,55 @@
       0,
       1,
       2
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
+   "id": "fx.jeju_gust",
+   "name": "阵风 · 济州",
+   "category": "fx",
+   "kind": "sprite",
+   "layer": "fx",
+   "current": {
+    "version": 1,
+    "hash": "7c31b185b3ff3eea9fb229a9307f03cbd0d3e5669094c0e944564d23aeec5619",
+    "status": "review",
+    "preview": "art/export/preview/fx.jeju_gust.png",
+    "preview_sha256": "d060a66fa4c5a0e6878ed36154d01dc12aa8c4283b87d1b5837ac4907b54a737"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    16,
+    16
+   ],
+   "frame_count": 8,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    8,
+    16
+   ],
+   "animations": {
+    "drift": {
+     "fps": 4,
+     "loop": true,
+     "frames": [
+      0,
+      1,
+      2,
+      3
+     ]
+    },
+    "blow": {
+     "fps": 8,
+     "loop": false,
+     "frames": [
+      4,
+      5,
+      6,
+      7
      ]
     }
    },
@@ -3172,6 +3914,42 @@
      "loop": false,
      "frames": [
       1
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
+   "id": "item.snack_jeju",
+   "name": "零食 · 小米糕（济州）",
+   "category": "item",
+   "kind": "sprite",
+   "layer": "ui",
+   "current": {
+    "version": 1,
+    "hash": "53fe663b6412cbac8a088e0a923b782848ca9cdf85bf194028d5f8823e3943ac",
+    "status": "review",
+    "preview": "art/export/preview/item.snack_jeju.png",
+    "preview_sha256": "c2278925288a80e4f8e2710ce0e8ddc39891f27bdcde273cd21148a264a5ef8f"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    16,
+    16
+   ],
+   "frame_count": 1,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    0,
+    0
+   ],
+   "animations": {
+    "default": {
+     "fps": 1,
+     "loop": false,
+     "frames": [
+      0
      ]
     }
    },
@@ -3715,6 +4493,70 @@
      "frames": [
       1,
       2
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
+   "id": "mech.jeju_seesaw",
+   "name": "跷跷板 · 济州跳板",
+   "category": "mechanism",
+   "kind": "sprite",
+   "layer": "entity",
+   "current": {
+    "version": 1,
+    "hash": "edf5de8a43ad78e9fdfa3e3b75825a1b414396488966770f392cb85a72e212f4",
+    "status": "review",
+    "preview": "art/export/preview/mech.jeju_seesaw.png",
+    "preview_sha256": "9cc3b91c47c9f19e2de632f1b2a47762d9a5e29ef79bc5d8a04a2b30d08a804b"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    16,
+    20
+   ],
+   "frame_count": 5,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    8,
+    20
+   ],
+   "animations": {
+    "end": {
+     "fps": 0,
+     "loop": false,
+     "frames": [
+      0
+     ]
+    },
+    "down": {
+     "fps": 0,
+     "loop": false,
+     "frames": [
+      1
+     ]
+    },
+    "launch": {
+     "fps": 0,
+     "loop": false,
+     "frames": [
+      2
+     ]
+    },
+    "mid": {
+     "fps": 0,
+     "loop": false,
+     "frames": [
+      3
+     ]
+    },
+    "pivot": {
+     "fps": 0,
+     "loop": false,
+     "frames": [
+      4
      ]
     }
    },
@@ -4406,6 +5248,84 @@
    "ninepatch": null
   },
   {
+   "id": "monster.dokkaebi",
+   "name": "小鬼怪（도깨비）",
+   "category": "monster",
+   "kind": "sprite",
+   "layer": "entity",
+   "current": {
+    "version": 1,
+    "hash": "d00c782ddabf54a2950fa3f113606b1c13f8f77e027905e6128f6194c5f22874",
+    "status": "review",
+    "preview": "art/export/preview/monster.dokkaebi.png",
+    "preview_sha256": "dd27b5361ca1ae1b3efdbf3aa0bcf57bd54d7a2c6c1f2dab805bd10d047bd56a"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    16,
+    16
+   ],
+   "frame_count": 11,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    8,
+    16
+   ],
+   "animations": {
+    "idle": {
+     "fps": 2,
+     "loop": true,
+     "frames": [
+      0,
+      0,
+      0,
+      1
+     ]
+    },
+    "walk": {
+     "fps": 6,
+     "loop": true,
+     "frames": [
+      2,
+      3
+     ]
+    },
+    "wrestle": {
+     "fps": 6,
+     "loop": true,
+     "frames": [
+      4,
+      5
+     ]
+    },
+    "pushed": {
+     "fps": 4,
+     "loop": false,
+     "frames": [
+      6
+     ]
+    },
+    "ko": {
+     "fps": 2,
+     "loop": true,
+     "frames": [
+      7,
+      8
+     ]
+    },
+    "trapped": {
+     "fps": 4,
+     "loop": true,
+     "frames": [
+      9,
+      10
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
    "id": "monster.imp",
    "name": "小鬼",
    "category": "monster",
@@ -4606,6 +5526,69 @@
      "frames": [
       8,
       9
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
+   "id": "monster.seagull",
+   "name": "海鸥",
+   "category": "monster",
+   "kind": "sprite",
+   "layer": "entity",
+   "current": {
+    "version": 1,
+    "hash": "fc4a69e06d25574c7808acdb3be4c58d28a909d21da7d9aea574f923a6b2981f",
+    "status": "review",
+    "preview": "art/export/preview/monster.seagull.png",
+    "preview_sha256": "30b33e8499e79c0abbd98b81f918250153355df2f4aea32ab848fd3d2f6ba9ac"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    16,
+    12
+   ],
+   "frame_count": 9,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    8,
+    12
+   ],
+   "animations": {
+    "fly": {
+     "fps": 6,
+     "loop": true,
+     "frames": [
+      0,
+      1,
+      2,
+      1
+     ]
+    },
+    "swoop": {
+     "fps": 8,
+     "loop": true,
+     "frames": [
+      3,
+      4
+     ]
+    },
+    "grab": {
+     "fps": 8,
+     "loop": false,
+     "frames": [
+      5,
+      6
+     ]
+    },
+    "flee": {
+     "fps": 8,
+     "loop": true,
+     "frames": [
+      7,
+      8
      ]
     }
    },
@@ -5579,6 +6562,200 @@
     "deco.forest_grass",
     "fauna.forest_bird",
     "fauna.forest_butterfly"
+   ]
+  },
+  {
+   "id": "theme.jeju",
+   "name": "主题 · 济州海女村（白天的海边）",
+   "category": "theme",
+   "kind": "procedural",
+   "layer": "terrain",
+   "current": {
+    "version": 1,
+    "hash": "e8a081b7160dfaeda3f276d48ec40568d6b0d6ffc28acf2606f5aa0b918f06ae",
+    "status": "review",
+    "preview": "art/export/preview/theme.jeju.png",
+    "preview_sha256": "3ac016bd4d623afcc112e7b31b043a69b57dd0c00c6177445586c1aef8a81d03"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "renderer": [
+    "workbench/js/core/terrain.js",
+    "workbench/js/core/terrain-diyu.js",
+    "workbench/js/core/terrain-jeju.js",
+    "workbench/js/core/ambient.js",
+    "workbench/js/core/env.js"
+   ],
+   "params": {
+    "title": "济州",
+    "rock": {
+     "pattern": "jeju",
+     "base": [
+      "x",
+      "y"
+     ],
+     "pore": "z",
+     "lip": "w",
+     "speck": "w",
+     "light": "v",
+     "dark": "z",
+     "edge": "z",
+     "grass": [
+      "m",
+      "n",
+      "o"
+     ],
+     "soil": [
+      "g",
+      "f"
+     ],
+     "blacksand": [
+      "w",
+      "x",
+      "t"
+     ],
+     "reef": [
+      "y",
+      "z",
+      "u",
+      "w",
+      "o",
+      "n"
+     ],
+     "wall": [
+      "x",
+      "v",
+      "y",
+      "z"
+     ],
+     "deck": [
+      "e",
+      "f",
+      "g",
+      "v",
+      "f"
+     ],
+     "top": "m"
+    },
+    "earth": {
+     "base": [
+      "e",
+      "F"
+     ],
+     "clump": "f",
+     "pebble": "v",
+     "pebbleShade": "g",
+     "crust": "d",
+     "crust2": "F",
+     "dark": "f",
+     "frame": "g",
+     "bevel": "d"
+    },
+    "cracked": {
+     "base": [
+      "F",
+      "d"
+     ],
+     "crack": "g",
+     "crackLight": "c",
+     "light": "c",
+     "dark": "f",
+     "frame": "f",
+     "bevel": "c"
+    },
+    "sand": {
+     "base": [
+      "c",
+      "d",
+      "c"
+     ],
+     "grain": "k",
+     "top": "l"
+    },
+    "water": {
+     "body": "q",
+     "upper": "r",
+     "surface": "s",
+     "glint": "t"
+    },
+    "background": {
+     "style": "jeju",
+     "base": [
+      "r",
+      "s"
+     ],
+     "speck": "u",
+     "accent": "v",
+     "detail": "y",
+     "far": "v",
+     "far2": "u",
+     "mid": "w",
+     "cloud": [
+      "t",
+      "u"
+     ],
+     "sea": [
+      "q",
+      "p",
+      "r",
+      "q"
+     ],
+     "glint": "u",
+     "shore": [
+      "y",
+      "x"
+     ],
+     "foam": "u"
+    },
+    "ambient": [
+     {
+      "type": "floor",
+      "id": "deco.jeju_harubang",
+      "anim": "default",
+      "every": 12,
+      "max": 1,
+      "salt": 7
+     },
+     {
+      "type": "floor",
+      "id": "deco.jeju_tangerine_tree",
+      "anim": "sway",
+      "every": 6,
+      "max": 2,
+      "salt": 11
+     },
+     {
+      "type": "floor",
+      "id": "deco.jeju_canola",
+      "anim": "sway",
+      "every": 4,
+      "max": 3
+     },
+     {
+      "type": "flyer",
+      "id": "fauna.jeju_dragonfly",
+      "anim": "fly",
+      "count": 1,
+      "chance": 0.35
+     }
+    ],
+    "env": {
+     "sun": {
+      "x": 52,
+      "y": 30,
+      "radius": 24
+     },
+     "weathers": [
+      "rain"
+     ],
+     "weather": "none"
+    }
+   },
+   "depends": [
+    "deco.jeju_harubang",
+    "deco.jeju_tangerine_tree",
+    "deco.jeju_canola",
+    "fauna.jeju_dragonfly"
    ]
   },
   {

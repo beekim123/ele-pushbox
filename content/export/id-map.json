@@ -5,7 +5,7 @@
   "art": {
    "name": "美术资产",
    "source": "art/source/<分类>/<id>.json",
-   "count": 134
+   "count": 156
   },
   "level": {
    "name": "关卡",
@@ -40,12 +40,12 @@
   "recipient": {
    "name": "收件人",
    "source": "content/catalog/recipients.json",
-   "count": 82
+   "count": 84
   },
   "cargo": {
    "name": "货物",
    "source": "content/catalog/cargo.json",
-   "count": 48
+   "count": 50
   },
   "combo": {
    "name": "缘分组合",
@@ -117,6 +117,18 @@
    "approved": false
   },
   {
+   "uid": "art:avatar.goblin_chief",
+   "domain": "art",
+   "id": "avatar.goblin_chief",
+   "name": "滚轮头像 · 鬼怪大王",
+   "source": "art/source/avatar/avatar.goblin_chief.json",
+   "game": "res://generated/art/avatar.goblin_chief.tres",
+   "category": "avatar",
+   "version": 1,
+   "hash": "1e2ca8bb169a5996e06fc04295dc0ab6c7914410bf2f3f7733500e5463f2a1e4",
+   "approved": false
+  },
+  {
    "uid": "art:avatar.goblin_smith",
    "domain": "art",
    "id": "avatar.goblin_smith",
@@ -129,6 +141,18 @@
    "approved": true
   },
   {
+   "uid": "art:avatar.haenyeo",
+   "domain": "art",
+   "id": "avatar.haenyeo",
+   "name": "滚轮头像 · 海女奶奶",
+   "source": "art/source/avatar/avatar.haenyeo.json",
+   "game": "res://generated/art/avatar.haenyeo.tres",
+   "category": "avatar",
+   "version": 1,
+   "hash": "e3f832812840a67fc3fd03a0d3213cdcbaf76d36390afa04284fbed91a9897a6",
+   "approved": false
+  },
+  {
    "uid": "art:avatar.judge",
    "domain": "art",
    "id": "avatar.judge",
@@ -138,6 +162,18 @@
    "category": "avatar",
    "version": 1,
    "hash": "61ed92ffabe4822309497cd0f31004dd3f06fad79bb70c412ae7de9231ee49d0",
+   "approved": false
+  },
+  {
+   "uid": "art:avatar.lighthouse_keeper",
+   "domain": "art",
+   "id": "avatar.lighthouse_keeper",
+   "name": "滚轮头像 · 灯塔大叔",
+   "source": "art/source/avatar/avatar.lighthouse_keeper.json",
+   "game": "res://generated/art/avatar.lighthouse_keeper.tres",
+   "category": "avatar",
+   "version": 1,
+   "hash": "c44749d263664e8dc76a2c48a765f53e5ba1208105d1a1aa4dc07929bcb7f2cb",
    "approved": false
   },
   {
@@ -163,6 +199,18 @@
    "version": 1,
    "hash": "c607836c63d2102ccb6d1bc7e4a74a4869cc6badd4b48c385dbc18e961a51aee",
    "approved": true
+  },
+  {
+   "uid": "art:avatar.tangerine_farmer",
+   "domain": "art",
+   "id": "avatar.tangerine_farmer",
+   "name": "滚轮头像 · 橘园阿姨",
+   "source": "art/source/avatar/avatar.tangerine_farmer.json",
+   "game": "res://generated/art/avatar.tangerine_farmer.tres",
+   "category": "avatar",
+   "version": 1,
+   "hash": "d210783dde6a1786882696e5530e77121149d1115c357dddb2d9a3cdc4523fbf",
+   "approved": false
   },
   {
    "uid": "art:avatar.wuchang",
@@ -201,6 +249,18 @@
    "approved": true
   },
   {
+   "uid": "art:cargo.buckwheat_jelly",
+   "domain": "art",
+   "id": "cargo.buckwheat_jelly",
+   "name": "货物 · 荞麦凉粉",
+   "source": "art/source/cargo/cargo.buckwheat_jelly.json",
+   "game": "res://generated/art/cargo.buckwheat_jelly.tres",
+   "category": "cargo",
+   "version": 1,
+   "hash": "7bfdadaf4da1bc086033aced9a129cbc81863fd9ac40a13b8af25c2bb190bb65",
+   "approved": false
+  },
+  {
    "uid": "art:cargo.ice_cream",
    "domain": "art",
    "id": "cargo.ice_cream",
@@ -211,6 +271,18 @@
    "version": 1,
    "hash": "4a0426f3f3bc60493a8f13bed4735f04ae784511e6160e3f453e69d5479fe09f",
    "approved": true
+  },
+  {
+   "uid": "art:cargo.kite",
+   "domain": "art",
+   "id": "cargo.kite",
+   "name": "货物 · 风筝",
+   "source": "art/source/cargo/cargo.kite.json",
+   "game": "res://generated/art/cargo.kite.tres",
+   "category": "cargo",
+   "version": 1,
+   "hash": "3ff8c842f9fb48a08eda72f15bfca379473d2dbfdfb3d47d2012027fe1c2384d",
+   "approved": false
   },
   {
    "uid": "art:cargo.letter",
@@ -249,6 +321,18 @@
    "approved": false
   },
   {
+   "uid": "art:cargo.tangerine",
+   "domain": "art",
+   "id": "cargo.tangerine",
+   "name": "货物 · 橘子筐",
+   "source": "art/source/cargo/cargo.tangerine.json",
+   "game": "res://generated/art/cargo.tangerine.tres",
+   "category": "cargo",
+   "version": 1,
+   "hash": "97cb9d54f748ed95555162179f17ff504894ea4e1c4f09143402f7e41b0f6581",
+   "approved": false
+  },
+  {
    "uid": "art:cargo.vase",
    "domain": "art",
    "id": "cargo.vase",
@@ -273,6 +357,18 @@
    "approved": false
   },
   {
+   "uid": "art:char.goblin_chief",
+   "domain": "art",
+   "id": "char.goblin_chief",
+   "name": "鬼怪大王（收件人）",
+   "source": "art/source/character/char.goblin_chief.json",
+   "game": "res://generated/art/char.goblin_chief.tres",
+   "category": "character",
+   "version": 1,
+   "hash": "f1a6bee81d9e8a638567ae5ec6a53332cbc6bae404b02ba21dfa09c709e7d970",
+   "approved": false
+  },
+  {
    "uid": "art:char.goblin_smith",
    "domain": "art",
    "id": "char.goblin_smith",
@@ -285,6 +381,18 @@
    "approved": true
   },
   {
+   "uid": "art:char.haenyeo",
+   "domain": "art",
+   "id": "char.haenyeo",
+   "name": "海女奶奶（收件人）",
+   "source": "art/source/character/char.haenyeo.json",
+   "game": "res://generated/art/char.haenyeo.tres",
+   "category": "character",
+   "version": 1,
+   "hash": "b12df444fc6db2660d55c1b035331620a3b60af8028a2f308356263db48d9d4e",
+   "approved": false
+  },
+  {
    "uid": "art:char.judge",
    "domain": "art",
    "id": "char.judge",
@@ -294,6 +402,18 @@
    "category": "character",
    "version": 1,
    "hash": "5e438a02e9fbe068f601a6d9b8293f30563cd8f6bf0feb511618bdb5f1318528",
+   "approved": false
+  },
+  {
+   "uid": "art:char.lighthouse_keeper",
+   "domain": "art",
+   "id": "char.lighthouse_keeper",
+   "name": "灯塔大叔（收件人）",
+   "source": "art/source/character/char.lighthouse_keeper.json",
+   "game": "res://generated/art/char.lighthouse_keeper.tres",
+   "category": "character",
+   "version": 1,
+   "hash": "3d0531df178d789cc2df72cfc741d8ef7116f6aa2d19a777783b5b80e4f9d162",
    "approved": false
   },
   {
@@ -354,6 +474,18 @@
    "category": "character",
    "version": 1,
    "hash": "67b8374148a76242dbc4bdc02bd445c1f7975b72c4bb2904b073b7a9a3d0d097",
+   "approved": false
+  },
+  {
+   "uid": "art:char.tangerine_farmer",
+   "domain": "art",
+   "id": "char.tangerine_farmer",
+   "name": "橘园阿姨（收件人）",
+   "source": "art/source/character/char.tangerine_farmer.json",
+   "game": "res://generated/art/char.tangerine_farmer.tres",
+   "category": "character",
+   "version": 1,
+   "hash": "70e559f5acb1a4addfd2306ba553a2e6dd1c286b0301d12b305129e55c31563f",
    "approved": false
   },
   {
@@ -513,6 +645,42 @@
    "approved": true
   },
   {
+   "uid": "art:deco.jeju_canola",
+   "domain": "art",
+   "id": "deco.jeju_canola",
+   "name": "济州 · 油菜花",
+   "source": "art/source/deco/deco.jeju_canola.json",
+   "game": "res://generated/art/deco.jeju_canola.tres",
+   "category": "deco",
+   "version": 1,
+   "hash": "c8ddae0d3aab851d8351729b50084754862e5e8db2aa933917a0f06cf4436b5d",
+   "approved": false
+  },
+  {
+   "uid": "art:deco.jeju_harubang",
+   "domain": "art",
+   "id": "deco.jeju_harubang",
+   "name": "济州 · 石头爷爷",
+   "source": "art/source/deco/deco.jeju_harubang.json",
+   "game": "res://generated/art/deco.jeju_harubang.tres",
+   "category": "deco",
+   "version": 1,
+   "hash": "ac7da0d9e13534304c228df0bdf8bf9b5833a3a17be4c15bba17a183303a2f5d",
+   "approved": false
+  },
+  {
+   "uid": "art:deco.jeju_tangerine_tree",
+   "domain": "art",
+   "id": "deco.jeju_tangerine_tree",
+   "name": "济州 · 橘子树",
+   "source": "art/source/deco/deco.jeju_tangerine_tree.json",
+   "game": "res://generated/art/deco.jeju_tangerine_tree.tres",
+   "category": "deco",
+   "version": 1,
+   "hash": "ca05de66bc4d923a3959382b0f40e61a9f15c3114b4582133d5c1a798445b3d7",
+   "approved": false
+  },
+  {
    "uid": "art:deco.ruins_lotus",
    "domain": "art",
    "id": "deco.ruins_lotus",
@@ -657,6 +825,30 @@
    "approved": true
   },
   {
+   "uid": "art:fauna.jeju_dragonfly",
+   "domain": "art",
+   "id": "fauna.jeju_dragonfly",
+   "name": "济州 · 红蜻蜓（提示动物）",
+   "source": "art/source/fauna/fauna.jeju_dragonfly.json",
+   "game": "res://generated/art/fauna.jeju_dragonfly.tres",
+   "category": "fauna",
+   "version": 1,
+   "hash": "b40bc937f37b37c26f84abc2037451dd6a072891a8c5db8a0126f582f09ff82a",
+   "approved": false
+  },
+  {
+   "uid": "art:fauna.jeju_pony",
+   "domain": "art",
+   "id": "fauna.jeju_pony",
+   "name": "济州 · 济州小马（提示动物）",
+   "source": "art/source/fauna/fauna.jeju_pony.json",
+   "game": "res://generated/art/fauna.jeju_pony.tres",
+   "category": "fauna",
+   "version": 1,
+   "hash": "9e7a20b742bb22a611b904418d63b3d511f231d1ffd726ad7c72cb25bde47b59",
+   "approved": false
+  },
+  {
    "uid": "art:fauna.ruins_scarab",
    "domain": "art",
    "id": "fauna.ruins_scarab",
@@ -763,6 +955,18 @@
    "version": 1,
    "hash": "9b6b40ade3dc85922d5080995c8269186416db4868b43d165be6682289e59dac",
    "approved": true
+  },
+  {
+   "uid": "art:fx.jeju_gust",
+   "domain": "art",
+   "id": "fx.jeju_gust",
+   "name": "阵风 · 济州",
+   "source": "art/source/fx/fx.jeju_gust.json",
+   "game": "res://generated/art/fx.jeju_gust.tres",
+   "category": "fx",
+   "version": 1,
+   "hash": "7c31b185b3ff3eea9fb229a9307f03cbd0d3e5669094c0e944564d23aeec5619",
+   "approved": false
   },
   {
    "uid": "art:fx.land_dust",
@@ -897,6 +1101,18 @@
    "approved": false
   },
   {
+   "uid": "art:item.snack_jeju",
+   "domain": "art",
+   "id": "item.snack_jeju",
+   "name": "零食 · 小米糕（济州）",
+   "source": "art/source/item/item.snack_jeju.json",
+   "game": "res://generated/art/item.snack_jeju.tres",
+   "category": "item",
+   "version": 1,
+   "hash": "53fe663b6412cbac8a088e0a923b782848ca9cdf85bf194028d5f8823e3943ac",
+   "approved": false
+  },
+  {
    "uid": "art:material.chapter2_5",
    "domain": "art",
    "id": "material.chapter2_5",
@@ -1015,6 +1231,18 @@
    "version": 1,
    "hash": "209d87777324350081358077a14054505123733c2172b2214c113dab79cffef7",
    "approved": true
+  },
+  {
+   "uid": "art:mech.jeju_seesaw",
+   "domain": "art",
+   "id": "mech.jeju_seesaw",
+   "name": "跷跷板 · 济州跳板",
+   "source": "art/source/mechanism/mech.jeju_seesaw.json",
+   "game": "res://generated/art/mech.jeju_seesaw.tres",
+   "category": "mechanism",
+   "version": 1,
+   "hash": "edf5de8a43ad78e9fdfa3e3b75825a1b414396488966770f392cb85a72e212f4",
+   "approved": false
   },
   {
    "uid": "art:mech.ladder",
@@ -1173,6 +1401,18 @@
    "approved": true
   },
   {
+   "uid": "art:monster.dokkaebi",
+   "domain": "art",
+   "id": "monster.dokkaebi",
+   "name": "小鬼怪（도깨비）",
+   "source": "art/source/monster/monster.dokkaebi.json",
+   "game": "res://generated/art/monster.dokkaebi.tres",
+   "category": "monster",
+   "version": 1,
+   "hash": "d00c782ddabf54a2950fa3f113606b1c13f8f77e027905e6128f6194c5f22874",
+   "approved": false
+  },
+  {
    "uid": "art:monster.imp",
    "domain": "art",
    "id": "monster.imp",
@@ -1207,6 +1447,18 @@
    "version": 1,
    "hash": "1e741865f806cbbae9da2a28998cf7d31dab13e8a7827352cbeaee5b8f7e4ad0",
    "approved": true
+  },
+  {
+   "uid": "art:monster.seagull",
+   "domain": "art",
+   "id": "monster.seagull",
+   "name": "海鸥",
+   "source": "art/source/monster/monster.seagull.json",
+   "game": "res://generated/art/monster.seagull.tres",
+   "category": "monster",
+   "version": 1,
+   "hash": "fc4a69e06d25574c7808acdb3be4c58d28a909d21da7d9aea574f923a6b2981f",
+   "approved": false
   },
   {
    "uid": "art:monster.skeleton_guard",
@@ -1327,6 +1579,18 @@
    "version": 2,
    "hash": "ec6077066b21197ba11f6d2ed9cb68831fda36a6968e85903b9ff28b457f6a86",
    "approved": true
+  },
+  {
+   "uid": "art:theme.jeju",
+   "domain": "art",
+   "id": "theme.jeju",
+   "name": "主题 · 济州海女村（白天的海边）",
+   "source": "art/source/theme/theme.jeju.json",
+   "game": "res://generated/themes/theme.jeju.tres",
+   "category": "theme",
+   "version": 1,
+   "hash": "e8a081b7160dfaeda3f276d48ec40568d6b0d6ffc28acf2606f5aa0b918f06ae",
+   "approved": false
   },
   {
    "uid": "art:theme.ruins",
@@ -3888,6 +4152,22 @@
    "game": "res://generated/content/catalog/recipients.json#goblin_chief"
   },
   {
+   "uid": "recipient:tangerine_farmer",
+   "domain": "recipient",
+   "id": "tangerine_farmer",
+   "name": "橘园阿姨",
+   "source": "content/catalog/recipients.json",
+   "game": "res://generated/content/catalog/recipients.json#tangerine_farmer"
+  },
+  {
+   "uid": "recipient:lighthouse_keeper",
+   "domain": "recipient",
+   "id": "lighthouse_keeper",
+   "name": "灯塔大叔",
+   "source": "content/catalog/recipients.json",
+   "game": "res://generated/content/catalog/recipients.json#lighthouse_keeper"
+  },
+  {
    "uid": "recipient:spice_merchant",
    "domain": "recipient",
    "id": "spice_merchant",
@@ -4422,6 +4702,22 @@
    "name": "荞麦凉粉",
    "source": "content/catalog/cargo.json",
    "game": "res://generated/content/catalog/cargo.json#buckwheat_jelly"
+  },
+  {
+   "uid": "cargo:tangerine",
+   "domain": "cargo",
+   "id": "tangerine",
+   "name": "橘子筐",
+   "source": "content/catalog/cargo.json",
+   "game": "res://generated/content/catalog/cargo.json#tangerine"
+  },
+  {
+   "uid": "cargo:kite",
+   "domain": "cargo",
+   "id": "kite",
+   "name": "风筝",
+   "source": "content/catalog/cargo.json",
+   "game": "res://generated/content/catalog/cargo.json#kite"
   },
   {
    "uid": "cargo:spice_box",
