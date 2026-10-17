@@ -320,8 +320,40 @@ func _crystal() -> void:
 	_plate(314-cw2,6,cw2,14); _coin(318-cw2,8); _text(309,8,_data.coins,"t",true,"r")
 	_footer("S1")
 
+func _hash_input(value: int, factor: int) -> Array[int]:
+	# Signed int64 times a positive 27-bit factor, as three little-endian
+	# uint32 words (96-bit two's complement). Each partial product fits int64.
+	var low: int = (value & 0xffffffff) * factor
+	var high: int = ((value >> 32) & 0xffffffff) * factor + (low >> 32)
+	return [low & 0xffffffff, high & 0xffffffff, ((high >> 32) - (factor if value < 0 else 0)) & 0xffffffff]
+
 func _hash(x: int, y: int, seed: int) -> int:
-	return posmod(RASTER.h32(x,y,seed),1000)
+	# Exact ui-kit.js Hh/BigInt, including signed inputs. Do not truncate the
+	# high product bits: they feed back into the low bits through v >> 16.
+	var xs: Array[int] = _hash_input(x, 73856093)
+	var ys: Array[int] = _hash_input(y, 19349663)
+	var seeds: Array[int] = _hash_input(seed, 83492791)
+	var words: Array[int] = []
+	for i: int in 3: words.append(xs[i] ^ ys[i] ^ seeds[i])
+	# v ^ (v >> 13) is nonnegative even if the initial v is negative.
+	# Iterate low to high so the next word still contains the original bits.
+	for i: int in 3:
+		var upper: int = words[i + 1] if i < 2 else (0xffffffff if (words[2] & 0x80000000) != 0 else 0)
+		words[i] ^= (words[i] >> 13) | ((upper & 0x1fff) << 19)
+	var carry: int = 0
+	for i: int in 3:
+		var product: int = words[i] * 1274126177 + carry
+		words[i] = product & 0xffffffff
+		carry = product >> 32
+	words.append(carry)
+	var remainder: int = 0
+	var upper: int = 0
+	for i: int in range(words.size() - 1, -1, -1):
+		var word: int = words[i]
+		var mixed: int = word ^ ((word >> 16) | ((upper & 0xffff) << 16))
+		remainder = (remainder * 0x100000000 + mixed) % 1000
+		upper = word
+	return remainder
 
 func _slab(x: int, y: int, w: int, face: int, o: Dictionary = {}) -> int:
 	var top: int = o.get("top",2)
