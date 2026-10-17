@@ -31,6 +31,14 @@
 | [UX-06](UX-06.md) | 引导进游戏 ②：按键提示层、开局心里话、目标发光、因果光、第 1 组房间放大 | `claude/inspiring-ride-zfnn4s` → `ux/UX-06` | Godot 关卡场景、存档 | 等 UX-04 合并 |
 | [UX-07](UX-07.md) | 引导进游戏 ③：卡住与死局提醒、第三层提示、规则卡时机、选关目标、过关"发现" | `claude/inspiring-ride-zfnn4s` → `ux/UX-07` | Godot 关卡场景、提示面板、规则卡、选关、过关 | 等 UX-06 合并 |
 | DLG-01 | 预留：对话系统第 2 步（dialogue.md 第 3、4 节：对话数据 `content/dialogue/`、`talk` / `near` / `level_idle` 触发、头顶标记、工作台「对话」页）。先由设计包定内容再拆 | — | — | 预留（新手引导 UX 系列之后） |
+| [DSN-04](DSN-04.md) | 第四张配送地图「极地雪村」设计（只写设计和后续包） | `claude/inspiring-ride-zfnn4s` → `dsn/DSN-04` | 设计目录 5 个文件（只动 `polar`）、本表（只改预留行） | 待派（现在可派，可和 DSN-05 同时） |
+| ART-01a / ART-01b / ART-01c | 预留给 DSN-04：雪村美术三批（主题地形 + 装饰；收件人；怪物、动物、货物） | — | — | 预留 |
+| DLV-06 | 预留给 DSN-04：v2 规则支持冰面滑行等 | — | — | 预留 |
+| DLV-07a / DLV-07b | 预留给 DSN-04：雪村普通房；机关房 + 进开局抽签 | — | — | 预留 |
+| [DSN-05](DSN-05.md) | 第五张配送地图「糖果王国」设计（只写设计和后续包） | `claude/inspiring-ride-zfnn4s` → `dsn/DSN-05` | 设计目录 5 个文件（只动 `candy`）、本表（只改预留行） | 待派（现在可派，可和 DSN-04 同时） |
+| ART-02a / ART-02b / ART-02c | 预留给 DSN-05：糖果美术三批 | — | — | 预留 |
+| DLV-08 | 预留给 DSN-05：v2 规则支持软糖弹跳等 | — | — | 预留 |
+| DLV-09a / DLV-09b | 预留给 DSN-05：糖果普通房；机关房 + 进开局抽签 | — | — | 预留 |
 | [WB-03](WB-03.md) | 配送菜单改短名（开局抽签 / 石牢 / 地府 / 海女村），退役 v1 旧版 | `claude/inspiring-ride-zfnn4s` → `wb/WB-03` | `slices.json`、`nav.js`、`index.html`、e2e | 已结束：菜单已改；v1 代码被已确认界面引用，不删；v1 数据等 DLV-01 后再删 |
 | [UI-09](UI-09.md) | 通用界面风格提案：3–4 个风格画在同一组样板界面上，用户选（2026-10-17） | `claude/inspiring-ride-zfnn4s` → `ui/UI-09` | `index.html`（追加）、`nav.js`（「美术」末尾加一项） | **已合并**（2026-10-17），用户选定 G2 深蓝圆角 |
 | [UI-10](UI-10.md) | 按选定风格做整套游戏界面 + 配送 v2 界面 + 通用大厅 | `claude/inspiring-ride-zfnn4s` → `ui/UI-10` | `index.html`、`tools/art.mjs`（追加）；15 个界面换版本 | 已拆成 10a / 10b / 10c |
@@ -59,6 +67,7 @@
 - `UX-01`、`DSN-01`、`DSN-02`、`DSN-03`、`BR-01`
 - `UX-02`–`UX-07`（DSN-03 拆出）
 - `DLG-01`（预留：对话系统第 2 步）
+- `DSN-04`、`DSN-05`；预留 `ART-01a`–`ART-01d`、`ART-02a`–`ART-02d`、`DLV-06`–`DLV-09b`
 - `WB-03`、`UI-10`、`UI-10a`–`UI-10c`、`AUD-00`、`WB-04`、`DLV-04a`、`DLV-04b`
 - `WB-02`、`AUD-01`、`AUD-02`（预留）
 
