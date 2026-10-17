@@ -11,6 +11,70 @@
       "ok": true
     },
     {
+      "actual_skin": "S2",
+      "actual_theme": "dungeon",
+      "id": "ui.lobby_chapter_skin.dungeon",
+      "ok": true
+    },
+    {
+      "id": "ui.lobby_keyboard_focus.dungeon",
+      "ok": true
+    },
+    {
+      "actual_skin": "S3",
+      "actual_theme": "ruins",
+      "id": "ui.lobby_chapter_skin.ruins",
+      "ok": true
+    },
+    {
+      "id": "ui.lobby_keyboard_focus.ruins",
+      "ok": true
+    },
+    {
+      "actual_skin": "S1",
+      "actual_theme": "cave",
+      "id": "ui.lobby_chapter_skin.cave",
+      "ok": true
+    },
+    {
+      "id": "ui.lobby_keyboard_focus.cave",
+      "ok": true
+    },
+    {
+      "actual_skin": "S5",
+      "actual_theme": "forest",
+      "id": "ui.lobby_chapter_skin.forest",
+      "ok": true
+    },
+    {
+      "id": "ui.lobby_keyboard_focus.forest",
+      "ok": true
+    },
+    {
+      "actual_skin": "S4",
+      "actual_theme": "sky",
+      "id": "ui.lobby_chapter_skin.sky",
+      "ok": true
+    },
+    {
+      "id": "ui.lobby_keyboard_focus.sky",
+      "ok": true
+    },
+    {
+      "actual_skin": "S6",
+      "actual_theme": "cosmos",
+      "id": "ui.lobby_chapter_skin.cosmos",
+      "ok": true
+    },
+    {
+      "id": "ui.lobby_keyboard_focus.cosmos",
+      "ok": true
+    },
+    {
+      "id": "ui.lobby_fixture_preserves_save",
+      "ok": true
+    },
+    {
       "id": "ui.blocked_feedback_and_no_move",
       "moves_and_sdk_unchanged": true,
       "ok": true,
@@ -19,16 +83,73 @@
   ],
   "layout_issues": [],
   "performance": {
-    "fps_observed": 19.0,
+    "fps_observed": 16.0,
     "full_performance_acceptance": false,
-    "memory_static_peak_bytes": 62060815.0,
+    "memory_static_peak_bytes": 61714551.0,
     "note": "Short capture run only; includes Control/layout construction. A sustained all-level benchmark is still required.",
-    "process_frame_peak_ms": 930.642,
-    "settle_advance_peak_us": 5687,
-    "undo_peak_us": 3672
+    "process_frame_peak_ms": 529.631,
+    "settle_advance_peak_us": 5456,
+    "undo_peak_us": 3340
   },
-  "reference_issues": [],
+  "reference_issues": [
+    "UI reference differs by more than 1700 pixels: lobby.forest = 1862"
+  ],
   "references": [
+    {
+      "approved": false,
+      "diff_by_lobby_region": {
+        "backdrop": 111,
+        "chapter": 72,
+        "floor": 0,
+        "keys": 216,
+        "menu": 513,
+        "title": 236
+      },
+      "diff_by_region": {
+        "body": 774,
+        "footer": 169,
+        "hud": 205
+      },
+      "diff_pixels": 1148,
+      "largest_color_differences": [
+        {
+          "colors": "262b44ff -> 181425ff",
+          "pixels": 556
+        },
+        {
+          "colors": "181425ff -> 262b44ff",
+          "pixels": 163
+        },
+        {
+          "colors": "3a4466ff -> 181425ff",
+          "pixels": 58
+        },
+        {
+          "colors": "262b44ff -> 3a4466ff",
+          "pixels": 43
+        },
+        {
+          "colors": "181425ff -> 5a6988ff",
+          "pixels": 36
+        },
+        {
+          "colors": "181425ff -> 3a4466ff",
+          "pixels": 30
+        },
+        {
+          "colors": "5a6988ff -> 181425ff",
+          "pixels": 29
+        },
+        {
+          "colors": "262b44ff -> f77622ff",
+          "pixels": 28
+        }
+      ],
+      "name": "lobby.zh-Hans",
+      "note": "Lobby artwork APR-0008; live chapter skin, 1700-pixel acceptance threshold. Runtime UI approval is not inferred from artwork approval.",
+      "pixels": 57600,
+      "screenshot": "game/reports/shots/lobby.zh-Hans.png"
+    },
     {
       "approved": false,
       "diff_by_region": {
@@ -427,6 +548,61 @@
     },
     {
       "approved": false,
+      "diff_by_lobby_region": {
+        "backdrop": 154,
+        "chapter": 54,
+        "floor": 0,
+        "keys": 220,
+        "menu": 521,
+        "title": 310
+      },
+      "diff_by_region": {
+        "body": 881,
+        "footer": 173,
+        "hud": 205
+      },
+      "diff_pixels": 1259,
+      "largest_color_differences": [
+        {
+          "colors": "262b44ff -> 181425ff",
+          "pixels": 646
+        },
+        {
+          "colors": "181425ff -> 262b44ff",
+          "pixels": 153
+        },
+        {
+          "colors": "262b44ff -> 3a4466ff",
+          "pixels": 52
+        },
+        {
+          "colors": "3a4466ff -> 181425ff",
+          "pixels": 50
+        },
+        {
+          "colors": "181425ff -> 3a4466ff",
+          "pixels": 47
+        },
+        {
+          "colors": "181425ff -> 5a6988ff",
+          "pixels": 31
+        },
+        {
+          "colors": "5a6988ff -> 181425ff",
+          "pixels": 30
+        },
+        {
+          "colors": "262b44ff -> f77622ff",
+          "pixels": 28
+        }
+      ],
+      "name": "lobby.en",
+      "note": "Lobby artwork APR-0008; live chapter skin, 1700-pixel acceptance threshold. Runtime UI approval is not inferred from artwork approval.",
+      "pixels": 57600,
+      "screenshot": "game/reports/shots/lobby.en.png"
+    },
+    {
+      "approved": false,
       "diff_by_region": {
         "body": 1519,
         "footer": 66,
@@ -820,6 +996,336 @@
         "boot_router_integration": false,
         "kind": "dialogue_component_over_live_M05"
       }
+    },
+    {
+      "approved": false,
+      "diff_by_lobby_region": {
+        "backdrop": 111,
+        "chapter": 72,
+        "floor": 0,
+        "keys": 216,
+        "menu": 513,
+        "title": 236
+      },
+      "diff_by_region": {
+        "body": 774,
+        "footer": 169,
+        "hud": 205
+      },
+      "diff_pixels": 1148,
+      "largest_color_differences": [
+        {
+          "colors": "262b44ff -> 181425ff",
+          "pixels": 556
+        },
+        {
+          "colors": "181425ff -> 262b44ff",
+          "pixels": 163
+        },
+        {
+          "colors": "3a4466ff -> 181425ff",
+          "pixels": 58
+        },
+        {
+          "colors": "262b44ff -> 3a4466ff",
+          "pixels": 43
+        },
+        {
+          "colors": "181425ff -> 5a6988ff",
+          "pixels": 36
+        },
+        {
+          "colors": "181425ff -> 3a4466ff",
+          "pixels": 30
+        },
+        {
+          "colors": "5a6988ff -> 181425ff",
+          "pixels": 29
+        },
+        {
+          "colors": "262b44ff -> f77622ff",
+          "pixels": 28
+        }
+      ],
+      "name": "lobby.dungeon",
+      "note": "Lobby artwork APR-0008; live chapter skin, 1700-pixel acceptance threshold. Runtime UI approval is not inferred from artwork approval.",
+      "pixels": 57600,
+      "screenshot": "game/reports/shots/lobby.dungeon.png"
+    },
+    {
+      "approved": false,
+      "diff_by_lobby_region": {
+        "backdrop": 109,
+        "chapter": 224,
+        "floor": 0,
+        "keys": 162,
+        "menu": 382,
+        "title": 156
+      },
+      "diff_by_region": {
+        "body": 747,
+        "footer": 162,
+        "hud": 124
+      },
+      "diff_pixels": 1033,
+      "largest_color_differences": [
+        {
+          "colors": "3e2731ff -> 181425ff",
+          "pixels": 301
+        },
+        {
+          "colors": "733e39ff -> 181425ff",
+          "pixels": 206
+        },
+        {
+          "colors": "f77622ff -> 181425ff",
+          "pixels": 102
+        },
+        {
+          "colors": "f77622ff -> feae34ff",
+          "pixels": 91
+        },
+        {
+          "colors": "c28569ff -> 181425ff",
+          "pixels": 75
+        },
+        {
+          "colors": "e4a672ff -> 181425ff",
+          "pixels": 69
+        },
+        {
+          "colors": "b86f50ff -> 181425ff",
+          "pixels": 59
+        },
+        {
+          "colors": "feae34ff -> 181425ff",
+          "pixels": 28
+        }
+      ],
+      "name": "lobby.ruins",
+      "note": "Lobby artwork APR-0008; live chapter skin, 1700-pixel acceptance threshold. Runtime UI approval is not inferred from artwork approval.",
+      "pixels": 57600,
+      "screenshot": "game/reports/shots/lobby.ruins.png"
+    },
+    {
+      "approved": false,
+      "diff_by_lobby_region": {
+        "backdrop": 95,
+        "chapter": 180,
+        "floor": 0,
+        "keys": 552,
+        "menu": 642,
+        "title": 170
+      },
+      "diff_by_region": {
+        "body": 845,
+        "footer": 552,
+        "hud": 242
+      },
+      "diff_pixels": 1639,
+      "largest_color_differences": [
+        {
+          "colors": "262b44ff -> 0099dbff",
+          "pixels": 292
+        },
+        {
+          "colors": "124e89ff -> 262b44ff",
+          "pixels": 203
+        },
+        {
+          "colors": "3a4466ff -> 0099dbff",
+          "pixels": 125
+        },
+        {
+          "colors": "262b44ff -> 181425ff",
+          "pixels": 116
+        },
+        {
+          "colors": "124e89ff -> 0099dbff",
+          "pixels": 78
+        },
+        {
+          "colors": "ffffffff -> c0cbdcff",
+          "pixels": 77
+        },
+        {
+          "colors": "181425ff -> 262b44ff",
+          "pixels": 70
+        },
+        {
+          "colors": "181425ff -> 0099dbff",
+          "pixels": 60
+        }
+      ],
+      "name": "lobby.cave",
+      "note": "Lobby artwork APR-0008; live chapter skin, 1700-pixel acceptance threshold. Runtime UI approval is not inferred from artwork approval.",
+      "pixels": 57600,
+      "screenshot": "game/reports/shots/lobby.cave.png"
+    },
+    {
+      "approved": false,
+      "diff_by_lobby_region": {
+        "backdrop": 139,
+        "chapter": 530,
+        "floor": 0,
+        "keys": 384,
+        "menu": 783,
+        "title": 26
+      },
+      "diff_by_region": {
+        "body": 1321,
+        "footer": 384,
+        "hud": 157
+      },
+      "diff_pixels": 1862,
+      "largest_color_differences": [
+        {
+          "colors": "3e2731ff -> 733e39ff",
+          "pixels": 290
+        },
+        {
+          "colors": "733e39ff -> 3e2731ff",
+          "pixels": 152
+        },
+        {
+          "colors": "3e2731ff -> 181425ff",
+          "pixels": 137
+        },
+        {
+          "colors": "3e8948ff -> 181425ff",
+          "pixels": 137
+        },
+        {
+          "colors": "3e8948ff -> 63c74dff",
+          "pixels": 128
+        },
+        {
+          "colors": "63c74dff -> 3e8948ff",
+          "pixels": 115
+        },
+        {
+          "colors": "733e39ff -> 181425ff",
+          "pixels": 79
+        },
+        {
+          "colors": "733e39ff -> 265c42ff",
+          "pixels": 76
+        }
+      ],
+      "name": "lobby.forest",
+      "note": "Lobby artwork APR-0008; live chapter skin, 1700-pixel acceptance threshold. Runtime UI approval is not inferred from artwork approval.",
+      "pixels": 57600,
+      "screenshot": "game/reports/shots/lobby.forest.png"
+    },
+    {
+      "approved": false,
+      "diff_by_lobby_region": {
+        "backdrop": 112,
+        "chapter": 109,
+        "floor": 0,
+        "keys": 144,
+        "menu": 369,
+        "title": 172
+      },
+      "diff_by_region": {
+        "body": 597,
+        "footer": 144,
+        "hud": 165
+      },
+      "diff_pixels": 906,
+      "largest_color_differences": [
+        {
+          "colors": "c0cbdcff -> 181425ff",
+          "pixels": 196
+        },
+        {
+          "colors": "0099dbff -> 181425ff",
+          "pixels": 179
+        },
+        {
+          "colors": "0099dbff -> c0cbdcff",
+          "pixels": 68
+        },
+        {
+          "colors": "181425ff -> 68386cff",
+          "pixels": 56
+        },
+        {
+          "colors": "c0cbdcff -> 0099dbff",
+          "pixels": 48
+        },
+        {
+          "colors": "ffffffff -> 68386cff",
+          "pixels": 44
+        },
+        {
+          "colors": "ffffffff -> 181425ff",
+          "pixels": 30
+        },
+        {
+          "colors": "68386cff -> ffffffff",
+          "pixels": 26
+        }
+      ],
+      "name": "lobby.sky",
+      "note": "Lobby artwork APR-0008; live chapter skin, 1700-pixel acceptance threshold. Runtime UI approval is not inferred from artwork approval.",
+      "pixels": 57600,
+      "screenshot": "game/reports/shots/lobby.sky.png"
+    },
+    {
+      "approved": false,
+      "diff_by_lobby_region": {
+        "backdrop": 60,
+        "chapter": 77,
+        "floor": 0,
+        "keys": 110,
+        "menu": 284,
+        "title": 65
+      },
+      "diff_by_region": {
+        "body": 387,
+        "footer": 110,
+        "hud": 99
+      },
+      "diff_pixels": 596,
+      "largest_color_differences": [
+        {
+          "colors": "3a4466ff -> 5a6988ff",
+          "pixels": 160
+        },
+        {
+          "colors": "262b44ff -> 181425ff",
+          "pixels": 122
+        },
+        {
+          "colors": "f77622ff -> 181425ff",
+          "pixels": 85
+        },
+        {
+          "colors": "3a4466ff -> 181425ff",
+          "pixels": 35
+        },
+        {
+          "colors": "181425ff -> 5a6988ff",
+          "pixels": 35
+        },
+        {
+          "colors": "5a6988ff -> 8b9bb4ff",
+          "pixels": 28
+        },
+        {
+          "colors": "181425ff -> 262b44ff",
+          "pixels": 26
+        },
+        {
+          "colors": "262b44ff -> 5a6988ff",
+          "pixels": 24
+        }
+      ],
+      "name": "lobby.cosmos",
+      "note": "Lobby artwork APR-0008; live chapter skin, 1700-pixel acceptance threshold. Runtime UI approval is not inferred from artwork approval.",
+      "pixels": 57600,
+      "screenshot": "game/reports/shots/lobby.cosmos.png"
     }
   ]
 }
