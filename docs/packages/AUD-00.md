@@ -1,6 +1,6 @@
 # AUD-00（第二版）主题小调：4 个抓耳的方案，每个配 3 首地图变奏，分开成独立曲子
 
-状态：待派（2026-10-17 重写。第一版已合并但用户不满意：不抓耳；四种味道拼在一个文件里听不出来）
+状态：**等 WB-04（合成器升级）合并后再派**（2026-10-17 重写。第一版已合并但用户不满意：不抓耳；四种味道拼在一个文件里听不出来）
 基线：`claude/inspiring-ride-zfnn4s` → 分支：`aud/AUD-00-v2`（**不要**用旧的 `aud/AUD-00` 分支，**不要**从 `main` 开）
 
 **开工**（照抄）：
@@ -17,6 +17,7 @@ git checkout -b aud/AUD-00-v2 origin/claude/inspiring-ride-zfnn4s
 **预计 2–3 小时**。超过 4 小时还没做完，就停下，把做到哪、卡在哪写进「交付」交回。
 
 ## 要读的（只读这些）
+0. `audio/presets.json`（WB-04 做的音色预设：古筝、笛子、二胡、木鱼、编钟、伽倻琴、海浪等）和 `docs/packages/WB-04/presets/all.wav`。**配器用这些预设**，让每张地图的乐器一听就不同。
 1. [audio.md](../design/audio.md) **第 3.0 节**（这一版的全部要求）和第 1 节的数值表
 2. 第一版的源文件 `audio/source/music/theme_a.json`：看音乐源怎么写，格式照它
 3. `content/catalog/audio.json` 里 `music_sets` 和 `theme_a` 条目：看怎么登记

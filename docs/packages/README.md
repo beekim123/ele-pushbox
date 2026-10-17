@@ -18,7 +18,8 @@
 | [DSN-02](DSN-02.md) | 声音设计：一套音效 + 每张地图的背景音乐（只写设计和包） | `claude/inspiring-ride-zfnn4s` → `dsn/DSN-02` | 本表（只改下面三行） | **已合并**（2026-10-17） |
 | [WB-02](WB-02.md) | 声音流程工具与工作台「声音」菜单；DSN-02 已合并，不用等 DSN-01，可以现在派 | `claude/inspiring-ride-zfnn4s`（DSN-02 合并后，派前核对） → `wb/WB-02` | `tools/content.mjs`、`tools/lib/ids.mjs`、菜单/脚本追加、e2e 追加、生成文件 | **已合并**（2026-10-17） |
 | [AUD-01](AUD-01.md) | 全游戏通用 32 项音效候选；依赖 WB-02 合并 | `claude/inspiring-ride-zfnn4s` → `aud/AUD-01` | 仅音效生成结果；与 AUD-02 的汇总生成文件合并后重建 | **已合并**（2026-10-17），待用户试听 |
-| [AUD-00](AUD-00.md) | 主题小调第二版：4 个抓耳方案 × 4 首独立曲子（主题曲 + 石牢 / 地府 / 海女村变奏） | `claude/inspiring-ride-zfnn4s` → `aud/AUD-00-v2` | `audio.json`（主题曲组）、`tools/content.mjs`（一处）、生成文件 | 待派（第一版已合并，用户不满意，重做） |
+| [WB-04](WB-04.md) | 合成器升级：拨弦、调频（钟铃木鱼）、锯齿波、颤音、气声、回声混响，音色预设库和试听样本 | `claude/inspiring-ride-zfnn4s` → `wb/WB-04` | `tools/lib/audio.mjs`、`tools/audio.mjs`、生成文件；现有 36 个声音源各升一版 | 待派（现在可派） |
+| [AUD-00](AUD-00.md) | 主题小调第二版：4 个抓耳方案 × 4 首独立曲子（主题曲 + 石牢 / 地府 / 海女村变奏） | `claude/inspiring-ride-zfnn4s` → `aud/AUD-00-v2` | `audio.json`（主题曲组）、`tools/content.mjs`（一处）、生成文件 | 等 WB-04 合并后派 |
 | [AUD-02](AUD-02.md) | 石牢、地府、海女村音乐各 3 首候选；依赖 WB-02 合并，与 AUD-01 互不依赖 | `claude/inspiring-ride-zfnn4s` → `aud/AUD-02` | 仅音乐生成结果；与 AUD-01 的汇总生成文件合并后重建 | 暂停：等 AUD-00 选定小调后重写 |
 | [DSN-03](DSN-03.md) | 新手引导改造设计（用户：UX-01 报告 8 个问题全按建议） | `claude/inspiring-ride-zfnn4s` → `dsn/DSN-03` | `game-design.md`（只改引导相关）、本表（只改下面三行） | 待派 |
 | UX-02 | 预留给 DSN-03：引导文字（新表 `content/i18n-onboarding/`）和关卡数据 | — | — | 预留 |
@@ -44,7 +45,7 @@
 - `DLV-01`–`DLV-05`
 - `UX-01`、`DSN-01`、`DSN-02`、`DSN-03`、`BR-01`
 - `UX-02`–`UX-04`（预留）
-- `WB-03`、`UI-10`、`AUD-00`
+- `WB-03`、`UI-10`、`AUD-00`、`WB-04`
 - `WB-02`、`AUD-01`、`AUD-02`（预留）
 
 ## 以前的分支规则（2026-10-16，BR-01 之后作废）
