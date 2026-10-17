@@ -624,7 +624,7 @@
    "levels": [
     "M01"
    ],
-   "status": "playable"
+   "status": "specified"
   },
   {
    "id": "ladder",
@@ -635,7 +635,7 @@
    "levels": [
     "M02"
    ],
-   "status": "playable"
+   "status": "specified"
   },
   {
    "id": "dig",
@@ -649,7 +649,7 @@
    "levels": [
     "M03"
    ],
-   "status": "playable"
+   "status": "specified"
   },
   {
    "id": "pour",
@@ -664,7 +664,7 @@
     "M06",
     "G10"
    ],
-   "status": "playable"
+   "status": "specified"
   },
   {
    "id": "plate_door",
@@ -677,7 +677,7 @@
     "M06",
     "E01"
    ],
-   "status": "playable"
+   "status": "specified"
   },
   {
    "id": "fall",
@@ -690,7 +690,7 @@
    "levels": [
     "M07"
    ],
-   "status": "playable"
+   "status": "specified"
   },
   {
    "id": "water_flow",
@@ -795,7 +795,7 @@
     "Q01",
     "Q10"
    ],
-   "status": "playable"
+   "status": "specified"
   },
   {
    "id": "blast_through",
@@ -808,7 +808,7 @@
    "levels": [
     "Q02"
    ],
-   "status": "playable"
+   "status": "specified"
   },
   {
    "id": "fuse",
@@ -823,7 +823,7 @@
    "levels": [
     "Q03"
    ],
-   "status": "playable"
+   "status": "specified"
   },
   {
    "id": "gravel",
@@ -837,7 +837,7 @@
     "Q04",
     "E04"
    ],
-   "status": "playable"
+   "status": "specified"
   },
   {
    "id": "acid",
@@ -851,7 +851,7 @@
     "G01",
     "E01"
    ],
-   "status": "playable"
+   "status": "specified"
   },
   {
    "id": "etch_tag",
@@ -864,7 +864,7 @@
    "levels": [
     "G02"
    ],
-   "status": "playable"
+   "status": "specified"
   },
   {
    "id": "gas_rise",
@@ -877,7 +877,7 @@
    "levels": [
     "G03"
    ],
-   "status": "playable"
+   "status": "specified"
   },
   {
    "id": "gas_sink",
@@ -890,7 +890,7 @@
    "levels": [
     "G04"
    ],
-   "status": "playable"
+   "status": "specified"
   },
   {
    "id": "lifetime",
@@ -903,7 +903,7 @@
    "levels": [
     "G05"
    ],
-   "status": "playable"
+   "status": "specified"
   },
   {
    "id": "vine",
@@ -917,7 +917,7 @@
     "G06",
     "E03"
    ],
-   "status": "playable"
+   "status": "specified"
   },
   {
    "id": "burn",
@@ -931,7 +931,7 @@
    "levels": [
     "F01"
    ],
-   "status": "playable"
+   "status": "specified"
   },
   {
    "id": "freeze",
@@ -945,7 +945,7 @@
     "F02",
     "F09"
    ],
-   "status": "playable"
+   "status": "specified"
   },
   {
    "id": "melt",
@@ -959,7 +959,7 @@
     "F03",
     "E03"
    ],
-   "status": "playable"
+   "status": "specified"
   },
   {
    "id": "blast_ignite",
@@ -973,7 +973,7 @@
    "levels": [
     "F04"
    ],
-   "status": "playable"
+   "status": "specified"
   },
   {
    "id": "power",
@@ -1075,7 +1075,7 @@
     "F09",
     "E05"
    ],
-   "status": "playable"
+   "status": "specified"
   },
   {
    "id": "low_gravity",
@@ -1127,7 +1127,7 @@
    "levels": [
     "G08"
    ],
-   "status": "playable"
+   "status": "specified"
   },
   {
    "id": "conveyor",
@@ -1292,7 +1292,7 @@
     "Q08",
     "E02"
    ],
-   "status": "playable"
+   "status": "specified"
   },
   {
    "id": "hold_breath",
@@ -1334,7 +1334,7 @@
     "G10",
     "E06"
    ],
-   "status": "playable"
+   "status": "specified"
   },
   {
    "id": "gust",
@@ -1346,7 +1346,7 @@
     "F08",
     "E06"
    ],
-   "status": "playable"
+   "status": "specified"
   },
   {
    "id": "monsoon",
@@ -1428,7 +1428,7 @@
    "levels": [
     "Q09"
    ],
-   "status": "playable"
+   "status": "specified"
   },
   {
    "id": "petal_trail",
@@ -1459,7 +1459,7 @@
     "Q10",
     "E05"
    ],
-   "status": "playable"
+   "status": "specified"
   },
   {
    "id": "float_block",

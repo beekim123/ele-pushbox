@@ -19,18 +19,23 @@
   ],
   "layout_issues": [],
   "performance": {
-    "fps_observed": 36.0,
+    "fps_observed": 19.0,
     "full_performance_acceptance": false,
-    "memory_static_peak_bytes": 49367493.0,
+    "memory_static_peak_bytes": 57023918.0,
     "note": "Short capture run only; includes Control/layout construction. A sustained all-level benchmark is still required.",
-    "process_frame_peak_ms": 148.323,
-    "settle_advance_peak_us": 645,
-    "undo_peak_us": 2275
+    "process_frame_peak_ms": 499.756,
+    "settle_advance_peak_us": 5719,
+    "undo_peak_us": 3325
   },
+  "reference_issues": [
+    "G2 reference differs by more than 1700 pixels: chapters.zh-Hans = 1809",
+    "G2 reference differs by more than 1700 pixels: settings.zh-Hans = 2005",
+    "G2 reference differs by more than 1700 pixels: chapters.en = 1767"
+  ],
   "references": [
     {
       "approved": false,
-      "diff_pixels": 178,
+      "diff_pixels": 20102,
       "name": "lobby.zh-Hans",
       "note": "Development Control layout; pending UI/bubble approvals. Geometry and glyph differences are unresolved, not waived.",
       "pixels": 57600,
@@ -38,9 +43,48 @@
     },
     {
       "approved": false,
-      "diff_pixels": 88,
+      "diff_by_region": {
+        "body": 1724,
+        "footer": 69,
+        "hud": 16
+      },
+      "diff_pixels": 1809,
+      "largest_color_differences": [
+        {
+          "colors": "262b44ff -> 181425ff",
+          "pixels": 267
+        },
+        {
+          "colors": "b86f50ff -> 733e39ff",
+          "pixels": 258
+        },
+        {
+          "colors": "733e39ff -> 3e2731ff",
+          "pixels": 195
+        },
+        {
+          "colors": "733e39ff -> b86f50ff",
+          "pixels": 141
+        },
+        {
+          "colors": "733e39ff -> 181425ff",
+          "pixels": 127
+        },
+        {
+          "colors": "181425ff -> 3e2731ff",
+          "pixels": 93
+        },
+        {
+          "colors": "feae34ff -> d77643ff",
+          "pixels": 79
+        },
+        {
+          "colors": "181425ff -> 262b44ff",
+          "pixels": 63
+        }
+      ],
       "name": "chapters.zh-Hans",
-      "note": "Development Control layout; pending UI/bubble approvals. Geometry and glyph differences are unresolved, not waived. Chapter availability is a UI-only reference fixture; real manifest counts are retained and no SDK unlock is claimed.",
+      "note": "G2 artwork APR-0007; live localized Controls, 1700-pixel acceptance threshold. Runtime UI approval is not inferred from artwork approval. Chapter availability is a UI-only reference fixture; real manifest counts are retained and no SDK unlock is claimed.",
       "pixels": 57600,
       "screenshot": "game/reports/shots/chapters.zh-Hans.png",
       "ui_fixture": {
@@ -52,7 +96,7 @@
         "manifest_level_counts": {
           "basics": 7,
           "blast": 8,
-          "experimental": 0,
+          "experimental": 6,
           "react": 9,
           "thermal": 7,
           "water": 9
@@ -62,31 +106,148 @@
     },
     {
       "approved": false,
-      "diff_pixels": 166,
+      "diff_by_region": {
+        "body": 1339,
+        "footer": 73,
+        "hud": 20
+      },
+      "diff_pixels": 1432,
+      "largest_color_differences": [
+        {
+          "colors": "3a4466ff -> 262b44ff",
+          "pixels": 602
+        },
+        {
+          "colors": "262b44ff -> 181425ff",
+          "pixels": 545
+        },
+        {
+          "colors": "5a6988ff -> 3a4466ff",
+          "pixels": 101
+        },
+        {
+          "colors": "262b44ff -> c0cbdcff",
+          "pixels": 28
+        },
+        {
+          "colors": "181425ff -> 262b44ff",
+          "pixels": 23
+        },
+        {
+          "colors": "2ce8f5ff -> 3a4466ff",
+          "pixels": 21
+        },
+        {
+          "colors": "181425ff -> 3a4466ff",
+          "pixels": 16
+        },
+        {
+          "colors": "181425ff -> c0cbdcff",
+          "pixels": 10
+        }
+      ],
       "name": "levels.zh-Hans",
-      "note": "Development Control layout; pending UI/bubble approvals. Geometry and glyph differences are unresolved, not waived.",
+      "note": "G2 artwork APR-0007; live localized Controls, 1700-pixel acceptance threshold. Runtime UI approval is not inferred from artwork approval.",
       "pixels": 57600,
       "screenshot": "game/reports/shots/levels.zh-Hans.png"
     },
     {
       "approved": false,
-      "diff_pixels": 491,
+      "diff_by_region": {
+        "body": 46,
+        "footer": 36,
+        "hud": 1196
+      },
+      "diff_pixels": 1278,
+      "largest_color_differences": [
+        {
+          "colors": "181425ff -> 8b9bb4ff",
+          "pixels": 253
+        },
+        {
+          "colors": "262b44ff -> 181425ff",
+          "pixels": 244
+        },
+        {
+          "colors": "0099dbff -> 181425ff",
+          "pixels": 192
+        },
+        {
+          "colors": "c0cbdcff -> 181425ff",
+          "pixels": 145
+        },
+        {
+          "colors": "c0cbdcff -> 8b9bb4ff",
+          "pixels": 100
+        },
+        {
+          "colors": "feae34ff -> 181425ff",
+          "pixels": 55
+        },
+        {
+          "colors": "181425ff -> d77643ff",
+          "pixels": 43
+        },
+        {
+          "colors": "f77622ff -> 181425ff",
+          "pixels": 42
+        }
+      ],
       "name": "pause.zh-Hans",
-      "note": "Development Control layout; pending UI/bubble approvals. Geometry and glyph differences are unresolved, not waived.",
+      "note": "G2 artwork APR-0007; live localized Controls, 1700-pixel acceptance threshold. Runtime UI approval is not inferred from artwork approval.",
       "pixels": 57600,
       "screenshot": "game/reports/shots/pause.zh-Hans.png"
     },
     {
       "approved": false,
-      "diff_pixels": 448,
+      "diff_by_region": {
+        "body": 299,
+        "footer": 1690,
+        "hud": 16
+      },
+      "diff_pixels": 2005,
+      "largest_color_differences": [
+        {
+          "colors": "262b44ff -> 181425ff",
+          "pixels": 410
+        },
+        {
+          "colors": "181425ff -> 262b44ff",
+          "pixels": 297
+        },
+        {
+          "colors": "3a4466ff -> 262b44ff",
+          "pixels": 210
+        },
+        {
+          "colors": "ffffffff -> 262b44ff",
+          "pixels": 196
+        },
+        {
+          "colors": "262b44ff -> 3a4466ff",
+          "pixels": 168
+        },
+        {
+          "colors": "262b44ff -> ffffffff",
+          "pixels": 134
+        },
+        {
+          "colors": "181425ff -> ffffffff",
+          "pixels": 101
+        },
+        {
+          "colors": "181425ff -> c0cbdcff",
+          "pixels": 94
+        }
+      ],
       "name": "settings.zh-Hans",
-      "note": "Development Control layout; pending UI/bubble approvals. Geometry and glyph differences are unresolved, not waived.",
+      "note": "G2 artwork APR-0007; live localized Controls, 1700-pixel acceptance threshold. Runtime UI approval is not inferred from artwork approval.",
       "pixels": 57600,
       "screenshot": "game/reports/shots/settings.zh-Hans.png"
     },
     {
       "approved": false,
-      "diff_pixels": 5877,
+      "diff_pixels": 13855,
       "name": "hint.zh-Hans",
       "note": "Development Control layout; pending UI/bubble approvals. Geometry and glyph differences are unresolved, not waived.",
       "pixels": 57600,
@@ -94,7 +255,7 @@
     },
     {
       "approved": false,
-      "diff_pixels": 923,
+      "diff_pixels": 42764,
       "name": "complete.zh-Hans",
       "note": "Development Control layout; pending UI/bubble approvals. Geometry and glyph differences are unresolved, not waived.",
       "pixels": 57600,
@@ -102,7 +263,7 @@
     },
     {
       "approved": false,
-      "diff_pixels": 471,
+      "diff_pixels": 18867,
       "name": "rulecard.zh-Hans",
       "note": "Development Control layout; pending UI/bubble approvals. Geometry and glyph differences are unresolved, not waived.",
       "pixels": 57600,
@@ -110,7 +271,7 @@
     },
     {
       "approved": false,
-      "diff_pixels": 225,
+      "diff_pixels": 22167,
       "name": "lobby.en",
       "note": "Development Control layout; pending UI/bubble approvals. Geometry and glyph differences are unresolved, not waived.",
       "pixels": 57600,
@@ -118,9 +279,48 @@
     },
     {
       "approved": false,
-      "diff_pixels": 483,
+      "diff_by_region": {
+        "body": 1685,
+        "footer": 66,
+        "hud": 16
+      },
+      "diff_pixels": 1767,
+      "largest_color_differences": [
+        {
+          "colors": "b86f50ff -> 733e39ff",
+          "pixels": 258
+        },
+        {
+          "colors": "262b44ff -> 181425ff",
+          "pixels": 230
+        },
+        {
+          "colors": "733e39ff -> 3e2731ff",
+          "pixels": 195
+        },
+        {
+          "colors": "733e39ff -> b86f50ff",
+          "pixels": 141
+        },
+        {
+          "colors": "733e39ff -> 181425ff",
+          "pixels": 127
+        },
+        {
+          "colors": "181425ff -> 3e2731ff",
+          "pixels": 93
+        },
+        {
+          "colors": "feae34ff -> d77643ff",
+          "pixels": 79
+        },
+        {
+          "colors": "181425ff -> 262b44ff",
+          "pixels": 63
+        }
+      ],
       "name": "chapters.en",
-      "note": "Development Control layout; pending UI/bubble approvals. Geometry and glyph differences are unresolved, not waived. Chapter availability is a UI-only reference fixture; real manifest counts are retained and no SDK unlock is claimed.",
+      "note": "G2 artwork APR-0007; live localized Controls, 1700-pixel acceptance threshold. Runtime UI approval is not inferred from artwork approval. Chapter availability is a UI-only reference fixture; real manifest counts are retained and no SDK unlock is claimed.",
       "pixels": 57600,
       "screenshot": "game/reports/shots/chapters.en.png",
       "ui_fixture": {
@@ -132,7 +332,7 @@
         "manifest_level_counts": {
           "basics": 7,
           "blast": 8,
-          "experimental": 0,
+          "experimental": 6,
           "react": 9,
           "thermal": 7,
           "water": 9
@@ -142,31 +342,148 @@
     },
     {
       "approved": false,
-      "diff_pixels": 826,
+      "diff_by_region": {
+        "body": 1385,
+        "footer": 70,
+        "hud": 20
+      },
+      "diff_pixels": 1475,
+      "largest_color_differences": [
+        {
+          "colors": "3a4466ff -> 262b44ff",
+          "pixels": 602
+        },
+        {
+          "colors": "262b44ff -> 181425ff",
+          "pixels": 542
+        },
+        {
+          "colors": "5a6988ff -> 3a4466ff",
+          "pixels": 101
+        },
+        {
+          "colors": "c0cbdcff -> 262b44ff",
+          "pixels": 43
+        },
+        {
+          "colors": "262b44ff -> c0cbdcff",
+          "pixels": 31
+        },
+        {
+          "colors": "181425ff -> 262b44ff",
+          "pixels": 23
+        },
+        {
+          "colors": "2ce8f5ff -> 3a4466ff",
+          "pixels": 21
+        },
+        {
+          "colors": "181425ff -> 3a4466ff",
+          "pixels": 16
+        }
+      ],
       "name": "levels.en",
-      "note": "Development Control layout; pending UI/bubble approvals. Geometry and glyph differences are unresolved, not waived.",
+      "note": "G2 artwork APR-0007; live localized Controls, 1700-pixel acceptance threshold. Runtime UI approval is not inferred from artwork approval.",
       "pixels": 57600,
       "screenshot": "game/reports/shots/levels.en.png"
     },
     {
       "approved": false,
-      "diff_pixels": 656,
+      "diff_by_region": {
+        "body": 46,
+        "footer": 37,
+        "hud": 1184
+      },
+      "diff_pixels": 1267,
+      "largest_color_differences": [
+        {
+          "colors": "262b44ff -> 181425ff",
+          "pixels": 273
+        },
+        {
+          "colors": "181425ff -> 8b9bb4ff",
+          "pixels": 240
+        },
+        {
+          "colors": "0099dbff -> 181425ff",
+          "pixels": 220
+        },
+        {
+          "colors": "c0cbdcff -> 181425ff",
+          "pixels": 132
+        },
+        {
+          "colors": "c0cbdcff -> 8b9bb4ff",
+          "pixels": 58
+        },
+        {
+          "colors": "feae34ff -> 181425ff",
+          "pixels": 55
+        },
+        {
+          "colors": "181425ff -> d77643ff",
+          "pixels": 43
+        },
+        {
+          "colors": "f77622ff -> 181425ff",
+          "pixels": 42
+        }
+      ],
       "name": "pause.en",
-      "note": "Development Control layout; pending UI/bubble approvals. Geometry and glyph differences are unresolved, not waived.",
+      "note": "G2 artwork APR-0007; live localized Controls, 1700-pixel acceptance threshold. Runtime UI approval is not inferred from artwork approval.",
       "pixels": 57600,
       "screenshot": "game/reports/shots/pause.en.png"
     },
     {
       "approved": false,
-      "diff_pixels": 434,
+      "diff_by_region": {
+        "body": 299,
+        "footer": 1286,
+        "hud": 16
+      },
+      "diff_pixels": 1601,
+      "largest_color_differences": [
+        {
+          "colors": "262b44ff -> 181425ff",
+          "pixels": 387
+        },
+        {
+          "colors": "181425ff -> 262b44ff",
+          "pixels": 241
+        },
+        {
+          "colors": "ffffffff -> 262b44ff",
+          "pixels": 155
+        },
+        {
+          "colors": "262b44ff -> ffffffff",
+          "pixels": 148
+        },
+        {
+          "colors": "3a4466ff -> 262b44ff",
+          "pixels": 148
+        },
+        {
+          "colors": "262b44ff -> 3a4466ff",
+          "pixels": 133
+        },
+        {
+          "colors": "181425ff -> c0cbdcff",
+          "pixels": 74
+        },
+        {
+          "colors": "3a4466ff -> ffffffff",
+          "pixels": 73
+        }
+      ],
       "name": "settings.en",
-      "note": "Development Control layout; pending UI/bubble approvals. Geometry and glyph differences are unresolved, not waived.",
+      "note": "G2 artwork APR-0007; live localized Controls, 1700-pixel acceptance threshold. Runtime UI approval is not inferred from artwork approval.",
       "pixels": 57600,
       "screenshot": "game/reports/shots/settings.en.png"
     },
     {
       "approved": false,
-      "diff_pixels": 5822,
+      "diff_pixels": 16738,
       "name": "hint.en",
       "note": "Development Control layout; pending UI/bubble approvals. Geometry and glyph differences are unresolved, not waived.",
       "pixels": 57600,
@@ -174,7 +491,7 @@
     },
     {
       "approved": false,
-      "diff_pixels": 916,
+      "diff_pixels": 42758,
       "name": "complete.en",
       "note": "Development Control layout; pending UI/bubble approvals. Geometry and glyph differences are unresolved, not waived.",
       "pixels": 57600,
@@ -182,7 +499,7 @@
     },
     {
       "approved": false,
-      "diff_pixels": 782,
+      "diff_pixels": 17736,
       "name": "rulecard.en",
       "note": "Development Control layout; pending UI/bubble approvals. Geometry and glyph differences are unresolved, not waived.",
       "pixels": 57600,

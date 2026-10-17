@@ -2,6 +2,7 @@ extends SceneTree
 ## Real GPU captures, compared with exported references. Differences are data.
 var references: Array[Dictionary] = []
 var issues: Array = []
+var reference_issues: Array[String] = []
 var behaviors: Array[Dictionary] = []
 
 class ChapterAvailabilityFixture extends "res://modes/lab/controller.gd":
@@ -29,10 +30,14 @@ func _run() -> void:
 	# Cosmetic UI sample from ui.screen.levels; this is isolated test progress,
 	# not an SDK completion claim and never written into the player's save.
 	var save: Node = root.get_node("Save")
+	save.data["progress"] = {}
 	for uid: String in ["level:M01", "level:M02", "level:M04", "level:M06"]:
 		save.data.progress[uid] = {"cleared":true,"skipped":false,"moves":4}
 	save.data.progress["level:M03"] = {"cleared":false,"skipped":true,"moves":0}
 	save.data["rule_cards_seen"] = ["mechanic:push", "mechanic:ladder", "mechanic:dig", "mechanic:pour", "mechanic:plate_door", "mechanic:fall"]
+	settings.values["window_scale"] = "auto"
+	settings.values["show_grid"] = false
+	settings.values["open_all_levels"] = false
 	settings.values["music"] = 0.8
 	settings.values["sfx"] = 0.8
 	settings.values["ambience"] = "full"
@@ -63,6 +68,7 @@ func _run() -> void:
 				app.world_view.pose = "win"
 			if name == "rulecard": app.lab.level_index = 2; app.start_level(); app.rule_uid = "mechanic:dig"
 			app.show_screen(name)
+			if name == "settings": app.screen.set_focus(1)
 			if app.screen.has_method("prepare_reference"):
 				await app.screen.prepare_reference()
 			await process_frame
@@ -84,14 +90,29 @@ func _run() -> void:
 			var expected_path: String = ProjectSettings.globalize_path("res://../art/export/reference/" + name + "." + language + ".png")
 			var expected: Image = Image.load_from_file(expected_path)
 			var different: int = 0
+			var color_differences: Dictionary = {}
+			var region_differences: Dictionary = {"hud":0,"body":0,"footer":0}
 			if expected == null or expected.get_size() != image.get_size():
 				different = 320 * 180
 			else:
 				for y: int in range(180):
 					for x: int in range(320):
-						if image.get_pixel(x, y).to_rgba32() != expected.get_pixel(x, y).to_rgba32(): different += 1
+						if image.get_pixel(x, y).to_rgba32() != expected.get_pixel(x, y).to_rgba32():
+							different += 1
+							var pair: String = expected.get_pixel(x, y).to_html() + " -> " + image.get_pixel(x, y).to_html()
+							color_differences[pair] = int(color_differences.get(pair, 0)) + 1
+							var region: String = "hud" if y < 24 else "footer" if y >= 161 else "body"
+							region_differences[region] += 1
+			if name in ["chapters", "levels", "settings", "pause"] and different > 1700:
+				reference_issues.append("G2 reference differs by more than 1700 pixels: %s.%s = %d" % [name, language, different])
 			issues.append_array(app.layout_issues())
 			var reference: Dictionary = {"name":name + "." + language,"diff_pixels":different,"pixels":57600,"screenshot":"game/reports/shots/" + name + "." + language + ".png","approved":false,"note":"Development Control layout; pending UI/bubble approvals. Geometry and glyph differences are unresolved, not waived."}
+			if name in ["chapters", "levels", "settings", "pause"]:
+				reference["diff_by_region"] = region_differences
+				var pairs: Array = color_differences.keys()
+				pairs.sort_custom(func(a: String, b: String) -> bool: return int(color_differences[a]) > int(color_differences[b]))
+				reference["largest_color_differences"] = pairs.slice(0, 8).map(func(pair: String) -> Dictionary: return {"colors":pair,"pixels":color_differences[pair]})
+				reference["note"] = "G2 artwork APR-0007; live localized Controls, 1700-pixel acceptance threshold. Runtime UI approval is not inferred from artwork approval."
 			if name == "chapters":
 				var counts: Dictionary = {}
 				for group: Dictionary in app.lab.groups:
@@ -130,10 +151,10 @@ func _run() -> void:
 	while app.get("_busy"): await process_frame
 	app.undo()
 	var metrics: Dictionary = {"settle_advance_peak_us":app.settle_peak_us,"undo_peak_us":app.undo_peak_us,"process_frame_peak_ms":frame_peak,"memory_static_peak_bytes":Performance.get_monitor(Performance.MEMORY_STATIC_MAX),"fps_observed":Engine.get_frames_per_second(),"full_performance_acceptance":false,"note":"Short capture run only; includes Control/layout construction. A sustained all-level benchmark is still required."}
-	var report: Dictionary = {"references":references,"layout_issues":issues,"behaviors":behaviors,"performance":metrics}
+	var report: Dictionary = {"references":references,"layout_issues":issues,"reference_issues":reference_issues,"behaviors":behaviors,"performance":metrics}
 	var file := FileAccess.open("res://reports/ui-reference-report.json", FileAccess.WRITE)
 	file.store_string(JSON.stringify(report, "  "))
 	file.close()
-	print(JSON.stringify({"suite":"ui-gpu","captures":references.size(),"layout_issues":issues.size(),"different_reference_count":references.filter(func(item: Dictionary) -> bool: return item.diff_pixels > 0).size(),"performance":metrics}))
+	print(JSON.stringify({"suite":"ui-gpu","captures":references.size(),"layout_issues":issues.size(),"reference_issues":reference_issues.size(),"different_reference_count":references.filter(func(item: Dictionary) -> bool: return item.diff_pixels > 0).size(),"performance":metrics}))
 	app.dispose()
-	quit(0 if issues.is_empty() else 1)
+	quit(0 if issues.is_empty() and reference_issues.is_empty() else 1)
