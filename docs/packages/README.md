@@ -16,7 +16,7 @@
 | DLV-04 | 预留给 DSN-01：济州房间数据 | — | — | 预留 |
 | DLV-05 | 预留给 DSN-01：v2 规则支持跷跷板 / 阵风（需要时） | — | — | 预留 |
 | [DSN-02](DSN-02.md) | 声音设计：一套音效 + 每张地图的背景音乐（只写设计和包） | `claude/inspiring-ride-zfnn4s` → `dsn/DSN-02` | 本表（只改下面三行） | **已合并**（2026-10-17） |
-| [WB-02](WB-02.md) | 声音流程工具与工作台「声音」菜单；依赖 DSN-02 合并，先做 | `claude/inspiring-ride-zfnn4s`（DSN-02 合并后，派前核对） → `wb/WB-02` | `tools/content.mjs`、`tools/lib/ids.mjs`、菜单/脚本追加、e2e 追加、生成文件 | 待派 |
+| [WB-02](WB-02.md) | 声音流程工具与工作台「声音」菜单；DSN-02 已合并，不用等 DSN-01，可以现在派 | `claude/inspiring-ride-zfnn4s`（DSN-02 合并后，派前核对） → `wb/WB-02` | `tools/content.mjs`、`tools/lib/ids.mjs`、菜单/脚本追加、e2e 追加、生成文件 | 待派 |
 | [AUD-01](AUD-01.md) | 全游戏通用 32 项音效候选；依赖 WB-02 合并 | WB-02 合并后的分支（Claude 派前填写） → `aud/AUD-01` | 仅音效生成结果；与 AUD-02 的汇总生成文件合并后重建 | 待派 |
 | [AUD-02](AUD-02.md) | 石牢、地府、海女村音乐各 3 首候选；依赖 WB-02 合并，与 AUD-01 互不依赖 | WB-02 合并后的分支（Claude 派前填写） → `aud/AUD-02` | 仅音乐生成结果；与 AUD-01 的汇总生成文件合并后重建 | 待派 |
 | [BR-01](BR-01.md) | 分支整理：合进 `main`、打 `v0.3`、删旧分支 | Claude 做 | — | 等第 1 批合并后 |
