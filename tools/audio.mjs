@@ -5,7 +5,7 @@ import path from 'node:path';
 import crypto from 'node:crypto';
 import { execFileSync } from 'node:child_process';
 import { fileURLToPath, pathToFileURL } from 'node:url';
-import { validateSource, renderAudio, sourceHash, rendererFingerprint } from './lib/audio.mjs';
+import { validateSource, renderAudio, sourceHash, rendererFingerprint, audioPresets, renderPresetPreview, joinAudioPreviews } from './lib/audio.mjs';
 import { buildContent } from './content.mjs';
 const REPO = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const sha = b => crypto.createHash('sha256').update(b).digest('hex');
@@ -399,8 +399,13 @@ export function approveAudio(root = REPO, req, { by, via, note } = {}) {
   refreshContent(root);
   return { record: record.id, already: false };
 }
+export function buildPresetPreviews(out, policy) {
+  const rendered = Object.keys(audioPresets()).map(name => ({ name, ...renderPresetPreview(name, policy) }));
+  transaction(out, [...rendered.map(r => [r.name + '.wav', r.wav]), ['all.wav', joinAudioPreviews(rendered.map(r => r.wav))]]);
+  return rendered;
+}
 function options(argv) {
-  const out = {}, allowed = new Set(['root', 'kind', 'baseline-ref', 'require-sources', 'items', 'from-file', 'by', 'via', 'note']);
+  const out = {}, allowed = new Set(['root', 'kind', 'baseline-ref', 'require-sources', 'items', 'from-file', 'by', 'via', 'note', 'out']);
   for (let i = 0; i < argv.length; i++) {
     const k = argv[i].slice(2);
     if (!argv[i].startsWith('--') || !allowed.has(k) || k in out)
@@ -419,13 +424,24 @@ function options(argv) {
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
   try {
     const [cmd, ...rest] = process.argv.slice(2), o = options(rest), root = path.resolve(o.root || REPO);
-    if (!['build', 'verify', 'approve'].includes(cmd))
-      fail('audio', 'command', 'usage: node tools/audio.mjs build|verify|approve [--root dir]');
-    const valid = cmd === 'build' ? ['root', 'kind', 'baseline-ref'] : cmd === 'verify' ? ['root', 'kind', 'require-sources'] : ['root', 'items', 'from-file', 'by', 'via', 'note'];
+    if (!['build', 'verify', 'approve', 'presets'].includes(cmd))
+      fail('audio', 'command', 'usage: node tools/audio.mjs build|verify|approve|presets [--root dir] [--out dir]');
+    const valid = cmd === 'build' ? ['root', 'kind', 'baseline-ref'] : cmd === 'verify' ? ['root', 'kind', 'require-sources'] : cmd === 'presets' ? ['root', 'out'] : ['root', 'items', 'from-file', 'by', 'via', 'note'];
     for (const k of Object.keys(o))
       if (!valid.includes(k))
         fail('audio', 'arguments', `--${k} is not valid for ${cmd}`);
-    if (cmd === 'build') {
+    if (cmd === 'presets') {
+      if (!o.out) fail('audio', 'arguments', 'presets requires --out dir');
+      const policyPath = path.join(root, 'content/catalog/audio.json');
+      const policy = read(fs.existsSync(policyPath) ? policyPath : path.join(REPO, 'content/catalog/audio.json')).policy;
+      const out = path.resolve(root, o.out), samples = buildPresetPreviews(out, policy);
+      for (const s of samples) {
+        console.log(`${s.name}: ${s.metrics.verified ? '指标通过' : '未验证（指标冲突）'}; gain ${s.gain_db.toFixed(2)} dB; RMS ${s.metrics.rms_dbfs.toFixed(2)} dBFS; peak ${s.metrics.peak_dbfs.toFixed(2)} dBFS; noise ${(100 * s.metrics.noise_energy_ratio).toFixed(2)}%`);
+        for (const issue of s.issues) console.log('  ' + issue);
+      }
+      console.log(`audio presets: ${samples.length} WAV + all.wav; ${samples.filter(s => !s.metrics.verified).length} 个样本未通过现行指标；仅试听，不进清单或游戏; ${out}`);
+    }
+    else if (cmd === 'build') {
       const r = buildAudio(root, { kind: o.kind, baselineRef: o['baseline-ref'] });
       for (const e of r.data.entries.filter(e => (!o.kind || e.kind === o.kind) && !e.current))
         console.log(`${e.uid}: 未制作`);
