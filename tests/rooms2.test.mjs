@@ -182,7 +182,7 @@ test("every v2 room and the run pool pass the checker, and the committed report 
   assert.equal(report.templates.length, ROOMS.length);
   for (const p of report.pools) {
     assert.ok(p.ok, JSON.stringify(p.failures));
-    assert.deepEqual(Object.keys(p.maps).sort(), ["diyu_1", "dungeon_2"], "both maps come up");
+    assert.deepEqual(Object.keys(p.maps).sort(), ["diyu_1", "dungeon_2", "jeju_1"], "all three maps come up");
   }
   const noTimes = (r) => JSON.stringify(r, (k, v) => (k === "ms" ? undefined : v));
   assert.equal(noTimes(report), noTimes(readJson("content/rooms2-check.generated.json")), "run node tools/check-rooms2.mjs --write");

@@ -87,5 +87,17 @@
  "room2.jeju_home_shore.name": "收件人之家 · 防波堤",
  "room2.jeju_home_orchard.name": "收件人之家 · 橘园",
  "room2.jeju_home_cave.name": "收件人之家 · 熔岩洞口",
- "dlg.fauna.jeju_dragonfly.fed": "只帮小马带路：喂零食要找小马"
+ "dlg.fauna.jeju_dragonfly.fed": "只帮小马带路：喂零食要找小马",
+ "room2.jeju_neolttwigi.name": "跳板场 · 一头落下一头飞",
+ "room2.jeju_neolttwigi.hint.0": "先打开木箱上方的门，再绕到铁箱右边，把铁箱推下井；弹起的木箱会压住出路的压板。",
+ "room2.jeju_baramgil.name": "风口 · 风替你推",
+ "room2.jeju_baramgil.hint.0": "木箱后面是石墙，人推不了；走几步让风把木箱吹进深坑，再踩着木箱过坑。",
+ "room2.jeju_pier.name": "码头 · 铁箱沉下去也算",
+ "room2.jeju_pier.hint.0": "从码头下面绕到铁箱右边，把铁箱推进水井；木箱弹上岸后，踩着它登上栈道。",
+ "room2.jeju_terrace.name": "橘园台地 · 一袋土也算重",
+ "room2.jeju_terrace.hint.0": "先挖开木箱上方的土，带着这袋土从上面绕到右岸；站在压板上向左倒沙，弹起木箱后再爬上台地。",
+ "room2.jeju_doldam.name": "石墙风口 · 铁箱当刹车",
+ "room2.jeju_doldam.hint.0": "先沿下方走到右侧梯子，踩上入口压板放风；马上向左推铁箱落进右坑，木箱才会停在左边的压板上。",
+ "room2.jeju_dodaebul.name": "石灯台 · 风替你砸跳板",
+ "room2.jeju_dodaebul.hint.0": "下到石灯台底部，站到跳板右端再按上开门；风会把木箱送进左井，把你弹上高台。"
 }

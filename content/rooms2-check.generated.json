@@ -23,7 +23,7 @@
      "errors": [],
      "warnings": [],
      "explored": 274,
-     "ms": 92,
+     "ms": 28,
      "shortest": 50,
      "hints": {
       "first": [
@@ -44,7 +44,7 @@
      "errors": [],
      "warnings": [],
      "explored": 274,
-     "ms": 22,
+     "ms": 10,
      "shortest": 50,
      "hints": {
       "first": [
@@ -80,7 +80,7 @@
      "errors": [],
      "warnings": [],
      "explored": 30,
-     "ms": 4,
+     "ms": 2,
      "shortest": 15
     },
     {
@@ -92,7 +92,7 @@
      "errors": [],
      "warnings": [],
      "explored": 32,
-     "ms": 4,
+     "ms": 1,
      "shortest": 18
     },
     {
@@ -116,7 +116,7 @@
      "errors": [],
      "warnings": [],
      "explored": 30,
-     "ms": 2,
+     "ms": 1,
      "shortest": 15
     },
     {
@@ -128,7 +128,7 @@
      "errors": [],
      "warnings": [],
      "explored": 32,
-     "ms": 3,
+     "ms": 1,
      "shortest": 18
     },
     {
@@ -140,7 +140,7 @@
      "errors": [],
      "warnings": [],
      "explored": 17,
-     "ms": 1,
+     "ms": 0,
      "shortest": 7
     }
    ],
@@ -167,7 +167,7 @@
      "errors": [],
      "warnings": [],
      "explored": 46,
-     "ms": 5,
+     "ms": 2,
      "shortest": 19
     },
     {
@@ -179,7 +179,7 @@
      "errors": [],
      "warnings": [],
      "explored": 48,
-     "ms": 5,
+     "ms": 1,
      "shortest": 22
     },
     {
@@ -191,7 +191,7 @@
      "errors": [],
      "warnings": [],
      "explored": 46,
-     "ms": 4,
+     "ms": 0,
      "shortest": 21
     },
     {
@@ -203,7 +203,7 @@
      "errors": [],
      "warnings": [],
      "explored": 48,
-     "ms": 4,
+     "ms": 1,
      "shortest": 24
     },
     {
@@ -227,7 +227,7 @@
      "errors": [],
      "warnings": [],
      "explored": 29,
-     "ms": 2,
+     "ms": 0,
      "shortest": 13
     },
     {
@@ -239,7 +239,7 @@
      "errors": [],
      "warnings": [],
      "explored": 46,
-     "ms": 2,
+     "ms": 1,
      "shortest": 15
     },
     {
@@ -251,7 +251,7 @@
      "errors": [],
      "warnings": [],
      "explored": 49,
-     "ms": 3,
+     "ms": 1,
      "shortest": 18
     },
     {
@@ -263,7 +263,7 @@
      "errors": [],
      "warnings": [],
      "explored": 29,
-     "ms": 1,
+     "ms": 0,
      "shortest": 9
     },
     {
@@ -275,7 +275,7 @@
      "errors": [],
      "warnings": [],
      "explored": 46,
-     "ms": 3,
+     "ms": 1,
      "shortest": 19
     },
     {
@@ -299,7 +299,7 @@
      "errors": [],
      "warnings": [],
      "explored": 46,
-     "ms": 2,
+     "ms": 0,
      "shortest": 21
     },
     {
@@ -311,7 +311,7 @@
      "errors": [],
      "warnings": [],
      "explored": 48,
-     "ms": 3,
+     "ms": 1,
      "shortest": 24
     },
     {
@@ -335,7 +335,7 @@
      "errors": [],
      "warnings": [],
      "explored": 29,
-     "ms": 1,
+     "ms": 0,
      "shortest": 13
     },
     {
@@ -347,7 +347,7 @@
      "errors": [],
      "warnings": [],
      "explored": 45,
-     "ms": 2,
+     "ms": 1,
      "shortest": 14
     },
     {
@@ -359,7 +359,7 @@
      "errors": [],
      "warnings": [],
      "explored": 49,
-     "ms": 2,
+     "ms": 0,
      "shortest": 17
     },
     {
@@ -371,7 +371,7 @@
      "errors": [],
      "warnings": [],
      "explored": 29,
-     "ms": 2,
+     "ms": 1,
      "shortest": 9
     }
    ],
@@ -398,7 +398,7 @@
      "errors": [],
      "warnings": [],
      "explored": 36,
-     "ms": 2,
+     "ms": 1,
      "shortest": 16
     },
     {
@@ -410,7 +410,7 @@
      "errors": [],
      "warnings": [],
      "explored": 36,
-     "ms": 1,
+     "ms": 0,
      "shortest": 18
     },
     {
@@ -434,7 +434,7 @@
      "errors": [],
      "warnings": [],
      "explored": 36,
-     "ms": 2,
+     "ms": 0,
      "shortest": 16
     },
     {
@@ -446,7 +446,7 @@
      "errors": [],
      "warnings": [],
      "explored": 36,
-     "ms": 2,
+     "ms": 1,
      "shortest": 18
     },
     {
@@ -458,7 +458,7 @@
      "errors": [],
      "warnings": [],
      "explored": 29,
-     "ms": 1,
+     "ms": 0,
      "shortest": 11
     }
    ],
@@ -485,7 +485,7 @@
      "errors": [],
      "warnings": [],
      "explored": 36,
-     "ms": 1,
+     "ms": 0,
      "shortest": 16
     },
     {
@@ -509,7 +509,7 @@
      "errors": [],
      "warnings": [],
      "explored": 31,
-     "ms": 2,
+     "ms": 0,
      "shortest": 12
     },
     {
@@ -521,7 +521,7 @@
      "errors": [],
      "warnings": [],
      "explored": 36,
-     "ms": 2,
+     "ms": 1,
      "shortest": 16
     },
     {
@@ -533,7 +533,7 @@
      "errors": [],
      "warnings": [],
      "explored": 36,
-     "ms": 1,
+     "ms": 0,
      "shortest": 18
     },
     {
@@ -572,7 +572,7 @@
      "errors": [],
      "warnings": [],
      "explored": 49,
-     "ms": 2,
+     "ms": 1,
      "shortest": 39
     },
     {
@@ -584,7 +584,7 @@
      "errors": [],
      "warnings": [],
      "explored": 52,
-     "ms": 5,
+     "ms": 3,
      "shortest": 42
     },
     {
@@ -608,7 +608,7 @@
      "errors": [],
      "warnings": [],
      "explored": 52,
-     "ms": 2,
+     "ms": 1,
      "shortest": 44
     },
     {
@@ -620,7 +620,7 @@
      "errors": [],
      "warnings": [],
      "explored": 49,
-     "ms": 2,
+     "ms": 1,
      "shortest": 39
     },
     {
@@ -632,7 +632,7 @@
      "errors": [],
      "warnings": [],
      "explored": 52,
-     "ms": 3,
+     "ms": 1,
      "shortest": 42
     },
     {
@@ -644,7 +644,7 @@
      "errors": [],
      "warnings": [],
      "explored": 49,
-     "ms": 2,
+     "ms": 1,
      "shortest": 41
     },
     {
@@ -683,7 +683,7 @@
      "errors": [],
      "warnings": [],
      "explored": 70,
-     "ms": 3,
+     "ms": 1,
      "shortest": 19,
      "author": 19,
      "hints": {
@@ -715,7 +715,7 @@
      "errors": [],
      "warnings": [],
      "explored": 70,
-     "ms": 3,
+     "ms": 0,
      "shortest": 22
     },
     {
@@ -727,7 +727,7 @@
      "errors": [],
      "warnings": [],
      "explored": 73,
-     "ms": 2,
+     "ms": 1,
      "shortest": 25
     },
     {
@@ -739,7 +739,7 @@
      "errors": [],
      "warnings": [],
      "explored": 70,
-     "ms": 2,
+     "ms": 1,
      "shortest": 19,
      "author": 19,
      "hints": {
@@ -759,7 +759,7 @@
      "errors": [],
      "warnings": [],
      "explored": 73,
-     "ms": 2,
+     "ms": 1,
      "shortest": 22
     },
     {
@@ -771,7 +771,7 @@
      "errors": [],
      "warnings": [],
      "explored": 70,
-     "ms": 3,
+     "ms": 1,
      "shortest": 22
     },
     {
@@ -783,7 +783,7 @@
      "errors": [],
      "warnings": [],
      "explored": 73,
-     "ms": 2,
+     "ms": 1,
      "shortest": 25
     }
    ],
@@ -810,7 +810,7 @@
      "errors": [],
      "warnings": [],
      "explored": 38,
-     "ms": 3,
+     "ms": 1,
      "shortest": 19,
      "hints": {
       "first": [
@@ -842,7 +842,7 @@
      "errors": [],
      "warnings": [],
      "explored": 38,
-     "ms": 3,
+     "ms": 1,
      "shortest": 22
     },
     {
@@ -854,7 +854,7 @@
      "errors": [],
      "warnings": [],
      "explored": 41,
-     "ms": 3,
+     "ms": 1,
      "shortest": 25
     },
     {
@@ -866,7 +866,7 @@
      "errors": [],
      "warnings": [],
      "explored": 38,
-     "ms": 2,
+     "ms": 1,
      "shortest": 19,
      "hints": {
       "first": [
@@ -886,7 +886,7 @@
      "errors": [],
      "warnings": [],
      "explored": 41,
-     "ms": 2,
+     "ms": 1,
      "shortest": 22
     },
     {
@@ -898,7 +898,7 @@
      "errors": [],
      "warnings": [],
      "explored": 38,
-     "ms": 3,
+     "ms": 1,
      "shortest": 22
     },
     {
@@ -910,7 +910,7 @@
      "errors": [],
      "warnings": [],
      "explored": 41,
-     "ms": 6,
+     "ms": 1,
      "shortest": 25
     }
    ],
@@ -937,7 +937,7 @@
      "errors": [],
      "warnings": [],
      "explored": 79,
-     "ms": 5,
+     "ms": 1,
      "shortest": 19,
      "hints": {
       "first": [
@@ -957,7 +957,7 @@
      "errors": [],
      "warnings": [],
      "explored": 82,
-     "ms": 4,
+     "ms": 2,
      "shortest": 22
     },
     {
@@ -969,7 +969,7 @@
      "errors": [],
      "warnings": [],
      "explored": 78,
-     "ms": 3,
+     "ms": 1,
      "shortest": 23
     },
     {
@@ -981,7 +981,7 @@
      "errors": [],
      "warnings": [],
      "explored": 82,
-     "ms": 3,
+     "ms": 1,
      "shortest": 26
     },
     {
@@ -993,7 +993,7 @@
      "errors": [],
      "warnings": [],
      "explored": 77,
-     "ms": 6,
+     "ms": 1,
      "shortest": 19,
      "hints": {
       "first": [
@@ -1013,7 +1013,7 @@
      "errors": [],
      "warnings": [],
      "explored": 82,
-     "ms": 4,
+     "ms": 2,
      "shortest": 22
     },
     {
@@ -1025,7 +1025,7 @@
      "errors": [],
      "warnings": [],
      "explored": 76,
-     "ms": 3,
+     "ms": 1,
      "shortest": 23
     },
     {
@@ -1037,7 +1037,7 @@
      "errors": [],
      "warnings": [],
      "explored": 82,
-     "ms": 3,
+     "ms": 1,
      "shortest": 26
     }
    ],
@@ -1064,7 +1064,7 @@
      "errors": [],
      "warnings": [],
      "explored": 1222,
-     "ms": 98,
+     "ms": 26,
      "shortest": 21,
      "hints": {
       "first": [
@@ -1085,7 +1085,7 @@
      "errors": [],
      "warnings": [],
      "explored": 1361,
-     "ms": 74,
+     "ms": 18,
      "shortest": 24
     },
     {
@@ -1097,7 +1097,7 @@
      "errors": [],
      "warnings": [],
      "explored": 1219,
-     "ms": 52,
+     "ms": 13,
      "shortest": 24
     },
     {
@@ -1109,7 +1109,7 @@
      "errors": [],
      "warnings": [],
      "explored": 1358,
-     "ms": 59,
+     "ms": 14,
      "shortest": 27
     },
     {
@@ -1121,7 +1121,7 @@
      "errors": [],
      "warnings": [],
      "explored": 1216,
-     "ms": 54,
+     "ms": 12,
      "shortest": 21,
      "hints": {
       "first": [
@@ -1142,7 +1142,7 @@
      "errors": [],
      "warnings": [],
      "explored": 1359,
-     "ms": 66,
+     "ms": 14,
      "shortest": 24
     },
     {
@@ -1154,7 +1154,7 @@
      "errors": [],
      "warnings": [],
      "explored": 1213,
-     "ms": 71,
+     "ms": 12,
      "shortest": 24
     },
     {
@@ -1166,7 +1166,7 @@
      "errors": [],
      "warnings": [],
      "explored": 1356,
-     "ms": 78,
+     "ms": 16,
      "shortest": 27
     }
    ],
@@ -1193,7 +1193,7 @@
      "errors": [],
      "warnings": [],
      "explored": 46,
-     "ms": 2,
+     "ms": 1,
      "shortest": 19
     },
     {
@@ -1205,7 +1205,7 @@
      "errors": [],
      "warnings": [],
      "explored": 48,
-     "ms": 2,
+     "ms": 0,
      "shortest": 22
     },
     {
@@ -1217,7 +1217,7 @@
      "errors": [],
      "warnings": [],
      "explored": 46,
-     "ms": 2,
+     "ms": 1,
      "shortest": 21
     },
     {
@@ -1229,7 +1229,7 @@
      "errors": [],
      "warnings": [],
      "explored": 48,
-     "ms": 2,
+     "ms": 0,
      "shortest": 24
     },
     {
@@ -1253,7 +1253,7 @@
      "errors": [],
      "warnings": [],
      "explored": 29,
-     "ms": 1,
+     "ms": 0,
      "shortest": 13
     },
     {
@@ -1265,7 +1265,7 @@
      "errors": [],
      "warnings": [],
      "explored": 46,
-     "ms": 2,
+     "ms": 0,
      "shortest": 15
     },
     {
@@ -1277,7 +1277,7 @@
      "errors": [],
      "warnings": [],
      "explored": 49,
-     "ms": 3,
+     "ms": 1,
      "shortest": 18
     },
     {
@@ -1289,7 +1289,7 @@
      "errors": [],
      "warnings": [],
      "explored": 29,
-     "ms": 2,
+     "ms": 0,
      "shortest": 9
     },
     {
@@ -1301,7 +1301,7 @@
      "errors": [],
      "warnings": [],
      "explored": 46,
-     "ms": 2,
+     "ms": 1,
      "shortest": 19
     },
     {
@@ -1313,7 +1313,7 @@
      "errors": [],
      "warnings": [],
      "explored": 48,
-     "ms": 3,
+     "ms": 0,
      "shortest": 22
     },
     {
@@ -1325,7 +1325,7 @@
      "errors": [],
      "warnings": [],
      "explored": 46,
-     "ms": 8,
+     "ms": 1,
      "shortest": 21
     },
     {
@@ -1337,7 +1337,7 @@
      "errors": [],
      "warnings": [],
      "explored": 48,
-     "ms": 4,
+     "ms": 0,
      "shortest": 24
     },
     {
@@ -1349,7 +1349,7 @@
      "errors": [],
      "warnings": [],
      "explored": 29,
-     "ms": 1,
+     "ms": 0,
      "shortest": 11
     },
     {
@@ -1373,7 +1373,7 @@
      "errors": [],
      "warnings": [],
      "explored": 45,
-     "ms": 2,
+     "ms": 0,
      "shortest": 14
     },
     {
@@ -1385,7 +1385,7 @@
      "errors": [],
      "warnings": [],
      "explored": 49,
-     "ms": 2,
+     "ms": 1,
      "shortest": 17
     },
     {
@@ -1397,7 +1397,7 @@
      "errors": [],
      "warnings": [],
      "explored": 29,
-     "ms": 2,
+     "ms": 0,
      "shortest": 9
     }
    ],
@@ -1424,7 +1424,7 @@
      "errors": [],
      "warnings": [],
      "explored": 236,
-     "ms": 66,
+     "ms": 14,
      "shortest": 39,
      "hints": {
       "first": [
@@ -1445,7 +1445,7 @@
      "errors": [],
      "warnings": [],
      "explored": 250,
-     "ms": 39,
+     "ms": 7,
      "shortest": 42
     },
     {
@@ -1457,7 +1457,7 @@
      "errors": [],
      "warnings": [],
      "explored": 236,
-     "ms": 22,
+     "ms": 5,
      "shortest": 42
     },
     {
@@ -1469,7 +1469,7 @@
      "errors": [],
      "warnings": [],
      "explored": 250,
-     "ms": 23,
+     "ms": 6,
      "shortest": 45
     },
     {
@@ -1481,7 +1481,7 @@
      "errors": [],
      "warnings": [],
      "explored": 232,
-     "ms": 24,
+     "ms": 5,
      "shortest": 39,
      "hints": {
       "first": [
@@ -1502,7 +1502,7 @@
      "errors": [],
      "warnings": [],
      "explored": 246,
-     "ms": 23,
+     "ms": 5,
      "shortest": 42
     },
     {
@@ -1514,7 +1514,7 @@
      "errors": [],
      "warnings": [],
      "explored": 232,
-     "ms": 24,
+     "ms": 5,
      "shortest": 42
     },
     {
@@ -1526,7 +1526,7 @@
      "errors": [],
      "warnings": [],
      "explored": 246,
-     "ms": 15,
+     "ms": 5,
      "shortest": 45
     }
    ],
@@ -1553,7 +1553,7 @@
      "errors": [],
      "warnings": [],
      "explored": 47,
-     "ms": 7,
+     "ms": 3,
      "shortest": 29,
      "hints": {
       "first": [
@@ -1573,7 +1573,7 @@
      "errors": [],
      "warnings": [],
      "explored": 42,
-     "ms": 5,
+     "ms": 2,
      "shortest": 21
     },
     {
@@ -1585,7 +1585,7 @@
      "errors": [],
      "warnings": [],
      "explored": 47,
-     "ms": 6,
+     "ms": 2,
      "shortest": 29,
      "hints": {
       "first": [
@@ -1605,7 +1605,7 @@
      "errors": [],
      "warnings": [],
      "explored": 42,
-     "ms": 8,
+     "ms": 2,
      "shortest": 21
     }
    ],
@@ -1632,7 +1632,7 @@
      "errors": [],
      "warnings": [],
      "explored": 78,
-     "ms": 5,
+     "ms": 1,
      "shortest": 19,
      "author": 19,
      "hints": {
@@ -1652,7 +1652,7 @@
      "errors": [],
      "warnings": [],
      "explored": 78,
-     "ms": 2,
+     "ms": 1,
      "shortest": 23
     },
     {
@@ -1664,7 +1664,7 @@
      "errors": [],
      "warnings": [],
      "explored": 81,
-     "ms": 2,
+     "ms": 1,
      "shortest": 22
     },
     {
@@ -1676,7 +1676,7 @@
      "errors": [],
      "warnings": [],
      "explored": 81,
-     "ms": 2,
+     "ms": 1,
      "shortest": 26
     },
     {
@@ -1688,7 +1688,7 @@
      "errors": [],
      "warnings": [],
      "explored": 78,
-     "ms": 3,
+     "ms": 1,
      "shortest": 19,
      "author": 19,
      "hints": {
@@ -1708,7 +1708,7 @@
      "errors": [],
      "warnings": [],
      "explored": 78,
-     "ms": 2,
+     "ms": 1,
      "shortest": 23
     },
     {
@@ -1732,7 +1732,7 @@
      "errors": [],
      "warnings": [],
      "explored": 81,
-     "ms": 3,
+     "ms": 1,
      "shortest": 26
     }
    ],
@@ -1771,7 +1771,7 @@
      "errors": [],
      "warnings": [],
      "explored": 52,
-     "ms": 4,
+     "ms": 1,
      "shortest": 41
     },
     {
@@ -1783,7 +1783,7 @@
      "errors": [],
      "warnings": [],
      "explored": 54,
-     "ms": 2,
+     "ms": 1,
      "shortest": 42
     },
     {
@@ -1795,7 +1795,7 @@
      "errors": [],
      "warnings": [],
      "explored": 54,
-     "ms": 8,
+     "ms": 0,
      "shortest": 44
     },
     {
@@ -1807,7 +1807,7 @@
      "errors": [],
      "warnings": [],
      "explored": 52,
-     "ms": 5,
+     "ms": 0,
      "shortest": 39
     },
     {
@@ -1819,7 +1819,7 @@
      "errors": [],
      "warnings": [],
      "explored": 52,
-     "ms": 4,
+     "ms": 1,
      "shortest": 41
     },
     {
@@ -1831,7 +1831,7 @@
      "errors": [],
      "warnings": [],
      "explored": 54,
-     "ms": 5,
+     "ms": 1,
      "shortest": 42
     },
     {
@@ -1843,7 +1843,7 @@
      "errors": [],
      "warnings": [],
      "explored": 54,
-     "ms": 4,
+     "ms": 1,
      "shortest": 44
     }
    ],
@@ -1870,7 +1870,7 @@
      "errors": [],
      "warnings": [],
      "explored": 326,
-     "ms": 32,
+     "ms": 5,
      "shortest": 39,
      "hints": {
       "first": [
@@ -1890,7 +1890,7 @@
      "errors": [],
      "warnings": [],
      "explored": 324,
-     "ms": 28,
+     "ms": 4,
      "shortest": 42
     },
     {
@@ -1902,7 +1902,7 @@
      "errors": [],
      "warnings": [],
      "explored": 343,
-     "ms": 24,
+     "ms": 4,
      "shortest": 42
     },
     {
@@ -1914,7 +1914,7 @@
      "errors": [],
      "warnings": [],
      "explored": 342,
-     "ms": 24,
+     "ms": 5,
      "shortest": 45
     },
     {
@@ -1926,7 +1926,7 @@
      "errors": [],
      "warnings": [],
      "explored": 319,
-     "ms": 20,
+     "ms": 4,
      "shortest": 39,
      "hints": {
       "first": [
@@ -1946,7 +1946,7 @@
      "errors": [],
      "warnings": [],
      "explored": 318,
-     "ms": 20,
+     "ms": 4,
      "shortest": 42
     },
     {
@@ -1958,7 +1958,7 @@
      "errors": [],
      "warnings": [],
      "explored": 339,
-     "ms": 25,
+     "ms": 4,
      "shortest": 42
     },
     {
@@ -1970,7 +1970,7 @@
      "errors": [],
      "warnings": [],
      "explored": 337,
-     "ms": 24,
+     "ms": 4,
      "shortest": 45
     }
    ],
@@ -1997,7 +1997,7 @@
      "errors": [],
      "warnings": [],
      "explored": 27,
-     "ms": 1,
+     "ms": 0,
      "shortest": 16
     },
     {
@@ -2009,7 +2009,7 @@
      "errors": [],
      "warnings": [],
      "explored": 29,
-     "ms": 1,
+     "ms": 0,
      "shortest": 19
     },
     {
@@ -2021,7 +2021,7 @@
      "errors": [],
      "warnings": [],
      "explored": 16,
-     "ms": 0,
+     "ms": 1,
      "shortest": 8
     },
     {
@@ -2057,7 +2057,7 @@
      "errors": [],
      "warnings": [],
      "explored": 16,
-     "ms": 1,
+     "ms": 0,
      "shortest": 8
     }
    ],
@@ -2096,7 +2096,7 @@
      "errors": [],
      "warnings": [],
      "explored": 37,
-     "ms": 1,
+     "ms": 0,
      "shortest": 18
     },
     {
@@ -2108,7 +2108,7 @@
      "errors": [],
      "warnings": [],
      "explored": 32,
-     "ms": 1,
+     "ms": 0,
      "shortest": 12
     },
     {
@@ -2132,7 +2132,7 @@
      "errors": [],
      "warnings": [],
      "explored": 37,
-     "ms": 1,
+     "ms": 0,
      "shortest": 18
     },
     {
@@ -2171,7 +2171,7 @@
      "errors": [],
      "warnings": [],
      "explored": 29,
-     "ms": 1,
+     "ms": 0,
      "shortest": 19,
      "author": 19,
      "hints": {
@@ -2216,7 +2216,7 @@
      "errors": [],
      "warnings": [],
      "explored": 32,
-     "ms": 1,
+     "ms": 0,
      "shortest": 25
     },
     {
@@ -2228,7 +2228,7 @@
      "errors": [],
      "warnings": [],
      "explored": 29,
-     "ms": 3,
+     "ms": 0,
      "shortest": 19,
      "author": 19,
      "hints": {
@@ -2249,7 +2249,7 @@
      "errors": [],
      "warnings": [],
      "explored": 29,
-     "ms": 2,
+     "ms": 0,
      "shortest": 22
     },
     {
@@ -2261,7 +2261,7 @@
      "errors": [],
      "warnings": [],
      "explored": 32,
-     "ms": 1,
+     "ms": 0,
      "shortest": 22
     },
     {
@@ -2300,7 +2300,7 @@
      "errors": [],
      "warnings": [],
      "explored": 1503,
-     "ms": 79,
+     "ms": 16,
      "shortest": 23,
      "hints": {
       "first": [
@@ -2320,7 +2320,7 @@
      "errors": [],
      "warnings": [],
      "explored": 1643,
-     "ms": 67,
+     "ms": 17,
      "shortest": 26
     },
     {
@@ -2332,7 +2332,7 @@
      "errors": [],
      "warnings": [],
      "explored": 1503,
-     "ms": 67,
+     "ms": 15,
      "shortest": 23,
      "hints": {
       "first": [
@@ -2352,7 +2352,7 @@
      "errors": [],
      "warnings": [],
      "explored": 1643,
-     "ms": 75,
+     "ms": 17,
      "shortest": 26
     }
    ],
@@ -2379,7 +2379,7 @@
      "errors": [],
      "warnings": [],
      "explored": 46,
-     "ms": 2,
+     "ms": 0,
      "shortest": 19
     },
     {
@@ -2391,7 +2391,7 @@
      "errors": [],
      "warnings": [],
      "explored": 48,
-     "ms": 3,
+     "ms": 0,
      "shortest": 22
     },
     {
@@ -2403,7 +2403,7 @@
      "errors": [],
      "warnings": [],
      "explored": 46,
-     "ms": 2,
+     "ms": 0,
      "shortest": 21
     },
     {
@@ -2415,7 +2415,7 @@
      "errors": [],
      "warnings": [],
      "explored": 48,
-     "ms": 5,
+     "ms": 1,
      "shortest": 24
     },
     {
@@ -2427,7 +2427,7 @@
      "errors": [],
      "warnings": [],
      "explored": 29,
-     "ms": 3,
+     "ms": 0,
      "shortest": 11
     },
     {
@@ -2439,7 +2439,7 @@
      "errors": [],
      "warnings": [],
      "explored": 29,
-     "ms": 2,
+     "ms": 0,
      "shortest": 13
     },
     {
@@ -2451,7 +2451,7 @@
      "errors": [],
      "warnings": [],
      "explored": 46,
-     "ms": 2,
+     "ms": 1,
      "shortest": 15
     },
     {
@@ -2463,7 +2463,7 @@
      "errors": [],
      "warnings": [],
      "explored": 49,
-     "ms": 2,
+     "ms": 0,
      "shortest": 18
     },
     {
@@ -2475,7 +2475,7 @@
      "errors": [],
      "warnings": [],
      "explored": 29,
-     "ms": 2,
+     "ms": 0,
      "shortest": 9
     },
     {
@@ -2487,7 +2487,7 @@
      "errors": [],
      "warnings": [],
      "explored": 46,
-     "ms": 2,
+     "ms": 1,
      "shortest": 19
     },
     {
@@ -2499,7 +2499,7 @@
      "errors": [],
      "warnings": [],
      "explored": 48,
-     "ms": 2,
+     "ms": 1,
      "shortest": 22
     },
     {
@@ -2511,7 +2511,7 @@
      "errors": [],
      "warnings": [],
      "explored": 46,
-     "ms": 3,
+     "ms": 0,
      "shortest": 21
     },
     {
@@ -2523,7 +2523,7 @@
      "errors": [],
      "warnings": [],
      "explored": 48,
-     "ms": 2,
+     "ms": 0,
      "shortest": 24
     },
     {
@@ -2535,7 +2535,7 @@
      "errors": [],
      "warnings": [],
      "explored": 29,
-     "ms": 2,
+     "ms": 1,
      "shortest": 11
     },
     {
@@ -2547,7 +2547,7 @@
      "errors": [],
      "warnings": [],
      "explored": 29,
-     "ms": 1,
+     "ms": 0,
      "shortest": 13
     },
     {
@@ -2559,7 +2559,7 @@
      "errors": [],
      "warnings": [],
      "explored": 45,
-     "ms": 2,
+     "ms": 0,
      "shortest": 14
     },
     {
@@ -2571,7 +2571,7 @@
      "errors": [],
      "warnings": [],
      "explored": 49,
-     "ms": 3,
+     "ms": 1,
      "shortest": 17
     },
     {
@@ -2583,7 +2583,7 @@
      "errors": [],
      "warnings": [],
      "explored": 29,
-     "ms": 2,
+     "ms": 0,
      "shortest": 9
     }
    ],
@@ -2610,7 +2610,7 @@
      "errors": [],
      "warnings": [],
      "explored": 29,
-     "ms": 3,
+     "ms": 1,
      "shortest": 27,
      "hints": {
       "first": [
@@ -2631,7 +2631,7 @@
      "errors": [],
      "warnings": [],
      "explored": 29,
-     "ms": 4,
+     "ms": 0,
      "shortest": 27,
      "hints": {
       "first": [
@@ -2667,7 +2667,7 @@
      "errors": [],
      "warnings": [],
      "explored": 305,
-     "ms": 74,
+     "ms": 6,
      "shortest": 51,
      "hints": {
       "first": [
@@ -2688,7 +2688,7 @@
      "errors": [],
      "warnings": [],
      "explored": 304,
-     "ms": 17,
+     "ms": 6,
      "shortest": 51,
      "hints": {
       "first": [
@@ -2699,6 +2699,137 @@
       ],
       "ok": true
      }
+    }
+   ],
+   "warnings": []
+  },
+  {
+   "id": "jeju_baramgil",
+   "file": "content/rooms/jeju/jeju_baramgil.json",
+   "sha256": "fe03042d4a9e6bfe4ebf32ec1b432f6cba4816131211a558dd63ca96297901d9",
+   "world": "jeju",
+   "role": "teach",
+   "size": [
+    1,
+    1
+   ],
+   "errors": [],
+   "routes": [
+    {
+     "route": "left.0.low>right.0.low",
+     "mirror": false,
+     "from": "left.0.low",
+     "to": "right.0.low",
+     "ok": true,
+     "errors": [],
+     "warnings": [],
+     "explored": 42,
+     "ms": 2,
+     "shortest": 22,
+     "author": 23,
+     "hints": {
+      "first": [
+       5
+      ],
+      "ok": true
+     }
+    },
+    {
+     "route": "left.0.low>right.0.high",
+     "mirror": false,
+     "from": "left.0.low",
+     "to": "right.0.high",
+     "ok": true,
+     "errors": [],
+     "warnings": [],
+     "explored": 42,
+     "ms": 2,
+     "shortest": 21,
+     "author": 23
+    },
+    {
+     "route": "left.0.high>right.0.low",
+     "mirror": false,
+     "from": "left.0.high",
+     "to": "right.0.low",
+     "ok": true,
+     "errors": [],
+     "warnings": [],
+     "explored": 42,
+     "ms": 1,
+     "shortest": 21,
+     "author": 23
+    },
+    {
+     "route": "left.0.high>right.0.high",
+     "mirror": false,
+     "from": "left.0.high",
+     "to": "right.0.high",
+     "ok": true,
+     "errors": [],
+     "warnings": [],
+     "explored": 42,
+     "ms": 1,
+     "shortest": 20,
+     "author": 23
+    },
+    {
+     "route": "left.0.low>right.0.low",
+     "mirror": true,
+     "from": "right.0.low",
+     "to": "left.0.low",
+     "ok": true,
+     "errors": [],
+     "warnings": [],
+     "explored": 42,
+     "ms": 1,
+     "shortest": 22,
+     "author": 23,
+     "hints": {
+      "first": [
+       5
+      ],
+      "ok": true
+     }
+    },
+    {
+     "route": "left.0.low>right.0.high",
+     "mirror": true,
+     "from": "right.0.low",
+     "to": "left.0.high",
+     "ok": true,
+     "errors": [],
+     "warnings": [],
+     "explored": 42,
+     "ms": 0,
+     "shortest": 21,
+     "author": 23
+    },
+    {
+     "route": "left.0.high>right.0.low",
+     "mirror": true,
+     "from": "right.0.high",
+     "to": "left.0.low",
+     "ok": true,
+     "errors": [],
+     "warnings": [],
+     "explored": 42,
+     "ms": 1,
+     "shortest": 21,
+     "author": 23
+    },
+    {
+     "route": "left.0.high>right.0.high",
+     "mirror": true,
+     "from": "right.0.high",
+     "to": "left.0.high",
+     "ok": true,
+     "errors": [],
+     "warnings": [],
+     "explored": 42,
+     "ms": 1,
+     "shortest": 20,
+     "author": 23
     }
    ],
    "warnings": []
@@ -2724,7 +2855,7 @@
      "errors": [],
      "warnings": [],
      "explored": 52,
-     "ms": 2,
+     "ms": 1,
      "shortest": 39
     },
     {
@@ -2736,7 +2867,7 @@
      "errors": [],
      "warnings": [],
      "explored": 54,
-     "ms": 2,
+     "ms": 1,
      "shortest": 42
     },
     {
@@ -2760,7 +2891,7 @@
      "errors": [],
      "warnings": [],
      "explored": 54,
-     "ms": 2,
+     "ms": 1,
      "shortest": 44
     },
     {
@@ -2784,7 +2915,7 @@
      "errors": [],
      "warnings": [],
      "explored": 54,
-     "ms": 2,
+     "ms": 1,
      "shortest": 42
     },
     {
@@ -2796,7 +2927,7 @@
      "errors": [],
      "warnings": [],
      "explored": 52,
-     "ms": 2,
+     "ms": 1,
      "shortest": 41
     },
     {
@@ -2808,8 +2939,218 @@
      "errors": [],
      "warnings": [],
      "explored": 54,
-     "ms": 2,
+     "ms": 1,
      "shortest": 44
+    }
+   ],
+   "warnings": []
+  },
+  {
+   "id": "jeju_dodaebul",
+   "file": "content/rooms/jeju/jeju_dodaebul.json",
+   "sha256": "03347c43357dc012de9af68d34b615240404f99bd9166b1e24d449e6c0cc1ba1",
+   "world": "jeju",
+   "role": "twist",
+   "size": [
+    2,
+    1
+   ],
+   "errors": [],
+   "routes": [
+    {
+     "route": "left.0.low>right.0.high",
+     "mirror": false,
+     "from": "left.0.low",
+     "to": "right.0.high",
+     "ok": true,
+     "errors": [],
+     "warnings": [],
+     "explored": 396,
+     "ms": 13,
+     "shortest": 45,
+     "author": 47,
+     "hints": {
+      "first": [
+       23
+      ],
+      "ok": true
+     }
+    },
+    {
+     "route": "left.0.high>right.0.high",
+     "mirror": false,
+     "from": "left.0.high",
+     "to": "right.0.high",
+     "ok": true,
+     "errors": [],
+     "warnings": [],
+     "explored": 400,
+     "ms": 16,
+     "shortest": 42,
+     "author": 43
+    },
+    {
+     "route": "left.0.low>right.0.high",
+     "mirror": true,
+     "from": "right.0.low",
+     "to": "left.0.high",
+     "ok": true,
+     "errors": [],
+     "warnings": [],
+     "explored": 396,
+     "ms": 9,
+     "shortest": 45,
+     "author": 47,
+     "hints": {
+      "first": [
+       23
+      ],
+      "ok": true
+     }
+    },
+    {
+     "route": "left.0.high>right.0.high",
+     "mirror": true,
+     "from": "right.0.high",
+     "to": "left.0.high",
+     "ok": true,
+     "errors": [],
+     "warnings": [],
+     "explored": 400,
+     "ms": 9,
+     "shortest": 42,
+     "author": 43
+    }
+   ],
+   "warnings": []
+  },
+  {
+   "id": "jeju_doldam",
+   "file": "content/rooms/jeju/jeju_doldam.json",
+   "sha256": "ca926994eb5ef357ab18912c5c584518e821005289ed66d23db37cd2e790b402",
+   "world": "jeju",
+   "role": "develop",
+   "size": [
+    2,
+    1
+   ],
+   "errors": [],
+   "routes": [
+    {
+     "route": "left.0.low>right.0.low",
+     "mirror": false,
+     "from": "left.0.low",
+     "to": "right.0.low",
+     "ok": true,
+     "errors": [],
+     "warnings": [],
+     "explored": 168,
+     "ms": 3,
+     "shortest": 53,
+     "author": 55,
+     "hints": {
+      "first": [
+       29
+      ],
+      "ok": true
+     }
+    },
+    {
+     "route": "left.0.low>right.0.high",
+     "mirror": false,
+     "from": "left.0.low",
+     "to": "right.0.high",
+     "ok": true,
+     "errors": [],
+     "warnings": [],
+     "explored": 146,
+     "ms": 3,
+     "shortest": 49,
+     "author": 51
+    },
+    {
+     "route": "left.0.high>right.0.low",
+     "mirror": false,
+     "from": "left.0.high",
+     "to": "right.0.low",
+     "ok": true,
+     "errors": [],
+     "warnings": [],
+     "explored": 168,
+     "ms": 2,
+     "shortest": 57,
+     "author": 59
+    },
+    {
+     "route": "left.0.high>right.0.high",
+     "mirror": false,
+     "from": "left.0.high",
+     "to": "right.0.high",
+     "ok": true,
+     "errors": [],
+     "warnings": [],
+     "explored": 146,
+     "ms": 2,
+     "shortest": 53,
+     "author": 55
+    },
+    {
+     "route": "left.0.low>right.0.low",
+     "mirror": true,
+     "from": "right.0.low",
+     "to": "left.0.low",
+     "ok": true,
+     "errors": [],
+     "warnings": [],
+     "explored": 176,
+     "ms": 2,
+     "shortest": 53,
+     "author": 55,
+     "hints": {
+      "first": [
+       29
+      ],
+      "ok": true
+     }
+    },
+    {
+     "route": "left.0.low>right.0.high",
+     "mirror": true,
+     "from": "right.0.low",
+     "to": "left.0.high",
+     "ok": true,
+     "errors": [],
+     "warnings": [],
+     "explored": 150,
+     "ms": 2,
+     "shortest": 49,
+     "author": 51
+    },
+    {
+     "route": "left.0.high>right.0.low",
+     "mirror": true,
+     "from": "right.0.high",
+     "to": "left.0.low",
+     "ok": true,
+     "errors": [],
+     "warnings": [],
+     "explored": 175,
+     "ms": 3,
+     "shortest": 57,
+     "author": 59
+    },
+    {
+     "route": "left.0.high>right.0.high",
+     "mirror": true,
+     "from": "right.0.high",
+     "to": "left.0.high",
+     "ok": true,
+     "errors": [],
+     "warnings": [],
+     "explored": 150,
+     "ms": 2,
+     "shortest": 53,
+     "author": 55
     }
    ],
    "warnings": []
@@ -2859,7 +3200,7 @@
      "errors": [],
      "warnings": [],
      "explored": 24,
-     "ms": 1,
+     "ms": 0,
      "shortest": 15
     },
     {
@@ -2910,7 +3251,7 @@
      "errors": [],
      "warnings": [],
      "explored": 34,
-     "ms": 1,
+     "ms": 0,
      "shortest": 22
     },
     {
@@ -2934,7 +3275,7 @@
      "errors": [],
      "warnings": [],
      "explored": 34,
-     "ms": 3,
+     "ms": 0,
      "shortest": 24
     },
     {
@@ -2946,7 +3287,7 @@
      "errors": [],
      "warnings": [],
      "explored": 32,
-     "ms": 2,
+     "ms": 1,
      "shortest": 19
     },
     {
@@ -2958,7 +3299,7 @@
      "errors": [],
      "warnings": [],
      "explored": 34,
-     "ms": 3,
+     "ms": 0,
      "shortest": 22
     },
     {
@@ -2970,7 +3311,7 @@
      "errors": [],
      "warnings": [],
      "explored": 32,
-     "ms": 3,
+     "ms": 1,
      "shortest": 21
     },
     {
@@ -2982,7 +3323,7 @@
      "errors": [],
      "warnings": [],
      "explored": 34,
-     "ms": 1,
+     "ms": 0,
      "shortest": 24
     }
    ],
@@ -3021,7 +3362,7 @@
      "errors": [],
      "warnings": [],
      "explored": 124,
-     "ms": 2,
+     "ms": 1,
      "shortest": 17
     },
     {
@@ -3033,7 +3374,7 @@
      "errors": [],
      "warnings": [],
      "explored": 124,
-     "ms": 3,
+     "ms": 1,
      "shortest": 15
     },
     {
@@ -3045,7 +3386,7 @@
      "errors": [],
      "warnings": [],
      "explored": 124,
-     "ms": 2,
+     "ms": 1,
      "shortest": 17
     }
    ],
@@ -3084,7 +3425,7 @@
      "errors": [],
      "warnings": [],
      "explored": 23,
-     "ms": 1,
+     "ms": 0,
      "shortest": 17
     },
     {
@@ -3096,7 +3437,7 @@
      "errors": [],
      "warnings": [],
      "explored": 23,
-     "ms": 1,
+     "ms": 0,
      "shortest": 15
     },
     {
@@ -3135,7 +3476,7 @@
      "errors": [],
      "warnings": [],
      "explored": 22,
-     "ms": 2,
+     "ms": 1,
      "shortest": 14
     },
     {
@@ -3147,7 +3488,7 @@
      "errors": [],
      "warnings": [],
      "explored": 22,
-     "ms": 2,
+     "ms": 1,
      "shortest": 16
     },
     {
@@ -3159,7 +3500,7 @@
      "errors": [],
      "warnings": [],
      "explored": 22,
-     "ms": 6,
+     "ms": 1,
      "shortest": 14
     },
     {
@@ -3171,8 +3512,139 @@
      "errors": [],
      "warnings": [],
      "explored": 22,
-     "ms": 3,
+     "ms": 0,
      "shortest": 16
+    }
+   ],
+   "warnings": []
+  },
+  {
+   "id": "jeju_neolttwigi",
+   "file": "content/rooms/jeju/jeju_neolttwigi.json",
+   "sha256": "b078e323eb19c2370a40b0ec7d50ad8a8ffad2ca9fd72743d1e727c42e5dcc71",
+   "world": "jeju",
+   "role": "teach",
+   "size": [
+    2,
+    1
+   ],
+   "errors": [],
+   "routes": [
+    {
+     "route": "left.0.low>right.0.low",
+     "mirror": false,
+     "from": "left.0.low",
+     "to": "right.0.low",
+     "ok": true,
+     "errors": [],
+     "warnings": [],
+     "explored": 1150,
+     "ms": 32,
+     "shortest": 49,
+     "author": 51,
+     "hints": {
+      "first": [
+       26
+      ],
+      "ok": true
+     }
+    },
+    {
+     "route": "left.0.low>right.0.high",
+     "mirror": false,
+     "from": "left.0.low",
+     "to": "right.0.high",
+     "ok": true,
+     "errors": [],
+     "warnings": [],
+     "explored": 1177,
+     "ms": 26,
+     "shortest": 52,
+     "author": 55
+    },
+    {
+     "route": "left.0.high>right.0.low",
+     "mirror": false,
+     "from": "left.0.high",
+     "to": "right.0.low",
+     "ok": true,
+     "errors": [],
+     "warnings": [],
+     "explored": 1153,
+     "ms": 27,
+     "shortest": 47,
+     "author": 48
+    },
+    {
+     "route": "left.0.high>right.0.high",
+     "mirror": false,
+     "from": "left.0.high",
+     "to": "right.0.high",
+     "ok": true,
+     "errors": [],
+     "warnings": [],
+     "explored": 1180,
+     "ms": 27,
+     "shortest": 50,
+     "author": 52
+    },
+    {
+     "route": "left.0.low>right.0.low",
+     "mirror": true,
+     "from": "right.0.low",
+     "to": "left.0.low",
+     "ok": true,
+     "errors": [],
+     "warnings": [],
+     "explored": 1148,
+     "ms": 28,
+     "shortest": 49,
+     "author": 51,
+     "hints": {
+      "first": [
+       26
+      ],
+      "ok": true
+     }
+    },
+    {
+     "route": "left.0.low>right.0.high",
+     "mirror": true,
+     "from": "right.0.low",
+     "to": "left.0.high",
+     "ok": true,
+     "errors": [],
+     "warnings": [],
+     "explored": 1174,
+     "ms": 29,
+     "shortest": 52,
+     "author": 55
+    },
+    {
+     "route": "left.0.high>right.0.low",
+     "mirror": true,
+     "from": "right.0.high",
+     "to": "left.0.low",
+     "ok": true,
+     "errors": [],
+     "warnings": [],
+     "explored": 1151,
+     "ms": 27,
+     "shortest": 47,
+     "author": 48
+    },
+    {
+     "route": "left.0.high>right.0.high",
+     "mirror": true,
+     "from": "right.0.high",
+     "to": "left.0.high",
+     "ok": true,
+     "errors": [],
+     "warnings": [],
+     "explored": 1177,
+     "ms": 28,
+     "shortest": 50,
+     "author": 52
     }
    ],
    "warnings": []
@@ -3198,7 +3670,7 @@
      "errors": [],
      "warnings": [],
      "explored": 60,
-     "ms": 4,
+     "ms": 1,
      "shortest": 39
     },
     {
@@ -3210,7 +3682,7 @@
      "errors": [],
      "warnings": [],
      "explored": 62,
-     "ms": 5,
+     "ms": 0,
      "shortest": 42
     },
     {
@@ -3222,7 +3694,7 @@
      "errors": [],
      "warnings": [],
      "explored": 60,
-     "ms": 4,
+     "ms": 1,
      "shortest": 42
     },
     {
@@ -3234,7 +3706,7 @@
      "errors": [],
      "warnings": [],
      "explored": 62,
-     "ms": 2,
+     "ms": 1,
      "shortest": 45
     },
     {
@@ -3246,7 +3718,7 @@
      "errors": [],
      "warnings": [],
      "explored": 60,
-     "ms": 2,
+     "ms": 1,
      "shortest": 39
     },
     {
@@ -3258,7 +3730,7 @@
      "errors": [],
      "warnings": [],
      "explored": 62,
-     "ms": 2,
+     "ms": 0,
      "shortest": 42
     },
     {
@@ -3270,7 +3742,7 @@
      "errors": [],
      "warnings": [],
      "explored": 60,
-     "ms": 2,
+     "ms": 1,
      "shortest": 42
     },
     {
@@ -3282,8 +3754,218 @@
      "errors": [],
      "warnings": [],
      "explored": 62,
-     "ms": 2,
+     "ms": 1,
      "shortest": 45
+    }
+   ],
+   "warnings": []
+  },
+  {
+   "id": "jeju_pier",
+   "file": "content/rooms/jeju/jeju_pier.json",
+   "sha256": "21abd9abdb572c823aa63ef9d6c0a9b563ab999b83f2d24527bbf52b3f0a9d0c",
+   "world": "jeju",
+   "role": "develop",
+   "size": [
+    2,
+    1
+   ],
+   "errors": [],
+   "routes": [
+    {
+     "route": "left.0.low>right.0.high",
+     "mirror": false,
+     "from": "left.0.low",
+     "to": "right.0.high",
+     "ok": true,
+     "errors": [],
+     "warnings": [],
+     "explored": 201,
+     "ms": 4,
+     "shortest": 81,
+     "author": 82,
+     "hints": {
+      "first": [
+       23
+      ],
+      "ok": true
+     }
+    },
+    {
+     "route": "left.0.high>right.0.high",
+     "mirror": false,
+     "from": "left.0.high",
+     "to": "right.0.high",
+     "ok": true,
+     "errors": [],
+     "warnings": [],
+     "explored": 201,
+     "ms": 4,
+     "shortest": 85,
+     "author": 86
+    },
+    {
+     "route": "left.0.low>right.0.high",
+     "mirror": true,
+     "from": "right.0.low",
+     "to": "left.0.high",
+     "ok": true,
+     "errors": [],
+     "warnings": [],
+     "explored": 201,
+     "ms": 5,
+     "shortest": 81,
+     "author": 82,
+     "hints": {
+      "first": [
+       23
+      ],
+      "ok": true
+     }
+    },
+    {
+     "route": "left.0.high>right.0.high",
+     "mirror": true,
+     "from": "right.0.high",
+     "to": "left.0.high",
+     "ok": true,
+     "errors": [],
+     "warnings": [],
+     "explored": 201,
+     "ms": 5,
+     "shortest": 85,
+     "author": 86
+    }
+   ],
+   "warnings": []
+  },
+  {
+   "id": "jeju_terrace",
+   "file": "content/rooms/jeju/jeju_terrace.json",
+   "sha256": "e4720e4ae03bc5701a8c0776c2ecd458d1877c117630004dec75b64615000d3c",
+   "world": "jeju",
+   "role": "develop",
+   "size": [
+    1,
+    2
+   ],
+   "errors": [],
+   "routes": [
+    {
+     "route": "left.1.low>right.0.high",
+     "mirror": false,
+     "from": "left.1.low",
+     "to": "right.0.high",
+     "ok": true,
+     "errors": [],
+     "warnings": [],
+     "explored": 700,
+     "ms": 16,
+     "shortest": 43,
+     "author": 47,
+     "hints": {
+      "first": [
+       30
+      ],
+      "ok": true
+     }
+    },
+    {
+     "route": "left.1.low>right.0.low",
+     "mirror": false,
+     "from": "left.1.low",
+     "to": "right.0.low",
+     "ok": true,
+     "errors": [],
+     "warnings": [],
+     "explored": 658,
+     "ms": 15,
+     "shortest": 39,
+     "author": 43
+    },
+    {
+     "route": "left.1.high>right.0.high",
+     "mirror": false,
+     "from": "left.1.high",
+     "to": "right.0.high",
+     "ok": true,
+     "errors": [],
+     "warnings": [],
+     "explored": 703,
+     "ms": 16,
+     "shortest": 39,
+     "author": 43
+    },
+    {
+     "route": "left.1.high>right.0.low",
+     "mirror": false,
+     "from": "left.1.high",
+     "to": "right.0.low",
+     "ok": true,
+     "errors": [],
+     "warnings": [],
+     "explored": 659,
+     "ms": 15,
+     "shortest": 35,
+     "author": 39
+    },
+    {
+     "route": "left.1.low>right.0.high",
+     "mirror": true,
+     "from": "right.1.low",
+     "to": "left.0.high",
+     "ok": true,
+     "errors": [],
+     "warnings": [],
+     "explored": 696,
+     "ms": 15,
+     "shortest": 43,
+     "author": 47,
+     "hints": {
+      "first": [
+       30
+      ],
+      "ok": true
+     }
+    },
+    {
+     "route": "left.1.low>right.0.low",
+     "mirror": true,
+     "from": "right.1.low",
+     "to": "left.0.low",
+     "ok": true,
+     "errors": [],
+     "warnings": [],
+     "explored": 653,
+     "ms": 14,
+     "shortest": 39,
+     "author": 43
+    },
+    {
+     "route": "left.1.high>right.0.high",
+     "mirror": true,
+     "from": "right.1.high",
+     "to": "left.0.high",
+     "ok": true,
+     "errors": [],
+     "warnings": [],
+     "explored": 699,
+     "ms": 15,
+     "shortest": 39,
+     "author": 43
+    },
+    {
+     "route": "left.1.high>right.0.low",
+     "mirror": true,
+     "from": "right.1.high",
+     "to": "left.0.low",
+     "ok": true,
+     "errors": [],
+     "warnings": [],
+     "explored": 654,
+     "ms": 15,
+     "shortest": 35,
+     "author": 39
     }
    ],
    "warnings": []
@@ -3292,71 +3974,93 @@
  "pools": [
   {
    "id": "delivery_pool",
-   "input_sha256": "bc53f7526a16049283f35fe267bfa44d65b740ca31cb1d16b019c4c77d32b06e",
+   "input_sha256": "0cb391b16cee48c458b617c4aa65315d61a49b9d554ba3491bc8d9e9eb5c386a",
    "seeds": 300,
    "ok": true,
    "failures": [],
    "maps": {
-    "dungeon_2": 151,
-    "diyu_1": 149
+    "diyu_1": 107,
+    "dungeon_2": 100,
+    "jeju_1": 93
    },
    "recipients": {
-    "zombie": 44,
-    "yama": 19,
-    "old_miner": 56,
-    "ancestor": 49,
-    "wuchang": 21,
-    "goblin_smith": 51,
-    "judge": 25,
-    "meng_po": 35
+    "meng_po": 18,
+    "old_miner": 27,
+    "ancestor": 37,
+    "lighthouse_keeper": 15,
+    "wuchang": 19,
+    "goblin_chief": 9,
+    "haenyeo": 36,
+    "tangerine_farmer": 33,
+    "zombie": 33,
+    "goblin_smith": 40,
+    "judge": 21,
+    "yama": 12
    },
    "cargo": {
-    "ice_cream": 99,
-    "letter": 76,
-    "qingtuan": 56,
-    "vase": 60,
-    "paper_house": 9
+    "ice_cream": 58,
+    "letter": 85,
+    "buckwheat_jelly": 30,
+    "paper_house": 10,
+    "vase": 36,
+    "tangerine": 21,
+    "qingtuan": 44,
+    "kite": 16
    },
    "template_use": {
-    "dungeon2_gate": 151,
-    "dungeon2_bridge": 151,
-    "dungeon2_pole": 151,
-    "dungeon2_corridor": 96,
-    "dungeon2_yard": 41,
-    "dungeon2_station": 151,
-    "dungeon2_sandpour": 151,
-    "dungeon2_home": 151,
-    "diyu_gate": 149,
-    "diyu_naihe": 149,
-    "diyu_lantern": 149,
-    "diyu_ghostfire": 68,
-    "diyu_wangchuan": 122,
-    "diyu_teahouse": 149,
-    "diyu_sand_bridge": 87,
-    "diyu_home_hall": 65,
-    "dungeon2_ferry": 110,
-    "dungeon2_well": 88,
-    "diyu_wangxiang": 60,
-    "diyu_home_yard": 84,
-    "diyu_huangquan": 76,
-    "diyu_fengdu": 53,
-    "diyu_paper_bridge": 62
+    "diyu_gate": 107,
+    "diyu_naihe": 107,
+    "diyu_lantern": 107,
+    "diyu_huangquan": 53,
+    "diyu_wangchuan": 93,
+    "diyu_teahouse": 107,
+    "diyu_sand_bridge": 53,
+    "diyu_ghostfire": 57,
+    "diyu_home_yard": 55,
+    "dungeon2_gate": 100,
+    "dungeon2_bridge": 100,
+    "dungeon2_pole": 100,
+    "dungeon2_corridor": 63,
+    "dungeon2_ferry": 75,
+    "dungeon2_station": 100,
+    "dungeon2_sandpour": 100,
+    "dungeon2_home": 100,
+    "dungeon2_well": 59,
+    "diyu_wangxiang": 45,
+    "diyu_paper_bridge": 54,
+    "jeju_gate": 93,
+    "jeju_baramgil": 93,
+    "jeju_neolttwigi": 93,
+    "jeju_doldam": 57,
+    "jeju_haenyeo_house": 93,
+    "jeju_dodaebul": 93,
+    "jeju_pier": 60,
+    "jeju_olle": 38,
+    "jeju_home_shore": 51,
+    "dungeon2_yard": 29,
+    "diyu_home_hall": 52,
+    "jeju_home_cave": 9,
+    "jeju_canola": 52,
+    "jeju_terrace": 28,
+    "jeju_home_orchard": 33,
+    "diyu_fengdu": 28
    },
    "rooms_per_run": {
-    "7": 35,
-    "8": 138,
-    "9": 105,
-    "10": 22
+    "7": 29,
+    "8": 129,
+    "9": 118,
+    "10": 24
    },
    "screens_per_run": {
-    "8": 29,
-    "9": 18,
-    "10": 89,
-    "11": 22,
-    "12": 81,
-    "13": 16,
-    "14": 33,
-    "15": 12
+    "8": 17,
+    "9": 14,
+    "10": 71,
+    "11": 20,
+    "12": 88,
+    "13": 17,
+    "14": 57,
+    "15": 6,
+    "16": 10
    }
   }
  ]

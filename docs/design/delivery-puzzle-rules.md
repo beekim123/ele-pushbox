@@ -144,7 +144,7 @@
 
 ## 6 开局池与地图布局
 
-开局池是 `slices.json` 的 `delivery_pool`：`pool.maps`（地图和权重：`dungeon_2`、`diyu_1` 各 1）、`pool.weights`（稀有度权重 common 4 / rare 2 / legendary 1）、`pool.rerolls`（可以重转 1 次）。
+开局池是 `slices.json` 的 `delivery_pool`：`pool.maps`（地图和权重：`dungeon_2`、`diyu_1`、`jeju_1` 各 1）、`pool.weights`（稀有度权重 common 4 / rare 2 / legendary 1）、`pool.rerolls`（可以重转 1 次）。
 
 随机数和 v1 相同（xorshift32，`PB.mapgen.makeRng`，见 [delivery-maps.md](delivery-maps.md) 第 3 节）。`generate(seed, pool, maps, cat, templatesOf, picks)` 取随机数的顺序（游戏必须一致）：
 
@@ -160,14 +160,15 @@
 
 **同种子同局**：同样的 `seed` 和 `picks` 一定生成同一张地图（测试检查）。
 
-两张地图：
+三张地图：
 
 | 地图 | 网格（屏） | 方向 | `layout.sequence`（括号里是出现概率） |
 |---|---|---|---|
 | `dungeon_2` 废弃的符文监狱 | 12 × 3 | `down` | 起点、教、教、喘口气（50%）、发展、驿站、转折、发展（60%）、收件人之家 |
 | `diyu_1` 地府·酆都 | 13 × 3 | `right` | 同上，收件人之家前再加喘口气（40%） |
+| `jeju_1` 济州海女村 | 16 × 2 | `right` | 同地府：起点、教、教、喘口气（50%）、发展、驿站、转折、发展（60%）、喘口气（40%）、收件人之家 |
 
-300 个种子的统计（`pools2`）：两张图 151 / 149 局；每局 7–10 间房（7 间 35 局、8 间 138、9 间 105、10 间 22），8–15 屏。
+300 个种子的统计（`pools2`）：石牢 / 地府 / 济州分别 100 / 107 / 93 局，全部生成成功；每局 7–10 间房（7 间 29 局、8 间 129、9 间 118、10 间 24），8–16 屏。济州保留 16 × 2 的布局。
 
 ## 7 检查工具与工作台
 

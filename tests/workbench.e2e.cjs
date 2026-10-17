@@ -325,7 +325,7 @@ let runningBrowser = null;
   await page.goto(URL + "#overview"); await page.waitForTimeout(200);
   const menu = await page.evaluate(() => Array.from(document.querySelectorAll("#nav > a, #nav > .nav-group")).map((n) => n.matches("a")
     ? [n.firstChild.textContent] : [n.querySelector(".nav-head-label").textContent, ...Array.from(n.querySelectorAll(".nav-list a")).map((a) => a.firstChild.textContent)]));
-  const wantMenu = [["总览"], ["关卡与玩法", "模式与关卡", "机制", "设计数据"], ["配送", "开局抽签", "石牢", "地府"], ["美术", "场景", "资产与动画", "编辑与对比", "确认", "导出", "界面风格提案"], ["工具", "编号映射"], ["声音", "音效"]];
+  const wantMenu = [["总览"], ["关卡与玩法", "模式与关卡", "机制", "设计数据"], ["配送", "开局抽签", "石牢", "地府", "海女村"], ["美术", "场景", "资产与动画", "编辑与对比", "确认", "导出", "界面风格提案"], ["工具", "编号映射"], ["声音", "音效"]];
   check(JSON.stringify(menu) === JSON.stringify(wantMenu), "left menu shows the categories and pages of WB-01 in order, 配送 by map as in workbench.md 6.1 (" + JSON.stringify(menu) + ")");
   const reg = await page.evaluate(() => ({
     pages: [...new Set(PBNav.pages().map((p) => p.view))],

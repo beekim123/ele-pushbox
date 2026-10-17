@@ -1,19 +1,19 @@
 # DLV-04b 济州海女村：6 间机关房，济州进开局抽签
 
-状态：**待派**（DLV-04a 已合并，7 间普通房已在基线上）。
-基线：`claude/inspiring-ride-zfnn4s`（已包含 DLV-04a）→ 分支：`dlv/DLV-04b`（**不要**从 `main` 开）
+状态：**制作完成，自动验收未全过；人工试玩未完成，待技术复验与合并**（未合并；遗留见「交付」）。
+基线：`claude/inspiring-ride-zfnn4s`（已包含 DLV-04a）→ 分支：`ui/DLV-04b`（按用户本轮指令；**不要**从 `main` 开）
 预计：3–4 小时；超过 5 小时还没做完就停下，把进度写进「交付」交回。
 
 **开工**（照抄）：
 ```bash
 git fetch origin
-git checkout -b dlv/DLV-04b origin/claude/inspiring-ride-zfnn4s
+git checkout -b ui/DLV-04b origin/claude/inspiring-ride-zfnn4s
 ```
 **交回**（二选一）：
-- 能推送：`git push -u origin dlv/DLV-04b`
-- 不能推送：`git bundle create DLV-04b.bundle origin/claude/inspiring-ride-zfnn4s..dlv/DLV-04b`，把 `DLV-04b.bundle` 交给用户
+- 能推送：`git push -u origin ui/DLV-04b`
+- 不能推送：`git bundle create DLV-04b.bundle origin/claude/inspiring-ride-zfnn4s..ui/DLV-04b`，把 `DLV-04b.bundle` 交给用户
 
-只往 `dlv/DLV-04b` 提交；不往别的分支推送，也不合并别的分支。
+只往 `ui/DLV-04b` 提交；不往别的分支推送，也不合并别的分支。
 
 ## 目标
 做出济州的 6 间机关房：`jeju_neolttwigi`、`jeju_baramgil`、`jeju_pier`、`jeju_terrace`、`jeju_doldam`、`jeju_dodaebul`，全部通过 `check-rooms2`；然后把济州（`jeju_1`）放进正式地图和开局抽签。做完后工作台「配送」菜单会自动出现「海女村」。
@@ -72,9 +72,25 @@ node tests/workbench.e2e.cjs
 - 工作台「配送」菜单出现「海女村」；点开能看到 13 间房；试玩一间机关房，跷跷板、阵风能用，按 `H` 喂零食有提示气泡。
 
 ## 交付（制作方填写，不超过 40 行）
-- 每间房一句：谜题怎么解
-- 300 个种子的统计一行
-- 上面「最后跑一次」各一行结果
-- 改了哪条测试的预期、为什么（没有写"无"）
-- 遗留问题（没有写"无"）
-（分支名、提交号、`git diff --stat` 贴在给用户的回复里，不写进这个文件）
+- 跳板场：先扳开净空门，从上方绕到铁箱右侧推箱落井；弹起的木箱压住出口门。
+- 风口：走动让阵风把墙角木箱吹进两格深坑，踩木箱过坑。
+- 码头：从下方绕到铁箱右侧，推铁箱沉到水底跳板；沿下方返回，踩弹起的木箱上栈道。
+- 橘园台地：挖出净空处的土，绕到右岸压板向左倒沙，弹起木箱开门，再爬到上屏。
+- 石墙风口：沿下方到右侧入口压板放风，立即左推铁箱落右坑，挡住木箱使它停在左压板。
+- 石灯台：下到跳板右端按上扳杆，风吹木箱落左井，把人物弹上石灯台。
+- 300 种子：石牢 100 / 地府 107 / 济州 93，全部生成；7/8/9/10 房分别 29/129/118/24 局，8–16 屏；保留济州 16×2。
+- `check-rooms2 --write`：36 间房、300 种子全部通过；济州 13 间每条路线及翻转通过，新六房 44 条路线均有作者解。
+- `content.mjs check`：退出 1，2 error(s)、0 warning(s)：`content/i18n-delivery2`、`content/i18n-result` 缺 `zh-Hans.json`。
+- `node --test --test-concurrency=1 tests/*.test.mjs`：213 项，198 通过、15 失败；失败均由上述两项文字表错误引起，房间及 DLV-05 测试通过。
+- `art.mjs build`：156 assets、0 bumped、94 reference renders、6 approval records；资产生成完成，总退出 1 原因为同两项 content 错误。
+- `workbench.e2e.cjs`：使用流程指定 Mac 浏览器路径，113 项通过、3 项失败；详情见下。
+- 测试预期只改两处：`rooms2.test.mjs` 的地图集合加入济州；`workbench.e2e.cjs` 的配送菜单加入海女村，适配济州正式入池。
+- E2E 遗留：总览内容检查受缺文字表阻塞；第 211 行仍断言地图数量为 2，第 556 行仍要求声音页出现「地图待 DSN-01」。后两处不在可改清单内，未改断言或产品行为绕过。
+- 文字表遗留目录未由本包创建，也不在基线 Git 文件清单与本包可改范围内，未补表或删除目录。
+- 石墙风口已试四条正常作者路线和放风后迟推的反例；迟推在原图和镜像均失败，正常路线及冻结检查通过。
+- 页面验收：E2E 已看到菜单「海女村」，三地图页面各自房间列表无异常；人工查看 13 房、试玩机关和按 H 气泡未完成。
+- 人工试玩原因：浏览器工具安全策略禁止打开 `file://`；用户明确选择「作为交付遗留，记录人工试玩未完成」。
+- 具体几何差异已记 `delivery-jeju.md` 第 4 节；未改规则实现、原七房、确认记录或冻结美术，无新增美术确认。
+- 当前阶段：制作交回，技术验收未全过、人工验收未完成，尚未合并或正式入库。
+- 下一步（整理合并方）：处理两项范围外文字表问题、修正上述两处未授权测试预期后，复跑失败及受影响检查，再按流程审核合并。
+- 下一步（用户，已选择后续再验）：打开本地工作台 `#rooms2/map/jeju_1` 查看 13 房，试玩石灯台并确认阵风、跳板和 H 气泡；本轮无需即时操作。
