@@ -119,6 +119,495 @@
     "B": 0.6
    },
    "fail_keep": 0.5
+  },
+  {
+   "id": "dungeon_2",
+   "short_name": "石牢",
+   "format": 2,
+   "name": "配送地图 · 废弃的符文监狱（石牢重做）",
+   "mode": "delivery",
+   "status": "design",
+   "doc": "docs/design/delivery-dungeon.md",
+   "world": "dungeon",
+   "cargo": [
+    "letter",
+    "vase",
+    "ice_cream"
+   ],
+   "recipients": [
+    "old_miner",
+    "zombie",
+    "goblin_smith"
+   ],
+   "monsters": [
+    "rat_swarm",
+    "skeleton_guard"
+   ],
+   "rooms2": [
+    "dungeon2_bridge",
+    "dungeon2_corridor",
+    "dungeon2_ferry",
+    "dungeon2_gate",
+    "dungeon2_home",
+    "dungeon2_pole",
+    "dungeon2_sandpour",
+    "dungeon2_station",
+    "dungeon2_well",
+    "dungeon2_yard"
+   ],
+   "mechanisms": [
+    "push",
+    "ladder",
+    "dig",
+    "pour",
+    "plate_door",
+    "fall",
+    "lever",
+    "float_block",
+    "pole",
+    "hint_animal",
+    "push_monster",
+    "crush_monster",
+    "trap_monster"
+   ],
+   "layout": {
+    "cols": 12,
+    "rows": 3,
+    "direction": "down",
+    "sequence": [
+     {
+      "role": "gate"
+     },
+     {
+      "role": "teach"
+     },
+     {
+      "role": "teach"
+     },
+     {
+      "role": "breather",
+      "chance": 50
+     },
+     {
+      "role": "develop"
+     },
+     {
+      "role": "station"
+     },
+     {
+      "role": "twist"
+     },
+     {
+      "role": "develop",
+      "chance": 60
+     },
+     {
+      "role": "home"
+     }
+    ]
+   },
+   "station": {
+    "items": [
+     "sandbag",
+     "first_aid",
+     "rope_ladder",
+     "snack"
+    ],
+    "stock": {
+     "sandbag": 5,
+     "first_aid": 1,
+     "rope_ladder": 2,
+     "snack": 3
+    },
+    "heal": 1
+   },
+   "time": {
+    "tick_hz": 60,
+    "transition_secs": 0.3
+   },
+   "intervals": {
+    "walk": 0.22,
+    "climb": 0.22,
+    "push": 0.3,
+    "dig": 0.35,
+    "pour": 0.35,
+    "interact": 0.4,
+    "move_anim": 0.1
+   },
+   "gravity": {
+    "tiles_per_sec": 12
+   },
+   "player": {
+    "hearts": 3,
+    "iframe_secs": 1.5,
+    "fall_hurt_rows": 3,
+    "sand_max": 9,
+    "item_slots": 3
+   },
+   "monster_fall_ko_rows": 3,
+   "cargo_integrity": 3,
+   "coins": {
+    "pickup": 5
+   },
+   "tip": {
+    "time_fast": 1.5,
+    "time_floor": 0.5,
+    "like": 1.5
+   },
+   "rating": {
+    "S": 1.4,
+    "A": 1,
+    "B": 0.6
+   },
+   "fail_keep": 0.5
+  },
+  {
+   "id": "diyu_1",
+   "short_name": "地府",
+   "format": 2,
+   "name": "配送地图 · 地府·酆都",
+   "mode": "delivery",
+   "status": "design",
+   "doc": "docs/design/delivery-diyu.md",
+   "world": "diyu",
+   "top_edge": "sky",
+   "cargo": [
+    "letter",
+    "qingtuan",
+    "paper_house",
+    "ice_cream"
+   ],
+   "cargo_only": {
+    "paper_house": [
+     "ancestor",
+     "wuchang"
+    ]
+   },
+   "recipients": [
+    "ancestor",
+    "meng_po",
+    "judge",
+    "wuchang",
+    "yama"
+   ],
+   "monsters": [
+    "imp",
+    "wandering_soul",
+    "jiangshi"
+   ],
+   "rooms2": [
+    "diyu_fengdu",
+    "diyu_gate",
+    "diyu_ghostfire",
+    "diyu_home_hall",
+    "diyu_home_yard",
+    "diyu_huangquan",
+    "diyu_lantern",
+    "diyu_naihe",
+    "diyu_paper_bridge",
+    "diyu_sand_bridge",
+    "diyu_teahouse",
+    "diyu_wangchuan",
+    "diyu_wangxiang"
+   ],
+   "mechanisms": [
+    "push",
+    "ladder",
+    "dig",
+    "pour",
+    "plate_door",
+    "fall",
+    "lever",
+    "lift",
+    "float_sink",
+    "load_bridge",
+    "float_block",
+    "hint_animal",
+    "hold_breath",
+    "push_monster",
+    "trap_monster"
+   ],
+   "layout": {
+    "cols": 13,
+    "rows": 3,
+    "direction": "right",
+    "sequence": [
+     {
+      "role": "gate"
+     },
+     {
+      "role": "teach"
+     },
+     {
+      "role": "teach"
+     },
+     {
+      "role": "breather",
+      "chance": 50
+     },
+     {
+      "role": "develop"
+     },
+     {
+      "role": "station"
+     },
+     {
+      "role": "twist"
+     },
+     {
+      "role": "develop",
+      "chance": 60
+     },
+     {
+      "role": "breather",
+      "chance": 40
+     },
+     {
+      "role": "home"
+     }
+    ]
+   },
+   "station": {
+    "items": [
+     "sandbag",
+     "first_aid",
+     "rope_ladder",
+     "snack"
+    ],
+    "stock": {
+     "sandbag": 5,
+     "first_aid": 1,
+     "rope_ladder": 2,
+     "snack": 3
+    },
+    "heal": 1
+   },
+   "time": {
+    "tick_hz": 60,
+    "transition_secs": 0.3
+   },
+   "intervals": {
+    "walk": 0.22,
+    "climb": 0.22,
+    "push": 0.3,
+    "dig": 0.35,
+    "pour": 0.35,
+    "interact": 0.4,
+    "move_anim": 0.1
+   },
+   "gravity": {
+    "tiles_per_sec": 12
+   },
+   "player": {
+    "hearts": 3,
+    "iframe_secs": 1.5,
+    "fall_hurt_rows": 3,
+    "sand_max": 9,
+    "item_slots": 3
+   },
+   "monster_fall_ko_rows": 3,
+   "cargo_integrity": 3,
+   "coins": {
+    "pickup": 5
+   },
+   "tip": {
+    "time_fast": 1.5,
+    "time_floor": 0.5,
+    "like": 1.5
+   },
+   "rating": {
+    "S": 1.4,
+    "A": 1,
+    "B": 0.6
+   },
+   "fail_keep": 0.5
+  },
+  {
+   "id": "jeju_1",
+   "short_name": "海女村",
+   "format": 2,
+   "name": "配送地图 · 济州海女村",
+   "mode": "delivery",
+   "status": "design",
+   "doc": "docs/design/delivery-jeju.md",
+   "world": "jeju",
+   "top_edge": "sky",
+   "cargo": [
+    "tangerine",
+    "buckwheat_jelly",
+    "letter",
+    "kite"
+   ],
+   "cargo_only": {
+    "tangerine": [
+     "haenyeo",
+     "lighthouse_keeper",
+     "goblin_chief"
+    ]
+   },
+   "recipients": [
+    "haenyeo",
+    "tangerine_farmer",
+    "lighthouse_keeper",
+    "goblin_chief"
+   ],
+   "monsters": [
+    "dokkaebi",
+    "seagull"
+   ],
+   "rooms2": [
+    "jeju_baramgil",
+    "jeju_canola",
+    "jeju_dodaebul",
+    "jeju_doldam",
+    "jeju_gate",
+    "jeju_haenyeo_house",
+    "jeju_home_cave",
+    "jeju_home_orchard",
+    "jeju_home_shore",
+    "jeju_neolttwigi",
+    "jeju_olle",
+    "jeju_pier",
+    "jeju_terrace"
+   ],
+   "mechanisms": [
+    "push",
+    "ladder",
+    "dig",
+    "pour",
+    "plate_door",
+    "fall",
+    "float_sink",
+    "seesaw",
+    "gust",
+    "hint_animal",
+    "push_monster",
+    "crush_monster",
+    "trap_monster"
+   ],
+   "layout": {
+    "cols": 16,
+    "rows": 2,
+    "direction": "right",
+    "sequence": [
+     {
+      "role": "gate"
+     },
+     {
+      "role": "teach"
+     },
+     {
+      "role": "teach"
+     },
+     {
+      "role": "breather",
+      "chance": 50
+     },
+     {
+      "role": "develop"
+     },
+     {
+      "role": "station"
+     },
+     {
+      "role": "twist"
+     },
+     {
+      "role": "develop",
+      "chance": 60
+     },
+     {
+      "role": "breather",
+      "chance": 40
+     },
+     {
+      "role": "home"
+     }
+    ]
+   },
+   "station": {
+    "items": [
+     "sandbag",
+     "first_aid",
+     "umbrella",
+     "snack"
+    ],
+    "stock": {
+     "sandbag": 5,
+     "first_aid": 1,
+     "umbrella": 1,
+     "snack": 3
+    },
+    "heal": 1
+   },
+   "time": {
+    "tick_hz": 60,
+    "transition_secs": 0.3
+   },
+   "intervals": {
+    "walk": 0.22,
+    "climb": 0.22,
+    "push": 0.3,
+    "dig": 0.35,
+    "pour": 0.35,
+    "interact": 0.4,
+    "move_anim": 0.1
+   },
+   "gravity": {
+    "tiles_per_sec": 12
+   },
+   "player": {
+    "hearts": 3,
+    "iframe_secs": 1.5,
+    "fall_hurt_rows": 3,
+    "sand_max": 9,
+    "item_slots": 3
+   },
+   "monster_fall_ko_rows": 3,
+   "cargo_integrity": 3,
+   "coins": {
+    "pickup": 5
+   },
+   "tip": {
+    "time_fast": 1.5,
+    "time_floor": 0.5,
+    "like": 1.5
+   },
+   "rating": {
+    "S": 1.4,
+    "A": 1,
+    "B": 0.6
+   },
+   "fail_keep": 0.5
+  },
+  {
+   "id": "delivery_pool",
+   "name": "开局池 · 配送模式",
+   "mode": "delivery",
+   "status": "design",
+   "doc": "docs/design/delivery-puzzle-rules.md",
+   "pool": {
+    "maps": [
+     {
+      "slice": "dungeon_2",
+      "weight": 1
+     },
+     {
+      "slice": "diyu_1",
+      "weight": 1
+     },
+     {
+      "slice": "jeju_1",
+      "weight": 1
+     }
+    ],
+    "weights": {
+     "common": 4,
+     "rare": 2,
+     "legendary": 1
+    },
+    "rerolls": 1
+   }
   }
  ]
 }

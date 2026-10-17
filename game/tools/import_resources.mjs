@@ -30,6 +30,8 @@ function inputs(repoRoot) {
   if (problems.length) throw new Error('translation tables: ' + problems.map(p => `${p.where}: ${p.msg}`).join('; '));
   for (const [locale, table] of Object.entries(texts)) {
     for (const [key, value] of Object.entries(table)) {
+      // Workbench-only groups (e.g. content/i18n-audio "audio.dom") are nested objects; the game never reads them.
+      if (key !== '_meta' && value && typeof value === 'object' && !Array.isArray(value)) { delete table[key]; continue; }
       if (key !== '_meta' && typeof value !== 'string') throw new Error(`translation must be a string: ${locale}/${key}`);
     }
   }

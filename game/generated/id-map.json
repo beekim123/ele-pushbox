@@ -5,7 +5,7 @@
   "art": {
    "name": "美术资产",
    "source": "art/source/<分类>/<id>.json",
-   "count": 109
+   "count": 159
   },
   "level": {
    "name": "关卡",
@@ -15,7 +15,7 @@
   "room": {
    "name": "配送房间模板",
    "source": "content/rooms/<地区>/<id>.json",
-   "count": 10
+   "count": 46
   },
   "mode": {
    "name": "模式",
@@ -30,7 +30,7 @@
   "mechanic": {
    "name": "机制",
    "source": "content/catalog/mechanisms.json",
-   "count": 74
+   "count": 77
   },
   "world": {
    "name": "地区",
@@ -40,12 +40,12 @@
   "recipient": {
    "name": "收件人",
    "source": "content/catalog/recipients.json",
-   "count": 82
+   "count": 84
   },
   "cargo": {
    "name": "货物",
    "source": "content/catalog/cargo.json",
-   "count": 48
+   "count": 50
   },
   "combo": {
    "name": "缘分组合",
@@ -60,7 +60,7 @@
   "item": {
    "name": "道具",
    "source": "content/catalog/items.json",
-   "count": 20
+   "count": 21
   },
   "buff": {
    "name": "增益",
@@ -85,15 +85,49 @@
   "slice": {
    "name": "可玩切片（配送局配置）",
    "source": "content/catalog/slices.json",
-   "count": 1
+   "count": 5
+  },
+  "sfx": {
+   "name": "音效",
+   "source": "content/catalog/audio.json；audio/source/sfx/<id>.json",
+   "count": 32
+  },
+  "music": {
+   "name": "音乐候选与曲组",
+   "source": "content/catalog/audio.json；audio/source/music/<id>.json",
+   "count": 17
   },
   "text": {
    "name": "界面与台词文字",
    "source": "content/i18n/zh-Hans.json 与 content/i18n-<名>/zh-Hans.json",
-   "count": 386
+   "count": 543
   }
  },
  "entries": [
+  {
+   "uid": "art:avatar.ancestor",
+   "domain": "art",
+   "id": "avatar.ancestor",
+   "name": "滚轮头像 · 太爷爷",
+   "source": "art/source/avatar/avatar.ancestor.json",
+   "game": "res://generated/art/avatar.ancestor.tres",
+   "category": "avatar",
+   "version": 1,
+   "hash": "68adb0805a85208b14a364da1f7c2a63b803ae4575b179ffa3a753c283df76ca",
+   "approved": false
+  },
+  {
+   "uid": "art:avatar.goblin_chief",
+   "domain": "art",
+   "id": "avatar.goblin_chief",
+   "name": "滚轮头像 · 鬼怪大王",
+   "source": "art/source/avatar/avatar.goblin_chief.json",
+   "game": "res://generated/art/avatar.goblin_chief.tres",
+   "category": "avatar",
+   "version": 1,
+   "hash": "1e2ca8bb169a5996e06fc04295dc0ab6c7914410bf2f3f7733500e5463f2a1e4",
+   "approved": false
+  },
   {
    "uid": "art:avatar.goblin_smith",
    "domain": "art",
@@ -105,6 +139,54 @@
    "version": 1,
    "hash": "b901baf70b30239fa027bf78bcad072eee4aa8e5197ca6d97acabc8dd866d29d",
    "approved": true
+  },
+  {
+   "uid": "art:avatar.haenyeo",
+   "domain": "art",
+   "id": "avatar.haenyeo",
+   "name": "滚轮头像 · 海女奶奶",
+   "source": "art/source/avatar/avatar.haenyeo.json",
+   "game": "res://generated/art/avatar.haenyeo.tres",
+   "category": "avatar",
+   "version": 1,
+   "hash": "e3f832812840a67fc3fd03a0d3213cdcbaf76d36390afa04284fbed91a9897a6",
+   "approved": false
+  },
+  {
+   "uid": "art:avatar.judge",
+   "domain": "art",
+   "id": "avatar.judge",
+   "name": "滚轮头像 · 判官",
+   "source": "art/source/avatar/avatar.judge.json",
+   "game": "res://generated/art/avatar.judge.tres",
+   "category": "avatar",
+   "version": 1,
+   "hash": "61ed92ffabe4822309497cd0f31004dd3f06fad79bb70c412ae7de9231ee49d0",
+   "approved": false
+  },
+  {
+   "uid": "art:avatar.lighthouse_keeper",
+   "domain": "art",
+   "id": "avatar.lighthouse_keeper",
+   "name": "滚轮头像 · 灯塔大叔",
+   "source": "art/source/avatar/avatar.lighthouse_keeper.json",
+   "game": "res://generated/art/avatar.lighthouse_keeper.tres",
+   "category": "avatar",
+   "version": 1,
+   "hash": "c44749d263664e8dc76a2c48a765f53e5ba1208105d1a1aa4dc07929bcb7f2cb",
+   "approved": false
+  },
+  {
+   "uid": "art:avatar.meng_po",
+   "domain": "art",
+   "id": "avatar.meng_po",
+   "name": "滚轮头像 · 孟婆",
+   "source": "art/source/avatar/avatar.meng_po.json",
+   "game": "res://generated/art/avatar.meng_po.tres",
+   "category": "avatar",
+   "version": 1,
+   "hash": "fd39720c72eadf7f6a54e425146fdfd04fb01ed11fef04c3851de7407789dcba",
+   "approved": false
   },
   {
    "uid": "art:avatar.old_miner",
@@ -119,6 +201,42 @@
    "approved": true
   },
   {
+   "uid": "art:avatar.tangerine_farmer",
+   "domain": "art",
+   "id": "avatar.tangerine_farmer",
+   "name": "滚轮头像 · 橘园阿姨",
+   "source": "art/source/avatar/avatar.tangerine_farmer.json",
+   "game": "res://generated/art/avatar.tangerine_farmer.tres",
+   "category": "avatar",
+   "version": 1,
+   "hash": "d210783dde6a1786882696e5530e77121149d1115c357dddb2d9a3cdc4523fbf",
+   "approved": false
+  },
+  {
+   "uid": "art:avatar.wuchang",
+   "domain": "art",
+   "id": "avatar.wuchang",
+   "name": "滚轮头像 · 黑白无常",
+   "source": "art/source/avatar/avatar.wuchang.json",
+   "game": "res://generated/art/avatar.wuchang.tres",
+   "category": "avatar",
+   "version": 1,
+   "hash": "be1bcc58ff471af314f83e89c08abf47a21c466fb8116020c6a4ad08ae8fb483",
+   "approved": false
+  },
+  {
+   "uid": "art:avatar.yama",
+   "domain": "art",
+   "id": "avatar.yama",
+   "name": "滚轮头像 · 阎王",
+   "source": "art/source/avatar/avatar.yama.json",
+   "game": "res://generated/art/avatar.yama.tres",
+   "category": "avatar",
+   "version": 1,
+   "hash": "b6c465355350c795739a6a2c8e838e43efc529abbf55e7cfea795f7d1a83acef",
+   "approved": false
+  },
+  {
    "uid": "art:avatar.zombie",
    "domain": "art",
    "id": "avatar.zombie",
@@ -129,6 +247,18 @@
    "version": 1,
    "hash": "fea509a9818ab135825d06410c991cc2e7258c52e4ade9cf72817bb1ae5410c8",
    "approved": true
+  },
+  {
+   "uid": "art:cargo.buckwheat_jelly",
+   "domain": "art",
+   "id": "cargo.buckwheat_jelly",
+   "name": "货物 · 荞麦凉粉",
+   "source": "art/source/cargo/cargo.buckwheat_jelly.json",
+   "game": "res://generated/art/cargo.buckwheat_jelly.tres",
+   "category": "cargo",
+   "version": 1,
+   "hash": "7bfdadaf4da1bc086033aced9a129cbc81863fd9ac40a13b8af25c2bb190bb65",
+   "approved": false
   },
   {
    "uid": "art:cargo.ice_cream",
@@ -143,6 +273,18 @@
    "approved": true
   },
   {
+   "uid": "art:cargo.kite",
+   "domain": "art",
+   "id": "cargo.kite",
+   "name": "货物 · 风筝",
+   "source": "art/source/cargo/cargo.kite.json",
+   "game": "res://generated/art/cargo.kite.tres",
+   "category": "cargo",
+   "version": 1,
+   "hash": "3ff8c842f9fb48a08eda72f15bfca379473d2dbfdfb3d47d2012027fe1c2384d",
+   "approved": false
+  },
+  {
    "uid": "art:cargo.letter",
    "domain": "art",
    "id": "cargo.letter",
@@ -153,6 +295,42 @@
    "version": 1,
    "hash": "755d60fe4cd9fddc356cb2154695834209935dfed6da8e443721c2c4a0df3bb4",
    "approved": true
+  },
+  {
+   "uid": "art:cargo.paper_house",
+   "domain": "art",
+   "id": "cargo.paper_house",
+   "name": "货物 · 纸扎房子",
+   "source": "art/source/cargo/cargo.paper_house.json",
+   "game": "res://generated/art/cargo.paper_house.tres",
+   "category": "cargo",
+   "version": 1,
+   "hash": "b037d3e05af811178d78919e9c1eb52fd9d049da3431a63367b4bf915990205d",
+   "approved": false
+  },
+  {
+   "uid": "art:cargo.qingtuan",
+   "domain": "art",
+   "id": "cargo.qingtuan",
+   "name": "货物 · 青团",
+   "source": "art/source/cargo/cargo.qingtuan.json",
+   "game": "res://generated/art/cargo.qingtuan.tres",
+   "category": "cargo",
+   "version": 1,
+   "hash": "0d6039abcdc5d4d0d1bb8167de63d1f5fd5b9ea6edfde92628110899ddd4754c",
+   "approved": false
+  },
+  {
+   "uid": "art:cargo.tangerine",
+   "domain": "art",
+   "id": "cargo.tangerine",
+   "name": "货物 · 橘子筐",
+   "source": "art/source/cargo/cargo.tangerine.json",
+   "game": "res://generated/art/cargo.tangerine.tres",
+   "category": "cargo",
+   "version": 1,
+   "hash": "97cb9d54f748ed95555162179f17ff504894ea4e1c4f09143402f7e41b0f6581",
+   "approved": false
   },
   {
    "uid": "art:cargo.vase",
@@ -167,6 +345,30 @@
    "approved": true
   },
   {
+   "uid": "art:char.ancestor",
+   "domain": "art",
+   "id": "char.ancestor",
+   "name": "太爷爷（收件人）",
+   "source": "art/source/character/char.ancestor.json",
+   "game": "res://generated/art/char.ancestor.tres",
+   "category": "character",
+   "version": 1,
+   "hash": "fdd09be4ec7f7ae10ce5e7f1a7bec75808f19db4d2d97206982b7ee794ffcde0",
+   "approved": false
+  },
+  {
+   "uid": "art:char.goblin_chief",
+   "domain": "art",
+   "id": "char.goblin_chief",
+   "name": "鬼怪大王（收件人）",
+   "source": "art/source/character/char.goblin_chief.json",
+   "game": "res://generated/art/char.goblin_chief.tres",
+   "category": "character",
+   "version": 1,
+   "hash": "f1a6bee81d9e8a638567ae5ec6a53332cbc6bae404b02ba21dfa09c709e7d970",
+   "approved": false
+  },
+  {
    "uid": "art:char.goblin_smith",
    "domain": "art",
    "id": "char.goblin_smith",
@@ -179,6 +381,42 @@
    "approved": true
   },
   {
+   "uid": "art:char.haenyeo",
+   "domain": "art",
+   "id": "char.haenyeo",
+   "name": "海女奶奶（收件人）",
+   "source": "art/source/character/char.haenyeo.json",
+   "game": "res://generated/art/char.haenyeo.tres",
+   "category": "character",
+   "version": 1,
+   "hash": "b12df444fc6db2660d55c1b035331620a3b60af8028a2f308356263db48d9d4e",
+   "approved": false
+  },
+  {
+   "uid": "art:char.judge",
+   "domain": "art",
+   "id": "char.judge",
+   "name": "判官（收件人）",
+   "source": "art/source/character/char.judge.json",
+   "game": "res://generated/art/char.judge.tres",
+   "category": "character",
+   "version": 1,
+   "hash": "5e438a02e9fbe068f601a6d9b8293f30563cd8f6bf0feb511618bdb5f1318528",
+   "approved": false
+  },
+  {
+   "uid": "art:char.lighthouse_keeper",
+   "domain": "art",
+   "id": "char.lighthouse_keeper",
+   "name": "灯塔大叔（收件人）",
+   "source": "art/source/character/char.lighthouse_keeper.json",
+   "game": "res://generated/art/char.lighthouse_keeper.tres",
+   "category": "character",
+   "version": 1,
+   "hash": "3d0531df178d789cc2df72cfc741d8ef7116f6aa2d19a777783b5b80e4f9d162",
+   "approved": false
+  },
+  {
    "uid": "art:char.lucky_cat",
    "domain": "art",
    "id": "char.lucky_cat",
@@ -189,6 +427,18 @@
    "version": 1,
    "hash": "d9cee704ae0f93f988d6a502847e83b696af6e68c5a1d4dda5ebeb18bcb5901a",
    "approved": true
+  },
+  {
+   "uid": "art:char.meng_po",
+   "domain": "art",
+   "id": "char.meng_po",
+   "name": "孟婆（收件人）",
+   "source": "art/source/character/char.meng_po.json",
+   "game": "res://generated/art/char.meng_po.tres",
+   "category": "character",
+   "version": 1,
+   "hash": "f72e44b429e5d1e69e661ae25d1c2958ff05af0ffb5f71aae992dccb907761fe",
+   "approved": false
   },
   {
    "uid": "art:char.miner",
@@ -227,6 +477,18 @@
    "approved": false
   },
   {
+   "uid": "art:char.tangerine_farmer",
+   "domain": "art",
+   "id": "char.tangerine_farmer",
+   "name": "橘园阿姨（收件人）",
+   "source": "art/source/character/char.tangerine_farmer.json",
+   "game": "res://generated/art/char.tangerine_farmer.tres",
+   "category": "character",
+   "version": 1,
+   "hash": "70e559f5acb1a4addfd2306ba553a2e6dd1c286b0301d12b305129e55c31563f",
+   "approved": false
+  },
+  {
    "uid": "art:char.turtle_keeper",
    "domain": "art",
    "id": "char.turtle_keeper",
@@ -237,6 +499,30 @@
    "version": 1,
    "hash": "5aacda67d54282cd2f56c94c7db447f6a74898ec2bba5582705b28fc3eadf7a3",
    "approved": true
+  },
+  {
+   "uid": "art:char.wuchang",
+   "domain": "art",
+   "id": "char.wuchang",
+   "name": "黑白无常（收件人）",
+   "source": "art/source/character/char.wuchang.json",
+   "game": "res://generated/art/char.wuchang.tres",
+   "category": "character",
+   "version": 1,
+   "hash": "51aac273292137af5b1ecd2c6a505d15928f5ab1863350ecd4f1164cb0b6ec08",
+   "approved": false
+  },
+  {
+   "uid": "art:char.yama",
+   "domain": "art",
+   "id": "char.yama",
+   "name": "阎王（收件人）",
+   "source": "art/source/character/char.yama.json",
+   "game": "res://generated/art/char.yama.tres",
+   "category": "character",
+   "version": 1,
+   "hash": "aec4f07219fdf1c031f102a65886bebcc9c2ff265f0bd17f6e6f8972bb7d7ef2",
+   "approved": false
   },
   {
    "uid": "art:char.zombie",
@@ -287,6 +573,30 @@
    "approved": true
   },
   {
+   "uid": "art:deco.diyu_lantern",
+   "domain": "art",
+   "id": "deco.diyu_lantern",
+   "name": "地府 · 引魂灯",
+   "source": "art/source/deco/deco.diyu_lantern.json",
+   "game": "res://generated/art/deco.diyu_lantern.tres",
+   "category": "deco",
+   "version": 1,
+   "hash": "3df6d3cb39ed5ef60828ddaa100bd958dd54bcedcacd1366f6f9c0d6c4d92183",
+   "approved": false
+  },
+  {
+   "uid": "art:deco.diyu_lily",
+   "domain": "art",
+   "id": "deco.diyu_lily",
+   "name": "地府 · 彼岸花",
+   "source": "art/source/deco/deco.diyu_lily.json",
+   "game": "res://generated/art/deco.diyu_lily.tres",
+   "category": "deco",
+   "version": 1,
+   "hash": "e763612acf57e29178163ed55cc4c62138569f228dcccbc4c15b6f6b0a905c6f",
+   "approved": false
+  },
+  {
    "uid": "art:deco.dungeon_moss",
    "domain": "art",
    "id": "deco.dungeon_moss",
@@ -333,6 +643,42 @@
    "version": 1,
    "hash": "1cd11380958d41b5277d46d74cb3e3469be16801cadaf657d33a751ca7f5bb44",
    "approved": true
+  },
+  {
+   "uid": "art:deco.jeju_canola",
+   "domain": "art",
+   "id": "deco.jeju_canola",
+   "name": "济州 · 油菜花",
+   "source": "art/source/deco/deco.jeju_canola.json",
+   "game": "res://generated/art/deco.jeju_canola.tres",
+   "category": "deco",
+   "version": 1,
+   "hash": "c8ddae0d3aab851d8351729b50084754862e5e8db2aa933917a0f06cf4436b5d",
+   "approved": false
+  },
+  {
+   "uid": "art:deco.jeju_harubang",
+   "domain": "art",
+   "id": "deco.jeju_harubang",
+   "name": "济州 · 石头爷爷",
+   "source": "art/source/deco/deco.jeju_harubang.json",
+   "game": "res://generated/art/deco.jeju_harubang.tres",
+   "category": "deco",
+   "version": 1,
+   "hash": "ac7da0d9e13534304c228df0bdf8bf9b5833a3a17be4c15bba17a183303a2f5d",
+   "approved": false
+  },
+  {
+   "uid": "art:deco.jeju_tangerine_tree",
+   "domain": "art",
+   "id": "deco.jeju_tangerine_tree",
+   "name": "济州 · 橘子树",
+   "source": "art/source/deco/deco.jeju_tangerine_tree.json",
+   "game": "res://generated/art/deco.jeju_tangerine_tree.tres",
+   "category": "deco",
+   "version": 1,
+   "hash": "ca05de66bc4d923a3959382b0f40e61a9f15c3114b4582133d5c1a798445b3d7",
+   "approved": false
   },
   {
    "uid": "art:deco.ruins_lotus",
@@ -395,6 +741,30 @@
    "approved": true
   },
   {
+   "uid": "art:fauna.diyu_butterfly",
+   "domain": "art",
+   "id": "fauna.diyu_butterfly",
+   "name": "地府 · 彼岸蝶（提示动物）",
+   "source": "art/source/fauna/fauna.diyu_butterfly.json",
+   "game": "res://generated/art/fauna.diyu_butterfly.tres",
+   "category": "fauna",
+   "version": 1,
+   "hash": "478bb61357dc52969557ae39e7cf534f43c781db0bab1133819e7b48b243443d",
+   "approved": false
+  },
+  {
+   "uid": "art:fauna.diyu_dog",
+   "domain": "art",
+   "id": "fauna.diyu_dog",
+   "name": "地府 · 小白狗（提示动物）",
+   "source": "art/source/fauna/fauna.diyu_dog.json",
+   "game": "res://generated/art/fauna.diyu_dog.tres",
+   "category": "fauna",
+   "version": 1,
+   "hash": "563f63333c1e2fdcd0176336a61b05aa2ff752122be5063b4582264059a3831a",
+   "approved": false
+  },
+  {
    "uid": "art:fauna.dungeon_bat",
    "domain": "art",
    "id": "fauna.dungeon_bat",
@@ -405,6 +775,18 @@
    "version": 1,
    "hash": "d2eb3b1ef3417414ac847e2cdfb1ab11c45a46128ef00eac1563ebc6b1514bdc",
    "approved": true
+  },
+  {
+   "uid": "art:fauna.dungeon_cat",
+   "domain": "art",
+   "id": "fauna.dungeon_cat",
+   "name": "石牢 · 牢猫（提示动物）",
+   "source": "art/source/fauna/fauna.dungeon_cat.json",
+   "game": "res://generated/art/fauna.dungeon_cat.tres",
+   "category": "fauna",
+   "version": 1,
+   "hash": "0bc7f82924612e6c810a4f517e514a941d982761d55f79a7e23f715a812171af",
+   "approved": false
   },
   {
    "uid": "art:fauna.dungeon_rat",
@@ -441,6 +823,30 @@
    "version": 1,
    "hash": "e4c5e613207d38dab9d962926faa7c263f017e4563b5314f9fb6f9188ae49eda",
    "approved": true
+  },
+  {
+   "uid": "art:fauna.jeju_dragonfly",
+   "domain": "art",
+   "id": "fauna.jeju_dragonfly",
+   "name": "济州 · 红蜻蜓（提示动物）",
+   "source": "art/source/fauna/fauna.jeju_dragonfly.json",
+   "game": "res://generated/art/fauna.jeju_dragonfly.tres",
+   "category": "fauna",
+   "version": 1,
+   "hash": "b40bc937f37b37c26f84abc2037451dd6a072891a8c5db8a0126f582f09ff82a",
+   "approved": false
+  },
+  {
+   "uid": "art:fauna.jeju_pony",
+   "domain": "art",
+   "id": "fauna.jeju_pony",
+   "name": "济州 · 济州小马（提示动物）",
+   "source": "art/source/fauna/fauna.jeju_pony.json",
+   "game": "res://generated/art/fauna.jeju_pony.tres",
+   "category": "fauna",
+   "version": 1,
+   "hash": "9e7a20b742bb22a611b904418d63b3d511f231d1ffd726ad7c72cb25bde47b59",
+   "approved": false
   },
   {
    "uid": "art:fauna.ruins_scarab",
@@ -549,6 +955,18 @@
    "version": 1,
    "hash": "9b6b40ade3dc85922d5080995c8269186416db4868b43d165be6682289e59dac",
    "approved": true
+  },
+  {
+   "uid": "art:fx.jeju_gust",
+   "domain": "art",
+   "id": "fx.jeju_gust",
+   "name": "阵风 · 济州",
+   "source": "art/source/fx/fx.jeju_gust.json",
+   "game": "res://generated/art/fx.jeju_gust.tres",
+   "category": "fx",
+   "version": 1,
+   "hash": "7c31b185b3ff3eea9fb229a9307f03cbd0d3e5669094c0e944564d23aeec5619",
+   "approved": false
   },
   {
    "uid": "art:fx.land_dust",
@@ -671,6 +1089,30 @@
    "approved": true
   },
   {
+   "uid": "art:item.snack",
+   "domain": "art",
+   "id": "item.snack",
+   "name": "零食（小鱼饼干 / 桂花糕）",
+   "source": "art/source/item/item.snack.json",
+   "game": "res://generated/art/item.snack.tres",
+   "category": "item",
+   "version": 1,
+   "hash": "4f1533198afeedaa44b9fcb95fd94844d16513ac8b2f1842c68a71e0b17bfdf9",
+   "approved": false
+  },
+  {
+   "uid": "art:item.snack_jeju",
+   "domain": "art",
+   "id": "item.snack_jeju",
+   "name": "零食 · 小米糕（济州）",
+   "source": "art/source/item/item.snack_jeju.json",
+   "game": "res://generated/art/item.snack_jeju.tres",
+   "category": "item",
+   "version": 1,
+   "hash": "53fe663b6412cbac8a088e0a923b782848ca9cdf85bf194028d5f8823e3943ac",
+   "approved": false
+  },
+  {
    "uid": "art:material.chapter2_5",
    "domain": "art",
    "id": "material.chapter2_5",
@@ -791,6 +1233,18 @@
    "approved": true
   },
   {
+   "uid": "art:mech.jeju_seesaw",
+   "domain": "art",
+   "id": "mech.jeju_seesaw",
+   "name": "跷跷板 · 济州跳板",
+   "source": "art/source/mechanism/mech.jeju_seesaw.json",
+   "game": "res://generated/art/mech.jeju_seesaw.tres",
+   "category": "mechanism",
+   "version": 1,
+   "hash": "edf5de8a43ad78e9fdfa3e3b75825a1b414396488966770f392cb85a72e212f4",
+   "approved": false
+  },
+  {
    "uid": "art:mech.ladder",
    "domain": "art",
    "id": "mech.ladder",
@@ -801,6 +1255,18 @@
    "version": 1,
    "hash": "92a24415a1048bce62488a0c4e7bd087e3158a8023aef6f2b937427eead953f6",
    "approved": true
+  },
+  {
+   "uid": "art:mech.lantern_float",
+   "domain": "art",
+   "id": "mech.lantern_float",
+   "name": "浮空地块 · 灯笼浮台（地府）",
+   "source": "art/source/mechanism/mech.lantern_float.json",
+   "game": "res://generated/art/mech.lantern_float.tres",
+   "category": "mechanism",
+   "version": 1,
+   "hash": "db943286974489b17c81326ca23cdbb6b76b5e6264a77df0ecbabf5b5f293406",
+   "approved": false
   },
   {
    "uid": "art:mech.lever",
@@ -875,6 +1341,18 @@
    "approved": true
   },
   {
+   "uid": "art:mech.rune_float",
+   "domain": "art",
+   "id": "mech.rune_float",
+   "name": "浮空地块 · 符文浮石（石牢）",
+   "source": "art/source/mechanism/mech.rune_float.json",
+   "game": "res://generated/art/mech.rune_float.tres",
+   "category": "mechanism",
+   "version": 1,
+   "hash": "ac7cc14d46bb2076f9a126be2a141fa0ce512f9736e34b9e48637603779e6971",
+   "approved": false
+  },
+  {
    "uid": "art:mech.socket",
    "domain": "art",
    "id": "mech.socket",
@@ -923,6 +1401,42 @@
    "approved": true
   },
   {
+   "uid": "art:monster.dokkaebi",
+   "domain": "art",
+   "id": "monster.dokkaebi",
+   "name": "小鬼怪（도깨비）",
+   "source": "art/source/monster/monster.dokkaebi.json",
+   "game": "res://generated/art/monster.dokkaebi.tres",
+   "category": "monster",
+   "version": 1,
+   "hash": "d00c782ddabf54a2950fa3f113606b1c13f8f77e027905e6128f6194c5f22874",
+   "approved": false
+  },
+  {
+   "uid": "art:monster.imp",
+   "domain": "art",
+   "id": "monster.imp",
+   "name": "小鬼",
+   "source": "art/source/monster/monster.imp.json",
+   "game": "res://generated/art/monster.imp.tres",
+   "category": "monster",
+   "version": 1,
+   "hash": "48e833c982b68afd61b85be358f61dfbd89e2badb19638c257a43e1f16430d09",
+   "approved": false
+  },
+  {
+   "uid": "art:monster.jiangshi",
+   "domain": "art",
+   "id": "monster.jiangshi",
+   "name": "僵尸",
+   "source": "art/source/monster/monster.jiangshi.json",
+   "game": "res://generated/art/monster.jiangshi.tres",
+   "category": "monster",
+   "version": 1,
+   "hash": "4aa76da86b739569c6a098b102816ceb4aa1aa29f7aa9b0b01a1a1e0959c1b6f",
+   "approved": false
+  },
+  {
    "uid": "art:monster.rat_swarm",
    "domain": "art",
    "id": "monster.rat_swarm",
@@ -935,6 +1449,18 @@
    "approved": true
   },
   {
+   "uid": "art:monster.seagull",
+   "domain": "art",
+   "id": "monster.seagull",
+   "name": "海鸥",
+   "source": "art/source/monster/monster.seagull.json",
+   "game": "res://generated/art/monster.seagull.tres",
+   "category": "monster",
+   "version": 1,
+   "hash": "fc4a69e06d25574c7808acdb3be4c58d28a909d21da7d9aea574f923a6b2981f",
+   "approved": false
+  },
+  {
    "uid": "art:monster.skeleton_guard",
    "domain": "art",
    "id": "monster.skeleton_guard",
@@ -945,6 +1471,18 @@
    "version": 1,
    "hash": "7c5340f68c1fd3df4414a6516cb5baf45a446f260307ab676f94258d4c5f2ace",
    "approved": true
+  },
+  {
+   "uid": "art:monster.wandering_soul",
+   "domain": "art",
+   "id": "monster.wandering_soul",
+   "name": "游魂",
+   "source": "art/source/monster/monster.wandering_soul.json",
+   "game": "res://generated/art/monster.wandering_soul.tres",
+   "category": "monster",
+   "version": 1,
+   "hash": "be9e34d8aedf84ab89c98ba206e23e23329354f0baca338515a6cb904548df0a",
+   "approved": false
   },
   {
    "uid": "art:obj.crate_iron",
@@ -1007,6 +1545,18 @@
    "approved": true
   },
   {
+   "uid": "art:theme.diyu",
+   "domain": "art",
+   "id": "theme.diyu",
+   "name": "主题 · 地府（荒郊野岭）",
+   "source": "art/source/theme/theme.diyu.json",
+   "game": "res://generated/themes/theme.diyu.tres",
+   "category": "theme",
+   "version": 1,
+   "hash": "e7d67e5a07bb6afb1d6146e07ad45860e373e18b92c3a90537f709c89deba834",
+   "approved": false
+  },
+  {
    "uid": "art:theme.dungeon",
    "domain": "art",
    "id": "theme.dungeon",
@@ -1029,6 +1579,18 @@
    "version": 2,
    "hash": "ec6077066b21197ba11f6d2ed9cb68831fda36a6968e85903b9ff28b457f6a86",
    "approved": true
+  },
+  {
+   "uid": "art:theme.jeju",
+   "domain": "art",
+   "id": "theme.jeju",
+   "name": "主题 · 济州海女村（白天的海边）",
+   "source": "art/source/theme/theme.jeju.json",
+   "game": "res://generated/themes/theme.jeju.tres",
+   "category": "theme",
+   "version": 1,
+   "hash": "e8a081b7160dfaeda3f276d48ec40568d6b0d6ffc28acf2606f5aa0b918f06ae",
+   "approved": false
   },
   {
    "uid": "art:theme.ruins",
@@ -1206,8 +1768,8 @@
    "source": "art/source/screen/ui.screen.chapters.json",
    "game": "res://ui/screens/chapters.tscn",
    "category": "screen",
-   "version": 4,
-   "hash": "616c8a1a09bf2ad32f24c8cf1e70d8059bdb14d9c394ebbe86eb4703feaeb781",
+   "version": 6,
+   "hash": "444fab65592fd9d0f846dd891ae2e2f6b63b727d556b852221bb69260799557c",
    "approved": true
   },
   {
@@ -1218,8 +1780,20 @@
    "source": "art/source/screen/ui.screen.complete.json",
    "game": "res://ui/screens/complete.tscn",
    "category": "screen",
-   "version": 4,
-   "hash": "fbb067b0492c0dd3cc479c65713e8cc6dabf0f93f55e2d6a628bfb458c14d9bf",
+   "version": 6,
+   "hash": "a7e9e0b4971d3c55228bf7dd7ee0db5cbb8a450dbdedca7aaccaf8723d0c3eb8",
+   "approved": true
+  },
+  {
+   "uid": "art:ui.screen.confirm",
+   "domain": "art",
+   "id": "ui.screen.confirm",
+   "name": "放弃这一单确认框",
+   "source": "art/source/screen/ui.screen.confirm.json",
+   "game": "res://ui/screens/confirm.tscn",
+   "category": "screen",
+   "version": 2,
+   "hash": "312087ae242d0c79e5615c009eac05c161e1a69376cf221167efd1aff9f7f8c4",
    "approved": true
   },
   {
@@ -1230,8 +1804,8 @@
    "source": "art/source/screen/ui.screen.delivery_hud.json",
    "game": "res://ui/screens/delivery_hud.tscn",
    "category": "screen",
-   "version": 1,
-   "hash": "23c03f3921674452382a4ef6731bf5aacf26cca8e8a8f55c753d2a06289c361b",
+   "version": 3,
+   "hash": "63b46cc9eb2dec0811388d60f6b500e23c4952550c32ea939d7ab30ea74782b5",
    "approved": true
   },
   {
@@ -1242,8 +1816,8 @@
    "source": "art/source/screen/ui.screen.delivery_pause.json",
    "game": "res://ui/screens/delivery_pause.tscn",
    "category": "screen",
-   "version": 1,
-   "hash": "6f1e53c3dac19938cd506249fa827483ea8e31778fe6f1a6574ad4427b6099f1",
+   "version": 3,
+   "hash": "59aea63939340159d14dd494c6995fc36260e066048af95a03502e3df11d74ad",
    "approved": true
   },
   {
@@ -1254,8 +1828,8 @@
    "source": "art/source/screen/ui.screen.dialogue.json",
    "game": "res://ui/screens/dialogue.tscn",
    "category": "screen",
-   "version": 1,
-   "hash": "ea330683e10b2adfdef4f733182869535eea2cb27b750adf982b3410e8de85e5",
+   "version": 3,
+   "hash": "b2d0012a3f36c3efcb1a97f1c71af571ef4f92a8632a39cf661fdf7635b77bfc",
    "approved": true
   },
   {
@@ -1266,8 +1840,20 @@
    "source": "art/source/screen/ui.screen.hint.json",
    "game": "res://ui/screens/hint.tscn",
    "category": "screen",
-   "version": 4,
-   "hash": "89aa4fe24b01333d1c56f8e7144b9db5c38ef0777cc35a615c4e41b064b470d9",
+   "version": 6,
+   "hash": "fe54342c105c701351792f67ec4f51ef5a0f292fc749376d0779021b9643f019",
+   "approved": true
+  },
+  {
+   "uid": "art:ui.screen.hint_animal",
+   "domain": "art",
+   "id": "ui.screen.hint_animal",
+   "name": "提示动物气泡（配送）",
+   "source": "art/source/screen/ui.screen.hint_animal.json",
+   "game": "res://ui/screens/hint_animal.tscn",
+   "category": "screen",
+   "version": 1,
+   "hash": "712ab03b13b0f32879b784ba16d1b62ca58a97f9b0b33594ed157bb9c3efe074",
    "approved": true
   },
   {
@@ -1278,8 +1864,8 @@
    "source": "art/source/screen/ui.screen.levels.json",
    "game": "res://ui/screens/levels.tscn",
    "category": "screen",
-   "version": 4,
-   "hash": "3ce7d34a0b822daa3fb5d01c243a606e06de7c4ae367565e2c06dec2c5ca4b24",
+   "version": 6,
+   "hash": "20c8fee27de3b5b0af0a60819c5d946e4f7fa4f45ed0b63e18bc6f041bf3bd34",
    "approved": true
   },
   {
@@ -1290,8 +1876,32 @@
    "source": "art/source/screen/ui.screen.lobby.json",
    "game": "res://ui/screens/lobby.tscn",
    "category": "screen",
-   "version": 4,
-   "hash": "e2ec45838d3dcccf1f97feee4dcfc767b831ab3945d6ac07366db546cec5282e",
+   "version": 5,
+   "hash": "d26fbdaec9c31d7b585cba36ba266d536351205d8512ebfdd6a35b06b3addbc7",
+   "approved": true
+  },
+  {
+   "uid": "art:ui.screen.lobby_generic",
+   "domain": "art",
+   "id": "ui.screen.lobby_generic",
+   "name": "通用大厅",
+   "source": "art/source/screen/ui.screen.lobby_generic.json",
+   "game": "res://ui/screens/lobby_generic.tscn",
+   "category": "screen",
+   "version": 1,
+   "hash": "2edd46733942372b145565ca581d30a3abaeeac5b107a02f76287e84a98482be",
+   "approved": true
+  },
+  {
+   "uid": "art:ui.screen.observe",
+   "domain": "art",
+   "id": "ui.screen.observe",
+   "name": "看全图（配送）",
+   "source": "art/source/screen/ui.screen.observe.json",
+   "game": "res://ui/screens/observe.tscn",
+   "category": "screen",
+   "version": 1,
+   "hash": "773612a72d128b4742e2043d1bdf733f1af8854ea21d292f09c2f58ec60e29e0",
    "approved": true
   },
   {
@@ -1302,8 +1912,8 @@
    "source": "art/source/screen/ui.screen.pause.json",
    "game": "res://ui/screens/pause.tscn",
    "category": "screen",
-   "version": 4,
-   "hash": "8423060d12710e97b5e078ff4fd400b2a2b747c12af96e7ae95c1cf480e47ad3",
+   "version": 6,
+   "hash": "1548d52f6bd91b5cc8e8c76ec070f9282078094e583f64cf75312a989f82cc74",
    "approved": true
   },
   {
@@ -1314,8 +1924,8 @@
    "source": "art/source/screen/ui.screen.reels.json",
    "game": "res://ui/screens/reels.tscn",
    "category": "screen",
-   "version": 1,
-   "hash": "138cda5479dee0fd74e3ae7909f908ad3cacb0c2852f2592418e12d337190146",
+   "version": 3,
+   "hash": "1febeb784a0483c562ae56c2e8fc28e35be9c994d112ac0ee911d1994ec9e0c4",
    "approved": true
   },
   {
@@ -1326,8 +1936,8 @@
    "source": "art/source/screen/ui.screen.rulecard.json",
    "game": "res://ui/screens/rulecard.tscn",
    "category": "screen",
-   "version": 4,
-   "hash": "e14dc3f027abd88493efd7491799dce58263e3bb9fcf26911dedf8f08c1e59f5",
+   "version": 6,
+   "hash": "0f4ae758b37423615c8c7eb48e0d98c51ce98f9ed70768c828ded394102e4d24",
    "approved": true
   },
   {
@@ -1338,8 +1948,8 @@
    "source": "art/source/screen/ui.screen.settings.json",
    "game": "res://ui/screens/settings.tscn",
    "category": "screen",
-   "version": 4,
-   "hash": "4c6df2e53a82b5b26efcfea702f0332847c7cb07b829d2352b04c3e21fa3df1a",
+   "version": 6,
+   "hash": "cde3e49fc687ee33c811a219e066c8b7829f5c4c79eac022b449f040f1ba4f56",
    "approved": true
   },
   {
@@ -1350,8 +1960,8 @@
    "source": "art/source/screen/ui.screen.settlement.json",
    "game": "res://ui/screens/settlement.tscn",
    "category": "screen",
-   "version": 1,
-   "hash": "5e949d677dd27100d1860b728932206d1e9053f2ff1e8b5d28f71ca5b44ed929",
+   "version": 3,
+   "hash": "eb200c1c77c54dbb7e345ed3a2cb1474a74b03b8e230879cd0cee84edfc46bbf",
    "approved": true
   },
   {
@@ -1362,8 +1972,8 @@
    "source": "art/source/screen/ui.screen.settlement_fail.json",
    "game": "res://ui/screens/settlement_fail.tscn",
    "category": "screen",
-   "version": 1,
-   "hash": "e46ea2a5a1354fc34a6227afad82fc4785c81de39900d891fb46fca7106cfee5",
+   "version": 3,
+   "hash": "5d50d41bc6d54c7c48b227ff84488e43922eeeff0f2dcfda60a8fb8680f4e0f2",
    "approved": true
   },
   {
@@ -1374,8 +1984,8 @@
    "source": "art/source/screen/ui.screen.shop.json",
    "game": "res://ui/screens/shop.tscn",
    "category": "screen",
-   "version": 1,
-   "hash": "267d16250937ed3619c685b049c770d516487ec82e69364d75c7a3a4bf98c85a",
+   "version": 3,
+   "hash": "6cfbd485aa578250578060970c27852eac432d147dc877f5fa0e9d64f0867733",
    "approved": true
   },
   {
@@ -1905,6 +2515,330 @@
    "source": "content/rooms/dungeon/dungeon_well.json",
    "game": "res://generated/content/rooms/dungeon/dungeon_well.json",
    "sha256": "7dfb90d1395d7554bd453fe0e7d24675eb219ad8126a217f4dd8d4060525494e"
+  },
+  {
+   "uid": "room:diyu_fengdu",
+   "domain": "room",
+   "id": "diyu_fengdu",
+   "name": "酆都城 · 钟楼的锣",
+   "source": "content/rooms/diyu/diyu_fengdu.json",
+   "game": "res://generated/content/rooms/diyu/diyu_fengdu.json",
+   "sha256": "131b51faf553a5a87c65df2193181be97b52427bf00744bb4751b94c9fad2a3e"
+  },
+  {
+   "uid": "room:diyu_gate",
+   "domain": "room",
+   "id": "diyu_gate",
+   "name": "鬼门关",
+   "source": "content/rooms/diyu/diyu_gate.json",
+   "game": "res://generated/content/rooms/diyu/diyu_gate.json",
+   "sha256": "f7d8a89604c056a81b0b48725d954981d2c9a5d3f3519c4256383a07a57b05f4"
+  },
+  {
+   "uid": "room:diyu_ghostfire",
+   "domain": "room",
+   "id": "diyu_ghostfire",
+   "name": "鬼火回廊",
+   "source": "content/rooms/diyu/diyu_ghostfire.json",
+   "game": "res://generated/content/rooms/diyu/diyu_ghostfire.json",
+   "sha256": "7ad204f806e41a95ccfdeb32714a9433f067d8d1acc1152710cfdb59cf5fea49"
+  },
+  {
+   "uid": "room:diyu_home_hall",
+   "domain": "room",
+   "id": "diyu_home_hall",
+   "name": "收件人之家 · 判官殿",
+   "source": "content/rooms/diyu/diyu_home_hall.json",
+   "game": "res://generated/content/rooms/diyu/diyu_home_hall.json",
+   "sha256": "08a29119d3b4704cd1764c2b9a40cefe1f011678d4a0eb101d7ab62866177814"
+  },
+  {
+   "uid": "room:diyu_home_yard",
+   "domain": "room",
+   "id": "diyu_home_yard",
+   "name": "收件人之家 · 先人小院",
+   "source": "content/rooms/diyu/diyu_home_yard.json",
+   "game": "res://generated/content/rooms/diyu/diyu_home_yard.json",
+   "sha256": "30357d9d2367da86632d6df683f044bfdc05ac4b8542b756812e37d900220ca2"
+  },
+  {
+   "uid": "room:diyu_huangquan",
+   "domain": "room",
+   "id": "diyu_huangquan",
+   "name": "黄泉路 · 喘口气",
+   "source": "content/rooms/diyu/diyu_huangquan.json",
+   "game": "res://generated/content/rooms/diyu/diyu_huangquan.json",
+   "sha256": "f0eff08aaef6b8db669515e80abdf6e7d2a573b8328110559bf3a40348dbc0fa"
+  },
+  {
+   "uid": "room:diyu_lantern",
+   "domain": "room",
+   "id": "diyu_lantern",
+   "name": "孔明灯台 · 从槽里推出来",
+   "source": "content/rooms/diyu/diyu_lantern.json",
+   "game": "res://generated/content/rooms/diyu/diyu_lantern.json",
+   "sha256": "e206b910476686b813019449054696c639a00a905248bb4399ea6cff5af68c27"
+  },
+  {
+   "uid": "room:diyu_naihe",
+   "domain": "room",
+   "id": "diyu_naihe",
+   "name": "奈何桥 · 一次只过一个",
+   "source": "content/rooms/diyu/diyu_naihe.json",
+   "game": "res://generated/content/rooms/diyu/diyu_naihe.json",
+   "sha256": "4288a295f6206c7de5170d1c8d8d38ad142dbfbf53e0e00d58ed300f5eaa17a1"
+  },
+  {
+   "uid": "room:diyu_paper_bridge",
+   "domain": "room",
+   "id": "diyu_paper_bridge",
+   "name": "纸台过桥 · 灯台不压桥",
+   "source": "content/rooms/diyu/diyu_paper_bridge.json",
+   "game": "res://generated/content/rooms/diyu/diyu_paper_bridge.json",
+   "sha256": "811d32ffb14d51f307d91ed98b5f88f56e6a1c8c288c9e202bee72578373bb4c"
+  },
+  {
+   "uid": "room:diyu_sand_bridge",
+   "domain": "room",
+   "id": "diyu_sand_bridge",
+   "name": "黄泉沙 · 沙也有分量",
+   "source": "content/rooms/diyu/diyu_sand_bridge.json",
+   "game": "res://generated/content/rooms/diyu/diyu_sand_bridge.json",
+   "sha256": "2bac57e9c0fafc6dc79cd77dcf6f64d60ca97327cf7a4a65fda97d8483e456a4"
+  },
+  {
+   "uid": "room:diyu_teahouse",
+   "domain": "room",
+   "id": "diyu_teahouse",
+   "name": "驿站 · 桥头茶摊",
+   "source": "content/rooms/diyu/diyu_teahouse.json",
+   "game": "res://generated/content/rooms/diyu/diyu_teahouse.json",
+   "sha256": "2cc232e95951180f60a91403130f551bd58b56c5a9ffe808a4ad3c6c1a16e705"
+  },
+  {
+   "uid": "room:diyu_wangchuan",
+   "domain": "room",
+   "id": "diyu_wangchuan",
+   "name": "忘川渡 · 木浮铁沉",
+   "source": "content/rooms/diyu/diyu_wangchuan.json",
+   "game": "res://generated/content/rooms/diyu/diyu_wangchuan.json",
+   "sha256": "bcd53a48faae5b9d17a231ecbb344e55b3460eab5e2f800f13a38572e2a2509d"
+  },
+  {
+   "uid": "room:diyu_wangxiang",
+   "domain": "room",
+   "id": "diyu_wangxiang",
+   "name": "望乡台 · 吊篮卡住了",
+   "source": "content/rooms/diyu/diyu_wangxiang.json",
+   "game": "res://generated/content/rooms/diyu/diyu_wangxiang.json",
+   "sha256": "0a2ed07cf7a712a7a7f09d33918f44d5405951de911dad7c06f318097a50df47"
+  },
+  {
+   "uid": "room:dungeon2_bridge",
+   "domain": "room",
+   "id": "dungeon2_bridge",
+   "name": "断桥 · 推浮石",
+   "source": "content/rooms/dungeon/dungeon2_bridge.json",
+   "game": "res://generated/content/rooms/dungeon/dungeon2_bridge.json",
+   "sha256": "9b32f77f5feff4367ffabc640b5d54c023773af934a4260a7513c94f8c554cff"
+  },
+  {
+   "uid": "room:dungeon2_corridor",
+   "domain": "room",
+   "id": "dungeon2_corridor",
+   "name": "鼠道 · 喘口气",
+   "source": "content/rooms/dungeon/dungeon2_corridor.json",
+   "game": "res://generated/content/rooms/dungeon/dungeon2_corridor.json",
+   "sha256": "a5c772b8848dd64e517a687358e6334ae5840af135dc81b0737bf12fc166fd61"
+  },
+  {
+   "uid": "room:dungeon2_ferry",
+   "domain": "room",
+   "id": "dungeon2_ferry",
+   "name": "渡箱 · 浮石载货",
+   "source": "content/rooms/dungeon/dungeon2_ferry.json",
+   "game": "res://generated/content/rooms/dungeon/dungeon2_ferry.json",
+   "sha256": "7075c0be92d7deebe9bf38824140e450ce1256e89b16985ae2b15f6264415ed4"
+  },
+  {
+   "uid": "room:dungeon2_gate",
+   "domain": "room",
+   "id": "dungeon2_gate",
+   "name": "渡门 · 符文监狱",
+   "source": "content/rooms/dungeon/dungeon2_gate.json",
+   "game": "res://generated/content/rooms/dungeon/dungeon2_gate.json",
+   "sha256": "62903f2e12f4c24783fb512a34785328e458b8ec0b5ad6fd43e0af38f41c772c"
+  },
+  {
+   "uid": "room:dungeon2_home",
+   "domain": "room",
+   "id": "dungeon2_home",
+   "name": "收件人之家 · 牢房小屋",
+   "source": "content/rooms/dungeon/dungeon2_home.json",
+   "game": "res://generated/content/rooms/dungeon/dungeon2_home.json",
+   "sha256": "e7c0da65cc0d3cbba600e8c6981b3d6830b72c616791a2eb5cd45b82b127c3d5"
+  },
+  {
+   "uid": "room:dungeon2_pole",
+   "domain": "room",
+   "id": "dungeon2_pole",
+   "name": "撑岸 · 站在浮石上用铲子",
+   "source": "content/rooms/dungeon/dungeon2_pole.json",
+   "game": "res://generated/content/rooms/dungeon/dungeon2_pole.json",
+   "sha256": "8d04237ba2546af5faa723643bd1eb78a89d569a359471d31ac0920a268784b9"
+  },
+  {
+   "uid": "room:dungeon2_sandpour",
+   "domain": "room",
+   "id": "dungeon2_sandpour",
+   "name": "沙井 · 站在浮石上倒沙",
+   "source": "content/rooms/dungeon/dungeon2_sandpour.json",
+   "game": "res://generated/content/rooms/dungeon/dungeon2_sandpour.json",
+   "sha256": "26609990a6a10c2a34ce9a230c9f0f728cc5ca4cdc08a7d86549c8ae2f1d3617"
+  },
+  {
+   "uid": "room:dungeon2_station",
+   "domain": "room",
+   "id": "dungeon2_station",
+   "name": "驿站 · 牢房分号",
+   "source": "content/rooms/dungeon/dungeon2_station.json",
+   "game": "res://generated/content/rooms/dungeon/dungeon2_station.json",
+   "sha256": "2b60123d6ee2edd091ab048305efa381bb0cf5546d4d8c53bcc6c77e03664a5c"
+  },
+  {
+   "uid": "room:dungeon2_well",
+   "domain": "room",
+   "id": "dungeon2_well",
+   "name": "落井 · 一路撑下去",
+   "source": "content/rooms/dungeon/dungeon2_well.json",
+   "game": "res://generated/content/rooms/dungeon/dungeon2_well.json",
+   "sha256": "af2ec175eeaf7701227916d332451f0eb53e11235b319f62cea2e7661b70bd64"
+  },
+  {
+   "uid": "room:dungeon2_yard",
+   "domain": "room",
+   "id": "dungeon2_yard",
+   "name": "放风场 · 高台上的拉杆",
+   "source": "content/rooms/dungeon/dungeon2_yard.json",
+   "game": "res://generated/content/rooms/dungeon/dungeon2_yard.json",
+   "sha256": "5db11c0be6caf73722e3c39f89962081e4dc6a5337c4ab812db9e132a2821902"
+  },
+  {
+   "uid": "room:jeju_baramgil",
+   "domain": "room",
+   "id": "jeju_baramgil",
+   "name": "风口 · 风替你推",
+   "source": "content/rooms/jeju/jeju_baramgil.json",
+   "game": "res://generated/content/rooms/jeju/jeju_baramgil.json",
+   "sha256": "fe03042d4a9e6bfe4ebf32ec1b432f6cba4816131211a558dd63ca96297901d9"
+  },
+  {
+   "uid": "room:jeju_canola",
+   "domain": "room",
+   "id": "jeju_canola",
+   "name": "油菜花田",
+   "source": "content/rooms/jeju/jeju_canola.json",
+   "game": "res://generated/content/rooms/jeju/jeju_canola.json",
+   "sha256": "d0d66c406a4926dbf03d8838f590eab673c8bf32c3562cee55d96a87a9529089"
+  },
+  {
+   "uid": "room:jeju_dodaebul",
+   "domain": "room",
+   "id": "jeju_dodaebul",
+   "name": "石灯台 · 风替你砸跳板",
+   "source": "content/rooms/jeju/jeju_dodaebul.json",
+   "game": "res://generated/content/rooms/jeju/jeju_dodaebul.json",
+   "sha256": "03347c43357dc012de9af68d34b615240404f99bd9166b1e24d449e6c0cc1ba1"
+  },
+  {
+   "uid": "room:jeju_doldam",
+   "domain": "room",
+   "id": "jeju_doldam",
+   "name": "石墙风口 · 铁箱当刹车",
+   "source": "content/rooms/jeju/jeju_doldam.json",
+   "game": "res://generated/content/rooms/jeju/jeju_doldam.json",
+   "sha256": "ca926994eb5ef357ab18912c5c584518e821005289ed66d23db37cd2e790b402"
+  },
+  {
+   "uid": "room:jeju_gate",
+   "domain": "room",
+   "id": "jeju_gate",
+   "name": "浦口 · 渡门下船",
+   "source": "content/rooms/jeju/jeju_gate.json",
+   "game": "res://generated/content/rooms/jeju/jeju_gate.json",
+   "sha256": "0bc2f893eb54c88eca6012fcd395f480430e1ecd653102288d4e7465ddd0360c"
+  },
+  {
+   "uid": "room:jeju_haenyeo_house",
+   "domain": "room",
+   "id": "jeju_haenyeo_house",
+   "name": "驿站 · 海女之家",
+   "source": "content/rooms/jeju/jeju_haenyeo_house.json",
+   "game": "res://generated/content/rooms/jeju/jeju_haenyeo_house.json",
+   "sha256": "c16f2ed6a778783d83435f8cb9c29dba8592b475beb4e76b1c163640a23c5fd6"
+  },
+  {
+   "uid": "room:jeju_home_cave",
+   "domain": "room",
+   "id": "jeju_home_cave",
+   "name": "收件人之家 · 熔岩洞口",
+   "source": "content/rooms/jeju/jeju_home_cave.json",
+   "game": "res://generated/content/rooms/jeju/jeju_home_cave.json",
+   "sha256": "78fe556b44dcdfe4fd812ef3d640acec8f8a7d05bee75aa8ca6a9e6fa46e73fd"
+  },
+  {
+   "uid": "room:jeju_home_orchard",
+   "domain": "room",
+   "id": "jeju_home_orchard",
+   "name": "收件人之家 · 橘园",
+   "source": "content/rooms/jeju/jeju_home_orchard.json",
+   "game": "res://generated/content/rooms/jeju/jeju_home_orchard.json",
+   "sha256": "b3b2599003678116618862983eec638cc686a0d882d80821c4caabff22d790c8"
+  },
+  {
+   "uid": "room:jeju_home_shore",
+   "domain": "room",
+   "id": "jeju_home_shore",
+   "name": "收件人之家 · 防波堤",
+   "source": "content/rooms/jeju/jeju_home_shore.json",
+   "game": "res://generated/content/rooms/jeju/jeju_home_shore.json",
+   "sha256": "fad142f902d4ed7d20f3d9c48176881b9a8bb0bb092c6ee584afc23228a9d3d9"
+  },
+  {
+   "uid": "room:jeju_neolttwigi",
+   "domain": "room",
+   "id": "jeju_neolttwigi",
+   "name": "跳板场 · 一头落下一头飞",
+   "source": "content/rooms/jeju/jeju_neolttwigi.json",
+   "game": "res://generated/content/rooms/jeju/jeju_neolttwigi.json",
+   "sha256": "b078e323eb19c2370a40b0ec7d50ad8a8ffad2ca9fd72743d1e727c42e5dcc71"
+  },
+  {
+   "uid": "room:jeju_olle",
+   "domain": "room",
+   "id": "jeju_olle",
+   "name": "石墙小巷",
+   "source": "content/rooms/jeju/jeju_olle.json",
+   "game": "res://generated/content/rooms/jeju/jeju_olle.json",
+   "sha256": "90b2c897ae809ba22e1bb2a8edfb65c81c9338ca0e57fbf87160f8074dd28c58"
+  },
+  {
+   "uid": "room:jeju_pier",
+   "domain": "room",
+   "id": "jeju_pier",
+   "name": "码头 · 铁箱沉下去也算",
+   "source": "content/rooms/jeju/jeju_pier.json",
+   "game": "res://generated/content/rooms/jeju/jeju_pier.json",
+   "sha256": "21abd9abdb572c823aa63ef9d6c0a9b563ab999b83f2d24527bbf52b3f0a9d0c"
+  },
+  {
+   "uid": "room:jeju_terrace",
+   "domain": "room",
+   "id": "jeju_terrace",
+   "name": "橘园台地 · 一袋土也算重",
+   "source": "content/rooms/jeju/jeju_terrace.json",
+   "game": "res://generated/content/rooms/jeju/jeju_terrace.json",
+   "sha256": "e4720e4ae03bc5701a8c0776c2ecd458d1877c117630004dec75b64615000d3c"
   },
   {
    "uid": "mode:lab",
@@ -2577,6 +3511,30 @@
    "name": "矿车",
    "source": "content/catalog/mechanisms.json",
    "game": "res://gameplay/mechanics/mine_cart.gd"
+  },
+  {
+   "uid": "mechanic:float_block",
+   "domain": "mechanic",
+   "id": "float_block",
+   "name": "浮空地块",
+   "source": "content/catalog/mechanisms.json",
+   "game": "res://gameplay/mechanics/float_block.gd"
+  },
+  {
+   "uid": "mechanic:pole",
+   "domain": "mechanic",
+   "id": "pole",
+   "name": "撑篙",
+   "source": "content/catalog/mechanisms.json",
+   "game": "res://gameplay/mechanics/pole.gd"
+  },
+  {
+   "uid": "mechanic:hint_animal",
+   "domain": "mechanic",
+   "id": "hint_animal",
+   "name": "提示动物",
+   "source": "content/catalog/mechanisms.json",
+   "game": "res://gameplay/mechanics/hint_animal.gd"
   },
   {
    "uid": "world:dungeon",
@@ -3347,6 +4305,22 @@
    "game": "res://generated/content/catalog/recipients.json#goblin_chief"
   },
   {
+   "uid": "recipient:tangerine_farmer",
+   "domain": "recipient",
+   "id": "tangerine_farmer",
+   "name": "橘园阿姨",
+   "source": "content/catalog/recipients.json",
+   "game": "res://generated/content/catalog/recipients.json#tangerine_farmer"
+  },
+  {
+   "uid": "recipient:lighthouse_keeper",
+   "domain": "recipient",
+   "id": "lighthouse_keeper",
+   "name": "灯塔大叔",
+   "source": "content/catalog/recipients.json",
+   "game": "res://generated/content/catalog/recipients.json#lighthouse_keeper"
+  },
+  {
    "uid": "recipient:spice_merchant",
    "domain": "recipient",
    "id": "spice_merchant",
@@ -3881,6 +4855,22 @@
    "name": "荞麦凉粉",
    "source": "content/catalog/cargo.json",
    "game": "res://generated/content/catalog/cargo.json#buckwheat_jelly"
+  },
+  {
+   "uid": "cargo:tangerine",
+   "domain": "cargo",
+   "id": "tangerine",
+   "name": "橘子筐",
+   "source": "content/catalog/cargo.json",
+   "game": "res://generated/content/catalog/cargo.json#tangerine"
+  },
+  {
+   "uid": "cargo:kite",
+   "domain": "cargo",
+   "id": "kite",
+   "name": "风筝",
+   "source": "content/catalog/cargo.json",
+   "game": "res://generated/content/catalog/cargo.json#kite"
   },
   {
    "uid": "cargo:spice_box",
@@ -5019,6 +6009,14 @@
    "game": "res://generated/content/catalog/items.json#whistle"
   },
   {
+   "uid": "item:snack",
+   "domain": "item",
+   "id": "snack",
+   "name": "零食",
+   "source": "content/catalog/items.json",
+   "game": "res://generated/content/catalog/items.json#snack"
+  },
+  {
    "uid": "buff:cart",
    "domain": "buff",
    "id": "cart",
@@ -5425,6 +6423,1801 @@
    "name": "第一个可玩切片 · 幽暗石牢",
    "source": "content/catalog/slices.json",
    "game": "res://generated/content/catalog/slices.json#dungeon_1"
+  },
+  {
+   "uid": "slice:dungeon_2",
+   "domain": "slice",
+   "id": "dungeon_2",
+   "name": "配送地图 · 废弃的符文监狱（石牢重做）",
+   "source": "content/catalog/slices.json",
+   "game": "res://generated/content/catalog/slices.json#dungeon_2"
+  },
+  {
+   "uid": "slice:diyu_1",
+   "domain": "slice",
+   "id": "diyu_1",
+   "name": "配送地图 · 地府·酆都",
+   "source": "content/catalog/slices.json",
+   "game": "res://generated/content/catalog/slices.json#diyu_1"
+  },
+  {
+   "uid": "slice:jeju_1",
+   "domain": "slice",
+   "id": "jeju_1",
+   "name": "配送地图 · 济州海女村",
+   "source": "content/catalog/slices.json",
+   "game": "res://generated/content/catalog/slices.json#jeju_1"
+  },
+  {
+   "uid": "slice:delivery_pool",
+   "domain": "slice",
+   "id": "delivery_pool",
+   "name": "开局池 · 配送模式",
+   "source": "content/catalog/slices.json",
+   "game": "res://generated/content/catalog/slices.json#delivery_pool"
+  },
+  {
+   "uid": "sfx:push",
+   "domain": "sfx",
+   "id": "push",
+   "name": "推箱",
+   "source": "audio/source/sfx/push.json",
+   "game": "res://generated/audio/sfx/push.wav",
+   "audio_kind": "sfx",
+   "availability": "review",
+   "approved": false,
+   "importable": false,
+   "current_is_approved": false,
+   "version": 2,
+   "hash": "efbc79274845128c41ece8f684f11aabe832f6bec434edb56705b26d35347cb6",
+   "current": {
+    "version": 2,
+    "hash": "efbc79274845128c41ece8f684f11aabe832f6bec434edb56705b26d35347cb6",
+    "wav": "audio/export/preview/sfx/push.wav",
+    "sha256": "0759ec84b844d0297bde41eb47048ac4a714d6eb377dd51160a1df2debb9edf5",
+    "metrics": {
+     "verified": true,
+     "sample_rate": 44100,
+     "channels": 1,
+     "bit_depth": 16,
+     "sample_count": 7938,
+     "duration_ms": 180,
+     "active_sample_count": 7862,
+     "rms_dbfs": -23.999948121287574,
+     "full_rms_dbfs": -24.04172701433236,
+     "peak_dbfs": -13.760320791178772,
+     "dc_abs": 0.00007487148324318154,
+     "noise_energy_ratio": 0,
+     "endpoint_start_abs": 0,
+     "endpoint_end_abs": 0,
+     "longest_silence_ms": 0.06802721088435375,
+     "track_count": 1,
+     "voice_max": 1,
+     "pitched_voice_max": 1
+    }
+   },
+   "game_audio": null
+  },
+  {
+   "uid": "sfx:crate_land",
+   "domain": "sfx",
+   "id": "crate_land",
+   "name": "箱子落地",
+   "source": "audio/source/sfx/crate_land.json",
+   "game": "res://generated/audio/sfx/crate_land.wav",
+   "audio_kind": "sfx",
+   "availability": "review",
+   "approved": false,
+   "importable": false,
+   "current_is_approved": false,
+   "version": 2,
+   "hash": "e0b5eea9fe9b129bd1291b1c1cbaee9b942b417d06ba08763bac39ed4206e463",
+   "current": {
+    "version": 2,
+    "hash": "e0b5eea9fe9b129bd1291b1c1cbaee9b942b417d06ba08763bac39ed4206e463",
+    "wav": "audio/export/preview/sfx/crate_land.wav",
+    "sha256": "ab27ad107a33ed34f36c5876576058bf8fbe24276adc07a12690289e55859248",
+    "metrics": {
+     "verified": true,
+     "sample_rate": 44100,
+     "channels": 1,
+     "bit_depth": 16,
+     "sample_count": 10584,
+     "duration_ms": 240,
+     "active_sample_count": 10508,
+     "rms_dbfs": -23.99998561018217,
+     "full_rms_dbfs": -24.03128151370929,
+     "peak_dbfs": -12.774252756381069,
+     "dc_abs": 0.0001755856422430083,
+     "noise_energy_ratio": 0,
+     "endpoint_start_abs": 0,
+     "endpoint_end_abs": 0,
+     "longest_silence_ms": 0.06802721088435375,
+     "track_count": 2,
+     "voice_max": 2,
+     "pitched_voice_max": 2
+    }
+   },
+   "game_audio": null
+  },
+  {
+   "uid": "sfx:climb",
+   "domain": "sfx",
+   "id": "climb",
+   "name": "爬梯",
+   "source": "audio/source/sfx/climb.json",
+   "game": "res://generated/audio/sfx/climb.wav",
+   "audio_kind": "sfx",
+   "availability": "review",
+   "approved": false,
+   "importable": false,
+   "current_is_approved": false,
+   "version": 2,
+   "hash": "bfc3c1fa37ff90dd99b19ba5bc9508b51aff15956f99ae9365e6da23f93fdb5f",
+   "current": {
+    "version": 2,
+    "hash": "bfc3c1fa37ff90dd99b19ba5bc9508b51aff15956f99ae9365e6da23f93fdb5f",
+    "wav": "audio/export/preview/sfx/climb.wav",
+    "sha256": "52becf1b207e4c52ca0a97a3fcdb1765c90034be93e43ffda10c5c310b3688cf",
+    "metrics": {
+     "verified": true,
+     "sample_rate": 44100,
+     "channels": 1,
+     "bit_depth": 16,
+     "sample_count": 4410,
+     "duration_ms": 100,
+     "active_sample_count": 4349,
+     "rms_dbfs": -23.999936450357623,
+     "full_rms_dbfs": -24.060424227190733,
+     "peak_dbfs": -12.837936828921983,
+     "dc_abs": 0.00010639631829294218,
+     "noise_energy_ratio": 0,
+     "endpoint_start_abs": 0,
+     "endpoint_end_abs": 0.000091552734375,
+     "longest_silence_ms": 0.022675736961451247,
+     "track_count": 2,
+     "voice_max": 2,
+     "pitched_voice_max": 2
+    }
+   },
+   "game_audio": null
+  },
+  {
+   "uid": "sfx:dig",
+   "domain": "sfx",
+   "id": "dig",
+   "name": "挖掘",
+   "source": "audio/source/sfx/dig.json",
+   "game": "res://generated/audio/sfx/dig.wav",
+   "audio_kind": "sfx",
+   "availability": "review",
+   "approved": false,
+   "importable": false,
+   "current_is_approved": false,
+   "version": 2,
+   "hash": "806479d87a260bb4a802f186c0b85e2d9f0b680dcd80d2552670af850254cfd9",
+   "current": {
+    "version": 2,
+    "hash": "806479d87a260bb4a802f186c0b85e2d9f0b680dcd80d2552670af850254cfd9",
+    "wav": "audio/export/preview/sfx/dig.wav",
+    "sha256": "de9ebe661c3c43e1a723e0cf19ddd57f464e2def158e1bed7dcd97d3333c2c6d",
+    "metrics": {
+     "verified": true,
+     "sample_rate": 44100,
+     "channels": 1,
+     "bit_depth": 16,
+     "sample_count": 9702,
+     "duration_ms": 220,
+     "active_sample_count": 9665,
+     "rms_dbfs": -24.000015580980687,
+     "full_rms_dbfs": -24.016608634111485,
+     "peak_dbfs": -13.408278828926058,
+     "dc_abs": 0.00023456574272701504,
+     "noise_energy_ratio": 0.021960346957622886,
+     "endpoint_start_abs": 0,
+     "endpoint_end_abs": 0.000030517578125,
+     "longest_silence_ms": 0.022675736961451247,
+     "track_count": 2,
+     "voice_max": 2,
+     "pitched_voice_max": 1
+    }
+   },
+   "game_audio": null
+  },
+  {
+   "uid": "sfx:pour",
+   "domain": "sfx",
+   "id": "pour",
+   "name": "倒沙",
+   "source": "audio/source/sfx/pour.json",
+   "game": "res://generated/audio/sfx/pour.wav",
+   "audio_kind": "sfx",
+   "availability": "review",
+   "approved": false,
+   "importable": false,
+   "current_is_approved": false,
+   "version": 2,
+   "hash": "c663ab8aa7a1b9adde6ed7d45fbad6becf8ddbcf07ec597423400efe1c46a7a4",
+   "current": {
+    "version": 2,
+    "hash": "c663ab8aa7a1b9adde6ed7d45fbad6becf8ddbcf07ec597423400efe1c46a7a4",
+    "wav": "audio/export/preview/sfx/pour.wav",
+    "sha256": "c87d913d5123889bf1b8180df1aca9771d278a0f16124fa8c24c9bc9f0da1b76",
+    "metrics": {
+     "verified": true,
+     "sample_rate": 44100,
+     "channels": 1,
+     "bit_depth": 16,
+     "sample_count": 14112,
+     "duration_ms": 320,
+     "active_sample_count": 14053,
+     "rms_dbfs": -23.99811795122732,
+     "full_rms_dbfs": -24.016311942625734,
+     "peak_dbfs": -13.906283661785757,
+     "dc_abs": 0.0007622236567559966,
+     "noise_energy_ratio": 0.04875261665949746,
+     "endpoint_start_abs": 0,
+     "endpoint_end_abs": 0,
+     "longest_silence_ms": 0.022675736961451247,
+     "track_count": 2,
+     "voice_max": 2,
+     "pitched_voice_max": 1
+    }
+   },
+   "game_audio": null
+  },
+  {
+   "uid": "sfx:plate_down",
+   "domain": "sfx",
+   "id": "plate_down",
+   "name": "压板按下",
+   "source": "audio/source/sfx/plate_down.json",
+   "game": "res://generated/audio/sfx/plate_down.wav",
+   "audio_kind": "sfx",
+   "availability": "review",
+   "approved": false,
+   "importable": false,
+   "current_is_approved": false,
+   "version": 2,
+   "hash": "48237cc61f1ac5710a48580b311f85a1e4604dad0a4441c9af842419cf4bcc97",
+   "current": {
+    "version": 2,
+    "hash": "48237cc61f1ac5710a48580b311f85a1e4604dad0a4441c9af842419cf4bcc97",
+    "wav": "audio/export/preview/sfx/plate_down.wav",
+    "sha256": "8a7c9ddb84620bac0f36bec5dc22d909f86b42ef3d8733b09b5e2675a8d06372",
+    "metrics": {
+     "verified": true,
+     "sample_rate": 44100,
+     "channels": 1,
+     "bit_depth": 16,
+     "sample_count": 4410,
+     "duration_ms": 100,
+     "active_sample_count": 4387,
+     "rms_dbfs": -23.99996017892834,
+     "full_rms_dbfs": -24.02266823744714,
+     "peak_dbfs": -15.028466545353613,
+     "dc_abs": 0.00007976090826955783,
+     "noise_energy_ratio": 0,
+     "endpoint_start_abs": 0,
+     "endpoint_end_abs": 0.000030517578125,
+     "longest_silence_ms": 0.022675736961451247,
+     "track_count": 1,
+     "voice_max": 1,
+     "pitched_voice_max": 1
+    }
+   },
+   "game_audio": null
+  },
+  {
+   "uid": "sfx:plate_up",
+   "domain": "sfx",
+   "id": "plate_up",
+   "name": "压板松开",
+   "source": "audio/source/sfx/plate_up.json",
+   "game": "res://generated/audio/sfx/plate_up.wav",
+   "audio_kind": "sfx",
+   "availability": "review",
+   "approved": false,
+   "importable": false,
+   "current_is_approved": false,
+   "version": 2,
+   "hash": "7361bc432de19cd82d308bc1dee61fe072648f3e615789926762e880fbf7e345",
+   "current": {
+    "version": 2,
+    "hash": "7361bc432de19cd82d308bc1dee61fe072648f3e615789926762e880fbf7e345",
+    "wav": "audio/export/preview/sfx/plate_up.wav",
+    "sha256": "f39f60378b9c1fb3f1ee9b78aff5aa15ad642caf33801d4284a34682303b9443",
+    "metrics": {
+     "verified": true,
+     "sample_rate": 44100,
+     "channels": 1,
+     "bit_depth": 16,
+     "sample_count": 4410,
+     "duration_ms": 100,
+     "active_sample_count": 4357,
+     "rms_dbfs": -24.000010139220677,
+     "full_rms_dbfs": -24.052518668409732,
+     "peak_dbfs": -14.586753024797828,
+     "dc_abs": 0.000018372827646683674,
+     "noise_energy_ratio": 0,
+     "endpoint_start_abs": 0,
+     "endpoint_end_abs": 0.000030517578125,
+     "longest_silence_ms": 0.022675736961451247,
+     "track_count": 1,
+     "voice_max": 1,
+     "pitched_voice_max": 1
+    }
+   },
+   "game_audio": null
+  },
+  {
+   "uid": "sfx:door_open",
+   "domain": "sfx",
+   "id": "door_open",
+   "name": "门打开",
+   "source": "audio/source/sfx/door_open.json",
+   "game": "res://generated/audio/sfx/door_open.wav",
+   "audio_kind": "sfx",
+   "availability": "review",
+   "approved": false,
+   "importable": false,
+   "current_is_approved": false,
+   "version": 2,
+   "hash": "c9f833e5b0b15cb099b8fe011cdd4132f9fda65e5371b0c246efbabc6477542c",
+   "current": {
+    "version": 2,
+    "hash": "c9f833e5b0b15cb099b8fe011cdd4132f9fda65e5371b0c246efbabc6477542c",
+    "wav": "audio/export/preview/sfx/door_open.wav",
+    "sha256": "8328f701fcddb1c986e736791cb74311fa3d7bde683914d00543c10a501f350a",
+    "metrics": {
+     "verified": true,
+     "sample_rate": 44100,
+     "channels": 1,
+     "bit_depth": 16,
+     "sample_count": 12348,
+     "duration_ms": 280,
+     "active_sample_count": 12296,
+     "rms_dbfs": -24.0000114365057,
+     "full_rms_dbfs": -24.018338309280047,
+     "peak_dbfs": -13.187719632532362,
+     "dc_abs": 0.00009934524521304058,
+     "noise_energy_ratio": 0,
+     "endpoint_start_abs": 0,
+     "endpoint_end_abs": 0,
+     "longest_silence_ms": 0.11337868480725624,
+     "track_count": 2,
+     "voice_max": 2,
+     "pitched_voice_max": 2
+    }
+   },
+   "game_audio": null
+  },
+  {
+   "uid": "sfx:door_close",
+   "domain": "sfx",
+   "id": "door_close",
+   "name": "门关闭",
+   "source": "audio/source/sfx/door_close.json",
+   "game": "res://generated/audio/sfx/door_close.wav",
+   "audio_kind": "sfx",
+   "availability": "review",
+   "approved": false,
+   "importable": false,
+   "current_is_approved": false,
+   "version": 2,
+   "hash": "4e614e2fd2338d17aa8455a852194c23cb7cd501bc1ad197064b074368f83741",
+   "current": {
+    "version": 2,
+    "hash": "4e614e2fd2338d17aa8455a852194c23cb7cd501bc1ad197064b074368f83741",
+    "wav": "audio/export/preview/sfx/door_close.wav",
+    "sha256": "2656ddd9fdc6e557cd71a5459eaceec44d67142d6f656ad4fcabc30db1113aac",
+    "metrics": {
+     "verified": true,
+     "sample_rate": 44100,
+     "channels": 1,
+     "bit_depth": 16,
+     "sample_count": 11466,
+     "duration_ms": 260,
+     "active_sample_count": 11390,
+     "rms_dbfs": -23.99998655424969,
+     "full_rms_dbfs": -24.028867662325915,
+     "peak_dbfs": -13.626945584938486,
+     "dc_abs": 0.00010003782412404065,
+     "noise_energy_ratio": 0,
+     "endpoint_start_abs": 0,
+     "endpoint_end_abs": 0.000030517578125,
+     "longest_silence_ms": 0.045351473922902494,
+     "track_count": 2,
+     "voice_max": 2,
+     "pitched_voice_max": 2
+    }
+   },
+   "game_audio": null
+  },
+  {
+   "uid": "sfx:goal_on",
+   "domain": "sfx",
+   "id": "goal_on",
+   "name": "目标灯亮",
+   "source": "audio/source/sfx/goal_on.json",
+   "game": "res://generated/audio/sfx/goal_on.wav",
+   "audio_kind": "sfx",
+   "availability": "review",
+   "approved": false,
+   "importable": false,
+   "current_is_approved": false,
+   "version": 2,
+   "hash": "5b3a8dfd8a4e5610ea983dcd36ae0157ebc4c785d65bbd523b23f8d51529de86",
+   "current": {
+    "version": 2,
+    "hash": "5b3a8dfd8a4e5610ea983dcd36ae0157ebc4c785d65bbd523b23f8d51529de86",
+    "wav": "audio/export/preview/sfx/goal_on.wav",
+    "sha256": "bc023d8418f9cc7233bbb9a18d52f3ffe0ccbdd86ad11626807723f079c28d80",
+    "metrics": {
+     "verified": true,
+     "sample_rate": 44100,
+     "channels": 1,
+     "bit_depth": 16,
+     "sample_count": 15435,
+     "duration_ms": 350,
+     "active_sample_count": 15373,
+     "rms_dbfs": -23.999969111356254,
+     "full_rms_dbfs": -24.01744841473516,
+     "peak_dbfs": -14.908167612800987,
+     "dc_abs": 0.000006026406098153547,
+     "noise_energy_ratio": 0,
+     "endpoint_start_abs": 0,
+     "endpoint_end_abs": 0,
+     "longest_silence_ms": 0.06802721088435375,
+     "track_count": 2,
+     "voice_max": 2,
+     "pitched_voice_max": 2
+    }
+   },
+   "game_audio": null
+  },
+  {
+   "uid": "sfx:level_clear",
+   "domain": "sfx",
+   "id": "level_clear",
+   "name": "全部灯亮过关",
+   "source": "audio/source/sfx/level_clear.json",
+   "game": "res://generated/audio/sfx/level_clear.wav",
+   "audio_kind": "sfx",
+   "availability": "review",
+   "approved": false,
+   "importable": false,
+   "current_is_approved": false,
+   "version": 2,
+   "hash": "f6c4463e1a0378ccd596b20f1a8e51ec8e85e8ed47a10c0fbb5ecfaa808aff4b",
+   "current": {
+    "version": 2,
+    "hash": "f6c4463e1a0378ccd596b20f1a8e51ec8e85e8ed47a10c0fbb5ecfaa808aff4b",
+    "wav": "audio/export/preview/sfx/level_clear.wav",
+    "sha256": "5b33005da67d75288c103e7d543c4fc2c2e3c25b35c8b66579ba4604a936e335",
+    "metrics": {
+     "verified": true,
+     "sample_rate": 44100,
+     "channels": 1,
+     "bit_depth": 16,
+     "sample_count": 48510,
+     "duration_ms": 1100,
+     "active_sample_count": 48393,
+     "rms_dbfs": -23.99994624474631,
+     "full_rms_dbfs": -24.0104330689654,
+     "peak_dbfs": -15.399695325779817,
+     "dc_abs": 0.000002747274039824263,
+     "noise_energy_ratio": 0,
+     "endpoint_start_abs": 0,
+     "endpoint_end_abs": 0,
+     "longest_silence_ms": 0.06802721088435375,
+     "track_count": 3,
+     "voice_max": 2,
+     "pitched_voice_max": 2
+    }
+   },
+   "game_audio": null
+  },
+  {
+   "uid": "sfx:undo",
+   "domain": "sfx",
+   "id": "undo",
+   "name": "撤销",
+   "source": "audio/source/sfx/undo.json",
+   "game": "res://generated/audio/sfx/undo.wav",
+   "audio_kind": "sfx",
+   "availability": "review",
+   "approved": false,
+   "importable": false,
+   "current_is_approved": false,
+   "version": 2,
+   "hash": "783869bca480885d80e214351000943e2c0d4e3406e82762ec723298d1b6b433",
+   "current": {
+    "version": 2,
+    "hash": "783869bca480885d80e214351000943e2c0d4e3406e82762ec723298d1b6b433",
+    "wav": "audio/export/preview/sfx/undo.wav",
+    "sha256": "31ca31ddc48bddffdee626261f9027a6c14f1bbba2f7a54a21f383bd5c1e5826",
+    "metrics": {
+     "verified": true,
+     "sample_rate": 44100,
+     "channels": 1,
+     "bit_depth": 16,
+     "sample_count": 7938,
+     "duration_ms": 180,
+     "active_sample_count": 7880,
+     "rms_dbfs": -24.000026430763974,
+     "full_rms_dbfs": -24.031873999030857,
+     "peak_dbfs": -16.96180777553262,
+     "dc_abs": 0.000013017450180303602,
+     "noise_energy_ratio": 0,
+     "endpoint_start_abs": 0,
+     "endpoint_end_abs": 0.000030517578125,
+     "longest_silence_ms": 0.06802721088435375,
+     "track_count": 1,
+     "voice_max": 1,
+     "pitched_voice_max": 1
+    }
+   },
+   "game_audio": null
+  },
+  {
+   "uid": "sfx:restart",
+   "domain": "sfx",
+   "id": "restart",
+   "name": "重开",
+   "source": "audio/source/sfx/restart.json",
+   "game": "res://generated/audio/sfx/restart.wav",
+   "audio_kind": "sfx",
+   "availability": "review",
+   "approved": false,
+   "importable": false,
+   "current_is_approved": false,
+   "version": 2,
+   "hash": "9b528477ff64a80cc94421c9daba85b93dec6ddca2fe91354d46aa9b51ff99a1",
+   "current": {
+    "version": 2,
+    "hash": "9b528477ff64a80cc94421c9daba85b93dec6ddca2fe91354d46aa9b51ff99a1",
+    "wav": "audio/export/preview/sfx/restart.wav",
+    "sha256": "cbeb1c7a872b1107a00b8e1818e8c2a674c179116644baec6713835e4f047a1b",
+    "metrics": {
+     "verified": true,
+     "sample_rate": 44100,
+     "channels": 1,
+     "bit_depth": 16,
+     "sample_count": 19845,
+     "duration_ms": 450,
+     "active_sample_count": 19804,
+     "rms_dbfs": -23.99999009603778,
+     "full_rms_dbfs": -24.00897147846441,
+     "peak_dbfs": -15.000098337391359,
+     "dc_abs": 0.000009788076833742756,
+     "noise_energy_ratio": 0,
+     "endpoint_start_abs": 0,
+     "endpoint_end_abs": 0,
+     "longest_silence_ms": 0.09070294784580499,
+     "track_count": 3,
+     "voice_max": 2,
+     "pitched_voice_max": 2
+    }
+   },
+   "game_audio": null
+  },
+  {
+   "uid": "sfx:hint_show",
+   "domain": "sfx",
+   "id": "hint_show",
+   "name": "提示出现",
+   "source": "audio/source/sfx/hint_show.json",
+   "game": "res://generated/audio/sfx/hint_show.wav",
+   "audio_kind": "sfx",
+   "availability": "review",
+   "approved": false,
+   "importable": false,
+   "current_is_approved": false,
+   "version": 2,
+   "hash": "abc0596d6d7f2bb046e55877d7d3d85fc1dbf70878073ac058454b94514cef6a",
+   "current": {
+    "version": 2,
+    "hash": "abc0596d6d7f2bb046e55877d7d3d85fc1dbf70878073ac058454b94514cef6a",
+    "wav": "audio/export/preview/sfx/hint_show.wav",
+    "sha256": "510e58308baf19b9c04a36be26a20b20054d0a2a00b42092c0f95e3ab1e46940",
+    "metrics": {
+     "verified": true,
+     "sample_rate": 44100,
+     "channels": 1,
+     "bit_depth": 16,
+     "sample_count": 11466,
+     "duration_ms": 260,
+     "active_sample_count": 11397,
+     "rms_dbfs": -24.000016594396143,
+     "full_rms_dbfs": -24.026228402549332,
+     "peak_dbfs": -16.64986017317019,
+     "dc_abs": 0.000009174436751864208,
+     "noise_energy_ratio": 0,
+     "endpoint_start_abs": 0,
+     "endpoint_end_abs": 0.000030517578125,
+     "longest_silence_ms": 0.045351473922902494,
+     "track_count": 2,
+     "voice_max": 2,
+     "pitched_voice_max": 2
+    }
+   },
+   "game_audio": null
+  },
+  {
+   "uid": "sfx:rule_card",
+   "domain": "sfx",
+   "id": "rule_card",
+   "name": "规则卡",
+   "source": "audio/source/sfx/rule_card.json",
+   "game": "res://generated/audio/sfx/rule_card.wav",
+   "audio_kind": "sfx",
+   "availability": "review",
+   "approved": false,
+   "importable": false,
+   "current_is_approved": false,
+   "version": 2,
+   "hash": "50c0fc9c2893d352215b53ee24507efcf8324c17b5bcda28942a535169f12ba5",
+   "current": {
+    "version": 2,
+    "hash": "50c0fc9c2893d352215b53ee24507efcf8324c17b5bcda28942a535169f12ba5",
+    "wav": "audio/export/preview/sfx/rule_card.wav",
+    "sha256": "ff934e6f1c91e40af5ddc10088fbdcdf7455804fa924fe2f895052fa6f3aff62",
+    "metrics": {
+     "verified": true,
+     "sample_rate": 44100,
+     "channels": 1,
+     "bit_depth": 16,
+     "sample_count": 13230,
+     "duration_ms": 300,
+     "active_sample_count": 13160,
+     "rms_dbfs": -23.99999153555154,
+     "full_rms_dbfs": -24.023030069597382,
+     "peak_dbfs": -14.248054489371786,
+     "dc_abs": 0.00016973816979048563,
+     "noise_energy_ratio": 0.009921831841338276,
+     "endpoint_start_abs": 0,
+     "endpoint_end_abs": 0.000030517578125,
+     "longest_silence_ms": 0.022675736961451247,
+     "track_count": 2,
+     "voice_max": 2,
+     "pitched_voice_max": 1
+    }
+   },
+   "game_audio": null
+  },
+  {
+   "uid": "sfx:coin",
+   "domain": "sfx",
+   "id": "coin",
+   "name": "金币",
+   "source": "audio/source/sfx/coin.json",
+   "game": "res://generated/audio/sfx/coin.wav",
+   "audio_kind": "sfx",
+   "availability": "review",
+   "approved": false,
+   "importable": false,
+   "current_is_approved": false,
+   "version": 2,
+   "hash": "e078e57247be32f5f16e39bf6ca0ff4dd31a321f62a2ece2d16b54061eb25cc7",
+   "current": {
+    "version": 2,
+    "hash": "e078e57247be32f5f16e39bf6ca0ff4dd31a321f62a2ece2d16b54061eb25cc7",
+    "wav": "audio/export/preview/sfx/coin.wav",
+    "sha256": "20628e3477be05b239d62e564ca33fb8bda5515e6f16206c50cf2c16732d79ac",
+    "metrics": {
+     "verified": true,
+     "sample_rate": 44100,
+     "channels": 1,
+     "bit_depth": 16,
+     "sample_count": 9702,
+     "duration_ms": 220,
+     "active_sample_count": 9647,
+     "rms_dbfs": -24.00004413404808,
+     "full_rms_dbfs": -24.024732451947948,
+     "peak_dbfs": -17.04252002663011,
+     "dc_abs": 0.000006602390897173263,
+     "noise_energy_ratio": 0,
+     "endpoint_start_abs": 0,
+     "endpoint_end_abs": 0,
+     "longest_silence_ms": 0.06802721088435375,
+     "track_count": 2,
+     "voice_max": 2,
+     "pitched_voice_max": 2
+    }
+   },
+   "game_audio": null
+  },
+  {
+   "uid": "sfx:hurt",
+   "domain": "sfx",
+   "id": "hurt",
+   "name": "受伤",
+   "source": "audio/source/sfx/hurt.json",
+   "game": "res://generated/audio/sfx/hurt.wav",
+   "audio_kind": "sfx",
+   "availability": "review",
+   "approved": false,
+   "importable": false,
+   "current_is_approved": false,
+   "version": 2,
+   "hash": "1b43f23c1d165d3307867c5f6491f3ab43d973bb8053c8bddf9c7aef37f0e645",
+   "current": {
+    "version": 2,
+    "hash": "1b43f23c1d165d3307867c5f6491f3ab43d973bb8053c8bddf9c7aef37f0e645",
+    "wav": "audio/export/preview/sfx/hurt.wav",
+    "sha256": "7fdcff39baa179f81ec7bfc9aead547b895860e7d3039c940be0e893c59991a2",
+    "metrics": {
+     "verified": true,
+     "sample_rate": 44100,
+     "channels": 1,
+     "bit_depth": 16,
+     "sample_count": 15435,
+     "duration_ms": 350,
+     "active_sample_count": 15360,
+     "rms_dbfs": -24.000024628858448,
+     "full_rms_dbfs": -24.021177865272485,
+     "peak_dbfs": -16.57627331394849,
+     "dc_abs": 0.000009336184250485908,
+     "noise_energy_ratio": 0,
+     "endpoint_start_abs": 0,
+     "endpoint_end_abs": 0,
+     "longest_silence_ms": 0.09070294784580499,
+     "track_count": 1,
+     "voice_max": 1,
+     "pitched_voice_max": 1
+    }
+   },
+   "game_audio": null
+  },
+  {
+   "uid": "sfx:cargo_damage",
+   "domain": "sfx",
+   "id": "cargo_damage",
+   "name": "货物受损",
+   "source": "audio/source/sfx/cargo_damage.json",
+   "game": "res://generated/audio/sfx/cargo_damage.wav",
+   "audio_kind": "sfx",
+   "availability": "review",
+   "approved": false,
+   "importable": false,
+   "current_is_approved": false,
+   "version": 2,
+   "hash": "8bc0aa505961bcac747d98b92ee1b7e479511dfc433ab782ea5003e6c4f1959b",
+   "current": {
+    "version": 2,
+    "hash": "8bc0aa505961bcac747d98b92ee1b7e479511dfc433ab782ea5003e6c4f1959b",
+    "wav": "audio/export/preview/sfx/cargo_damage.wav",
+    "sha256": "f0204ad99be58d6ec5e0fee049229c9427d44b32cf127602affb9f737d9420d7",
+    "metrics": {
+     "verified": true,
+     "sample_rate": 44100,
+     "channels": 1,
+     "bit_depth": 16,
+     "sample_count": 12348,
+     "duration_ms": 280,
+     "active_sample_count": 12298,
+     "rms_dbfs": -23.99998150712683,
+     "full_rms_dbfs": -24.017602113787035,
+     "peak_dbfs": -12.0815845568716,
+     "dc_abs": 0.0002632178185169157,
+     "noise_energy_ratio": 0,
+     "endpoint_start_abs": 0,
+     "endpoint_end_abs": 0,
+     "longest_silence_ms": 0.06802721088435375,
+     "track_count": 3,
+     "voice_max": 2,
+     "pitched_voice_max": 2
+    }
+   },
+   "game_audio": null
+  },
+  {
+   "uid": "sfx:reel_spin",
+   "domain": "sfx",
+   "id": "reel_spin",
+   "name": "滚轮转动",
+   "source": "audio/source/sfx/reel_spin.json",
+   "game": "res://generated/audio/sfx/reel_spin.wav",
+   "audio_kind": "sfx",
+   "availability": "review",
+   "approved": false,
+   "importable": false,
+   "current_is_approved": false,
+   "version": 2,
+   "hash": "828f91d11fa886e6a2e79d199598e5f4b69d119910d3595cb8a1d2d5239ada6b",
+   "current": {
+    "version": 2,
+    "hash": "828f91d11fa886e6a2e79d199598e5f4b69d119910d3595cb8a1d2d5239ada6b",
+    "wav": "audio/export/preview/sfx/reel_spin.wav",
+    "sha256": "937a71f9645a9d2374eded903619399344e972c781e937c9ae924c204c56ab8b",
+    "metrics": {
+     "verified": true,
+     "sample_rate": 44100,
+     "channels": 1,
+     "bit_depth": 16,
+     "sample_count": 17640,
+     "duration_ms": 400,
+     "active_sample_count": 15162,
+     "rms_dbfs": -24.00003934713571,
+     "full_rms_dbfs": -24.65745933467629,
+     "peak_dbfs": -11.610953532748079,
+     "dc_abs": 0.0003706467124610261,
+     "noise_energy_ratio": 0,
+     "endpoint_start_abs": 0,
+     "endpoint_end_abs": 0,
+     "longest_silence_ms": 55.05668934240363,
+     "track_count": 2,
+     "voice_max": 1,
+     "pitched_voice_max": 1,
+     "seam_value_delta": 0,
+     "seam_slope_delta": 0.000091552734375
+    }
+   },
+   "game_audio": null
+  },
+  {
+   "uid": "sfx:reel_stop",
+   "domain": "sfx",
+   "id": "reel_stop",
+   "name": "滚轮停下",
+   "source": "audio/source/sfx/reel_stop.json",
+   "game": "res://generated/audio/sfx/reel_stop.wav",
+   "audio_kind": "sfx",
+   "availability": "review",
+   "approved": false,
+   "importable": false,
+   "current_is_approved": false,
+   "version": 2,
+   "hash": "d1147285b7f307e1feb19130433571f10ecf8f7cc34e8a198d693209ac646dd9",
+   "current": {
+    "version": 2,
+    "hash": "d1147285b7f307e1feb19130433571f10ecf8f7cc34e8a198d693209ac646dd9",
+    "wav": "audio/export/preview/sfx/reel_stop.wav",
+    "sha256": "77de55cf81cbb763f63483ee49c18d71d1dcb4b311c70962fdf57350e8f0d868",
+    "metrics": {
+     "verified": true,
+     "sample_rate": 44100,
+     "channels": 1,
+     "bit_depth": 16,
+     "sample_count": 13230,
+     "duration_ms": 300,
+     "active_sample_count": 13168,
+     "rms_dbfs": -24.00001084811094,
+     "full_rms_dbfs": -24.02041032378003,
+     "peak_dbfs": -16.61568141867714,
+     "dc_abs": 0.00001656668526785714,
+     "noise_energy_ratio": 0,
+     "endpoint_start_abs": 0,
+     "endpoint_end_abs": 0.000030517578125,
+     "longest_silence_ms": 0.06802721088435375,
+     "track_count": 2,
+     "voice_max": 2,
+     "pitched_voice_max": 2
+    }
+   },
+   "game_audio": null
+  },
+  {
+   "uid": "sfx:reroll",
+   "domain": "sfx",
+   "id": "reroll",
+   "name": "重转",
+   "source": "audio/source/sfx/reroll.json",
+   "game": "res://generated/audio/sfx/reroll.wav",
+   "audio_kind": "sfx",
+   "availability": "review",
+   "approved": false,
+   "importable": false,
+   "current_is_approved": false,
+   "version": 2,
+   "hash": "c021e6732a6012263261d520dc516d037229e91fe472d84cd45d9fce1b4ef88d",
+   "current": {
+    "version": 2,
+    "hash": "c021e6732a6012263261d520dc516d037229e91fe472d84cd45d9fce1b4ef88d",
+    "wav": "audio/export/preview/sfx/reroll.wav",
+    "sha256": "bf0a83b6e42edc5b8ce31602c562d56ef08fdded770395616957c269c5993799",
+    "metrics": {
+     "verified": true,
+     "sample_rate": 44100,
+     "channels": 1,
+     "bit_depth": 16,
+     "sample_count": 11025,
+     "duration_ms": 250,
+     "active_sample_count": 10985,
+     "rms_dbfs": -23.999938700676864,
+     "full_rms_dbfs": -24.01572343440573,
+     "peak_dbfs": -16.184887861554948,
+     "dc_abs": 0.00000858367435515873,
+     "noise_energy_ratio": 0,
+     "endpoint_start_abs": 0,
+     "endpoint_end_abs": 0.000030517578125,
+     "longest_silence_ms": 0.06802721088435375,
+     "track_count": 3,
+     "voice_max": 2,
+     "pitched_voice_max": 2
+    }
+   },
+   "game_audio": null
+  },
+  {
+   "uid": "sfx:shop_buy",
+   "domain": "sfx",
+   "id": "shop_buy",
+   "name": "驿站买东西",
+   "source": "audio/source/sfx/shop_buy.json",
+   "game": "res://generated/audio/sfx/shop_buy.wav",
+   "audio_kind": "sfx",
+   "availability": "review",
+   "approved": false,
+   "importable": false,
+   "current_is_approved": false,
+   "version": 2,
+   "hash": "099c8b83f8e99c488f32e92e14faae98dbef2badeef9d9a646c5c132e4bab6ec",
+   "current": {
+    "version": 2,
+    "hash": "099c8b83f8e99c488f32e92e14faae98dbef2badeef9d9a646c5c132e4bab6ec",
+    "wav": "audio/export/preview/sfx/shop_buy.wav",
+    "sha256": "0b156bec4cf7f8aa6b4eefe4aae3fe58280d5d318ca711213126aa5086d4fb6d",
+    "metrics": {
+     "verified": true,
+     "sample_rate": 44100,
+     "channels": 1,
+     "bit_depth": 16,
+     "sample_count": 13230,
+     "duration_ms": 300,
+     "active_sample_count": 13194,
+     "rms_dbfs": -23.999967039370006,
+     "full_rms_dbfs": -24.011800033360842,
+     "peak_dbfs": -15.704661887820478,
+     "dc_abs": 0.00006665195917776834,
+     "noise_energy_ratio": 0,
+     "endpoint_start_abs": 0,
+     "endpoint_end_abs": 0.000030517578125,
+     "longest_silence_ms": 0.045351473922902494,
+     "track_count": 3,
+     "voice_max": 2,
+     "pitched_voice_max": 2
+    }
+   },
+   "game_audio": null
+  },
+  {
+   "uid": "sfx:feed_snack",
+   "domain": "sfx",
+   "id": "feed_snack",
+   "name": "喂零食",
+   "source": "audio/source/sfx/feed_snack.json",
+   "game": "res://generated/audio/sfx/feed_snack.wav",
+   "audio_kind": "sfx",
+   "availability": "review",
+   "approved": false,
+   "importable": false,
+   "current_is_approved": false,
+   "version": 2,
+   "hash": "b19fc407d247b9d62e7df1ee4ef5a4c74b2f914f14c3b32f2a983e7fe0b755a7",
+   "current": {
+    "version": 2,
+    "hash": "b19fc407d247b9d62e7df1ee4ef5a4c74b2f914f14c3b32f2a983e7fe0b755a7",
+    "wav": "audio/export/preview/sfx/feed_snack.wav",
+    "sha256": "7341c7ea3af3e075d005943e52a1b336ba1451624c956cc3696174574a0088ca",
+    "metrics": {
+     "verified": true,
+     "sample_rate": 44100,
+     "channels": 1,
+     "bit_depth": 16,
+     "sample_count": 11466,
+     "duration_ms": 260,
+     "active_sample_count": 11398,
+     "rms_dbfs": -24.000001864627805,
+     "full_rms_dbfs": -24.025832380467357,
+     "peak_dbfs": -15.85796545917519,
+     "dc_abs": 3.806047158446712e-7,
+     "noise_energy_ratio": 0,
+     "endpoint_start_abs": 0,
+     "endpoint_end_abs": 0.000030517578125,
+     "longest_silence_ms": 5.034013605442177,
+     "track_count": 2,
+     "voice_max": 1,
+     "pitched_voice_max": 1
+    }
+   },
+   "game_audio": null
+  },
+  {
+   "uid": "sfx:animal_hint",
+   "domain": "sfx",
+   "id": "animal_hint",
+   "name": "提示动物叫一声",
+   "source": "audio/source/sfx/animal_hint.json",
+   "game": "res://generated/audio/sfx/animal_hint.wav",
+   "audio_kind": "sfx",
+   "availability": "review",
+   "approved": false,
+   "importable": false,
+   "current_is_approved": false,
+   "version": 2,
+   "hash": "c7c8416f575ba216de158fc46bd5a8bf02af54a9677e463dfc859bc1f87d1f9d",
+   "current": {
+    "version": 2,
+    "hash": "c7c8416f575ba216de158fc46bd5a8bf02af54a9677e463dfc859bc1f87d1f9d",
+    "wav": "audio/export/preview/sfx/animal_hint.wav",
+    "sha256": "a8169a0d7e9ec546743bf7818daa33c9f72d6b3623cd12dc6f72fd691f87ab60",
+    "metrics": {
+     "verified": true,
+     "sample_rate": 44100,
+     "channels": 1,
+     "bit_depth": 16,
+     "sample_count": 16758,
+     "duration_ms": 380,
+     "active_sample_count": 16707,
+     "rms_dbfs": -24.001836365720184,
+     "full_rms_dbfs": -24.015072905788337,
+     "peak_dbfs": -16.94314449022994,
+     "dc_abs": 0.0000063082044769662255,
+     "noise_energy_ratio": 0,
+     "endpoint_start_abs": 0,
+     "endpoint_end_abs": 0.000030517578125,
+     "longest_silence_ms": 15.124716553287982,
+     "track_count": 2,
+     "voice_max": 1,
+     "pitched_voice_max": 1
+    }
+   },
+   "game_audio": null
+  },
+  {
+   "uid": "sfx:delivery_arrive",
+   "domain": "sfx",
+   "id": "delivery_arrive",
+   "name": "送达",
+   "source": "audio/source/sfx/delivery_arrive.json",
+   "game": "res://generated/audio/sfx/delivery_arrive.wav",
+   "audio_kind": "sfx",
+   "availability": "review",
+   "approved": false,
+   "importable": false,
+   "current_is_approved": false,
+   "version": 2,
+   "hash": "ddeda1dcba49f705a3ed92fb9bff8ce8c1483ab93cdd06687bb234e50ef8ccab",
+   "current": {
+    "version": 2,
+    "hash": "ddeda1dcba49f705a3ed92fb9bff8ce8c1483ab93cdd06687bb234e50ef8ccab",
+    "wav": "audio/export/preview/sfx/delivery_arrive.wav",
+    "sha256": "574cfe3dfc20d3c4f6455ccf545c201168de60f0f0e5d18fb95e7b745a67fe8e",
+    "metrics": {
+     "verified": true,
+     "sample_rate": 44100,
+     "channels": 1,
+     "bit_depth": 16,
+     "sample_count": 57330,
+     "duration_ms": 1300,
+     "active_sample_count": 57248,
+     "rms_dbfs": -24.000043667660684,
+     "full_rms_dbfs": -24.00625964505761,
+     "peak_dbfs": -14.827422684143981,
+     "dc_abs": 0.0000015751179778802547,
+     "noise_energy_ratio": 0,
+     "endpoint_start_abs": 0,
+     "endpoint_end_abs": 0,
+     "longest_silence_ms": 0.09070294784580499,
+     "track_count": 4,
+     "voice_max": 2,
+     "pitched_voice_max": 2
+    }
+   },
+   "game_audio": null
+  },
+  {
+   "uid": "sfx:ui_move",
+   "domain": "sfx",
+   "id": "ui_move",
+   "name": "光标移动",
+   "source": "audio/source/sfx/ui_move.json",
+   "game": "res://generated/audio/sfx/ui_move.wav",
+   "audio_kind": "sfx",
+   "availability": "review",
+   "approved": false,
+   "importable": false,
+   "current_is_approved": false,
+   "version": 2,
+   "hash": "c4c2688ec4aee688a766979b71b831676d64e2fd73269a60d396cc26d7c2739a",
+   "current": {
+    "version": 2,
+    "hash": "c4c2688ec4aee688a766979b71b831676d64e2fd73269a60d396cc26d7c2739a",
+    "wav": "audio/export/preview/sfx/ui_move.wav",
+    "sha256": "10f0a8afb91bc1c8ff7f7323a1c868a3b9842dc00e0a8b95da8d4da3baa86178",
+    "metrics": {
+     "verified": true,
+     "sample_rate": 44100,
+     "channels": 1,
+     "bit_depth": 16,
+     "sample_count": 3087,
+     "duration_ms": 70,
+     "active_sample_count": 3060,
+     "rms_dbfs": -23.999988374833777,
+     "full_rms_dbfs": -24.03813848809846,
+     "peak_dbfs": -13.591384062846465,
+     "dc_abs": 0.0000192180666909621,
+     "noise_energy_ratio": 0,
+     "endpoint_start_abs": 0,
+     "endpoint_end_abs": 0,
+     "longest_silence_ms": 0.11337868480725624,
+     "track_count": 1,
+     "voice_max": 1,
+     "pitched_voice_max": 1
+    }
+   },
+   "game_audio": null
+  },
+  {
+   "uid": "sfx:ui_confirm",
+   "domain": "sfx",
+   "id": "ui_confirm",
+   "name": "界面确认",
+   "source": "audio/source/sfx/ui_confirm.json",
+   "game": "res://generated/audio/sfx/ui_confirm.wav",
+   "audio_kind": "sfx",
+   "availability": "review",
+   "approved": false,
+   "importable": false,
+   "current_is_approved": false,
+   "version": 2,
+   "hash": "af8762fb552ed801da4fa255014f6d092c3aba7d803044a0dc95797da3301457",
+   "current": {
+    "version": 2,
+    "hash": "af8762fb552ed801da4fa255014f6d092c3aba7d803044a0dc95797da3301457",
+    "wav": "audio/export/preview/sfx/ui_confirm.wav",
+    "sha256": "f7853013c9ee88281afa1bf7a3ff22d0340d4bb25aecbd264da772cecddbb5d2",
+    "metrics": {
+     "verified": true,
+     "sample_rate": 44100,
+     "channels": 1,
+     "bit_depth": 16,
+     "sample_count": 5292,
+     "duration_ms": 120,
+     "active_sample_count": 5268,
+     "rms_dbfs": -24.00002619064738,
+     "full_rms_dbfs": -24.019765235883757,
+     "peak_dbfs": -15.97224423320387,
+     "dc_abs": 0.0001035763833528203,
+     "noise_energy_ratio": 0,
+     "endpoint_start_abs": 0,
+     "endpoint_end_abs": 0.0001220703125,
+     "longest_silence_ms": 1.0430839002267573,
+     "track_count": 2,
+     "voice_max": 1,
+     "pitched_voice_max": 1
+    }
+   },
+   "game_audio": null
+  },
+  {
+   "uid": "sfx:ui_back",
+   "domain": "sfx",
+   "id": "ui_back",
+   "name": "取消或返回",
+   "source": "audio/source/sfx/ui_back.json",
+   "game": "res://generated/audio/sfx/ui_back.wav",
+   "audio_kind": "sfx",
+   "availability": "review",
+   "approved": false,
+   "importable": false,
+   "current_is_approved": false,
+   "version": 2,
+   "hash": "cbad9560a31e54f5c7ee3904573430fbbc7412c1722a276296073cae917da3da",
+   "current": {
+    "version": 2,
+    "hash": "cbad9560a31e54f5c7ee3904573430fbbc7412c1722a276296073cae917da3da",
+    "wav": "audio/export/preview/sfx/ui_back.wav",
+    "sha256": "34c2e0bada19f00ceb37c33764b2f048c90613d09b1e17f6c91b620bef28653b",
+    "metrics": {
+     "verified": true,
+     "sample_rate": 44100,
+     "channels": 1,
+     "bit_depth": 16,
+     "sample_count": 5292,
+     "duration_ms": 120,
+     "active_sample_count": 5243,
+     "rms_dbfs": -23.99999770356822,
+     "full_rms_dbfs": -24.0403939486275,
+     "peak_dbfs": -16.000632247293233,
+     "dc_abs": 0.00006322651673516629,
+     "noise_energy_ratio": 0,
+     "endpoint_start_abs": 0,
+     "endpoint_end_abs": 0.0001220703125,
+     "longest_silence_ms": 1.0430839002267573,
+     "track_count": 2,
+     "voice_max": 1,
+     "pitched_voice_max": 1
+    }
+   },
+   "game_audio": null
+  },
+  {
+   "uid": "sfx:menu_open",
+   "domain": "sfx",
+   "id": "menu_open",
+   "name": "打开菜单",
+   "source": "audio/source/sfx/menu_open.json",
+   "game": "res://generated/audio/sfx/menu_open.wav",
+   "audio_kind": "sfx",
+   "availability": "review",
+   "approved": false,
+   "importable": false,
+   "current_is_approved": false,
+   "version": 2,
+   "hash": "a3826e547aed001000211b437145be7bdceff6ebdec82fb1edcf535ddd86cd37",
+   "current": {
+    "version": 2,
+    "hash": "a3826e547aed001000211b437145be7bdceff6ebdec82fb1edcf535ddd86cd37",
+    "wav": "audio/export/preview/sfx/menu_open.wav",
+    "sha256": "88f91bf2363dd0a225509a081916b3788da8b43fe0190304975054f45a931c64",
+    "metrics": {
+     "verified": true,
+     "sample_rate": 44100,
+     "channels": 1,
+     "bit_depth": 16,
+     "sample_count": 7056,
+     "duration_ms": 160,
+     "active_sample_count": 7030,
+     "rms_dbfs": -24.000018774665097,
+     "full_rms_dbfs": -24.016050107746196,
+     "peak_dbfs": -15.849742520344567,
+     "dc_abs": 0.00003063867962549603,
+     "noise_energy_ratio": 0,
+     "endpoint_start_abs": 0,
+     "endpoint_end_abs": 0.000030517578125,
+     "longest_silence_ms": 0.022675736961451247,
+     "track_count": 1,
+     "voice_max": 1,
+     "pitched_voice_max": 1
+    }
+   },
+   "game_audio": null
+  },
+  {
+   "uid": "sfx:menu_close",
+   "domain": "sfx",
+   "id": "menu_close",
+   "name": "关闭菜单",
+   "source": "audio/source/sfx/menu_close.json",
+   "game": "res://generated/audio/sfx/menu_close.wav",
+   "audio_kind": "sfx",
+   "availability": "review",
+   "approved": false,
+   "importable": false,
+   "current_is_approved": false,
+   "version": 2,
+   "hash": "bbb812d9ff9ad7603d0f4da7df84e6f0019238cb59a7566b15329c12b3cbfac7",
+   "current": {
+    "version": 2,
+    "hash": "bbb812d9ff9ad7603d0f4da7df84e6f0019238cb59a7566b15329c12b3cbfac7",
+    "wav": "audio/export/preview/sfx/menu_close.wav",
+    "sha256": "dc51f0ec44220a0a5cfafc2861f53c05ecf46ce469d96756ff541707d1e6160a",
+    "metrics": {
+     "verified": true,
+     "sample_rate": 44100,
+     "channels": 1,
+     "bit_depth": 16,
+     "sample_count": 7056,
+     "duration_ms": 160,
+     "active_sample_count": 7016,
+     "rms_dbfs": -24.00000207628956,
+     "full_rms_dbfs": -24.024690944083407,
+     "peak_dbfs": -16.241451328947367,
+     "dc_abs": 5.06031269929847e-7,
+     "noise_energy_ratio": 0,
+     "endpoint_start_abs": 0,
+     "endpoint_end_abs": 0.000030517578125,
+     "longest_silence_ms": 0.022675736961451247,
+     "track_count": 1,
+     "voice_max": 1,
+     "pitched_voice_max": 1
+    }
+   },
+   "game_audio": null
+  },
+  {
+   "uid": "sfx:blocked",
+   "domain": "sfx",
+   "id": "blocked",
+   "name": "不能操作",
+   "source": "audio/source/sfx/blocked.json",
+   "game": "res://generated/audio/sfx/blocked.wav",
+   "audio_kind": "sfx",
+   "availability": "review",
+   "approved": false,
+   "importable": false,
+   "current_is_approved": false,
+   "version": 2,
+   "hash": "91ff297787e3c8224f65ea5fcf372c69d26613546893b247309edf6c49b6573e",
+   "current": {
+    "version": 2,
+    "hash": "91ff297787e3c8224f65ea5fcf372c69d26613546893b247309edf6c49b6573e",
+    "wav": "audio/export/preview/sfx/blocked.wav",
+    "sha256": "ce5ac14c6c7097a076c3566295b865af4bf4e20a644a74b504f5e100f17771a3",
+    "metrics": {
+     "verified": true,
+     "sample_rate": 44100,
+     "channels": 1,
+     "bit_depth": 16,
+     "sample_count": 6174,
+     "duration_ms": 140,
+     "active_sample_count": 6129,
+     "rms_dbfs": -23.99995164184874,
+     "full_rms_dbfs": -24.031719520548236,
+     "peak_dbfs": -15.566736813075133,
+     "dc_abs": 0.0001330188767285188,
+     "noise_energy_ratio": 0,
+     "endpoint_start_abs": 0,
+     "endpoint_end_abs": 0.000030517578125,
+     "longest_silence_ms": 0.09070294784580499,
+     "track_count": 1,
+     "voice_max": 1,
+     "pitched_voice_max": 1
+    }
+   },
+   "game_audio": null
+  },
+  {
+   "uid": "sfx:volume_preview",
+   "domain": "sfx",
+   "id": "volume_preview",
+   "name": "音效音量试听",
+   "source": "audio/source/sfx/volume_preview.json",
+   "game": "res://generated/audio/sfx/volume_preview.wav",
+   "audio_kind": "sfx",
+   "availability": "review",
+   "approved": false,
+   "importable": false,
+   "current_is_approved": false,
+   "version": 2,
+   "hash": "6bed47312323347ecfa7ca73129e0a4e0b6657aaff50a0e2ab4df9e926839107",
+   "current": {
+    "version": 2,
+    "hash": "6bed47312323347ecfa7ca73129e0a4e0b6657aaff50a0e2ab4df9e926839107",
+    "wav": "audio/export/preview/sfx/volume_preview.wav",
+    "sha256": "4c7f0f1fcd5f0993c53582902938c5d2ce8fa28be4c8cf6ccc5678994882796e",
+    "metrics": {
+     "verified": true,
+     "sample_rate": 44100,
+     "channels": 1,
+     "bit_depth": 16,
+     "sample_count": 22050,
+     "duration_ms": 500,
+     "active_sample_count": 22010,
+     "rms_dbfs": -24.000023178520927,
+     "full_rms_dbfs": -24.007908165308706,
+     "peak_dbfs": -17.39858840107688,
+     "dc_abs": 0.000002243491797760771,
+     "noise_energy_ratio": 0,
+     "endpoint_start_abs": 0,
+     "endpoint_end_abs": 0.000030517578125,
+     "longest_silence_ms": 0.09070294784580499,
+     "track_count": 2,
+     "voice_max": 2,
+     "pitched_voice_max": 2
+    }
+   },
+   "game_audio": null
+  },
+  {
+   "uid": "music:dungeon_a",
+   "domain": "music",
+   "id": "dungeon_a",
+   "name": "灯笈微光",
+   "source": "audio/source/music/dungeon_a.json",
+   "game": "res://generated/audio/music/dungeon_a.wav",
+   "audio_kind": "music",
+   "availability": "planned",
+   "approved": false,
+   "importable": false,
+   "current_is_approved": false,
+   "version": null,
+   "hash": null,
+   "current": null,
+   "game_audio": null
+  },
+  {
+   "uid": "music:dungeon_b",
+   "domain": "music",
+   "id": "dungeon_b",
+   "name": "符文回廊",
+   "source": "audio/source/music/dungeon_b.json",
+   "game": "res://generated/audio/music/dungeon_b.wav",
+   "audio_kind": "music",
+   "availability": "planned",
+   "approved": false,
+   "importable": false,
+   "current_is_approved": false,
+   "version": null,
+   "hash": null,
+   "current": null,
+   "game_audio": null
+  },
+  {
+   "uid": "music:dungeon_c",
+   "domain": "music",
+   "id": "dungeon_c",
+   "name": "石阶慢行",
+   "source": "audio/source/music/dungeon_c.json",
+   "game": "res://generated/audio/music/dungeon_c.wav",
+   "audio_kind": "music",
+   "availability": "planned",
+   "approved": false,
+   "importable": false,
+   "current_is_approved": false,
+   "version": null,
+   "hash": null,
+   "current": null,
+   "game_audio": null
+  },
+  {
+   "uid": "music:diyu_a",
+   "domain": "music",
+   "id": "diyu_a",
+   "name": "酆都夜摊",
+   "source": "audio/source/music/diyu_a.json",
+   "game": "res://generated/audio/music/diyu_a.wav",
+   "audio_kind": "music",
+   "availability": "planned",
+   "approved": false,
+   "importable": false,
+   "current_is_approved": false,
+   "version": null,
+   "hash": null,
+   "current": null,
+   "game_audio": null
+  },
+  {
+   "uid": "music:diyu_b",
+   "domain": "music",
+   "id": "diyu_b",
+   "name": "奈何茶暖",
+   "source": "audio/source/music/diyu_b.json",
+   "game": "res://generated/audio/music/diyu_b.wav",
+   "audio_kind": "music",
+   "availability": "planned",
+   "approved": false,
+   "importable": false,
+   "current_is_approved": false,
+   "version": null,
+   "hash": null,
+   "current": null,
+   "game_audio": null
+  },
+  {
+   "uid": "music:diyu_c",
+   "domain": "music",
+   "id": "diyu_c",
+   "name": "纸灯小巡",
+   "source": "audio/source/music/diyu_c.json",
+   "game": "res://generated/audio/music/diyu_c.wav",
+   "audio_kind": "music",
+   "availability": "planned",
+   "approved": false,
+   "importable": false,
+   "current_is_approved": false,
+   "version": null,
+   "hash": null,
+   "current": null,
+   "game_audio": null
+  },
+  {
+   "uid": "music:jeju_a",
+   "domain": "music",
+   "id": "jeju_a",
+   "name": "晨潮出门",
+   "source": "audio/source/music/jeju_a.json",
+   "game": "res://generated/audio/music/jeju_a.wav",
+   "audio_kind": "music",
+   "availability": "planned",
+   "approved": false,
+   "importable": false,
+   "current_is_approved": false,
+   "version": null,
+   "hash": null,
+   "current": null,
+   "game_audio": null
+  },
+  {
+   "uid": "music:jeju_b",
+   "domain": "music",
+   "id": "jeju_b",
+   "name": "石墙晒网",
+   "source": "audio/source/music/jeju_b.json",
+   "game": "res://generated/audio/music/jeju_b.wav",
+   "audio_kind": "music",
+   "availability": "planned",
+   "approved": false,
+   "importable": false,
+   "current_is_approved": false,
+   "version": null,
+   "hash": null,
+   "current": null,
+   "game_audio": null
+  },
+  {
+   "uid": "music:jeju_c",
+   "domain": "music",
+   "id": "jeju_c",
+   "name": "风过橘园",
+   "source": "audio/source/music/jeju_c.json",
+   "game": "res://generated/audio/music/jeju_c.wav",
+   "audio_kind": "music",
+   "availability": "planned",
+   "approved": false,
+   "importable": false,
+   "current_is_approved": false,
+   "version": null,
+   "hash": null,
+   "current": null,
+   "game_audio": null
+  },
+  {
+   "uid": "music:theme_a",
+   "domain": "music",
+   "id": "theme_a",
+   "name": "渡口灯",
+   "source": "audio/source/music/theme_a.json",
+   "game": "res://generated/audio/music/theme_a.wav",
+   "audio_kind": "music",
+   "availability": "review",
+   "approved": false,
+   "importable": false,
+   "current_is_approved": false,
+   "version": 2,
+   "hash": "a371397fca8fcffac8d4e2b954ba8257c2ec2de7976575a96038df6ce15657b2",
+   "current": {
+    "version": 2,
+    "hash": "a371397fca8fcffac8d4e2b954ba8257c2ec2de7976575a96038df6ce15657b2",
+    "wav": "audio/export/preview/music/theme_a.wav",
+    "sha256": "b5f55db93ba1dc3603847968383039a1f5446165fa7e43f8d6bfbebacd1aabd5",
+    "metrics": {
+     "verified": true,
+     "sample_rate": 44100,
+     "channels": 1,
+     "bit_depth": 16,
+     "sample_count": 4032000,
+     "duration_ms": 91428.57142857143,
+     "active_sample_count": 4032000,
+     "rms_dbfs": -26.24266942706155,
+     "full_rms_dbfs": -26.24266942706155,
+     "peak_dbfs": -15.476513549118117,
+     "dc_abs": 0.000005587903280106802,
+     "noise_energy_ratio": 0.0016552038035622073,
+     "endpoint_start_abs": 0.069854736328125,
+     "endpoint_end_abs": 0.068359375,
+     "longest_silence_ms": 0.045351473922902494,
+     "track_count": 6,
+     "voice_max": 5,
+     "pitched_voice_max": 4,
+     "seam_value_delta": 0.001495361328125,
+     "seam_slope_delta": 0.0013427734375,
+     "window_count": 89,
+     "window_non_silent_count": 89,
+     "window_rms_min_dbfs": -26.959860168689428,
+     "window_rms_max_dbfs": -25.470083600542726,
+     "window_rms_range_db": 1.4897765681467021
+    }
+   },
+   "game_audio": null
+  },
+  {
+   "uid": "music:theme_b",
+   "domain": "music",
+   "id": "theme_b",
+   "name": "小信差",
+   "source": "audio/source/music/theme_b.json",
+   "game": "res://generated/audio/music/theme_b.wav",
+   "audio_kind": "music",
+   "availability": "review",
+   "approved": false,
+   "importable": false,
+   "current_is_approved": false,
+   "version": 2,
+   "hash": "2b18abbf627e4e082bb626f492beae2a887ce84327b3a59d6705513fa0613613",
+   "current": {
+    "version": 2,
+    "hash": "2b18abbf627e4e082bb626f492beae2a887ce84327b3a59d6705513fa0613613",
+    "wav": "audio/export/preview/music/theme_b.wav",
+    "sha256": "2f6e182aa4fded431fde06cf346aa811132e74eb80c217852acde84afe0a3d4f",
+    "metrics": {
+     "verified": true,
+     "sample_rate": 44100,
+     "channels": 1,
+     "bit_depth": 16,
+     "sample_count": 4032000,
+     "duration_ms": 91428.57142857143,
+     "active_sample_count": 4032000,
+     "rms_dbfs": -26.182569867593692,
+     "full_rms_dbfs": -26.182569867593692,
+     "peak_dbfs": -15.476513549118117,
+     "dc_abs": 0.000005325991009909009,
+     "noise_energy_ratio": 0.0015993449366450813,
+     "endpoint_start_abs": 0.069580078125,
+     "endpoint_end_abs": 0.067962646484375,
+     "longest_silence_ms": 0.022675736961451247,
+     "track_count": 6,
+     "voice_max": 5,
+     "pitched_voice_max": 4,
+     "seam_value_delta": 0.001617431640625,
+     "seam_slope_delta": 0.001129150390625,
+     "window_count": 89,
+     "window_non_silent_count": 89,
+     "window_rms_min_dbfs": -26.905290284857468,
+     "window_rms_max_dbfs": -25.36314952179021,
+     "window_rms_range_db": 1.542140763067259
+    }
+   },
+   "game_audio": null
+  },
+  {
+   "uid": "music:theme_c",
+   "domain": "music",
+   "id": "theme_c",
+   "name": "回家的路",
+   "source": "audio/source/music/theme_c.json",
+   "game": "res://generated/audio/music/theme_c.wav",
+   "audio_kind": "music",
+   "availability": "review",
+   "approved": false,
+   "importable": false,
+   "current_is_approved": false,
+   "version": 2,
+   "hash": "2e01b43df0b450798a7c64232fb86cf3002e2d43f86c407304c40a1b26b2b5a7",
+   "current": {
+    "version": 2,
+    "hash": "2e01b43df0b450798a7c64232fb86cf3002e2d43f86c407304c40a1b26b2b5a7",
+    "wav": "audio/export/preview/music/theme_c.wav",
+    "sha256": "74499f15a01f532fa5e1d2e0ffdfd8aa1b6c0a82cf9103f10fd6f480e5330edb",
+    "metrics": {
+     "verified": true,
+     "sample_rate": 44100,
+     "channels": 1,
+     "bit_depth": 16,
+     "sample_count": 4032000,
+     "duration_ms": 91428.57142857143,
+     "active_sample_count": 4032000,
+     "rms_dbfs": -26.26133818394692,
+     "full_rms_dbfs": -26.26133818394692,
+     "peak_dbfs": -15.611402643341808,
+     "dc_abs": 0.0000023104274083697606,
+     "noise_energy_ratio": 0.001630612791234449,
+     "endpoint_start_abs": 0.070709228515625,
+     "endpoint_end_abs": 0.0689697265625,
+     "longest_silence_ms": 0.022675736961451247,
+     "track_count": 6,
+     "voice_max": 5,
+     "pitched_voice_max": 4,
+     "seam_value_delta": 0.001739501953125,
+     "seam_slope_delta": 0.00128173828125,
+     "window_count": 89,
+     "window_non_silent_count": 89,
+     "window_rms_min_dbfs": -26.93831606010919,
+     "window_rms_max_dbfs": -25.44258644503701,
+     "window_rms_range_db": 1.4957296150721824
+    }
+   },
+   "game_audio": null
+  },
+  {
+   "uid": "music:theme_d",
+   "domain": "music",
+   "id": "theme_d",
+   "name": "钟与浪",
+   "source": "audio/source/music/theme_d.json",
+   "game": "res://generated/audio/music/theme_d.wav",
+   "audio_kind": "music",
+   "availability": "review",
+   "approved": false,
+   "importable": false,
+   "current_is_approved": false,
+   "version": 2,
+   "hash": "d9c85cf5b2a18db75f3169074c6f33efa1240a663dea60b9efdae9096567166f",
+   "current": {
+    "version": 2,
+    "hash": "d9c85cf5b2a18db75f3169074c6f33efa1240a663dea60b9efdae9096567166f",
+    "wav": "audio/export/preview/music/theme_d.wav",
+    "sha256": "adff7e5fe46cee289b1a2600459d21e16d3f37e48aada7372d88b390591ebd5b",
+    "metrics": {
+     "verified": true,
+     "sample_rate": 44100,
+     "channels": 1,
+     "bit_depth": 16,
+     "sample_count": 4032000,
+     "duration_ms": 91428.57142857143,
+     "active_sample_count": 4032000,
+     "rms_dbfs": -26.351800102309607,
+     "full_rms_dbfs": -26.351800102309607,
+     "peak_dbfs": -16.159298459844887,
+     "dc_abs": 0.0000014827213590107267,
+     "noise_energy_ratio": 0.0016590554216065123,
+     "endpoint_start_abs": 0.02703857421875,
+     "endpoint_end_abs": 0.0289306640625,
+     "longest_silence_ms": 0.045351473922902494,
+     "track_count": 6,
+     "voice_max": 5,
+     "pitched_voice_max": 4,
+     "seam_value_delta": 0.00189208984375,
+     "seam_slope_delta": 0.00042724609375,
+     "window_count": 89,
+     "window_non_silent_count": 89,
+     "window_rms_min_dbfs": -29.15807964463598,
+     "window_rms_max_dbfs": -25.451982251643006,
+     "window_rms_range_db": 3.706097392992973
+    }
+   },
+   "game_audio": null
+  },
+  {
+   "uid": "music:dungeon",
+   "domain": "music",
+   "id": "dungeon",
+   "name": "石牢",
+   "source": "content/catalog/audio.json#music_sets/dungeon",
+   "game": "res://generated/audio/music/dungeon.wav",
+   "audio_kind": "music_set",
+   "availability": "planned",
+   "approved": false,
+   "importable": false,
+   "current_is_approved": false,
+   "version": null,
+   "hash": null,
+   "current": null,
+   "game_audio": null
+  },
+  {
+   "uid": "music:diyu",
+   "domain": "music",
+   "id": "diyu",
+   "name": "地府·酆都",
+   "source": "content/catalog/audio.json#music_sets/diyu",
+   "game": "res://generated/audio/music/diyu.wav",
+   "audio_kind": "music_set",
+   "availability": "planned",
+   "approved": false,
+   "importable": false,
+   "current_is_approved": false,
+   "version": null,
+   "hash": null,
+   "current": null,
+   "game_audio": null
+  },
+  {
+   "uid": "music:jeju",
+   "domain": "music",
+   "id": "jeju",
+   "name": "济州海女村",
+   "source": "content/catalog/audio.json#music_sets/jeju",
+   "game": "res://generated/audio/music/jeju.wav",
+   "audio_kind": "music_set",
+   "availability": "planned",
+   "approved": false,
+   "importable": false,
+   "current_is_approved": false,
+   "version": null,
+   "hash": null,
+   "current": null,
+   "game_audio": null
+  },
+  {
+   "uid": "music:theme",
+   "domain": "music",
+   "id": "theme",
+   "name": "主题小调",
+   "source": "content/catalog/audio.json#music_sets/theme",
+   "game": "res://generated/audio/music/theme.wav",
+   "audio_kind": "music_set",
+   "availability": "planned",
+   "approved": false,
+   "importable": false,
+   "current_is_approved": false,
+   "version": null,
+   "hash": null,
+   "current": null,
+   "game_audio": null
   },
   {
    "uid": "text:game.title",
@@ -6707,6 +9500,94 @@
    "game": "tr:dlg.sample.note"
   },
   {
+   "uid": "text:audio.dom",
+   "domain": "text",
+   "id": "audio.dom",
+   "name": "",
+   "source": "content/i18n-audio/zh-Hans.json",
+   "game": "tr:audio.dom"
+  },
+  {
+   "uid": "text:g.lobby.level",
+   "domain": "text",
+   "id": "g.lobby.level",
+   "name": "关卡模式",
+   "source": "content/i18n-common/zh-Hans.json",
+   "game": "tr:g.lobby.level"
+  },
+  {
+   "uid": "text:g.lobby.delivery",
+   "domain": "text",
+   "id": "g.lobby.delivery",
+   "name": "配送",
+   "source": "content/i18n-common/zh-Hans.json",
+   "game": "tr:g.lobby.delivery"
+  },
+  {
+   "uid": "text:g.reels.map",
+   "domain": "text",
+   "id": "g.reels.map",
+   "name": "地图",
+   "source": "content/i18n-common/zh-Hans.json",
+   "game": "tr:g.reels.map"
+  },
+  {
+   "uid": "text:g.reels.tip",
+   "domain": "text",
+   "id": "g.reels.tip",
+   "name": "小费 ×1.5",
+   "source": "content/i18n-common/zh-Hans.json",
+   "game": "tr:g.reels.tip"
+  },
+  {
+   "uid": "text:g.keys.move",
+   "domain": "text",
+   "id": "g.keys.move",
+   "name": "移动",
+   "source": "content/i18n-common/zh-Hans.json",
+   "game": "tr:g.keys.move"
+  },
+  {
+   "uid": "text:g.keys.undo",
+   "domain": "text",
+   "id": "g.keys.undo",
+   "name": "撤销",
+   "source": "content/i18n-common/zh-Hans.json",
+   "game": "tr:g.keys.undo"
+  },
+  {
+   "uid": "text:g.keys.pause",
+   "domain": "text",
+   "id": "g.keys.pause",
+   "name": "暂停",
+   "source": "content/i18n-common/zh-Hans.json",
+   "game": "tr:g.keys.pause"
+  },
+  {
+   "uid": "text:g.say",
+   "domain": "text",
+   "id": "g.say",
+   "name": "木箱会浮起来！",
+   "source": "content/i18n-common/zh-Hans.json",
+   "game": "tr:g.say"
+  },
+  {
+   "uid": "text:g.think",
+   "domain": "text",
+   "id": "g.think",
+   "name": "这条路对不对……",
+   "source": "content/i18n-common/zh-Hans.json",
+   "game": "tr:g.think"
+  },
+  {
+   "uid": "text:g.hello",
+   "domain": "text",
+   "id": "g.hello",
+   "name": "你好！",
+   "source": "content/i18n-common/zh-Hans.json",
+   "game": "tr:g.hello"
+  },
+  {
    "uid": "text:dlv.reels.title",
    "domain": "text",
    "id": "dlv.reels.title",
@@ -7145,6 +10026,230 @@
    "name": "基础 {n}",
    "source": "content/i18n-delivery/zh-Hans.json",
    "game": "tr:dlv.done.base"
+  },
+  {
+   "uid": "text:d2.map",
+   "domain": "text",
+   "id": "d2.map",
+   "name": "地图",
+   "source": "content/i18n-delivery2/zh-Hans.json",
+   "game": "tr:d2.map"
+  },
+  {
+   "uid": "text:d2.reroll",
+   "domain": "text",
+   "id": "d2.reroll",
+   "name": "重转 剩{n}次",
+   "source": "content/i18n-delivery2/zh-Hans.json",
+   "game": "tr:d2.reroll"
+  },
+  {
+   "uid": "text:d2.go",
+   "domain": "text",
+   "id": "d2.go",
+   "name": "出发",
+   "source": "content/i18n-delivery2/zh-Hans.json",
+   "game": "tr:d2.go"
+  },
+  {
+   "uid": "text:d2.select",
+   "domain": "text",
+   "id": "d2.select",
+   "name": "选择",
+   "source": "content/i18n-delivery2/zh-Hans.json",
+   "game": "tr:d2.select"
+  },
+  {
+   "uid": "text:d2.buy",
+   "domain": "text",
+   "id": "d2.buy",
+   "name": "购买",
+   "source": "content/i18n-delivery2/zh-Hans.json",
+   "game": "tr:d2.buy"
+  },
+  {
+   "uid": "text:d2.leave",
+   "domain": "text",
+   "id": "d2.leave",
+   "name": "离开",
+   "source": "content/i18n-delivery2/zh-Hans.json",
+   "game": "tr:d2.leave"
+  },
+  {
+   "uid": "text:d2.back",
+   "domain": "text",
+   "id": "d2.back",
+   "name": "返回",
+   "source": "content/i18n-delivery2/zh-Hans.json",
+   "game": "tr:d2.back"
+  },
+  {
+   "uid": "text:d2.observe",
+   "domain": "text",
+   "id": "d2.observe",
+   "name": "看全图",
+   "source": "content/i18n-delivery2/zh-Hans.json",
+   "game": "tr:d2.observe"
+  },
+  {
+   "uid": "text:d2.player",
+   "domain": "text",
+   "id": "d2.player",
+   "name": "人",
+   "source": "content/i18n-delivery2/zh-Hans.json",
+   "game": "tr:d2.player"
+  },
+  {
+   "uid": "text:d2.exit",
+   "domain": "text",
+   "id": "d2.exit",
+   "name": "出口",
+   "source": "content/i18n-delivery2/zh-Hans.json",
+   "game": "tr:d2.exit"
+  },
+  {
+   "uid": "text:d2.monster",
+   "domain": "text",
+   "id": "d2.monster",
+   "name": "怪物",
+   "source": "content/i18n-delivery2/zh-Hans.json",
+   "game": "tr:d2.monster"
+  },
+  {
+   "uid": "text:d2.animal",
+   "domain": "text",
+   "id": "d2.animal",
+   "name": "动物",
+   "source": "content/i18n-delivery2/zh-Hans.json",
+   "game": "tr:d2.animal"
+  },
+  {
+   "uid": "text:d2.snack.dungeon",
+   "domain": "text",
+   "id": "d2.snack.dungeon",
+   "name": "小鱼饼干",
+   "source": "content/i18n-delivery2/zh-Hans.json",
+   "game": "tr:d2.snack.dungeon"
+  },
+  {
+   "uid": "text:d2.snack.diyu",
+   "domain": "text",
+   "id": "d2.snack.diyu",
+   "name": "桂花糕",
+   "source": "content/i18n-delivery2/zh-Hans.json",
+   "game": "tr:d2.snack.diyu"
+  },
+  {
+   "uid": "text:d2.snack.jeju",
+   "domain": "text",
+   "id": "d2.snack.jeju",
+   "name": "小米糕",
+   "source": "content/i18n-delivery2/zh-Hans.json",
+   "game": "tr:d2.snack.jeju"
+  },
+  {
+   "uid": "text:d2.snack.desc",
+   "domain": "text",
+   "id": "d2.snack.desc",
+   "name": "一块零食换一句提示",
+   "source": "content/i18n-delivery2/zh-Hans.json",
+   "game": "tr:d2.snack.desc"
+  },
+  {
+   "uid": "text:d2.snack.stock",
+   "domain": "text",
+   "id": "d2.snack.stock",
+   "name": "每站 3 块 · 10 金币",
+   "source": "content/i18n-delivery2/zh-Hans.json",
+   "game": "tr:d2.snack.stock"
+  },
+  {
+   "uid": "text:d2.feed",
+   "domain": "text",
+   "id": "d2.feed",
+   "name": "喂零食要找猫 / 狗 / 小马",
+   "source": "content/i18n-delivery2/zh-Hans.json",
+   "game": "tr:d2.feed"
+  },
+  {
+   "uid": "text:d2.hint",
+   "domain": "text",
+   "id": "d2.hint",
+   "name": "先挖一袋沙。",
+   "source": "content/i18n-delivery2/zh-Hans.json",
+   "game": "tr:d2.hint"
+  },
+  {
+   "uid": "text:d2.hint.near",
+   "domain": "text",
+   "id": "d2.hint.near",
+   "name": "走近看箭头 · 喂零食听提示",
+   "source": "content/i18n-delivery2/zh-Hans.json",
+   "game": "tr:d2.hint.near"
+  },
+  {
+   "uid": "text:d2.tip",
+   "domain": "text",
+   "id": "d2.tip",
+   "name": "小费 ×1.5",
+   "source": "content/i18n-delivery2/zh-Hans.json",
+   "game": "tr:d2.tip"
+  },
+  {
+   "uid": "text:d2.reel.order",
+   "domain": "text",
+   "id": "d2.reel.order",
+   "name": "地图 → 收件人 → 货物",
+   "source": "content/i18n-delivery2/zh-Hans.json",
+   "game": "tr:d2.reel.order"
+  },
+  {
+   "uid": "text:d2.integrity",
+   "domain": "text",
+   "id": "d2.integrity",
+   "name": "完好度",
+   "source": "content/i18n-delivery2/zh-Hans.json",
+   "game": "tr:d2.integrity"
+  },
+  {
+   "uid": "text:d2.pause",
+   "domain": "text",
+   "id": "d2.pause",
+   "name": "配送暂停",
+   "source": "content/i18n-delivery2/zh-Hans.json",
+   "game": "tr:d2.pause"
+  },
+  {
+   "uid": "text:d2.map.dungeon",
+   "domain": "text",
+   "id": "d2.map.dungeon",
+   "name": "石牢",
+   "source": "content/i18n-delivery2/zh-Hans.json",
+   "game": "tr:d2.map.dungeon"
+  },
+  {
+   "uid": "text:d2.map.diyu",
+   "domain": "text",
+   "id": "d2.map.diyu",
+   "name": "地府",
+   "source": "content/i18n-delivery2/zh-Hans.json",
+   "game": "tr:d2.map.diyu"
+  },
+  {
+   "uid": "text:d2.price",
+   "domain": "text",
+   "id": "d2.price",
+   "name": "价格",
+   "source": "content/i18n-delivery2/zh-Hans.json",
+   "game": "tr:d2.price"
+  },
+  {
+   "uid": "text:d2.stock",
+   "domain": "text",
+   "id": "d2.stock",
+   "name": "库存",
+   "source": "content/i18n-delivery2/zh-Hans.json",
+   "game": "tr:d2.stock"
   },
   {
    "uid": "text:dev.placeholder",
@@ -8513,6 +11618,950 @@
    "name": "跨章组合复习：让前一章的机关改变后一章的用法。",
    "source": "content/i18n-extra/zh-Hans.json",
    "game": "tr:extra.chapter.review_blurb"
+  },
+  {
+   "uid": "text:result.lobby.level",
+   "domain": "text",
+   "id": "result.lobby.level",
+   "name": "关卡模式",
+   "source": "content/i18n-result/zh-Hans.json",
+   "game": "tr:result.lobby.level"
+  },
+  {
+   "uid": "text:result.lobby.delivery",
+   "domain": "text",
+   "id": "result.lobby.delivery",
+   "name": "配送",
+   "source": "content/i18n-result/zh-Hans.json",
+   "game": "tr:result.lobby.delivery"
+  },
+  {
+   "uid": "text:result.par",
+   "domain": "text",
+   "id": "result.par",
+   "name": "参考用时 {n} 秒",
+   "source": "content/i18n-result/zh-Hans.json",
+   "game": "tr:result.par"
+  },
+  {
+   "uid": "text:room2.diyu_fengdu.name",
+   "domain": "text",
+   "id": "room2.diyu_fengdu.name",
+   "name": "酆都城 · 钟楼的锣",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.diyu_fengdu.name"
+  },
+  {
+   "uid": "text:room2.diyu_fengdu.hint.0",
+   "domain": "text",
+   "id": "room2.diyu_fengdu.hint.0",
+   "name": "推纸台过坑：箱子坐在上面一起走。",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.diyu_fengdu.hint.0"
+  },
+  {
+   "uid": "text:room2.diyu_fengdu.hint.1",
+   "domain": "text",
+   "id": "room2.diyu_fengdu.hint.1",
+   "name": "踩上纸台，把箱子推到钟楼下面当台阶。",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.diyu_fengdu.hint.1"
+  },
+  {
+   "uid": "text:room2.diyu_fengdu.hint.2",
+   "domain": "text",
+   "id": "room2.diyu_fengdu.hint.2",
+   "name": "踩着箱子上钟楼，敲锣：城门开了。",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.diyu_fengdu.hint.2"
+  },
+  {
+   "uid": "text:room2.diyu_fengdu.hint.3",
+   "domain": "text",
+   "id": "room2.diyu_fengdu.hint.3",
+   "name": "从梯子下去，穿过城门。",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.diyu_fengdu.hint.3"
+  },
+  {
+   "uid": "text:room2.diyu_gate.name",
+   "domain": "text",
+   "id": "room2.diyu_gate.name",
+   "name": "鬼门关",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.diyu_gate.name"
+  },
+  {
+   "uid": "text:room2.diyu_ghostfire.name",
+   "domain": "text",
+   "id": "room2.diyu_ghostfire.name",
+   "name": "鬼火回廊",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.diyu_ghostfire.name"
+  },
+  {
+   "uid": "text:room2.diyu_home_hall.name",
+   "domain": "text",
+   "id": "room2.diyu_home_hall.name",
+   "name": "收件人之家 · 判官殿",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.diyu_home_hall.name"
+  },
+  {
+   "uid": "text:room2.diyu_home_yard.name",
+   "domain": "text",
+   "id": "room2.diyu_home_yard.name",
+   "name": "收件人之家 · 先人小院",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.diyu_home_yard.name"
+  },
+  {
+   "uid": "text:room2.diyu_huangquan.name",
+   "domain": "text",
+   "id": "room2.diyu_huangquan.name",
+   "name": "黄泉路 · 喘口气",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.diyu_huangquan.name"
+  },
+  {
+   "uid": "text:room2.diyu_lantern.name",
+   "domain": "text",
+   "id": "room2.diyu_lantern.name",
+   "name": "孔明灯台 · 从槽里推出来",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.diyu_lantern.name"
+  },
+  {
+   "uid": "text:room2.diyu_lantern.hint.0",
+   "domain": "text",
+   "id": "room2.diyu_lantern.hint.0",
+   "name": "跳进槽里，从侧面走进纸台的一端：它会被推着走。",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.diyu_lantern.hint.0"
+  },
+  {
+   "uid": "text:room2.diyu_lantern.hint.1",
+   "domain": "text",
+   "id": "room2.diyu_lantern.hint.1",
+   "name": "纸台悬在坑上，不会掉：踩上去走过去。",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.diyu_lantern.hint.1"
+  },
+  {
+   "uid": "text:room2.diyu_naihe.name",
+   "domain": "text",
+   "id": "room2.diyu_naihe.name",
+   "name": "奈何桥 · 一次只过一个",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.diyu_naihe.name"
+  },
+  {
+   "uid": "text:room2.diyu_naihe.hint.0",
+   "domain": "text",
+   "id": "room2.diyu_naihe.hint.0",
+   "name": "奈何桥一次只承一个：先把箱子推上桥。",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.diyu_naihe.hint.0"
+  },
+  {
+   "uid": "text:room2.diyu_naihe.hint.1",
+   "domain": "text",
+   "id": "room2.diyu_naihe.hint.1",
+   "name": "再推一下：你和箱子都在桥上，桥就塌了——箱子正好压住桥下的压板。",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.diyu_naihe.hint.1"
+  },
+  {
+   "uid": "text:room2.diyu_naihe.hint.2",
+   "domain": "text",
+   "id": "room2.diyu_naihe.hint.2",
+   "name": "门开了：踩着箱子爬上梯子，走过去。",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.diyu_naihe.hint.2"
+  },
+  {
+   "uid": "text:room2.diyu_paper_bridge.name",
+   "domain": "text",
+   "id": "room2.diyu_paper_bridge.name",
+   "name": "纸台过桥 · 灯台不压桥",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.diyu_paper_bridge.name"
+  },
+  {
+   "uid": "text:room2.diyu_paper_bridge.hint.0",
+   "domain": "text",
+   "id": "room2.diyu_paper_bridge.hint.0",
+   "name": "推纸台上桥：纸台和上面的箱子都不压桥，桥上只有你一个。",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.diyu_paper_bridge.hint.0"
+  },
+  {
+   "uid": "text:room2.diyu_paper_bridge.hint.1",
+   "domain": "text",
+   "id": "room2.diyu_paper_bridge.hint.1",
+   "name": "踩上纸台，把箱子推上对岸的压板。",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.diyu_paper_bridge.hint.1"
+  },
+  {
+   "uid": "text:room2.diyu_paper_bridge.hint.2",
+   "domain": "text",
+   "id": "room2.diyu_paper_bridge.hint.2",
+   "name": "门开了：从箱子上翻过去。",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.diyu_paper_bridge.hint.2"
+  },
+  {
+   "uid": "text:room2.diyu_sand_bridge.name",
+   "domain": "text",
+   "id": "room2.diyu_sand_bridge.name",
+   "name": "黄泉沙 · 沙也有分量",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.diyu_sand_bridge.name"
+  },
+  {
+   "uid": "text:room2.diyu_sand_bridge.hint.0",
+   "domain": "text",
+   "id": "room2.diyu_sand_bridge.hint.0",
+   "name": "挖一袋黄泉沙。",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.diyu_sand_bridge.hint.0"
+  },
+  {
+   "uid": "text:room2.diyu_sand_bridge.hint.1",
+   "domain": "text",
+   "id": "room2.diyu_sand_bridge.hint.1",
+   "name": "把沙倒在桥上：沙也有分量，一格沙算一个。",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.diyu_sand_bridge.hint.1"
+  },
+  {
+   "uid": "text:room2.diyu_sand_bridge.hint.2",
+   "domain": "text",
+   "id": "room2.diyu_sand_bridge.hint.2",
+   "name": "踩上沙堆：桥塌了，沙正好压住桥下的压板。",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.diyu_sand_bridge.hint.2"
+  },
+  {
+   "uid": "text:room2.diyu_sand_bridge.hint.3",
+   "domain": "text",
+   "id": "room2.diyu_sand_bridge.hint.3",
+   "name": "门开了：爬上梯子走过去。",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.diyu_sand_bridge.hint.3"
+  },
+  {
+   "uid": "text:room2.diyu_teahouse.name",
+   "domain": "text",
+   "id": "room2.diyu_teahouse.name",
+   "name": "驿站 · 桥头茶摊",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.diyu_teahouse.name"
+  },
+  {
+   "uid": "text:room2.diyu_wangchuan.name",
+   "domain": "text",
+   "id": "room2.diyu_wangchuan.name",
+   "name": "忘川渡 · 木浮铁沉",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.diyu_wangchuan.name"
+  },
+  {
+   "uid": "text:room2.diyu_wangchuan.hint.0",
+   "domain": "text",
+   "id": "room2.diyu_wangchuan.hint.0",
+   "name": "木箱浮在忘川上：推下去当垫脚石。",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.diyu_wangchuan.hint.0"
+  },
+  {
+   "uid": "text:room2.diyu_wangchuan.hint.1",
+   "domain": "text",
+   "id": "room2.diyu_wangchuan.hint.1",
+   "name": "铁箱会沉：推进浅水坑，压住水底的压板。",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.diyu_wangchuan.hint.1"
+  },
+  {
+   "uid": "text:room2.diyu_wangchuan.hint.2",
+   "domain": "text",
+   "id": "room2.diyu_wangchuan.hint.2",
+   "name": "跳进槽里，把纸台推出去搭过忘川。",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.diyu_wangchuan.hint.2"
+  },
+  {
+   "uid": "text:room2.diyu_wangchuan.hint.3",
+   "domain": "text",
+   "id": "room2.diyu_wangchuan.hint.3",
+   "name": "踩着纸台过河。",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.diyu_wangchuan.hint.3"
+  },
+  {
+   "uid": "text:room2.diyu_wangxiang.name",
+   "domain": "text",
+   "id": "room2.diyu_wangxiang.name",
+   "name": "望乡台 · 吊篮卡住了",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.diyu_wangxiang.name"
+  },
+  {
+   "uid": "text:room2.diyu_wangxiang.hint.0",
+   "domain": "text",
+   "id": "room2.diyu_wangxiang.hint.0",
+   "name": "吊篮下不去：井道里的门关着，它的压板在水井底下。把铁箱推进去，它会沉。",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.diyu_wangxiang.hint.0"
+  },
+  {
+   "uid": "text:room2.diyu_wangxiang.hint.1",
+   "domain": "text",
+   "id": "room2.diyu_wangxiang.hint.1",
+   "name": "门开了：回到吊篮上，再踩一次按钮。",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.diyu_wangxiang.hint.1"
+  },
+  {
+   "uid": "text:room2.diyu_wangxiang.hint.2",
+   "domain": "text",
+   "id": "room2.diyu_wangxiang.hint.2",
+   "name": "到底了，走出去。",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.diyu_wangxiang.hint.2"
+  },
+  {
+   "uid": "text:room2.dungeon2_bridge.name",
+   "domain": "text",
+   "id": "room2.dungeon2_bridge.name",
+   "name": "断桥 · 推浮石",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.dungeon2_bridge.name"
+  },
+  {
+   "uid": "text:room2.dungeon2_bridge.hint.0",
+   "domain": "text",
+   "id": "room2.dungeon2_bridge.hint.0",
+   "name": "走进浮石的一端就能推动它；浮石悬在空中，不会掉。",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.dungeon2_bridge.hint.0"
+  },
+  {
+   "uid": "text:room2.dungeon2_bridge.hint.1",
+   "domain": "text",
+   "id": "room2.dungeon2_bridge.hint.1",
+   "name": "推不动了就踩上去，从上面走过坑。",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.dungeon2_bridge.hint.1"
+  },
+  {
+   "uid": "text:room2.dungeon2_corridor.name",
+   "domain": "text",
+   "id": "room2.dungeon2_corridor.name",
+   "name": "鼠道 · 喘口气",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.dungeon2_corridor.name"
+  },
+  {
+   "uid": "text:room2.dungeon2_ferry.name",
+   "domain": "text",
+   "id": "room2.dungeon2_ferry.name",
+   "name": "渡箱 · 浮石载货",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.dungeon2_ferry.name"
+  },
+  {
+   "uid": "text:room2.dungeon2_ferry.hint.0",
+   "domain": "text",
+   "id": "room2.dungeon2_ferry.hint.0",
+   "name": "浮石载着箱子一起走：把它推过坑。",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.dungeon2_ferry.hint.0"
+  },
+  {
+   "uid": "text:room2.dungeon2_ferry.hint.1",
+   "domain": "text",
+   "id": "room2.dungeon2_ferry.hint.1",
+   "name": "踩上浮石，把箱子推上对岸的压板。",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.dungeon2_ferry.hint.1"
+  },
+  {
+   "uid": "text:room2.dungeon2_ferry.hint.2",
+   "domain": "text",
+   "id": "room2.dungeon2_ferry.hint.2",
+   "name": "门开了：踩着箱子翻过矮墙。",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.dungeon2_ferry.hint.2"
+  },
+  {
+   "uid": "text:room2.dungeon2_gate.name",
+   "domain": "text",
+   "id": "room2.dungeon2_gate.name",
+   "name": "渡门 · 符文监狱",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.dungeon2_gate.name"
+  },
+  {
+   "uid": "text:room2.dungeon2_home.name",
+   "domain": "text",
+   "id": "room2.dungeon2_home.name",
+   "name": "收件人之家 · 牢房小屋",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.dungeon2_home.name"
+  },
+  {
+   "uid": "text:room2.dungeon2_pole.name",
+   "domain": "text",
+   "id": "room2.dungeon2_pole.name",
+   "name": "撑岸 · 站在浮石上用铲子",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.dungeon2_pole.name"
+  },
+  {
+   "uid": "text:room2.dungeon2_pole.hint.0",
+   "domain": "text",
+   "id": "room2.dungeon2_pole.hint.0",
+   "name": "跳到浮石上。",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.dungeon2_pole.hint.0"
+  },
+  {
+   "uid": "text:room2.dungeon2_pole.hint.1",
+   "domain": "text",
+   "id": "room2.dungeon2_pole.hint.1",
+   "name": "对着身后的墙挖：挖不动，就撑——浮石往反方向漂一格。",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.dungeon2_pole.hint.1"
+  },
+  {
+   "uid": "text:room2.dungeon2_pole.hint.2",
+   "domain": "text",
+   "id": "room2.dungeon2_pole.hint.2",
+   "name": "上岸。",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.dungeon2_pole.hint.2"
+  },
+  {
+   "uid": "text:room2.dungeon2_sandpour.name",
+   "domain": "text",
+   "id": "room2.dungeon2_sandpour.name",
+   "name": "沙井 · 站在浮石上倒沙",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.dungeon2_sandpour.name"
+  },
+  {
+   "uid": "text:room2.dungeon2_sandpour.hint.0",
+   "domain": "text",
+   "id": "room2.dungeon2_sandpour.hint.0",
+   "name": "先挖一袋沙。",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.dungeon2_sandpour.hint.0"
+  },
+  {
+   "uid": "text:room2.dungeon2_sandpour.hint.1",
+   "domain": "text",
+   "id": "room2.dungeon2_sandpour.hint.1",
+   "name": "站到浮石右端，把沙倒进坑里：沙落到底，压住压板。",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.dungeon2_sandpour.hint.1"
+  },
+  {
+   "uid": "text:room2.dungeon2_sandpour.hint.2",
+   "domain": "text",
+   "id": "room2.dungeon2_sandpour.hint.2",
+   "name": "门开了：对着岸撑一下，上对岸。",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.dungeon2_sandpour.hint.2"
+  },
+  {
+   "uid": "text:room2.dungeon2_station.name",
+   "domain": "text",
+   "id": "room2.dungeon2_station.name",
+   "name": "驿站 · 牢房分号",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.dungeon2_station.name"
+  },
+  {
+   "uid": "text:room2.dungeon2_well.name",
+   "domain": "text",
+   "id": "room2.dungeon2_well.name",
+   "name": "落井 · 一路撑下去",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.dungeon2_well.name"
+  },
+  {
+   "uid": "text:room2.dungeon2_well.hint.0",
+   "domain": "text",
+   "id": "room2.dungeon2_well.hint.0",
+   "name": "跳上浮石，对着来时的岸撑一下。",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.dungeon2_well.hint.0"
+  },
+  {
+   "uid": "text:room2.dungeon2_well.hint.1",
+   "domain": "text",
+   "id": "room2.dungeon2_well.hint.1",
+   "name": "这块往左撑：走到它右端，对着石墙用铲子。",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.dungeon2_well.hint.1"
+  },
+  {
+   "uid": "text:room2.dungeon2_well.hint.2",
+   "domain": "text",
+   "id": "room2.dungeon2_well.hint.2",
+   "name": "最后一块往右撑。",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.dungeon2_well.hint.2"
+  },
+  {
+   "uid": "text:room2.dungeon2_well.hint.3",
+   "domain": "text",
+   "id": "room2.dungeon2_well.hint.3",
+   "name": "落到下面的石台上，向右出去。",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.dungeon2_well.hint.3"
+  },
+  {
+   "uid": "text:room2.dungeon2_yard.name",
+   "domain": "text",
+   "id": "room2.dungeon2_yard.name",
+   "name": "放风场 · 高台上的拉杆",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.dungeon2_yard.name"
+  },
+  {
+   "uid": "text:room2.dungeon2_yard.hint.0",
+   "domain": "text",
+   "id": "room2.dungeon2_yard.hint.0",
+   "name": "推浮石把箱子运过坑。",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.dungeon2_yard.hint.0"
+  },
+  {
+   "uid": "text:room2.dungeon2_yard.hint.1",
+   "domain": "text",
+   "id": "room2.dungeon2_yard.hint.1",
+   "name": "把箱子推到高台下面当台阶。",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.dungeon2_yard.hint.1"
+  },
+  {
+   "uid": "text:room2.dungeon2_yard.hint.2",
+   "domain": "text",
+   "id": "room2.dungeon2_yard.hint.2",
+   "name": "上高台拉下拉杆：下层的门开了。",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.dungeon2_yard.hint.2"
+  },
+  {
+   "uid": "text:room2.dungeon2_yard.hint.3",
+   "domain": "text",
+   "id": "room2.dungeon2_yard.hint.3",
+   "name": "从梯子下去，穿过下层的门。",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.dungeon2_yard.hint.3"
+  },
+  {
+   "uid": "text:dlg.fauna.dungeon_bat.fed",
+   "domain": "text",
+   "id": "dlg.fauna.dungeon_bat.fed",
+   "name": "只帮牢猫传话：喂零食要找猫",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:dlg.fauna.dungeon_bat.fed"
+  },
+  {
+   "uid": "text:dlg.fauna.diyu_butterfly.fed",
+   "domain": "text",
+   "id": "dlg.fauna.diyu_butterfly.fed",
+   "name": "只帮小白狗带路：喂零食要找狗",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:dlg.fauna.diyu_butterfly.fed"
+  },
+  {
+   "uid": "text:dlg.r2.hurt",
+   "domain": "text",
+   "id": "dlg.r2.hurt",
+   "name": "太高了，跳下去会摔伤。",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:dlg.r2.hurt"
+  },
+  {
+   "uid": "text:dlg.r2.no_snack",
+   "domain": "text",
+   "id": "dlg.r2.no_snack",
+   "name": "零食吃完了。",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:dlg.r2.no_snack"
+  },
+  {
+   "uid": "text:dlg.r2.no_hint",
+   "domain": "text",
+   "id": "dlg.r2.no_hint",
+   "name": "这间没有要提示的，往出口走吧。",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:dlg.r2.no_hint"
+  },
+  {
+   "uid": "text:dlg.r2.done_hint",
+   "domain": "text",
+   "id": "dlg.r2.done_hint",
+   "name": "都做完了：去出口吧。",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:dlg.r2.done_hint"
+  },
+  {
+   "uid": "text:dlg.r2.exit",
+   "domain": "text",
+   "id": "dlg.r2.exit",
+   "name": "到出口了！",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:dlg.r2.exit"
+  },
+  {
+   "uid": "text:r2.hud.moves",
+   "domain": "text",
+   "id": "r2.hud.moves",
+   "name": "{n} 步",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:r2.hud.moves"
+  },
+  {
+   "uid": "text:r2.hud.hint",
+   "domain": "text",
+   "id": "r2.hud.hint",
+   "name": "提示 {i}/{n}",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:r2.hud.hint"
+  },
+  {
+   "uid": "text:r2.hud.step",
+   "domain": "text",
+   "id": "r2.hud.step",
+   "name": "第 {i}/{n} 步",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:r2.hud.step"
+  },
+  {
+   "uid": "text:r2.hud.cleared",
+   "domain": "text",
+   "id": "r2.hud.cleared",
+   "name": "通过",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:r2.hud.cleared"
+  },
+  {
+   "uid": "text:r2.hud.snack",
+   "domain": "text",
+   "id": "r2.hud.snack",
+   "name": "×{n}",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:r2.hud.snack"
+  },
+  {
+   "uid": "text:room2.jeju_gate.name",
+   "domain": "text",
+   "id": "room2.jeju_gate.name",
+   "name": "浦口 · 渡门下船",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.jeju_gate.name"
+  },
+  {
+   "uid": "text:room2.jeju_olle.name",
+   "domain": "text",
+   "id": "room2.jeju_olle.name",
+   "name": "石墙小巷",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.jeju_olle.name"
+  },
+  {
+   "uid": "text:room2.jeju_canola.name",
+   "domain": "text",
+   "id": "room2.jeju_canola.name",
+   "name": "油菜花田",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.jeju_canola.name"
+  },
+  {
+   "uid": "text:room2.jeju_haenyeo_house.name",
+   "domain": "text",
+   "id": "room2.jeju_haenyeo_house.name",
+   "name": "驿站 · 海女之家",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.jeju_haenyeo_house.name"
+  },
+  {
+   "uid": "text:room2.jeju_home_shore.name",
+   "domain": "text",
+   "id": "room2.jeju_home_shore.name",
+   "name": "收件人之家 · 防波堤",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.jeju_home_shore.name"
+  },
+  {
+   "uid": "text:room2.jeju_home_orchard.name",
+   "domain": "text",
+   "id": "room2.jeju_home_orchard.name",
+   "name": "收件人之家 · 橘园",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.jeju_home_orchard.name"
+  },
+  {
+   "uid": "text:room2.jeju_home_cave.name",
+   "domain": "text",
+   "id": "room2.jeju_home_cave.name",
+   "name": "收件人之家 · 熔岩洞口",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.jeju_home_cave.name"
+  },
+  {
+   "uid": "text:dlg.fauna.jeju_dragonfly.fed",
+   "domain": "text",
+   "id": "dlg.fauna.jeju_dragonfly.fed",
+   "name": "只帮小马带路：喂零食要找小马",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:dlg.fauna.jeju_dragonfly.fed"
+  },
+  {
+   "uid": "text:room2.jeju_neolttwigi.name",
+   "domain": "text",
+   "id": "room2.jeju_neolttwigi.name",
+   "name": "跳板场 · 一头落下一头飞",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.jeju_neolttwigi.name"
+  },
+  {
+   "uid": "text:room2.jeju_neolttwigi.hint.0",
+   "domain": "text",
+   "id": "room2.jeju_neolttwigi.hint.0",
+   "name": "先打开木箱上方的门，再绕到铁箱右边，把铁箱推下井；弹起的木箱会压住出路的压板。",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.jeju_neolttwigi.hint.0"
+  },
+  {
+   "uid": "text:room2.jeju_baramgil.name",
+   "domain": "text",
+   "id": "room2.jeju_baramgil.name",
+   "name": "风口 · 风替你推",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.jeju_baramgil.name"
+  },
+  {
+   "uid": "text:room2.jeju_baramgil.hint.0",
+   "domain": "text",
+   "id": "room2.jeju_baramgil.hint.0",
+   "name": "木箱后面是石墙，人推不了；走几步让风把木箱吹进深坑，再踩着木箱过坑。",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.jeju_baramgil.hint.0"
+  },
+  {
+   "uid": "text:room2.jeju_pier.name",
+   "domain": "text",
+   "id": "room2.jeju_pier.name",
+   "name": "码头 · 铁箱沉下去也算",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.jeju_pier.name"
+  },
+  {
+   "uid": "text:room2.jeju_pier.hint.0",
+   "domain": "text",
+   "id": "room2.jeju_pier.hint.0",
+   "name": "从码头下面绕到铁箱右边，把铁箱推进水井；木箱弹上岸后，踩着它登上栈道。",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.jeju_pier.hint.0"
+  },
+  {
+   "uid": "text:room2.jeju_terrace.name",
+   "domain": "text",
+   "id": "room2.jeju_terrace.name",
+   "name": "橘园台地 · 一袋土也算重",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.jeju_terrace.name"
+  },
+  {
+   "uid": "text:room2.jeju_terrace.hint.0",
+   "domain": "text",
+   "id": "room2.jeju_terrace.hint.0",
+   "name": "先挖开木箱上方的土，带着这袋土从上面绕到右岸；站在压板上向左倒沙，弹起木箱后再爬",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.jeju_terrace.hint.0"
+  },
+  {
+   "uid": "text:room2.jeju_doldam.name",
+   "domain": "text",
+   "id": "room2.jeju_doldam.name",
+   "name": "石墙风口 · 铁箱当刹车",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.jeju_doldam.name"
+  },
+  {
+   "uid": "text:room2.jeju_doldam.hint.0",
+   "domain": "text",
+   "id": "room2.jeju_doldam.hint.0",
+   "name": "先沿下方走到右侧梯子，踩上入口压板放风；马上向左推铁箱落进右坑，木箱才会停在左边",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.jeju_doldam.hint.0"
+  },
+  {
+   "uid": "text:room2.jeju_dodaebul.name",
+   "domain": "text",
+   "id": "room2.jeju_dodaebul.name",
+   "name": "石灯台 · 风替你砸跳板",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.jeju_dodaebul.name"
+  },
+  {
+   "uid": "text:room2.jeju_dodaebul.hint.0",
+   "domain": "text",
+   "id": "room2.jeju_dodaebul.hint.0",
+   "name": "下到石灯台底部，站到跳板右端再按上开门；风会把木箱送进左井，把你弹上高台。",
+   "source": "content/i18n-rooms2/zh-Hans.json",
+   "game": "tr:room2.jeju_dodaebul.hint.0"
+  },
+  {
+   "uid": "text:ui.title_alt",
+   "domain": "text",
+   "id": "ui.title_alt",
+   "name": "PORTITOR",
+   "source": "content/i18n-ui/zh-Hans.json",
+   "game": "tr:ui.title_alt"
+  },
+  {
+   "uid": "text:lobby.current_tag",
+   "domain": "text",
+   "id": "lobby.current_tag",
+   "name": "当前",
+   "source": "content/i18n-ui/zh-Hans.json",
+   "game": "tr:lobby.current_tag"
+  },
+  {
+   "uid": "text:keys.adjust",
+   "domain": "text",
+   "id": "keys.adjust",
+   "name": "调整",
+   "source": "content/i18n-ui/zh-Hans.json",
+   "game": "tr:keys.adjust"
+  },
+  {
+   "uid": "text:settings.ui_style",
+   "domain": "text",
+   "id": "settings.ui_style",
+   "name": "界面风格",
+   "source": "content/i18n-ui/zh-Hans.json",
+   "game": "tr:settings.ui_style"
+  },
+  {
+   "uid": "text:settings.ui_style.note1",
+   "domain": "text",
+   "id": "settings.ui_style.note1",
+   "name": "大厅随地图换风格，",
+   "source": "content/i18n-ui/zh-Hans.json",
+   "game": "tr:settings.ui_style.note1"
+  },
+  {
+   "uid": "text:settings.ui_style.note2",
+   "domain": "text",
+   "id": "settings.ui_style.note2",
+   "name": "其他界面用这一套。",
+   "source": "content/i18n-ui/zh-Hans.json",
+   "game": "tr:settings.ui_style.note2"
+  },
+  {
+   "uid": "text:ui_style.s1",
+   "domain": "text",
+   "id": "ui_style.s1",
+   "name": "晶石琉璃",
+   "source": "content/i18n-ui/zh-Hans.json",
+   "game": "tr:ui_style.s1"
+  },
+  {
+   "uid": "text:ui_style.s2",
+   "domain": "text",
+   "id": "ui_style.s2",
+   "name": "漂浮符文",
+   "source": "content/i18n-ui/zh-Hans.json",
+   "game": "tr:ui_style.s2"
+  },
+  {
+   "uid": "text:ui_style.s3",
+   "domain": "text",
+   "id": "ui_style.s3",
+   "name": "祥云玉简",
+   "source": "content/i18n-ui/zh-Hans.json",
+   "game": "tr:ui_style.s3"
+  },
+  {
+   "uid": "text:ui_style.s4",
+   "domain": "text",
+   "id": "ui_style.s4",
+   "name": "梦泡糖霜",
+   "source": "content/i18n-ui/zh-Hans.json",
+   "game": "tr:ui_style.s4"
+  },
+  {
+   "uid": "text:ui_style.s1.mark",
+   "domain": "text",
+   "id": "ui_style.s1.mark",
+   "name": "晶",
+   "source": "content/i18n-ui/zh-Hans.json",
+   "game": "tr:ui_style.s1.mark"
+  },
+  {
+   "uid": "text:ui_style.s2.mark",
+   "domain": "text",
+   "id": "ui_style.s2.mark",
+   "name": "符",
+   "source": "content/i18n-ui/zh-Hans.json",
+   "game": "tr:ui_style.s2.mark"
+  },
+  {
+   "uid": "text:ui_style.s3.mark",
+   "domain": "text",
+   "id": "ui_style.s3.mark",
+   "name": "玉",
+   "source": "content/i18n-ui/zh-Hans.json",
+   "game": "tr:ui_style.s3.mark"
+  },
+  {
+   "uid": "text:ui_style.s4.mark",
+   "domain": "text",
+   "id": "ui_style.s4.mark",
+   "name": "泡",
+   "source": "content/i18n-ui/zh-Hans.json",
+   "game": "tr:ui_style.s4.mark"
+  },
+  {
+   "uid": "text:dlv.confirm.title",
+   "domain": "text",
+   "id": "dlv.confirm.title",
+   "name": "放弃这一单？",
+   "source": "content/i18n-ui/zh-Hans.json",
+   "game": "tr:dlv.confirm.title"
+  },
+  {
+   "uid": "text:dlv.confirm.text",
+   "domain": "text",
+   "id": "dlv.confirm.text",
+   "name": "路上拾到的金币只带回一半。",
+   "source": "content/i18n-ui/zh-Hans.json",
+   "game": "tr:dlv.confirm.text"
+  },
+  {
+   "uid": "text:dlv.confirm.yes",
+   "domain": "text",
+   "id": "dlv.confirm.yes",
+   "name": "放弃",
+   "source": "content/i18n-ui/zh-Hans.json",
+   "game": "tr:dlv.confirm.yes"
+  },
+  {
+   "uid": "text:dlv.confirm.no",
+   "domain": "text",
+   "id": "dlv.confirm.no",
+   "name": "再想想",
+   "source": "content/i18n-ui/zh-Hans.json",
+   "game": "tr:dlv.confirm.no"
   }
  ]
 }

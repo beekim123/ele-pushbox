@@ -1,4 +1,140 @@
 {
+ "art:avatar.ancestor": {
+  "uid": "art:avatar.ancestor",
+  "id": "avatar.ancestor",
+  "kind": "sprite",
+  "version": 1,
+  "hash": "68adb0805a85208b14a364da1f7c2a63b803ae4575b179ffa3a753c283df76ca",
+  "approved": false,
+  "placeholder": true,
+  "texture": "",
+  "texture_path": "",
+  "png_sha256": "",
+  "size": [
+   24,
+   24
+  ],
+  "frame_count": 1,
+  "anchor": [
+   0,
+   0
+  ],
+  "animations": {
+   "default": {
+    "fps": 1,
+    "loop": false,
+    "frames": [
+     0
+    ]
+   }
+  },
+  "ninepatch": null,
+  "params": {},
+  "palette": {
+   "a": "#be4a2f",
+   "b": "#d77643",
+   "c": "#ead4aa",
+   "d": "#e4a672",
+   "e": "#b86f50",
+   "f": "#733e39",
+   "g": "#3e2731",
+   "h": "#a22633",
+   "i": "#e43b44",
+   "j": "#f77622",
+   "k": "#feae34",
+   "l": "#fee761",
+   "m": "#63c74d",
+   "n": "#3e8948",
+   "o": "#265c42",
+   "p": "#193c3e",
+   "q": "#124e89",
+   "r": "#0099db",
+   "s": "#2ce8f5",
+   "t": "#ffffff",
+   "u": "#c0cbdc",
+   "v": "#8b9bb4",
+   "w": "#5a6988",
+   "x": "#3a4466",
+   "y": "#262b44",
+   "z": "#181425",
+   "A": "#ff0044",
+   "B": "#68386c",
+   "C": "#b55088",
+   "D": "#f6757a",
+   "E": "#e8b796",
+   "F": "#c28569"
+  },
+  "depends": [],
+  "resource": "res://generated/art/avatar.ancestor.tres"
+ },
+ "art:avatar.goblin_chief": {
+  "uid": "art:avatar.goblin_chief",
+  "id": "avatar.goblin_chief",
+  "kind": "sprite",
+  "version": 1,
+  "hash": "1e2ca8bb169a5996e06fc04295dc0ab6c7914410bf2f3f7733500e5463f2a1e4",
+  "approved": false,
+  "placeholder": true,
+  "texture": "",
+  "texture_path": "",
+  "png_sha256": "",
+  "size": [
+   24,
+   24
+  ],
+  "frame_count": 1,
+  "anchor": [
+   0,
+   0
+  ],
+  "animations": {
+   "default": {
+    "fps": 1,
+    "loop": false,
+    "frames": [
+     0
+    ]
+   }
+  },
+  "ninepatch": null,
+  "params": {},
+  "palette": {
+   "a": "#be4a2f",
+   "b": "#d77643",
+   "c": "#ead4aa",
+   "d": "#e4a672",
+   "e": "#b86f50",
+   "f": "#733e39",
+   "g": "#3e2731",
+   "h": "#a22633",
+   "i": "#e43b44",
+   "j": "#f77622",
+   "k": "#feae34",
+   "l": "#fee761",
+   "m": "#63c74d",
+   "n": "#3e8948",
+   "o": "#265c42",
+   "p": "#193c3e",
+   "q": "#124e89",
+   "r": "#0099db",
+   "s": "#2ce8f5",
+   "t": "#ffffff",
+   "u": "#c0cbdc",
+   "v": "#8b9bb4",
+   "w": "#5a6988",
+   "x": "#3a4466",
+   "y": "#262b44",
+   "z": "#181425",
+   "A": "#ff0044",
+   "B": "#68386c",
+   "C": "#b55088",
+   "D": "#f6757a",
+   "E": "#e8b796",
+   "F": "#c28569"
+  },
+  "depends": [],
+  "resource": "res://generated/art/avatar.goblin_chief.tres"
+ },
  "art:avatar.goblin_smith": {
   "uid": "art:avatar.goblin_smith",
   "id": "avatar.goblin_smith",
@@ -66,6 +202,278 @@
   },
   "depends": [],
   "resource": "res://generated/art/avatar.goblin_smith.tres"
+ },
+ "art:avatar.haenyeo": {
+  "uid": "art:avatar.haenyeo",
+  "id": "avatar.haenyeo",
+  "kind": "sprite",
+  "version": 1,
+  "hash": "e3f832812840a67fc3fd03a0d3213cdcbaf76d36390afa04284fbed91a9897a6",
+  "approved": false,
+  "placeholder": true,
+  "texture": "",
+  "texture_path": "",
+  "png_sha256": "",
+  "size": [
+   24,
+   24
+  ],
+  "frame_count": 1,
+  "anchor": [
+   0,
+   0
+  ],
+  "animations": {
+   "default": {
+    "fps": 1,
+    "loop": false,
+    "frames": [
+     0
+    ]
+   }
+  },
+  "ninepatch": null,
+  "params": {},
+  "palette": {
+   "a": "#be4a2f",
+   "b": "#d77643",
+   "c": "#ead4aa",
+   "d": "#e4a672",
+   "e": "#b86f50",
+   "f": "#733e39",
+   "g": "#3e2731",
+   "h": "#a22633",
+   "i": "#e43b44",
+   "j": "#f77622",
+   "k": "#feae34",
+   "l": "#fee761",
+   "m": "#63c74d",
+   "n": "#3e8948",
+   "o": "#265c42",
+   "p": "#193c3e",
+   "q": "#124e89",
+   "r": "#0099db",
+   "s": "#2ce8f5",
+   "t": "#ffffff",
+   "u": "#c0cbdc",
+   "v": "#8b9bb4",
+   "w": "#5a6988",
+   "x": "#3a4466",
+   "y": "#262b44",
+   "z": "#181425",
+   "A": "#ff0044",
+   "B": "#68386c",
+   "C": "#b55088",
+   "D": "#f6757a",
+   "E": "#e8b796",
+   "F": "#c28569"
+  },
+  "depends": [],
+  "resource": "res://generated/art/avatar.haenyeo.tres"
+ },
+ "art:avatar.judge": {
+  "uid": "art:avatar.judge",
+  "id": "avatar.judge",
+  "kind": "sprite",
+  "version": 1,
+  "hash": "61ed92ffabe4822309497cd0f31004dd3f06fad79bb70c412ae7de9231ee49d0",
+  "approved": false,
+  "placeholder": true,
+  "texture": "",
+  "texture_path": "",
+  "png_sha256": "",
+  "size": [
+   24,
+   24
+  ],
+  "frame_count": 1,
+  "anchor": [
+   0,
+   0
+  ],
+  "animations": {
+   "default": {
+    "fps": 1,
+    "loop": false,
+    "frames": [
+     0
+    ]
+   }
+  },
+  "ninepatch": null,
+  "params": {},
+  "palette": {
+   "a": "#be4a2f",
+   "b": "#d77643",
+   "c": "#ead4aa",
+   "d": "#e4a672",
+   "e": "#b86f50",
+   "f": "#733e39",
+   "g": "#3e2731",
+   "h": "#a22633",
+   "i": "#e43b44",
+   "j": "#f77622",
+   "k": "#feae34",
+   "l": "#fee761",
+   "m": "#63c74d",
+   "n": "#3e8948",
+   "o": "#265c42",
+   "p": "#193c3e",
+   "q": "#124e89",
+   "r": "#0099db",
+   "s": "#2ce8f5",
+   "t": "#ffffff",
+   "u": "#c0cbdc",
+   "v": "#8b9bb4",
+   "w": "#5a6988",
+   "x": "#3a4466",
+   "y": "#262b44",
+   "z": "#181425",
+   "A": "#ff0044",
+   "B": "#68386c",
+   "C": "#b55088",
+   "D": "#f6757a",
+   "E": "#e8b796",
+   "F": "#c28569"
+  },
+  "depends": [],
+  "resource": "res://generated/art/avatar.judge.tres"
+ },
+ "art:avatar.lighthouse_keeper": {
+  "uid": "art:avatar.lighthouse_keeper",
+  "id": "avatar.lighthouse_keeper",
+  "kind": "sprite",
+  "version": 1,
+  "hash": "c44749d263664e8dc76a2c48a765f53e5ba1208105d1a1aa4dc07929bcb7f2cb",
+  "approved": false,
+  "placeholder": true,
+  "texture": "",
+  "texture_path": "",
+  "png_sha256": "",
+  "size": [
+   24,
+   24
+  ],
+  "frame_count": 1,
+  "anchor": [
+   0,
+   0
+  ],
+  "animations": {
+   "default": {
+    "fps": 1,
+    "loop": false,
+    "frames": [
+     0
+    ]
+   }
+  },
+  "ninepatch": null,
+  "params": {},
+  "palette": {
+   "a": "#be4a2f",
+   "b": "#d77643",
+   "c": "#ead4aa",
+   "d": "#e4a672",
+   "e": "#b86f50",
+   "f": "#733e39",
+   "g": "#3e2731",
+   "h": "#a22633",
+   "i": "#e43b44",
+   "j": "#f77622",
+   "k": "#feae34",
+   "l": "#fee761",
+   "m": "#63c74d",
+   "n": "#3e8948",
+   "o": "#265c42",
+   "p": "#193c3e",
+   "q": "#124e89",
+   "r": "#0099db",
+   "s": "#2ce8f5",
+   "t": "#ffffff",
+   "u": "#c0cbdc",
+   "v": "#8b9bb4",
+   "w": "#5a6988",
+   "x": "#3a4466",
+   "y": "#262b44",
+   "z": "#181425",
+   "A": "#ff0044",
+   "B": "#68386c",
+   "C": "#b55088",
+   "D": "#f6757a",
+   "E": "#e8b796",
+   "F": "#c28569"
+  },
+  "depends": [],
+  "resource": "res://generated/art/avatar.lighthouse_keeper.tres"
+ },
+ "art:avatar.meng_po": {
+  "uid": "art:avatar.meng_po",
+  "id": "avatar.meng_po",
+  "kind": "sprite",
+  "version": 1,
+  "hash": "fd39720c72eadf7f6a54e425146fdfd04fb01ed11fef04c3851de7407789dcba",
+  "approved": false,
+  "placeholder": true,
+  "texture": "",
+  "texture_path": "",
+  "png_sha256": "",
+  "size": [
+   24,
+   24
+  ],
+  "frame_count": 1,
+  "anchor": [
+   0,
+   0
+  ],
+  "animations": {
+   "default": {
+    "fps": 1,
+    "loop": false,
+    "frames": [
+     0
+    ]
+   }
+  },
+  "ninepatch": null,
+  "params": {},
+  "palette": {
+   "a": "#be4a2f",
+   "b": "#d77643",
+   "c": "#ead4aa",
+   "d": "#e4a672",
+   "e": "#b86f50",
+   "f": "#733e39",
+   "g": "#3e2731",
+   "h": "#a22633",
+   "i": "#e43b44",
+   "j": "#f77622",
+   "k": "#feae34",
+   "l": "#fee761",
+   "m": "#63c74d",
+   "n": "#3e8948",
+   "o": "#265c42",
+   "p": "#193c3e",
+   "q": "#124e89",
+   "r": "#0099db",
+   "s": "#2ce8f5",
+   "t": "#ffffff",
+   "u": "#c0cbdc",
+   "v": "#8b9bb4",
+   "w": "#5a6988",
+   "x": "#3a4466",
+   "y": "#262b44",
+   "z": "#181425",
+   "A": "#ff0044",
+   "B": "#68386c",
+   "C": "#b55088",
+   "D": "#f6757a",
+   "E": "#e8b796",
+   "F": "#c28569"
+  },
+  "depends": [],
+  "resource": "res://generated/art/avatar.meng_po.tres"
  },
  "art:avatar.old_miner": {
   "uid": "art:avatar.old_miner",
@@ -135,6 +543,210 @@
   "depends": [],
   "resource": "res://generated/art/avatar.old_miner.tres"
  },
+ "art:avatar.tangerine_farmer": {
+  "uid": "art:avatar.tangerine_farmer",
+  "id": "avatar.tangerine_farmer",
+  "kind": "sprite",
+  "version": 1,
+  "hash": "d210783dde6a1786882696e5530e77121149d1115c357dddb2d9a3cdc4523fbf",
+  "approved": false,
+  "placeholder": true,
+  "texture": "",
+  "texture_path": "",
+  "png_sha256": "",
+  "size": [
+   24,
+   24
+  ],
+  "frame_count": 1,
+  "anchor": [
+   0,
+   0
+  ],
+  "animations": {
+   "default": {
+    "fps": 1,
+    "loop": false,
+    "frames": [
+     0
+    ]
+   }
+  },
+  "ninepatch": null,
+  "params": {},
+  "palette": {
+   "a": "#be4a2f",
+   "b": "#d77643",
+   "c": "#ead4aa",
+   "d": "#e4a672",
+   "e": "#b86f50",
+   "f": "#733e39",
+   "g": "#3e2731",
+   "h": "#a22633",
+   "i": "#e43b44",
+   "j": "#f77622",
+   "k": "#feae34",
+   "l": "#fee761",
+   "m": "#63c74d",
+   "n": "#3e8948",
+   "o": "#265c42",
+   "p": "#193c3e",
+   "q": "#124e89",
+   "r": "#0099db",
+   "s": "#2ce8f5",
+   "t": "#ffffff",
+   "u": "#c0cbdc",
+   "v": "#8b9bb4",
+   "w": "#5a6988",
+   "x": "#3a4466",
+   "y": "#262b44",
+   "z": "#181425",
+   "A": "#ff0044",
+   "B": "#68386c",
+   "C": "#b55088",
+   "D": "#f6757a",
+   "E": "#e8b796",
+   "F": "#c28569"
+  },
+  "depends": [],
+  "resource": "res://generated/art/avatar.tangerine_farmer.tres"
+ },
+ "art:avatar.wuchang": {
+  "uid": "art:avatar.wuchang",
+  "id": "avatar.wuchang",
+  "kind": "sprite",
+  "version": 1,
+  "hash": "be1bcc58ff471af314f83e89c08abf47a21c466fb8116020c6a4ad08ae8fb483",
+  "approved": false,
+  "placeholder": true,
+  "texture": "",
+  "texture_path": "",
+  "png_sha256": "",
+  "size": [
+   24,
+   24
+  ],
+  "frame_count": 1,
+  "anchor": [
+   0,
+   0
+  ],
+  "animations": {
+   "default": {
+    "fps": 1,
+    "loop": false,
+    "frames": [
+     0
+    ]
+   }
+  },
+  "ninepatch": null,
+  "params": {},
+  "palette": {
+   "a": "#be4a2f",
+   "b": "#d77643",
+   "c": "#ead4aa",
+   "d": "#e4a672",
+   "e": "#b86f50",
+   "f": "#733e39",
+   "g": "#3e2731",
+   "h": "#a22633",
+   "i": "#e43b44",
+   "j": "#f77622",
+   "k": "#feae34",
+   "l": "#fee761",
+   "m": "#63c74d",
+   "n": "#3e8948",
+   "o": "#265c42",
+   "p": "#193c3e",
+   "q": "#124e89",
+   "r": "#0099db",
+   "s": "#2ce8f5",
+   "t": "#ffffff",
+   "u": "#c0cbdc",
+   "v": "#8b9bb4",
+   "w": "#5a6988",
+   "x": "#3a4466",
+   "y": "#262b44",
+   "z": "#181425",
+   "A": "#ff0044",
+   "B": "#68386c",
+   "C": "#b55088",
+   "D": "#f6757a",
+   "E": "#e8b796",
+   "F": "#c28569"
+  },
+  "depends": [],
+  "resource": "res://generated/art/avatar.wuchang.tres"
+ },
+ "art:avatar.yama": {
+  "uid": "art:avatar.yama",
+  "id": "avatar.yama",
+  "kind": "sprite",
+  "version": 1,
+  "hash": "b6c465355350c795739a6a2c8e838e43efc529abbf55e7cfea795f7d1a83acef",
+  "approved": false,
+  "placeholder": true,
+  "texture": "",
+  "texture_path": "",
+  "png_sha256": "",
+  "size": [
+   24,
+   24
+  ],
+  "frame_count": 1,
+  "anchor": [
+   0,
+   0
+  ],
+  "animations": {
+   "default": {
+    "fps": 1,
+    "loop": false,
+    "frames": [
+     0
+    ]
+   }
+  },
+  "ninepatch": null,
+  "params": {},
+  "palette": {
+   "a": "#be4a2f",
+   "b": "#d77643",
+   "c": "#ead4aa",
+   "d": "#e4a672",
+   "e": "#b86f50",
+   "f": "#733e39",
+   "g": "#3e2731",
+   "h": "#a22633",
+   "i": "#e43b44",
+   "j": "#f77622",
+   "k": "#feae34",
+   "l": "#fee761",
+   "m": "#63c74d",
+   "n": "#3e8948",
+   "o": "#265c42",
+   "p": "#193c3e",
+   "q": "#124e89",
+   "r": "#0099db",
+   "s": "#2ce8f5",
+   "t": "#ffffff",
+   "u": "#c0cbdc",
+   "v": "#8b9bb4",
+   "w": "#5a6988",
+   "x": "#3a4466",
+   "y": "#262b44",
+   "z": "#181425",
+   "A": "#ff0044",
+   "B": "#68386c",
+   "C": "#b55088",
+   "D": "#f6757a",
+   "E": "#e8b796",
+   "F": "#c28569"
+  },
+  "depends": [],
+  "resource": "res://generated/art/avatar.yama.tres"
+ },
  "art:avatar.zombie": {
   "uid": "art:avatar.zombie",
   "id": "avatar.zombie",
@@ -202,6 +814,81 @@
   },
   "depends": [],
   "resource": "res://generated/art/avatar.zombie.tres"
+ },
+ "art:cargo.buckwheat_jelly": {
+  "uid": "art:cargo.buckwheat_jelly",
+  "id": "cargo.buckwheat_jelly",
+  "kind": "sprite",
+  "version": 1,
+  "hash": "7bfdadaf4da1bc086033aced9a129cbc81863fd9ac40a13b8af25c2bb190bb65",
+  "approved": false,
+  "placeholder": true,
+  "texture": "",
+  "texture_path": "",
+  "png_sha256": "",
+  "size": [
+   16,
+   16
+  ],
+  "frame_count": 2,
+  "anchor": [
+   0,
+   0
+  ],
+  "animations": {
+   "default": {
+    "fps": 1,
+    "loop": false,
+    "frames": [
+     0
+    ]
+   },
+   "chipped": {
+    "fps": 1,
+    "loop": false,
+    "frames": [
+     1
+    ]
+   }
+  },
+  "ninepatch": null,
+  "params": {},
+  "palette": {
+   "a": "#be4a2f",
+   "b": "#d77643",
+   "c": "#ead4aa",
+   "d": "#e4a672",
+   "e": "#b86f50",
+   "f": "#733e39",
+   "g": "#3e2731",
+   "h": "#a22633",
+   "i": "#e43b44",
+   "j": "#f77622",
+   "k": "#feae34",
+   "l": "#fee761",
+   "m": "#63c74d",
+   "n": "#3e8948",
+   "o": "#265c42",
+   "p": "#193c3e",
+   "q": "#124e89",
+   "r": "#0099db",
+   "s": "#2ce8f5",
+   "t": "#ffffff",
+   "u": "#c0cbdc",
+   "v": "#8b9bb4",
+   "w": "#5a6988",
+   "x": "#3a4466",
+   "y": "#262b44",
+   "z": "#181425",
+   "A": "#ff0044",
+   "B": "#68386c",
+   "C": "#b55088",
+   "D": "#f6757a",
+   "E": "#e8b796",
+   "F": "#c28569"
+  },
+  "depends": [],
+  "resource": "res://generated/art/cargo.buckwheat_jelly.tres"
  },
  "art:cargo.ice_cream": {
   "uid": "art:cargo.ice_cream",
@@ -279,6 +966,81 @@
   "depends": [],
   "resource": "res://generated/art/cargo.ice_cream.tres"
  },
+ "art:cargo.kite": {
+  "uid": "art:cargo.kite",
+  "id": "cargo.kite",
+  "kind": "sprite",
+  "version": 1,
+  "hash": "3ff8c842f9fb48a08eda72f15bfca379473d2dbfdfb3d47d2012027fe1c2384d",
+  "approved": false,
+  "placeholder": true,
+  "texture": "",
+  "texture_path": "",
+  "png_sha256": "",
+  "size": [
+   16,
+   16
+  ],
+  "frame_count": 2,
+  "anchor": [
+   0,
+   0
+  ],
+  "animations": {
+   "default": {
+    "fps": 1,
+    "loop": false,
+    "frames": [
+     0
+    ]
+   },
+   "torn": {
+    "fps": 1,
+    "loop": false,
+    "frames": [
+     1
+    ]
+   }
+  },
+  "ninepatch": null,
+  "params": {},
+  "palette": {
+   "a": "#be4a2f",
+   "b": "#d77643",
+   "c": "#ead4aa",
+   "d": "#e4a672",
+   "e": "#b86f50",
+   "f": "#733e39",
+   "g": "#3e2731",
+   "h": "#a22633",
+   "i": "#e43b44",
+   "j": "#f77622",
+   "k": "#feae34",
+   "l": "#fee761",
+   "m": "#63c74d",
+   "n": "#3e8948",
+   "o": "#265c42",
+   "p": "#193c3e",
+   "q": "#124e89",
+   "r": "#0099db",
+   "s": "#2ce8f5",
+   "t": "#ffffff",
+   "u": "#c0cbdc",
+   "v": "#8b9bb4",
+   "w": "#5a6988",
+   "x": "#3a4466",
+   "y": "#262b44",
+   "z": "#181425",
+   "A": "#ff0044",
+   "B": "#68386c",
+   "C": "#b55088",
+   "D": "#f6757a",
+   "E": "#e8b796",
+   "F": "#c28569"
+  },
+  "depends": [],
+  "resource": "res://generated/art/cargo.kite.tres"
+ },
  "art:cargo.letter": {
   "uid": "art:cargo.letter",
   "id": "cargo.letter",
@@ -346,6 +1108,231 @@
   },
   "depends": [],
   "resource": "res://generated/art/cargo.letter.tres"
+ },
+ "art:cargo.paper_house": {
+  "uid": "art:cargo.paper_house",
+  "id": "cargo.paper_house",
+  "kind": "sprite",
+  "version": 1,
+  "hash": "b037d3e05af811178d78919e9c1eb52fd9d049da3431a63367b4bf915990205d",
+  "approved": false,
+  "placeholder": true,
+  "texture": "",
+  "texture_path": "",
+  "png_sha256": "",
+  "size": [
+   16,
+   16
+  ],
+  "frame_count": 2,
+  "anchor": [
+   0,
+   0
+  ],
+  "animations": {
+   "default": {
+    "fps": 1,
+    "loop": false,
+    "frames": [
+     0
+    ]
+   },
+   "damaged": {
+    "fps": 1,
+    "loop": false,
+    "frames": [
+     1
+    ]
+   }
+  },
+  "ninepatch": null,
+  "params": {},
+  "palette": {
+   "a": "#be4a2f",
+   "b": "#d77643",
+   "c": "#ead4aa",
+   "d": "#e4a672",
+   "e": "#b86f50",
+   "f": "#733e39",
+   "g": "#3e2731",
+   "h": "#a22633",
+   "i": "#e43b44",
+   "j": "#f77622",
+   "k": "#feae34",
+   "l": "#fee761",
+   "m": "#63c74d",
+   "n": "#3e8948",
+   "o": "#265c42",
+   "p": "#193c3e",
+   "q": "#124e89",
+   "r": "#0099db",
+   "s": "#2ce8f5",
+   "t": "#ffffff",
+   "u": "#c0cbdc",
+   "v": "#8b9bb4",
+   "w": "#5a6988",
+   "x": "#3a4466",
+   "y": "#262b44",
+   "z": "#181425",
+   "A": "#ff0044",
+   "B": "#68386c",
+   "C": "#b55088",
+   "D": "#f6757a",
+   "E": "#e8b796",
+   "F": "#c28569"
+  },
+  "depends": [],
+  "resource": "res://generated/art/cargo.paper_house.tres"
+ },
+ "art:cargo.qingtuan": {
+  "uid": "art:cargo.qingtuan",
+  "id": "cargo.qingtuan",
+  "kind": "sprite",
+  "version": 1,
+  "hash": "0d6039abcdc5d4d0d1bb8167de63d1f5fd5b9ea6edfde92628110899ddd4754c",
+  "approved": false,
+  "placeholder": true,
+  "texture": "",
+  "texture_path": "",
+  "png_sha256": "",
+  "size": [
+   16,
+   16
+  ],
+  "frame_count": 2,
+  "anchor": [
+   0,
+   0
+  ],
+  "animations": {
+   "default": {
+    "fps": 1,
+    "loop": false,
+    "frames": [
+     0
+    ]
+   },
+   "stale": {
+    "fps": 1,
+    "loop": false,
+    "frames": [
+     1
+    ]
+   }
+  },
+  "ninepatch": null,
+  "params": {},
+  "palette": {
+   "a": "#be4a2f",
+   "b": "#d77643",
+   "c": "#ead4aa",
+   "d": "#e4a672",
+   "e": "#b86f50",
+   "f": "#733e39",
+   "g": "#3e2731",
+   "h": "#a22633",
+   "i": "#e43b44",
+   "j": "#f77622",
+   "k": "#feae34",
+   "l": "#fee761",
+   "m": "#63c74d",
+   "n": "#3e8948",
+   "o": "#265c42",
+   "p": "#193c3e",
+   "q": "#124e89",
+   "r": "#0099db",
+   "s": "#2ce8f5",
+   "t": "#ffffff",
+   "u": "#c0cbdc",
+   "v": "#8b9bb4",
+   "w": "#5a6988",
+   "x": "#3a4466",
+   "y": "#262b44",
+   "z": "#181425",
+   "A": "#ff0044",
+   "B": "#68386c",
+   "C": "#b55088",
+   "D": "#f6757a",
+   "E": "#e8b796",
+   "F": "#c28569"
+  },
+  "depends": [],
+  "resource": "res://generated/art/cargo.qingtuan.tres"
+ },
+ "art:cargo.tangerine": {
+  "uid": "art:cargo.tangerine",
+  "id": "cargo.tangerine",
+  "kind": "sprite",
+  "version": 1,
+  "hash": "97cb9d54f748ed95555162179f17ff504894ea4e1c4f09143402f7e41b0f6581",
+  "approved": false,
+  "placeholder": true,
+  "texture": "",
+  "texture_path": "",
+  "png_sha256": "",
+  "size": [
+   16,
+   16
+  ],
+  "frame_count": 2,
+  "anchor": [
+   0,
+   0
+  ],
+  "animations": {
+   "default": {
+    "fps": 1,
+    "loop": false,
+    "frames": [
+     0
+    ]
+   },
+   "damaged": {
+    "fps": 1,
+    "loop": false,
+    "frames": [
+     1
+    ]
+   }
+  },
+  "ninepatch": null,
+  "params": {},
+  "palette": {
+   "a": "#be4a2f",
+   "b": "#d77643",
+   "c": "#ead4aa",
+   "d": "#e4a672",
+   "e": "#b86f50",
+   "f": "#733e39",
+   "g": "#3e2731",
+   "h": "#a22633",
+   "i": "#e43b44",
+   "j": "#f77622",
+   "k": "#feae34",
+   "l": "#fee761",
+   "m": "#63c74d",
+   "n": "#3e8948",
+   "o": "#265c42",
+   "p": "#193c3e",
+   "q": "#124e89",
+   "r": "#0099db",
+   "s": "#2ce8f5",
+   "t": "#ffffff",
+   "u": "#c0cbdc",
+   "v": "#8b9bb4",
+   "w": "#5a6988",
+   "x": "#3a4466",
+   "y": "#262b44",
+   "z": "#181425",
+   "A": "#ff0044",
+   "B": "#68386c",
+   "C": "#b55088",
+   "D": "#f6757a",
+   "E": "#e8b796",
+   "F": "#c28569"
+  },
+  "depends": [],
+  "resource": "res://generated/art/cargo.tangerine.tres"
  },
  "art:cargo.vase": {
   "uid": "art:cargo.vase",
@@ -421,6 +1408,164 @@
   },
   "depends": [],
   "resource": "res://generated/art/cargo.vase.tres"
+ },
+ "art:char.ancestor": {
+  "uid": "art:char.ancestor",
+  "id": "char.ancestor",
+  "kind": "sprite",
+  "version": 1,
+  "hash": "fdd09be4ec7f7ae10ce5e7f1a7bec75808f19db4d2d97206982b7ee794ffcde0",
+  "approved": false,
+  "placeholder": true,
+  "texture": "",
+  "texture_path": "",
+  "png_sha256": "",
+  "size": [
+   16,
+   16
+  ],
+  "frame_count": 4,
+  "anchor": [
+   8,
+   16
+  ],
+  "animations": {
+   "idle": {
+    "fps": 2,
+    "loop": true,
+    "frames": [
+     0,
+     0,
+     0,
+     1
+    ]
+   },
+   "win": {
+    "fps": 4,
+    "loop": true,
+    "frames": [
+     2,
+     3
+    ]
+   }
+  },
+  "ninepatch": null,
+  "params": {},
+  "palette": {
+   "a": "#be4a2f",
+   "b": "#d77643",
+   "c": "#ead4aa",
+   "d": "#e4a672",
+   "e": "#b86f50",
+   "f": "#733e39",
+   "g": "#3e2731",
+   "h": "#a22633",
+   "i": "#e43b44",
+   "j": "#f77622",
+   "k": "#feae34",
+   "l": "#fee761",
+   "m": "#63c74d",
+   "n": "#3e8948",
+   "o": "#265c42",
+   "p": "#193c3e",
+   "q": "#124e89",
+   "r": "#0099db",
+   "s": "#2ce8f5",
+   "t": "#ffffff",
+   "u": "#c0cbdc",
+   "v": "#8b9bb4",
+   "w": "#5a6988",
+   "x": "#3a4466",
+   "y": "#262b44",
+   "z": "#181425",
+   "A": "#ff0044",
+   "B": "#68386c",
+   "C": "#b55088",
+   "D": "#f6757a",
+   "E": "#e8b796",
+   "F": "#c28569"
+  },
+  "depends": [],
+  "resource": "res://generated/art/char.ancestor.tres"
+ },
+ "art:char.goblin_chief": {
+  "uid": "art:char.goblin_chief",
+  "id": "char.goblin_chief",
+  "kind": "sprite",
+  "version": 1,
+  "hash": "f1a6bee81d9e8a638567ae5ec6a53332cbc6bae404b02ba21dfa09c709e7d970",
+  "approved": false,
+  "placeholder": true,
+  "texture": "",
+  "texture_path": "",
+  "png_sha256": "",
+  "size": [
+   20,
+   18
+  ],
+  "frame_count": 4,
+  "anchor": [
+   10,
+   18
+  ],
+  "animations": {
+   "idle": {
+    "fps": 3,
+    "loop": true,
+    "frames": [
+     0,
+     0,
+     0,
+     1
+    ]
+   },
+   "win": {
+    "fps": 4,
+    "loop": true,
+    "frames": [
+     2,
+     3
+    ]
+   }
+  },
+  "ninepatch": null,
+  "params": {},
+  "palette": {
+   "a": "#be4a2f",
+   "b": "#d77643",
+   "c": "#ead4aa",
+   "d": "#e4a672",
+   "e": "#b86f50",
+   "f": "#733e39",
+   "g": "#3e2731",
+   "h": "#a22633",
+   "i": "#e43b44",
+   "j": "#f77622",
+   "k": "#feae34",
+   "l": "#fee761",
+   "m": "#63c74d",
+   "n": "#3e8948",
+   "o": "#265c42",
+   "p": "#193c3e",
+   "q": "#124e89",
+   "r": "#0099db",
+   "s": "#2ce8f5",
+   "t": "#ffffff",
+   "u": "#c0cbdc",
+   "v": "#8b9bb4",
+   "w": "#5a6988",
+   "x": "#3a4466",
+   "y": "#262b44",
+   "z": "#181425",
+   "A": "#ff0044",
+   "B": "#68386c",
+   "C": "#b55088",
+   "D": "#f6757a",
+   "E": "#e8b796",
+   "F": "#c28569"
+  },
+  "depends": [],
+  "resource": "res://generated/art/char.goblin_chief.tres"
  },
  "art:char.goblin_smith": {
   "uid": "art:char.goblin_smith",
@@ -502,6 +1647,257 @@
   },
   "depends": [],
   "resource": "res://generated/art/char.goblin_smith.tres"
+ },
+ "art:char.haenyeo": {
+  "uid": "art:char.haenyeo",
+  "id": "char.haenyeo",
+  "kind": "sprite",
+  "version": 1,
+  "hash": "b12df444fc6db2660d55c1b035331620a3b60af8028a2f308356263db48d9d4e",
+  "approved": false,
+  "placeholder": true,
+  "texture": "",
+  "texture_path": "",
+  "png_sha256": "",
+  "size": [
+   16,
+   16
+  ],
+  "frame_count": 8,
+  "anchor": [
+   8,
+   16
+  ],
+  "animations": {
+   "idle": {
+    "fps": 3,
+    "loop": true,
+    "frames": [
+     0,
+     0,
+     0,
+     1
+    ]
+   },
+   "win": {
+    "fps": 4,
+    "loop": true,
+    "frames": [
+     2,
+     3
+    ]
+   },
+   "dive": {
+    "fps": 2,
+    "loop": true,
+    "frames": [
+     4,
+     5
+    ]
+   },
+   "surface": {
+    "fps": 3,
+    "loop": true,
+    "frames": [
+     6,
+     7
+    ]
+   }
+  },
+  "ninepatch": null,
+  "params": {},
+  "palette": {
+   "a": "#be4a2f",
+   "b": "#d77643",
+   "c": "#ead4aa",
+   "d": "#e4a672",
+   "e": "#b86f50",
+   "f": "#733e39",
+   "g": "#3e2731",
+   "h": "#a22633",
+   "i": "#e43b44",
+   "j": "#f77622",
+   "k": "#feae34",
+   "l": "#fee761",
+   "m": "#63c74d",
+   "n": "#3e8948",
+   "o": "#265c42",
+   "p": "#193c3e",
+   "q": "#124e89",
+   "r": "#0099db",
+   "s": "#2ce8f5",
+   "t": "#ffffff",
+   "u": "#c0cbdc",
+   "v": "#8b9bb4",
+   "w": "#5a6988",
+   "x": "#3a4466",
+   "y": "#262b44",
+   "z": "#181425",
+   "A": "#ff0044",
+   "B": "#68386c",
+   "C": "#b55088",
+   "D": "#f6757a",
+   "E": "#e8b796",
+   "F": "#c28569"
+  },
+  "depends": [],
+  "resource": "res://generated/art/char.haenyeo.tres"
+ },
+ "art:char.judge": {
+  "uid": "art:char.judge",
+  "id": "char.judge",
+  "kind": "sprite",
+  "version": 1,
+  "hash": "5e438a02e9fbe068f601a6d9b8293f30563cd8f6bf0feb511618bdb5f1318528",
+  "approved": false,
+  "placeholder": true,
+  "texture": "",
+  "texture_path": "",
+  "png_sha256": "",
+  "size": [
+   16,
+   16
+  ],
+  "frame_count": 4,
+  "anchor": [
+   8,
+   16
+  ],
+  "animations": {
+   "idle": {
+    "fps": 2,
+    "loop": true,
+    "frames": [
+     0,
+     0,
+     0,
+     1
+    ]
+   },
+   "win": {
+    "fps": 4,
+    "loop": true,
+    "frames": [
+     2,
+     3
+    ]
+   }
+  },
+  "ninepatch": null,
+  "params": {},
+  "palette": {
+   "a": "#be4a2f",
+   "b": "#d77643",
+   "c": "#ead4aa",
+   "d": "#e4a672",
+   "e": "#b86f50",
+   "f": "#733e39",
+   "g": "#3e2731",
+   "h": "#a22633",
+   "i": "#e43b44",
+   "j": "#f77622",
+   "k": "#feae34",
+   "l": "#fee761",
+   "m": "#63c74d",
+   "n": "#3e8948",
+   "o": "#265c42",
+   "p": "#193c3e",
+   "q": "#124e89",
+   "r": "#0099db",
+   "s": "#2ce8f5",
+   "t": "#ffffff",
+   "u": "#c0cbdc",
+   "v": "#8b9bb4",
+   "w": "#5a6988",
+   "x": "#3a4466",
+   "y": "#262b44",
+   "z": "#181425",
+   "A": "#ff0044",
+   "B": "#68386c",
+   "C": "#b55088",
+   "D": "#f6757a",
+   "E": "#e8b796",
+   "F": "#c28569"
+  },
+  "depends": [],
+  "resource": "res://generated/art/char.judge.tres"
+ },
+ "art:char.lighthouse_keeper": {
+  "uid": "art:char.lighthouse_keeper",
+  "id": "char.lighthouse_keeper",
+  "kind": "sprite",
+  "version": 1,
+  "hash": "3d0531df178d789cc2df72cfc741d8ef7116f6aa2d19a777783b5b80e4f9d162",
+  "approved": false,
+  "placeholder": true,
+  "texture": "",
+  "texture_path": "",
+  "png_sha256": "",
+  "size": [
+   16,
+   16
+  ],
+  "frame_count": 4,
+  "anchor": [
+   8,
+   16
+  ],
+  "animations": {
+   "idle": {
+    "fps": 3,
+    "loop": true,
+    "frames": [
+     0,
+     1
+    ]
+   },
+   "win": {
+    "fps": 4,
+    "loop": true,
+    "frames": [
+     2,
+     3
+    ]
+   }
+  },
+  "ninepatch": null,
+  "params": {},
+  "palette": {
+   "a": "#be4a2f",
+   "b": "#d77643",
+   "c": "#ead4aa",
+   "d": "#e4a672",
+   "e": "#b86f50",
+   "f": "#733e39",
+   "g": "#3e2731",
+   "h": "#a22633",
+   "i": "#e43b44",
+   "j": "#f77622",
+   "k": "#feae34",
+   "l": "#fee761",
+   "m": "#63c74d",
+   "n": "#3e8948",
+   "o": "#265c42",
+   "p": "#193c3e",
+   "q": "#124e89",
+   "r": "#0099db",
+   "s": "#2ce8f5",
+   "t": "#ffffff",
+   "u": "#c0cbdc",
+   "v": "#8b9bb4",
+   "w": "#5a6988",
+   "x": "#3a4466",
+   "y": "#262b44",
+   "z": "#181425",
+   "A": "#ff0044",
+   "B": "#68386c",
+   "C": "#b55088",
+   "D": "#f6757a",
+   "E": "#e8b796",
+   "F": "#c28569"
+  },
+  "depends": [],
+  "resource": "res://generated/art/char.lighthouse_keeper.tres"
  },
  "art:char.lucky_cat": {
   "uid": "art:char.lucky_cat",
@@ -589,6 +1985,83 @@
   },
   "depends": [],
   "resource": "res://generated/art/char.lucky_cat.tres"
+ },
+ "art:char.meng_po": {
+  "uid": "art:char.meng_po",
+  "id": "char.meng_po",
+  "kind": "sprite",
+  "version": 1,
+  "hash": "f72e44b429e5d1e69e661ae25d1c2958ff05af0ffb5f71aae992dccb907761fe",
+  "approved": false,
+  "placeholder": true,
+  "texture": "",
+  "texture_path": "",
+  "png_sha256": "",
+  "size": [
+   16,
+   16
+  ],
+  "frame_count": 4,
+  "anchor": [
+   8,
+   16
+  ],
+  "animations": {
+   "idle": {
+    "fps": 3,
+    "loop": true,
+    "frames": [
+     0,
+     1
+    ]
+   },
+   "win": {
+    "fps": 4,
+    "loop": true,
+    "frames": [
+     2,
+     3
+    ]
+   }
+  },
+  "ninepatch": null,
+  "params": {},
+  "palette": {
+   "a": "#be4a2f",
+   "b": "#d77643",
+   "c": "#ead4aa",
+   "d": "#e4a672",
+   "e": "#b86f50",
+   "f": "#733e39",
+   "g": "#3e2731",
+   "h": "#a22633",
+   "i": "#e43b44",
+   "j": "#f77622",
+   "k": "#feae34",
+   "l": "#fee761",
+   "m": "#63c74d",
+   "n": "#3e8948",
+   "o": "#265c42",
+   "p": "#193c3e",
+   "q": "#124e89",
+   "r": "#0099db",
+   "s": "#2ce8f5",
+   "t": "#ffffff",
+   "u": "#c0cbdc",
+   "v": "#8b9bb4",
+   "w": "#5a6988",
+   "x": "#3a4466",
+   "y": "#262b44",
+   "z": "#181425",
+   "A": "#ff0044",
+   "B": "#68386c",
+   "C": "#b55088",
+   "D": "#f6757a",
+   "E": "#e8b796",
+   "F": "#c28569"
+  },
+  "depends": [],
+  "resource": "res://generated/art/char.meng_po.tres"
  },
  "art:char.miner": {
   "uid": "art:char.miner",
@@ -929,6 +2402,85 @@
   "depends": [],
   "resource": "res://generated/art/char.portitor_alt.tres"
  },
+ "art:char.tangerine_farmer": {
+  "uid": "art:char.tangerine_farmer",
+  "id": "char.tangerine_farmer",
+  "kind": "sprite",
+  "version": 1,
+  "hash": "70e559f5acb1a4addfd2306ba553a2e6dd1c286b0301d12b305129e55c31563f",
+  "approved": false,
+  "placeholder": true,
+  "texture": "",
+  "texture_path": "",
+  "png_sha256": "",
+  "size": [
+   16,
+   16
+  ],
+  "frame_count": 4,
+  "anchor": [
+   8,
+   16
+  ],
+  "animations": {
+   "idle": {
+    "fps": 3,
+    "loop": true,
+    "frames": [
+     0,
+     0,
+     0,
+     1
+    ]
+   },
+   "win": {
+    "fps": 4,
+    "loop": true,
+    "frames": [
+     2,
+     3
+    ]
+   }
+  },
+  "ninepatch": null,
+  "params": {},
+  "palette": {
+   "a": "#be4a2f",
+   "b": "#d77643",
+   "c": "#ead4aa",
+   "d": "#e4a672",
+   "e": "#b86f50",
+   "f": "#733e39",
+   "g": "#3e2731",
+   "h": "#a22633",
+   "i": "#e43b44",
+   "j": "#f77622",
+   "k": "#feae34",
+   "l": "#fee761",
+   "m": "#63c74d",
+   "n": "#3e8948",
+   "o": "#265c42",
+   "p": "#193c3e",
+   "q": "#124e89",
+   "r": "#0099db",
+   "s": "#2ce8f5",
+   "t": "#ffffff",
+   "u": "#c0cbdc",
+   "v": "#8b9bb4",
+   "w": "#5a6988",
+   "x": "#3a4466",
+   "y": "#262b44",
+   "z": "#181425",
+   "A": "#ff0044",
+   "B": "#68386c",
+   "C": "#b55088",
+   "D": "#f6757a",
+   "E": "#e8b796",
+   "F": "#c28569"
+  },
+  "depends": [],
+  "resource": "res://generated/art/char.tangerine_farmer.tres"
+ },
  "art:char.turtle_keeper": {
   "uid": "art:char.turtle_keeper",
   "id": "char.turtle_keeper",
@@ -1006,6 +2558,160 @@
   },
   "depends": [],
   "resource": "res://generated/art/char.turtle_keeper.tres"
+ },
+ "art:char.wuchang": {
+  "uid": "art:char.wuchang",
+  "id": "char.wuchang",
+  "kind": "sprite",
+  "version": 1,
+  "hash": "51aac273292137af5b1ecd2c6a505d15928f5ab1863350ecd4f1164cb0b6ec08",
+  "approved": false,
+  "placeholder": true,
+  "texture": "",
+  "texture_path": "",
+  "png_sha256": "",
+  "size": [
+   24,
+   16
+  ],
+  "frame_count": 4,
+  "anchor": [
+   12,
+   16
+  ],
+  "animations": {
+   "idle": {
+    "fps": 2,
+    "loop": true,
+    "frames": [
+     0,
+     1
+    ]
+   },
+   "win": {
+    "fps": 4,
+    "loop": true,
+    "frames": [
+     2,
+     3
+    ]
+   }
+  },
+  "ninepatch": null,
+  "params": {},
+  "palette": {
+   "a": "#be4a2f",
+   "b": "#d77643",
+   "c": "#ead4aa",
+   "d": "#e4a672",
+   "e": "#b86f50",
+   "f": "#733e39",
+   "g": "#3e2731",
+   "h": "#a22633",
+   "i": "#e43b44",
+   "j": "#f77622",
+   "k": "#feae34",
+   "l": "#fee761",
+   "m": "#63c74d",
+   "n": "#3e8948",
+   "o": "#265c42",
+   "p": "#193c3e",
+   "q": "#124e89",
+   "r": "#0099db",
+   "s": "#2ce8f5",
+   "t": "#ffffff",
+   "u": "#c0cbdc",
+   "v": "#8b9bb4",
+   "w": "#5a6988",
+   "x": "#3a4466",
+   "y": "#262b44",
+   "z": "#181425",
+   "A": "#ff0044",
+   "B": "#68386c",
+   "C": "#b55088",
+   "D": "#f6757a",
+   "E": "#e8b796",
+   "F": "#c28569"
+  },
+  "depends": [],
+  "resource": "res://generated/art/char.wuchang.tres"
+ },
+ "art:char.yama": {
+  "uid": "art:char.yama",
+  "id": "char.yama",
+  "kind": "sprite",
+  "version": 1,
+  "hash": "aec4f07219fdf1c031f102a65886bebcc9c2ff265f0bd17f6e6f8972bb7d7ef2",
+  "approved": false,
+  "placeholder": true,
+  "texture": "",
+  "texture_path": "",
+  "png_sha256": "",
+  "size": [
+   16,
+   16
+  ],
+  "frame_count": 4,
+  "anchor": [
+   8,
+   16
+  ],
+  "animations": {
+   "idle": {
+    "fps": 2,
+    "loop": true,
+    "frames": [
+     0,
+     1
+    ]
+   },
+   "win": {
+    "fps": 4,
+    "loop": true,
+    "frames": [
+     2,
+     3
+    ]
+   }
+  },
+  "ninepatch": null,
+  "params": {},
+  "palette": {
+   "a": "#be4a2f",
+   "b": "#d77643",
+   "c": "#ead4aa",
+   "d": "#e4a672",
+   "e": "#b86f50",
+   "f": "#733e39",
+   "g": "#3e2731",
+   "h": "#a22633",
+   "i": "#e43b44",
+   "j": "#f77622",
+   "k": "#feae34",
+   "l": "#fee761",
+   "m": "#63c74d",
+   "n": "#3e8948",
+   "o": "#265c42",
+   "p": "#193c3e",
+   "q": "#124e89",
+   "r": "#0099db",
+   "s": "#2ce8f5",
+   "t": "#ffffff",
+   "u": "#c0cbdc",
+   "v": "#8b9bb4",
+   "w": "#5a6988",
+   "x": "#3a4466",
+   "y": "#262b44",
+   "z": "#181425",
+   "A": "#ff0044",
+   "B": "#68386c",
+   "C": "#b55088",
+   "D": "#f6757a",
+   "E": "#e8b796",
+   "F": "#c28569"
+  },
+  "depends": [],
+  "resource": "res://generated/art/char.yama.tres"
  },
  "art:char.zombie": {
   "uid": "art:char.zombie",
@@ -1302,6 +3008,146 @@
   "depends": [],
   "resource": "res://generated/art/deco.cosmos_sprout.tres"
  },
+ "art:deco.diyu_lantern": {
+  "uid": "art:deco.diyu_lantern",
+  "id": "deco.diyu_lantern",
+  "kind": "sprite",
+  "version": 1,
+  "hash": "3df6d3cb39ed5ef60828ddaa100bd958dd54bcedcacd1366f6f9c0d6c4d92183",
+  "approved": false,
+  "placeholder": true,
+  "texture": "",
+  "texture_path": "",
+  "png_sha256": "",
+  "size": [
+   10,
+   16
+  ],
+  "frame_count": 3,
+  "anchor": [
+   6,
+   16
+  ],
+  "animations": {
+   "flicker": {
+    "fps": 6,
+    "loop": true,
+    "frames": [
+     0,
+     1,
+     0,
+     2
+    ]
+   }
+  },
+  "ninepatch": null,
+  "params": {},
+  "palette": {
+   "a": "#be4a2f",
+   "b": "#d77643",
+   "c": "#ead4aa",
+   "d": "#e4a672",
+   "e": "#b86f50",
+   "f": "#733e39",
+   "g": "#3e2731",
+   "h": "#a22633",
+   "i": "#e43b44",
+   "j": "#f77622",
+   "k": "#feae34",
+   "l": "#fee761",
+   "m": "#63c74d",
+   "n": "#3e8948",
+   "o": "#265c42",
+   "p": "#193c3e",
+   "q": "#124e89",
+   "r": "#0099db",
+   "s": "#2ce8f5",
+   "t": "#ffffff",
+   "u": "#c0cbdc",
+   "v": "#8b9bb4",
+   "w": "#5a6988",
+   "x": "#3a4466",
+   "y": "#262b44",
+   "z": "#181425",
+   "A": "#ff0044",
+   "B": "#68386c",
+   "C": "#b55088",
+   "D": "#f6757a",
+   "E": "#e8b796",
+   "F": "#c28569"
+  },
+  "depends": [],
+  "resource": "res://generated/art/deco.diyu_lantern.tres"
+ },
+ "art:deco.diyu_lily": {
+  "uid": "art:deco.diyu_lily",
+  "id": "deco.diyu_lily",
+  "kind": "sprite",
+  "version": 1,
+  "hash": "e763612acf57e29178163ed55cc4c62138569f228dcccbc4c15b6f6b0a905c6f",
+  "approved": false,
+  "placeholder": true,
+  "texture": "",
+  "texture_path": "",
+  "png_sha256": "",
+  "size": [
+   9,
+   9
+  ],
+  "frame_count": 2,
+  "anchor": [
+   4,
+   9
+  ],
+  "animations": {
+   "sway": {
+    "fps": 2,
+    "loop": true,
+    "frames": [
+     0,
+     1
+    ]
+   }
+  },
+  "ninepatch": null,
+  "params": {},
+  "palette": {
+   "a": "#be4a2f",
+   "b": "#d77643",
+   "c": "#ead4aa",
+   "d": "#e4a672",
+   "e": "#b86f50",
+   "f": "#733e39",
+   "g": "#3e2731",
+   "h": "#a22633",
+   "i": "#e43b44",
+   "j": "#f77622",
+   "k": "#feae34",
+   "l": "#fee761",
+   "m": "#63c74d",
+   "n": "#3e8948",
+   "o": "#265c42",
+   "p": "#193c3e",
+   "q": "#124e89",
+   "r": "#0099db",
+   "s": "#2ce8f5",
+   "t": "#ffffff",
+   "u": "#c0cbdc",
+   "v": "#8b9bb4",
+   "w": "#5a6988",
+   "x": "#3a4466",
+   "y": "#262b44",
+   "z": "#181425",
+   "A": "#ff0044",
+   "B": "#68386c",
+   "C": "#b55088",
+   "D": "#f6757a",
+   "E": "#e8b796",
+   "F": "#c28569"
+  },
+  "depends": [],
+  "resource": "res://generated/art/deco.diyu_lily.tres"
+ },
  "art:deco.dungeon_moss": {
   "uid": "art:deco.dungeon_moss",
   "id": "deco.dungeon_moss",
@@ -1578,6 +3424,212 @@
   },
   "depends": [],
   "resource": "res://generated/art/deco.forest_grass.tres"
+ },
+ "art:deco.jeju_canola": {
+  "uid": "art:deco.jeju_canola",
+  "id": "deco.jeju_canola",
+  "kind": "sprite",
+  "version": 1,
+  "hash": "c8ddae0d3aab851d8351729b50084754862e5e8db2aa933917a0f06cf4436b5d",
+  "approved": false,
+  "placeholder": true,
+  "texture": "",
+  "texture_path": "",
+  "png_sha256": "",
+  "size": [
+   9,
+   8
+  ],
+  "frame_count": 2,
+  "anchor": [
+   4,
+   8
+  ],
+  "animations": {
+   "sway": {
+    "fps": 2,
+    "loop": true,
+    "frames": [
+     0,
+     1
+    ]
+   }
+  },
+  "ninepatch": null,
+  "params": {},
+  "palette": {
+   "a": "#be4a2f",
+   "b": "#d77643",
+   "c": "#ead4aa",
+   "d": "#e4a672",
+   "e": "#b86f50",
+   "f": "#733e39",
+   "g": "#3e2731",
+   "h": "#a22633",
+   "i": "#e43b44",
+   "j": "#f77622",
+   "k": "#feae34",
+   "l": "#fee761",
+   "m": "#63c74d",
+   "n": "#3e8948",
+   "o": "#265c42",
+   "p": "#193c3e",
+   "q": "#124e89",
+   "r": "#0099db",
+   "s": "#2ce8f5",
+   "t": "#ffffff",
+   "u": "#c0cbdc",
+   "v": "#8b9bb4",
+   "w": "#5a6988",
+   "x": "#3a4466",
+   "y": "#262b44",
+   "z": "#181425",
+   "A": "#ff0044",
+   "B": "#68386c",
+   "C": "#b55088",
+   "D": "#f6757a",
+   "E": "#e8b796",
+   "F": "#c28569"
+  },
+  "depends": [],
+  "resource": "res://generated/art/deco.jeju_canola.tres"
+ },
+ "art:deco.jeju_harubang": {
+  "uid": "art:deco.jeju_harubang",
+  "id": "deco.jeju_harubang",
+  "kind": "sprite",
+  "version": 1,
+  "hash": "ac7da0d9e13534304c228df0bdf8bf9b5833a3a17be4c15bba17a183303a2f5d",
+  "approved": false,
+  "placeholder": true,
+  "texture": "",
+  "texture_path": "",
+  "png_sha256": "",
+  "size": [
+   10,
+   16
+  ],
+  "frame_count": 1,
+  "anchor": [
+   5,
+   16
+  ],
+  "animations": {
+   "default": {
+    "fps": 1,
+    "loop": false,
+    "frames": [
+     0
+    ]
+   }
+  },
+  "ninepatch": null,
+  "params": {},
+  "palette": {
+   "a": "#be4a2f",
+   "b": "#d77643",
+   "c": "#ead4aa",
+   "d": "#e4a672",
+   "e": "#b86f50",
+   "f": "#733e39",
+   "g": "#3e2731",
+   "h": "#a22633",
+   "i": "#e43b44",
+   "j": "#f77622",
+   "k": "#feae34",
+   "l": "#fee761",
+   "m": "#63c74d",
+   "n": "#3e8948",
+   "o": "#265c42",
+   "p": "#193c3e",
+   "q": "#124e89",
+   "r": "#0099db",
+   "s": "#2ce8f5",
+   "t": "#ffffff",
+   "u": "#c0cbdc",
+   "v": "#8b9bb4",
+   "w": "#5a6988",
+   "x": "#3a4466",
+   "y": "#262b44",
+   "z": "#181425",
+   "A": "#ff0044",
+   "B": "#68386c",
+   "C": "#b55088",
+   "D": "#f6757a",
+   "E": "#e8b796",
+   "F": "#c28569"
+  },
+  "depends": [],
+  "resource": "res://generated/art/deco.jeju_harubang.tres"
+ },
+ "art:deco.jeju_tangerine_tree": {
+  "uid": "art:deco.jeju_tangerine_tree",
+  "id": "deco.jeju_tangerine_tree",
+  "kind": "sprite",
+  "version": 1,
+  "hash": "ca05de66bc4d923a3959382b0f40e61a9f15c3114b4582133d5c1a798445b3d7",
+  "approved": false,
+  "placeholder": true,
+  "texture": "",
+  "texture_path": "",
+  "png_sha256": "",
+  "size": [
+   16,
+   16
+  ],
+  "frame_count": 2,
+  "anchor": [
+   8,
+   16
+  ],
+  "animations": {
+   "sway": {
+    "fps": 2,
+    "loop": true,
+    "frames": [
+     0,
+     1
+    ]
+   }
+  },
+  "ninepatch": null,
+  "params": {},
+  "palette": {
+   "a": "#be4a2f",
+   "b": "#d77643",
+   "c": "#ead4aa",
+   "d": "#e4a672",
+   "e": "#b86f50",
+   "f": "#733e39",
+   "g": "#3e2731",
+   "h": "#a22633",
+   "i": "#e43b44",
+   "j": "#f77622",
+   "k": "#feae34",
+   "l": "#fee761",
+   "m": "#63c74d",
+   "n": "#3e8948",
+   "o": "#265c42",
+   "p": "#193c3e",
+   "q": "#124e89",
+   "r": "#0099db",
+   "s": "#2ce8f5",
+   "t": "#ffffff",
+   "u": "#c0cbdc",
+   "v": "#8b9bb4",
+   "w": "#5a6988",
+   "x": "#3a4466",
+   "y": "#262b44",
+   "z": "#181425",
+   "A": "#ff0044",
+   "B": "#68386c",
+   "C": "#b55088",
+   "D": "#f6757a",
+   "E": "#e8b796",
+   "F": "#c28569"
+  },
+  "depends": [],
+  "resource": "res://generated/art/deco.jeju_tangerine_tree.tres"
  },
  "art:deco.ruins_lotus": {
   "uid": "art:deco.ruins_lotus",
@@ -1923,6 +3975,175 @@
   "depends": [],
   "resource": "res://generated/art/fauna.cosmos_drone.tres"
  },
+ "art:fauna.diyu_butterfly": {
+  "uid": "art:fauna.diyu_butterfly",
+  "id": "fauna.diyu_butterfly",
+  "kind": "sprite",
+  "version": 1,
+  "hash": "478bb61357dc52969557ae39e7cf534f43c781db0bab1133819e7b48b243443d",
+  "approved": false,
+  "placeholder": true,
+  "texture": "",
+  "texture_path": "",
+  "png_sha256": "",
+  "size": [
+   7,
+   5
+  ],
+  "frame_count": 2,
+  "anchor": [
+   3,
+   2
+  ],
+  "animations": {
+   "fly": {
+    "fps": 8,
+    "loop": true,
+    "frames": [
+     0,
+     1
+    ]
+   },
+   "rest": {
+    "fps": 1,
+    "loop": true,
+    "frames": [
+     1
+    ]
+   }
+  },
+  "ninepatch": null,
+  "params": {},
+  "palette": {
+   "a": "#be4a2f",
+   "b": "#d77643",
+   "c": "#ead4aa",
+   "d": "#e4a672",
+   "e": "#b86f50",
+   "f": "#733e39",
+   "g": "#3e2731",
+   "h": "#a22633",
+   "i": "#e43b44",
+   "j": "#f77622",
+   "k": "#feae34",
+   "l": "#fee761",
+   "m": "#63c74d",
+   "n": "#3e8948",
+   "o": "#265c42",
+   "p": "#193c3e",
+   "q": "#124e89",
+   "r": "#0099db",
+   "s": "#2ce8f5",
+   "t": "#ffffff",
+   "u": "#c0cbdc",
+   "v": "#8b9bb4",
+   "w": "#5a6988",
+   "x": "#3a4466",
+   "y": "#262b44",
+   "z": "#181425",
+   "A": "#ff0044",
+   "B": "#68386c",
+   "C": "#b55088",
+   "D": "#f6757a",
+   "E": "#e8b796",
+   "F": "#c28569"
+  },
+  "depends": [],
+  "resource": "res://generated/art/fauna.diyu_butterfly.tres"
+ },
+ "art:fauna.diyu_dog": {
+  "uid": "art:fauna.diyu_dog",
+  "id": "fauna.diyu_dog",
+  "kind": "sprite",
+  "version": 1,
+  "hash": "563f63333c1e2fdcd0176336a61b05aa2ff752122be5063b4582264059a3831a",
+  "approved": false,
+  "placeholder": true,
+  "texture": "",
+  "texture_path": "",
+  "png_sha256": "",
+  "size": [
+   13,
+   10
+  ],
+  "frame_count": 5,
+  "anchor": [
+   6,
+   10
+  ],
+  "animations": {
+   "sit": {
+    "fps": 2,
+    "loop": true,
+    "frames": [
+     0
+    ]
+   },
+   "wag": {
+    "fps": 6,
+    "loop": true,
+    "frames": [
+     0,
+     1
+    ]
+   },
+   "walk": {
+    "fps": 8,
+    "loop": true,
+    "frames": [
+     2,
+     3
+    ]
+   },
+   "bark": {
+    "fps": 4,
+    "loop": false,
+    "frames": [
+     4,
+     4,
+     0
+    ]
+   }
+  },
+  "ninepatch": null,
+  "params": {},
+  "palette": {
+   "a": "#be4a2f",
+   "b": "#d77643",
+   "c": "#ead4aa",
+   "d": "#e4a672",
+   "e": "#b86f50",
+   "f": "#733e39",
+   "g": "#3e2731",
+   "h": "#a22633",
+   "i": "#e43b44",
+   "j": "#f77622",
+   "k": "#feae34",
+   "l": "#fee761",
+   "m": "#63c74d",
+   "n": "#3e8948",
+   "o": "#265c42",
+   "p": "#193c3e",
+   "q": "#124e89",
+   "r": "#0099db",
+   "s": "#2ce8f5",
+   "t": "#ffffff",
+   "u": "#c0cbdc",
+   "v": "#8b9bb4",
+   "w": "#5a6988",
+   "x": "#3a4466",
+   "y": "#262b44",
+   "z": "#181425",
+   "A": "#ff0044",
+   "B": "#68386c",
+   "C": "#b55088",
+   "D": "#f6757a",
+   "E": "#e8b796",
+   "F": "#c28569"
+  },
+  "depends": [],
+  "resource": "res://generated/art/fauna.diyu_dog.tres"
+ },
  "art:fauna.dungeon_bat": {
   "uid": "art:fauna.dungeon_bat",
   "id": "fauna.dungeon_bat",
@@ -2003,6 +4224,96 @@
   },
   "depends": [],
   "resource": "res://generated/art/fauna.dungeon_bat.tres"
+ },
+ "art:fauna.dungeon_cat": {
+  "uid": "art:fauna.dungeon_cat",
+  "id": "fauna.dungeon_cat",
+  "kind": "sprite",
+  "version": 1,
+  "hash": "0bc7f82924612e6c810a4f517e514a941d982761d55f79a7e23f715a812171af",
+  "approved": false,
+  "placeholder": true,
+  "texture": "",
+  "texture_path": "",
+  "png_sha256": "",
+  "size": [
+   12,
+   10
+  ],
+  "frame_count": 5,
+  "anchor": [
+   6,
+   10
+  ],
+  "animations": {
+   "sit": {
+    "fps": 2,
+    "loop": true,
+    "frames": [
+     0,
+     0,
+     0,
+     0,
+     1,
+     0
+    ]
+   },
+   "walk": {
+    "fps": 8,
+    "loop": true,
+    "frames": [
+     2,
+     3
+    ]
+   },
+   "meow": {
+    "fps": 4,
+    "loop": false,
+    "frames": [
+     4,
+     4,
+     0
+    ]
+   }
+  },
+  "ninepatch": null,
+  "params": {},
+  "palette": {
+   "a": "#be4a2f",
+   "b": "#d77643",
+   "c": "#ead4aa",
+   "d": "#e4a672",
+   "e": "#b86f50",
+   "f": "#733e39",
+   "g": "#3e2731",
+   "h": "#a22633",
+   "i": "#e43b44",
+   "j": "#f77622",
+   "k": "#feae34",
+   "l": "#fee761",
+   "m": "#63c74d",
+   "n": "#3e8948",
+   "o": "#265c42",
+   "p": "#193c3e",
+   "q": "#124e89",
+   "r": "#0099db",
+   "s": "#2ce8f5",
+   "t": "#ffffff",
+   "u": "#c0cbdc",
+   "v": "#8b9bb4",
+   "w": "#5a6988",
+   "x": "#3a4466",
+   "y": "#262b44",
+   "z": "#181425",
+   "A": "#ff0044",
+   "B": "#68386c",
+   "C": "#b55088",
+   "D": "#f6757a",
+   "E": "#e8b796",
+   "F": "#c28569"
+  },
+  "depends": [],
+  "resource": "res://generated/art/fauna.dungeon_cat.tres"
  },
  "art:fauna.dungeon_rat": {
   "uid": "art:fauna.dungeon_rat",
@@ -2226,6 +4537,178 @@
   },
   "depends": [],
   "resource": "res://generated/art/fauna.forest_butterfly.tres"
+ },
+ "art:fauna.jeju_dragonfly": {
+  "uid": "art:fauna.jeju_dragonfly",
+  "id": "fauna.jeju_dragonfly",
+  "kind": "sprite",
+  "version": 1,
+  "hash": "b40bc937f37b37c26f84abc2037451dd6a072891a8c5db8a0126f582f09ff82a",
+  "approved": false,
+  "placeholder": true,
+  "texture": "",
+  "texture_path": "",
+  "png_sha256": "",
+  "size": [
+   9,
+   5
+  ],
+  "frame_count": 3,
+  "anchor": [
+   4,
+   2
+  ],
+  "animations": {
+   "fly": {
+    "fps": 8,
+    "loop": true,
+    "frames": [
+     0,
+     1
+    ]
+   },
+   "rest": {
+    "fps": 1,
+    "loop": true,
+    "frames": [
+     2
+    ]
+   }
+  },
+  "ninepatch": null,
+  "params": {},
+  "palette": {
+   "a": "#be4a2f",
+   "b": "#d77643",
+   "c": "#ead4aa",
+   "d": "#e4a672",
+   "e": "#b86f50",
+   "f": "#733e39",
+   "g": "#3e2731",
+   "h": "#a22633",
+   "i": "#e43b44",
+   "j": "#f77622",
+   "k": "#feae34",
+   "l": "#fee761",
+   "m": "#63c74d",
+   "n": "#3e8948",
+   "o": "#265c42",
+   "p": "#193c3e",
+   "q": "#124e89",
+   "r": "#0099db",
+   "s": "#2ce8f5",
+   "t": "#ffffff",
+   "u": "#c0cbdc",
+   "v": "#8b9bb4",
+   "w": "#5a6988",
+   "x": "#3a4466",
+   "y": "#262b44",
+   "z": "#181425",
+   "A": "#ff0044",
+   "B": "#68386c",
+   "C": "#b55088",
+   "D": "#f6757a",
+   "E": "#e8b796",
+   "F": "#c28569"
+  },
+  "depends": [],
+  "resource": "res://generated/art/fauna.jeju_dragonfly.tres"
+ },
+ "art:fauna.jeju_pony": {
+  "uid": "art:fauna.jeju_pony",
+  "id": "fauna.jeju_pony",
+  "kind": "sprite",
+  "version": 1,
+  "hash": "9e7a20b742bb22a611b904418d63b3d511f231d1ffd726ad7c72cb25bde47b59",
+  "approved": false,
+  "placeholder": true,
+  "texture": "",
+  "texture_path": "",
+  "png_sha256": "",
+  "size": [
+   16,
+   13
+  ],
+  "frame_count": 7,
+  "anchor": [
+   8,
+   13
+  ],
+  "animations": {
+   "sit": {
+    "fps": 2,
+    "loop": true,
+    "frames": [
+     0,
+     0,
+     1,
+     0
+    ]
+   },
+   "wag": {
+    "fps": 4,
+    "loop": true,
+    "frames": [
+     2,
+     3
+    ]
+   },
+   "walk": {
+    "fps": 8,
+    "loop": true,
+    "frames": [
+     4,
+     5
+    ]
+   },
+   "neigh": {
+    "fps": 4,
+    "loop": false,
+    "frames": [
+     6,
+     6,
+     2
+    ]
+   }
+  },
+  "ninepatch": null,
+  "params": {},
+  "palette": {
+   "a": "#be4a2f",
+   "b": "#d77643",
+   "c": "#ead4aa",
+   "d": "#e4a672",
+   "e": "#b86f50",
+   "f": "#733e39",
+   "g": "#3e2731",
+   "h": "#a22633",
+   "i": "#e43b44",
+   "j": "#f77622",
+   "k": "#feae34",
+   "l": "#fee761",
+   "m": "#63c74d",
+   "n": "#3e8948",
+   "o": "#265c42",
+   "p": "#193c3e",
+   "q": "#124e89",
+   "r": "#0099db",
+   "s": "#2ce8f5",
+   "t": "#ffffff",
+   "u": "#c0cbdc",
+   "v": "#8b9bb4",
+   "w": "#5a6988",
+   "x": "#3a4466",
+   "y": "#262b44",
+   "z": "#181425",
+   "A": "#ff0044",
+   "B": "#68386c",
+   "C": "#b55088",
+   "D": "#f6757a",
+   "E": "#e8b796",
+   "F": "#c28569"
+  },
+  "depends": [],
+  "resource": "res://generated/art/fauna.jeju_pony.tres"
  },
  "art:fauna.ruins_scarab": {
   "uid": "art:fauna.ruins_scarab",
@@ -2855,6 +5338,87 @@
   },
   "depends": [],
   "resource": "res://generated/art/fx.goal_spark.tres"
+ },
+ "art:fx.jeju_gust": {
+  "uid": "art:fx.jeju_gust",
+  "id": "fx.jeju_gust",
+  "kind": "sprite",
+  "version": 1,
+  "hash": "7c31b185b3ff3eea9fb229a9307f03cbd0d3e5669094c0e944564d23aeec5619",
+  "approved": false,
+  "placeholder": true,
+  "texture": "",
+  "texture_path": "",
+  "png_sha256": "",
+  "size": [
+   16,
+   16
+  ],
+  "frame_count": 8,
+  "anchor": [
+   8,
+   16
+  ],
+  "animations": {
+   "drift": {
+    "fps": 4,
+    "loop": true,
+    "frames": [
+     0,
+     1,
+     2,
+     3
+    ]
+   },
+   "blow": {
+    "fps": 8,
+    "loop": false,
+    "frames": [
+     4,
+     5,
+     6,
+     7
+    ]
+   }
+  },
+  "ninepatch": null,
+  "params": {},
+  "palette": {
+   "a": "#be4a2f",
+   "b": "#d77643",
+   "c": "#ead4aa",
+   "d": "#e4a672",
+   "e": "#b86f50",
+   "f": "#733e39",
+   "g": "#3e2731",
+   "h": "#a22633",
+   "i": "#e43b44",
+   "j": "#f77622",
+   "k": "#feae34",
+   "l": "#fee761",
+   "m": "#63c74d",
+   "n": "#3e8948",
+   "o": "#265c42",
+   "p": "#193c3e",
+   "q": "#124e89",
+   "r": "#0099db",
+   "s": "#2ce8f5",
+   "t": "#ffffff",
+   "u": "#c0cbdc",
+   "v": "#8b9bb4",
+   "w": "#5a6988",
+   "x": "#3a4466",
+   "y": "#262b44",
+   "z": "#181425",
+   "A": "#ff0044",
+   "B": "#68386c",
+   "C": "#b55088",
+   "D": "#f6757a",
+   "E": "#e8b796",
+   "F": "#c28569"
+  },
+  "depends": [],
+  "resource": "res://generated/art/fx.jeju_gust.tres"
  },
  "art:fx.land_dust": {
   "uid": "art:fx.land_dust",
@@ -3562,6 +6126,156 @@
   },
   "depends": [],
   "resource": "res://generated/art/item.sandbag.tres"
+ },
+ "art:item.snack": {
+  "uid": "art:item.snack",
+  "id": "item.snack",
+  "kind": "sprite",
+  "version": 1,
+  "hash": "4f1533198afeedaa44b9fcb95fd94844d16513ac8b2f1842c68a71e0b17bfdf9",
+  "approved": false,
+  "placeholder": true,
+  "texture": "",
+  "texture_path": "",
+  "png_sha256": "",
+  "size": [
+   16,
+   16
+  ],
+  "frame_count": 2,
+  "anchor": [
+   0,
+   0
+  ],
+  "animations": {
+   "default": {
+    "fps": 1,
+    "loop": false,
+    "frames": [
+     0
+    ]
+   },
+   "dungeon": {
+    "fps": 1,
+    "loop": false,
+    "frames": [
+     0
+    ]
+   },
+   "diyu": {
+    "fps": 1,
+    "loop": false,
+    "frames": [
+     1
+    ]
+   }
+  },
+  "ninepatch": null,
+  "params": {},
+  "palette": {
+   "a": "#be4a2f",
+   "b": "#d77643",
+   "c": "#ead4aa",
+   "d": "#e4a672",
+   "e": "#b86f50",
+   "f": "#733e39",
+   "g": "#3e2731",
+   "h": "#a22633",
+   "i": "#e43b44",
+   "j": "#f77622",
+   "k": "#feae34",
+   "l": "#fee761",
+   "m": "#63c74d",
+   "n": "#3e8948",
+   "o": "#265c42",
+   "p": "#193c3e",
+   "q": "#124e89",
+   "r": "#0099db",
+   "s": "#2ce8f5",
+   "t": "#ffffff",
+   "u": "#c0cbdc",
+   "v": "#8b9bb4",
+   "w": "#5a6988",
+   "x": "#3a4466",
+   "y": "#262b44",
+   "z": "#181425",
+   "A": "#ff0044",
+   "B": "#68386c",
+   "C": "#b55088",
+   "D": "#f6757a",
+   "E": "#e8b796",
+   "F": "#c28569"
+  },
+  "depends": [],
+  "resource": "res://generated/art/item.snack.tres"
+ },
+ "art:item.snack_jeju": {
+  "uid": "art:item.snack_jeju",
+  "id": "item.snack_jeju",
+  "kind": "sprite",
+  "version": 1,
+  "hash": "53fe663b6412cbac8a088e0a923b782848ca9cdf85bf194028d5f8823e3943ac",
+  "approved": false,
+  "placeholder": true,
+  "texture": "",
+  "texture_path": "",
+  "png_sha256": "",
+  "size": [
+   16,
+   16
+  ],
+  "frame_count": 1,
+  "anchor": [
+   0,
+   0
+  ],
+  "animations": {
+   "default": {
+    "fps": 1,
+    "loop": false,
+    "frames": [
+     0
+    ]
+   }
+  },
+  "ninepatch": null,
+  "params": {},
+  "palette": {
+   "a": "#be4a2f",
+   "b": "#d77643",
+   "c": "#ead4aa",
+   "d": "#e4a672",
+   "e": "#b86f50",
+   "f": "#733e39",
+   "g": "#3e2731",
+   "h": "#a22633",
+   "i": "#e43b44",
+   "j": "#f77622",
+   "k": "#feae34",
+   "l": "#fee761",
+   "m": "#63c74d",
+   "n": "#3e8948",
+   "o": "#265c42",
+   "p": "#193c3e",
+   "q": "#124e89",
+   "r": "#0099db",
+   "s": "#2ce8f5",
+   "t": "#ffffff",
+   "u": "#c0cbdc",
+   "v": "#8b9bb4",
+   "w": "#5a6988",
+   "x": "#3a4466",
+   "y": "#262b44",
+   "z": "#181425",
+   "A": "#ff0044",
+   "B": "#68386c",
+   "C": "#b55088",
+   "D": "#f6757a",
+   "E": "#e8b796",
+   "F": "#c28569"
+  },
+  "depends": [],
+  "resource": "res://generated/art/item.snack_jeju.tres"
  },
  "art:material.chapter2_5": {
   "uid": "art:material.chapter2_5",
@@ -4363,6 +7077,102 @@
   "depends": [],
   "resource": "res://generated/art/mech.heat_vent.tres"
  },
+ "art:mech.jeju_seesaw": {
+  "uid": "art:mech.jeju_seesaw",
+  "id": "mech.jeju_seesaw",
+  "kind": "sprite",
+  "version": 1,
+  "hash": "edf5de8a43ad78e9fdfa3e3b75825a1b414396488966770f392cb85a72e212f4",
+  "approved": false,
+  "placeholder": true,
+  "texture": "",
+  "texture_path": "",
+  "png_sha256": "",
+  "size": [
+   16,
+   20
+  ],
+  "frame_count": 5,
+  "anchor": [
+   8,
+   20
+  ],
+  "animations": {
+   "end": {
+    "fps": 0,
+    "loop": false,
+    "frames": [
+     0
+    ]
+   },
+   "down": {
+    "fps": 0,
+    "loop": false,
+    "frames": [
+     1
+    ]
+   },
+   "launch": {
+    "fps": 0,
+    "loop": false,
+    "frames": [
+     2
+    ]
+   },
+   "mid": {
+    "fps": 0,
+    "loop": false,
+    "frames": [
+     3
+    ]
+   },
+   "pivot": {
+    "fps": 0,
+    "loop": false,
+    "frames": [
+     4
+    ]
+   }
+  },
+  "ninepatch": null,
+  "params": {},
+  "palette": {
+   "a": "#be4a2f",
+   "b": "#d77643",
+   "c": "#ead4aa",
+   "d": "#e4a672",
+   "e": "#b86f50",
+   "f": "#733e39",
+   "g": "#3e2731",
+   "h": "#a22633",
+   "i": "#e43b44",
+   "j": "#f77622",
+   "k": "#feae34",
+   "l": "#fee761",
+   "m": "#63c74d",
+   "n": "#3e8948",
+   "o": "#265c42",
+   "p": "#193c3e",
+   "q": "#124e89",
+   "r": "#0099db",
+   "s": "#2ce8f5",
+   "t": "#ffffff",
+   "u": "#c0cbdc",
+   "v": "#8b9bb4",
+   "w": "#5a6988",
+   "x": "#3a4466",
+   "y": "#262b44",
+   "z": "#181425",
+   "A": "#ff0044",
+   "B": "#68386c",
+   "C": "#b55088",
+   "D": "#f6757a",
+   "E": "#e8b796",
+   "F": "#c28569"
+  },
+  "depends": [],
+  "resource": "res://generated/art/mech.jeju_seesaw.tres"
+ },
  "art:mech.ladder": {
   "uid": "art:mech.ladder",
   "id": "mech.ladder",
@@ -4430,6 +7240,109 @@
   },
   "depends": [],
   "resource": "res://generated/art/mech.ladder.tres"
+ },
+ "art:mech.lantern_float": {
+  "uid": "art:mech.lantern_float",
+  "id": "mech.lantern_float",
+  "kind": "sprite",
+  "version": 1,
+  "hash": "db943286974489b17c81326ca23cdbb6b76b5e6264a77df0ecbabf5b5f293406",
+  "approved": false,
+  "placeholder": true,
+  "texture": "",
+  "texture_path": "",
+  "png_sha256": "",
+  "size": [
+   16,
+   16
+  ],
+  "frame_count": 6,
+  "anchor": [
+   8,
+   16
+  ],
+  "animations": {
+   "left": {
+    "fps": 0,
+    "loop": false,
+    "frames": [
+     0
+    ]
+   },
+   "mid": {
+    "fps": 0,
+    "loop": false,
+    "frames": [
+     1
+    ]
+   },
+   "right": {
+    "fps": 0,
+    "loop": false,
+    "frames": [
+     2
+    ]
+   },
+   "left_move": {
+    "fps": 0,
+    "loop": false,
+    "frames": [
+     3
+    ]
+   },
+   "mid_move": {
+    "fps": 0,
+    "loop": false,
+    "frames": [
+     4
+    ]
+   },
+   "right_move": {
+    "fps": 0,
+    "loop": false,
+    "frames": [
+     5
+    ]
+   }
+  },
+  "ninepatch": null,
+  "params": {},
+  "palette": {
+   "a": "#be4a2f",
+   "b": "#d77643",
+   "c": "#ead4aa",
+   "d": "#e4a672",
+   "e": "#b86f50",
+   "f": "#733e39",
+   "g": "#3e2731",
+   "h": "#a22633",
+   "i": "#e43b44",
+   "j": "#f77622",
+   "k": "#feae34",
+   "l": "#fee761",
+   "m": "#63c74d",
+   "n": "#3e8948",
+   "o": "#265c42",
+   "p": "#193c3e",
+   "q": "#124e89",
+   "r": "#0099db",
+   "s": "#2ce8f5",
+   "t": "#ffffff",
+   "u": "#c0cbdc",
+   "v": "#8b9bb4",
+   "w": "#5a6988",
+   "x": "#3a4466",
+   "y": "#262b44",
+   "z": "#181425",
+   "A": "#ff0044",
+   "B": "#68386c",
+   "C": "#b55088",
+   "D": "#f6757a",
+   "E": "#e8b796",
+   "F": "#c28569"
+  },
+  "depends": [],
+  "resource": "res://generated/art/mech.lantern_float.tres"
  },
  "art:mech.lever": {
   "uid": "art:mech.lever",
@@ -4885,6 +7798,109 @@
   "depends": [],
   "resource": "res://generated/art/mech.rope_ladder.tres"
  },
+ "art:mech.rune_float": {
+  "uid": "art:mech.rune_float",
+  "id": "mech.rune_float",
+  "kind": "sprite",
+  "version": 1,
+  "hash": "ac7cc14d46bb2076f9a126be2a141fa0ce512f9736e34b9e48637603779e6971",
+  "approved": false,
+  "placeholder": true,
+  "texture": "",
+  "texture_path": "",
+  "png_sha256": "",
+  "size": [
+   16,
+   16
+  ],
+  "frame_count": 6,
+  "anchor": [
+   8,
+   16
+  ],
+  "animations": {
+   "left": {
+    "fps": 0,
+    "loop": false,
+    "frames": [
+     0
+    ]
+   },
+   "mid": {
+    "fps": 0,
+    "loop": false,
+    "frames": [
+     1
+    ]
+   },
+   "right": {
+    "fps": 0,
+    "loop": false,
+    "frames": [
+     2
+    ]
+   },
+   "left_move": {
+    "fps": 0,
+    "loop": false,
+    "frames": [
+     3
+    ]
+   },
+   "mid_move": {
+    "fps": 0,
+    "loop": false,
+    "frames": [
+     4
+    ]
+   },
+   "right_move": {
+    "fps": 0,
+    "loop": false,
+    "frames": [
+     5
+    ]
+   }
+  },
+  "ninepatch": null,
+  "params": {},
+  "palette": {
+   "a": "#be4a2f",
+   "b": "#d77643",
+   "c": "#ead4aa",
+   "d": "#e4a672",
+   "e": "#b86f50",
+   "f": "#733e39",
+   "g": "#3e2731",
+   "h": "#a22633",
+   "i": "#e43b44",
+   "j": "#f77622",
+   "k": "#feae34",
+   "l": "#fee761",
+   "m": "#63c74d",
+   "n": "#3e8948",
+   "o": "#265c42",
+   "p": "#193c3e",
+   "q": "#124e89",
+   "r": "#0099db",
+   "s": "#2ce8f5",
+   "t": "#ffffff",
+   "u": "#c0cbdc",
+   "v": "#8b9bb4",
+   "w": "#5a6988",
+   "x": "#3a4466",
+   "y": "#262b44",
+   "z": "#181425",
+   "A": "#ff0044",
+   "B": "#68386c",
+   "C": "#b55088",
+   "D": "#f6757a",
+   "E": "#e8b796",
+   "F": "#c28569"
+  },
+  "depends": [],
+  "resource": "res://generated/art/mech.rune_float.tres"
+ },
  "art:mech.socket": {
   "uid": "art:mech.socket",
   "id": "mech.socket",
@@ -5181,6 +8197,310 @@
   "depends": [],
   "resource": "res://generated/art/mech.vine.tres"
  },
+ "art:monster.dokkaebi": {
+  "uid": "art:monster.dokkaebi",
+  "id": "monster.dokkaebi",
+  "kind": "sprite",
+  "version": 1,
+  "hash": "d00c782ddabf54a2950fa3f113606b1c13f8f77e027905e6128f6194c5f22874",
+  "approved": false,
+  "placeholder": true,
+  "texture": "",
+  "texture_path": "",
+  "png_sha256": "",
+  "size": [
+   16,
+   16
+  ],
+  "frame_count": 11,
+  "anchor": [
+   8,
+   16
+  ],
+  "animations": {
+   "idle": {
+    "fps": 2,
+    "loop": true,
+    "frames": [
+     0,
+     0,
+     0,
+     1
+    ]
+   },
+   "walk": {
+    "fps": 6,
+    "loop": true,
+    "frames": [
+     2,
+     3
+    ]
+   },
+   "wrestle": {
+    "fps": 6,
+    "loop": true,
+    "frames": [
+     4,
+     5
+    ]
+   },
+   "pushed": {
+    "fps": 4,
+    "loop": false,
+    "frames": [
+     6
+    ]
+   },
+   "ko": {
+    "fps": 2,
+    "loop": true,
+    "frames": [
+     7,
+     8
+    ]
+   },
+   "trapped": {
+    "fps": 4,
+    "loop": true,
+    "frames": [
+     9,
+     10
+    ]
+   }
+  },
+  "ninepatch": null,
+  "params": {},
+  "palette": {
+   "a": "#be4a2f",
+   "b": "#d77643",
+   "c": "#ead4aa",
+   "d": "#e4a672",
+   "e": "#b86f50",
+   "f": "#733e39",
+   "g": "#3e2731",
+   "h": "#a22633",
+   "i": "#e43b44",
+   "j": "#f77622",
+   "k": "#feae34",
+   "l": "#fee761",
+   "m": "#63c74d",
+   "n": "#3e8948",
+   "o": "#265c42",
+   "p": "#193c3e",
+   "q": "#124e89",
+   "r": "#0099db",
+   "s": "#2ce8f5",
+   "t": "#ffffff",
+   "u": "#c0cbdc",
+   "v": "#8b9bb4",
+   "w": "#5a6988",
+   "x": "#3a4466",
+   "y": "#262b44",
+   "z": "#181425",
+   "A": "#ff0044",
+   "B": "#68386c",
+   "C": "#b55088",
+   "D": "#f6757a",
+   "E": "#e8b796",
+   "F": "#c28569"
+  },
+  "depends": [],
+  "resource": "res://generated/art/monster.dokkaebi.tres"
+ },
+ "art:monster.imp": {
+  "uid": "art:monster.imp",
+  "id": "monster.imp",
+  "kind": "sprite",
+  "version": 1,
+  "hash": "48e833c982b68afd61b85be358f61dfbd89e2badb19638c257a43e1f16430d09",
+  "approved": false,
+  "placeholder": true,
+  "texture": "",
+  "texture_path": "",
+  "png_sha256": "",
+  "size": [
+   16,
+   16
+  ],
+  "frame_count": 10,
+  "anchor": [
+   8,
+   16
+  ],
+  "animations": {
+   "walk": {
+    "fps": 8,
+    "loop": true,
+    "frames": [
+     0,
+     1
+    ]
+   },
+   "chase": {
+    "fps": 12,
+    "loop": true,
+    "frames": [
+     2,
+     3
+    ]
+   },
+   "flee": {
+    "fps": 12,
+    "loop": true,
+    "frames": [
+     4,
+     5
+    ]
+   },
+   "stunned": {
+    "fps": 4,
+    "loop": true,
+    "frames": [
+     6,
+     7
+    ]
+   },
+   "trapped": {
+    "fps": 4,
+    "loop": true,
+    "frames": [
+     8,
+     9
+    ]
+   }
+  },
+  "ninepatch": null,
+  "params": {},
+  "palette": {
+   "a": "#be4a2f",
+   "b": "#d77643",
+   "c": "#ead4aa",
+   "d": "#e4a672",
+   "e": "#b86f50",
+   "f": "#733e39",
+   "g": "#3e2731",
+   "h": "#a22633",
+   "i": "#e43b44",
+   "j": "#f77622",
+   "k": "#feae34",
+   "l": "#fee761",
+   "m": "#63c74d",
+   "n": "#3e8948",
+   "o": "#265c42",
+   "p": "#193c3e",
+   "q": "#124e89",
+   "r": "#0099db",
+   "s": "#2ce8f5",
+   "t": "#ffffff",
+   "u": "#c0cbdc",
+   "v": "#8b9bb4",
+   "w": "#5a6988",
+   "x": "#3a4466",
+   "y": "#262b44",
+   "z": "#181425",
+   "A": "#ff0044",
+   "B": "#68386c",
+   "C": "#b55088",
+   "D": "#f6757a",
+   "E": "#e8b796",
+   "F": "#c28569"
+  },
+  "depends": [],
+  "resource": "res://generated/art/monster.imp.tres"
+ },
+ "art:monster.jiangshi": {
+  "uid": "art:monster.jiangshi",
+  "id": "monster.jiangshi",
+  "kind": "sprite",
+  "version": 1,
+  "hash": "4aa76da86b739569c6a098b102816ceb4aa1aa29f7aa9b0b01a1a1e0959c1b6f",
+  "approved": false,
+  "placeholder": true,
+  "texture": "",
+  "texture_path": "",
+  "png_sha256": "",
+  "size": [
+   16,
+   16
+  ],
+  "frame_count": 6,
+  "anchor": [
+   8,
+   16
+  ],
+  "animations": {
+   "idle": {
+    "fps": 1,
+    "loop": true,
+    "frames": [
+     0
+    ]
+   },
+   "hop": {
+    "fps": 8,
+    "loop": true,
+    "frames": [
+     1,
+     2,
+     2,
+     1
+    ]
+   },
+   "trapped": {
+    "fps": 4,
+    "loop": true,
+    "frames": [
+     3,
+     4
+    ]
+   },
+   "ko": {
+    "fps": 4,
+    "loop": false,
+    "frames": [
+     5
+    ]
+   }
+  },
+  "ninepatch": null,
+  "params": {},
+  "palette": {
+   "a": "#be4a2f",
+   "b": "#d77643",
+   "c": "#ead4aa",
+   "d": "#e4a672",
+   "e": "#b86f50",
+   "f": "#733e39",
+   "g": "#3e2731",
+   "h": "#a22633",
+   "i": "#e43b44",
+   "j": "#f77622",
+   "k": "#feae34",
+   "l": "#fee761",
+   "m": "#63c74d",
+   "n": "#3e8948",
+   "o": "#265c42",
+   "p": "#193c3e",
+   "q": "#124e89",
+   "r": "#0099db",
+   "s": "#2ce8f5",
+   "t": "#ffffff",
+   "u": "#c0cbdc",
+   "v": "#8b9bb4",
+   "w": "#5a6988",
+   "x": "#3a4466",
+   "y": "#262b44",
+   "z": "#181425",
+   "A": "#ff0044",
+   "B": "#68386c",
+   "C": "#b55088",
+   "D": "#f6757a",
+   "E": "#e8b796",
+   "F": "#c28569"
+  },
+  "depends": [],
+  "resource": "res://generated/art/monster.jiangshi.tres"
+ },
  "art:monster.rat_swarm": {
   "uid": "art:monster.rat_swarm",
   "id": "monster.rat_swarm",
@@ -5282,6 +8602,101 @@
   "depends": [],
   "resource": "res://generated/art/monster.rat_swarm.tres"
  },
+ "art:monster.seagull": {
+  "uid": "art:monster.seagull",
+  "id": "monster.seagull",
+  "kind": "sprite",
+  "version": 1,
+  "hash": "fc4a69e06d25574c7808acdb3be4c58d28a909d21da7d9aea574f923a6b2981f",
+  "approved": false,
+  "placeholder": true,
+  "texture": "",
+  "texture_path": "",
+  "png_sha256": "",
+  "size": [
+   16,
+   12
+  ],
+  "frame_count": 9,
+  "anchor": [
+   8,
+   12
+  ],
+  "animations": {
+   "fly": {
+    "fps": 6,
+    "loop": true,
+    "frames": [
+     0,
+     1,
+     2,
+     1
+    ]
+   },
+   "swoop": {
+    "fps": 8,
+    "loop": true,
+    "frames": [
+     3,
+     4
+    ]
+   },
+   "grab": {
+    "fps": 8,
+    "loop": false,
+    "frames": [
+     5,
+     6
+    ]
+   },
+   "flee": {
+    "fps": 8,
+    "loop": true,
+    "frames": [
+     7,
+     8
+    ]
+   }
+  },
+  "ninepatch": null,
+  "params": {},
+  "palette": {
+   "a": "#be4a2f",
+   "b": "#d77643",
+   "c": "#ead4aa",
+   "d": "#e4a672",
+   "e": "#b86f50",
+   "f": "#733e39",
+   "g": "#3e2731",
+   "h": "#a22633",
+   "i": "#e43b44",
+   "j": "#f77622",
+   "k": "#feae34",
+   "l": "#fee761",
+   "m": "#63c74d",
+   "n": "#3e8948",
+   "o": "#265c42",
+   "p": "#193c3e",
+   "q": "#124e89",
+   "r": "#0099db",
+   "s": "#2ce8f5",
+   "t": "#ffffff",
+   "u": "#c0cbdc",
+   "v": "#8b9bb4",
+   "w": "#5a6988",
+   "x": "#3a4466",
+   "y": "#262b44",
+   "z": "#181425",
+   "A": "#ff0044",
+   "B": "#68386c",
+   "C": "#b55088",
+   "D": "#f6757a",
+   "E": "#e8b796",
+   "F": "#c28569"
+  },
+  "depends": [],
+  "resource": "res://generated/art/monster.seagull.tres"
+ },
  "art:monster.skeleton_guard": {
   "uid": "art:monster.skeleton_guard",
   "id": "monster.skeleton_guard",
@@ -5375,6 +8790,85 @@
   },
   "depends": [],
   "resource": "res://generated/art/monster.skeleton_guard.tres"
+ },
+ "art:monster.wandering_soul": {
+  "uid": "art:monster.wandering_soul",
+  "id": "monster.wandering_soul",
+  "kind": "sprite",
+  "version": 1,
+  "hash": "be9e34d8aedf84ab89c98ba206e23e23329354f0baca338515a6cb904548df0a",
+  "approved": false,
+  "placeholder": true,
+  "texture": "",
+  "texture_path": "",
+  "png_sha256": "",
+  "size": [
+   16,
+   16
+  ],
+  "frame_count": 5,
+  "anchor": [
+   8,
+   16
+  ],
+  "animations": {
+   "float": {
+    "fps": 4,
+    "loop": true,
+    "frames": [
+     0,
+     1,
+     2,
+     1
+    ]
+   },
+   "fade": {
+    "fps": 6,
+    "loop": true,
+    "frames": [
+     3,
+     4
+    ]
+   }
+  },
+  "ninepatch": null,
+  "params": {},
+  "palette": {
+   "a": "#be4a2f",
+   "b": "#d77643",
+   "c": "#ead4aa",
+   "d": "#e4a672",
+   "e": "#b86f50",
+   "f": "#733e39",
+   "g": "#3e2731",
+   "h": "#a22633",
+   "i": "#e43b44",
+   "j": "#f77622",
+   "k": "#feae34",
+   "l": "#fee761",
+   "m": "#63c74d",
+   "n": "#3e8948",
+   "o": "#265c42",
+   "p": "#193c3e",
+   "q": "#124e89",
+   "r": "#0099db",
+   "s": "#2ce8f5",
+   "t": "#ffffff",
+   "u": "#c0cbdc",
+   "v": "#8b9bb4",
+   "w": "#5a6988",
+   "x": "#3a4466",
+   "y": "#262b44",
+   "z": "#181425",
+   "A": "#ff0044",
+   "B": "#68386c",
+   "C": "#b55088",
+   "D": "#f6757a",
+   "E": "#e8b796",
+   "F": "#c28569"
+  },
+  "depends": [],
+  "resource": "res://generated/art/monster.wandering_soul.tres"
  },
  "art:obj.crate_iron": {
   "uid": "art:obj.crate_iron",
@@ -5914,6 +9408,70 @@
   ],
   "resource": "res://generated/themes/theme.cosmos.tres"
  },
+ "art:theme.diyu": {
+  "uid": "art:theme.diyu",
+  "id": "theme.diyu",
+  "kind": "procedural",
+  "version": 1,
+  "hash": "e7d67e5a07bb6afb1d6146e07ad45860e373e18b92c3a90537f709c89deba834",
+  "approved": false,
+  "placeholder": true,
+  "texture": "",
+  "texture_path": "",
+  "png_sha256": "",
+  "size": [
+   0,
+   0
+  ],
+  "frame_count": 0,
+  "anchor": [
+   0,
+   0
+  ],
+  "animations": {},
+  "ninepatch": null,
+  "params": {},
+  "palette": {
+   "a": "#be4a2f",
+   "b": "#d77643",
+   "c": "#ead4aa",
+   "d": "#e4a672",
+   "e": "#b86f50",
+   "f": "#733e39",
+   "g": "#3e2731",
+   "h": "#a22633",
+   "i": "#e43b44",
+   "j": "#f77622",
+   "k": "#feae34",
+   "l": "#fee761",
+   "m": "#63c74d",
+   "n": "#3e8948",
+   "o": "#265c42",
+   "p": "#193c3e",
+   "q": "#124e89",
+   "r": "#0099db",
+   "s": "#2ce8f5",
+   "t": "#ffffff",
+   "u": "#c0cbdc",
+   "v": "#8b9bb4",
+   "w": "#5a6988",
+   "x": "#3a4466",
+   "y": "#262b44",
+   "z": "#181425",
+   "A": "#ff0044",
+   "B": "#68386c",
+   "C": "#b55088",
+   "D": "#f6757a",
+   "E": "#e8b796",
+   "F": "#c28569"
+  },
+  "depends": [
+   "deco.diyu_lantern",
+   "deco.diyu_lily",
+   "fauna.diyu_butterfly"
+  ],
+  "resource": "res://generated/themes/theme.diyu.tres"
+ },
  "art:theme.dungeon": {
   "uid": "art:theme.dungeon",
   "id": "theme.dungeon",
@@ -6266,6 +9824,71 @@
    "fauna.forest_butterfly"
   ],
   "resource": "res://generated/themes/theme.forest.tres"
+ },
+ "art:theme.jeju": {
+  "uid": "art:theme.jeju",
+  "id": "theme.jeju",
+  "kind": "procedural",
+  "version": 1,
+  "hash": "e8a081b7160dfaeda3f276d48ec40568d6b0d6ffc28acf2606f5aa0b918f06ae",
+  "approved": false,
+  "placeholder": true,
+  "texture": "",
+  "texture_path": "",
+  "png_sha256": "",
+  "size": [
+   0,
+   0
+  ],
+  "frame_count": 0,
+  "anchor": [
+   0,
+   0
+  ],
+  "animations": {},
+  "ninepatch": null,
+  "params": {},
+  "palette": {
+   "a": "#be4a2f",
+   "b": "#d77643",
+   "c": "#ead4aa",
+   "d": "#e4a672",
+   "e": "#b86f50",
+   "f": "#733e39",
+   "g": "#3e2731",
+   "h": "#a22633",
+   "i": "#e43b44",
+   "j": "#f77622",
+   "k": "#feae34",
+   "l": "#fee761",
+   "m": "#63c74d",
+   "n": "#3e8948",
+   "o": "#265c42",
+   "p": "#193c3e",
+   "q": "#124e89",
+   "r": "#0099db",
+   "s": "#2ce8f5",
+   "t": "#ffffff",
+   "u": "#c0cbdc",
+   "v": "#8b9bb4",
+   "w": "#5a6988",
+   "x": "#3a4466",
+   "y": "#262b44",
+   "z": "#181425",
+   "A": "#ff0044",
+   "B": "#68386c",
+   "C": "#b55088",
+   "D": "#f6757a",
+   "E": "#e8b796",
+   "F": "#c28569"
+  },
+  "depends": [
+   "deco.jeju_harubang",
+   "deco.jeju_tangerine_tree",
+   "deco.jeju_canola",
+   "fauna.jeju_dragonfly"
+  ],
+  "resource": "res://generated/themes/theme.jeju.tres"
  },
  "art:theme.ruins": {
   "uid": "art:theme.ruins",
@@ -7782,8 +11405,8 @@
   "uid": "art:ui.screen.chapters",
   "id": "ui.screen.chapters",
   "kind": "procedural",
-  "version": 4,
-  "hash": "616c8a1a09bf2ad32f24c8cf1e70d8059bdb14d9c394ebbe86eb4703feaeb781",
+  "version": 6,
+  "hash": "444fab65592fd9d0f846dd891ae2e2f6b63b727d556b852221bb69260799557c",
   "approved": true,
   "placeholder": false,
   "texture": "",
@@ -7832,7 +11455,8 @@
      "theme": "theme.cosmos",
      "locked": true
     }
-   ]
+   ],
+   "focus": 1
   },
   "palette": {
    "a": "#be4a2f",
@@ -7870,6 +11494,8 @@
   },
   "depends": [
    "char.portitor",
+   "mech.exit_flag",
+   "obj.crate_wood",
    "theme.cave",
    "theme.cosmos",
    "theme.dungeon",
@@ -7888,8 +11514,8 @@
   "uid": "art:ui.screen.complete",
   "id": "ui.screen.complete",
   "kind": "procedural",
-  "version": 4,
-  "hash": "fbb067b0492c0dd3cc479c65713e8cc6dabf0f93f55e2d6a628bfb458c14d9bf",
+  "version": 6,
+  "hash": "a7e9e0b4971d3c55228bf7dd7ee0db5cbb8a450dbdedca7aaccaf8723d0c3eb8",
   "approved": true,
   "placeholder": false,
   "texture": "",
@@ -7945,8 +11571,11 @@
   },
   "depends": [
    "char.portitor",
+   "item.sandbag",
    "mech.socket_lit",
    "theme.dungeon",
+   "ui.class_icon",
+   "ui.goal_lamp",
    "ui.icons",
    "ui.keycap",
    "ui.menu_icons",
@@ -7954,12 +11583,372 @@
   ],
   "resource": "res://generated/art/metadata/ui.screen.complete.tres"
  },
+ "art:ui.screen.confirm": {
+  "uid": "art:ui.screen.confirm",
+  "id": "ui.screen.confirm",
+  "kind": "procedural",
+  "version": 2,
+  "hash": "312087ae242d0c79e5615c009eac05c161e1a69376cf221167efd1aff9f7f8c4",
+  "approved": true,
+  "placeholder": false,
+  "texture": "",
+  "texture_path": "",
+  "png_sha256": "",
+  "size": [
+   0,
+   0
+  ],
+  "frame_count": 0,
+  "anchor": [
+   0,
+   0
+  ],
+  "animations": {},
+  "ninepatch": null,
+  "params": {
+   "screen": "confirm",
+   "theme": "theme.dungeon",
+   "exclude": [
+    "fauna.dungeon_rat"
+   ],
+   "focus": 1,
+   "hud": {
+    "hearts": 2,
+    "maxHearts": 3,
+    "cargo": "vase",
+    "left": 2,
+    "max": 3,
+    "rule": "fragile",
+    "hot": false,
+    "coins": 35,
+    "sand": 2,
+    "items": [
+     "first_aid",
+     "rope_ladder"
+    ],
+    "slots": 3,
+    "secs": 83,
+    "minimap": {
+     "cols": 8,
+     "rows": 4,
+     "cur": 4,
+     "rooms": [
+      {
+       "index": 0,
+       "x": 0,
+       "y": 2,
+       "cols": 1,
+       "rows": 1,
+       "role": "gate",
+       "seen": true
+      },
+      {
+       "index": 1,
+       "x": 1,
+       "y": 2,
+       "cols": 2,
+       "rows": 1,
+       "role": "room",
+       "seen": true
+      },
+      {
+       "index": 2,
+       "x": 3,
+       "y": 2,
+       "cols": 1,
+       "rows": 1,
+       "role": "station",
+       "seen": true
+      },
+      {
+       "index": 3,
+       "x": 4,
+       "y": 1,
+       "cols": 1,
+       "rows": 2,
+       "role": "room",
+       "seen": true
+      },
+      {
+       "index": 4,
+       "x": 5,
+       "y": 0,
+       "cols": 2,
+       "rows": 2,
+       "role": "room",
+       "seen": true
+      },
+      {
+       "index": 5,
+       "x": 7,
+       "y": 0,
+       "cols": 1,
+       "rows": 1,
+       "role": "home",
+       "seen": false
+      }
+     ]
+    },
+    "snacks": 3
+   },
+   "room2": {
+    "format": "pushbox.room/2",
+    "world": "dungeon",
+    "weight": 10,
+    "mirror": true,
+    "id": "dungeon2_yard",
+    "type": "room",
+    "role": "develop",
+    "size": [
+     2,
+     2
+    ],
+    "name": "放风场 · 高台上的拉杆",
+    "idea": "关键想法：浮石把箱子运过坑，箱子再当台阶。变化：拉杆在上层高台，它开的是下层出口的门——镜头要跟着走一大圈；骷髅守卫只在下层走廊巡逻，不进解谜区。",
+    "needs": [
+     "float_block"
+    ],
+    "requires": [
+     "float_block",
+     "push",
+     "lever"
+    ],
+    "mechanisms": [
+     "float_block",
+     "push",
+     "lever",
+     "ladder",
+     "hint_animal"
+    ],
+    "exits": [
+     "left.0.low",
+     "right.1.low"
+    ],
+    "routes": [
+     "left.0.low>right.1.low"
+    ],
+    "puzzle_area": [
+     [
+      1,
+      1,
+      27,
+      9
+     ]
+    ],
+    "legend": {
+     "2": {
+      "monster": "skeleton_guard",
+      "dir": "left",
+      "zone": [
+       28,
+       32
+      ]
+     }
+    },
+    "devices": [
+     {
+      "type": "lever",
+      "at": [
+       24,
+       4
+      ],
+      "action": {
+       "link": 0
+      }
+     }
+    ],
+    "links": [
+     {
+      "plates": [],
+      "doors": [
+       [
+        33,
+        16
+       ],
+       [
+        33,
+        17
+       ]
+      ]
+     }
+    ],
+    "hints": [
+     {
+      "text": "推浮石把箱子运过坑。",
+      "target": [
+       12,
+       7
+      ],
+      "show": {
+       "action": "push",
+       "dir": "R",
+       "at": [
+        4,
+        7
+       ]
+      },
+      "done": {
+       "covers": [
+        12,
+        7
+       ]
+      }
+     },
+     {
+      "text": "把箱子推到高台下面当台阶。",
+      "target": [
+       21,
+       6
+      ],
+      "show": {
+       "action": "push",
+       "dir": "R",
+       "at": [
+        12,
+        6
+       ]
+      },
+      "done": {
+       "crate": [
+        21,
+        6
+       ]
+      }
+     },
+     {
+      "text": "上高台拉下拉杆：下层的门开了。",
+      "target": [
+       24,
+       4
+      ],
+      "show": {
+       "action": "lever",
+       "dir": "U",
+       "at": [
+        24,
+        4
+       ]
+      },
+      "done": {
+       "lever": 0
+      }
+     },
+     {
+      "text": "从梯子下去，穿过下层的门。",
+      "target": [
+       27,
+       10
+      ],
+      "show": {
+       "action": "climb",
+       "dir": "D",
+       "at": [
+        27,
+        5
+       ]
+      },
+      "done": {
+       "player": [
+        28,
+        10,
+        39,
+        19
+       ]
+      }
+     }
+    ],
+    "map": [
+     "########################################",
+     "#...........................############",
+     "#...........................############",
+     "#...........................############",
+     "#..........................H############",
+     "#.....................#####H############",
+     ".......B..............#####H############",
+     ".....FFF.....##############H############",
+     "##########...##############H############",
+     "##########...##############H############",
+     "##########...##############H...........#",
+     "##########...##############H...........#",
+     "##########...##############H...........#",
+     "###########################H...........#",
+     "#############..............H...........#",
+     "#############..............H...........#",
+     "#############..............H.....|......",
+     "#############.......$......H..2..|..$...",
+     "########################################",
+     "########################################"
+    ]
+   },
+   "world": "dungeon"
+  },
+  "palette": {
+   "a": "#be4a2f",
+   "b": "#d77643",
+   "c": "#ead4aa",
+   "d": "#e4a672",
+   "e": "#b86f50",
+   "f": "#733e39",
+   "g": "#3e2731",
+   "h": "#a22633",
+   "i": "#e43b44",
+   "j": "#f77622",
+   "k": "#feae34",
+   "l": "#fee761",
+   "m": "#63c74d",
+   "n": "#3e8948",
+   "o": "#265c42",
+   "p": "#193c3e",
+   "q": "#124e89",
+   "r": "#0099db",
+   "s": "#2ce8f5",
+   "t": "#ffffff",
+   "u": "#c0cbdc",
+   "v": "#8b9bb4",
+   "w": "#5a6988",
+   "x": "#3a4466",
+   "y": "#262b44",
+   "z": "#181425",
+   "A": "#ff0044",
+   "B": "#68386c",
+   "C": "#b55088",
+   "D": "#f6757a",
+   "E": "#e8b796",
+   "F": "#c28569"
+  },
+  "depends": [
+   "cargo.vase",
+   "char.portitor",
+   "fauna.diyu_butterfly",
+   "fauna.diyu_dog",
+   "fauna.dungeon_bat",
+   "fauna.dungeon_cat",
+   "fauna.jeju_pony",
+   "item.first_aid",
+   "item.rope_ladder",
+   "item.sandbag",
+   "item.snack",
+   "item.snack_jeju",
+   "mech.lantern_float",
+   "mech.rune_float",
+   "monster.skeleton_guard",
+   "obj.crate_wood",
+   "theme.diyu",
+   "theme.dungeon",
+   "ui.delivery_icons",
+   "ui.icons",
+   "ui.keycap",
+   "ui.menu_icons",
+   "ui.panel"
+  ],
+  "resource": "res://generated/art/metadata/ui.screen.confirm.tres"
+ },
  "art:ui.screen.delivery_hud": {
   "uid": "art:ui.screen.delivery_hud",
   "id": "ui.screen.delivery_hud",
   "kind": "procedural",
-  "version": 1,
-  "hash": "23c03f3921674452382a4ef6731bf5aacf26cca8e8a8f55c753d2a06289c361b",
+  "version": 3,
+  "hash": "63b46cc9eb2dec0811388d60f6b500e23c4952550c32ea939d7ab30ea74782b5",
   "approved": true,
   "placeholder": false,
   "texture": "",
@@ -7982,45 +11971,366 @@
    "exclude": [
     "fauna.dungeon_rat"
    ],
-   "room": [
-    "####################",
-    "####............####",
-    "##................##",
-    "#...H..............#",
-    "#...H##########....#",
-    "#...H..............#",
-    "....H...............",
-    "..P.H..#.....#......",
-    "####################",
-    "####################"
-   ],
-   "facing": "right",
-   "entities": [
-    {
-     "sprite": "monster.rat_swarm",
-     "anim": "walk",
-     "x": 12,
-     "y": 3,
-     "flip": true
+   "hud": {
+    "hearts": 2,
+    "maxHearts": 3,
+    "cargo": "vase",
+    "left": 2,
+    "max": 3,
+    "rule": "fragile",
+    "hot": false,
+    "coins": 35,
+    "sand": 2,
+    "items": [
+     "first_aid",
+     "rope_ladder"
+    ],
+    "slots": 3,
+    "secs": 83,
+    "minimap": {
+     "cols": 8,
+     "rows": 4,
+     "cur": 4,
+     "rooms": [
+      {
+       "index": 0,
+       "x": 0,
+       "y": 2,
+       "cols": 1,
+       "rows": 1,
+       "role": "gate",
+       "seen": true
+      },
+      {
+       "index": 1,
+       "x": 1,
+       "y": 2,
+       "cols": 2,
+       "rows": 1,
+       "role": "room",
+       "seen": true
+      },
+      {
+       "index": 2,
+       "x": 3,
+       "y": 2,
+       "cols": 1,
+       "rows": 1,
+       "role": "station",
+       "seen": true
+      },
+      {
+       "index": 3,
+       "x": 4,
+       "y": 1,
+       "cols": 1,
+       "rows": 2,
+       "role": "room",
+       "seen": true
+      },
+      {
+       "index": 4,
+       "x": 5,
+       "y": 0,
+       "cols": 2,
+       "rows": 2,
+       "role": "room",
+       "seen": true
+      },
+      {
+       "index": 5,
+       "x": 7,
+       "y": 0,
+       "cols": 1,
+       "rows": 1,
+       "role": "home",
+       "seen": false
+      }
+     ]
     },
-    {
-     "sprite": "item.coin",
-     "anim": "spin",
-     "x": 7,
-     "y": 3
+    "snacks": 3
+   },
+   "room2": {
+    "format": "pushbox.room/2",
+    "world": "dungeon",
+    "weight": 10,
+    "mirror": true,
+    "id": "dungeon2_yard",
+    "type": "room",
+    "role": "develop",
+    "size": [
+     2,
+     2
+    ],
+    "name": "放风场 · 高台上的拉杆",
+    "idea": "关键想法：浮石把箱子运过坑，箱子再当台阶。变化：拉杆在上层高台，它开的是下层出口的门——镜头要跟着走一大圈；骷髅守卫只在下层走廊巡逻，不进解谜区。",
+    "needs": [
+     "float_block"
+    ],
+    "requires": [
+     "float_block",
+     "push",
+     "lever"
+    ],
+    "mechanisms": [
+     "float_block",
+     "push",
+     "lever",
+     "ladder",
+     "hint_animal"
+    ],
+    "exits": [
+     "left.0.low",
+     "right.1.low"
+    ],
+    "routes": [
+     "left.0.low>right.1.low"
+    ],
+    "puzzle_area": [
+     [
+      1,
+      1,
+      27,
+      9
+     ]
+    ],
+    "legend": {
+     "2": {
+      "monster": "skeleton_guard",
+      "dir": "left",
+      "zone": [
+       28,
+       32
+      ]
+     }
     },
-    {
-     "sprite": "item.coin",
-     "anim": "spin",
-     "x": 10,
-     "y": 3
-    },
-    {
-     "sprite": "item.coin",
-     "anim": "spin",
-     "x": 16,
-     "y": 7
-    }
+    "devices": [
+     {
+      "type": "lever",
+      "at": [
+       24,
+       4
+      ],
+      "action": {
+       "link": 0
+      }
+     }
+    ],
+    "links": [
+     {
+      "plates": [],
+      "doors": [
+       [
+        33,
+        16
+       ],
+       [
+        33,
+        17
+       ]
+      ]
+     }
+    ],
+    "hints": [
+     {
+      "text": "推浮石把箱子运过坑。",
+      "target": [
+       12,
+       7
+      ],
+      "show": {
+       "action": "push",
+       "dir": "R",
+       "at": [
+        4,
+        7
+       ]
+      },
+      "done": {
+       "covers": [
+        12,
+        7
+       ]
+      }
+     },
+     {
+      "text": "把箱子推到高台下面当台阶。",
+      "target": [
+       21,
+       6
+      ],
+      "show": {
+       "action": "push",
+       "dir": "R",
+       "at": [
+        12,
+        6
+       ]
+      },
+      "done": {
+       "crate": [
+        21,
+        6
+       ]
+      }
+     },
+     {
+      "text": "上高台拉下拉杆：下层的门开了。",
+      "target": [
+       24,
+       4
+      ],
+      "show": {
+       "action": "lever",
+       "dir": "U",
+       "at": [
+        24,
+        4
+       ]
+      },
+      "done": {
+       "lever": 0
+      }
+     },
+     {
+      "text": "从梯子下去，穿过下层的门。",
+      "target": [
+       27,
+       10
+      ],
+      "show": {
+       "action": "climb",
+       "dir": "D",
+       "at": [
+        27,
+        5
+       ]
+      },
+      "done": {
+       "player": [
+        28,
+        10,
+        39,
+        19
+       ]
+      }
+     }
+    ],
+    "map": [
+     "########################################",
+     "#...........................############",
+     "#...........................############",
+     "#...........................############",
+     "#..........................H############",
+     "#.....................#####H############",
+     ".......B..............#####H############",
+     ".....FFF.....##############H############",
+     "##########...##############H############",
+     "##########...##############H############",
+     "##########...##############H...........#",
+     "##########...##############H...........#",
+     "##########...##############H...........#",
+     "###########################H...........#",
+     "#############..............H...........#",
+     "#############..............H...........#",
+     "#############..............H.....|......",
+     "#############.......$......H..2..|..$...",
+     "########################################",
+     "########################################"
+    ]
+   },
+   "world": "dungeon"
+  },
+  "palette": {
+   "a": "#be4a2f",
+   "b": "#d77643",
+   "c": "#ead4aa",
+   "d": "#e4a672",
+   "e": "#b86f50",
+   "f": "#733e39",
+   "g": "#3e2731",
+   "h": "#a22633",
+   "i": "#e43b44",
+   "j": "#f77622",
+   "k": "#feae34",
+   "l": "#fee761",
+   "m": "#63c74d",
+   "n": "#3e8948",
+   "o": "#265c42",
+   "p": "#193c3e",
+   "q": "#124e89",
+   "r": "#0099db",
+   "s": "#2ce8f5",
+   "t": "#ffffff",
+   "u": "#c0cbdc",
+   "v": "#8b9bb4",
+   "w": "#5a6988",
+   "x": "#3a4466",
+   "y": "#262b44",
+   "z": "#181425",
+   "A": "#ff0044",
+   "B": "#68386c",
+   "C": "#b55088",
+   "D": "#f6757a",
+   "E": "#e8b796",
+   "F": "#c28569"
+  },
+  "depends": [
+   "cargo.vase",
+   "char.portitor",
+   "fauna.diyu_butterfly",
+   "fauna.diyu_dog",
+   "fauna.dungeon_bat",
+   "fauna.dungeon_cat",
+   "fauna.jeju_pony",
+   "item.coin",
+   "item.first_aid",
+   "item.rope_ladder",
+   "item.sandbag",
+   "item.snack",
+   "item.snack_jeju",
+   "mech.ladder",
+   "mech.lantern_float",
+   "mech.rune_float",
+   "monster.rat_swarm",
+   "monster.skeleton_guard",
+   "obj.crate_wood",
+   "theme.diyu",
+   "theme.dungeon",
+   "ui.delivery_icons"
+  ],
+  "resource": "res://generated/art/metadata/ui.screen.delivery_hud.tres"
+ },
+ "art:ui.screen.delivery_pause": {
+  "uid": "art:ui.screen.delivery_pause",
+  "id": "ui.screen.delivery_pause",
+  "kind": "procedural",
+  "version": 3,
+  "hash": "59aea63939340159d14dd494c6995fc36260e066048af95a03502e3df11d74ad",
+  "approved": true,
+  "placeholder": false,
+  "texture": "",
+  "texture_path": "",
+  "png_sha256": "",
+  "size": [
+   0,
+   0
+  ],
+  "frame_count": 0,
+  "anchor": [
+   0,
+   0
+  ],
+  "animations": {},
+  "ninepatch": null,
+  "params": {
+   "screen": "delivery_pause",
+   "items": [
+    "pause.resume",
+    "dlv.pause.restart_room",
+    "dlv.pause.give_up",
+    "pause.settings",
+    "pause.menu"
    ],
    "hud": {
     "hearts": 2,
@@ -8039,55 +12349,259 @@
     "slots": 3,
     "secs": 83,
     "minimap": {
-     "cols": 4,
-     "rows": 3,
+     "cols": 8,
+     "rows": 4,
      "cur": 4,
      "rooms": [
       {
        "index": 0,
-       "x": 3,
-       "y": 0,
+       "x": 0,
+       "y": 2,
+       "cols": 1,
+       "rows": 1,
        "role": "gate",
        "seen": true
       },
       {
        "index": 1,
-       "x": 2,
-       "y": 0,
+       "x": 1,
+       "y": 2,
+       "cols": 2,
+       "rows": 1,
        "role": "room",
        "seen": true
       },
       {
        "index": 2,
-       "x": 2,
-       "y": 1,
+       "x": 3,
+       "y": 2,
+       "cols": 1,
+       "rows": 1,
        "role": "station",
        "seen": true
       },
       {
        "index": 3,
-       "x": 2,
-       "y": 2,
+       "x": 4,
+       "y": 1,
+       "cols": 1,
+       "rows": 2,
        "role": "room",
        "seen": true
       },
       {
        "index": 4,
-       "x": 1,
-       "y": 2,
+       "x": 5,
+       "y": 0,
+       "cols": 2,
+       "rows": 2,
        "role": "room",
        "seen": true
       },
       {
        "index": 5,
-       "x": 0,
-       "y": 2,
+       "x": 7,
+       "y": 0,
+       "cols": 1,
+       "rows": 1,
        "role": "home",
        "seen": false
       }
      ]
-    }
-   }
+    },
+    "snacks": 3
+   },
+   "room2": {
+    "format": "pushbox.room/2",
+    "world": "dungeon",
+    "weight": 10,
+    "mirror": true,
+    "id": "dungeon2_yard",
+    "type": "room",
+    "role": "develop",
+    "size": [
+     2,
+     2
+    ],
+    "name": "放风场 · 高台上的拉杆",
+    "idea": "关键想法：浮石把箱子运过坑，箱子再当台阶。变化：拉杆在上层高台，它开的是下层出口的门——镜头要跟着走一大圈；骷髅守卫只在下层走廊巡逻，不进解谜区。",
+    "needs": [
+     "float_block"
+    ],
+    "requires": [
+     "float_block",
+     "push",
+     "lever"
+    ],
+    "mechanisms": [
+     "float_block",
+     "push",
+     "lever",
+     "ladder",
+     "hint_animal"
+    ],
+    "exits": [
+     "left.0.low",
+     "right.1.low"
+    ],
+    "routes": [
+     "left.0.low>right.1.low"
+    ],
+    "puzzle_area": [
+     [
+      1,
+      1,
+      27,
+      9
+     ]
+    ],
+    "legend": {
+     "2": {
+      "monster": "skeleton_guard",
+      "dir": "left",
+      "zone": [
+       28,
+       32
+      ]
+     }
+    },
+    "devices": [
+     {
+      "type": "lever",
+      "at": [
+       24,
+       4
+      ],
+      "action": {
+       "link": 0
+      }
+     }
+    ],
+    "links": [
+     {
+      "plates": [],
+      "doors": [
+       [
+        33,
+        16
+       ],
+       [
+        33,
+        17
+       ]
+      ]
+     }
+    ],
+    "hints": [
+     {
+      "text": "推浮石把箱子运过坑。",
+      "target": [
+       12,
+       7
+      ],
+      "show": {
+       "action": "push",
+       "dir": "R",
+       "at": [
+        4,
+        7
+       ]
+      },
+      "done": {
+       "covers": [
+        12,
+        7
+       ]
+      }
+     },
+     {
+      "text": "把箱子推到高台下面当台阶。",
+      "target": [
+       21,
+       6
+      ],
+      "show": {
+       "action": "push",
+       "dir": "R",
+       "at": [
+        12,
+        6
+       ]
+      },
+      "done": {
+       "crate": [
+        21,
+        6
+       ]
+      }
+     },
+     {
+      "text": "上高台拉下拉杆：下层的门开了。",
+      "target": [
+       24,
+       4
+      ],
+      "show": {
+       "action": "lever",
+       "dir": "U",
+       "at": [
+        24,
+        4
+       ]
+      },
+      "done": {
+       "lever": 0
+      }
+     },
+     {
+      "text": "从梯子下去，穿过下层的门。",
+      "target": [
+       27,
+       10
+      ],
+      "show": {
+       "action": "climb",
+       "dir": "D",
+       "at": [
+        27,
+        5
+       ]
+      },
+      "done": {
+       "player": [
+        28,
+        10,
+        39,
+        19
+       ]
+      }
+     }
+    ],
+    "map": [
+     "########################################",
+     "#...........................############",
+     "#...........................############",
+     "#...........................############",
+     "#..........................H############",
+     "#.....................#####H############",
+     ".......B..............#####H############",
+     ".....FFF.....##############H############",
+     "##########...##############H############",
+     "##########...##############H############",
+     "##########...##############H...........#",
+     "##########...##############H...........#",
+     "##########...##############H...........#",
+     "###########################H...........#",
+     "#############..............H...........#",
+     "#############..............H...........#",
+     "#############..............H.....|......",
+     "#############.......$......H..2..|..$...",
+     "########################################",
+     "########################################"
+    ]
+   },
+   "world": "dungeon",
+   "theme": "theme.dungeon"
   },
   "palette": {
    "a": "#be4a2f",
@@ -8124,88 +12638,25 @@
    "F": "#c28569"
   },
   "depends": [
-   "theme.dungeon",
-   "char.portitor",
-   "mech.ladder",
-   "monster.rat_swarm",
-   "item.coin",
-   "ui.delivery_icons",
    "cargo.vase",
-   "item.sandbag",
-   "item.first_aid",
-   "item.rope_ladder"
-  ],
-  "resource": "res://generated/art/metadata/ui.screen.delivery_hud.tres"
- },
- "art:ui.screen.delivery_pause": {
-  "uid": "art:ui.screen.delivery_pause",
-  "id": "ui.screen.delivery_pause",
-  "kind": "procedural",
-  "version": 1,
-  "hash": "6f1e53c3dac19938cd506249fa827483ea8e31778fe6f1a6574ad4427b6099f1",
-  "approved": true,
-  "placeholder": false,
-  "texture": "",
-  "texture_path": "",
-  "png_sha256": "",
-  "size": [
-   0,
-   0
-  ],
-  "frame_count": 0,
-  "anchor": [
-   0,
-   0
-  ],
-  "animations": {},
-  "ninepatch": null,
-  "params": {
-   "screen": "pause",
-   "items": [
-    "pause.resume",
-    "dlv.pause.restart_room",
-    "dlv.pause.give_up",
-    "pause.settings",
-    "pause.menu"
-   ]
-  },
-  "palette": {
-   "a": "#be4a2f",
-   "b": "#d77643",
-   "c": "#ead4aa",
-   "d": "#e4a672",
-   "e": "#b86f50",
-   "f": "#733e39",
-   "g": "#3e2731",
-   "h": "#a22633",
-   "i": "#e43b44",
-   "j": "#f77622",
-   "k": "#feae34",
-   "l": "#fee761",
-   "m": "#63c74d",
-   "n": "#3e8948",
-   "o": "#265c42",
-   "p": "#193c3e",
-   "q": "#124e89",
-   "r": "#0099db",
-   "s": "#2ce8f5",
-   "t": "#ffffff",
-   "u": "#c0cbdc",
-   "v": "#8b9bb4",
-   "w": "#5a6988",
-   "x": "#3a4466",
-   "y": "#262b44",
-   "z": "#181425",
-   "A": "#ff0044",
-   "B": "#68386c",
-   "C": "#b55088",
-   "D": "#f6757a",
-   "E": "#e8b796",
-   "F": "#c28569"
-  },
-  "depends": [
    "char.portitor",
+   "fauna.diyu_butterfly",
+   "fauna.diyu_dog",
+   "fauna.dungeon_bat",
+   "fauna.dungeon_cat",
+   "fauna.jeju_pony",
+   "item.first_aid",
+   "item.rope_ladder",
+   "item.sandbag",
+   "item.snack",
+   "item.snack_jeju",
+   "mech.lantern_float",
+   "mech.rune_float",
+   "monster.skeleton_guard",
+   "obj.crate_wood",
+   "theme.diyu",
    "theme.dungeon",
+   "ui.delivery_icons",
    "ui.icons",
    "ui.keycap",
    "ui.menu_icons",
@@ -8217,8 +12668,8 @@
   "uid": "art:ui.screen.dialogue",
   "id": "ui.screen.dialogue",
   "kind": "procedural",
-  "version": 1,
-  "hash": "ea330683e10b2adfdef4f733182869535eea2cb27b750adf982b3410e8de85e5",
+  "version": 3,
+  "hash": "b2d0012a3f36c3efcb1a97f1c71af571ef4f92a8632a39cf661fdf7635b77bfc",
   "approved": true,
   "placeholder": false,
   "texture": "",
@@ -8275,10 +12726,13 @@
   "depends": [
    "char.miner",
    "char.portitor",
+   "item.sandbag",
    "theme.dungeon",
    "ui.bubble",
    "ui.bubble_tail",
+   "ui.class_icon",
    "ui.emote",
+   "ui.goal_lamp",
    "ui.icons",
    "ui.keycap",
    "ui.menu_icons",
@@ -8290,8 +12744,8 @@
   "uid": "art:ui.screen.hint",
   "id": "ui.screen.hint",
   "kind": "procedural",
-  "version": 4,
-  "hash": "89aa4fe24b01333d1c56f8e7144b9db5c38ef0777cc35a615c4e41b064b470d9",
+  "version": 6,
+  "hash": "fe54342c105c701351792f67ec4f51ef5a0f292fc749376d0779021b9643f019",
   "approved": true,
   "placeholder": false,
   "texture": "",
@@ -8309,7 +12763,8 @@
   "animations": {},
   "ninepatch": null,
   "params": {
-   "screen": "hint"
+   "screen": "hint",
+   "level": 3
   },
   "palette": {
    "a": "#be4a2f",
@@ -8347,9 +12802,12 @@
   },
   "depends": [
    "char.portitor",
+   "item.sandbag",
    "theme.dungeon",
    "ui.bubble",
    "ui.bubble_tail",
+   "ui.class_icon",
+   "ui.goal_lamp",
    "ui.icons",
    "ui.keycap",
    "ui.menu_icons",
@@ -8357,12 +12815,328 @@
   ],
   "resource": "res://generated/art/metadata/ui.screen.hint.tres"
  },
+ "art:ui.screen.hint_animal": {
+  "uid": "art:ui.screen.hint_animal",
+  "id": "ui.screen.hint_animal",
+  "kind": "procedural",
+  "version": 1,
+  "hash": "712ab03b13b0f32879b784ba16d1b62ca58a97f9b0b33594ed157bb9c3efe074",
+  "approved": true,
+  "placeholder": false,
+  "texture": "",
+  "texture_path": "",
+  "png_sha256": "",
+  "size": [
+   0,
+   0
+  ],
+  "frame_count": 0,
+  "anchor": [
+   0,
+   0
+  ],
+  "animations": {},
+  "ninepatch": null,
+  "params": {
+   "screen": "hint_animal",
+   "theme": "theme.dungeon",
+   "exclude": [
+    "fauna.dungeon_rat"
+   ],
+   "hud": {
+    "hearts": 2,
+    "maxHearts": 3,
+    "cargo": "vase",
+    "left": 2,
+    "max": 3,
+    "rule": "fragile",
+    "hot": false,
+    "coins": 35,
+    "sand": 2,
+    "items": [
+     "first_aid",
+     "rope_ladder"
+    ],
+    "slots": 3,
+    "secs": 83,
+    "minimap": {
+     "cols": 8,
+     "rows": 4,
+     "cur": 4,
+     "rooms": [
+      {
+       "index": 0,
+       "x": 0,
+       "y": 2,
+       "cols": 1,
+       "rows": 1,
+       "role": "gate",
+       "seen": true
+      },
+      {
+       "index": 1,
+       "x": 1,
+       "y": 2,
+       "cols": 2,
+       "rows": 1,
+       "role": "room",
+       "seen": true
+      },
+      {
+       "index": 2,
+       "x": 3,
+       "y": 2,
+       "cols": 1,
+       "rows": 1,
+       "role": "station",
+       "seen": true
+      },
+      {
+       "index": 3,
+       "x": 4,
+       "y": 1,
+       "cols": 1,
+       "rows": 2,
+       "role": "room",
+       "seen": true
+      },
+      {
+       "index": 4,
+       "x": 5,
+       "y": 0,
+       "cols": 2,
+       "rows": 2,
+       "role": "room",
+       "seen": true
+      },
+      {
+       "index": 5,
+       "x": 7,
+       "y": 0,
+       "cols": 1,
+       "rows": 1,
+       "role": "home",
+       "seen": false
+      }
+     ]
+    },
+    "snacks": 3
+   },
+   "room2": {
+    "format": "pushbox.room/2",
+    "world": "dungeon",
+    "weight": 10,
+    "mirror": true,
+    "id": "dungeon2_sandpour",
+    "type": "room",
+    "role": "twist",
+    "name": "沙井 · 站在浮石上倒沙",
+    "idea": "关键想法：浮石不只用来过坑——它是你在坑上唯一能站的地方。变化：先站在浮石上把沙倒进坑底压住压板开门，再撑过去；先撑就倒不进去了（可以撑回来）。",
+    "needs": [
+     "pole"
+    ],
+    "requires": [
+     "float_block",
+     "pour"
+    ],
+    "mechanisms": [
+     "float_block",
+     "pole",
+     "dig",
+     "pour",
+     "plate_door",
+     "ladder",
+     "hint_animal"
+    ],
+    "exits": [
+     "left.0.high",
+     "right.0.high",
+     "right.0.low"
+    ],
+    "routes": [
+     "left.0.high>right.0.high",
+     "left.0.high>right.0.low"
+    ],
+    "puzzle_area": [
+     [
+      1,
+      2,
+      12,
+      8
+     ]
+    ],
+    "links": [
+     {
+      "plates": [
+       [
+        7,
+        8
+       ]
+      ],
+      "doors": [
+       [
+        12,
+        2
+       ],
+       [
+        12,
+        3
+       ]
+      ]
+     }
+    ],
+    "hints": [
+     {
+      "text": "先挖一袋沙。",
+      "target": [
+       2,
+       3
+      ],
+      "show": {
+       "action": "dig",
+       "dir": "DIG_R",
+       "at": [
+        1,
+        3
+       ]
+      },
+      "done": {
+       "any": [
+        {
+         "bag_sand": 1
+        },
+        {
+         "door": 0
+        }
+       ]
+      }
+     },
+     {
+      "text": "站到浮石右端，把沙倒进坑里：沙落到底，压住压板。",
+      "target": [
+       7,
+       4
+      ],
+      "show": {
+       "action": "pour",
+       "dir": "POUR_R",
+       "at": [
+        6,
+        4
+       ]
+      },
+      "done": {
+       "door": 0
+      }
+     },
+     {
+      "text": "门开了：对着岸撑一下，上对岸。",
+      "target": [
+       4,
+       4
+      ],
+      "show": {
+       "action": "pole",
+       "dir": "DIG_L",
+       "at": [
+        5,
+        4
+       ]
+      },
+      "done": {
+       "player": [
+        8,
+        0,
+        19,
+        9
+       ]
+      }
+     }
+    ],
+    "map": [
+     "####################",
+     "####################",
+     "............|.......",
+     "..ss........|...H...",
+     "#####...########H###",
+     "#####FF.########H###",
+     "#####...########H...",
+     "#####...########H...",
+     "#####.._############",
+     "####################"
+    ]
+   },
+   "world": "dungeon",
+   "nearHint": true,
+   "hintKey": "d2.hint",
+   "fedFlyer": true
+  },
+  "palette": {
+   "a": "#be4a2f",
+   "b": "#d77643",
+   "c": "#ead4aa",
+   "d": "#e4a672",
+   "e": "#b86f50",
+   "f": "#733e39",
+   "g": "#3e2731",
+   "h": "#a22633",
+   "i": "#e43b44",
+   "j": "#f77622",
+   "k": "#feae34",
+   "l": "#fee761",
+   "m": "#63c74d",
+   "n": "#3e8948",
+   "o": "#265c42",
+   "p": "#193c3e",
+   "q": "#124e89",
+   "r": "#0099db",
+   "s": "#2ce8f5",
+   "t": "#ffffff",
+   "u": "#c0cbdc",
+   "v": "#8b9bb4",
+   "w": "#5a6988",
+   "x": "#3a4466",
+   "y": "#262b44",
+   "z": "#181425",
+   "A": "#ff0044",
+   "B": "#68386c",
+   "C": "#b55088",
+   "D": "#f6757a",
+   "E": "#e8b796",
+   "F": "#c28569"
+  },
+  "depends": [
+   "cargo.vase",
+   "char.portitor",
+   "fauna.diyu_butterfly",
+   "fauna.diyu_dog",
+   "fauna.dungeon_bat",
+   "fauna.dungeon_cat",
+   "fauna.jeju_pony",
+   "item.coin",
+   "item.first_aid",
+   "item.rope_ladder",
+   "item.sandbag",
+   "item.snack",
+   "item.snack_jeju",
+   "mech.ladder",
+   "mech.lantern_float",
+   "mech.rune_float",
+   "monster.rat_swarm",
+   "monster.skeleton_guard",
+   "obj.crate_wood",
+   "theme.diyu",
+   "theme.dungeon",
+   "ui.delivery_icons"
+  ],
+  "resource": "res://generated/art/metadata/ui.screen.hint_animal.tres"
+ },
  "art:ui.screen.levels": {
   "uid": "art:ui.screen.levels",
   "id": "ui.screen.levels",
   "kind": "procedural",
-  "version": 4,
-  "hash": "3ce7d34a0b822daa3fb5d01c243a606e06de7c4ae367565e2c06dec2c5ca4b24",
+  "version": 6,
+  "hash": "20c8fee27de3b5b0af0a60819c5d946e4f7fa4f45ed0b63e18bc6f041bf3bd34",
   "approved": true,
   "placeholder": false,
   "texture": "",
@@ -8413,7 +13187,8 @@
      "id": "M07",
      "state": "open"
     }
-   ]
+   ],
+   "focus": 4
   },
   "palette": {
    "a": "#be4a2f",
@@ -8454,7 +13229,8 @@
    "ui.icons",
    "ui.keycap",
    "ui.menu_icons",
-   "ui.panel"
+   "ui.panel",
+   "ui.theme_emblem"
   ],
   "resource": "res://generated/art/metadata/ui.screen.levels.tres"
  },
@@ -8462,8 +13238,8 @@
   "uid": "art:ui.screen.lobby",
   "id": "ui.screen.lobby",
   "kind": "procedural",
-  "version": 4,
-  "hash": "e2ec45838d3dcccf1f97feee4dcfc767b831ab3945d6ac07366db546cec5282e",
+  "version": 5,
+  "hash": "d26fbdaec9c31d7b585cba36ba266d536351205d8512ebfdd6a35b06b3addbc7",
   "approved": true,
   "placeholder": false,
   "texture": "",
@@ -8501,7 +13277,8 @@
      "key": "menu.quit",
      "icon": "quit"
     }
-   ]
+   ],
+   "coins": 1280
   },
   "palette": {
    "a": "#be4a2f",
@@ -8545,16 +13322,463 @@
    "ui.icons",
    "ui.keycap",
    "ui.menu_icons",
-   "ui.panel"
+   "ui.panel",
+   "ui.theme_emblem"
   ],
   "resource": "res://generated/art/metadata/ui.screen.lobby.tres"
+ },
+ "art:ui.screen.lobby_generic": {
+  "uid": "art:ui.screen.lobby_generic",
+  "id": "ui.screen.lobby_generic",
+  "kind": "procedural",
+  "version": 1,
+  "hash": "2edd46733942372b145565ca581d30a3abaeeac5b107a02f76287e84a98482be",
+  "approved": true,
+  "placeholder": false,
+  "texture": "",
+  "texture_path": "",
+  "png_sha256": "",
+  "size": [
+   0,
+   0
+  ],
+  "frame_count": 0,
+  "anchor": [
+   0,
+   0
+  ],
+  "animations": {},
+  "ninepatch": null,
+  "params": {
+   "screen": "lobby_generic",
+   "theme": "theme.diyu",
+   "items": [
+    {
+     "key": "result.lobby.level"
+    },
+    {
+     "key": "result.lobby.delivery"
+    },
+    {
+     "key": "menu.settings"
+    },
+    {
+     "key": "menu.quit"
+    }
+   ],
+   "coins": 1280
+  },
+  "palette": {
+   "a": "#be4a2f",
+   "b": "#d77643",
+   "c": "#ead4aa",
+   "d": "#e4a672",
+   "e": "#b86f50",
+   "f": "#733e39",
+   "g": "#3e2731",
+   "h": "#a22633",
+   "i": "#e43b44",
+   "j": "#f77622",
+   "k": "#feae34",
+   "l": "#fee761",
+   "m": "#63c74d",
+   "n": "#3e8948",
+   "o": "#265c42",
+   "p": "#193c3e",
+   "q": "#124e89",
+   "r": "#0099db",
+   "s": "#2ce8f5",
+   "t": "#ffffff",
+   "u": "#c0cbdc",
+   "v": "#8b9bb4",
+   "w": "#5a6988",
+   "x": "#3a4466",
+   "y": "#262b44",
+   "z": "#181425",
+   "A": "#ff0044",
+   "B": "#68386c",
+   "C": "#b55088",
+   "D": "#f6757a",
+   "E": "#e8b796",
+   "F": "#c28569"
+  },
+  "depends": [
+   "char.portitor",
+   "mech.exit_flag",
+   "obj.crate_wood",
+   "theme.diyu",
+   "ui.icons",
+   "ui.keycap",
+   "ui.menu_icons",
+   "ui.panel",
+   "ui.theme_emblem"
+  ],
+  "resource": "res://generated/art/metadata/ui.screen.lobby_generic.tres"
+ },
+ "art:ui.screen.observe": {
+  "uid": "art:ui.screen.observe",
+  "id": "ui.screen.observe",
+  "kind": "procedural",
+  "version": 1,
+  "hash": "773612a72d128b4742e2043d1bdf733f1af8854ea21d292f09c2f58ec60e29e0",
+  "approved": true,
+  "placeholder": false,
+  "texture": "",
+  "texture_path": "",
+  "png_sha256": "",
+  "size": [
+   0,
+   0
+  ],
+  "frame_count": 0,
+  "anchor": [
+   0,
+   0
+  ],
+  "animations": {},
+  "ninepatch": null,
+  "params": {
+   "screen": "observe",
+   "theme": "theme.dungeon",
+   "exclude": [
+    "fauna.dungeon_rat"
+   ],
+   "hud": {
+    "hearts": 2,
+    "maxHearts": 3,
+    "cargo": "vase",
+    "left": 2,
+    "max": 3,
+    "rule": "fragile",
+    "hot": false,
+    "coins": 35,
+    "sand": 2,
+    "items": [
+     "first_aid",
+     "rope_ladder"
+    ],
+    "slots": 3,
+    "secs": 83,
+    "minimap": {
+     "cols": 8,
+     "rows": 4,
+     "cur": 4,
+     "rooms": [
+      {
+       "index": 0,
+       "x": 0,
+       "y": 2,
+       "cols": 1,
+       "rows": 1,
+       "role": "gate",
+       "seen": true
+      },
+      {
+       "index": 1,
+       "x": 1,
+       "y": 2,
+       "cols": 2,
+       "rows": 1,
+       "role": "room",
+       "seen": true
+      },
+      {
+       "index": 2,
+       "x": 3,
+       "y": 2,
+       "cols": 1,
+       "rows": 1,
+       "role": "station",
+       "seen": true
+      },
+      {
+       "index": 3,
+       "x": 4,
+       "y": 1,
+       "cols": 1,
+       "rows": 2,
+       "role": "room",
+       "seen": true
+      },
+      {
+       "index": 4,
+       "x": 5,
+       "y": 0,
+       "cols": 2,
+       "rows": 2,
+       "role": "room",
+       "seen": true
+      },
+      {
+       "index": 5,
+       "x": 7,
+       "y": 0,
+       "cols": 1,
+       "rows": 1,
+       "role": "home",
+       "seen": false
+      }
+     ]
+    },
+    "snacks": 3
+   },
+   "room2": {
+    "format": "pushbox.room/2",
+    "world": "dungeon",
+    "weight": 10,
+    "mirror": true,
+    "id": "dungeon2_yard",
+    "type": "room",
+    "role": "develop",
+    "size": [
+     2,
+     2
+    ],
+    "name": "放风场 · 高台上的拉杆",
+    "idea": "关键想法：浮石把箱子运过坑，箱子再当台阶。变化：拉杆在上层高台，它开的是下层出口的门——镜头要跟着走一大圈；骷髅守卫只在下层走廊巡逻，不进解谜区。",
+    "needs": [
+     "float_block"
+    ],
+    "requires": [
+     "float_block",
+     "push",
+     "lever"
+    ],
+    "mechanisms": [
+     "float_block",
+     "push",
+     "lever",
+     "ladder",
+     "hint_animal"
+    ],
+    "exits": [
+     "left.0.low",
+     "right.1.low"
+    ],
+    "routes": [
+     "left.0.low>right.1.low"
+    ],
+    "puzzle_area": [
+     [
+      1,
+      1,
+      27,
+      9
+     ]
+    ],
+    "legend": {
+     "2": {
+      "monster": "skeleton_guard",
+      "dir": "left",
+      "zone": [
+       28,
+       32
+      ]
+     }
+    },
+    "devices": [
+     {
+      "type": "lever",
+      "at": [
+       24,
+       4
+      ],
+      "action": {
+       "link": 0
+      }
+     }
+    ],
+    "links": [
+     {
+      "plates": [],
+      "doors": [
+       [
+        33,
+        16
+       ],
+       [
+        33,
+        17
+       ]
+      ]
+     }
+    ],
+    "hints": [
+     {
+      "text": "推浮石把箱子运过坑。",
+      "target": [
+       12,
+       7
+      ],
+      "show": {
+       "action": "push",
+       "dir": "R",
+       "at": [
+        4,
+        7
+       ]
+      },
+      "done": {
+       "covers": [
+        12,
+        7
+       ]
+      }
+     },
+     {
+      "text": "把箱子推到高台下面当台阶。",
+      "target": [
+       21,
+       6
+      ],
+      "show": {
+       "action": "push",
+       "dir": "R",
+       "at": [
+        12,
+        6
+       ]
+      },
+      "done": {
+       "crate": [
+        21,
+        6
+       ]
+      }
+     },
+     {
+      "text": "上高台拉下拉杆：下层的门开了。",
+      "target": [
+       24,
+       4
+      ],
+      "show": {
+       "action": "lever",
+       "dir": "U",
+       "at": [
+        24,
+        4
+       ]
+      },
+      "done": {
+       "lever": 0
+      }
+     },
+     {
+      "text": "从梯子下去，穿过下层的门。",
+      "target": [
+       27,
+       10
+      ],
+      "show": {
+       "action": "climb",
+       "dir": "D",
+       "at": [
+        27,
+        5
+       ]
+      },
+      "done": {
+       "player": [
+        28,
+        10,
+        39,
+        19
+       ]
+      }
+     }
+    ],
+    "map": [
+     "########################################",
+     "#...........................############",
+     "#...........................############",
+     "#...........................############",
+     "#..........................H############",
+     "#.....................#####H############",
+     ".......B..............#####H############",
+     ".....FFF.....##############H############",
+     "##########...##############H############",
+     "##########...##############H############",
+     "##########...##############H...........#",
+     "##########...##############H...........#",
+     "##########...##############H...........#",
+     "###########################H...........#",
+     "#############..............H...........#",
+     "#############..............H...........#",
+     "#############..............H.....|......",
+     "#############.......$......H..2..|..$...",
+     "########################################",
+     "########################################"
+    ]
+   },
+   "world": "dungeon"
+  },
+  "palette": {
+   "a": "#be4a2f",
+   "b": "#d77643",
+   "c": "#ead4aa",
+   "d": "#e4a672",
+   "e": "#b86f50",
+   "f": "#733e39",
+   "g": "#3e2731",
+   "h": "#a22633",
+   "i": "#e43b44",
+   "j": "#f77622",
+   "k": "#feae34",
+   "l": "#fee761",
+   "m": "#63c74d",
+   "n": "#3e8948",
+   "o": "#265c42",
+   "p": "#193c3e",
+   "q": "#124e89",
+   "r": "#0099db",
+   "s": "#2ce8f5",
+   "t": "#ffffff",
+   "u": "#c0cbdc",
+   "v": "#8b9bb4",
+   "w": "#5a6988",
+   "x": "#3a4466",
+   "y": "#262b44",
+   "z": "#181425",
+   "A": "#ff0044",
+   "B": "#68386c",
+   "C": "#b55088",
+   "D": "#f6757a",
+   "E": "#e8b796",
+   "F": "#c28569"
+  },
+  "depends": [
+   "cargo.vase",
+   "char.portitor",
+   "fauna.diyu_butterfly",
+   "fauna.diyu_dog",
+   "fauna.dungeon_bat",
+   "fauna.dungeon_cat",
+   "fauna.jeju_pony",
+   "item.coin",
+   "item.first_aid",
+   "item.rope_ladder",
+   "item.sandbag",
+   "item.snack",
+   "item.snack_jeju",
+   "mech.ladder",
+   "mech.lantern_float",
+   "mech.rune_float",
+   "monster.rat_swarm",
+   "monster.skeleton_guard",
+   "obj.crate_wood",
+   "theme.diyu",
+   "theme.dungeon",
+   "ui.delivery_icons"
+  ],
+  "resource": "res://generated/art/metadata/ui.screen.observe.tres"
  },
  "art:ui.screen.pause": {
   "uid": "art:ui.screen.pause",
   "id": "ui.screen.pause",
   "kind": "procedural",
-  "version": 4,
-  "hash": "8423060d12710e97b5e078ff4fd400b2a2b747c12af96e7ae95c1cf480e47ad3",
+  "version": 6,
+  "hash": "1548d52f6bd91b5cc8e8c76ec070f9282078094e583f64cf75312a989f82cc74",
   "approved": true,
   "placeholder": false,
   "texture": "",
@@ -8619,7 +13843,10 @@
   },
   "depends": [
    "char.portitor",
+   "item.sandbag",
    "theme.dungeon",
+   "ui.class_icon",
+   "ui.goal_lamp",
    "ui.icons",
    "ui.keycap",
    "ui.menu_icons",
@@ -8631,8 +13858,8 @@
   "uid": "art:ui.screen.reels",
   "id": "ui.screen.reels",
   "kind": "procedural",
-  "version": 1,
-  "hash": "138cda5479dee0fd74e3ae7909f908ad3cacb0c2852f2592418e12d337190146",
+  "version": 3,
+  "hash": "1febeb784a0483c562ae56c2e8fc28e35be9c994d112ac0ee911d1994ec9e0c4",
   "approved": true,
   "placeholder": false,
   "texture": "",
@@ -8669,7 +13896,591 @@
    "recipient": "old_miner",
    "liked": true,
    "rerolls": 1,
-   "cat": "idle"
+   "cat": "idle",
+   "room2": {
+    "format": "pushbox.room/2",
+    "world": "dungeon",
+    "weight": 10,
+    "mirror": true,
+    "id": "dungeon2_yard",
+    "type": "room",
+    "role": "develop",
+    "size": [
+     2,
+     2
+    ],
+    "name": "放风场 · 高台上的拉杆",
+    "idea": "关键想法：浮石把箱子运过坑，箱子再当台阶。变化：拉杆在上层高台，它开的是下层出口的门——镜头要跟着走一大圈；骷髅守卫只在下层走廊巡逻，不进解谜区。",
+    "needs": [
+     "float_block"
+    ],
+    "requires": [
+     "float_block",
+     "push",
+     "lever"
+    ],
+    "mechanisms": [
+     "float_block",
+     "push",
+     "lever",
+     "ladder",
+     "hint_animal"
+    ],
+    "exits": [
+     "left.0.low",
+     "right.1.low"
+    ],
+    "routes": [
+     "left.0.low>right.1.low"
+    ],
+    "puzzle_area": [
+     [
+      1,
+      1,
+      27,
+      9
+     ]
+    ],
+    "legend": {
+     "2": {
+      "monster": "skeleton_guard",
+      "dir": "left",
+      "zone": [
+       28,
+       32
+      ]
+     }
+    },
+    "devices": [
+     {
+      "type": "lever",
+      "at": [
+       24,
+       4
+      ],
+      "action": {
+       "link": 0
+      }
+     }
+    ],
+    "links": [
+     {
+      "plates": [],
+      "doors": [
+       [
+        33,
+        16
+       ],
+       [
+        33,
+        17
+       ]
+      ]
+     }
+    ],
+    "hints": [
+     {
+      "text": "推浮石把箱子运过坑。",
+      "target": [
+       12,
+       7
+      ],
+      "show": {
+       "action": "push",
+       "dir": "R",
+       "at": [
+        4,
+        7
+       ]
+      },
+      "done": {
+       "covers": [
+        12,
+        7
+       ]
+      }
+     },
+     {
+      "text": "把箱子推到高台下面当台阶。",
+      "target": [
+       21,
+       6
+      ],
+      "show": {
+       "action": "push",
+       "dir": "R",
+       "at": [
+        12,
+        6
+       ]
+      },
+      "done": {
+       "crate": [
+        21,
+        6
+       ]
+      }
+     },
+     {
+      "text": "上高台拉下拉杆：下层的门开了。",
+      "target": [
+       24,
+       4
+      ],
+      "show": {
+       "action": "lever",
+       "dir": "U",
+       "at": [
+        24,
+        4
+       ]
+      },
+      "done": {
+       "lever": 0
+      }
+     },
+     {
+      "text": "从梯子下去，穿过下层的门。",
+      "target": [
+       27,
+       10
+      ],
+      "show": {
+       "action": "climb",
+       "dir": "D",
+       "at": [
+        27,
+        5
+       ]
+      },
+      "done": {
+       "player": [
+        28,
+        10,
+        39,
+        19
+       ]
+      }
+     }
+    ],
+    "map": [
+     "########################################",
+     "#...........................############",
+     "#...........................############",
+     "#...........................############",
+     "#..........................H############",
+     "#.....................#####H############",
+     ".......B..............#####H############",
+     ".....FFF.....##############H############",
+     "##########...##############H############",
+     "##########...##############H############",
+     "##########...##############H...........#",
+     "##########...##############H...........#",
+     "##########...##############H...........#",
+     "###########################H...........#",
+     "#############..............H...........#",
+     "#############..............H...........#",
+     "#############..............H.....|......",
+     "#############.......$......H..2..|..$...",
+     "########################################",
+     "########################################"
+    ]
+   },
+   "world": "dungeon",
+   "map": "dungeon_2",
+   "mapList": [
+    "dungeon_2",
+    "diyu_1"
+   ],
+   "mapRooms": {
+    "dungeon_2": {
+     "format": "pushbox.room/2",
+     "world": "dungeon",
+     "weight": 10,
+     "mirror": true,
+     "id": "dungeon2_yard",
+     "type": "room",
+     "role": "develop",
+     "size": [
+      2,
+      2
+     ],
+     "name": "放风场 · 高台上的拉杆",
+     "idea": "关键想法：浮石把箱子运过坑，箱子再当台阶。变化：拉杆在上层高台，它开的是下层出口的门——镜头要跟着走一大圈；骷髅守卫只在下层走廊巡逻，不进解谜区。",
+     "needs": [
+      "float_block"
+     ],
+     "requires": [
+      "float_block",
+      "push",
+      "lever"
+     ],
+     "mechanisms": [
+      "float_block",
+      "push",
+      "lever",
+      "ladder",
+      "hint_animal"
+     ],
+     "exits": [
+      "left.0.low",
+      "right.1.low"
+     ],
+     "routes": [
+      "left.0.low>right.1.low"
+     ],
+     "puzzle_area": [
+      [
+       1,
+       1,
+       27,
+       9
+      ]
+     ],
+     "legend": {
+      "2": {
+       "monster": "skeleton_guard",
+       "dir": "left",
+       "zone": [
+        28,
+        32
+       ]
+      }
+     },
+     "devices": [
+      {
+       "type": "lever",
+       "at": [
+        24,
+        4
+       ],
+       "action": {
+        "link": 0
+       }
+      }
+     ],
+     "links": [
+      {
+       "plates": [],
+       "doors": [
+        [
+         33,
+         16
+        ],
+        [
+         33,
+         17
+        ]
+       ]
+      }
+     ],
+     "hints": [
+      {
+       "text": "推浮石把箱子运过坑。",
+       "target": [
+        12,
+        7
+       ],
+       "show": {
+        "action": "push",
+        "dir": "R",
+        "at": [
+         4,
+         7
+        ]
+       },
+       "done": {
+        "covers": [
+         12,
+         7
+        ]
+       }
+      },
+      {
+       "text": "把箱子推到高台下面当台阶。",
+       "target": [
+        21,
+        6
+       ],
+       "show": {
+        "action": "push",
+        "dir": "R",
+        "at": [
+         12,
+         6
+        ]
+       },
+       "done": {
+        "crate": [
+         21,
+         6
+        ]
+       }
+      },
+      {
+       "text": "上高台拉下拉杆：下层的门开了。",
+       "target": [
+        24,
+        4
+       ],
+       "show": {
+        "action": "lever",
+        "dir": "U",
+        "at": [
+         24,
+         4
+        ]
+       },
+       "done": {
+        "lever": 0
+       }
+      },
+      {
+       "text": "从梯子下去，穿过下层的门。",
+       "target": [
+        27,
+        10
+       ],
+       "show": {
+        "action": "climb",
+        "dir": "D",
+        "at": [
+         27,
+         5
+        ]
+       },
+       "done": {
+        "player": [
+         28,
+         10,
+         39,
+         19
+        ]
+       }
+      }
+     ],
+     "map": [
+      "########################################",
+      "#...........................############",
+      "#...........................############",
+      "#...........................############",
+      "#..........................H############",
+      "#.....................#####H############",
+      ".......B..............#####H############",
+      ".....FFF.....##############H############",
+      "##########...##############H############",
+      "##########...##############H############",
+      "##########...##############H...........#",
+      "##########...##############H...........#",
+      "##########...##############H...........#",
+      "###########################H...........#",
+      "#############..............H...........#",
+      "#############..............H...........#",
+      "#############..............H.....|......",
+      "#############.......$......H..2..|..$...",
+      "########################################",
+      "########################################"
+     ]
+    },
+    "diyu_1": {
+     "format": "pushbox.room/2",
+     "world": "diyu",
+     "weight": 10,
+     "mirror": true,
+     "id": "diyu_fengdu",
+     "type": "room",
+     "role": "develop",
+     "size": [
+      2,
+      2
+     ],
+     "name": "酆都城 · 钟楼的锣",
+     "idea": "关键想法：纸台把箱子运过坑，箱子再当台阶。变化：锣在钟楼上，敲响开的是下层的城门；城门外有跳跳僵尸巡街，不进解谜区。",
+     "needs": [
+      "float_block"
+     ],
+     "requires": [
+      "float_block",
+      "push",
+      "lever"
+     ],
+     "mechanisms": [
+      "float_block",
+      "push",
+      "lever",
+      "ladder",
+      "hint_animal"
+     ],
+     "exits": [
+      "left.0.low",
+      "right.1.low"
+     ],
+     "routes": [
+      "left.0.low>right.1.low"
+     ],
+     "puzzle_area": [
+      [
+       1,
+       1,
+       27,
+       12
+      ]
+     ],
+     "legend": {
+      "2": {
+       "monster": "jiangshi",
+       "dir": "left",
+       "zone": [
+        28,
+        32
+       ]
+      },
+      "3": {
+       "monster": "wandering_soul",
+       "dir": "left",
+       "zone": [
+        34,
+        38
+       ]
+      }
+     },
+     "devices": [
+      {
+       "type": "lever",
+       "at": [
+        23,
+        4
+       ],
+       "action": {
+        "link": 0
+       }
+      }
+     ],
+     "links": [
+      {
+       "plates": [],
+       "doors": [
+        [
+         33,
+         16
+        ],
+        [
+         33,
+         17
+        ]
+       ]
+      }
+     ],
+     "hints": [
+      {
+       "text": "推纸台过坑：箱子坐在上面一起走。",
+       "target": [
+        12,
+        7
+       ],
+       "show": {
+        "action": "push",
+        "dir": "R",
+        "at": [
+         4,
+         7
+        ]
+       },
+       "done": {
+        "covers": [
+         12,
+         7
+        ]
+       }
+      },
+      {
+       "text": "踩上纸台，把箱子推到钟楼下面当台阶。",
+       "target": [
+        21,
+        6
+       ],
+       "show": {
+        "action": "push",
+        "dir": "R",
+        "at": [
+         11,
+         6
+        ]
+       },
+       "done": {
+        "crate": [
+         21,
+         6
+        ]
+       }
+      },
+      {
+       "text": "踩着箱子上钟楼，敲锣：城门开了。",
+       "target": [
+        23,
+        4
+       ],
+       "show": {
+        "action": "lever",
+        "dir": "U",
+        "at": [
+         23,
+         4
+        ]
+       },
+       "done": {
+        "lever": 0
+       }
+      },
+      {
+       "text": "从梯子下去，穿过城门。",
+       "target": [
+        27,
+        10
+       ],
+       "show": {
+        "action": "climb",
+        "dir": "D",
+        "at": [
+         27,
+         6
+        ]
+       },
+       "done": {
+        "player": [
+         34,
+         10,
+         39,
+         19
+        ]
+       }
+      }
+     ],
+     "map": [
+      "########################################",
+      "#...........................############",
+      "#...........................############",
+      "#...........................############",
+      "#...........................############",
+      "#.....................###...############",
+      ".......B........$..$..###..H############",
+      ".....FFF.....##############H############",
+      "##########...##############H############",
+      "##########...##############H############",
+      "##########...##############H############",
+      "##########...##############H############",
+      "##########...##############H############",
+      "###########################H############",
+      "###########################H############",
+      "###########################H############",
+      "##########################.......|......",
+      "##########################....2..|..3.$.",
+      "########################################",
+      "########################################"
+     ]
+    }
+   },
+   "focus": 1
   },
   "palette": {
    "a": "#be4a2f",
@@ -8706,17 +14517,29 @@
    "F": "#c28569"
   },
   "depends": [
-   "theme.dungeon",
-   "ui.panel",
-   "ui.keycap",
-   "char.lucky_cat",
-   "cargo.letter",
-   "cargo.vase",
-   "cargo.ice_cream",
+   "avatar.goblin_smith",
    "avatar.old_miner",
    "avatar.zombie",
-   "avatar.goblin_smith",
-   "ui.delivery_icons"
+   "cargo.ice_cream",
+   "cargo.letter",
+   "cargo.vase",
+   "char.lucky_cat",
+   "fauna.diyu_butterfly",
+   "fauna.diyu_dog",
+   "fauna.dungeon_bat",
+   "fauna.dungeon_cat",
+   "fauna.jeju_pony",
+   "item.snack",
+   "item.snack_jeju",
+   "mech.lantern_float",
+   "mech.rune_float",
+   "monster.skeleton_guard",
+   "obj.crate_wood",
+   "theme.diyu",
+   "theme.dungeon",
+   "ui.delivery_icons",
+   "ui.keycap",
+   "ui.panel"
   ],
   "resource": "res://generated/art/metadata/ui.screen.reels.tres"
  },
@@ -8724,8 +14547,8 @@
   "uid": "art:ui.screen.rulecard",
   "id": "ui.screen.rulecard",
   "kind": "procedural",
-  "version": 4,
-  "hash": "e14dc3f027abd88493efd7491799dce58263e3bb9fcf26911dedf8f08c1e59f5",
+  "version": 6,
+  "hash": "0f4ae758b37423615c8c7eb48e0d98c51ce98f9ed70768c828ded394102e4d24",
   "approved": true,
   "placeholder": false,
   "texture": "",
@@ -8781,7 +14604,10 @@
   },
   "depends": [
    "char.portitor",
+   "item.sandbag",
    "theme.dungeon",
+   "ui.class_icon",
+   "ui.goal_lamp",
    "ui.icons",
    "ui.keycap",
    "ui.menu_icons",
@@ -8793,8 +14619,8 @@
   "uid": "art:ui.screen.settings",
   "id": "ui.screen.settings",
   "kind": "procedural",
-  "version": 4,
-  "hash": "4c6df2e53a82b5b26efcfea702f0332847c7cb07b829d2352b04c3e21fa3df1a",
+  "version": 6,
+  "hash": "cde3e49fc687ee33c811a219e066c8b7829f5c4c79eac022b449f040f1ba4f56",
   "approved": true,
   "placeholder": false,
   "texture": "",
@@ -8854,7 +14680,8 @@
      "type": "value",
      "valueKey": "settings.run"
     }
-   ]
+   ],
+   "focus": 1
   },
   "palette": {
    "a": "#be4a2f",
@@ -8891,7 +14718,13 @@
    "F": "#c28569"
   },
   "depends": [
+   "char.portitor",
+   "mech.exit_flag",
+   "obj.crate_wood",
+   "theme.cave",
    "theme.dungeon",
+   "theme.ruins",
+   "theme.sky",
    "ui.icons",
    "ui.keycap",
    "ui.menu_icons",
@@ -8903,8 +14736,8 @@
   "uid": "art:ui.screen.settlement",
   "id": "ui.screen.settlement",
   "kind": "procedural",
-  "version": 1,
-  "hash": "5e949d677dd27100d1860b728932206d1e9053f2ff1e8b5d28f71ca5b44ed929",
+  "version": 3,
+  "hash": "eb200c1c77c54dbb7e345ed3a2cb1474a74b03b8e230879cd0cee84edfc46bbf",
   "approved": true,
   "placeholder": false,
   "texture": "",
@@ -8939,7 +14772,38 @@
    "tip": 61,
    "picked": 25,
    "total": 86,
-   "rating": "A"
+   "rating": "A",
+   "room": {
+    "format": "pushbox.room/2",
+    "world": "dungeon",
+    "id": "ui_result_preview",
+    "type": "room",
+    "role": "develop",
+    "size": [
+     1,
+     1
+    ],
+    "name": "UI result preview",
+    "exits": [
+     "left.0.low",
+     "right.0.low"
+    ],
+    "routes": [
+     "left.0.low>right.0.low"
+    ],
+    "map": [
+     "####################",
+     "#..................#",
+     "#..................#",
+     "#..................#",
+     "#..................#",
+     "#..................#",
+     ".......B............",
+     "......FFF...........",
+     "####################",
+     "####################"
+    ]
+   }
   },
   "palette": {
    "a": "#be4a2f",
@@ -8976,11 +14840,11 @@
    "F": "#c28569"
   },
   "depends": [
-   "theme.dungeon",
-   "ui.panel",
    "avatar.old_miner",
    "item.coin",
-   "ui.delivery_icons"
+   "theme.dungeon",
+   "ui.delivery_icons",
+   "ui.panel"
   ],
   "resource": "res://generated/art/metadata/ui.screen.settlement.tres"
  },
@@ -8988,8 +14852,8 @@
   "uid": "art:ui.screen.settlement_fail",
   "id": "ui.screen.settlement_fail",
   "kind": "procedural",
-  "version": 1,
-  "hash": "e46ea2a5a1354fc34a6227afad82fc4785c81de39900d891fb46fca7106cfee5",
+  "version": 3,
+  "hash": "5d50d41bc6d54c7c48b227ff84488e43922eeeff0f2dcfda60a8fb8680f4e0f2",
   "approved": true,
   "placeholder": false,
   "texture": "",
@@ -9016,7 +14880,38 @@
    "cargo": "vase",
    "reason": "hearts",
    "picked": 30,
-   "kept": 15
+   "kept": 15,
+   "room": {
+    "format": "pushbox.room/2",
+    "world": "dungeon",
+    "id": "ui_result_preview",
+    "type": "room",
+    "role": "develop",
+    "size": [
+     1,
+     1
+    ],
+    "name": "UI result preview",
+    "exits": [
+     "left.0.low",
+     "right.0.low"
+    ],
+    "routes": [
+     "left.0.low>right.0.low"
+    ],
+    "map": [
+     "####################",
+     "#..................#",
+     "#..................#",
+     "#..................#",
+     "#..................#",
+     "#..................#",
+     ".......B............",
+     "......FFF...........",
+     "####################",
+     "####################"
+    ]
+   }
   },
   "palette": {
    "a": "#be4a2f",
@@ -9053,10 +14948,11 @@
    "F": "#c28569"
   },
   "depends": [
-   "theme.dungeon",
-   "ui.panel",
    "avatar.zombie",
-   "cargo.vase"
+   "cargo.vase",
+   "theme.dungeon",
+   "ui.delivery_icons",
+   "ui.panel"
   ],
   "resource": "res://generated/art/metadata/ui.screen.settlement_fail.tres"
  },
@@ -9064,8 +14960,8 @@
   "uid": "art:ui.screen.shop",
   "id": "ui.screen.shop",
   "kind": "procedural",
-  "version": 1,
-  "hash": "267d16250937ed3619c685b049c770d516487ec82e69364d75c7a3a4bf98c85a",
+  "version": 3,
+  "hash": "6cfbd485aa578250578060970c27852eac432d147dc877f5fa0e9d64f0867733",
   "approved": true,
   "placeholder": false,
   "texture": "",
@@ -9091,6 +14987,11 @@
    "coins": 45,
    "goods": [
     {
+     "id": "snack",
+     "price": 10,
+     "stock": 3
+    },
+    {
      "id": "sandbag",
      "price": 10,
      "stock": 5
@@ -9111,7 +15012,58 @@
     "first_aid"
    ],
    "slots": 3,
-   "sand": 2
+   "sand": 2,
+   "room2": {
+    "format": "pushbox.room/2",
+    "world": "dungeon",
+    "weight": 10,
+    "mirror": true,
+    "id": "dungeon2_station",
+    "type": "station",
+    "role": "station",
+    "name": "驿站 · 牢房分号",
+    "idea": "龟掌柜在废弃的牢房里开了分号：站在他旁边按 ↑ 打开货架；零食（小鱼饼干）在这里买。",
+    "mechanisms": [
+     "ladder"
+    ],
+    "exits": [
+     "left.0.low",
+     "left.0.high",
+     "right.0.low",
+     "right.0.high",
+     "top.0.mid",
+     "bottom.0.mid"
+    ],
+    "routes": [
+     "left.0.low>right.0.low",
+     "left.0.low>right.0.high",
+     "left.0.high>right.0.low",
+     "left.0.high>right.0.high",
+     "left.0.low>bottom.0.mid",
+     "left.0.high>bottom.0.mid",
+     "top.0.mid>right.0.low",
+     "top.0.mid>right.0.high",
+     "top.0.mid>bottom.0.mid"
+    ],
+    "legend": {
+     "1": {
+      "feature": "keeper"
+     }
+    },
+    "map": [
+     "#########HH#########",
+     "#........HH........#",
+     ".........HH.........",
+     "....H....HH....H....",
+     "####H....HH....H####",
+     "####H....HH....H####",
+     "....H....HH....H....",
+     "....H.1..HH..$.H....",
+     "#########HH#########",
+     "#########HH#########"
+    ]
+   },
+   "world": "dungeon"
   },
   "palette": {
    "a": "#be4a2f",
@@ -9148,17 +15100,29 @@
    "F": "#c28569"
   },
   "depends": [
-   "theme.dungeon",
-   "ui.panel",
-   "ui.keycap",
-   "ui.bubble",
-   "ui.bubble_tail",
    "char.turtle_keeper",
+   "fauna.diyu_butterfly",
+   "fauna.diyu_dog",
+   "fauna.dungeon_bat",
+   "fauna.dungeon_cat",
+   "fauna.jeju_pony",
    "item.coin",
-   "item.sandbag",
    "item.first_aid",
    "item.rope_ladder",
-   "ui.delivery_icons"
+   "item.sandbag",
+   "item.snack",
+   "item.snack_jeju",
+   "mech.lantern_float",
+   "mech.rune_float",
+   "monster.skeleton_guard",
+   "obj.crate_wood",
+   "theme.diyu",
+   "theme.dungeon",
+   "ui.bubble",
+   "ui.bubble_tail",
+   "ui.delivery_icons",
+   "ui.keycap",
+   "ui.panel"
   ],
   "resource": "res://generated/art/metadata/ui.screen.shop.tres"
  },

@@ -378,14 +378,15 @@ func _chapter_name(order: int) -> String:
 	return t("chapter.n", {"n": order}) if order <= 5 else t("extra.chapter.review") if order == 6 else t("chapter.extra")
 
 func _chapters() -> void:
-	_label(t("chapters.title"), Vector2(10, 4), 200, "l", "z")
+	const G2 = preload("res://presentation/ui/widgets/g2.gd")
+	_g2_wall()
+	G2.heading(self, Vector2(8, 3), t("chapters.title"))
 	_chapter_cards = Control.new()
 	add_child(_chapter_cards)
 	_draw_cards(float(app.lab.group_index))
 	call_deferred("_prepare_thumbnails")
 	var group: Dictionary = app.lab.current_group()
-	_centered(_chapter_name(int(group.order)) + " · " + t(group.theme), 160, 116, 300, "l", "z")
-	_panel(Rect2(6, 148, 308, 30))
+	G2.text(self, Vector2(160, 114), _chapter_name(int(group.order)) + " · " + t(group.theme), "t", false, "c", 304)
 	var body: String
 	if not app.lab.stage_available(app.lab.group_index):
 		body = t("chapter.preview") if app.lab.open_all_levels else t("chapter.unavailable")
@@ -393,46 +394,42 @@ func _chapters() -> void:
 		body = t("extra.chapter.review_blurb") if int(group.order) == 6 else t("chapter." + str(int(group.order)) + ".blurb")
 	else:
 		body = t("chapters.unlock", {"chapter": _chapter_name(maxi(1, int(group.order) - 1)), "n": _unlock_need(app.lab.group_index)}) if int(group.order) <= 5 else t("chapters.later")
-	_paragraph(body, Vector2(12, 149), 296, 2, "u" if app.lab.available(app.lab.group_index) else "v")
+	var lines: Array[String] = _g2_lines(body, 268, 2)
+	var y: int = 140 if lines.size() < 2 else 138
+	G2.plate(self, Rect2(20, y, 280, 17 if lines.size() < 2 else 22))
+	for index: int in lines.size(): G2.text(self, Vector2(160, y + 3 + index * 10), lines[index], "u", true, "c")
 	_page_indicator()
+	_g2_keybar([{"keys": ["left", "right"], "label": "keys.select"}, {"keys": ["Enter"], "label": "keys.play"}, {"keys": ["Esc"], "label": "keys.back"}])
 
 func _unlock_need(index: int) -> int:
 	return app.lab.unlock_need(index)
 
 func _page_indicator() -> void:
+	const G2 = preload("res://presentation/ui/widgets/g2.gd")
 	var pages := Control.new()
 	pages.name = "ChapterPageIndicator"
 	pages.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	add_child(pages)
 	var count: int = app.lab.groups.size()
-	if count > 16:
-		var current: Label = _flow_label(t("progress", {"a": app.lab.group_index + 1, "b": count}), Vector2(115, 132), 90, false, false, pages)
-		current.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-		_chapter_arrow("left", -1, 130)
-		_chapter_arrow("right", 1, 177)
-		return
-	var total: int = count * 10 + 4
-	var cursor: int = 160 - total / 2
+	var gap: int = mini(10, 260 / maxi(1, count - 1))
+	var x: int = 160 - ((count - 1) * gap) / 2
 	for index: int in count:
-		var active: bool = index == app.lab.group_index
-		var marker := ColorRect.new()
+		var marker := Control.new()
 		marker.name = "Page%d" % index
-		marker.color = _color("l" if active else "z")
-		marker.position = Vector2(cursor, 136)
-		marker.size = Vector2(14 if active else 6, 3)
 		marker.mouse_filter = Control.MOUSE_FILTER_IGNORE
 		pages.add_child(marker)
-		if not active:
-			_rectangle(Rect2(cursor + 1, 137, 4, 1), "v" if app.lab.available(index) else "x")
-		cursor += int(marker.size.x) + 4
-	_chapter_arrow("left", -1, 160 - total / 2 - 20)
-	_chapter_arrow("right", 1, 160 + total / 2 + 7)
+		G2.dot(marker, Vector2(x + index * gap, 133), 2 if index == app.lab.group_index else 1, "m" if index == app.lab.group_index else "u" if app.lab.available(index) else "x")
+	_chapter_arrow("left", -1, x - 14)
+	_chapter_arrow("right", 1, x + (count - 1) * gap + 12)
 
 func _chapter_arrow(animation: String, amount: int, x: int) -> void:
-	var arrow := TextureButton.new()
-	arrow.texture_normal = PortitorUI.atlas("art:ui.keycap", animation)
-	arrow.position = Vector2(x, 131)
+	const G2 = preload("res://presentation/ui/widgets/g2.gd")
+	G2.arrow(self, Vector2(x + (0 if amount < 0 else 2), 133), animation)
+	var arrow := Button.new()
+	arrow.position = Vector2(x - 4, 127)
+	arrow.size = Vector2(11, 12)
 	arrow.focus_mode = Control.FOCUS_NONE
+	for state: String in ["normal", "hover", "pressed", "focus", "disabled"]: arrow.add_theme_stylebox_override(state, StyleBoxEmpty.new())
 	arrow.disabled = (amount < 0 and app.lab.group_index == 0) or (amount > 0 and app.lab.group_index + 1 == app.lab.groups.size())
 	arrow.pressed.connect(func() -> void: app.change_chapter(amount))
 	add_child(arrow)
@@ -452,87 +449,92 @@ func prepare_reference() -> void:
 		await _rule_preview.prepare_reference()
 
 func _draw_cards(focus: float) -> void:
+	const G2 = preload("res://presentation/ui/widgets/g2.gd")
 	for preview: Dictionary in _card_previews:
-		if is_instance_valid(preview.node) and preview.node.get_parent() != null:
-			preview.node.get_parent().remove_child(preview.node)
+		if is_instance_valid(preview.node) and preview.node.get_parent() != null: preview.node.get_parent().remove_child(preview.node)
 	_card_previews.clear()
 	for child: Node in _chapter_cards.get_children():
 		_chapter_cards.remove_child(child)
 		child.queue_free()
 	var order: Array[int] = []
-	for index: int in app.lab.groups.size():
-		order.append(index)
+	for index: int in app.lab.groups.size(): order.append(index)
 	order.sort_custom(func(a: int, b: int) -> bool: return absf(a - focus) > absf(b - focus))
 	for index: int in order:
 		var distance: float = index - focus
-		if absf(distance) > 2.4:
-			continue
+		if absf(distance) > 2.4: continue
 		var d: float = minf(2, absf(distance))
-		var start: int = int(d)
-		var end: int = mini(2, start + 1)
-		var fraction: float = d - start
-		var widths: Array[float] = [116, 64, 40]
-		var heights: Array[float] = [96, 74, 54]
-		var offsets: Array[float] = [0, 94, 140]
-		var card_size := Vector2(roundf(lerpf(widths[start], widths[end], fraction)), roundf(lerpf(heights[start], heights[end], fraction)))
-		var cx: float = 160 + signf(distance) * roundf(lerpf(offsets[start], offsets[end], fraction))
+		var first: int = int(d)
+		var last: int = mini(2, first + 1)
+		var fraction: float = d - first
+		var widths: Array[float] = [124, 72, 56]
+		var heights: Array[float] = [86, 66, 54]
+		var offsets: Array[float] = [0, 106, 168]
+		var tops: Array[float] = [24, 36, 44]
+		var dimensions := Vector2(roundf(lerpf(widths[first], widths[last], fraction)), roundf(lerpf(heights[first], heights[last], fraction)))
+		var cx: float = 160 + signf(distance) * roundf(lerpf(offsets[first], offsets[last], fraction))
+		var top: float = roundf(lerpf(tops[first], tops[last], fraction))
 		var center: bool = d < 0.5
-		var panel: NinePatchRect = _panel(Rect2(Vector2(cx - floorf(card_size.x / 2), 66 - floorf(card_size.y / 2)), card_size), 1 if center else 0, _chapter_cards)
-		panel.name = "ChapterCard%d" % index
+		var card := Control.new()
+		card.name = "ChapterCard%d" % index
+		card.position = Vector2(cx - floorf(dimensions.x / 2), top)
+		card.size = dimensions
+		card.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		_chapter_cards.add_child(card)
+		G2.panel(card, Rect2(Vector2.ZERO, dimensions), not center)
 		var group: Dictionary = app.lab.groups[index]
-		# A free-layout face keeps PanelContainer from resizing every overlay
-		# to the full card. Only the outer ninepatch participates in layout.
-		var face := Control.new()
-		face.size = card_size
-		face.mouse_filter = Control.MOUSE_FILTER_IGNORE
-		panel.add_child(face)
-		var thumbnail_slot: int = 0 if center else 1 if d < 1.5 else 2
-		var key: String = "art:" + str(group.theme) + "|" + str(thumbnail_slot)
+		var locked: bool = not app.lab.available(index)
+		var picture_height: int = 52 if center else 34
+		var picture_size := Vector2i(int(dimensions.x) - 12, picture_height)
+		G2.well(card, Rect2(6, 6, picture_size.x, picture_size.y), center)
+		var slot: int = 0 if center else 1 if d < 1.5 else 2
+		var key: String = "art:" + str(group.theme) + "|G2|" + str(slot)
 		var miniature: Variant = _preview_pool.get(key)
 		var fresh: bool = miniature == null
 		if fresh:
-			miniature = ILLUSTRATION.new()
+			miniature = G2.ChapterPicture.new()
 			_preview_pool[key] = miniature
 		miniature.name = "ThemeThumbnail%d" % index
 		miniature.set_meta("theme_uid", "art:" + str(group.theme))
-		face.add_child(miniature)
-		if fresh:
-			var sizes: Array[Vector2i] = [Vector2i(108, 68), Vector2i(56, 56), Vector2i(32, 36)]
-			miniature.configure_chapter("art:" + str(group.theme), sizes[thumbnail_slot], _visual_tick() + index * 97, center)
-		miniature.position = Vector2(4, 4)
-		miniature.size = Vector2(card_size.x - 8, card_size.y - (28 if center else 18))
+		card.add_child(miniature)
+		if fresh: miniature.configure_chapter("art:" + str(group.theme), picture_size - Vector2i(2, 2), _visual_tick() + index * 97, center)
+		miniature.position = Vector2(7, 7)
+		miniature.size = Vector2(picture_size - Vector2i(2, 2))
 		_card_previews.append({"node": miniature, "index": index})
-		if center and not app.lab.available(index):
-			_dim_item(miniature, 1)
-		_rectangle(Rect2(3, 3, card_size.x - 6, 1), "z", face)
-		_rectangle(Rect2(3, 4 + miniature.size.y, card_size.x - 6, 1), "z", face)
-		var number: String = str(int(group.order)) if int(group.order) <= 5 else "+"
+		if locked:
+			_dim_item(miniature, 2)
+			var lock_at := Vector2(floorf((dimensions.x - 18) / 2), 6 + (picture_height - 18) / 2)
+			G2.plate(card, Rect2(lock_at, Vector2(18, 18)))
+			G2.icon(card, "art:ui.icons", "lock", lock_at + Vector2(3, 3), "w")
+		var done: int = 0
+		for level: Dictionary in group.get("levels", []):
+			if Save.level_data("level:" + str(level.id)).get("cleared", false): done += 1
+		var progress: String = t("progress", {"a": done, "b": group.get("levels", []).size()})
 		if center:
-			_sprite("art:ui.theme_emblem", str(group.theme).trim_prefix("theme."), Vector2(7, 7), face)
-			_text2x(number, Vector2(8, card_size.y - 25), "l" if app.lab.available(index) else "w", "z", face)
-		elif app.lab.available(index):
-			_label(number, Vector2(floorf(card_size.x / 2) - floorf(_measure(number) / 2.0), card_size.y - 16), _measure(number), "u", "", face)
-		if center and app.lab.available(index):
-			var done: int = 0
-			for level: Dictionary in group.get("levels", []):
-				if Save.level_data("level:" + str(level.id)).get("cleared", false):
-					done += 1
-			var progress_text: String = t("progress", {"a": done, "b": group.get("levels", []).size()})
-			var progress: Label = _label(progress_text, Vector2(card_size.x - 8 - _measure(progress_text), card_size.y - 21), _measure(progress_text), "k", "", face)
-			progress.name = "ChapterProgress%d" % index
+			G2.plate(card, Rect2(1, 1, 24, 22))
+			G2.icon(card, "art:ui.theme_emblem", str(group.theme).trim_prefix("theme."), Vector2(5, 4))
+			if not locked:
+				for pip: int in group.get("levels", []).size():
+					G2.rect(card, Rect2(10 + pip * 4, 66, 2, 4), "m" if pip < done else "x")
+				var label: Label = G2.text(card, Vector2(dimensions.x - 9, 75), progress, "u", true, "r", int(dimensions.x) - 18)
+				label.name = "ChapterProgress%d" % index
+		else:
+			var label: String = _chapter_name(int(group.order)) if locked else progress
+			# Far cards intentionally bleed past the screen; only their artwork is clipped.
+			var shown: Label = G2.text(card, Vector2(dimensions.x / 2, 44), label, "w" if locked else "u", true, "c", int(dimensions.x) - 12)
+			shown.visible = card.position.x >= 0 and card.position.x + dimensions.x <= 320
 		var click := Button.new()
-		click.size = card_size
+		click.position.x = maxf(0, -card.position.x)
+		click.size = Vector2(minf(dimensions.x - click.position.x, 320 - maxf(0, card.position.x)), dimensions.y)
 		click.focus_mode = Control.FOCUS_NONE
-		for state: String in ["normal", "hover", "pressed", "focus", "disabled"]:
-			click.add_theme_stylebox_override(state, StyleBoxEmpty.new())
-		face.add_child(click)
+		for state: String in ["normal", "hover", "pressed", "focus", "disabled"]: click.add_theme_stylebox_override(state, StyleBoxEmpty.new())
+		card.add_child(click)
 		click.pressed.connect(func() -> void:
 			if index == app.lab.group_index: app.activate_menu(0)
 			else: app.change_chapter(index - app.lab.group_index))
-		if not app.lab.available(index):
-			_sprite("art:ui.icons", "lock", Vector2(card_size.x - 20, card_size.y - 20) if center else Vector2(floorf(card_size.x / 2) - 6, card_size.y - 15), face)
-		if d >= 1.5:
-			_dim_item(panel, 1)
+		if not center:
+			var dim: int = 2 if d >= 1.5 else 1
+			_dim_item(card, dim)
+			if locked: _dim_item(miniature, dim + 2)
 
 func slide_chapter(old: int, target: int) -> void:
 	if _tween != null:
@@ -542,75 +544,92 @@ func slide_chapter(old: int, target: int) -> void:
 	_tween.finished.connect(func() -> void: app.show_screen("chapters"))
 
 func _levels() -> void:
+	const G2 = preload("res://presentation/ui/widgets/g2.gd")
 	var group: Dictionary = app.lab.current_group()
-	focus_index = clampi(app.lab.level_index, 0, maxi(0, app.lab.levels().size() - 1))
+	_g2_wall("art:" + str(group.theme))
+	var list: Array = app.lab.levels()
+	focus_index = clampi(app.lab.level_index, 0, maxi(0, list.size() - 1))
 	var done: int = 0
-	for item: Dictionary in app.lab.levels():
-		if Save.level_data("level:" + str(item.id)).get("cleared", false):
-			done += 1
-	var cleared: String = t("levels.cleared", {"a": done, "b": app.lab.levels().size()})
-	var cleared_width: int = _measure(cleared)
-	_label(t("levels.title", {"chapter": _chapter_name(int(group.order)), "theme": t(group.theme)}), Vector2(10, 4), 290 - cleared_width, "l", "z")
-	_label(cleared, Vector2(310 - cleared_width, 4), cleared_width, "k", "z")
-	var row_height: int = mini(17, int(136 / maxi(1, app.lab.levels().size())))
-	for index: int in app.lab.levels().size():
-		var item: Dictionary = app.lab.levels()[index]
-		var y: int = 22 + index * row_height
+	for item: Dictionary in list:
+		if Save.level_data("level:" + str(item.id)).get("cleared", false): done += 1
+	var cleared: String = t("levels.cleared", {"a": done, "b": list.size()})
+	var cw: int = mini(140, G2.measure(cleared, true) + 28)
+	G2.heading(self, Vector2(8, 3), t("levels.title", {"chapter": _chapter_name(int(group.order)), "theme": t(group.theme)}), 300 - cw)
+	G2.plate(self, Rect2(312 - cw, 4, cw, 15))
+	G2.icon(self, "art:ui.icons", "check", Vector2(316 - cw, 5))
+	G2.text(self, Vector2(307, 7), cleared, "u", true, "r", cw - 23)
+	var visible: int = mini(7, list.size())
+	var start: int = clampi(focus_index - visible / 2, 0, maxi(0, list.size() - visible))
+	var height: int = maxi(122, visible * 16 + 10)
+	G2.panel(self, Rect2(10, 26, 152, height))
+	G2.panel(self, Rect2(168, 26, 144, height))
+	var next_index: int = -1
+	for index: int in list.size():
+		var progress: Dictionary = Save.level_data("level:" + str(list[index].id))
+		if not progress.get("cleared", false) and not progress.get("skipped", false):
+			next_index = index
+			break
+	for index: int in list.size():
+		if index < start or index >= start + visible:
+			_g2_level_offpage(index)
+			continue
+		var item: Dictionary = list[index]
+		var y: int = 31 + (index - start) * 16
 		var progress: Dictionary = Save.level_data("level:" + str(item.id))
-		_row(Rect2(8, y, 176, 15), index, Rect2(), true)
-		_row_label(index, str(item.id), Vector2(14, y), 28, "k")
-		var status_width: int = 16 if progress.get("cleared", false) or progress.get("skipped", false) or index == focus_index else 0
-		var title_key: String = "level." + str(item.id) + ".title"
-		var title: String = t(title_key)
-		if title == title_key: title = str(item.get("title", t("chapter.preview")))
-		_row_label(index, title, Vector2(42, y), 136 - status_width)
-		if progress.get("cleared", false):
-			_sprite("art:ui.icons", "check", Vector2(169, y + 1))
-		elif progress.get("skipped", false):
-			_sprite("art:ui.icons", "skip", Vector2(169, y + 1))
-		elif index == focus_index:
-			_sprite("art:ui.menu_icons", "continue", Vector2(169, y + 1))
-	_panel(Rect2(190, 22, 122, 136))
+		_g2_row(Rect2(15, y, 142, 15), index)
+		var kind: String = "next" if index == next_index else "check" if progress.get("cleared", false) else "skip" if progress.get("skipped", false) else "open"
+		var idw: int = G2.measure(str(item.id), true)
+		var lx: int = 22 + idw + 5
+		var tagw: int = G2.measure(t("levels.next"), true) + 8
+		var room: int = (152 - tagw - 3 if kind == "next" else 152 if kind == "open" else 138) - lx
+		_g2_row_text(index, str(item.id), Vector2(22, y + 4), idw, true, "u")
+		_g2_row_text(index, _level_text(item, "title"), Vector2(lx, y + 2), room)
+		var decoration := Control.new()
+		add_child(decoration)
+		_row_records.back()["decoration"] = decoration
+		_row_records.back()["level_status"] = {"kind": kind, "at": Vector2(152 - tagw if kind == "next" else 140, y + 2)}
+		if index - start < visible - 1: _row_records.back()["rule"] = G2.rect(self, Rect2(22, y + 15, 128, 1), "x")
 	_details = Control.new()
 	add_child(_details)
 	_update_level_details()
-	_keybar([{"keys": ["up", "down"], "label": "keys.select"}, {"keys": ["Enter"], "label": "keys.play"}, {"keys": ["Esc"], "label": "keys.back"}])
+	_g2_refresh_decorations()
+	_g2_keybar([{"keys": ["up", "down"], "label": "keys.select"}, {"keys": ["Enter"], "label": "keys.play"}, {"keys": ["Esc"], "label": "keys.back"}])
 
 func _update_level_details() -> void:
-	if _details == null:
-		return
+	const G2 = preload("res://presentation/ui/widgets/g2.gd")
+	if _details == null: return
 	for child: Node in _details.get_children():
 		_details.remove_child(child)
 		child.queue_free()
 	var uid: String = app.lab.level_uid()
-	var has_spec: bool = app.lab.has_spec()
-	var spec: Dictionary = Registry.level_spec(uid) if not uid.is_empty() and has_spec else {}
+	var spec: Dictionary = Registry.level_spec(uid) if not uid.is_empty() and app.lab.has_spec() else {}
 	if spec.is_empty():
-		_paragraph(t("chapter.preview"), Vector2(195, 32), 112, 8, "u", _details)
-	if not spec.is_empty():
-		var rows: Array = spec.map
-		var cell: int = maxi(2, mini(6, floori(minf(112.0 / str(rows[0]).length(), 54.0 / rows.size()))))
-		var map_width: int = str(rows[0]).length() * cell
-		var map_height: int = rows.size() * cell
-		var origin := Vector2(190 + (122 - map_width) / 2, 28)
-		var colors: Dictionary = {"#": "w", "%": "F", "e": "e", "s": "c", "~": "r", "|": "v", "H": "f", "o": "k", "b": "b", "X": "l", "_": "s", "P": "i", "h": "i", "B": "b", "I": "u", ".": "y"}
-		for y: int in rows.size():
-			for x: int in str(rows[y]).length():
-				_rectangle(Rect2(origin + Vector2(x * cell, y * cell), Vector2(cell, cell)), colors.get(str(rows[y]).substr(x, 1), "y"), _details)
-		# Keep the full discovery available when a taller map leaves less room.
-		# This region scrolls independently; keyboard focus stays on the level row.
-		var description := ScrollContainer.new()
-		description.name = "LevelDiscoveryScroll"
-		description.position = Vector2(195, 32 + map_height)
-		description.size = Vector2(112, maxi(26, 154 - (32 + map_height)))
-		description.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
-		description.vertical_scroll_mode = ScrollContainer.SCROLL_MODE_AUTO
-		description.focus_mode = Control.FOCUS_NONE
-		_details.add_child(description)
-		description.get_v_scroll_bar().focus_mode = Control.FOCUS_NONE
-		var text_width: int = maxi(60, 110 - ceili(description.get_v_scroll_bar().get_combined_minimum_size().x))
-		var discovery: String = _level_text(spec, "discovery")
-		_paragraph(discovery, Vector2.ZERO, text_width, _wrapped(discovery, text_width).size(), "u", description)
+		G2.text(_details, Vector2(177, 86), t("chapter.preview"), "u", true, "l", 126)
+		return
+	G2.well(_details, Rect2(176, 34, 128, 46))
+	# Render the initial map with approved assets; never advance an SDK world.
+	_g2_level_picture(spec)
+	var idw: int = G2.measure(str(spec.id), true)
+	G2.text(_details, Vector2(177, 88), str(spec.id), "m", true)
+	G2.text(_details, Vector2(182 + idw, 86), _level_text(spec, "title"), "t", false, "l", 121 - idw)
+	G2.rect(_details, Rect2(176, 101, 128, 1), "x")
+	var description := ScrollContainer.new()
+	description.name = "LevelDiscoveryScroll"
+	description.position = Vector2(177, 104)
+	description.size = Vector2(126, 41)
+	description.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
+	description.vertical_scroll_mode = ScrollContainer.SCROLL_MODE_SHOW_NEVER
+	description.focus_mode = Control.FOCUS_NONE
+	_details.add_child(description)
+	description.get_v_scroll_bar().focus_mode = Control.FOCUS_NONE
+	var column: VBoxContainer = PortitorUI.column(0)
+	column.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	description.add_child(column)
+	for line: String in _g2_lines(_level_text(spec, "discovery"), 126):
+		var label: Label = PortitorUI.label(line, 126, true)
+		label.add_theme_font_override("font", G2.font(true))
+		label.add_theme_color_override("font_color", _color("u"))
+		column.add_child(label)
 
 func _level_text(spec: Dictionary, field: String) -> String:
 	var key: String = "level." + str(spec.get("id", "")) + "." + field
@@ -759,75 +778,91 @@ func _hud_action(action: String) -> void:
 		"pause": app.show_screen("pause")
 
 func _pause() -> void:
-	_dimmed_hud()
+	const G2 = preload("res://presentation/ui/widgets/g2.gd")
+	# Pause dims the existing world/HUD by one palette step in the G2 spec.
+	app.world_view.background_dim_steps = 1
+	var before: Array[Node] = get_children()
+	_hud()
+	for child: Node in get_children():
+		if not before.has(child): _dim_item(child, 1)
 	var keys: Array[String] = ["pause.resume", "pause.hint", "pause.restart", "pause.skip", "pause.levels", "pause.settings", "pause.menu"]
-	var width: int = maxi(120, mini(220, _measure(t("pause.title")) + 36))
-	for key: String in keys:
-		width = maxi(width, mini(220, _measure(t(key)) + 36))
-	var height: int = 22 + keys.size() * 15
-	var x: int = (320 - width) / 2
-	var y: int = (180 - height) / 2
-	_panel(Rect2(x, y, width, height), 2)
-	_centered(t("pause.title"), 160, y + 3, width - 12, "l", "g")
+	var caps: Array[String] = ["Esc", "H", "R", "", "", "", ""]
+	var icons: Array[Array] = [["ui.menu_icons", "continue"], ["ui.icons", "hint"], ["ui.icons", "restart"], ["ui.icons", "skip"], ["ui.menu_icons", "chapters"], ["ui.menu_icons", "settings"], ["ui.menu_icons", "quit"]]
+	var width: int = maxi(132, G2.measure(t("pause.title")) + 40)
 	for index: int in keys.size():
-		var line_y: int = y + 19 + index * 15
-		_row(Rect2(x + 5, line_y - 1, width - 10, 15), index)
-		var mark: ColorRect = _rectangle(Rect2(x + 10, line_y + 5, 2, 4), "k")
-		mark.visible = index == focus_index
-		_row_records.back()["pointer"] = mark
-		_row_label(index, t(keys[index]), Vector2(x + 17, line_y), width - 26, "c")
+		width = maxi(width, 44 + G2.measure(t(keys[index])) + (G2.key_width(caps[index]) + 4 if not caps[index].is_empty() else 0))
+	width = mini(304, width)
+	var x: int = 160 - width / 2
+	G2.panel(self, Rect2(x, 24, width, 135))
+	G2.title(self, Rect2(x, 24, width, 24), t("pause.title"))
+	for index: int in keys.size():
+		var y: int = 48 + index * 15
+		_g2_row(Rect2(x + 8, y, width - 16, 15), index)
+		var room: int = width - 44 - (G2.key_width(caps[index]) + 4 if not caps[index].is_empty() else 0)
+		_g2_row_text(index, t(keys[index]), Vector2(x + 30, y + 2), room)
+		var decoration := Control.new()
+		add_child(decoration)
+		_row_records.back()["decoration"] = decoration
+		_row_records.back()["icon"] = {"uid": "art:" + str(icons[index][0]), "animation": icons[index][1], "at": Vector2(x + 14, y + 1)}
+		if not caps[index].is_empty(): G2.keycap(self, Vector2(x + width - 14 - G2.key_width(caps[index]), y + 2), caps[index])
+		if index == 3:
+			var rule: ColorRect = G2.rect(self, Rect2(x + 14, y + 14, width - 28, 1), "x")
+			_row_records.back()["rule"] = rule
+	_g2_refresh_decorations()
+	_g2_keybar([{"keys": ["up", "down"], "label": "keys.select"}, {"keys": ["Enter"], "label": "keys.confirm"}, {"keys": ["Esc"], "label": "keys.back"}])
 
 func _settings() -> void:
+	const G2 = preload("res://presentation/ui/widgets/g2.gd")
+	_g2_wall()
 	var keys: Array[String] = ["settings.language", "settings.music", "settings.sfx", "settings.scale", "settings.env", "settings.grid", "settings.unlock", "settings.tutorial"]
 	var fields: Array[String] = ["language", "music", "sfx", "window_scale", "ambience", "show_grid", "open_all_levels", "tutorial"]
-	_panel(Rect2(20, 14, 280, 22 + keys.size() * 17))
-	_label(t("settings.title"), Vector2(28, 17), 264, "l")
+	G2.heading(self, Vector2(8, 3), t("settings.title"))
+	var width: int = 224
 	for index: int in keys.size():
-		var y: int = 35 + index * 17
-		var selection: Callable = (func() -> void: set_focus(index)) if fields[index] in ["music", "sfx"] else (func() -> void: app.activate_menu(index))
-		_row(Rect2(24, y - 2, 272, 16), index, Rect2(), false, selection)
-		_row_label(index, t(keys[index]), Vector2(32, y), 170)
-		var value: Variant = Settings.values.get(fields[index], false)
-		var display: String = str(value)
-		match fields[index]:
-			"language": display = "English" if Locale.language == "en" else "简体中文"
-			"music", "sfx":
-				var bars: Array[ColorRect] = []
-				for bar: int in 10:
-					bars.append(_rectangle(Rect2(218 + bar * 7, y + 4, 5, 6), ("k" if index == focus_index else "d") if bar < roundi(float(value) * 10) else "x"))
-				var slider := HSlider.new()
-				slider.position = Vector2(218, y - 2)
-				slider.size = Vector2(70, 16)
-				slider.min_value = 0
-				slider.max_value = 1
-				slider.step = 0.1
-				slider.set_value_no_signal(float(value))
-				# Keep the approved ten-bar artwork; native slider owns GUI drag/capture.
-				slider.modulate.a = 0
-				var field: String = fields[index]
-				slider.value_changed.connect(func(volume: float) -> void: app.set_volume(field, volume))
-				slider.focus_entered.connect(func() -> void: focus_index = index; _sync_rows())
-				add_child(slider)
-				_volume_rows[field] = {"slider": slider, "bars": bars, "index": index}
-				continue
-			"show_grid", "open_all_levels": display = t("on" if value else "off")
-			"ambience": display = t("env.full" if value == "full" else "env.lite" if value == "lights" else "env.off")
-			"window_scale": display = t("settings.scale.auto") if str(value) == "auto" else str(int(value)) + "×"
-			"tutorial": display = t("settings.run")
-		if fields[index] in ["show_grid", "open_all_levels"]:
-			var toggle_width: int = mini(86, _measure(display) + 12)
-			_panel(Rect2(288 - toggle_width, y - 1, toggle_width, 13), 1 if value else 0)
-			_label(display, Vector2(294 - toggle_width, y - 1), toggle_width - 12, "l" if value else "v")
-		else:
-			_label(display, Vector2(288 - _measure(display), y), mini(86, _measure(display)), "c")
+		var display: String = _g2_setting_value(fields[index])
+		var value_width: int = 65 + G2.measure(display, true) if fields[index] in ["music", "sfx"] else G2.measure(display) + (25 if fields[index] in ["show_grid", "open_all_levels"] else 22)
+		width = maxi(width, G2.measure(t(keys[index])) + value_width + 44)
+	width = mini(300, width)
+	var x: int = 160 - width / 2
+	G2.panel(self, Rect2(x, 24, width, 138))
+	for index: int in keys.size():
+		var y: int = 29 + index * 16
+		var field: String = fields[index]
+		var selection: Callable = (func() -> void: set_focus(index)) if field in ["music", "sfx"] else (func() -> void: app.activate_menu(index))
+		_g2_row(Rect2(x + 5, y, width - 10, 15), index, selection)
+		var display: String = _g2_setting_value(field)
+		var value_width: int = 65 + G2.measure(display, true) if field in ["music", "sfx"] else G2.measure(display) + 25 if field in ["show_grid", "open_all_levels"] else mini(width / 2, G2.measure(display) + 22)
+		_g2_row_text(index, t(keys[index]), Vector2(x + 24, y + 2), width - 38 - value_width)
+		var decoration := Control.new()
+		add_child(decoration)
+		_row_records.back()["decoration"] = decoration
+		_row_records.back()["setting"] = {"key": keys[index], "field": field, "at": Vector2(x, y), "width": width}
+		if field in ["music", "sfx"]:
+			var slider := HSlider.new()
+			slider.position = Vector2(x + width - 11 - G2.measure(display, true) - 59, y)
+			slider.size = Vector2(51, 15)
+			slider.min_value = 0
+			slider.max_value = 1
+			slider.step = 0.1
+			slider.set_value_no_signal(float(Settings.values[field]))
+			slider.modulate.a = 0
+			slider.value_changed.connect(func(volume: float) -> void: app.set_volume(field, volume))
+			slider.focus_entered.connect(func() -> void: focus_index = index; _sync_rows(); _g2_refresh_decorations())
+			add_child(slider)
+			_volume_rows[field] = {"slider": slider, "index": index, "origin": Vector2(x, y), "width": width}
+		if index in [0, 2, 5]:
+			_row_records.back()["rule"] = G2.rect(self, Rect2(x + 11, y + 15, width - 22, 1), "x")
+	_g2_refresh_decorations()
+	_g2_keybar([{"keys": ["up", "down"], "label": "keys.select"}, {"keys": ["left", "right"], "label": "keys.adjust"}, {"keys": ["Esc"], "label": "keys.back"}])
 
 func refresh_volume(key: String) -> void:
+	const G2 = preload("res://presentation/ui/widgets/g2.gd")
 	if not _volume_rows.has(key): return
 	var row: Dictionary = _volume_rows[key]
 	var value: float = float(Settings.values[key])
 	(row.slider as HSlider).set_value_no_signal(value)
-	for bar: int in row.bars.size():
-		(row.bars[bar] as ColorRect).color = _color(("k" if int(row.index) == focus_index else "d") if bar < roundi(value * 10) else "x")
+	(row.slider as HSlider).position = Vector2(row.origin.x + int(row.width) - 11 - G2.measure(str(roundi(value * 10)), true) - 59, row.origin.y)
+	_g2_refresh_decorations()
 
 func _hint() -> void:
 	_hud()
@@ -1028,3 +1063,187 @@ func _level_has_placeholder() -> bool:
 		if str(device.get("type", "")) in ["mine_cart", "lantern_reveal", "nested_box", "bounce", "seesaw", "gust"]:
 			return true
 	return false
+
+# UI-06a: G2-only helpers. Other screens retain their existing widgets.
+func _g2_keybar(groups: Array[Dictionary]) -> void:
+	const G2 = preload("res://presentation/ui/widgets/g2.gd")
+	var translated: Array[Dictionary] = []
+	for group: Dictionary in groups:
+		translated.append({"keys": group["keys"], "label": t(group.label)})
+	G2.keybar(self, translated)
+
+func _g2_row(area: Rect2, index: int, activation: Callable = Callable()) -> Button:
+	const G2 = preload("res://presentation/ui/widgets/g2.gd")
+	var node := Button.new()
+	node.position = area.position
+	node.size = area.size
+	for state: String in ["normal", "hover", "pressed", "focus", "disabled"]:
+		node.add_theme_stylebox_override(state, StyleBoxEmpty.new())
+	add_child(node)
+	var active: TextureRect = G2.row(self, area)
+	active.visible = index == focus_index
+	var pointer: Control = G2.cursor(self, area.position + Vector2(-2, 7))
+	pointer.visible = index == focus_index
+	_row_records.append({"index": index, "active": active, "pointer": pointer, "labels": []})
+	node.focus_entered.connect(func() -> void:
+		focus_index = index
+		_sync_rows()
+		if screen_name == "levels":
+			app.lab.level_index = index
+			_update_level_details()
+		_g2_refresh_decorations())
+	node.pressed.connect(activation if activation.is_valid() else func() -> void: app.activate_menu(index))
+	buttons.append(node)
+	return node
+
+func _g2_row_text(index: int, value: String, at: Vector2, room: int, small: bool = false, normal: String = "t") -> Label:
+	const G2 = preload("res://presentation/ui/widgets/g2.gd")
+	var node: Label = G2.text(self, at, value, "y" if index == focus_index else normal, small, "l", room)
+	for record: Dictionary in _row_records:
+		if record.index == index: record.labels.append({"node": node, "normal": normal, "selected": "y"})
+	return node
+
+func _g2_setting_value(field: String) -> String:
+	var value: Variant = Settings.values.get(field, false)
+	match field:
+		"language": return "English" if Locale.language == "en" else "简体中文"
+		"music", "sfx": return str(roundi(float(value) * 10))
+		"show_grid", "open_all_levels": return t("on" if value else "off")
+		"ambience": return t("env.full" if value == "full" else "env.lite" if value == "lights" else "env.off")
+		"window_scale": return t("settings.scale.auto") if str(value) == "auto" else str(int(value)) + "×"
+		"tutorial": return t("settings.run")
+	return str(value)
+
+func _g2_refresh_decorations() -> void:
+	const G2 = preload("res://presentation/ui/widgets/g2.gd")
+	for record: Dictionary in _row_records:
+		var selected: bool = int(record.index) == focus_index
+		if record.has("rule"): record.rule.visible = not selected and int(record.index) + 1 != focus_index
+		if not record.has("decoration"): continue
+		var parent: Control = record.decoration
+		for child: Node in parent.get_children():
+			parent.remove_child(child)
+			child.queue_free()
+		if record.has("icon"):
+			var icon: Dictionary = record.icon
+			G2.icon(parent, icon.uid, icon.animation, icon.at, "y" if selected else "")
+		if record.has("setting"):
+			_g2_setting_decoration(parent, record.setting, selected)
+		if record.has("level_status"):
+			var status: Dictionary = record.level_status
+			if status.kind == "next": G2.tag(parent, status.at, t("levels.next"))
+			elif status.kind in ["check", "skip"]: G2.icon(parent, "art:ui.icons", status.kind, status.at, "y" if selected else "")
+
+func _g2_setting_decoration(parent: Node, item: Dictionary, selected: bool) -> void:
+	const G2 = preload("res://presentation/ui/widgets/g2.gd")
+	var at: Vector2 = item.at
+	var field: String = item.field
+	var value: Variant = Settings.values.get(field, false)
+	var display: String = _g2_setting_value(field)
+	var ink: String = "y" if selected else "t"
+	_g2_setting_icon(parent, item.key, at + Vector2(11, 4), "y" if selected else "u")
+	var xr: int = int(at.x) + int(item.width) - 11
+	if field in ["music", "sfx"]:
+		G2.text(parent, Vector2(xr, at.y + 4), display, ink, true, "r")
+		G2.slider(parent, Vector2(xr - G2.measure(display, true) - 59, at.y + 3), 51, float(value))
+	elif field in ["show_grid", "open_all_levels"]:
+		G2.text(parent, Vector2(xr, at.y + 2), display, ink, false, "r")
+		G2.toggle(parent, Vector2(xr - G2.measure(display) - 25, at.y + 2), bool(value))
+	elif field == "tutorial":
+		G2.tag(parent, Vector2(xr - G2.measure(display, true) - 8, at.y + 2), display, not selected)
+	else:
+		var value_width: int = mini(int(item.width) / 2, G2.measure(display) + 22)
+		G2.text(parent, Vector2(xr - 10, at.y + 2), display, ink, false, "r", value_width - 20)
+		G2.arrow(parent, Vector2(xr - value_width + 1, at.y + 7), "left", ink if selected else "w")
+		G2.arrow(parent, Vector2(xr - 2, at.y + 7), "right", ink if selected else "w")
+
+func _g2_setting_icon(parent: Node, key: String, at: Vector2, code: String) -> void:
+	const G2 = preload("res://presentation/ui/widgets/g2.gd")
+	var points: Array = []
+	match key:
+		"settings.language": points = [[2,0],[3,0],[4,0],[1,1],[5,1],[0,2],[6,2],[0,3],[6,3],[0,4],[6,4],[1,5],[5,5],[2,6],[3,6],[4,6]]
+		"settings.env": points = [[3,0],[3,6],[0,3],[6,3],[1,1],[5,5],[5,1],[1,5]]
+		"settings.tutorial": points = [[2,0],[3,0],[4,0],[5,1],[6,2],[6,3],[6,4],[5,5],[4,6],[3,6],[2,6],[1,5],[0,4],[0,3],[1,1],[0,1],[1,2]]
+	for point: Array in points: G2.rect(parent, Rect2(at + Vector2(point[0], point[1]), Vector2.ONE), code)
+	var areas: Array = []
+	match key:
+		"settings.language": areas = [[3,1,1,5],[1,3,5,1]]
+		"settings.music": areas = [[4,0,1,6],[4,0,3,1],[6,1,1,1],[2,5,3,2]]
+		"settings.sfx": areas = [[0,2,2,3],[2,1,1,5],[3,0,1,7],[5,2,1,1],[5,4,1,1],[6,1,1,5]]
+		"settings.scale": areas = [[0,0,7,1],[0,6,7,1],[0,0,1,7],[6,0,1,7],[2,2,3,3]]
+		"settings.env": areas = [[2,2,3,3]]
+		"settings.grid": areas = [[0,0,7,1],[0,3,7,1],[0,6,7,1],[0,0,1,7],[3,0,1,7],[6,0,1,7]]
+		"settings.unlock": areas = [[0,3,7,4],[1,0,1,3],[1,0,4,1],[4,0,1,2]]
+		"settings.tutorial": areas = [[3,2,1,3],[4,3,1,1]]
+	for area: Array in areas: G2.rect(parent, Rect2(at + Vector2(area[0], area[1]), Vector2(area[2], area[3])), code)
+	if key == "settings.unlock": G2.rect(parent, Rect2(at + Vector2(3,4), Vector2(1,2)), "t" if code == "y" else "y")
+
+func _g2_level_offpage(index: int) -> void:
+	var node := Button.new()
+	node.position = Vector2(10, 26)
+	node.size = Vector2.ONE
+	for state: String in ["normal", "hover", "pressed", "focus", "disabled"]: node.add_theme_stylebox_override(state, StyleBoxEmpty.new())
+	add_child(node)
+	buttons.append(node)
+	node.focus_entered.connect(func() -> void:
+		app.lab.level_index = index
+		app.show_screen("levels"))
+
+func _g2_lines(value: String, width: int, count: int = 0) -> Array[String]:
+	const G2 = preload("res://presentation/ui/widgets/g2.gd")
+	var tokens := RegEx.new()
+	tokens.compile("[　-鿿가-힯＀-￯]|[^\\s　-鿿가-힯＀-￯]+|\\s+")
+	var lines: Array[String] = []
+	var line: String = ""
+	for found: RegExMatch in tokens.search_all(value):
+		var token: String = found.get_string()
+		if token.strip_edges().is_empty():
+			if not line.is_empty(): line += " "
+		elif line.is_empty() or G2.measure(line + token, true) <= width:
+			line += token
+		else:
+			if "，。：；、！？）」』”…,.:;!?)".contains(token.left(1)) and line.length() > 1:
+				lines.append(line.left(-1))
+				line = line.right(1) + token
+				continue
+			lines.append(line.rstrip(" \t\n"))
+			line = token
+	if not line.is_empty(): lines.append(line.rstrip(" \t\n"))
+	if count > 0 and lines.size() > count:
+		var rest: String = " ".join(lines.slice(count - 1))
+		lines.resize(count)
+		lines[count - 1] = G2.fit(rest, width, true)
+	return lines
+
+func _g2_level_picture(spec: Dictionary) -> void:
+	const G2 = preload("res://presentation/ui/widgets/g2.gd")
+	var picture := G2.LevelPicture.new()
+	_details.add_child(picture)
+	picture.position = Vector2(177, 35)
+	picture.configure(spec, "art:" + str(app.lab.current_group().theme), _visual_tick())
+
+func _g2_wall(theme_uid: String = "art:theme.dungeon") -> void:
+	var art: Dictionary = Registry.art(theme_uid)
+	if not art.get("approved", false): return
+	var theme: Dictionary = art.get("params", {})
+	var backdrop := TextureRect.new()
+	var raster = RASTER.new(320, 180)
+	ILLUSTRATION.BACKGROUND.draw(raster, theme, Rect2i(0, 0, 320, 180), _visual_tick())
+	backdrop.texture = ImageTexture.create_from_image(raster.image())
+	backdrop.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	var material := ShaderMaterial.new()
+	material.shader = ILLUSTRATION.PALETTE_SHADER
+	backdrop.material = material
+	# Decode first in a viewport, then palette-dim its final RGBA image.
+	var viewport := SubViewport.new()
+	viewport.size = Vector2i(320, 180)
+	viewport.render_target_update_mode = SubViewport.UPDATE_ONCE
+	viewport.canvas_item_default_texture_filter = Viewport.DEFAULT_CANVAS_ITEM_TEXTURE_FILTER_NEAREST
+	add_child(viewport)
+	viewport.add_child(backdrop)
+	var shown := TextureRect.new()
+	shown.texture = viewport.get_texture()
+	shown.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	add_child(shown)
+	_dim_item(shown, 2)
+

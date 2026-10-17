@@ -1,39 +1,72 @@
 {
  "format": "portitor.import-inventory/1",
- "source_id_map_sha256": "47550e80b9c2358c503ad9820a9a94c29a7dd5a3dfa7d00a06748e8fb8b882ff",
+ "source_id_map_sha256": "97a389351253c37b343ce986c8d506032d074558eebfc8744a108c3a263b6df8",
  "files": [
   {
    "path": "generated/id-map.json",
    "owners": [
+    "art:avatar.ancestor",
+    "art:avatar.goblin_chief",
     "art:avatar.goblin_smith",
+    "art:avatar.haenyeo",
+    "art:avatar.judge",
+    "art:avatar.lighthouse_keeper",
+    "art:avatar.meng_po",
     "art:avatar.old_miner",
+    "art:avatar.tangerine_farmer",
+    "art:avatar.wuchang",
+    "art:avatar.yama",
     "art:avatar.zombie",
+    "art:cargo.buckwheat_jelly",
     "art:cargo.ice_cream",
+    "art:cargo.kite",
     "art:cargo.letter",
+    "art:cargo.paper_house",
+    "art:cargo.qingtuan",
+    "art:cargo.tangerine",
     "art:cargo.vase",
+    "art:char.ancestor",
+    "art:char.goblin_chief",
     "art:char.goblin_smith",
+    "art:char.haenyeo",
+    "art:char.judge",
+    "art:char.lighthouse_keeper",
     "art:char.lucky_cat",
+    "art:char.meng_po",
     "art:char.miner",
     "art:char.portitor",
     "art:char.portitor_alt",
+    "art:char.tangerine_farmer",
     "art:char.turtle_keeper",
+    "art:char.wuchang",
+    "art:char.yama",
     "art:char.zombie",
     "art:deco.cave_crystal",
     "art:deco.cave_mushroom",
     "art:deco.cosmos_sprout",
+    "art:deco.diyu_lantern",
+    "art:deco.diyu_lily",
     "art:deco.dungeon_moss",
     "art:deco.dungeon_torch",
     "art:deco.forest_flower",
     "art:deco.forest_grass",
+    "art:deco.jeju_canola",
+    "art:deco.jeju_harubang",
+    "art:deco.jeju_tangerine_tree",
     "art:deco.ruins_lotus",
     "art:deco.ruins_vine",
     "art:deco.sky_flower",
     "art:fauna.cave_moth",
     "art:fauna.cosmos_drone",
+    "art:fauna.diyu_butterfly",
+    "art:fauna.diyu_dog",
     "art:fauna.dungeon_bat",
+    "art:fauna.dungeon_cat",
     "art:fauna.dungeon_rat",
     "art:fauna.forest_bird",
     "art:fauna.forest_butterfly",
+    "art:fauna.jeju_dragonfly",
+    "art:fauna.jeju_pony",
     "art:fauna.ruins_scarab",
     "art:fauna.sky_cloudling",
     "art:fauna.sky_dove",
@@ -43,6 +76,7 @@
     "art:fx.fizz",
     "art:fx.frost",
     "art:fx.goal_spark",
+    "art:fx.jeju_gust",
     "art:fx.land_dust",
     "art:fx.monster_poof",
     "art:fx.ripple",
@@ -53,6 +87,8 @@
     "art:item.first_aid",
     "art:item.rope_ladder",
     "art:item.sandbag",
+    "art:item.snack",
+    "art:item.snack_jeju",
     "art:material.chapter2_5",
     "art:mech.bin",
     "art:mech.bin_gauge",
@@ -63,26 +99,36 @@
     "art:mech.ferry_gate",
     "art:mech.frost_vent",
     "art:mech.heat_vent",
+    "art:mech.jeju_seesaw",
     "art:mech.ladder",
+    "art:mech.lantern_float",
     "art:mech.lever",
     "art:mech.lift",
     "art:mech.link_symbol",
     "art:mech.plate",
     "art:mech.portal",
     "art:mech.rope_ladder",
+    "art:mech.rune_float",
     "art:mech.socket",
     "art:mech.socket_lit",
     "art:mech.torch",
     "art:mech.vine",
+    "art:monster.dokkaebi",
+    "art:monster.imp",
+    "art:monster.jiangshi",
     "art:monster.rat_swarm",
+    "art:monster.seagull",
     "art:monster.skeleton_guard",
+    "art:monster.wandering_soul",
     "art:obj.crate_iron",
     "art:obj.crate_wood",
     "art:obj.goblin_forge",
     "art:theme.cave",
     "art:theme.cosmos",
+    "art:theme.diyu",
     "art:theme.dungeon",
     "art:theme.forest",
+    "art:theme.jeju",
     "art:theme.ruins",
     "art:theme.sky",
     "art:ui.bubble",
@@ -99,12 +145,16 @@
     "art:ui.rule_icon",
     "art:ui.screen.chapters",
     "art:ui.screen.complete",
+    "art:ui.screen.confirm",
     "art:ui.screen.delivery_hud",
     "art:ui.screen.delivery_pause",
     "art:ui.screen.dialogue",
     "art:ui.screen.hint",
+    "art:ui.screen.hint_animal",
     "art:ui.screen.levels",
     "art:ui.screen.lobby",
+    "art:ui.screen.lobby_generic",
+    "art:ui.screen.observe",
     "art:ui.screen.pause",
     "art:ui.screen.reels",
     "art:ui.screen.rulecard",
@@ -163,6 +213,7 @@
     "cargo:hot_soup",
     "cargo:ice_cream",
     "cargo:ink_brush",
+    "cargo:kite",
     "cargo:kitten",
     "cargo:lantern",
     "cargo:letter",
@@ -185,6 +236,7 @@
     "cargo:spice_box",
     "cargo:story_box",
     "cargo:sword",
+    "cargo:tangerine",
     "cargo:tea_set",
     "cargo:treasure_map",
     "cargo:vase",
@@ -266,6 +318,7 @@
     "item:rope_ladder",
     "item:sandbag",
     "item:seal",
+    "item:snack",
     "item:spring_shoes",
     "item:umbrella",
     "item:water_jug",
@@ -337,6 +390,7 @@
     "mechanic:drum_beat",
     "mechanic:etch_tag",
     "mechanic:fall",
+    "mechanic:float_block",
     "mechanic:float_sink",
     "mechanic:freeze",
     "mechanic:fuse",
@@ -345,6 +399,7 @@
     "mechanic:gaze",
     "mechanic:gravel",
     "mechanic:gust",
+    "mechanic:hint_animal",
     "mechanic:hold_breath",
     "mechanic:ice_slide",
     "mechanic:ladder",
@@ -369,6 +424,7 @@
     "mechanic:particles",
     "mechanic:petal_trail",
     "mechanic:plate_door",
+    "mechanic:pole",
     "mechanic:portal",
     "mechanic:pour",
     "mechanic:power",
@@ -470,6 +526,23 @@
     "monster:wind_sprite",
     "monster:yeti",
     "monster:zombie_mob",
+    "music:diyu",
+    "music:diyu_a",
+    "music:diyu_b",
+    "music:diyu_c",
+    "music:dungeon",
+    "music:dungeon_a",
+    "music:dungeon_b",
+    "music:dungeon_c",
+    "music:jeju",
+    "music:jeju_a",
+    "music:jeju_b",
+    "music:jeju_c",
+    "music:theme",
+    "music:theme_a",
+    "music:theme_b",
+    "music:theme_c",
+    "music:theme_d",
     "recipient:alien",
     "recipient:anansi",
     "recipient:ancestor",
@@ -517,6 +590,7 @@
     "recipient:kappa_kid",
     "recipient:kid",
     "recipient:kungfu_master",
+    "recipient:lighthouse_keeper",
     "recipient:llama",
     "recipient:mad_hatter",
     "recipient:mariachi",
@@ -543,6 +617,7 @@
     "recipient:spice_merchant",
     "recipient:stargazer",
     "recipient:storyteller",
+    "recipient:tangerine_farmer",
     "recipient:trex_mom",
     "recipient:troll_granny",
     "recipient:tulip_farmer",
@@ -552,6 +627,29 @@
     "recipient:xolo",
     "recipient:yama",
     "recipient:zombie",
+    "room:diyu_fengdu",
+    "room:diyu_gate",
+    "room:diyu_ghostfire",
+    "room:diyu_home_hall",
+    "room:diyu_home_yard",
+    "room:diyu_huangquan",
+    "room:diyu_lantern",
+    "room:diyu_naihe",
+    "room:diyu_paper_bridge",
+    "room:diyu_sand_bridge",
+    "room:diyu_teahouse",
+    "room:diyu_wangchuan",
+    "room:diyu_wangxiang",
+    "room:dungeon2_bridge",
+    "room:dungeon2_corridor",
+    "room:dungeon2_ferry",
+    "room:dungeon2_gate",
+    "room:dungeon2_home",
+    "room:dungeon2_pole",
+    "room:dungeon2_sandpour",
+    "room:dungeon2_station",
+    "room:dungeon2_well",
+    "room:dungeon2_yard",
     "room:dungeon_burrow",
     "room:dungeon_corner",
     "room:dungeon_gate",
@@ -562,7 +660,57 @@
     "room:dungeon_shaft",
     "room:dungeon_station",
     "room:dungeon_well",
+    "room:jeju_baramgil",
+    "room:jeju_canola",
+    "room:jeju_dodaebul",
+    "room:jeju_doldam",
+    "room:jeju_gate",
+    "room:jeju_haenyeo_house",
+    "room:jeju_home_cave",
+    "room:jeju_home_orchard",
+    "room:jeju_home_shore",
+    "room:jeju_neolttwigi",
+    "room:jeju_olle",
+    "room:jeju_pier",
+    "room:jeju_terrace",
+    "sfx:animal_hint",
+    "sfx:blocked",
+    "sfx:cargo_damage",
+    "sfx:climb",
+    "sfx:coin",
+    "sfx:crate_land",
+    "sfx:delivery_arrive",
+    "sfx:dig",
+    "sfx:door_close",
+    "sfx:door_open",
+    "sfx:feed_snack",
+    "sfx:goal_on",
+    "sfx:hint_show",
+    "sfx:hurt",
+    "sfx:level_clear",
+    "sfx:menu_close",
+    "sfx:menu_open",
+    "sfx:plate_down",
+    "sfx:plate_up",
+    "sfx:pour",
+    "sfx:push",
+    "sfx:reel_spin",
+    "sfx:reel_stop",
+    "sfx:reroll",
+    "sfx:restart",
+    "sfx:rule_card",
+    "sfx:shop_buy",
+    "sfx:ui_back",
+    "sfx:ui_confirm",
+    "sfx:ui_move",
+    "sfx:undo",
+    "sfx:volume_preview",
+    "slice:delivery_pool",
+    "slice:diyu_1",
     "slice:dungeon_1",
+    "slice:dungeon_2",
+    "slice:jeju_1",
+    "text:audio.dom",
     "text:cargo.ice_cream.name",
     "text:cargo.ice_cream.rule",
     "text:cargo.letter.name",
@@ -586,12 +734,52 @@
     "text:complete.moves",
     "text:complete.next",
     "text:complete.title",
+    "text:d2.animal",
+    "text:d2.back",
+    "text:d2.buy",
+    "text:d2.exit",
+    "text:d2.feed",
+    "text:d2.go",
+    "text:d2.hint",
+    "text:d2.hint.near",
+    "text:d2.integrity",
+    "text:d2.leave",
+    "text:d2.map",
+    "text:d2.map.diyu",
+    "text:d2.map.dungeon",
+    "text:d2.monster",
+    "text:d2.observe",
+    "text:d2.pause",
+    "text:d2.player",
+    "text:d2.price",
+    "text:d2.reel.order",
+    "text:d2.reroll",
+    "text:d2.select",
+    "text:d2.snack.desc",
+    "text:d2.snack.diyu",
+    "text:d2.snack.dungeon",
+    "text:d2.snack.jeju",
+    "text:d2.snack.stock",
+    "text:d2.stock",
+    "text:d2.tip",
     "text:dev.pending_art",
     "text:dev.placeholder",
+    "text:dlg.fauna.diyu_butterfly.fed",
+    "text:dlg.fauna.dungeon_bat.fed",
+    "text:dlg.fauna.jeju_dragonfly.fed",
+    "text:dlg.r2.done_hint",
+    "text:dlg.r2.exit",
+    "text:dlg.r2.hurt",
+    "text:dlg.r2.no_hint",
+    "text:dlg.r2.no_snack",
     "text:dlg.sample.note",
     "text:dlg.sample.npc",
     "text:dlg.sample.npc.name",
     "text:dlg.sample.self",
+    "text:dlv.confirm.no",
+    "text:dlv.confirm.text",
+    "text:dlv.confirm.title",
+    "text:dlv.confirm.yes",
     "text:dlv.done.again",
     "text:dlv.done.base",
     "text:dlv.done.hub",
@@ -642,6 +830,16 @@
     "text:extra.rule.pour.text",
     "text:extra.rule.push.name",
     "text:extra.rule.push.text",
+    "text:g.hello",
+    "text:g.keys.move",
+    "text:g.keys.pause",
+    "text:g.keys.undo",
+    "text:g.lobby.delivery",
+    "text:g.lobby.level",
+    "text:g.reels.map",
+    "text:g.reels.tip",
+    "text:g.say",
+    "text:g.think",
     "text:game.tagline",
     "text:game.title",
     "text:hint.demo",
@@ -656,6 +854,7 @@
     "text:item.rope_ladder.name",
     "text:item.sandbag.desc",
     "text:item.sandbag.name",
+    "text:keys.adjust",
     "text:keys.back",
     "text:keys.confirm",
     "text:keys.play",
@@ -899,6 +1098,7 @@
     "text:levels.next",
     "text:levels.title",
     "text:lobby.current",
+    "text:lobby.current_tag",
     "text:menu.chapters",
     "text:menu.continue",
     "text:menu.quit",
@@ -915,6 +1115,11 @@
     "text:pause.skip",
     "text:pause.title",
     "text:progress",
+    "text:r2.hud.cleared",
+    "text:r2.hud.hint",
+    "text:r2.hud.moves",
+    "text:r2.hud.snack",
+    "text:r2.hud.step",
     "text:recipient.goblin_smith.name",
     "text:recipient.goblin_smith.rule",
     "text:recipient.goblin_smith.thanks",
@@ -924,6 +1129,93 @@
     "text:recipient.zombie.name",
     "text:recipient.zombie.rule",
     "text:recipient.zombie.thanks",
+    "text:result.lobby.delivery",
+    "text:result.lobby.level",
+    "text:result.par",
+    "text:room2.diyu_fengdu.hint.0",
+    "text:room2.diyu_fengdu.hint.1",
+    "text:room2.diyu_fengdu.hint.2",
+    "text:room2.diyu_fengdu.hint.3",
+    "text:room2.diyu_fengdu.name",
+    "text:room2.diyu_gate.name",
+    "text:room2.diyu_ghostfire.name",
+    "text:room2.diyu_home_hall.name",
+    "text:room2.diyu_home_yard.name",
+    "text:room2.diyu_huangquan.name",
+    "text:room2.diyu_lantern.hint.0",
+    "text:room2.diyu_lantern.hint.1",
+    "text:room2.diyu_lantern.name",
+    "text:room2.diyu_naihe.hint.0",
+    "text:room2.diyu_naihe.hint.1",
+    "text:room2.diyu_naihe.hint.2",
+    "text:room2.diyu_naihe.name",
+    "text:room2.diyu_paper_bridge.hint.0",
+    "text:room2.diyu_paper_bridge.hint.1",
+    "text:room2.diyu_paper_bridge.hint.2",
+    "text:room2.diyu_paper_bridge.name",
+    "text:room2.diyu_sand_bridge.hint.0",
+    "text:room2.diyu_sand_bridge.hint.1",
+    "text:room2.diyu_sand_bridge.hint.2",
+    "text:room2.diyu_sand_bridge.hint.3",
+    "text:room2.diyu_sand_bridge.name",
+    "text:room2.diyu_teahouse.name",
+    "text:room2.diyu_wangchuan.hint.0",
+    "text:room2.diyu_wangchuan.hint.1",
+    "text:room2.diyu_wangchuan.hint.2",
+    "text:room2.diyu_wangchuan.hint.3",
+    "text:room2.diyu_wangchuan.name",
+    "text:room2.diyu_wangxiang.hint.0",
+    "text:room2.diyu_wangxiang.hint.1",
+    "text:room2.diyu_wangxiang.hint.2",
+    "text:room2.diyu_wangxiang.name",
+    "text:room2.dungeon2_bridge.hint.0",
+    "text:room2.dungeon2_bridge.hint.1",
+    "text:room2.dungeon2_bridge.name",
+    "text:room2.dungeon2_corridor.name",
+    "text:room2.dungeon2_ferry.hint.0",
+    "text:room2.dungeon2_ferry.hint.1",
+    "text:room2.dungeon2_ferry.hint.2",
+    "text:room2.dungeon2_ferry.name",
+    "text:room2.dungeon2_gate.name",
+    "text:room2.dungeon2_home.name",
+    "text:room2.dungeon2_pole.hint.0",
+    "text:room2.dungeon2_pole.hint.1",
+    "text:room2.dungeon2_pole.hint.2",
+    "text:room2.dungeon2_pole.name",
+    "text:room2.dungeon2_sandpour.hint.0",
+    "text:room2.dungeon2_sandpour.hint.1",
+    "text:room2.dungeon2_sandpour.hint.2",
+    "text:room2.dungeon2_sandpour.name",
+    "text:room2.dungeon2_station.name",
+    "text:room2.dungeon2_well.hint.0",
+    "text:room2.dungeon2_well.hint.1",
+    "text:room2.dungeon2_well.hint.2",
+    "text:room2.dungeon2_well.hint.3",
+    "text:room2.dungeon2_well.name",
+    "text:room2.dungeon2_yard.hint.0",
+    "text:room2.dungeon2_yard.hint.1",
+    "text:room2.dungeon2_yard.hint.2",
+    "text:room2.dungeon2_yard.hint.3",
+    "text:room2.dungeon2_yard.name",
+    "text:room2.jeju_baramgil.hint.0",
+    "text:room2.jeju_baramgil.name",
+    "text:room2.jeju_canola.name",
+    "text:room2.jeju_dodaebul.hint.0",
+    "text:room2.jeju_dodaebul.name",
+    "text:room2.jeju_doldam.hint.0",
+    "text:room2.jeju_doldam.name",
+    "text:room2.jeju_gate.name",
+    "text:room2.jeju_haenyeo_house.name",
+    "text:room2.jeju_home_cave.name",
+    "text:room2.jeju_home_orchard.name",
+    "text:room2.jeju_home_shore.name",
+    "text:room2.jeju_neolttwigi.hint.0",
+    "text:room2.jeju_neolttwigi.name",
+    "text:room2.jeju_olle.name",
+    "text:room2.jeju_pier.hint.0",
+    "text:room2.jeju_pier.name",
+    "text:room2.jeju_terrace.hint.0",
+    "text:room2.jeju_terrace.name",
     "text:rule.close",
     "text:rule.earth.name",
     "text:rule.earth.text",
@@ -938,6 +1230,9 @@
     "text:settings.sfx",
     "text:settings.title",
     "text:settings.tutorial",
+    "text:settings.ui_style",
+    "text:settings.ui_style.note1",
+    "text:settings.ui_style.note2",
     "text:settings.unlock",
     "text:settings.unlock.available",
     "text:showcase.code",
@@ -949,6 +1244,15 @@
     "text:theme.forest",
     "text:theme.ruins",
     "text:theme.sky",
+    "text:ui.title_alt",
+    "text:ui_style.s1",
+    "text:ui_style.s1.mark",
+    "text:ui_style.s2",
+    "text:ui_style.s2.mark",
+    "text:ui_style.s3",
+    "text:ui_style.s3.mark",
+    "text:ui_style.s4",
+    "text:ui_style.s4.mark",
     "upgrade:bag",
     "upgrade:cargo_guard",
     "upgrade:discount",
@@ -997,7 +1301,7 @@
     "world:wonderland",
     "world:xianxia"
    ],
-   "sha256": "47550e80b9c2358c503ad9820a9a94c29a7dd5a3dfa7d00a06748e8fb8b882ff"
+   "sha256": "97a389351253c37b343ce986c8d506032d074558eebfc8744a108c3a263b6df8"
   },
   {
    "path": "generated/content-manifest.json",
@@ -1051,6 +1355,7 @@
     "cargo:hot_soup",
     "cargo:ice_cream",
     "cargo:ink_brush",
+    "cargo:kite",
     "cargo:kitten",
     "cargo:lantern",
     "cargo:letter",
@@ -1073,6 +1378,7 @@
     "cargo:spice_box",
     "cargo:story_box",
     "cargo:sword",
+    "cargo:tangerine",
     "cargo:tea_set",
     "cargo:treasure_map",
     "cargo:vase",
@@ -1154,6 +1460,7 @@
     "item:rope_ladder",
     "item:sandbag",
     "item:seal",
+    "item:snack",
     "item:spring_shoes",
     "item:umbrella",
     "item:water_jug",
@@ -1225,6 +1532,7 @@
     "mechanic:drum_beat",
     "mechanic:etch_tag",
     "mechanic:fall",
+    "mechanic:float_block",
     "mechanic:float_sink",
     "mechanic:freeze",
     "mechanic:fuse",
@@ -1233,6 +1541,7 @@
     "mechanic:gaze",
     "mechanic:gravel",
     "mechanic:gust",
+    "mechanic:hint_animal",
     "mechanic:hold_breath",
     "mechanic:ice_slide",
     "mechanic:ladder",
@@ -1257,6 +1566,7 @@
     "mechanic:particles",
     "mechanic:petal_trail",
     "mechanic:plate_door",
+    "mechanic:pole",
     "mechanic:portal",
     "mechanic:pour",
     "mechanic:power",
@@ -1358,6 +1668,23 @@
     "monster:wind_sprite",
     "monster:yeti",
     "monster:zombie_mob",
+    "music:diyu",
+    "music:diyu_a",
+    "music:diyu_b",
+    "music:diyu_c",
+    "music:dungeon",
+    "music:dungeon_a",
+    "music:dungeon_b",
+    "music:dungeon_c",
+    "music:jeju",
+    "music:jeju_a",
+    "music:jeju_b",
+    "music:jeju_c",
+    "music:theme",
+    "music:theme_a",
+    "music:theme_b",
+    "music:theme_c",
+    "music:theme_d",
     "recipient:alien",
     "recipient:anansi",
     "recipient:ancestor",
@@ -1405,6 +1732,7 @@
     "recipient:kappa_kid",
     "recipient:kid",
     "recipient:kungfu_master",
+    "recipient:lighthouse_keeper",
     "recipient:llama",
     "recipient:mad_hatter",
     "recipient:mariachi",
@@ -1431,6 +1759,7 @@
     "recipient:spice_merchant",
     "recipient:stargazer",
     "recipient:storyteller",
+    "recipient:tangerine_farmer",
     "recipient:trex_mom",
     "recipient:troll_granny",
     "recipient:tulip_farmer",
@@ -1440,6 +1769,29 @@
     "recipient:xolo",
     "recipient:yama",
     "recipient:zombie",
+    "room:diyu_fengdu",
+    "room:diyu_gate",
+    "room:diyu_ghostfire",
+    "room:diyu_home_hall",
+    "room:diyu_home_yard",
+    "room:diyu_huangquan",
+    "room:diyu_lantern",
+    "room:diyu_naihe",
+    "room:diyu_paper_bridge",
+    "room:diyu_sand_bridge",
+    "room:diyu_teahouse",
+    "room:diyu_wangchuan",
+    "room:diyu_wangxiang",
+    "room:dungeon2_bridge",
+    "room:dungeon2_corridor",
+    "room:dungeon2_ferry",
+    "room:dungeon2_gate",
+    "room:dungeon2_home",
+    "room:dungeon2_pole",
+    "room:dungeon2_sandpour",
+    "room:dungeon2_station",
+    "room:dungeon2_well",
+    "room:dungeon2_yard",
     "room:dungeon_burrow",
     "room:dungeon_corner",
     "room:dungeon_gate",
@@ -1450,7 +1802,56 @@
     "room:dungeon_shaft",
     "room:dungeon_station",
     "room:dungeon_well",
+    "room:jeju_baramgil",
+    "room:jeju_canola",
+    "room:jeju_dodaebul",
+    "room:jeju_doldam",
+    "room:jeju_gate",
+    "room:jeju_haenyeo_house",
+    "room:jeju_home_cave",
+    "room:jeju_home_orchard",
+    "room:jeju_home_shore",
+    "room:jeju_neolttwigi",
+    "room:jeju_olle",
+    "room:jeju_pier",
+    "room:jeju_terrace",
+    "sfx:animal_hint",
+    "sfx:blocked",
+    "sfx:cargo_damage",
+    "sfx:climb",
+    "sfx:coin",
+    "sfx:crate_land",
+    "sfx:delivery_arrive",
+    "sfx:dig",
+    "sfx:door_close",
+    "sfx:door_open",
+    "sfx:feed_snack",
+    "sfx:goal_on",
+    "sfx:hint_show",
+    "sfx:hurt",
+    "sfx:level_clear",
+    "sfx:menu_close",
+    "sfx:menu_open",
+    "sfx:plate_down",
+    "sfx:plate_up",
+    "sfx:pour",
+    "sfx:push",
+    "sfx:reel_spin",
+    "sfx:reel_stop",
+    "sfx:reroll",
+    "sfx:restart",
+    "sfx:rule_card",
+    "sfx:shop_buy",
+    "sfx:ui_back",
+    "sfx:ui_confirm",
+    "sfx:ui_move",
+    "sfx:undo",
+    "sfx:volume_preview",
+    "slice:delivery_pool",
+    "slice:diyu_1",
     "slice:dungeon_1",
+    "slice:dungeon_2",
+    "slice:jeju_1",
     "upgrade:bag",
     "upgrade:cargo_guard",
     "upgrade:discount",
@@ -1499,40 +1900,73 @@
     "world:wonderland",
     "world:xianxia"
    ],
-   "sha256": "9ba5a1e466bc2a49fb847826df17b049762a8308ba8683b44b86462673d06ea0"
+   "sha256": "973068db00d12cb031476424fd099c321fef812e562d6bf220f722f8dc2f78c2"
   },
   {
    "path": "generated/ids.gd",
    "owners": [
+    "art:avatar.ancestor",
+    "art:avatar.goblin_chief",
     "art:avatar.goblin_smith",
+    "art:avatar.haenyeo",
+    "art:avatar.judge",
+    "art:avatar.lighthouse_keeper",
+    "art:avatar.meng_po",
     "art:avatar.old_miner",
+    "art:avatar.tangerine_farmer",
+    "art:avatar.wuchang",
+    "art:avatar.yama",
     "art:avatar.zombie",
+    "art:cargo.buckwheat_jelly",
     "art:cargo.ice_cream",
+    "art:cargo.kite",
     "art:cargo.letter",
+    "art:cargo.paper_house",
+    "art:cargo.qingtuan",
+    "art:cargo.tangerine",
     "art:cargo.vase",
+    "art:char.ancestor",
+    "art:char.goblin_chief",
     "art:char.goblin_smith",
+    "art:char.haenyeo",
+    "art:char.judge",
+    "art:char.lighthouse_keeper",
     "art:char.lucky_cat",
+    "art:char.meng_po",
     "art:char.miner",
     "art:char.portitor",
     "art:char.portitor_alt",
+    "art:char.tangerine_farmer",
     "art:char.turtle_keeper",
+    "art:char.wuchang",
+    "art:char.yama",
     "art:char.zombie",
     "art:deco.cave_crystal",
     "art:deco.cave_mushroom",
     "art:deco.cosmos_sprout",
+    "art:deco.diyu_lantern",
+    "art:deco.diyu_lily",
     "art:deco.dungeon_moss",
     "art:deco.dungeon_torch",
     "art:deco.forest_flower",
     "art:deco.forest_grass",
+    "art:deco.jeju_canola",
+    "art:deco.jeju_harubang",
+    "art:deco.jeju_tangerine_tree",
     "art:deco.ruins_lotus",
     "art:deco.ruins_vine",
     "art:deco.sky_flower",
     "art:fauna.cave_moth",
     "art:fauna.cosmos_drone",
+    "art:fauna.diyu_butterfly",
+    "art:fauna.diyu_dog",
     "art:fauna.dungeon_bat",
+    "art:fauna.dungeon_cat",
     "art:fauna.dungeon_rat",
     "art:fauna.forest_bird",
     "art:fauna.forest_butterfly",
+    "art:fauna.jeju_dragonfly",
+    "art:fauna.jeju_pony",
     "art:fauna.ruins_scarab",
     "art:fauna.sky_cloudling",
     "art:fauna.sky_dove",
@@ -1542,6 +1976,7 @@
     "art:fx.fizz",
     "art:fx.frost",
     "art:fx.goal_spark",
+    "art:fx.jeju_gust",
     "art:fx.land_dust",
     "art:fx.monster_poof",
     "art:fx.ripple",
@@ -1552,6 +1987,8 @@
     "art:item.first_aid",
     "art:item.rope_ladder",
     "art:item.sandbag",
+    "art:item.snack",
+    "art:item.snack_jeju",
     "art:material.chapter2_5",
     "art:mech.bin",
     "art:mech.bin_gauge",
@@ -1562,26 +1999,36 @@
     "art:mech.ferry_gate",
     "art:mech.frost_vent",
     "art:mech.heat_vent",
+    "art:mech.jeju_seesaw",
     "art:mech.ladder",
+    "art:mech.lantern_float",
     "art:mech.lever",
     "art:mech.lift",
     "art:mech.link_symbol",
     "art:mech.plate",
     "art:mech.portal",
     "art:mech.rope_ladder",
+    "art:mech.rune_float",
     "art:mech.socket",
     "art:mech.socket_lit",
     "art:mech.torch",
     "art:mech.vine",
+    "art:monster.dokkaebi",
+    "art:monster.imp",
+    "art:monster.jiangshi",
     "art:monster.rat_swarm",
+    "art:monster.seagull",
     "art:monster.skeleton_guard",
+    "art:monster.wandering_soul",
     "art:obj.crate_iron",
     "art:obj.crate_wood",
     "art:obj.goblin_forge",
     "art:theme.cave",
     "art:theme.cosmos",
+    "art:theme.diyu",
     "art:theme.dungeon",
     "art:theme.forest",
+    "art:theme.jeju",
     "art:theme.ruins",
     "art:theme.sky",
     "art:ui.bubble",
@@ -1598,12 +2045,16 @@
     "art:ui.rule_icon",
     "art:ui.screen.chapters",
     "art:ui.screen.complete",
+    "art:ui.screen.confirm",
     "art:ui.screen.delivery_hud",
     "art:ui.screen.delivery_pause",
     "art:ui.screen.dialogue",
     "art:ui.screen.hint",
+    "art:ui.screen.hint_animal",
     "art:ui.screen.levels",
     "art:ui.screen.lobby",
+    "art:ui.screen.lobby_generic",
+    "art:ui.screen.observe",
     "art:ui.screen.pause",
     "art:ui.screen.reels",
     "art:ui.screen.rulecard",
@@ -1662,6 +2113,7 @@
     "cargo:hot_soup",
     "cargo:ice_cream",
     "cargo:ink_brush",
+    "cargo:kite",
     "cargo:kitten",
     "cargo:lantern",
     "cargo:letter",
@@ -1684,6 +2136,7 @@
     "cargo:spice_box",
     "cargo:story_box",
     "cargo:sword",
+    "cargo:tangerine",
     "cargo:tea_set",
     "cargo:treasure_map",
     "cargo:vase",
@@ -1765,6 +2218,7 @@
     "item:rope_ladder",
     "item:sandbag",
     "item:seal",
+    "item:snack",
     "item:spring_shoes",
     "item:umbrella",
     "item:water_jug",
@@ -1836,6 +2290,7 @@
     "mechanic:drum_beat",
     "mechanic:etch_tag",
     "mechanic:fall",
+    "mechanic:float_block",
     "mechanic:float_sink",
     "mechanic:freeze",
     "mechanic:fuse",
@@ -1844,6 +2299,7 @@
     "mechanic:gaze",
     "mechanic:gravel",
     "mechanic:gust",
+    "mechanic:hint_animal",
     "mechanic:hold_breath",
     "mechanic:ice_slide",
     "mechanic:ladder",
@@ -1868,6 +2324,7 @@
     "mechanic:particles",
     "mechanic:petal_trail",
     "mechanic:plate_door",
+    "mechanic:pole",
     "mechanic:portal",
     "mechanic:pour",
     "mechanic:power",
@@ -1969,6 +2426,23 @@
     "monster:wind_sprite",
     "monster:yeti",
     "monster:zombie_mob",
+    "music:diyu",
+    "music:diyu_a",
+    "music:diyu_b",
+    "music:diyu_c",
+    "music:dungeon",
+    "music:dungeon_a",
+    "music:dungeon_b",
+    "music:dungeon_c",
+    "music:jeju",
+    "music:jeju_a",
+    "music:jeju_b",
+    "music:jeju_c",
+    "music:theme",
+    "music:theme_a",
+    "music:theme_b",
+    "music:theme_c",
+    "music:theme_d",
     "recipient:alien",
     "recipient:anansi",
     "recipient:ancestor",
@@ -2016,6 +2490,7 @@
     "recipient:kappa_kid",
     "recipient:kid",
     "recipient:kungfu_master",
+    "recipient:lighthouse_keeper",
     "recipient:llama",
     "recipient:mad_hatter",
     "recipient:mariachi",
@@ -2042,6 +2517,7 @@
     "recipient:spice_merchant",
     "recipient:stargazer",
     "recipient:storyteller",
+    "recipient:tangerine_farmer",
     "recipient:trex_mom",
     "recipient:troll_granny",
     "recipient:tulip_farmer",
@@ -2051,6 +2527,29 @@
     "recipient:xolo",
     "recipient:yama",
     "recipient:zombie",
+    "room:diyu_fengdu",
+    "room:diyu_gate",
+    "room:diyu_ghostfire",
+    "room:diyu_home_hall",
+    "room:diyu_home_yard",
+    "room:diyu_huangquan",
+    "room:diyu_lantern",
+    "room:diyu_naihe",
+    "room:diyu_paper_bridge",
+    "room:diyu_sand_bridge",
+    "room:diyu_teahouse",
+    "room:diyu_wangchuan",
+    "room:diyu_wangxiang",
+    "room:dungeon2_bridge",
+    "room:dungeon2_corridor",
+    "room:dungeon2_ferry",
+    "room:dungeon2_gate",
+    "room:dungeon2_home",
+    "room:dungeon2_pole",
+    "room:dungeon2_sandpour",
+    "room:dungeon2_station",
+    "room:dungeon2_well",
+    "room:dungeon2_yard",
     "room:dungeon_burrow",
     "room:dungeon_corner",
     "room:dungeon_gate",
@@ -2061,7 +2560,57 @@
     "room:dungeon_shaft",
     "room:dungeon_station",
     "room:dungeon_well",
+    "room:jeju_baramgil",
+    "room:jeju_canola",
+    "room:jeju_dodaebul",
+    "room:jeju_doldam",
+    "room:jeju_gate",
+    "room:jeju_haenyeo_house",
+    "room:jeju_home_cave",
+    "room:jeju_home_orchard",
+    "room:jeju_home_shore",
+    "room:jeju_neolttwigi",
+    "room:jeju_olle",
+    "room:jeju_pier",
+    "room:jeju_terrace",
+    "sfx:animal_hint",
+    "sfx:blocked",
+    "sfx:cargo_damage",
+    "sfx:climb",
+    "sfx:coin",
+    "sfx:crate_land",
+    "sfx:delivery_arrive",
+    "sfx:dig",
+    "sfx:door_close",
+    "sfx:door_open",
+    "sfx:feed_snack",
+    "sfx:goal_on",
+    "sfx:hint_show",
+    "sfx:hurt",
+    "sfx:level_clear",
+    "sfx:menu_close",
+    "sfx:menu_open",
+    "sfx:plate_down",
+    "sfx:plate_up",
+    "sfx:pour",
+    "sfx:push",
+    "sfx:reel_spin",
+    "sfx:reel_stop",
+    "sfx:reroll",
+    "sfx:restart",
+    "sfx:rule_card",
+    "sfx:shop_buy",
+    "sfx:ui_back",
+    "sfx:ui_confirm",
+    "sfx:ui_move",
+    "sfx:undo",
+    "sfx:volume_preview",
+    "slice:delivery_pool",
+    "slice:diyu_1",
     "slice:dungeon_1",
+    "slice:dungeon_2",
+    "slice:jeju_1",
+    "text:audio.dom",
     "text:cargo.ice_cream.name",
     "text:cargo.ice_cream.rule",
     "text:cargo.letter.name",
@@ -2085,12 +2634,52 @@
     "text:complete.moves",
     "text:complete.next",
     "text:complete.title",
+    "text:d2.animal",
+    "text:d2.back",
+    "text:d2.buy",
+    "text:d2.exit",
+    "text:d2.feed",
+    "text:d2.go",
+    "text:d2.hint",
+    "text:d2.hint.near",
+    "text:d2.integrity",
+    "text:d2.leave",
+    "text:d2.map",
+    "text:d2.map.diyu",
+    "text:d2.map.dungeon",
+    "text:d2.monster",
+    "text:d2.observe",
+    "text:d2.pause",
+    "text:d2.player",
+    "text:d2.price",
+    "text:d2.reel.order",
+    "text:d2.reroll",
+    "text:d2.select",
+    "text:d2.snack.desc",
+    "text:d2.snack.diyu",
+    "text:d2.snack.dungeon",
+    "text:d2.snack.jeju",
+    "text:d2.snack.stock",
+    "text:d2.stock",
+    "text:d2.tip",
     "text:dev.pending_art",
     "text:dev.placeholder",
+    "text:dlg.fauna.diyu_butterfly.fed",
+    "text:dlg.fauna.dungeon_bat.fed",
+    "text:dlg.fauna.jeju_dragonfly.fed",
+    "text:dlg.r2.done_hint",
+    "text:dlg.r2.exit",
+    "text:dlg.r2.hurt",
+    "text:dlg.r2.no_hint",
+    "text:dlg.r2.no_snack",
     "text:dlg.sample.note",
     "text:dlg.sample.npc",
     "text:dlg.sample.npc.name",
     "text:dlg.sample.self",
+    "text:dlv.confirm.no",
+    "text:dlv.confirm.text",
+    "text:dlv.confirm.title",
+    "text:dlv.confirm.yes",
     "text:dlv.done.again",
     "text:dlv.done.base",
     "text:dlv.done.hub",
@@ -2141,6 +2730,16 @@
     "text:extra.rule.pour.text",
     "text:extra.rule.push.name",
     "text:extra.rule.push.text",
+    "text:g.hello",
+    "text:g.keys.move",
+    "text:g.keys.pause",
+    "text:g.keys.undo",
+    "text:g.lobby.delivery",
+    "text:g.lobby.level",
+    "text:g.reels.map",
+    "text:g.reels.tip",
+    "text:g.say",
+    "text:g.think",
     "text:game.tagline",
     "text:game.title",
     "text:hint.demo",
@@ -2155,6 +2754,7 @@
     "text:item.rope_ladder.name",
     "text:item.sandbag.desc",
     "text:item.sandbag.name",
+    "text:keys.adjust",
     "text:keys.back",
     "text:keys.confirm",
     "text:keys.play",
@@ -2398,6 +2998,7 @@
     "text:levels.next",
     "text:levels.title",
     "text:lobby.current",
+    "text:lobby.current_tag",
     "text:menu.chapters",
     "text:menu.continue",
     "text:menu.quit",
@@ -2414,6 +3015,11 @@
     "text:pause.skip",
     "text:pause.title",
     "text:progress",
+    "text:r2.hud.cleared",
+    "text:r2.hud.hint",
+    "text:r2.hud.moves",
+    "text:r2.hud.snack",
+    "text:r2.hud.step",
     "text:recipient.goblin_smith.name",
     "text:recipient.goblin_smith.rule",
     "text:recipient.goblin_smith.thanks",
@@ -2423,6 +3029,93 @@
     "text:recipient.zombie.name",
     "text:recipient.zombie.rule",
     "text:recipient.zombie.thanks",
+    "text:result.lobby.delivery",
+    "text:result.lobby.level",
+    "text:result.par",
+    "text:room2.diyu_fengdu.hint.0",
+    "text:room2.diyu_fengdu.hint.1",
+    "text:room2.diyu_fengdu.hint.2",
+    "text:room2.diyu_fengdu.hint.3",
+    "text:room2.diyu_fengdu.name",
+    "text:room2.diyu_gate.name",
+    "text:room2.diyu_ghostfire.name",
+    "text:room2.diyu_home_hall.name",
+    "text:room2.diyu_home_yard.name",
+    "text:room2.diyu_huangquan.name",
+    "text:room2.diyu_lantern.hint.0",
+    "text:room2.diyu_lantern.hint.1",
+    "text:room2.diyu_lantern.name",
+    "text:room2.diyu_naihe.hint.0",
+    "text:room2.diyu_naihe.hint.1",
+    "text:room2.diyu_naihe.hint.2",
+    "text:room2.diyu_naihe.name",
+    "text:room2.diyu_paper_bridge.hint.0",
+    "text:room2.diyu_paper_bridge.hint.1",
+    "text:room2.diyu_paper_bridge.hint.2",
+    "text:room2.diyu_paper_bridge.name",
+    "text:room2.diyu_sand_bridge.hint.0",
+    "text:room2.diyu_sand_bridge.hint.1",
+    "text:room2.diyu_sand_bridge.hint.2",
+    "text:room2.diyu_sand_bridge.hint.3",
+    "text:room2.diyu_sand_bridge.name",
+    "text:room2.diyu_teahouse.name",
+    "text:room2.diyu_wangchuan.hint.0",
+    "text:room2.diyu_wangchuan.hint.1",
+    "text:room2.diyu_wangchuan.hint.2",
+    "text:room2.diyu_wangchuan.hint.3",
+    "text:room2.diyu_wangchuan.name",
+    "text:room2.diyu_wangxiang.hint.0",
+    "text:room2.diyu_wangxiang.hint.1",
+    "text:room2.diyu_wangxiang.hint.2",
+    "text:room2.diyu_wangxiang.name",
+    "text:room2.dungeon2_bridge.hint.0",
+    "text:room2.dungeon2_bridge.hint.1",
+    "text:room2.dungeon2_bridge.name",
+    "text:room2.dungeon2_corridor.name",
+    "text:room2.dungeon2_ferry.hint.0",
+    "text:room2.dungeon2_ferry.hint.1",
+    "text:room2.dungeon2_ferry.hint.2",
+    "text:room2.dungeon2_ferry.name",
+    "text:room2.dungeon2_gate.name",
+    "text:room2.dungeon2_home.name",
+    "text:room2.dungeon2_pole.hint.0",
+    "text:room2.dungeon2_pole.hint.1",
+    "text:room2.dungeon2_pole.hint.2",
+    "text:room2.dungeon2_pole.name",
+    "text:room2.dungeon2_sandpour.hint.0",
+    "text:room2.dungeon2_sandpour.hint.1",
+    "text:room2.dungeon2_sandpour.hint.2",
+    "text:room2.dungeon2_sandpour.name",
+    "text:room2.dungeon2_station.name",
+    "text:room2.dungeon2_well.hint.0",
+    "text:room2.dungeon2_well.hint.1",
+    "text:room2.dungeon2_well.hint.2",
+    "text:room2.dungeon2_well.hint.3",
+    "text:room2.dungeon2_well.name",
+    "text:room2.dungeon2_yard.hint.0",
+    "text:room2.dungeon2_yard.hint.1",
+    "text:room2.dungeon2_yard.hint.2",
+    "text:room2.dungeon2_yard.hint.3",
+    "text:room2.dungeon2_yard.name",
+    "text:room2.jeju_baramgil.hint.0",
+    "text:room2.jeju_baramgil.name",
+    "text:room2.jeju_canola.name",
+    "text:room2.jeju_dodaebul.hint.0",
+    "text:room2.jeju_dodaebul.name",
+    "text:room2.jeju_doldam.hint.0",
+    "text:room2.jeju_doldam.name",
+    "text:room2.jeju_gate.name",
+    "text:room2.jeju_haenyeo_house.name",
+    "text:room2.jeju_home_cave.name",
+    "text:room2.jeju_home_orchard.name",
+    "text:room2.jeju_home_shore.name",
+    "text:room2.jeju_neolttwigi.hint.0",
+    "text:room2.jeju_neolttwigi.name",
+    "text:room2.jeju_olle.name",
+    "text:room2.jeju_pier.hint.0",
+    "text:room2.jeju_pier.name",
+    "text:room2.jeju_terrace.hint.0",
+    "text:room2.jeju_terrace.name",
     "text:rule.close",
     "text:rule.earth.name",
     "text:rule.earth.text",
@@ -2437,6 +3130,9 @@
     "text:settings.sfx",
     "text:settings.title",
     "text:settings.tutorial",
+    "text:settings.ui_style",
+    "text:settings.ui_style.note1",
+    "text:settings.ui_style.note2",
     "text:settings.unlock",
     "text:settings.unlock.available",
     "text:showcase.code",
@@ -2448,6 +3144,15 @@
     "text:theme.forest",
     "text:theme.ruins",
     "text:theme.sky",
+    "text:ui.title_alt",
+    "text:ui_style.s1",
+    "text:ui_style.s1.mark",
+    "text:ui_style.s2",
+    "text:ui_style.s2.mark",
+    "text:ui_style.s3",
+    "text:ui_style.s3.mark",
+    "text:ui_style.s4",
+    "text:ui_style.s4.mark",
     "upgrade:bag",
     "upgrade:cargo_guard",
     "upgrade:discount",
@@ -2496,7 +3201,7 @@
     "world:wonderland",
     "world:xianxia"
    ],
-   "sha256": "9b2d324379b52fce1e8660c7f01309d839a8eb24a0088f28599c4e301137b55a"
+   "sha256": "80788f7a42b156d2afe63c1c00694fcb755f28d01349034c04dea882b890ecc2"
   },
   {
    "path": "generated/content/levels/lab/basics/M01.json",
@@ -2891,13 +3596,265 @@
    "sha256": "7dfb90d1395d7554bd453fe0e7d24675eb219ad8126a217f4dd8d4060525494e"
   },
   {
+   "path": "generated/content/rooms/diyu/diyu_fengdu.json",
+   "owners": [
+    "room:diyu_fengdu"
+   ],
+   "sha256": "131b51faf553a5a87c65df2193181be97b52427bf00744bb4751b94c9fad2a3e"
+  },
+  {
+   "path": "generated/content/rooms/diyu/diyu_gate.json",
+   "owners": [
+    "room:diyu_gate"
+   ],
+   "sha256": "f7d8a89604c056a81b0b48725d954981d2c9a5d3f3519c4256383a07a57b05f4"
+  },
+  {
+   "path": "generated/content/rooms/diyu/diyu_ghostfire.json",
+   "owners": [
+    "room:diyu_ghostfire"
+   ],
+   "sha256": "7ad204f806e41a95ccfdeb32714a9433f067d8d1acc1152710cfdb59cf5fea49"
+  },
+  {
+   "path": "generated/content/rooms/diyu/diyu_home_hall.json",
+   "owners": [
+    "room:diyu_home_hall"
+   ],
+   "sha256": "08a29119d3b4704cd1764c2b9a40cefe1f011678d4a0eb101d7ab62866177814"
+  },
+  {
+   "path": "generated/content/rooms/diyu/diyu_home_yard.json",
+   "owners": [
+    "room:diyu_home_yard"
+   ],
+   "sha256": "30357d9d2367da86632d6df683f044bfdc05ac4b8542b756812e37d900220ca2"
+  },
+  {
+   "path": "generated/content/rooms/diyu/diyu_huangquan.json",
+   "owners": [
+    "room:diyu_huangquan"
+   ],
+   "sha256": "f0eff08aaef6b8db669515e80abdf6e7d2a573b8328110559bf3a40348dbc0fa"
+  },
+  {
+   "path": "generated/content/rooms/diyu/diyu_lantern.json",
+   "owners": [
+    "room:diyu_lantern"
+   ],
+   "sha256": "e206b910476686b813019449054696c639a00a905248bb4399ea6cff5af68c27"
+  },
+  {
+   "path": "generated/content/rooms/diyu/diyu_naihe.json",
+   "owners": [
+    "room:diyu_naihe"
+   ],
+   "sha256": "4288a295f6206c7de5170d1c8d8d38ad142dbfbf53e0e00d58ed300f5eaa17a1"
+  },
+  {
+   "path": "generated/content/rooms/diyu/diyu_paper_bridge.json",
+   "owners": [
+    "room:diyu_paper_bridge"
+   ],
+   "sha256": "811d32ffb14d51f307d91ed98b5f88f56e6a1c8c288c9e202bee72578373bb4c"
+  },
+  {
+   "path": "generated/content/rooms/diyu/diyu_sand_bridge.json",
+   "owners": [
+    "room:diyu_sand_bridge"
+   ],
+   "sha256": "2bac57e9c0fafc6dc79cd77dcf6f64d60ca97327cf7a4a65fda97d8483e456a4"
+  },
+  {
+   "path": "generated/content/rooms/diyu/diyu_teahouse.json",
+   "owners": [
+    "room:diyu_teahouse"
+   ],
+   "sha256": "2cc232e95951180f60a91403130f551bd58b56c5a9ffe808a4ad3c6c1a16e705"
+  },
+  {
+   "path": "generated/content/rooms/diyu/diyu_wangchuan.json",
+   "owners": [
+    "room:diyu_wangchuan"
+   ],
+   "sha256": "bcd53a48faae5b9d17a231ecbb344e55b3460eab5e2f800f13a38572e2a2509d"
+  },
+  {
+   "path": "generated/content/rooms/diyu/diyu_wangxiang.json",
+   "owners": [
+    "room:diyu_wangxiang"
+   ],
+   "sha256": "0a2ed07cf7a712a7a7f09d33918f44d5405951de911dad7c06f318097a50df47"
+  },
+  {
+   "path": "generated/content/rooms/dungeon/dungeon2_bridge.json",
+   "owners": [
+    "room:dungeon2_bridge"
+   ],
+   "sha256": "9b32f77f5feff4367ffabc640b5d54c023773af934a4260a7513c94f8c554cff"
+  },
+  {
+   "path": "generated/content/rooms/dungeon/dungeon2_corridor.json",
+   "owners": [
+    "room:dungeon2_corridor"
+   ],
+   "sha256": "a5c772b8848dd64e517a687358e6334ae5840af135dc81b0737bf12fc166fd61"
+  },
+  {
+   "path": "generated/content/rooms/dungeon/dungeon2_ferry.json",
+   "owners": [
+    "room:dungeon2_ferry"
+   ],
+   "sha256": "7075c0be92d7deebe9bf38824140e450ce1256e89b16985ae2b15f6264415ed4"
+  },
+  {
+   "path": "generated/content/rooms/dungeon/dungeon2_gate.json",
+   "owners": [
+    "room:dungeon2_gate"
+   ],
+   "sha256": "62903f2e12f4c24783fb512a34785328e458b8ec0b5ad6fd43e0af38f41c772c"
+  },
+  {
+   "path": "generated/content/rooms/dungeon/dungeon2_home.json",
+   "owners": [
+    "room:dungeon2_home"
+   ],
+   "sha256": "e7c0da65cc0d3cbba600e8c6981b3d6830b72c616791a2eb5cd45b82b127c3d5"
+  },
+  {
+   "path": "generated/content/rooms/dungeon/dungeon2_pole.json",
+   "owners": [
+    "room:dungeon2_pole"
+   ],
+   "sha256": "8d04237ba2546af5faa723643bd1eb78a89d569a359471d31ac0920a268784b9"
+  },
+  {
+   "path": "generated/content/rooms/dungeon/dungeon2_sandpour.json",
+   "owners": [
+    "room:dungeon2_sandpour"
+   ],
+   "sha256": "26609990a6a10c2a34ce9a230c9f0f728cc5ca4cdc08a7d86549c8ae2f1d3617"
+  },
+  {
+   "path": "generated/content/rooms/dungeon/dungeon2_station.json",
+   "owners": [
+    "room:dungeon2_station"
+   ],
+   "sha256": "2b60123d6ee2edd091ab048305efa381bb0cf5546d4d8c53bcc6c77e03664a5c"
+  },
+  {
+   "path": "generated/content/rooms/dungeon/dungeon2_well.json",
+   "owners": [
+    "room:dungeon2_well"
+   ],
+   "sha256": "af2ec175eeaf7701227916d332451f0eb53e11235b319f62cea2e7661b70bd64"
+  },
+  {
+   "path": "generated/content/rooms/dungeon/dungeon2_yard.json",
+   "owners": [
+    "room:dungeon2_yard"
+   ],
+   "sha256": "5db11c0be6caf73722e3c39f89962081e4dc6a5337c4ab812db9e132a2821902"
+  },
+  {
+   "path": "generated/content/rooms/jeju/jeju_baramgil.json",
+   "owners": [
+    "room:jeju_baramgil"
+   ],
+   "sha256": "fe03042d4a9e6bfe4ebf32ec1b432f6cba4816131211a558dd63ca96297901d9"
+  },
+  {
+   "path": "generated/content/rooms/jeju/jeju_canola.json",
+   "owners": [
+    "room:jeju_canola"
+   ],
+   "sha256": "d0d66c406a4926dbf03d8838f590eab673c8bf32c3562cee55d96a87a9529089"
+  },
+  {
+   "path": "generated/content/rooms/jeju/jeju_dodaebul.json",
+   "owners": [
+    "room:jeju_dodaebul"
+   ],
+   "sha256": "03347c43357dc012de9af68d34b615240404f99bd9166b1e24d449e6c0cc1ba1"
+  },
+  {
+   "path": "generated/content/rooms/jeju/jeju_doldam.json",
+   "owners": [
+    "room:jeju_doldam"
+   ],
+   "sha256": "ca926994eb5ef357ab18912c5c584518e821005289ed66d23db37cd2e790b402"
+  },
+  {
+   "path": "generated/content/rooms/jeju/jeju_gate.json",
+   "owners": [
+    "room:jeju_gate"
+   ],
+   "sha256": "0bc2f893eb54c88eca6012fcd395f480430e1ecd653102288d4e7465ddd0360c"
+  },
+  {
+   "path": "generated/content/rooms/jeju/jeju_haenyeo_house.json",
+   "owners": [
+    "room:jeju_haenyeo_house"
+   ],
+   "sha256": "c16f2ed6a778783d83435f8cb9c29dba8592b475beb4e76b1c163640a23c5fd6"
+  },
+  {
+   "path": "generated/content/rooms/jeju/jeju_home_cave.json",
+   "owners": [
+    "room:jeju_home_cave"
+   ],
+   "sha256": "78fe556b44dcdfe4fd812ef3d640acec8f8a7d05bee75aa8ca6a9e6fa46e73fd"
+  },
+  {
+   "path": "generated/content/rooms/jeju/jeju_home_orchard.json",
+   "owners": [
+    "room:jeju_home_orchard"
+   ],
+   "sha256": "b3b2599003678116618862983eec638cc686a0d882d80821c4caabff22d790c8"
+  },
+  {
+   "path": "generated/content/rooms/jeju/jeju_home_shore.json",
+   "owners": [
+    "room:jeju_home_shore"
+   ],
+   "sha256": "fad142f902d4ed7d20f3d9c48176881b9a8bb0bb092c6ee584afc23228a9d3d9"
+  },
+  {
+   "path": "generated/content/rooms/jeju/jeju_neolttwigi.json",
+   "owners": [
+    "room:jeju_neolttwigi"
+   ],
+   "sha256": "b078e323eb19c2370a40b0ec7d50ad8a8ffad2ca9fd72743d1e727c42e5dcc71"
+  },
+  {
+   "path": "generated/content/rooms/jeju/jeju_olle.json",
+   "owners": [
+    "room:jeju_olle"
+   ],
+   "sha256": "90b2c897ae809ba22e1bb2a8edfb65c81c9338ca0e57fbf87160f8074dd28c58"
+  },
+  {
+   "path": "generated/content/rooms/jeju/jeju_pier.json",
+   "owners": [
+    "room:jeju_pier"
+   ],
+   "sha256": "21abd9abdb572c823aa63ef9d6c0a9b563ab999b83f2d24527bbf52b3f0a9d0c"
+  },
+  {
+   "path": "generated/content/rooms/jeju/jeju_terrace.json",
+   "owners": [
+    "room:jeju_terrace"
+   ],
+   "sha256": "e4720e4ae03bc5701a8c0776c2ecd458d1877c117630004dec75b64615000d3c"
+  },
+  {
    "path": "generated/content/catalog/modes.json",
    "owners": [
     "mode:delivery",
     "mode:hell",
     "mode:lab"
    ],
-   "sha256": "85cf71666e9704d3fcaf018530450ca07571cb0245a5131de778b67ad1a9b806"
+   "sha256": "bbcf3529f2f6a174a755017f50b2616a5daa1c287d354e81cdf2453a39690677"
   },
   {
    "path": "generated/content/catalog/groups.json",
@@ -2955,7 +3912,7 @@
     "world:wonderland",
     "world:xianxia"
    ],
-   "sha256": "3a0b2e7a02f7a300a4f0815ab0ffc7d4b60f0751197a7833d06bcdba25e49766"
+   "sha256": "a86b716643f2d90280be0382b5be978d28db2074b854d2eaffc64b826d957e07"
   },
   {
    "path": "generated/content/catalog/recipients.json",
@@ -3007,6 +3964,7 @@
     "recipient:kappa_kid",
     "recipient:kid",
     "recipient:kungfu_master",
+    "recipient:lighthouse_keeper",
     "recipient:llama",
     "recipient:mad_hatter",
     "recipient:mariachi",
@@ -3033,6 +3991,7 @@
     "recipient:spice_merchant",
     "recipient:stargazer",
     "recipient:storyteller",
+    "recipient:tangerine_farmer",
     "recipient:trex_mom",
     "recipient:troll_granny",
     "recipient:tulip_farmer",
@@ -3043,7 +4002,7 @@
     "recipient:yama",
     "recipient:zombie"
    ],
-   "sha256": "ea0f2395cb1b33b4a35a253c8c845e44524ed4b8272d778aa24b17b1e2f10918"
+   "sha256": "b8b3aeaf1ca47b1701b4cd4cfe4a2db5df1d3f5c1d7746a98665b384b3a95ad7"
   },
   {
    "path": "generated/content/catalog/cargo.json",
@@ -3069,6 +4028,7 @@
     "cargo:hot_soup",
     "cargo:ice_cream",
     "cargo:ink_brush",
+    "cargo:kite",
     "cargo:kitten",
     "cargo:lantern",
     "cargo:letter",
@@ -3091,13 +4051,14 @@
     "cargo:spice_box",
     "cargo:story_box",
     "cargo:sword",
+    "cargo:tangerine",
     "cargo:tea_set",
     "cargo:treasure_map",
     "cargo:vase",
     "cargo:water_bucket",
     "cargo:watermelon"
    ],
-   "sha256": "03fc7b985ee4fa520e88a5fad428caad4eafc4496f5beac70d3aab139d72ba14"
+   "sha256": "8acea3a02e4b210143fbdb1ab90799a4037f720fd62e9b1276cd4bd8d14008e8"
   },
   {
    "path": "generated/content/catalog/combos.json",
@@ -3225,7 +4186,7 @@
     "monster:yeti",
     "monster:zombie_mob"
    ],
-   "sha256": "d7c08cdb1271a21a43ac5c1f0f88b3a75e702837e37129e207d69f273c216347"
+   "sha256": "df2d41b88e309e2caa5991cc515fdc09edc45f1e162a2afecfea2dc3387421b0"
   },
   {
    "path": "generated/content/catalog/items.json",
@@ -3246,12 +4207,13 @@
     "item:rope_ladder",
     "item:sandbag",
     "item:seal",
+    "item:snack",
     "item:spring_shoes",
     "item:umbrella",
     "item:water_jug",
     "item:whistle"
    ],
-   "sha256": "fb63e83e34173b6ed85bbabc651a6b6a3c062d3e3b24103bd254c24c03bbacb9"
+   "sha256": "15efd3427c32c461864819a3d21cfbdcd39073dfe1431abb026ec06dbde8f96f"
   },
   {
    "path": "generated/content/catalog/buffs.json",
@@ -3330,13 +4292,18 @@
   {
    "path": "generated/content/catalog/slices.json",
    "owners": [
-    "slice:dungeon_1"
+    "slice:delivery_pool",
+    "slice:diyu_1",
+    "slice:dungeon_1",
+    "slice:dungeon_2",
+    "slice:jeju_1"
    ],
-   "sha256": "919b8069ac89ecfcc09d489a551327693c197ccb60ac9a6dcf81ae6576f7d2df"
+   "sha256": "904e7d5e85b89ed25b1fa9aa06b7e197de9a2be484d54446b77e22318298e06a"
   },
   {
    "path": "generated/content/i18n/zh-Hans.json",
    "owners": [
+    "text:audio.dom",
     "text:cargo.ice_cream.name",
     "text:cargo.ice_cream.rule",
     "text:cargo.letter.name",
@@ -3360,12 +4327,52 @@
     "text:complete.moves",
     "text:complete.next",
     "text:complete.title",
+    "text:d2.animal",
+    "text:d2.back",
+    "text:d2.buy",
+    "text:d2.exit",
+    "text:d2.feed",
+    "text:d2.go",
+    "text:d2.hint",
+    "text:d2.hint.near",
+    "text:d2.integrity",
+    "text:d2.leave",
+    "text:d2.map",
+    "text:d2.map.diyu",
+    "text:d2.map.dungeon",
+    "text:d2.monster",
+    "text:d2.observe",
+    "text:d2.pause",
+    "text:d2.player",
+    "text:d2.price",
+    "text:d2.reel.order",
+    "text:d2.reroll",
+    "text:d2.select",
+    "text:d2.snack.desc",
+    "text:d2.snack.diyu",
+    "text:d2.snack.dungeon",
+    "text:d2.snack.jeju",
+    "text:d2.snack.stock",
+    "text:d2.stock",
+    "text:d2.tip",
     "text:dev.pending_art",
     "text:dev.placeholder",
+    "text:dlg.fauna.diyu_butterfly.fed",
+    "text:dlg.fauna.dungeon_bat.fed",
+    "text:dlg.fauna.jeju_dragonfly.fed",
+    "text:dlg.r2.done_hint",
+    "text:dlg.r2.exit",
+    "text:dlg.r2.hurt",
+    "text:dlg.r2.no_hint",
+    "text:dlg.r2.no_snack",
     "text:dlg.sample.note",
     "text:dlg.sample.npc",
     "text:dlg.sample.npc.name",
     "text:dlg.sample.self",
+    "text:dlv.confirm.no",
+    "text:dlv.confirm.text",
+    "text:dlv.confirm.title",
+    "text:dlv.confirm.yes",
     "text:dlv.done.again",
     "text:dlv.done.base",
     "text:dlv.done.hub",
@@ -3416,6 +4423,16 @@
     "text:extra.rule.pour.text",
     "text:extra.rule.push.name",
     "text:extra.rule.push.text",
+    "text:g.hello",
+    "text:g.keys.move",
+    "text:g.keys.pause",
+    "text:g.keys.undo",
+    "text:g.lobby.delivery",
+    "text:g.lobby.level",
+    "text:g.reels.map",
+    "text:g.reels.tip",
+    "text:g.say",
+    "text:g.think",
     "text:game.tagline",
     "text:game.title",
     "text:hint.demo",
@@ -3430,6 +4447,7 @@
     "text:item.rope_ladder.name",
     "text:item.sandbag.desc",
     "text:item.sandbag.name",
+    "text:keys.adjust",
     "text:keys.back",
     "text:keys.confirm",
     "text:keys.play",
@@ -3673,6 +4691,7 @@
     "text:levels.next",
     "text:levels.title",
     "text:lobby.current",
+    "text:lobby.current_tag",
     "text:menu.chapters",
     "text:menu.continue",
     "text:menu.quit",
@@ -3689,6 +4708,11 @@
     "text:pause.skip",
     "text:pause.title",
     "text:progress",
+    "text:r2.hud.cleared",
+    "text:r2.hud.hint",
+    "text:r2.hud.moves",
+    "text:r2.hud.snack",
+    "text:r2.hud.step",
     "text:recipient.goblin_smith.name",
     "text:recipient.goblin_smith.rule",
     "text:recipient.goblin_smith.thanks",
@@ -3698,6 +4722,93 @@
     "text:recipient.zombie.name",
     "text:recipient.zombie.rule",
     "text:recipient.zombie.thanks",
+    "text:result.lobby.delivery",
+    "text:result.lobby.level",
+    "text:result.par",
+    "text:room2.diyu_fengdu.hint.0",
+    "text:room2.diyu_fengdu.hint.1",
+    "text:room2.diyu_fengdu.hint.2",
+    "text:room2.diyu_fengdu.hint.3",
+    "text:room2.diyu_fengdu.name",
+    "text:room2.diyu_gate.name",
+    "text:room2.diyu_ghostfire.name",
+    "text:room2.diyu_home_hall.name",
+    "text:room2.diyu_home_yard.name",
+    "text:room2.diyu_huangquan.name",
+    "text:room2.diyu_lantern.hint.0",
+    "text:room2.diyu_lantern.hint.1",
+    "text:room2.diyu_lantern.name",
+    "text:room2.diyu_naihe.hint.0",
+    "text:room2.diyu_naihe.hint.1",
+    "text:room2.diyu_naihe.hint.2",
+    "text:room2.diyu_naihe.name",
+    "text:room2.diyu_paper_bridge.hint.0",
+    "text:room2.diyu_paper_bridge.hint.1",
+    "text:room2.diyu_paper_bridge.hint.2",
+    "text:room2.diyu_paper_bridge.name",
+    "text:room2.diyu_sand_bridge.hint.0",
+    "text:room2.diyu_sand_bridge.hint.1",
+    "text:room2.diyu_sand_bridge.hint.2",
+    "text:room2.diyu_sand_bridge.hint.3",
+    "text:room2.diyu_sand_bridge.name",
+    "text:room2.diyu_teahouse.name",
+    "text:room2.diyu_wangchuan.hint.0",
+    "text:room2.diyu_wangchuan.hint.1",
+    "text:room2.diyu_wangchuan.hint.2",
+    "text:room2.diyu_wangchuan.hint.3",
+    "text:room2.diyu_wangchuan.name",
+    "text:room2.diyu_wangxiang.hint.0",
+    "text:room2.diyu_wangxiang.hint.1",
+    "text:room2.diyu_wangxiang.hint.2",
+    "text:room2.diyu_wangxiang.name",
+    "text:room2.dungeon2_bridge.hint.0",
+    "text:room2.dungeon2_bridge.hint.1",
+    "text:room2.dungeon2_bridge.name",
+    "text:room2.dungeon2_corridor.name",
+    "text:room2.dungeon2_ferry.hint.0",
+    "text:room2.dungeon2_ferry.hint.1",
+    "text:room2.dungeon2_ferry.hint.2",
+    "text:room2.dungeon2_ferry.name",
+    "text:room2.dungeon2_gate.name",
+    "text:room2.dungeon2_home.name",
+    "text:room2.dungeon2_pole.hint.0",
+    "text:room2.dungeon2_pole.hint.1",
+    "text:room2.dungeon2_pole.hint.2",
+    "text:room2.dungeon2_pole.name",
+    "text:room2.dungeon2_sandpour.hint.0",
+    "text:room2.dungeon2_sandpour.hint.1",
+    "text:room2.dungeon2_sandpour.hint.2",
+    "text:room2.dungeon2_sandpour.name",
+    "text:room2.dungeon2_station.name",
+    "text:room2.dungeon2_well.hint.0",
+    "text:room2.dungeon2_well.hint.1",
+    "text:room2.dungeon2_well.hint.2",
+    "text:room2.dungeon2_well.hint.3",
+    "text:room2.dungeon2_well.name",
+    "text:room2.dungeon2_yard.hint.0",
+    "text:room2.dungeon2_yard.hint.1",
+    "text:room2.dungeon2_yard.hint.2",
+    "text:room2.dungeon2_yard.hint.3",
+    "text:room2.dungeon2_yard.name",
+    "text:room2.jeju_baramgil.hint.0",
+    "text:room2.jeju_baramgil.name",
+    "text:room2.jeju_canola.name",
+    "text:room2.jeju_dodaebul.hint.0",
+    "text:room2.jeju_dodaebul.name",
+    "text:room2.jeju_doldam.hint.0",
+    "text:room2.jeju_doldam.name",
+    "text:room2.jeju_gate.name",
+    "text:room2.jeju_haenyeo_house.name",
+    "text:room2.jeju_home_cave.name",
+    "text:room2.jeju_home_orchard.name",
+    "text:room2.jeju_home_shore.name",
+    "text:room2.jeju_neolttwigi.hint.0",
+    "text:room2.jeju_neolttwigi.name",
+    "text:room2.jeju_olle.name",
+    "text:room2.jeju_pier.hint.0",
+    "text:room2.jeju_pier.name",
+    "text:room2.jeju_terrace.hint.0",
+    "text:room2.jeju_terrace.name",
     "text:rule.close",
     "text:rule.earth.name",
     "text:rule.earth.text",
@@ -3712,6 +4823,9 @@
     "text:settings.sfx",
     "text:settings.title",
     "text:settings.tutorial",
+    "text:settings.ui_style",
+    "text:settings.ui_style.note1",
+    "text:settings.ui_style.note2",
     "text:settings.unlock",
     "text:settings.unlock.available",
     "text:showcase.code",
@@ -3722,13 +4836,23 @@
     "text:theme.dungeon",
     "text:theme.forest",
     "text:theme.ruins",
-    "text:theme.sky"
+    "text:theme.sky",
+    "text:ui.title_alt",
+    "text:ui_style.s1",
+    "text:ui_style.s1.mark",
+    "text:ui_style.s2",
+    "text:ui_style.s2.mark",
+    "text:ui_style.s3",
+    "text:ui_style.s3.mark",
+    "text:ui_style.s4",
+    "text:ui_style.s4.mark"
    ],
-   "sha256": "cf1afaccb03994d3871fa5b8686eef06e53e8348e8aba2582db51d5f12a298ac"
+   "sha256": "bcabcd9fa1abe4435fb1bbaa82a78c7acb2d87192310470de67b923e9c831a41"
   },
   {
    "path": "generated/content/i18n/en.json",
    "owners": [
+    "text:audio.dom",
     "text:cargo.ice_cream.name",
     "text:cargo.ice_cream.rule",
     "text:cargo.letter.name",
@@ -3752,12 +4876,52 @@
     "text:complete.moves",
     "text:complete.next",
     "text:complete.title",
+    "text:d2.animal",
+    "text:d2.back",
+    "text:d2.buy",
+    "text:d2.exit",
+    "text:d2.feed",
+    "text:d2.go",
+    "text:d2.hint",
+    "text:d2.hint.near",
+    "text:d2.integrity",
+    "text:d2.leave",
+    "text:d2.map",
+    "text:d2.map.diyu",
+    "text:d2.map.dungeon",
+    "text:d2.monster",
+    "text:d2.observe",
+    "text:d2.pause",
+    "text:d2.player",
+    "text:d2.price",
+    "text:d2.reel.order",
+    "text:d2.reroll",
+    "text:d2.select",
+    "text:d2.snack.desc",
+    "text:d2.snack.diyu",
+    "text:d2.snack.dungeon",
+    "text:d2.snack.jeju",
+    "text:d2.snack.stock",
+    "text:d2.stock",
+    "text:d2.tip",
     "text:dev.pending_art",
     "text:dev.placeholder",
+    "text:dlg.fauna.diyu_butterfly.fed",
+    "text:dlg.fauna.dungeon_bat.fed",
+    "text:dlg.fauna.jeju_dragonfly.fed",
+    "text:dlg.r2.done_hint",
+    "text:dlg.r2.exit",
+    "text:dlg.r2.hurt",
+    "text:dlg.r2.no_hint",
+    "text:dlg.r2.no_snack",
     "text:dlg.sample.note",
     "text:dlg.sample.npc",
     "text:dlg.sample.npc.name",
     "text:dlg.sample.self",
+    "text:dlv.confirm.no",
+    "text:dlv.confirm.text",
+    "text:dlv.confirm.title",
+    "text:dlv.confirm.yes",
     "text:dlv.done.again",
     "text:dlv.done.base",
     "text:dlv.done.hub",
@@ -3808,6 +4972,16 @@
     "text:extra.rule.pour.text",
     "text:extra.rule.push.name",
     "text:extra.rule.push.text",
+    "text:g.hello",
+    "text:g.keys.move",
+    "text:g.keys.pause",
+    "text:g.keys.undo",
+    "text:g.lobby.delivery",
+    "text:g.lobby.level",
+    "text:g.reels.map",
+    "text:g.reels.tip",
+    "text:g.say",
+    "text:g.think",
     "text:game.tagline",
     "text:game.title",
     "text:hint.demo",
@@ -3822,6 +4996,7 @@
     "text:item.rope_ladder.name",
     "text:item.sandbag.desc",
     "text:item.sandbag.name",
+    "text:keys.adjust",
     "text:keys.back",
     "text:keys.confirm",
     "text:keys.play",
@@ -4065,6 +5240,7 @@
     "text:levels.next",
     "text:levels.title",
     "text:lobby.current",
+    "text:lobby.current_tag",
     "text:menu.chapters",
     "text:menu.continue",
     "text:menu.quit",
@@ -4081,6 +5257,11 @@
     "text:pause.skip",
     "text:pause.title",
     "text:progress",
+    "text:r2.hud.cleared",
+    "text:r2.hud.hint",
+    "text:r2.hud.moves",
+    "text:r2.hud.snack",
+    "text:r2.hud.step",
     "text:recipient.goblin_smith.name",
     "text:recipient.goblin_smith.rule",
     "text:recipient.goblin_smith.thanks",
@@ -4090,6 +5271,93 @@
     "text:recipient.zombie.name",
     "text:recipient.zombie.rule",
     "text:recipient.zombie.thanks",
+    "text:result.lobby.delivery",
+    "text:result.lobby.level",
+    "text:result.par",
+    "text:room2.diyu_fengdu.hint.0",
+    "text:room2.diyu_fengdu.hint.1",
+    "text:room2.diyu_fengdu.hint.2",
+    "text:room2.diyu_fengdu.hint.3",
+    "text:room2.diyu_fengdu.name",
+    "text:room2.diyu_gate.name",
+    "text:room2.diyu_ghostfire.name",
+    "text:room2.diyu_home_hall.name",
+    "text:room2.diyu_home_yard.name",
+    "text:room2.diyu_huangquan.name",
+    "text:room2.diyu_lantern.hint.0",
+    "text:room2.diyu_lantern.hint.1",
+    "text:room2.diyu_lantern.name",
+    "text:room2.diyu_naihe.hint.0",
+    "text:room2.diyu_naihe.hint.1",
+    "text:room2.diyu_naihe.hint.2",
+    "text:room2.diyu_naihe.name",
+    "text:room2.diyu_paper_bridge.hint.0",
+    "text:room2.diyu_paper_bridge.hint.1",
+    "text:room2.diyu_paper_bridge.hint.2",
+    "text:room2.diyu_paper_bridge.name",
+    "text:room2.diyu_sand_bridge.hint.0",
+    "text:room2.diyu_sand_bridge.hint.1",
+    "text:room2.diyu_sand_bridge.hint.2",
+    "text:room2.diyu_sand_bridge.hint.3",
+    "text:room2.diyu_sand_bridge.name",
+    "text:room2.diyu_teahouse.name",
+    "text:room2.diyu_wangchuan.hint.0",
+    "text:room2.diyu_wangchuan.hint.1",
+    "text:room2.diyu_wangchuan.hint.2",
+    "text:room2.diyu_wangchuan.hint.3",
+    "text:room2.diyu_wangchuan.name",
+    "text:room2.diyu_wangxiang.hint.0",
+    "text:room2.diyu_wangxiang.hint.1",
+    "text:room2.diyu_wangxiang.hint.2",
+    "text:room2.diyu_wangxiang.name",
+    "text:room2.dungeon2_bridge.hint.0",
+    "text:room2.dungeon2_bridge.hint.1",
+    "text:room2.dungeon2_bridge.name",
+    "text:room2.dungeon2_corridor.name",
+    "text:room2.dungeon2_ferry.hint.0",
+    "text:room2.dungeon2_ferry.hint.1",
+    "text:room2.dungeon2_ferry.hint.2",
+    "text:room2.dungeon2_ferry.name",
+    "text:room2.dungeon2_gate.name",
+    "text:room2.dungeon2_home.name",
+    "text:room2.dungeon2_pole.hint.0",
+    "text:room2.dungeon2_pole.hint.1",
+    "text:room2.dungeon2_pole.hint.2",
+    "text:room2.dungeon2_pole.name",
+    "text:room2.dungeon2_sandpour.hint.0",
+    "text:room2.dungeon2_sandpour.hint.1",
+    "text:room2.dungeon2_sandpour.hint.2",
+    "text:room2.dungeon2_sandpour.name",
+    "text:room2.dungeon2_station.name",
+    "text:room2.dungeon2_well.hint.0",
+    "text:room2.dungeon2_well.hint.1",
+    "text:room2.dungeon2_well.hint.2",
+    "text:room2.dungeon2_well.hint.3",
+    "text:room2.dungeon2_well.name",
+    "text:room2.dungeon2_yard.hint.0",
+    "text:room2.dungeon2_yard.hint.1",
+    "text:room2.dungeon2_yard.hint.2",
+    "text:room2.dungeon2_yard.hint.3",
+    "text:room2.dungeon2_yard.name",
+    "text:room2.jeju_baramgil.hint.0",
+    "text:room2.jeju_baramgil.name",
+    "text:room2.jeju_canola.name",
+    "text:room2.jeju_dodaebul.hint.0",
+    "text:room2.jeju_dodaebul.name",
+    "text:room2.jeju_doldam.hint.0",
+    "text:room2.jeju_doldam.name",
+    "text:room2.jeju_gate.name",
+    "text:room2.jeju_haenyeo_house.name",
+    "text:room2.jeju_home_cave.name",
+    "text:room2.jeju_home_orchard.name",
+    "text:room2.jeju_home_shore.name",
+    "text:room2.jeju_neolttwigi.hint.0",
+    "text:room2.jeju_neolttwigi.name",
+    "text:room2.jeju_olle.name",
+    "text:room2.jeju_pier.hint.0",
+    "text:room2.jeju_pier.name",
+    "text:room2.jeju_terrace.hint.0",
+    "text:room2.jeju_terrace.name",
     "text:rule.close",
     "text:rule.earth.name",
     "text:rule.earth.text",
@@ -4104,6 +5372,9 @@
     "text:settings.sfx",
     "text:settings.title",
     "text:settings.tutorial",
+    "text:settings.ui_style",
+    "text:settings.ui_style.note1",
+    "text:settings.ui_style.note2",
     "text:settings.unlock",
     "text:settings.unlock.available",
     "text:showcase.code",
@@ -4114,9 +5385,32 @@
     "text:theme.dungeon",
     "text:theme.forest",
     "text:theme.ruins",
-    "text:theme.sky"
+    "text:theme.sky",
+    "text:ui.title_alt",
+    "text:ui_style.s1",
+    "text:ui_style.s1.mark",
+    "text:ui_style.s2",
+    "text:ui_style.s2.mark",
+    "text:ui_style.s3",
+    "text:ui_style.s3.mark",
+    "text:ui_style.s4",
+    "text:ui_style.s4.mark"
    ],
-   "sha256": "3afd8ac4faac8bf05ebc034a6947726dfe2bbe959845e89afae7d5b82e851ee2"
+   "sha256": "75d7484adf4d5ab13735619f0cec22520d5c761e1cccc2e7e47a2a6e5c3361b0"
+  },
+  {
+   "path": "generated/art/avatar.ancestor.tres",
+   "owners": [
+    "art:avatar.ancestor"
+   ],
+   "sha256": "cf50e3540a9f612e808825f074a711f9b7e227edb03909a39dca111e97723fb0"
+  },
+  {
+   "path": "generated/art/avatar.goblin_chief.tres",
+   "owners": [
+    "art:avatar.goblin_chief"
+   ],
+   "sha256": "3238c075860177c2dbbfa61e2c52782610ade092d7cc0f907b7d1f77f24668b1"
   },
   {
    "path": "generated/art/sheets/avatar.goblin_smith.png",
@@ -4133,6 +5427,34 @@
    "sha256": "08c5c5deb6cd5e8aeae1a4a048e35cd844de7917f71ef2e02d0ad5e7f03e40f1"
   },
   {
+   "path": "generated/art/avatar.haenyeo.tres",
+   "owners": [
+    "art:avatar.haenyeo"
+   ],
+   "sha256": "fab58876f5e88ac5141e876717edfcf195b511ee2df2b26da328590952d7edb6"
+  },
+  {
+   "path": "generated/art/avatar.judge.tres",
+   "owners": [
+    "art:avatar.judge"
+   ],
+   "sha256": "825cc1a631a2acf85873efe890258754084cde524d5a2d7a8458c3c43d49a9e1"
+  },
+  {
+   "path": "generated/art/avatar.lighthouse_keeper.tres",
+   "owners": [
+    "art:avatar.lighthouse_keeper"
+   ],
+   "sha256": "505a750076371a4860541b8463fd70b0e7803e2ceb02a678ea8065eeb3174f91"
+  },
+  {
+   "path": "generated/art/avatar.meng_po.tres",
+   "owners": [
+    "art:avatar.meng_po"
+   ],
+   "sha256": "caa72e0f0014e2eea21acce648dd1527dc2f6425177837300eb574d19396a826"
+  },
+  {
    "path": "generated/art/sheets/avatar.old_miner.png",
    "owners": [
     "art:avatar.old_miner"
@@ -4145,6 +5467,27 @@
     "art:avatar.old_miner"
    ],
    "sha256": "e95282d3b0c56b99a6a54b9c9f7e66d1a4332f00c5a71962942d2e777c57da71"
+  },
+  {
+   "path": "generated/art/avatar.tangerine_farmer.tres",
+   "owners": [
+    "art:avatar.tangerine_farmer"
+   ],
+   "sha256": "9926c11fd7e079a2b79b0ae08a1677ee4f0ecca529b09e01f07c7c9c88be59e3"
+  },
+  {
+   "path": "generated/art/avatar.wuchang.tres",
+   "owners": [
+    "art:avatar.wuchang"
+   ],
+   "sha256": "35d3912926a837345cb1fa033d53417523461cbf7fbc9b753f18b361b2829655"
+  },
+  {
+   "path": "generated/art/avatar.yama.tres",
+   "owners": [
+    "art:avatar.yama"
+   ],
+   "sha256": "c8deba99d8387b1755fd62c6fbbce5ea6b6c3923aa111a21076e18501aa1c895"
   },
   {
    "path": "generated/art/sheets/avatar.zombie.png",
@@ -4161,6 +5504,13 @@
    "sha256": "36284402010e611d2dba7ae03d72b7fa10332589891ec0197a6496ff8e0ff119"
   },
   {
+   "path": "generated/art/cargo.buckwheat_jelly.tres",
+   "owners": [
+    "art:cargo.buckwheat_jelly"
+   ],
+   "sha256": "dc86f1020b0088fc7fe1bc247b8b67e6e1416b0bda78b7961ef9da402546ab38"
+  },
+  {
    "path": "generated/art/sheets/cargo.ice_cream.png",
    "owners": [
     "art:cargo.ice_cream"
@@ -4173,6 +5523,13 @@
     "art:cargo.ice_cream"
    ],
    "sha256": "a5027a153c014f1358547cb3210a091e5e9cbe3038856b1b83ebaca9901f86db"
+  },
+  {
+   "path": "generated/art/cargo.kite.tres",
+   "owners": [
+    "art:cargo.kite"
+   ],
+   "sha256": "77d27cd8890132928ca1c87dd13ccf45fe38a64593276182550eb64cf0339135"
   },
   {
    "path": "generated/art/sheets/cargo.letter.png",
@@ -4189,6 +5546,27 @@
    "sha256": "697b872a71ae13562958ffa162a30944a64b3a7c478aedb44f2b179089e8cdd0"
   },
   {
+   "path": "generated/art/cargo.paper_house.tres",
+   "owners": [
+    "art:cargo.paper_house"
+   ],
+   "sha256": "c67eca51d77baebdb3506ea9ec48b9fdb668b1957a82c0c3a758020bbcc2e5e6"
+  },
+  {
+   "path": "generated/art/cargo.qingtuan.tres",
+   "owners": [
+    "art:cargo.qingtuan"
+   ],
+   "sha256": "639db82d531e9341ad9747e2bac134b8b51ec2fd6a8d0a24467ad4c5cb8968ea"
+  },
+  {
+   "path": "generated/art/cargo.tangerine.tres",
+   "owners": [
+    "art:cargo.tangerine"
+   ],
+   "sha256": "602d68f90eeec153c32853c97f57957f71885e1be077f41d93d2155d73e67d7d"
+  },
+  {
    "path": "generated/art/sheets/cargo.vase.png",
    "owners": [
     "art:cargo.vase"
@@ -4201,6 +5579,20 @@
     "art:cargo.vase"
    ],
    "sha256": "c3f3518886573d0ed805d404ea1c3d7e6ce56e79056eb01e869a7f3152e32907"
+  },
+  {
+   "path": "generated/art/char.ancestor.tres",
+   "owners": [
+    "art:char.ancestor"
+   ],
+   "sha256": "b42d729e8acdb760a1c49163eacba9b4d986debacc0740fa4ddf47527c4d2b1d"
+  },
+  {
+   "path": "generated/art/char.goblin_chief.tres",
+   "owners": [
+    "art:char.goblin_chief"
+   ],
+   "sha256": "4072d7022b1fb9e5f1b96edfb7b5f1552e17000c351fdd21c8142c5eb0bde44c"
   },
   {
    "path": "generated/art/sheets/char.goblin_smith.png",
@@ -4217,6 +5609,27 @@
    "sha256": "c1f862e9d665d1d28f1d51e9737f62618ab33503fc51ef2dc9e74fd777a0aecd"
   },
   {
+   "path": "generated/art/char.haenyeo.tres",
+   "owners": [
+    "art:char.haenyeo"
+   ],
+   "sha256": "396fba0a05288e2e85027e587369b5b0cfe7a7d4be497bb301cac0396c408958"
+  },
+  {
+   "path": "generated/art/char.judge.tres",
+   "owners": [
+    "art:char.judge"
+   ],
+   "sha256": "0c1e45681a2cc5a9c07941f48788052156cbdfb7a6805068ceb4465ccd9e8296"
+  },
+  {
+   "path": "generated/art/char.lighthouse_keeper.tres",
+   "owners": [
+    "art:char.lighthouse_keeper"
+   ],
+   "sha256": "d0fc5d74e88db03f0d3c303f5c3c6343eeda9f10d360cd35cfd0a05ccd8c52e6"
+  },
+  {
    "path": "generated/art/sheets/char.lucky_cat.png",
    "owners": [
     "art:char.lucky_cat"
@@ -4229,6 +5642,13 @@
     "art:char.lucky_cat"
    ],
    "sha256": "dd0e6a4c511f0b095065b8c4a6878f576177693ccc8c491b144d389accf43c86"
+  },
+  {
+   "path": "generated/art/char.meng_po.tres",
+   "owners": [
+    "art:char.meng_po"
+   ],
+   "sha256": "82af21912eaaa210230e1971dfe51e4071c579fba5211d14b5fdffa80dc889d0"
   },
   {
    "path": "generated/art/sheets/char.miner.png",
@@ -4266,6 +5686,13 @@
    "sha256": "f0329896a7bf049e3c454ed01eedeed32b1a75d89ad50447eec35ff14d1f6189"
   },
   {
+   "path": "generated/art/char.tangerine_farmer.tres",
+   "owners": [
+    "art:char.tangerine_farmer"
+   ],
+   "sha256": "321c980996d573ebed55feee88c117ddd1a7654b4196e5292384a6a4206877b2"
+  },
+  {
    "path": "generated/art/sheets/char.turtle_keeper.png",
    "owners": [
     "art:char.turtle_keeper"
@@ -4278,6 +5705,20 @@
     "art:char.turtle_keeper"
    ],
    "sha256": "3b58f80b992776f2059917e5bfb8664243e42787622fec934c954143413d42e6"
+  },
+  {
+   "path": "generated/art/char.wuchang.tres",
+   "owners": [
+    "art:char.wuchang"
+   ],
+   "sha256": "7b0dfad3ad54d4367eb7e6699e04f170b8dae96b5f115bd4fe688c78fd4cf3a2"
+  },
+  {
+   "path": "generated/art/char.yama.tres",
+   "owners": [
+    "art:char.yama"
+   ],
+   "sha256": "2253cfe5bb21cf7228f42c1d2820d83c26f2146b601ef93e85abcc6dfd994577"
   },
   {
    "path": "generated/art/sheets/char.zombie.png",
@@ -4336,6 +5777,20 @@
    "sha256": "458a0d893f5b0ae48382a6194a7dffa9e7ef6fef73ff4216d4050cf9ca7d60d9"
   },
   {
+   "path": "generated/art/deco.diyu_lantern.tres",
+   "owners": [
+    "art:deco.diyu_lantern"
+   ],
+   "sha256": "4e5b3163a2c274313ff240637a2d7a508248907fd45fb9fff549ea5c2640582e"
+  },
+  {
+   "path": "generated/art/deco.diyu_lily.tres",
+   "owners": [
+    "art:deco.diyu_lily"
+   ],
+   "sha256": "000473e63f73b05f659022ea69bed55d624827df8a98e2ae7deb5779bbe2a1e6"
+  },
+  {
    "path": "generated/art/sheets/deco.dungeon_moss.png",
    "owners": [
     "art:deco.dungeon_moss"
@@ -4390,6 +5845,27 @@
     "art:deco.forest_grass"
    ],
    "sha256": "d4e8fb93fb074e27065b70ef5f39b9fb4d0d053020ab39e86c08afdf827d1585"
+  },
+  {
+   "path": "generated/art/deco.jeju_canola.tres",
+   "owners": [
+    "art:deco.jeju_canola"
+   ],
+   "sha256": "49a3c5d6824214f15448778eb3f380dce0354d79ddd840375fc6096243c98933"
+  },
+  {
+   "path": "generated/art/deco.jeju_harubang.tres",
+   "owners": [
+    "art:deco.jeju_harubang"
+   ],
+   "sha256": "03b5f890aaaf21dfcd2fa4f6f5f651ab84fb04066981c19402b8b4518f54fcf9"
+  },
+  {
+   "path": "generated/art/deco.jeju_tangerine_tree.tres",
+   "owners": [
+    "art:deco.jeju_tangerine_tree"
+   ],
+   "sha256": "6902936a029ec8d74394e6d593e5a8630dfa54524a9070b15c9f891483ea426a"
   },
   {
    "path": "generated/art/sheets/deco.ruins_lotus.png",
@@ -4462,6 +5938,20 @@
    "sha256": "093d41e0c45da1f250a67559deebddd56dfb00b96819dc26f60afcb66d4a9359"
   },
   {
+   "path": "generated/art/fauna.diyu_butterfly.tres",
+   "owners": [
+    "art:fauna.diyu_butterfly"
+   ],
+   "sha256": "8873efe5c94df820ef4ab8b099e4689a6d7b79faceefd3d1f59d337f24adf283"
+  },
+  {
+   "path": "generated/art/fauna.diyu_dog.tres",
+   "owners": [
+    "art:fauna.diyu_dog"
+   ],
+   "sha256": "4a1523bf8cd7c8305c9aab9b9666255f0465a373563e1b7740520853457165bb"
+  },
+  {
    "path": "generated/art/sheets/fauna.dungeon_bat.png",
    "owners": [
     "art:fauna.dungeon_bat"
@@ -4474,6 +5964,13 @@
     "art:fauna.dungeon_bat"
    ],
    "sha256": "02610f4521d4294058c59b1014528ec3cdbdb0d68336c95e2311c1513e87fc2e"
+  },
+  {
+   "path": "generated/art/fauna.dungeon_cat.tres",
+   "owners": [
+    "art:fauna.dungeon_cat"
+   ],
+   "sha256": "eab42ba915d9a141d6feb5652d1146939883418c55c7ed0c82d8ce666c1336db"
   },
   {
    "path": "generated/art/sheets/fauna.dungeon_rat.png",
@@ -4516,6 +6013,20 @@
     "art:fauna.forest_butterfly"
    ],
    "sha256": "8d6d830137b8404663706904435053d7348d6218fff1a1133b60eef77ec16c61"
+  },
+  {
+   "path": "generated/art/fauna.jeju_dragonfly.tres",
+   "owners": [
+    "art:fauna.jeju_dragonfly"
+   ],
+   "sha256": "e262b07fe16f3f5a363d7caef5348fe73fced6e9214681e035a9107a9f5a2f68"
+  },
+  {
+   "path": "generated/art/fauna.jeju_pony.tres",
+   "owners": [
+    "art:fauna.jeju_pony"
+   ],
+   "sha256": "f3aa1f430aceaedd3edf5b1abbf592c93f2814f3a6b27af2ba450dc965b9d1f6"
   },
   {
    "path": "generated/art/sheets/fauna.ruins_scarab.png",
@@ -4642,6 +6153,13 @@
     "art:fx.goal_spark"
    ],
    "sha256": "a4c7c8e6ab5d179da18520f8143c31b565e1310cef48e4d1beafd3e8b481b2ff"
+  },
+  {
+   "path": "generated/art/fx.jeju_gust.tres",
+   "owners": [
+    "art:fx.jeju_gust"
+   ],
+   "sha256": "cc6c65c3eb13e4dc7b383bf16247eed60ece850486cdf0581e7c978fa6985749"
   },
   {
    "path": "generated/art/sheets/fx.land_dust.png",
@@ -4784,6 +6302,20 @@
    "sha256": "d29384fc50241fcb88bdbbb2074037e2fe6be8e4c9a558bcb9f4d8f47b68cc5b"
   },
   {
+   "path": "generated/art/item.snack.tres",
+   "owners": [
+    "art:item.snack"
+   ],
+   "sha256": "ee909da25edd1e303351e84cdf28a580667249fd5248ef246527ae7804c5cc8a"
+  },
+  {
+   "path": "generated/art/item.snack_jeju.tres",
+   "owners": [
+    "art:item.snack_jeju"
+   ],
+   "sha256": "e528e33a75a86ae9630525db82f4bc6ed9b8d72993d09f9edd26bbfcb632cbe8"
+  },
+  {
    "path": "generated/materials/material.chapter2_5.tres",
    "owners": [
     "art:material.chapter2_5"
@@ -4917,6 +6449,13 @@
    "sha256": "e8a38944dac96f4c82a8cfc528cf994672ff02377bdc902b1788acf08f5d3159"
   },
   {
+   "path": "generated/art/mech.jeju_seesaw.tres",
+   "owners": [
+    "art:mech.jeju_seesaw"
+   ],
+   "sha256": "e20500b4c411633697339e8a9ef69a2201aaea8aa15c46e507af6e3e059580cb"
+  },
+  {
    "path": "generated/art/sheets/mech.ladder.png",
    "owners": [
     "art:mech.ladder"
@@ -4929,6 +6468,13 @@
     "art:mech.ladder"
    ],
    "sha256": "869fecec7da6472b064e044788bea5c52170e165a66a10b21d0e276163b48b06"
+  },
+  {
+   "path": "generated/art/mech.lantern_float.tres",
+   "owners": [
+    "art:mech.lantern_float"
+   ],
+   "sha256": "f7d7d3d5a5ac5d8e15bae19548e5a3aa6707fe2344fe409451f286f631e68ca3"
   },
   {
    "path": "generated/art/sheets/mech.lever.png",
@@ -5015,6 +6561,13 @@
    "sha256": "833a521cb0ad23594d86c79cd589231def8e50e2ed390016f30e3857b7f22d00"
   },
   {
+   "path": "generated/art/mech.rune_float.tres",
+   "owners": [
+    "art:mech.rune_float"
+   ],
+   "sha256": "3b53a912e13506a669f7fb786d55c3d00a3591076c4b001acb67dece5ff031d9"
+  },
+  {
    "path": "generated/art/sheets/mech.socket.png",
    "owners": [
     "art:mech.socket"
@@ -5071,6 +6624,27 @@
    "sha256": "b6aef14ad0091fd2fa1bc6206b94ccc50a980306ca6aa47a90891ea980c929a7"
   },
   {
+   "path": "generated/art/monster.dokkaebi.tres",
+   "owners": [
+    "art:monster.dokkaebi"
+   ],
+   "sha256": "6c22394e5b5e4f600f7dffcf00ea39171c8c68916605f8d471c9c4249836ec5a"
+  },
+  {
+   "path": "generated/art/monster.imp.tres",
+   "owners": [
+    "art:monster.imp"
+   ],
+   "sha256": "706aec0dbaaf761f2b68a75948a069a9b01f1c1990cba9124c526c0d9abe0c26"
+  },
+  {
+   "path": "generated/art/monster.jiangshi.tres",
+   "owners": [
+    "art:monster.jiangshi"
+   ],
+   "sha256": "a98abc47b32f4fc45989cd2f4f91c27a393a4e7d5752c0ea75510baf926e7210"
+  },
+  {
    "path": "generated/art/sheets/monster.rat_swarm.png",
    "owners": [
     "art:monster.rat_swarm"
@@ -5085,6 +6659,13 @@
    "sha256": "9418c2944fb24c3003e76f319c962fbd32c7feb4678e4031027c76e5a2c339d5"
   },
   {
+   "path": "generated/art/monster.seagull.tres",
+   "owners": [
+    "art:monster.seagull"
+   ],
+   "sha256": "3682bc137e8973e3520f4f4a742c81d1f9fb578d09893ba982b81c28a89c4885"
+  },
+  {
    "path": "generated/art/sheets/monster.skeleton_guard.png",
    "owners": [
     "art:monster.skeleton_guard"
@@ -5097,6 +6678,13 @@
     "art:monster.skeleton_guard"
    ],
    "sha256": "def126c0ad95f46c182a2cc6cc22c8b517deac213cfe5a4f152bc2a59f796809"
+  },
+  {
+   "path": "generated/art/monster.wandering_soul.tres",
+   "owners": [
+    "art:monster.wandering_soul"
+   ],
+   "sha256": "d462f5401b01be19ebeffae68155d60e2a21d61a1f24d8b6e79db111cf8e0976"
   },
   {
    "path": "generated/art/sheets/obj.crate_iron.png",
@@ -5155,6 +6743,13 @@
    "sha256": "51d742b29ed1b3babf258e7cec3d63c34febea6f3a1b4f91f3d3af19db5a3886"
   },
   {
+   "path": "generated/themes/theme.diyu.tres",
+   "owners": [
+    "art:theme.diyu"
+   ],
+   "sha256": "6cb396cd8d259f82327e9b17e336cb39c4e7c7c251a56331e4d95d66fcee560d"
+  },
+  {
    "path": "generated/themes/theme.dungeon.tres",
    "owners": [
     "art:theme.dungeon"
@@ -5167,6 +6762,13 @@
     "art:theme.forest"
    ],
    "sha256": "d6593171c8b338890d0d894ba6c812f06deb589e792d84f015790719ba639d0a"
+  },
+  {
+   "path": "generated/themes/theme.jeju.tres",
+   "owners": [
+    "art:theme.jeju"
+   ],
+   "sha256": "84c2c896b36816553162aa9edbe4aad7957c1a5164431a8113c171548415e405"
   },
   {
    "path": "generated/themes/theme.ruins.tres",
@@ -5355,105 +6957,133 @@
    "owners": [
     "art:ui.screen.chapters"
    ],
-   "sha256": "6fe0cc6be51a88a9bd102efc028cfc59266bd4c6de64abbb00859029ebcf0d18"
+   "sha256": "7632b21cdfd9dc38956e8ccde071f5b6ee756ad3f4f143c55c29ac440dba6112"
   },
   {
    "path": "generated/art/metadata/ui.screen.complete.tres",
    "owners": [
     "art:ui.screen.complete"
    ],
-   "sha256": "b363e4a9c3c2f11371dcbee854b870e689c8e01b012e39f00d7fe92df39545b0"
+   "sha256": "927291d2af407138bb4a41c773ef6050f1034f81fbd47ce49d0c4042d76849a1"
+  },
+  {
+   "path": "generated/art/metadata/ui.screen.confirm.tres",
+   "owners": [
+    "art:ui.screen.confirm"
+   ],
+   "sha256": "097021a709a6940e08b5f3e96f862b9eda7add49b725b9791ed5874efaa63446"
   },
   {
    "path": "generated/art/metadata/ui.screen.delivery_hud.tres",
    "owners": [
     "art:ui.screen.delivery_hud"
    ],
-   "sha256": "794952cfc2d74a53e25a3f227cacc49dec1661f3216d449dfa10c41f9654742d"
+   "sha256": "48ed34216787a0bcadd9070613ac96309bf5c4e9bb9f7e028ffbc4d83fc28002"
   },
   {
    "path": "generated/art/metadata/ui.screen.delivery_pause.tres",
    "owners": [
     "art:ui.screen.delivery_pause"
    ],
-   "sha256": "95af24761ed9ef82e2973ca1d1c4ae801f45c7ca4ee4879e1fe51ae6c0654e1c"
+   "sha256": "052efeec3d5e033a828c48526571ffac83e39a9688eda69b9638d06b14f35157"
   },
   {
    "path": "generated/art/metadata/ui.screen.dialogue.tres",
    "owners": [
     "art:ui.screen.dialogue"
    ],
-   "sha256": "36e6d8f816ed753ca95dc170ef46d5a61bf3109c7bf8f143d0af292d6247efe0"
+   "sha256": "53123ba912a8e5d625b75633df2b2f509fcf9235e9e3f50048ca311a655d8cd0"
   },
   {
    "path": "generated/art/metadata/ui.screen.hint.tres",
    "owners": [
     "art:ui.screen.hint"
    ],
-   "sha256": "1355a843840adc534c704a272a2fb4f86b1be24d5cb87680033bbc485057ee68"
+   "sha256": "b3ef078c525f2ad594fb104ed55f5933496e0a04085d7f85b86dee7d1c774baf"
+  },
+  {
+   "path": "generated/art/metadata/ui.screen.hint_animal.tres",
+   "owners": [
+    "art:ui.screen.hint_animal"
+   ],
+   "sha256": "ff0086871a3a96484c8d79f938169791f991d76ba5cfb17bfe3e869bc57b040e"
   },
   {
    "path": "generated/art/metadata/ui.screen.levels.tres",
    "owners": [
     "art:ui.screen.levels"
    ],
-   "sha256": "60c7e26544af4cd4429b1a0b66493aa3948ad11b5e7cf511d92d9217fb7f71a5"
+   "sha256": "613707bfeca3181189a0fb7a4680242cf55169f3c6b8da71f5a4998943592742"
   },
   {
    "path": "generated/art/metadata/ui.screen.lobby.tres",
    "owners": [
     "art:ui.screen.lobby"
    ],
-   "sha256": "4e1e3ddb939997dc5bb05de68bcb43554b06e3723cf489b9d40ba6f75387c0e0"
+   "sha256": "6c745794a475b23ed711b18767dd222afc146800743612a4ae5e80f27d6b4af8"
+  },
+  {
+   "path": "generated/art/metadata/ui.screen.lobby_generic.tres",
+   "owners": [
+    "art:ui.screen.lobby_generic"
+   ],
+   "sha256": "152a392379a99284447af51d8ae8e87aabe46027701725ab48a581f9b3d3f8ea"
+  },
+  {
+   "path": "generated/art/metadata/ui.screen.observe.tres",
+   "owners": [
+    "art:ui.screen.observe"
+   ],
+   "sha256": "59a3128d7d2f5108b3e1092bd6fb24e833c924a5de87d2c13cdb8a14ad03f0ec"
   },
   {
    "path": "generated/art/metadata/ui.screen.pause.tres",
    "owners": [
     "art:ui.screen.pause"
    ],
-   "sha256": "7e814777b2d546e75ac8c0d88965a24b5268fe8c0642bf4014845ade5e868456"
+   "sha256": "956eb6d36bfb3d1c374f075fe09206455068e5457286714c87e17c072e47ccda"
   },
   {
    "path": "generated/art/metadata/ui.screen.reels.tres",
    "owners": [
     "art:ui.screen.reels"
    ],
-   "sha256": "705520e143062eac9ee31476801eb44ab9c789e296e7890b6eda469caf14caa1"
+   "sha256": "cc6a043de9e19eda26d6af0f4763684673c560e98e872024718afb07f0516377"
   },
   {
    "path": "generated/art/metadata/ui.screen.rulecard.tres",
    "owners": [
     "art:ui.screen.rulecard"
    ],
-   "sha256": "bfa6d57b3a6ec677122f06cae9cdb052e4086672dab171fd48e5e701212a6f4d"
+   "sha256": "7a30703e43c90fe26650600961943e1e2981d3ef72fda94ba41f35e0d7a82be6"
   },
   {
    "path": "generated/art/metadata/ui.screen.settings.tres",
    "owners": [
     "art:ui.screen.settings"
    ],
-   "sha256": "879b5971f78e062a410fe8e88753ae5c1f2e228e497a4f5f11fa5b7aeaf0bb74"
+   "sha256": "2119d4836fac60d8a90ffe32f3fbe14b8c27fca683abdde514e9d62a720d30f2"
   },
   {
    "path": "generated/art/metadata/ui.screen.settlement.tres",
    "owners": [
     "art:ui.screen.settlement"
    ],
-   "sha256": "cad4d1af9643f2ebac75b717b1cbd91dca2adf057649d605c379c89dfdba463e"
+   "sha256": "f9097b3b9637beb553cfc4f5ac936b25aa5bda2c56768e2143426b7e8a8dd13f"
   },
   {
    "path": "generated/art/metadata/ui.screen.settlement_fail.tres",
    "owners": [
     "art:ui.screen.settlement_fail"
    ],
-   "sha256": "152b57efaa5292af923b475c60f3a08f85b1607ce4d1ee4cdef3adc970b520d0"
+   "sha256": "c98fba1abc17638fcddee27a29d75e4bddae8b9f333ebe919cd4f2b132e36f09"
   },
   {
    "path": "generated/art/metadata/ui.screen.shop.tres",
    "owners": [
     "art:ui.screen.shop"
    ],
-   "sha256": "ef25bb2d9cf648afd9f216160baa7fa05c316c4b9ba4824a34980d5daef3200e"
+   "sha256": "a3811bb6cde47c95de3109dc87a93bc4ed7045e46e33b10abedcbc819d47f937"
   },
   {
    "path": "generated/art/sheets/ui.target.png",
@@ -5486,35 +7116,68 @@
   {
    "path": "generated/art-index.json",
    "owners": [
+    "art:avatar.ancestor",
+    "art:avatar.goblin_chief",
     "art:avatar.goblin_smith",
+    "art:avatar.haenyeo",
+    "art:avatar.judge",
+    "art:avatar.lighthouse_keeper",
+    "art:avatar.meng_po",
     "art:avatar.old_miner",
+    "art:avatar.tangerine_farmer",
+    "art:avatar.wuchang",
+    "art:avatar.yama",
     "art:avatar.zombie",
+    "art:cargo.buckwheat_jelly",
     "art:cargo.ice_cream",
+    "art:cargo.kite",
     "art:cargo.letter",
+    "art:cargo.paper_house",
+    "art:cargo.qingtuan",
+    "art:cargo.tangerine",
     "art:cargo.vase",
+    "art:char.ancestor",
+    "art:char.goblin_chief",
     "art:char.goblin_smith",
+    "art:char.haenyeo",
+    "art:char.judge",
+    "art:char.lighthouse_keeper",
     "art:char.lucky_cat",
+    "art:char.meng_po",
     "art:char.miner",
     "art:char.portitor",
     "art:char.portitor_alt",
+    "art:char.tangerine_farmer",
     "art:char.turtle_keeper",
+    "art:char.wuchang",
+    "art:char.yama",
     "art:char.zombie",
     "art:deco.cave_crystal",
     "art:deco.cave_mushroom",
     "art:deco.cosmos_sprout",
+    "art:deco.diyu_lantern",
+    "art:deco.diyu_lily",
     "art:deco.dungeon_moss",
     "art:deco.dungeon_torch",
     "art:deco.forest_flower",
     "art:deco.forest_grass",
+    "art:deco.jeju_canola",
+    "art:deco.jeju_harubang",
+    "art:deco.jeju_tangerine_tree",
     "art:deco.ruins_lotus",
     "art:deco.ruins_vine",
     "art:deco.sky_flower",
     "art:fauna.cave_moth",
     "art:fauna.cosmos_drone",
+    "art:fauna.diyu_butterfly",
+    "art:fauna.diyu_dog",
     "art:fauna.dungeon_bat",
+    "art:fauna.dungeon_cat",
     "art:fauna.dungeon_rat",
     "art:fauna.forest_bird",
     "art:fauna.forest_butterfly",
+    "art:fauna.jeju_dragonfly",
+    "art:fauna.jeju_pony",
     "art:fauna.ruins_scarab",
     "art:fauna.sky_cloudling",
     "art:fauna.sky_dove",
@@ -5524,6 +7187,7 @@
     "art:fx.fizz",
     "art:fx.frost",
     "art:fx.goal_spark",
+    "art:fx.jeju_gust",
     "art:fx.land_dust",
     "art:fx.monster_poof",
     "art:fx.ripple",
@@ -5534,6 +7198,8 @@
     "art:item.first_aid",
     "art:item.rope_ladder",
     "art:item.sandbag",
+    "art:item.snack",
+    "art:item.snack_jeju",
     "art:material.chapter2_5",
     "art:mech.bin",
     "art:mech.bin_gauge",
@@ -5544,26 +7210,36 @@
     "art:mech.ferry_gate",
     "art:mech.frost_vent",
     "art:mech.heat_vent",
+    "art:mech.jeju_seesaw",
     "art:mech.ladder",
+    "art:mech.lantern_float",
     "art:mech.lever",
     "art:mech.lift",
     "art:mech.link_symbol",
     "art:mech.plate",
     "art:mech.portal",
     "art:mech.rope_ladder",
+    "art:mech.rune_float",
     "art:mech.socket",
     "art:mech.socket_lit",
     "art:mech.torch",
     "art:mech.vine",
+    "art:monster.dokkaebi",
+    "art:monster.imp",
+    "art:monster.jiangshi",
     "art:monster.rat_swarm",
+    "art:monster.seagull",
     "art:monster.skeleton_guard",
+    "art:monster.wandering_soul",
     "art:obj.crate_iron",
     "art:obj.crate_wood",
     "art:obj.goblin_forge",
     "art:theme.cave",
     "art:theme.cosmos",
+    "art:theme.diyu",
     "art:theme.dungeon",
     "art:theme.forest",
+    "art:theme.jeju",
     "art:theme.ruins",
     "art:theme.sky",
     "art:ui.bubble",
@@ -5580,12 +7256,16 @@
     "art:ui.rule_icon",
     "art:ui.screen.chapters",
     "art:ui.screen.complete",
+    "art:ui.screen.confirm",
     "art:ui.screen.delivery_hud",
     "art:ui.screen.delivery_pause",
     "art:ui.screen.dialogue",
     "art:ui.screen.hint",
+    "art:ui.screen.hint_animal",
     "art:ui.screen.levels",
     "art:ui.screen.lobby",
+    "art:ui.screen.lobby_generic",
+    "art:ui.screen.observe",
     "art:ui.screen.pause",
     "art:ui.screen.reels",
     "art:ui.screen.rulecard",
@@ -5596,7 +7276,7 @@
     "art:ui.target",
     "art:ui.theme_emblem"
    ],
-   "sha256": "f90c089998324f6c8c897bab4084ba2dfb70a3094bb2e06d85c382de00749796"
+   "sha256": "f3c3e564a6193267a83edd4f49787dd9521a968aff8cbff737772d2a3231b92a"
   },
   {
    "path": "generated/content/routes/M01.json",
@@ -5643,35 +7323,68 @@
   {
    "path": "generated/import-inventory.json",
    "owners": [
+    "art:avatar.ancestor",
+    "art:avatar.goblin_chief",
     "art:avatar.goblin_smith",
+    "art:avatar.haenyeo",
+    "art:avatar.judge",
+    "art:avatar.lighthouse_keeper",
+    "art:avatar.meng_po",
     "art:avatar.old_miner",
+    "art:avatar.tangerine_farmer",
+    "art:avatar.wuchang",
+    "art:avatar.yama",
     "art:avatar.zombie",
+    "art:cargo.buckwheat_jelly",
     "art:cargo.ice_cream",
+    "art:cargo.kite",
     "art:cargo.letter",
+    "art:cargo.paper_house",
+    "art:cargo.qingtuan",
+    "art:cargo.tangerine",
     "art:cargo.vase",
+    "art:char.ancestor",
+    "art:char.goblin_chief",
     "art:char.goblin_smith",
+    "art:char.haenyeo",
+    "art:char.judge",
+    "art:char.lighthouse_keeper",
     "art:char.lucky_cat",
+    "art:char.meng_po",
     "art:char.miner",
     "art:char.portitor",
     "art:char.portitor_alt",
+    "art:char.tangerine_farmer",
     "art:char.turtle_keeper",
+    "art:char.wuchang",
+    "art:char.yama",
     "art:char.zombie",
     "art:deco.cave_crystal",
     "art:deco.cave_mushroom",
     "art:deco.cosmos_sprout",
+    "art:deco.diyu_lantern",
+    "art:deco.diyu_lily",
     "art:deco.dungeon_moss",
     "art:deco.dungeon_torch",
     "art:deco.forest_flower",
     "art:deco.forest_grass",
+    "art:deco.jeju_canola",
+    "art:deco.jeju_harubang",
+    "art:deco.jeju_tangerine_tree",
     "art:deco.ruins_lotus",
     "art:deco.ruins_vine",
     "art:deco.sky_flower",
     "art:fauna.cave_moth",
     "art:fauna.cosmos_drone",
+    "art:fauna.diyu_butterfly",
+    "art:fauna.diyu_dog",
     "art:fauna.dungeon_bat",
+    "art:fauna.dungeon_cat",
     "art:fauna.dungeon_rat",
     "art:fauna.forest_bird",
     "art:fauna.forest_butterfly",
+    "art:fauna.jeju_dragonfly",
+    "art:fauna.jeju_pony",
     "art:fauna.ruins_scarab",
     "art:fauna.sky_cloudling",
     "art:fauna.sky_dove",
@@ -5681,6 +7394,7 @@
     "art:fx.fizz",
     "art:fx.frost",
     "art:fx.goal_spark",
+    "art:fx.jeju_gust",
     "art:fx.land_dust",
     "art:fx.monster_poof",
     "art:fx.ripple",
@@ -5691,6 +7405,8 @@
     "art:item.first_aid",
     "art:item.rope_ladder",
     "art:item.sandbag",
+    "art:item.snack",
+    "art:item.snack_jeju",
     "art:material.chapter2_5",
     "art:mech.bin",
     "art:mech.bin_gauge",
@@ -5701,26 +7417,36 @@
     "art:mech.ferry_gate",
     "art:mech.frost_vent",
     "art:mech.heat_vent",
+    "art:mech.jeju_seesaw",
     "art:mech.ladder",
+    "art:mech.lantern_float",
     "art:mech.lever",
     "art:mech.lift",
     "art:mech.link_symbol",
     "art:mech.plate",
     "art:mech.portal",
     "art:mech.rope_ladder",
+    "art:mech.rune_float",
     "art:mech.socket",
     "art:mech.socket_lit",
     "art:mech.torch",
     "art:mech.vine",
+    "art:monster.dokkaebi",
+    "art:monster.imp",
+    "art:monster.jiangshi",
     "art:monster.rat_swarm",
+    "art:monster.seagull",
     "art:monster.skeleton_guard",
+    "art:monster.wandering_soul",
     "art:obj.crate_iron",
     "art:obj.crate_wood",
     "art:obj.goblin_forge",
     "art:theme.cave",
     "art:theme.cosmos",
+    "art:theme.diyu",
     "art:theme.dungeon",
     "art:theme.forest",
+    "art:theme.jeju",
     "art:theme.ruins",
     "art:theme.sky",
     "art:ui.bubble",
@@ -5737,12 +7463,16 @@
     "art:ui.rule_icon",
     "art:ui.screen.chapters",
     "art:ui.screen.complete",
+    "art:ui.screen.confirm",
     "art:ui.screen.delivery_hud",
     "art:ui.screen.delivery_pause",
     "art:ui.screen.dialogue",
     "art:ui.screen.hint",
+    "art:ui.screen.hint_animal",
     "art:ui.screen.levels",
     "art:ui.screen.lobby",
+    "art:ui.screen.lobby_generic",
+    "art:ui.screen.observe",
     "art:ui.screen.pause",
     "art:ui.screen.reels",
     "art:ui.screen.rulecard",
@@ -5808,6 +7538,42 @@
     "room:dungeon_shaft",
     "room:dungeon_station",
     "room:dungeon_well",
+    "room:diyu_fengdu",
+    "room:diyu_gate",
+    "room:diyu_ghostfire",
+    "room:diyu_home_hall",
+    "room:diyu_home_yard",
+    "room:diyu_huangquan",
+    "room:diyu_lantern",
+    "room:diyu_naihe",
+    "room:diyu_paper_bridge",
+    "room:diyu_sand_bridge",
+    "room:diyu_teahouse",
+    "room:diyu_wangchuan",
+    "room:diyu_wangxiang",
+    "room:dungeon2_bridge",
+    "room:dungeon2_corridor",
+    "room:dungeon2_ferry",
+    "room:dungeon2_gate",
+    "room:dungeon2_home",
+    "room:dungeon2_pole",
+    "room:dungeon2_sandpour",
+    "room:dungeon2_station",
+    "room:dungeon2_well",
+    "room:dungeon2_yard",
+    "room:jeju_baramgil",
+    "room:jeju_canola",
+    "room:jeju_dodaebul",
+    "room:jeju_doldam",
+    "room:jeju_gate",
+    "room:jeju_haenyeo_house",
+    "room:jeju_home_cave",
+    "room:jeju_home_orchard",
+    "room:jeju_home_shore",
+    "room:jeju_neolttwigi",
+    "room:jeju_olle",
+    "room:jeju_pier",
+    "room:jeju_terrace",
     "mode:lab",
     "mode:delivery",
     "mode:hell",
@@ -5892,6 +7658,9 @@
     "mechanic:petal_trail",
     "mechanic:pack_animal",
     "mechanic:mine_cart",
+    "mechanic:float_block",
+    "mechanic:pole",
+    "mechanic:hint_animal",
     "world:dungeon",
     "world:ruins",
     "world:cave",
@@ -5988,6 +7757,8 @@
     "recipient:onsen_host",
     "recipient:haenyeo",
     "recipient:goblin_chief",
+    "recipient:tangerine_farmer",
+    "recipient:lighthouse_keeper",
     "recipient:spice_merchant",
     "recipient:diwali_sisters",
     "recipient:boat_vendor",
@@ -6055,6 +7826,8 @@
     "cargo:fried_tofu",
     "cargo:cucumber",
     "cargo:buckwheat_jelly",
+    "cargo:tangerine",
+    "cargo:kite",
     "cargo:spice_box",
     "cargo:durian",
     "cargo:story_box",
@@ -6197,6 +7970,7 @@
     "item:first_aid",
     "item:pocket_watch",
     "item:whistle",
+    "item:snack",
     "buff:cart",
     "buff:energy_drink",
     "buff:cooler",
@@ -6248,6 +8022,59 @@
     "event:temple_fair",
     "event:cattle_crossing",
     "slice:dungeon_1",
+    "slice:dungeon_2",
+    "slice:diyu_1",
+    "slice:jeju_1",
+    "slice:delivery_pool",
+    "sfx:push",
+    "sfx:crate_land",
+    "sfx:climb",
+    "sfx:dig",
+    "sfx:pour",
+    "sfx:plate_down",
+    "sfx:plate_up",
+    "sfx:door_open",
+    "sfx:door_close",
+    "sfx:goal_on",
+    "sfx:level_clear",
+    "sfx:undo",
+    "sfx:restart",
+    "sfx:hint_show",
+    "sfx:rule_card",
+    "sfx:coin",
+    "sfx:hurt",
+    "sfx:cargo_damage",
+    "sfx:reel_spin",
+    "sfx:reel_stop",
+    "sfx:reroll",
+    "sfx:shop_buy",
+    "sfx:feed_snack",
+    "sfx:animal_hint",
+    "sfx:delivery_arrive",
+    "sfx:ui_move",
+    "sfx:ui_confirm",
+    "sfx:ui_back",
+    "sfx:menu_open",
+    "sfx:menu_close",
+    "sfx:blocked",
+    "sfx:volume_preview",
+    "music:dungeon_a",
+    "music:dungeon_b",
+    "music:dungeon_c",
+    "music:diyu_a",
+    "music:diyu_b",
+    "music:diyu_c",
+    "music:jeju_a",
+    "music:jeju_b",
+    "music:jeju_c",
+    "music:theme_a",
+    "music:theme_b",
+    "music:theme_c",
+    "music:theme_d",
+    "music:dungeon",
+    "music:diyu",
+    "music:jeju",
+    "music:theme",
     "text:game.title",
     "text:game.tagline",
     "text:menu.continue",
@@ -6408,6 +8235,17 @@
     "text:dlg.sample.npc",
     "text:dlg.sample.self",
     "text:dlg.sample.note",
+    "text:audio.dom",
+    "text:g.lobby.level",
+    "text:g.lobby.delivery",
+    "text:g.reels.map",
+    "text:g.reels.tip",
+    "text:g.keys.move",
+    "text:g.keys.undo",
+    "text:g.keys.pause",
+    "text:g.say",
+    "text:g.think",
+    "text:g.hello",
     "text:dlv.reels.title",
     "text:dlv.reels.cargo",
     "text:dlv.reels.recipient",
@@ -6463,6 +8301,34 @@
     "text:dlv.pause.give_up",
     "text:npc.turtle_keeper.name",
     "text:dlv.done.base",
+    "text:d2.map",
+    "text:d2.reroll",
+    "text:d2.go",
+    "text:d2.select",
+    "text:d2.buy",
+    "text:d2.leave",
+    "text:d2.back",
+    "text:d2.observe",
+    "text:d2.player",
+    "text:d2.exit",
+    "text:d2.monster",
+    "text:d2.animal",
+    "text:d2.snack.dungeon",
+    "text:d2.snack.diyu",
+    "text:d2.snack.jeju",
+    "text:d2.snack.desc",
+    "text:d2.snack.stock",
+    "text:d2.feed",
+    "text:d2.hint",
+    "text:d2.hint.near",
+    "text:d2.tip",
+    "text:d2.reel.order",
+    "text:d2.integrity",
+    "text:d2.pause",
+    "text:d2.map.dungeon",
+    "text:d2.map.diyu",
+    "text:d2.price",
+    "text:d2.stock",
     "text:dev.placeholder",
     "text:dev.pending_art",
     "text:error.runtime",
@@ -6633,7 +8499,125 @@
     "text:level.E03.hint.2",
     "text:level.E03.hint.3",
     "text:extra.chapter.review",
-    "text:extra.chapter.review_blurb"
+    "text:extra.chapter.review_blurb",
+    "text:result.lobby.level",
+    "text:result.lobby.delivery",
+    "text:result.par",
+    "text:room2.diyu_fengdu.name",
+    "text:room2.diyu_fengdu.hint.0",
+    "text:room2.diyu_fengdu.hint.1",
+    "text:room2.diyu_fengdu.hint.2",
+    "text:room2.diyu_fengdu.hint.3",
+    "text:room2.diyu_gate.name",
+    "text:room2.diyu_ghostfire.name",
+    "text:room2.diyu_home_hall.name",
+    "text:room2.diyu_home_yard.name",
+    "text:room2.diyu_huangquan.name",
+    "text:room2.diyu_lantern.name",
+    "text:room2.diyu_lantern.hint.0",
+    "text:room2.diyu_lantern.hint.1",
+    "text:room2.diyu_naihe.name",
+    "text:room2.diyu_naihe.hint.0",
+    "text:room2.diyu_naihe.hint.1",
+    "text:room2.diyu_naihe.hint.2",
+    "text:room2.diyu_paper_bridge.name",
+    "text:room2.diyu_paper_bridge.hint.0",
+    "text:room2.diyu_paper_bridge.hint.1",
+    "text:room2.diyu_paper_bridge.hint.2",
+    "text:room2.diyu_sand_bridge.name",
+    "text:room2.diyu_sand_bridge.hint.0",
+    "text:room2.diyu_sand_bridge.hint.1",
+    "text:room2.diyu_sand_bridge.hint.2",
+    "text:room2.diyu_sand_bridge.hint.3",
+    "text:room2.diyu_teahouse.name",
+    "text:room2.diyu_wangchuan.name",
+    "text:room2.diyu_wangchuan.hint.0",
+    "text:room2.diyu_wangchuan.hint.1",
+    "text:room2.diyu_wangchuan.hint.2",
+    "text:room2.diyu_wangchuan.hint.3",
+    "text:room2.diyu_wangxiang.name",
+    "text:room2.diyu_wangxiang.hint.0",
+    "text:room2.diyu_wangxiang.hint.1",
+    "text:room2.diyu_wangxiang.hint.2",
+    "text:room2.dungeon2_bridge.name",
+    "text:room2.dungeon2_bridge.hint.0",
+    "text:room2.dungeon2_bridge.hint.1",
+    "text:room2.dungeon2_corridor.name",
+    "text:room2.dungeon2_ferry.name",
+    "text:room2.dungeon2_ferry.hint.0",
+    "text:room2.dungeon2_ferry.hint.1",
+    "text:room2.dungeon2_ferry.hint.2",
+    "text:room2.dungeon2_gate.name",
+    "text:room2.dungeon2_home.name",
+    "text:room2.dungeon2_pole.name",
+    "text:room2.dungeon2_pole.hint.0",
+    "text:room2.dungeon2_pole.hint.1",
+    "text:room2.dungeon2_pole.hint.2",
+    "text:room2.dungeon2_sandpour.name",
+    "text:room2.dungeon2_sandpour.hint.0",
+    "text:room2.dungeon2_sandpour.hint.1",
+    "text:room2.dungeon2_sandpour.hint.2",
+    "text:room2.dungeon2_station.name",
+    "text:room2.dungeon2_well.name",
+    "text:room2.dungeon2_well.hint.0",
+    "text:room2.dungeon2_well.hint.1",
+    "text:room2.dungeon2_well.hint.2",
+    "text:room2.dungeon2_well.hint.3",
+    "text:room2.dungeon2_yard.name",
+    "text:room2.dungeon2_yard.hint.0",
+    "text:room2.dungeon2_yard.hint.1",
+    "text:room2.dungeon2_yard.hint.2",
+    "text:room2.dungeon2_yard.hint.3",
+    "text:dlg.fauna.dungeon_bat.fed",
+    "text:dlg.fauna.diyu_butterfly.fed",
+    "text:dlg.r2.hurt",
+    "text:dlg.r2.no_snack",
+    "text:dlg.r2.no_hint",
+    "text:dlg.r2.done_hint",
+    "text:dlg.r2.exit",
+    "text:r2.hud.moves",
+    "text:r2.hud.hint",
+    "text:r2.hud.step",
+    "text:r2.hud.cleared",
+    "text:r2.hud.snack",
+    "text:room2.jeju_gate.name",
+    "text:room2.jeju_olle.name",
+    "text:room2.jeju_canola.name",
+    "text:room2.jeju_haenyeo_house.name",
+    "text:room2.jeju_home_shore.name",
+    "text:room2.jeju_home_orchard.name",
+    "text:room2.jeju_home_cave.name",
+    "text:dlg.fauna.jeju_dragonfly.fed",
+    "text:room2.jeju_neolttwigi.name",
+    "text:room2.jeju_neolttwigi.hint.0",
+    "text:room2.jeju_baramgil.name",
+    "text:room2.jeju_baramgil.hint.0",
+    "text:room2.jeju_pier.name",
+    "text:room2.jeju_pier.hint.0",
+    "text:room2.jeju_terrace.name",
+    "text:room2.jeju_terrace.hint.0",
+    "text:room2.jeju_doldam.name",
+    "text:room2.jeju_doldam.hint.0",
+    "text:room2.jeju_dodaebul.name",
+    "text:room2.jeju_dodaebul.hint.0",
+    "text:ui.title_alt",
+    "text:lobby.current_tag",
+    "text:keys.adjust",
+    "text:settings.ui_style",
+    "text:settings.ui_style.note1",
+    "text:settings.ui_style.note2",
+    "text:ui_style.s1",
+    "text:ui_style.s2",
+    "text:ui_style.s3",
+    "text:ui_style.s4",
+    "text:ui_style.s1.mark",
+    "text:ui_style.s2.mark",
+    "text:ui_style.s3.mark",
+    "text:ui_style.s4.mark",
+    "text:dlv.confirm.title",
+    "text:dlv.confirm.text",
+    "text:dlv.confirm.yes",
+    "text:dlv.confirm.no"
    ],
    "sha256": null
   }

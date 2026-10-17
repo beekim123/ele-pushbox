@@ -769,7 +769,10 @@
     "carrot"
    ],
    "layer": 2,
-   "status": "concept"
+   "status": "concept",
+   "params": {
+    "move": "stay"
+   }
   },
   {
    "id": "judge",
@@ -785,7 +788,11 @@
     "letter"
    ],
    "layer": 2,
-   "status": "concept"
+   "status": "concept",
+   "params": {
+    "move": "stay",
+    "damaged_tip_mult": 0.5
+   }
   },
   {
    "id": "wuchang",
@@ -801,7 +808,10 @@
     "paper_house"
    ],
    "layer": 2,
-   "status": "concept"
+   "status": "concept",
+   "params": {
+    "move": "stay"
+   }
   },
   {
    "id": "yama",
@@ -817,7 +827,11 @@
     "tea_set"
    ],
    "layer": 2,
-   "status": "concept"
+   "status": "concept",
+   "params": {
+    "move": "stay",
+    "home_melt_mult": 3
+   }
   },
   {
    "id": "ancestor",
@@ -835,7 +849,10 @@
     "paper_house"
    ],
    "layer": 2,
-   "status": "concept"
+   "status": "concept",
+   "params": {
+    "move": "stay"
+   }
   },
   {
    "id": "fox_bride",
@@ -889,15 +906,21 @@
    "worlds": [
     "jeju"
    ],
-   "rarity": "rare",
+   "rarity": "common",
    "temper": "爽朗",
-   "rule": "在海里潜水：要到码头等她上岸",
+   "rule": "在海里潜水：要到防波堤边等她上岸。每隔一会儿冒出水面吹一声口哨（숨비소리），这时才能交货",
    "likes": [
     "hot_soup",
-    "fish"
+    "fish",
+    "letter"
    ],
    "layer": 2,
-   "status": "concept"
+   "status": "concept",
+   "params": {
+    "move": "stay",
+    "dive_secs": 8,
+    "surface_secs": 4
+   }
   },
   {
    "id": "goblin_chief",
@@ -905,14 +928,58 @@
    "worlds": [
     "jeju"
    ],
-   "rarity": "rare",
+   "rarity": "legendary",
    "temper": "爱摔跤",
-   "rule": "先陪它摔一跤（把它推出两格）才肯收货",
+   "rule": "先陪他摔一跤（把他推出两格）才肯收货",
    "likes": [
     "buckwheat_jelly"
    ],
    "layer": 2,
-   "status": "concept"
+   "status": "concept",
+   "params": {
+    "move": "stay",
+    "wrestle_tiles": 2
+   }
+  },
+  {
+   "id": "tangerine_farmer",
+   "name": "橘园阿姨",
+   "worlds": [
+    "jeju"
+   ],
+   "rarity": "common",
+   "temper": "勤快",
+   "rule": "完好度满分时小费多一半；她自己种橘子，不收橘子筐",
+   "likes": [
+    "letter",
+    "kite"
+   ],
+   "layer": 2,
+   "status": "concept",
+   "params": {
+    "move": "stay",
+    "perfect_tip_mult": 1.5
+   }
+  },
+  {
+   "id": "lighthouse_keeper",
+   "name": "灯塔大叔",
+   "worlds": [
+    "jeju"
+   ],
+   "rarity": "rare",
+   "temper": "话少",
+   "rule": "石灯台（도대불）在防波堤尽头，门前一直刮风：风筝在他门口也会被吹",
+   "likes": [
+    "tangerine",
+    "hot_soup"
+   ],
+   "layer": 2,
+   "status": "concept",
+   "params": {
+    "move": "stay",
+    "home_gust": true
+   }
   },
   {
    "id": "spice_merchant",

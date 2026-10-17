@@ -197,6 +197,21 @@
    "status": "concept",
    "layer": 1,
    "price": 20
+  },
+  {
+   "id": "snack",
+   "name": "零食",
+   "mode": "delivery",
+   "summary": "喂给提示动物，换一句明确的提示（这个房间的下一步）。石牢卖小鱼饼干，地府卖桂花糕：同一个道具换包装",
+   "status": "concept",
+   "layer": 1,
+   "price": 10,
+   "assets": [
+    "item.snack"
+   ],
+   "params": {
+    "hints": 1
+   }
   }
  ]
 }

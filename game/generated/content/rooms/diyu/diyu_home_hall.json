@@ -1,0 +1,48 @@
+{
+ "format": "pushbox.room/2",
+ "world": "diyu",
+ "weight": 10,
+ "mirror": true,
+ "id": "diyu_home_hall",
+ "type": "home",
+ "role": "home",
+ "name": "收件人之家 · 判官殿",
+ "idea": "终点：判官、无常或阎王坐在殿上，走上三级台阶就到。",
+ "only": {
+  "recipients": [
+   "judge",
+   "wuchang",
+   "yama"
+  ]
+ },
+ "mechanisms": [
+  "ladder"
+ ],
+ "exits": [
+  "left.0.low",
+  "left.0.high",
+  "top.0.mid"
+ ],
+ "routes": [
+  "left.0.low>recipient",
+  "left.0.high>recipient",
+  "top.0.mid>recipient"
+ ],
+ "legend": {
+  "1": {
+   "feature": "recipient"
+  }
+ },
+ "map": [
+  "#########HH#########",
+  "#........HH........#",
+  ".........HH........#",
+  "....H....HH........#",
+  "####H....HH.....1..#",
+  "####H....HH...######",
+  "....H....HH..#######",
+  "....H..$.HH.########",
+  "####################",
+  "####################"
+ ]
+}

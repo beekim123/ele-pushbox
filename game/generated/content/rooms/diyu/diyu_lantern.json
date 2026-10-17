@@ -1,0 +1,107 @@
+{
+ "format": "pushbox.room/2",
+ "world": "diyu",
+ "weight": 10,
+ "mirror": true,
+ "id": "diyu_lantern",
+ "type": "room",
+ "role": "teach",
+ "name": "孔明灯台 · 从槽里推出来",
+ "idea": "关键想法：孔明灯吊着的纸台悬在半空，从侧面走进它的一端就推着它走，它不会掉。变化：纸台嵌在地面的槽里，要先跳进槽，从侧面把它像抽屉一样推出去，搭在坑上。",
+ "teaches": [
+  "float_block"
+ ],
+ "requires": [
+  "float_block"
+ ],
+ "mechanisms": [
+  "float_block",
+  "ladder",
+  "hint_animal"
+ ],
+ "exits": [
+  "left.0.high",
+  "left.0.low",
+  "right.0.high",
+  "right.0.low"
+ ],
+ "routes": [
+  "left.0.high>right.0.high",
+  "left.0.high>right.0.low",
+  "left.0.low>right.0.high",
+  "left.0.low>right.0.low"
+ ],
+ "puzzle_area": [
+  [
+   1,
+   2,
+   11,
+   8
+  ]
+ ],
+ "hints": [
+  {
+   "text": "跳进槽里，从侧面走进纸台的一端：它会被推着走。",
+   "target": [
+    3,
+    4
+   ],
+   "show": {
+    "action": "push",
+    "dir": "R",
+    "at": [
+     2,
+     4
+    ]
+   },
+   "done": {
+    "covers": [
+     10,
+     4
+    ]
+   }
+  },
+  {
+   "text": "纸台悬在坑上，不会掉：踩上去走过去。",
+   "target": [
+    9,
+    3
+   ],
+   "show": {
+    "action": "walk",
+    "dir": "R",
+    "at": [
+     6,
+     4
+    ]
+   },
+   "done": {
+    "player": [
+     11,
+     0,
+     19,
+     9
+    ]
+   }
+  }
+ ],
+ "solutions": {
+  "left.0.high>right.0.high": [
+   "R*2",
+   "R*4",
+   "R*13"
+  ]
+ },
+ "map": [
+  "####################",
+  "####################",
+  "....................",
+  "..H...........$.H...",
+  "#.HFFFF....#####H###",
+  "##H####....#####H###",
+  "..H####....#####H...",
+  "..H####....#####H.$.",
+  "#######....#########",
+  "####################"
+ ]
+}

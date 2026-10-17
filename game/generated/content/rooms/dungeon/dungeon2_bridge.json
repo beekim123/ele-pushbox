@@ -1,0 +1,105 @@
+{
+ "format": "pushbox.room/2",
+ "world": "dungeon",
+ "weight": 10,
+ "mirror": true,
+ "id": "dungeon2_bridge",
+ "type": "room",
+ "role": "teach",
+ "name": "断桥 · 推浮石",
+ "idea": "关键想法：走进浮石的一端就把整块推动一格，它悬在空中不会掉。变化：推到撞上对面的石柱就推不动了——这时踩上去，从上面走过坑。",
+ "teaches": [
+  "float_block"
+ ],
+ "requires": [
+  "float_block"
+ ],
+ "mechanisms": [
+  "float_block",
+  "ladder",
+  "hint_animal"
+ ],
+ "exits": [
+  "left.0.high",
+  "left.0.low",
+  "right.0.high",
+  "right.0.low"
+ ],
+ "routes": [
+  "left.0.high>right.0.high",
+  "left.0.low>right.0.high",
+  "left.0.high>right.0.low",
+  "left.0.low>right.0.low"
+ ],
+ "puzzle_area": [
+  [
+   3,
+   2,
+   13,
+   8
+  ]
+ ],
+ "hints": [
+  {
+   "text": "走进浮石的一端就能推动它；浮石悬在空中，不会掉。",
+   "target": [
+    11,
+    3
+   ],
+   "show": {
+    "action": "push",
+    "dir": "R",
+    "at": [
+     2,
+     3
+    ]
+   },
+   "done": {
+    "covers": [
+     11,
+     3
+    ]
+   }
+  },
+  {
+   "text": "推不动了就踩上去，从上面走过坑。",
+   "target": [
+    13,
+    3
+   ],
+   "show": {
+    "action": "walk",
+    "dir": "R",
+    "at": [
+     7,
+     3
+    ]
+   },
+   "done": {
+    "player": [
+     12,
+     0,
+     19,
+     9
+    ]
+   }
+  }
+ ],
+ "solutions": {
+  "left.0.high>right.0.high": [
+   "R*19"
+  ]
+ },
+ "map": [
+  "####################",
+  "####################",
+  "....................",
+  "..HFFFF.....#...H.$.",
+  "##H#####....####H###",
+  "##H#####....####H###",
+  "..H#####....####H...",
+  "..H#####....####H...",
+  "########....########",
+  "####################"
+ ]
+}

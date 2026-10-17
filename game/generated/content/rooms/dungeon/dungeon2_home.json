@@ -1,0 +1,41 @@
+{
+ "format": "pushbox.room/2",
+ "world": "dungeon",
+ "weight": 10,
+ "mirror": true,
+ "id": "dungeon2_home",
+ "type": "home",
+ "role": "home",
+ "name": "收件人之家 · 牢房小屋",
+ "idea": "终点：收件人站在屋檐下的台阶上，爬一小段梯子就到。",
+ "mechanisms": [
+  "ladder"
+ ],
+ "exits": [
+  "left.0.low",
+  "left.0.high",
+  "top.0.mid"
+ ],
+ "routes": [
+  "left.0.low>recipient",
+  "left.0.high>recipient",
+  "top.0.mid>recipient"
+ ],
+ "legend": {
+  "1": {
+   "feature": "recipient"
+  }
+ },
+ "map": [
+  "#########HH#########",
+  "#........HH........#",
+  ".........HH........#",
+  "....H....HH........#",
+  "####H....HH........#",
+  "####H....HH..H.1...#",
+  "....H....HH..H######",
+  "....H..$.HH..H######",
+  "####################",
+  "####################"
+ ]
+}
