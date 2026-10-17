@@ -16,6 +16,7 @@ func _initialize() -> void:
 	call_deferred("_run")
 
 func _run() -> void:
+	_check_lobby_hash()
 	if DisplayServer.get_name() == "headless":
 		push_error("UI capture requires an actual rendering driver")
 		quit(1)
@@ -221,3 +222,83 @@ func _record_capture(app: Node, image: Image, capture_name: String, name: String
 	if name == "lobby": reference["diff_by_lobby_region"] = lobby_regions
 	if name == "dialogue": reference["ui_fixture"] = {"kind":"dialogue_component_over_live_M05", "boot_router_integration":false}
 	references.append(reference)
+
+func _check_lobby_hash() -> void:
+	# Expected values generated in Node from ui-kit.js:24-30 (Hh/BigInt).
+	# Includes UI coordinates, signed inputs and both int64 limits.
+	var cases: Array = [
+		[0, 0, 0, 0],
+		[1, 0, 0, 694],
+		[0, 1, 0, 352],
+		[0, 0, 1, 453],
+		[13, 9, 4, 196],
+		[14, 64, 8, 703],
+		[320, 180, 50, 652],
+		[1199, 172, 50, 587],
+		[-40, -20, 0, 78],
+		[-3, -1, 51, 677],
+		[34, 18, -2, 4],
+		[71, 37, 53, 66],
+		[108, 56, -4, 978],
+		[145, 75, 55, 423],
+		[182, 94, -6, 707],
+		[219, 113, 57, 911],
+		[256, 132, -8, 409],
+		[293, 151, 59, 506],
+		[330, 170, -10, 121],
+		[-34, 189, 61, 860],
+		[3, -3, -12, 118],
+		[40, 16, 63, 18],
+		[77, 35, -14, 707],
+		[114, 54, 65, 520],
+		[151, 73, -16, 752],
+		[188, 92, 67, 868],
+		[225, 111, -18, 87],
+		[262, 130, 69, 48],
+		[299, 149, -20, 562],
+		[336, 168, 71, 919],
+		[-28, 187, -22, 752],
+		[9, -5, 73, 184],
+		[46, 14, -24, 557],
+		[83, 33, 75, 976],
+		[120, 52, -26, 389],
+		[157, 71, 77, 199],
+		[194, 90, -28, 461],
+		[231, 109, 79, 283],
+		[268, 128, -30, 120],
+		[305, 147, 81, 277],
+		[342, 166, -32, 194],
+		[-22, 185, 83, 399],
+		[15, -7, -34, 214],
+		[52, 12, 85, 774],
+		[89, 31, -36, 178],
+		[126, 50, 87, 892],
+		[163, 69, -38, 594],
+		[200, 88, 89, 805],
+		[2147483647, 0, 0, 961],
+		[0, 2147483647, 0, 171],
+		[0, 0, 2147483647, 258],
+		[2147483647, -1, 2147483647, 29],
+		[-2147483648, 0, 0, 636],
+		[0, -2147483648, 0, 284],
+		[0, 0, -2147483648, 620],
+		[-2147483648, -1, -2147483648, 207],
+		[9223372036854775807, 0, 0, 357],
+		[0, 9223372036854775807, 0, 271],
+		[0, 0, 9223372036854775807, 430],
+		[9223372036854775807, -1, 9223372036854775807, 597],
+		[-9223372036854775808, 0, 0, 256],
+		[0, -9223372036854775808, 0, 64],
+		[0, 0, -9223372036854775808, 520],
+		[-9223372036854775808, -1, -9223372036854775808, 679],
+	]
+	var skin: Control = load("res://presentation/ui/widgets/lobby_skins.gd").new()
+	var mismatches: Array[String] = []
+	for sample: Array in cases:
+		var actual: int = skin._hash(sample[0], sample[1], sample[2])
+		if actual != sample[3]:
+			mismatches.append("Hh(%s, %s, %s): expected %s, got %s" % [sample[0], sample[1], sample[2], sample[3], actual])
+	skin.free()
+	behaviors.append({"id":"ui.lobby_hash_matches_bigint", "ok":mismatches.is_empty(), "cases":cases.size(), "mismatches":mismatches})
+	if not mismatches.is_empty(): issues.append("lobby hash differs from Hh: %s/%s cases" % [mismatches.size(), cases.size()])
+	print(JSON.stringify({"suite":"ui-lobby-hash", "cases":cases.size(), "failures":mismatches}))

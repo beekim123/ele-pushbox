@@ -1,6 +1,12 @@
 {
   "behaviors": [
     {
+      "cases": 64,
+      "id": "ui.lobby_hash_matches_bigint",
+      "mismatches": [],
+      "ok": true
+    },
+    {
       "actual_ink_pixels": 571,
       "id": "ui.hint_body_visible.zh-Hans",
       "ok": true
@@ -83,66 +89,64 @@
   ],
   "layout_issues": [],
   "performance": {
-    "fps_observed": 16.0,
+    "fps_observed": 15.0,
     "full_performance_acceptance": false,
-    "memory_static_peak_bytes": 61714551.0,
+    "memory_static_peak_bytes": 62120252.0,
     "note": "Short capture run only; includes Control/layout construction. A sustained all-level benchmark is still required.",
-    "process_frame_peak_ms": 529.631,
-    "settle_advance_peak_us": 5456,
-    "undo_peak_us": 3340
+    "process_frame_peak_ms": 524.736,
+    "settle_advance_peak_us": 4908,
+    "undo_peak_us": 3049
   },
-  "reference_issues": [
-    "UI reference differs by more than 1700 pixels: lobby.forest = 1862"
-  ],
+  "reference_issues": [],
   "references": [
     {
       "approved": false,
       "diff_by_lobby_region": {
-        "backdrop": 111,
-        "chapter": 72,
+        "backdrop": 56,
+        "chapter": 26,
         "floor": 0,
-        "keys": 216,
-        "menu": 513,
-        "title": 236
+        "keys": 148,
+        "menu": 356,
+        "title": 47
       },
       "diff_by_region": {
-        "body": 774,
-        "footer": 169,
-        "hud": 205
+        "body": 471,
+        "footer": 103,
+        "hud": 59
       },
-      "diff_pixels": 1148,
+      "diff_pixels": 633,
       "largest_color_differences": [
         {
           "colors": "262b44ff -> 181425ff",
-          "pixels": 556
+          "pixels": 448
         },
         {
           "colors": "181425ff -> 262b44ff",
-          "pixels": 163
+          "pixels": 44
         },
         {
           "colors": "3a4466ff -> 181425ff",
-          "pixels": 58
-        },
-        {
-          "colors": "262b44ff -> 3a4466ff",
-          "pixels": 43
-        },
-        {
-          "colors": "181425ff -> 5a6988ff",
-          "pixels": 36
-        },
-        {
-          "colors": "181425ff -> 3a4466ff",
-          "pixels": 30
-        },
-        {
-          "colors": "5a6988ff -> 181425ff",
-          "pixels": 29
+          "pixels": 24
         },
         {
           "colors": "262b44ff -> f77622ff",
-          "pixels": 28
+          "pixels": 20
+        },
+        {
+          "colors": "3a4466ff -> f77622ff",
+          "pixels": 18
+        },
+        {
+          "colors": "181425ff -> 3a4466ff",
+          "pixels": 15
+        },
+        {
+          "colors": "262b44ff -> 3a4466ff",
+          "pixels": 14
+        },
+        {
+          "colors": "f77622ff -> 262b44ff",
+          "pixels": 12
         }
       ],
       "name": "lobby.zh-Hans",
@@ -549,51 +553,51 @@
     {
       "approved": false,
       "diff_by_lobby_region": {
-        "backdrop": 154,
-        "chapter": 54,
+        "backdrop": 87,
+        "chapter": 22,
         "floor": 0,
-        "keys": 220,
-        "menu": 521,
-        "title": 310
+        "keys": 151,
+        "menu": 357,
+        "title": 98
       },
       "diff_by_region": {
-        "body": 881,
-        "footer": 173,
-        "hud": 205
+        "body": 551,
+        "footer": 106,
+        "hud": 58
       },
-      "diff_pixels": 1259,
+      "diff_pixels": 715,
       "largest_color_differences": [
         {
           "colors": "262b44ff -> 181425ff",
-          "pixels": 646
+          "pixels": 531
         },
         {
           "colors": "181425ff -> 262b44ff",
-          "pixels": 153
-        },
-        {
-          "colors": "262b44ff -> 3a4466ff",
-          "pixels": 52
+          "pixels": 40
         },
         {
           "colors": "3a4466ff -> 181425ff",
-          "pixels": 50
-        },
-        {
-          "colors": "181425ff -> 3a4466ff",
-          "pixels": 47
-        },
-        {
-          "colors": "181425ff -> 5a6988ff",
-          "pixels": 31
-        },
-        {
-          "colors": "5a6988ff -> 181425ff",
-          "pixels": 30
+          "pixels": 21
         },
         {
           "colors": "262b44ff -> f77622ff",
-          "pixels": 28
+          "pixels": 20
+        },
+        {
+          "colors": "262b44ff -> 3a4466ff",
+          "pixels": 20
+        },
+        {
+          "colors": "3a4466ff -> f77622ff",
+          "pixels": 18
+        },
+        {
+          "colors": "181425ff -> 3a4466ff",
+          "pixels": 15
+        },
+        {
+          "colors": "f77622ff -> 262b44ff",
+          "pixels": 12
         }
       ],
       "name": "lobby.en",
@@ -1000,51 +1004,51 @@
     {
       "approved": false,
       "diff_by_lobby_region": {
-        "backdrop": 111,
-        "chapter": 72,
+        "backdrop": 56,
+        "chapter": 26,
         "floor": 0,
-        "keys": 216,
-        "menu": 513,
-        "title": 236
+        "keys": 148,
+        "menu": 356,
+        "title": 47
       },
       "diff_by_region": {
-        "body": 774,
-        "footer": 169,
-        "hud": 205
+        "body": 471,
+        "footer": 103,
+        "hud": 59
       },
-      "diff_pixels": 1148,
+      "diff_pixels": 633,
       "largest_color_differences": [
         {
           "colors": "262b44ff -> 181425ff",
-          "pixels": 556
+          "pixels": 448
         },
         {
           "colors": "181425ff -> 262b44ff",
-          "pixels": 163
+          "pixels": 44
         },
         {
           "colors": "3a4466ff -> 181425ff",
-          "pixels": 58
-        },
-        {
-          "colors": "262b44ff -> 3a4466ff",
-          "pixels": 43
-        },
-        {
-          "colors": "181425ff -> 5a6988ff",
-          "pixels": 36
-        },
-        {
-          "colors": "181425ff -> 3a4466ff",
-          "pixels": 30
-        },
-        {
-          "colors": "5a6988ff -> 181425ff",
-          "pixels": 29
+          "pixels": 24
         },
         {
           "colors": "262b44ff -> f77622ff",
-          "pixels": 28
+          "pixels": 20
+        },
+        {
+          "colors": "3a4466ff -> f77622ff",
+          "pixels": 18
+        },
+        {
+          "colors": "181425ff -> 3a4466ff",
+          "pixels": 15
+        },
+        {
+          "colors": "262b44ff -> 3a4466ff",
+          "pixels": 14
+        },
+        {
+          "colors": "f77622ff -> 262b44ff",
+          "pixels": 12
         }
       ],
       "name": "lobby.dungeon",
@@ -1165,51 +1169,51 @@
     {
       "approved": false,
       "diff_by_lobby_region": {
-        "backdrop": 139,
-        "chapter": 530,
+        "backdrop": 64,
+        "chapter": 156,
         "floor": 0,
-        "keys": 384,
-        "menu": 783,
-        "title": 26
+        "keys": 158,
+        "menu": 339,
+        "title": 0
       },
       "diff_by_region": {
-        "body": 1321,
-        "footer": 384,
-        "hud": 157
+        "body": 495,
+        "footer": 158,
+        "hud": 64
       },
-      "diff_pixels": 1862,
+      "diff_pixels": 717,
       "largest_color_differences": [
         {
-          "colors": "3e2731ff -> 733e39ff",
-          "pixels": 290
-        },
-        {
-          "colors": "733e39ff -> 3e2731ff",
-          "pixels": 152
+          "colors": "3e8948ff -> 181425ff",
+          "pixels": 137
         },
         {
           "colors": "3e2731ff -> 181425ff",
           "pixels": 137
         },
         {
-          "colors": "3e8948ff -> 181425ff",
-          "pixels": 137
-        },
-        {
-          "colors": "3e8948ff -> 63c74dff",
-          "pixels": 128
-        },
-        {
-          "colors": "63c74dff -> 3e8948ff",
-          "pixels": 115
+          "colors": "3e2731ff -> 733e39ff",
+          "pixels": 93
         },
         {
           "colors": "733e39ff -> 181425ff",
           "pixels": 79
         },
         {
-          "colors": "733e39ff -> 265c42ff",
-          "pixels": 76
+          "colors": "193c3eff -> 181425ff",
+          "pixels": 57
+        },
+        {
+          "colors": "265c42ff -> 181425ff",
+          "pixels": 51
+        },
+        {
+          "colors": "c28569ff -> 733e39ff",
+          "pixels": 24
+        },
+        {
+          "colors": "181425ff -> 733e39ff",
+          "pixels": 19
         }
       ],
       "name": "lobby.forest",
