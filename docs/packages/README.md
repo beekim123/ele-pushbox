@@ -26,7 +26,7 @@
 | [DSN-03](DSN-03.md) | 新手引导改造设计（用户：UX-01 报告 8 个问题全按建议） | `claude/inspiring-ride-zfnn4s` → `dsn/DSN-03` | `game-design.md`（只改引导相关）、本表（只改下面三行） | **已合并**（2026-10-17） |
 | [UX-02](UX-02.md) | 引导的文字和关卡数据：新表 `content/i18n-onboarding/`、字形、第 1 组 7 关加 `onboarding`（DSN-03 拆出） | `claude/inspiring-ride-zfnn4s` → `ux/UX-02` | 新文件 `content/onboarding/basics.json`、`tools/content.mjs`（只加检查）、字形生成文件 | 已合并（2026-10-17） |
 | [UX-03](UX-03.md) | 工作台关卡页预览引导；关卡里的 5（+1）项新资产 | `claude/inspiring-ride-zfnn4s`（UX-02 合并后）→ `ux/UX-03` | `play.js`（加开关）、`index.html`、`tools/art.mjs`（追加）、e2e（追加）、生成文件 | 待派（现在可派，和 UX-05 同时） |
-| [UX-04](UX-04.md) | 引导进游戏 ①：备选键、Mac ⌘、鼠标悬停、按设备显示、"开始游戏"、"操作说明" | `claude/inspiring-ride-zfnn4s` → `ux/UX-04` | Godot 输入、大厅、暂停、设置（和 UI-06 同一批界面文件） | 等 UX-02、UX-03、UX-05、UI-06b、UI-06c 合并 |
+| [UX-04](UX-04.md) | 引导进游戏 ①：备选键、Mac ⌘、鼠标悬停、按设备显示、"开始游戏"、"操作说明" | `claude/inspiring-ride-zfnn4s` → `ux/UX-04` | Godot 输入、大厅、暂停、设置（和 UI-06 同一批界面文件） | 等 UX-03、UX-05、UI-06d 合并 |
 | [UX-05](UX-05.md) | 引导的 7 个新界面：HUD 标 Z/R/H、规则卡按法、过关"发现"、开始游戏、操作说明、暂停、设置 | `claude/inspiring-ride-zfnn4s`（UX-02 合并后）→ `ux/UX-05` | `index.html`、`tools/art.mjs`（追加）、e2e（追加）；生成文件与 UX-03 合并后重建 | 待派（现在可派，和 UX-03 同时） |
 | [UX-06](UX-06.md) | 引导进游戏 ②：按键提示层、开局心里话、目标发光、因果光、第 1 组房间放大 | `claude/inspiring-ride-zfnn4s` → `ux/UX-06` | Godot 关卡场景、存档 | 等 UX-04 合并 |
 | [UX-07](UX-07.md) | 引导进游戏 ③：卡住与死局提醒、第三层提示、规则卡时机、选关目标、过关"发现" | `claude/inspiring-ride-zfnn4s` → `ux/UX-07` | Godot 关卡场景、提示面板、规则卡、选关、过关 | 等 UX-06 合并 |
@@ -40,7 +40,8 @@
 | [BR-01](BR-01.md) | 分支整理：合进 `main`、打 `v0.3`、删旧分支 | Claude 做 | — | 等第 1 批合并后 |
 | [UI-06a](UI-06a.md) | Godot 换 G2（一）：公共组件 + 选章、选关、设置、暂停（Mac 上做） | `claude/inspiring-ride-zfnn4s` → `ui/UI-06a` | `game/presentation/ui/screens/screen.gd` | 已合并（部分通过，余下并进 06b） |
 | [UI-06b](UI-06b.md) | Godot 换 G2（二）：补完 06a + 提示、规则卡、对话、过关（Mac 上做） | `claude/inspiring-ride-zfnn4s` → `ui/UI-06b` | `screen.gd`、`bubble.gd`、`capture.gd` | 已合并（2026-10-17） |
-| [UI-06c](UI-06c.md) | Godot 大厅 6 套章节皮肤（Mac 上做） | `claude/inspiring-ride-zfnn4s` → `ui/UI-06c` | `screen.gd`、`capture.gd` | 待派（现在可派） |
+| [UI-06c](UI-06c.md) | Godot 大厅 6 套章节皮肤（Mac 上做） | `claude/inspiring-ride-zfnn4s` → `ui/UI-06c` | `screen.gd`、`capture.gd` | 已合并（森林待 UI-06d） |
+| [UI-06d](UI-06d.md) | Godot 大厅森林皮肤对齐（UI-06c 收尾，Mac 上做） | `claude/inspiring-ride-zfnn4s` → `ui/UI-06d` | `lobby_skins.gd` | 待派（现在可派） |
 | [DLV-01](DLV-01.md) | 配送 v2 实时规则（设计模型） | 派前 Claude 按新模板重写 | — | 待重写 |
 
 第 1 批四个包互不冲突，可以同时派：
