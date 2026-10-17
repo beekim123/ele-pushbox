@@ -17,7 +17,7 @@ const ROOT = path.resolve(opt("root", REPO));
 const rel = (...p) => path.join(ROOT, ...p);
 // font-delivery / font-rooms2 / font-extra / font-ui add glyphs only; ui-delivery and ui-style register screens next to ui.js
 // (neither changes what ui.js draws); ui-style (2026-10-16 interface style) replaces the older screen entries.
-const PB = loadCore(["raster", "font-data", "font-small", "font-delivery", "font-extra", "font-ui", "font-rooms2", "sprites", "i18n", "tilemodel", "terrain", "terrain-diyu", "terrain-jeju", "ambient", "env", "matter", "scene", "dialogue", "ui", "ui-delivery", "ui-kit", "ui-skins", "ui-style"], { authoringModel: false });
+const PB = loadCore(["raster", "font-data", "font-small", "font-delivery", "font-extra", "font-ui", "font-rooms2", "sprites", "i18n", "tilemodel", "terrain", "terrain-diyu", "terrain-jeju", "ambient", "env", "matter", "scene", "dialogue", "ui", "ui-delivery", "ui-kit", "ui-skins", "ui-style", "ui-common", "ui-screens-level"], { authoringModel: false });
 const LOCALES = ["zh-Hans", "en"];
 // content/i18n (frozen) plus the content/i18n-<name> tables (tools/lib/i18n.mjs).
 function loadI18n() {

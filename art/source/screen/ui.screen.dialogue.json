@@ -19,7 +19,11 @@
   "workbench/js/core/ui-style.js",
   "workbench/js/core/font-ui.js",
   "content/i18n-ui/zh-Hans.json",
-  "content/i18n-ui/en.json"
+  "content/i18n-ui/en.json",
+  "workbench/js/core/ui-common.js",
+  "workbench/js/core/ui-screens-level.js",
+  "content/i18n-common/zh-Hans.json",
+  "content/i18n-common/en.json"
  ],
  "depends": [
   "char.miner",
@@ -36,7 +40,7 @@
   "ui.menu_icons",
   "ui.panel"
  ],
- "version": 2,
+ "version": 3,
  "stage": "review",
  "size": [
   320,
@@ -49,5 +53,5 @@
  },
  "usage": "对话系统的样张（docs/design/dialogue.md）：渡口居民头顶「!」并用说话气泡交委托（名牌写名字），主角用思考气泡自言自语，系统说明用木牌样式。全部角色台词用 10px 小字。",
  "notes": "只用于确认对话气泡的样子；游戏里的对话由对话数据驱动。老矿工借用 char.miner 当示例居民。 2026-10-16 界面定稿：画法见 workbench/js/core/ui-style.js（移植 tools/ui-proposals 的已确认效果图）。",
- "content_hash": "f05e9a2b368fe45071f5613b2eb08714ef96cfcae3511a5499321884cb72d504"
+ "content_hash": "b2d0012a3f36c3efcb1a97f1c71af571ef4f92a8632a39cf661fdf7635b77bfc"
 }

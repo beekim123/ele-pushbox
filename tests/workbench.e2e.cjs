@@ -282,6 +282,43 @@ let runningBrowser = null;
   });
   check(textIssues.length === 0, "all screens fit in zh-Hans and en" + (textIssues.length ? ": " + textIssues.slice(0, 3).join(", ") : ""));
 
+  // UI-10a: the real browser uses the shared G2 kit and the eight level screens.
+  const commonUI = await page.evaluate(() => {
+    const G = PB.uiCommon;
+    if (!G) return { missing: true };
+    const ids = ["chapters", "levels", "settings", "pause", "hint", "rulecard", "dialogue", "complete"];
+    const problems = [], specs = Object.fromEntries(PBStore.levels().map((l) => [l.id, l]));
+    for (const id of ids) for (const locale of ["zh-Hans", "en"]) {
+      G.takeIssues();
+      const a = PBStore.asset("ui.screen." + id);
+      PB.ui.render(new PB.Raster(320, 180), a, 0, { locale, focus: id === "hint" ? 2 : 0, specs, levelSpec: specs.M05, ruleSpec: specs.M03 });
+      problems.push(...G.takeIssues().map((it) => id + "/" + locale + "/" + it.kind + "/" + it.key));
+    }
+    const states = ["n", "sel", "dis"].map((state) => {
+      const c = new PB.uk.C(new PB.Raster(64, 32));
+      G.kit.button(c, 4, 4, 48, 18, "A", state);
+      return c.get(8, 8);
+    });
+    const labels = [], sliders = [], oldText = PB.uk.C.prototype.text, oldSlider = G.kit.slider;
+    const a = JSON.parse(JSON.stringify(PBStore.asset("ui.screen.settings")));
+    a.params.items.splice(1, 0, { key: "settings.ui_style", type: "value", valueKey: "ui_style.s1" });
+    PB.uk.C.prototype.text = function (x, y, text, ...rest) { labels.push(text); return oldText.call(this, x, y, text, ...rest); };
+    G.kit.slider = function (...args) { sliders.push(args[4]); return oldSlider(...args); };
+    try { PB.ui.render(new PB.Raster(320, 180), a, 0, { locale: "zh-Hans", focus: 0 }); }
+    finally { PB.uk.C.prototype.text = oldText; G.kit.slider = oldSlider; }
+    return {
+      style: G.STYLE.id, states, problems,
+      components: ["panel", "title", "button", "cursor", "keycap", "slider", "toggle", "tag", "say", "think"].every((key) => typeof G.kit[key] === "function"),
+      settings: a.params.items.filter((it) => it.key !== "settings.ui_style").every((it) => labels.includes(PB.i18n.t(it.key))),
+      noStyle: !labels.includes(PB.i18n.t("settings.ui_style")) && !labels.includes(PB.i18n.t("ui_style.s1")),
+      sliderValues: JSON.stringify(sliders) === JSON.stringify(a.params.items.filter((it) => it.type === "slider").map((it) => it.value / 10)),
+    };
+  });
+  check(commonUI.style === "G2" && commonUI.components && JSON.stringify(commonUI.states) === JSON.stringify(["x", "t", "y"]), "UI-10a: shared G2 components expose normal, selected and disabled button faces");
+  check(commonUI.problems && commonUI.problems.length === 0, "UI-10a: eight G2 screens fit both shipped locales (" + JSON.stringify(commonUI.problems) + ")");
+  check(commonUI.settings && commonUI.noStyle, "UI-10a: settings retains its controls and removes the style row and preview");
+  check(commonUI.sliderValues, "UI-10a: volume sliders preserve the existing 0–10 setting values");
+
   // 6b. Left category menu (WB-01): drawn from the one PBNav.MENU array, folds by category and
   // remembers it, keeps hash links and browser history; the whole left column can collapse.
   const menuErrors = errors.length;
