@@ -1,7 +1,8 @@
 // Delivery v2 rooms, format pushbox.room/2 (docs/design/delivery-puzzle-rules.md):
 // float blocks and the pole, falls, the follow camera, runs from the pool, the
 // checker and its committed report, the text tables, the renderer
-// (delivery-scene2.js) and the diyu terrain and backdrop (terrain-diyu.js).
+// (delivery-scene2.js: also the sky top edge and the ladder heads of section 8)
+// and the diyu terrain and backdrop (terrain-diyu.js).
 // The repository is only read.
 import { test } from "node:test";
 import assert from "node:assert/strict";
@@ -26,6 +27,8 @@ PB.i18n.setLocale("zh-Hans");
 const catalog = (n) => readJson(`content/catalog/${n}.json`).entries;
 const worlds = new Map(catalog("worlds").map((w) => [w.id, w]));
 const ROOMS = loadRooms2(ROOT).map((x) => x.room);
+const MAPS2 = catalog("slices").filter((s) => s.format === 2);
+const mapOf = (id) => MAPS2.find((s) => (s.rooms2 || []).includes(id));
 const at = (s) => [s.player.x, s.player.y];
 
 // A 1 x 1 test room: bedrock border and floor (rows 8-9), open air above, the
@@ -213,7 +216,7 @@ test("every v2 room draws (whole room and camera view, mirrored too) and its sol
       const route = room.hint_route || room.routes[0];
       const [a, b] = route.split(">").map((id) => (id === "gate" || id === "recipient" || !mirror ? id : R.mirrorExit(id, W)));
       const v = R.variant(room, mirror, [a, b].filter((x) => x !== "gate" && x !== "recipient"));
-      const M = R.start(v, a, b), sc = D.scene(M, world), P = D.run(M, {});
+      const M = R.start(v, a, b), sc = D.scene(M, world, mapOf(room.id)), P = D.run(M, {});
       const [fw, fh] = D.size(sc, "full");
       const full = new PB.Raster(fw, fh), cam = new PB.Raster(D.VW, D.VH);
       D.draw(full, sc, P, { tick: 0, view: "full", recipient, overlays: { areas: true, patrol: true, screens: true, marks: true, hints: true } });
@@ -288,4 +291,112 @@ test("diyu: the backdrop fills any width, is the same at the same time, and drif
     assert.deepEqual(draw(w, h, 0).data, r.data, "the same time gives the same picture");
     assert.notDeepEqual(draw(w, h, 900).data, r.data, "mist and will-o'-wisps move");
   }
+});
+// ---------- looks (delivery-puzzle-rules.md 8): the sky top edge and the ladder heads ----------
+// Rooms open on their first route, unmirrored.
+function opening(id) {
+  const room = ROOMS.find((r) => r.id === id), [a, b] = room.routes[0].split(">");
+  const v = R.variant(room, false, [a, b].filter((x) => x !== "gate" && x !== "recipient"));
+  return { room, v, M: R.start(v, a, b) };
+}
+const xyOf = (cells, W) => [...cells].sort((p, q) => p - q).map((i) => [i % W, Math.floor(i / W)]);
+
+test("top edge: in a map with top_edge sky a column's 1-2 solid cells from row 0 are sky, 3 or more stay; only the room's top counts", () => {
+  const sky = MAPS2.find((s) => s.id === "diyu_1"), rock = MAPS2.find((s) => s.id === "dungeon_2");
+  assert.equal(sky.top_edge, "sky");
+  assert.equal(rock.top_edge, undefined);
+  const rowsOf = (W, ys, stays) => ys.flatMap((y) => [...Array(W).keys()].filter((x) => !stays(x)).map((x) => [x, y]));
+  // diyu_naihe: columns 3-9 hang 3 cells of rock from the top (a cliff cut off by the picture's top); the rest of rows 0-1 is sky.
+  const naihe = opening("diyu_naihe").v;
+  for (let x = 3; x <= 9; x++) for (let y = 0; y < 3; y++) assert.ok("#%R".includes(naihe.map[y][x]), `diyu_naihe (${x}, ${y}) is rock`);
+  assert.deepEqual(xyOf(D.skyCells(naihe, sky), naihe.W), rowsOf(20, [0, 1], (x) => x >= 3 && x <= 9));
+  // diyu_fengdu, 2 x 2 screens: only row 0 over its open hall; the rock on the right and the second screen's top (rows 10-11) stay.
+  const fengdu = opening("diyu_fengdu").v;
+  assert.equal(fengdu.H, 20);
+  assert.deepEqual(xyOf(D.skyCells(fengdu, sky), fengdu.W), rowsOf(40, [0], (x) => x < 1 || x > 27));
+  // Made up, two screens high: ladders, doors, crates and float blocks are not solid (column 5's float
+  // block cuts the run); a thin band of rock at rows 10-11 under open air is not the room's top and stays.
+  const tall = { W: 7, H: 20, map: Array.from({ length: 20 }, (_, y) =>
+    (y === 0 ? "#%RH###" : y === 1 ? "#R|.BF#" : y === 2 ? "#....##" : y === 10 || y === 11 || y === 19 ? "#######" : "#.....#")) };
+  assert.deepEqual(xyOf(D.skyCells(tall, sky), tall.W), [[1, 0], [2, 0], [4, 0], [5, 0], [1, 1]]);
+  // No top_edge (the dungeon, a room in no map): no sky.
+  for (const m of [rock, undefined, { top_edge: "rock" }]) assert.equal(D.skyCells(tall, m).size, 0);
+  assert.equal(D.skyCells(naihe, rock).size, 0);
+  for (const room of ROOMS.filter((r) => mapOf(r.id) === rock)) assert.equal(D.skyCells(opening(room.id).v, rock).size, 0, room.id);
+});
+
+test("top edge: sky cells show the backdrop with no terrain, plants or critters, stay bedrock in the puzzle, and nothing below the top changes", () => {
+  const HUD = D.HUD_H;
+  for (const id of ["diyu_naihe", "diyu_fengdu", "diyu_lantern", "dungeon2_well"]) {
+    const { room, v, M } = opening(id), W = v.W;
+    const drawn = (map) => {
+      const sc = D.scene(M, worlds.get(room.world), map), [w, h] = D.size(sc, "full");
+      D.draw(new PB.Raster(w, h), sc, D.run(M, {}), { tick: 0, view: "full", overlays: {} });
+      return sc;
+    };
+    const sc = drawn(mapOf(id)), rockTop = drawn(undefined);
+    assert.equal(sc.sky.size > 0, room.world === "diyu", `${id}: ${sc.sky.size} sky cells`);
+    assert.deepEqual(xyOf(sc.sky, W), xyOf(D.skyCells(v, mapOf(id)), W));
+    for (const i of sc.sky) {
+      assert.equal(M.s.terrain[i], TM.T.ROCK, `${id}: sky cell ${i} is still bedrock`);
+      assert.ok(sc.occ.has(i), `${id}: sky cell ${i} is kept free of plants and critters`);
+      for (let y = 0; y < 16; y++) for (let x = 0; x < 16; x++) {
+        const k = ((HUD + Math.floor(i / W) * 16 + y) * sc.pw + (i % W) * 16 + x) * 4;
+        assert.equal(sc.ter.data[k + 3], 0, `${id}: no terrain drawn in sky cell ${i}`);
+        assert.ok(sc.fr.data[k] === sc.bg.data[k] && sc.fr.data[k + 1] === sc.bg.data[k + 1] && sc.fr.data[k + 2] === sc.bg.data[k + 2], `${id}: sky cell ${i} shows the backdrop`);
+      }
+    }
+    // Against the rock top: the terrain differs in rows 0-2 at most (row 2 rounds its corners next to the sky).
+    for (let k = (HUD + 3 * 16) * sc.pw * 4; k < sc.ter.data.length; k++) if (sc.ter.data[k] !== rockTop.ter.data[k]) assert.fail(`${id}: terrain changed below row 2 (pixel ${k >> 2})`);
+    if (id === "diyu_naihe") {
+      // The cliff of columns 3-9 is drawn (its inside fully, the two sides with their edge).
+      for (let x = 4 * 16; x < 9 * 16; x++) for (let y = HUD; y < HUD + 32; y++) assert.equal(sc.ter.data[(y * sc.pw + x) * 4 + 3], 255, `diyu_naihe cliff (${x}, ${y})`);
+    }
+  }
+});
+
+// Last: it loads workbench/js/app/ladder-tops.js the way index.html does (tools/art.mjs does not load it).
+test("v2 ladder heads with a landing beside them keep only their lowest 4 px, by the level-mode rule of ladder-tops.js, judged on the opening map", () => {
+  assert.equal(PB.ladderTops, undefined);
+  const render = (sc, P, tick) => { const [w, h] = D.size(sc, "full"), r = new PB.Raster(w, h); D.draw(r, sc, P, { tick, view: "full", overlays: {} }); return r; };
+  const playTo = (M, sol) => {
+    const P = D.run(M, {});
+    let tick = 0;
+    for (const act of sol) {
+      while (D.busy(P, tick)) { tick += 4; D.update(P, tick); }
+      assert.ok(D.act(P, act, tick).ok, act);
+      tick += 40; D.update(P, tick);
+    }
+    while (D.busy(P, tick)) { tick += 4; D.update(P, tick); }
+    return { P, tick };
+  };
+  // Without ladder-tops.js: the whole ladder sprites, at the start and (author solutions) at the end of the route.
+  const cases = ROOMS.map((room) => {
+    const { v, M } = opening(room.id), sc = D.scene(M, worlds.get(room.world), mapOf(room.id)), sol = (room.solutions || {})[room.routes[0]];
+    const end = sol ? playTo(M, R.expand(sol)) : null;
+    return { room, v, M, sc, start: render(sc, D.run(M, {}), 0), end, endPic: end && render(sc, end.P, end.tick) };
+  });
+  vm.runInThisContext(fs.readFileSync(path.join(ROOT, "workbench/js/app/ladder-tops.js"), "utf8"));
+  const LT = PB.ladderTops;
+  let caps = 0, ends = 0;
+  for (const c of cases) {
+    const W = c.v.W, climb = new Set(LT.cells(c.M.spec));
+    const tops = [...climb].filter((i) => LT.isTop(c.M.spec, climb, i % W, Math.floor(i / W))).sort((p, q) => p - q);
+    if (c.room.id === "diyu_naihe") assert.deepEqual(xyOf(tops, W), [[2, 3], [7, 3], [16, 3]]);
+    caps += tops.length;
+    const pairs = [["start", render(c.sc, D.run(c.M, {}), 0), c.start]];
+    if (c.end) { pairs.push(["end", render(c.sc, c.end.P, c.end.tick), c.endPic]); ends++; }
+    for (const [when, got, was] of pairs) {
+      const cut = new Set();
+      for (let y = 0; y < got.h; y++) for (let x = 0; x < got.w; x++) {
+        const k = (y * got.w + x) * 4;
+        if (got.data[k] === was.data[k] && got.data[k + 1] === was.data[k + 1] && got.data[k + 2] === was.data[k + 2]) continue;
+        const cell = Math.floor((y - D.HUD_H) / 16) * W + (x >> 4);
+        assert.ok(y >= D.HUD_H && tops.includes(cell) && (y - D.HUD_H) % 16 < 16 - LT.KEEP_ROWS, `${c.room.id} (${when}): (${x}, ${y}) changed outside the upper 12 px of a ladder head`);
+        cut.add(cell);
+      }
+      assert.deepEqual([...cut].sort((p, q) => p - q), tops, `${c.room.id} (${when}): every ladder head is cut, the same ones after crates and float blocks moved`);
+    }
+  }
+  assert.ok(caps > 0 && ends > 0, `${caps} ladder heads, ${ends} rooms played to the end`);
 });
