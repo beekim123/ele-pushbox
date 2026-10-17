@@ -34,8 +34,9 @@
 | [UI-10b](UI-10b.md) | G2 配送界面：三滚轮、零食、小地图、提示气泡、看全图 | `claude/inspiring-ride-zfnn4s` → `ui/UI-10b` | `index.html`、`tools/art.mjs`（追加） | 已合并（2026-10-17，界面待用户确认） |
 | [UI-10c](UI-10c.md) | G2 结算、失败 + 通用大厅 | `claude/inspiring-ride-zfnn4s` → `ui/UI-10c` | `index.html`、`tools/art.mjs`（追加） | 已合并（2026-10-17，界面待用户确认） |
 | [BR-01](BR-01.md) | 分支整理：合进 `main`、打 `v0.3`、删旧分支 | Claude 做 | — | 等第 1 批合并后 |
-| [UI-06a](UI-06a.md) | Godot 换 G2（一）：公共组件 + 选章、选关、设置、暂停（Mac 上做） | `claude/inspiring-ride-zfnn4s` → `ui/UI-06a` | `game/presentation/ui/screens/screen.gd` | 待派（现在可派） |
-| [UI-06b](UI-06b.md) | Godot 换 G2（二）：提示、规则卡、对话、过关 + 通用大厅（Mac 上做） | `claude/inspiring-ride-zfnn4s` → `ui/UI-06b` | `screen.gd`、`bubble.gd` | 等 UI-06a 合并 |
+| [UI-06a](UI-06a.md) | Godot 换 G2（一）：公共组件 + 选章、选关、设置、暂停（Mac 上做） | `claude/inspiring-ride-zfnn4s` → `ui/UI-06a` | `game/presentation/ui/screens/screen.gd` | 已合并（部分通过，余下并进 06b） |
+| [UI-06b](UI-06b.md) | Godot 换 G2（二）：补完 06a + 提示、规则卡、对话、过关（Mac 上做） | `claude/inspiring-ride-zfnn4s` → `ui/UI-06b` | `screen.gd`、`bubble.gd`、`capture.gd` | 待派（现在可派） |
+| [UI-06c](UI-06c.md) | Godot 大厅 6 套章节皮肤（Mac 上做） | `claude/inspiring-ride-zfnn4s` → `ui/UI-06c` | `screen.gd`、`capture.gd` | 等 UI-06b 合并 |
 | [DLV-01](DLV-01.md) | 配送 v2 实时规则（设计模型） | 派前 Claude 按新模板重写 | — | 待重写 |
 
 第 1 批四个包互不冲突，可以同时派：

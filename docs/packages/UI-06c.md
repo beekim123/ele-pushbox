@@ -1,0 +1,76 @@
+# UI-06c Godot 大厅：6 套章节皮肤
+
+状态：**等 UI-06b 合并后再派**（都改 `screen.gd` 和 `capture.gd`）
+基线：`claude/inspiring-ride-zfnn4s`（已包含 UI-06b）→ 分支：`ui/UI-06c`（**不要**从 `main` 开）
+预计：3–4 小时；超过 5 小时还没做完就停下，把进度写进「交付」交回。
+**必须在用户的 Mac 上做**（Godot / SDK 只有 macOS arm64 版）。
+
+**开工**（照抄；用自己的工作目录，不和别的窗口共用）：
+```bash
+git fetch origin
+git worktree add ../ele-pushbox-UI-06c -b ui/UI-06c origin/claude/inspiring-ride-zfnn4s
+cd ../ele-pushbox-UI-06c
+```
+**交回**（二选一）：
+- 能推送：`git push -u origin ui/UI-06c`
+- 不能推送：`git bundle create UI-06c.bundle origin/claude/inspiring-ride-zfnn4s..ui/UI-06c`，把 `UI-06c.bundle` 交给用户
+
+只往 `ui/UI-06c` 提交；不往别的分支推送，也不合并别的分支。
+
+## 目标
+Godot 的大厅按当前章节换皮肤（6 套，用户 2026-10-17 确认 `ui.screen.lobby@v5`，APR-0008），和参考图 `art/export/reference/lobby.<主题>.png`（dungeon、ruins、cave、forest、sky、cosmos）以及 `lobby.zh-Hans.png`、`lobby.en.png` 一致。做完后关卡模式从大厅到过关全部是用户确认过的新界面。
+
+## 要读的（只读这些）
+- `workbench/js/core/ui-skins.js`：6 套皮肤的画法和「章节 → 皮肤」对应（文件末尾）。这是规格，照着在 Godot 里实现。
+- `game/presentation/ui/screens/screen.gd`：只看 `_lobby` 和它用到的辅助函数
+- `game/presentation/ui/widgets/g2.gd`：能复用的组件
+- `game/tests/ui/capture.gd`
+
+## 要做的
+1. 先导入：`node tools/content.mjs build && node game/tools/import_resources.mjs import`
+2. 新建 `game/presentation/ui/widgets/lobby_skins.gd`：6 套皮肤；`screen.gd` 的 `_lobby` 按当前章节选皮肤。
+3. `capture.gd`：大厅按 6 个主题各截一张，和 `lobby.<主题>.png` 比；中英文各一张和 `lobby.<语言>.png` 比。只在截图测试里切章节，不改存档和关卡数据。
+4. 已知的坑：
+   - 通用大厅 `lobby_generic` 是给配送地图（地府、海女村）用的，不在本包（配送进 Godot 见 DLV-02）。
+   - `game/reports/verification.json` 只在默认全套完整跑完时才提交；半截失败时 `git checkout -- game/reports/verification.json`。
+
+验收和下面「可改的文件」清单冲突时，以清单为准，把做不到的写进交付，不要想办法绕过。
+
+## 可改的文件
+- 新建：`game/presentation/ui/widgets/lobby_skins.gd`
+- `game/presentation/ui/screens/screen.gd`：只改 `_lobby` 和它的辅助函数
+- `game/tests/ui/*.gd`：加检查、改截图清单；改已有检查的预期要在交付里写明
+- 生成文件（用工具生成后提交）：`game/generated/**`、`game/reports/ui-reference-report.json`、`game/reports/shots/*.png`、`content/export/*`；`verification.json` 见上面
+- 本文件的状态和「交付」
+
+## 不能碰的文件
+- 冻结区（AGENTS.md 2a）：`art/**`、`workbench/js/core/**`、`content/i18n/**`
+- `content/**`（除了生成的 `content/export/*`）、`game/gameplay/**`、`game/sim/**`、`game/tools/**`
+- 其他界面（UI-06a、06b 做好的）、`g2.gd` 已有组件、`docs/design/**`、`docs/status.md`
+
+## 检查
+边做边跑（只跑这些）：
+```bash
+tools/run-tests.sh --suites ui,ui-contracts
+sh -c '. tools/godot-bin.sh && find_portitor_godot && "$PORTITOR_GODOT" --path game --display-driver macos --audio-driver Dummy --script res://tests/ui/capture.gd'   # 只跑界面截图对照
+```
+最后跑一次：
+```bash
+tools/run-tests.sh            # 默认全套，全部通过
+sh -c '. tools/godot-bin.sh && find_portitor_godot && "$PORTITOR_GODOT" --path game --display-driver macos --audio-driver Dummy --script res://tests/ui/capture.gd'
+node tools/content.mjs check  # 0 错误，并且仍是 "mechanisms playable 27"
+node tools/art.mjs build      # 0 bumped，确认记录 8 条
+```
+不要跑 `--gpu` 全套。不要做的：逐个算文件哈希、复制仓库做试验、逐帧比对、为写交付补跑命令（process.md 第 10 节）。
+
+## 验收
+- 大厅 6 个主题 + 中英文共 8 张截图，每张差异像素 ≤ 1700；超了写出原因。
+- 打开 Godot 游戏：切到不同章节回大厅，皮肤跟着换。
+- 默认全套测试全部通过；`content.mjs check` 仍是 `mechanisms playable 27`。
+
+## 交付（制作方填写，不超过 40 行）
+- 6 套皮肤各一句，加差异像素数
+- 上面「最后跑一次」各一行结果
+- 改了哪条测试的预期、为什么（没有写"无"）
+- 遗留问题（没有写"无"）
+（分支名、提交号、`git diff --stat` 贴在给用户的回复里，不写进这个文件）
